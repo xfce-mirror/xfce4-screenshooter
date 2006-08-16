@@ -1,0 +1,8 @@
+[Xfce Panel]
+Type=X-XFCE-PanelPlugin
+Encoding=UTF-8
+_Name= Screenshot
+_Comment= Take a screenshot
+Icon=applets-screenshooter
+X-XFCE-Exec=@PLUGIN_PATH@/xfce4-screenshooter-plugin
+
