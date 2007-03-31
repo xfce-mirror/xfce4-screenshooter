@@ -1,0 +1,64 @@
+# English/GB translation of xfce4-screenshooter-plugin.
+# Copyright (C) 2007 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-screenshooter-plugin package.
+# Jeff Bailes <thepizzaking@gmail.com>, 2007.
+# , fuzzy
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-screenshooter-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"PO-Revision-Date: 2007-03-31 10:20+1000\n"
+"Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
+"Language-Team: English/GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../panel-plugin/screenshooter.c:146
+#, c-format
+msgid "Error grabbing the pointer %d"
+msgstr "Error grabbing the pointer %d"
+
+#: ../panel-plugin/screenshooter.c:403
+msgid "Properties"
+msgstr "Properties"
+
+#: ../panel-plugin/screenshooter.c:419
+msgid "Screenshots"
+msgstr "Screenshots"
+
+#: ../panel-plugin/screenshooter.c:432
+msgid "Ask for _filename"
+msgstr "Ask for _filename"
+
+#: ../panel-plugin/screenshooter.c:440
+msgid "Always take shot of the whole screen"
+msgstr "Always take shot of the whole screen"
+
+#: ../panel-plugin/screenshooter.c:458
+msgid "Window selection delay"
+msgstr "Window selection delay"
+
+#: ../panel-plugin/screenshooter.c:475
+msgid "Screenshot delay"
+msgstr "Screenshot delay"
+
+#: ../panel-plugin/screenshooter.c:499
+msgid "Take screenshot"
+msgstr "Take screenshot"
+
+#: ../panel-plugin/screenshooter.c:506
+msgid "Save screenshot as ..."
+msgstr "Save screenshot as ..."
+
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+msgid " Screenshot"
+msgstr " Screenshot"
+
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid " Take a screenshot"
+msgstr " Take a screenshot"
+
