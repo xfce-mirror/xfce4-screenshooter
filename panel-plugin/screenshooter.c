@@ -200,7 +200,7 @@ gchar *generate_filename_for_uri(char *uri){
         return NULL;
     file_name = g_strdup ("Screenshot.png");
     if((test=open(file_name,O_RDWR,MODE))==-1)
-    {
+    if((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))==-1) {
         return file_name;
     }
     do{
@@ -208,8 +208,7 @@ gchar *generate_filename_for_uri(char *uri){
         g_free (file_name);
         file_name = g_strdup_printf ("Screenshot-%d.png",i);
     }
-    while((test=open(file_name,O_RDWR,MODE))!=-1);
-
+    while((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))!=-1);
     return file_name;
 
 
@@ -227,6 +226,7 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
 
     gint width;
     gint height;
+    gint dialog_response;
 
     gchar * filename = NULL;
     gchar * basename = NULL;
@@ -266,31 +266,25 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
 
     gtk_image_set_from_pixbuf (GTK_IMAGE (sd->preview), thumbnail);
     g_object_unref (thumbnail);
-            filename = generate_filename_for_uri (xfce_file_chooser_get_current_folder(XFCE_FILE_CHOOSER (sd->chooser)));
+      filename = generate_filename_for_uri (xfce_file_chooser_get_current_folder(XFCE_FILE_CHOOSER (sd->chooser)));
 
     if (sd->ask_for_file && filename)
     {
         gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (sd->chooser), filename);
-        if (gtk_dialog_run (GTK_DIALOG (sd->chooser)) == GTK_RESPONSE_ACCEPT)
+
+        dialog_response = gtk_dialog_run (GTK_DIALOG (sd->chooser));       
+         if (dialog_response == GTK_RESPONSE_ACCEPT)
         {
         filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER(sd->chooser));
         }
         gtk_widget_hide (GTK_WIDGET (sd->chooser));
     }
-    else
-    {
-       /* sd->counter++;
-        basename = g_strdup_printf ("Screenshot-%d.png", sd->counter);
-       filename = g_build_filename (sd->screenshots_dir, basename, NULL);
-        curdir = g_get_current_dir();
-        filename = g_build_filename (curdir, basename, NULL);
-        g_free(basename);
-        */
-    }
 
-    if (filename) {
-        gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
-        g_free (filename);
+    if (filename) 
+    {
+        if (!(sd->ask_for_file) || dialog_response == GTK_RESPONSE_ACCEPT)
+                gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);g_free (filename);
+        g_free(filename);
     }
 }
 

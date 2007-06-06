@@ -3,7 +3,7 @@ dnl
 dnl xfce4-test-plugin - Test plugin for the XFce4 panel
 dnl
 
-m4_define([test_version], [1.0.0])
+m4_define([test_version], [1.0.2])
 
 AC_INIT([xfce4-screenshooter-plugin], [test_version()],
 	[dbobadil@dcc.uchile.cl])
