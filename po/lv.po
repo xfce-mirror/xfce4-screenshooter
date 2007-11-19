@@ -1,0 +1,62 @@
+# Latvian translation for the xfce4-screenshooter-plugin package.
+# Copyright (C) 2006 Daniel Bobadilla Leal.
+# This file is distributed under the same license as the xfce4-screenshooter-plugin package.
+# Rihards Prieditis <rprieditis@inbox.lv>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"PO-Revision-Date: 2007-11-16 23:39+0300\n"
+"Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
+"Language-Team: Latvian <rprieditis@inbox.lv>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/screenshooter.c:146
+#, c-format
+msgid "Error grabbing the pointer %d"
+msgstr "Kļūda ķerot norādi uz %d"
+
+#: ../panel-plugin/screenshooter.c:403
+msgid "Properties"
+msgstr "Rekvizīti"
+
+#: ../panel-plugin/screenshooter.c:419
+msgid "Screenshots"
+msgstr "Ekrānkopija"
+
+#: ../panel-plugin/screenshooter.c:432
+msgid "Ask for _filename"
+msgstr "Jautāt pēc _faila nosaukuma"
+
+#: ../panel-plugin/screenshooter.c:440
+msgid "Always take shot of the whole screen"
+msgstr "Vienmēr bildēt visu ekrānu"
+
+#: ../panel-plugin/screenshooter.c:458
+msgid "Window selection delay"
+msgstr "Loga atlases aizture"
+
+#: ../panel-plugin/screenshooter.c:475
+msgid "Screenshot delay"
+msgstr "Ekrānkopijas aizture"
+
+#: ../panel-plugin/screenshooter.c:499
+msgid "Take screenshot"
+msgstr "Bildēt ekrānkopiju"
+
+#: ../panel-plugin/screenshooter.c:506
+msgid "Save screenshot as ..."
+msgstr "Saglabāt ekrānkopiju kā..."
+
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+msgid " Screenshot"
+msgstr "Ekrānkopija"
+
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid " Take a screenshot"
+msgstr "Bildēt ekrānkopiju"
+
