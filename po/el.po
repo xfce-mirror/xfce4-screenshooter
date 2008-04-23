@@ -1,373 +1,63 @@
-# translation of el.po to Greek
-# Greek translation of the squeeze package.
-# Copyright (C) 2006-2008 Stephan Arts.
-# This file is distributed under the same license as the squeeze package.
+# translation of xfce4-screenshooter-plugin.po to Greek
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 #
-# Stavros Giannouris <stavrosg@hellug.gr>, 2007.
 # Evaggelos Balaskas <ebalaskas@ebalaskas.gr>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: el\n"
-"Report-Msgid-Bugs-To: stephan@xfce.org\n"
-"POT-Creation-Date: 2007-08-21 00:30+0200\n"
-"PO-Revision-Date: 2008-03-25 00:42+0200\n"
+"Project-Id-Version: xfce4-screenshooter-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"PO-Revision-Date: 2008-03-28 19:49+0200\n"
 "Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../libsqueeze/archive.c:236
-msgid "Name"
-msgstr "Όνομα"
-
-#: ../libsqueeze/archive.c:238
-msgid "Mime type"
-msgstr "Τύπος αρχείου"
-
-#: ../squeeze.desktop.in.h:1
-msgid "Archive Manager"
-msgstr "Διαχειριστής συμπιεσμένων αρχείων"
-
-#: ../squeeze.desktop.in.h:2
-msgid "Create and manage archives with the archive manager"
-msgstr "Δημιουργία και διαχείριση συμπιεσμένων αρχείων με τον διαχειριστή συμπιεσμένων αρχείων"
-
-#: ../squeeze.desktop.in.h:3
-msgid "Squeeze Archive Manager"
-msgstr "Διαχειριστής συμπιεσμένων αρχείων Squeeze"
-
-#.
-#. * Could not open archive (mime type not supported or file did not exist)
-#. * Should be a more specific error message.
-#.
-#: ../src/application.c:160 ../src/application.c:250
-msgid "Could not open archive, MIME-type unsupported or file did not exist"
-msgstr ""
-"Δεν είναι δυνατό το άνοιγμα αυτού του αρχείου. Ο τύπος αρχείου δεν "
-"υποστηρίζεται ή το αρχείο δεν υπάρχει."
-
-#: ../src/application.c:191 ../src/main_window.c:826 ../src/main_window.c:1260
-msgid ""
-"Squeeze cannot extract this archive type,\n"
-"the application to support this is missing."
-msgstr ""
-"Το squeeze δε μπορεί να αποσυμπιέσει αυτό τον τύπο αρχείου.\n"
-"Η εφαρμογή που τον υποστηρίζει δεν είναι διαθέσιμη."
-
-#.
-#. * Could not create archive (mime type unsupported)
-#.
-#: ../src/application.c:233
-msgid "Could not create archive, MIME-type unsupported"
-msgstr "Δεν ήταν δυνατή η δημιουργία του αρχείου, ο τύπος MIME δεν υποστηρίζεται"
-
-#: ../src/application.c:268 ../src/main_window.c:874
-msgid ""
-"Squeeze cannot add files to this archive type,\n"
-"the application to support this is missing."
-msgstr ""
-"Το squeeze δε μπορεί να προσθέσει αρχεία σε αυτό τον τύπο αρχείου.\n"
-"Η εφαρμογή που τον υποστηρίζει δεν είναι διαθέσιμη."
-
-#: ../src/archive_store.c:249 ../src/notebook.c:179
-msgid "Show full path"
-msgstr "Προβολή ολόκληρης της διαδρομής"
-
-#: ../src/archive_store.c:250 ../src/notebook.c:180
-msgid "Show the full path strings for each entry"
-msgstr "Εμφάνιση πλήρους διαδρομής σε κάθε εγγραφή"
-
-#: ../src/archive_store.c:256 ../src/notebook.c:186
-msgid "Show mime icons"
-msgstr "Προβολή εικονιδίων εφαρμογών"
-
-#: ../src/archive_store.c:257 ../src/notebook.c:187
-msgid "Show the mime type icons for each entry"
-msgstr "Εμφάνιση εικονιδίων εφαρμογών σε κάθε εγγραφή "
-
-#: ../src/archive_store.c:263
-msgid "Show up dir entry"
-msgstr "Προβολή εγγραφής καταλόγου"
-
-#: ../src/archive_store.c:264
-msgid "Show '..' to go to the parent directory"
-msgstr "Προβολή '..' για μετάβαση στο γονικό κατάλογο"
-
-#: ../src/archive_store.c:270 ../src/notebook.c:193
-msgid "Sort folders before files"
-msgstr "Ταξινόμηση φακέλων πριν τα αρχεία"
-
-#: ../src/archive_store.c:271 ../src/notebook.c:194
-msgid "The folders will be put at the top of the list"
-msgstr "Οι φάκελοι θα ταξινομηθούν στην κορυφή της λίστας"
-
-#: ../src/archive_store.c:277 ../src/archive_store.c:278 ../src/notebook.c:200
-#: ../src/notebook.c:201
-msgid "Sort text case sensitive"
-msgstr "Ταξινόμησε κείμενο με διαχωρισμό χαρακτήρων"
-
-#: ../src/extract_dialog.c:76
-msgid "<b>Extract files:</b>"
-msgstr "<b>Αρχεία για εξαγωγή</b>"
-
-#: ../src/extract_dialog.c:77
-msgid "<b>Options:</b>"
-msgstr "<b>Επιλογές:</b>"
-
-#: ../src/extract_dialog.c:87
-msgid "All files"
-msgstr "Όλα τα αρχεία"
-
-#: ../src/extract_dialog.c:88
-msgid "Selected files"
-msgstr "Επιλεγμένα αρχεία"
-
-#: ../src/extract_dialog.c:100 ../src/main_window.c:451
-#: ../src/main_window.c:1219
-msgid "Extract"
-msgstr "Αποσυμπίεση"
-
-#: ../src/extract_dialog.c:110
-msgid "Extract archive"
-msgstr "Αποσυμπίεση αρχείου"
-
-#: ../src/main.c:51
-msgid "[destination path]"
-msgstr "[προορισμός]"
-
-#: ../src/main.c:59
-msgid "[archive path] [file1] [file2] ... [fileN]"
-msgstr "[διαδρομή συμπιεσμένου αρχείου] [αρχείο1] [αρχείο2] ... [αρχείοΝ]"
-
-#: ../src/main.c:63
-msgid "[file1] [file2] ... [fileN]"
-msgstr "[αρχείο1] [αρχείο2] ... [αρχείοΝ]"
-
-#: ../src/main.c:66
-msgid "Version information"
-msgstr "Πληροφορίες έκδοσης"
-
-#: ../src/main.c:92
-msgid "[archive name]"
-msgstr "[όνομα αρχείου]"
-
-#: ../src/main.c:96
+#: ../panel-plugin/screenshooter.c:146
 #, c-format
-msgid ""
-"%s: %s\n"
-"Try %s --help to see a full list of available command line options.\n"
-msgstr ""
-"%s: %s\n"
-"Εκτελέστε %s --help για να δείτε τη λίστα με όλες τις υποστηριζόμενες "
-"επιλογές.\n"
+msgid "Error grabbing the pointer %d"
+msgstr "Σφάλμα στην αρπαγή του δείκτη %d"
 
-#: ../src/main_window.c:133
-msgid "Internal Style"
-msgstr "Κανονικό"
+#: ../panel-plugin/screenshooter.c:403
+msgid "Properties"
+msgstr "Ρυθμίσεις"
 
-#: ../src/main_window.c:134
-msgid "Tool Bar Style"
-msgstr "Εργαλειοθήκη"
+#: ../panel-plugin/screenshooter.c:419
+msgid "Screenshots"
+msgstr "Στιγμιότυπα οθόνης"
 
-#: ../src/main_window.c:135
-msgid "Path Bar Style"
-msgstr "Μπάρα τοποθεσίας"
+#: ../panel-plugin/screenshooter.c:432
+msgid "Ask for _filename"
+msgstr "Ερώτηση για όν_ομα αρχείου"
 
-#: ../src/main_window.c:182
-msgid "Navigation Style"
-msgstr "Στυλ περιήγησης"
+#: ../panel-plugin/screenshooter.c:440
+msgid "Always take shot of the whole screen"
+msgstr "Πάντα λήψη στιγμιοτύπου όλης της οθόνης"
 
-#: ../src/main_window.c:183
-msgid ""
-"Style of navigation\n"
-"The style to navigate trough the archive"
-msgstr ""
-"Τρόπος περιήγησης\n"
-"Πως θα μετακινήστε μέσα στο συμπιεσμένο αρχείο"
+#: ../panel-plugin/screenshooter.c:458
+msgid "Window selection delay"
+msgstr "Καθυστέρηση επιλογής παραθύρου"
 
-#. File menu
-#: ../src/main_window.c:295
-msgid "_File"
-msgstr "_Αρχείο"
+#: ../panel-plugin/screenshooter.c:475
+msgid "Screenshot delay"
+msgstr "Καθυστέρηση στιγμιοτύπου"
 
-#. Action menu: ref all the childs
-#: ../src/main_window.c:323
-msgid "_Action"
-msgstr "_Ενέργεια"
+#: ../panel-plugin/screenshooter.c:499
+msgid "Take screenshot"
+msgstr "Λήψη στιγμιοτύπου οθόνης"
 
-#: ../src/main_window.c:328
-msgid "_Add files"
-msgstr "Π_ροσθήκη αρχείων"
+#: ../panel-plugin/screenshooter.c:506
+msgid "Save screenshot as ..."
+msgstr "Αποθήκευση στιγμιοτύπου ως ..."
 
-#: ../src/main_window.c:334
-msgid "_Add _folders"
-msgstr "Προσθήκη _καταλόγων"
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+msgid " Screenshot"
+msgstr "Στιγμιότυπο οθόνης"
 
-#: ../src/main_window.c:340
-msgid "_Extract"
-msgstr "_Αποσυμπίεση"
-
-#. View menu
-#: ../src/main_window.c:373
-msgid "_View"
-msgstr "_Προβολή"
-
-#. Help menu
-#: ../src/main_window.c:397
-msgid "_Help"
-msgstr "_Βοήθεια"
-
-#: ../src/main_window.c:443 ../src/main_window.c:852
-msgid "Add files"
-msgstr "Προσθήκη αρχείων"
-
-#: ../src/main_window.c:447 ../src/main_window.c:894
-msgid "Add folders"
-msgstr "Προσθήκη καταλόγων"
-
-#: ../src/main_window.c:724
-msgid "Open archive in new window"
-msgstr "Άνοιγμα του συμπιεσμένου αρχείου σε νέο παράθυρο"
-
-#: ../src/main_window.c:730
-msgid "Open archive"
-msgstr "Άνοιγμα συμπιεσμένου αρχείου"
-
-#: ../src/main_window.c:916
-msgid ""
-"Squeeze cannot add folders to this archive type,\n"
-"the application to support this is missing."
-msgstr ""
-"Το squeeze δεν μπορεί να προσθέσει καταλόγους σε αυτό το τύπο συμπιεσμένου αρχείου,\n"
-"η εφαρμογή που το υποστηρίζει δεν είναι διαθέσιμη."
-
-#: ../src/main_window.c:937
-msgid "Are you sure you want to remove the selected files?"
-msgstr "Είσαστε βέβαιοι ότι θέλετε να διαγράψετε τα επιλεγμένα αρχεία;"
-
-#: ../src/main_window.c:950
-msgid ""
-"Squeeze cannot remove files from this archive type,\n"
-"the application to support this is missing."
-msgstr ""
-"Το squeeze δε μπορεί να αφαιρέσει αρχεία από αυτό τον τύπο αρχείου.\n"
-"Η εφαρμογή που τον υποστηρίζει δεν είναι διαθέσιμη."
-
-#: ../src/main_window.c:999
-msgid ""
-"Are you sure you want to cancel this operation?\n"
-"This could damage the archive."
-msgstr ""
-"Θέλετε σίγουρα να ακυρώσετε αυτή τη λειτουργία;\n"
-"Αυτό μπορεί να χαλάσει το αρχείο."
-
-#: ../src/main_window.c:1081
-msgid "Lead developer:"
-msgstr "Βασικός προγραμματιστής:"
-
-#: ../src/main_window.c:1084
-msgid "Contributors:"
-msgstr "Συντελεστές:"
-
-#: ../src/main_window.c:1087
-msgid "Inspired by Xarchiver, written by Giuseppe Torelli"
-msgstr "Εμπνευσμένο από το Xarchiver, του Giuseppe Torelli"
-
-#: ../src/main_window.c:1089
-msgid "Application Icon:"
-msgstr "Εικονίδιο εφαρμογής:"
-
-#: ../src/main_window.c:1092
-msgid "Add / Extract icons:"
-msgstr "Προσθήκη / εξαγωγή εικονιδίων:"
-
-#: ../src/main_window.c:1093
-msgid "Based on the original extract icon created by Andreas Nilsson"
-msgstr "Βασισμένο στο εικονίδιο αποσυμπίεσης του Andreas Nilsson"
-
-#: ../src/main_window.c:1100
-msgid ""
-"Squeeze is a lightweight and flexible archive manager for the Xfce Desktop "
-"Environment"
-msgstr "Ένας ελαφρύς και ευέλικτος διαχειριστής συμπιεσμένων αρχείων για το Xfce"
-
-#. Translator credits as shown in the about dialog: NAME <E-MAIL> YEAR
-#: ../src/main_window.c:1108
-msgid "translator-credits"
-msgstr ""
-"Σταύρος Γιαννούρης <stavrosg@hellug.gr>, 2007\n"
-"Ευάγγελος Μπαλάσκας <ebalaskas@ebalaskas.gr>, 2008"
-
-#: ../src/main_window.c:1137 ../src/main_window.c:1208
-#: ../src/main_window.c:1376
-msgid "Done"
-msgstr "Τέλος"
-
-#: ../src/main_window.c:1218
-msgid "Which action do you want to perform on the selected file(s)?"
-msgstr "Τι εργασία θέλετε να εφαρμόσετε στα επιλεγμένα αρχεία;"
-
-#: ../src/main_window.c:1219
-msgid "Open"
-msgstr "Άνοιγμα"
-
-#: ../src/main_window.c:1233
-msgid ""
-"Squeeze cannot view this file.\n"
-"the application to support this is missing."
-msgstr ""
-"Το squeeze δε μπορεί να προβάλλει αυτό το αρχείο.\n"
-"Η εφαρμογή που τον υποστηρίζει δεν είναι διαθέσιμη."
-
-#: ../src/main_window.c:1301
-msgid "Failed to open file"
-msgstr "Το άνοιγμα του αρχείου απέτυχε"
-
-#: ../src/main_window.c:1302
-#, c-format
-msgid ""
-"'%s'\n"
-"Could not be opened"
-msgstr ""
-"'%s'\n"
-"Δεν ήταν δυνατό να εκτελεστεί"
-
-#: ../src/new_dialog.c:69
-msgid "Archive type:"
-msgstr "Τύπος συμπιεσμένου αρχείου:"
-
-#: ../src/new_dialog.c:80
-msgid "Archives"
-msgstr "Συμπιεσμένα αρχεία"
-
-#: ../src/new_dialog.c:108
-msgid "Create new archive"
-msgstr "Δημιουργία νέου συμπιεσμένου αρχείου"
-
-#: ../src/notebook.c:207
-msgid "Rules hint"
-msgstr "Ίχνος κανόνων"
-
-#: ../src/notebook.c:208
-msgid "Make the row background colors alternate"
-msgstr "Εναλλασσόμενα χρώματα παρασκηνίου γραμμών"
-
-#: ../src/path_bar.c:141
-msgid "Spacing"
-msgstr "Διάστιχο"
-
-#: ../src/path_bar.c:142
-msgid "The amount of space between the path buttons"
-msgstr "Το μέγεθος του διαστήματος μεταξύ κουμπιών διαδρομής"
-
-#: ../src/tool_bar.c:167
-msgid "Location:"
-msgstr "Τοποθεσία:"
-
-#: ../src/message_dialog.c:158
-msgid "Archive manager"
-msgstr "Διαχειριστής συμπιεσμένων αρχείων"
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid " Take a screenshot"
+msgstr "Λήψη στιγμιοτύπου οθόνης"
 
