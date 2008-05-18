@@ -1,3 +1,12 @@
+2008-05-18 18:25 mmassonnet
+
+	* Fix GCC warnings and bug with delay (Patch from Jérôme Guelfucci)
+	* Drop automated file INSTALL
+
+2007-06-06 23:00 dbl
+
+	* Fallback to Screenshot.png on "Cancel" (debbug#420242)
+
 2006-09-11 18:51 nick
 
 	* Apply Patch from Enrico Tröger to enable i18n.

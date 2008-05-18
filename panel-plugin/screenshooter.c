@@ -229,14 +229,11 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
     gint dialog_response;
 
     gchar * filename = NULL;
-    gchar * basename = NULL;
-    gchar * curdir = NULL;
-
 
     if (sd->whole_screen) {
         window = gdk_get_default_root_window();
     } else {
-        if (delay = sd->window_delay) {
+        if (delay == sd->window_delay) {
             g_timeout_add(1000, delay_callback, &delay);
             gtk_main();
         }
@@ -250,7 +247,7 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
 
     gdk_drawable_get_size(window, &width, &height);
 
-    if (delay = sd->screenshot_delay) {
+    if (delay == sd->screenshot_delay) {
         g_timeout_add(1000, delay_callback, &delay);
         gtk_main();
     }
@@ -389,7 +386,6 @@ static void
 screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
 {
     GtkWidget *dlg, *header, *vbox, *hbox1, *hbox2, *label1, *label2, *cb1, *cb2;
-    GtkAdjustment *adjustment;
     GtkWidget *window_delay_spinner, *screenshot_delay_spinner;
 
     xfce_panel_plugin_block_menu (plugin);
