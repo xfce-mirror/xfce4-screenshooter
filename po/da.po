@@ -1,0 +1,63 @@
+# Danish translation of xfce4-screenshooter-plugin.
+# Copyright (C) 2008 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-screenshooter-plugin package.
+# Jannich Brendle <jannich@bredsaal.dk>, 2008.
+#
+# , fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-screenshooter-plugin VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"PO-Revision-Date: 2008-05-13 13:15+0200\n"
+"Last-Translator: Jannich Brendle <jannich@bredsaal.dk>\n"
+"Language-Team: Danish <xfce-i18n@xfce.org>\n"
+"MIME-Version: 1.0"
+"Content-Type: text/plain; charset=UTF-8"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../panel-plugin/screenshooter.c:146
+#, c-format
+msgid "Error grabbing the pointer %d"
+msgstr ""
+
+#: ../panel-plugin/screenshooter.c:403
+msgid "Properties"
+msgstr "Egenskaber"
+
+#: ../panel-plugin/screenshooter.c:419
+msgid "Screenshots"
+msgstr "Skærmdump"
+
+#: ../panel-plugin/screenshooter.c:432
+msgid "Ask for _filename"
+msgstr "Spørg efter _filnavn"
+
+#: ../panel-plugin/screenshooter.c:440
+msgid "Always take shot of the whole screen"
+msgstr "Tag altid skærmdump af hele skærmen"
+
+#: ../panel-plugin/screenshooter.c:458
+msgid "Window selection delay"
+msgstr "Forsinkelse for vinduesvælger"
+
+#: ../panel-plugin/screenshooter.c:475
+msgid "Screenshot delay"
+msgstr "Forsinkelse for skærmdump"
+
+#: ../panel-plugin/screenshooter.c:499
+msgid "Take screenshot"
+msgstr "Tag skærmdump"
+
+#: ../panel-plugin/screenshooter.c:506
+msgid "Save screenshot as ..."
+msgstr "Gem skærmdump som ..."
+
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+msgid " Screenshot"
+msgstr " Skærmdump"
+
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid " Take a screenshot"
+msgstr "Tag et skærmdump"
+
