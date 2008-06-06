@@ -1,4 +1,3 @@
-/* vim: set expandtab ts=8 sw=4: */
 /*  $Id$
  *
  *  Copyright © 2004 German Poo-Caaman~o <gpoo@ubiobio.cl>
@@ -39,7 +38,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-
+#include <X11/Xatom.h>
 
 #define SCREENSHOT_ICON_NAME  "applets-screenshooter"
 #define MODE 0644
@@ -57,7 +56,6 @@ typedef struct
     gint whole_screen;
     gint ask_for_file;
 
-    gint window_delay;
     gint screenshot_delay;
     gchar *screenshots_dir;
 
@@ -115,81 +113,86 @@ screenshot_free_data (XfcePanelPlugin * plugin, ScreenshotData * sd)
     g_free (sd);
 }
 
-static GdkNativeWindow
-select_window (GdkScreen *screen)
+/* Borrowed from libwnck */
+static Window
+get_window_property (Window  xwindow,
+		     Atom    atom)
 {
-#define MASK (ButtonPressMask | ButtonReleaseMask)
+  Atom type;
+  int format;
+  gulong nitems;
+  gulong bytes_after;
+  Window *w;
+  int err, result;
+  Window retval;
 
-  Display    *x_dpy;
-  Cursor      x_cursor;
-  XEvent      x_event;
-  Window      x_win;
-  Window      x_root;
-  gint        x_scr;
-  gint        status;
-  gint        buttons;
+  gdk_error_trap_push ();
 
-  x_dpy = GDK_SCREEN_XDISPLAY (screen);
-  x_scr = GDK_SCREEN_XNUMBER (screen);
+  type = None;
+  result = XGetWindowProperty (gdk_display,
+			       xwindow,
+			       atom,
+			       0, G_MAXLONG,
+			       False, XA_WINDOW, &type, &format, &nitems,
+			       &bytes_after, (unsigned char **) &w);  
+  err = gdk_error_trap_pop ();
 
-  x_win    = None;
-  x_root   = RootWindow (x_dpy, x_scr);
-  x_cursor = XCreateFontCursor (x_dpy, GDK_CROSSHAIR);
-  buttons  = 0;
-
-  status = XGrabPointer (x_dpy, x_root, False,
-                         MASK, GrabModeSync, GrabModeAsync,
-                         x_root, x_cursor, CurrentTime);
-
-  if (status != GrabSuccess)
+  if (err != Success ||
+      result != Success)
+    return None;
+  
+  if (type != XA_WINDOW)
     {
-      g_message (_("Error grabbing the pointer %d"), status);
-      return 0;
+      XFree (w);
+      return None;
     }
 
-  while ((x_win == None) || (buttons != 0))
-    {
-      XAllowEvents (x_dpy, SyncPointer, CurrentTime);
-      XWindowEvent (x_dpy, x_root, MASK, &x_event);
-
-      switch (x_event.type)
-        {
-        case ButtonPress:
-          if (x_win == None)
-            {
-              x_win = x_event.xbutton.subwindow;
-              if (x_win == None)
-                x_win = x_root;
-            }
-          buttons++;
-          break;
-
-        case ButtonRelease:
-          if (buttons > 0)
-            buttons--;
-          break;
-
-        default:
-          g_assert_not_reached ();
-        }
-    }
-
-  XUngrabPointer (x_dpy, CurrentTime);
-  XFreeCursor (x_dpy, x_cursor);
-
-  return x_win;
+  retval = *w;
+  XFree (w);
+  
+  return retval;
 }
 
-static gboolean
-delay_callback (gpointer data)
+/* Borrowed from gnome-screenshot */
+static Window
+screenshot_find_active_window (void)
 {
-    gint *left = data;
+  Window retval = None;
+  Window root_window;
 
-    (*left)--;
-    if (!*left)
-        gtk_main_quit();
+  root_window = GDK_ROOT_WINDOW ();
 
-    return *left;
+  if (gdk_net_wm_supports (gdk_atom_intern ("_NET_ACTIVE_WINDOW", FALSE)))
+    {
+      retval = get_window_property (root_window,
+				    gdk_x11_get_xatom_by_name ("_NET_ACTIVE_WINDOW"));
+    }
+
+  return retval;  
+}
+
+/* Borrowed from gnome-screenshot */
+static Window
+find_toplevel_window (Window xid)
+{
+  Window root, parent, *children;
+  unsigned int nchildren;
+
+  do
+    {
+      if (XQueryTree (GDK_DISPLAY (), xid, &root,
+		      &parent, &children, &nchildren) == 0)
+	{
+	  g_warning ("Couldn't find window manager window");
+	  return None;
+	}
+
+      if (root == parent)
+	return xid;
+
+      xid = parent;
+    }
+  while (TRUE);
 }
 
 gchar *generate_filename_for_uri(char *uri){
@@ -199,21 +202,19 @@ gchar *generate_filename_for_uri(char *uri){
     if(uri == NULL)
         return NULL;
     file_name = g_strdup ("Screenshot.png");
-    if((test=open(file_name,O_RDWR,MODE))==-1)
-    if((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))==-1) {
+    if((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))==-1) 
+    {
         return file_name;
     }
-    do{
+    do
+    {
         i++;
         g_free (file_name);
         file_name = g_strdup_printf ("Screenshot-%d.png",i);
     }
     while((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))!=-1);
     return file_name;
-
-
 }
-
 
 static void
 button_clicked(GtkWidget * button,  ScreenshotData * sd)
@@ -221,36 +222,27 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
     GdkPixbuf * screenshot;
     GdkPixbuf * thumbnail;
     GdkWindow * window;
-    GdkNativeWindow nwindow;
-    gint delay;
-
     gint width;
     gint height;
     gint dialog_response;
-
     gchar * filename = NULL;
 
-    if (sd->whole_screen) {
-        window = gdk_get_default_root_window();
-    } else {
-        if (delay == sd->window_delay) {
-            g_timeout_add(1000, delay_callback, &delay);
-            gtk_main();
-        }
-        nwindow = select_window(gdk_screen_get_default());
-        if (nwindow) {
-            window = gdk_window_foreign_new(nwindow);
-        } else {
-            window = gdk_get_default_root_window();
-        }
+    if (sd->whole_screen)
+    {
+       window = gdk_get_default_root_window();
+    } 
+    else 
+    {
+       window = gdk_window_foreign_new (find_toplevel_window (screenshot_find_active_window ()));
     }
+
+    /* delay, we make the button unclickable so that no other screenshot 
+       can be taken at the same time */
+    gtk_widget_set_sensitive(GTK_WIDGET (sd->button), FALSE);
+    sleep( sd->screenshot_delay);
+    gtk_widget_set_sensitive(GTK_WIDGET ( sd->button), TRUE);
 
     gdk_drawable_get_size(window, &width, &height);
-
-    if (delay == sd->screenshot_delay) {
-        g_timeout_add(1000, delay_callback, &delay);
-        gtk_main();
-    }
 
     screenshot = gdk_pixbuf_get_from_drawable (NULL,
 					       window,
@@ -263,26 +255,27 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
 
     gtk_image_set_from_pixbuf (GTK_IMAGE (sd->preview), thumbnail);
     g_object_unref (thumbnail);
-      filename = generate_filename_for_uri (xfce_file_chooser_get_current_folder(XFCE_FILE_CHOOSER (sd->chooser)));
-
-    if (sd->ask_for_file && filename)
+    
+    filename = generate_filename_for_uri (xfce_file_chooser_get_current_folder(XFCE_FILE_CHOOSER (sd->chooser)));  
+    
+    if (sd->ask_for_file)
     {
-        gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (sd->chooser), filename);
-
-        dialog_response = gtk_dialog_run (GTK_DIALOG (sd->chooser));       
-         if (dialog_response == GTK_RESPONSE_ACCEPT)
-        {
+      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (sd->chooser), filename);
+      dialog_response = gtk_dialog_run (GTK_DIALOG (sd->chooser));
+      
+      if ( dialog_response == GTK_RESPONSE_ACCEPT )
+      {
         filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER(sd->chooser));
-        }
-        gtk_widget_hide (GTK_WIDGET (sd->chooser));
+        gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
+       }
+      
+      gtk_widget_hide ( GTK_WIDGET (sd->chooser) );
+    }  
+    else
+    {    
+       gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
     }
-
-    if (filename) 
-    {
-        if (!(sd->ask_for_file) || dialog_response == GTK_RESPONSE_ACCEPT)
-                gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);g_free (filename);
-        g_free(filename);
-    }
+    g_free (filename);
 }
 
 static void
@@ -298,7 +291,6 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
     char *file;
     XfceRc *rc;
     gint screenshot_delay = 2;
-    gint window_delay = 2;
     gint whole_screen = 1;
     gint ask_for_file = 1;
 
@@ -310,7 +302,6 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
         if (rc != NULL)
         {
             screenshot_delay = xfce_rc_read_int_entry (rc, "screenshot_delay", 2);
-            window_delay = xfce_rc_read_int_entry (rc, "window_delay", 2);
             whole_screen = xfce_rc_read_int_entry (rc, "whole_screen", 1);
             ask_for_file = xfce_rc_read_int_entry (rc, "ask_for_file", 1);
 
@@ -319,7 +310,6 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
     }
 
     screenshot->screenshot_delay = screenshot_delay;
-    screenshot->window_delay = window_delay;
     screenshot->whole_screen = whole_screen;
     screenshot->ask_for_file = ask_for_file;
 }
@@ -340,7 +330,6 @@ screenshot_write_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
         return;
 
     xfce_rc_write_int_entry (rc, "screenshot_delay", screenshot->screenshot_delay);
-    xfce_rc_write_int_entry (rc, "window_delay", screenshot->window_delay);
     xfce_rc_write_int_entry (rc, "whole_screen", screenshot->whole_screen);
     xfce_rc_write_int_entry (rc, "ask_for_file", screenshot->ask_for_file);
 
@@ -357,12 +346,6 @@ static void
 whole_screen_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
     sd->whole_screen = gtk_toggle_button_get_active (tb);
-}
-
-static void
-window_delay_spinner_changed(GtkWidget * spinner, ScreenshotData *sd)
-{
-    sd->window_delay = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spinner));
 }
 
 static void
@@ -385,8 +368,8 @@ screenshot_dialog_response (GtkWidget *dlg, int reponse,
 static void
 screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
 {
-    GtkWidget *dlg, *header, *vbox, *hbox1, *hbox2, *label1, *label2, *cb1, *cb2;
-    GtkWidget *window_delay_spinner, *screenshot_delay_spinner;
+    GtkWidget *dlg, *header, *vbox, *hbox2, *label2, *cb1, *cb2;
+    GtkWidget *screenshot_delay_spinner;
 
     xfce_panel_plugin_block_menu (plugin);
 
@@ -427,31 +410,14 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
     g_signal_connect (cb1, "toggled", G_CALLBACK (ask_for_file_toggled),
                       sd);
 
-    cb2 = gtk_check_button_new_with_mnemonic (_("Always take shot of the whole screen"));
+    cb2 = gtk_check_button_new_with_mnemonic (_("Take a screenshot of the whole screen"));
     gtk_widget_show (cb2);
     gtk_box_pack_start (GTK_BOX (vbox), cb2, FALSE, FALSE, 0);
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (cb2),
                                   sd->whole_screen);
     g_signal_connect (cb2, "toggled", G_CALLBACK (whole_screen_toggled),
                       sd);
-
-    /* Window selection delay */
-    hbox1 = gtk_hbox_new(FALSE, 8);
-    gtk_widget_show(hbox1);
-    gtk_box_pack_start (GTK_BOX (vbox), hbox1, FALSE, FALSE, 0);
-
-    window_delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(window_delay_spinner), sd->window_delay);
-    gtk_widget_show(window_delay_spinner);
-    gtk_box_pack_start (GTK_BOX (hbox1), window_delay_spinner, FALSE, FALSE, 0);
-
-    label1 = gtk_label_new_with_mnemonic(_("Window selection delay"));
-    gtk_widget_show(label1);
-    gtk_box_pack_start (GTK_BOX (hbox1), label1, FALSE, FALSE, 0);
-
-    g_signal_connect(window_delay_spinner, "value-changed",
-                        G_CALLBACK(window_delay_spinner_changed), sd);
-
+    
     /* Screenshot delay */
     hbox2 = gtk_hbox_new(FALSE, 8);
     gtk_widget_show(hbox2);
@@ -462,7 +428,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
     gtk_widget_show(screenshot_delay_spinner);
     gtk_box_pack_start (GTK_BOX (hbox2), screenshot_delay_spinner, FALSE, FALSE, 0);
 
-    label2 = gtk_label_new_with_mnemonic(_("Screenshot delay"));
+    label2 = gtk_label_new_with_mnemonic(_("Delay before taking screenshot"));
     gtk_widget_show(label2);
     gtk_box_pack_start (GTK_BOX (hbox2), label2, FALSE, FALSE, 0);
 

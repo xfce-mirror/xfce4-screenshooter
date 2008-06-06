@@ -32,6 +32,9 @@ AC_HEADER_STDC
 dnl configure the panel plugin
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.22])
 
+dnl check for x11proto
+XDT_CHECK_PACKAGE([X11PROTO_CORE], [xproto], [7])
+
 dnl Translations
 XDT_I18N([ca cs de en_GB eu fr hu nb_NO pl pt_PT sq zh_TW])
 

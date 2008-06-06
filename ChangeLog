@@ -1,3 +1,13 @@
+2008-06-06 15:19 jeromeg
+
+	* panel-plugin/screenshooter.c:
+	  - new behaviour (fullscreen or active window screenshot).
+	  - fix delay
+	  - fix file saving (cancel now works, based on debian patch).
+	  - button made insensitive while screenshot is taken.
+	* configure.ac: added x11-proto-core to build deps.
+	* README: updated.
+	
 2008-05-18 18:25 mmassonnet
 
 	* Fix GCC warnings and bug with delay (Patch from Jérôme Guelfucci)
