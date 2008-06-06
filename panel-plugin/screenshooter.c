@@ -240,7 +240,6 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
        can be taken at the same time */
     gtk_widget_set_sensitive(GTK_WIDGET (sd->button), FALSE);
     sleep( sd->screenshot_delay);
-    gtk_widget_set_sensitive(GTK_WIDGET ( sd->button), TRUE);
 
     gdk_drawable_get_size(window, &width, &height);
 
@@ -256,7 +255,7 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
     gtk_image_set_from_pixbuf (GTK_IMAGE (sd->preview), thumbnail);
     g_object_unref (thumbnail);
     
-    filename = generate_filename_for_uri (xfce_file_chooser_get_current_folder(XFCE_FILE_CHOOSER (sd->chooser)));  
+    filename = generate_filename_for_uri (gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER (sd->chooser)));  
     
     if (sd->ask_for_file)
     {
@@ -275,6 +274,7 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
     {    
        gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
     }
+    gtk_widget_set_sensitive(GTK_WIDGET ( sd->button), TRUE);
     g_free (filename);
 }
 
