@@ -1,3 +1,16 @@
+2008-06-06 19:19 jeromeg
+
+	* Move the code to a src/ folder and remove the panel-plugin one.
+	* src/screenshooter-utils.{c,h}: moved generic code here.
+	* src/screenshooter.c: updated to use the generic code.
+	* Update the makefiles and autotools to use new code structure.
+	
+2008-06-06 15:35 jeromeg
+
+	* panel-plugin/screenshooter.c:
+	  - remove deprecated function.
+	  - set button sensitive at the end of the screenshot procedure.
+
 2008-06-06 15:19 jeromeg
 
 	* panel-plugin/screenshooter.c:

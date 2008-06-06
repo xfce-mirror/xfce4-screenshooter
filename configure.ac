@@ -43,7 +43,7 @@ XDT_FEATURE_DEBUG()
 
 AC_OUTPUT([
 Makefile
-panel-plugin/Makefile
+src/Makefile
 po/Makefile.in
 ])
 

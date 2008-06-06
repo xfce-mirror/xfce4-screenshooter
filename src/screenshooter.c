@@ -4,6 +4,7 @@
  *  Copyright © 2005,2006 Daniel Bobadilla Leal <dbobadil@dcc.uchile.cl>
  *  Copyright © 2005 Jasper Huijsmans <jasper@xfce.org>
  *  Copyright © 2006 Jani Monoses <jani@ubuntu.com>
+ *  Copyright © 2008 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
  *
  *  Portions from the Gimp sources by
  *  Copyright © 1998-2000 Sven Neumann <sven@gimp.org>
@@ -40,6 +41,8 @@
 #include <fcntl.h>
 #include <X11/Xatom.h>
 
+#include "screenshooter-utils.h"
+
 #define SCREENSHOT_ICON_NAME  "applets-screenshooter"
 #define MODE 0644
 
@@ -68,7 +71,6 @@ typedef struct
 }
 ScreenshotData;
 
-
 /* Panel Plugin Interface */
 
 static void screenshot_properties_dialog (XfcePanelPlugin *plugin,
@@ -76,7 +78,6 @@ static void screenshot_properties_dialog (XfcePanelPlugin *plugin,
 static void screenshot_construct (XfcePanelPlugin * plugin);
 
 XFCE_PANEL_PLUGIN_REGISTER_INTERNAL (screenshot_construct);
-
 
 /* internal functions */
 
@@ -113,88 +114,6 @@ screenshot_free_data (XfcePanelPlugin * plugin, ScreenshotData * sd)
     g_free (sd);
 }
 
-/* Borrowed from libwnck */
-static Window
-get_window_property (Window  xwindow,
-		     Atom    atom)
-{
-  Atom type;
-  int format;
-  gulong nitems;
-  gulong bytes_after;
-  Window *w;
-  int err, result;
-  Window retval;
-
-  gdk_error_trap_push ();
-
-  type = None;
-  result = XGetWindowProperty (gdk_display,
-			       xwindow,
-			       atom,
-			       0, G_MAXLONG,
-			       False, XA_WINDOW, &type, &format, &nitems,
-			       &bytes_after, (unsigned char **) &w);  
-  err = gdk_error_trap_pop ();
-
-  if (err != Success ||
-      result != Success)
-    return None;
-  
-  if (type != XA_WINDOW)
-    {
-      XFree (w);
-      return None;
-    }
-
-  retval = *w;
-  XFree (w);
-  
-  return retval;
-}
-
-/* Borrowed from gnome-screenshot */
-static Window
-screenshot_find_active_window (void)
-{
-  Window retval = None;
-  Window root_window;
-
-  root_window = GDK_ROOT_WINDOW ();
-
-  if (gdk_net_wm_supports (gdk_atom_intern ("_NET_ACTIVE_WINDOW", FALSE)))
-    {
-      retval = get_window_property (root_window,
-				    gdk_x11_get_xatom_by_name ("_NET_ACTIVE_WINDOW"));
-    }
-
-  return retval;  
-}
-
-/* Borrowed from gnome-screenshot */
-static Window
-find_toplevel_window (Window xid)
-{
-  Window root, parent, *children;
-  unsigned int nchildren;
-
-  do
-    {
-      if (XQueryTree (GDK_DISPLAY (), xid, &root,
-		      &parent, &children, &nchildren) == 0)
-	{
-	  g_warning ("Couldn't find window manager window");
-	  return None;
-	}
-
-      if (root == parent)
-	return xid;
-
-      xid = parent;
-    }
-  while (TRUE);
-}
-
 gchar *generate_filename_for_uri(char *uri){
     int test;
     gchar *file_name;
@@ -221,32 +140,17 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
 {
     GdkPixbuf * screenshot;
     GdkPixbuf * thumbnail;
-    GdkWindow * window;
     gint width;
     gint height;
     gint dialog_response;
     gchar * filename = NULL;
-
-    if (sd->whole_screen)
-    {
-       window = gdk_get_default_root_window();
-    } 
-    else 
-    {
-       window = gdk_window_foreign_new (find_toplevel_window (screenshot_find_active_window ()));
-    }
-
-    /* delay, we make the button unclickable so that no other screenshot 
-       can be taken at the same time */
+    
     gtk_widget_set_sensitive(GTK_WIDGET (sd->button), FALSE);
-    sleep( sd->screenshot_delay);
-
-    gdk_drawable_get_size(window, &width, &height);
-
-    screenshot = gdk_pixbuf_get_from_drawable (NULL,
-					       window,
-					       NULL, 0, 0, 0, 0,
-					       width, height);
+    
+    screenshot = take_screenshot(sd->whole_screen, sd->screenshot_delay);
+    
+    width = gdk_pixbuf_get_width(screenshot);
+    height = gdk_pixbuf_get_height(screenshot);
 
     thumbnail = gdk_pixbuf_scale_simple (screenshot,
 				         width/5,

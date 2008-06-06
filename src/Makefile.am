@@ -9,7 +9,8 @@ xfce4_screenshooter_plugin_LDFLAGS =						\
 	@LIBXFCE4PANEL_LIBS@
 
 xfce4_screenshooter_plugin_SOURCES =						\
-	screenshooter.c
+	screenshooter.c																\
+	screenshooter-utils.c 												
 
 # .desktop file
 #
