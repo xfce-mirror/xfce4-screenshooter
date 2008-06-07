@@ -1,3 +1,12 @@
+2008-06-08 00:15 jeromeg
+
+	* src/main.c: Add an executable to take screenshots.
+	* Modify autotools, makefiles and locale files to 
+	  build it, thanks to Gauvain Pocentek.
+	* src/screenshooter-utils.h: Add some headers to fix build warnings.
+	* README: update with executable cli options
+	* NEWS: update
+
 2008-06-06 19:19 jeromeg
 
 	* Move the code to a src/ folder and remove the panel-plugin one.

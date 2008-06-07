@@ -38,7 +38,6 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h>
 #include <X11/Xatom.h>
 
 #include "screenshooter-utils.h"
@@ -112,27 +111,6 @@ screenshot_free_data (XfcePanelPlugin * plugin, ScreenshotData * sd)
     gtk_object_sink (GTK_OBJECT (sd->tooltips));
     gtk_widget_destroy (sd->chooser);
     g_free (sd);
-}
-
-gchar *generate_filename_for_uri(char *uri){
-    int test;
-    gchar *file_name;
-    unsigned int i = 0;
-    if(uri == NULL)
-        return NULL;
-    file_name = g_strdup ("Screenshot.png");
-    if((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))==-1) 
-    {
-        return file_name;
-    }
-    do
-    {
-        i++;
-        g_free (file_name);
-        file_name = g_strdup_printf ("Screenshot-%d.png",i);
-    }
-    while((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))!=-1);
-    return file_name;
 }
 
 static void
@@ -372,9 +350,7 @@ screenshot_construct (XfcePanelPlugin * plugin)
                                                 GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
                                                 NULL);
 
-#if GTK_CHECK_VERSION(2,8,0)
     gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (sd->chooser), TRUE);
-#endif
     gtk_dialog_set_default_response (GTK_DIALOG (sd->chooser), GTK_RESPONSE_ACCEPT);
 
     sd->preview = gtk_image_new ();

@@ -27,6 +27,7 @@
 
 #include <screenshooter-utils.h>
 
+#define MODE 0644
 
 /* Prototypes */
 
@@ -146,4 +147,26 @@ GdkPixbuf *take_screenshot (gint fullscreen, gint delay)
 					     width, height);
 	
 	return screenshot;
+}
+
+gchar *generate_filename_for_uri(char *uri)
+{
+    int test;
+    gchar *file_name;
+    unsigned int i = 0;
+    if(uri == NULL)
+        return NULL;
+    file_name = g_strdup ("Screenshot.png");
+    if((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))==-1) 
+    {
+        return file_name;
+    }
+    do
+    {
+        i++;
+        g_free (file_name);
+        file_name = g_strdup_printf ("Screenshot-%d.png",i);
+    }
+    while((test=open(g_build_filename(uri, file_name, NULL),O_RDWR,MODE))!=-1);
+    return file_name;
 }

@@ -32,6 +32,8 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
+#include <fcntl.h>
 #include <X11/Xatom.h>
 
 GdkPixbuf *take_screenshot (gint fullscreen, gint delay);
+gchar *generate_filename_for_uri(char *uri);

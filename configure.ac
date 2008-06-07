@@ -32,8 +32,17 @@ AC_HEADER_STDC
 dnl configure the panel plugin
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.22])
 
+dnl check for xfce4util
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.4])
+
 dnl check for x11proto
 XDT_CHECK_PACKAGE([X11PROTO_CORE], [xproto], [7])
+
+dnl check for gtk
+XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.10.0])
+
+dnl check for glib
+XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.12.0])
 
 dnl Translations
 XDT_I18N([ca cs de en_GB eu fr hu nb_NO pl pt_PT sq zh_TW])
