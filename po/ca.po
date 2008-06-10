@@ -5,11 +5,12 @@
 # Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006.
 #
 #
+#: ../src/main.c:70
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2008-06-10 09:06+0200\n"
 "PO-Revision-Date: 2006-12-03 12:41+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
@@ -19,47 +20,72 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../panel-plugin/screenshooter.c:146
-#, c-format
-msgid "Error grabbing the pointer %d"
-msgstr "S'ha produït un error en obtenir el punter %d"
-
-#: ../panel-plugin/screenshooter.c:403
+#: ../src/screenshooter-plugin.c:258
 msgid "Properties"
 msgstr "Propietats"
 
-#: ../panel-plugin/screenshooter.c:419
+#: ../src/screenshooter-plugin.c:274
 msgid "Screenshots"
 msgstr "Captures de pantalla"
 
-#: ../panel-plugin/screenshooter.c:432
+#: ../src/screenshooter-plugin.c:287
 msgid "Ask for _filename"
 msgstr "Pregunta pel nom del _fitxer"
 
-#: ../panel-plugin/screenshooter.c:440
-msgid "Always take shot of the whole screen"
-msgstr "Captura sempre la pantalla sencera"
+#: ../src/screenshooter-plugin.c:295
+#, fuzzy
+msgid "Take a screenshot of desktop"
+msgstr "Pren una captura de pantalla"
 
-#: ../panel-plugin/screenshooter.c:458
-msgid "Window selection delay"
-msgstr "Retard en seleccionar la finestra"
+#: ../src/screenshooter-plugin.c:313
+#, fuzzy
+msgid "Delay before taking screenshot"
+msgstr "Pren una captura de pantalla"
 
-#: ../panel-plugin/screenshooter.c:475
-msgid "Screenshot delay"
-msgstr "Retard en fer la captura"
-
-#: ../panel-plugin/screenshooter.c:499
+#: ../src/screenshooter-plugin.c:339
 msgid "Take screenshot"
 msgstr "Pren una captura de pantalla"
 
-#: ../panel-plugin/screenshooter.c:506
+#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Desa la captura com…"
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+#: ../src/main.c:43
+msgid "Version information"
+msgstr ""
+
+#: ../src/main.c:47
+#, fuzzy
+msgid "Take a screenshot of the active window"
+msgstr "Pren una captura de pantalla"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/main.c:74
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+
+#: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
 msgstr "Captura de pantalla"
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr "Pren una captura de pantalla"
+
+#~ msgid "Error grabbing the pointer %d"
+#~ msgstr "S'ha produït un error en obtenir el punter %d"
+
+#~ msgid "Always take shot of the whole screen"
+#~ msgstr "Captura sempre la pantalla sencera"
+
+#~ msgid "Window selection delay"
+#~ msgstr "Retard en seleccionar la finestra"
+
+#~ msgid "Screenshot delay"
+#~ msgstr "Retard en fer la captura"

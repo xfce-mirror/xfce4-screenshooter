@@ -2,11 +2,12 @@
 # Copyright (C) 2006 Daniel Bobadilla Leal.
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Besnik Bleta <besnik@programeshqip.org>, 2007.
+#: ../src/main.c:70
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2008-06-10 09:06+0200\n"
 "PO-Revision-Date: 2007-01-30 21:21+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -15,48 +16,72 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.1\n"
 
-#: ../panel-plugin/screenshooter.c:146
-#, c-format
-msgid "Error grabbing the pointer %d"
-msgstr "Gabim gjatë përlarjes së treguesit %d"
-
-#: ../panel-plugin/screenshooter.c:403
+#: ../src/screenshooter-plugin.c:258
 msgid "Properties"
 msgstr "Veti"
 
-#: ../panel-plugin/screenshooter.c:419
+#: ../src/screenshooter-plugin.c:274
 msgid "Screenshots"
 msgstr "Foto ekrani"
 
-#: ../panel-plugin/screenshooter.c:432
+#: ../src/screenshooter-plugin.c:287
 msgid "Ask for _filename"
 msgstr "Pyet për _emër kartele"
 
-#: ../panel-plugin/screenshooter.c:440
-msgid "Always take shot of the whole screen"
-msgstr "Bëj përherë një foto të tërë ekranit"
+#: ../src/screenshooter-plugin.c:295
+#, fuzzy
+msgid "Take a screenshot of desktop"
+msgstr " Bëj një foto ekrani"
 
-#: ../panel-plugin/screenshooter.c:458
-msgid "Window selection delay"
-msgstr "Vonesë përzgjedhjeje dritareje"
+#: ../src/screenshooter-plugin.c:313
+#, fuzzy
+msgid "Delay before taking screenshot"
+msgstr " Bëj një foto ekrani"
 
-#: ../panel-plugin/screenshooter.c:475
-msgid "Screenshot delay"
-msgstr "Vonesë para fotos së ekranit"
-
-#: ../panel-plugin/screenshooter.c:499
+#: ../src/screenshooter-plugin.c:339
 msgid "Take screenshot"
 msgstr "Bëj foto ekrani"
 
-#: ../panel-plugin/screenshooter.c:506
+#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Ruaj foto ekrani si ..."
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+#: ../src/main.c:43
+msgid "Version information"
+msgstr ""
+
+#: ../src/main.c:47
+#, fuzzy
+msgid "Take a screenshot of the active window"
+msgstr " Bëj një foto ekrani"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/main.c:74
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+
+#: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
 msgstr "Foto ekrani"
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr " Bëj një foto ekrani"
 
+#~ msgid "Error grabbing the pointer %d"
+#~ msgstr "Gabim gjatë përlarjes së treguesit %d"
+
+#~ msgid "Always take shot of the whole screen"
+#~ msgstr "Bëj përherë një foto të tërë ekranit"
+
+#~ msgid "Window selection delay"
+#~ msgstr "Vonesë përzgjedhjeje dritareje"
+
+#~ msgid "Screenshot delay"
+#~ msgstr "Vonesë para fotos së ekranit"

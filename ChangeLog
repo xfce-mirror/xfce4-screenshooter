@@ -1,6 +1,12 @@
+2008-06-10 09:17 jeromeg
+
+	* po/: update po files.
+	* src/screenshooter.c: improve a string.
+	
 2008-06-08 00:15 jeromeg
 
-	* src/main.c: Add an executable to take screenshots.
+	* src/main.c: Add an executable with cli options to take 
+	  screenshots, thanks to Ristretto for the nice example !  
 	* Modify autotools, makefiles and locale files to 
 	  build it, thanks to Gauvain Pocentek.
 	* src/screenshooter-utils.h: Add some headers to fix build warnings.

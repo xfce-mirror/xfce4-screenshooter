@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Dsewnr Lu <dsewnr@gmail.com>, 2007
 #
+#: ../src/main.c:70
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2008-06-10 09:06+0200\n"
 "PO-Revision-Date: 2007-03-10 18:05+0800\n"
 "Last-Translator: Dsewnr Lu <dsewnr@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -15,47 +16,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/screenshooter.c:146
-#, c-format
-msgid "Error grabbing the pointer %d"
-msgstr "截取游標 %d 時發生錯誤"
-
-#: ../panel-plugin/screenshooter.c:403
+#: ../src/screenshooter-plugin.c:258
 msgid "Properties"
 msgstr "設定"
 
-#: ../panel-plugin/screenshooter.c:419
+#: ../src/screenshooter-plugin.c:274
 msgid "Screenshots"
 msgstr "螢幕快照"
 
-#: ../panel-plugin/screenshooter.c:432
+#: ../src/screenshooter-plugin.c:287
 msgid "Ask for _filename"
 msgstr "詢問檔名 (_F)"
 
-#: ../panel-plugin/screenshooter.c:440
-msgid "Always take shot of the whole screen"
-msgstr "總是截取整個螢幕畫面"
+#: ../src/screenshooter-plugin.c:295
+#, fuzzy
+msgid "Take a screenshot of desktop"
+msgstr " 進行一次螢幕快照"
 
-#: ../panel-plugin/screenshooter.c:458
-msgid "Window selection delay"
-msgstr "視窗選取延遲"
+#: ../src/screenshooter-plugin.c:313
+#, fuzzy
+msgid "Delay before taking screenshot"
+msgstr " 進行一次螢幕快照"
 
-#: ../panel-plugin/screenshooter.c:475
-msgid "Screenshot delay"
-msgstr "螢幕快照延遲"
-
-#: ../panel-plugin/screenshooter.c:499
+#: ../src/screenshooter-plugin.c:339
 msgid "Take screenshot"
 msgstr "進行螢幕快照"
 
-#: ../panel-plugin/screenshooter.c:506
+#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "另存螢幕快照為 ..."
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+#: ../src/main.c:43
+msgid "Version information"
+msgstr ""
+
+#: ../src/main.c:47
+#, fuzzy
+msgid "Take a screenshot of the active window"
+msgstr " 進行一次螢幕快照"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/main.c:74
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+
+#: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
 msgstr "螢幕快照"
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr " 進行一次螢幕快照"
+
+#~ msgid "Error grabbing the pointer %d"
+#~ msgstr "截取游標 %d 時發生錯誤"
+
+#~ msgid "Always take shot of the whole screen"
+#~ msgstr "總是截取整個螢幕畫面"
+
+#~ msgid "Window selection delay"
+#~ msgstr "視窗選取延遲"
+
+#~ msgid "Screenshot delay"
+#~ msgstr "螢幕快照延遲"

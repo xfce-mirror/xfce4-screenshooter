@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the xfce package.
 # Piarres Beobide <pi@beobide.net>, 2006.
 #
+#: ../src/main.c:70
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2008-06-10 09:06+0200\n"
 "PO-Revision-Date: 2006-09-19 09:14+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Basque <Librezake@librezale.org>\n"
@@ -15,47 +16,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/screenshooter.c:146
-#, c-format
-msgid "Error grabbing the pointer %d"
-msgstr "Errorea %d erakuslea eskuratzerakoan"
-
-#: ../panel-plugin/screenshooter.c:403
+#: ../src/screenshooter-plugin.c:258
 msgid "Properties"
 msgstr "Propietateak"
 
-#: ../panel-plugin/screenshooter.c:419
+#: ../src/screenshooter-plugin.c:274
 msgid "Screenshots"
 msgstr "Pantaila argazkiak"
 
-#: ../panel-plugin/screenshooter.c:432
+#: ../src/screenshooter-plugin.c:287
 msgid "Ask for _filename"
 msgstr "_Fitxategi izenak eskatu"
 
-#: ../panel-plugin/screenshooter.c:440
-msgid "Always take shot of the whole screen"
-msgstr "BEti pantaila osoaren argazkia atera"
+#: ../src/screenshooter-plugin.c:295
+#, fuzzy
+msgid "Take a screenshot of desktop"
+msgstr " Pantaila argazki bat atera"
 
-#: ../panel-plugin/screenshooter.c:458
-msgid "Window selection delay"
-msgstr "Leiho hautapen atzerapena"
+#: ../src/screenshooter-plugin.c:313
+#, fuzzy
+msgid "Delay before taking screenshot"
+msgstr " Pantaila argazki bat atera"
 
-#: ../panel-plugin/screenshooter.c:475
-msgid "Screenshot delay"
-msgstr "Argazki atzerapena"
-
-#: ../panel-plugin/screenshooter.c:499
+#: ../src/screenshooter-plugin.c:339
 msgid "Take screenshot"
 msgstr "Argazkia atera"
 
-#: ../panel-plugin/screenshooter.c:506
+#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Gorde argazkia honela ..."
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+#: ../src/main.c:43
+msgid "Version information"
+msgstr ""
+
+#: ../src/main.c:47
+#, fuzzy
+msgid "Take a screenshot of the active window"
+msgstr " Pantaila argazki bat atera"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/main.c:74
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+
+#: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
 msgstr " Pantala argazkia"
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr " Pantaila argazki bat atera"
+
+#~ msgid "Error grabbing the pointer %d"
+#~ msgstr "Errorea %d erakuslea eskuratzerakoan"
+
+#~ msgid "Always take shot of the whole screen"
+#~ msgstr "BEti pantaila osoaren argazkia atera"
+
+#~ msgid "Window selection delay"
+#~ msgstr "Leiho hautapen atzerapena"
+
+#~ msgid "Screenshot delay"
+#~ msgstr "Argazki atzerapena"

@@ -292,7 +292,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
     g_signal_connect (cb1, "toggled", G_CALLBACK (ask_for_file_toggled),
                       sd);
 
-    cb2 = gtk_check_button_new_with_mnemonic (_("Take a screenshot of the whole screen"));
+    cb2 = gtk_check_button_new_with_mnemonic (_("Take a screenshot of desktop"));
     gtk_widget_show (cb2);
     gtk_box_pack_start (GTK_BOX (vbox), cb2, FALSE, FALSE, 0);
     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (cb2),

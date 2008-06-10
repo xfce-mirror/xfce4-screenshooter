@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-
+#: ../src/main.c:70
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2008-06-10 09:06+0200\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <admin@rk.edu.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -16,47 +16,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/screenshooter.c:146
-#, c-format
-msgid "Error grabbing the pointer %d"
-msgstr "Błąd pobrania wskaźnika %d"
-
-#: ../panel-plugin/screenshooter.c:403
+#: ../src/screenshooter-plugin.c:258
 msgid "Properties"
 msgstr "Właściwości"
 
-#: ../panel-plugin/screenshooter.c:419
+#: ../src/screenshooter-plugin.c:274
 msgid "Screenshots"
 msgstr "Zrzuty Ekranu"
 
-#: ../panel-plugin/screenshooter.c:432
+#: ../src/screenshooter-plugin.c:287
 msgid "Ask for _filename"
 msgstr "Proś o _nazwę pliku"
 
-#: ../panel-plugin/screenshooter.c:440
-msgid "Always take shot of the whole screen"
-msgstr "Zawsze rób zrzuty całego ekranu"
+#: ../src/screenshooter-plugin.c:295
+#, fuzzy
+msgid "Take a screenshot of desktop"
+msgstr "Wykonaj zrzut ekranu"
 
-#: ../panel-plugin/screenshooter.c:458
-msgid "Window selection delay"
-msgstr "Opóźnienie wybrania okna"
+#: ../src/screenshooter-plugin.c:313
+#, fuzzy
+msgid "Delay before taking screenshot"
+msgstr "Wykonaj zrzut ekranu"
 
-#: ../panel-plugin/screenshooter.c:475
-msgid "Screenshot delay"
-msgstr "Opóźnienie wykonania zrzutu"
-
-#: ../panel-plugin/screenshooter.c:499
+#: ../src/screenshooter-plugin.c:339
 msgid "Take screenshot"
 msgstr "Wykonaj zrzut ekranu"
 
-#: ../panel-plugin/screenshooter.c:506
+#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Zapisz zrzut ekranu jako..."
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+#: ../src/main.c:43
+msgid "Version information"
+msgstr ""
+
+#: ../src/main.c:47
+#, fuzzy
+msgid "Take a screenshot of the active window"
+msgstr "Wykonaj zrzut ekranu"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/main.c:74
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+
+#: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
 msgstr "Zrzut Ekranu"
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr "Wykonaj zrzut ekranu"
+
+#~ msgid "Error grabbing the pointer %d"
+#~ msgstr "Błąd pobrania wskaźnika %d"
+
+#~ msgid "Always take shot of the whole screen"
+#~ msgstr "Zawsze rób zrzuty całego ekranu"
+
+#~ msgid "Window selection delay"
+#~ msgstr "Opóźnienie wybrania okna"
+
+#~ msgid "Screenshot delay"
+#~ msgstr "Opóźnienie wykonania zrzutu"
