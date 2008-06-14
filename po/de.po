@@ -1,6 +1,6 @@
-# German translations for xfce package.
+# German translations for the xfce4-screenshooter-plugin package.
 # Copyright (C) 2006 Daniel Bobadilla Leal.
-# This file is distributed under the same license as the xfce package.
+# This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Enrico Tröger <enrico.troeger@uvena.de>, 2006.
 #
 #: ../src/main.c:70
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-10 09:06+0200\n"
-"PO-Revision-Date: 2006-09-11 18:40+0100\n"
-"Last-Translator: Enrico Tröger <enrico.troeger@uvena.de>\n"
+"PO-Revision-Date: 2008-06-14 13:00+0100\n"
+"Last-Translator: Moritz Heiber <moe@xfce.org>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,38 +27,35 @@ msgstr "Bildschirmfotos"
 
 #: ../src/screenshooter-plugin.c:287
 msgid "Ask for _filename"
-msgstr "_Nach Dateinamen fragen"
+msgstr "_Nach Dateiname fragen"
 
 #: ../src/screenshooter-plugin.c:295
-#, fuzzy
 msgid "Take a screenshot of desktop"
-msgstr "Bildschirmfotos erstellen"
+msgstr "Bildschirmfoto des Desktops erstellen"
 
 #: ../src/screenshooter-plugin.c:313
-#, fuzzy
 msgid "Delay before taking screenshot"
-msgstr "Bildschirmfotos erstellen"
+msgstr "Verzögerung vor Erstellung des Bildschirmfotos"
 
 #: ../src/screenshooter-plugin.c:339
 msgid "Take screenshot"
-msgstr "Bildschirmfoto machen"
+msgstr "Bildschirmfoto erstellen"
 
 #: ../src/screenshooter-plugin.c:346 ../src/main.c:96
 msgid "Save screenshot as ..."
-msgstr "Speichere Bild als ..."
+msgstr "Speichere Bildschirmfoto als ..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
+msgstr "Versionsinformation"
 
 #: ../src/main.c:47
-#, fuzzy
 msgid "Take a screenshot of the active window"
-msgstr "Bildschirmfotos erstellen"
+msgstr "Bildschirmfoto des aktuellen Fensters erstellen"
 
 #: ../src/main.c:51
 msgid "Delay in seconds before taking the screenshot"
-msgstr ""
+msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
 
 #: ../src/main.c:74
 #, c-format
@@ -66,23 +63,13 @@ msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
+"%s: %s\n"
+"Versuchen Sie %s --help um eine Liste von Kommandos zu bekommen.\n"
 
 #: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
-msgstr "Bildschirmfotos"
+msgstr "Bildschirmfoto"
 
 #: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
-msgstr "Bildschirmfotos erstellen"
-
-#~ msgid "Error grabbing the pointer %d"
-#~ msgstr "Fehler beim Holen des Mauszeigers (%d)"
-
-#~ msgid "Always take shot of the whole screen"
-#~ msgstr "Immer vom ganzen Bildschirm ein Foto machen"
-
-#~ msgid "Window selection delay"
-#~ msgstr "Verzögerung für Fensterauswahl"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Verzögerung für Bildschirmfoto"
+msgstr "Bildschirmfoto erstellen"
