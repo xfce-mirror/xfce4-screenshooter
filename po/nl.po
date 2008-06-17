@@ -1,0 +1,75 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Stephan Arts <stephan@xfce.org>, 2008.
+#
+#: ../src/main.c:70
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"PO-Revision-Date: 2008-06-17 13:58+0200\n"
+"Last-Translator: Stephan Arts <stephan@xfce.org>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../src/screenshooter-plugin.c:258
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#: ../src/screenshooter-plugin.c:274
+msgid "Screenshots"
+msgstr "Schermafdrukken"
+
+#: ../src/screenshooter-plugin.c:287
+msgid "Ask for _filename"
+msgstr "Om _bestandsnaam vragen"
+
+#: ../src/screenshooter-plugin.c:295
+msgid "Take a screenshot of desktop"
+msgstr "Maak een schermafdruk van het bureaublad"
+
+#: ../src/screenshooter-plugin.c:313
+msgid "Delay before taking screenshot"
+msgstr "Vertraging voordat een schermafdruk wordt gemaakt"
+
+#: ../src/screenshooter-plugin.c:339
+msgid "Take screenshot"
+msgstr "Maak schermafdruk"
+
+#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+msgid "Save screenshot as ..."
+msgstr "Schermafdruk opslaan als ..."
+
+#: ../src/main.c:43
+msgid "Version information"
+msgstr "Versie informatie"
+
+#: ../src/main.c:47
+msgid "Take a screenshot of the active window"
+msgstr "Maak schermafdruk van het actieve venster"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Seconden vertraging voordat de schermafdruk wordt gemaakt"
+
+#: ../src/main.c:74
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"Typ %s --help voor een volledige lijst van mogelijke opties.\n"
+
+#: ../src/screenshooter.desktop.in.in.h:1
+msgid " Screenshot"
+msgstr " Schermafsruk"
+
+#: ../src/screenshooter.desktop.in.in.h:2
+msgid " Take a screenshot"
+msgstr " Maak een schermafdruk"
