@@ -1,3 +1,10 @@
+2008-06-17 11:52 jeromeg
+
+	* COPYING: added the GPL2 text.
+	* autogen.sh, configure.ac.in: 
+	  - added some magic of sarts to have the svn versions generated.
+	  - cleaned the versions stuff
+
 2008-06-10 09:17 jeromeg
 
 	* po/: update po files.
