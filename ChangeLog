@@ -1,3 +1,8 @@
+2008-06-18 17:08 jeromeg
+
+	* src/xfce4-screenshooter.1: add manpage (thanks to Debian).
+	* Makefile.am: install the manpage.
+
 2008-06-17 21:50 jeromeg
 
 	* src/screenshooter-utils.h: add unistd.h include to fix build
