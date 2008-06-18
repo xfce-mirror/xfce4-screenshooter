@@ -1,3 +1,9 @@
+2008-06-18 18:12 jeromeg
+
+	* src/screenshooter-plugin.c: remove some code that seems to
+	  be useless.
+	* NEWS: updated.
+
 2008-06-18 17:08 jeromeg
 
 	* src/xfce4-screenshooter.1: add manpage (thanks to Debian).

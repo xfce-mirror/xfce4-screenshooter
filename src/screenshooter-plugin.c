@@ -63,9 +63,6 @@ typedef struct
 
     gint counter;
 
-    NetkScreen *screen;
-    int netk_id;
-    int screen_id;
     int style_id;
 }
 ScreenshotData;
@@ -98,19 +95,13 @@ screenshot_set_size (XfcePanelPlugin *plugin, int size, ScreenshotData *sd)
 static void
 screenshot_free_data (XfcePanelPlugin * plugin, ScreenshotData * sd)
 {
-    if (sd->netk_id)
-        g_signal_handler_disconnect (sd->screen, sd->netk_id);
+  if (sd->style_id)
+  	g_signal_handler_disconnect (plugin, sd->style_id);
 
-    if (sd->screen_id)
-        g_signal_handler_disconnect (plugin, sd->screen_id);
-
-    if (sd->style_id)
-        g_signal_handler_disconnect (plugin, sd->style_id);
-
-    sd->netk_id = sd->screen_id = sd->style_id = 0;
-    gtk_object_sink (GTK_OBJECT (sd->tooltips));
-    gtk_widget_destroy (sd->chooser);
-    g_free (sd);
+  sd->style_id = 0;
+  gtk_object_sink (GTK_OBJECT (sd->tooltips));
+  gtk_widget_destroy (sd->chooser);
+  g_free (sd);
 }
 
 static void

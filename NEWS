@@ -1,3 +1,7 @@
+=== Version 1.2.0 ===
+	* Fix gcc-4.3 warnings.
+	* Add manpage taken from Debian package.
+
 === Version 1.1.0 ===
 	* Delay now works.
 	* Canceling save now works.
