@@ -9,54 +9,58 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2008-05-13 13:15+0200\n"
 "Last-Translator: Jannich Brendle <jannich@bredsaal.dk>\n"
 "Language-Team: Danish <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0Content-Type: text/plain; charset=UTF-8Content-Transfer-"
 "Encoding: 8bit\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Egenskaber"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "Forsinkelse for skærmdump"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "Skærmdump"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "Spørg efter _filnavn"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr "Tag et skærmdump"
 
-#: ../src/screenshooter-plugin.c:313
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
 #, fuzzy
-msgid "Delay before taking screenshot"
+msgid "Take a screenshot of the active window"
 msgstr "Tag et skærmdump"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Tag skærmdump"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Gem skærmdump som ..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
-
-#: ../src/main.c:47
-#, fuzzy
-msgid "Take a screenshot of the active window"
-msgstr "Tag et skærmdump"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
 #: ../src/main.c:74
@@ -74,11 +78,21 @@ msgstr " Skærmdump"
 msgid " Take a screenshot"
 msgstr "Tag et skærmdump"
 
+#~ msgid "Properties"
+#~ msgstr "Egenskaber"
+
+#~ msgid "Screenshots"
+#~ msgstr "Skærmdump"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "Spørg efter _filnavn"
+
+#, fuzzy
+#~ msgid "Delay before taking screenshot"
+#~ msgstr "Tag et skærmdump"
+
 #~ msgid "Always take shot of the whole screen"
 #~ msgstr "Tag altid skærmdump af hele skærmen"
 
 #~ msgid "Window selection delay"
 #~ msgstr "Forsinkelse for vinduesvælger"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Forsinkelse for skærmdump"

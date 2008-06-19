@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2008-03-28 19:49+0200\n"
 "Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -17,47 +17,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Ρυθμίσεις"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "Καθυστέρηση στιγμιοτύπου"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "Στιγμιότυπα οθόνης"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "Ερώτηση για όν_ομα αρχείου"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr "Λήψη στιγμιοτύπου οθόνης"
 
-#: ../src/screenshooter-plugin.c:313
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
 #, fuzzy
-msgid "Delay before taking screenshot"
+msgid "Take a screenshot of the active window"
 msgstr "Λήψη στιγμιοτύπου οθόνης"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Λήψη στιγμιοτύπου οθόνης"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Αποθήκευση στιγμιοτύπου ως ..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
-
-#: ../src/main.c:47
-#, fuzzy
-msgid "Take a screenshot of the active window"
-msgstr "Λήψη στιγμιοτύπου οθόνης"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
 #: ../src/main.c:74
@@ -75,6 +79,19 @@ msgstr "Στιγμιότυπο οθόνης"
 msgid " Take a screenshot"
 msgstr "Λήψη στιγμιοτύπου οθόνης"
 
+#~ msgid "Properties"
+#~ msgstr "Ρυθμίσεις"
+
+#~ msgid "Screenshots"
+#~ msgstr "Στιγμιότυπα οθόνης"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "Ερώτηση για όν_ομα αρχείου"
+
+#, fuzzy
+#~ msgid "Delay before taking screenshot"
+#~ msgstr "Λήψη στιγμιοτύπου οθόνης"
+
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Σφάλμα στην αρπαγή του δείκτη %d"
 
@@ -83,6 +100,3 @@ msgstr "Λήψη στιγμιοτύπου οθόνης"
 
 #~ msgid "Window selection delay"
 #~ msgstr "Καθυστέρηση επιλογής παραθύρου"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Καθυστέρηση στιγμιοτύπου"

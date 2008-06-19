@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2008-06-10 12:41-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
@@ -19,45 +19,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Propriedades"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "Atraso na captura de tela"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "Capturas de Tela"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "Pedir por nome de _arquivo"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 msgid "Take a screenshot of desktop"
 msgstr "Capturar a tela da área de trabalho"
 
-#: ../src/screenshooter-plugin.c:313
-msgid "Delay before taking screenshot"
-msgstr "Atraso antes de capturar a tela"
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
+msgid "Take a screenshot of the active window"
+msgstr "Capturar a tela da janela atual"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Atraso em segundos antes de capturar a tela"
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Capturar tela"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Salvar captura de tela como ..."
 
 #: ../src/main.c:43
 msgid "Version information"
 msgstr "Informação da versão"
-
-#: ../src/main.c:47
-msgid "Take a screenshot of the active window"
-msgstr "Capturar a tela da janela atual"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
-msgstr "Atraso em segundos antes de capturar a tela"
 
 #: ../src/main.c:74
 #, c-format
@@ -77,6 +82,18 @@ msgstr " Capturas de Tela"
 msgid " Take a screenshot"
 msgstr " Capturar uma tela"
 
+#~ msgid "Properties"
+#~ msgstr "Propriedades"
+
+#~ msgid "Screenshots"
+#~ msgstr "Capturas de Tela"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "Pedir por nome de _arquivo"
+
+#~ msgid "Delay before taking screenshot"
+#~ msgstr "Atraso antes de capturar a tela"
+
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Erro ao capturar o ponteiro %d"
 
@@ -85,6 +102,3 @@ msgstr " Capturar uma tela"
 
 #~ msgid "Window selection delay"
 #~ msgstr "Atraso na seleÃ§Ã£o de janela"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Atraso na captura de tela"

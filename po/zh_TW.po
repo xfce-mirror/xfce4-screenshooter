@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2007-03-10 18:05+0800\n"
 "Last-Translator: Dsewnr Lu <dsewnr@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -16,47 +16,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "設定"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "螢幕快照延遲"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "螢幕快照"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "詢問檔名 (_F)"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr " 進行一次螢幕快照"
 
-#: ../src/screenshooter-plugin.c:313
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
 #, fuzzy
-msgid "Delay before taking screenshot"
+msgid "Take a screenshot of the active window"
 msgstr " 進行一次螢幕快照"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "進行螢幕快照"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "另存螢幕快照為 ..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
-
-#: ../src/main.c:47
-#, fuzzy
-msgid "Take a screenshot of the active window"
-msgstr " 進行一次螢幕快照"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
 #: ../src/main.c:74
@@ -74,6 +78,19 @@ msgstr "螢幕快照"
 msgid " Take a screenshot"
 msgstr " 進行一次螢幕快照"
 
+#~ msgid "Properties"
+#~ msgstr "設定"
+
+#~ msgid "Screenshots"
+#~ msgstr "螢幕快照"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "詢問檔名 (_F)"
+
+#, fuzzy
+#~ msgid "Delay before taking screenshot"
+#~ msgstr " 進行一次螢幕快照"
+
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "截取游標 %d 時發生錯誤"
 
@@ -82,6 +99,3 @@ msgstr " 進行一次螢幕快照"
 
 #~ msgid "Window selection delay"
 #~ msgstr "視窗選取延遲"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "螢幕快照延遲"

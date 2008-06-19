@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2006-09-19 09:14+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Basque <Librezake@librezale.org>\n"
@@ -16,47 +16,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Propietateak"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "Argazki atzerapena"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "Pantaila argazkiak"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "_Fitxategi izenak eskatu"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr " Pantaila argazki bat atera"
 
-#: ../src/screenshooter-plugin.c:313
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
 #, fuzzy
-msgid "Delay before taking screenshot"
+msgid "Take a screenshot of the active window"
 msgstr " Pantaila argazki bat atera"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Argazkia atera"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Gorde argazkia honela ..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
-
-#: ../src/main.c:47
-#, fuzzy
-msgid "Take a screenshot of the active window"
-msgstr " Pantaila argazki bat atera"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
 #: ../src/main.c:74
@@ -74,6 +78,19 @@ msgstr " Pantala argazkia"
 msgid " Take a screenshot"
 msgstr " Pantaila argazki bat atera"
 
+#~ msgid "Properties"
+#~ msgstr "Propietateak"
+
+#~ msgid "Screenshots"
+#~ msgstr "Pantaila argazkiak"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "_Fitxategi izenak eskatu"
+
+#, fuzzy
+#~ msgid "Delay before taking screenshot"
+#~ msgstr " Pantaila argazki bat atera"
+
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Errorea %d erakuslea eskuratzerakoan"
 
@@ -82,6 +99,3 @@ msgstr " Pantaila argazki bat atera"
 
 #~ msgid "Window selection delay"
 #~ msgstr "Leiho hautapen atzerapena"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Argazki atzerapena"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2006-12-03 12:41+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
@@ -20,47 +20,51 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Propietats"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "Retard en fer la captura"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "Captures de pantalla"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "Pregunta pel nom del _fitxer"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr "Pren una captura de pantalla"
 
-#: ../src/screenshooter-plugin.c:313
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
 #, fuzzy
-msgid "Delay before taking screenshot"
+msgid "Take a screenshot of the active window"
 msgstr "Pren una captura de pantalla"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Pren una captura de pantalla"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Desa la captura com…"
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
-
-#: ../src/main.c:47
-#, fuzzy
-msgid "Take a screenshot of the active window"
-msgstr "Pren una captura de pantalla"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
 #: ../src/main.c:74
@@ -78,6 +82,19 @@ msgstr "Captura de pantalla"
 msgid " Take a screenshot"
 msgstr "Pren una captura de pantalla"
 
+#~ msgid "Properties"
+#~ msgstr "Propietats"
+
+#~ msgid "Screenshots"
+#~ msgstr "Captures de pantalla"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "Pregunta pel nom del _fitxer"
+
+#, fuzzy
+#~ msgid "Delay before taking screenshot"
+#~ msgstr "Pren una captura de pantalla"
+
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "S'ha produït un error en obtenir el punter %d"
 
@@ -86,6 +103,3 @@ msgstr "Pren una captura de pantalla"
 
 #~ msgid "Window selection delay"
 #~ msgstr "Retard en seleccionar la finestra"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Retard en fer la captura"

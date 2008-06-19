@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2007-03-31 10:20+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
@@ -18,47 +18,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Properties"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "Screenshot delay"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "Screenshots"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "Ask for _filename"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr " Take a screenshot"
 
-#: ../src/screenshooter-plugin.c:313
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
 #, fuzzy
-msgid "Delay before taking screenshot"
+msgid "Take a screenshot of the active window"
 msgstr " Take a screenshot"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Take screenshot"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Save screenshot as ..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
-
-#: ../src/main.c:47
-#, fuzzy
-msgid "Take a screenshot of the active window"
-msgstr " Take a screenshot"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
 #: ../src/main.c:74
@@ -76,6 +80,19 @@ msgstr " Screenshot"
 msgid " Take a screenshot"
 msgstr " Take a screenshot"
 
+#~ msgid "Properties"
+#~ msgstr "Properties"
+
+#~ msgid "Screenshots"
+#~ msgstr "Screenshots"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "Ask for _filename"
+
+#, fuzzy
+#~ msgid "Delay before taking screenshot"
+#~ msgstr " Take a screenshot"
+
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Error grabbing the pointer %d"
 
@@ -84,6 +101,3 @@ msgstr " Take a screenshot"
 
 #~ msgid "Window selection delay"
 #~ msgstr "Window selection delay"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Screenshot delay"

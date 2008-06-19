@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <admin@rk.edu.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -16,47 +16,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Właściwości"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "Opóźnienie wykonania zrzutu"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "Zrzuty Ekranu"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "Proś o _nazwę pliku"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr "Wykonaj zrzut ekranu"
 
-#: ../src/screenshooter-plugin.c:313
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
 #, fuzzy
-msgid "Delay before taking screenshot"
+msgid "Take a screenshot of the active window"
 msgstr "Wykonaj zrzut ekranu"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Wykonaj zrzut ekranu"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Zapisz zrzut ekranu jako..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
-
-#: ../src/main.c:47
-#, fuzzy
-msgid "Take a screenshot of the active window"
-msgstr "Wykonaj zrzut ekranu"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
 #: ../src/main.c:74
@@ -74,6 +78,19 @@ msgstr "Zrzut Ekranu"
 msgid " Take a screenshot"
 msgstr "Wykonaj zrzut ekranu"
 
+#~ msgid "Properties"
+#~ msgstr "Właściwości"
+
+#~ msgid "Screenshots"
+#~ msgstr "Zrzuty Ekranu"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "Proś o _nazwę pliku"
+
+#, fuzzy
+#~ msgid "Delay before taking screenshot"
+#~ msgstr "Wykonaj zrzut ekranu"
+
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Błąd pobrania wskaźnika %d"
 
@@ -82,6 +99,3 @@ msgstr "Wykonaj zrzut ekranu"
 
 #~ msgid "Window selection delay"
 #~ msgstr "Opóźnienie wybrania okna"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Opóźnienie wykonania zrzutu"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2008-06-14 13:00+0100\n"
 "Last-Translator: Moritz Heiber <moe@xfce.org>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -17,45 +17,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Einstellungen"
-
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
+#, fuzzy
+msgid "Screenshooter plugin"
 msgstr "Bildschirmfotos"
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "_Nach Dateiname fragen"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 msgid "Take a screenshot of desktop"
 msgstr "Bildschirmfoto des Desktops erstellen"
 
-#: ../src/screenshooter-plugin.c:313
-msgid "Delay before taking screenshot"
-msgstr "Verzögerung vor Erstellung des Bildschirmfotos"
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
+msgid "Take a screenshot of the active window"
+msgstr "Bildschirmfoto des aktuellen Fensters erstellen"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Bildschirmfoto erstellen"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Speichere Bildschirmfoto als ..."
 
 #: ../src/main.c:43
 msgid "Version information"
 msgstr "Versionsinformation"
-
-#: ../src/main.c:47
-msgid "Take a screenshot of the active window"
-msgstr "Bildschirmfoto des aktuellen Fensters erstellen"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
-msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
 
 #: ../src/main.c:74
 #, c-format
@@ -73,3 +78,12 @@ msgstr "Bildschirmfoto"
 #: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr "Bildschirmfoto erstellen"
+
+#~ msgid "Properties"
+#~ msgstr "Einstellungen"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "_Nach Dateiname fragen"
+
+#~ msgid "Delay before taking screenshot"
+#~ msgstr "Verzögerung vor Erstellung des Bildschirmfotos"

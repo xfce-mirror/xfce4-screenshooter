@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-10 09:06+0200\n"
+"POT-Creation-Date: 2008-06-19 16:41+0200\n"
 "PO-Revision-Date: 2006-09-10 22:17+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
@@ -14,47 +14,51 @@ msgstr ""
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
+#. Create the dialog
 #: ../src/screenshooter-plugin.c:258
-msgid "Properties"
-msgstr "Tulajdonságok"
+#, fuzzy
+msgid "Screenshooter plugin"
+msgstr "Képernyőkép késleltetés"
 
-#: ../src/screenshooter-plugin.c:274
-msgid "Screenshots"
-msgstr "Képernyőképek"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:283
+msgid "Modes"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:287
-msgid "Ask for _filename"
-msgstr "Kérdés _fájlnévre"
-
-#: ../src/screenshooter-plugin.c:295
+#: ../src/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr " Képernyőkép készítése"
 
-#: ../src/screenshooter-plugin.c:313
+#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
 #, fuzzy
-msgid "Delay before taking screenshot"
+msgid "Take a screenshot of the active window"
 msgstr " Képernyőkép készítése"
 
-#: ../src/screenshooter-plugin.c:339
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:310
+msgid "Options"
+msgstr ""
+
+#. Save option
+#: ../src/screenshooter-plugin.c:320
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:364
 msgid "Take screenshot"
 msgstr "Képernyőkép készítése"
 
-#: ../src/screenshooter-plugin.c:346 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Képernyőkép mentése mint ..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
-
-#: ../src/main.c:47
-#, fuzzy
-msgid "Take a screenshot of the active window"
-msgstr " Képernyőkép készítése"
-
-#: ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
 #: ../src/main.c:74
@@ -72,6 +76,19 @@ msgstr " Képernyőkép"
 msgid " Take a screenshot"
 msgstr " Képernyőkép készítése"
 
+#~ msgid "Properties"
+#~ msgstr "Tulajdonságok"
+
+#~ msgid "Screenshots"
+#~ msgstr "Képernyőképek"
+
+#~ msgid "Ask for _filename"
+#~ msgstr "Kérdés _fájlnévre"
+
+#, fuzzy
+#~ msgid "Delay before taking screenshot"
+#~ msgstr " Képernyőkép készítése"
+
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Hiba a %d. mutató elkapásakor"
 
@@ -80,6 +97,3 @@ msgstr " Képernyőkép készítése"
 
 #~ msgid "Window selection delay"
 #~ msgstr "Ablak kijelölés késleltetés"
-
-#~ msgid "Screenshot delay"
-#~ msgstr "Képernyőkép késleltetés"
