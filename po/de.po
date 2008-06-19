@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-19 16:41+0200\n"
+"POT-Creation-Date: 2008-06-19 19:32+0200\n"
 "PO-Revision-Date: 2008-06-14 13:00+0100\n"
 "Last-Translator: Moritz Heiber <moe@xfce.org>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -18,49 +18,64 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Create the dialog
-#: ../src/screenshooter-plugin.c:258
+#: ../src/screenshooter-plugin.c:271
 #, fuzzy
 msgid "Screenshooter plugin"
 msgstr "Bildschirmfotos"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../src/screenshooter-plugin.c:283
+#: ../src/screenshooter-plugin.c:296
 msgid "Modes"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:292
+#: ../src/screenshooter-plugin.c:305
 msgid "Take a screenshot of desktop"
 msgstr "Bildschirmfoto des Desktops erstellen"
 
-#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
+#: ../src/screenshooter-plugin.c:314 ../src/main.c:47
 msgid "Take a screenshot of the active window"
 msgstr "Bildschirmfoto des aktuellen Fensters erstellen"
 
 #. Create the options frame and add the delay and save options
-#: ../src/screenshooter-plugin.c:310
+#: ../src/screenshooter-plugin.c:323
 msgid "Options"
 msgstr ""
 
 #. Save option
-#: ../src/screenshooter-plugin.c:320
+#: ../src/screenshooter-plugin.c:333
 msgid "Show save dialog"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
-msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
+#. Default save location
+#: ../src/screenshooter-plugin.c:342 ../src/screenshooter-plugin.c:346
+msgid "Default save location"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:364
+#. Screenshot delay
+#: ../src/screenshooter-plugin.c:353
+#, fuzzy
+msgid "Delay before taking the screenshot"
+msgstr "Verzögerung vor Erstellung des Bildschirmfotos"
+
+#: ../src/screenshooter-plugin.c:366
+msgid "seconds"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:392
 msgid "Take screenshot"
 msgstr "Bildschirmfoto erstellen"
 
-#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:399 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Speichere Bildschirmfoto als ..."
 
 #: ../src/main.c:43
 msgid "Version information"
 msgstr "Versionsinformation"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
 
 #: ../src/main.c:74
 #, c-format
@@ -84,6 +99,3 @@ msgstr "Bildschirmfoto erstellen"
 
 #~ msgid "Ask for _filename"
 #~ msgstr "_Nach Dateiname fragen"
-
-#~ msgid "Delay before taking screenshot"
-#~ msgstr "Verzögerung vor Erstellung des Bildschirmfotos"

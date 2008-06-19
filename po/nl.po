@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-19 16:41+0200\n"
+"POT-Creation-Date: 2008-06-19 19:32+0200\n"
 "PO-Revision-Date: 2008-06-17 13:58+0200\n"
 "Last-Translator: Stephan Arts <stephan@xfce.org>\n"
 "Language-Team: Dutch\n"
@@ -18,49 +18,64 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Create the dialog
-#: ../src/screenshooter-plugin.c:258
+#: ../src/screenshooter-plugin.c:271
 #, fuzzy
 msgid "Screenshooter plugin"
 msgstr "Schermafdrukken"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../src/screenshooter-plugin.c:283
+#: ../src/screenshooter-plugin.c:296
 msgid "Modes"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:292
+#: ../src/screenshooter-plugin.c:305
 msgid "Take a screenshot of desktop"
 msgstr "Maak een schermafdruk van het bureaublad"
 
-#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
+#: ../src/screenshooter-plugin.c:314 ../src/main.c:47
 msgid "Take a screenshot of the active window"
 msgstr "Maak schermafdruk van het actieve venster"
 
 #. Create the options frame and add the delay and save options
-#: ../src/screenshooter-plugin.c:310
+#: ../src/screenshooter-plugin.c:323
 msgid "Options"
 msgstr ""
 
 #. Save option
-#: ../src/screenshooter-plugin.c:320
+#: ../src/screenshooter-plugin.c:333
 msgid "Show save dialog"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
-msgstr "Seconden vertraging voordat de schermafdruk wordt gemaakt"
+#. Default save location
+#: ../src/screenshooter-plugin.c:342 ../src/screenshooter-plugin.c:346
+msgid "Default save location"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:364
+#. Screenshot delay
+#: ../src/screenshooter-plugin.c:353
+#, fuzzy
+msgid "Delay before taking the screenshot"
+msgstr "Vertraging voordat een schermafdruk wordt gemaakt"
+
+#: ../src/screenshooter-plugin.c:366
+msgid "seconds"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:392
 msgid "Take screenshot"
 msgstr "Maak schermafdruk"
 
-#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:399 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Schermafdruk opslaan als ..."
 
 #: ../src/main.c:43
 msgid "Version information"
 msgstr "Versie informatie"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Seconden vertraging voordat de schermafdruk wordt gemaakt"
 
 #: ../src/main.c:74
 #, c-format
@@ -84,6 +99,3 @@ msgstr " Maak een schermafdruk"
 
 #~ msgid "Ask for _filename"
 #~ msgstr "Om _bestandsnaam vragen"
-
-#~ msgid "Delay before taking screenshot"
-#~ msgstr "Vertraging voordat een schermafdruk wordt gemaakt"

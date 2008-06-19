@@ -101,8 +101,9 @@ int main(int argc, char **argv)
                                           NULL);
   gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
   gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
+  gtk_file_chooser_set_current_folder( GTK_FILE_CHOOSER ( chooser ), xfce_get_homedir () );  
   
-  filename = generate_filename_for_uri(gtk_file_chooser_get_current_folder(GTK_FILE_CHOOSER(chooser)));
+  filename = generate_filename_for_uri ( xfce_get_homedir () );
   preview = gtk_image_new ();
   
   gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);

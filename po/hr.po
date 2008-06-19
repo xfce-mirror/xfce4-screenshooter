@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-19 16:41+0200\n"
+"POT-Creation-Date: 2008-06-19 19:32+0200\n"
 "PO-Revision-Date: 2008-06-17 12:27+0100\n"
 "Last-Translator: Jérôme Guelfucci <jerome.guelfucci@gmail.com>\n"
 "Language-Team: Croatian <mario.danic@gmail.com>\n"
@@ -17,49 +17,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Create the dialog
-#: ../src/screenshooter-plugin.c:258
+#: ../src/screenshooter-plugin.c:271
 #, fuzzy
 msgid "Screenshooter plugin"
 msgstr "Screenshots"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../src/screenshooter-plugin.c:283
+#: ../src/screenshooter-plugin.c:296
 msgid "Modes"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:292
+#: ../src/screenshooter-plugin.c:305
 msgid "Take a screenshot of desktop"
 msgstr "Uhvati screenshot desktopa"
 
-#: ../src/screenshooter-plugin.c:301 ../src/main.c:47
+#: ../src/screenshooter-plugin.c:314 ../src/main.c:47
 msgid "Take a screenshot of the active window"
 msgstr "Uhvati screenshot trenutnog prozora"
 
 #. Create the options frame and add the delay and save options
-#: ../src/screenshooter-plugin.c:310
+#: ../src/screenshooter-plugin.c:323
 msgid "Options"
 msgstr ""
 
 #. Save option
-#: ../src/screenshooter-plugin.c:320
+#: ../src/screenshooter-plugin.c:333
 msgid "Show save dialog"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:338 ../src/main.c:51
-msgid "Delay in seconds before taking the screenshot"
-msgstr "Odgoda u sekundama prije hvatanja screenshota"
+#. Default save location
+#: ../src/screenshooter-plugin.c:342 ../src/screenshooter-plugin.c:346
+msgid "Default save location"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:364
+#. Screenshot delay
+#: ../src/screenshooter-plugin.c:353
+#, fuzzy
+msgid "Delay before taking the screenshot"
+msgstr "Odgoda prije uzimanja screenshota"
+
+#: ../src/screenshooter-plugin.c:366
+msgid "seconds"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:392
 msgid "Take screenshot"
 msgstr "Uhvati screenshot"
 
-#: ../src/screenshooter-plugin.c:371 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:399 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Snimi screenshot kao ..."
 
 #: ../src/main.c:43
 msgid "Version information"
 msgstr "Informacije o inačici"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Odgoda u sekundama prije hvatanja screenshota"
 
 #: ../src/main.c:74
 #, c-format
@@ -84,6 +99,3 @@ msgstr " Uhvati screenshot"
 
 #~ msgid "Ask for _filename"
 #~ msgstr "Pitaj za _ime datoteke"
-
-#~ msgid "Delay before taking screenshot"
-#~ msgstr "Odgoda prije uzimanja screenshota"

@@ -1,3 +1,11 @@
+2008-06-19 19:30 jeromeg
+
+	* src/screenshooter-plugin.c:
+	  - add a default save location to the preferences dialog.
+	  - update the code to use this new default.
+	* src/main.c: save screenshots in main by default.
+	* po/: make update-po.
+	  
 2008-06-19 16:46 jeromeg
 
 	* po/: 

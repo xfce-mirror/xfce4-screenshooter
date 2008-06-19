@@ -59,7 +59,7 @@ typedef struct
     gint ask_for_file;
 
     gint screenshot_delay;
-    gchar *screenshots_dir;
+    gchar *screenshot_dir;
 
     gint counter;
 
@@ -145,6 +145,7 @@ button_clicked(GtkWidget * button,  ScreenshotData * sd)
     }  
     else
     {    
+       filename = generate_filename_for_uri ( sd->screenshot_dir );
        gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
     }
     gtk_widget_set_sensitive(GTK_WIDGET ( sd->button), TRUE);
@@ -166,7 +167,8 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
     gint screenshot_delay = 0;
     gint whole_screen = 1;
     gint ask_for_file = 1;
-
+    gchar *screenshot_dir = g_strdup ( xfce_get_homedir ());
+        
     if ((file = xfce_panel_plugin_lookup_rc_file (plugin)) != NULL)
     {
         rc = xfce_rc_simple_open (file, TRUE);
@@ -177,6 +179,7 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
             screenshot_delay = xfce_rc_read_int_entry (rc, "screenshot_delay", 0);
             whole_screen = xfce_rc_read_int_entry (rc, "whole_screen", 1);
             ask_for_file = xfce_rc_read_int_entry (rc, "ask_for_file", 1);
+            screenshot_dir = g_strdup ( xfce_rc_read_entry (rc, "screenshot_dir", xfce_get_homedir () ) );
 
             xfce_rc_close (rc);
         }
@@ -185,6 +188,7 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
     screenshot->screenshot_delay = screenshot_delay;
     screenshot->whole_screen = whole_screen;
     screenshot->ask_for_file = ask_for_file;
+    screenshot->screenshot_dir = screenshot_dir;
 }
 
 static void
@@ -205,6 +209,7 @@ screenshot_write_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
     xfce_rc_write_int_entry (rc, "screenshot_delay", screenshot->screenshot_delay);
     xfce_rc_write_int_entry (rc, "whole_screen", screenshot->whole_screen);
     xfce_rc_write_int_entry (rc, "ask_for_file", screenshot->ask_for_file);
+    xfce_rc_write_entry (rc, "screenshot_dir", screenshot->screenshot_dir);
 
     xfce_rc_close (rc);
 }
@@ -234,6 +239,13 @@ screenshot_delay_spinner_changed(GtkWidget * spinner, ScreenshotData *sd)
 }
 
 static void
+cb_default_folder (GtkWidget * chooser, ScreenshotData *sd)
+{
+    sd->screenshot_dir = gtk_file_chooser_get_filename ( GTK_FILE_CHOOSER ( chooser ) );
+    gtk_file_chooser_set_current_folder ( GTK_FILE_CHOOSER ( sd->chooser ), sd->screenshot_dir); 
+}
+
+static void
 screenshot_dialog_response (GtkWidget *dlg, int reponse,
                          ScreenshotData *screenshot)
 {
@@ -250,6 +262,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
     GtkWidget *dlg, *vbox, *label2; 
     GtkWidget *options_frame, *modes_frame, *delay_box, *options_box, *modes_box;
     GtkWidget *save_button, *desktop_button, *active_window_button;
+    GtkWidget *dir_chooser, *default_save_label, *delay_label;
     GtkWidget *screenshot_delay_spinner;
 
     xfce_panel_plugin_block_menu (plugin);
@@ -324,8 +337,23 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
                                   sd->ask_for_file);
     g_signal_connect (save_button, "toggled", G_CALLBACK (ask_for_file_toggled),
                       sd);
+    
+    /* Default save location */          
+    default_save_label = gtk_label_new ( _("Default save location") );
+    gtk_widget_show ( default_save_label );
+    gtk_container_add ( GTK_CONTAINER ( options_box ), default_save_label );
+    
+    dir_chooser = gtk_file_chooser_button_new (_("Default save location"), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+    gtk_widget_show ( dir_chooser );
+    gtk_file_chooser_set_current_folder ( GTK_FILE_CHOOSER (dir_chooser), sd->screenshot_dir);
+    gtk_container_add ( GTK_CONTAINER ( options_box ), dir_chooser );
+    g_signal_connect (dir_chooser, "selection-changed", G_CALLBACK (cb_default_folder), sd);
         
     /* Screenshot delay */
+    delay_label = gtk_label_new ( _("Delay before taking the screenshot") );
+    gtk_widget_show (	delay_label );
+    gtk_container_add ( GTK_CONTAINER ( options_box ), delay_label );
+    
     delay_box = gtk_hbox_new(FALSE, 8);
     gtk_widget_show(delay_box);
     gtk_box_pack_start (GTK_BOX (options_box), delay_box, FALSE, FALSE, 0);
@@ -335,7 +363,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
     gtk_widget_show(screenshot_delay_spinner);
     gtk_box_pack_start (GTK_BOX (delay_box), screenshot_delay_spinner, FALSE, FALSE, 0);
 
-    label2 = gtk_label_new_with_mnemonic(_("Delay in seconds before taking the screenshot"));
+    label2 = gtk_label_new_with_mnemonic(_("seconds"));
     gtk_widget_show(label2);
     gtk_box_pack_start (GTK_BOX (delay_box), label2, FALSE, FALSE, 0);
 
@@ -377,6 +405,7 @@ screenshot_construct (XfcePanelPlugin * plugin)
 
     gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (sd->chooser), TRUE);
     gtk_dialog_set_default_response (GTK_DIALOG (sd->chooser), GTK_RESPONSE_ACCEPT);
+    gtk_file_chooser_set_current_folder ( GTK_FILE_CHOOSER ( sd->chooser ), sd->screenshot_dir);
 
     sd->preview = gtk_image_new ();
     gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (sd->chooser), sd->preview);
