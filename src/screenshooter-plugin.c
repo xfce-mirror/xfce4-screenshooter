@@ -163,7 +163,7 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
 {
     char *file;
     XfceRc *rc;
-    gint screenshot_delay = 2;
+    gint screenshot_delay = 0;
     gint whole_screen = 1;
     gint ask_for_file = 1;
 
@@ -174,7 +174,7 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, ScreenshotData *screenshot)
 
         if (rc != NULL)
         {
-            screenshot_delay = xfce_rc_read_int_entry (rc, "screenshot_delay", 2);
+            screenshot_delay = xfce_rc_read_int_entry (rc, "screenshot_delay", 0);
             whole_screen = xfce_rc_read_int_entry (rc, "whole_screen", 1);
             ask_for_file = xfce_rc_read_int_entry (rc, "ask_for_file", 1);
 
@@ -222,6 +222,12 @@ whole_screen_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 }
 
 static void
+active_window_toggled (GtkToggleButton *tb, ScreenshotData *sd)
+{
+    sd->whole_screen = !gtk_toggle_button_get_active (tb);
+}
+
+static void
 screenshot_delay_spinner_changed(GtkWidget * spinner, ScreenshotData *sd)
 {
     sd->screenshot_delay = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spinner));
@@ -241,12 +247,15 @@ screenshot_dialog_response (GtkWidget *dlg, int reponse,
 static void
 screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
 {
-    GtkWidget *dlg, *header, *vbox, *hbox2, *label2, *cb1, *cb2;
+    GtkWidget *dlg, *vbox, *label2; 
+    GtkWidget *options_frame, *modes_frame, *delay_box, *options_box, *modes_box;
+    GtkWidget *save_button, *desktop_button, *active_window_button;
     GtkWidget *screenshot_delay_spinner;
 
     xfce_panel_plugin_block_menu (plugin);
 
-    dlg = gtk_dialog_new_with_buttons (_("Properties"),
+		/* Create the dialog */
+    dlg = xfce_titled_dialog_new_with_buttons (_("Screenshooter plugin"),
                 GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
                 GTK_DIALOG_DESTROY_WITH_PARENT |
                 GTK_DIALOG_NO_SEPARATOR,
@@ -261,49 +270,74 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
                       sd);
 
     gtk_container_set_border_width (GTK_CONTAINER (dlg), 2);
-
-    header = xfce_create_header (NULL, _("Screenshots"));
-    gtk_widget_set_size_request (GTK_BIN (header)->child, 200, 32);
-    gtk_container_set_border_width (GTK_CONTAINER (header), 6);
-    gtk_widget_show (header);
-    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), header,
-                        FALSE, TRUE, 0);
-
-    vbox = gtk_vbox_new (FALSE, 8);
+    gtk_window_set_icon_name (GTK_WINDOW (dlg), "applets-screenshooter");
+	
+		/* Create the main box for the dialog */
+		vbox = gtk_vbox_new (FALSE, 8);
     gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
     gtk_widget_show (vbox);
     gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), vbox,
                         TRUE, TRUE, 0);
-
-    cb1 = gtk_check_button_new_with_mnemonic (_("Ask for _filename"));
-    gtk_widget_show (cb1);
-    gtk_box_pack_start (GTK_BOX (vbox), cb1, FALSE, FALSE, 0);
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (cb1),
-                                  sd->ask_for_file);
-    g_signal_connect (cb1, "toggled", G_CALLBACK (ask_for_file_toggled),
-                      sd);
-
-    cb2 = gtk_check_button_new_with_mnemonic (_("Take a screenshot of desktop"));
-    gtk_widget_show (cb2);
-    gtk_box_pack_start (GTK_BOX (vbox), cb2, FALSE, FALSE, 0);
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (cb2),
+    
+    /* Create the frame for screenshot modes and fill it with the radio buttons */
+    modes_frame = gtk_frame_new (_("Modes"));
+    gtk_container_add (GTK_CONTAINER (vbox), modes_frame);
+    gtk_widget_show (modes_frame);
+       
+    modes_box = gtk_vbox_new (FALSE, 8);
+    gtk_container_add (GTK_CONTAINER (modes_frame), modes_box);
+    gtk_container_set_border_width (GTK_CONTAINER (modes_box), 6);
+    gtk_widget_show (modes_box);
+    
+    desktop_button = gtk_radio_button_new_with_mnemonic (NULL, _("Take a screenshot of desktop"));
+    gtk_widget_show (desktop_button);
+    gtk_box_pack_start (GTK_BOX (modes_box), desktop_button, FALSE, FALSE, 0);
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (desktop_button),
                                   sd->whole_screen);
-    g_signal_connect (cb2, "toggled", G_CALLBACK (whole_screen_toggled),
+    g_signal_connect (desktop_button, "toggled", G_CALLBACK (whole_screen_toggled),
+                      sd);
+                      
+    active_window_button = gtk_radio_button_new_with_mnemonic ( gtk_radio_button_get_group ( GTK_RADIO_BUTTON (desktop_button) ), 
+                                             _("Take a screenshot of the active window"));
+    gtk_widget_show (active_window_button);
+    gtk_box_pack_start (GTK_BOX (modes_box), active_window_button, FALSE, FALSE, 0);
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button),
+                                  !sd->whole_screen);
+    g_signal_connect (active_window_button, "toggled", G_CALLBACK (active_window_toggled),
                       sd);
     
+    /* Create the options frame and add the delay and save options */
+    options_frame = gtk_frame_new (_("Options"));
+    gtk_container_add(GTK_CONTAINER (vbox), options_frame);
+    gtk_widget_show (options_frame);
+    
+    options_box = gtk_vbox_new (FALSE, 8);
+    gtk_container_add (GTK_CONTAINER (options_frame), options_box);
+    gtk_container_set_border_width (GTK_CONTAINER (options_box), 6);
+    gtk_widget_show (options_box);
+    
+    /* Save option */
+    save_button = gtk_check_button_new_with_mnemonic (_("Show save dialog"));
+    gtk_widget_show (save_button);
+    gtk_box_pack_start (GTK_BOX (options_box), save_button, FALSE, FALSE, 0);
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_button),
+                                  sd->ask_for_file);
+    g_signal_connect (save_button, "toggled", G_CALLBACK (ask_for_file_toggled),
+                      sd);
+        
     /* Screenshot delay */
-    hbox2 = gtk_hbox_new(FALSE, 8);
-    gtk_widget_show(hbox2);
-    gtk_box_pack_start (GTK_BOX (vbox), hbox2, FALSE, FALSE, 0);
+    delay_box = gtk_hbox_new(FALSE, 8);
+    gtk_widget_show(delay_box);
+    gtk_box_pack_start (GTK_BOX (options_box), delay_box, FALSE, FALSE, 0);
 
     screenshot_delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(screenshot_delay_spinner), sd->screenshot_delay);
     gtk_widget_show(screenshot_delay_spinner);
-    gtk_box_pack_start (GTK_BOX (hbox2), screenshot_delay_spinner, FALSE, FALSE, 0);
+    gtk_box_pack_start (GTK_BOX (delay_box), screenshot_delay_spinner, FALSE, FALSE, 0);
 
-    label2 = gtk_label_new_with_mnemonic(_("Delay before taking screenshot"));
+    label2 = gtk_label_new_with_mnemonic(_("Delay in seconds before taking the screenshot"));
     gtk_widget_show(label2);
-    gtk_box_pack_start (GTK_BOX (hbox2), label2, FALSE, FALSE, 0);
+    gtk_box_pack_start (GTK_BOX (delay_box), label2, FALSE, FALSE, 0);
 
     g_signal_connect(screenshot_delay_spinner, "value-changed",
                         G_CALLBACK(screenshot_delay_spinner_changed), sd);

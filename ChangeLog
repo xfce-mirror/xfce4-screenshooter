@@ -1,3 +1,9 @@
+2008-06-19 15:09 jeromeg
+
+	* src/screenshooter-plugin.c:
+	  - rewrite the preferences dialog
+	  - change default delay to 0.
+
 2008-06-18 18:12 jeromeg
 
 	* src/screenshooter-plugin.c: remove some code that seems to
