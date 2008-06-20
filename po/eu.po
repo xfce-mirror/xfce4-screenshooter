@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-19 19:32+0200\n"
+"POT-Creation-Date: 2008-06-20 09:01+0200\n"
 "PO-Revision-Date: 2006-09-19 09:14+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Basque <Librezake@librezale.org>\n"
@@ -47,26 +47,30 @@ msgstr ""
 msgid "Show save dialog"
 msgstr ""
 
-#. Default save location
-#: ../src/screenshooter-plugin.c:342 ../src/screenshooter-plugin.c:346
+#: ../src/screenshooter-plugin.c:344
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:349
 msgid "Default save location"
 msgstr ""
 
-#. Screenshot delay
-#: ../src/screenshooter-plugin.c:353
-#, fuzzy
-msgid "Delay before taking the screenshot"
-msgstr " Pantaila argazki bat atera"
+#: ../src/screenshooter-plugin.c:358
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+"screenshot</span>"
+msgstr ""
 
-#: ../src/screenshooter-plugin.c:366
+#: ../src/screenshooter-plugin.c:372
 msgid "seconds"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:392
+#: ../src/screenshooter-plugin.c:398
 msgid "Take screenshot"
 msgstr "Argazkia atera"
 
-#: ../src/screenshooter-plugin.c:399 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:405 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Gorde argazkia honela ..."
 
@@ -92,6 +96,10 @@ msgstr " Pantala argazkia"
 #: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr " Pantaila argazki bat atera"
+
+#, fuzzy
+#~ msgid "Delay before taking the screenshot"
+#~ msgstr " Pantaila argazki bat atera"
 
 #~ msgid "Properties"
 #~ msgstr "Propietateak"

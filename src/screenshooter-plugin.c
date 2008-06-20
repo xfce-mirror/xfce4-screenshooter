@@ -339,7 +339,10 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
                       sd);
     
     /* Default save location */          
-    default_save_label = gtk_label_new ( _("Default save location") );
+    default_save_label = gtk_label_new ( "" );
+    gtk_label_set_markup ( GTK_LABEL( default_save_label ),
+  	                       _("<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"));
+  	gtk_misc_set_alignment( GTK_MISC ( default_save_label ), 0, 0);
     gtk_widget_show ( default_save_label );
     gtk_container_add ( GTK_CONTAINER ( options_box ), default_save_label );
     
@@ -350,7 +353,10 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, ScreenshotData *sd)
     g_signal_connect (dir_chooser, "selection-changed", G_CALLBACK (cb_default_folder), sd);
         
     /* Screenshot delay */
-    delay_label = gtk_label_new ( _("Delay before taking the screenshot") );
+    delay_label = gtk_label_new ( "" );
+    gtk_label_set_markup ( GTK_LABEL( delay_label ),
+  	                       _("<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"));
+  	gtk_misc_set_alignment( GTK_MISC ( delay_label ), 0, 0); 
     gtk_widget_show (	delay_label );
     gtk_container_add ( GTK_CONTAINER ( options_box ), delay_label );
     

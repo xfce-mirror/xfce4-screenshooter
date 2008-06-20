@@ -1,3 +1,11 @@
+2008-06-20 08:59 jeromeg
+
+	* src/screenshooter-plugin.c: make labels bold and 
+	  aligned to the left.
+	* po/:
+	  - make update-po.
+	  - update French translation.
+
 2008-06-19 19:30 jeromeg
 
 	* src/screenshooter-plugin.c:
@@ -32,7 +40,7 @@
 2008-06-17 21:50 jeromeg
 
 	* src/screenshooter-utils.h: add unistd.h include to fix build
-	with gcc-4.3 (thanks to Lionel Le Folgoc).
+	  with gcc-4.3 (thanks to Lionel Le Folgoc).
 
 2008-06-17 12:37 jeromeg
 
