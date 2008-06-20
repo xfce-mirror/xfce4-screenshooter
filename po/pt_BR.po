@@ -5,13 +5,12 @@
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007.
 # Og Maciel <ogmaciel@gnome.org>, 2008.
 #
-#: ../src/main.c:70
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-20 09:01+0200\n"
-"PO-Revision-Date: 2008-06-10 12:41-0500\n"
+"PO-Revision-Date: 2008-06-20 16:25-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
@@ -21,57 +20,55 @@ msgstr ""
 
 #. Create the dialog
 #: ../src/screenshooter-plugin.c:271
-#, fuzzy
 msgid "Screenshooter plugin"
-msgstr "Atraso na captura de tela"
+msgstr "Plug-in Screenshooter"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../src/screenshooter-plugin.c:296
 msgid "Modes"
-msgstr ""
+msgstr "Modos"
 
 #: ../src/screenshooter-plugin.c:305
 msgid "Take a screenshot of desktop"
 msgstr "Capturar a tela da área de trabalho"
 
-#: ../src/screenshooter-plugin.c:314 ../src/main.c:47
+#: ../src/screenshooter-plugin.c:314
+#: ../src/main.c:47
 msgid "Take a screenshot of the active window"
 msgstr "Capturar a tela da janela atual"
 
 #. Create the options frame and add the delay and save options
 #: ../src/screenshooter-plugin.c:323
 msgid "Options"
-msgstr ""
+msgstr "Opções"
 
 #. Save option
 #: ../src/screenshooter-plugin.c:333
 msgid "Show save dialog"
-msgstr ""
+msgstr "Mostrar o diálogo de salvar"
 
 #: ../src/screenshooter-plugin.c:344
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
-msgstr ""
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Localização padrão para salvar</span>"
 
 #: ../src/screenshooter-plugin.c:349
 msgid "Default save location"
-msgstr ""
+msgstr "Localização padrão para salvar"
 
 #: ../src/screenshooter-plugin.c:358
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Atraso antes de capturar a tela</span>"
 
 #: ../src/screenshooter-plugin.c:372
 msgid "seconds"
-msgstr ""
+msgstr "segundos"
 
 #: ../src/screenshooter-plugin.c:398
 msgid "Take screenshot"
 msgstr "Capturar tela"
 
-#: ../src/screenshooter-plugin.c:405 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:405
+#: ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Salvar captura de tela como ..."
 
@@ -90,8 +87,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Tente %s --help para ver uma lista completa das opções de linha de comando "
-"disponíveis.\n"
+"Tente %s --help para ver uma lista completa das opções de linha de comando disponíveis.\n"
 
 #: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
@@ -104,21 +100,16 @@ msgstr " Capturar uma tela"
 #, fuzzy
 #~ msgid "Delay before taking the screenshot"
 #~ msgstr "Atraso antes de capturar a tela"
-
 #~ msgid "Properties"
 #~ msgstr "Propriedades"
-
 #~ msgid "Screenshots"
 #~ msgstr "Capturas de Tela"
-
 #~ msgid "Ask for _filename"
 #~ msgstr "Pedir por nome de _arquivo"
-
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Erro ao capturar o ponteiro %d"
-
 #~ msgid "Always take shot of the whole screen"
 #~ msgstr "Sempre capturar a tela inteira"
-
 #~ msgid "Window selection delay"
 #~ msgstr "Atraso na seleÃ§Ã£o de janela"
+
