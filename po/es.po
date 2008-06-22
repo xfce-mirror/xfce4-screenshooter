@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2008-06-11 11:33+0100\n"
+"Last-Translator: Roberto <roberdmd@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../src/screenshooter-plugin.c:258
+msgid "Properties"
+msgstr "Propiedades"
+
+#: ../src/screenshooter-plugin.c:274
+msgid "Screenshots"
+msgstr "Capturas de pantalla"
+
+#: ../src/screenshooter-plugin.c:287
+msgid "Ask for _filename"
+msgstr "Preguntar por nombre de _fichero"
+
+#: ../src/screenshooter-plugin.c:295
+msgid "Take a screenshot of desktop"
+msgstr "Tomar captura de pantalla del escritorio"
+
+#: ../src/screenshooter-plugin.c:313
+msgid "Delay before taking screenshot"
+msgstr "Retraso antes de la captura de pantalla"
+
+#: ../src/screenshooter-plugin.c:339
+msgid "Take screenshot"
+msgstr "Tomar captura de pantalla"
+
+#: ../src/screenshooter-plugin.c:346
+#: ../src/main.c:96
+msgid "Save screenshot as ..."
+msgstr "Guardar captura de pantalla como..."
+
+#: ../src/main.c:43
+msgid "Version information"
+msgstr "Información de versión"
+
+#: ../src/main.c:47
+msgid "Take a screenshot of the active window"
+msgstr "Tomar captura de pantalla de la ventana activa"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Retraso en segundos antes de la captura de pantalla"
+
+#: ../src/main.c:74
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"Prueba %s --help para ver la lista completa de opciones de línea de comandos.\n"
+
+#: ../src/screenshooter.desktop.in.in.h:1
+msgid " Screenshot"
+msgstr "Captura de pantalla"
+
+#: ../src/screenshooter.desktop.in.in.h:2
+msgid " Take a screenshot"
+msgstr "Tomar captura de pantalla"
+
