@@ -1,0 +1,99 @@
+# Galician translation of xfce4-screenshoter-plugin
+# Copyright (C) 2008 Leandro Regueiro
+# This file is distributed under the same license as the xfce package.
+#
+# Leandro Regueiro <leandro.regueiro@gmail.com>, 2008.
+#
+# Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
+# colaborar connosco, podes atopar máis información en <http://trasno.net>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-20 09:01+0200\n"
+"PO-Revision-Date: 2008-06-24 20:02+0100\n"
+"Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#. Create the dialog
+#: ../src/screenshooter-plugin.c:271
+msgid "Screenshooter plugin"
+msgstr ""
+
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:296
+msgid "Modes"
+msgstr "Modos"
+
+#: ../src/screenshooter-plugin.c:305
+msgid "Take a screenshot of desktop"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:314
+#: ../src/main.c:47
+msgid "Take a screenshot of the active window"
+msgstr ""
+
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:323
+msgid "Options"
+msgstr "Opcións"
+
+#. Save option
+#: ../src/screenshooter-plugin.c:333
+msgid "Show save dialog"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:344
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:349
+msgid "Default save location"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:358
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:372
+msgid "seconds"
+msgstr "segundos"
+
+#: ../src/screenshooter-plugin.c:398
+msgid "Take screenshot"
+msgstr ""
+
+#: ../src/screenshooter-plugin.c:405
+#: ../src/main.c:96
+msgid "Save screenshot as ..."
+msgstr ""
+
+#: ../src/main.c:43
+msgid "Version information"
+msgstr "Información de versión"
+
+#: ../src/main.c:51
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/main.c:74
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+
+#: ../src/screenshooter.desktop.in.in.h:1
+msgid " Screenshot"
+msgstr ""
+
+#: ../src/screenshooter.desktop.in.in.h:2
+msgid " Take a screenshot"
+msgstr ""
+
