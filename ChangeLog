@@ -1,3 +1,7 @@
+2008-06-27 jeromeg
+
+	* src/screenshooter-utils.c: clean generate_filename_for_uri using g_access.
+
 2008-06-20 09:19 jeromeg
 
 	* NEWS: updated.
