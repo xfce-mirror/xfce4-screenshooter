@@ -31,6 +31,7 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
+#include <glib/gstdio.h>
 
 #include <fcntl.h>
 #include <X11/Xatom.h>

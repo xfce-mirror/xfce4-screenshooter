@@ -103,7 +103,7 @@ int main(int argc, char **argv)
   gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
   gtk_file_chooser_set_current_folder( GTK_FILE_CHOOSER ( chooser ), xfce_get_homedir () );  
   
-  filename = generate_filename_for_uri ( xfce_get_homedir () );
+  filename = generate_filename_for_uri ( g_strdup ( xfce_get_homedir () ) );
   preview = gtk_image_new ();
   
   gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);
@@ -123,5 +123,6 @@ int main(int argc, char **argv)
   
   gtk_widget_destroy(chooser);
   g_free(filename);
+  
+  return 0;
 }
-

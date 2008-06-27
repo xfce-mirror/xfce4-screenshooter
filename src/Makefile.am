@@ -4,7 +4,7 @@ bin_PROGRAMS = xfce4-screenshooter
 
 xfce4_screenshooter_plugin_CFLAGS =						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
-	@LIBXFCE4PANEL_CFLAGS@
+	@LIBXFCE4PANEL_CFLAGS@ -Wall
 
 xfce4_screenshooter_plugin_LDFLAGS =						\
 	@LIBXFCE4PANEL_LIBS@
@@ -17,7 +17,7 @@ xfce4_screenshooter_CFLAGS = \
 	@GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" -Wall
 	
 xfce4_screenshooter_LDFLAGS =                       \
 	@GTK_LIBS@ \

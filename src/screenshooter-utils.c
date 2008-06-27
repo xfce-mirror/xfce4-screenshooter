@@ -149,7 +149,6 @@ GdkPixbuf *take_screenshot (gint fullscreen, gint delay)
 
 gchar *generate_filename_for_uri(char *uri)
 {
-  int test;
   gchar *file_name;
   unsigned int i = 0;
     
@@ -160,7 +159,7 @@ gchar *generate_filename_for_uri(char *uri)
   
   file_name = g_strdup ("Screenshot.png");
     
-  if( ( test = g_access ( g_build_filename (uri, file_name, NULL), F_OK ) ) != 0 ) 
+  if( g_access ( g_build_filename (uri, file_name, NULL), F_OK ) != 0 ) 
   {
     return file_name;
   }
@@ -171,7 +170,7 @@ gchar *generate_filename_for_uri(char *uri)
     g_free (file_name);
     file_name = g_strdup_printf ("Screenshot-%d.png", i);
   }
-  while( ( test = g_access ( g_build_filename (uri, file_name, NULL), F_OK ) ) == -1 );
+  while( g_access ( g_build_filename (uri, file_name, NULL), F_OK ) == 0 );
     
   return file_name;
 }
