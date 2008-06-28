@@ -22,5 +22,5 @@ DISTCLEANFILES =							\
 	intltool-merge							\
 	intltool-update
 	
-man_MANS = src/xfce4-screenshooter.1
+dist_man_MANS = xfce4-screenshooter.1
 

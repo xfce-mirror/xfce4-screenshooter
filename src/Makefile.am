@@ -25,7 +25,7 @@ xfce4_screenshooter_LDFLAGS =                       \
 	
 xfce4_screenshooter_SOURCES	= \
 	main.c	\
-	screenshooter-utils.c screenshooter-utils.h							
+	screenshooter-utils.c screenshooter-utils.h					
 
 # .desktop file
 #

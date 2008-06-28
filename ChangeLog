@@ -1,5 +1,13 @@
 2008-06-27 jeromeg
 
+ === 1.2.0 ===
+  
+  * NEWS, README: updated for new release.
+  * configure.ac: remove svn tag, fix the manpage stuff to have make distcheck
+    working.
+
+2008-06-27 jeromeg
+
 	* src/Makefile.am: enable -Wall
 	* src/{main.c, screenshooter-utils.{c,h}}: fix gcc warnings except one...
 	* BUGFIX: fix infinite loop in generate_filename_for_uri !

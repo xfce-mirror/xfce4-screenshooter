@@ -1,11 +1,12 @@
 === Version 1.2.0 ===
-	* Fix gcc-4.3 warnings.
+	* Fix gcc warnings.
 	* Add manpage taken from Debian package.
 	* Cleaned the preferences dialog to make it look like the ones of
 	  others panel plugins. Use frames to separate different options.
 	* Added default save location to the plugin.
 	* BUGFIX: the executable sometimes opened the save dialog in weird places,
 	  now it shows the home directory by default.
+	* Some others code cleanups.
 
 === Version 1.1.0 ===
 	* Delay now works.
