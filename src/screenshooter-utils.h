@@ -33,6 +33,8 @@
 #include <gdk/gdkx.h>
 #include <glib/gstdio.h>
 
+#include <libxfce4util/libxfce4util.h>
+
 #include <fcntl.h>
 #include <X11/Xatom.h>
 #include <unistd.h>

@@ -105,7 +105,7 @@ find_toplevel_window (Window xid)
       if (XQueryTree (GDK_DISPLAY (), xid, &root,
 		      &parent, &children, &nchildren) == 0)
 	{
-	  g_warning ("Couldn't find window manager window");
+	  g_warning ( _("Couldn't find window manager window") );
 	  return None;
 	}
 
@@ -157,7 +157,7 @@ gchar *generate_filename_for_uri(char *uri)
   	return NULL;
   }      
   
-  file_name = g_strdup ("Screenshot.png");
+  file_name = g_strdup ( _("Screenshot.png") );
     
   if( g_access ( g_build_filename (uri, file_name, NULL), F_OK ) != 0 ) 
   {
@@ -168,7 +168,7 @@ gchar *generate_filename_for_uri(char *uri)
   {
     i++;
     g_free (file_name);
-    file_name = g_strdup_printf ("Screenshot-%d.png", i);
+    file_name = g_strdup_printf ( _("Screenshot-%d.png"), i);
   }
   while( g_access ( g_build_filename (uri, file_name, NULL), F_OK ) == 0 );
     
