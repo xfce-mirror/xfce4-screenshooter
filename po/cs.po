@@ -3,13 +3,12 @@
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Michal Várady <miko.vaji@gmail.com>, 2006.
 #
-#: ../src/main.c:70
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-20 09:01+0200\n"
-"PO-Revision-Date: 2006-09-24 13:02+0100\n"
+"PO-Revision-Date: 2008-07-07 19:29+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -19,69 +18,65 @@ msgstr ""
 
 #. Create the dialog
 #: ../src/screenshooter-plugin.c:271
-#, fuzzy
 msgid "Screenshooter plugin"
-msgstr "Zpoždění pořízení snímku"
+msgstr "Zásuvný modul pro pořizování snímků obrazovky"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../src/screenshooter-plugin.c:296
 msgid "Modes"
-msgstr ""
+msgstr "Režimy"
 
 #: ../src/screenshooter-plugin.c:305
-#, fuzzy
 msgid "Take a screenshot of desktop"
-msgstr "Pořídit snímek obrazovky"
+msgstr "Pořídit snímek obrazovky pracovního prostředí"
 
-#: ../src/screenshooter-plugin.c:314 ../src/main.c:47
-#, fuzzy
+#: ../src/screenshooter-plugin.c:314
+#: ../src/main.c:47
 msgid "Take a screenshot of the active window"
-msgstr "Pořídit snímek obrazovky"
+msgstr "Pořídit snímek aktivního okna"
 
 #. Create the options frame and add the delay and save options
 #: ../src/screenshooter-plugin.c:323
 msgid "Options"
-msgstr ""
+msgstr "Volby"
 
 #. Save option
 #: ../src/screenshooter-plugin.c:333
 msgid "Show save dialog"
-msgstr ""
+msgstr "Zobrazit dialogové okno uložit"
 
 #: ../src/screenshooter-plugin.c:344
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
-msgstr ""
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Výchozí umístění pro ukládání</span>"
 
 #: ../src/screenshooter-plugin.c:349
 msgid "Default save location"
-msgstr ""
+msgstr "Výchozí umístění pro ukládání"
 
 #: ../src/screenshooter-plugin.c:358
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zpoždění před pořízením snímku obrazovky</span>"
 
 #: ../src/screenshooter-plugin.c:372
 msgid "seconds"
-msgstr ""
+msgstr "sekund"
 
 #: ../src/screenshooter-plugin.c:398
 msgid "Take screenshot"
 msgstr "Pořídit snímek obrazovky"
 
-#: ../src/screenshooter-plugin.c:405 ../src/main.c:96
+#: ../src/screenshooter-plugin.c:405
+#: ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr "Uložit snímek obrazovky jako..."
 
 #: ../src/main.c:43
 msgid "Version information"
-msgstr ""
+msgstr "Informace o verzi"
 
 #: ../src/main.c:51
 msgid "Delay in seconds before taking the screenshot"
-msgstr ""
+msgstr "Zpoždění před pořízením snímku obrazovky v sekundách"
 
 #: ../src/main.c:74
 #, c-format
@@ -89,6 +84,8 @@ msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
+"%s: %s\n"
+"Kompletní výpis dostupných voleb získáte přepínačem %s --help\n"
 
 #: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
@@ -96,26 +93,21 @@ msgstr " Snímek obrazovky"
 
 #: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
-msgstr "Pořídit snímek obrazovky"
+msgstr " Pořídit snímek obrazovky"
 
 #, fuzzy
 #~ msgid "Delay before taking the screenshot"
 #~ msgstr "Pořídit snímek obrazovky"
-
 #~ msgid "Properties"
 #~ msgstr "Vlastnosti"
-
 #~ msgid "Screenshots"
 #~ msgstr "Snímky obrazovky"
-
 #~ msgid "Ask for _filename"
 #~ msgstr "Ptát se na _název souboru"
-
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Chyba při uchopení ukazatele %d"
-
 #~ msgid "Always take shot of the whole screen"
 #~ msgstr "Vždy zachytit celou obrazovku"
-
 #~ msgid "Window selection delay"
 #~ msgstr "Zpoždění pro výběr okna"
+
