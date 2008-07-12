@@ -1,12 +1,9 @@
 #!/bin/sh
 #
-# $Id: autogen.sh 23241 2006-09-29 19:05:15Z kelnos $
-#
 # Copyright (c) 2002-2005
 #         The Xfce development team. All rights reserved.
 #
 # Written for Xfce by Benedikt Meurer <benny@xfce.org>.
-#
 
 (type xdt-autogen) >/dev/null 2>&1 || {
   cat >&2 <<EOF
@@ -46,5 +43,3 @@ sed -e "s/@LINGUAS@/${linguas}/g" \
     < "configure.ac.in" >> "configure.ac"
 
 xdt-autogen $@
-
-# vi:set ts=2 sw=2 et ai:

@@ -1,14 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2004 German Poo-Caaman~o <gpoo@ubiobio.cl>
- *  Copyright © 2005,2006 Daniel Bobadilla Leal <dbobadil@dcc.uchile.cl>
- *  Copyright © 2005 Jasper Huijsmans <jasper@xfce.org>
- *  Copyright © 2006 Jani Monoses <jani@ubuntu.com>
  *  Copyright © 2008 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
- *
- *  Portions from the Gimp sources by
- *  Copyright © 1998-2000 Sven Neumann <sven@gimp.org>
- *  Copyright © 2003 Henrik Brix Andersen <brix@gimp.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -33,6 +25,9 @@
 
 gboolean version = FALSE;
 gboolean window = FALSE;
+gboolean no_save_dialog = FALSE;
+gboolean preferences = FALSE;
+gchar * screenshot_dir;
 gint delay = 0;
 
 static GOptionEntry entries[] =
@@ -50,6 +45,18 @@ static GOptionEntry entries[] =
        NULL
     
     },
+    {   "hide", 'h', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &no_save_dialog,
+        N_("Do not display the save dialog"),
+        NULL
+    },
+    {   "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
+        N_("Directory where the screenshot will be saved"),
+        NULL
+    },
+    {   "preferences", 'p', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &preferences,
+        N_("Dialog to set the default save folder"),
+        NULL
+    },
     { NULL }
 };
 
@@ -57,12 +64,25 @@ int main(int argc, char **argv)
 {
   GError *cli_error = NULL;
   GdkPixbuf * screenshot;
-  GdkPixbuf * thumbnail;
-  gchar * filename = NULL;
-  GtkWidget * preview;
-  GtkWidget * chooser;
-  gint dialog_response;
-  
+  ScreenshotData * sd = g_new0 (ScreenshotData, 1);
+  XfceRc *rc;
+  gchar * rc_file;
+
+  rc_file = g_build_filename( xfce_get_homedir(), ".config", "xfce4", "xfce4-screenshooter", NULL);
+
+  if ( g_file_test(rc_file, G_FILE_TEST_EXISTS) )
+  {
+    rc = xfce_rc_simple_open (rc_file, TRUE);
+    screenshot_dir = g_strdup ( xfce_rc_read_entry (rc, "screenshot_dir", xfce_get_homedir () ) );
+    sd->screenshot_dir = screenshot_dir;
+    xfce_rc_close (rc);
+  }
+  else
+  {
+    screenshot_dir = g_strdup( xfce_get_homedir () );
+    sd->screenshot_dir = screenshot_dir;
+  }
+
   xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
     
   if (!gtk_init_with_args(&argc, &argv, _(""), entries, PACKAGE, &cli_error))
@@ -81,46 +101,72 @@ int main(int argc, char **argv)
     return 0;
   }
   
-  if (!window)
+  if (window)
   {
-    screenshot = take_screenshot (1,delay);
-    
+    sd->whole_screen = 0;    
   }
   else
   {
-    screenshot = take_screenshot (0,delay);
+    sd->whole_screen = 1;
   }
   
-  chooser = gtk_file_chooser_dialog_new ( _("Save screenshot as ..."),
+  if (no_save_dialog)
+  {
+    sd->show_save_dialog = 0;
+  }
+  else
+  {
+    sd->show_save_dialog = 1;
+  }
+
+  sd->screenshot_delay = delay;
+  
+  if ( g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR) )
+  {
+    sd->screenshot_dir = screenshot_dir;
+  }
+  else
+  {
+    g_warning ("%s is not a valid directory, the default directory will be used.", screenshot_dir);
+  }
+  
+  if ( !preferences )
+  {
+    screenshot = take_screenshot( sd );
+    save_screenshot (screenshot, sd); 
+  }
+  else
+  {
+    GtkWidget * chooser;
+    gint dialog_response;
+    gchar * dir;
+
+    dir = screenshot_dir;
+
+    chooser = gtk_file_chooser_dialog_new ( _("Default save folder"),
                                           NULL,
-                                          GTK_FILE_CHOOSER_ACTION_SAVE,
+                                          GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
                                           GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
                                           GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
                                           NULL);
-  gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
-  gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
-  gtk_file_chooser_set_current_folder( GTK_FILE_CHOOSER ( chooser ), xfce_get_homedir () );  
-  
-  filename = generate_filename_for_uri ( g_strdup ( xfce_get_homedir () ) );
-  preview = gtk_image_new ();
-  
-  gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);
-  gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview);
-  
-  thumbnail = gdk_pixbuf_scale_simple (screenshot, gdk_pixbuf_get_width(screenshot)/5, gdk_pixbuf_get_height(screenshot)/5, GDK_INTERP_BILINEAR);
-  gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
-  g_object_unref (thumbnail);
-    
-  dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
-  
-  if ( dialog_response == GTK_RESPONSE_ACCEPT )
-  {
-    filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER(chooser));
-    gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
+    gtk_dialog_set_default_response (GTK_DIALOG ( chooser ), GTK_RESPONSE_ACCEPT);
+    gtk_file_chooser_set_current_folder( GTK_FILE_CHOOSER ( chooser ), dir);
+
+    dialog_response = gtk_dialog_run( GTK_DIALOG ( chooser ) );
+
+    if ( dialog_response == GTK_RESPONSE_ACCEPT )
+	  {
+	    dir = gtk_file_chooser_get_filename ( GTK_FILE_CHOOSER ( chooser ) );
+      
+      rc = xfce_rc_simple_open (rc_file, FALSE);
+      xfce_rc_write_entry (rc, "screenshot_dir", dir);
+      xfce_rc_close ( rc );
+      
+      g_free( dir );
+	  }
+    gtk_widget_destroy( GTK_WIDGET ( chooser ) );
   }
-  
-  gtk_widget_destroy(chooser);
-  g_free(filename);
-  
+
+  g_free( rc_file );
   return 0;
 }

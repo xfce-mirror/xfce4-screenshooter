@@ -1,14 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2004 German Poo-Caaman~o <gpoo@ubiobio.cl>
- *  Copyright © 2005,2006 Daniel Bobadilla Leal <dbobadil@dcc.uchile.cl>
- *  Copyright © 2005 Jasper Huijsmans <jasper@xfce.org>
- *  Copyright © 2006 Jani Monoses <jani@ubuntu.com>
  *  Copyright © 2008 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
- *
- *  Portions from the Gimp sources by
- *  Copyright © 1998-2000 Sven Neumann <sven@gimp.org>
- *  Copyright © 2003 Henrik Brix Andersen <brix@gimp.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -39,5 +31,15 @@
 #include <X11/Xatom.h>
 #include <unistd.h>
 
-GdkPixbuf *take_screenshot (gint fullscreen, gint delay);
-gchar *generate_filename_for_uri(char *uri);
+typedef struct
+{
+  gint whole_screen;
+  gint show_save_dialog;
+
+  gint screenshot_delay;
+  gchar *screenshot_dir;
+}
+ScreenshotData;
+
+GdkPixbuf *take_screenshot (ScreenshotData * sd);
+void save_screenshot (GdkPixbuf * screenshot, ScreenshotData * sd);

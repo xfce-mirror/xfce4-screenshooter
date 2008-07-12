@@ -1,3 +1,12 @@
+=== Version 1.3.0 ===
+  * Code cleanup, remove deprecated code.
+  * Reduce code duplication between the executable and the plugin.
+  * New CLI option to save screenshots without showing a save dialog.
+  * New CLI option to set the save directory.
+  * New CLI option to set a default save directory, saved in a rc file.
+  * BUGFIX: generate file names correctly, screenshots should now be
+  saved in the correct place, whatever mode is being used.
+
 === Version 1.2.0 ===
 	* Fix gcc warnings.
 	* Add manpage taken from Debian package.

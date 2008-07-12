@@ -1,14 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2004 German Poo-Caaman~o <gpoo@ubiobio.cl>
- *  Copyright © 2005,2006 Daniel Bobadilla Leal <dbobadil@dcc.uchile.cl>
- *  Copyright © 2005 Jasper Huijsmans <jasper@xfce.org>
- *  Copyright © 2006 Jani Monoses <jani@ubuntu.com>
  *  Copyright © 2008 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
- *
- *  Portions from the Gimp sources by
- *  Copyright © 1998-2000 Sven Neumann <sven@gimp.org>
- *  Copyright © 2003 Henrik Brix Andersen <brix@gimp.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -32,6 +24,7 @@
 static Window get_window_property (Window xwindow, Atom atom);
 static Window find_toplevel_window (Window xid);
 static Window screenshot_find_active_window (void);
+static gchar *generate_filename_for_uri(char *uri);
 
 /* Internals */
 
@@ -117,37 +110,7 @@ find_toplevel_window (Window xid)
   while (TRUE);
 }
 
-/* Public */
-
-GdkPixbuf *take_screenshot (gint fullscreen, gint delay)
-{
-  GdkPixbuf * screenshot;
-  GdkWindow * window;
-  gint width;
-  gint height;
-  
-  if (fullscreen)
-  {
-    window = gdk_get_default_root_window();
-  } 
-  else 
-  {
-    window = gdk_window_foreign_new (find_toplevel_window (screenshot_find_active_window ()));
-  }
-  
-  sleep(delay);
-  
-  gdk_drawable_get_size(window, &width, &height);
-
-  screenshot = gdk_pixbuf_get_from_drawable (NULL,
-					     window,
-					     NULL, 0, 0, 0, 0,
-					     width, height);
-	
-	return screenshot;
-}
-
-gchar *generate_filename_for_uri(char *uri)
+static gchar *generate_filename_for_uri(char *uri)
 {
   gchar *file_name;
   unsigned int i = 0;
@@ -173,4 +136,89 @@ gchar *generate_filename_for_uri(char *uri)
   while( g_access ( g_build_filename (uri, file_name, NULL), F_OK ) == 0 );
     
   return file_name;
+}
+
+/* Public */
+
+GdkPixbuf *take_screenshot (ScreenshotData * sd)
+{
+  GdkPixbuf * screenshot;
+  GdkWindow * window;
+  gint width;
+  gint height;
+  
+  if (sd->whole_screen)
+  {
+    window = gdk_get_default_root_window();
+  } 
+  else 
+  {
+    window = gdk_window_foreign_new (find_toplevel_window (screenshot_find_active_window ()));
+  }
+  
+  sleep(sd->screenshot_delay);
+  
+  gdk_drawable_get_size(window, &width, &height);
+
+  screenshot = gdk_pixbuf_get_from_drawable (NULL,
+					     window,
+					     NULL, 0, 0, 0, 0,
+					     width, height);
+	
+	return screenshot;
+}
+
+void save_screenshot (GdkPixbuf * screenshot, ScreenshotData * sd)
+{
+  GdkPixbuf * thumbnail;
+  gchar * filename = NULL;
+  GtkWidget * preview;
+  GtkWidget * chooser;
+  gint dialog_response;
+
+  filename = generate_filename_for_uri ( sd->screenshot_dir );
+    
+  if ( sd->show_save_dialog )
+	{
+	  /* If the user wants a save dialog, we run it, and grab the filename the user
+	  has chosen. */
+	  
+    chooser = gtk_file_chooser_dialog_new ( _("Save screenshot as ..."),
+                                          NULL,
+                                          GTK_FILE_CHOOSER_ACTION_SAVE,
+                                          GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                          GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+                                          NULL);
+    gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER ( chooser ), TRUE);
+    gtk_dialog_set_default_response (GTK_DIALOG ( chooser ), GTK_RESPONSE_ACCEPT);
+    gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER ( chooser ), sd->screenshot_dir);
+
+    preview = gtk_image_new ();
+  
+    gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER ( chooser ), filename);
+    gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER ( chooser ), preview);
+  
+    thumbnail = gdk_pixbuf_scale_simple (screenshot, gdk_pixbuf_get_width(screenshot)/5, 
+                                         gdk_pixbuf_get_height(screenshot)/5, 
+                                         GDK_INTERP_BILINEAR);
+    gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
+    g_object_unref ( thumbnail );
+    
+    dialog_response = gtk_dialog_run ( GTK_DIALOG ( chooser ) );
+	  
+	  if ( dialog_response == GTK_RESPONSE_ACCEPT )
+	  {
+	    filename = gtk_file_chooser_get_filename ( GTK_FILE_CHOOSER ( chooser ) );
+      gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
+	  }
+	  
+	  gtk_widget_destroy ( GTK_WIDGET ( chooser ) );
+	}  
+	else
+	{    
+	    /* Else, we just save the file in the default folder */
+      filename = g_build_filename (sd->screenshot_dir, filename, NULL);
+	    gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
+	}
+  g_free( filename );
 }

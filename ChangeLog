@@ -1,3 +1,37 @@
+2008-07-11 jeromeg
+
+  * src/main.c: 
+    - add a CLI option to set the directory where screenshots are saved.
+    - add a CLI option and a rc file to save a default save folder using a dialog.
+  * src/screenshooter-utils.c: do not show full filename in save dialog.
+  * xfce4-screenshooter.1: update manpage for the new CLI options.  
+
+2008-07-09 jeromeg
+
+  * src/*: remove obsolete copyrights.
+  * src/screenshooter-utils.{c,h}:
+    - move the ScreenshotData structure here.
+    - port take_screenshot to use ScreenshotData.
+    - write a generic save_screenshot function using ScreenshotData.
+    - BUGFIX: generate_filename_for_uri now outputs the whole filename with
+    its base. Fixes saving of screenshots without showing the save dialog.
+  * src/screenshooter-plugin.c:
+    - ported to use the new code.
+    - remove some obsolete code.
+  * main.c:
+    - port code to use ScreenshotData.
+    - add a CLI option to save screenshots without showing a save dialog.
+  * autogen.sh, configure.ac.in: remove some useless things, update a few others.
+  * xfce4-screenshooter.1: update manpage for the new CLI option.
+  * screenshooter.desktop.in.in: remove deprecated encoding key.
+
+2008-07-08 jeromeg
+
+  * src/screenshooter-plugin.c:
+    - separate screenshot data and plugin data.
+    - port code to use the two different structures.
+    - fix some resulting crashes.
+
 2008-07-05 jeromeg
 
 	* src/*, po/POTFILES.in: bugfix, make filename translatable.
@@ -44,7 +78,7 @@
 	* src/screenshooter-plugin.c:
 	  - add a default save location to the preferences dialog.
 	  - update the code to use this new default.
-	* src/main.c: save screenshots in main by default.
+	* src/main.c: save screenshots in home by default.
 	* po/: make update-po.
 	  
 2008-06-19 16:46 jeromeg
