@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#: ../src/main.c:70
+#: ../src/main.c:88
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-20 09:01+0200\n"
+"POT-Creation-Date: 2008-07-12 16:51+0200\n"
 "PO-Revision-Date: 2008-06-17 12:27+0100\n"
 "Last-Translator: Jérôme Guelfucci <jerome.guelfucci@gmail.com>\n"
 "Language-Team: Croatian <mario.danic@gmail.com>\n"
@@ -17,70 +17,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Create the dialog
-#: ../src/screenshooter-plugin.c:271
+#: ../src/screenshooter-plugin.c:223
 #, fuzzy
 msgid "Screenshooter plugin"
 msgstr "Screenshots"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../src/screenshooter-plugin.c:296
+#: ../src/screenshooter-plugin.c:248
 msgid "Modes"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:305
+#: ../src/screenshooter-plugin.c:257
 msgid "Take a screenshot of desktop"
 msgstr "Uhvati screenshot desktopa"
 
-#: ../src/screenshooter-plugin.c:314 ../src/main.c:47
+#: ../src/screenshooter-plugin.c:266 ../src/main.c:40
 msgid "Take a screenshot of the active window"
 msgstr "Uhvati screenshot trenutnog prozora"
 
 #. Create the options frame and add the delay and save options
-#: ../src/screenshooter-plugin.c:323
+#: ../src/screenshooter-plugin.c:275
 msgid "Options"
 msgstr ""
 
 #. Save option
-#: ../src/screenshooter-plugin.c:333
+#: ../src/screenshooter-plugin.c:285
 msgid "Show save dialog"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:344
+#: ../src/screenshooter-plugin.c:296
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:349
+#: ../src/screenshooter-plugin.c:301
 msgid "Default save location"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:358
+#: ../src/screenshooter-plugin.c:310
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:372
+#: ../src/screenshooter-plugin.c:324
 msgid "seconds"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:398
-msgid "Take screenshot"
-msgstr "Uhvati screenshot"
-
-#: ../src/screenshooter-plugin.c:405 ../src/main.c:96
-msgid "Save screenshot as ..."
-msgstr "Snimi screenshot kao ..."
-
-#: ../src/main.c:43
+#: ../src/main.c:36
 msgid "Version information"
 msgstr "Informacije o inačici"
 
-#: ../src/main.c:51
+#: ../src/main.c:44
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Odgoda u sekundama prije hvatanja screenshota"
 
-#: ../src/main.c:74
+#: ../src/main.c:49
+msgid "Do not display the save dialog"
+msgstr ""
+
+#: ../src/main.c:53
+msgid "Directory where the screenshot will be saved"
+msgstr ""
+
+#: ../src/main.c:57
+msgid "Dialog to set the default save folder"
+msgstr ""
+
+#: ../src/main.c:92
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -90,6 +94,30 @@ msgstr ""
 "Pokušajte %s --help kako biste vidjeli potpunu listu dostupni command-line "
 "parametara.\n"
 
+#: ../src/main.c:146
+msgid "Default save folder"
+msgstr ""
+
+#: ../src/screenshooter-utils.c:101
+msgid "Couldn't find window manager window"
+msgstr ""
+
+#: ../src/screenshooter-utils.c:123
+#, fuzzy
+msgid "Screenshot.png"
+msgstr " Screenshot"
+
+#: ../src/screenshooter-utils.c:134
+#, fuzzy, c-format
+msgid "Screenshot-%d.png"
+msgstr " Screenshot"
+
+#. If the user wants a save dialog, we run it, and grab the filename the user
+#. has chosen.
+#: ../src/screenshooter-utils.c:186
+msgid "Save screenshot as ..."
+msgstr "Snimi screenshot kao ..."
+
 #: ../src/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
 msgstr " Screenshot"
@@ -97,6 +125,9 @@ msgstr " Screenshot"
 #: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr " Uhvati screenshot"
+
+#~ msgid "Take screenshot"
+#~ msgstr "Uhvati screenshot"
 
 #, fuzzy
 #~ msgid "Delay before taking the screenshot"
