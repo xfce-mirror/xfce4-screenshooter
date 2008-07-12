@@ -1,10 +1,9 @@
-#: ../src/main.c:88
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-12 16:51+0200\n"
-"PO-Revision-Date: 2008-07-11 16:13+0100\n"
+"PO-Revision-Date: 2008-07-12 19:16+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
@@ -22,13 +21,14 @@ msgstr "Képernyőkép beillesztés"
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../src/screenshooter-plugin.c:248
 msgid "Modes"
-msgstr ""
+msgstr "Módok"
 
 #: ../src/screenshooter-plugin.c:257
 msgid "Take a screenshot of desktop"
 msgstr "Felvétel készítése az asztalról"
 
-#: ../src/screenshooter-plugin.c:266 ../src/main.c:40
+#: ../src/screenshooter-plugin.c:266
+#: ../src/main.c:40
 msgid "Take a screenshot of the active window"
 msgstr "Felvétel készítése az aktív ablakról"
 
@@ -43,22 +43,16 @@ msgid "Show save dialog"
 msgstr "Mentési párbeszéd megjelenítése"
 
 #: ../src/screenshooter-plugin.c:296
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Alap mentési hely</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Alap mentési hely</span>"
 
 #: ../src/screenshooter-plugin.c:301
 msgid "Default save location"
 msgstr "Alap mentési hely"
 
 #: ../src/screenshooter-plugin.c:310
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Késleltetés a felvétel előtt</"
-"span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Késleltetés a felvétel előtt</span>"
 
 #: ../src/screenshooter-plugin.c:324
 msgid "seconds"
@@ -74,15 +68,15 @@ msgstr "A felvétel előtt késleltetés másodpercben"
 
 #: ../src/main.c:49
 msgid "Do not display the save dialog"
-msgstr ""
+msgstr "Ne mutasd a mentési párbeszédet"
 
 #: ../src/main.c:53
 msgid "Directory where the screenshot will be saved"
-msgstr ""
+msgstr "A képernyőkép mentési mappája"
 
 #: ../src/main.c:57
 msgid "Dialog to set the default save folder"
-msgstr ""
+msgstr "Az alap mentési mappát beállító párbeszéd"
 
 #: ../src/main.c:92
 #, c-format
@@ -91,27 +85,24 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Próbáld ezt: %s --help az elérhető parancssori lehetőségek teljes "
-"listájáért.\n"
+"Próbáld ezt: %s --help az elérhető parancssori lehetőségek teljes listájáért.\n"
 
 #: ../src/main.c:146
-#, fuzzy
 msgid "Default save folder"
-msgstr "Alap mentési hely"
+msgstr "Alap mentési mappa"
 
 #: ../src/screenshooter-utils.c:101
 msgid "Couldn't find window manager window"
-msgstr ""
+msgstr "Nem leltem az ablakkezelő ablakot"
 
 #: ../src/screenshooter-utils.c:123
-#, fuzzy
 msgid "Screenshot.png"
-msgstr " Képernyőkép"
+msgstr "Képernyőkép.png"
 
 #: ../src/screenshooter-utils.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "Screenshot-%d.png"
-msgstr " Képernyőkép"
+msgstr "Képernyőkép-%d.png"
 
 #. If the user wants a save dialog, we run it, and grab the filename the user
 #. has chosen.
@@ -133,21 +124,16 @@ msgstr " Képernyőkép készítése"
 #, fuzzy
 #~ msgid "Delay before taking the screenshot"
 #~ msgstr " Képernyőkép készítése"
-
 #~ msgid "Properties"
 #~ msgstr "Tulajdonságok"
-
 #~ msgid "Screenshots"
 #~ msgstr "Képernyőképek"
-
 #~ msgid "Ask for _filename"
 #~ msgstr "Kérdés _fájlnévre"
-
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Hiba a %d. mutató elkapásakor"
-
 #~ msgid "Always take shot of the whole screen"
 #~ msgstr "Mindig az egész képernyőt menti"
-
 #~ msgid "Window selection delay"
 #~ msgstr "Ablak kijelölés késleltetés"
+
