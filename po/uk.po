@@ -1,0 +1,129 @@
+# Ukrainian translation of xfce4-screenshooter-plugin.
+# Copyright (C) 2008 Dmitry Nikitin
+# This file is distributed under the same license as the xfce4-screenshooter-plugin package.
+# Dmitry Nikitin <luckas_fb@mail.ru>, 2008.
+#: ../src/main.c:88
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-screenshooter-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-14 09:37+0000\n"
+"PO-Revision-Date: 2008-07-09 12:13+0300\n"
+"Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
+"Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Create the dialog
+#: ../src/screenshooter-plugin.c:223
+msgid "Screenshooter plugin"
+msgstr "Плагін для знімків екрану"
+
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../src/screenshooter-plugin.c:248
+msgid "Modes"
+msgstr "Режими"
+
+#: ../src/screenshooter-plugin.c:257
+msgid "Take a screenshot of desktop"
+msgstr "Зробити знімок стільниці"
+
+#: ../src/screenshooter-plugin.c:266 ../src/main.c:40
+msgid "Take a screenshot of the active window"
+msgstr "Зробити знімок активного вікна"
+
+#. Create the options frame and add the delay and save options
+#: ../src/screenshooter-plugin.c:275
+msgid "Options"
+msgstr "Опції"
+
+#. Save option
+#: ../src/screenshooter-plugin.c:285
+msgid "Show save dialog"
+msgstr "Показати діалог збереження"
+
+#: ../src/screenshooter-plugin.c:296
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Типова тека збереження</span>"
+
+#: ../src/screenshooter-plugin.c:301
+msgid "Default save location"
+msgstr "Типове місце збереження знімків екрану"
+
+#: ../src/screenshooter-plugin.c:310
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+"screenshot</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Затримка     перед      "
+"знімком   </span>"
+
+#: ../src/screenshooter-plugin.c:324
+msgid "seconds"
+msgstr "секунд"
+
+#: ../src/main.c:36
+msgid "Version information"
+msgstr "Інформація про версію"
+
+#: ../src/main.c:44
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Затримка в секундах перед отриманням знімку"
+
+#: ../src/main.c:49
+msgid "Do not display the save dialog"
+msgstr "Не відображати діалог збереження"
+
+#: ../src/main.c:53
+msgid "Directory where the screenshot will be saved"
+msgstr "Каталог, у який зберігаються знімки екрану"
+
+#: ../src/main.c:57
+msgid "Dialog to set the default save folder"
+msgstr "Діалог для встановлення типової теки збереження"
+
+#: ../src/main.c:92
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"Спробуй %s --help щоб побачити повний список доступних опцій командного "
+"рядка.\n"
+
+#: ../src/main.c:146
+msgid "Default save folder"
+msgstr "Типова тека збереження знімків екрану"
+
+#: ../src/screenshooter-utils.c:101
+msgid "Couldn't find window manager window"
+msgstr "Не вдається знайти вікно менеджера вікон"
+
+#: ../src/screenshooter-utils.c:123
+msgid "Screenshot.png"
+msgstr "Знімок_екрану.png"
+
+#: ../src/screenshooter-utils.c:134
+#, c-format
+msgid "Screenshot-%d.png"
+msgstr "Знімок_екрану-%d.png"
+
+#. If the user wants a save dialog, we run it, and grab the filename the user
+#. has chosen.
+#: ../src/screenshooter-utils.c:186
+msgid "Save screenshot as ..."
+msgstr "Зберегти знімок як ..."
+
+#: ../src/screenshooter.desktop.in.in.h:1
+msgid " Screenshot"
+msgstr "Знімок екрану"
+
+#: ../src/screenshooter.desktop.in.in.h:2
+msgid " Take a screenshot"
+msgstr "Отримати знімок"
+
