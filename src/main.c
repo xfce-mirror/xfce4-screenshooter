@@ -68,7 +68,10 @@ int main(int argc, char **argv)
   XfceRc *rc;
   gchar * rc_file;
 
-  if ( ( rc_file = xfce_resource_lookup( XFCE_RESOURCE_CONFIG, "xfce4-screenshooter") ) != NULL )
+  rc_file = g_build_filename( xfce_get_homedir(), ".config", "xfce4", 
+                              "xfce4-screenshooter", NULL);
+
+  if ( g_file_test(rc_file, G_FILE_TEST_EXISTS) )
   {
     rc = xfce_rc_simple_open (rc_file, TRUE);
     screenshot_dir = g_strdup ( xfce_rc_read_entry (rc, "screenshot_dir", 
