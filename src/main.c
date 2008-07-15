@@ -68,12 +68,11 @@ int main(int argc, char **argv)
   XfceRc *rc;
   gchar * rc_file;
 
-  rc_file = g_build_filename( xfce_get_homedir(), ".config", "xfce4", "xfce4-screenshooter", NULL);
-
-  if ( g_file_test(rc_file, G_FILE_TEST_EXISTS) )
+  if ( ( rc_file = xfce_resource_lookup( XFCE_RESOURCE_CONFIG, "xfce4-screenshooter") ) != NULL )
   {
     rc = xfce_rc_simple_open (rc_file, TRUE);
-    screenshot_dir = g_strdup ( xfce_rc_read_entry (rc, "screenshot_dir", xfce_get_homedir () ) );
+    screenshot_dir = g_strdup ( xfce_rc_read_entry (rc, "screenshot_dir", 
+                                xfce_get_homedir () ) );
     sd->screenshot_dir = screenshot_dir;
     xfce_rc_close (rc);
   }
@@ -89,7 +88,8 @@ int main(int argc, char **argv)
   {
     if (cli_error != NULL)
     {
-      g_print (_("%s: %s\nTry %s --help to see a full list of available command line options.\n"), PACKAGE, cli_error->message, PACKAGE_NAME);
+      g_print (_("%s: %s\nTry %s --help to see a full list of available command line options.\n"), 
+               PACKAGE, cli_error->message, PACKAGE_NAME);
       g_error_free (cli_error);
       return 1;
     }

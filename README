@@ -10,6 +10,10 @@ Since version 1.1.0, the plugin also ships an executable to take screenshots
 without having the panel applet running. 
 	
 The following command line options are available:
- -v, --version            Version information
- -w, --window             Take a screenshot of the active window
- -d, --delay              Delay in seconds before taking the screenshot
+  -v, --version            Version information
+  -w, --window             Take a screenshot of the active window
+  -d, --delay              Delay in seconds before taking the screenshot
+  -h, --hide               Do not display the save dialog
+  -s, --save               Directory where the screenshot will be saved
+  -p, --preferences        Dialog to set the default save folder
+
