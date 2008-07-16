@@ -126,7 +126,15 @@ int main(int argc, char **argv)
   
   if ( g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR) )
   {
-    sd->screenshot_dir = screenshot_dir;
+    if ( g_path_is_absolute ( screenshot_dir ) )
+    { 
+      sd->screenshot_dir = screenshot_dir;
+    }
+    else
+    {
+      screenshot_dir = g_build_filename(g_get_current_dir(), screenshot_dir);
+      sd->screenshot_dir = screenshot_dir;
+    }
   }
   else
   {

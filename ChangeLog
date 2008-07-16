@@ -1,6 +1,11 @@
+2008-07-16 jeromeg
+
+  * src/main.c: partially fix -s switch when using relative path. An obscure
+    warning "Error stating file..." is still shown but it should work fine.
+
 2008-07-15 jeromeg
 
-  * srx/main.c: revert one of the last change which does not work.
+  * src/main.c: revert one of the last change which does not work.
 
 2008-07-15 jeromeg
 
