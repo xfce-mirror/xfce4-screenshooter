@@ -1,3 +1,4 @@
+#: ../src/main.c:70
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
@@ -25,8 +26,7 @@ msgstr ""
 msgid "Take a screenshot of desktop"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:314
-#: ../src/main.c:47
+#: ../src/screenshooter-plugin.c:314 ../src/main.c:47
 msgid "Take a screenshot of the active window"
 msgstr ""
 
@@ -60,8 +60,7 @@ msgstr ""
 msgid "Take screenshot"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:405
-#: ../src/main.c:96
+#: ../src/screenshooter-plugin.c:405 ../src/main.c:96
 msgid "Save screenshot as ..."
 msgstr ""
 
@@ -87,4 +86,3 @@ msgstr ""
 #: ../src/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr ""
-
