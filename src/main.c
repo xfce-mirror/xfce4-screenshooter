@@ -132,7 +132,7 @@ int main(int argc, char **argv)
     }
     else
     {
-      screenshot_dir = g_build_filename(g_get_current_dir(), screenshot_dir);
+      screenshot_dir = g_build_filename(g_get_current_dir(), screenshot_dir, NULL);
       sd->screenshot_dir = screenshot_dir;
     }
   }
