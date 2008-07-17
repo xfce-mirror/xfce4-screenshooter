@@ -1,3 +1,7 @@
+=== Version 1.3.1 ===
+
+  * BUGFIX: Fix -s switch with relative path.
+
 === Version 1.3.0 ===
   * Code cleanup, remove deprecated code.
   * Reduce code duplication between the executable and the plugin.
@@ -9,18 +13,18 @@
   * A lot of updated/new translations.
 
 === Version 1.2.0 ===
-	* Fix gcc warnings.
-	* Add manpage taken from Debian package.
-	* Cleaned the preferences dialog to make it look like the ones of
-	  others panel plugins. Use frames to separate different options.
-	* Added default save location to the plugin.
-	* BUGFIX: the executable sometimes opened the save dialog in weird places,
-	  now it shows the home directory by default.
-	* Some others code cleanups.
+  * Fix gcc warnings.
+  * Add manpage taken from Debian package.
+  * Cleaned the preferences dialog to make it look like the ones of
+    others panel plugins. Use frames to separate different options.
+  * Added default save location to the plugin.
+  * BUGFIX: the executable sometimes opened the save dialog in weird places,
+    now it shows the home directory by default.
+  * Some others code cleanups.
 
 === Version 1.1.0 ===
-	* Delay now works.
-	* Canceling save now works.
-	* Executable to take screenshots from cli or with a keybinding.
-	* Many code improvements.
-	* Updated Brasilian, Croatian, Dutch, French and German translations.
+  * Delay now works.
+  * Canceling save now works.
+  * Executable to take screenshots from cli or with a keybinding.
+  * Many code improvements.
+  * Updated Brasilian, Croatian, Dutch, French and German translations.
