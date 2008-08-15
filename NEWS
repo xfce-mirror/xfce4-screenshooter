@@ -1,5 +1,8 @@
-=== Version 1.3.1 ===
+=== Version 1.3.2 ===
+  * BUGFIX: plug some stupid leaks.
+  * Use tooltips for panel plugin when compiled with gtk >= 2.12.
 
+=== Version 1.3.1 ===
   * BUGFIX: Fix -s switch with relative path.
 
 === Version 1.3.0 ===

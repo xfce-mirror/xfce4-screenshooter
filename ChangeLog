@@ -1,5 +1,12 @@
 2008-08-15 jeromeg
 
+  * src/screenshooter-plugin.c:
+    - improve indentation.
+    - use tooltips if gtk >= 2.12
+  * NEWS: updated.
+
+2008-08-15 jeromeg
+
   * src/*: plug a LOT of stupid leaks !
 
 2008-07-17 jeromeg

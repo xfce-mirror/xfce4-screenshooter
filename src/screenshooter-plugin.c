@@ -208,6 +208,20 @@ screenshot_dialog_response (GtkWidget *dlg, int reponse,
   g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
 
   gtk_widget_destroy (dlg);
+  
+  #if GTK_CHECK_VERSION(2,12,0)
+  if ( pd->sd->whole_screen )
+  {
+    gtk_widget_set_tooltip_text (GTK_WIDGET( pd->button ),
+                                _("Take a screenshot of desktop"));
+  }
+  else
+  {
+    gtk_widget_set_tooltip_text (GTK_WIDGET( pd->button ),
+                                _("Take a screenshot of the active window"));
+  }
+  #endif
+  
   xfce_panel_plugin_unblock_menu (pd->plugin);
   screenshot_write_rc_file (pd->plugin, pd);
 }
@@ -291,8 +305,8 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   gtk_box_pack_start (GTK_BOX (options_box), save_button, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_button),
                                 pd->sd->show_save_dialog);
-  g_signal_connect (save_button, "toggled", G_CALLBACK (show_save_dialog_toggled),
-                    pd);
+  g_signal_connect (save_button, "toggled", 
+                    G_CALLBACK (show_save_dialog_toggled), pd);
   
   /* Default save location */          
   default_save_label = gtk_label_new ( "" );
@@ -302,11 +316,14 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   gtk_widget_show ( default_save_label );
   gtk_container_add ( GTK_CONTAINER ( options_box ), default_save_label );
   
-  dir_chooser = gtk_file_chooser_button_new (_("Default save location"), GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+  dir_chooser = gtk_file_chooser_button_new (_("Default save location"), 
+                                         GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
   gtk_widget_show ( dir_chooser );
-  gtk_file_chooser_set_current_folder ( GTK_FILE_CHOOSER (dir_chooser), pd->sd->screenshot_dir);
+  gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER (dir_chooser), 
+                                     pd->sd->screenshot_dir);
   gtk_container_add ( GTK_CONTAINER ( options_box ), dir_chooser );
-  g_signal_connect (dir_chooser, "selection-changed", G_CALLBACK (cb_default_folder), pd);
+  g_signal_connect (dir_chooser, "selection-changed", 
+                    G_CALLBACK (cb_default_folder), pd);
       
   /* Screenshot delay */
   delay_label = gtk_label_new ( "" );
@@ -321,9 +338,11 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   gtk_box_pack_start (GTK_BOX (options_box), delay_box, FALSE, FALSE, 0);
 
   screenshot_delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
-  gtk_spin_button_set_value(GTK_SPIN_BUTTON( screenshot_delay_spinner ), pd->sd->screenshot_delay);
+  gtk_spin_button_set_value(GTK_SPIN_BUTTON( screenshot_delay_spinner ), 
+                            pd->sd->screenshot_delay);
   gtk_widget_show(screenshot_delay_spinner);
-  gtk_box_pack_start (GTK_BOX (delay_box), screenshot_delay_spinner, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (delay_box), screenshot_delay_spinner, FALSE, 
+                      FALSE, 0);
 
   label2 = gtk_label_new_with_mnemonic(_("seconds"));
   gtk_widget_show(label2);
@@ -354,6 +373,19 @@ screenshot_construct (XfcePanelPlugin * plugin)
   pd->image = gtk_image_new ();
 
   gtk_container_add (GTK_CONTAINER (pd->button), GTK_WIDGET (pd->image));
+  
+  #if GTK_CHECK_VERSION(2,12,0)
+  if ( pd->sd->whole_screen )
+  {
+    gtk_widget_set_tooltip_text (GTK_WIDGET( pd->button ),
+                                _("Take a screenshot of desktop"));
+  }
+  else
+  {
+    gtk_widget_set_tooltip_text (GTK_WIDGET( pd->button ),
+                                _("Take a screenshot of the active window"));
+  }
+  #endif
 
   gtk_widget_show_all (pd->button);
   
