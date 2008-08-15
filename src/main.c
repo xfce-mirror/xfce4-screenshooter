@@ -177,7 +177,9 @@ int main(int argc, char **argv)
 	  }
     gtk_widget_destroy( GTK_WIDGET ( chooser ) );
   }
-
+  
+  g_free( sd->screenshot_dir );
+  g_free ( sd );
   g_free( rc_file );
   return 0;
 }

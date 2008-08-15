@@ -84,7 +84,9 @@ screenshot_free_data (XfcePanelPlugin * plugin, PluginData * pd)
   	g_signal_handler_disconnect (plugin, pd->style_id);
 
   pd->style_id = 0;
-  g_free (pd);
+  g_free( pd->sd->screenshot_dir );
+  g_free( pd->sd );
+  g_free( pd );
 }
 
 static void
@@ -141,6 +143,8 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
   pd->sd->whole_screen = whole_screen;
   pd->sd->show_save_dialog = show_save_dialog;
   pd->sd->screenshot_dir = screenshot_dir;
+  
+  g_free( screenshot_dir );
 }
 
 static void
