@@ -1,5 +1,8 @@
 === Version 1.3.2 ===
   * BUGFIX: plug some stupid leaks.
+  * BUGFIX: when the active window is the desktop, instead of returning a
+    corrupted snapshot of the background image, return the whole desktop view.
+  * Code cleanup using libgdk functions.
   * Use tooltips for panel plugin when compiled with gtk >= 2.12.
 
 === Version 1.3.1 ===

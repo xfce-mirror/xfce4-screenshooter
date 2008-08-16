@@ -1,3 +1,17 @@
+2008-08-16 jeromeg
+
+  * src/screenshooter-utils.c:
+    - ported to use mostly gdk functions.
+    - BUGFIX: when the active window is the desktop, instead of returning a
+      corrupted snapshot of the background image, return the whole desktop view.
+    - drop get_window_property and screenshot_find_active_window which are now 
+      useless.
+    - improve indentation of code.
+  * src/screenshooter-utils.h:
+    - remove some useless #includes.
+  * configure.ac.in: add svn tag that I had forgotten.
+  * NEWS: updated.
+
 2008-08-15 jeromeg
 
   * src/screenshooter-plugin.c:
