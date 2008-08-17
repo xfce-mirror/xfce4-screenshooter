@@ -1,6 +1,12 @@
 2008-08-16 jeromeg
 
   * src/screenshooter-utils.c:
+    - do not g_free screenshot_dir when reading conf file, as we need it after.
+    - improve identation.
+
+2008-08-16 jeromeg
+
+  * src/screenshooter-utils.c:
     - ported to use mostly gdk functions.
     - BUGFIX: when the active window is the desktop, instead of returning a
       corrupted snapshot of the background image, return the whole desktop view.
