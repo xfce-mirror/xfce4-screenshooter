@@ -1,5 +1,12 @@
 2008-08-16 jeromeg
 
+  * xfce4-screenshooter.1: bump version for future release.
+  * configure.ac.in: ditto.
+  * src/Makefile.am: build with -Werror
+  * NEWS: updated.
+
+2008-08-16 jeromeg
+
   * src/screenshooter-utils.c:
     - do not g_free screenshot_dir when reading conf file, as we need it after.
     - improve identation.
