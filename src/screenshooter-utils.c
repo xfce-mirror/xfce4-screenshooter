@@ -23,7 +23,14 @@
 static gchar *generate_filename_for_uri(char *uri);
 static Window find_toplevel_window (Window xid);
 
+
+
 /* Borrowed from gnome-screenshot */
+/* This function returns the toplevel window containing Window, for most window
+managers this will enable you to get the decorations around Window. Does not
+work with Compiz.
+Window: the X identifier of the window
+Returns: the X identifier of the toplevel window containing Window*/
 static Window
 find_toplevel_window (Window xid)
 {
@@ -48,6 +55,12 @@ find_toplevel_window (Window xid)
 }
 
 
+
+/* Generates filename Screenshot-n.png where n is the first integer greater than 
+0 so that Screenshot-n.jpg does not exist in the folder whose URI is *uri.
+*uri: the uri of the folder for which the filename should be generated.
+returns: a filename verifying the above conditions or NULL if *uri == NULL.
+*/
 static gchar *generate_filename_for_uri(char *uri)
 {
   gchar *file_name;
@@ -58,27 +71,37 @@ static gchar *generate_filename_for_uri(char *uri)
   	  return NULL;
     }      
   
-  file_name = g_strdup ( _("Screenshot.png") );
-    
-  if( g_access (g_build_filename (uri, file_name, NULL), F_OK ) != 0 ) 
+  file_name = g_strdup (_("Screenshot.png"));
+  
+  /* If the plain filename matches the condition, go for it. */
+  if (g_access (g_build_filename (uri, file_name, NULL), F_OK) != 0) 
     {
       return file_name;
     }
-    
+  
+  /* Else, we find the first n that matches the condition */  
   do
     {
       i++;
       g_free (file_name);
-      file_name = g_strdup_printf ( _("Screenshot-%d.png"), i);
+      file_name = g_strdup_printf (_("Screenshot-%d.png"), i);
     }
-  while( g_access (g_build_filename (uri, file_name, NULL), F_OK ) == 0 );
+  while (g_access (g_build_filename (uri, file_name, NULL), F_OK) == 0);
     
   return file_name;
 }
 
+
+
 /* Public */
 
-GdkPixbuf *take_screenshot (ScreenshotData * sd)
+
+
+/* Takes the screenshot with the options given in sd.
+*sd: a ScreenshotData struct.
+returns: the screenshot in a *GdkPixbuf.
+*/
+GdkPixbuf *take_screenshot (ScreenshotData *sd)
 {
   GdkPixbuf *screenshot;
   GdkWindow *window;
@@ -86,35 +109,44 @@ GdkPixbuf *take_screenshot (ScreenshotData * sd)
   
   gint width;
   gint height;
+  /* gdk_get_default_root_window (), needs_unref enables us to unref *window 
+  only if a non default window has been grabbed */
   gboolean needs_unref = TRUE;
   
+  /* Get the screen on which the screenshot should be taken */
   screen = gdk_screen_get_default ();
-    
+  
+  /* Get the window/desktop we want to screenshot*/  
   if (sd->whole_screen)
     {
-      window = gdk_get_default_root_window();
+      window = gdk_get_default_root_window ();
       needs_unref = FALSE;
     } 
   else 
     {
       window = gdk_screen_get_active_window (screen);
-    
+      
+      /* If we are supposed to take a screenshot of the active window, and if 
+      the active window is the desktop background, grab the whole screen.*/      
       if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
         {
-          window = gdk_get_default_root_window();
+          window = gdk_get_default_root_window ();
           needs_unref = FALSE;
         }
       else
         {
           window = 
-            gdk_window_foreign_new (find_toplevel_window (GDK_WINDOW_XID(window)));
+            gdk_window_foreign_new (find_toplevel_window (GDK_WINDOW_XID (window)));
         }
     }
   
-  sleep(sd->screenshot_delay);
+  /* wait for n=delay seconds */ 
+  sleep (sd->screenshot_delay);
   
+  /* get the size of the part of the screen we want to screenshot */
   gdk_drawable_get_size(window, &width, &height);
-
+  
+  /* get the screenshot */
   screenshot = gdk_pixbuf_get_from_drawable (NULL,
 					     window,
 					     NULL, 0, 0, 0, 0,
@@ -126,7 +158,12 @@ GdkPixbuf *take_screenshot (ScreenshotData * sd)
 	return screenshot;
 }
 
-void save_screenshot (GdkPixbuf * screenshot, ScreenshotData * sd)
+
+
+/* Saves the screenshot according to the options in sd. 
+*screenshot: a GdkPixbuf containing our screenshot
+*sd: a ScreenshotData struct containing the save options.*/
+void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd)
 {
   GdkPixbuf * thumbnail;
   gchar * filename = NULL;
@@ -134,7 +171,7 @@ void save_screenshot (GdkPixbuf * screenshot, ScreenshotData * sd)
   GtkWidget * chooser;
   gint dialog_response;
 
-  filename = generate_filename_for_uri ( sd->screenshot_dir );
+  filename = generate_filename_for_uri (sd->screenshot_dir);
     
   if (sd->show_save_dialog)
 	  {

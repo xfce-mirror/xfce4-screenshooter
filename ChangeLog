@@ -1,3 +1,11 @@
+2008-08-19 jeromeg
+
+  * src/*:
+    - comment all code
+    - clean identation
+    - plug some leaks of GdkPixbuf.
+  * NEWS: updated.
+
 2008-08-16 jeromeg
 
   * xfce4-screenshooter.1: bump version for future release.

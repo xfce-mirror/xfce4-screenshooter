@@ -40,6 +40,7 @@ t */
 
 #define SCREENSHOT_ICON_NAME  "applets-screenshooter"
 
+/* Struct containing all panel plugin data */
 typedef struct
 {
   XfcePanelPlugin *plugin;
@@ -52,18 +53,47 @@ typedef struct
 }
 PluginData;
 
-/* Panel Plugin Interface */
+
+
+/* Protoypes */
 
 static void screenshot_properties_dialog (XfcePanelPlugin *plugin,
                                           PluginData *pd);
-static void screenshot_construct (XfcePanelPlugin * plugin);
+static void screenshot_construct (XfcePanelPlugin *plugin);
+static gboolean screenshot_set_size (XfcePanelPlugin *plugin, 
+                                     int size, PluginData *pd);
+static void screenshot_free_data (XfcePanelPlugin *plugin, 
+                                  PluginData *pd);
+static void button_clicked (GtkWidget *button, PluginData *pd);
+static void screenshot_style_set (XfcePanelPlugin *plugin, gpointer ignored,
+                                  PluginData *pd);
+static void screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd);                
+static void screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd);
+static void show_save_dialog_toggled (GtkToggleButton *tb, PluginData *pd);
+static void whole_screen_toggled (GtkToggleButton *tb, PluginData *pd);
+static void active_window_toggled (GtkToggleButton *tb, PluginData *pd);
+static void screenshot_delay_spinner_changed (GtkWidget *spinner, 
+                                              PluginData *pd);
+static void cb_default_folder (GtkWidget *chooser, PluginData *pd);
+static void screenshot_dialog_response (GtkWidget *dlg, int reponse,
+                                        PluginData *pd);
+                                        
+                                              
 
+/* Register the panel plugin */
 XFCE_PANEL_PLUGIN_REGISTER_INTERNAL (screenshot_construct);
+
+
 
 /* Internal functions */
 
+
+
+/* Modify the size of the panel button 
+Returns TRUE if succesful. 
+*/
 static gboolean
-screenshot_set_size (XfcePanelPlugin *plugin, int size, PluginData * pd)
+screenshot_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 {
   GdkPixbuf *pb;
   int width = size - 2 - 2 * MAX (pd->button->style->xthickness,
@@ -77,35 +107,55 @@ screenshot_set_size (XfcePanelPlugin *plugin, int size, PluginData * pd)
   return TRUE;
 }
 
+
+
+/* Free the panel plugin data stored in pd
+plugin: a XfcePanelPlugin (a screenshooter one).
+pd: the associated PluginData. 
+*/
 static void
-screenshot_free_data (XfcePanelPlugin * plugin, PluginData * pd)
+screenshot_free_data (XfcePanelPlugin *plugin, PluginData *pd)
 {
   if (pd->style_id)
   	g_signal_handler_disconnect (plugin, pd->style_id);
 
   pd->style_id = 0;
-  g_free( pd->sd->screenshot_dir );
-  g_free( pd->sd );
-  g_free( pd );
+  g_free (pd->sd->screenshot_dir);
+  g_free (pd->sd);
+  g_free (pd);
 }
 
+
+
+/* Take the screenshot when the button is clicked.
+button: the panel button.
+pd: the PluginData storing the options for taking the screenshot.
+*/
 static void
-button_clicked(GtkWidget * button, PluginData * pd)
+button_clicked (GtkWidget *button, PluginData *pd)
 {
-  GdkPixbuf * screenshot;
+  GdkPixbuf *screenshot;
     
 	/* Make the button unclickable so that the user does not press it while 
 	another screenshot is in progress */
-	gtk_widget_set_sensitive(GTK_WIDGET ( pd->button ), FALSE);
+	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), FALSE);
 
   /* Get the screenshot */
-	screenshot = take_screenshot( pd->sd );
+	screenshot = take_screenshot (pd->sd);
 
-  save_screenshot(screenshot, pd->sd);
+  save_screenshot (screenshot, pd->sd);
   
-	gtk_widget_set_sensitive(GTK_WIDGET ( pd->button ), TRUE);
+	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
+	
+	g_object_unref (screenshot);
 }
 
+
+
+/* Set the style of the panel plugin.
+plugin: a XfcePanelPlugin (a screenshooter one).
+pd: the associated PluginData.
+*/
 static void
 screenshot_style_set (XfcePanelPlugin *plugin, gpointer ignored,
                        PluginData *pd)
@@ -113,6 +163,12 @@ screenshot_style_set (XfcePanelPlugin *plugin, gpointer ignored,
   screenshot_set_size (plugin, xfce_panel_plugin_get_size (plugin), pd);
 }
 
+
+
+/* Read the rc file associated to the panel plugin and store the options in pd.
+plugin: a XfcePanelPlugin (a screenshooter one).
+pd: the associated PluginData.
+*/
 static void
 screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
@@ -123,11 +179,12 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
   gint show_save_dialog = 1;
   gchar *screenshot_dir = g_strdup (xfce_get_homedir ());
 
+  /* If there is an rc file, we read it */
   if ( (file = xfce_panel_plugin_lookup_rc_file (plugin) ) != NULL)
   {
       rc = xfce_rc_simple_open (file, TRUE);
 
-      if ( rc != NULL )
+      if ( rc != NULL)
       {
           screenshot_delay = xfce_rc_read_int_entry (rc, "screenshot_delay", 0);
           whole_screen = xfce_rc_read_int_entry (rc, "whole_screen", 1);
@@ -142,26 +199,33 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
       g_free (file);
   }
   
+  /* And set the pd values */
   pd->sd->screenshot_delay = screenshot_delay;
   pd->sd->whole_screen = whole_screen;
   pd->sd->show_save_dialog = show_save_dialog;
   pd->sd->screenshot_dir = screenshot_dir;
 }
 
+
+
+/* Write the pd options in the rc file associated to plugin
+plugin: a XfcePanelPlugin (a screenshooter one).
+pd: the associated PluginData.
+*/
 static void
 screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
   char *file;
   XfceRc *rc;
 
-  if ( !(file = xfce_panel_plugin_save_location (plugin, TRUE)) )
-      return;
+  if (!(file = xfce_panel_plugin_save_location (plugin, TRUE)))
+    return;
 
   rc = xfce_rc_simple_open (file, FALSE);
   g_free (file);
 
-  if ( !rc )
-      return;
+  if (!rc)
+    return;
 
   xfce_rc_write_int_entry (rc, "screenshot_delay", pd->sd->screenshot_delay);
   xfce_rc_write_int_entry (rc, "whole_screen", pd->sd->whole_screen);
@@ -171,39 +235,69 @@ screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
   xfce_rc_close (rc);
 }
 
+
+
+/* Callback for save dialog:
+   Get the value of the toggle button and set the save dialog option.
+*/ 
 static void
 show_save_dialog_toggled (GtkToggleButton *tb, PluginData *pd)
 {
-  pd->sd->show_save_dialog = gtk_toggle_button_get_active ( tb );
+  pd->sd->show_save_dialog = gtk_toggle_button_get_active (tb);
 }
 
+
+
+/* Callback for whole screen:
+   Get the value of the toggle button and set the whole screen option.
+*/ 
 static void
 whole_screen_toggled (GtkToggleButton *tb, PluginData *pd)
 {
-  pd->sd->whole_screen = gtk_toggle_button_get_active ( tb );
+  pd->sd->whole_screen = gtk_toggle_button_get_active (tb);
 }
 
-/* If active window is chosen, we set whole_screen to false */
+
+
+/* Callback for active window:
+   Get the value of the toggle button and set the whole screen option.
+*/ 
 static void
 active_window_toggled (GtkToggleButton *tb, PluginData *pd)
 {
-  pd->sd->whole_screen = !gtk_toggle_button_get_active ( tb );
+  pd->sd->whole_screen = !gtk_toggle_button_get_active (tb);
 }
 
+
+
+/* Callback for delay:
+   Get the value of the toggle button and set the delay option.
+*/ 
 static void
-screenshot_delay_spinner_changed(GtkWidget * spinner, PluginData *pd)
+screenshot_delay_spinner_changed(GtkWidget *spinner, PluginData *pd)
 {
   pd->sd->screenshot_delay = 
     gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
 }
 
+
+
+/* Callback for default folder:
+   Get the value of the toggle button and set the default folder option.
+*/ 
 static void
-cb_default_folder (GtkWidget * chooser, PluginData *pd)
+cb_default_folder (GtkWidget *chooser, PluginData *pd)
 {
   pd->sd->screenshot_dir = 
     gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
 }
 
+
+
+/* Callback for dialog response:
+   Update the tooltips if using gtk >= 2.12.
+   Unblock the plugin contextual menu.
+   Save the options in the rc file.*/
 static void
 screenshot_dialog_response (GtkWidget *dlg, int reponse,
                             PluginData *pd)
@@ -212,23 +306,28 @@ screenshot_dialog_response (GtkWidget *dlg, int reponse,
 
   gtk_widget_destroy (dlg);
   
+  /* Update tooltips according to the chosen option */
   #if GTK_CHECK_VERSION(2,12,0)
   if (pd->sd->whole_screen)
   {
-    gtk_widget_set_tooltip_text (GTK_WIDGET( pd->button ),
-                                _("Take a screenshot of desktop"));
+    gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
+                                 _("Take a screenshot of desktop"));
   }
   else
   {
-    gtk_widget_set_tooltip_text (GTK_WIDGET( pd->button ),
-                                _("Take a screenshot of the active window"));
+    gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
+                                 _("Take a screenshot of the active window"));
   }
   #endif
-    
+  
+  /* Unblock the menu and save options */
   xfce_panel_plugin_unblock_menu (pd->plugin);
   screenshot_write_rc_file (pd->plugin, pd);
 }
 
+
+
+/* Properties dialog to set the plugin options */
 static void
 screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
 {
@@ -237,7 +336,9 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   GtkWidget *save_button, *desktop_button, *active_window_button;
   GtkWidget *dir_chooser, *default_save_label, *delay_label;
   GtkWidget *screenshot_delay_spinner;
-
+  
+  /* Block the menu to prevent the user from launching several dialogs at
+  the same time */
   xfce_panel_plugin_block_menu (plugin);
 
 	/* Create the dialog */
@@ -287,7 +388,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
                     pd);
                     
   active_window_button = 
-    gtk_radio_button_new_with_mnemonic (gtk_radio_button_get_group (GTK_RADIO_BUTTON (desktop_button) ), 
+    gtk_radio_button_new_with_mnemonic (gtk_radio_button_get_group (GTK_RADIO_BUTTON (desktop_button)), 
                                         _("Take a screenshot of the active window"));
   gtk_widget_show (active_window_button);
   gtk_box_pack_start (GTK_BOX (modes_box), active_window_button, FALSE, FALSE, 0);
@@ -318,8 +419,8 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   
   /* Default save location */          
   default_save_label = gtk_label_new ( "" );
-  gtk_label_set_markup ( GTK_LABEL (default_save_label),
-	                       _("<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"));
+  gtk_label_set_markup (GTK_LABEL (default_save_label),
+	                      _("<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"));
 	gtk_misc_set_alignment (GTK_MISC (default_save_label), 0, 0);
   gtk_widget_show (default_save_label);
   gtk_container_add (GTK_CONTAINER (options_box), default_save_label);
@@ -343,29 +444,33 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   gtk_container_add (GTK_CONTAINER (options_box), delay_label);
   
   delay_box = gtk_hbox_new(FALSE, 8);
-  gtk_widget_show(delay_box);
+  gtk_widget_show (delay_box);
   gtk_box_pack_start (GTK_BOX (options_box), delay_box, FALSE, FALSE, 0);
 
   screenshot_delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
-  gtk_spin_button_set_value(GTK_SPIN_BUTTON( screenshot_delay_spinner ), 
-                            pd->sd->screenshot_delay);
-  gtk_widget_show(screenshot_delay_spinner);
+  gtk_spin_button_set_value (GTK_SPIN_BUTTON (screenshot_delay_spinner), 
+                             pd->sd->screenshot_delay);
+  gtk_widget_show (screenshot_delay_spinner);
   gtk_box_pack_start (GTK_BOX (delay_box), screenshot_delay_spinner, FALSE, 
                       FALSE, 0);
 
   label2 = gtk_label_new_with_mnemonic(_("seconds"));
-  gtk_widget_show(label2);
+  gtk_widget_show (label2);
   gtk_box_pack_start (GTK_BOX (delay_box), label2, FALSE, FALSE, 0);
 
-  g_signal_connect(screenshot_delay_spinner, "value-changed",
-                      G_CALLBACK(screenshot_delay_spinner_changed), pd);
+  g_signal_connect (screenshot_delay_spinner, "value-changed",
+                    G_CALLBACK (screenshot_delay_spinner_changed), pd);
 
   gtk_widget_show (dlg);
 }
 
+
+
+/* Create the plugin button */
 static void
-screenshot_construct (XfcePanelPlugin * plugin)
+screenshot_construct (XfcePanelPlugin *plugin)
 {
+  /* Initialise the data structs */
   PluginData *pd = g_new0 (PluginData, 1);
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
 
@@ -375,14 +480,17 @@ screenshot_construct (XfcePanelPlugin * plugin)
 
   pd->plugin = plugin;
 
+  /* Read the options */
   screenshot_read_rc_file (plugin, pd);
-
+  
+  /* Create the panel button */
   pd->button = xfce_create_panel_button ();
 
   pd->image = gtk_image_new ();
 
   gtk_container_add (GTK_CONTAINER (pd->button), GTK_WIDGET (pd->image));
   
+  /* Set the tooltips if available */
   #if GTK_CHECK_VERSION(2,12,0)
   if ( pd->sd->whole_screen )
   {
@@ -395,12 +503,13 @@ screenshot_construct (XfcePanelPlugin * plugin)
                                  _("Take a screenshot of the active window"));
   }
   #endif
-
+    
   gtk_widget_show_all (pd->button);
   
   gtk_container_add (GTK_CONTAINER (plugin), pd->button);
   xfce_panel_plugin_add_action_widget (plugin, pd->button);
-
+  
+  /* Set the callbacks */
   g_signal_connect (pd->button, "clicked",
                     G_CALLBACK (button_clicked), pd);
 

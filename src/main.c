@@ -23,13 +23,22 @@
 
 #include "screenshooter-utils.h"
 
+
+
+/* Set default values for cli args */
 gboolean version = FALSE;
 gboolean window = FALSE;
 gboolean no_save_dialog = FALSE;
 gboolean preferences = FALSE;
-gchar * screenshot_dir;
+gchar *screenshot_dir;
 gint delay = 0;
 
+
+
+/* Set cli options. The -p option creates a conf file named xfce4-screenshooter 
+   in ~/.config/xfce4/. This file only contains one entry, the name of the 
+   default save folder. 
+*/
 static GOptionEntry entries[] =
 {
     {    "version", 'v', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
@@ -60,126 +69,150 @@ static GOptionEntry entries[] =
     { NULL }
 };
 
+
+
 int main(int argc, char **argv)
 {
   GError *cli_error = NULL;
-  GdkPixbuf * screenshot;
-  ScreenshotData * sd = g_new0 (ScreenshotData, 1);
+  GdkPixbuf *screenshot;
+  ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   XfceRc *rc;
-  gchar * rc_file;
-
-  rc_file = g_build_filename( xfce_get_homedir(), ".config", "xfce4", 
+  gchar *rc_file;
+  
+  /* Get the path to the conf file */
+  rc_file = g_build_filename (xfce_get_homedir(), ".config", "xfce4", 
                               "xfce4-screenshooter", NULL);
-
-  if ( g_file_test(rc_file, G_FILE_TEST_EXISTS) )
-  {
-    rc = xfce_rc_simple_open (rc_file, TRUE);
-    screenshot_dir = g_strdup ( xfce_rc_read_entry (rc, "screenshot_dir", 
-                                xfce_get_homedir () ) );
-    sd->screenshot_dir = screenshot_dir;
-    xfce_rc_close (rc);
-  }
-  else
-  {
-    screenshot_dir = g_strdup( xfce_get_homedir () );
-    sd->screenshot_dir = screenshot_dir;
-  }
-
-  xfce_textdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-    
-  if (!gtk_init_with_args(&argc, &argv, _(""), entries, PACKAGE, &cli_error))
-  {
-    if (cli_error != NULL)
+  
+  /* If the file exists, we parse it to get the default save folder. Else we use
+  the home dir. */
+  if (g_file_test (rc_file, G_FILE_TEST_EXISTS))
     {
-      g_print (_("%s: %s\nTry %s --help to see a full list of available command line options.\n"), 
-               PACKAGE, cli_error->message, PACKAGE_NAME);
-      g_error_free (cli_error);
-      return 1;
+      rc = xfce_rc_simple_open (rc_file, TRUE);
+      screenshot_dir = g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", 
+                               xfce_get_homedir ()));
+      sd->screenshot_dir = screenshot_dir;
+      xfce_rc_close (rc);
     }
-  }
+  else
+    {
+      screenshot_dir = g_strdup (xfce_get_homedir ());
+      sd->screenshot_dir = screenshot_dir;
+    }
+
+  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
   
+  /* Print a message to advise to use help when a non existing cli option is
+  passed to the executable. */  
+  if (!gtk_init_with_args(&argc, &argv, _(""), entries, PACKAGE, &cli_error))
+    {
+      if (cli_error != NULL)
+        {
+          g_print (_("%s: %s\nTry %s --help to see a full list of available command line options.\n"), 
+                   PACKAGE, cli_error->message, PACKAGE_NAME);
+          g_error_free (cli_error);
+          return 1;
+        }
+    }
+  
+  /* Just print the version if we are in version mode */
   if (version)
-  {
-    g_print("%s\n", PACKAGE_STRING);
-    return 0;
-  }
+    {
+      g_print ("%s\n", PACKAGE_STRING);
+      return 0;
+    }
   
+  /* If -w is given to the executable, grab the active window, else just grab
+  the desktop.*/
   if (window)
-  {
-    sd->whole_screen = 0;    
-  }
+    {
+      sd->whole_screen = 0;    
+    }
   else
-  {
-    sd->whole_screen = 1;
-  }
+    {
+      sd->whole_screen = 1;
+    }
   
+  /* Wether to show the save dialog allowing to choose a filename and a save 
+  location */
   if (no_save_dialog)
-  {
-    sd->show_save_dialog = 0;
-  }
+    {
+      sd->show_save_dialog = 0;
+    }
   else
-  {
-    sd->show_save_dialog = 1;
-  }
+    {
+      sd->show_save_dialog = 1;
+    }
 
   sd->screenshot_delay = delay;
   
-  if ( g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR) )
-  {
-    if ( g_path_is_absolute ( screenshot_dir ) )
-    { 
-      sd->screenshot_dir = screenshot_dir;
-    }
-    else
+  /* Verify that the user gave a valid directory name */
+  if (g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR))
     {
-      screenshot_dir = g_build_filename(g_get_current_dir(), screenshot_dir, NULL);
-      sd->screenshot_dir = screenshot_dir;
+    /* Check if the path is absolute, if not make it absolute */
+      if (g_path_is_absolute (screenshot_dir))
+        { 
+          sd->screenshot_dir = screenshot_dir;
+        }
+    else
+      {
+        screenshot_dir = 
+          g_build_filename (g_get_current_dir (), screenshot_dir, NULL);
+        sd->screenshot_dir = screenshot_dir;
+      }
     }
-  }
   else
-  {
-    g_warning ("%s is not a valid directory, the default directory will be used.", screenshot_dir);
-  }
+    {
+      g_warning ("%s is not a valid directory, the default directory will be used.", 
+                 screenshot_dir);
+    }
   
-  if ( !preferences )
-  {
-    screenshot = take_screenshot( sd );
-    save_screenshot (screenshot, sd); 
-  }
+  /* If -p is given, show the preferences dialog, else just take the screenshots
+  with the given options */
+  if (!preferences)
+    {
+      screenshot = take_screenshot (sd);
+      save_screenshot (screenshot, sd);
+    
+      g_object_unref (screenshot);
+    }
   else
-  {
-    GtkWidget * chooser;
-    gint dialog_response;
-    gchar * dir;
-
-    dir = screenshot_dir;
-
-    chooser = gtk_file_chooser_dialog_new ( _("Default save folder"),
-                                          NULL,
-                                          GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-                                          GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                          GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
-                                          NULL);
-    gtk_dialog_set_default_response (GTK_DIALOG ( chooser ), GTK_RESPONSE_ACCEPT);
-    gtk_file_chooser_set_current_folder( GTK_FILE_CHOOSER ( chooser ), dir);
-
-    dialog_response = gtk_dialog_run( GTK_DIALOG ( chooser ) );
-
-    if ( dialog_response == GTK_RESPONSE_ACCEPT )
-	  {
-	    dir = gtk_file_chooser_get_filename ( GTK_FILE_CHOOSER ( chooser ) );
+    {
+      GtkWidget * chooser;
+      gint dialog_response;
+      gchar * dir;
       
-      rc = xfce_rc_simple_open (rc_file, FALSE);
-      xfce_rc_write_entry (rc, "screenshot_dir", dir);
-      xfce_rc_close ( rc );
+      /* The preferences dialog is a plain gtk_file_chooser, we just get the
+      folder the user selected and write it in the conf file*/
+      dir = screenshot_dir;
+
+      chooser = 
+        gtk_file_chooser_dialog_new (_("Default save folder"),
+                                     NULL,
+                                     GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+                                     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                     GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+                                     NULL);
+      gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
+      gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), dir);
+
+      dialog_response = gtk_dialog_run(GTK_DIALOG (chooser));
+
+      if (dialog_response == GTK_RESPONSE_ACCEPT)
+	      {
+	        dir = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
       
-      g_free( dir );
-	  }
-    gtk_widget_destroy( GTK_WIDGET ( chooser ) );
-  }
+          rc = xfce_rc_simple_open (rc_file, FALSE);
+          xfce_rc_write_entry (rc, "screenshot_dir", dir);
+          xfce_rc_close (rc);
+      
+          g_free (dir);
+	      }
+      gtk_widget_destroy (GTK_WIDGET (chooser));
+    }
   
-  g_free( sd->screenshot_dir );
-  g_free ( sd );
-  g_free( rc_file );
+  g_free (sd->screenshot_dir);
+  g_free (sd);
+  g_free (rc_file);
+  
   return 0;
 }

@@ -29,6 +29,7 @@
 
 #include <unistd.h>
 
+/* Struct to store the screenshot options */
 typedef struct
 {
   gint whole_screen;
@@ -39,5 +40,5 @@ typedef struct
 }
 ScreenshotData;
 
-GdkPixbuf *take_screenshot (ScreenshotData * sd);
-void save_screenshot (GdkPixbuf * screenshot, ScreenshotData * sd);
+GdkPixbuf *take_screenshot (ScreenshotData *sd);
+void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd);
