@@ -177,7 +177,7 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
   gint screenshot_delay = 0;
   gint whole_screen = 1;
   gint show_save_dialog = 1;
-  gchar *screenshot_dir = g_strdup (xfce_get_homedir ());
+  gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
 
   /* If there is an rc file, we read it */
   if ( (file = xfce_panel_plugin_lookup_rc_file (plugin) ) != NULL)
@@ -192,7 +192,7 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
           screenshot_dir = 
             g_strdup (xfce_rc_read_entry (rc, 
                                           "screenshot_dir", 
-                                          xfce_get_homedir ()));
+                                          DEFAULT_SAVE_DIRECTORY));
           xfce_rc_close (rc);
       }
       

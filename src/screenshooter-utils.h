@@ -29,6 +29,8 @@
 
 #include <unistd.h>
 
+#define DEFAULT_SAVE_DIRECTORY xfce_get_homedir ()
+
 /* Struct to store the screenshot options */
 typedef struct
 {

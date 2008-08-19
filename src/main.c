@@ -89,13 +89,13 @@ int main(int argc, char **argv)
     {
       rc = xfce_rc_simple_open (rc_file, TRUE);
       screenshot_dir = g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", 
-                               xfce_get_homedir ()));
+                               DEFAULT_SAVE_DIRECTORY));
       sd->screenshot_dir = screenshot_dir;
       xfce_rc_close (rc);
     }
   else
     {
-      screenshot_dir = g_strdup (xfce_get_homedir ());
+      screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
       sd->screenshot_dir = screenshot_dir;
     }
 
