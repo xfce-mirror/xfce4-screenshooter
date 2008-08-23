@@ -22,7 +22,7 @@
 /* Prototypes */
 static gchar *generate_filename_for_uri(char *uri);
 static Window find_toplevel_window (Window xid);
-
+static void cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data);
 
 
 /* Borrowed from gnome-screenshot */
@@ -89,6 +89,30 @@ static gchar *generate_filename_for_uri(char *uri)
   while (g_access (g_build_filename (uri, file_name, NULL), F_OK) == 0);
     
   return file_name;
+}
+
+
+
+/* Generate a correct file name when setting a folder in chooser
+GtkFileChooser *chooser: the file chooser we are using.
+gpointer user_data: not used here.
+*/
+static void
+cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data)
+{
+  gchar *current_folder = 
+    gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER (chooser));
+  
+  if (current_folder)
+    {
+      gchar *new_filename = generate_filename_for_uri (current_folder);
+      
+      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), 
+                                         new_filename);
+      g_free (new_filename);
+    }
+  
+  g_free (current_folder);
 }
 
 
@@ -203,6 +227,11 @@ void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd)
                                  GDK_INTERP_BILINEAR);
       gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
       g_object_unref (thumbnail);
+      
+      /* We the user opens a folder in the fine_chooser, we set a valid
+      filename */
+      g_signal_connect (G_OBJECT (chooser), "current-folder-changed", 
+                        G_CALLBACK(cb_current_folder_changed), NULL);
     
       dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
 	  
