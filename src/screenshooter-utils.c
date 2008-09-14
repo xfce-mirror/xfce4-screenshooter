@@ -209,6 +209,7 @@ void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd)
                                      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
                                      GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
                                      NULL);
+      gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
       gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), 
                                                       TRUE);
       gtk_dialog_set_default_response (GTK_DIALOG (chooser), 

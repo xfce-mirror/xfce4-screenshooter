@@ -192,6 +192,7 @@ int main(int argc, char **argv)
                                      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
                                      GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
                                      NULL);
+      gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
       gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
       gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), dir);
 
