@@ -55,6 +55,9 @@ XDT_FEATURE_DEBUG()
 
 AC_OUTPUT([
 Makefile
+icons/Makefile
+icons/48x48/Makefile
+icons/scalable/Makefile
 src/Makefile
 po/Makefile.in
 ])

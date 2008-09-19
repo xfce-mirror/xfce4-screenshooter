@@ -1,6 +1,8 @@
 === Version x.x.x ===
 
   * Use applets-screenshooter icon for preferences dialog and save dialog.
+  * Add some default icons taken from the Rodent icon theme to make sure the
+  applet has an icon.
 
 === Version 1.3.2 ===
   * BUGFIX: plug some stupid leaks.

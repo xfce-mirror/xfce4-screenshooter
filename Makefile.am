@@ -1,6 +1,6 @@
 @SET_MAKE@
 
-SUBDIRS = src po
+SUBDIRS = src po icons
 
 distclean-local:
 	rm -rf *.cache *~

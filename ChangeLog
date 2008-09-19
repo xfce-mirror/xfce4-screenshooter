@@ -1,3 +1,13 @@
+2008-09-19 jeromeg
+
+  * icons/*: add some default icons for the applet taken from the Rodent icon
+    theme.
+  * configure.ac.in: updated to generate makefiles for icons.
+  * AUTHORS: add credit to the Rodent icon theme, not sure it's the right place
+    to do so, but it's better than nothing.
+  * NEWS: updated.
+    
+
 2008-09-14 jeromeg
 
   * src/{main.c, screenshooter-utils.c}: Use applets-screenshooter icon for 
