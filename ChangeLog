@@ -1,3 +1,11 @@
+2008-19-20 jeromeg
+
+  * src/main.c:
+    - (main) plug some leaks with the dir and screenshot_dir.
+    - (main) don't use screenshot_dir to store the dirname, it should be done
+      with sd->screenshot_dir.
+  * NEWS: updated.
+
 2008-09-19 jeromeg
 
   * icons/*: add some default icons for the applet taken from the Rodent icon

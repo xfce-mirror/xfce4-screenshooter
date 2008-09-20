@@ -88,17 +88,15 @@ int main(int argc, char **argv)
   if (g_file_test (rc_file, G_FILE_TEST_EXISTS))
     {
       rc = xfce_rc_simple_open (rc_file, TRUE);
-      screenshot_dir = g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", 
-                               DEFAULT_SAVE_DIRECTORY));
-      sd->screenshot_dir = screenshot_dir;
+      sd->screenshot_dir = g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", 
+                                     DEFAULT_SAVE_DIRECTORY));
       xfce_rc_close (rc);
     }
   else
     {
-      screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
-      sd->screenshot_dir = screenshot_dir;
+      sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
     }
-
+  
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
   
   /* Print a message to advise to use help when a non existing cli option is
@@ -145,25 +143,29 @@ int main(int argc, char **argv)
 
   sd->screenshot_delay = delay;
   
-  /* Verify that the user gave a valid directory name */
-  if (g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR))
+  /* If the user gave a directory name, verify that it is valid */
+  if (screenshot_dir != NULL)  
     {
-    /* Check if the path is absolute, if not make it absolute */
-      if (g_path_is_absolute (screenshot_dir))
-        { 
-          sd->screenshot_dir = screenshot_dir;
+      if (g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR))
+        {
+          /* Check if the path is absolute, if not make it absolute */
+          if (g_path_is_absolute (screenshot_dir))
+            { 
+              sd->screenshot_dir = screenshot_dir;
+            }
+          else
+            {
+              sd->screenshot_dir = 
+              g_build_filename (g_get_current_dir (), screenshot_dir, NULL);
+              g_free (screenshot_dir);
+            }
         }
-    else
-      {
-        screenshot_dir = 
-          g_build_filename (g_get_current_dir (), screenshot_dir, NULL);
-        sd->screenshot_dir = screenshot_dir;
-      }
-    }
-  else
-    {
-      g_warning ("%s is not a valid directory, the default directory will be used.", 
-                 screenshot_dir);
+      else
+        {
+          g_warning ("%s is not a valid directory, the default directory will be used.", 
+                     screenshot_dir);
+          g_free (screenshot_dir);
+        }
     }
   
   /* If -p is given, show the preferences dialog, else just take the screenshots
@@ -183,8 +185,7 @@ int main(int argc, char **argv)
       
       /* The preferences dialog is a plain gtk_file_chooser, we just get the
       folder the user selected and write it in the conf file*/
-      dir = screenshot_dir;
-
+      
       chooser = 
         gtk_file_chooser_dialog_new (_("Default save folder"),
                                      NULL,
@@ -194,14 +195,15 @@ int main(int argc, char **argv)
                                      NULL);
       gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
       gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
-      gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), dir);
-
+      gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), 
+                                           sd->screenshot_dir);
+      
       dialog_response = gtk_dialog_run(GTK_DIALOG (chooser));
 
       if (dialog_response == GTK_RESPONSE_ACCEPT)
 	      {
 	        dir = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-      
+          
           rc = xfce_rc_simple_open (rc_file, FALSE);
           xfce_rc_write_entry (rc, "screenshot_dir", dir);
           xfce_rc_close (rc);
@@ -214,6 +216,6 @@ int main(int argc, char **argv)
   g_free (sd->screenshot_dir);
   g_free (sd);
   g_free (rc_file);
-  
+    
   return 0;
 }
