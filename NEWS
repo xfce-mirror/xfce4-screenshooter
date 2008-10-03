@@ -4,6 +4,8 @@
   * Add some default icons taken from the Rodent icon theme to make sure the
   applet has an icon.
   * Plug some remaining leaks and remove some useless code in main.
+  * Fix a crash when using the screenshooter to take a screenshot of the desktop
+  when xfdesktop is set up not to display any icons.
   
 === Version 1.3.2 ===
   * BUGFIX: plug some stupid leaks.

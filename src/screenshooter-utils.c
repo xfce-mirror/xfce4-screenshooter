@@ -152,7 +152,8 @@ GdkPixbuf *take_screenshot (ScreenshotData *sd)
       
       /* If we are supposed to take a screenshot of the active window, and if 
       the active window is the desktop background, grab the whole screen.*/      
-      if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
+      if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP ||
+          window == NULL)
         {
           window = gdk_get_default_root_window ();
           needs_unref = FALSE;

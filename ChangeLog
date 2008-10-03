@@ -1,4 +1,11 @@
-2008-19-20 jeromeg
+2008-10-02 jeromeg
+
+  * src/screenshooter-utils.c: in (take_screenshot), don't crash when taking a
+  screenshot of of the desktop when xfdesktop does not display desktop icons,
+  null pointer...
+  * NEWS: updated.
+
+2008-09-20 jeromeg
 
   * src/main.c:
     - (main) plug some leaks with the dir and screenshot_dir.
