@@ -72,7 +72,7 @@ static void screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd);
 static void show_save_dialog_toggled (GtkToggleButton *tb, PluginData *pd);
 static void whole_screen_toggled (GtkToggleButton *tb, PluginData *pd);
 static void active_window_toggled (GtkToggleButton *tb, PluginData *pd);
-static void screenshot_delay_spinner_changed (GtkWidget *spinner, 
+static void cb_delay_spinner_changed (GtkWidget *spinner, 
                                               PluginData *pd);
 static void cb_default_folder (GtkWidget *chooser, PluginData *pd);
 static void screenshot_dialog_response (GtkWidget *dlg, int reponse,
@@ -141,9 +141,10 @@ button_clicked (GtkWidget *button, PluginData *pd)
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), FALSE);
 
   /* Get the screenshot */
-	screenshot = take_screenshot (pd->sd);
+	screenshot = take_screenshot (pd->sd->mode, pd->sd->delay);
 
-  save_screenshot (screenshot, pd->sd);
+  save_screenshot (screenshot, pd->sd->show_save_dialog, 
+                   pd->sd->screenshot_dir);
   
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
 	
@@ -174,8 +175,8 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
   char *file;
   XfceRc *rc;
-  gint screenshot_delay = 0;
-  gint whole_screen = 1;
+  gint delay = 0;
+  gint mode = FULLSCREEN;
   gint show_save_dialog = 1;
   gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
 
@@ -186,8 +187,8 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 
       if ( rc != NULL)
       {
-          screenshot_delay = xfce_rc_read_int_entry (rc, "screenshot_delay", 0);
-          whole_screen = xfce_rc_read_int_entry (rc, "whole_screen", 1);
+          delay = xfce_rc_read_int_entry (rc, "delay", 0);
+          mode = xfce_rc_read_int_entry (rc, "mode", FULLSCREEN);
           show_save_dialog = xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
           screenshot_dir = 
             g_strdup (xfce_rc_read_entry (rc, 
@@ -200,8 +201,8 @@ screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
   }
   
   /* And set the pd values */
-  pd->sd->screenshot_delay = screenshot_delay;
-  pd->sd->whole_screen = whole_screen;
+  pd->sd->delay = delay;
+  pd->sd->mode = mode;
   pd->sd->show_save_dialog = show_save_dialog;
   pd->sd->screenshot_dir = screenshot_dir;
 }
@@ -227,8 +228,8 @@ screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
   if (!rc)
     return;
 
-  xfce_rc_write_int_entry (rc, "screenshot_delay", pd->sd->screenshot_delay);
-  xfce_rc_write_int_entry (rc, "whole_screen", pd->sd->whole_screen);
+  xfce_rc_write_int_entry (rc, "delay", pd->sd->delay);
+  xfce_rc_write_int_entry (rc, "mode", pd->sd->mode);
   xfce_rc_write_int_entry (rc, "show_save_dialog", pd->sd->show_save_dialog);
   xfce_rc_write_entry (rc, "screenshot_dir", pd->sd->screenshot_dir);
 
@@ -254,7 +255,14 @@ show_save_dialog_toggled (GtkToggleButton *tb, PluginData *pd)
 static void
 whole_screen_toggled (GtkToggleButton *tb, PluginData *pd)
 {
-  pd->sd->whole_screen = gtk_toggle_button_get_active (tb);
+  if (gtk_toggle_button_get_active (tb))
+    {
+      pd->sd->mode = FULLSCREEN;
+    }
+  else
+    {
+      pd->sd->mode = ACTIVE_WINDOW;
+    }
 }
 
 
@@ -265,7 +273,14 @@ whole_screen_toggled (GtkToggleButton *tb, PluginData *pd)
 static void
 active_window_toggled (GtkToggleButton *tb, PluginData *pd)
 {
-  pd->sd->whole_screen = !gtk_toggle_button_get_active (tb);
+  if (gtk_toggle_button_get_active (tb))
+    {
+      pd->sd->mode = ACTIVE_WINDOW;
+    }
+  else
+    {
+      pd->sd->mode = FULLSCREEN;
+    }
 }
 
 
@@ -274,9 +289,9 @@ active_window_toggled (GtkToggleButton *tb, PluginData *pd)
    Get the value of the toggle button and set the delay option.
 */ 
 static void
-screenshot_delay_spinner_changed(GtkWidget *spinner, PluginData *pd)
+cb_delay_spinner_changed(GtkWidget *spinner, PluginData *pd)
 {
-  pd->sd->screenshot_delay = 
+  pd->sd->delay = 
     gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
 }
 
@@ -308,7 +323,7 @@ screenshot_dialog_response (GtkWidget *dlg, int reponse,
   
   /* Update tooltips according to the chosen option */
   #if GTK_CHECK_VERSION(2,12,0)
-  if (pd->sd->whole_screen)
+  if (pd->sd->mode == FULLSCREEN)
   {
     gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
                                  _("Take a screenshot of desktop"));
@@ -335,7 +350,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   GtkWidget *options_frame, *modes_frame, *delay_box, *options_box, *modes_box;
   GtkWidget *save_button, *desktop_button, *active_window_button;
   GtkWidget *dir_chooser, *default_save_label, *delay_label;
-  GtkWidget *screenshot_delay_spinner;
+  GtkWidget *delay_spinner;
   
   /* Block the menu to prevent the user from launching several dialogs at
   the same time */
@@ -382,7 +397,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   gtk_widget_show (desktop_button);
   gtk_box_pack_start (GTK_BOX (modes_box), desktop_button, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (desktop_button),
-                                pd->sd->whole_screen);
+                                (pd->sd->mode == FULLSCREEN));
   g_signal_connect (desktop_button, "toggled", 
                     G_CALLBACK (whole_screen_toggled),
                     pd);
@@ -393,7 +408,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   gtk_widget_show (active_window_button);
   gtk_box_pack_start (GTK_BOX (modes_box), active_window_button, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button),
-                                !pd->sd->whole_screen);
+                                (pd->sd->mode == ACTIVE_WINDOW));
   g_signal_connect (active_window_button, "toggled", 
                     G_CALLBACK (active_window_toggled),
                     pd);
@@ -447,19 +462,19 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   gtk_widget_show (delay_box);
   gtk_box_pack_start (GTK_BOX (options_box), delay_box, FALSE, FALSE, 0);
 
-  screenshot_delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
-  gtk_spin_button_set_value (GTK_SPIN_BUTTON (screenshot_delay_spinner), 
-                             pd->sd->screenshot_delay);
-  gtk_widget_show (screenshot_delay_spinner);
-  gtk_box_pack_start (GTK_BOX (delay_box), screenshot_delay_spinner, FALSE, 
+  delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
+  gtk_spin_button_set_value (GTK_SPIN_BUTTON (delay_spinner), 
+                             pd->sd->delay);
+  gtk_widget_show (delay_spinner);
+  gtk_box_pack_start (GTK_BOX (delay_box), delay_spinner, FALSE, 
                       FALSE, 0);
 
   label2 = gtk_label_new_with_mnemonic(_("seconds"));
   gtk_widget_show (label2);
   gtk_box_pack_start (GTK_BOX (delay_box), label2, FALSE, FALSE, 0);
 
-  g_signal_connect (screenshot_delay_spinner, "value-changed",
-                    G_CALLBACK (screenshot_delay_spinner_changed), pd);
+  g_signal_connect (delay_spinner, "value-changed",
+                    G_CALLBACK (cb_delay_spinner_changed), pd);
 
   gtk_widget_show (dlg);
 }
@@ -492,7 +507,7 @@ screenshot_construct (XfcePanelPlugin *plugin)
   
   /* Set the tooltips if available */
   #if GTK_CHECK_VERSION(2,12,0)
-  if ( pd->sd->whole_screen )
+  if (pd->sd->mode == FULLSCREEN)
   {
     gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
                                  _("Take a screenshot of desktop"));

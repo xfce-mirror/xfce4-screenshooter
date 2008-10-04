@@ -31,16 +31,23 @@
 
 #define DEFAULT_SAVE_DIRECTORY xfce_get_homedir ()
 
+enum {
+  MODE_0,
+  FULLSCREEN,
+  ACTIVE_WINDOW,
+};
+
 /* Struct to store the screenshot options */
 typedef struct
 {
-  gint whole_screen;
+  gint mode;
   gint show_save_dialog;
 
-  gint screenshot_delay;
+  gint delay;
   gchar *screenshot_dir;
 }
 ScreenshotData;
 
-GdkPixbuf *take_screenshot (ScreenshotData *sd);
-void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd);
+GdkPixbuf *take_screenshot (gint mode, gint delay);
+void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
+                      gchar * default_dir);

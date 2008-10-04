@@ -1,3 +1,18 @@
+2008-10-04 jeromeg
+
+  * Partially refactor the code:
+    - screenshooter-utils.{c,h}:
+      - simplify some variable names.
+      - use an enum for screenshot modes.
+      - (take_screenshot) and (save_screenshot) do not depend anymore on the
+      backend.
+    - main.c:
+      - updated to use the new functions and structs' variables.
+      - move some code from (main) to (screenshooter_preferences_dialog).
+    - screenshooter-plugin.c:
+      - updated to use the new functions and structs' variables.
+      - use cb_ callbacks names rather than funky ones.
+
 2008-10-02 jeromeg
 
   * src/screenshooter-utils.c: in (take_screenshot), don't crash when taking a

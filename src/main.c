@@ -71,6 +71,46 @@ static GOptionEntry entries[] =
 
 
 
+void screenshooter_preferences_dialog (gchar *rc_file, 
+                                       gchar *current_default_dir)
+{
+  GtkWidget * chooser;
+  gint dialog_response;
+  gchar * dir;
+  XfceRc *rc;
+  
+  /* The preferences dialog is a plain gtk_file_chooser, we just get the
+  folder the user selected and write it in the conf file*/
+  
+  chooser = 
+    gtk_file_chooser_dialog_new (_("Default save folder"),
+                                  NULL,
+                                  GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+                                  GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                  GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+                                  NULL);
+  gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
+  gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
+  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), 
+                                       current_default_dir);
+  
+  dialog_response = gtk_dialog_run(GTK_DIALOG (chooser));
+
+  if (dialog_response == GTK_RESPONSE_ACCEPT)
+    {
+      dir = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
+      
+      rc = xfce_rc_simple_open (rc_file, FALSE);
+      xfce_rc_write_entry (rc, "screenshot_dir", dir);
+      xfce_rc_close (rc);
+  
+      g_free (dir);
+    }
+  gtk_widget_destroy (GTK_WIDGET (chooser));
+}
+
+
+
 int main(int argc, char **argv)
 {
   GError *cli_error = NULL;
@@ -78,6 +118,8 @@ int main(int argc, char **argv)
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   XfceRc *rc;
   gchar *rc_file;
+  
+  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
   
   /* Get the path to the conf file */
   rc_file = g_build_filename (xfce_get_homedir(), ".config", "xfce4", 
@@ -96,9 +138,7 @@ int main(int argc, char **argv)
     {
       sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
     }
-  
-  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-  
+    
   /* Print a message to advise to use help when a non existing cli option is
   passed to the executable. */  
   if (!gtk_init_with_args(&argc, &argv, _(""), entries, PACKAGE, &cli_error))
@@ -123,11 +163,11 @@ int main(int argc, char **argv)
   the desktop.*/
   if (window)
     {
-      sd->whole_screen = 0;    
+      sd->mode = ACTIVE_WINDOW;    
     }
   else
     {
-      sd->whole_screen = 1;
+      sd->mode = FULLSCREEN;
     }
   
   /* Wether to show the save dialog allowing to choose a filename and a save 
@@ -141,7 +181,7 @@ int main(int argc, char **argv)
       sd->show_save_dialog = 1;
     }
 
-  sd->screenshot_delay = delay;
+  sd->delay = delay;
   
   /* If the user gave a directory name, verify that it is valid */
   if (screenshot_dir != NULL)  
@@ -172,45 +212,14 @@ int main(int argc, char **argv)
   with the given options */
   if (!preferences)
     {
-      screenshot = take_screenshot (sd);
-      save_screenshot (screenshot, sd);
+      screenshot = take_screenshot (sd->mode, sd->delay);
+      save_screenshot (screenshot, sd->show_save_dialog, sd->screenshot_dir);
     
       g_object_unref (screenshot);
     }
   else
     {
-      GtkWidget * chooser;
-      gint dialog_response;
-      gchar * dir;
-      
-      /* The preferences dialog is a plain gtk_file_chooser, we just get the
-      folder the user selected and write it in the conf file*/
-      
-      chooser = 
-        gtk_file_chooser_dialog_new (_("Default save folder"),
-                                     NULL,
-                                     GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-                                     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                     GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
-                                     NULL);
-      gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
-      gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
-      gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), 
-                                           sd->screenshot_dir);
-      
-      dialog_response = gtk_dialog_run(GTK_DIALOG (chooser));
-
-      if (dialog_response == GTK_RESPONSE_ACCEPT)
-	      {
-	        dir = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-          
-          rc = xfce_rc_simple_open (rc_file, FALSE);
-          xfce_rc_write_entry (rc, "screenshot_dir", dir);
-          xfce_rc_close (rc);
-      
-          g_free (dir);
-	      }
-      gtk_widget_destroy (GTK_WIDGET (chooser));
+      screenshooter_preferences_dialog (rc_file, sd->screenshot_dir);
     }
   
   g_free (sd->screenshot_dir);

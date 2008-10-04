@@ -125,10 +125,10 @@ cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data)
 *sd: a ScreenshotData struct.
 returns: the screenshot in a *GdkPixbuf.
 */
-GdkPixbuf *take_screenshot (ScreenshotData *sd)
+GdkPixbuf *take_screenshot (gint mode, gint delay)
 {
   GdkPixbuf *screenshot;
-  GdkWindow *window;
+  GdkWindow *window = NULL;
   GdkScreen *screen;
   
   gint width;
@@ -141,12 +141,12 @@ GdkPixbuf *take_screenshot (ScreenshotData *sd)
   screen = gdk_screen_get_default ();
   
   /* Get the window/desktop we want to screenshot*/  
-  if (sd->whole_screen)
+  if (mode == FULLSCREEN)
     {
       window = gdk_get_default_root_window ();
       needs_unref = FALSE;
     } 
-  else 
+  else if (mode == ACTIVE_WINDOW)
     {
       window = gdk_screen_get_active_window (screen);
       
@@ -166,7 +166,7 @@ GdkPixbuf *take_screenshot (ScreenshotData *sd)
     }
   
   /* wait for n=delay seconds */ 
-  sleep (sd->screenshot_delay);
+  sleep (delay);
   
   /* get the size of the part of the screen we want to screenshot */
   gdk_drawable_get_size(window, &width, &height);
@@ -188,7 +188,8 @@ GdkPixbuf *take_screenshot (ScreenshotData *sd)
 /* Saves the screenshot according to the options in sd. 
 *screenshot: a GdkPixbuf containing our screenshot
 *sd: a ScreenshotData struct containing the save options.*/
-void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd)
+void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
+                      gchar * default_dir)
 {
   GdkPixbuf * thumbnail;
   gchar * filename = NULL;
@@ -196,9 +197,9 @@ void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd)
   GtkWidget * chooser;
   gint dialog_response;
 
-  filename = generate_filename_for_uri (sd->screenshot_dir);
+  filename = generate_filename_for_uri (default_dir);
     
-  if (sd->show_save_dialog)
+  if (show_save_dialog)
 	  {
 	    /* If the user wants a save dialog, we run it, and grab the filename 
 	    the user has chosen. */
@@ -216,7 +217,7 @@ void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd)
       gtk_dialog_set_default_response (GTK_DIALOG (chooser), 
                                      GTK_RESPONSE_ACCEPT);
       gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER (chooser), 
-                                        sd->screenshot_dir);
+                                          default_dir);
 
       preview = gtk_image_new ();
   
@@ -249,8 +250,9 @@ void save_screenshot (GdkPixbuf *screenshot, ScreenshotData *sd)
 	else
 	  {    
 	    /* Else, we just save the file in the default folder */
-      filename = g_build_filename (sd->screenshot_dir, filename, NULL);
+      filename = g_build_filename (default_dir, filename, NULL);
 	    gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
 	  }
+
   g_free (filename);
 }
