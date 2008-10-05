@@ -191,10 +191,12 @@ int main(int argc, char **argv)
           /* Check if the path is absolute, if not make it absolute */
           if (g_path_is_absolute (screenshot_dir))
             { 
-              sd->screenshot_dir = screenshot_dir;
+              g_free (sd->screenshot_dir);
+              sd->screenshot_dir = screenshot_dir;              
             }
           else
             {
+              g_free (sd->screenshot_dir);
               sd->screenshot_dir = 
               g_build_filename (g_get_current_dir (), screenshot_dir, NULL);
               g_free (screenshot_dir);

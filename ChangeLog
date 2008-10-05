@@ -1,3 +1,11 @@
+2008-10-05 jeromeg
+
+  * Plug some leaks detected by Gauvain Pocentek:
+    - src/main.c: in (main), free sd->screenshot_dir before setting the new 
+      value from command line.
+    - src/screenshooter-utils.c: in (save_screenshot), free filename before
+      getting the user set filename.
+
 2008-10-04 jeromeg
 
   * Partially refactor the code:

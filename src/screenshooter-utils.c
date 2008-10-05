@@ -240,6 +240,7 @@ void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
 	  
 	    if (dialog_response == GTK_RESPONSE_ACCEPT)
 	      {
+	        g_free (filename);
 	        filename = 
 	          gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser) );
           gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
@@ -249,9 +250,13 @@ void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
 	  }  
 	else
 	  {    
+	    gchar * savename = NULL;
 	    /* Else, we just save the file in the default folder */
-      filename = g_build_filename (default_dir, filename, NULL);
-	    gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
+      
+      savename = g_build_filename (default_dir, filename, NULL);
+	    gdk_pixbuf_save (screenshot, savename, "png", NULL, NULL);
+	    
+	    g_free (savename);
 	  }
 
   g_free (filename);
