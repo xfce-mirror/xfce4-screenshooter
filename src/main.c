@@ -28,6 +28,7 @@
 /* Set default values for cli args */
 gboolean version = FALSE;
 gboolean window = FALSE;
+gboolean fullscreen = FALSE;
 gboolean no_save_dialog = FALSE;
 gboolean preferences = FALSE;
 gchar *screenshot_dir;
@@ -47,6 +48,10 @@ static GOptionEntry entries[] =
     },
     {   "window", 'w', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &window,
         N_("Take a screenshot of the active window"),
+        NULL
+    },
+    {   "fullscreen", 'f', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &fullscreen,
+        N_("Take a screenshot of the desktop"),
         NULL
     },
     {		"delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,
@@ -165,9 +170,13 @@ int main(int argc, char **argv)
     {
       sd->mode = ACTIVE_WINDOW;    
     }
-  else
+  else if (fullscreen)
     {
       sd->mode = FULLSCREEN;
+    }
+  else
+    {
+      sd->mode = 0;
     }
   
   /* Wether to show the save dialog allowing to choose a filename and a save 
@@ -210,16 +219,17 @@ int main(int argc, char **argv)
         }
     }
   
-  /* If -p is given, show the preferences dialog, else just take the screenshots
-  with the given options */
-  if (!preferences)
+  /* If a mode cli option is given, take the screenshot accordingly. */
+  if (sd->mode)
     {
       screenshot = take_screenshot (sd->mode, sd->delay);
       save_screenshot (screenshot, sd->show_save_dialog, sd->screenshot_dir);
     
       g_object_unref (screenshot);
     }
-  else
+  
+  /* If -p is given, show the preferences dialog */
+  if (preferences)
     {
       screenshooter_preferences_dialog (rc_file, sd->screenshot_dir);
     }

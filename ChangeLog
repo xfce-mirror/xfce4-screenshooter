@@ -1,5 +1,13 @@
 2008-10-05 jeromeg
 
+  * NEWS: updated.
+  * src/main.c: add a fullscreen CLI option, the goal is to provide an interface
+    to take a screenshot with chosen option when calling the executable without
+    any cli options.
+  * xfce4-screenshooter.1: add new CLI option.
+
+2008-10-05 jeromeg
+
   * NEWS: updated and fixed identation.
   * configure.ac.in: added the new translations.
 

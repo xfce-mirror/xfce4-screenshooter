@@ -3,12 +3,14 @@
   * Use applets-screenshooter icon for preferences dialog and save dialog.
   * Add some default icons taken from the Rodent icon theme to make sure the
     applet has an icon.
-  * Plug some remaining leaks and remove some useless code in main.
-  * Fix a crash when using the screenshooter to take a screenshot of the desktop
-    when xfdesktop is set up not to display any icons.
+  * BUGFIX: Plug some remaining leaks and remove some useless code in main.
+  * BUGFIX: Fix a crash when using the screenshooter to take a screenshot of the 
+    desktop when xfdesktop is set up not to display any icons.
   * New and updated translations, thanks to the fabulous translation team.
+  * New CLI option to take a screenshot of the desktop.
   
 === Version 1.3.2 ===
+  
   * BUGFIX: plug some stupid leaks.
   * BUGFIX: when the active window is the desktop, instead of returning a
     corrupted snapshot of the background image, return the whole desktop view.
@@ -20,19 +22,22 @@
     the file chooser to set its save location.
 
 === Version 1.3.1 ===
+  
   * BUGFIX: Fix -s switch with relative path.
 
 === Version 1.3.0 ===
+  
   * Code cleanup, remove deprecated code.
   * Reduce code duplication between the executable and the plugin.
   * New CLI option to save screenshots without showing a save dialog.
   * New CLI option to set the save directory.
   * New CLI option to set a default save directory, saved in a rc file.
   * BUGFIX: generate file names correctly, screenshots should now be
-  saved in the correct place, whatever mode is being used.
+    saved in the correct place, whatever mode is being used.
   * A lot of updated/new translations.
 
 === Version 1.2.0 ===
+  
   * Fix gcc warnings.
   * Add manpage taken from Debian package.
   * Cleaned the preferences dialog to make it look like the ones of
@@ -43,6 +48,7 @@
   * Some others code cleanups.
 
 === Version 1.1.0 ===
+  
   * Delay now works.
   * Canceling save now works.
   * Executable to take screenshots from cli or with a keybinding.
