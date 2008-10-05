@@ -1,5 +1,10 @@
 2008-10-05 jeromeg
 
+  * NEWS: updated and fixed identation.
+  * configure.ac.in: added the new translations.
+
+2008-10-05 jeromeg
+
   * Plug some leaks detected by Gauvain Pocentek:
     - src/main.c: in (main), free sd->screenshot_dir before setting the new 
       value from command line.
