@@ -1,3 +1,20 @@
+2008-10-12 jeromeg
+
+  * src/screenshooter-dialogs.{c,h}:
+    - new file to handle the different dialogs.
+  * src/main.c:
+    - include screenshooter-dialogs.h
+    - (main) move the dialog for the preferred directory to 
+      screenshooter-dialogs.c
+    - (main) if no CLI option is given, show a dialog to set options and take a
+      screenshot.
+  * src/screenshooter-plugin.c: fix indentation of a function.
+  * configure.ac.in: 
+    - hardcode the dependence on libxfcegui4.
+    - add japanese to the list of translations.
+  * src/Makefile.am: add libxfcegui4 flags.
+  * NEWS: updated.  
+
 2008-10-05 jeromeg
 
   * NEWS: updated.

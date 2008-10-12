@@ -289,7 +289,7 @@ active_window_toggled (GtkToggleButton *tb, PluginData *pd)
    Get the value of the toggle button and set the delay option.
 */ 
 static void
-cb_delay_spinner_changed(GtkWidget *spinner, PluginData *pd)
+cb_delay_spinner_changed (GtkWidget *spinner, PluginData *pd)
 {
   pd->sd->delay = 
     gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));

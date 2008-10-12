@@ -21,7 +21,7 @@
 #include <config.h>
 #endif
 
-#include "screenshooter-utils.h"
+#include "screenshooter-dialogs.h"
 
 
 
@@ -73,46 +73,6 @@ static GOptionEntry entries[] =
     },
     { NULL }
 };
-
-
-
-void screenshooter_preferences_dialog (gchar *rc_file, 
-                                       gchar *current_default_dir)
-{
-  GtkWidget * chooser;
-  gint dialog_response;
-  gchar * dir;
-  XfceRc *rc;
-  
-  /* The preferences dialog is a plain gtk_file_chooser, we just get the
-  folder the user selected and write it in the conf file*/
-  
-  chooser = 
-    gtk_file_chooser_dialog_new (_("Default save folder"),
-                                  NULL,
-                                  GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-                                  GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                  GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
-                                  NULL);
-  gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
-  gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
-  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), 
-                                       current_default_dir);
-  
-  dialog_response = gtk_dialog_run(GTK_DIALOG (chooser));
-
-  if (dialog_response == GTK_RESPONSE_ACCEPT)
-    {
-      dir = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-      
-      rc = xfce_rc_simple_open (rc_file, FALSE);
-      xfce_rc_write_entry (rc, "screenshot_dir", dir);
-      xfce_rc_close (rc);
-  
-      g_free (dir);
-    }
-  gtk_widget_destroy (GTK_WIDGET (chooser));
-}
 
 
 
@@ -176,7 +136,7 @@ int main(int argc, char **argv)
     }
   else
     {
-      sd->mode = 0;
+      sd->mode = FULLSCREEN;
     }
   
   /* Wether to show the save dialog allowing to choose a filename and a save 
@@ -220,18 +180,36 @@ int main(int argc, char **argv)
     }
   
   /* If a mode cli option is given, take the screenshot accordingly. */
-  if (sd->mode)
+  if (fullscreen || window)
     {
       screenshot = take_screenshot (sd->mode, sd->delay);
       save_screenshot (screenshot, sd->show_save_dialog, sd->screenshot_dir);
     
       g_object_unref (screenshot);
     }
-  
   /* If -p is given, show the preferences dialog */
-  if (preferences)
+  else if (preferences)
     {
       screenshooter_preferences_dialog (rc_file, sd->screenshot_dir);
+    }
+  else
+    {
+      GtkWidget *dialog;
+      
+      dialog = screenshooter_dialog_new (sd);
+      gint response;
+      
+      response = gtk_dialog_run (GTK_DIALOG (dialog));
+      
+      if (response == GTK_RESPONSE_OK)
+        {
+          screenshot = take_screenshot (sd->mode, sd->delay);
+          save_screenshot (screenshot, sd->show_save_dialog, 
+                           sd->screenshot_dir);
+          g_object_unref (screenshot);
+        }
+      
+      gtk_widget_destroy (dialog);
     }
   
   g_free (sd->screenshot_dir);
