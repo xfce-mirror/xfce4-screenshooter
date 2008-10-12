@@ -195,10 +195,10 @@ int main(int argc, char **argv)
   else
     {
       GtkWidget *dialog;
-      
-      dialog = screenshooter_dialog_new (sd);
       gint response;
       
+      dialog = screenshooter_dialog_new (sd, FALSE);
+            
       response = gtk_dialog_run (GTK_DIALOG (dialog));
       
       if (response == GTK_RESPONSE_OK)

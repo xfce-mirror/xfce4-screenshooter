@@ -19,6 +19,19 @@
 
 #include "screenshooter-dialogs.h"
 
+/* Prototypes */ 
+
+static void cb_fullscreen_screen_toggled       (GtkToggleButton    *tb,
+                                                ScreenshotData     *sd);
+static void cb_active_window_toggled           (GtkToggleButton    *tb,
+                                                ScreenshotData     *sd);
+static void cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
+                                                ScreenshotData     *sd);
+static void cb_default_folder                  (GtkWidget          *chooser, 
+                                                ScreenshotData     *sd);                                        
+static void cb_delay_spinner_changed           (GtkWidget          *spinner, 
+                                                ScreenshotData     *sd);                                                                              
+                                      
 /* Internals */
 
 static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
@@ -81,26 +94,39 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
 
 
 
-GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd)
+GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 {
   GtkWidget *dlg;
   GtkWidget *vbox;
   GtkWidget *modes_frame, *modes_box;
-  GtkWidget *active_window_button = NULL, *fullscreen_button;
+  GtkWidget *active_window_button, *fullscreen_button;
   GtkWidget *options_frame, *options_box;
   GtkWidget *save_button;
   GtkWidget *default_save_label, *dir_chooser;
   GtkWidget *delay_label, *delay_box, *delay_spinner, *label2;
   
   /* Create the dialog */
-  dlg = 
-    xfce_titled_dialog_new_with_buttons (_("Screenshot"),
-                                         NULL,
-                                         GTK_DIALOG_DESTROY_WITH_PARENT |
-                                         GTK_DIALOG_NO_SEPARATOR,
-                                         GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
-                                         GTK_STOCK_OK, GTK_RESPONSE_OK,
-                                         NULL);
+  if (!plugin)
+    {
+      dlg = 
+        xfce_titled_dialog_new_with_buttons (_("Screenshot"),
+                                             NULL,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT |
+                                             GTK_DIALOG_NO_SEPARATOR,
+                                             GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
+                                             GTK_STOCK_OK, GTK_RESPONSE_OK,
+                                             NULL);
+    }
+  else
+    {
+      dlg =
+        xfce_titled_dialog_new_with_buttons (_("Screenshooter plugin"),
+                                             NULL,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT |
+                                             GTK_DIALOG_NO_SEPARATOR,
+                                             GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
+                                             NULL);
+    }                                             
 
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
   

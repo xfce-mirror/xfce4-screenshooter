@@ -10,8 +10,10 @@ xfce4_screenshooter_plugin_LDFLAGS =						\
 	@LIBXFCE4PANEL_LIBS@
 
 xfce4_screenshooter_plugin_SOURCES =						\
-	screenshooter-plugin.c																\
-	screenshooter-utils.c screenshooter-utils.h
+	screenshooter-plugin.c \
+	screenshooter-utils.c screenshooter-utils.h \
+	screenshooter-dialogs.c screenshooter-dialogs.h
+	
 	
 xfce4_screenshooter_CFLAGS = \
 	@GTK_CFLAGS@ \

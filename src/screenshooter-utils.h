@@ -48,6 +48,8 @@ typedef struct
 }
 ScreenshotData;
 
-GdkPixbuf *take_screenshot (gint mode, gint delay);
-void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
-                      gchar * default_dir);
+GdkPixbuf *take_screenshot       (gint         mode, 
+                                  gint         delay);
+void save_screenshot             (GdkPixbuf   *screenshot, 
+                                  gboolean     show_save_dialog,
+                                  gchar       *default_dir);

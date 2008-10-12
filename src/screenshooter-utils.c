@@ -20,9 +20,10 @@
 #include <screenshooter-utils.h>
 
 /* Prototypes */
-static gchar *generate_filename_for_uri(char *uri);
-static Window find_toplevel_window (Window xid);
-static void cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data);
+static gchar *generate_filename_for_uri      (char             *uri);
+static Window find_toplevel_window           (Window            xid);
+static void cb_current_folder_changed        (GtkFileChooser   *chooser, 
+                                              gpointer          user_data);
 
 
 /* Borrowed from gnome-screenshot */
@@ -189,12 +190,12 @@ GdkPixbuf *take_screenshot (gint mode, gint delay)
 *screenshot: a GdkPixbuf containing our screenshot
 *sd: a ScreenshotData struct containing the save options.*/
 void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
-                      gchar * default_dir)
+                      gchar *default_dir)
 {
-  GdkPixbuf * thumbnail;
-  gchar * filename = NULL;
-  GtkWidget * preview;
-  GtkWidget * chooser;
+  GdkPixbuf *thumbnail;
+  gchar *filename = NULL;
+  GtkWidget *preview;
+  GtkWidget *chooser;
   gint dialog_response;
 
   filename = generate_filename_for_uri (default_dir);
@@ -250,7 +251,7 @@ void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
 	  }  
 	else
 	  {    
-	    gchar * savename = NULL;
+	    gchar *savename = NULL;
 	    /* Else, we just save the file in the default folder */
       
       savename = g_build_filename (default_dir, filename, NULL);
