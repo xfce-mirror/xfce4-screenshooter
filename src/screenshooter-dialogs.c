@@ -182,37 +182,47 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   gtk_container_set_border_width (GTK_CONTAINER (options_box), 6);
   gtk_widget_show (options_box);
   
-  /* Save option */
-  save_button = gtk_check_button_new_with_mnemonic (_("Show save dialog"));
-  gtk_widget_show (save_button);
-  gtk_box_pack_start (GTK_BOX (options_box), save_button, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_button),
-                                sd->show_save_dialog);
-  g_signal_connect (save_button, "toggled", 
-                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
-
-  /* Default save location */          
-  default_save_label = gtk_label_new ( "" );
-  gtk_label_set_markup (GTK_LABEL (default_save_label),
-	                      _("<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"));
-	gtk_misc_set_alignment (GTK_MISC (default_save_label), 0, 0);
-  gtk_widget_show (default_save_label);
-  gtk_container_add (GTK_CONTAINER (options_box), default_save_label);
   
-  dir_chooser = 
-    gtk_file_chooser_button_new (_("Default save location"), 
-                                 GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-  gtk_widget_show (dir_chooser);
-  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dir_chooser), 
-                                       sd->screenshot_dir);
-  gtk_container_add (GTK_CONTAINER (options_box), dir_chooser);
-  g_signal_connect (dir_chooser, "selection-changed", 
-                    G_CALLBACK (cb_default_folder), sd);
+  if (plugin)
+    {
+		  /* Save option */
+		  save_button = gtk_check_button_new_with_mnemonic (_("Show save dialog"));
+		  gtk_widget_show (save_button);
+		  gtk_box_pack_start (GTK_BOX (options_box), save_button, FALSE, FALSE, 0);
+		  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_button),
+		                                sd->show_save_dialog);
+		  g_signal_connect (save_button, "toggled", 
+		                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
+    }
+
+  if (plugin)
+    {
+		  /* Default save location */          
+		  default_save_label = gtk_label_new ( "" );
+		  gtk_label_set_markup (GTK_LABEL (default_save_label),
+			_("<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"));
+			
+			gtk_misc_set_alignment (GTK_MISC (default_save_label), 0, 0);
+		  gtk_widget_show (default_save_label);
+		  gtk_container_add (GTK_CONTAINER (options_box), default_save_label);
+		  
+		  dir_chooser = 
+		    gtk_file_chooser_button_new (_("Default save location"), 
+		                                 GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+		  gtk_widget_show (dir_chooser);
+		  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dir_chooser), 
+		                                       sd->screenshot_dir);
+		  gtk_container_add (GTK_CONTAINER (options_box), dir_chooser);
+		  g_signal_connect (dir_chooser, "selection-changed", 
+		                    G_CALLBACK (cb_default_folder), sd);
+    }
                     
   /* Screenshot delay */
   delay_label = gtk_label_new ( "" );
+  
   gtk_label_set_markup (GTK_LABEL(delay_label),
-	                      _("<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"));
+  _("<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"));
+  
 	gtk_misc_set_alignment(GTK_MISC (delay_label), 0, 0); 
   gtk_widget_show (delay_label);
   gtk_container_add (GTK_CONTAINER (options_box), delay_label);

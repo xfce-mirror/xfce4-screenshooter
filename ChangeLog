@@ -1,3 +1,12 @@
+2008-10-15 jeromeg
+
+  * src/main.c: destroy the dialog before taking the screenshot of the active
+    window, we don't want to get a screenshot of the dialog...
+  * src/screenshooter-dialogs.c: don't show the save options and the default
+    folder chooser for the main application.
+  * src/screenshooter-utils.c: don't leak GdkWindows when falling back to 
+    fullscreen.
+  
 2008-10-12 jeromeg
 
   * src/screenshooter-dialogs.{c,h}

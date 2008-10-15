@@ -153,16 +153,28 @@ GdkPixbuf *take_screenshot (gint mode, gint delay)
       
       /* If we are supposed to take a screenshot of the active window, and if 
       the active window is the desktop background, grab the whole screen.*/      
-      if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP ||
-          window == NULL)
+      if (window == NULL || 
+          gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
         {
+          if (!(window == NULL))
+            {
+              g_object_unref (window);
+            }
+          
           window = gdk_get_default_root_window ();
           needs_unref = FALSE;
         }
       else
         {
-          window = 
-            gdk_window_foreign_new (find_toplevel_window (GDK_WINDOW_XID (window)));
+          GdkWindow *window2;
+          
+          window2 = 
+            gdk_window_foreign_new (find_toplevel_window 
+                                    (GDK_WINDOW_XID (window)));
+          
+          g_object_unref (window);
+          
+          window = window2;
         }
     }
   

@@ -201,6 +201,8 @@ int main(int argc, char **argv)
             
       response = gtk_dialog_run (GTK_DIALOG (dialog));
       
+      gtk_widget_destroy (dialog);
+      
       if (response == GTK_RESPONSE_OK)
         {
           screenshot = take_screenshot (sd->mode, sd->delay);
@@ -208,8 +210,6 @@ int main(int argc, char **argv)
                            sd->screenshot_dir);
           g_object_unref (screenshot);
         }
-      
-      gtk_widget_destroy (dialog);
     }
   
   g_free (sd->screenshot_dir);
