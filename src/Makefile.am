@@ -39,21 +39,32 @@ xfce4_screenshooter_SOURCES	= \
 # We also need to let intltool merge the translated fields, so we add an
 # additional level of indirection: a <name>.desktop.in.in file.
 # 
-desktop_in_in_files = screenshooter.desktop.in.in
-desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
+desktop_plugin_in_in_files = screenshooter.desktop.in.in
+desktop_plugin_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 	
-desktopdir = $(datadir)/xfce4/panel-plugins
-desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+desktop_plugindir = $(datadir)/xfce4/panel-plugins
+desktop_plugin_DATA = $(desktop_plugin_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 # get full path into .desktop file
-%.desktop.in: %.desktop.in.in
+screenshooter.desktop.in: screenshooter.desktop.in.in
 	sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" 	\
+		$< > $@
+
+desktop_in_in_files = xfce4-screenshooter.desktop.in.in
+desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
+desktopdir = $(datadir)/applications
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
+
+# Get full path into .desktop file
+xfce4-screenshooter.desktop.in: xfce4-screenshooter.desktop.in.in
+	sed -e "s^@PLUGIN_PATH@^$(libexecdir)/applications^" 		\
 		$< > $@
 	
 EXTRA_DIST =								\
-	$(desktop_in_in_files)
+	$(desktop_plugin_in_in_files) $(desktop_plugin_in_in_files)
 
 DISTCLEANFILES =							\
-	$(desktop_DATA) $(desktop_in_files)
+	$(desktop_DATA) $(desktop_plugin_in_files) desktop_plugin_in_files
 

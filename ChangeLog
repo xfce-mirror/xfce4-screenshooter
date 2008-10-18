@@ -1,3 +1,8 @@
+2008-10-18 jeromeg
+
+  * src/Makefile.am: install desktop file for the main application.
+  * src/xfce4-screenshooter.desktop.in.in: desktop file for main application.
+
 2008-10-15 jeromeg
 
   * src/main.c: destroy the dialog before taking the screenshot of the active
