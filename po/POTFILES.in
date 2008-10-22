@@ -1,5 +1,6 @@
-src/screenshooter-plugin.c
+lib/screenshooter-utils.c
+lib/screenshooter-dialogs.c
 src/main.c
-src/screenshooter-utils.c
-src/screenshooter.desktop.in.in
-src/screenshooter-dialogs.c
+src/xfce4-screenshooter.desktop.in.in
+panel-plugin/screenshooter-plugin.c
+panel-plugin/screenshooter.desktop.in.in

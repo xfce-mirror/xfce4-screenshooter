@@ -274,3 +274,64 @@ void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
 
   g_free (filename);
 }
+
+
+
+void
+screenshooter_read_rc_file (gchar *file, ScreenshotData *sd, gboolean dir_only)
+{
+  XfceRc *rc;
+  gint delay = 0;
+  gint mode = FULLSCREEN;
+  gint show_save_dialog = 1;
+  gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+
+  if (g_file_test (file, G_FILE_TEST_EXISTS))
+    {
+      rc = xfce_rc_simple_open (file, TRUE);
+
+      if (rc != NULL)
+        {
+          if (!dir_only)
+            {
+              delay = xfce_rc_read_int_entry (rc, "delay", 0);
+              mode = xfce_rc_read_int_entry (rc, "mode", FULLSCREEN);
+              show_save_dialog = 
+                xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
+            }
+  
+          g_free (screenshot_dir);
+          screenshot_dir = 
+            g_strdup (xfce_rc_read_entry (rc, 
+                                          "screenshot_dir", 
+                                          DEFAULT_SAVE_DIRECTORY));
+        }
+      
+      xfce_rc_close (rc);
+    }
+   
+  /* And set the sd values */
+  sd->delay = delay;
+  sd->mode = mode;
+  sd->show_save_dialog = show_save_dialog;
+  sd->screenshot_dir = screenshot_dir;
+}
+
+
+
+void
+screenshooter_write_rc_file (gchar *file, ScreenshotData *sd)
+{
+  XfceRc *rc;
+
+  rc = xfce_rc_simple_open (file, FALSE);
+  
+  g_return_if_fail (rc != NULL);
+  
+  xfce_rc_write_int_entry (rc, "delay", sd->delay);
+  xfce_rc_write_int_entry (rc, "mode", sd->mode);
+  xfce_rc_write_int_entry (rc, "show_save_dialog", sd->show_save_dialog);
+  xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
+  
+  xfce_rc_close (rc);
+}

@@ -21,7 +21,7 @@
 #include <config.h>
 #endif
 
-#include "screenshooter-dialogs.h"
+#include "libscreenshooter.h"
 
 
 
@@ -81,7 +81,6 @@ int main(int argc, char **argv)
   GError *cli_error = NULL;
   GdkPixbuf *screenshot;
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
-  XfceRc *rc;
   gchar *rc_file;
   
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
@@ -90,19 +89,7 @@ int main(int argc, char **argv)
   rc_file = g_build_filename (xfce_get_homedir(), ".config", "xfce4", 
                               "xfce4-screenshooter", NULL);
   
-  /* If the file exists, we parse it to get the default save folder. Else we use
-  the home dir. */
-  if (g_file_test (rc_file, G_FILE_TEST_EXISTS))
-    {
-      rc = xfce_rc_simple_open (rc_file, TRUE);
-      sd->screenshot_dir = g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", 
-                                     DEFAULT_SAVE_DIRECTORY));
-      xfce_rc_close (rc);
-    }
-  else
-    {
-      sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
-    }
+  screenshooter_read_rc_file (rc_file, sd, !(window || fullscreen));
     
   /* Print a message to advise to use help when a non existing cli option is
   passed to the executable. */  
@@ -197,6 +184,8 @@ int main(int argc, char **argv)
       GtkWidget *dialog;
       gint response;
       
+      screenshooter_read_rc_file (rc_file, sd, FALSE);
+      
       dialog = screenshooter_dialog_new (sd, FALSE);
             
       response = gtk_dialog_run (GTK_DIALOG (dialog));
@@ -209,6 +198,8 @@ int main(int argc, char **argv)
           save_screenshot (screenshot, sd->show_save_dialog, 
                            sd->screenshot_dir);
           g_object_unref (screenshot);
+          
+          screenshooter_write_rc_file (rc_file, sd);
         }
     }
   

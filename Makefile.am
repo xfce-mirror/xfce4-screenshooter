@@ -1,6 +1,6 @@
 @SET_MAKE@
 
-SUBDIRS = src po icons
+SUBDIRS = lib src panel-plugin po icons
 
 distclean-local:
 	rm -rf *.cache *~

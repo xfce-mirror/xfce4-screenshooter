@@ -36,7 +36,7 @@ t */
 #include <sys/stat.h>
 #include <X11/Xatom.h>
 
-#include "screenshooter-dialogs.h"
+#include "libscreenshooter.h"
 
 #define SCREENSHOT_ICON_NAME  "applets-screenshooter"
 
@@ -165,38 +165,9 @@ pd: the associated PluginData.
 static void
 screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
-  char *file;
-  XfceRc *rc;
-  gint delay = 0;
-  gint mode = FULLSCREEN;
-  gint show_save_dialog = 1;
-  gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
-
-  /* If there is an rc file, we read it */
-  if ( (file = xfce_panel_plugin_lookup_rc_file (plugin) ) != NULL)
-  {
-      rc = xfce_rc_simple_open (file, TRUE);
-
-      if ( rc != NULL)
-      {
-          delay = xfce_rc_read_int_entry (rc, "delay", 0);
-          mode = xfce_rc_read_int_entry (rc, "mode", FULLSCREEN);
-          show_save_dialog = xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
-          screenshot_dir = 
-            g_strdup (xfce_rc_read_entry (rc, 
-                                          "screenshot_dir", 
-                                          DEFAULT_SAVE_DIRECTORY));
-          xfce_rc_close (rc);
-      }
-      
-      g_free (file);
-  }
-  
-  /* And set the pd values */
-  pd->sd->delay = delay;
-  pd->sd->mode = mode;
-  pd->sd->show_save_dialog = show_save_dialog;
-  pd->sd->screenshot_dir = screenshot_dir;
+  screenshooter_read_rc_file (xfce_panel_plugin_lookup_rc_file (plugin), 
+                              pd->sd, 
+                              FALSE);
 }
 
 
@@ -208,24 +179,8 @@ pd: the associated PluginData.
 static void
 screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
-  char *file;
-  XfceRc *rc;
-
-  if (!(file = xfce_panel_plugin_save_location (plugin, TRUE)))
-    return;
-
-  rc = xfce_rc_simple_open (file, FALSE);
-  g_free (file);
-
-  if (!rc)
-    return;
-
-  xfce_rc_write_int_entry (rc, "delay", pd->sd->delay);
-  xfce_rc_write_int_entry (rc, "mode", pd->sd->mode);
-  xfce_rc_write_int_entry (rc, "show_save_dialog", pd->sd->show_save_dialog);
-  xfce_rc_write_entry (rc, "screenshot_dir", pd->sd->screenshot_dir);
-
-  xfce_rc_close (rc);
+  screenshooter_write_rc_file (xfce_panel_plugin_save_location (plugin, TRUE), 
+                               pd->sd);  
 }
 
 

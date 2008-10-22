@@ -16,7 +16,10 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
- 
+
+#ifndef __HAVE_UTILS_H__
+#define __HAVE_UTILS_H__
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -48,8 +51,14 @@ typedef struct
 }
 ScreenshotData;
 
-GdkPixbuf *take_screenshot       (gint         mode, 
-                                  gint         delay);
-void save_screenshot             (GdkPixbuf   *screenshot, 
-                                  gboolean     show_save_dialog,
-                                  gchar       *default_dir);
+GdkPixbuf *take_screenshot       (gint                  mode, 
+                                  gint                  delay);
+void save_screenshot             (GdkPixbuf            *screenshot, 
+                                  gboolean              show_save_dialog,
+                                  gchar                *default_dir);
+void screenshooter_read_rc_file  (gchar                *file, 
+                                  ScreenshotData       *sd, 
+                                  gboolean              dir_only);
+void screenshooter_write_rc_file (gchar                *file, 
+                                  ScreenshotData       *sd);
+#endif                               

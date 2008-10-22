@@ -1,5 +1,7 @@
 === Version x.x.x ===
 
+  * Add a dialog to set the screenshot options and take a screenshot when no 
+    CLI option is given to the executable, add a menu entry for the application.
   * Use applets-screenshooter icon for preferences dialog and save dialog.
   * Add some default icons taken from the Rodent icon theme to make sure the
     applet has an icon.
@@ -8,8 +10,7 @@
     desktop when xfdesktop is set up not to display any icons.
   * New and updated translations, thanks to the fabulous translation team.
   * New CLI option to take a screenshot of the desktop.
-  * Add a dialog to set the screenshot options and take a screenshot when no 
-    CLI option is given to the executable.
+  
   
 === Version 1.3.2 ===
   
