@@ -1,9 +1,11 @@
-#: ../src/main.c:70
+#. Print a message to advise to use help when a non existing cli option is
+#. passed to the executable.
+#: ../src/main.c:96
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-20 09:01+0200\n"
+"POT-Creation-Date: 2008-10-28 09:50+0100\n"
 "PO-Revision-Date: 2008-07-15 23:10+0200\n"
 "Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -12,80 +14,123 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Arabic\n"
 
-#. Create the dialog
-#: ../src/screenshooter-plugin.c:271
+#: ../lib/screenshooter-utils.c:46
+msgid "Couldn't find window manager window"
+msgstr ""
+
+#: ../lib/screenshooter-utils.c:75
+msgid "Screenshot.png"
+msgstr ""
+
+#: ../lib/screenshooter-utils.c:88
+#, c-format
+msgid "Screenshot-%d.png"
+msgstr ""
+
+#: ../lib/screenshooter-utils.c:221
+msgid "Save screenshot as ..."
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:112
+msgid "Screenshot"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:123
 msgid "Screenshooter plugin"
 msgstr ""
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../src/screenshooter-plugin.c:296
+#: ../lib/screenshooter-dialogs.c:144
 msgid "Modes"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:305
+#: ../lib/screenshooter-dialogs.c:155
+#: ../panel-plugin/screenshooter-plugin.c:272
 msgid "Take a screenshot of desktop"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:314 ../src/main.c:47
+#: ../lib/screenshooter-dialogs.c:166 ../src/main.c:50
+#: ../panel-plugin/screenshooter-plugin.c:210
+#: ../panel-plugin/screenshooter-plugin.c:277
 msgid "Take a screenshot of the active window"
 msgstr ""
 
 #. Create the options frame and add the delay and save options
-#: ../src/screenshooter-plugin.c:323
+#: ../lib/screenshooter-dialogs.c:176
 msgid "Options"
 msgstr ""
 
 #. Save option
-#: ../src/screenshooter-plugin.c:333
+#: ../lib/screenshooter-dialogs.c:189
 msgid "Show save dialog"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:344
+#: ../lib/screenshooter-dialogs.c:203
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:349
+#: ../lib/screenshooter-dialogs.c:210
 msgid "Default save location"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:358
+#: ../lib/screenshooter-dialogs.c:224
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:372
+#: ../lib/screenshooter-dialogs.c:241
 msgid "seconds"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:398
-msgid "Take screenshot"
+#: ../lib/screenshooter-dialogs.c:264
+msgid "Default save folder"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:405 ../src/main.c:96
-msgid "Save screenshot as ..."
-msgstr ""
-
-#: ../src/main.c:43
+#: ../src/main.c:46
 msgid "Version information"
 msgstr ""
 
-#: ../src/main.c:51
+#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:205
+msgid "Take a screenshot of the desktop"
+msgstr ""
+
+#: ../src/main.c:58
 msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
-#: ../src/main.c:74
+#: ../src/main.c:63
+msgid "Do not display the save dialog"
+msgstr ""
+
+#: ../src/main.c:67
+msgid "Directory where the screenshot will be saved"
+msgstr ""
+
+#: ../src/main.c:71
+msgid "Dialog to set the default save folder"
+msgstr ""
+
+#: ../src/main.c:100
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 
-#: ../src/screenshooter.desktop.in.in.h:1
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+msgid "A tool to take screenshots of your desktop or of the active windows"
+msgstr ""
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+msgid "Screenshot tool"
+msgstr ""
+
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
 msgstr ""
 
-#: ../src/screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr ""

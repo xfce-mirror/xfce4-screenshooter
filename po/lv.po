@@ -3,12 +3,14 @@
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Rihards Prieditis <rprieditis@inbox.lv>, 2007.
 #
-#: ../src/main.c:88
+#. Print a message to advise to use help when a non existing cli option is
+#. passed to the executable.
+#: ../src/main.c:96
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-12 16:51+0200\n"
+"POT-Creation-Date: 2008-10-28 09:50+0100\n"
 "PO-Revision-Date: 2007-11-16 23:39+0300\n"
 "Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
 "Language-Team: Latvian <rprieditis@inbox.lv>\n"
@@ -16,112 +18,132 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Create the dialog
-#: ../src/screenshooter-plugin.c:223
+#: ../lib/screenshooter-utils.c:46
+msgid "Couldn't find window manager window"
+msgstr ""
+
+#: ../lib/screenshooter-utils.c:75
+#, fuzzy
+msgid "Screenshot.png"
+msgstr "Ekrānkopija"
+
+#: ../lib/screenshooter-utils.c:88
+#, fuzzy, c-format
+msgid "Screenshot-%d.png"
+msgstr "Ekrānkopija"
+
+#: ../lib/screenshooter-utils.c:221
+msgid "Save screenshot as ..."
+msgstr "Saglabāt ekrānkopiju kā..."
+
+#: ../lib/screenshooter-dialogs.c:112
+#, fuzzy
+msgid "Screenshot"
+msgstr "Ekrānkopija"
+
+#: ../lib/screenshooter-dialogs.c:123
 #, fuzzy
 msgid "Screenshooter plugin"
 msgstr "Ekrānkopijas aizture"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../src/screenshooter-plugin.c:248
+#: ../lib/screenshooter-dialogs.c:144
 msgid "Modes"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:257
+#: ../lib/screenshooter-dialogs.c:155
+#: ../panel-plugin/screenshooter-plugin.c:272
 #, fuzzy
 msgid "Take a screenshot of desktop"
 msgstr "Bildēt ekrānkopiju"
 
-#: ../src/screenshooter-plugin.c:266 ../src/main.c:40
+#: ../lib/screenshooter-dialogs.c:166 ../src/main.c:50
+#: ../panel-plugin/screenshooter-plugin.c:210
+#: ../panel-plugin/screenshooter-plugin.c:277
 #, fuzzy
 msgid "Take a screenshot of the active window"
 msgstr "Bildēt ekrānkopiju"
 
 #. Create the options frame and add the delay and save options
-#: ../src/screenshooter-plugin.c:275
+#: ../lib/screenshooter-dialogs.c:176
 msgid "Options"
 msgstr ""
 
 #. Save option
-#: ../src/screenshooter-plugin.c:285
+#: ../lib/screenshooter-dialogs.c:189
 msgid "Show save dialog"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:296
+#: ../lib/screenshooter-dialogs.c:203
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:301
+#: ../lib/screenshooter-dialogs.c:210
 msgid "Default save location"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:310
+#: ../lib/screenshooter-dialogs.c:224
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
 
-#: ../src/screenshooter-plugin.c:324
+#: ../lib/screenshooter-dialogs.c:241
 msgid "seconds"
 msgstr ""
 
-#: ../src/main.c:36
+#: ../lib/screenshooter-dialogs.c:264
+msgid "Default save folder"
+msgstr ""
+
+#: ../src/main.c:46
 msgid "Version information"
 msgstr ""
 
-#: ../src/main.c:44
+#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:205
+#, fuzzy
+msgid "Take a screenshot of the desktop"
+msgstr "Bildēt ekrānkopiju"
+
+#: ../src/main.c:58
 msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
-#: ../src/main.c:49
+#: ../src/main.c:63
 msgid "Do not display the save dialog"
 msgstr ""
 
-#: ../src/main.c:53
+#: ../src/main.c:67
 msgid "Directory where the screenshot will be saved"
 msgstr ""
 
-#: ../src/main.c:57
+#: ../src/main.c:71
 msgid "Dialog to set the default save folder"
 msgstr ""
 
-#: ../src/main.c:92
+#: ../src/main.c:100
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 
-#: ../src/main.c:146
-msgid "Default save folder"
-msgstr ""
-
-#: ../src/screenshooter-utils.c:101
-msgid "Couldn't find window manager window"
-msgstr ""
-
-#: ../src/screenshooter-utils.c:123
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #, fuzzy
-msgid "Screenshot.png"
+msgid "A tool to take screenshots of your desktop or of the active windows"
+msgstr "Bildēt ekrānkopiju"
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#, fuzzy
+msgid "Screenshot tool"
 msgstr "Ekrānkopija"
 
-#: ../src/screenshooter-utils.c:134
-#, fuzzy, c-format
-msgid "Screenshot-%d.png"
-msgstr "Ekrānkopija"
-
-#. If the user wants a save dialog, we run it, and grab the filename the user
-#. has chosen.
-#: ../src/screenshooter-utils.c:186
-msgid "Save screenshot as ..."
-msgstr "Saglabāt ekrānkopiju kā..."
-
-#: ../src/screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
 msgstr "Ekrānkopija"
 
-#: ../src/screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr "Bildēt ekrānkopiju"
 
