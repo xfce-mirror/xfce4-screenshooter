@@ -56,24 +56,49 @@ PluginData;
 
 
 /* Protoypes */
+                                   
+static void 
+screenshooter_plugin_construct       (XfcePanelPlugin      *plugin);
 
-static void screenshot_properties_dialog (XfcePanelPlugin *plugin,
-                                          PluginData *pd);
-static void screenshot_construct (XfcePanelPlugin *plugin);
-static gboolean screenshot_set_size (XfcePanelPlugin *plugin, 
-                                     int size, PluginData *pd);
-static void screenshot_free_data (XfcePanelPlugin *plugin, 
-                                  PluginData *pd);
-static void button_clicked (GtkWidget *button, PluginData *pd);
-static void screenshot_style_set (XfcePanelPlugin *plugin, gpointer ignored,
-                                  PluginData *pd);
-static void screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd);                
-static void screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd);
-                                        
+static void 
+screenshooter_plugin_read_rc_file    (XfcePanelPlugin      *plugin, 
+                                      PluginData           *pd);  
+              
+static void 
+screenshooter_plugin_write_rc_file   (XfcePanelPlugin      *plugin, 
+                                      PluginData           *pd);
+
+static gboolean 
+cb_set_size                          (XfcePanelPlugin      *plugin, 
+                                      int                   size, 
+                                      PluginData           *pd);
+                                   
+static void 
+cb_properties_dialog                 (XfcePanelPlugin      *plugin,
+                                      PluginData           *pd);
+                                      
+static void
+cb_dialog_response                   (GtkWidget            *dlg, 
+                                      int                   reponse,
+                                      PluginData           *pd);
+                                   
+static void 
+cb_free_data                         (XfcePanelPlugin      *plugin, 
+                                      PluginData           *pd);
+                                  
+static void 
+cb_button_clicked                    (GtkWidget            *button, 
+                                      PluginData           *pd);
+
+static void
+cb_style_set                         (XfcePanelPlugin      *plugin, 
+                                      gpointer              ignored,
+                                      PluginData           *pd);
+                                       
                                               
 
 /* Register the panel plugin */
-XFCE_PANEL_PLUGIN_REGISTER_INTERNAL (screenshot_construct);
+XFCE_PANEL_PLUGIN_REGISTER_INTERNAL (screenshooter_plugin_construct);
 
 
 
@@ -85,7 +110,7 @@ XFCE_PANEL_PLUGIN_REGISTER_INTERNAL (screenshot_construct);
 Returns TRUE if succesful. 
 */
 static gboolean
-screenshot_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
+cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 {
   GdkPixbuf *pb;
   int width = size - 2 - 2 * MAX (pd->button->style->xthickness,
@@ -106,7 +131,7 @@ plugin: a XfcePanelPlugin (a screenshooter one).
 pd: the associated PluginData. 
 */
 static void
-screenshot_free_data (XfcePanelPlugin *plugin, PluginData *pd)
+cb_free_data (XfcePanelPlugin *plugin, PluginData *pd)
 {
   if (pd->style_id)
   	g_signal_handler_disconnect (plugin, pd->style_id);
@@ -124,7 +149,7 @@ button: the panel button.
 pd: the PluginData storing the options for taking the screenshot.
 */
 static void
-button_clicked (GtkWidget *button, PluginData *pd)
+cb_button_clicked (GtkWidget *button, PluginData *pd)
 {
   GdkPixbuf *screenshot;
     
@@ -133,10 +158,10 @@ button_clicked (GtkWidget *button, PluginData *pd)
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), FALSE);
 
   /* Get the screenshot */
-	screenshot = take_screenshot (pd->sd->mode, pd->sd->delay);
+	screenshot = screenshooter_take_screenshot (pd->sd->mode, pd->sd->delay);
 
-  save_screenshot (screenshot, pd->sd->show_save_dialog, 
-                   pd->sd->screenshot_dir);
+  screenshooter_save_screenshot (screenshot, pd->sd->show_save_dialog, 
+                                 pd->sd->screenshot_dir);
   
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
 	
@@ -150,10 +175,10 @@ plugin: a XfcePanelPlugin (a screenshooter one).
 pd: the associated PluginData.
 */
 static void
-screenshot_style_set (XfcePanelPlugin *plugin, gpointer ignored,
+cb_style_set (XfcePanelPlugin *plugin, gpointer ignored,
                        PluginData *pd)
 {
-  screenshot_set_size (plugin, xfce_panel_plugin_get_size (plugin), pd);
+  cb_set_size (plugin, xfce_panel_plugin_get_size (plugin), pd);
 }
 
 
@@ -163,7 +188,7 @@ plugin: a XfcePanelPlugin (a screenshooter one).
 pd: the associated PluginData.
 */
 static void
-screenshot_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
+screenshooter_plugin_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
   screenshooter_read_rc_file (xfce_panel_plugin_lookup_rc_file (plugin), 
                               pd->sd, 
@@ -177,7 +202,7 @@ plugin: a XfcePanelPlugin (a screenshooter one).
 pd: the associated PluginData.
 */
 static void
-screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
+screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
   screenshooter_write_rc_file (xfce_panel_plugin_save_location (plugin, TRUE), 
                                pd->sd);  
@@ -190,8 +215,8 @@ screenshot_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
    Unblock the plugin contextual menu.
    Save the options in the rc file.*/
 static void
-screenshot_dialog_response (GtkWidget *dlg, int reponse,
-                            PluginData *pd)
+cb_dialog_response (GtkWidget *dlg, int reponse,
+                    PluginData *pd)
 {
   g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
 
@@ -213,14 +238,14 @@ screenshot_dialog_response (GtkWidget *dlg, int reponse,
   
   /* Unblock the menu and save options */
   xfce_panel_plugin_unblock_menu (pd->plugin);
-  screenshot_write_rc_file (pd->plugin, pd);
+  screenshooter_plugin_write_rc_file (pd->plugin, pd);
 }
 
 
 
 /* Properties dialog to set the plugin options */
 static void
-screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
+cb_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
 {
   GtkWidget *dlg;
   
@@ -232,7 +257,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   
   g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
 
-  g_signal_connect (dlg, "response", G_CALLBACK (screenshot_dialog_response),
+  g_signal_connect (dlg, "response", G_CALLBACK (cb_dialog_response),
                     pd);
 
   gtk_widget_show (dlg);
@@ -242,7 +267,7 @@ screenshot_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
 
 /* Create the plugin button */
 static void
-screenshot_construct (XfcePanelPlugin *plugin)
+screenshooter_plugin_construct (XfcePanelPlugin *plugin)
 {
   /* Initialise the data structs */
   PluginData *pd = g_new0 (PluginData, 1);
@@ -255,7 +280,7 @@ screenshot_construct (XfcePanelPlugin *plugin)
   pd->plugin = plugin;
 
   /* Read the options */
-  screenshot_read_rc_file (plugin, pd);
+  screenshooter_plugin_read_rc_file (plugin, pd);
   
   /* Create the panel button */
   pd->button = xfce_create_panel_button ();
@@ -285,20 +310,20 @@ screenshot_construct (XfcePanelPlugin *plugin)
   
   /* Set the callbacks */
   g_signal_connect (pd->button, "clicked",
-                    G_CALLBACK (button_clicked), pd);
+                    G_CALLBACK (cb_button_clicked), pd);
 
   g_signal_connect (plugin, "free-data",
-                    G_CALLBACK (screenshot_free_data), pd);
+                    G_CALLBACK (cb_free_data), pd);
 
   g_signal_connect (plugin, "size-changed",
-                    G_CALLBACK (screenshot_set_size), pd);
+                    G_CALLBACK (cb_set_size), pd);
 
   pd->style_id =
       g_signal_connect (plugin, "style-set",
-                        G_CALLBACK (screenshot_style_set), pd);
+                        G_CALLBACK (cb_style_set), pd);
 
   xfce_panel_plugin_menu_show_configure (plugin);
   g_signal_connect (plugin, "configure-plugin",
-                    G_CALLBACK (screenshot_properties_dialog), pd);
+                    G_CALLBACK (cb_properties_dialog), pd);
 }
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (screenshot_construct);
+XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (screenshooter_plugin_construct);

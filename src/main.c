@@ -169,8 +169,9 @@ int main(int argc, char **argv)
   /* If a mode cli option is given, take the screenshot accordingly. */
   if (fullscreen || window)
     {
-      screenshot = take_screenshot (sd->mode, sd->delay);
-      save_screenshot (screenshot, sd->show_save_dialog, sd->screenshot_dir);
+      screenshot = screenshooter_take_screenshot (sd->mode, sd->delay);
+      screenshooter_save_screenshot (screenshot, sd->show_save_dialog, 
+                                     sd->screenshot_dir);
     
       g_object_unref (screenshot);
     }
@@ -194,9 +195,9 @@ int main(int argc, char **argv)
       
       if (response == GTK_RESPONSE_OK)
         {
-          screenshot = take_screenshot (sd->mode, sd->delay);
-          save_screenshot (screenshot, sd->show_save_dialog, 
-                           sd->screenshot_dir);
+          screenshot = screenshooter_take_screenshot (sd->mode, sd->delay);
+          screenshooter_save_screenshot (screenshot, sd->show_save_dialog, 
+                                         sd->screenshot_dir);
           g_object_unref (screenshot);
           
           screenshooter_write_rc_file (rc_file, sd);

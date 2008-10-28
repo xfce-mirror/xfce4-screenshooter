@@ -57,8 +57,8 @@ find_toplevel_window (Window xid)
 
 
 
-/* Generates filename Screenshot-n.png where n is the first integer greater than 
-0 so that Screenshot-n.jpg does not exist in the folder whose URI is *uri.
+/* Generates filename Screenshot-n.png (where n is the first integer greater than 
+0) so that Screenshot-n.jpg does not exist in the folder whose URI is *uri.
 *uri: the uri of the folder for which the filename should be generated.
 returns: a filename verifying the above conditions or NULL if *uri == NULL.
 */
@@ -126,7 +126,8 @@ cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data)
 *sd: a ScreenshotData struct.
 returns: the screenshot in a *GdkPixbuf.
 */
-GdkPixbuf *take_screenshot (gint mode, gint delay)
+GdkPixbuf *screenshooter_take_screenshot (gint       mode, 
+                                          gint       delay)
 {
   GdkPixbuf *screenshot;
   GdkWindow *window = NULL;
@@ -201,8 +202,9 @@ GdkPixbuf *take_screenshot (gint mode, gint delay)
 /* Saves the screenshot according to the options in sd. 
 *screenshot: a GdkPixbuf containing our screenshot
 *sd: a ScreenshotData struct containing the save options.*/
-void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
-                      gchar *default_dir)
+void screenshooter_save_screenshot (GdkPixbuf      *screenshot, 
+                                    gboolean        show_save_dialog,
+                                    gchar          *default_dir)
 {
   GdkPixbuf *thumbnail;
   gchar *filename = NULL;
@@ -278,7 +280,9 @@ void save_screenshot (GdkPixbuf *screenshot, gboolean show_save_dialog,
 
 
 void
-screenshooter_read_rc_file (gchar *file, ScreenshotData *sd, gboolean dir_only)
+screenshooter_read_rc_file (gchar               *file, 
+                            ScreenshotData      *sd, 
+                            gboolean             dir_only)
 {
   XfceRc *rc;
   gint delay = 0;
@@ -320,7 +324,8 @@ screenshooter_read_rc_file (gchar *file, ScreenshotData *sd, gboolean dir_only)
 
 
 void
-screenshooter_write_rc_file (gchar *file, ScreenshotData *sd)
+screenshooter_write_rc_file (gchar               *file, 
+                             ScreenshotData      *sd)
 {
   XfceRc *rc;
 

@@ -51,9 +51,11 @@ typedef struct
 }
 ScreenshotData;
 
-GdkPixbuf *take_screenshot       (gint                  mode, 
+GdkPixbuf 
+*screenshooter_take_screenshot   (gint                  mode, 
                                   gint                  delay);
-void save_screenshot             (GdkPixbuf            *screenshot, 
+void 
+screenshooter_save_screenshot    (GdkPixbuf            *screenshot, 
                                   gboolean              show_save_dialog,
                                   gchar                *default_dir);
 void screenshooter_read_rc_file  (gchar                *file, 

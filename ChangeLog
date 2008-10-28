@@ -1,5 +1,17 @@
 2008-10-28 jeromeg
 
+  * lib/screenshooter-utils.{c,h}: add the "screenshooter_" prefix before
+    (take_screenshot) and (save_screenshot).
+  * src/main.c: use the new function names in (main).
+  * panel-plugin/screenshooter-plugin.c:
+    - use new function names.
+    - add a missing prototype.
+    - clean the indentation of prototypes.
+    - add a "cb_" before all callback functions names.
+    - use a "screenshooter_plugin_" prefix for other functions.
+
+2008-10-28 jeromeg
+
   * src/xfce4-screenshooter.desktop.in.in: change the item name.
   * po/:
     - update-po.
