@@ -107,6 +107,35 @@ static void cb_combo_active_item_changed (GtkComboBox *box, ScreenshotData *sd)
   
   sd->app = active_command; 
 }
+
+static void add_item (GAppInfo *app_info, GtkWidget *liststore)
+{
+  GtkTreeIter iter;
+  gchar *command = g_strdup (g_app_info_get_executable (app_info));
+  
+  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
+          
+  gtk_list_store_set (GTK_LIST_STORE (liststore), &iter, 0, command, -1);
+          
+  g_free (command);
+}
+
+static void populate_liststore (GtkListStore *liststore)
+{
+  const gchar *content_type;
+  GList	*list_app;
+     
+  content_type = "image/png";
+    
+  list_app = g_app_info_get_all_for_type (content_type);
+  
+  if (list_app != NULL)
+    {
+      g_list_foreach (list_app, (GFunc) add_item, liststore);
+            
+      g_list_free (list_app);
+    }
+}
 #endif
 
                       
@@ -125,7 +154,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   GtkWidget *default_save_label, *dir_chooser;
   GtkWidget *delay_label, *delay_box, *delay_spinner, *label2;
 #ifdef HAVE_GIO
-  GtkWidget *combo_box, *open_with_label;
+  GtkWidget *open_with_label;
+  GtkListStore *liststore = gtk_list_store_new (1, G_TYPE_STRING);
+  GtkWidget *combobox;
+  GtkCellRenderer *renderer;
 #endif
   
   /* Create the dialog */
@@ -278,13 +310,22 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   gtk_widget_show (open_with_label);
   gtk_container_add (GTK_CONTAINER (options_box), open_with_label);
   
-  combo_box = screenshooter_open_with_combo_box ();
-  gtk_container_add (GTK_CONTAINER (options_box), combo_box);
+  combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
   
-  g_signal_connect (G_OBJECT (combo_box), "changed", 
+  renderer = gtk_cell_renderer_text_new ();
+  
+  gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
+  gtk_cell_layout_set_attributes(GTK_CELL_LAYOUT(combobox), 
+                                 renderer, "text", 0, NULL);
+  
+  populate_liststore (liststore);
+  
+  gtk_container_add (GTK_CONTAINER (options_box), combobox);
+  
+  g_signal_connect (G_OBJECT (combobox), "changed", 
                     G_CALLBACK (cb_combo_active_item_changed), sd);
   
-  gtk_widget_show (combo_box);                    
+  gtk_widget_show_all (combobox);                    
 #endif
 
   return dlg;                

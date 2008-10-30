@@ -21,9 +21,6 @@ libscreenshooter_la_LIBADD = \
 	@LIBXFCEGUI4_LIBS@
 	
 if HAVE_GIO
-
-libscreenshooter_la_SOURCES += \
-  screenshooter-open-with.c screenshooter-open-with.h
   
 libscreenshooter_la_CFLAGS += \
   @GIO_CFLAGS@

@@ -23,7 +23,7 @@
 
 #include "screenshooter-utils.h"
 #ifdef HAVE_GIO
-#include "screenshooter-open-with.h"
+#include <gio/gio.h>
 #endif
 
 #include <gtk/gtk.h>
