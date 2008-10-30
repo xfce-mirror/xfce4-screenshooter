@@ -17,6 +17,8 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
  
+#include "screenshooter-open-with.h"
+ 
 static void populate_liststore (GtkListStore* liststore);
  
 /* Internals */
@@ -29,19 +31,16 @@ static void populate_liststore (GtkListStore* liststore)
   gpointer data;
   gint n = 0;
   
-  #if GIO_CHECK_VERSION(2,18,0)
-  content_type = g_content_type_from_mime_type ("image/png");
-  #else
   content_type = "image/png";
-  #endif
-  
+    
   list_app = g_app_info_get_all_for_type (content_type);
   
   if (list_app != NULL)
     {
       while (( data = g_list_nth_data (list_app, n)) != NULL)
         {
-          gchar *command = g_app_info_get_executable (G_APP_INFO (data));
+          gchar *command = 
+            g_strdup (g_app_info_get_executable (G_APP_INFO (data)));
                    
           gtk_list_store_append (liststore, &iter);
           
@@ -53,9 +52,6 @@ static void populate_liststore (GtkListStore* liststore)
       
       g_list_free (list_app);
     }
-  
-  if (content_type != NULL)
-    g_free (content_type);
 }
 
 
@@ -67,7 +63,7 @@ static void populate_liststore (GtkListStore* liststore)
 GtkWidget *screenshooter_open_with_combo_box ()
 {
   GtkListStore *liststore = gtk_list_store_new (1, G_TYPE_STRING);
-  GtkComboBox *combobox;
+  GtkWidget *combobox;
   
   populate_liststore (liststore);
   
