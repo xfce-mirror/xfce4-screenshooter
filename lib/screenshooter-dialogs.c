@@ -30,7 +30,11 @@ static void cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
 static void cb_default_folder                  (GtkWidget          *chooser, 
                                                 ScreenshotData     *sd);                                        
 static void cb_delay_spinner_changed           (GtkWidget          *spinner, 
-                                                ScreenshotData     *sd);                                                                              
+                                                ScreenshotData     *sd);
+#ifdef HAVE_GIO                                                
+static void cb_combo_active_item_changed       (GtkComboBox        *box, 
+                                                ScreenshotData     *sd);
+#endif                                                                                                                                                                         
                                       
 /* Internals */
 
@@ -86,8 +90,24 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
 {
   sd->delay = 
     gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
-} 
+}
 
+
+
+#ifdef HAVE_GIO
+static void cb_combo_active_item_changed (GtkComboBox *box, ScreenshotData *sd)
+{
+  GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
+  GtkTreeIter iter;
+  gchar *active_command = NULL;
+   
+  gtk_combo_box_get_active_iter (GTK_COMBO_BOX (box), &iter);
+  
+  gtk_tree_model_get (model, &iter, 0, &active_command, -1);
+  
+  sd->app = active_command; 
+}
+#endif
 
                       
 /* Public */
@@ -104,6 +124,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   GtkWidget *save_button;
   GtkWidget *default_save_label, *dir_chooser;
   GtkWidget *delay_label, *delay_box, *delay_spinner, *label2;
+#ifdef HAVE_GIO
+  GtkWidget *combo_box, *open_with_label;
+#endif
   
   /* Create the dialog */
   if (!plugin)
@@ -198,7 +221,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   if (plugin)
     {
 		  /* Default save location */          
-		  default_save_label = gtk_label_new ( "" );
+		  default_save_label = gtk_label_new ("");
 		  gtk_label_set_markup (GTK_LABEL (default_save_label),
 			_("<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"));
 			
@@ -218,7 +241,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
     }
                     
   /* Screenshot delay */
-  delay_label = gtk_label_new ( "" );
+  delay_label = gtk_label_new ("");
   
   gtk_label_set_markup (GTK_LABEL(delay_label),
   _("<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"));
@@ -244,7 +267,26 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 
   g_signal_connect (delay_spinner, "value-changed",
                     G_CALLBACK (cb_delay_spinner_changed), sd);
+                    
+  /* Open with */
+#ifdef HAVE_GIO 
+  open_with_label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL(open_with_label),
+  _("<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</span>"));
   
+  gtk_misc_set_alignment(GTK_MISC (open_with_label), 0, 0); 
+  gtk_widget_show (open_with_label);
+  gtk_container_add (GTK_CONTAINER (options_box), open_with_label);
+  
+  combo_box = screenshooter_open_with_combo_box ();
+  gtk_container_add (GTK_CONTAINER (options_box), combo_box);
+  
+  g_signal_connect (G_OBJECT (combo_box), "changed", 
+                    G_CALLBACK (cb_combo_active_item_changed), sd);
+  
+  gtk_widget_show (combo_box);                    
+#endif
+
   return dlg;                
 }
 

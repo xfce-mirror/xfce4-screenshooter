@@ -1,5 +1,17 @@
 2008-10-28 jeromeg
 
+  * lib/screenshooter-utils.{c,h}:
+    - modify (screenshooter_save_screenshot) so that it returns the save 
+      location.
+    - start implementing (screenshooter_open_screenshot) to open screenshots
+      with a given application.
+  * src/main.c:
+  
+  * panel-plugin/screenshooter-plugin.c:   
+  
+
+2008-10-28 jeromeg
+
   * lib/screenshooter-utils.{c,h}: add the "screenshooter_" prefix before
     (take_screenshot) and (save_screenshot).
   * src/main.c: use the new function names in (main).

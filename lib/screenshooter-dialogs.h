@@ -22,6 +22,9 @@
 #endif
 
 #include "screenshooter-utils.h"
+#ifdef HAVE_GIO
+#include "screenshooter-open-with.h"
+#endif
 
 #include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>

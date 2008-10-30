@@ -202,12 +202,13 @@ GdkPixbuf *screenshooter_take_screenshot (gint       mode,
 /* Saves the screenshot according to the options in sd. 
 *screenshot: a GdkPixbuf containing our screenshot
 *sd: a ScreenshotData struct containing the save options.*/
-void screenshooter_save_screenshot (GdkPixbuf      *screenshot, 
+gchar 
+*screenshooter_save_screenshot     (GdkPixbuf      *screenshot, 
                                     gboolean        show_save_dialog,
                                     gchar          *default_dir)
 {
   GdkPixbuf *thumbnail;
-  gchar *filename = NULL;
+  gchar *filename = NULL, *savename = NULL;;
   GtkWidget *preview;
   GtkWidget *chooser;
   gint dialog_response;
@@ -255,26 +256,26 @@ void screenshooter_save_screenshot (GdkPixbuf      *screenshot,
 	  
 	    if (dialog_response == GTK_RESPONSE_ACCEPT)
 	      {
-	        g_free (filename);
-	        filename = 
+	        savename = 
 	          gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser) );
-          gdk_pixbuf_save (screenshot, filename, "png", NULL, NULL);
+          gdk_pixbuf_save (screenshot, savename, "png", NULL, NULL);
 	      }
 	  
 	    gtk_widget_destroy ( GTK_WIDGET ( chooser ) );
 	  }  
 	else
 	  {    
-	    gchar *savename = NULL;
+	    
 	    /* Else, we just save the file in the default folder */
       
       savename = g_build_filename (default_dir, filename, NULL);
 	    gdk_pixbuf_save (screenshot, savename, "png", NULL, NULL);
 	    
-	    g_free (savename);
 	  }
 
   g_free (filename);
+  
+  return savename;
 }
 
 
@@ -340,3 +341,17 @@ screenshooter_write_rc_file (gchar               *file,
   
   xfce_rc_close (rc);
 }
+
+
+
+void
+screenshooter_open_screenshot (gchar *screenshot_path,
+                               gchar *application)
+{
+  if (screenshot_path != NULL)
+    {
+      gchar *command = g_strconcat (application, " ", screenshot_path, NULL);
+    
+      xfce_exec (command, FALSE, TRUE, NULL);
+    }
+}                                    

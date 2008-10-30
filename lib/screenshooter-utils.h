@@ -29,6 +29,7 @@
 #include <glib/gstdio.h>
 
 #include <libxfce4util/libxfce4util.h>
+#include <libxfcegui4/libxfcegui4.h>
 
 #include <unistd.h>
 
@@ -48,19 +49,30 @@ typedef struct
 
   gint delay;
   gchar *screenshot_dir;
+  
+  gchar *app;
 }
 ScreenshotData;
 
 GdkPixbuf 
 *screenshooter_take_screenshot   (gint                  mode, 
                                   gint                  delay);
-void 
-screenshooter_save_screenshot    (GdkPixbuf            *screenshot, 
+                                  
+gchar 
+*screenshooter_save_screenshot   (GdkPixbuf            *screenshot, 
                                   gboolean              show_save_dialog,
                                   gchar                *default_dir);
-void screenshooter_read_rc_file  (gchar                *file, 
+                                  
+void 
+screenshooter_read_rc_file       (gchar                *file, 
                                   ScreenshotData       *sd, 
                                   gboolean              dir_only);
-void screenshooter_write_rc_file (gchar                *file, 
+                                  
+void 
+screenshooter_write_rc_file      (gchar                *file, 
                                   ScreenshotData       *sd);
+                                  
+void
+screenshooter_open_screenshot    (gchar *screenshot_path,
+                                  gchar *application);                                  
 #endif                               

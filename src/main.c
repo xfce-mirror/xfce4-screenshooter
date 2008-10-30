@@ -195,11 +195,20 @@ int main(int argc, char **argv)
       
       if (response == GTK_RESPONSE_OK)
         {
+          gchar *screenshot_path = NULL;
+          
           screenshot = screenshooter_take_screenshot (sd->mode, sd->delay);
-          screenshooter_save_screenshot (screenshot, sd->show_save_dialog, 
-                                         sd->screenshot_dir);
+          screenshot_path =
+            screenshooter_save_screenshot (screenshot, sd->show_save_dialog, 
+                                           sd->screenshot_dir);
           g_object_unref (screenshot);
           
+          if (screenshot_path != NULL)
+            {
+              screenshooter_open_screenshot (screenshot_path, sd->app);
+              g_free (screenshot_path);
+            }
+                   
           screenshooter_write_rc_file (rc_file, sd);
         }
     }
