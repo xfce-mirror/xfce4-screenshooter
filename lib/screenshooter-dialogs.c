@@ -34,6 +34,10 @@ static void cb_delay_spinner_changed           (GtkWidget          *spinner,
 #ifdef HAVE_GIO                                                
 static void cb_combo_active_item_changed       (GtkComboBox        *box, 
                                                 ScreenshotData     *sd);
+static void add_item                           (GAppInfo           *app_info, 
+                                                GtkWidget          *liststore);
+static void populate_liststore                 (GtkListStore       *liststore);                                                
+                                                                                               
 #endif                                                                                                                                                                         
                                       
 /* Internals */
@@ -95,6 +99,9 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
 
 
 #ifdef HAVE_GIO
+
+
+
 static void cb_combo_active_item_changed (GtkComboBox *box, ScreenshotData *sd)
 {
   GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
@@ -103,22 +110,65 @@ static void cb_combo_active_item_changed (GtkComboBox *box, ScreenshotData *sd)
    
   gtk_combo_box_get_active_iter (GTK_COMBO_BOX (box), &iter);
   
-  gtk_tree_model_get (model, &iter, 0, &active_command, -1);
+  gtk_tree_model_get (model, &iter, 2, &active_command, -1);
   
   sd->app = active_command; 
 }
+
+
 
 static void add_item (GAppInfo *app_info, GtkWidget *liststore)
 {
   GtkTreeIter iter;
   gchar *command = g_strdup (g_app_info_get_executable (app_info));
+  gchar *name = g_strdup (g_app_info_get_name (app_info));
+  GIcon *icon = g_app_info_get_icon (app_info);
+  GdkPixbuf *pixbuf = NULL;
+  
+  if (G_IS_LOADABLE_ICON (icon))
+    {
+      GFile *file = g_file_icon_get_file (G_FILE_ICON (icon));
+      gchar *path = g_file_get_path (file);
+      
+      pixbuf = 
+        gdk_pixbuf_new_from_file_at_size (path, 22, 22, NULL);
+    }
+  else
+    {
+      gchar **names = NULL;
+      
+      g_object_get (G_OBJECT (icon), "names", &names, NULL);
+           
+      if (names != NULL)
+        {
+          GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
+          
+          if (names[0] != NULL)
+            {
+              pixbuf = 
+                gtk_icon_theme_load_icon (icon_theme, 
+                                          names[0], 
+                                          22,
+                                          GTK_ICON_LOOKUP_GENERIC_FALLBACK,
+                                          NULL);
+            }                                          
+          
+          g_free (names);                                             
+        }
+    }
   
   gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
           
-  gtk_list_store_set (GTK_LIST_STORE (liststore), &iter, 0, command, -1);
+  gtk_list_store_set (GTK_LIST_STORE (liststore), &iter, 0, pixbuf, 1, name,
+                      2, command, -1);
           
   g_free (command);
+  g_free (name);
+  if (pixbuf != NULL)
+    g_object_unref (pixbuf);
 }
+
+
 
 static void populate_liststore (GtkListStore *liststore)
 {
@@ -155,9 +205,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   GtkWidget *delay_label, *delay_box, *delay_spinner, *label2;
 #ifdef HAVE_GIO
   GtkWidget *open_with_label;
-  GtkListStore *liststore = gtk_list_store_new (1, G_TYPE_STRING);
+  GtkListStore *liststore;
   GtkWidget *combobox;
-  GtkCellRenderer *renderer;
+  GtkCellRenderer *renderer, *renderer_pixbuf;
 #endif
   
   /* Create the dialog */
@@ -310,13 +360,21 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   gtk_widget_show (open_with_label);
   gtk_container_add (GTK_CONTAINER (options_box), open_with_label);
   
+  liststore = gtk_list_store_new (3, GDK_TYPE_PIXBUF, 
+                                  G_TYPE_STRING, G_TYPE_STRING);
+  
   combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
   
   renderer = gtk_cell_renderer_text_new ();
+  renderer_pixbuf = gtk_cell_renderer_pixbuf_new ();
   
-  gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
-  gtk_cell_layout_set_attributes(GTK_CELL_LAYOUT(combobox), 
-                                 renderer, "text", 0, NULL);
+  gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), 
+                              renderer_pixbuf, FALSE);
+  gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), 
+                                  renderer, "text", 1, NULL);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer_pixbuf,
+                                  "pixbuf", 0, NULL);                                  
   
   populate_liststore (liststore);
   

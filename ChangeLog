@@ -1,3 +1,11 @@
+2008-11-01 jeromeg
+
+  * lib/screenshooter-dialogs.c, Implement the Open with stuff:
+    - add (cb_combo_active_item_changed), (add_item) and (populate_liststore)
+      to manage the combobox stuff.
+    - (screenshooter_dialog_new): add the combobox and set signals.
+  * Only build the open with stuff if gio is available.    
+
 2008-10-28 jeromeg
 
   * lib/screenshooter-utils.{c,h}:
@@ -6,9 +14,7 @@
     - start implementing (screenshooter_open_screenshot) to open screenshots
       with a given application.
   * src/main.c:
-  
-  * panel-plugin/screenshooter-plugin.c:   
-  
+    - if an application has been chosen, open the screenshot after taking it.
 
 2008-10-28 jeromeg
 
