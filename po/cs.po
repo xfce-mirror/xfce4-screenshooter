@@ -1,17 +1,14 @@
 # Czech translations for xfce4-screenshooter-plugin package.
 # Copyright (C) 2006 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
-# Michal Várady <miko.vaji@gmail.com>, 2006.
+# Michal Várady <miko.vaji@gmail.com>, 2006-2008.
 #
-#. Print a message to advise to use help when a non existing cli option is
-#. passed to the executable.
-#: ../src/main.c:96
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-28 09:50+0100\n"
-"PO-Revision-Date: 2008-07-07 19:29+0100\n"
+"PO-Revision-Date: 2008-11-02 18:56+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -37,9 +34,8 @@ msgid "Save screenshot as ..."
 msgstr "Uložit snímek obrazovky jako..."
 
 #: ../lib/screenshooter-dialogs.c:112
-#, fuzzy
 msgid "Screenshot"
-msgstr " Snímek obrazovky"
+msgstr "Snímek obrazovky"
 
 #: ../lib/screenshooter-dialogs.c:123
 msgid "Screenshooter plugin"
@@ -55,7 +51,8 @@ msgstr "Režimy"
 msgid "Take a screenshot of desktop"
 msgstr "Pořídit snímek obrazovky pracovního prostředí"
 
-#: ../lib/screenshooter-dialogs.c:166 ../src/main.c:50
+#: ../lib/screenshooter-dialogs.c:166
+#: ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:210
 #: ../panel-plugin/screenshooter-plugin.c:277
 msgid "Take a screenshot of the active window"
@@ -72,23 +69,16 @@ msgid "Show save dialog"
 msgstr "Zobrazit dialogové okno uložit"
 
 #: ../lib/screenshooter-dialogs.c:203
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Výchozí umístění pro "
-"ukládání</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Výchozí umístění pro ukládání</span>"
 
 #: ../lib/screenshooter-dialogs.c:210
 msgid "Default save location"
 msgstr "Výchozí umístění pro ukládání"
 
 #: ../lib/screenshooter-dialogs.c:224
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Zpoždění před pořízením "
-"snímku obrazovky</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zpoždění před pořízením snímku obrazovky</span>"
 
 #: ../lib/screenshooter-dialogs.c:241
 msgid "seconds"
@@ -102,8 +92,8 @@ msgstr "Výchozí složka pro ukládání"
 msgid "Version information"
 msgstr "Informace o verzi"
 
-#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:205
-#, fuzzy
+#: ../src/main.c:54
+#: ../panel-plugin/screenshooter-plugin.c:205
 msgid "Take a screenshot of the desktop"
 msgstr "Pořídit snímek obrazovky pracovního prostředí"
 
@@ -133,14 +123,12 @@ msgstr ""
 "Kompletní výpis dostupných voleb získáte přepínačem %s --help\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "A tool to take screenshots of your desktop or of the active windows"
-msgstr "Pořídit snímek aktivního okna"
+msgstr "Nástroj pro pořízení snímků pracovní plochy nebo aktivních oken"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Screenshot tool"
-msgstr " Snímek obrazovky"
+msgstr "Nástroj pro pořízení snímků obrazovky"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
@@ -156,21 +144,16 @@ msgstr " Pořídit snímek obrazovky"
 #, fuzzy
 #~ msgid "Delay before taking the screenshot"
 #~ msgstr "Pořídit snímek obrazovky"
-
 #~ msgid "Properties"
 #~ msgstr "Vlastnosti"
-
 #~ msgid "Screenshots"
 #~ msgstr "Snímky obrazovky"
-
 #~ msgid "Ask for _filename"
 #~ msgstr "Ptát se na _název souboru"
-
 #~ msgid "Error grabbing the pointer %d"
 #~ msgstr "Chyba při uchopení ukazatele %d"
-
 #~ msgid "Always take shot of the whole screen"
 #~ msgstr "Vždy zachytit celou obrazovku"
-
 #~ msgid "Window selection delay"
 #~ msgstr "Zpoždění pro výběr okna"
+
