@@ -1,3 +1,9 @@
+2008-11-02 jeromeg
+
+  * lib/screenshooter-dialogs.c:
+    - (cb_combo_active_item_changed) free sd->app before setting the new value.
+    - (add_item) free path, unref file and icon, correctly free names. 
+
 2008-11-01 jeromeg
 
   * lib/screenshooter-dialogs.c, Implement the Open with stuff:

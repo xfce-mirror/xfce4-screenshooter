@@ -112,6 +112,9 @@ static void cb_combo_active_item_changed (GtkComboBox *box, ScreenshotData *sd)
   
   gtk_tree_model_get (model, &iter, 2, &active_command, -1);
   
+  if (sd->app != NULL)
+    g_free (sd->app);
+  
   sd->app = active_command; 
 }
 
@@ -132,6 +135,9 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
       
       pixbuf = 
         gdk_pixbuf_new_from_file_at_size (path, 22, 22, NULL);
+      
+      g_free (path);
+      g_object_unref (file);
     }
   else
     {
@@ -153,7 +159,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
                                           NULL);
             }                                          
           
-          g_free (names);                                             
+          g_strfreev (names);                                        
         }
     }
   
@@ -166,6 +172,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
   g_free (name);
   if (pixbuf != NULL)
     g_object_unref (pixbuf);
+  g_object_unref (icon);
 }
 
 
