@@ -70,3 +70,15 @@ panel-plugin/Makefile
 po/Makefile.in
 ])
 
+dnl ***************************
+dnl *** Print configuration ***
+dnl ***************************
+
+echo "Build Configuration:"
+
+if test x"$GIO_FOUND" = x"yes"; then
+echo "* Open with support:             yes"
+else
+echo "* Open with support:             no"
+fi
+

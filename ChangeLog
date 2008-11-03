@@ -1,5 +1,15 @@
 2008-11-03 jeromeg
 
+  * configure.ac.in: Display build options.
+  * lib/screenshooter-dialog.c:
+    - (cb_combo_active_item_changed) Fix prototype and do not free sd->app as it
+      makes the plugin segfault.
+  * lib/screenshooter-utils.c:
+    - (screenshooter_open_screenshot) Display the error with xfce_err if any.
+  * TODO: updated.
+
+2008-11-03 jeromeg
+
   * TODO: updated.
   * lib/screenshooter-utils.h: add define for default application.
   * lib/screenshooter-utils.c:

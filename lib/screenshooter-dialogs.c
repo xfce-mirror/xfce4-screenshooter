@@ -34,7 +34,7 @@ static void cb_default_folder                  (GtkWidget          *chooser,
 static void cb_delay_spinner_changed           (GtkWidget          *spinner, 
                                                 ScreenshotData     *sd);
 #ifdef HAVE_GIO                                                
-static void cb_combo_active_item_changed       (GtkComboBox        *box, 
+static void cb_combo_active_item_changed       (GtkWidget          *box, 
                                                 ScreenshotData     *sd);
 static void add_item                           (GAppInfo           *app_info, 
                                                 GtkWidget          *liststore);
@@ -106,7 +106,7 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
 
 
 
-static void cb_combo_active_item_changed (GtkComboBox *box, ScreenshotData *sd)
+static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
 {
   GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
   GtkTreeIter iter;
@@ -116,10 +116,7 @@ static void cb_combo_active_item_changed (GtkComboBox *box, ScreenshotData *sd)
   
   gtk_tree_model_get (model, &iter, 2, &active_command, -1);
   
-  if (sd->app != NULL)
-    g_free (sd->app);
-  
-  sd->app = active_command; 
+  sd->app = active_command;
 }
 
 

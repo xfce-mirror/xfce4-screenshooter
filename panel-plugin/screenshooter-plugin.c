@@ -138,6 +138,7 @@ cb_free_data (XfcePanelPlugin *plugin, PluginData *pd)
 
   pd->style_id = 0;
   g_free (pd->sd->screenshot_dir);
+  g_free (pd->sd->app);
   g_free (pd->sd);
   g_free (pd);
 }
@@ -152,6 +153,7 @@ static void
 cb_button_clicked (GtkWidget *button, PluginData *pd)
 {
   GdkPixbuf *screenshot;
+  gchar *screenshot_path = NULL;
     
 	/* Make the button unclickable so that the user does not press it while 
 	another screenshot is in progress */
@@ -160,12 +162,19 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
   /* Get the screenshot */
 	screenshot = screenshooter_take_screenshot (pd->sd->mode, pd->sd->delay);
 
-  screenshooter_save_screenshot (screenshot, pd->sd->show_save_dialog, 
-                                 pd->sd->screenshot_dir);
+  screenshot_path = 
+    screenshooter_save_screenshot (screenshot, pd->sd->show_save_dialog, 
+                                   pd->sd->screenshot_dir);
+  
+  g_object_unref (screenshot);                                   
+  
+  if (screenshot_path != NULL)
+    {
+      screenshooter_open_screenshot (screenshot_path, pd->sd->app);
+      g_free (screenshot_path);
+    }                              
   
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
-	
-	g_object_unref (screenshot);
 }
 
 

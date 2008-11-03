@@ -360,7 +360,15 @@ screenshooter_open_screenshot (gchar *screenshot_path,
           gchar *command = 
             g_strconcat (application, " ", screenshot_path, NULL);
     
-          xfce_exec (command, FALSE, TRUE, NULL);
+          GError      *error = NULL;
+          
+          if (!xfce_exec_on_screen (gdk_screen_get_default (), command, FALSE, TRUE, &error))
+            {
+              xfce_err (error->message);
+              g_error_free (error);
+            }
+          
+          g_free (command);
         }
     }
 }                                    
