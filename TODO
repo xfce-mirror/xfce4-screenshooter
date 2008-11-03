@@ -1,9 +1,8 @@
-* Save the chosen application to open screenshots with, and set it as active when creating the combobox.
 * Add open with support to the plugin.
 * Write some documentation.
 * Update the code comments.
 * Update the website.
-* Correctly free the stuff in the GLists and liststore in screenshooter-dialogs.c
+* Correctly free the stuff in the GLists in screenshooter-dialogs.c
 
 Low priority:
 * Try to get borders captured with compiz.

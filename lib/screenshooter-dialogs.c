@@ -19,6 +19,8 @@
 
 #include "screenshooter-dialogs.h"
 
+#define ICON_SIZE 22
+
 /* Prototypes */ 
 
 static void cb_fullscreen_screen_toggled       (GtkToggleButton    *tb,
@@ -36,7 +38,9 @@ static void cb_combo_active_item_changed       (GtkComboBox        *box,
                                                 ScreenshotData     *sd);
 static void add_item                           (GAppInfo           *app_info, 
                                                 GtkWidget          *liststore);
-static void populate_liststore                 (GtkListStore       *liststore);                                                
+static void populate_liststore                 (GtkListStore       *liststore);
+static void set_default_item                   (GtkWidget          *combobox, 
+                                                gchar              *default_app);                                               
                                                                                                
 #endif                                                                                                                                                                         
                                       
@@ -134,7 +138,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
       gchar *path = g_file_get_path (file);
       
       pixbuf = 
-        gdk_pixbuf_new_from_file_at_size (path, 22, 22, NULL);
+        gdk_pixbuf_new_from_file_at_size (path, ICON_SIZE, ICON_SIZE, NULL);
       
       g_free (path);
       g_object_unref (file);
@@ -154,7 +158,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
               pixbuf = 
                 gtk_icon_theme_load_icon (icon_theme, 
                                           names[0], 
-                                          22,
+                                          ICON_SIZE,
                                           GTK_ICON_LOOKUP_GENERIC_FALLBACK,
                                           NULL);
             }                                          
@@ -181,6 +185,16 @@ static void populate_liststore (GtkListStore *liststore)
 {
   const gchar *content_type;
   GList	*list_app;
+  GtkTreeIter iter;
+  
+  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
+  
+  gtk_list_store_set (GTK_LIST_STORE (liststore), 
+                      &iter, 
+                      0, NULL, 
+                      1, _("Do not open screenshots"),
+                      2, "none", 
+                      -1);
      
   content_type = "image/png";
     
@@ -193,6 +207,30 @@ static void populate_liststore (GtkListStore *liststore)
       g_list_free (list_app);
     }
 }
+
+static void set_default_item (GtkWidget     *combobox, 
+                              gchar         *default_app)
+{
+  GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
+  GtkTreeIter iter; 
+  gchar *command = NULL;
+  
+  gtk_tree_model_get_iter_first (model , &iter);    
+
+  do
+    {
+      gtk_tree_model_get (model, &iter, 2, &command, -1);
+      
+      if (g_str_equal (command, default_app))
+        {
+          gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+          break;
+        }
+      
+      g_free (command);      
+    }
+  while (gtk_tree_model_iter_next (model, &iter)); 
+}                              
 #endif
 
                       
@@ -384,6 +422,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                                   "pixbuf", 0, NULL);                                  
   
   populate_liststore (liststore);
+  
+  set_default_item (combobox, sd->app);
   
   gtk_container_add (GTK_CONTAINER (options_box), combobox);
   

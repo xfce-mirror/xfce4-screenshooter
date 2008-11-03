@@ -34,6 +34,7 @@
 #include <unistd.h>
 
 #define DEFAULT_SAVE_DIRECTORY xfce_get_homedir ()
+#define DEFAULT_APPLICATION "none"
 
 enum {
   MODE_0,

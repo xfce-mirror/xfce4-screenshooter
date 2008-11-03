@@ -290,6 +290,7 @@ screenshooter_read_rc_file (gchar               *file,
   gint mode = FULLSCREEN;
   gint show_save_dialog = 1;
   gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+  gchar *app = DEFAULT_APPLICATION;
 
   if (g_file_test (file, G_FILE_TEST_EXISTS))
     {
@@ -303,6 +304,8 @@ screenshooter_read_rc_file (gchar               *file,
               mode = xfce_rc_read_int_entry (rc, "mode", FULLSCREEN);
               show_save_dialog = 
                 xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
+              app = 
+                g_strdup (xfce_rc_read_entry (rc, "app", DEFAULT_APPLICATION));
             }
   
           g_free (screenshot_dir);
@@ -320,6 +323,7 @@ screenshooter_read_rc_file (gchar               *file,
   sd->mode = mode;
   sd->show_save_dialog = show_save_dialog;
   sd->screenshot_dir = screenshot_dir;
+  sd->app = app;
 }
 
 
@@ -338,6 +342,7 @@ screenshooter_write_rc_file (gchar               *file,
   xfce_rc_write_int_entry (rc, "mode", sd->mode);
   xfce_rc_write_int_entry (rc, "show_save_dialog", sd->show_save_dialog);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
+  xfce_rc_write_entry (rc, "app", sd->app);
   
   xfce_rc_close (rc);
 }
@@ -350,8 +355,12 @@ screenshooter_open_screenshot (gchar *screenshot_path,
 {
   if (screenshot_path != NULL)
     {
-      gchar *command = g_strconcat (application, " ", screenshot_path, NULL);
+      if (!g_str_equal (application, "none"))
+        {
+          gchar *command = 
+            g_strconcat (application, " ", screenshot_path, NULL);
     
-      xfce_exec (command, FALSE, TRUE, NULL);
+          xfce_exec (command, FALSE, TRUE, NULL);
+        }
     }
 }                                    
