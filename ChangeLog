@@ -6,6 +6,10 @@
       makes the plugin segfault.
   * lib/screenshooter-utils.c:
     - (screenshooter_open_screenshot) Display the error with xfce_err if any.
+  * src/main.c: free sd->app when exiting.
+  * panel-plugin/screenshooter-plugin.c:
+    - (free_data) free sd->app when exiting.
+    - (cb_button_clicked) implement open with stuff.
   * TODO: updated.
 
 2008-11-03 jeromeg
