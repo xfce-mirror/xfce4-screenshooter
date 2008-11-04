@@ -280,6 +280,11 @@ gchar
 
 
 
+/* Read the options from file and sets the sd values.
+@file: the path to the rc file.
+@sd: the ScreenshotData to be set.
+@dir_only: if true, only read the screenshot_dir.
+*/
 void
 screenshooter_read_rc_file (gchar               *file, 
                             ScreenshotData      *sd, 
@@ -328,6 +333,10 @@ screenshooter_read_rc_file (gchar               *file,
 
 
 
+/* Writes the options from sd to file.
+@file: the path to the rc file.
+@sd: a ScreenshotData.
+*/
 void
 screenshooter_write_rc_file (gchar               *file, 
                              ScreenshotData      *sd)
@@ -349,12 +358,17 @@ screenshooter_write_rc_file (gchar               *file,
 
 
 
+/* Opens the screenshot using application.
+@screenshot_path: the path to the saved screenshot.
+@application: the command to run the application.
+*/
 void
 screenshooter_open_screenshot (gchar *screenshot_path,
                                gchar *application)
 {
   if (screenshot_path != NULL)
     {
+      /* If application == none, we don't do anything */      
       if (!g_str_equal (application, "none"))
         {
           gchar *command = 
@@ -362,6 +376,7 @@ screenshooter_open_screenshot (gchar *screenshot_path,
     
           GError      *error = NULL;
           
+          /* Execute the command and show an error dialog if there was an error */
           if (!xfce_exec_on_screen (gdk_screen_get_default (), command, FALSE, TRUE, &error))
             {
               xfce_err (error->message);

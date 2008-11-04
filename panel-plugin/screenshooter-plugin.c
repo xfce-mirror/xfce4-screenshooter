@@ -168,12 +168,14 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
   
   g_object_unref (screenshot);                                   
   
+  /* Open the screenshot */
   if (screenshot_path != NULL)
     {
       screenshooter_open_screenshot (screenshot_path, pd->sd->app);
       g_free (screenshot_path);
     }                              
   
+  /* Make the panel button clickable */
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
 }
 

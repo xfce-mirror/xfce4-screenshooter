@@ -33,14 +33,21 @@
 
 #include <unistd.h>
 
+
+
 #define DEFAULT_SAVE_DIRECTORY xfce_get_homedir ()
 #define DEFAULT_APPLICATION "none"
 
+
+
+/* Screenshot Modes */
 enum {
   MODE_0,
   FULLSCREEN,
   ACTIVE_WINDOW,
 };
+
+
 
 /* Struct to store the screenshot options */
 typedef struct
@@ -54,6 +61,8 @@ typedef struct
   gchar *app;
 }
 ScreenshotData;
+
+
 
 GdkPixbuf 
 *screenshooter_take_screenshot   (gint                  mode, 

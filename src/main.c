@@ -180,15 +180,20 @@ int main(int argc, char **argv)
     {
       screenshooter_preferences_dialog (rc_file, sd->screenshot_dir);
     }
+  /* Else we just show up the main application */
   else
     {
       GtkWidget *dialog;
       gint response;
       
+      /* Read the preferences */
       screenshooter_read_rc_file (rc_file, sd, FALSE);
       
+      /* Set the dialog up */
       dialog = screenshooter_dialog_new (sd, FALSE);
-            
+      
+      /* Run the dialog and destroy it, so that it's not grabbed in active
+         window mode */
       response = gtk_dialog_run (GTK_DIALOG (dialog));
       
       gtk_widget_destroy (dialog);
@@ -197,18 +202,21 @@ int main(int argc, char **argv)
         {
           gchar *screenshot_path = NULL;
           
+          /* Take the screenshot */
           screenshot = screenshooter_take_screenshot (sd->mode, sd->delay);
           screenshot_path =
             screenshooter_save_screenshot (screenshot, sd->show_save_dialog, 
                                            sd->screenshot_dir);
           g_object_unref (screenshot);
           
+          /* Open the screenshot */
           if (screenshot_path != NULL)
             {
               screenshooter_open_screenshot (screenshot_path, sd->app);
               g_free (screenshot_path);
             }
-                   
+          
+          /* Save preferences */     
           screenshooter_write_rc_file (rc_file, sd);
         }
     }

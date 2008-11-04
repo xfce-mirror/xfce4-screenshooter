@@ -46,6 +46,9 @@ static void set_default_item                   (GtkWidget          *combobox,
                                       
 /* Internals */
 
+
+
+/* Set the mode when the button is toggled */
 static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
                                           ScreenshotData   *sd)
 {
@@ -61,6 +64,7 @@ static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
 
 
 
+/* Set the mode when the button is toggled */
 static void cb_active_window_toggled (GtkToggleButton *tb,
                                       ScreenshotData   *sd)
 {
@@ -76,6 +80,7 @@ static void cb_active_window_toggled (GtkToggleButton *tb,
 
 
 
+/* Set sd->show_save_dialog when the button is toggled */
 static void cb_show_save_dialog_toggled (GtkToggleButton *tb,
                                          ScreenshotData   *sd)
 {
@@ -84,6 +89,7 @@ static void cb_show_save_dialog_toggled (GtkToggleButton *tb,
 
 
 
+/* Set sd->screenshot_dir when the user changed the value in the file chooser */
 static void cb_default_folder (GtkWidget       *chooser, 
                                ScreenshotData  *sd)
 {
@@ -93,6 +99,7 @@ static void cb_default_folder (GtkWidget       *chooser,
 
    
 
+/* Set the delay according to the spinner */
 static void cb_delay_spinner_changed (GtkWidget       *spinner, 
                                       ScreenshotData  *sd)
 {
@@ -106,6 +113,7 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
 
 
 
+/* Set sd->app as per the active item in the combobox */
 static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
 {
   GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
@@ -121,6 +129,7 @@ static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
 
 
 
+/* Extract the informations from app_info and add them to the liststore. */
 static void add_item (GAppInfo *app_info, GtkWidget *liststore)
 {
   GtkTreeIter iter;
@@ -129,6 +138,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
   GIcon *icon = g_app_info_get_icon (app_info);
   GdkPixbuf *pixbuf = NULL;
   
+  /* Get the icon */
   if (G_IS_LOADABLE_ICON (icon))
     {
       GFile *file = g_file_icon_get_file (G_FILE_ICON (icon));
@@ -164,11 +174,13 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
         }
     }
   
+  /* Add to the liststore */
   gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
           
   gtk_list_store_set (GTK_LIST_STORE (liststore), &iter, 0, pixbuf, 1, name,
                       2, command, -1);
-          
+  
+  /* Free the stuff */      
   g_free (command);
   g_free (name);
   if (pixbuf != NULL)
@@ -178,12 +190,14 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
 
 
 
+/* Populate the liststore using the applications which can open image/png. */
 static void populate_liststore (GtkListStore *liststore)
 {
   const gchar *content_type;
   GList	*list_app;
   GtkTreeIter iter;
   
+  /* Add default "none" item. */
   gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
   
   gtk_list_store_set (GTK_LIST_STORE (liststore), 
@@ -194,9 +208,11 @@ static void populate_liststore (GtkListStore *liststore)
                       -1);
      
   content_type = "image/png";
-    
+  
+  /* Get all applications for image/png.*/
   list_app = g_app_info_get_all_for_type (content_type);
   
+  /* Add them to the liststore */
   if (list_app != NULL)
     {
       g_list_foreach (list_app, (GFunc) add_item, liststore);
@@ -205,6 +221,9 @@ static void populate_liststore (GtkListStore *liststore)
     }
 }
 
+
+
+/* Select the sd->app item in the combobox */
 static void set_default_item (GtkWidget     *combobox, 
                               gchar         *default_app)
 {
@@ -212,8 +231,10 @@ static void set_default_item (GtkWidget     *combobox,
   GtkTreeIter iter; 
   gchar *command = NULL;
   
+  /* Get the first iter */
   gtk_tree_model_get_iter_first (model , &iter);    
-
+  
+  /* Loop until finding the appropirate item, if any */
   do
     {
       gtk_tree_model_get (model, &iter, 2, &command, -1);
@@ -230,11 +251,16 @@ static void set_default_item (GtkWidget     *combobox,
 }                              
 #endif
 
+
                       
 /* Public */
 
 
 
+/* Build the preferences dialog.
+@sd: a ScreenshotData to set the options.
+plugin: if in plugin mode, we show the save options in the dialog.
+*/
 GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 {
   GtkWidget *dlg;
@@ -434,6 +460,11 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 }
 
 
+
+/* Dialog to set the screenshot_dir when using the main executable
+@rc_file: file where the option will be saved.
+@current_default_dir: the current default dir to set the file chooser.
+*/
 void screenshooter_preferences_dialog (gchar *rc_file, 
                                        gchar *current_default_dir)
 {
