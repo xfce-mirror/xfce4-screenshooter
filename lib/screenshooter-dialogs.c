@@ -110,9 +110,6 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
 
 
 #ifdef HAVE_GIO
-
-
-
 /* Set sd->app as per the active item in the combobox */
 static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
 {

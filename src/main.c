@@ -210,11 +210,13 @@ int main(int argc, char **argv)
           g_object_unref (screenshot);
           
           /* Open the screenshot */
+          #ifdef HAVE_GIO
           if (screenshot_path != NULL)
             {
               screenshooter_open_screenshot (screenshot_path, sd->app);
               g_free (screenshot_path);
             }
+          #endif
           
           /* Save preferences */     
           screenshooter_write_rc_file (rc_file, sd);
@@ -222,7 +224,9 @@ int main(int argc, char **argv)
     }
   
   g_free (sd->screenshot_dir);
+  #ifdef HAVE_GIO
   g_free (sd->app);
+  #endif
   g_free (sd);
   g_free (rc_file);
     

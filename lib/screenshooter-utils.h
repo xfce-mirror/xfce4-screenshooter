@@ -58,7 +58,10 @@ typedef struct
   gint delay;
   gchar *screenshot_dir;
   
+  #ifdef HAVE_GIO
   gchar *app;
+  #endif
+  
 }
 ScreenshotData;
 
@@ -81,8 +84,10 @@ screenshooter_read_rc_file       (gchar                *file,
 void 
 screenshooter_write_rc_file      (gchar                *file, 
                                   ScreenshotData       *sd);
-                                  
+
+#ifdef HAVE_GIO                                 
 void
 screenshooter_open_screenshot    (gchar *screenshot_path,
                                   gchar *application);                                  
+#endif
 #endif                               
