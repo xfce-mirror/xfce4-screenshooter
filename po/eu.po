@@ -3,16 +3,16 @@
 # Copyright (C) 2006 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
 #
-# Piarres Beobide <pi@beobide.net>, 2006, 2008.
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
 #: ../src/main.c:96
+# Piarres Beobide <pi@beobide.net>, 2006, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-04 19:18+0100\n"
-"PO-Revision-Date: 2008-09-11 22:29+0200\n"
+"PO-Revision-Date: 2008-11-04 22:52+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,14 +38,12 @@ msgid "Save screenshot as ..."
 msgstr "Gorde argazkia honela ..."
 
 #: ../lib/screenshooter-dialogs.c:203
-#, fuzzy
 msgid "Do not open screenshots"
-msgstr " Atera pantaila-argazkia bat"
+msgstr "Ez ireki pantaila-argazkiak"
 
 #: ../lib/screenshooter-dialogs.c:282
-#, fuzzy
 msgid "Screenshot"
-msgstr " Pantaila-argazkia"
+msgstr "Pantaila-argazkia"
 
 #: ../lib/screenshooter-dialogs.c:293
 msgid "Screenshooter plugin"
@@ -78,8 +76,7 @@ msgid "Show save dialog"
 msgstr "Ikusi gordetze elkarrizketa"
 
 #: ../lib/screenshooter-dialogs.c:373
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Lehenetsitako gordetze "
 "kokalekua</span>"
@@ -101,13 +98,10 @@ msgid "seconds"
 msgstr "segundu"
 
 #: ../lib/screenshooter-dialogs.c:422
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 "span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Atzeratu pantaila-argazkia "
-"atera aurretik</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pantaila-argazkiak honekin ireki: </span>"
 
 #: ../lib/screenshooter-dialogs.c:477
 msgid "Default save folder"
@@ -118,7 +112,6 @@ msgid "Version information"
 msgstr "Bertsio argibideak"
 
 #: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
-#, fuzzy
 msgid "Take a screenshot of the desktop"
 msgstr "Atera idazmahaiaren pantaila-argazkia"
 
@@ -148,14 +141,12 @@ msgstr ""
 "Erabili %s --help komando-lerroko komando erabilgarriak ikusteko.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "A tool to take screenshots of your desktop or of the active windows"
-msgstr "Atera leiho aktiboaren pantaila-argazkia"
+msgstr "Leiho aktiboen edo idazmahaiaren pantaila-argazkiak ateratzeko lanabesa"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Screenshot tool"
-msgstr " Pantaila-argazkia"
+msgstr " Pantaila-argazki tresna"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
@@ -164,3 +155,4 @@ msgstr " Pantaila-argazkia"
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr " Atera pantaila-argazkia bat"
+
