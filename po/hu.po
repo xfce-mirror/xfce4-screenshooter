@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-28 09:50+0100\n"
+"POT-Creation-Date: 2008-11-04 19:18+0100\n"
 "PO-Revision-Date: 2008-07-12 19:16+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
@@ -29,56 +29,61 @@ msgstr "Képernyőkép.png"
 msgid "Screenshot-%d.png"
 msgstr "Képernyőkép-%d.png"
 
-#: ../lib/screenshooter-utils.c:221
+#: ../lib/screenshooter-utils.c:224
 msgid "Save screenshot as ..."
 msgstr "Képernyőkép mentése mint ..."
 
-#: ../lib/screenshooter-dialogs.c:112
+#: ../lib/screenshooter-dialogs.c:203
+#, fuzzy
+msgid "Do not open screenshots"
+msgstr " Képernyőkép készítése"
+
+#: ../lib/screenshooter-dialogs.c:282
 #, fuzzy
 msgid "Screenshot"
 msgstr " Képernyőkép"
 
-#: ../lib/screenshooter-dialogs.c:123
+#: ../lib/screenshooter-dialogs.c:293
 msgid "Screenshooter plugin"
 msgstr "Képernyőkép beillesztés"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../lib/screenshooter-dialogs.c:144
+#: ../lib/screenshooter-dialogs.c:314
 msgid "Modes"
 msgstr "Módok"
 
-#: ../lib/screenshooter-dialogs.c:155
-#: ../panel-plugin/screenshooter-plugin.c:272
+#: ../lib/screenshooter-dialogs.c:325
+#: ../panel-plugin/screenshooter-plugin.c:312
 msgid "Take a screenshot of desktop"
 msgstr "Felvétel készítése az asztalról"
 
-#: ../lib/screenshooter-dialogs.c:166 ../src/main.c:50
-#: ../panel-plugin/screenshooter-plugin.c:210
-#: ../panel-plugin/screenshooter-plugin.c:277
+#: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
+#: ../panel-plugin/screenshooter-plugin.c:250
+#: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the active window"
 msgstr "Felvétel készítése az aktív ablakról"
 
 #. Create the options frame and add the delay and save options
-#: ../lib/screenshooter-dialogs.c:176
+#: ../lib/screenshooter-dialogs.c:346
 msgid "Options"
 msgstr "Lehetőségek"
 
 #. Save option
-#: ../lib/screenshooter-dialogs.c:189
+#: ../lib/screenshooter-dialogs.c:359
 msgid "Show save dialog"
 msgstr "Mentési párbeszéd megjelenítése"
 
-#: ../lib/screenshooter-dialogs.c:203
+#: ../lib/screenshooter-dialogs.c:373
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Alap mentési hely</span>"
 
-#: ../lib/screenshooter-dialogs.c:210
+#: ../lib/screenshooter-dialogs.c:380
 msgid "Default save location"
 msgstr "Alap mentési hely"
 
-#: ../lib/screenshooter-dialogs.c:224
+#: ../lib/screenshooter-dialogs.c:394
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -86,11 +91,20 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Késleltetés a felvétel előtt</"
 "span>"
 
-#: ../lib/screenshooter-dialogs.c:241
+#: ../lib/screenshooter-dialogs.c:411
 msgid "seconds"
 msgstr "másodperc"
 
-#: ../lib/screenshooter-dialogs.c:264
+#: ../lib/screenshooter-dialogs.c:422
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
+"span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Késleltetés a felvétel előtt</"
+"span>"
+
+#: ../lib/screenshooter-dialogs.c:477
 msgid "Default save folder"
 msgstr "Alap mentési mappa"
 
@@ -98,7 +112,7 @@ msgstr "Alap mentési mappa"
 msgid "Version information"
 msgstr "Verzió adatok"
 
-#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:205
+#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
 #, fuzzy
 msgid "Take a screenshot of the desktop"
 msgstr "Felvétel készítése az asztalról"

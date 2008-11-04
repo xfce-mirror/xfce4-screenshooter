@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-28 09:50+0100\n"
+"POT-Creation-Date: 2008-11-04 19:18+0100\n"
 "PO-Revision-Date: 2008-09-11 22:29+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
@@ -33,57 +33,62 @@ msgstr "Pantaila-argazkia.png"
 msgid "Screenshot-%d.png"
 msgstr "Pantala-argazkia-%d.png"
 
-#: ../lib/screenshooter-utils.c:221
+#: ../lib/screenshooter-utils.c:224
 msgid "Save screenshot as ..."
 msgstr "Gorde argazkia honela ..."
 
-#: ../lib/screenshooter-dialogs.c:112
+#: ../lib/screenshooter-dialogs.c:203
+#, fuzzy
+msgid "Do not open screenshots"
+msgstr " Atera pantaila-argazkia bat"
+
+#: ../lib/screenshooter-dialogs.c:282
 #, fuzzy
 msgid "Screenshot"
 msgstr " Pantaila-argazkia"
 
-#: ../lib/screenshooter-dialogs.c:123
+#: ../lib/screenshooter-dialogs.c:293
 msgid "Screenshooter plugin"
 msgstr "Argazki-ateratze plugina"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../lib/screenshooter-dialogs.c:144
+#: ../lib/screenshooter-dialogs.c:314
 msgid "Modes"
 msgstr "Moduak"
 
-#: ../lib/screenshooter-dialogs.c:155
-#: ../panel-plugin/screenshooter-plugin.c:272
+#: ../lib/screenshooter-dialogs.c:325
+#: ../panel-plugin/screenshooter-plugin.c:312
 msgid "Take a screenshot of desktop"
 msgstr "Atera idazmahaiaren pantaila-argazkia"
 
-#: ../lib/screenshooter-dialogs.c:166 ../src/main.c:50
-#: ../panel-plugin/screenshooter-plugin.c:210
-#: ../panel-plugin/screenshooter-plugin.c:277
+#: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
+#: ../panel-plugin/screenshooter-plugin.c:250
+#: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the active window"
 msgstr "Atera leiho aktiboaren pantaila-argazkia"
 
 #. Create the options frame and add the delay and save options
-#: ../lib/screenshooter-dialogs.c:176
+#: ../lib/screenshooter-dialogs.c:346
 msgid "Options"
 msgstr "Aukerak"
 
 #. Save option
-#: ../lib/screenshooter-dialogs.c:189
+#: ../lib/screenshooter-dialogs.c:359
 msgid "Show save dialog"
 msgstr "Ikusi gordetze elkarrizketa"
 
-#: ../lib/screenshooter-dialogs.c:203
+#: ../lib/screenshooter-dialogs.c:373
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Lehenetsitako gordetze "
 "kokalekua</span>"
 
-#: ../lib/screenshooter-dialogs.c:210
+#: ../lib/screenshooter-dialogs.c:380
 msgid "Default save location"
 msgstr "Lehenetsitako gordetze kokapena"
 
-#: ../lib/screenshooter-dialogs.c:224
+#: ../lib/screenshooter-dialogs.c:394
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -91,11 +96,20 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Atzeratu pantaila-argazkia "
 "atera aurretik</span>"
 
-#: ../lib/screenshooter-dialogs.c:241
+#: ../lib/screenshooter-dialogs.c:411
 msgid "seconds"
 msgstr "segundu"
 
-#: ../lib/screenshooter-dialogs.c:264
+#: ../lib/screenshooter-dialogs.c:422
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
+"span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Atzeratu pantaila-argazkia "
+"atera aurretik</span>"
+
+#: ../lib/screenshooter-dialogs.c:477
 msgid "Default save folder"
 msgstr "Lehenetsitako gordetze karpeta"
 
@@ -103,7 +117,7 @@ msgstr "Lehenetsitako gordetze karpeta"
 msgid "Version information"
 msgstr "Bertsio argibideak"
 
-#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:205
+#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
 #, fuzzy
 msgid "Take a screenshot of the desktop"
 msgstr "Atera idazmahaiaren pantaila-argazkia"

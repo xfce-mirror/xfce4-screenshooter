@@ -357,7 +357,7 @@ screenshooter_write_rc_file (gchar               *file,
   xfce_rc_write_int_entry (rc, "mode", sd->mode);
   xfce_rc_write_int_entry (rc, "show_save_dialog", sd->show_save_dialog);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
-  #ifdef
+  #ifdef HAVE_GIO
   xfce_rc_write_entry (rc, "app", sd->app);
   #endif
   

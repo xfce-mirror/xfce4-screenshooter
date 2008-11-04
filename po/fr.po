@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-28 09:50+0100\n"
+"POT-Creation-Date: 2008-11-04 19:18+0100\n"
 "PO-Revision-Date: 2008-07-12 16:54+0100\n"
 "Last-Translator: Jérôme Guelfucci <jerome.guelfucci@gmail.com>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
@@ -31,56 +31,60 @@ msgstr "Capture.png"
 msgid "Screenshot-%d.png"
 msgstr "Capture-%d.png"
 
-#: ../lib/screenshooter-utils.c:221
+#: ../lib/screenshooter-utils.c:224
 msgid "Save screenshot as ..."
 msgstr "Enregistrer une capture d'écran sous ..."
 
-#: ../lib/screenshooter-dialogs.c:112
+#: ../lib/screenshooter-dialogs.c:203
+msgid "Do not open screenshots"
+msgstr "Ne pas ouvrir les captures d'écran"
+
+#: ../lib/screenshooter-dialogs.c:282
 msgid "Screenshot"
 msgstr "Capture d'écran"
 
-#: ../lib/screenshooter-dialogs.c:123
+#: ../lib/screenshooter-dialogs.c:293
 msgid "Screenshooter plugin"
 msgstr "Outil de capture d'écran"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../lib/screenshooter-dialogs.c:144
+#: ../lib/screenshooter-dialogs.c:314
 msgid "Modes"
 msgstr "Modes"
 
-#: ../lib/screenshooter-dialogs.c:155
-#: ../panel-plugin/screenshooter-plugin.c:272
+#: ../lib/screenshooter-dialogs.c:325
+#: ../panel-plugin/screenshooter-plugin.c:312
 msgid "Take a screenshot of desktop"
 msgstr "Prendre une capture d'écran du bureau"
 
-#: ../lib/screenshooter-dialogs.c:166 ../src/main.c:50
-#: ../panel-plugin/screenshooter-plugin.c:210
-#: ../panel-plugin/screenshooter-plugin.c:277
+#: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
+#: ../panel-plugin/screenshooter-plugin.c:250
+#: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the active window"
 msgstr "Prendre une capture d'écran de la fenêtre active"
 
 #. Create the options frame and add the delay and save options
-#: ../lib/screenshooter-dialogs.c:176
+#: ../lib/screenshooter-dialogs.c:346
 msgid "Options"
 msgstr "Options"
 
 #. Save option
-#: ../lib/screenshooter-dialogs.c:189
+#: ../lib/screenshooter-dialogs.c:359
 msgid "Show save dialog"
 msgstr "Afficher la fenêtre de sauvagarde"
 
-#: ../lib/screenshooter-dialogs.c:203
+#: ../lib/screenshooter-dialogs.c:373
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Répertoire de sauvegarde par "
 "défaut</span>"
 
-#: ../lib/screenshooter-dialogs.c:210
+#: ../lib/screenshooter-dialogs.c:380
 msgid "Default save location"
 msgstr "Répertoire de sauvegarde par défaut"
 
-#: ../lib/screenshooter-dialogs.c:224
+#: ../lib/screenshooter-dialogs.c:394
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -88,12 +92,18 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Délai avant la prise de la "
 "capture d'écran</span>"
 
-#: ../lib/screenshooter-dialogs.c:241
+#: ../lib/screenshooter-dialogs.c:411
 msgid "seconds"
 msgstr "secondes"
 
-#: ../lib/screenshooter-dialogs.c:264
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:422
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
+"span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Ouvrir la capture d'écran avec'</span>"
+
+#: ../lib/screenshooter-dialogs.c:477
 msgid "Default save folder"
 msgstr "Répertoire de sauvegarde par défaut"
 
@@ -101,7 +111,7 @@ msgstr "Répertoire de sauvegarde par défaut"
 msgid "Version information"
 msgstr "Informations sur la version"
 
-#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:205
+#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
 msgid "Take a screenshot of the desktop"
 msgstr "Prendre une capture d'écran du bureau"
 
@@ -133,7 +143,8 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "A tool to take screenshots of your desktop or of the active windows"
-msgstr "Un outil pour prendre des captures d'écran du bureau ou de la fenêtre active"
+msgstr ""
+"Un outil pour prendre des captures d'écran du bureau ou de la fenêtre active"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 msgid "Screenshot tool"
