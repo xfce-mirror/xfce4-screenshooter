@@ -1,3 +1,15 @@
+2008-11-05 jeromeg
+
+  * Add svn tag.
+  * Fix the version mess.
+  * lib/screenshooter-utils.c: 
+    - (screenshooter_read_rc_file) apply a patch by Enrico Tröger to fix a 
+      crash.
+  * lib/screenshooter-dialogs.c:
+    - plug a leak in (cb_default_folder) and in (cb_combo_active_item_changed).
+
+  === 1.3.9.0 ===
+
 2008-11-04 jeromeg
 
   * Fix make distcheck.

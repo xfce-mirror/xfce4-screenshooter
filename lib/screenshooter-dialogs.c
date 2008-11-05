@@ -93,6 +93,7 @@ static void cb_show_save_dialog_toggled (GtkToggleButton *tb,
 static void cb_default_folder (GtkWidget       *chooser, 
                                ScreenshotData  *sd)
 {
+  g_free (sd->screenshot_dir);
   sd->screenshot_dir = 
     gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
 }
@@ -121,6 +122,7 @@ static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
   
   gtk_tree_model_get (model, &iter, 2, &active_command, -1);
   
+  g_free (sd->app);
   sd->app = active_command;
 }
 

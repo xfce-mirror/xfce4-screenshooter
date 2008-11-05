@@ -296,7 +296,7 @@ screenshooter_read_rc_file (gchar               *file,
   gint show_save_dialog = 1;
   gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
   #ifdef HAVE_GIO
-  gchar *app = DEFAULT_APPLICATION;
+  gchar *app = g_strdup (DEFAULT_APPLICATION);
   #endif
   
   if (g_file_test (file, G_FILE_TEST_EXISTS))
@@ -312,6 +312,7 @@ screenshooter_read_rc_file (gchar               *file,
               show_save_dialog = 
                 xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
               #ifdef HAVE_GIO
+              g_free (app);
               app = 
                 g_strdup (xfce_rc_read_entry (rc, "app", DEFAULT_APPLICATION));
               #endif

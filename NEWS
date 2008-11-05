@@ -1,4 +1,9 @@
-=== Version 1.3.90 ===
+=== Version 1.3.9.1 ===
+
+  * Apply a patch by Enrico Tröger to fix a crash.
+  * Plug some additionnal leaks.
+
+=== Version 1.3.9.0 ===
 
   * Add a dialog to set the screenshot options and take a screenshot when no 
     CLI option is given to the executable, add a menu entry for the application.
