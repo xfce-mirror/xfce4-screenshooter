@@ -204,19 +204,38 @@ int main(int argc, char **argv)
           
           /* Take the screenshot */
           screenshot = screenshooter_take_screenshot (sd->mode, sd->delay);
-          screenshot_path =
-            screenshooter_save_screenshot (screenshot, sd->show_save_dialog, 
-                                           sd->screenshot_dir);
+          
+          #ifdef HAVE_GIO
+          if (!g_str_equal(sd->app, "none"))
+            {
+              screenshot_path = 
+                screenshooter_save_screenshot (screenshot, 
+                                               FALSE, 
+                                               "/tmp");
+            }
+          else
+            {
+          #endif
+              screenshot_path = 
+                screenshooter_save_screenshot (screenshot, 
+                                               sd->show_save_dialog, 
+                                               sd->screenshot_dir);
+          #ifdef HAVE_GIO
+            }
+          #endif
+          
           g_object_unref (screenshot);
           
           /* Open the screenshot */
-          #ifdef HAVE_GIO
+          
           if (screenshot_path != NULL)
             {
+              #ifdef HAVE_GIO
               screenshooter_open_screenshot (screenshot_path, sd->app);
+              #endif
               g_free (screenshot_path);
             }
-          #endif
+          
           
           /* Save preferences */     
           screenshooter_write_rc_file (rc_file, sd);

@@ -163,21 +163,33 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
 
   /* Get the screenshot */
 	screenshot = screenshooter_take_screenshot (pd->sd->mode, pd->sd->delay);
-
-  screenshot_path = 
-    screenshooter_save_screenshot (screenshot, pd->sd->show_save_dialog, 
-                                   pd->sd->screenshot_dir);
   
+  #ifdef HAVE_GIO
+  if (!g_str_equal(pd->sd->app, "none"))
+    {
+      screenshot_path = 
+        screenshooter_save_screenshot (screenshot, FALSE, "/tmp");
+    }
+  else
+    {
+  #endif
+      screenshot_path = 
+        screenshooter_save_screenshot (screenshot, pd->sd->show_save_dialog, 
+                                       pd->sd->screenshot_dir);
+  #ifdef HAVE_GIO
+    }
+  #endif
+    
   g_object_unref (screenshot);                                   
   
   /* Open the screenshot */
-  #ifdef HAVE_GIO
-  if (screenshot_path != NULL)
-    {
-      screenshooter_open_screenshot (screenshot_path, pd->sd->app);
-      g_free (screenshot_path);
-    }
-  #endif                             
+ if (screenshot_path != NULL)
+	 {
+	   #ifdef HAVE_GIO
+	   screenshooter_open_screenshot (screenshot_path, pd->sd->app);
+	   #endif
+	   g_free (screenshot_path);
+	 }                           
   
   /* Make the panel button clickable */
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);

@@ -1,5 +1,16 @@
 2008-11-05 jeromeg
 
+  * src/main.c, lib/screenshooter-plugin.c:
+    - If no application is selected to open the screenshots, show the save 
+      dialog as usual. If an application is selected, save the screenshot in
+      /tmp without showing the save dialog, and open it with the application.
+      The user will then be able to do what he wants to do with the picture, and
+      to save it where he wants using the application.
+    - don't leak screenshot_path when GIO is not present on the system.
+  * NEWS: updated
+
+2008-11-05 jeromeg
+
   * Add svn tag.
   * Fix the version mess.
   * lib/screenshooter-utils.c: 
