@@ -136,6 +136,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
   gchar *name = g_strdup (g_app_info_get_name (app_info));
   GIcon *icon = g_app_info_get_icon (app_info);
   GdkPixbuf *pixbuf = NULL;
+  GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
   
   /* Get the icon */
   if (G_IS_LOADABLE_ICON (icon))
@@ -157,8 +158,6 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
            
       if (names != NULL)
         {
-          GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
-          
           if (names[0] != NULL)
             {
               pixbuf = 
@@ -171,6 +170,13 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
           
           g_strfreev (names);                                        
         }
+    }
+  
+  if (pixbuf == NULL)
+    {
+      pixbuf = gtk_icon_theme_load_icon (icon_theme, "exec", ICON_SIZE,
+                                         GTK_ICON_LOOKUP_GENERIC_FALLBACK,
+                                         NULL);
     }
   
   /* Add to the liststore */

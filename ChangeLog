@@ -1,6 +1,12 @@
 2008-11-05 jeromeg
 
-  * src/main.c, lib/screenshooter-plugin.c:
+  * lib/screenshooter-dialogs.c (add_item):
+    - Move the detection of the icon theme out of the if-else.
+    - Fallbac to the "exec" icon if no icon was found for an application.
+
+2008-11-05 jeromeg
+
+  * src/main.c, panel-plugin/screenshooter-plugin.c:
     - If no application is selected to open the screenshots, show the save 
       dialog as usual. If an application is selected, save the screenshot in
       /tmp without showing the save dialog, and open it with the application.
