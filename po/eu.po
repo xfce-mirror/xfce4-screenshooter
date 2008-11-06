@@ -3,10 +3,10 @@
 # Copyright (C) 2006 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
 #
+# Piarres Beobide <pi@beobide.net>, 2006, 2008.
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
 #: ../src/main.c:96
-# Piarres Beobide <pi@beobide.net>, 2006, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
@@ -146,7 +146,7 @@ msgstr "Leiho aktiboen edo idazmahaiaren pantaila-argazkiak ateratzeko lanabesa"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 msgid "Screenshot tool"
-msgstr " Pantaila-argazki tresna"
+msgstr "Pantaila-argazki tresna"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
@@ -155,4 +155,3 @@ msgstr " Pantaila-argazkia"
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
 msgstr " Atera pantaila-argazkia bat"
-
