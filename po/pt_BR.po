@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-04 19:18+0100\n"
-"PO-Revision-Date: 2008-10-28 18:41-0400\n"
+"PO-Revision-Date: 2008-11-06 22:05-0400\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
@@ -40,9 +40,8 @@ msgid "Save screenshot as ..."
 msgstr "Salvar a captura de tela como ..."
 
 #: ../lib/screenshooter-dialogs.c:203
-#, fuzzy
 msgid "Do not open screenshots"
-msgstr " Capturar imagem da tela"
+msgstr "Não abrir capturas de tela"
 
 #: ../lib/screenshooter-dialogs.c:282
 msgid "Screenshot"
@@ -102,13 +101,12 @@ msgid "seconds"
 msgstr "segundos"
 
 #: ../lib/screenshooter-dialogs.c:422
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 "span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Atraso antes de capturar uma "
-"imagem da tela</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Abrir a imagem da captura de "
+"tela com</span>"
 
 #: ../lib/screenshooter-dialogs.c:477
 msgid "Default save folder"
