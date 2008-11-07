@@ -54,7 +54,7 @@ dnl Optionnal check for gio
 XDT_CHECK_OPTIONAL_PACKAGE([GIO], [gio-2.0], [2.16])
 
 dnl Translations
-XDT_I18N([ar ca cs da de el en_GB es eu fr gl hr hu id ja lv nb_NO nl pl pt_BR pt_PT sq uk ur zh_TW])
+XDT_I18N([ar ca cs da de el en_GB es eu fi fr gl hr hu id ja lv nb_NO nl pl pt_BR pt_PT sq uk ur zh_TW])
 
 dnl Check for debugging support
 XDT_FEATURE_DEBUG()
