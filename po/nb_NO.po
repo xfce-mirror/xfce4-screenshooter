@@ -21,118 +21,116 @@ msgstr ""
 
 #: ../lib/screenshooter-utils.c:46
 msgid "Couldn't find window manager window"
-msgstr ""
+msgstr "Klarte ikke finne vindusbehandlervindu"
 
 #: ../lib/screenshooter-utils.c:75
-#, fuzzy
 msgid "Screenshot.png"
-msgstr "Skjermskudd"
+msgstr "Skjermbildekopi.png"
 
 #: ../lib/screenshooter-utils.c:88
-#, fuzzy, c-format
+#, c-format
 msgid "Screenshot-%d.png"
-msgstr "Skjermskudd"
+msgstr "Skjermbildekopi-%d.png"
 
 #: ../lib/screenshooter-utils.c:224
 msgid "Save screenshot as ..."
-msgstr "Lagre skjermskudd som ..."
+msgstr "Lagre skjermbildekopi som ..."
 
 #: ../lib/screenshooter-dialogs.c:203
-#, fuzzy
 msgid "Do not open screenshots"
-msgstr "Ta et skjermskkudd"
+msgstr "Ikke åpne skjermbildekopi"
 
 #: ../lib/screenshooter-dialogs.c:282
-#, fuzzy
 msgid "Screenshot"
-msgstr "Skjermskudd"
+msgstr "Skjermbildekopi"
 
 #: ../lib/screenshooter-dialogs.c:293
-#, fuzzy
 msgid "Screenshooter plugin"
-msgstr "Skjermskudd forsinkelse"
+msgstr "Skjermbildekopi"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../lib/screenshooter-dialogs.c:314
 msgid "Modes"
-msgstr ""
+msgstr "Modus"
 
 #: ../lib/screenshooter-dialogs.c:325
 #: ../panel-plugin/screenshooter-plugin.c:312
-#, fuzzy
 msgid "Take a screenshot of desktop"
-msgstr "Ta et skjermskkudd"
+msgstr "Ta en skjermbildekopi av skrivebordet"
 
 #: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:250
 #: ../panel-plugin/screenshooter-plugin.c:317
-#, fuzzy
 msgid "Take a screenshot of the active window"
-msgstr "Ta et skjermskkudd"
+msgstr "Ta en skjermbildekopi av det aktive vinduet"
 
 #. Create the options frame and add the delay and save options
 #: ../lib/screenshooter-dialogs.c:346
 msgid "Options"
-msgstr ""
+msgstr "Brukervalg"
 
 #. Save option
 #: ../lib/screenshooter-dialogs.c:359
 msgid "Show save dialog"
-msgstr ""
+msgstr "Vis vindu for å lagre"
 
 #: ../lib/screenshooter-dialogs.c:373
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Standard lagringsplass</span>"
 
 #: ../lib/screenshooter-dialogs.c:380
 msgid "Default save location"
-msgstr ""
+msgstr "Standard lagringsplass"
 
 #: ../lib/screenshooter-dialogs.c:394
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse før "
+"skjermbildekopien knipses</span>"
 
 #: ../lib/screenshooter-dialogs.c:411
 msgid "seconds"
-msgstr ""
+msgstr "sekunder"
 
 #: ../lib/screenshooter-dialogs.c:422
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 "span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Åpne skjermbildekopien med</"
+"span>"
 
 #: ../lib/screenshooter-dialogs.c:477
 msgid "Default save folder"
-msgstr ""
+msgstr "Standard lagringsplass"
 
 #: ../src/main.c:46
 msgid "Version information"
-msgstr ""
+msgstr "Versjonsinformasjon"
 
 #: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
-#, fuzzy
 msgid "Take a screenshot of the desktop"
-msgstr "Ta et skjermskkudd"
+msgstr "Ta skjermbildekopi av skrivebordet"
 
 #: ../src/main.c:58
 msgid "Delay in seconds before taking the screenshot"
-msgstr ""
+msgstr "Forsinkelse i sekunder før skjermbildekopi knipses"
 
 #: ../src/main.c:63
 msgid "Do not display the save dialog"
-msgstr ""
+msgstr "Ikke vis vindu for å lagre"
 
 #: ../src/main.c:67
 msgid "Directory where the screenshot will be saved"
-msgstr ""
+msgstr "Mappen hvor skjermbildekopier lagres"
 
 #: ../src/main.c:71
 msgid "Dialog to set the default save folder"
-msgstr ""
+msgstr "Vindu for å sette ønsket lagringsmappe"
 
 #: ../src/main.c:100
 #, c-format
@@ -140,46 +138,23 @@ msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
+"%s: %s\n"
+"Prøv %s --help for å se liste over tilgjengelige kommandolinjeopsjoner.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "A tool to take screenshots of your desktop or of the active windows"
-msgstr "Ta et skjermskkudd"
+msgstr ""
+"Verktøy for å ta skjermbildekopi av skrivebordet eller det aktive vinduet"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Screenshot tool"
-msgstr "Skjermskudd"
+msgstr "skjermbildekopiverktøy"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
-msgstr "Skjermskudd"
+msgstr "Skjermbildekopi"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
-msgstr "Ta et skjermskkudd"
+msgstr "Ta en skjermbildekopi"
 
-#~ msgid "Take screenshot"
-#~ msgstr "Lage skjermskudd"
-
-#, fuzzy
-#~ msgid "Delay before taking the screenshot"
-#~ msgstr "Ta et skjermskkudd"
-
-#~ msgid "Properties"
-#~ msgstr "Egenskaper"
-
-#~ msgid "Screenshots"
-#~ msgstr "Skjermskudd"
-
-#~ msgid "Ask for _filename"
-#~ msgstr "Spør etter _filnavn"
-
-#~ msgid "Error grabbing the pointer %d"
-#~ msgstr "Feil ved innhenting av peker %d"
-
-#~ msgid "Always take shot of the whole screen"
-#~ msgstr "Ta alltid skudd av hele skjermen"
-
-#~ msgid "Window selection delay"
-#~ msgstr "Vindusvalg forsinkelse"
