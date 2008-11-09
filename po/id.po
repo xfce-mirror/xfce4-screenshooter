@@ -3,15 +3,12 @@
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Andhika Padmawan <andhika.padmawan@gmail.com>, 2008.
 #
-#. Print a message to advise to use help when a non existing cli option is
-#. passed to the executable.
-#: ../src/main.c:96
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-04 19:18+0100\n"
-"PO-Revision-Date: 2008-10-29 22:42+0700\n"
+"PO-Revision-Date: 2008-11-07 05:47+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,9 +33,8 @@ msgid "Save screenshot as ..."
 msgstr "Simpan cuplikan layar sebagai ..."
 
 #: ../lib/screenshooter-dialogs.c:203
-#, fuzzy
 msgid "Do not open screenshots"
-msgstr " Ambil cuplikan layar"
+msgstr "Jangan buka cuplikan layar"
 
 #: ../lib/screenshooter-dialogs.c:282
 msgid "Screenshot"
@@ -58,7 +54,8 @@ msgstr "Mode"
 msgid "Take a screenshot of desktop"
 msgstr "Ambil cuplikan layar destop"
 
-#: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
+#: ../lib/screenshooter-dialogs.c:336
+#: ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:250
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the active window"
@@ -75,35 +72,24 @@ msgid "Show save dialog"
 msgstr "Tampilkan dialog simpan"
 
 #: ../lib/screenshooter-dialogs.c:373
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Lokasi simpan standar</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Lokasi simpan standar</span>"
 
 #: ../lib/screenshooter-dialogs.c:380
 msgid "Default save location"
 msgstr "Lokasi simpan standar"
 
 #: ../lib/screenshooter-dialogs.c:394
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Jeda sebelum mengambil "
-"cuplikan layar</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Jeda sebelum mengambil cuplikan layar</span>"
 
 #: ../lib/screenshooter-dialogs.c:411
 msgid "seconds"
 msgstr "detik"
 
 #: ../lib/screenshooter-dialogs.c:422
-#, fuzzy
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
-"span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Jeda sebelum mengambil "
-"cuplikan layar</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Buka cuplikan layar dengan</span>"
 
 #: ../lib/screenshooter-dialogs.c:477
 msgid "Default save folder"
@@ -113,7 +99,8 @@ msgstr "Folder simpan standar"
 msgid "Version information"
 msgstr "Informasi versi"
 
-#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
+#: ../src/main.c:54
+#: ../panel-plugin/screenshooter-plugin.c:245
 msgid "Take a screenshot of the desktop"
 msgstr "Ambil cuplikan layar dari destop"
 
@@ -140,13 +127,11 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Gunakan %s --help untuk melihat senarai lengkap opsi baris perintah yang "
-"tersedia.\n"
+"Gunakan %s --help untuk melihat senarai lengkap opsi baris perintah yang tersedia.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "A tool to take screenshots of your desktop or of the active windows"
-msgstr ""
-"Alat untuk mengambil cuplikan layar destop anda atau jendela yang aktif"
+msgstr "Alat untuk mengambil cuplikan layar destop anda atau jendela yang aktif"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 msgid "Screenshot tool"
@@ -162,12 +147,10 @@ msgstr " Ambil cuplikan layar"
 
 #~ msgid "Properties"
 #~ msgstr "Properti"
-
 #~ msgid "Ask for _filename"
 #~ msgstr "Tanya _nama berkas"
-
 #~ msgid "Delay before taking screenshot"
 #~ msgstr "Jeda sebelum mengambil cuplikan layar"
-
 #~ msgid "Take screenshot"
 #~ msgstr "Ambil cuplikan layar"
+

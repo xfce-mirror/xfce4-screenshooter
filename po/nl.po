@@ -12,17 +12,17 @@ msgstr ""
 "Project-Id-Version: 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-04 19:18+0100\n"
-"PO-Revision-Date: 2008-06-29 17:05+0100\n"
-"Last-Translator: Stephan Arts <stephan@xfce.org>\n"
+"PO-Revision-Date: 2008-11-09 21:52+0100\n"
+"Last-Translator: Vincent Tunru <projects@vinnl.nl>\n"
 "Language-Team: Dutch <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../lib/screenshooter-utils.c:46
 msgid "Couldn't find window manager window"
-msgstr "De vensterbeheerder kon niet gevonden worden"
+msgstr "Kan venster niet vinden"
 
 #: ../lib/screenshooter-utils.c:75
 msgid "Screenshot.png"
@@ -52,18 +52,19 @@ msgstr "Schermafdruk-plugin"
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../lib/screenshooter-dialogs.c:314
 msgid "Modes"
-msgstr "Schermafdruk-soorten"
+msgstr "Bereik"
 
 #: ../lib/screenshooter-dialogs.c:325
 #: ../panel-plugin/screenshooter-plugin.c:312
 msgid "Take a screenshot of desktop"
-msgstr "Een schermafdruk van het volledige scherm maken"
+msgstr "Hele scherm"
 
-#: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
+#: ../lib/screenshooter-dialogs.c:336
+#: ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:250
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the active window"
-msgstr "Een schermafdruk van het actieve venster maken"
+msgstr "Actieve venster"
 
 #. Create the options frame and add the delay and save options
 #: ../lib/screenshooter-dialogs.c:346
@@ -73,51 +74,40 @@ msgstr "Opties"
 #. Save option
 #: ../lib/screenshooter-dialogs.c:359
 msgid "Show save dialog"
-msgstr "Opslaan-dialoogvenster weergeven"
+msgstr "Kies een opslaglocatie na elke schermafdruk"
 
 #: ../lib/screenshooter-dialogs.c:373
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Standaard-opslaglocatie</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Standaard opslaglocatie</span>"
 
 #: ../lib/screenshooter-dialogs.c:380
 msgid "Default save location"
-msgstr "Standaard-opslaglocatie"
+msgstr "Standaard opslaglocatie"
 
 #: ../lib/screenshooter-dialogs.c:394
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Vertraging voor het maken van "
-"een schermafdruk</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vertraging voor het maken van een schermafdruk</span>"
 
 #: ../lib/screenshooter-dialogs.c:411
 msgid "seconds"
 msgstr "seconden"
 
 #: ../lib/screenshooter-dialogs.c:422
-#, fuzzy
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
-"span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">De schermafdruk openen met"
-"</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Schermafdruk openen met</span>"
 
 #: ../lib/screenshooter-dialogs.c:477
-#, fuzzy
 msgid "Default save folder"
-msgstr "Standaard-opslaglocatie"
+msgstr "Standaard opslaglocatie"
 
 #: ../src/main.c:46
 msgid "Version information"
 msgstr "Versie-informatie"
 
-#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
+#: ../src/main.c:54
+#: ../panel-plugin/screenshooter-plugin.c:245
 msgid "Take a screenshot of the desktop"
-msgstr "Maak een schermafdruk van het volledig scherm"
+msgstr "Schermafdruk van het hele scherm maken"
 
 #: ../src/main.c:58
 msgid "Delay in seconds before taking the screenshot"
@@ -125,15 +115,15 @@ msgstr "Vertraging in seconden voor het maken van een schermafdruk"
 
 #: ../src/main.c:63
 msgid "Do not display the save dialog"
-msgstr "Het 'opslaan' dialoogvenster niet tonen"
+msgstr "Niet vragen waar de schermafdruk opgeslagen moet worden"
 
 #: ../src/main.c:67
 msgid "Directory where the screenshot will be saved"
-msgstr "Map waar de schermafdruk zal worden opgeslagen"
+msgstr "Locatie voor de schermafdruk"
 
 #: ../src/main.c:71
 msgid "Dialog to set the default save folder"
-msgstr ""
+msgstr "Dialoogvenster om de standaardlocatie voor schermafdrukken in te stellen"
 
 #: ../src/main.c:100
 #, c-format
@@ -145,22 +135,20 @@ msgstr ""
 "Probeer %s --help voor een volledige lijst van mogelijke opties.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "A tool to take screenshots of your desktop or of the active windows"
-msgstr "Schermafdruk van het actieve venster maken"
+msgstr "Schermafdrukken maken van het hele scherm of van aparte vensters"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Screenshot tool"
-msgstr "Schermafdrukgereedschap"
+msgstr "Schermafdruk"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
-msgstr " Schermafdruk"
+msgstr "Schermafdruk"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
-msgstr " Schermafdruk maken"
+msgstr "Schermafdruk maken"
 
 #~ msgid "Take screenshot"
 #~ msgstr "Schermafdruk maken"
@@ -168,9 +156,8 @@ msgstr " Schermafdruk maken"
 #, fuzzy
 #~ msgid "Delay before taking the screenshot"
 #~ msgstr "Vertraging voordat een schermafdruk wordt gemaakt"
-
 #~ msgid "Properties"
 #~ msgstr "Eigenschappen"
-
 #~ msgid "Ask for _filename"
 #~ msgstr "Om _bestandsnaam vragen"
+
