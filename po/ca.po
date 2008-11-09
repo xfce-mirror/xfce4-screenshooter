@@ -2,7 +2,7 @@
 # Copyright (C) 2006 xfce4-screenshooter-plugin's copyright holder.
 # This file is distributed under the same license as the
 # xfce4-screenshooter-plugin package.
-# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006.
+# Carles Muñoz Gorriz <carlesmu@internautas.org>, 2006, 2008.
 #
 #
 #. Print a message to advise to use help when a non existing cli option is
@@ -13,129 +13,127 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-04 19:18+0100\n"
-"PO-Revision-Date: 2006-12-03 12:41+0100\n"
+"PO-Revision-Date: 2008-11-08 18:55+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: ../lib/screenshooter-utils.c:46
 msgid "Couldn't find window manager window"
-msgstr ""
+msgstr "No s'ha pogut trobat la finestra del gestor de finestres"
 
 #: ../lib/screenshooter-utils.c:75
-#, fuzzy
 msgid "Screenshot.png"
-msgstr "Captura de pantalla"
+msgstr "captura.png"
 
 #: ../lib/screenshooter-utils.c:88
-#, fuzzy, c-format
+#, c-format
 msgid "Screenshot-%d.png"
-msgstr "Captura de pantalla"
+msgstr "captura-%d.png"
 
 #: ../lib/screenshooter-utils.c:224
 msgid "Save screenshot as ..."
 msgstr "Desa la captura com…"
 
 #: ../lib/screenshooter-dialogs.c:203
-#, fuzzy
 msgid "Do not open screenshots"
-msgstr "Pren una captura de pantalla"
+msgstr "No obris les captures"
 
 #: ../lib/screenshooter-dialogs.c:282
-#, fuzzy
 msgid "Screenshot"
-msgstr "Captura de pantalla"
+msgstr "Capturador de pantalla"
 
 #: ../lib/screenshooter-dialogs.c:293
-#, fuzzy
 msgid "Screenshooter plugin"
-msgstr "Retard en fer la captura"
+msgstr "Connector per fer captures de pantalla"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../lib/screenshooter-dialogs.c:314
 msgid "Modes"
-msgstr ""
+msgstr "Tipus"
 
 #: ../lib/screenshooter-dialogs.c:325
 #: ../panel-plugin/screenshooter-plugin.c:312
-#, fuzzy
 msgid "Take a screenshot of desktop"
-msgstr "Pren una captura de pantalla"
+msgstr "Fes una captura de l'escriptiri"
 
 #: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:250
 #: ../panel-plugin/screenshooter-plugin.c:317
-#, fuzzy
 msgid "Take a screenshot of the active window"
-msgstr "Pren una captura de pantalla"
+msgstr "Fes una captura de la finestra activa"
 
 #. Create the options frame and add the delay and save options
 #: ../lib/screenshooter-dialogs.c:346
 msgid "Options"
-msgstr ""
+msgstr "Opcions"
 
 #. Save option
 #: ../lib/screenshooter-dialogs.c:359
 msgid "Show save dialog"
-msgstr ""
+msgstr "Mostra el diàleg d'on desar-la"
 
 #: ../lib/screenshooter-dialogs.c:373
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Lloc per defecte on desar</"
+"span>"
 
 #: ../lib/screenshooter-dialogs.c:380
 msgid "Default save location"
-msgstr ""
+msgstr "Lloc per defecte on desar"
 
 #: ../lib/screenshooter-dialogs.c:394
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Retard abans de fer captura "
+"de pantalla</span>"
 
 #: ../lib/screenshooter-dialogs.c:411
 msgid "seconds"
-msgstr ""
+msgstr "segons"
 
 #: ../lib/screenshooter-dialogs.c:422
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 "span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Obre la captura amb</span>"
 
 #: ../lib/screenshooter-dialogs.c:477
 msgid "Default save folder"
-msgstr ""
+msgstr "Carpeta per defecte on desar"
 
 #: ../src/main.c:46
 msgid "Version information"
-msgstr ""
+msgstr "Informació de la versió"
 
 #: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
-#, fuzzy
 msgid "Take a screenshot of the desktop"
-msgstr "Pren una captura de pantalla"
+msgstr "Fes una captura de l'escritori"
 
 #: ../src/main.c:58
 msgid "Delay in seconds before taking the screenshot"
-msgstr ""
+msgstr "Retard en segons abans de fer la captura de pantalla"
 
 #: ../src/main.c:63
 msgid "Do not display the save dialog"
-msgstr ""
+msgstr "No mostris el diàleg d'on desar-la"
 
 #: ../src/main.c:67
 msgid "Directory where the screenshot will be saved"
-msgstr ""
+msgstr "Carpeta on la captura es desarà"
 
 #: ../src/main.c:71
 msgid "Dialog to set the default save folder"
-msgstr ""
+msgstr "Diàleg on s'estableix la carpeta on es desa per defecte"
 
 #: ../src/main.c:100
 #, c-format
@@ -143,24 +141,27 @@ msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
+"%s: %s\n"
+"Feu %s --help per veure la llista complerta d'opcions disponibles de la "
+"línia d'ordres.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "A tool to take screenshots of your desktop or of the active windows"
-msgstr "Pren una captura de pantalla"
+msgstr ""
+"Una eina per fer captures de captures de pantalla de l'escriptori de de "
+"finestres actives"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Screenshot tool"
-msgstr "Captura de pantalla"
+msgstr "Eina de captura de pantalles"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid " Screenshot"
-msgstr "Captura de pantalla"
+msgstr "Capturador de pantalla"
 
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid " Take a screenshot"
-msgstr "Pren una captura de pantalla"
+msgstr "Captura la pantalla"
 
 #~ msgid "Take screenshot"
 #~ msgstr "Pren una captura de pantalla"
