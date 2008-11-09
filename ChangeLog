@@ -1,8 +1,13 @@
+2008-11-09 jeromeg
+
+  * configure.ac.in : get ready for 1.3.9.2.
+  * xfce4-screenshooter.1: bump version number.
+  
 2008-11-05 jeromeg
 
   * lib/screenshooter-dialogs.c (add_item):
     - Move the detection of the icon theme out of the if-else.
-    - Fallbac to the "exec" icon if no icon was found for an application.
+    - Fallback to the "exec" icon if no icon was found for an application.
 
 2008-11-05 jeromeg
 
