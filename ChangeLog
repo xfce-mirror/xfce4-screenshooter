@@ -1,5 +1,13 @@
 2008-11-12 jeromeg
 
+  * lib/screenshooter-dialogs.c
+    - (cb_combo_active_item_set_sensitive) add to make save_button insensitive
+      when an application is selected.
+    - (screenshooter_dialog_new) add a callback to the function above, set the
+      sensitiveness when creating the checkbox.
+
+2008-11-12 jeromeg
+
   * lib/screenshooter-utils.c: 
     - (screenshooter_take_screenshot) rework the window grabbing to try to fix
       bug 4601.
