@@ -185,6 +185,7 @@ int main(int argc, char **argv)
     {
       GtkWidget *dialog;
       gint response;
+      GdkDisplay *display = gdk_display_get_default ();
       
       /* Read the preferences */
       screenshooter_read_rc_file (rc_file, sd, FALSE);
@@ -196,8 +197,12 @@ int main(int argc, char **argv)
          window mode */
       response = gtk_dialog_run (GTK_DIALOG (dialog));
       
-      gtk_widget_destroy (dialog);
+      gtk_widget_hide_all (dialog);
       
+      gdk_display_sync (display);
+      
+      sleep (1);
+                  
       if (response == GTK_RESPONSE_OK)
         {
           gchar *screenshot_path = NULL;
@@ -239,6 +244,8 @@ int main(int argc, char **argv)
           
           /* Save preferences */     
           screenshooter_write_rc_file (rc_file, sd);
+          
+          gtk_widget_destroy (dialog);
         }
     }
   

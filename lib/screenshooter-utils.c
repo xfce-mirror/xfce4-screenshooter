@@ -130,9 +130,9 @@ GdkPixbuf *screenshooter_take_screenshot (gint       mode,
                                           gint       delay)
 {
   GdkPixbuf *screenshot;
-  GdkWindow *window = NULL;
+  GdkWindow *window, *window2;
   GdkScreen *screen;
-  
+    
   gint width;
   gint height;
   /* gdk_get_default_root_window (), needs_unref enables us to unref *window 
@@ -151,32 +151,31 @@ GdkPixbuf *screenshooter_take_screenshot (gint       mode,
   else if (mode == ACTIVE_WINDOW)
     {
       window = gdk_screen_get_active_window (screen);
-      
+            
       /* If we are supposed to take a screenshot of the active window, and if 
       the active window is the desktop background, grab the whole screen.*/      
-      if (window == NULL || 
-          gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
+      if (window == NULL)
         {
-          if (!(window == NULL))
-            {
-              g_object_unref (window);
-            }
-          
+          window = gdk_get_default_root_window ();
+          needs_unref = FALSE;
+        }
+            
+      if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
+        {
+          g_object_unref (window);
+                    
           window = gdk_get_default_root_window ();
           needs_unref = FALSE;
         }
       else
         {
-          GdkWindow *window2;
+           window2 = gdk_window_foreign_new (find_toplevel_window 
+                                             (GDK_WINDOW_XID (window)));
+           g_object_unref (window);
           
-          window2 = 
-            gdk_window_foreign_new (find_toplevel_window 
-                                    (GDK_WINDOW_XID (window)));
-          
-          g_object_unref (window);
-          
-          window = window2;
-        }
+           window = window2;
+        }  
+      
     }
   
   /* wait for n=delay seconds */ 

@@ -1,3 +1,13 @@
+2008-11-12 jeromeg
+
+  * lib/screenshooter-utils.c: 
+    - (screenshooter_take_screenshot) rework the window grabbing to try to fix
+      bug 4601.
+  * src/main.c (main) try to fix 4601:
+    - hide the dialog instead of destroying it.
+    - sync the display before taking the screenshot.
+    - ugly, wait 1 second before taking the screenshot.
+
 2008-11-09 jeromeg
 
   * Post release bump.
