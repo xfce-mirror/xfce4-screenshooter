@@ -1,3 +1,12 @@
+=== Version 1.3.9.2 ===
+
+  * Hopefully fix bug 4601, crash with "BadWindow" X error.
+  * Fix bug 4571.
+  * Translations:
+    Basque (Piarres Beobide), German (Fabian Nowak), Spanish (Abel Martín),
+    Indonesian (Andhika Padmawan), Japanese (Nobuhiro Iwamatsu),
+    Dutch (Vincent Tunru), European Portuguese (Nuno Miguel).
+
 === Version 1.3.9.1 ===
 
   * Apply a patch by Enrico Tröger to fix a crash.
