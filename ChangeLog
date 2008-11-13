@@ -1,3 +1,9 @@
+2008-11-12-jeromeg
+
+  * src/main.c:
+    - destroy the widget instead of hiding it.
+    - set the dialog window type hint.
+
 2008-11-12 jeromeg
 
   * lib/screenshooter-dialogs.c
