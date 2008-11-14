@@ -130,7 +130,8 @@ GdkPixbuf *screenshooter_take_screenshot (gint       mode,
                                           gint       delay)
 {
   GdkPixbuf *screenshot;
-  GdkWindow *window, *window2;
+  GdkWindow *window = NULL;
+  GdkWindow *window2 = NULL;
   GdkScreen *screen;
     
   gint width;
