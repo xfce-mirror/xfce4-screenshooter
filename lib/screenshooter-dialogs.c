@@ -300,8 +300,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   GtkWidget *modes_frame, *modes_box;
   GtkWidget *active_window_button, *fullscreen_button;
   GtkWidget *options_frame, *options_box;
-  GtkWidget *save_button;
-  GtkWidget *default_save_label, *dir_chooser;
+  GtkWidget *save_button = NULL;
   GtkWidget *delay_label, *delay_box, *delay_spinner, *label2;
 #ifdef HAVE_GIO
   GtkWidget *open_with_label;
@@ -411,6 +410,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   if (plugin)
     {
 		  /* Default save location */          
+		  GtkWidget *default_save_label, *dir_chooser;
+		  
 		  default_save_label = gtk_label_new ("");
 		  gtk_label_set_markup (GTK_LABEL (default_save_label),
 			_("<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"));

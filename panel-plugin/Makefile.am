@@ -5,7 +5,7 @@ xfce4_screenshooter_plugin_CFLAGS =						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	-I$(top_srcdir)								\
 	-I$(top_srcdir)/lib							\
-	@LIBXFCE4PANEL_CFLAGS@ -Werror
+	@LIBXFCE4PANEL_CFLAGS@
 
 xfce4_screenshooter_plugin_LDFLAGS =						\
 	@LIBXFCE4PANEL_LIBS@ \
