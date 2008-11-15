@@ -42,7 +42,7 @@ gint delay = 0;
 */
 static GOptionEntry entries[] =
 {
-    {    "version", 'v', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
+    {    "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
         N_("Version information"),
         NULL
     },
@@ -51,7 +51,7 @@ static GOptionEntry entries[] =
         NULL
     },
     {   "fullscreen", 'f', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &fullscreen,
-        N_("Take a screenshot of the desktop"),
+        N_("Take a screenshot of the whole screen"),
         NULL
     },
     {		"delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,

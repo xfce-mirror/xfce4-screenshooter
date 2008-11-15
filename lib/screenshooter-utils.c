@@ -221,7 +221,7 @@ gchar
 	    the user has chosen. */
 	  
       chooser = 
-        gtk_file_chooser_dialog_new (_("Save screenshot as ..."),
+        gtk_file_chooser_dialog_new (_("Save screenshot as..."),
                                      NULL,
                                      GTK_FILE_CHOOSER_ACTION_SAVE,
                                      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,

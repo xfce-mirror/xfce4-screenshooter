@@ -313,7 +313,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   if (!plugin)
     {
       dlg = 
-        xfce_titled_dialog_new_with_buttons (_("Screenshot"),
+        xfce_titled_dialog_new_with_buttons (_("Take a screenshot"),
                                              NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT |
                                              GTK_DIALOG_NO_SEPARATOR,
@@ -324,7 +324,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   else
     {
       dlg =
-        xfce_titled_dialog_new_with_buttons (_("Screenshooter plugin"),
+        xfce_titled_dialog_new_with_buttons (_("Take a screenshot"),
                                              NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT |
                                              GTK_DIALOG_NO_SEPARATOR,
@@ -356,7 +356,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   fullscreen_button = 
     gtk_radio_button_new_with_mnemonic (NULL, 
-                                        _("Take a screenshot of desktop"));
+                                        _("Take a screenshot of the whole screen"));
   gtk_widget_show (fullscreen_button);
   gtk_box_pack_start (GTK_BOX (modes_box), fullscreen_button, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fullscreen_button),
@@ -525,7 +525,7 @@ void screenshooter_preferences_dialog (gchar *rc_file,
   folder the user selected and write it in the conf file*/
   
   chooser = 
-    gtk_file_chooser_dialog_new (_("Default save folder"),
+    gtk_file_chooser_dialog_new (_("Default save location"),
                                   NULL,
                                   GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
                                   GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
