@@ -1,5 +1,12 @@
 2008-11-15 jeromeg
 
+  * lib/screenshooter-utils.c:
+    - (screenshooter_take_screenshot) Use gnome-screenshot technic,
+      grab the screenshot on the root window, to also take things such
+      as menus.
+
+2008-11-15 jeromeg
+
   * po/: update-po.
 
 2008-11-15 jeromeg

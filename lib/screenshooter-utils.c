@@ -132,16 +132,22 @@ GdkPixbuf *screenshooter_take_screenshot (gint       mode,
   GdkPixbuf *screenshot;
   GdkWindow *window = NULL;
   GdkWindow *window2 = NULL;
+  GdkWindow *root;
   GdkScreen *screen;
+  gint x_real_orig, y_real_orig, x_orig, y_orig;
+  gint width, real_width, height, real_height;
     
-  gint width;
-  gint height;
-  /* gdk_get_default_root_window (), needs_unref enables us to unref *window 
-  only if a non default window has been grabbed */
+  /* gdk_get_default_root_window () does not need to be unrefed, 
+   * needs_unref enables us to unref *window only if a non default 
+   * window has been grabbed 
+   * */
   gboolean needs_unref = TRUE;
   
   /* Get the screen on which the screenshot should be taken */
   screen = gdk_screen_get_default ();
+  
+  /* Get the root window */
+  root = gdk_get_default_root_window ();
   
   /* Get the window/desktop we want to screenshot*/  
   if (mode == FULLSCREEN)
@@ -182,14 +188,43 @@ GdkPixbuf *screenshooter_take_screenshot (gint       mode,
   /* wait for n=delay seconds */ 
   sleep (delay);
   
-  /* get the size of the part of the screen we want to screenshot */
-  gdk_drawable_get_size(window, &width, &height);
+  /* Based on gnome-screenshot code */
+    
+  /* get the size and the origin of the part of the screen we want to 
+   * screenshot */
+  gdk_drawable_get_size (window, &real_width, &real_height);      
+  gdk_window_get_origin (window, &x_real_orig, &y_real_orig);
   
-  /* get the screenshot */
-  screenshot = gdk_pixbuf_get_from_drawable (NULL,
-					     window,
-					     NULL, 0, 0, 0, 0,
-					     width, height);
+  /* Don't grab thing offscreen */
+    
+  x_orig = x_real_orig;
+  y_orig = y_real_orig;
+  width  = real_width;
+  height = real_height;
+
+  if (x_orig < 0)
+    {
+      width = width + x_orig;
+      x_orig = 0;
+    }
+
+  if (y_orig < 0)
+    {
+      height = height + y_orig;
+      y_orig = 0;
+    }
+
+  if (x_orig + width > gdk_screen_width ())
+    width = gdk_screen_width () - x_orig;
+
+  if (y_orig + height > gdk_screen_height ())
+    height = gdk_screen_height () - y_orig;
+  
+  /* Take the screenshot from the root GdkWindow, to grab things such as
+   * menus. */
+  screenshot = gdk_pixbuf_get_from_drawable (NULL, root, NULL,
+                                             x_orig, y_orig, 0, 0,
+                                             width, height);
 					     
 	if (needs_unref)
 	  g_object_unref (window);
