@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-04 19:18+0100\n"
+"POT-Creation-Date: 2008-11-15 17:52+0100\n"
 "PO-Revision-Date: 2007-10-27 16:24+0500\n"
 "Last-Translator: Muhammad Ali Makki <makk.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
@@ -36,89 +36,79 @@ msgid "Screenshot-%d.png"
 msgstr "سکرین شوٹ"
 
 #: ../lib/screenshooter-utils.c:224
-msgid "Save screenshot as ..."
+#, fuzzy
+msgid "Save screenshot as..."
 msgstr "سکرین شوٹ محفوظ بنام..."
 
-#: ../lib/screenshooter-dialogs.c:203
+#: ../lib/screenshooter-dialogs.c:238
 #, fuzzy
 msgid "Do not open screenshots"
 msgstr "سکرین شوٹ لیں"
 
-#: ../lib/screenshooter-dialogs.c:282
+#: ../lib/screenshooter-dialogs.c:316 ../lib/screenshooter-dialogs.c:327
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
 #, fuzzy
-msgid "Screenshot"
-msgstr "سکرین شوٹ"
-
-#: ../lib/screenshooter-dialogs.c:293
-#, fuzzy
-msgid "Screenshooter plugin"
-msgstr "سکرین شوٹ وقفہ"
+msgid "Take a screenshot"
+msgstr "سکرین شوٹ لیں"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../lib/screenshooter-dialogs.c:314
+#: ../lib/screenshooter-dialogs.c:348
 msgid "Modes"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:325
-#: ../panel-plugin/screenshooter-plugin.c:312
+#: ../lib/screenshooter-dialogs.c:359 ../src/main.c:54
+#: ../panel-plugin/screenshooter-plugin.c:257
+#: ../panel-plugin/screenshooter-plugin.c:324
 #, fuzzy
-msgid "Take a screenshot of desktop"
+msgid "Take a screenshot of the whole screen"
 msgstr "سکرین شوٹ لیں"
 
-#: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
-#: ../panel-plugin/screenshooter-plugin.c:250
-#: ../panel-plugin/screenshooter-plugin.c:317
+#: ../lib/screenshooter-dialogs.c:370 ../src/main.c:50
+#: ../panel-plugin/screenshooter-plugin.c:262
+#: ../panel-plugin/screenshooter-plugin.c:329
 #, fuzzy
 msgid "Take a screenshot of the active window"
 msgstr "سکرین شوٹ لیں"
 
 #. Create the options frame and add the delay and save options
-#: ../lib/screenshooter-dialogs.c:346
+#: ../lib/screenshooter-dialogs.c:380
 msgid "Options"
 msgstr ""
 
 #. Save option
-#: ../lib/screenshooter-dialogs.c:359
+#: ../lib/screenshooter-dialogs.c:393
 msgid "Show save dialog"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:373
+#: ../lib/screenshooter-dialogs.c:417
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:380
+#: ../lib/screenshooter-dialogs.c:424 ../lib/screenshooter-dialogs.c:528
 msgid "Default save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:394
+#: ../lib/screenshooter-dialogs.c:438
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:411
+#: ../lib/screenshooter-dialogs.c:455
 msgid "seconds"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:422
+#: ../lib/screenshooter-dialogs.c:466
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 "span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:477
-msgid "Default save folder"
-msgstr ""
-
 #: ../src/main.c:46
 msgid "Version information"
 msgstr ""
-
-#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
-#, fuzzy
-msgid "Take a screenshot of the desktop"
-msgstr "سکرین شوٹ لیں"
 
 #: ../src/main.c:58
 msgid "Delay in seconds before taking the screenshot"
@@ -143,23 +133,34 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#, fuzzy
-msgid "A tool to take screenshots of your desktop or of the active windows"
-msgstr "سکرین شوٹ لیں"
-
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#, fuzzy
-msgid "Screenshot tool"
-msgstr "سکرین شوٹ"
-
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
-msgid " Screenshot"
-msgstr "سکرین شوٹ"
-
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid " Take a screenshot"
+#, fuzzy
+msgid "Take screenshots of the whole screen or of the active window"
 msgstr "سکرین شوٹ لیں"
+
+#, fuzzy
+#~ msgid "Screenshot"
+#~ msgstr "سکرین شوٹ"
+
+#, fuzzy
+#~ msgid "Screenshooter plugin"
+#~ msgstr "سکرین شوٹ وقفہ"
+
+#, fuzzy
+#~ msgid "Take a screenshot of desktop"
+#~ msgstr "سکرین شوٹ لیں"
+
+#, fuzzy
+#~ msgid "A tool to take screenshots of your desktop or of the active windows"
+#~ msgstr "سکرین شوٹ لیں"
+
+#, fuzzy
+#~ msgid "Screenshot tool"
+#~ msgstr "سکرین شوٹ"
+
+#~ msgid " Screenshot"
+#~ msgstr "سکرین شوٹ"
 
 #~ msgid "Take screenshot"
 #~ msgstr "تصویر لیں"

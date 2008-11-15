@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-04 19:18+0100\n"
+"POT-Creation-Date: 2008-11-15 17:52+0100\n"
 "PO-Revision-Date: 2008-07-12 19:16+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
@@ -30,60 +30,61 @@ msgid "Screenshot-%d.png"
 msgstr "Képernyőkép-%d.png"
 
 #: ../lib/screenshooter-utils.c:224
-msgid "Save screenshot as ..."
+#, fuzzy
+msgid "Save screenshot as..."
 msgstr "Képernyőkép mentése mint ..."
 
-#: ../lib/screenshooter-dialogs.c:203
+#: ../lib/screenshooter-dialogs.c:238
 #, fuzzy
 msgid "Do not open screenshots"
 msgstr " Képernyőkép készítése"
 
-#: ../lib/screenshooter-dialogs.c:282
+#: ../lib/screenshooter-dialogs.c:316 ../lib/screenshooter-dialogs.c:327
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
 #, fuzzy
-msgid "Screenshot"
-msgstr " Képernyőkép"
-
-#: ../lib/screenshooter-dialogs.c:293
-msgid "Screenshooter plugin"
-msgstr "Képernyőkép beillesztés"
+msgid "Take a screenshot"
+msgstr " Képernyőkép készítése"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
-#: ../lib/screenshooter-dialogs.c:314
+#: ../lib/screenshooter-dialogs.c:348
 msgid "Modes"
 msgstr "Módok"
 
-#: ../lib/screenshooter-dialogs.c:325
-#: ../panel-plugin/screenshooter-plugin.c:312
-msgid "Take a screenshot of desktop"
+#: ../lib/screenshooter-dialogs.c:359 ../src/main.c:54
+#: ../panel-plugin/screenshooter-plugin.c:257
+#: ../panel-plugin/screenshooter-plugin.c:324
+#, fuzzy
+msgid "Take a screenshot of the whole screen"
 msgstr "Felvétel készítése az asztalról"
 
-#: ../lib/screenshooter-dialogs.c:336 ../src/main.c:50
-#: ../panel-plugin/screenshooter-plugin.c:250
-#: ../panel-plugin/screenshooter-plugin.c:317
+#: ../lib/screenshooter-dialogs.c:370 ../src/main.c:50
+#: ../panel-plugin/screenshooter-plugin.c:262
+#: ../panel-plugin/screenshooter-plugin.c:329
 msgid "Take a screenshot of the active window"
 msgstr "Felvétel készítése az aktív ablakról"
 
 #. Create the options frame and add the delay and save options
-#: ../lib/screenshooter-dialogs.c:346
+#: ../lib/screenshooter-dialogs.c:380
 msgid "Options"
 msgstr "Lehetőségek"
 
 #. Save option
-#: ../lib/screenshooter-dialogs.c:359
+#: ../lib/screenshooter-dialogs.c:393
 msgid "Show save dialog"
 msgstr "Mentési párbeszéd megjelenítése"
 
-#: ../lib/screenshooter-dialogs.c:373
+#: ../lib/screenshooter-dialogs.c:417
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Alap mentési hely</span>"
 
-#: ../lib/screenshooter-dialogs.c:380
+#: ../lib/screenshooter-dialogs.c:424 ../lib/screenshooter-dialogs.c:528
 msgid "Default save location"
 msgstr "Alap mentési hely"
 
-#: ../lib/screenshooter-dialogs.c:394
+#: ../lib/screenshooter-dialogs.c:438
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -91,11 +92,11 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Késleltetés a felvétel előtt</"
 "span>"
 
-#: ../lib/screenshooter-dialogs.c:411
+#: ../lib/screenshooter-dialogs.c:455
 msgid "seconds"
 msgstr "másodperc"
 
-#: ../lib/screenshooter-dialogs.c:422
+#: ../lib/screenshooter-dialogs.c:466
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
@@ -104,18 +105,9 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Késleltetés a felvétel előtt</"
 "span>"
 
-#: ../lib/screenshooter-dialogs.c:477
-msgid "Default save folder"
-msgstr "Alap mentési mappa"
-
 #: ../src/main.c:46
 msgid "Version information"
 msgstr "Verzió adatok"
-
-#: ../src/main.c:54 ../panel-plugin/screenshooter-plugin.c:245
-#, fuzzy
-msgid "Take a screenshot of the desktop"
-msgstr "Felvétel készítése az asztalról"
 
 #: ../src/main.c:58
 msgid "Delay in seconds before taking the screenshot"
@@ -143,23 +135,35 @@ msgstr ""
 "Próbáld ezt: %s --help az elérhető parancssori lehetőségek teljes "
 "listájáért.\n"
 
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
 #, fuzzy
-msgid "A tool to take screenshots of your desktop or of the active windows"
+msgid "Take screenshots of the whole screen or of the active window"
 msgstr "Felvétel készítése az aktív ablakról"
 
-#: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #, fuzzy
-msgid "Screenshot tool"
-msgstr " Képernyőkép"
+#~ msgid "Screenshot"
+#~ msgstr " Képernyőkép"
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
-msgid " Screenshot"
-msgstr " Képernyőkép"
+#~ msgid "Screenshooter plugin"
+#~ msgstr "Képernyőkép beillesztés"
 
-#: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid " Take a screenshot"
-msgstr " Képernyőkép készítése"
+#~ msgid "Take a screenshot of desktop"
+#~ msgstr "Felvétel készítése az asztalról"
+
+#~ msgid "Default save folder"
+#~ msgstr "Alap mentési mappa"
+
+#, fuzzy
+#~ msgid "A tool to take screenshots of your desktop or of the active windows"
+#~ msgstr "Felvétel készítése az aktív ablakról"
+
+#, fuzzy
+#~ msgid "Screenshot tool"
+#~ msgstr " Képernyőkép"
+
+#~ msgid " Screenshot"
+#~ msgstr " Képernyőkép"
 
 #~ msgid "Take screenshot"
 #~ msgstr "Képernyőkép készítése"
