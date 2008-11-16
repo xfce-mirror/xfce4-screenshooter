@@ -1,3 +1,8 @@
+=== Version 1.x.x ===
+
+  * BUGFIX: correctly grab active windows. In particular, menus are
+    grabbed now.
+
 === Version 1.4.0 ===
 
   * Fix build with --disable-maintainer-mode on some configurations.

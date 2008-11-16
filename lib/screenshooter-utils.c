@@ -20,18 +20,28 @@
 #include <screenshooter-utils.h>
 
 /* Prototypes */
-static gchar *generate_filename_for_uri      (char             *uri);
-static Window find_toplevel_window           (Window            xid);
-static void cb_current_folder_changed        (GtkFileChooser   *chooser, 
-                                              gpointer          user_data);
+static 
+gchar *generate_filename_for_uri      (char             *uri);
+static 
+Window find_toplevel_window           (Window            xid);
+static 
+void cb_current_folder_changed        (GtkFileChooser   *chooser, 
+                                       gpointer          user_data);
+static 
+GdkWindow *get_active_window          (GdkScreen        *screen, 
+                                       gboolean         *needs_unref);
+static 
+GdkPixbuf *get_window_screenshot      (GdkWindow        *window);
+
 
 
 /* Borrowed from gnome-screenshot */
-/* This function returns the toplevel window containing Window, for most window
-managers this will enable you to get the decorations around Window. Does not
-work with Compiz.
-Window: the X identifier of the window
-Returns: the X identifier of the toplevel window containing Window*/
+
+/* This function returns the toplevel window containing Window, for most 
+ * window managers this will enable you to get the decorations around 
+ * Window. Does not work with Compiz.
+ * Window: the X identifier of the window
+ * Returns: the X identifier of the toplevel window containing Window.*/
 static Window
 find_toplevel_window (Window xid)
 {
@@ -57,10 +67,11 @@ find_toplevel_window (Window xid)
 
 
 
-/* Generates filename Screenshot-n.png (where n is the first integer greater than 
-0) so that Screenshot-n.jpg does not exist in the folder whose URI is *uri.
-*uri: the uri of the folder for which the filename should be generated.
-returns: a filename verifying the above conditions or NULL if *uri == NULL.
+/* Generates filename Screenshot-n.png (where n is the first integer 
+ * greater than 0) so that Screenshot-n.jpg does not exist in the folder
+ * whose URI is *uri. 
+ * @uri: uri of the folder for which the filename should be generated.
+ * returns: the filename or NULL if *uri == NULL.
 */
 static gchar *generate_filename_for_uri(char *uri)
 {
@@ -117,85 +128,62 @@ cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data)
 }
 
 
-
-/* Public */
-
-
-
-/* Takes the screenshot with the options given in sd.
-*sd: a ScreenshotData struct.
-returns: the screenshot in a *GdkPixbuf.
-*/
-GdkPixbuf *screenshooter_take_screenshot (gint       mode, 
-                                          gint       delay)
+static GdkWindow 
+*get_active_window (GdkScreen *screen, gboolean *needs_unref)
 {
-  GdkPixbuf *screenshot;
-  GdkWindow *window = NULL;
-  GdkWindow *window2 = NULL;
-  GdkWindow *root;
-  GdkScreen *screen;
+  GdkWindow *window, *window2;
+  
+  window = gdk_screen_get_active_window (screen);
+            
+  /* If there is no active window, we fallback to the whole screen. */      
+  if (window == NULL)
+    {
+      window = gdk_get_default_root_window ();
+      *needs_unref = FALSE;
+    }
+  
+  /* If the active window is the desktop, we grab the whole screen, else
+   * we find the toplevel window to grab the decorations. */
+  if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
+    {
+      g_object_unref (window);
+                    
+      window = gdk_get_default_root_window ();
+      *needs_unref = FALSE;
+    }
+  else
+    {
+      window2 = gdk_window_foreign_new (find_toplevel_window 
+                                        (GDK_WINDOW_XID (window)));
+      g_object_unref (window);
+          
+      window = window2;
+    }
+
+  return window;
+}
+
+
+
+static GdkPixbuf
+*get_window_screenshot (GdkWindow *window)
+{
   gint x_real_orig, y_real_orig, x_orig, y_orig;
   gint width, real_width, height, real_height;
+  GdkPixbuf *screenshot;
+  GdkWindow *root;
     
-  /* gdk_get_default_root_window () does not need to be unrefed, 
-   * needs_unref enables us to unref *window only if a non default 
-   * window has been grabbed 
-   * */
-  gboolean needs_unref = TRUE;
-  
-  /* Get the screen on which the screenshot should be taken */
-  screen = gdk_screen_get_default ();
-  
   /* Get the root window */
   root = gdk_get_default_root_window ();
   
-  /* Get the window/desktop we want to screenshot*/  
-  if (mode == FULLSCREEN)
-    {
-      window = gdk_get_default_root_window ();
-      needs_unref = FALSE;
-    } 
-  else if (mode == ACTIVE_WINDOW)
-    {
-      window = gdk_screen_get_active_window (screen);
-            
-      /* If we are supposed to take a screenshot of the active window, and if 
-      the active window is the desktop background, grab the whole screen.*/      
-      if (window == NULL)
-        {
-          window = gdk_get_default_root_window ();
-          needs_unref = FALSE;
-        }
-            
-      if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
-        {
-          g_object_unref (window);
-                    
-          window = gdk_get_default_root_window ();
-          needs_unref = FALSE;
-        }
-      else
-        {
-           window2 = gdk_window_foreign_new (find_toplevel_window 
-                                             (GDK_WINDOW_XID (window)));
-           g_object_unref (window);
-          
-           window = window2;
-        }  
-      
-    }
-  
-  /* wait for n=delay seconds */ 
-  sleep (delay);
-  
   /* Based on gnome-screenshot code */
     
-  /* get the size and the origin of the part of the screen we want to 
-   * screenshot */
+  /* Get the size and the origin of the part of the screen we want to 
+   * screenshot. */
   gdk_drawable_get_size (window, &real_width, &real_height);      
   gdk_window_get_origin (window, &x_real_orig, &y_real_orig);
   
-  /* Don't grab thing offscreen */
+  /* Don't grab thing offscreen. */
     
   x_orig = x_real_orig;
   y_orig = y_real_orig;
@@ -225,6 +213,53 @@ GdkPixbuf *screenshooter_take_screenshot (gint       mode,
   screenshot = gdk_pixbuf_get_from_drawable (NULL, root, NULL,
                                              x_orig, y_orig, 0, 0,
                                              width, height);
+  
+  return screenshot;                                             
+}
+
+
+
+/* Public */
+
+
+
+/* Takes the screenshot with the options given in sd.
+*sd: a ScreenshotData struct.
+returns: the screenshot in a *GdkPixbuf.
+*/
+GdkPixbuf *screenshooter_take_screenshot (gint       mode, 
+                                          gint       delay)
+{
+  GdkPixbuf *screenshot;
+  GdkWindow *window = NULL;
+  GdkScreen *screen;
+      
+  /* gdk_get_default_root_window () does not need to be unrefed, 
+   * needs_unref enables us to unref *window only if a non default 
+   * window has been grabbed. */
+  gboolean needs_unref = TRUE;
+  
+  /* Get the screen on which the screenshot should be taken */
+  screen = gdk_screen_get_default ();
+    
+  /* Get the window/desktop we want to screenshot*/  
+  if (mode == FULLSCREEN)
+    {
+      window = gdk_get_default_root_window ();
+      needs_unref = FALSE;
+    } 
+  else if (mode == ACTIVE_WINDOW)
+    {
+      window = get_active_window (screen, &needs_unref);      
+    }
+  
+  /* wait for n=delay seconds */ 
+  sleep (delay);
+  
+  if (mode == FULLSCREEN || mode == ACTIVE_WINDOW)
+    {
+      screenshot = get_window_screenshot (window);
+    }
 					     
 	if (needs_unref)
 	  g_object_unref (window);
@@ -259,10 +294,13 @@ gchar
         gtk_file_chooser_dialog_new (_("Save screenshot as..."),
                                      NULL,
                                      GTK_FILE_CHOOSER_ACTION_SAVE,
-                                     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                     GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+                                     GTK_STOCK_CANCEL, 
+                                     GTK_RESPONSE_CANCEL,
+                                     GTK_STOCK_SAVE, 
+                                     GTK_RESPONSE_ACCEPT,
                                      NULL);
-      gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
+      gtk_window_set_icon_name (GTK_WINDOW (chooser), 
+                                "applets-screenshooter");
       gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), 
                                                       TRUE);
       gtk_dialog_set_default_response (GTK_DIALOG (chooser), 
@@ -272,13 +310,17 @@ gchar
 
       preview = gtk_image_new ();
   
-      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);
-      gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview);
+      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), 
+                                         filename);
+      gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), 
+                                           preview);
   
       thumbnail = 
-        gdk_pixbuf_scale_simple (screenshot, gdk_pixbuf_get_width(screenshot)/5, 
+        gdk_pixbuf_scale_simple (screenshot, 
+                                 gdk_pixbuf_get_width(screenshot)/5, 
                                  gdk_pixbuf_get_height(screenshot)/5, 
                                  GDK_INTERP_BILINEAR);
+      
       gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
       g_object_unref (thumbnail);
       
@@ -349,7 +391,8 @@ screenshooter_read_rc_file (gchar               *file,
               #ifdef HAVE_GIO
               g_free (app);
               app = 
-                g_strdup (xfce_rc_read_entry (rc, "app", DEFAULT_APPLICATION));
+                g_strdup (xfce_rc_read_entry (rc, "app", 
+                                              DEFAULT_APPLICATION));
               #endif
             }
   
@@ -391,7 +434,8 @@ screenshooter_write_rc_file (gchar               *file,
   
   xfce_rc_write_int_entry (rc, "delay", sd->delay);
   xfce_rc_write_int_entry (rc, "mode", sd->mode);
-  xfce_rc_write_int_entry (rc, "show_save_dialog", sd->show_save_dialog);
+  xfce_rc_write_int_entry (rc, "show_save_dialog", 
+                           sd->show_save_dialog);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
   #ifdef HAVE_GIO
   xfce_rc_write_entry (rc, "app", sd->app);
@@ -421,8 +465,10 @@ screenshooter_open_screenshot (gchar *screenshot_path,
     
           GError      *error = NULL;
           
-          /* Execute the command and show an error dialog if there was an error */
-          if (!xfce_exec_on_screen (gdk_screen_get_default (), command, FALSE, TRUE, &error))
+          /* Execute the command and show an error dialog if there was 
+           * an error. */
+          if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
+                                    FALSE, TRUE, &error))
             {
               xfce_err (error->message);
               g_error_free (error);
