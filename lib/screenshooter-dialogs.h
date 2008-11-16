@@ -42,4 +42,7 @@ GtkWidget
 void
 screenshooter_preferences_dialog   (gchar               *rc_file, 
                                     gchar               *current_default_dir);
-                                      
+gchar 
+*screenshooter_save_screenshot     (GdkPixbuf           *screenshot, 
+                                    gboolean             show_save_dialog,
+                                    gchar               *default_dir);

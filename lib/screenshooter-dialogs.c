@@ -23,26 +23,39 @@
 
 /* Prototypes */ 
 
-static void cb_fullscreen_screen_toggled       (GtkToggleButton    *tb,
-                                                ScreenshotData     *sd);
-static void cb_active_window_toggled           (GtkToggleButton    *tb,
-                                                ScreenshotData     *sd);
-static void cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
-                                                ScreenshotData     *sd);
-static void cb_default_folder                  (GtkWidget          *chooser, 
-                                                ScreenshotData     *sd);                                        
-static void cb_delay_spinner_changed           (GtkWidget          *spinner, 
-                                                ScreenshotData     *sd);
+static void 
+cb_fullscreen_screen_toggled       (GtkToggleButton    *tb,
+                                    ScreenshotData     *sd);
+static void 
+cb_active_window_toggled           (GtkToggleButton    *tb,
+                                    ScreenshotData     *sd);
+static void 
+cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
+                                    ScreenshotData     *sd);
+static void 
+cb_default_folder                  (GtkWidget          *chooser, 
+                                    ScreenshotData     *sd);                                        
+static void 
+cb_delay_spinner_changed           (GtkWidget          *spinner, 
+                                    ScreenshotData     *sd);
+static gchar 
+*generate_filename_for_uri         (char               *uri);
+
 #ifdef HAVE_GIO                                                
-static void cb_combo_active_item_changed       (GtkWidget          *box, 
-                                                ScreenshotData     *sd);
-static void cb_combo_active_item_set_sensitive (GtkWidget          *box,
-                                                GtkWidget          *button);                                                
-static void add_item                           (GAppInfo           *app_info, 
-                                                GtkWidget          *liststore);
-static void populate_liststore                 (GtkListStore       *liststore);
-static void set_default_item                   (GtkWidget          *combobox, 
-                                                gchar              *default_app);                                               
+static void 
+cb_combo_active_item_changed       (GtkWidget          *box, 
+                                    ScreenshotData     *sd);
+static void 
+cb_combo_active_item_set_sensitive (GtkWidget          *box,
+                                    GtkWidget          *button);                                                
+static void 
+add_item                           (GAppInfo           *app_info, 
+                                    GtkWidget          *liststore);
+static void 
+populate_liststore                 (GtkListStore       *liststore);
+static void 
+set_default_item                   (GtkWidget          *combobox, 
+                                    gchar              *default_app);                                               
                                                                                                
 #endif                                                                                                                                                                         
                                       
@@ -108,6 +121,68 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
 {
   sd->delay = 
     gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
+}
+
+
+
+/* Generates filename Screenshot-n.png (where n is the first integer 
+ * greater than 0) so that Screenshot-n.jpg does not exist in the folder
+ * whose URI is *uri. 
+ * @uri: uri of the folder for which the filename should be generated.
+ * returns: the filename or NULL if *uri == NULL.
+*/
+static gchar *generate_filename_for_uri(char *uri)
+{
+  gchar *file_name;
+  unsigned int i = 0;
+    
+  if ( uri == NULL )
+    {
+  	  return NULL;
+    }      
+  
+  file_name = g_strdup (_("Screenshot.png"));
+  
+  /* If the plain filename matches the condition, go for it. */
+  if (g_access (g_build_filename (uri, file_name, NULL), F_OK) != 0) 
+    {
+      return file_name;
+    }
+  
+  /* Else, we find the first n that matches the condition */  
+  do
+    {
+      i++;
+      g_free (file_name);
+      file_name = g_strdup_printf (_("Screenshot-%d.png"), i);
+    }
+  while (g_access (g_build_filename (uri, file_name, NULL), F_OK) == 0);
+    
+  return file_name;
+}
+
+
+
+/* Generate a correct file name when setting a folder in chooser
+GtkFileChooser *chooser: the file chooser we are using.
+gpointer user_data: not used here.
+*/
+static void
+cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data)
+{
+  gchar *current_folder = 
+    gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER (chooser));
+  
+  if (current_folder)
+    {
+      gchar *new_filename = generate_filename_for_uri (current_folder);
+      
+      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), 
+                                         new_filename);
+      g_free (new_filename);
+    }
+  
+  g_free (current_folder);
 }
 
 
@@ -549,4 +624,94 @@ void screenshooter_preferences_dialog (gchar *rc_file,
       g_free (dir);
     }
   gtk_widget_destroy (GTK_WIDGET (chooser));
+}
+
+
+
+/* Saves the screenshot according to the options in sd. 
+ * @screenshot: a GdkPixbuf containing our screenshot
+ * show_save_dialog: whether the save dialog should be shown.
+ * @default_dir: the default save location.
+ */
+gchar 
+*screenshooter_save_screenshot     (GdkPixbuf      *screenshot, 
+                                    gboolean        show_save_dialog,
+                                    gchar          *default_dir)
+{
+  GdkPixbuf *thumbnail;
+  gchar *filename = NULL, *savename = NULL;;
+  GtkWidget *preview;
+  GtkWidget *chooser;
+  gint dialog_response;
+
+  filename = generate_filename_for_uri (default_dir);
+    
+  if (show_save_dialog)
+	  {
+	    /* If the user wants a save dialog, we run it, and grab the filename 
+	    the user has chosen. */
+	  
+      chooser = 
+        gtk_file_chooser_dialog_new (_("Save screenshot as..."),
+                                     NULL,
+                                     GTK_FILE_CHOOSER_ACTION_SAVE,
+                                     GTK_STOCK_CANCEL, 
+                                     GTK_RESPONSE_CANCEL,
+                                     GTK_STOCK_SAVE, 
+                                     GTK_RESPONSE_ACCEPT,
+                                     NULL);
+      gtk_window_set_icon_name (GTK_WINDOW (chooser), 
+                                "applets-screenshooter");
+      gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), 
+                                                      TRUE);
+      gtk_dialog_set_default_response (GTK_DIALOG (chooser), 
+                                     GTK_RESPONSE_ACCEPT);
+      gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER (chooser), 
+                                          default_dir);
+
+      preview = gtk_image_new ();
+  
+      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), 
+                                         filename);
+      gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), 
+                                           preview);
+  
+      thumbnail = 
+        gdk_pixbuf_scale_simple (screenshot, 
+                                 gdk_pixbuf_get_width(screenshot)/5, 
+                                 gdk_pixbuf_get_height(screenshot)/5, 
+                                 GDK_INTERP_BILINEAR);
+      
+      gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
+      g_object_unref (thumbnail);
+      
+      /* We the user opens a folder in the fine_chooser, we set a valid
+      filename */
+      g_signal_connect (G_OBJECT (chooser), "current-folder-changed", 
+                        G_CALLBACK(cb_current_folder_changed), NULL);
+    
+      dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
+	  
+	    if (dialog_response == GTK_RESPONSE_ACCEPT)
+	      {
+	        savename = 
+	          gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser) );
+          gdk_pixbuf_save (screenshot, savename, "png", NULL, NULL);
+	      }
+	  
+	    gtk_widget_destroy ( GTK_WIDGET ( chooser ) );
+	  }  
+	else
+	  {    
+	    
+	    /* Else, we just save the file in the default folder */
+      
+      savename = g_build_filename (default_dir, filename, NULL);
+	    gdk_pixbuf_save (screenshot, savename, "png", NULL, NULL);
+	    
+	  }
+
+  g_free (filename);
+  
+  return savename;
 }

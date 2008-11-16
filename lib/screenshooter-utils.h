@@ -71,11 +71,6 @@ GdkPixbuf
 *screenshooter_take_screenshot   (gint                  mode, 
                                   gint                  delay);
                                   
-gchar 
-*screenshooter_save_screenshot   (GdkPixbuf            *screenshot, 
-                                  gboolean              show_save_dialog,
-                                  gchar                *default_dir);
-                                  
 void 
 screenshooter_read_rc_file       (gchar                *file, 
                                   ScreenshotData       *sd, 

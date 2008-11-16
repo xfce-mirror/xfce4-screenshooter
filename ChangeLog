@@ -1,5 +1,13 @@
 2008-11-16 jeromeg
 
+  * lib/screenshooter-utils.c, lib/screenshooter-dialogs.c
+    - update some code comments.
+    - move (screenshooter_save_screenshot) to the dialogs file.
+    - move (generate_filename_for_uri) and the callbacks to the dialogs
+      file.
+
+2008-11-16 jeromeg
+
   * lib/screenshooter-utils.c:
     - fix indentation in some places.
     - Update the code comments.
