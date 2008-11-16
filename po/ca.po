@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-15 17:52+0100\n"
-"PO-Revision-Date: 2008-11-08 18:55+0100\n"
+"PO-Revision-Date: 2008-11-16 11:20+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,6 @@ msgid "Screenshot-%d.png"
 msgstr "captura-%d.png"
 
 #: ../lib/screenshooter-utils.c:224
-#, fuzzy
 msgid "Save screenshot as..."
 msgstr "Desa la captura com…"
 
@@ -47,9 +46,8 @@ msgstr "No obris les captures"
 #: ../lib/screenshooter-dialogs.c:316 ../lib/screenshooter-dialogs.c:327
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Take a screenshot"
-msgstr "Captura la pantalla"
+msgstr "Fes una captura de pantalla"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../lib/screenshooter-dialogs.c:348
@@ -59,9 +57,8 @@ msgstr "Tipus"
 #: ../lib/screenshooter-dialogs.c:359 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:257
 #: ../panel-plugin/screenshooter-plugin.c:324
-#, fuzzy
 msgid "Take a screenshot of the whole screen"
-msgstr "Fes una captura de l'escritori"
+msgstr "Fes una captura de la pantalla sencera"
 
 #: ../lib/screenshooter-dialogs.c:370 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:262
@@ -141,9 +138,8 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Take screenshots of the whole screen or of the active window"
-msgstr "Fes una captura de la finestra activa"
+msgstr "Fes una captura de la pantalla sencera o de la finestra activa"
 
 #~ msgid "Screenshot"
 #~ msgstr "Capturador de pantalla"
