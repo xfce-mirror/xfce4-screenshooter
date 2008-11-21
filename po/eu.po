@@ -34,9 +34,8 @@ msgid "Screenshot-%d.png"
 msgstr "Pantala-argazkia-%d.png"
 
 #: ../lib/screenshooter-utils.c:224
-#, fuzzy
 msgid "Save screenshot as..."
-msgstr "Gorde argazkia honela ..."
+msgstr "Gorde pantaila-argazkia honela ..."
 
 #: ../lib/screenshooter-dialogs.c:238
 msgid "Do not open screenshots"
@@ -45,9 +44,8 @@ msgstr "Ez ireki pantaila-argazkiak"
 #: ../lib/screenshooter-dialogs.c:316 ../lib/screenshooter-dialogs.c:327
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Take a screenshot"
-msgstr " Atera pantaila-argazkia bat"
+msgstr "Atera pantaila-argazkia bat"
 
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../lib/screenshooter-dialogs.c:348
@@ -57,9 +55,8 @@ msgstr "Moduak"
 #: ../lib/screenshooter-dialogs.c:359 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:257
 #: ../panel-plugin/screenshooter-plugin.c:324
-#, fuzzy
 msgid "Take a screenshot of the whole screen"
-msgstr "Atera idazmahaiaren pantaila-argazkia"
+msgstr "Atera pantaila osoaren pantaila-argazkia"
 
 #: ../lib/screenshooter-dialogs.c:370 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:262
@@ -139,9 +136,8 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Take screenshots of the whole screen or of the active window"
-msgstr "Atera leiho aktiboaren pantaila-argazkia"
+msgstr "Atera leiho aktiboaren edo idazmahai osoaren pantaila-argazkia"
 
 #~ msgid "Screenshot"
 #~ msgstr "Pantaila-argazkia"
@@ -162,5 +158,11 @@ msgstr "Atera leiho aktiboaren pantaila-argazkia"
 #~ msgid "Screenshot tool"
 #~ msgstr "Pantaila-argazki tresna"
 
+# translation of eu.po to Euskara
+# Basque translations for xfce package.
+# Copyright (C) 2006 THE xfce'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce package.
+#
+# Piarres Beobide <pi@beobide.net>, 2006, 2008.
 #~ msgid " Screenshot"
 #~ msgstr " Pantaila-argazkia"
