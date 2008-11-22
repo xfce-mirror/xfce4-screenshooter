@@ -1,3 +1,25 @@
+2008-11-22 jeromeg
+
+  * lib/screenshooter-utils.{c,h}:
+    - fix includes
+    - cleanup prototypes
+    - (screenshooter_copy_to_clipboard) Partially apply a patch by 
+      David Collins to add copying to clipboard possibility.
+    - add post screenshot actions in the ScreenshotData struct, in
+      (screenshooter_read_rc_file) and in (screenshooter_write_rc_file)
+      (Patch by David Collins).
+    - remove all references to "none" application.
+  * lib/screenshooter-dialogs.{c,h}:
+    - remove all references to none application.
+    - remove (cb_combo_active_item_set_sensitive).
+    - remove "none" item from (add_item).
+  * lib/screenshooter-actions.{c,h}:
+    - added to manage post screenshot actions.
+  * lib/Mafile.am: add new source files.
+  * lib/libscreenshooter.h: include screenshooter-actions.h.
+  * src/main.c, panel-plugin/screenshooter-plugin.c: 
+    - use (screenshooter_take_and_output_screenshot).
+    
 2008-11-16 jeromeg
 
   * lib/screenshooter-utils.c, lib/screenshooter-dialogs.c

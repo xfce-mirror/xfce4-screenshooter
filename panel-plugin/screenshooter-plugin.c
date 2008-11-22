@@ -154,42 +154,11 @@ pd: the PluginData storing the options for taking the screenshot.
 static void
 cb_button_clicked (GtkWidget *button, PluginData *pd)
 {
-  GdkPixbuf *screenshot;
-  gchar *screenshot_path = NULL;
-    
-	/* Make the button unclickable so that the user does not press it while 
+  /* Make the button unclickable so that the user does not press it while 
 	another screenshot is in progress */
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), FALSE);
 
-  /* Get the screenshot */
-	screenshot = screenshooter_take_screenshot (pd->sd->mode, pd->sd->delay);
-  
-  #ifdef HAVE_GIO
-  if (!g_str_equal(pd->sd->app, "none"))
-    {
-      screenshot_path = 
-        screenshooter_save_screenshot (screenshot, FALSE, "/tmp");
-    }
-  else
-    {
-  #endif
-      screenshot_path = 
-        screenshooter_save_screenshot (screenshot, pd->sd->show_save_dialog, 
-                                       pd->sd->screenshot_dir);
-  #ifdef HAVE_GIO
-    }
-  #endif
-    
-  g_object_unref (screenshot);                                   
-  
-  /* Open the screenshot */
- if (screenshot_path != NULL)
-	 {
-	   #ifdef HAVE_GIO
-	   screenshooter_open_screenshot (screenshot_path, pd->sd->app);
-	   #endif
-	   g_free (screenshot_path);
-	 }                           
+  screenshooter_take_and_output_screenshot (pd->sd);
   
   /* Make the panel button clickable */
 	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);

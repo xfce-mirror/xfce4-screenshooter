@@ -4,7 +4,8 @@ noinst_LTLIBRARIES = 							\
 libscreenshooter_la_SOURCES =							\
 	libscreenshooter.h \
 	screenshooter-utils.c screenshooter-utils.h \
-	screenshooter-dialogs.c screenshooter-dialogs.h
+	screenshooter-dialogs.c screenshooter-dialogs.h \
+	screenshooter-actions.c screenshooter-actions.h
 
 libscreenshooter_la_CFLAGS = \
 	-I$(top_srcdir)	\

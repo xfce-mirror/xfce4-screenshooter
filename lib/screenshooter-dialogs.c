@@ -46,9 +46,6 @@ static void
 cb_combo_active_item_changed       (GtkWidget          *box, 
                                     ScreenshotData     *sd);
 static void 
-cb_combo_active_item_set_sensitive (GtkWidget          *box,
-                                    GtkWidget          *button);                                                
-static void 
 add_item                           (GAppInfo           *app_info, 
                                     GtkWidget          *liststore);
 static void 
@@ -205,31 +202,6 @@ static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
 
 
 
-static void cb_combo_active_item_set_sensitive (GtkWidget          *box,
-                                                GtkWidget          *button)
-{
-  GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
-  GtkTreeIter iter;
-  gchar *active_command = NULL;
-   
-  gtk_combo_box_get_active_iter (GTK_COMBO_BOX (box), &iter);
-  
-  gtk_tree_model_get (model, &iter, 2, &active_command, -1);
-  
-  if (g_str_equal (active_command, "none"))
-    {
-      gtk_widget_set_sensitive (button, TRUE);
-    }
-  else
-    {
-      gtk_widget_set_sensitive (button, FALSE);
-    }
-    
-  g_free (active_command);
-}                                                
-
-
-
 /* Extract the informations from app_info and add them to the liststore. */
 static void add_item (GAppInfo *app_info, GtkWidget *liststore)
 {
@@ -302,17 +274,6 @@ static void populate_liststore (GtkListStore *liststore)
 {
   const gchar *content_type;
   GList	*list_app;
-  GtkTreeIter iter;
-  
-  /* Add default "none" item. */
-  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
-  
-  gtk_list_store_set (GTK_LIST_STORE (liststore), 
-                      &iter, 
-                      0, NULL, 
-                      1, _("Do not open screenshots"),
-                      2, "none", 
-                      -1);
      
   content_type = "image/png";
   
@@ -466,14 +427,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
     {
 		  /* Save option */
 		  save_button = gtk_check_button_new_with_mnemonic (_("Show save dialog"));
-		  
-		  #ifdef HAVE_GIO
-		  if (!g_str_equal (sd->app, "none"))
-		    {
-		      gtk_widget_set_sensitive (save_button, FALSE);
-		    }
-		  #endif
-		  
+		  		  
 		  gtk_widget_show (save_button);
 		  gtk_box_pack_start (GTK_BOX (options_box), save_button, FALSE, FALSE, 0);
 		  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_button),
@@ -568,13 +522,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   g_signal_connect (G_OBJECT (combobox), "changed", 
                     G_CALLBACK (cb_combo_active_item_changed), sd);
-
-  if (plugin)
-    {
-      g_signal_connect (G_OBJECT (combobox), "changed", 
-                        G_CALLBACK (cb_combo_active_item_set_sensitive), 
-                        save_button);
-    }                  
   
   gtk_widget_show_all (combobox);                    
 #endif

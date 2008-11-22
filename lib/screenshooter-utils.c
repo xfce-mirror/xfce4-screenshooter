@@ -17,19 +17,21 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#include <screenshooter-utils.h>
+#include "screenshooter-utils.h"
 
 /* Prototypes */
+
+
+
 static 
 Window find_toplevel_window           (Window            xid);
-static 
-void cb_current_folder_changed        (GtkFileChooser   *chooser, 
-                                       gpointer          user_data);
-static 
-GdkWindow *get_active_window          (GdkScreen        *screen, 
+
+static GdkWindow 
+*get_active_window                    (GdkScreen        *screen, 
                                        gboolean         *needs_unref);
-static 
-GdkPixbuf *get_window_screenshot      (GdkWindow        *window);
+
+static GdkPixbuf 
+*get_window_screenshot                (GdkWindow        *window);
 
 
 
@@ -37,7 +39,7 @@ GdkPixbuf *get_window_screenshot      (GdkWindow        *window);
 
 /* This function returns the toplevel window containing Window, for most 
  * window managers this will enable you to get the decorations around 
- * Window. Does not work with Compiz.
+ * the window. Does not work with Compiz.
  * Window: the X identifier of the window
  * Returns: the X identifier of the toplevel window containing Window.*/
 static Window
@@ -164,8 +166,7 @@ static GdkPixbuf
 *sd: a ScreenshotData struct.
 returns: the screenshot in a *GdkPixbuf.
 */
-GdkPixbuf *screenshooter_take_screenshot (gint       mode, 
-                                          gint       delay)
+GdkPixbuf *screenshooter_take_screenshot (gint mode, gint delay)
 {
   GdkPixbuf *screenshot;
   GdkWindow *window = NULL;
@@ -206,6 +207,24 @@ GdkPixbuf *screenshooter_take_screenshot (gint       mode,
 
 
 
+/* Copy the screenshot to the Clipboard.
+* Code is from gnome-screenshooter.
+* @screenshot: the screenshot
+*/
+void
+screenshooter_copy_to_clipboard (GdkPixbuf *screenshot) 
+{
+  GtkClipboard *clipboard;
+
+  clipboard = gtk_clipboard_get_for_display (gdk_display_get_default(), 
+                                             GDK_SELECTION_CLIPBOARD);
+  gtk_clipboard_set_image (clipboard, screenshot);
+
+  gtk_clipboard_store (clipboard);
+}
+
+
+
 /* Read the options from file and sets the sd values.
 @file: the path to the rc file.
 @sd: the ScreenshotData to be set.
@@ -219,10 +238,11 @@ screenshooter_read_rc_file (gchar               *file,
   XfceRc *rc;
   gint delay = 0;
   gint mode = FULLSCREEN;
+  gint action = SAVE;
   gint show_save_dialog = 1;
   gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
   #ifdef HAVE_GIO
-  gchar *app = g_strdup (DEFAULT_APPLICATION);
+  gchar *app = NULL;
   #endif
   
   if (g_file_test (file, G_FILE_TEST_EXISTS))
@@ -234,18 +254,24 @@ screenshooter_read_rc_file (gchar               *file,
           if (!dir_only)
             {
               delay = xfce_rc_read_int_entry (rc, "delay", 0);
+              
               mode = xfce_rc_read_int_entry (rc, "mode", FULLSCREEN);
+              
+              action = xfce_rc_read_int_entry (rc, "action", SAVE);
+              
               show_save_dialog = 
                 xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
+              
               #ifdef HAVE_GIO
               g_free (app);
+              
               app = 
-                g_strdup (xfce_rc_read_entry (rc, "app", 
-                                              DEFAULT_APPLICATION));
+                g_strdup (xfce_rc_read_entry (rc, "app", NULL));
               #endif
             }
   
           g_free (screenshot_dir);
+          
           screenshot_dir = 
             g_strdup (xfce_rc_read_entry (rc, 
                                           "screenshot_dir", 
@@ -258,6 +284,7 @@ screenshooter_read_rc_file (gchar               *file,
   /* And set the sd values */
   sd->delay = delay;
   sd->mode = mode;
+  sd->action = action;
   sd->show_save_dialog = show_save_dialog;
   sd->screenshot_dir = screenshot_dir;
   #ifdef HAVE_GIO
@@ -283,6 +310,7 @@ screenshooter_write_rc_file (gchar               *file,
   
   xfce_rc_write_int_entry (rc, "delay", sd->delay);
   xfce_rc_write_int_entry (rc, "mode", sd->mode);
+  xfce_rc_write_int_entry (rc, "action", sd->action);
   xfce_rc_write_int_entry (rc, "show_save_dialog", 
                            sd->show_save_dialog);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
@@ -306,25 +334,21 @@ screenshooter_open_screenshot (gchar *screenshot_path,
 {
   if (screenshot_path != NULL)
     {
-      /* If application == none, we don't do anything */      
-      if (!g_str_equal (application, "none"))
-        {
-          gchar *command = 
-            g_strconcat (application, " ", screenshot_path, NULL);
+      gchar *command = 
+        g_strconcat (application, " ", screenshot_path, NULL);
     
-          GError      *error = NULL;
+      GError      *error = NULL;
           
-          /* Execute the command and show an error dialog if there was 
-           * an error. */
-          if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
-                                    FALSE, TRUE, &error))
-            {
-              xfce_err (error->message);
-              g_error_free (error);
-            }
-          
-          g_free (command);
+      /* Execute the command and show an error dialog if there was 
+      * an error. */
+      if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
+                                FALSE, TRUE, &error))
+        {
+          xfce_err (error->message);
+          g_error_free (error);
         }
+          
+      g_free (command);
     }
 }     
-#endif                               
+#endif

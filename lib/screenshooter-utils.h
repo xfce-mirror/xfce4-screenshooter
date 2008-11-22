@@ -33,10 +33,7 @@
 
 #include <unistd.h>
 
-
-
 #define DEFAULT_SAVE_DIRECTORY xfce_get_homedir ()
-#define DEFAULT_APPLICATION "none"
 
 
 
@@ -49,19 +46,29 @@ enum {
 
 
 
+/* Possible actions */
+enum {
+  ACTION_0,
+  SAVE,
+  CLIPBOARD,
+  #ifdef HAVE_GIO
+  OPEN,
+  #endif
+};
+
+
+
 /* Struct to store the screenshot options */
 typedef struct
 {
   gint mode;
   gint show_save_dialog;
-
   gint delay;
+  gint action;
   gchar *screenshot_dir;
-  
   #ifdef HAVE_GIO
   gchar *app;
   #endif
-  
 }
 ScreenshotData;
 
@@ -70,7 +77,9 @@ ScreenshotData;
 GdkPixbuf 
 *screenshooter_take_screenshot   (gint                  mode, 
                                   gint                  delay);
-                                  
+void
+screenshooter_copy_to_clipboard  (GdkPixbuf            *screenshot) ;
+
 void 
 screenshooter_read_rc_file       (gchar                *file, 
                                   ScreenshotData       *sd, 

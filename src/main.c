@@ -208,46 +208,10 @@ int main(int argc, char **argv)
                   
       if (response == GTK_RESPONSE_OK)
         {
-          gchar *screenshot_path = NULL;
-          
-          /* Take the screenshot */
-          screenshot = screenshooter_take_screenshot (sd->mode, sd->delay);
-          
-          #ifdef HAVE_GIO
-          if (!g_str_equal(sd->app, "none"))
-            {
-              screenshot_path = 
-                screenshooter_save_screenshot (screenshot, 
-                                               FALSE, 
-                                               "/tmp");
-            }
-          else
-            {
-          #endif
-              screenshot_path = 
-                screenshooter_save_screenshot (screenshot, 
-                                               sd->show_save_dialog, 
-                                               sd->screenshot_dir);
-          #ifdef HAVE_GIO
-            }
-          #endif
-          
-          g_object_unref (screenshot);
-          
-          /* Open the screenshot */
-          
-          if (screenshot_path != NULL)
-            {
-              #ifdef HAVE_GIO
-              screenshooter_open_screenshot (screenshot_path, sd->app);
-              #endif
-              g_free (screenshot_path);
-            }
-          
+          screenshooter_take_and_output_screenshot (sd);
           
           /* Save preferences */     
           screenshooter_write_rc_file (rc_file, sd);
-          
         }
     }
   

@@ -22,5 +22,6 @@
 
 #include "screenshooter-dialogs.h"
 #include "screenshooter-utils.h"
+#include "screenshooter-actions.h"
 
 #endif
