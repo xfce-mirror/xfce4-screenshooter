@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-15 17:52+0100\n"
-"PO-Revision-Date: 2008-07-09 12:13+0300\n"
+"PO-Revision-Date: 2008-11-17 13:09+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,19 +32,16 @@ msgid "Screenshot-%d.png"
 msgstr "Знімок_екрану-%d.png"
 
 #: ../lib/screenshooter-utils.c:224
-#, fuzzy
 msgid "Save screenshot as..."
-msgstr "Зберегти знімок як ..."
+msgstr "Зберегти знімок як..."
 
 #: ../lib/screenshooter-dialogs.c:238
-#, fuzzy
 msgid "Do not open screenshots"
-msgstr "Отримати знімок"
+msgstr "Не відкривати знімки"
 
 #: ../lib/screenshooter-dialogs.c:316 ../lib/screenshooter-dialogs.c:327
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Take a screenshot"
 msgstr "Отримати знімок"
 
@@ -56,9 +53,8 @@ msgstr "Режими"
 #: ../lib/screenshooter-dialogs.c:359 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:257
 #: ../panel-plugin/screenshooter-plugin.c:324
-#, fuzzy
 msgid "Take a screenshot of the whole screen"
-msgstr "Зробити знімок стільниці"
+msgstr "Отримати знімок всього екрану"
 
 #: ../lib/screenshooter-dialogs.c:370 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:262
@@ -77,10 +73,8 @@ msgid "Show save dialog"
 msgstr "Показати діалог збереження"
 
 #: ../lib/screenshooter-dialogs.c:417
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Типова тека збереження</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Типова тека збереження</span>"
 
 #: ../lib/screenshooter-dialogs.c:424 ../lib/screenshooter-dialogs.c:528
 msgid "Default save location"
@@ -99,13 +93,12 @@ msgid "seconds"
 msgstr "секунд"
 
 #: ../lib/screenshooter-dialogs.c:466
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 "span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Затримка     перед      "
-"знімком   </span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Відкрити знімок з</"
+"span>"
 
 #: ../src/main.c:46
 msgid "Version information"
@@ -139,30 +132,6 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Take screenshots of the whole screen or of the active window"
-msgstr "Зробити знімок активного вікна"
+msgstr "Отримати знімки всього екрану або активного вікна"
 
-#, fuzzy
-#~ msgid "Screenshot"
-#~ msgstr "Знімок екрану"
-
-#~ msgid "Screenshooter plugin"
-#~ msgstr "Плагін для знімків екрану"
-
-#~ msgid "Take a screenshot of desktop"
-#~ msgstr "Зробити знімок стільниці"
-
-#~ msgid "Default save folder"
-#~ msgstr "Типова тека збереження знімків екрану"
-
-#, fuzzy
-#~ msgid "A tool to take screenshots of your desktop or of the active windows"
-#~ msgstr "Зробити знімок активного вікна"
-
-#, fuzzy
-#~ msgid "Screenshot tool"
-#~ msgstr "Знімок екрану"
-
-#~ msgid " Screenshot"
-#~ msgstr "Знімок екрану"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-15 17:52+0100\n"
-"PO-Revision-Date: 2007-01-30 21:21+0200\n"
+"PO-Revision-Date: 2008-11-04 23:27+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -52,64 +52,70 @@ msgstr " Bëj një foto ekrani"
 #. Create the frame for screenshot modes and fill it with the radio buttons
 #: ../lib/screenshooter-dialogs.c:348
 msgid "Modes"
-msgstr ""
+msgstr "Mënyra"
 
 #: ../lib/screenshooter-dialogs.c:359 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:257
 #: ../panel-plugin/screenshooter-plugin.c:324
 #, fuzzy
 msgid "Take a screenshot of the whole screen"
-msgstr " Bëj një foto ekrani"
+msgstr "Bëni një foto ekrani të dritares aktive"
 
 #: ../lib/screenshooter-dialogs.c:370 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:262
 #: ../panel-plugin/screenshooter-plugin.c:329
-#, fuzzy
 msgid "Take a screenshot of the active window"
-msgstr " Bëj një foto ekrani"
+msgstr "Bëni një foto ekrani të dritares aktive"
 
 #. Create the options frame and add the delay and save options
 #: ../lib/screenshooter-dialogs.c:380
 msgid "Options"
-msgstr ""
+msgstr "Mundësi"
 
 #. Save option
 #: ../lib/screenshooter-dialogs.c:393
 msgid "Show save dialog"
-msgstr ""
+msgstr "Shfaq dialog ruajtjeje"
 
 #: ../lib/screenshooter-dialogs.c:417
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Vend parazgjedhje për "
+"ruajtje</span>"
 
 #: ../lib/screenshooter-dialogs.c:424 ../lib/screenshooter-dialogs.c:528
 msgid "Default save location"
-msgstr ""
+msgstr "Vend parazgjedhje për ruajtje"
 
 #: ../lib/screenshooter-dialogs.c:438
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Vonesë në sekonda përpara "
+"bërjes së fotos së ekranit</span>"
 
 #: ../lib/screenshooter-dialogs.c:455
 msgid "seconds"
-msgstr ""
+msgstr "sekonda"
 
 #: ../lib/screenshooter-dialogs.c:466
+#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 "span>"
 msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Vonesë në sekonda përpara "
+"bërjes së fotos së ekranit</span>"
 
 #: ../src/main.c:46
 msgid "Version information"
-msgstr ""
+msgstr "Të dhëna versioni"
 
 #: ../src/main.c:58
 msgid "Delay in seconds before taking the screenshot"
-msgstr ""
+msgstr "Vonesë në sekonda përpara bërjes së fotos së ekranit"
 
 #: ../src/main.c:63
 msgid "Do not display the save dialog"
@@ -129,28 +135,44 @@ msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
+"%s: %s\n"
+"Provoni %s --help për të parë një listë të plotë të mundësive të passhme për "
+"rresht urdhërash.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 #, fuzzy
 msgid "Take screenshots of the whole screen or of the active window"
-msgstr " Bëj një foto ekrani"
+msgstr "Bëni një foto ekrani të dritares aktive"
+
+msgid "Properties"
+msgstr "Veti"
+
+msgid "Ask for _filename"
+msgstr "Pyet për _emër kartele"
+
+msgid "Error grabbing the pointer %d"
+msgstr "Gabim gjatë përlarjes së treguesit %d"
+
+msgid "Always take shot of the whole screen"
+msgstr "Bëj përherë një foto të tërë ekranit"
+
+msgid "Window selection delay"
+msgstr "Vonesë përzgjedhjeje dritareje"
 
 #, fuzzy
 #~ msgid "Screenshot"
 #~ msgstr "Foto ekrani"
 
-#, fuzzy
 #~ msgid "Screenshooter plugin"
-#~ msgstr "Vonesë para fotos së ekranit"
+#~ msgstr "Shtojcë për foto ekrani"
 
-#, fuzzy
 #~ msgid "Take a screenshot of desktop"
-#~ msgstr " Bëj një foto ekrani"
+#~ msgstr "Bëni një foto ekrani të desktopit"
 
 #, fuzzy
 #~ msgid "A tool to take screenshots of your desktop or of the active windows"
-#~ msgstr " Bëj një foto ekrani"
+#~ msgstr "Bëni një foto ekrani të dritares aktive"
 
 #, fuzzy
 #~ msgid "Screenshot tool"
@@ -164,22 +186,8 @@ msgstr " Bëj një foto ekrani"
 
 #, fuzzy
 #~ msgid "Delay before taking the screenshot"
-#~ msgstr " Bëj një foto ekrani"
+#~ msgstr "Vonesë në sekonda përpara bërjes së fotos së ekranit"
 
-#~ msgid "Properties"
-#~ msgstr "Veti"
-
+#, fuzzy
 #~ msgid "Screenshots"
 #~ msgstr "Foto ekrani"
-
-#~ msgid "Ask for _filename"
-#~ msgstr "Pyet për _emër kartele"
-
-#~ msgid "Error grabbing the pointer %d"
-#~ msgstr "Gabim gjatë përlarjes së treguesit %d"
-
-#~ msgid "Always take shot of the whole screen"
-#~ msgstr "Bëj përherë një foto të tërë ekranit"
-
-#~ msgid "Window selection delay"
-#~ msgstr "Vonesë përzgjedhjeje dritareje"
