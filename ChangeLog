@@ -1,3 +1,16 @@
+2008-11-23 jeromeg
+
+  * lib/screenshooter-actions.c: fix Open with mode.
+  * lib/screenshooter-dialogs.c:
+    - Start to rewrite the dialog code on the basis of a patch by David
+      Collins.
+    - Remove frames.
+    - Add alignments.
+    - Add copy to clipboard function.
+    - The layout still needs to be tweaked.
+    - The dialog for the plugin crashes at the moment, I'll fix this
+      later.
+
 2008-11-22 jeromeg
 
   * lib/screenshooter-utils.{c,h}:

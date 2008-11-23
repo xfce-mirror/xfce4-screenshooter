@@ -39,8 +39,8 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
     {
       gchar *screenshot_path =
         screenshooter_save_screenshot (screenshot, 
-                                       sd->show_save_dialog, 
-                                       sd->screenshot_dir);
+                                       FALSE, 
+                                       "/tmp");
       if (screenshot_path != NULL)
         {
           screenshooter_open_screenshot (screenshot_path, sd->app);
