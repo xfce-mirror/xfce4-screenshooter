@@ -246,13 +246,13 @@ cb_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   GtkWidget *dlg;
   
   dlg = screenshooter_dialog_new (pd->sd, TRUE);
-  
+        
   /* Block the menu to prevent the user from launching several dialogs at
   the same time */
   xfce_panel_plugin_block_menu (plugin);
   
   g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
-
+  
   g_signal_connect (dlg, "response", G_CALLBACK (cb_dialog_response),
                     pd);
 

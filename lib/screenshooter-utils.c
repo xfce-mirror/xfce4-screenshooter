@@ -242,7 +242,7 @@ screenshooter_read_rc_file (gchar               *file,
   gint show_save_dialog = 1;
   gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
   #ifdef HAVE_GIO
-  gchar *app = NULL;
+  gchar *app = g_strdup ("none");
   #endif
   
   if (g_file_test (file, G_FILE_TEST_EXISTS))
@@ -266,7 +266,7 @@ screenshooter_read_rc_file (gchar               *file,
               g_free (app);
               
               app = 
-                g_strdup (xfce_rc_read_entry (rc, "app", NULL));
+                g_strdup (xfce_rc_read_entry (rc, "app", "none"));
               #endif
             }
   
@@ -334,21 +334,24 @@ screenshooter_open_screenshot (gchar *screenshot_path,
 {
   if (screenshot_path != NULL)
     {
-      gchar *command = 
-        g_strconcat (application, " ", screenshot_path, NULL);
-    
-      GError      *error = NULL;
-          
-      /* Execute the command and show an error dialog if there was 
-      * an error. */
-      if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
-                                FALSE, TRUE, &error))
+      if (!g_str_equal (application, "none"))
         {
-          xfce_err (error->message);
-          g_error_free (error);
-        }
+          gchar *command = 
+            g_strconcat (application, " ", screenshot_path, NULL);
+    
+          GError      *error = NULL;
           
-      g_free (command);
+          /* Execute the command and show an error dialog if there was 
+          * an error. */
+          if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
+                                    FALSE, TRUE, &error))
+            {
+              xfce_err (error->message);
+              g_error_free (error);
+            }
+          
+          g_free (command);
+       }
     }
 }     
 #endif

@@ -1,3 +1,13 @@
+2008-11-24 jeromeg
+
+  * lib/screenshooter-utils.c:
+    - re-add "none" application, fixes the segfault in the plugin 
+      dialog.
+  * lib/screenshooter-dialogs.c (screenshooter_dialog_new):
+    - add a "Application:" label.
+    - Improve the layout.
+    - the "Default save location" label should not be bold.
+
 2008-11-23 jeromeg
 
   * lib/screenshooter-actions.c: fix Open with mode.
