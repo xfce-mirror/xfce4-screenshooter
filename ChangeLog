@@ -1,5 +1,11 @@
 2008-11-24 jeromeg
 
+  * CONTRIBUTORS:
+    - create a contributors list.
+    - add David Collins.
+
+2008-11-24 jeromeg
+
   * lib/screenshooter-utils.c:
     - re-add "none" application, fixes the segfault in the plugin 
       dialog.
