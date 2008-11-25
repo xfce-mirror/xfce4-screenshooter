@@ -1,3 +1,14 @@
+2008-11-25 jeromeg
+
+  * lib/screenshooter-dialogs.c:
+    - set icon size to 16 for the combobox.
+    - add (cb_save_toggled_sensi) to set to items insensitive 
+      when not toggled. Add callback using this function.
+    - improve indentation.
+    - improve the paddings of the layout a little bit.
+    - put the default save location before the checkbox.
+    - select the first item of the combobox when creating it.
+
 2008-11-24 jeromeg
 
   * CONTRIBUTORS:

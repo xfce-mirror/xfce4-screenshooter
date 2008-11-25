@@ -19,7 +19,7 @@
 
 #include "screenshooter-dialogs.h"
 
-#define ICON_SIZE 22
+#define ICON_SIZE 16
 
 /* Prototypes */ 
 
@@ -32,6 +32,9 @@ cb_active_window_toggled           (GtkToggleButton    *tb,
 static void 
 cb_save_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
+static void 
+cb_save_toggled_sensi              (GtkToggleButton    *tb,
+                                    GtkWidget          *widget);
 #ifdef HAVE_GIO                                    
 static void 
 cb_open_toggled                    (GtkToggleButton    *tb,
@@ -111,6 +114,15 @@ static void cb_save_toggled (GtkToggleButton *tb, ScreenshotData  *sd)
     {
       sd->action = SAVE;
     }
+}
+
+
+
+/* Set the widget active if the toggle button is active */
+static void 
+cb_toggle_set_sensi (GtkToggleButton *tb, GtkWidget *widget)
+{
+  gtk_widget_set_sensitive (widget, gtk_toggle_button_get_active (tb));
 }
 
 
@@ -234,7 +246,8 @@ cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data)
 
 #ifdef HAVE_GIO
 /* Set sd->app as per the active item in the combobox */
-static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
+static void cb_combo_active_item_changed (GtkWidget *box, 
+                                          ScreenshotData *sd)
 {
   GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
   GtkTreeIter iter;
@@ -250,7 +263,9 @@ static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
 
 
 
-/* Extract the informations from app_info and add them to the liststore. */
+/* Extract the informations from app_info and add them to the 
+ * liststore. 
+ * */
 static void add_item (GAppInfo *app_info, GtkWidget *liststore)
 {
   GtkTreeIter iter;
@@ -267,7 +282,8 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
       gchar *path = g_file_get_path (file);
       
       pixbuf = 
-        gdk_pixbuf_new_from_file_at_size (path, ICON_SIZE, ICON_SIZE, NULL);
+        gdk_pixbuf_new_from_file_at_size (path, ICON_SIZE, 
+                                          ICON_SIZE, NULL);
       
       g_free (path);
       g_object_unref (file);
@@ -296,16 +312,17 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
   
   if (pixbuf == NULL)
     {
-      pixbuf = gtk_icon_theme_load_icon (icon_theme, "exec", ICON_SIZE,
-                                         GTK_ICON_LOOKUP_GENERIC_FALLBACK,
-                                         NULL);
+      pixbuf = 
+        gtk_icon_theme_load_icon (icon_theme, "exec", ICON_SIZE,
+                                  GTK_ICON_LOOKUP_GENERIC_FALLBACK,
+                                  NULL);
     }
   
   /* Add to the liststore */
   gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
           
-  gtk_list_store_set (GTK_LIST_STORE (liststore), &iter, 0, pixbuf, 1, name,
-                      2, command, -1);
+  gtk_list_store_set (GTK_LIST_STORE (liststore), &iter, 0, pixbuf, 1, 
+                      name, 2, command, -1);
   
   /* Free the stuff */      
   g_free (command);
@@ -343,7 +360,8 @@ static void populate_liststore (GtkListStore *liststore)
 static void set_default_item (GtkWidget     *combobox, 
                               gchar         *default_app)
 {
-  GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
+  GtkTreeModel *model = 
+    gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
   GtkTreeIter iter; 
   gchar *command = NULL;
   
@@ -595,7 +613,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   /* Create actions box */
   
-  actions_box = gtk_vbox_new (FALSE, 0);
+  actions_box = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (actions_alignment), actions_box);
   gtk_container_set_border_width (GTK_CONTAINER (actions_box), 0);
   gtk_widget_show (actions_box);
@@ -606,10 +624,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
     gtk_radio_button_new_with_mnemonic (NULL, 
                                         _("Save"));
   
-  gtk_box_pack_start (GTK_BOX (actions_box), 
-                      save_radio_button, FALSE, 
-                      FALSE, 6);
-                      
+  gtk_container_add (GTK_CONTAINER (actions_box), save_radio_button);
+                        
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_radio_button),
                                 (sd->action == SAVE));
   
@@ -641,28 +657,16 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
       gtk_widget_show (save_alignment);
                   
-      /* Show save dialog checkbox */
+      /* Save box */
       
       save_box = gtk_vbox_new (FALSE, 0);
       gtk_container_add (GTK_CONTAINER (save_alignment), save_box);
       gtk_container_set_border_width (GTK_CONTAINER (save_box), 0);
       gtk_widget_show (save_box);
       
-      save_checkbox = 
-        gtk_check_button_new_with_label (_("Show save dialog"));
-		  		  
-		  gtk_widget_show (save_checkbox);
-		  gtk_box_pack_start (GTK_BOX (save_box), 
-                          save_checkbox, FALSE, 
-                          FALSE, 0);
-		  
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
-		                                sd->show_save_dialog);
-		  
-      g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
-		                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
-             
-		  /* Default save location */          
+      gtk_widget_set_sensitive (save_box, (sd->mode == SAVE));
+      
+      /* Default save location */          
       
       save_location_box = gtk_hbox_new (FALSE, 12);
       gtk_container_add (GTK_CONTAINER (save_box), save_location_box);
@@ -694,6 +698,25 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                           
 		  g_signal_connect (G_OBJECT (dir_chooser), "selection-changed", 
 		                    G_CALLBACK (cb_default_folder), sd);
+      
+      /* Show save dialog checkbox */
+      
+      save_checkbox = 
+        gtk_check_button_new_with_label (_("Show save dialog"));
+		  		  
+		  gtk_widget_show (save_checkbox);
+		  gtk_box_pack_start (GTK_BOX (save_box), 
+                          save_checkbox, FALSE, 
+                          FALSE, 0);
+		  
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
+		                                sd->show_save_dialog);
+		  
+      g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
+		                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
+ 
+      g_signal_connect (G_OBJECT (save_radio_button), "toggled",
+                        G_CALLBACK (cb_toggle_set_sensi), save_box);
     }
   
   #ifdef HAVE_GIO 
@@ -705,10 +728,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
       _("Open with"));
   
-  gtk_box_pack_start (GTK_BOX (actions_box), 
-                      open_with_radio_button, FALSE, 
-                      FALSE, 6);
-  
+  gtk_container_add (GTK_CONTAINER (actions_box), 
+                     open_with_radio_button);
+    
   gtk_widget_show (open_with_radio_button);
                       
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (open_with_radio_button),
@@ -739,6 +761,11 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                      open_with_box);
   gtk_container_set_border_width (GTK_CONTAINER (open_with_box), 0);
   gtk_widget_show (open_with_box);
+  
+  gtk_widget_set_sensitive (open_with_box, (sd->mode == OPEN));
+  
+  g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), open_with_box);
   
   /* Application label */
   
@@ -775,6 +802,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                                   "pixbuf", 0, NULL);                                  
   
   populate_liststore (liststore);
+  
+  gtk_combo_box_set_active (GTK_COMBO_BOX (combobox), 0);
   
   set_default_item (combobox, sd->app);
   
