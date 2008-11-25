@@ -156,7 +156,7 @@ static void cb_clipboard_toggled (GtkToggleButton *tb,
 static void cb_show_save_dialog_toggled (GtkToggleButton *tb,
                                          ScreenshotData   *sd)
 {
-  sd->show_save_dialog = gtk_toggle_button_get_active (tb);
+  sd->show_save_dialog = !gtk_toggle_button_get_active (tb);
 }                                  
 
 
@@ -429,8 +429,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
       dlg = 
         xfce_titled_dialog_new_with_buttons (_("Take a screenshot"),
                                              NULL,
-                                             GTK_DIALOG_DESTROY_WITH_PARENT |
-                                             GTK_DIALOG_NO_SEPARATOR,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT,
                                              GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
                                              GTK_STOCK_OK, GTK_RESPONSE_OK,
                                              NULL);
@@ -440,8 +439,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
       dlg =
         xfce_titled_dialog_new_with_buttons (_("Take a screenshot"),
                                              NULL,
-                                             GTK_DIALOG_DESTROY_WITH_PARENT |
-                                             GTK_DIALOG_NO_SEPARATOR,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT,
                                              GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
                                              NULL);
     }                                             
@@ -461,7 +459,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   /* Create area label */
   area_label = gtk_label_new ("");
   gtk_label_set_markup (GTK_LABEL (area_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">Area to screenshot</span>"));
+  _("<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"));
 			
   gtk_misc_set_alignment (GTK_MISC (area_label), 0, 0);
   gtk_widget_show (area_label);
@@ -491,7 +489,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   fullscreen_button = 
     gtk_radio_button_new_with_mnemonic (NULL, 
-                                        _("Whole screen"));
+                                        _("Entire screen"));
                                         
   gtk_box_pack_start (GTK_BOX (area_box), 
                       fullscreen_button, FALSE, 
@@ -702,7 +700,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
       /* Show save dialog checkbox */
       
       save_checkbox = 
-        gtk_check_button_new_with_label (_("Show save dialog"));
+        gtk_check_button_new_with_label (_("Save to default location"));
 		  		  
 		  gtk_widget_show (save_checkbox);
 		  gtk_box_pack_start (GTK_BOX (save_box), 
@@ -718,6 +716,26 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
       g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                         G_CALLBACK (cb_toggle_set_sensi), save_box);
     }
+    
+  /* Copy to clipboard radio button */
+  
+  clipboard_radio_button = 
+    gtk_radio_button_new_with_mnemonic (
+      gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
+      _("Copy to the clipboard"));
+  
+  gtk_box_pack_start (GTK_BOX (actions_box), 
+                      clipboard_radio_button, FALSE, 
+                      FALSE, 0);
+  
+  gtk_widget_show (clipboard_radio_button);
+                      
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
+                                (sd->action == CLIPBOARD));
+  
+  g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled", 
+                    G_CALLBACK (cb_clipboard_toggled),
+                    sd);
   
   #ifdef HAVE_GIO 
    
@@ -726,7 +744,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   open_with_radio_button = 
     gtk_radio_button_new_with_mnemonic (
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
-      _("Open with"));
+      _("Open with:"));
   
   gtk_container_add (GTK_CONTAINER (actions_box), 
                      open_with_radio_button);
@@ -816,27 +834,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   gtk_widget_show_all (combobox);                    
 #endif
-
-  /* Copy to clipboard radio button */
-  
-  clipboard_radio_button = 
-    gtk_radio_button_new_with_mnemonic (
-      gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
-      _("Copy to the clipboard"));
-  
-  gtk_box_pack_start (GTK_BOX (actions_box), 
-                      clipboard_radio_button, FALSE, 
-                      FALSE, 6);
-  
-  gtk_widget_show (clipboard_radio_button);
-                      
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
-                                (sd->action == CLIPBOARD));
-  
-  g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled", 
-                    G_CALLBACK (cb_clipboard_toggled),
-                    sd);
-  
+ 
   return dlg;                
 }
 

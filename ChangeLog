@@ -1,6 +1,12 @@
 2008-11-25 jeromeg
 
   * lib/screenshooter-dialogs.c:
+    - improve the dialog.
+    - improve some strings.
+
+2008-11-25 jeromeg
+
+  * lib/screenshooter-dialogs.c:
     - set icon size to 16 for the combobox.
     - add (cb_save_toggled_sensi) to set to items insensitive 
       when not toggled. Add callback using this function.
