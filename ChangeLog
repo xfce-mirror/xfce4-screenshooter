@@ -1,6 +1,14 @@
 2008-11-25 jeromeg
 
   * lib/screenshooter-dialogs.c:
+    - merge the save checkbox and the default save location filechooser
+    to a single line.
+    - remove some unused variables.
+  * panel-plugin/screenshooter-plugin.c: update the tooltips.
+
+2008-11-25 jeromeg
+
+  * lib/screenshooter-dialogs.c:
     - improve the dialog.
     - improve some strings.
 

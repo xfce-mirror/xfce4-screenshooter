@@ -223,7 +223,7 @@ cb_dialog_response (GtkWidget *dlg, int reponse,
   if (pd->sd->mode == FULLSCREEN)
   {
     gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                                 _("Take a screenshot of the whole screen"));
+                                 _("Take a screenshot of the entire screen"));
   }
   else
   {
@@ -290,7 +290,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   if (pd->sd->mode == FULLSCREEN)
   {
     gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                                 _("Take a screenshot of the whole screen"));
+                                 _("Take a screenshot of the entire screen"));
   }
   else
   {

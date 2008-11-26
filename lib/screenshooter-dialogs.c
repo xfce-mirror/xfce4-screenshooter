@@ -636,10 +636,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   if (plugin)
     {
 		  GtkWidget *save_alignment;
-      
       GtkWidget *save_checkbox;
-      GtkWidget *save_location_box;
-      GtkWidget *default_save_label, *dir_chooser;
+      GtkWidget *dir_chooser;
       
       /* Create actions alignment */
   
@@ -657,7 +655,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                   
       /* Save box */
       
-      save_box = gtk_vbox_new (FALSE, 0);
+      save_box = gtk_hbox_new (FALSE, 12);
       gtk_container_add (GTK_CONTAINER (save_alignment), save_box);
       gtk_container_set_border_width (GTK_CONTAINER (save_box), 0);
       gtk_widget_show (save_box);
@@ -665,44 +663,12 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
       gtk_widget_set_sensitive (save_box, (sd->mode == SAVE));
       
       /* Default save location */          
-      
-      save_location_box = gtk_hbox_new (FALSE, 12);
-      gtk_container_add (GTK_CONTAINER (save_box), save_location_box);
-      
-      gtk_widget_show (save_location_box);
-            
-		  default_save_label = gtk_label_new ("Default save location:");
-		  			
-			gtk_misc_set_alignment (GTK_MISC (default_save_label), 0, 0.5);
-		  
-      gtk_widget_show (default_save_label);
-		  
-      gtk_box_pack_start (GTK_BOX (save_location_box), 
-                          default_save_label, FALSE, 
-                          FALSE, 0);
-      		  
-		  dir_chooser = 
-		    gtk_file_chooser_button_new (_("Default save location"), 
-		                                 GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-		  		  
-      gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dir_chooser), 
-		                                       sd->screenshot_dir);
-		  
-      gtk_box_pack_start (GTK_BOX (save_location_box), 
-                          dir_chooser, FALSE, 
-                          FALSE, 0);
-      
-      gtk_widget_show (dir_chooser);
-                          
-		  g_signal_connect (G_OBJECT (dir_chooser), "selection-changed", 
-		                    G_CALLBACK (cb_default_folder), sd);
-      
-      /* Show save dialog checkbox */
-      
-      save_checkbox = 
-        gtk_check_button_new_with_label (_("Save to default location"));
+                  
+		  save_checkbox = 
+        gtk_check_button_new_with_label (_("Save to default location:"));
 		  		  
 		  gtk_widget_show (save_checkbox);
+      
 		  gtk_box_pack_start (GTK_BOX (save_box), 
                           save_checkbox, FALSE, 
                           FALSE, 0);
@@ -712,7 +678,26 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 		  
       g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
 		                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
- 
+      		  
+		  dir_chooser = 
+		    gtk_file_chooser_button_new (_("Default save location"), 
+		                                 GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+		  		  
+      gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dir_chooser), 
+		                                       sd->screenshot_dir);
+		  
+      gtk_box_pack_start (GTK_BOX (save_box), 
+                          dir_chooser, FALSE, 
+                          FALSE, 0);
+      
+      gtk_widget_show (dir_chooser);
+                          
+		  g_signal_connect (G_OBJECT (dir_chooser), "selection-changed", 
+		                    G_CALLBACK (cb_default_folder), sd);
+      
+      g_signal_connect (G_OBJECT (save_checkbox), "toggled",
+                        G_CALLBACK (cb_toggle_set_sensi), dir_chooser);
+            
       g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                         G_CALLBACK (cb_toggle_set_sensi), save_box);
     }
