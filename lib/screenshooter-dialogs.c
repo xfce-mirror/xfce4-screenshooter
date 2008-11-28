@@ -32,9 +32,6 @@ cb_active_window_toggled           (GtkToggleButton    *tb,
 static void 
 cb_save_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
-static void 
-cb_save_toggled_sensi              (GtkToggleButton    *tb,
-                                    GtkWidget          *widget);
 #ifdef HAVE_GIO                                    
 static void 
 cb_open_toggled                    (GtkToggleButton    *tb,
@@ -43,7 +40,9 @@ cb_open_toggled                    (GtkToggleButton    *tb,
 static void 
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
-                                                                            
+static void 
+cb_toggle_set_sensi                (GtkToggleButton    *tb, 
+                                    GtkWidget          *widget);                                                                            
 static void 
 cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
@@ -393,9 +392,9 @@ static void set_default_item (GtkWidget     *combobox,
 
 /* Build the preferences dialog.
 @sd: a ScreenshotData to set the options.
-plugin: if in plugin mode, we show the save options in the dialog.
 */
-GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
+GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, 
+                                     gboolean plugin)
 {
   GtkWidget *dlg;
   GtkWidget *vbox;
@@ -408,7 +407,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   GtkWidget *actions_box, *actions_label, *actions_alignment;
   
-  GtkWidget *save_box = NULL, *save_radio_button;
+  GtkWidget *save_box, *save_radio_button;
+  GtkWidget *save_alignment;
+  GtkWidget *save_checkbox;
+  GtkWidget *dir_chooser;
     
   GtkWidget *clipboard_radio_button;
     
@@ -498,6 +500,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fullscreen_button),
                                 (sd->mode == FULLSCREEN));
                                 
+  gtk_widget_set_tooltip_text (fullscreen_button,
+                               _("Take a screenshot of the entire screen"));
+                                
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled", 
                     G_CALLBACK (cb_fullscreen_screen_toggled),
                     sd);
@@ -515,6 +520,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button),
                                 (sd->mode == ACTIVE_WINDOW));
+                                
+  gtk_widget_set_tooltip_text (active_window_button,
+                               _("Take a screenshot of the active window"));
                                 
   g_signal_connect (G_OBJECT (active_window_button), "toggled", 
                     G_CALLBACK (cb_active_window_toggled),
@@ -568,6 +576,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (delay_spinner), 
                              sd->delay);
+  
+  /* Tooltip needs to be improved */
+  gtk_widget_set_tooltip_text (delay_spinner,
+                               _("Delay in seconds between pressing the button to take the screenshot and taking the screenshot"));  
                              
   gtk_widget_show (delay_spinner);
   
@@ -631,77 +643,82 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                     G_CALLBACK (cb_save_toggled),
                     sd);
                     
+  gtk_widget_set_tooltip_text (save_radio_button,
+                               _("Save the screenshot to a PNG file"));
+                    
   gtk_widget_show (save_radio_button);
   
-  if (plugin)
-    {
-		  GtkWidget *save_alignment;
-      GtkWidget *save_checkbox;
-      GtkWidget *dir_chooser;
-      
-      /* Create actions alignment */
+  /* Create actions alignment */
   
-      save_alignment = gtk_alignment_new (0, 0, 1, 1);
+  save_alignment = gtk_alignment_new (0, 0, 1, 1);
+
+  gtk_container_add (GTK_CONTAINER (actions_box), save_alignment);
+
+  gtk_alignment_set_padding (GTK_ALIGNMENT (save_alignment),
+                             0,
+                             6,
+                             24,
+                             0);
+
+  gtk_widget_show (save_alignment);
+              
+  /* Save box */
   
-      gtk_container_add (GTK_CONTAINER (actions_box), save_alignment);
-  
-      gtk_alignment_set_padding (GTK_ALIGNMENT (save_alignment),
-                                 0,
-                                 6,
-                                 24,
-                                 0);
-  
-      gtk_widget_show (save_alignment);
-                  
-      /* Save box */
-      
-      save_box = gtk_hbox_new (FALSE, 12);
-      gtk_container_add (GTK_CONTAINER (save_alignment), save_box);
-      gtk_container_set_border_width (GTK_CONTAINER (save_box), 0);
-      gtk_widget_show (save_box);
-      
-      gtk_widget_set_sensitive (save_box, (sd->mode == SAVE));
-      
-      /* Default save location */          
-                  
-		  save_checkbox = 
-        gtk_check_button_new_with_label (_("Save to default location:"));
-		  		  
-		  gtk_widget_show (save_checkbox);
-      
-		  gtk_box_pack_start (GTK_BOX (save_box), 
-                          save_checkbox, FALSE, 
-                          FALSE, 0);
-		  
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
-		                                sd->show_save_dialog);
-		  
-      g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
-		                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
-      		  
-		  dir_chooser = 
-		    gtk_file_chooser_button_new (_("Default save location"), 
-		                                 GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-		  		  
-      gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dir_chooser), 
-		                                       sd->screenshot_dir);
-		  
-      gtk_box_pack_start (GTK_BOX (save_box), 
-                          dir_chooser, FALSE, 
-                          FALSE, 0);
-      
-      gtk_widget_show (dir_chooser);
-                          
-		  g_signal_connect (G_OBJECT (dir_chooser), "selection-changed", 
-		                    G_CALLBACK (cb_default_folder), sd);
-      
-      g_signal_connect (G_OBJECT (save_checkbox), "toggled",
-                        G_CALLBACK (cb_toggle_set_sensi), dir_chooser);
-            
-      g_signal_connect (G_OBJECT (save_radio_button), "toggled",
-                        G_CALLBACK (cb_toggle_set_sensi), save_box);
-    }
+  save_box = gtk_hbox_new (FALSE, 12);
+  gtk_container_add (GTK_CONTAINER (save_alignment), save_box);
+  gtk_container_set_border_width (GTK_CONTAINER (save_box), 0);
+  gtk_widget_show (save_box);
     
+  /* Default save location */          
+              
+  save_checkbox = 
+    gtk_check_button_new_with_label (_("Save to default location:"));
+        
+  gtk_widget_show (save_checkbox);
+  
+  gtk_box_pack_start (GTK_BOX (save_box), 
+                      save_checkbox, FALSE, 
+                      FALSE, 0);
+  
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
+                                sd->show_save_dialog);
+  
+  g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
+                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
+                    
+  gtk_widget_set_tooltip_text (save_checkbox,
+  _("If checked, the screenshot will be saved to the default save location set on the right. If not, a save dialog will be displayed."));
+        
+  dir_chooser = 
+    gtk_file_chooser_button_new (_("Default save location"), 
+                                 GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+        
+  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dir_chooser), 
+                                       sd->screenshot_dir);
+  
+  gtk_box_pack_start (GTK_BOX (save_box), 
+                      dir_chooser, FALSE, 
+                      FALSE, 0);
+  
+  gtk_widget_show (dir_chooser);
+  
+  gtk_widget_set_tooltip_text (dir_chooser,
+                               _("Set the default save location"));
+                      
+  g_signal_connect (G_OBJECT (dir_chooser), "selection-changed", 
+                    G_CALLBACK (cb_default_folder), sd);
+  
+  g_signal_connect (G_OBJECT (save_checkbox), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), dir_chooser);
+        
+  g_signal_connect (G_OBJECT (save_radio_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), save_box);
+  
+  /* Run the callback functions to grey/ungrey the correct widgets */
+  
+  cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (save_radio_button),
+                       save_box);
+  
   /* Copy to clipboard radio button */
   
   clipboard_radio_button = 
@@ -714,6 +731,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                       FALSE, 0);
   
   gtk_widget_show (clipboard_radio_button);
+  
+  gtk_widget_set_tooltip_text (clipboard_radio_button,
+  _("Copy the screenshot to the clipboard so that it can be pasted later"));
                       
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
                                 (sd->action == CLIPBOARD));
@@ -722,7 +742,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                     G_CALLBACK (cb_clipboard_toggled),
                     sd);
   
-  #ifdef HAVE_GIO 
+#ifdef HAVE_GIO 
    
   /* Open with radio button */
   
@@ -742,6 +762,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   g_signal_connect (G_OBJECT (open_with_radio_button), "toggled", 
                     G_CALLBACK (cb_open_toggled),
                     sd);
+  
+  gtk_widget_set_tooltip_text (open_with_radio_button,
+  _("Open the screenshot with the chosen application"));
   
   /* Create open with alignment */
   
@@ -764,9 +787,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                      open_with_box);
   gtk_container_set_border_width (GTK_CONTAINER (open_with_box), 0);
   gtk_widget_show (open_with_box);
-  
-  gtk_widget_set_sensitive (open_with_box, (sd->mode == OPEN));
-  
+    
   g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), open_with_box);
   
@@ -817,7 +838,15 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   g_signal_connect (G_OBJECT (combobox), "changed", 
                     G_CALLBACK (cb_combo_active_item_changed), sd);
   
-  gtk_widget_show_all (combobox);                    
+  gtk_widget_show_all (combobox); 
+  
+  gtk_widget_set_tooltip_text (combobox,
+  _("Application to open the screenshot"));
+  
+  /* Run the callback functions to grey/ungrey the correct widgets */
+  
+  cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button),
+                       open_with_box);               
 #endif
  
   return dlg;                

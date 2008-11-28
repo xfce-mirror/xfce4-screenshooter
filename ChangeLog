@@ -1,3 +1,14 @@
+2008-11-28 jeromeg
+
+  * Fix the ChangeLog encoding.
+  * lib/screenshooter-dialogs.c:
+    - remove a prototype that was not used.
+    - (screenshooter_dialog_new):
+      + add some tooltips.
+      + also show the save box for the application.
+      + fix the default state of some widgets as suggested by David 
+        Collins.
+
 2008-11-25 jeromeg
 
   * lib/screenshooter-dialogs.c:
@@ -202,7 +213,7 @@
   * Add svn tag.
   * Fix the version mess.
   * lib/screenshooter-utils.c: 
-    - (screenshooter_read_rc_file) apply a patch by Enrico Tröger to fix a 
+    - (screenshooter_read_rc_file) apply a patch by Enrico Troger to fix a 
       crash.
   * lib/screenshooter-dialogs.c:
     - plug a leak in (cb_default_folder) and in (cb_combo_active_item_changed).
@@ -675,7 +686,7 @@
 	
 2008-05-18 18:25 mmassonnet
 
-	* Fix GCC warnings and bug with delay (Patch from Jérôme Guelfucci)
+	* Fix GCC warnings and bug with delay (Patch from Jerome Guelfucci)
 	* Drop automated file INSTALL
 
 2007-06-06 23:00 dbl
@@ -684,4 +695,4 @@
 
 2006-09-11 18:51 nick
 
-	* Apply Patch from Enrico Tröger to enable i18n.
+	* Apply Patch from Enrico Troger to enable i18n.

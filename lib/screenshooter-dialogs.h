@@ -34,7 +34,7 @@
 
 
 GtkWidget   
-*screenshooter_dialog_new          (ScreenshotData      *sd,
+*screenshooter_dialog_new          (ScreenshotData      *sd, 
                                     gboolean             plugin);
 void
 screenshooter_preferences_dialog   (gchar               *rc_file, 
