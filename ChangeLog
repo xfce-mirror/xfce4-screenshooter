@@ -1,5 +1,11 @@
 2008-11-28 jeromeg
 
+  * lib/screenshooter-dialogs.c:
+    - (cb_show_save_dialog_toggled) set show_save_dialog correctly.
+    - (screenshooter_dialog_new) initiate the checkbox correctly.
+
+2008-11-28 jeromeg
+
   * Fix the ChangeLog encoding.
   * lib/screenshooter-dialogs.c:
     - remove a prototype that was not used.

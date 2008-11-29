@@ -155,7 +155,14 @@ static void cb_clipboard_toggled (GtkToggleButton *tb,
 static void cb_show_save_dialog_toggled (GtkToggleButton *tb,
                                          ScreenshotData   *sd)
 {
-  sd->show_save_dialog = !gtk_toggle_button_get_active (tb);
+  if (gtk_toggle_button_get_active (tb))
+    {
+      sd->show_save_dialog = 0;
+    }
+  else
+    {
+      sd->show_save_dialog = 1;
+    }
 }                                  
 
 
@@ -681,7 +688,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                       FALSE, 0);
   
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
-                                sd->show_save_dialog);
+                                (sd->show_save_dialog == 0));
   
   g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
                     G_CALLBACK (cb_show_save_dialog_toggled), sd);
