@@ -2,6 +2,14 @@
 
   * BUGFIX: correctly grab active windows. In particular, menus are
     grabbed now.
+  * BUGFIX: correctly save the preferences, even if ~/.config/xfce4 does
+    not exist. Thanks to Nick Schermer for the explanations.
+  * Use -V for the version CLI option.
+  * Add possibility to copy the screenshot to the clipboard, thanks to
+    David Collins.
+  * The dialog for the plugin preferences and the application has been
+    totally rewritten to improve the user interface: it should look 
+    cleaner and tooltips have been added. Work started by David Collins.
 
 === Version 1.4.0 ===
 

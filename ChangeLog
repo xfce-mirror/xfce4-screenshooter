@@ -1,5 +1,10 @@
 2008-11-30 jeromeg
 
+  * Update NEWS file.
+  * xfce4-screenshooter.1: remove preferences CLI option.
+
+2008-11-30 jeromeg
+
   * src/main.c:
     - remove preferences CLI option , the application can set the
       default save folder now.
