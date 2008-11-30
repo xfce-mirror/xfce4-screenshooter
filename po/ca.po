@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-30 10:17+0100\n"
-"PO-Revision-Date: 2008-11-16 11:20+0100\n"
+"PO-Revision-Date: 2008-11-30 13:23+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,26 +42,22 @@ msgid "Take a screenshot"
 msgstr "Fes una captura de pantalla"
 
 #: ../lib/screenshooter-dialogs.c:471
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Lloc per defecte on desar</"
-"span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Àrea de captura</span>"
 
 #: ../lib/screenshooter-dialogs.c:501
 msgid "Entire screen"
-msgstr ""
+msgstr "Pantalla sencera"
 
 #: ../lib/screenshooter-dialogs.c:511
 #: ../panel-plugin/screenshooter-plugin.c:225
 #: ../panel-plugin/screenshooter-plugin.c:292
-#, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr "Fes una captura de la pantalla sencera"
 
 #: ../lib/screenshooter-dialogs.c:522
 msgid "Active window"
-msgstr ""
+msgstr "Finestra activa"
 
 #: ../lib/screenshooter-dialogs.c:532 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:230
@@ -78,72 +74,70 @@ msgstr ""
 "de pantalla</span>"
 
 #: ../lib/screenshooter-dialogs.c:589
-#, fuzzy
 msgid ""
 "Delay in seconds between pressing the button to take the screenshot and "
 "taking the screenshot"
-msgstr "Retard en segons abans de fer la captura de pantalla"
+msgstr ""
+"Retard en segons entre que es fa clic al botó de captura i que es fa la "
+"captura en sí"
 
 #: ../lib/screenshooter-dialogs.c:597
 msgid "seconds"
 msgstr "segons"
 
 #: ../lib/screenshooter-dialogs.c:611
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Lloc per defecte on desar</"
-"span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acció</span>"
 
 #: ../lib/screenshooter-dialogs.c:642
 msgid "Save"
-msgstr ""
+msgstr "Desa"
 
 #: ../lib/screenshooter-dialogs.c:654
-#, fuzzy
 msgid "Save the screenshot to a PNG file"
-msgstr "Desa la captura com…"
+msgstr "Desa la captura com a fitxer PNG"
 
 #: ../lib/screenshooter-dialogs.c:682
-#, fuzzy
 msgid "Save to default location:"
-msgstr "Lloc per defecte on desar"
+msgstr "Desa en el lloc per defecte:"
 
 #: ../lib/screenshooter-dialogs.c:697
 msgid ""
 "If checked, the screenshot will be saved to the default save location set on "
 "the right. If not, a save dialog will be displayed."
 msgstr ""
+"Si està marcat, la captura es desarà en el lloc per defecte indicat a la "
+"dreta. Si no, es mostrarà una finestra de diàleg per desar-lo."
 
 #: ../lib/screenshooter-dialogs.c:700
 msgid "Default save location"
 msgstr "Lloc per defecte on desar"
 
 #: ../lib/screenshooter-dialogs.c:713
-#, fuzzy
 msgid "Set the default save location"
-msgstr "Lloc per defecte on desar"
+msgstr "Indica el lloc per defecte on desar"
 
 #: ../lib/screenshooter-dialogs.c:734
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "Copia al porta-retalls"
 
 #: ../lib/screenshooter-dialogs.c:743
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
+"Copia la captura al porta-retalls i, d'aquesta manera, el podreu enganxar "
+"més endavant"
 
 #: ../lib/screenshooter-dialogs.c:759
 msgid "Open with:"
-msgstr ""
+msgstr "Obre amb:"
 
 #: ../lib/screenshooter-dialogs.c:774
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Obre la captura amb l'aplicació seleccionada"
 
 #: ../lib/screenshooter-dialogs.c:851
-#, fuzzy
 msgid "Application to open the screenshot"
-msgstr "No obris les captures"
+msgstr "Aplicació amb la que s'obre la captura"
 
 #: ../lib/screenshooter-dialogs.c:888
 msgid "Save screenshot as..."
@@ -181,9 +175,8 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Take screenshots of the entire screen or of the active window"
-msgstr "Fes una captura de la pantalla sencera o de la finestra activa"
+msgstr "Fes les captures de la pantalla sencera o de la finestra activa"
 
 #~ msgid "Modes"
 #~ msgstr "Tipus"
