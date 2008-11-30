@@ -30,7 +30,6 @@ gboolean version = FALSE;
 gboolean window = FALSE;
 gboolean fullscreen = FALSE;
 gboolean no_save_dialog = FALSE;
-gboolean preferences = FALSE;
 gchar *screenshot_dir;
 gint delay = 0;
 
@@ -67,10 +66,6 @@ static GOptionEntry entries[] =
         N_("Directory where the screenshot will be saved"),
         NULL
     },
-    {   "preferences", 'p', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &preferences,
-        N_("Dialog to set the default save folder"),
-        NULL
-    },
     { NULL }
 };
 
@@ -81,15 +76,18 @@ int main(int argc, char **argv)
   GError *cli_error = NULL;
   GdkPixbuf *screenshot;
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
-  gchar *rc_file;
+  gchar *rc_file = 
+    xfce_resource_lookup (XFCE_RESOURCE_CONFIG, 
+                          "xfce4/xfce4-screenshooter");
   
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
   
-  /* Get the path to the conf file */
-  rc_file = g_build_filename (xfce_get_homedir(), ".config", "xfce4", 
-                              "xfce4-screenshooter", NULL);
+  /* Read the preferences */
+      
+  screenshooter_read_rc_file (rc_file, sd);
   
-  screenshooter_read_rc_file (rc_file, sd, !(window || fullscreen));
+  if (rc_file != NULL)
+    g_free (rc_file);
     
   /* Print a message to advise to use help when a non existing cli option is
   passed to the executable. */  
@@ -111,8 +109,8 @@ int main(int argc, char **argv)
       return 0;
     }
   
-  /* If -w is given to the executable, grab the active window, else just grab
-  the desktop.*/
+  /* If -w is given to the executable, grab the active window, else just 
+   * grab the desktop.*/
   if (window)
     {
       sd->mode = ACTIVE_WINDOW;    
@@ -175,11 +173,6 @@ int main(int argc, char **argv)
     
       g_object_unref (screenshot);
     }
-  /* If -p is given, show the preferences dialog */
-  else if (preferences)
-    {
-      screenshooter_preferences_dialog (rc_file, sd->screenshot_dir);
-    }
   /* Else we just show up the main application */
   else
     {
@@ -187,8 +180,14 @@ int main(int argc, char **argv)
       gint response;
       GdkDisplay *display = gdk_display_get_default ();
       
+      rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, 
+                                      "xfce4/xfce4-screenshooter");
+      
       /* Read the preferences */
-      screenshooter_read_rc_file (rc_file, sd, FALSE);
+      screenshooter_read_rc_file (rc_file, sd);
+      
+      if (rc_file != NULL)
+        g_free (rc_file);
       
       /* Set the dialog up */
       dialog = screenshooter_dialog_new (sd, FALSE);
@@ -196,8 +195,9 @@ int main(int argc, char **argv)
       gtk_window_set_type_hint(GTK_WINDOW (dialog), 
                                GDK_WINDOW_TYPE_HINT_NORMAL);
       
-      /* Run the dialog and destroy it, so that it's not grabbed in active
-         window mode */
+      /* Run the dialog and destroy it, so that it's not grabbed in 
+       * active window mode */
+      
       response = gtk_dialog_run (GTK_DIALOG (dialog));
       
       gtk_widget_destroy (dialog);
@@ -208,10 +208,21 @@ int main(int argc, char **argv)
                   
       if (response == GTK_RESPONSE_OK)
         {
+          rc_file = 
+            xfce_resource_save_location (XFCE_RESOURCE_CONFIG, 
+                                         "xfce4/xfce4-screenshooter",
+                                         TRUE);
+          
           screenshooter_take_and_output_screenshot (sd);
           
-          /* Save preferences */     
-          screenshooter_write_rc_file (rc_file, sd);
+          /* Save preferences */
+          
+          if (rc_file != NULL)
+            {
+              screenshooter_write_rc_file (rc_file, sd);
+              
+              g_free (rc_file);
+            }
         }
     }
   
@@ -220,7 +231,6 @@ int main(int argc, char **argv)
   g_free (sd->app);
   #endif
   g_free (sd);
-  g_free (rc_file);
     
   return 0;
 }

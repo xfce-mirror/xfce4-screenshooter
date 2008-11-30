@@ -861,50 +861,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
 
 
-/* Dialog to set the screenshot_dir when using the main executable
-@rc_file: file where the option will be saved.
-@current_default_dir: the current default dir to set the file chooser.
-*/
-void screenshooter_preferences_dialog (gchar *rc_file, 
-                                       gchar *current_default_dir)
-{
-  GtkWidget * chooser;
-  gint dialog_response;
-  gchar * dir;
-  XfceRc *rc;
-  
-  /* The preferences dialog is a plain gtk_file_chooser, we just get the
-  folder the user selected and write it in the conf file*/
-  
-  chooser = 
-    gtk_file_chooser_dialog_new (_("Default save location"),
-                                  NULL,
-                                  GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-                                  GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                                  GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
-                                  NULL);
-  gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
-  gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
-  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (chooser), 
-                                       current_default_dir);
-  
-  dialog_response = gtk_dialog_run(GTK_DIALOG (chooser));
-
-  if (dialog_response == GTK_RESPONSE_ACCEPT)
-    {
-      dir = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-      
-      rc = xfce_rc_simple_open (rc_file, FALSE);
-      xfce_rc_write_entry (rc, "screenshot_dir", dir);
-      xfce_rc_close (rc);
-  
-      g_free (dir);
-    }
-  gtk_widget_destroy (GTK_WIDGET (chooser));
-}
-
-
-
 /* Saves the screenshot according to the options in sd. 
  * @screenshot: a GdkPixbuf containing our screenshot
  * show_save_dialog: whether the save dialog should be shown.

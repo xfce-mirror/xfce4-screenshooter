@@ -1,3 +1,20 @@
+2008-11-30 jeromeg
+
+  * src/main.c:
+    - remove preferences CLI option , the application can set the
+      default save folder now.
+    - fix the rc file mess. Use xfce_resource_lookup and 
+      xfce_resource_save_location so that folders get created if they
+      don't exist. Thanks to Nick Schermer for helping.
+  * lib/screenshooter-utils.{c,h}:
+    - remove the dir_only option in (screenshooter_read_rc_file).
+  * lib/screenshooter-dialogs.{c,h}:
+    - remove (screenshooter_preferences_dialog).
+  *lib/screenshooter-actions.c:
+    - don't hardcode "/tmp", use g_get_tmp_dir () instead.
+  * panel-plugin/screenshooter-plugin.c:
+    - use new syntax for screenshooter_read_rc_file.
+
 2008-11-28 jeromeg
 
   * lib/screenshooter-dialogs.c:

@@ -232,8 +232,7 @@ screenshooter_copy_to_clipboard (GdkPixbuf *screenshot)
 */
 void
 screenshooter_read_rc_file (gchar               *file, 
-                            ScreenshotData      *sd, 
-                            gboolean             dir_only)
+                            ScreenshotData      *sd)
 {
   XfceRc *rc;
   gint delay = 0;
@@ -245,31 +244,28 @@ screenshooter_read_rc_file (gchar               *file,
   gchar *app = g_strdup ("none");
   #endif
   
-  if (g_file_test (file, G_FILE_TEST_EXISTS))
+  if (file != NULL)
     {
       rc = xfce_rc_simple_open (file, TRUE);
 
       if (rc != NULL)
         {
-          if (!dir_only)
-            {
-              delay = xfce_rc_read_int_entry (rc, "delay", 0);
+          delay = xfce_rc_read_int_entry (rc, "delay", 0);
               
-              mode = xfce_rc_read_int_entry (rc, "mode", FULLSCREEN);
+          mode = xfce_rc_read_int_entry (rc, "mode", FULLSCREEN);
               
-              action = xfce_rc_read_int_entry (rc, "action", SAVE);
+          action = xfce_rc_read_int_entry (rc, "action", SAVE);
               
-              show_save_dialog = 
-                xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
+          show_save_dialog = 
+            xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
               
-              #ifdef HAVE_GIO
-              g_free (app);
+          #ifdef HAVE_GIO
+          g_free (app);
               
-              app = 
-                g_strdup (xfce_rc_read_entry (rc, "app", "none"));
-              #endif
-            }
-  
+          app = 
+            g_strdup (xfce_rc_read_entry (rc, "app", "none"));
+          #endif
+           
           g_free (screenshot_dir);
           
           screenshot_dir = 
@@ -303,6 +299,8 @@ screenshooter_write_rc_file (gchar               *file,
                              ScreenshotData      *sd)
 {
   XfceRc *rc;
+  
+  g_return_if_fail (file != NULL);
 
   rc = xfce_rc_simple_open (file, FALSE);
   
@@ -317,6 +315,8 @@ screenshooter_write_rc_file (gchar               *file,
   #ifdef HAVE_GIO
   xfce_rc_write_entry (rc, "app", sd->app);
   #endif
+
+  xfce_rc_flush (rc);
   
   xfce_rc_close (rc);
 }

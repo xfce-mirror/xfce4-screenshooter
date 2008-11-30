@@ -82,8 +82,7 @@ screenshooter_copy_to_clipboard  (GdkPixbuf            *screenshot) ;
 
 void 
 screenshooter_read_rc_file       (gchar                *file, 
-                                  ScreenshotData       *sd, 
-                                  gboolean              dir_only);
+                                  ScreenshotData       *sd);
                                   
 void 
 screenshooter_write_rc_file      (gchar                *file, 
