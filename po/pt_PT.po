@@ -4,15 +4,12 @@
 # Automatically generated, 2007.
 # Nuno Miguel <nunis@netcabo.pt>, 2007.
 #
-#. Print a message to advise to use help when a non existing cli option is
-#. passed to the executable.
-#: ../src/main.c:94
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-30 10:17+0100\n"
-"PO-Revision-Date: 2008-11-08 15:58+0100\n"
+"PO-Revision-Date: 2008-11-30 16:16+0100\n"
 "Last-Translator: Nuno Miguel <nunis@netcabo.pt>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,130 +30,109 @@ msgstr "Captura_de_ecrã.png"
 msgid "Screenshot-%d.png"
 msgstr "Captura_de_ecrã-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:439 ../lib/screenshooter-dialogs.c:449
+#: ../lib/screenshooter-dialogs.c:439
+#: ../lib/screenshooter-dialogs.c:449
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Take a screenshot"
-msgstr " Tirar uma captura de ecrã"
+msgstr "Tirar uma captura de ecrã"
 
 #: ../lib/screenshooter-dialogs.c:471
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Localização por omissão para "
-"gravar</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Área a capturar</span>"
 
 #: ../lib/screenshooter-dialogs.c:501
 msgid "Entire screen"
-msgstr ""
+msgstr "Ecrã inteiro"
 
 #: ../lib/screenshooter-dialogs.c:511
 #: ../panel-plugin/screenshooter-plugin.c:225
 #: ../panel-plugin/screenshooter-plugin.c:292
-#, fuzzy
 msgid "Take a screenshot of the entire screen"
-msgstr "Tirar imagem do ambiente de trabalho"
+msgstr "Tirar uma imagem de todo o ecrã"
 
 #: ../lib/screenshooter-dialogs.c:522
 msgid "Active window"
-msgstr ""
+msgstr "Janela activa"
 
-#: ../lib/screenshooter-dialogs.c:532 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:532
+#: ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:230
 #: ../panel-plugin/screenshooter-plugin.c:297
 msgid "Take a screenshot of the active window"
-msgstr "Capturar o ecrã da janela actual"
+msgstr "Capturar uma imagem da janela activa"
 
 #: ../lib/screenshooter-dialogs.c:545
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Atraso antes de capturar o "
-"ecrã</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Atraso antes de capturar o ecrã</span>"
 
 #: ../lib/screenshooter-dialogs.c:589
-#, fuzzy
-msgid ""
-"Delay in seconds between pressing the button to take the screenshot and "
-"taking the screenshot"
-msgstr "Atraso em segundos antes de capturar o ecrã"
+msgid "Delay in seconds between pressing the button to take the screenshot and taking the screenshot"
+msgstr "Atraso em segundos entre o pressionar do botão e a captura do ecrã"
 
 #: ../lib/screenshooter-dialogs.c:597
 msgid "seconds"
 msgstr "segundos"
 
 #: ../lib/screenshooter-dialogs.c:611
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Localização por omissão para "
-"gravar</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acção</span>"
 
 #: ../lib/screenshooter-dialogs.c:642
 msgid "Save"
-msgstr ""
+msgstr "Gravar"
 
 #: ../lib/screenshooter-dialogs.c:654
-#, fuzzy
 msgid "Save the screenshot to a PNG file"
-msgstr "Gravar captura de ecrã como ..."
+msgstr "Gravar captura de ecrã para ficheiro PNG"
 
 #: ../lib/screenshooter-dialogs.c:682
-#, fuzzy
 msgid "Save to default location:"
-msgstr "Localização por omissão para gravar"
+msgstr "Gravar para a localização por omissão:"
 
 #: ../lib/screenshooter-dialogs.c:697
-msgid ""
-"If checked, the screenshot will be saved to the default save location set on "
-"the right. If not, a save dialog will be displayed."
-msgstr ""
+msgid "If checked, the screenshot will be saved to the default save location set on the right. If not, a save dialog will be displayed."
+msgstr "Se activo, a imagem será gravada na localização de gravação por omissão definida à direita. Se não, um diálogo de gravação é mostrado."
 
 #: ../lib/screenshooter-dialogs.c:700
 msgid "Default save location"
 msgstr "Localização por omissão para gravar"
 
 #: ../lib/screenshooter-dialogs.c:713
-#, fuzzy
 msgid "Set the default save location"
-msgstr "Localização por omissão para gravar"
+msgstr "Definir a localização por omissão para gravar"
 
 #: ../lib/screenshooter-dialogs.c:734
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "Copiar para a área de transferência"
 
 #: ../lib/screenshooter-dialogs.c:743
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
+msgstr "Copiar a imagem para a área de transferência para poder ser colada mais tarde"
 
 #: ../lib/screenshooter-dialogs.c:759
 msgid "Open with:"
-msgstr ""
+msgstr "Abrir com:"
 
 #: ../lib/screenshooter-dialogs.c:774
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Abrir a imagem com a aplicação escolhida"
 
 #: ../lib/screenshooter-dialogs.c:851
-#, fuzzy
 msgid "Application to open the screenshot"
-msgstr "Não abrir capturas de ecrã"
+msgstr "Aplicação para abrir a captura de ecrã"
 
 #: ../lib/screenshooter-dialogs.c:888
-#, fuzzy
 msgid "Save screenshot as..."
-msgstr "Gravar captura de ecrã como ..."
+msgstr "Gravar captura de ecrã como..."
 
 #: ../src/main.c:45
 msgid "Version information"
 msgstr "Informação da versão"
 
 #: ../src/main.c:53
-#, fuzzy
 msgid "Take a screenshot of the whole screen"
-msgstr "Tirar imagem do ambiente de trabalho"
+msgstr "Tirar uma imagem de todo o ecrã"
 
 #: ../src/main.c:57
 msgid "Delay in seconds before taking the screenshot"
@@ -177,55 +153,42 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Tente %s --help para ver uma lista completa das opções de linha de comando "
-"disponíveis.\n"
+"Tente %s --help para ver uma lista completa das opções de linha de comando disponíveis.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Take screenshots of the entire screen or of the active window"
-msgstr "Capturar o ecrã da janela actual"
+msgstr "Capturar imagens de todo o ecrã ou da janela activa"
 
 #~ msgid "Modes"
 #~ msgstr "Modos"
-
 #~ msgid "Options"
 #~ msgstr "Opções"
-
 #~ msgid "Show save dialog"
 #~ msgstr "Mostrar diálogo de gravação"
-
 #~ msgid ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 #~ "span>"
 #~ msgstr ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">Abrir a captura com</span>"
-
 #~ msgid "Dialog to set the default save folder"
 #~ msgstr "Diálogo para configurar a pasta por omissão para gravar"
-
 #~ msgid "Screenshot"
 #~ msgstr "Captura de ecrã"
-
 #~ msgid "Screenshooter plugin"
 #~ msgstr "Plugin Screenshooter"
-
 #~ msgid "Take a screenshot of desktop"
 #~ msgstr "Capturar o ecrã do ambiente de trabalho"
-
 #~ msgid "Default save folder"
 #~ msgstr "Pasta por omissão para gravar"
-
 #~ msgid "A tool to take screenshots of your desktop or of the active windows"
 #~ msgstr ""
 #~ "Uma ferramenta para capturar imagens do ambiente de trabalho ou das "
 #~ "janela activas"
-
 #~ msgid "Screenshot tool"
 #~ msgstr "Ferramenta de captura de ecrã"
-
 #~ msgid " Screenshot"
 #~ msgstr " Captura de ecrã"
-
 #~ msgid "Take screenshot"
 #~ msgstr "Capturar ecrã"
+
