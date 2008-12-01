@@ -192,7 +192,7 @@ int main(int argc, char **argv)
       /* Show the dialog and take the screenshot until the application
        * is exited */
       
-      while (response != GTK_RESPONSE_CANCEL)
+      while (response == GTK_RESPONSE_OK)
         {
           /* Set the dialog up */
           dialog = screenshooter_dialog_new (sd, FALSE);

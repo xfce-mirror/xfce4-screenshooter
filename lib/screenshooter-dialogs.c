@@ -66,7 +66,7 @@ static void
 populate_liststore                 (GtkListStore       *liststore);
 static void 
 set_default_item                   (GtkWidget          *combobox, 
-                                    gchar              *default_app);                                               
+                                    ScreenshotData     *sd);                                               
                                                                                                
 #endif                                                                                                                                                                         
                                       
@@ -363,31 +363,47 @@ static void populate_liststore (GtkListStore *liststore)
 
 
 /* Select the sd->app item in the combobox */
-static void set_default_item (GtkWidget     *combobox, 
-                              gchar         *default_app)
+static void set_default_item (GtkWidget       *combobox, 
+                              ScreenshotData  *sd)
 {
   GtkTreeModel *model = 
     gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
   GtkTreeIter iter; 
   gchar *command = NULL;
+  gboolean found = FALSE;
   
   /* Get the first iter */
-  gtk_tree_model_get_iter_first (model , &iter);    
-  
+  gtk_tree_model_get_iter_first (model , &iter);
+       
   /* Loop until finding the appropirate item, if any */
   do
     {
       gtk_tree_model_get (model, &iter, 2, &command, -1);
       
-      if (g_str_equal (command, default_app))
+      if (g_str_equal (command, sd->app))
         {
           gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
-          break;
+          
+          found = TRUE;
         }
       
       g_free (command);      
     }
-  while (gtk_tree_model_iter_next (model, &iter)); 
+  while (gtk_tree_model_iter_next (model, &iter));
+  
+  /* If no suitable item was found, set the first item as active and
+   * set sd->app accordingly. */
+  if (!found)
+    {
+      gtk_tree_model_get_iter_first (model , &iter);
+      gtk_tree_model_get (model, &iter, 2, &command, -1);
+      
+      gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+      
+      g_free (sd->app);
+      
+      sd->app = command;
+    }
 }                              
 #endif
 
@@ -833,10 +849,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                                   "pixbuf", 0, NULL);                                  
   
   populate_liststore (liststore);
-  
-  gtk_combo_box_set_active (GTK_COMBO_BOX (combobox), 0);
-  
-  set_default_item (combobox, sd->app);
+    
+  set_default_item (combobox, sd);
   
   gtk_box_pack_start (GTK_BOX (open_with_box), 
                       combobox, FALSE, 

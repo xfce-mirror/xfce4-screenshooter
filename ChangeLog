@@ -1,5 +1,16 @@
 2008-12-01 jeromeg
 
+  * src/main.c: check for GTK_RESPONSE_OK instead of something !=
+    GTK_RESPONSE_CANCEL.
+  * lib/screenshooter-dialogs.c:
+    - (set_default_item) set first item as active if no item was found,
+    change the prototype.
+    - (screenshooter_dialog_new) use the new set_default_item, don't set
+    the first item as active without updating sd->app. Fixes the opening
+    of screenshots with the first item of the combobox.
+
+2008-12-01 jeromeg
+
   * src/main.c: Show the dialog again after taking a screenshot, the
     application is exited when the user presses the Cancel Button.
 
