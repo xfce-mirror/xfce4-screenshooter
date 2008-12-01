@@ -213,17 +213,15 @@ int main(int argc, char **argv)
                       
           if (response == GTK_RESPONSE_OK)
             {
-              rc_file = 
-                xfce_resource_save_location (XFCE_RESOURCE_CONFIG, 
-                                             "xfce4/xfce4-screenshooter",
-                                             TRUE);
-              
               screenshooter_take_and_output_screenshot (sd);
             }
         }
       
       /* Save preferences */
-          
+      rc_file = 
+        xfce_resource_save_location (XFCE_RESOURCE_CONFIG, 
+                                     "xfce4/xfce4-screenshooter",
+                                     TRUE);
       if (rc_file != NULL)
         {
           screenshooter_write_rc_file (rc_file, sd);
