@@ -1,5 +1,13 @@
 2008-12-01 jeromeg
 
+  * lib/screenshooter-dialogs.c:
+    - indent the code correctly.
+    - add some more detailed comments.
+    - show an error dialog when saving the screenshot failed.
+  * NEWS: updated.
+
+2008-12-01 jeromeg
+
   * lib/screenshooter-dialogs.c: use a custom button instead of the 
     stock ok button to be more precise on the action of this button.
 

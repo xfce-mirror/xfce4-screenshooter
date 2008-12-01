@@ -889,17 +889,23 @@ gchar
 {
   GdkPixbuf *thumbnail;
   gchar *filename = NULL, *savename = NULL;;
+  
   GtkWidget *preview;
   GtkWidget *chooser;
   gint dialog_response;
-
+  
+  GError *error = NULL;
+  
+  /* Generate the filename for the default save location */
+  
   filename = generate_filename_for_uri (default_dir);
     
   if (show_save_dialog)
 	  {
-	    /* If the user wants a save dialog, we run it, and grab the filename 
-	    the user has chosen. */
-	  
+	    /* If the user wants a save dialog, we run it, and grab the 
+       * filename the user has chosen. */
+	    
+      /* Create the dialog and set its default properties */
       chooser = 
         gtk_file_chooser_dialog_new (_("Save screenshot as..."),
                                      NULL,
@@ -909,19 +915,26 @@ gchar
                                      GTK_STOCK_SAVE, 
                                      GTK_RESPONSE_ACCEPT,
                                      NULL);
+                                     
       gtk_window_set_icon_name (GTK_WINDOW (chooser), 
                                 "applets-screenshooter");
-      gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), 
-                                                      TRUE);
+                                
+      gtk_file_chooser_set_do_overwrite_confirmation (
+      GTK_FILE_CHOOSER (chooser), TRUE);
+      
       gtk_dialog_set_default_response (GTK_DIALOG (chooser), 
-                                     GTK_RESPONSE_ACCEPT);
+                                       GTK_RESPONSE_ACCEPT);
+
       gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER (chooser), 
                                           default_dir);
 
-      preview = gtk_image_new ();
-  
       gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), 
                                          filename);
+
+      /* Create the preview and the thumbnail */
+      
+      preview = gtk_image_new ();
+                                          
       gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), 
                                            preview);
   
@@ -932,6 +945,7 @@ gchar
                                  GDK_INTERP_BILINEAR);
       
       gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
+      
       g_object_unref (thumbnail);
       
       /* We the user opens a folder in the fine_chooser, we set a valid
@@ -940,15 +954,27 @@ gchar
                         G_CALLBACK(cb_current_folder_changed), NULL);
     
       dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
-	  
+	    
+      /* The user pressed the save button */
 	    if (dialog_response == GTK_RESPONSE_ACCEPT)
 	      {
-	        savename = 
-	          gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser) );
-          gdk_pixbuf_save (screenshot, savename, "png", NULL, NULL);
+	        /* Get the save location */
+          savename = 
+	          gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
+          
+          /* Try to save the screenshot. If it fails, we show an error
+           * dialog */
+          
+          if (!gdk_pixbuf_save (screenshot, savename, 
+                                "png", &error, NULL))
+            {
+              xfce_err ("%s", error->message);
+              
+              g_error_free (error);
+            }
 	      }
 	  
-	    gtk_widget_destroy ( GTK_WIDGET ( chooser ) );
+	    gtk_widget_destroy (GTK_WIDGET (chooser));
 	  }  
 	else
 	  {    
@@ -956,7 +982,15 @@ gchar
 	    /* Else, we just save the file in the default folder */
       
       savename = g_build_filename (default_dir, filename, NULL);
-	    gdk_pixbuf_save (screenshot, savename, "png", NULL, NULL);
+	    
+      /* Try to save the screenshot. If it fails, we show an error
+      * dialog */
+      if (!gdk_pixbuf_save (screenshot, savename, "png", &error, NULL))
+            {
+              xfce_err ("%s", error->message);
+              
+              g_error_free (error);
+            }
 	    
 	  }
 
