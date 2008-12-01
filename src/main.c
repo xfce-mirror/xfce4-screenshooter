@@ -177,7 +177,7 @@ int main(int argc, char **argv)
   else
     {
       GtkWidget *dialog;
-      gint response;
+      gint response = GTK_RESPONSE_OK;
       GdkDisplay *display = gdk_display_get_default ();
       
       rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, 
@@ -189,40 +189,46 @@ int main(int argc, char **argv)
       if (rc_file != NULL)
         g_free (rc_file);
       
-      /* Set the dialog up */
-      dialog = screenshooter_dialog_new (sd, FALSE);
+      /* Show the dialog and take the screenshot until the application
+       * is exited */
       
-      gtk_window_set_type_hint(GTK_WINDOW (dialog), 
-                               GDK_WINDOW_TYPE_HINT_NORMAL);
-      
-      /* Run the dialog and destroy it, so that it's not grabbed in 
-       * active window mode */
-      
-      response = gtk_dialog_run (GTK_DIALOG (dialog));
-      
-      gtk_widget_destroy (dialog);
-      
-      gdk_display_sync (display);
-      
-      sleep (1);
-                  
-      if (response == GTK_RESPONSE_OK)
+      while (response != GTK_RESPONSE_CANCEL)
         {
-          rc_file = 
-            xfce_resource_save_location (XFCE_RESOURCE_CONFIG, 
-                                         "xfce4/xfce4-screenshooter",
-                                         TRUE);
+          /* Set the dialog up */
+          dialog = screenshooter_dialog_new (sd, FALSE);
           
-          screenshooter_take_and_output_screenshot (sd);
+          gtk_window_set_type_hint(GTK_WINDOW (dialog), 
+                                   GDK_WINDOW_TYPE_HINT_NORMAL);
           
-          /* Save preferences */
+          /* Run the dialog and destroy it, so that it's not grabbed in 
+           * active window mode */
           
-          if (rc_file != NULL)
+          response = gtk_dialog_run (GTK_DIALOG (dialog));
+          
+          gtk_widget_destroy (dialog);
+          
+          gdk_display_sync (display);
+          
+          sleep (1);
+                      
+          if (response == GTK_RESPONSE_OK)
             {
-              screenshooter_write_rc_file (rc_file, sd);
+              rc_file = 
+                xfce_resource_save_location (XFCE_RESOURCE_CONFIG, 
+                                             "xfce4/xfce4-screenshooter",
+                                             TRUE);
               
-              g_free (rc_file);
+              screenshooter_take_and_output_screenshot (sd);
             }
+        }
+      
+      /* Save preferences */
+          
+      if (rc_file != NULL)
+        {
+          screenshooter_write_rc_file (rc_file, sd);
+          
+          g_free (rc_file);
         }
     }
   

@@ -1,3 +1,8 @@
+2008-12-01 jeromeg
+
+  * src/main.c: Show the dialog again after taking a screenshot, the
+    application is exited when the user presses the Cancel Button.
+
 2008-11-30 jeromeg
 
   * Make a few strings consistent.
