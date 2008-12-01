@@ -455,8 +455,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
         xfce_titled_dialog_new_with_buttons (_("Take a screenshot"),
                                              NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT,
-                                             GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
-                                             GTK_STOCK_OK, GTK_RESPONSE_OK,
+                                             GTK_STOCK_CLOSE, 
+                                             GTK_RESPONSE_CANCEL,
+                                             _("Take the screenshot"), 
+                                             GTK_RESPONSE_OK,
                                              NULL);
     }
   else
