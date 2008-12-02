@@ -5,6 +5,7 @@
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007.
 # Og Maciel <ogmaciel@gnome.org>, 2008.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
+# Henrique P Machado <zehrique@gmail.com>, 2008.
 #
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-30 10:17+0100\n"
-"PO-Revision-Date: 2008-11-28 21:46-0500\n"
-"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
+"PO-Revision-Date: 2008-12-01 15:31-0300\n"
+"Last-Translator: Henrique P Machado <zehrique@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -39,29 +40,25 @@ msgstr "Captura_de_tela-%d.png"
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
-msgstr "Capturar imagem da tela"
+msgstr "Capturar uma imagem da tela"
 
 #: ../lib/screenshooter-dialogs.c:471
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Localização padrão para "
-"salvar</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Área para capturar</span>"
 
 #: ../lib/screenshooter-dialogs.c:501
 msgid "Entire screen"
-msgstr ""
+msgstr "Tela inteira"
 
 #: ../lib/screenshooter-dialogs.c:511
 #: ../panel-plugin/screenshooter-plugin.c:225
 #: ../panel-plugin/screenshooter-plugin.c:292
-#, fuzzy
 msgid "Take a screenshot of the entire screen"
-msgstr "Capture uma imagem da tela toda"
+msgstr "Obter uma captura da tela inteira"
 
 #: ../lib/screenshooter-dialogs.c:522
 msgid "Active window"
-msgstr ""
+msgstr "Janela ativa"
 
 #: ../lib/screenshooter-dialogs.c:532 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:230
@@ -78,72 +75,67 @@ msgstr ""
 "imagem da tela</span>"
 
 #: ../lib/screenshooter-dialogs.c:589
-#, fuzzy
 msgid ""
 "Delay in seconds between pressing the button to take the screenshot and "
 "taking the screenshot"
-msgstr "Atraso em segundos antes de capturar uma imagem da tela"
+msgstr "Atraso em segundos entre o pressionamento do botão para obter a "
+"captura de tela e obter a captura da tela"
 
 #: ../lib/screenshooter-dialogs.c:597
 msgid "seconds"
 msgstr "segundos"
 
 #: ../lib/screenshooter-dialogs.c:611
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Localização padrão para "
-"salvar</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ação</span>"
 
 #: ../lib/screenshooter-dialogs.c:642
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 #: ../lib/screenshooter-dialogs.c:654
-#, fuzzy
 msgid "Save the screenshot to a PNG file"
-msgstr "Salvar a captura de tela como..."
+msgstr "Salvar a captura de tela em um arquivo PNG"
 
 #: ../lib/screenshooter-dialogs.c:682
-#, fuzzy
 msgid "Save to default location:"
-msgstr "Localização padrão para salvar"
+msgstr "Gravar na localização padrão:"
 
 #: ../lib/screenshooter-dialogs.c:697
 msgid ""
 "If checked, the screenshot will be saved to the default save location set on "
 "the right. If not, a save dialog will be displayed."
-msgstr ""
+msgstr "Se marcada, a captura da tela será salva na localização padrão "
+"definida à direita. Caso contrário, um diálogo para salvar será exibido."
 
 #: ../lib/screenshooter-dialogs.c:700
 msgid "Default save location"
 msgstr "Localização padrão para salvar"
 
 #: ../lib/screenshooter-dialogs.c:713
-#, fuzzy
 msgid "Set the default save location"
-msgstr "Localização padrão para salvar"
+msgstr "Configura a localização padrão para salvar"
 
 #: ../lib/screenshooter-dialogs.c:734
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "Copiar para a área de transferência"
 
 #: ../lib/screenshooter-dialogs.c:743
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
+msgstr "Copia a captura da tela para a área de transferência para que possa "
+"ser colada posteriormente"
 
 #: ../lib/screenshooter-dialogs.c:759
 msgid "Open with:"
-msgstr ""
+msgstr "Abrir com:"
 
 #: ../lib/screenshooter-dialogs.c:774
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Abrir a captura de tela com o aplicativo escolhido"
 
 #: ../lib/screenshooter-dialogs.c:851
-#, fuzzy
 msgid "Application to open the screenshot"
-msgstr "Não abrir capturas de tela"
+msgstr "Aplicativo para abrir a captura da tela"
 
 #: ../lib/screenshooter-dialogs.c:888
 msgid "Save screenshot as..."
@@ -155,7 +147,7 @@ msgstr "Informação da versão"
 
 #: ../src/main.c:53
 msgid "Take a screenshot of the whole screen"
-msgstr "Capture uma imagem da tela toda"
+msgstr "Obter uma captura da tela inteira"
 
 #: ../src/main.c:57
 msgid "Delay in seconds before taking the screenshot"
@@ -163,11 +155,11 @@ msgstr "Atraso em segundos antes de capturar uma imagem da tela"
 
 #: ../src/main.c:62
 msgid "Do not display the save dialog"
-msgstr "Não exibir o diálogo salvar"
+msgstr "Não exibir o diálogo para salvar"
 
 #: ../src/main.c:66
 msgid "Directory where the screenshot will be saved"
-msgstr "Diretório onde será salvo a imagem da captura de tela"
+msgstr "Diretório onde será salva a imagem da captura de tela"
 
 #: ../src/main.c:98
 #, c-format
@@ -181,9 +173,8 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Take screenshots of the entire screen or of the active window"
-msgstr "Capturar uma imagem da tela toda ou da janela atual"
+msgstr "Obter captura da tela inteira ou da janela ativa"
 
 #~ msgid "Modes"
 #~ msgstr "Modos"
