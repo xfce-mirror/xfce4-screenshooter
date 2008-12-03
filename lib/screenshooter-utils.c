@@ -92,8 +92,8 @@ static GdkWindow
     }
   else
     {
-      window2 = gdk_window_foreign_new (find_toplevel_window 
-                                        (GDK_WINDOW_XID (window)));
+      window2 = gdk_window_get_toplevel (window);
+      
       g_object_unref (window);
           
       window = window2;
@@ -107,27 +107,25 @@ static GdkWindow
 static GdkPixbuf
 *get_window_screenshot (GdkWindow *window)
 {
-  gint x_real_orig, y_real_orig, x_orig, y_orig;
-  gint width, real_width, height, real_height;
+  gint x_orig, y_orig;
+  gint width, height;
   GdkPixbuf *screenshot;
   GdkWindow *root;
+  GdkRectangle *rectangle = g_new0 (GdkRectangle, 1);
     
   /* Get the root window */
   root = gdk_get_default_root_window ();
   
   /* Based on gnome-screenshot code */
+
+  gdk_window_get_frame_extents (window, rectangle);
     
-  /* Get the size and the origin of the part of the screen we want to 
-   * screenshot. */
-  gdk_drawable_get_size (window, &real_width, &real_height);      
-  gdk_window_get_origin (window, &x_real_orig, &y_real_orig);
-  
   /* Don't grab thing offscreen. */
     
-  x_orig = x_real_orig;
-  y_orig = y_real_orig;
-  width  = real_width;
-  height = real_height;
+  x_orig = rectangle->x;
+  y_orig = rectangle->y;
+  width  = rectangle->width;
+  height = rectangle->height;
 
   if (x_orig < 0)
     {
