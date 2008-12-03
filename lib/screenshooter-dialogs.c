@@ -524,9 +524,11 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fullscreen_button),
                                 (sd->mode == FULLSCREEN));
-                                
+  
+  #if GTK_CHECK_VERSION(2,12,0)                              
   gtk_widget_set_tooltip_text (fullscreen_button,
                                _("Take a screenshot of the entire screen"));
+  #endif
                                 
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled", 
                     G_CALLBACK (cb_fullscreen_screen_toggled),
@@ -545,9 +547,11 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button),
                                 (sd->mode == ACTIVE_WINDOW));
-                                
+  
+  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (active_window_button,
                                _("Take a screenshot of the active window"));
+  #endif
                                 
   g_signal_connect (G_OBJECT (active_window_button), "toggled", 
                     G_CALLBACK (cb_active_window_toggled),
@@ -603,8 +607,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                              sd->delay);
   
   /* Tooltip needs to be improved */
+  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (delay_spinner,
                                _("Delay in seconds between pressing the button to take the screenshot and taking the screenshot"));  
+  #endif
                              
   gtk_widget_show (delay_spinner);
   
@@ -667,10 +673,12 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   g_signal_connect (G_OBJECT (save_radio_button), "toggled", 
                     G_CALLBACK (cb_save_toggled),
                     sd);
-                    
+  
+  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (save_radio_button,
                                _("Save the screenshot to a PNG file"));
-                    
+  #endif                  
+  
   gtk_widget_show (save_radio_button);
   
   /* Create actions alignment */
@@ -710,10 +718,12 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
                     G_CALLBACK (cb_show_save_dialog_toggled), sd);
-                    
+  
+  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (save_checkbox,
   _("If checked, the screenshot will be saved to the default save location set on the right. If not, a save dialog will be displayed."));
-        
+  #endif
+  
   dir_chooser = 
     gtk_file_chooser_button_new (_("Default save location"), 
                                  GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
@@ -727,8 +737,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_show (dir_chooser);
   
+  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (dir_chooser,
                                _("Set the default save location"));
+  #endif                               
                       
   g_signal_connect (G_OBJECT (dir_chooser), "selection-changed", 
                     G_CALLBACK (cb_default_folder), sd);
@@ -757,8 +769,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_show (clipboard_radio_button);
   
+  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (clipboard_radio_button,
   _("Copy the screenshot to the clipboard so that it can be pasted later"));
+  #endif
                       
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
                                 (sd->action == CLIPBOARD));
@@ -788,8 +802,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     G_CALLBACK (cb_open_toggled),
                     sd);
   
+  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (open_with_radio_button,
   _("Open the screenshot with the chosen application"));
+  #endif
   
   /* Create open with alignment */
   
@@ -863,8 +879,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_show_all (combobox); 
   
+  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (combobox,
   _("Application to open the screenshot"));
+  #endif
   
   /* Run the callback functions to grey/ungrey the correct widgets */
   
