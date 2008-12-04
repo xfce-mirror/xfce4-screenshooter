@@ -209,6 +209,8 @@ int main(int argc, char **argv)
           
           gdk_display_sync (display);
           
+          /* Make sure the window manager had time to set the new active
+           * window.*/
           sleep (1);
                       
           if (response == GTK_RESPONSE_OK)

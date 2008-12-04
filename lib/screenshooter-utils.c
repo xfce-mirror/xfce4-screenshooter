@@ -23,47 +23,12 @@
 
 
 
-static 
-Window find_toplevel_window           (Window            xid);
-
 static GdkWindow 
 *get_active_window                    (GdkScreen        *screen, 
                                        gboolean         *needs_unref);
 
 static GdkPixbuf 
 *get_window_screenshot                (GdkWindow        *window);
-
-
-
-/* Borrowed from gnome-screenshot */
-
-/* This function returns the toplevel window containing Window, for most 
- * window managers this will enable you to get the decorations around 
- * the window. Does not work with Compiz.
- * Window: the X identifier of the window
- * Returns: the X identifier of the toplevel window containing Window.*/
-static Window
-find_toplevel_window (Window xid)
-{
-  Window root, parent, *children;
-  unsigned int nchildren;
-
-  do
-    {
-      if (XQueryTree (GDK_DISPLAY (), xid, &root,
-		      &parent, &children, &nchildren) == 0)
-	      {
-	        g_warning ( _("Couldn't find window manager window") );
-	        return None;
-	      }
-
-      if (root == parent)
-	      return xid;
-
-      xid = parent;
-    }
-  while (TRUE);
-}
 
 
 
@@ -116,8 +81,6 @@ static GdkPixbuf
   /* Get the root window */
   root = gdk_get_default_root_window ();
   
-  /* Based on gnome-screenshot code */
-
   gdk_window_get_frame_extents (window, rectangle);
     
   /* Don't grab thing offscreen. */
@@ -144,6 +107,8 @@ static GdkPixbuf
 
   if (y_orig + height > gdk_screen_height ())
     height = gdk_screen_height () - y_orig;
+    
+  g_free (rectangle);
   
   /* Take the screenshot from the root GdkWindow, to grab things such as
    * menus. */
@@ -177,6 +142,9 @@ GdkPixbuf *screenshooter_take_screenshot (gint mode, gint delay)
   
   /* Get the screen on which the screenshot should be taken */
   screen = gdk_screen_get_default ();
+  
+  /* wait for n=delay seconds */ 
+  sleep (delay);
     
   /* Get the window/desktop we want to screenshot*/  
   if (mode == FULLSCREEN)
@@ -188,10 +156,7 @@ GdkPixbuf *screenshooter_take_screenshot (gint mode, gint delay)
     {
       window = get_active_window (screen, &needs_unref);      
     }
-  
-  /* wait for n=delay seconds */ 
-  sleep (delay);
-  
+    
   if (mode == FULLSCREEN || mode == ACTIVE_WINDOW)
     {
       screenshot = get_window_screenshot (window);

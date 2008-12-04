@@ -1,3 +1,15 @@
+2008-12-04 jeromeg
+
+  * lib/screenshooter-utils.c:
+    - remove all X code, in particular find_toplevel_window. Instead,
+      use a combination of gdk_window_get_toplevel and 
+      gdk_window_get_frame_extents. This should fix some remaining 
+      crashes with "BadWindow" error.
+    - detect the area to screenshot after the delay, rather than before.
+  * src/main.c: add a comment.
+  * configure.ac.in: remove x11proto-core build dependency.
+  * NEWS: updated.
+
 2008-12-03 jeromeg
 
   * lib/screenshooter-dialogs.c: ifdef the tooltips stuff, because it's

@@ -41,9 +41,6 @@ XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.4])
 dnl Check for xfcegui4
 XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.4])
 
-dnl Check for x11proto
-XDT_CHECK_PACKAGE([X11PROTO_CORE], [xproto], [7])
-
 dnl Check for gtk
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.10.0])
 
