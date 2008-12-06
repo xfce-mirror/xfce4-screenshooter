@@ -10,17 +10,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-30 10:17+0100\n"
+"POT-Creation-Date: 2008-12-06 13:23+0100\n"
 "PO-Revision-Date: 2008-06-17 12:27+0100\n"
 "Last-Translator: Jérôme Guelfucci <jerome.guelfucci@gmail.com>\n"
 "Language-Team: Croatian <mario.danic@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../lib/screenshooter-utils.c:56
-msgid "Couldn't find window manager window"
-msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:207
 #, fuzzy
@@ -32,108 +28,111 @@ msgstr " Screenshot"
 msgid "Screenshot-%d.png"
 msgstr " Screenshot"
 
-#: ../lib/screenshooter-dialogs.c:439 ../lib/screenshooter-dialogs.c:449
+#: ../lib/screenshooter-dialogs.c:455 ../lib/screenshooter-dialogs.c:467
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 #, fuzzy
 msgid "Take a screenshot"
 msgstr " Uhvati screenshot"
 
-#: ../lib/screenshooter-dialogs.c:471
+#: ../lib/screenshooter-dialogs.c:460
+#, fuzzy
+msgid "Take the screenshot"
+msgstr " Uhvati screenshot"
+
+#: ../lib/screenshooter-dialogs.c:489
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:501
+#: ../lib/screenshooter-dialogs.c:519
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:511
+#: ../lib/screenshooter-dialogs.c:530
 #: ../panel-plugin/screenshooter-plugin.c:225
 #: ../panel-plugin/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr "Uhvati screenshot desktopa"
 
-#: ../lib/screenshooter-dialogs.c:522
+#: ../lib/screenshooter-dialogs.c:542
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:532 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:553 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:230
 #: ../panel-plugin/screenshooter-plugin.c:297
 msgid "Take a screenshot of the active window"
 msgstr "Uhvati screenshot trenutnog prozora"
 
-#: ../lib/screenshooter-dialogs.c:545
+#: ../lib/screenshooter-dialogs.c:567
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:589
+#: ../lib/screenshooter-dialogs.c:612
 #, fuzzy
-msgid ""
-"Delay in seconds between pressing the button to take the screenshot and "
-"taking the screenshot"
+msgid "Delay in seconds before the screenshot is taken"
 msgstr "Odgoda u sekundama prije hvatanja screenshota"
 
-#: ../lib/screenshooter-dialogs.c:597
+#: ../lib/screenshooter-dialogs.c:621
 msgid "seconds"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:611
+#: ../lib/screenshooter-dialogs.c:635
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:642
+#: ../lib/screenshooter-dialogs.c:666
 msgid "Save"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:654
+#: ../lib/screenshooter-dialogs.c:679
 #, fuzzy
 msgid "Save the screenshot to a PNG file"
 msgstr "Snimi screenshot kao ..."
 
-#: ../lib/screenshooter-dialogs.c:682
-msgid "Save to default location:"
+#: ../lib/screenshooter-dialogs.c:708
+msgid "Save by default to:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:697
+#: ../lib/screenshooter-dialogs.c:724
 msgid ""
-"If checked, the screenshot will be saved to the default save location set on "
+"If checked, the screenshot will be saved by default to the location set on "
 "the right. If not, a save dialog will be displayed."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:700
+#: ../lib/screenshooter-dialogs.c:728
 msgid "Default save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:713
+#: ../lib/screenshooter-dialogs.c:742
 msgid "Set the default save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:734
+#: ../lib/screenshooter-dialogs.c:764
 msgid "Copy to the clipboard"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:743
+#: ../lib/screenshooter-dialogs.c:774
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:759
+#: ../lib/screenshooter-dialogs.c:791
 msgid "Open with:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:774
+#: ../lib/screenshooter-dialogs.c:807
 msgid "Open the screenshot with the chosen application"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:851
+#: ../lib/screenshooter-dialogs.c:884
 #, fuzzy
 msgid "Application to open the screenshot"
 msgstr " Uhvati screenshot"
 
-#: ../lib/screenshooter-dialogs.c:888
+#: ../lib/screenshooter-dialogs.c:928
 #, fuzzy
 msgid "Save screenshot as..."
 msgstr "Snimi screenshot kao ..."
@@ -174,6 +173,12 @@ msgstr ""
 #, fuzzy
 msgid "Take screenshots of the entire screen or of the active window"
 msgstr "Uhvati screenshot trenutnog prozora"
+
+#, fuzzy
+#~ msgid ""
+#~ "Delay in seconds between pressing the button to take the screenshot and "
+#~ "taking the screenshot"
+#~ msgstr "Odgoda u sekundama prije hvatanja screenshota"
 
 #, fuzzy
 #~ msgid "Screenshot"

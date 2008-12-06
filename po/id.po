@@ -10,17 +10,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-30 10:17+0100\n"
+"POT-Creation-Date: 2008-12-06 13:23+0100\n"
 "PO-Revision-Date: 2008-11-07 05:47+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../lib/screenshooter-utils.c:56
-msgid "Couldn't find window manager window"
-msgstr "Tak dapat menemukan jendela manajer jendela"
 
 #: ../lib/screenshooter-dialogs.c:207
 msgid "Screenshot.png"
@@ -31,41 +27,46 @@ msgstr "Cuplikanlayar.png"
 msgid "Screenshot-%d.png"
 msgstr "Cuplikanlayar-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:439 ../lib/screenshooter-dialogs.c:449
+#: ../lib/screenshooter-dialogs.c:455 ../lib/screenshooter-dialogs.c:467
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 #, fuzzy
 msgid "Take a screenshot"
 msgstr " Ambil cuplikan layar"
 
-#: ../lib/screenshooter-dialogs.c:471
+#: ../lib/screenshooter-dialogs.c:460
+#, fuzzy
+msgid "Take the screenshot"
+msgstr " Ambil cuplikan layar"
+
+#: ../lib/screenshooter-dialogs.c:489
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Lokasi simpan standar</span>"
 
-#: ../lib/screenshooter-dialogs.c:501
+#: ../lib/screenshooter-dialogs.c:519
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:511
+#: ../lib/screenshooter-dialogs.c:530
 #: ../panel-plugin/screenshooter-plugin.c:225
 #: ../panel-plugin/screenshooter-plugin.c:292
 #, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr "Ambil cuplikan layar dari destop"
 
-#: ../lib/screenshooter-dialogs.c:522
+#: ../lib/screenshooter-dialogs.c:542
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:532 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:553 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:230
 #: ../panel-plugin/screenshooter-plugin.c:297
 msgid "Take a screenshot of the active window"
 msgstr "Ambil cuplikan layar jendela yang aktif"
 
-#: ../lib/screenshooter-dialogs.c:545
+#: ../lib/screenshooter-dialogs.c:567
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -73,74 +74,72 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Jeda sebelum mengambil "
 "cuplikan layar</span>"
 
-#: ../lib/screenshooter-dialogs.c:589
+#: ../lib/screenshooter-dialogs.c:612
 #, fuzzy
-msgid ""
-"Delay in seconds between pressing the button to take the screenshot and "
-"taking the screenshot"
+msgid "Delay in seconds before the screenshot is taken"
 msgstr "Jeda dalam detik sebelum mengambil cuplikan layar"
 
-#: ../lib/screenshooter-dialogs.c:597
+#: ../lib/screenshooter-dialogs.c:621
 msgid "seconds"
 msgstr "detik"
 
-#: ../lib/screenshooter-dialogs.c:611
+#: ../lib/screenshooter-dialogs.c:635
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Lokasi simpan standar</span>"
 
-#: ../lib/screenshooter-dialogs.c:642
+#: ../lib/screenshooter-dialogs.c:666
 msgid "Save"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:654
+#: ../lib/screenshooter-dialogs.c:679
 #, fuzzy
 msgid "Save the screenshot to a PNG file"
 msgstr "Simpan cuplikan layar sebagai ..."
 
-#: ../lib/screenshooter-dialogs.c:682
+#: ../lib/screenshooter-dialogs.c:708
 #, fuzzy
-msgid "Save to default location:"
+msgid "Save by default to:"
 msgstr "Lokasi simpan standar"
 
-#: ../lib/screenshooter-dialogs.c:697
+#: ../lib/screenshooter-dialogs.c:724
 msgid ""
-"If checked, the screenshot will be saved to the default save location set on "
+"If checked, the screenshot will be saved by default to the location set on "
 "the right. If not, a save dialog will be displayed."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:700
+#: ../lib/screenshooter-dialogs.c:728
 msgid "Default save location"
 msgstr "Lokasi simpan standar"
 
-#: ../lib/screenshooter-dialogs.c:713
+#: ../lib/screenshooter-dialogs.c:742
 #, fuzzy
 msgid "Set the default save location"
 msgstr "Lokasi simpan standar"
 
-#: ../lib/screenshooter-dialogs.c:734
+#: ../lib/screenshooter-dialogs.c:764
 msgid "Copy to the clipboard"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:743
+#: ../lib/screenshooter-dialogs.c:774
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:759
+#: ../lib/screenshooter-dialogs.c:791
 msgid "Open with:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:774
+#: ../lib/screenshooter-dialogs.c:807
 msgid "Open the screenshot with the chosen application"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:851
+#: ../lib/screenshooter-dialogs.c:884
 #, fuzzy
 msgid "Application to open the screenshot"
 msgstr "Jangan buka cuplikan layar"
 
-#: ../lib/screenshooter-dialogs.c:888
+#: ../lib/screenshooter-dialogs.c:928
 #, fuzzy
 msgid "Save screenshot as..."
 msgstr "Simpan cuplikan layar sebagai ..."
@@ -181,6 +180,15 @@ msgstr ""
 #, fuzzy
 msgid "Take screenshots of the entire screen or of the active window"
 msgstr "Ambil cuplikan layar jendela yang aktif"
+
+#~ msgid "Couldn't find window manager window"
+#~ msgstr "Tak dapat menemukan jendela manajer jendela"
+
+#, fuzzy
+#~ msgid ""
+#~ "Delay in seconds between pressing the button to take the screenshot and "
+#~ "taking the screenshot"
+#~ msgstr "Jeda dalam detik sebelum mengambil cuplikan layar"
 
 #~ msgid "Modes"
 #~ msgstr "Mode"

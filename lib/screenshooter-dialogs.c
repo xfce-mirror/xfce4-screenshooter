@@ -609,7 +609,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Tooltip needs to be improved */
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (delay_spinner,
-                               _("Delay in seconds between pressing the button to take the screenshot and taking the screenshot"));  
+                               _("Delay in seconds before the screenshot is taken"));  
   #endif
                              
   gtk_widget_show (delay_spinner);
@@ -705,7 +705,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Default save location */          
               
   save_checkbox = 
-    gtk_check_button_new_with_label (_("Save to default location:"));
+    gtk_check_button_new_with_label (_("Save by default to:"));
         
   gtk_widget_show (save_checkbox);
   
@@ -721,7 +721,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (save_checkbox,
-  _("If checked, the screenshot will be saved to the default save location set on the right. If not, a save dialog will be displayed."));
+  _("If checked, the screenshot will be saved by default to the location set on the right. If not, a save dialog will be displayed."));
   #endif
   
   dir_chooser = 
