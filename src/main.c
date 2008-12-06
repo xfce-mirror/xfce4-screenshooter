@@ -69,6 +69,75 @@ static GOptionEntry entries[] =
     { NULL }
 };
 
+static void
+cb_dialog_response (GtkWidget *dlg, int response, ScreenshotData *sd);
+
+
+
+/* Internals */
+
+
+
+static void
+cb_dialog_response (GtkWidget *dialog, int response, 
+                    ScreenshotData *sd)
+{
+  if (response == GTK_RESPONSE_OK)
+    {
+      GdkDisplay *display = gdk_display_get_default ();
+      
+      gtk_widget_hide (dialog);
+      
+      gdk_display_sync (display);
+          
+      /* Make sure the window manager had time to set the new active
+      * window.*/
+      sleep (1);
+              
+      screenshooter_take_and_output_screenshot (sd);
+      
+      gtk_widget_show (dialog);
+    }
+  else if (response == GTK_RESPONSE_HELP)
+    {
+      GError *error_help = NULL;
+              
+      /* Execute the help and show an error dialog if there was 
+       * an error. */
+      if (!xfce_exec_on_screen (gdk_screen_get_default (),
+                                "xfhelp4 xfce4-screenshooter.html", 
+                                FALSE, TRUE, &error_help))
+        {
+          xfce_err (error_help->message);
+          g_error_free (error_help);
+        }
+    }
+  else
+    {
+      gchar *rc_file = 
+      xfce_resource_save_location (XFCE_RESOURCE_CONFIG, 
+                                   "xfce4/xfce4-screenshooter",
+                                   TRUE);
+      
+      gtk_widget_destroy (dialog);
+          
+      /* Save preferences */
+      
+      if (rc_file != NULL)
+        {
+          screenshooter_write_rc_file (rc_file, sd);
+          
+          g_free (rc_file);
+        }
+           
+      gtk_main_quit ();
+    }
+}
+
+
+
+/* Main */
+
 
 
 int main(int argc, char **argv)
@@ -177,9 +246,7 @@ int main(int argc, char **argv)
   else
     {
       GtkWidget *dialog;
-      gint response = GTK_RESPONSE_OK;
-      GdkDisplay *display = gdk_display_get_default ();
-      
+                  
       rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, 
                                       "xfce4/xfce4-screenshooter");
       
@@ -189,47 +256,21 @@ int main(int argc, char **argv)
       if (rc_file != NULL)
         g_free (rc_file);
       
-      /* Show the dialog and take the screenshot until the application
-       * is exited */
+      /* Set the dialog up */
       
-      while (response == GTK_RESPONSE_OK)
-        {
-          /* Set the dialog up */
-          dialog = screenshooter_dialog_new (sd, FALSE);
-          
-          gtk_window_set_type_hint(GTK_WINDOW (dialog), 
-                                   GDK_WINDOW_TYPE_HINT_NORMAL);
-          
-          /* Run the dialog and destroy it, so that it's not grabbed in 
-           * active window mode */
-          
-          response = gtk_dialog_run (GTK_DIALOG (dialog));
-          
-          gtk_widget_destroy (dialog);
-          
-          gdk_display_sync (display);
-          
-          /* Make sure the window manager had time to set the new active
-           * window.*/
-          sleep (1);
-                      
-          if (response == GTK_RESPONSE_OK)
-            {
-              screenshooter_take_and_output_screenshot (sd);
-            }
-        }
+      dialog = screenshooter_dialog_new (sd, FALSE);
+               
+      gtk_window_set_type_hint(GTK_WINDOW (dialog), 
+                               GDK_WINDOW_TYPE_HINT_NORMAL);
       
-      /* Save preferences */
-      rc_file = 
-        xfce_resource_save_location (XFCE_RESOURCE_CONFIG, 
-                                     "xfce4/xfce4-screenshooter",
-                                     TRUE);
-      if (rc_file != NULL)
-        {
-          screenshooter_write_rc_file (rc_file, sd);
-          
-          g_free (rc_file);
-        }
+      g_signal_connect (dialog, 
+                        "response", 
+                        G_CALLBACK (cb_dialog_response),
+                        sd);
+                        
+      gtk_widget_show (dialog);
+      
+      gtk_main ();               
     }
   
   g_free (sd->screenshot_dir);

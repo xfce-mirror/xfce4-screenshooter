@@ -79,7 +79,7 @@ cb_properties_dialog                 (XfcePanelPlugin      *plugin,
                                       
 static void
 cb_dialog_response                   (GtkWidget            *dlg, 
-                                      int                   reponse,
+                                      int                   response,
                                       PluginData           *pd);
                                    
 static void 
@@ -210,30 +210,48 @@ screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
    Unblock the plugin contextual menu.
    Save the options in the rc file.*/
 static void
-cb_dialog_response (GtkWidget *dlg, int reponse,
+cb_dialog_response (GtkWidget *dlg, int response,
                     PluginData *pd)
 {
-  g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
+  if (response == GTK_RESPONSE_OK)
+    {
+      g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
 
-  gtk_widget_destroy (dlg);
-  
-  /* Update tooltips according to the chosen option */
-  #if GTK_CHECK_VERSION(2,12,0)
-  if (pd->sd->mode == FULLSCREEN)
-  {
-    gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                                 _("Take a screenshot of the entire screen"));
-  }
-  else
-  {
-    gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                                 _("Take a screenshot of the active window"));
-  }
-  #endif
-  
-  /* Unblock the menu and save options */
-  xfce_panel_plugin_unblock_menu (pd->plugin);
-  screenshooter_plugin_write_rc_file (pd->plugin, pd);
+      gtk_widget_destroy (dlg);
+      
+      /* Update tooltips according to the chosen option */
+      #if GTK_CHECK_VERSION(2,12,0)
+      if (pd->sd->mode == FULLSCREEN)
+      {
+        gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
+                        _("Take a screenshot of the entire screen"));
+      }
+      else
+      {
+        gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
+                        _("Take a screenshot of the active window"));
+      }
+      #endif
+      
+      /* Unblock the menu and save options */
+      xfce_panel_plugin_unblock_menu (pd->plugin);
+      screenshooter_plugin_write_rc_file (pd->plugin, pd);
+    }
+    
+  if (response == GTK_RESPONSE_HELP)
+    {
+      GError *error_help = NULL;
+              
+      /* Execute the help and show an error dialog if there was 
+       * an error. */
+      if (!xfce_exec_on_screen (gdk_screen_get_default (),
+                                "xfhelp4 xfce4-screenshooter.html", 
+                                FALSE, TRUE, &error_help))
+        {
+          xfce_err (error_help->message);
+          g_error_free (error_help);
+        }
+    }
 }
 
 

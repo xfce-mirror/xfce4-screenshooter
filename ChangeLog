@@ -1,4 +1,15 @@
-2008-12-05 jeromeg
+2008-12-06 jeromeg
+
+  * lib/screenshooter-dialogs.c: add help button to the dialog.
+  * src/main.c: rework the managing of the dialog response and a support
+    for the help button.
+  * panel-plugin/screenshooter-plugin.c: add support for help button.
+
+2008-12-06 jeromeg
+
+  * doc/fr/: update the french translation.
+
+2008-12-06 jeromeg
 
   * lib/screenshooter-dialogs.c: improve a few strings.
 
