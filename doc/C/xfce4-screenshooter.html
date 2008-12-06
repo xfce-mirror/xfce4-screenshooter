@@ -1,86 +1,143 @@
 <html>
     <head>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	    <title>Aide de l'outil de capture d'écran de Xfce</title>
+	    <title>Xfce4 Screenshooter</title>
 	    <link rel="stylesheet" href="../xfce.css" type="text/css">
     </head>
 
 <body>
 
-<h1>Aide de l'outil de capture d'écran de Xfce</h1>
+<h1>Help for the Xfce screenshot tool</h1>
 
 <h2>Introduction</h2>
 
-<p>Cette application permet de prendre des captures d'écran de l'écran tout
-entier ou de la fenêtre active. Il est possible de régler le délai avant 
-la prise de la capture d'écran et l'action à effectuer avec la capture
-d'écran: la sauvegarder dans un fichier PNG, la copier dans le presse-papier,
-ou l'ouvrir avec une autre application.
-</p>
+<p>This application enables you to take screenshots of the entire
+screen or of the active window. You can set the delay that elapses before 
+the screenshot is taken and the action that will be done with the
+screenshot: save it to a PNG file, copy it to the clipboard, or open
+it using another application.</p>
 
-<p>Une extension pour le tableau de bord de Xfce est aussi disponible.</p>
+<p>A plugin for the Xfce panel is also available.</p>
 
-<h2>Utilisation de l'application</h2>
+<h2>Using the application</h2>
 
-<h3>Via l'interface graphique</h3>
+<h3>Via the user interface</h3>
 
-<p>Pour lancer l'application, utilisez le lanceur <b>Prendre une capture d'écran</b>,
-dans la catégorie <b>Accessoires</b> du menu principal de Xfce.</p>
+<p>To launch the application, use the <b>Take a screenshot</b> item in
+the <b>Accessories</b> category of Xfce's main menu.</p>
 
-<p>Cette fenêtre apparaîtra alors :</p>
+<p>This window will be displayed:</p>
 
-<img src="images/xfce4-screenshooter-dialog.png" alt="La fenêtre de l'application"/>
+<img src="images/xfce4-screenshooter-dialog.png" alt="The window of the application"/>
 
-<h4>Zone à capturer</h4>
+<h4>Area to capture</h4>
 
-<p>La section <b>Zone à capturer</b> permet de régler la source de la capture
-d'écran:
+<p>The <b>Area to screenshot</b> section enables you to set what will be
+screenshoted:
 
 <ul>
-  <li>"L'écran tout entier" prend une capture de l'écran tel que vous le
-  voyez, dans sa totalité.</li>
-  <li>"La fenêtre active" prend une capture de la fenêtre qui est active,
-  c'est à dire celle qui était active avant que la fenêtre de l'outil de
-  capture d'écran n'apparaisse.</li>
+  <li>"Entire screen" takes a screenshot of screen as you see it, in its
+  totality.</li>
+  <li>"Active window" takes a screenshot of the active window, that is
+  to say the one which was active before the dialog to take the screenshot
+  appeared.</li>
 </ul>
 </p>
 
-<h4>Délai avant la prise de la capture d'écran</h4>
+<h4>Delay before taking the screenshot</h4>
 
-<p>La section <b>Délai avant la prise de la capture d'écran</b> permet de régler
-le délai qui s'écoule entre l'appui sur le bouton pour prendre la capture
-d'écran et la prise de la capture d'écran. Cela permet d'ouvrir des menus,
-d'effectuer une action quelconque à afficher sur la capture d'écran.</p>
+<p>The <b>Delay before taking the screenshot</b> section enables you to
+set the delay that will elapse between pressing the <b>Take the screenshot</b>
+button and taking the screenshot. This delay will enable to open menus or
+to do whatever action you want to be displayed on the screenshot.</p>
 
 <h4>Action</h4>
 
-<p>La section <b>Action</b> permet de choisir l'action à effectuer avec la
-capture d'écran. Trois actions sont possibles.</p>
+<p>The <b>Action</b> section enables you to choose what should be done
+with the screenshot. Three choices are available.</p>
 
-<h5>Sauvegarder</h5>
+<h5>Save</h5>
 
-<p><b>Sauvegarder</b> enregistrera la capture d'écran dans un fichier PNG.
-Si vous cochez la case <b>Sauvegarder dans l'emplacement par défaut</b>,
-la capture d'écran sera enregistrée dès que vous appuyerez sur le boutton
-pour la prendre, dans le dossier spécifié juste à droite. Sinon, une 
-fenêtre de sauvegarde vous permettra de choisir où la sauvegarder, et 
-sous quel nom.</p>
+<p>The <b>Save</b> option will save the screenshot to a PNG file.
+If you check the <b>Save by default to</b> checkbox, the screenshot will
+be saved after you press the <b>Take the screenshot</b> button, without
+showing any save dialog. Else, a save dialog will be displayed, also
+showing a preview of the screenshot, you will then be able to set the save
+location and the name of the file.
+</p>
 
-<h5>Copier dans le presse papier</h5>
+<h5>Copy to the clipboard</h5>
 
-<p><b>Copier dans le presse papier</b> permet de coller la capture
-d'écran dans une autre application, comme un logiciel de traitement de
-texte.</p>
+<p>The <b>Copy to the clipboard</b> option enables you to paste the screenshot
+in another application, such as a word processor.</p>
 
-<h6>Ouvrir avec</h6>
+<h6>Open with</h6>
 
-<p><b>Ouvrir avec</b> permet d'enregistrer la capture d'écran dans le
-dossier temporaire du système et de l'ouvrir avec l'application
-choisie dans le champ en dessous. Les applications permettant d'ouvrir
-des images sont automatiquement détectées et proposées dans la liste
-déroulante.</p>
+<p>The <b>Open with</b> option saves the screenshot to the system's temporary
+directory and opens it with the application set using the dropdown list below.
+The applications which support images are automatically detected and added
+to the dropdown list.
+</p>
 
-<h3>Via la ligne de commande</h3>
+<h3>Via command line</h3>
+
+<p>Les options de ligne de commande permettent de prendre des captures d'écran
+rapidement. Elles permettent aussi de faire fonctionner la touche Prt Scrn
+en haut à droite de la plus part des claviers, pour cela, réglez les raccourcis
+de votre environnement de bureau pour qu'il lance xfce4-screenshooter
+avec les bonnes options lorsque la touche Prt Scrn est appuyée.</p>
+
+<h4>Les options en ligne de commande</h4>
+
+<h5>L'option -w</h5>
+
+<p>L'option <b>-w</b> permet de prendre une capture d'écran de la fenêtre
+active.</p>
+
+<h5>L'option -f</h5>
+
+<p>L'option <b>-f</b> permet de prendre une capture d'écran de l'écran tout entier.</p>
+
+<h5>L'option -d</h5>
+
+<p>L'option <b>-d</b> suivie d'un entier positif permet de régler le délai en secondes
+avant la prise de la capture d'écran.</p>
+
+<h5>L'option -s</h5>
+
+<p>L'option <b>-s</b> suivie d'un chemin vers un dossier existant permet de choisir
+où la capture d'écran est sauvegardée. Si vous choisissez d'afficher la fenêtre
+de sauvegarde (voir plus bas), elle s'ouvrira dans ce dossier. Sinon, la 
+capture d'écran est directement sauvegardée dans ce dossier.</p>
+
+<h5>L'option -h</h5>
+
+<p>L'option <b>-h</b> permet de ne pas afficher la fenêtre de sauvegarde,
+et de sauvegarder les captures dans l'emplacement par défaut.</p>
+
+<h2>Utilisation de l'extension pour le tableau de bord de Xfce</h2>
+
+<h3>Ajout</h3>
+
+<p>Pour ajouter l'extension au tableau de bord, cliquez droit sur le 
+tableau de bord et sélectionnez <b>Ajouter un élément</b>. Dans la fenêtre
+qui apparaît, choisissez d'ajouter l'extension de capture d'écran.</p>
+
+<h3>Configuration</h3>
+
+<p>Vous pouvez ensuite configurer la prise des capture d'écran en cliquant
+droit sur l'icône de l'extension, sur le tableau de bord, et en choisissant
+<b>Configurer</b>. Une fenêtre de configuration similaire à la fenêtre de l'application
+que vous pouvez voir plus haut apparaît alors. Merci de regarder plus haut 
+pour les différentes options.</p>
+
+<h3>Utilisation</h3>
+
+<p>Il suffit ce cliquer sur l'icône de l'extension pour prendre une capture
+d'écran.</p>
+
+<p>
+</p>
 
 </body>
 

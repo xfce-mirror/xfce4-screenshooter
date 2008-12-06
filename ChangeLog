@@ -1,5 +1,9 @@
 2008-12-06 jeromeg
 
+  * doc/C/: Start english documentation
+  
+2008-12-06 jeromeg
+
   * lib/screenshooter-dialogs.c: add help button to the dialog.
   * src/main.c: rework the managing of the dialog response and a support
     for the help button.
