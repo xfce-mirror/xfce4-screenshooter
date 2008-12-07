@@ -59,10 +59,10 @@ with the screenshot. Three choices are available.</p>
 
 <p>The <b>"Save"</b> option will save the screenshot to a PNG file.
 If you check the <b>"Save by default to"</b> checkbox, the screenshot will
-be saved after you press the <b>"Take the screenshot"</b> button, without
-showing any save dialog. Else, a save dialog will be displayed, also
-showing a preview of the screenshot, you will then be able to set the save
-location and the name of the file.
+be saved to the folder on the right after you press the <b>"Take the screenshot"</b> 
+button, without showing any save dialog. Else, a save dialog will be 
+displayed, also showing a preview of the screenshot, you will then be 
+able to set the save location and the name of the file.
 </p>
 
 <h5>Copy to the clipboard</h5>
@@ -83,8 +83,8 @@ to the dropdown list.
 <p>Command line options allow you to take screenshots quickly. They also allow
 you to configure the Prt Scrn key on the upper right of most keyboards so that
 it takes screenshots. To do so, configure the keybindings of your desktop
-environnement so that it launches <b>xfce4-screenshooter</b> with one of
-the following options when the Prt Scrn key is pressed.</p>
+environnement so that it launches <b>xfce4-screenshooter</b> with one or
+several of the following options when the Prt Scrn key is pressed.</p>
 
 <h4>The command line options</h4>
 
@@ -102,18 +102,19 @@ the following options when the Prt Scrn key is pressed.</p>
 the delay before taking the screenshot when the <b>-f</b> or <b>-w</b> option
 is given.</p>
 
-<h5>The-s option</h5>
+<h5>The -s option</h5>
 
 <p>The <b>-s</b> option followed by the path to an existing folder allows you
 to set where the screenshots are saved. It only has an effect if the
-<b>-f</b> or the <b>-w</b> option is given. It has an effect on the
-<b>-h option</b>, see below.</p>
+<b>-f</b> or the <b>-w</b> option is given. Combined with the 
+<b>-h option</b> (see below), it can be used to save a file to a given 
+path, without showing any save dialog.</p>
 
 <h5>The -h option</h5>
 
 <p>If you give the <b>-h</b> option, the screenshot will be saved without
-showing any save dialog. If the <b>-s</b> option is given, it will be saved
-to this directory.</p>
+showing any save dialog. The <b>-s</b> option allows you to set the save
+location if needed.</p>
 
 <h2>Using the plugin for the Xfce panel</h2>
 

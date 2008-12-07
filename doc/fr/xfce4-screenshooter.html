@@ -24,8 +24,8 @@ ou l'ouvrir avec une autre application.
 
 <h3>Via l'interface graphique</h3>
 
-<p>Pour lancer l'application, utilisez le lanceur <b>Prendre une capture d'écran</b>,
-dans la catégorie <b>Accessoires</b> du menu principal de Xfce.</p>
+<p>Pour lancer l'application, utilisez le lanceur <b>"Prendre une capture d'écran"</b>,
+dans la catégorie <b>"Accessoires"</b> du menu principal de Xfce.</p>
 
 <p>Cette fenêtre apparaîtra alors :</p>
 
@@ -33,48 +33,48 @@ dans la catégorie <b>Accessoires</b> du menu principal de Xfce.</p>
 
 <h4>Zone à capturer</h4>
 
-<p>La section <b>Zone à capturer</b> permet de régler la source de la capture
-d'écran:
+<p>La section <b>"Zone à capturer"</b> permet de choisir la partie de l'écran
+à capturer :
 
 <ul>
   <li>"L'écran tout entier" prend une capture de l'écran tel que vous le
   voyez, dans sa totalité.</li>
   <li>"La fenêtre active" prend une capture de la fenêtre qui est active,
-  c'est à dire celle qui était active avant que la fenêtre de l'outil de
-  capture d'écran n'apparaisse.</li>
+  c'est à dire celle qui était active avant que cette fenêtre ne soit
+  apparue.</li>
 </ul>
 </p>
 
 <h4>Délai avant la prise de la capture d'écran</h4>
 
-<p>La section <b>Délai avant la prise de la capture d'écran</b> permet de régler
-le délai qui s'écoule entre l'appui sur le bouton pour prendre la capture
-d'écran et la prise de la capture d'écran. Cela permet d'ouvrir des menus,
+<p>La section <b>"Délai avant la prise de la capture d'écran"</b> permet de régler
+le délai qui s'écoule entre l'appui sur le bouton <b>"Prendre la capture d'écran"</b> 
+et la prise de la capture d'écran. Cela permet d'ouvrir des menus,
 d'effectuer une action quelconque à afficher sur la capture d'écran.</p>
 
 <h4>Action</h4>
 
-<p>La section <b>Action</b> permet de choisir l'action à effectuer avec la
+<p>La section <b>"Action"</b> permet de choisir l'action à effectuer avec la
 capture d'écran. Trois actions sont possibles.</p>
 
 <h5>Sauvegarder</h5>
 
-<p><b>Sauvegarder</b> enregistrera la capture d'écran dans un fichier PNG.
-Si vous cochez la case <b>Sauvegarder par défaut dans</b>,
-la capture d'écran sera enregistrée dès que vous appuyerez sur le boutton
-pour la prendre, dans le dossier spécifié juste à droite. Sinon, une 
-fenêtre de sauvegarde vous permettra de choisir où la sauvegarder, et 
-sous quel nom.</p>
+<p><b>"Sauvegarder"</b> enregistrera la capture d'écran dans un fichier PNG.
+Si vous cochez la case <b>"Sauvegarder par défaut dans"</b>,
+la capture d'écran sera enregistrée après l'appui sur le boutton
+<b>"Prendre la capture d'écran"</b> dans le dossier spécifié à droite, 
+sans afficher de fenêtre de sauvegarde. Sinon, une fenêtre de sauvegarde 
+vous permettra de choisir où la sauvegarder, et sous quel nom.</p>
 
 <h5>Copier dans le presse papier</h5>
 
-<p><b>Copier dans le presse papier</b> permet de coller la capture
+<p><b>"Copier dans le presse papier"</b> permet de coller la capture
 d'écran dans une autre application, comme un logiciel de traitement de
 texte.</p>
 
 <h6>Ouvrir avec</h6>
 
-<p><b>Ouvrir avec</b> permet d'enregistrer la capture d'écran dans le
+<p><b>"Ouvrir avec"</b> permet d'enregistrer la capture d'écran dans le
 dossier temporaire du système et de l'ouvrir avec l'application
 choisie dans le champ en dessous. Les applications permettant d'ouvrir
 des images sont automatiquement détectées et proposées dans la liste
@@ -84,9 +84,10 @@ déroulante.</p>
 
 <p>Les options de ligne de commande permettent de prendre des captures d'écran
 rapidement. Elles permettent aussi de faire fonctionner la touche Prt Scrn
-en haut à droite de la plus part des claviers, pour cela, réglez les raccourcis
-de votre environnement de bureau pour qu'il lance xfce4-screenshooter
-avec les bonnes options lorsque la touche Prt Scrn est appuyée.</p>
+en haut à droite de la plus part des claviers. Pour cela, réglez les raccourcis
+de votre environnement de bureau pour qu'ils lancent xfce4-screenshooter
+avec une ou plusieurs des options suivantes lorsque la touche Prt Scrn 
+est appuyée.</p>
 
 <h4>Les options en ligne de commande</h4>
 
@@ -102,33 +103,39 @@ active.</p>
 <h5>L'option -d</h5>
 
 <p>L'option <b>-d</b> suivie d'un entier positif permet de régler le délai en secondes
-avant la prise de la capture d'écran.</p>
+avant la prise de la capture d'écran lorsque les options <b>-w</b> ou
+<b>-f</b> sont données.</p>
 
 <h5>L'option -s</h5>
 
 <p>L'option <b>-s</b> suivie d'un chemin vers un dossier existant permet de choisir
-où la capture d'écran est sauvegardée. Si vous choisissez d'afficher la fenêtre
-de sauvegarde (voir plus bas), elle s'ouvrira dans ce dossier. Sinon, la 
-capture d'écran est directement sauvegardée dans ce dossier.</p>
+où la capture d'écran est sauvegardée. Elle ne fait effet que si les options
+<b>-w</b> ou <b>-f</b> sont données. En combinant cette option avec l'option
+<b>-h</b>, vous pouvez enregistrer une capture d'écran dans un dossier
+donné, sans afficher de fenêtre de sauvegarde.
+</p>
 
 <h5>L'option -h</h5>
 
-<p>L'option <b>-h</b> permet de ne pas afficher la fenêtre de sauvegarde,
-et de sauvegarder les captures dans l'emplacement par défaut.</p>
+<p>L'option <b>-h</b> permet de sauvegarder les captures d'écran sans 
+afficher de fenêtre de sauvegarde. L'option <b>-s</b> permet de choisir
+où les sauvegarder.</p>
 
 <h2>Utilisation de l'extension pour le tableau de bord de Xfce</h2>
 
 <h3>Ajout</h3>
 
 <p>Pour ajouter l'extension au tableau de bord, cliquez droit sur le 
-tableau de bord et sélectionnez <b>Ajouter un élément</b>. Dans la fenêtre
-qui apparaît, choisissez d'ajouter l'extension de capture d'écran.</p>
+tableau de bord et sélectionnez <b>"Ajouter un élément"</b>. Dans la fenêtre
+qui apparaît, choisissez d'ajouter l'extension nommée 
+<b>"Prendre une capture d'écran"</b>.
+</p>
 
 <h3>Configuration</h3>
 
 <p>Vous pouvez ensuite configurer la prise des capture d'écran en cliquant
 droit sur l'icône de l'extension, sur le tableau de bord, et en choisissant
-<b>Configurer</b>. Une fenêtre de configuration similaire à la fenêtre de l'application
+<b>"Configurer"</b>. Une fenêtre de configuration similaire à la fenêtre de l'application
 que vous pouvez voir plus haut apparaît alors. Merci de regarder plus haut 
 pour les différentes options.</p>
 
