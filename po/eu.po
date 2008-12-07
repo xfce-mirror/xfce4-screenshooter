@@ -6,12 +6,12 @@
 # Piarres Beobide <pi@beobide.net>, 2006, 2008.
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
-#: ../src/main.c:94
+#: ../src/main.c:96
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-06 13:23+0100\n"
+"POT-Creation-Date: 2008-11-15 17:52+0100\n"
 "PO-Revision-Date: 2008-11-04 22:52+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: ../lib/screenshooter-utils.c:56
+msgid "Couldn't find window manager window"
+msgstr "Ezin da aurkitu leiho kudeatzaile leihoa"
 
 #: ../lib/screenshooter-dialogs.c:207
 msgid "Screenshot.png"
@@ -29,46 +33,57 @@ msgstr "Pantaila-argazkia.png"
 msgid "Screenshot-%d.png"
 msgstr "Pantala-argazkia-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:455 ../lib/screenshooter-dialogs.c:467
+#: ../lib/screenshooter-dialogs.c:888
+msgid "Save screenshot as..."
+msgstr "Gorde pantaila-argazkia honela ..."
+
+#: ../lib/screenshooter-dialogs.c:238
+msgid "Do not open screenshots"
+msgstr "Ez ireki pantaila-argazkiak"
+
+#: ../lib/screenshooter-dialogs.c:439 ../lib/screenshooter-dialogs.c:449
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Atera pantaila-argazkia bat"
 
-#: ../lib/screenshooter-dialogs.c:460
-#, fuzzy
-msgid "Take the screenshot"
-msgstr "Atera pantaila-argazkia bat"
+#. Create the frame for screenshot modes and fill it with the radio buttons
+#: ../lib/screenshooter-dialogs.c:348
+msgid "Modes"
+msgstr "Moduak"
 
-#: ../lib/screenshooter-dialogs.c:489
-#, fuzzy
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Lehenetsitako gordetze "
-"kokalekua</span>"
-
-#: ../lib/screenshooter-dialogs.c:519
-msgid "Entire screen"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:530
-#: ../panel-plugin/screenshooter-plugin.c:225
-#: ../panel-plugin/screenshooter-plugin.c:292
-#, fuzzy
-msgid "Take a screenshot of the entire screen"
+#: ../src/main.c:53
+msgid "Take a screenshot of the whole screen"
 msgstr "Atera pantaila osoaren pantaila-argazkia"
 
-#: ../lib/screenshooter-dialogs.c:542
-msgid "Active window"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:553 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:532 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:230
 #: ../panel-plugin/screenshooter-plugin.c:297
 msgid "Take a screenshot of the active window"
 msgstr "Atera leiho aktiboaren pantaila-argazkia"
 
-#: ../lib/screenshooter-dialogs.c:567
+#. Create the options frame and add the delay and save options
+#: ../lib/screenshooter-dialogs.c:380
+msgid "Options"
+msgstr "Aukerak"
+
+#. Save option
+#: ../lib/screenshooter-dialogs.c:393
+msgid "Show save dialog"
+msgstr "Ikusi gordetze elkarrizketa"
+
+#: ../lib/screenshooter-dialogs.c:417
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Default save location</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Lehenetsitako gordetze "
+"kokalekua</span>"
+
+#: ../lib/screenshooter-dialogs.c:700
+msgid "Default save location"
+msgstr "Lehenetsitako gordetze kokapena"
+
+#: ../lib/screenshooter-dialogs.c:545
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -76,83 +91,21 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Atzeratu pantaila-argazkia "
 "atera aurretik</span>"
 
-#: ../lib/screenshooter-dialogs.c:612
-#, fuzzy
-msgid "Delay in seconds before the screenshot is taken"
-msgstr "Pantaila-argazkia ateratzeko atzerapena segundutan"
-
-#: ../lib/screenshooter-dialogs.c:621
+#: ../lib/screenshooter-dialogs.c:597
 msgid "seconds"
 msgstr "segundu"
 
-#: ../lib/screenshooter-dialogs.c:635
-#, fuzzy
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Lehenetsitako gordetze "
-"kokalekua</span>"
-
-#: ../lib/screenshooter-dialogs.c:666
-msgid "Save"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:679
-#, fuzzy
-msgid "Save the screenshot to a PNG file"
-msgstr "Gorde pantaila-argazkia honela ..."
-
-#: ../lib/screenshooter-dialogs.c:708
-#, fuzzy
-msgid "Save by default to:"
-msgstr "Lehenetsitako gordetze kokapena"
-
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:466
 msgid ""
-"If checked, the screenshot will be saved by default to the location set on "
-"the right. If not, a save dialog will be displayed."
+"<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
+"span>"
 msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:728
-msgid "Default save location"
-msgstr "Lehenetsitako gordetze kokapena"
-
-#: ../lib/screenshooter-dialogs.c:742
-#, fuzzy
-msgid "Set the default save location"
-msgstr "Lehenetsitako gordetze kokapena"
-
-#: ../lib/screenshooter-dialogs.c:764
-msgid "Copy to the clipboard"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:774
-msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:791
-msgid "Open with:"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:807
-msgid "Open the screenshot with the chosen application"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:884
-#, fuzzy
-msgid "Application to open the screenshot"
-msgstr "Ez ireki pantaila-argazkiak"
-
-#: ../lib/screenshooter-dialogs.c:928
-msgid "Save screenshot as..."
-msgstr "Gorde pantaila-argazkia honela ..."
+"<span weight=\"bold\" stretch=\"semiexpanded\">Pantaila-argazkiak honekin "
+"ireki: </span>"
 
 #: ../src/main.c:45
 msgid "Version information"
 msgstr "Bertsio argibideak"
-
-#: ../src/main.c:53
-msgid "Take a screenshot of the whole screen"
-msgstr "Atera pantaila osoaren pantaila-argazkia"
 
 #: ../src/main.c:57
 msgid "Delay in seconds before taking the screenshot"
@@ -166,6 +119,10 @@ msgstr "Ez erakutsi gordetze elkarrizketa"
 msgid "Directory where the screenshot will be saved"
 msgstr "Pantaila-argazkia gordeko den direktorioan"
 
+#: ../src/main.c:71
+msgid "Dialog to set the default save folder"
+msgstr "Lehenetsitako gordetze karpeta ezartzeko elkarrizketa"
+
 #: ../src/main.c:98
 #, c-format
 msgid ""
@@ -177,37 +134,8 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
-msgid "Take screenshots of the entire screen or of the active window"
+msgid "Take screenshots of the whole screen or of the active window"
 msgstr "Atera leiho aktiboaren edo idazmahai osoaren pantaila-argazkia"
-
-#~ msgid "Couldn't find window manager window"
-#~ msgstr "Ezin da aurkitu leiho kudeatzaile leihoa"
-
-#, fuzzy
-#~ msgid ""
-#~ "Delay in seconds between pressing the button to take the screenshot and "
-#~ "taking the screenshot"
-#~ msgstr "Pantaila-argazkia ateratzeko atzerapena segundutan"
-
-#~ msgid "Modes"
-#~ msgstr "Moduak"
-
-#~ msgid "Options"
-#~ msgstr "Aukerak"
-
-#~ msgid "Show save dialog"
-#~ msgstr "Ikusi gordetze elkarrizketa"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
-#~ "span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Pantaila-argazkiak honekin "
-#~ "ireki: </span>"
-
-#~ msgid "Dialog to set the default save folder"
-#~ msgstr "Lehenetsitako gordetze karpeta ezartzeko elkarrizketa"
 
 #~ msgid "Screenshot"
 #~ msgstr "Pantaila-argazkia"
@@ -236,3 +164,83 @@ msgstr "Atera leiho aktiboaren edo idazmahai osoaren pantaila-argazkia"
 # Piarres Beobide <pi@beobide.net>, 2006, 2008.
 #~ msgid " Screenshot"
 #~ msgstr " Pantaila-argazkia"
+
+#: ../lib/screenshooter-dialogs.c:471
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kapturatzeko eremua</span>"
+
+#: ../lib/screenshooter-dialogs.c:501
+msgid "Entire screen"
+msgstr "Pantaila osoa"
+
+#: ../lib/screenshooter-dialogs.c:511
+#: ../panel-plugin/screenshooter-plugin.c:225
+#: ../panel-plugin/screenshooter-plugin.c:292
+msgid "Take a screenshot of the entire screen"
+msgstr "Atera pantaila osoaren pantaila-argazkia"
+
+#: ../lib/screenshooter-dialogs.c:522
+msgid "Active window"
+msgstr "Leiho aktiboa"
+
+#: ../lib/screenshooter-dialogs.c:589
+msgid ""
+"Delay in seconds between pressing the button to take the screenshot and "
+"taking the screenshot"
+msgstr ""
+"Pantaila-argazkia ateratzeko botoia sakatzetik argazkia atera areko "
+"atzerapena segundotan"
+
+#: ../lib/screenshooter-dialogs.c:611
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekintza</span>"
+
+#: ../lib/screenshooter-dialogs.c:642
+msgid "Save"
+msgstr "Gorde"
+
+#: ../lib/screenshooter-dialogs.c:654
+msgid "Save the screenshot to a PNG file"
+msgstr "Gorde pantaila-argazkia PNG fitxategi batetan"
+
+#: ../lib/screenshooter-dialogs.c:682
+msgid "Save to default location:"
+msgstr "Lehenetsitako gordetze kokapena:"
+
+#: ../lib/screenshooter-dialogs.c:697
+msgid ""
+"If checked, the screenshot will be saved to the default save location set on "
+"the right. If not, a save dialog will be displayed."
+msgstr ""
+"Hautarik badago, pantaila-argazkia eskuinean ezarritako lehenetsitako "
+"gordetze kokapenean gordeko da. Hala ez badago gordetze elkarrizketa "
+"bistaratuko da."
+
+#: ../lib/screenshooter-dialogs.c:713
+msgid "Set the default save location"
+msgstr "Ezarri lehenetsitako gordetze kokapena"
+
+#: ../lib/screenshooter-dialogs.c:734
+msgid "Copy to the clipboard"
+msgstr "Kopiatu arbelera"
+
+#: ../lib/screenshooter-dialogs.c:743
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "Kopiatu pantaila-argazkia arbelera beranduago itsatsi ahal izateko"
+
+#: ../lib/screenshooter-dialogs.c:759
+msgid "Open with:"
+msgstr "Ireki honekin:"
+
+#: ../lib/screenshooter-dialogs.c:774
+msgid "Open the screenshot with the chosen application"
+msgstr "Ireki pantaila-argazkia hautatutako aplikazioarekin"
+
+#: ../lib/screenshooter-dialogs.c:851
+msgid "Application to open the screenshot"
+msgstr "Pantaila-argazkia irekitzeko aplikazioa"
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid "Take screenshots of the entire screen or of the active window"
+msgstr "Atera leiho aktiboaren edo idazmahai osoaren pantaila-argazkia"
