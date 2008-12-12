@@ -1,6 +1,6 @@
 [Xfce Panel]
 Type=X-XFCE-PanelPlugin
-_Name=Take a screenshot
+_Name=Screenshot
 _Comment=Take screenshots of the entire screen or of the active window
 Icon=applets-screenshooter
 X-XFCE-Exec=@PLUGIN_PATH@/xfce4-screenshooter-plugin

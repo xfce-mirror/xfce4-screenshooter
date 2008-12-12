@@ -466,7 +466,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   else
     {
       dlg =
-        xfce_titled_dialog_new_with_buttons (_("Take a screenshot"),
+        xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT,
                                              GTK_STOCK_HELP,
@@ -474,6 +474,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                                              GTK_STOCK_CLOSE, 
                                              GTK_RESPONSE_OK,
                                              NULL);
+      
+      xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), 
+                                       _("Preferences"));
     }                                             
 
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
