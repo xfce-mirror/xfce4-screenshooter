@@ -598,7 +598,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   rectangle_button = 
     gtk_radio_button_new_with_mnemonic (
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (fullscreen_button)), 
-                                  _("Select a rectangle"));
+                                  _("Select a region"));
 
    gtk_box_pack_start (GTK_BOX (area_box), 
                        rectangle_button, FALSE, 

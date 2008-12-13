@@ -1,5 +1,11 @@
 2008-12-13 jeromeg
 
+  * lib/screenshooter-dialogs.c: change a few strings.
+  * Update the desktop files.
+  * po/: update po.
+
+2008-12-13 jeromeg
+
   * lib/screenshooter-utils.{c,h}: add RECTANGLE mode, based on David
     Collins patch.
   * lib/screenshooter-dialogs.c: update the dialog for the new mode,
