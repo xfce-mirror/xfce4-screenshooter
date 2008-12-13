@@ -42,6 +42,7 @@ enum {
   MODE_0,
   FULLSCREEN,
   ACTIVE_WINDOW,
+  RECTANGLE,
 };
 
 

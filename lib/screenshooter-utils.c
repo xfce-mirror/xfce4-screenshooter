@@ -30,6 +30,9 @@ static GdkWindow
 static GdkPixbuf 
 *get_window_screenshot                (GdkWindow        *window);
 
+static GdkPixbuf
+*get_rectangle_screenshot             ();
+
 
 
 static GdkWindow 
@@ -121,6 +124,157 @@ static GdkPixbuf
 
 
 
+static GdkPixbuf
+*get_rectangle_screenshot ()
+{
+  GdkPixbuf *screenshot=NULL;
+ 
+  /* Get display and root window */
+  GdkDisplay *display = gdk_display_get_default ();
+  GdkWindow *root_window =  gdk_get_default_root_window ();
+  
+  GdkGCValues gc_values;
+  GdkGC *gc;
+  GdkGrabStatus grabstatus;
+  
+  GdkGCValuesMask values_mask =
+    GDK_GC_FUNCTION | GDK_GC_FILL	| GDK_GC_CLIP_MASK | 
+    GDK_GC_SUBWINDOW | GDK_GC_CLIP_X_ORIGIN | GDK_GC_CLIP_Y_ORIGIN | 
+    GDK_GC_EXPOSURES | GDK_GC_LINE_WIDTH | GDK_GC_LINE_STYLE | 
+    GDK_GC_CAP_STYLE | GDK_GC_JOIN_STYLE;
+  
+  GdkColor gc_white = {0, 65535, 65535, 65535};
+  GdkColor gc_black = {0, 0, 0, 0};
+  
+  GdkEventMask mask = 
+    GDK_POINTER_MOTION_MASK | GDK_BUTTON_PRESS_MASK | 
+    GDK_BUTTON_RELEASE_MASK;
+  GdkCursor *xhair_cursor = gdk_cursor_new (GDK_CROSSHAIR);
+
+  gboolean pressed = FALSE;
+  gboolean done = FALSE;
+  gint x, y, w, h;
+  
+  /*Set up graphics context for a XOR rectangle that will be drawn as 
+   * the user drags the mouse */
+  gc_values.function           = GDK_XOR;
+  gc_values.line_width         = 0;
+  gc_values.line_style         = GDK_LINE_SOLID;
+  gc_values.fill               = GDK_SOLID;
+  gc_values.cap_style          = GDK_CAP_BUTT;
+  gc_values.join_style         = GDK_JOIN_MITER;
+  gc_values.graphics_exposures = FALSE;
+  gc_values.clip_x_origin      = 0;
+  gc_values.clip_y_origin      = 0;
+  gc_values.clip_mask          = None;
+  gc_values.subwindow_mode     = GDK_INCLUDE_INFERIORS;
+  
+  gc = gdk_gc_new_with_values (root_window, &gc_values, values_mask);
+  gdk_gc_set_rgb_fg_color (gc, &gc_white);
+  gdk_gc_set_rgb_bg_color (gc, &gc_black);
+  
+  /* Change cursor to cross-hair */
+  grabstatus = gdk_pointer_grab (root_window, FALSE, mask,
+                                 NULL, xhair_cursor, GDK_CURRENT_TIME);
+  
+  while (!done && grabstatus == GDK_GRAB_SUCCESS)
+    {
+      gint x1, y1, x2, y2;
+      GdkEvent *event;
+      
+      event = gdk_event_get ();
+      
+      if (event == NULL) 
+        continue;
+        
+      switch (event->type)
+        {
+          /* Start dragging the rectangle out */
+          case GDK_BUTTON_PRESS:
+            x = x2 = x1 = event->button.x;
+            y = y2 = y1 = event->button.y;
+            w = 0; h = 0;
+            pressed = TRUE;
+            break;
+          
+          /* Finish dragging the rectangle out */
+         case GDK_BUTTON_RELEASE:
+           if (pressed)
+             {
+               if (w > 0 && h > 0)
+                 {
+                   /* Remove the rectangle drawn previously */
+                   gdk_draw_rectangle (root_window, 
+                                       gc, 
+                                       FALSE, 
+                                       x, y, w, h);
+                   done = TRUE;
+                 } 
+               else 
+                 {
+                   /* The user has not dragged the mouse, start again */
+                   
+                   pressed = FALSE;
+                 }
+             }
+           break;
+          
+          /* The user is moving the mouse */
+          case GDK_MOTION_NOTIFY:
+            if (pressed)
+              {
+                if (w > 0 && h > 0)
+               
+                /* Remove the rectangle drawn previously */
+                gdk_draw_rectangle (root_window, 
+                                    gc, 
+                                    FALSE, 
+                                    x, y, w, h);
+
+                x2 = event->motion.x;
+                y2 = event->motion.y;
+
+                x = MIN (x1, x2);
+                y = MIN (y1, y2);
+                w = ABS (x2 - x1);
+                h = ABS (y2 - y1);
+
+                /* Draw  the rectangle as the user drags  the mouse */
+                if (w > 0 && h > 0)
+                  gdk_draw_rectangle (root_window, 
+                                      gc, 
+                                      FALSE, 
+                                      x, y, w, h);
+            
+              }
+            break;
+           
+          default: 
+            break;
+        }
+      
+      gdk_event_free (event);
+    }
+  
+  if (grabstatus == GDK_GRAB_SUCCESS) 
+    {
+      gdk_pointer_ungrab(GDK_CURRENT_TIME);
+    }
+  
+  /* Get the screenshot's pixbuf */
+  screenshot = gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
+                                             x, y, 0, 0, w, h);
+  
+  if (gc!=NULL)
+    g_object_unref (gc);
+    
+  gdk_cursor_unref (xhair_cursor);
+  
+  return screenshot;
+}
+
+
+
 /* Public */
 
 
@@ -144,7 +298,8 @@ GdkPixbuf *screenshooter_take_screenshot (gint mode, gint delay)
   screen = gdk_screen_get_default ();
   
   /* wait for n=delay seconds */ 
-  sleep (delay);
+  if (mode != RECTANGLE)
+    sleep (delay);
     
   /* Get the window/desktop we want to screenshot*/  
   if (mode == FULLSCREEN)
@@ -156,14 +311,19 @@ GdkPixbuf *screenshooter_take_screenshot (gint mode, gint delay)
     {
       window = get_active_window (screen, &needs_unref);      
     }
-    
+      
   if (mode == FULLSCREEN || mode == ACTIVE_WINDOW)
     {
       screenshot = get_window_screenshot (window);
+      
+      if (needs_unref)
+	      g_object_unref (window);
     }
-					     
-	if (needs_unref)
-	  g_object_unref (window);
+  else if (mode == RECTANGLE)
+    {
+      screenshot = get_rectangle_screenshot ();
+    }
+
 		
 	return screenshot;
 }

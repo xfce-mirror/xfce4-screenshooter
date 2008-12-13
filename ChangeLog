@@ -1,3 +1,13 @@
+2008-12-13 jeromeg
+
+  * lib/screenshooter-utils.{c,h}: add RECTANGLE mode, based on David
+    Collins patch.
+  * lib/screenshooter-dialogs.c: update the dialog for the new mode,
+    patch by David Collins.
+  * panel-plugin/screenshooter-plugin.c: update the tooltips for the new 
+    mode.
+  * NEWS: updated.
+
 2008-12-12 jeromeg
 
   * lib/screenshooter-dialogs.c: change a string and add a subtitle for

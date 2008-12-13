@@ -32,6 +32,9 @@ cb_active_window_toggled           (GtkToggleButton    *tb,
 static void 
 cb_save_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
+static void 
+cb_rectangle_toggled               (GtkToggleButton    *tb,
+                                    ScreenshotData     *sd);                                    
 #ifdef HAVE_GIO                                    
 static void 
 cb_open_toggled                    (GtkToggleButton    *tb,
@@ -42,7 +45,10 @@ cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void 
 cb_toggle_set_sensi                (GtkToggleButton    *tb, 
-                                    GtkWidget          *widget);                                                                            
+                                    GtkWidget          *widget); 
+static void 
+cb_toggle_set_insensi              (GtkToggleButton    *tb, 
+                                    GtkWidget          *widget);                                                                                                               
 static void 
 cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
@@ -74,7 +80,7 @@ set_default_item                   (GtkWidget          *combobox,
 
 
 
-/* Set the mode when the button is toggled */
+/* Set the captured area when the button is toggled */
 static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
                                           ScreenshotData   *sd)
 {
@@ -90,7 +96,7 @@ static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
 
 
 
-/* Set the mode when the button is toggled */
+/* Set the captured area when the button is toggled */
 static void cb_active_window_toggled (GtkToggleButton *tb,
                                       ScreenshotData   *sd)
 {
@@ -98,9 +104,17 @@ static void cb_active_window_toggled (GtkToggleButton *tb,
     {
       sd->mode = ACTIVE_WINDOW;
     }
-  else
+}
+
+
+
+/* Set the captured when the button is toggled */
+static void cb_rectangle_toggled (GtkToggleButton *tb,
+                                  ScreenshotData   *sd)
+{
+  if (gtk_toggle_button_get_active (tb))
     {
-      sd->mode = FULLSCREEN;
+      sd->mode = RECTANGLE;
     }
 }
 
@@ -122,6 +136,15 @@ static void
 cb_toggle_set_sensi (GtkToggleButton *tb, GtkWidget *widget)
 {
   gtk_widget_set_sensitive (widget, gtk_toggle_button_get_active (tb));
+}
+
+
+
+/* Set the widget active if the toggle button is inactive */
+static void 
+cb_toggle_set_insensi (GtkToggleButton *tb, GtkWidget *widget)
+{
+  gtk_widget_set_sensitive (widget, !gtk_toggle_button_get_active (tb));
 }
 
 
@@ -423,7 +446,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   GtkWidget *vbox;
   
   GtkWidget *area_box, *area_label, *area_alignment;
-  GtkWidget *active_window_button, *fullscreen_button;
+  GtkWidget *active_window_button, 
+            *fullscreen_button,
+            *rectangle_button;
   
   GtkWidget *delay_box, *delay_label, *delay_alignment;
   GtkWidget *delay_spinner_box, *delay_spinner, *seconds_label;
@@ -494,7 +519,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Create area label */
   area_label = gtk_label_new ("");
   gtk_label_set_markup (GTK_LABEL (area_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>"));
+  _("<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"));
 			
   gtk_misc_set_alignment (GTK_MISC (area_label), 0, 0);
   gtk_widget_show (area_label);
@@ -522,6 +547,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
     
   /* Create radio buttons for areas to screenshot */
   
+  /* Fullscreen */
   fullscreen_button = 
     gtk_radio_button_new_with_mnemonic (NULL, 
                                         _("Entire screen"));
@@ -544,6 +570,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     
   gtk_widget_show (fullscreen_button);
   
+  /* Active window */
   active_window_button = 
     gtk_radio_button_new_with_mnemonic (
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (fullscreen_button)), 
@@ -566,6 +593,30 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     sd);
                     
   gtk_widget_show (active_window_button);
+  
+  /* Rectangle */
+  rectangle_button = 
+    gtk_radio_button_new_with_mnemonic (
+      gtk_radio_button_get_group (GTK_RADIO_BUTTON (fullscreen_button)), 
+                                  _("Select a rectangle"));
+
+   gtk_box_pack_start (GTK_BOX (area_box), 
+                       rectangle_button, FALSE, 
+                       FALSE, 0);
+                       
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button),
+                                (sd->mode == RECTANGLE));
+  
+  #if GTK_CHECK_VERSION(2,12,0)
+  gtk_widget_set_tooltip_text (rectangle_button,
+                               _("Select a region to be captured"));
+  #endif
+  
+  g_signal_connect (G_OBJECT (rectangle_button), "toggled", 
+                    G_CALLBACK (cb_rectangle_toggled),
+                    sd);
+  
+  gtk_widget_show (rectangle_button);
   
   /* Create delay label */
   
@@ -635,6 +686,14 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
   g_signal_connect (G_OBJECT (delay_spinner), "value-changed",
                     G_CALLBACK (cb_delay_spinner_changed), sd);
+  
+  /* Set the delay box as inactive when we capture rectangles */                  
+  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_insensi), delay_box);
+  
+  /* Set the default state */
+  cb_toggle_set_insensi (GTK_TOGGLE_BUTTON (rectangle_button),
+                         delay_box);
         
   /* Create actions label */
   
@@ -832,11 +891,14 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Open with box*/
   
   open_with_box = gtk_hbox_new (FALSE, 12);
+  
   gtk_container_add (GTK_CONTAINER (open_with_alignment), 
                      open_with_box);
+                     
   gtk_container_set_border_width (GTK_CONTAINER (open_with_box), 0);
+  
   gtk_widget_show (open_with_box);
-    
+      
   g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), open_with_box);
   
