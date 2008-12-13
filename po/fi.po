@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-13 14:08+0100\n"
-"PO-Revision-Date: 2008-11-15 22:10+0200\n"
+"POT-Creation-Date: 2008-12-13 15:55+0200\n"
+"PO-Revision-Date: 2008-12-13 16:05+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -34,40 +34,35 @@ msgid "Take a screenshot"
 msgstr "Kaappaa kuva"
 
 #: ../lib/screenshooter-dialogs.c:487
-#, fuzzy
 msgid "Take the screenshot"
 msgstr "Kaappaa kuva"
 
 #: ../lib/screenshooter-dialogs.c:494
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Screenshot"
-msgstr "Kuvakaappaus.png"
+msgstr "Kuvakaappaus"
 
 #: ../lib/screenshooter-dialogs.c:504
 msgid "Preferences"
-msgstr ""
+msgstr "Asetukset"
 
 #: ../lib/screenshooter-dialogs.c:522
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Oletustallennuskansio</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kaapattava alue</span>"
 
 #: ../lib/screenshooter-dialogs.c:553
 msgid "Entire screen"
-msgstr ""
+msgstr "Koko näyttö"
 
 #: ../lib/screenshooter-dialogs.c:564
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:315
-#, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr "Kaappaa kuva koko näytöstä"
 
 #: ../lib/screenshooter-dialogs.c:577
 msgid "Active window"
-msgstr ""
+msgstr "Aktiivinen ikkuna"
 
 #: ../lib/screenshooter-dialogs.c:588 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:232
@@ -77,13 +72,13 @@ msgstr "Kaappaa kuva aktiivisesta ikkunasta"
 
 #: ../lib/screenshooter-dialogs.c:601
 msgid "Select a region"
-msgstr ""
+msgstr "Valitse alue"
 
 #: ../lib/screenshooter-dialogs.c:612
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:325
 msgid "Select a region to be captured"
-msgstr ""
+msgstr "Valitse kaapattava näytön alue"
 
 #: ../lib/screenshooter-dialogs.c:626
 msgid ""
@@ -94,7 +89,6 @@ msgstr ""
 "ottamista</span>"
 
 #: ../lib/screenshooter-dialogs.c:671
-#, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Aika sekunteina ennen kuvakaappauksen ottamista"
 
@@ -103,60 +97,57 @@ msgid "seconds"
 msgstr "sekuntia"
 
 #: ../lib/screenshooter-dialogs.c:702
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Oletustallennuskansio</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Tehtävä</span>"
 
 #: ../lib/screenshooter-dialogs.c:733
 msgid "Save"
-msgstr ""
+msgstr "Tallenna"
 
 #: ../lib/screenshooter-dialogs.c:746
-#, fuzzy
 msgid "Save the screenshot to a PNG file"
-msgstr "Tallenna kaappaus nimellä..."
+msgstr "Tallenna kaappaus PNG-tiedostoon"
 
 #: ../lib/screenshooter-dialogs.c:775
-#, fuzzy
 msgid "Save by default to:"
-msgstr "Oletustallennuskansio"
+msgstr "Oletustallennuskansio:"
 
 #: ../lib/screenshooter-dialogs.c:791
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right. If not, a save dialog will be displayed."
 msgstr ""
+"Jos valitset tämän, kuvakaappaus tallennetaan oletusarvoisesti oikealla "
+"asetettuun kansioon. Muussa tapauksessa näytetään tallennusdialogi."
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Default save location"
 msgstr "Oletustallennuskansio"
 
 #: ../lib/screenshooter-dialogs.c:809
-#, fuzzy
 msgid "Set the default save location"
-msgstr "Oletustallennuskansio"
+msgstr "Valitse oletustallennuskansio"
 
 #: ../lib/screenshooter-dialogs.c:831
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "Kopioi leikepöydälle"
 
 #: ../lib/screenshooter-dialogs.c:841
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
+msgstr "Kopioi kuvakaappaus leikepöydälle, josta voit myöhemmin liittää sen"
 
 #: ../lib/screenshooter-dialogs.c:858
 msgid "Open with:"
-msgstr ""
+msgstr "Avaa sovelluksessa:"
 
 #: ../lib/screenshooter-dialogs.c:874
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Avaa kuvakaappaus valitussa sovelluksessa"
 
 #: ../lib/screenshooter-dialogs.c:954
-#, fuzzy
 msgid "Application to open the screenshot"
-msgstr "Älä avaa kuvakaappauksia"
+msgstr "Sovellus, jolla kaappaus avataan"
 
 #: ../lib/screenshooter-dialogs.c:998
 msgid "Save screenshot as..."
@@ -193,35 +184,7 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
-msgstr "Kaappaa kuva koko näytöstä tai aktiivisesta ikkunasta"
-
-#~ msgid "Couldn't find window manager window"
-#~ msgstr "Ikkunamanagerin ikkunaa ei löytynyt"
-
-#, fuzzy
-#~ msgid ""
-#~ "Delay in seconds between pressing the button to take the screenshot and "
-#~ "taking the screenshot"
-#~ msgstr "Aika sekunteina ennen kuvakaappauksen ottamista"
-
-#~ msgid "Modes"
-#~ msgstr "Tilat"
-
-#~ msgid "Options"
-#~ msgstr "Asetukset"
-
-#~ msgid "Show save dialog"
-#~ msgstr "Näytä tallennusdialogi"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
-#~ "span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Avaa kuvakaappaus "
-#~ "sovelluksessa</span>"
-
-#~ msgid "Dialog to set the default save folder"
-#~ msgstr "Valintaikkuna oletuskansion asettamiseen"
+msgstr ""
+"Kaappaa kuva koko näytöstä, aktiivisesta ikkunasta tai näytön alueesta"
