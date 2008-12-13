@@ -1,0 +1,200 @@
+# Chinese translations for xfce package.
+# Copyright (C) 2008 THE xfce'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce package.
+# Hunt Xu <huntxu@live.cn>, 2008.
+#
+#. Print a message to advise to use help when a non existing cli option is
+#. passed to the executable.
+#: ../src/main.c:163
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce 4-screenshooter-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-12-13 14:08+0100\n"
+"PO-Revision-Date: 2008-12-04 17:24+0800\n"
+"Last-Translator: Hunt Xu <huntxu@live.cn>\n"
+"Language-Team: Chinese (simplified)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../lib/screenshooter-dialogs.c:230
+msgid "Screenshot.png"
+msgstr "Screenshot.png"
+
+#: ../lib/screenshooter-dialogs.c:243
+#, c-format
+msgid "Screenshot-%d.png"
+msgstr "Screenshot-%d.png"
+
+#: ../lib/screenshooter-dialogs.c:480
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+msgid "Take a screenshot"
+msgstr "截屏"
+
+#: ../lib/screenshooter-dialogs.c:487
+#, fuzzy
+msgid "Take the screenshot"
+msgstr "截屏"
+
+#: ../lib/screenshooter-dialogs.c:494
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+#, fuzzy
+msgid "Screenshot"
+msgstr "Screenshot.png"
+
+#: ../lib/screenshooter-dialogs.c:504
+msgid "Preferences"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:522
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Area to capture</span>截取范围"
+
+#: ../lib/screenshooter-dialogs.c:553
+msgid "Entire screen"
+msgstr "全屏幕"
+
+#: ../lib/screenshooter-dialogs.c:564
+#: ../panel-plugin/screenshooter-plugin.c:227
+#: ../panel-plugin/screenshooter-plugin.c:315
+msgid "Take a screenshot of the entire screen"
+msgstr "截取全屏幕图像"
+
+#: ../lib/screenshooter-dialogs.c:577
+msgid "Active window"
+msgstr "活动窗口"
+
+#: ../lib/screenshooter-dialogs.c:588 ../src/main.c:49
+#: ../panel-plugin/screenshooter-plugin.c:232
+#: ../panel-plugin/screenshooter-plugin.c:320
+msgid "Take a screenshot of the active window"
+msgstr "只截取当前活动窗口图像"
+
+#: ../lib/screenshooter-dialogs.c:601
+msgid "Select a region"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:612
+#: ../panel-plugin/screenshooter-plugin.c:237
+#: ../panel-plugin/screenshooter-plugin.c:325
+msgid "Select a region to be captured"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:626
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+"screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">在 截图前延迟</span>"
+
+#: ../lib/screenshooter-dialogs.c:671
+#, fuzzy
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "截图前延迟(秒)"
+
+#: ../lib/screenshooter-dialogs.c:680
+msgid "seconds"
+msgstr "秒"
+
+#: ../lib/screenshooter-dialogs.c:702
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截图</span>"
+
+#: ../lib/screenshooter-dialogs.c:733
+msgid "Save"
+msgstr "保存"
+
+#: ../lib/screenshooter-dialogs.c:746
+msgid "Save the screenshot to a PNG file"
+msgstr "保存为 PNG 文件"
+
+#: ../lib/screenshooter-dialogs.c:775
+#, fuzzy
+msgid "Save by default to:"
+msgstr "默认保存至:"
+
+#: ../lib/screenshooter-dialogs.c:791
+#, fuzzy
+msgid ""
+"If checked, the screenshot will be saved by default to the location set on "
+"the right. If not, a save dialog will be displayed."
+msgstr ""
+"若选中此项，截图将会被保存至右边设定好的默认保存位置。否则将会弹出保存对话框"
+
+#: ../lib/screenshooter-dialogs.c:795
+msgid "Default save location"
+msgstr "默认保存位置"
+
+#: ../lib/screenshooter-dialogs.c:809
+msgid "Set the default save location"
+msgstr "设置默认保存位置"
+
+#: ../lib/screenshooter-dialogs.c:831
+msgid "Copy to the clipboard"
+msgstr "复制到剪贴板"
+
+#: ../lib/screenshooter-dialogs.c:841
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "复制到剪贴板以便之后粘贴"
+
+#: ../lib/screenshooter-dialogs.c:858
+msgid "Open with:"
+msgstr "打开程序:"
+
+#: ../lib/screenshooter-dialogs.c:874
+msgid "Open the screenshot with the chosen application"
+msgstr "使用所选程序打开截图"
+
+#: ../lib/screenshooter-dialogs.c:954
+msgid "Application to open the screenshot"
+msgstr "用以打开截图的程序"
+
+#: ../lib/screenshooter-dialogs.c:998
+msgid "Save screenshot as..."
+msgstr "截图另存为..."
+
+#: ../src/main.c:45
+msgid "Version information"
+msgstr "版本信息"
+
+#: ../src/main.c:53
+msgid "Take a screenshot of the whole screen"
+msgstr "截取全屏幕"
+
+#: ../src/main.c:57
+msgid "Delay in seconds before taking the screenshot"
+msgstr "截图前延迟(秒)"
+
+#: ../src/main.c:62
+msgid "Do not display the save dialog"
+msgstr "不弹出保存对话框"
+
+#: ../src/main.c:66
+msgid "Directory where the screenshot will be saved"
+msgstr "截图保存到的目录"
+
+#: ../src/main.c:167
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"运行 %s --help 查看全部可用的命令行参数列表。\n"
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#, fuzzy
+msgid ""
+"Take screenshots of the entire screen,of the active window or of a region"
+msgstr "截取全屏幕或是当前活动窗口图像"
+
+#~ msgid "Couldn't find window manager window"
+#~ msgstr "无法找到窗口管理器窗口"
+
+#~ msgid ""
+#~ "Delay in seconds between pressing the button to take the screenshot and "
+#~ "taking the screenshot"
+#~ msgstr "在按下截图按钮之后延迟的秒数"
