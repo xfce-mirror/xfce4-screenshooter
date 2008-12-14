@@ -48,11 +48,9 @@ static GdkWindow
       window = gdk_get_default_root_window ();
       *needs_unref = FALSE;
     }
-  
-  /* If the active window is the desktop, we grab the whole screen, else
-   * we find the toplevel window to grab the decorations. */
-  if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
+  else if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
     {
+      /* If the active window is the desktop, grab the whole screen */
       g_object_unref (window);
                     
       window = gdk_get_default_root_window ();
@@ -60,6 +58,7 @@ static GdkWindow
     }
   else
     {
+      /* Else we find the toplevel window to grab the decorations. */
       window2 = gdk_window_get_toplevel (window);
       
       g_object_unref (window);
