@@ -1,5 +1,10 @@
 2008-12-14 jeromeg
 
+  * CONTRIBUTORS: updated.
+  * TODO: add some items.
+
+2008-12-14 jeromeg
+
   * lib/screenshooter-utils.c: (get_window_screenshot) don't crash when
     we are in active window mode and NULL is returned as the active
     window. The root window should not be unrefed !
