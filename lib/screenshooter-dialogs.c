@@ -88,10 +88,6 @@ static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
     {
       sd->mode = FULLSCREEN;
     }
-  else
-    {
-      sd->mode = ACTIVE_WINDOW;
-    }
 }
 
 
@@ -904,7 +900,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   /* Application label */
   
-  application_label = gtk_label_new ("Application:");
+  application_label = gtk_label_new (_("Application:"));
   
   gtk_misc_set_alignment (GTK_MISC (application_label), 0, 0.5);
 		  
