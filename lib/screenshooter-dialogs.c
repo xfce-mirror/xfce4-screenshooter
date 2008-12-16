@@ -401,7 +401,8 @@ static void set_default_item (GtkWidget       *combobox,
       
       if (g_str_equal (command, sd->app))
         {
-          gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+          gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), 
+                                         &iter);
           
           found = TRUE;
         }
@@ -515,7 +516,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Create area label */
   area_label = gtk_label_new ("");
   gtk_label_set_markup (GTK_LABEL (area_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"));
+  _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+    "Region to capture</span>"));
 			
   gtk_misc_set_alignment (GTK_MISC (area_label), 0, 0);
   gtk_widget_show (area_label);
@@ -557,7 +559,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   #if GTK_CHECK_VERSION(2,12,0)                              
   gtk_widget_set_tooltip_text (fullscreen_button,
-                               _("Take a screenshot of the entire screen"));
+                          _("Take a screenshot of the entire screen"));
   #endif
                                 
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled", 
@@ -581,7 +583,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (active_window_button,
-                               _("Take a screenshot of the active window"));
+                          _("Take a screenshot of the active window"));
   #endif
                                 
   g_signal_connect (G_OBJECT (active_window_button), "toggled", 
@@ -605,7 +607,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (rectangle_button,
-                               _("Select a region to be captured"));
+  _("Select a region to be captured by clicking a point of the screen "
+    "without releasing the mouse button, dragging your mouse to the "
+    "other corner of the region, and releasing the mouse button."));
   #endif
   
   g_signal_connect (G_OBJECT (rectangle_button), "toggled", 
@@ -619,7 +623,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   delay_label = gtk_label_new ("");
   
   gtk_label_set_markup (GTK_LABEL(delay_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"));
+  _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+    "Delay before taking the screenshot</span>"));
   
 	gtk_misc_set_alignment(GTK_MISC (delay_label), 0, 0); 
   gtk_widget_show (delay_label);
@@ -664,7 +669,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Tooltip needs to be improved */
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (delay_spinner,
-                               _("Delay in seconds before the screenshot is taken"));  
+                _("Delay in seconds before the screenshot is taken"));  
   #endif
                              
   gtk_widget_show (delay_spinner);
@@ -784,7 +789,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (save_checkbox,
-  _("If checked, the screenshot will be saved by default to the location set on the right. If not, a save dialog will be displayed."));
+  _("If checked, the screenshot will be saved by default to the "
+    "location set on the right. If not, a save dialog will be "
+    "displayed."));
   #endif
   
   dir_chooser = 
@@ -834,7 +841,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (clipboard_radio_button,
-  _("Copy the screenshot to the clipboard so that it can be pasted later"));
+  _("Copy the screenshot to the clipboard so that it can be "
+    "pasted later"));
   #endif
                       
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),

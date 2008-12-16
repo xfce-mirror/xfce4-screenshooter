@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-13 14:08+0100\n"
+"POT-Creation-Date: 2008-12-16 18:03+0100\n"
 "PO-Revision-Date: 2008-11-17 13:09+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -18,70 +18,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../lib/screenshooter-dialogs.c:230
+#: ../lib/screenshooter-dialogs.c:226
 msgid "Screenshot.png"
 msgstr "Знімок_екрану.png"
 
-#: ../lib/screenshooter-dialogs.c:243
+#: ../lib/screenshooter-dialogs.c:239
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "Знімок_екрану-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:480
+#: ../lib/screenshooter-dialogs.c:477
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Отримати знімок"
 
-#: ../lib/screenshooter-dialogs.c:487
+#: ../lib/screenshooter-dialogs.c:484
 #, fuzzy
 msgid "Take the screenshot"
 msgstr "Отримати знімок"
 
-#: ../lib/screenshooter-dialogs.c:494
+#: ../lib/screenshooter-dialogs.c:491
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 #, fuzzy
 msgid "Screenshot"
 msgstr "Знімок_екрану.png"
 
-#: ../lib/screenshooter-dialogs.c:504
+#: ../lib/screenshooter-dialogs.c:501
 msgid "Preferences"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:522
+#: ../lib/screenshooter-dialogs.c:519
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Типова тека збереження</span>"
 
-#: ../lib/screenshooter-dialogs.c:553
+#: ../lib/screenshooter-dialogs.c:551
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:564
+#: ../lib/screenshooter-dialogs.c:562
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:315
 #, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr "Отримати знімок всього екрану"
 
-#: ../lib/screenshooter-dialogs.c:577
+#: ../lib/screenshooter-dialogs.c:575
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:588 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:320
 msgid "Take a screenshot of the active window"
 msgstr "Зробити знімок активного вікна"
 
-#: ../lib/screenshooter-dialogs.c:601
+#: ../lib/screenshooter-dialogs.c:599
 msgid "Select a region"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:612
-#: ../panel-plugin/screenshooter-plugin.c:237
-#: ../panel-plugin/screenshooter-plugin.c:325
-msgid "Select a region to be captured"
+#: ../lib/screenshooter-dialogs.c:610
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:626
@@ -92,72 +93,77 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Затримка     перед      "
 "знімком   </span>"
 
-#: ../lib/screenshooter-dialogs.c:671
+#: ../lib/screenshooter-dialogs.c:672
 #, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Затримка в секундах перед отриманням знімку"
 
-#: ../lib/screenshooter-dialogs.c:680
+#: ../lib/screenshooter-dialogs.c:681
 msgid "seconds"
 msgstr "секунд"
 
-#: ../lib/screenshooter-dialogs.c:702
+#: ../lib/screenshooter-dialogs.c:703
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Типова тека збереження</span>"
 
-#: ../lib/screenshooter-dialogs.c:733
+#: ../lib/screenshooter-dialogs.c:734
 msgid "Save"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:746
+#: ../lib/screenshooter-dialogs.c:747
 #, fuzzy
 msgid "Save the screenshot to a PNG file"
 msgstr "Зберегти знімок як..."
 
-#: ../lib/screenshooter-dialogs.c:775
+#: ../lib/screenshooter-dialogs.c:776
 #, fuzzy
 msgid "Save by default to:"
 msgstr "Типове місце збереження знімків екрану"
 
-#: ../lib/screenshooter-dialogs.c:791
+#: ../lib/screenshooter-dialogs.c:792
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right. If not, a save dialog will be displayed."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:795
+#: ../lib/screenshooter-dialogs.c:798
 msgid "Default save location"
 msgstr "Типове місце збереження знімків екрану"
 
-#: ../lib/screenshooter-dialogs.c:809
+#: ../lib/screenshooter-dialogs.c:812
 #, fuzzy
 msgid "Set the default save location"
 msgstr "Типове місце збереження знімків екрану"
 
-#: ../lib/screenshooter-dialogs.c:831
+#: ../lib/screenshooter-dialogs.c:834
 msgid "Copy to the clipboard"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:841
+#: ../lib/screenshooter-dialogs.c:844
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:858
+#: ../lib/screenshooter-dialogs.c:862
 msgid "Open with:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:874
+#: ../lib/screenshooter-dialogs.c:878
 msgid "Open the screenshot with the chosen application"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:954
+#. Application label
+#: ../lib/screenshooter-dialogs.c:911
+msgid "Application:"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:958
 #, fuzzy
 msgid "Application to open the screenshot"
 msgstr "Не відкривати знімки"
 
-#: ../lib/screenshooter-dialogs.c:998
+#: ../lib/screenshooter-dialogs.c:1002
 msgid "Save screenshot as..."
 msgstr "Зберегти знімок як..."
 
@@ -197,6 +203,11 @@ msgstr ""
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
 msgstr "Отримати знімки всього екрану або активного вікна"
+
+#: ../panel-plugin/screenshooter-plugin.c:237
+#: ../panel-plugin/screenshooter-plugin.c:325
+msgid "Select a region to be captured"
+msgstr ""
 
 #~ msgid "Couldn't find window manager window"
 #~ msgstr "Не вдається знайти вікно менеджера вікон"
