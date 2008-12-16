@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-16 18:03+0100\n"
+"POT-Creation-Date: 2008-12-16 18:16+0100\n"
 "PO-Revision-Date: 2008-11-09 21:43+0100\n"
 "Last-Translator: Abel Martín <abel.martin.ruiz@gmail.com>\n"
 "Language-Team: \n"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:562
 #: ../panel-plugin/screenshooter-plugin.c:227
-#: ../panel-plugin/screenshooter-plugin.c:315
+#: ../panel-plugin/screenshooter-plugin.c:317
 #, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr "Realizar una captura de pantalla del escritorio"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:586 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:232
-#: ../panel-plugin/screenshooter-plugin.c:320
+#: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
 msgstr "Realizar captura de pantalla de la ventana activa"
 
@@ -84,6 +84,8 @@ msgid "Select a region"
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:610
+#: ../panel-plugin/screenshooter-plugin.c:237
+#: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -211,11 +213,6 @@ msgstr ""
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
 msgstr "Realizar captura de pantalla de la ventana activa"
-
-#: ../panel-plugin/screenshooter-plugin.c:237
-#: ../panel-plugin/screenshooter-plugin.c:325
-msgid "Select a region to be captured"
-msgstr ""
 
 #~ msgid "Couldn't find window manager window"
 #~ msgstr "No se pudo encontrar la ventana del gestor de ventanas"

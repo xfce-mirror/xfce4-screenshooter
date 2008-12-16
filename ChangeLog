@@ -1,5 +1,9 @@
 2008-12-16 jeromeg
 
+  * Forgot to update the tooltip for the panel button...
+
+2008-12-16 jeromeg
+
   * lib/screenshooter-dialogs.c (screenshooter_dialog_new):
     - improve the tooltip for the "Select a region"
     - split strings so that they are not too long, makes the code easier

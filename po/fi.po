@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-16 18:03+0100\n"
+"POT-Creation-Date: 2008-12-16 18:16+0100\n"
 "PO-Revision-Date: 2008-12-13 16:05+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
@@ -56,7 +56,7 @@ msgstr "Koko näyttö"
 
 #: ../lib/screenshooter-dialogs.c:562
 #: ../panel-plugin/screenshooter-plugin.c:227
-#: ../panel-plugin/screenshooter-plugin.c:315
+#: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
 msgstr "Kaappaa kuva koko näytöstä"
 
@@ -66,7 +66,7 @@ msgstr "Aktiivinen ikkuna"
 
 #: ../lib/screenshooter-dialogs.c:586 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:232
-#: ../panel-plugin/screenshooter-plugin.c:320
+#: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
 msgstr "Kaappaa kuva aktiivisesta ikkunasta"
 
@@ -75,6 +75,8 @@ msgid "Select a region"
 msgstr "Valitse alue"
 
 #: ../lib/screenshooter-dialogs.c:610
+#: ../panel-plugin/screenshooter-plugin.c:237
+#: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -193,7 +195,5 @@ msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
 msgstr "Kaappaa kuva koko näytöstä, aktiivisesta ikkunasta tai näytön alueesta"
 
-#: ../panel-plugin/screenshooter-plugin.c:237
-#: ../panel-plugin/screenshooter-plugin.c:325
-msgid "Select a region to be captured"
-msgstr "Valitse kaapattava näytön alue"
+#~ msgid "Select a region to be captured"
+#~ msgstr "Valitse kaapattava näytön alue"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-16 18:03+0100\n"
+"POT-Creation-Date: 2008-12-16 18:16+0100\n"
 "PO-Revision-Date: 2007-03-31 10:20+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:562
 #: ../panel-plugin/screenshooter-plugin.c:227
-#: ../panel-plugin/screenshooter-plugin.c:315
+#: ../panel-plugin/screenshooter-plugin.c:317
 #, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr " Take a screenshot"
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:586 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:232
-#: ../panel-plugin/screenshooter-plugin.c:320
+#: ../panel-plugin/screenshooter-plugin.c:322
 #, fuzzy
 msgid "Take a screenshot of the active window"
 msgstr " Take a screenshot"
@@ -82,6 +82,8 @@ msgid "Select a region"
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:610
+#: ../panel-plugin/screenshooter-plugin.c:237
+#: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -199,11 +201,6 @@ msgstr ""
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
 msgstr " Take a screenshot"
-
-#: ../panel-plugin/screenshooter-plugin.c:237
-#: ../panel-plugin/screenshooter-plugin.c:325
-msgid "Select a region to be captured"
-msgstr ""
 
 #, fuzzy
 #~ msgid "Screenshooter plugin"

@@ -234,7 +234,9 @@ cb_dialog_response (GtkWidget *dlg, int response,
       else if (pd->sd->mode == RECTANGLE)
       {
         gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                        _("Select a region to be captured"));
+   _("Select a region to be captured by clicking a point of the screen "
+     "without releasing the mouse button, dragging your mouse to the "
+     "other corner of the region, and releasing the mouse button."));
       }
       #endif
       
@@ -322,7 +324,9 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   else if (pd->sd->mode == RECTANGLE)
     {
       gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                      _("Select a region to be captured"));
+   _("Select a region to be captured by clicking a point of the screen "
+     "without releasing the mouse button, dragging your mouse to the "
+     "other corner of the region, and releasing the mouse button."));
     }
   #endif
     
