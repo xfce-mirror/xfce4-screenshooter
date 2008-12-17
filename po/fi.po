@@ -4,15 +4,12 @@
 # Elias Julkunen <elias.julkunen@gmail.com>, 2008.
 # Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2008.
 #
-#. Print a message to advise to use help when a non existing cli option is
-#. passed to the executable.
-#: ../src/main.c:163
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-16 18:16+0100\n"
-"PO-Revision-Date: 2008-12-13 16:05+0200\n"
+"POT-Creation-Date: 2008-12-17 14:54+0200\n"
+"PO-Revision-Date: 2008-12-17 14:56+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -82,6 +79,9 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
+"Valitaksesi kaapattavan alueen aseta hiiren osoitin haluamasi alueen "
+"kulmaan, paina hiiren vasen painike pohjaan, siirrä osoitin alueen "
+"vastakkaiseen kulmaan ja päästä painike ylös."
 
 #: ../lib/screenshooter-dialogs.c:626
 msgid ""
@@ -150,7 +150,7 @@ msgstr "Avaa kuvakaappaus valitussa sovelluksessa"
 #. Application label
 #: ../lib/screenshooter-dialogs.c:911
 msgid "Application:"
-msgstr ""
+msgstr "Sovellus:"
 
 #: ../lib/screenshooter-dialogs.c:958
 msgid "Application to open the screenshot"
