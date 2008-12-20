@@ -1,5 +1,10 @@
 2008-12-20 jeromeg
 
+  * src/main.c (cb_dialog_response): only sleep one second if mode is not
+    rectangular selection.
+
+2008-12-20 jeromeg
+
   * doc/C/images: update the screenshot.
   * doc/C/xfce4-screenshooter.html: 
     - update with the new options

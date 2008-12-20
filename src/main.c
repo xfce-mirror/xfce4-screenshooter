@@ -92,7 +92,8 @@ cb_dialog_response (GtkWidget *dialog, int response,
           
       /* Make sure the window manager had time to set the new active
       * window.*/
-      sleep (1);
+      if (sd->mode != RECTANGLE)
+        sleep (1);
               
       screenshooter_take_and_output_screenshot (sd);
       
