@@ -14,8 +14,10 @@
     - Use -V for the version CLI option.
     - Add possibility to copy the screenshot to the clipboard, thanks to
       David Collins.
-    - Add possibility to define a rectangular region to be captured
-      using the mouse, thanks to David Collins.
+    - Add possibility to define region to be captured using the mouse, 
+      thanks to David Collins.
+    - Add CLI options for the region selection and to open the 
+      screenshot with an application.
     - The dialog for the plugin preferences and the application has been
       totally rewritten to improve the user interface: it should look 
       cleaner and tooltips have been added. Work started by David 
