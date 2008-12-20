@@ -7,15 +7,15 @@
 
 <body>
 
-<h1>Help for the Xfce screenshot tool</h1>
+<h1>Help for Xfce4 Screenshooter</h1>
 
 <h2>Introduction</h2>
 
-<p>This application allows you to take screenshots of the entire
-screen or of the active window. You can set the delay that elapses before 
-the screenshot is taken and the action that will be done with the
-screenshot: save it to a PNG file, copy it to the clipboard, or open
-it using another application.</p>
+<p>This application allows you to capture the entire
+screen, the active window or a selected region. You can set the delay 
+that elapses before the screenshot is taken and the action that will be done 
+with the screenshot: save it to a PNG file, copy it to the clipboard, 
+or open it using another application.</p>
 
 <p>A plugin for the Xfce panel is also available.</p>
 
@@ -30,16 +30,20 @@ the <b>"Accessories"</b> category of Xfce's main menu.</p>
 
 <img src="images/xfce4-screenshooter-dialog.png" alt="The window of the application"/>
 
-<h4>Area to capture</h4>
+<h4>Region to capture</h4>
 
-<p>The <b>"Area to screenshot"</b> section allows you to set what will be
-screenshoted:
+<p>The <b>"Region to capture"</b> section allows you to set from what the 
+screenshot will be taken:
 
 <ul>
-  <li>"Entire screen" takes a screenshot of screen as you see it, in its
-  totality.</li>
-  <li>"Active window" takes a screenshot of the active window, that is
-  to say the one which was active before this dialog appeared.</li>
+  <li>"Entire screen" takes a screenshot of the whole screen as you see it.</li>
+  <li>"Active window" takes a screenshot of the active window, the one which was active 
+  before this dialog appeared, or if you set a delay, the one that is
+  active after the delay.</li>
+  <li>"Select a region" allows you to select a region to be captured by 
+  clicking a point of the screen without releasing the mouse button, 
+  dragging your mouse to the other corner of the region, and releasing 
+  the mouse button.</li>
 </ul>
 </p>
 
@@ -60,21 +64,23 @@ with the screenshot. Three choices are available.</p>
 <p>The <b>"Save"</b> option will save the screenshot to a PNG file.
 If you check the <b>"Save by default to"</b> checkbox, the screenshot will
 be saved to the folder on the right after you press the <b>"Take the screenshot"</b> 
-button, without showing any save dialog. Else, a save dialog will be 
-displayed, also showing a preview of the screenshot, you will then be 
-able to set the save location and the name of the file.
+button, without showing any save dialog. Otherwise, a save dialog will be 
+displayed, which also shows a preview of the screenshot. You will then be 
+able to set the save location, and the name of the file.
 </p>
 
 <h5>Copy to the clipboard</h5>
 
 <p>The <b>"Copy to the clipboard"</b> option allows you to paste the screenshot
-in another application, such as a word processor.</p>
+in another application, such as a word processor. You must keep the 
+application running until the paste is done, since the clipboard is 
+often lost once the application has been exited.</p>
 
 <h6>Open with</h6>
 
 <p>The <b>"Open with"</b> option saves the screenshot to the system's temporary
 directory and opens it with the application set using the dropdown list below.
-The applications which support images are automatically detected and added
+Applications which support images are automatically detected and added
 to the dropdown list.
 </p>
 
@@ -121,10 +127,10 @@ location if needed.</p>
 <h3>Adding the plugin</h3>
 
 <p>To add the plugin to the panel, right click on the panel and select
-<b>"Add New Item"</b>. Select the plugin named <b>"Take a screenshot"</b>, 
+<b>"Add New Item"</b>. Select the plugin named <b>"Screenshot"</b>, 
 and add it.</p>
 
-<h3>Setting the plugin</h3>
+<h3>Setting the plugin up</h3>
 
 <p>You can configure how screenshots are taken by right clicking on the 
 extension and selecting <b>"Configure"</b>. A preferences dialog similar
