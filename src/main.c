@@ -28,9 +28,11 @@
 /* Set default values for cli args */
 gboolean version = FALSE;
 gboolean window = FALSE;
+gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean no_save_dialog = FALSE;
 gchar *screenshot_dir;
+gchar *application;
 gint delay = 0;
 
 
@@ -50,13 +52,18 @@ static GOptionEntry entries[] =
         NULL
     },
     {   "fullscreen", 'f', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &fullscreen,
-        N_("Take a screenshot of the whole screen"),
+        N_("Take a screenshot of the entire screen"),
+        NULL
+    },
+    {   "region", 'r', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &region,
+        N_("Select a region to be captured by clicking a point of the screen "
+           "without releasing the mouse button, dragging your mouse to the "
+           "other corner of the region, and releasing the mouse button."),
         NULL
     },
     {		"delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,
        N_("Delay in seconds before taking the screenshot"),
        NULL
-    
     },
     {   "hide", 'h', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &no_save_dialog,
         N_("Do not display the save dialog"),
@@ -64,6 +71,10 @@ static GOptionEntry entries[] =
     },
     {   "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
         N_("Directory where the screenshot will be saved"),
+        NULL
+    },
+    {   "open", 'o', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &application,
+        N_("Application to open the screenshot"),
         NULL
     },
     { NULL }
@@ -189,9 +200,9 @@ int main(int argc, char **argv)
     {
       sd->mode = FULLSCREEN;
     }
-  else
+  else if (region)
     {
-      sd->mode = FULLSCREEN;
+      sd->mode = RECTANGLE;
     }
   
   /* Wether to show the save dialog allowing to choose a filename and a save 
@@ -207,6 +218,17 @@ int main(int argc, char **argv)
 
   sd->delay = delay;
   
+  if (application != NULL)
+    {
+      sd->app = application;
+      sd->action = OPEN;
+    }
+  else
+    {
+      sd->app = g_strdup ("none");
+      sd->action = SAVE;
+    }
+  
   /* If the user gave a directory name, verify that it is valid */
   if (screenshot_dir != NULL)  
     {
@@ -216,32 +238,35 @@ int main(int argc, char **argv)
           if (g_path_is_absolute (screenshot_dir))
             { 
               g_free (sd->screenshot_dir);
+              
               sd->screenshot_dir = screenshot_dir;              
             }
           else
             {
               g_free (sd->screenshot_dir);
+              
               sd->screenshot_dir = 
-              g_build_filename (g_get_current_dir (), screenshot_dir, NULL);
+                g_build_filename (g_get_current_dir (), 
+                                  screenshot_dir, 
+                                  NULL);
+              
               g_free (screenshot_dir);
             }
         }
       else
         {
-          g_warning ("%s is not a valid directory, the default directory will be used.", 
+          g_warning (_("%s is not a valid directory, the default directory"
+                       " will be used."), 
                      screenshot_dir);
+          
           g_free (screenshot_dir);
         }
     }
   
   /* If a mode cli option is given, take the screenshot accordingly. */
-  if (fullscreen || window)
+  if (fullscreen || window || region)
     {
-      screenshot = screenshooter_take_screenshot (sd->mode, sd->delay);
-      screenshooter_save_screenshot (screenshot, sd->show_save_dialog, 
-                                     sd->screenshot_dir);
-    
-      g_object_unref (screenshot);
+      screenshooter_take_and_output_screenshot (sd);
     }
   /* Else we just show up the main application */
   else

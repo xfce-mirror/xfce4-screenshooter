@@ -1,5 +1,14 @@
 2008-12-20 jeromeg
 
+  * src/main.c:
+    - add a CLI option to open the screenshot with an application.
+    - add a CLI option to take the screenshot of a region.
+    - set a warning string as translatable.
+    - update the description of the CLI options.
+    - use screenshooter_take_and_output_screenshot
+
+2008-12-20 jeromeg
+
   * src/main.c (cb_dialog_response): only sleep one second if mode is not
     rectangular selection.
 
