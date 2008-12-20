@@ -12,10 +12,10 @@
 <h2>Introduction</h2>
 
 <p>Cette application permet de prendre des captures d'écran de l'écran tout
-entier ou de la fenêtre active. Il est possible de régler le délai avant 
-la prise de la capture d'écran et l'action à effectuer avec la capture
-d'écran: la sauvegarder dans un fichier PNG, la copier dans le presse-papier,
-ou l'ouvrir avec une autre application.
+entier, de la fenêtre active ou d'une zone sélectionnée. Il est possible 
+de régler le délai avant la prise de la capture d'écran et l'action à 
+effectuer avec la capture d'écran: la sauvegarder dans un fichier PNG, 
+la copier dans le presse-papier, ou l'ouvrir avec une autre application.
 </p>
 
 <p>Une extension pour le tableau de bord de Xfce est aussi disponible.</p>
@@ -41,7 +41,13 @@ dans la catégorie <b>"Accessoires"</b> du menu principal de Xfce.</p>
   voyez, dans sa totalité.</li>
   <li>"La fenêtre active" prend une capture de la fenêtre qui est active,
   c'est à dire celle qui était active avant que cette fenêtre ne soit
-  apparue.</li>
+  apparue ou, si vous spécifiez un délai, celle qui est active après
+  que le délai se soit écoulé.</li>
+  <li>"Sélectionner une zone" vous permet de sélectionner une zone à
+  capturer en cliquant avec la souris sur un point de l'écran sans 
+  relacher le bouton de la souris, puis en déplaçant la souris jusqu'à
+  l'autre coin de la zone et enfin en relachant le bouton de la souris.
+  </li>
 </ul>
 </p>
 
@@ -70,7 +76,9 @@ vous permettra de choisir où la sauvegarder, et sous quel nom.</p>
 
 <p><b>"Copier dans le presse papier"</b> permet de coller la capture
 d'écran dans une autre application, comme un logiciel de traitement de
-texte.</p>
+texte. Quitter l'application avant d'avoir collé la capture d'écran
+provoque souvent son effacement du presse papier, certains gestionnaires
+de presse papier permettent d'éviter ce problème.</p>
 
 <h6>Ouvrir avec</h6>
 
@@ -98,28 +106,45 @@ active.</p>
 
 <h5>L'option -f</h5>
 
-<p>L'option <b>-f</b> permet de prendre une capture d'écran de l'écran tout entier.</p>
+<p>L'option <b>-f</b> permet de prendre une capture d'écran de l'écran 
+tout entier.</p>
+
+<h5>L'option -r</h5>
+
+<p>L'option <b>-r</b> permet de sélectionner une zone à capturer en 
+cliquant avec la souris sur un point de l'écran sans relacher le bouton 
+de la souris, puis en déplaçant la souris jusqu'à l'autre coin de la 
+zone et enfin en relachant le bouton de la souris.</p>
 
 <h5>L'option -d</h5>
 
 <p>L'option <b>-d</b> suivie d'un entier positif permet de régler le délai en secondes
-avant la prise de la capture d'écran lorsque les options <b>-w</b> ou
-<b>-f</b> sont données.</p>
+avant la prise de la capture d'écran lorsque les options <b>-w</b>, 
+<b>-f</b> ou <b>-r</b> sont données.</p>
 
 <h5>L'option -s</h5>
 
-<p>L'option <b>-s</b> suivie d'un chemin vers un dossier existant permet de choisir
-où la capture d'écran est sauvegardée. Elle ne fait effet que si les options
-<b>-w</b> ou <b>-f</b> sont données. En combinant cette option avec l'option
-<b>-h</b>, vous pouvez enregistrer une capture d'écran dans un dossier
-donné, sans afficher de fenêtre de sauvegarde.
-</p>
+<p>L'option <b>-s</b> suivie d'un chemin vers un dossier existant permet 
+de choisir où la capture d'écran est sauvegardée. Elle n'a un effet que 
+si les options <b>-w</b>, <b>-f</b> ou <b>-r</b> sont données. En 
+combinant cette option avec l'option <b>-h</b>, vous pouvez enregistrer 
+une capture d'écran dans un dossier donné, sans afficher de 
+fenêtre de sauvegarde.</p>
 
 <h5>L'option -h</h5>
 
 <p>L'option <b>-h</b> permet de sauvegarder les captures d'écran sans 
 afficher de fenêtre de sauvegarde. L'option <b>-s</b> permet de choisir
-où les sauvegarder.</p>
+où les sauvegarder. Cette option n'a un effet que si les options
+<b>-w</b>, <b>-f</b> ou <b>-r sont données.</p>
+
+<h5>L'option -o</h5>
+
+<p>L'option <b>-o</b> suivie d'un nom d'application permet de 
+sauvegarder la capture d'écran dans le dossier temporaire du système 
+et de l'ouvrir avec l'application dont le nom est donné après -o. Cette 
+option n'a un effet que si les options <b>-w</b>, <b>-f</b> ou <b>-r 
+sont données.</p>
 
 <h2>Utilisation de l'extension pour le tableau de bord de Xfce</h2>
 
@@ -128,7 +153,7 @@ où les sauvegarder.</p>
 <p>Pour ajouter l'extension au tableau de bord, cliquez droit sur le 
 tableau de bord et sélectionnez <b>"Ajouter un élément"</b>. Dans la fenêtre
 qui apparaît, choisissez d'ajouter l'extension nommée 
-<b>"Prendre une capture d'écran"</b>.
+<b>"Capture d'écran"</b>.
 </p>
 
 <h3>Configuration</h3>
