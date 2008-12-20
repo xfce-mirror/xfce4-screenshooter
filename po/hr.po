@@ -5,12 +5,12 @@
 # 
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
-#: ../src/main.c:163
+#: ../src/main.c:175
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-16 18:16+0100\n"
+"POT-Creation-Date: 2008-12-20 16:19+0100\n"
 "PO-Revision-Date: 2008-06-17 12:27+0100\n"
 "Last-Translator: Jérôme Guelfucci <jerome.guelfucci@gmail.com>\n"
 "Language-Team: Croatian <mario.danic@gmail.com>\n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:562
+#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:55
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:317
 #, fuzzy
@@ -68,7 +68,7 @@ msgstr "Uhvati screenshot desktopa"
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:51
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
@@ -78,7 +78,7 @@ msgstr "Uhvati screenshot trenutnog prozora"
 msgid "Select a region"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:610
+#: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Application:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:958
+#: ../lib/screenshooter-dialogs.c:958 ../src/main.c:77
 #, fuzzy
 msgid "Application to open the screenshot"
 msgstr " Uhvati screenshot"
@@ -164,28 +164,23 @@ msgstr " Uhvati screenshot"
 msgid "Save screenshot as..."
 msgstr "Snimi screenshot kao ..."
 
-#: ../src/main.c:45
+#: ../src/main.c:47
 msgid "Version information"
 msgstr "Informacije o inačici"
 
-#: ../src/main.c:53
-#, fuzzy
-msgid "Take a screenshot of the whole screen"
-msgstr "Uhvati screenshot desktopa"
-
-#: ../src/main.c:57
+#: ../src/main.c:65
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Odgoda u sekundama prije hvatanja screenshota"
 
-#: ../src/main.c:62
+#: ../src/main.c:69
 msgid "Do not display the save dialog"
 msgstr ""
 
-#: ../src/main.c:66
+#: ../src/main.c:73
 msgid "Directory where the screenshot will be saved"
 msgstr ""
 
-#: ../src/main.c:167
+#: ../src/main.c:179
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -195,12 +190,21 @@ msgstr ""
 "Pokušajte %s --help kako biste vidjeli potpunu listu dostupni command-line "
 "parametara.\n"
 
+#: ../src/main.c:258
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr ""
+
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 #, fuzzy
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
 msgstr "Uhvati screenshot trenutnog prozora"
+
+#, fuzzy
+#~ msgid "Take a screenshot of the whole screen"
+#~ msgstr "Uhvati screenshot desktopa"
 
 #, fuzzy
 #~ msgid ""

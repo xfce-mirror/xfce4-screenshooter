@@ -6,12 +6,12 @@
 #
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
-#: ../src/main.c:163
+#: ../src/main.c:175
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-16 18:16+0100\n"
+"POT-Creation-Date: 2008-12-20 16:19+0100\n"
 "PO-Revision-Date: 2008-11-30 16:16+0100\n"
 "Last-Translator: Nuno Miguel <nunis@netcabo.pt>\n"
 "Language-Team: \n"
@@ -57,7 +57,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Área a capturar</span>"
 msgid "Entire screen"
 msgstr "Ecrã inteiro"
 
-#: ../lib/screenshooter-dialogs.c:562
+#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:55
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
@@ -67,7 +67,7 @@ msgstr "Tirar uma imagem de todo o ecrã"
 msgid "Active window"
 msgstr "Janela activa"
 
-#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:51
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
@@ -77,7 +77,7 @@ msgstr "Capturar uma imagem da janela activa"
 msgid "Select a region"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:610
+#: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
@@ -159,7 +159,7 @@ msgstr "Abrir a imagem com a aplicação escolhida"
 msgid "Application:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:958
+#: ../lib/screenshooter-dialogs.c:958 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Aplicação para abrir a captura de ecrã"
 
@@ -167,27 +167,23 @@ msgstr "Aplicação para abrir a captura de ecrã"
 msgid "Save screenshot as..."
 msgstr "Gravar captura de ecrã como..."
 
-#: ../src/main.c:45
+#: ../src/main.c:47
 msgid "Version information"
 msgstr "Informação da versão"
 
-#: ../src/main.c:53
-msgid "Take a screenshot of the whole screen"
-msgstr "Tirar uma imagem de todo o ecrã"
-
-#: ../src/main.c:57
+#: ../src/main.c:65
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Atraso em segundos antes de capturar o ecrã"
 
-#: ../src/main.c:62
+#: ../src/main.c:69
 msgid "Do not display the save dialog"
 msgstr "Não exibir o diálogo gravar"
 
-#: ../src/main.c:66
+#: ../src/main.c:73
 msgid "Directory where the screenshot will be saved"
 msgstr "Directório onde será gravada a captura de ecrã"
 
-#: ../src/main.c:167
+#: ../src/main.c:179
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -197,12 +193,20 @@ msgstr ""
 "Tente %s --help para ver uma lista completa das opções de linha de comando "
 "disponíveis.\n"
 
+#: ../src/main.c:258
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr ""
+
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 #, fuzzy
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
 msgstr "Capturar imagens de todo o ecrã ou da janela activa"
+
+#~ msgid "Take a screenshot of the whole screen"
+#~ msgstr "Tirar uma imagem de todo o ecrã"
 
 #~ msgid "Couldn't find window manager window"
 #~ msgstr "Incapaz de encontrar a janela gestor de janelas"

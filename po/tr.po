@@ -5,12 +5,12 @@
 #
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
-#: ../src/main.c:163
+#: ../src/main.c:175
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-16 18:16+0100\n"
+"POT-Creation-Date: 2008-12-20 16:19+0100\n"
 "PO-Revision-Date: 2008-11-05 00:49+0200\n"
 "Last-Translator: Gökmen Görgen <gkmngrgn@gmail.com>\n"
 "Language-Team: Turkish <turkce@pardus.org.tr>\n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:562
+#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:55
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:317
 #, fuzzy
@@ -68,7 +68,7 @@ msgstr "Masaüstünün ekran görüntüsünü al"
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:51
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
@@ -78,7 +78,7 @@ msgstr "Etkin pencerenin ekran görüntüsünü al"
 msgid "Select a region"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:610
+#: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Application:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:958
+#: ../lib/screenshooter-dialogs.c:958 ../src/main.c:77
 #, fuzzy
 msgid "Application to open the screenshot"
 msgstr "Ekran görüntülerini açma"
@@ -170,28 +170,23 @@ msgstr "Ekran görüntülerini açma"
 msgid "Save screenshot as..."
 msgstr "Ekran görüntüsünü farklı kaydet ..."
 
-#: ../src/main.c:45
+#: ../src/main.c:47
 msgid "Version information"
 msgstr "Sürüm bilgisi"
 
-#: ../src/main.c:53
-#, fuzzy
-msgid "Take a screenshot of the whole screen"
-msgstr "Masaüstünün ekran görüntüsünü al"
-
-#: ../src/main.c:57
+#: ../src/main.c:65
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Ekran görüntüsü almayı saniye değerinden geciktir"
 
-#: ../src/main.c:62
+#: ../src/main.c:69
 msgid "Do not display the save dialog"
 msgstr "Kaydetme penceresini gösterme"
 
-#: ../src/main.c:66
+#: ../src/main.c:73
 msgid "Directory where the screenshot will be saved"
 msgstr "Ekran görüntüsünün kaydedileceği dizin"
 
-#: ../src/main.c:167
+#: ../src/main.c:179
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -200,12 +195,21 @@ msgstr ""
 "%s: %s\n"
 "Uygun komut satırı seçeneklerini görmek için, %s --help komutunu deneyiniz.\n"
 
+#: ../src/main.c:258
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr ""
+
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 #, fuzzy
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
 msgstr "Etkin pencerenin ekran görüntüsünü al"
+
+#, fuzzy
+#~ msgid "Take a screenshot of the whole screen"
+#~ msgstr "Masaüstünün ekran görüntüsünü al"
 
 #~ msgid "Couldn't find window manager window"
 #~ msgstr "Masaüstü yöneticisi penceresi bulunamadı"

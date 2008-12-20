@@ -9,12 +9,12 @@
 #
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
-#: ../src/main.c:163
+#: ../src/main.c:175
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-16 18:16+0100\n"
+"POT-Creation-Date: 2008-12-20 16:19+0100\n"
 "PO-Revision-Date: 2008-06-24 20:02+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -58,7 +58,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:562
+#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:55
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:51
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Select a region"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:610
+#: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Application:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:958
+#: ../lib/screenshooter-dialogs.c:958 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr ""
 
@@ -160,31 +160,32 @@ msgstr ""
 msgid "Save screenshot as..."
 msgstr ""
 
-#: ../src/main.c:45
+#: ../src/main.c:47
 msgid "Version information"
 msgstr "Información de versión"
 
-#: ../src/main.c:53
-msgid "Take a screenshot of the whole screen"
-msgstr ""
-
-#: ../src/main.c:57
+#: ../src/main.c:65
 msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
-#: ../src/main.c:62
+#: ../src/main.c:69
 msgid "Do not display the save dialog"
 msgstr ""
 
-#: ../src/main.c:66
+#: ../src/main.c:73
 msgid "Directory where the screenshot will be saved"
 msgstr ""
 
-#: ../src/main.c:167
+#: ../src/main.c:179
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+
+#: ../src/main.c:258
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
 msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
