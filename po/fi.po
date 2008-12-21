@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-20 16:19+0100\n"
-"PO-Revision-Date: 2008-12-17 14:56+0200\n"
+"POT-Creation-Date: 2008-12-21 14:23+0200\n"
+"PO-Revision-Date: 2008-12-21 14:25+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -191,16 +191,10 @@ msgstr ""
 #: ../src/main.c:258
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "%s ei ole kelvollinen kansio, joten käytetään oletuskansiota."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
 msgstr "Kaappaa kuva koko näytöstä, aktiivisesta ikkunasta tai näytön alueesta"
-
-#~ msgid "Take a screenshot of the whole screen"
-#~ msgstr "Kaappaa kuva koko näytöstä"
-
-#~ msgid "Select a region to be captured"
-#~ msgstr "Valitse kaapattava näytön alue"
