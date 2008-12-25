@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-20 16:19+0100\n"
-"PO-Revision-Date: 2008-07-13 11:57+0100\n"
-"Last-Translator: Enrico Tröger <enrico.troeger@uvena.de>\n"
+"PO-Revision-Date: 2008-12-21 12:54+0100\n"
+"Last-Translator: Fabian Nowak <tiymstery@arcor.de>\n"
 "Language-Team: German <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,12 +31,10 @@ msgstr "Bildschirmfoto-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:477
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Take a screenshot"
 msgstr "Bildschirmfoto erstellen"
 
 #: ../lib/screenshooter-dialogs.c:484
-#, fuzzy
 msgid "Take the screenshot"
 msgstr "Bildschirmfoto erstellen"
 
@@ -47,29 +45,25 @@ msgstr "Bildschirmfoto"
 
 #: ../lib/screenshooter-dialogs.c:501
 msgid "Preferences"
-msgstr ""
+msgstr "Einstellungen"
 
 #: ../lib/screenshooter-dialogs.c:519
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Voreingestellter Speicherort</"
-"span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aufnahmebereich</span>"
 
 #: ../lib/screenshooter-dialogs.c:551
 msgid "Entire screen"
-msgstr ""
+msgstr "Ganzer Bildschirm"
 
 #: ../lib/screenshooter-dialogs.c:562 ../src/main.c:55
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:317
-#, fuzzy
 msgid "Take a screenshot of the entire screen"
-msgstr "Bildschirmfoto des Desktops erstellen"
+msgstr "Bildschirmfoto des ganzen Bildschirms erstellen"
 
 #: ../lib/screenshooter-dialogs.c:575
 msgid "Active window"
-msgstr ""
+msgstr "Aktives Fenster"
 
 #: ../lib/screenshooter-dialogs.c:586 ../src/main.c:51
 #: ../panel-plugin/screenshooter-plugin.c:232
@@ -79,7 +73,7 @@ msgstr "Bildschirmfoto des aktuellen Fensters erstellen"
 
 #: ../lib/screenshooter-dialogs.c:599
 msgid "Select a region"
-msgstr ""
+msgstr "Bereich auswählen"
 
 #: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:237
@@ -89,17 +83,19 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
+"Wählen Sie den aufzunehmenden Bereich aus, indem Sie auf einen Punkt auf dem "
+"Bildschirm klicken, ohne die Maustaste loszulassen, den Mauszeiger dann an "
+"das entgegengesetzte Ende des Bereichs ziehen und die Taste loslassen."
 
 #: ../lib/screenshooter-dialogs.c:626
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Verzögerung bevor das "
-"Bildschirmfoto genommen wird</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Verzögerung, bevor das "
+"Bildschirmfoto erstellt wird</span>"
 
 #: ../lib/screenshooter-dialogs.c:672
-#, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
 
@@ -108,69 +104,65 @@ msgid "seconds"
 msgstr "Sekunden"
 
 #: ../lib/screenshooter-dialogs.c:703
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Voreingestellter Speicherort</"
-"span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aktion</span>"
 
 #: ../lib/screenshooter-dialogs.c:734
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: ../lib/screenshooter-dialogs.c:747
-#, fuzzy
 msgid "Save the screenshot to a PNG file"
-msgstr "Speichere Bildschirmfoto als ..."
+msgstr "Bildschirmfoto als PNG-Datei speichern"
 
 #: ../lib/screenshooter-dialogs.c:776
-#, fuzzy
 msgid "Save by default to:"
-msgstr "Voreingestellter Speicherort"
+msgstr "Voreingestellter Speicherort:"
 
 #: ../lib/screenshooter-dialogs.c:792
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right. If not, a save dialog will be displayed."
 msgstr ""
+"Wenn dies ausgewählt ist, wird das Bildschirmfoto an dem rechts angegebenen "
+"Speicherort abgelegt. Ansonsten wird ein Dialog angezeigt."
 
 #: ../lib/screenshooter-dialogs.c:798
 msgid "Default save location"
 msgstr "Voreingestellter Speicherort"
 
 #: ../lib/screenshooter-dialogs.c:812
-#, fuzzy
 msgid "Set the default save location"
-msgstr "Voreingestellter Speicherort"
+msgstr "Voreingestellten Speicherort angeben"
 
 #: ../lib/screenshooter-dialogs.c:834
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "In die Zwischenablage kopieren"
 
 #: ../lib/screenshooter-dialogs.c:844
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
+"Das Bildschirmfoto in die Zwischenablage kopieren, so dass es später "
+"eingefügt werden kann"
 
 #: ../lib/screenshooter-dialogs.c:862
 msgid "Open with:"
-msgstr ""
+msgstr "Öffnen mit:"
 
 #: ../lib/screenshooter-dialogs.c:878
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Bildschirmfoto mit der angegebenen Anwendung öffnen"
 
 #. Application label
 #: ../lib/screenshooter-dialogs.c:911
 msgid "Application:"
-msgstr ""
+msgstr "Anwendung:"
 
 #: ../lib/screenshooter-dialogs.c:958 ../src/main.c:77
-#, fuzzy
 msgid "Application to open the screenshot"
-msgstr "Bildschirmfotos nicht öffnen"
+msgstr "Anwendung zum Öffnen des Bildschirmfotos"
 
 #: ../lib/screenshooter-dialogs.c:1002
-#, fuzzy
 msgid "Save screenshot as..."
 msgstr "Speichere Bildschirmfoto als ..."
 
@@ -188,7 +180,7 @@ msgstr "Den Speichern-Dialog nicht anzeigen"
 
 #: ../src/main.c:73
 msgid "Directory where the screenshot will be saved"
-msgstr "Das Verzeichnis, in dem das Bildschrimfoto gespeichert werden soll"
+msgstr "Das Verzeichnis, in dem das Bildschirmfoto gespeichert werden soll"
 
 #: ../src/main.c:179
 #, c-format
@@ -197,24 +189,24 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Versuchen Sie %s --help, um eine Liste der verfügbaren Optionen zu "
-"bekommen.\n"
+"Geben Sie »%s --help« ein, um Informationen über die Verwendung zu erhalten.\n"
 
 #: ../src/main.c:258
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr ""
+"»%s« ist kein gültiges Verzeichnis, das Standardverzeichnis wird verwendet."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
-msgstr "Bildschirmfoto des aktuellen Fensters erstellen"
+msgstr ""
+"Bildschirmfoto des ganzen Bildschirms, des aktuellen Fensters oder eines "
+"Bereichs erstellen"
 
-#, fuzzy
 #~ msgid "Take a screenshot of the whole screen"
-#~ msgstr "Bildschirmfoto des Desktops erstellen"
+#~ msgstr "Bildschirmfoto des ganzen Bildschirms erstellen"
 
 #~ msgid "Couldn't find window manager window"
 #~ msgstr "Konnte aktives Fenster nicht finden"
