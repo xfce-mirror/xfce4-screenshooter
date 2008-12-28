@@ -9,6 +9,7 @@
       explaning why it failed.
     - fix some remaining crashes when taking a screenshot of the active
       window.
+    - only read the preferences file once when opening the application.
   
   * Enhancements:
     - Use -V for the version CLI option.
@@ -24,6 +25,8 @@
       Collins.
     - When using delay, detect the area to screenshot after the delay,
       and not before, as it caused weird results in some cases.
+    - Add a documentation accessible from the application and the panel
+      plugin.
 
 === Version 1.4.0 ===
 

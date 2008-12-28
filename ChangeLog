@@ -1,5 +1,9 @@
 2008-12-28 jeromeg
 
+  * NEWS: updated.
+
+2008-12-28 jeromeg
+
   * src/main.c:
     - only read the preferences file once when using the application.
     - check if the directory name stored in the preferences still exists
