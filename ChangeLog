@@ -1,5 +1,9 @@
 2008-12-28 jeromeg
 
+  * Fix a bunch of compilation warnings.
+
+2008-12-28 jeromeg
+
   * lib/screenshooter-dialogs.c (screenshooter_dialog_new): improve a 
     tooltip.
 

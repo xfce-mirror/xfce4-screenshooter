@@ -460,7 +460,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   GtkWidget *clipboard_radio_button;
     
 #ifdef HAVE_GIO
-  GtkWidget *open_with_label, *open_with_alignment;
+  GtkWidget *open_with_alignment;
   GtkWidget *open_with_box, *open_with_radio_button;
   
   GtkWidget *application_label;
@@ -979,7 +979,7 @@ gchar
                                     gchar          *default_dir)
 {
   GdkPixbuf *thumbnail;
-  gchar *filename = NULL, *savename = NULL;;
+  gchar *filename = NULL, *savename = NULL;
   
   GtkWidget *preview;
   GtkWidget *chooser;

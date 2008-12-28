@@ -16,6 +16,9 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
+
+#ifndef __HAVE_DIALOGS_H__
+#define __HAVE_DIALOGS_H__
  
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -40,3 +43,4 @@ gchar
 *screenshooter_save_screenshot     (GdkPixbuf           *screenshot, 
                                     gboolean             show_save_dialog,
                                     gchar               *default_dir);
+#endif                                    

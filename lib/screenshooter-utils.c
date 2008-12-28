@@ -124,12 +124,11 @@ static GdkPixbuf
 
 
 static GdkPixbuf
-*get_rectangle_screenshot ()
+*get_rectangle_screenshot (void)
 {
   GdkPixbuf *screenshot = NULL;
  
-  /* Get display and root window */
-  GdkDisplay *display = gdk_display_get_default ();
+  /* Get root window */
   GdkWindow *root_window =  gdk_get_default_root_window ();
   
   GdkGCValues gc_values;

@@ -155,8 +155,9 @@ cb_dialog_response (GtkWidget *dialog, int response,
 int main(int argc, char **argv)
 {
   GError *cli_error = NULL;
-  GdkPixbuf *screenshot;
+  
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
+  
   gchar *rc_file = 
     xfce_resource_lookup (XFCE_RESOURCE_CONFIG, 
                           "xfce4/xfce4-screenshooter");
