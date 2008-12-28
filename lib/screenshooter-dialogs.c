@@ -790,8 +790,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (save_checkbox,
   _("If checked, the screenshot will be saved by default to the "
-    "location set on the right. If not, a save dialog will be "
-    "displayed."));
+    "location set on the right without displaying a save dialog"));
   #endif
   
   dir_chooser = 

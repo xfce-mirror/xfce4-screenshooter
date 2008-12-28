@@ -4,11 +4,14 @@
 # Stephan Arts <stephan@xfce.org>, 2008.
 # Vincent Tunru <projects@vinnl.nl>, 2008.
 #
+#. Print a message to advise to use help when a non existing cli option is
+#. passed to the executable.
+#: ../src/main.c:181
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-20 16:19+0100\n"
+"POT-Creation-Date: 2008-12-28 12:07+0100\n"
 "PO-Revision-Date: 2008-12-20 18:29-0000\n"
 "Last-Translator: Vincent Tunru <projects@vinnl.nl>\n"
 "Language-Team: Dutch <xfce-i18n@xfce.org>\n"
@@ -48,14 +51,15 @@ msgstr "Voorkeuren"
 
 #: ../lib/screenshooter-dialogs.c:519
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Gebied om een schermafdruk van te maken</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Gebied om een schermafdruk "
+"van te maken</span>"
 
 #: ../lib/screenshooter-dialogs.c:551
 msgid "Entire screen"
 msgstr "Volledig scherm"
 
-#: ../lib/screenshooter-dialogs.c:562
-#: ../src/main.c:55
+#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:55
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:317
 #, fuzzy
@@ -66,8 +70,7 @@ msgstr "Schermafdruk van het hele scherm maken"
 msgid "Active window"
 msgstr "Actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:586
-#: ../src/main.c:51
+#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:51
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
@@ -77,16 +80,25 @@ msgstr "Actieve venster"
 msgid "Select a region"
 msgstr "Selecteer een gebied"
 
-#: ../lib/screenshooter-dialogs.c:610
-#: ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
-msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
-msgstr "Selecteer een gebied om een schermafdruk door te klikken op een hoek van het gebied zonder de muisknop zo te laten. Sleep vervolgens de muis naar de andere hoek en laat de muisknop los."
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr ""
+"Selecteer een gebied om een schermafdruk door te klikken op een hoek van het "
+"gebied zonder de muisknop zo te laten. Sleep vervolgens de muis naar de "
+"andere hoek en laat de muisknop los."
 
 #: ../lib/screenshooter-dialogs.c:626
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vertraging voor het maken van een schermafdruk</span>"
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+"screenshot</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Vertraging voor het maken van "
+"een schermafdruk</span>"
 
 #: ../lib/screenshooter-dialogs.c:672
 #, fuzzy
@@ -114,44 +126,50 @@ msgid "Save by default to:"
 msgstr "Standaard-opslaglocatie:"
 
 #: ../lib/screenshooter-dialogs.c:792
-msgid "If checked, the screenshot will be saved by default to the location set on the right. If not, a save dialog will be displayed."
-msgstr "Als deze optie is aangevinkt zal de schermafdruk standaard opgeslagen worden in de locatie die hiernaast is aangegeven. Zo niet zal elke keer worden gevraagd waar de afdruk opgeslagen moet worden."
+#, fuzzy
+msgid ""
+"If checked, the screenshot will be saved by default to the location set on "
+"the right without displaying a save dialog"
+msgstr ""
+"Als deze optie is aangevinkt zal de schermafdruk standaard opgeslagen worden "
+"in de locatie die hiernaast is aangegeven. Zo niet zal elke keer worden "
+"gevraagd waar de afdruk opgeslagen moet worden."
 
-#: ../lib/screenshooter-dialogs.c:798
+#: ../lib/screenshooter-dialogs.c:797
 msgid "Default save location"
 msgstr "Standaard opslaglocatie"
 
-#: ../lib/screenshooter-dialogs.c:812
+#: ../lib/screenshooter-dialogs.c:811
 msgid "Set the default save location"
 msgstr "Standaard-opslaglocatie instellen"
 
-#: ../lib/screenshooter-dialogs.c:834
+#: ../lib/screenshooter-dialogs.c:833
 msgid "Copy to the clipboard"
 msgstr "Kopieer naar klembord"
 
-#: ../lib/screenshooter-dialogs.c:844
+#: ../lib/screenshooter-dialogs.c:843
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Kopieer de schermafdruk naar het klembord zodat deze later geplakt kan worden"
+msgstr ""
+"Kopieer de schermafdruk naar het klembord zodat deze later geplakt kan worden"
 
-#: ../lib/screenshooter-dialogs.c:862
+#: ../lib/screenshooter-dialogs.c:861
 msgid "Open with:"
 msgstr "Openen met:"
 
-#: ../lib/screenshooter-dialogs.c:878
+#: ../lib/screenshooter-dialogs.c:877
 msgid "Open the screenshot with the chosen application"
 msgstr "Open de schermafdruk met de gegeven toepassing"
 
 #. Application label
-#: ../lib/screenshooter-dialogs.c:911
+#: ../lib/screenshooter-dialogs.c:910
 msgid "Application:"
 msgstr "Toepassing:"
 
-#: ../lib/screenshooter-dialogs.c:958
-#: ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:957 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Toepassing om de schermafdruk te openen"
 
-#: ../lib/screenshooter-dialogs.c:1002
+#: ../lib/screenshooter-dialogs.c:1001
 msgid "Save screenshot as..."
 msgstr "Schermafdruk opslaan als..."
 
@@ -171,7 +189,7 @@ msgstr "Niet vragen waar de schermafdruk opgeslagen moet worden"
 msgid "Directory where the screenshot will be saved"
 msgstr "Locatie voor de schermafdruk"
 
-#: ../src/main.c:179
+#: ../src/main.c:185
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -180,19 +198,23 @@ msgstr ""
 "%s: %s\n"
 "Probeer %s --help voor een volledige lijst van mogelijke opties.\n"
 
-#: ../src/main.c:258
+#: ../src/main.c:268
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s is geen geldige map, de standaardmap zal worden gebruikt."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid "Take screenshots of the entire screen,of the active window or of a region"
-msgstr "Schermafdruk maken van het gehele scherm, het actieve venster of een deelgebied"
+msgid ""
+"Take screenshots of the entire screen,of the active window or of a region"
+msgstr ""
+"Schermafdruk maken van het gehele scherm, het actieve venster of een "
+"deelgebied"
 
 #, fuzzy
 #~ msgid "Take a screenshot of the whole screen"
 #~ msgstr "Schermafdruk van het hele scherm maken"
+
 #~ msgid "Couldn't find window manager window"
 #~ msgstr "Kan venster niet vinden"
 
@@ -201,41 +223,54 @@ msgstr "Schermafdruk maken van het gehele scherm, het actieve venster of een dee
 #~ "Delay in seconds between pressing the button to take the screenshot and "
 #~ "taking the screenshot"
 #~ msgstr "Vertraging in seconden voor het maken van een schermafdruk"
+
 #~ msgid "Modes"
 #~ msgstr "Bereik"
+
 #~ msgid "Options"
 #~ msgstr "Opties"
+
 #~ msgid "Show save dialog"
 #~ msgstr "Kies een opslaglocatie na elke schermafdruk"
+
 #~ msgid ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
 #~ "span>"
 #~ msgstr ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">Schermafdruk openen met</"
 #~ "span>"
+
 #~ msgid "Dialog to set the default save folder"
 #~ msgstr ""
 #~ "Dialoogvenster om de standaardlocatie voor schermafdrukken in te stellen"
+
 #~ msgid "Screenshooter plugin"
 #~ msgstr "Schermafdruk-plugin"
+
 #~ msgid "Take a screenshot of desktop"
 #~ msgstr "Hele scherm"
+
 #~ msgid "Default save folder"
 #~ msgstr "Standaard opslaglocatie"
+
 #~ msgid "A tool to take screenshots of your desktop or of the active windows"
 #~ msgstr "Schermafdrukken maken van het hele scherm of van aparte vensters"
+
 #~ msgid "Screenshot tool"
 #~ msgstr "Schermafdruk"
+
 #~ msgid " Screenshot"
 #~ msgstr "Schermafdruk"
+
 #~ msgid "Take screenshot"
 #~ msgstr "Schermafdruk maken"
 
 #, fuzzy
 #~ msgid "Delay before taking the screenshot"
 #~ msgstr "Vertraging voordat een schermafdruk wordt gemaakt"
+
 #~ msgid "Properties"
 #~ msgstr "Eigenschappen"
+
 #~ msgid "Ask for _filename"
 #~ msgstr "Om _bestandsnaam vragen"
-

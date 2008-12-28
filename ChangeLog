@@ -1,5 +1,10 @@
 2008-12-28 jeromeg
 
+  * lib/screenshooter-dialogs.c (screenshooter_dialog_new): improve a 
+    tooltip.
+
+2008-12-28 jeromeg
+
   * Rename "mode" into "region" and "RECTANGLE" into "SELECT".
 
 2008-12-28 jeromeg
