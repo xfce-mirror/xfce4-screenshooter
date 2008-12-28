@@ -170,13 +170,20 @@ int main(int argc, char **argv)
   if (rc_file != NULL)
     g_free (rc_file);
     
+  /* Check if the directory read from the preferences is valid */
+  if (!g_file_test (sd->screenshot_dir, G_FILE_TEST_IS_DIR))
+    {
+      sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+    }
+    
   /* Print a message to advise to use help when a non existing cli option is
   passed to the executable. */  
   if (!gtk_init_with_args(&argc, &argv, _(""), entries, PACKAGE, &cli_error))
     {
       if (cli_error != NULL)
         {
-          g_print (_("%s: %s\nTry %s --help to see a full list of available command line options.\n"), 
+          g_print (_("%s: %s\nTry %s --help to see a full list of"
+                     " available command line options.\n"), 
                    PACKAGE, cli_error->message, PACKAGE_NAME);
           g_error_free (cli_error);
           return 1;
@@ -189,99 +196,90 @@ int main(int argc, char **argv)
       g_print ("%s\n", PACKAGE_STRING);
       return 0;
     }
-  
-  /* If -w is given to the executable, grab the active window, else just 
-   * grab the desktop.*/
-  if (window)
+    
+  /* If a mode cli option is given, take the screenshot accordingly. */
+  if (fullscreen || window || region)
     {
-      sd->mode = ACTIVE_WINDOW;    
-    }
-  else if (fullscreen)
-    {
-      sd->mode = FULLSCREEN;
-    }
-  else if (region)
-    {
-      sd->mode = RECTANGLE;
-    }
-  
-  /* Wether to show the save dialog allowing to choose a filename and a save 
-  location */
-  if (no_save_dialog)
-    {
-      sd->show_save_dialog = 0;
-    }
-  else
-    {
-      sd->show_save_dialog = 1;
-    }
-
-  sd->delay = delay;
-  
-  if (application != NULL)
-    {
-      sd->app = application;
-      sd->action = OPEN;
-    }
-  else
-    {
-      sd->app = g_strdup ("none");
-      sd->action = SAVE;
-    }
-  
-  /* If the user gave a directory name, verify that it is valid */
-  if (screenshot_dir != NULL)  
-    {
-      if (g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR))
+      /* Set the region to be captured */
+      if (window)
         {
-          /* Check if the path is absolute, if not make it absolute */
-          if (g_path_is_absolute (screenshot_dir))
-            { 
-              g_free (sd->screenshot_dir);
-              
-              sd->screenshot_dir = screenshot_dir;              
+          sd->mode = ACTIVE_WINDOW;    
+        }
+      else if (fullscreen)
+        {
+          sd->mode = FULLSCREEN;
+        }
+      else if (region)
+        {
+          sd->mode = RECTANGLE;
+        }
+      
+      /* Wether to show the save dialog allowing to choose a filename 
+       * and a save location */
+      if (no_save_dialog)
+        {
+          sd->show_save_dialog = 0;
+        }
+      else
+        {
+          sd->show_save_dialog = 1;
+        }
+
+      sd->delay = delay;
+      
+      if (application != NULL)
+        {
+          sd->app = application;
+          sd->action = OPEN;
+        }
+      else
+        {
+          sd->app = g_strdup ("none");
+          sd->action = SAVE;
+        }
+      
+      /* If the user gave a directory name, verify that it is valid */
+      if (screenshot_dir != NULL)  
+        {
+          if (g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR))
+            {
+              /* Check if the path is absolute, if not make it 
+               * absolute */
+              if (g_path_is_absolute (screenshot_dir))
+                { 
+                  g_free (sd->screenshot_dir);
+                  
+                  sd->screenshot_dir = screenshot_dir;              
+                }
+              else
+                {
+                  g_free (sd->screenshot_dir);
+                  
+                  sd->screenshot_dir = 
+                    g_build_filename (g_get_current_dir (), 
+                                      screenshot_dir, 
+                                      NULL);
+                  
+                  g_free (screenshot_dir);
+                }
             }
           else
             {
-              g_free (sd->screenshot_dir);
-              
-              sd->screenshot_dir = 
-                g_build_filename (g_get_current_dir (), 
-                                  screenshot_dir, 
-                                  NULL);
+              g_warning (_("%s is not a valid directory, the default"
+                           " directory will be used."), 
+                         screenshot_dir);
               
               g_free (screenshot_dir);
             }
         }
-      else
-        {
-          g_warning (_("%s is not a valid directory, the default directory"
-                       " will be used."), 
-                     screenshot_dir);
-          
-          g_free (screenshot_dir);
-        }
-    }
-  
-  /* If a mode cli option is given, take the screenshot accordingly. */
-  if (fullscreen || window || region)
-    {
+      
       screenshooter_take_and_output_screenshot (sd);
     }
   /* Else we just show up the main application */
   else
     {
       GtkWidget *dialog;
-                  
-      rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, 
-                                      "xfce4/xfce4-screenshooter");
-      
-      /* Read the preferences */
-      screenshooter_read_rc_file (rc_file, sd);
-      
-      if (rc_file != NULL)
-        g_free (rc_file);
-      
+                 
       /* Set the dialog up */
       
       dialog = screenshooter_dialog_new (sd, FALSE);

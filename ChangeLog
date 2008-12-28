@@ -1,3 +1,13 @@
+2008-12-28 jeromeg
+
+  * src/main.c:
+    - only read the preferences file once when using the application.
+    - check if the directory name stored in the preferences still exists
+      before trying to use it.
+  * lib/screenshooter-actions.c: set home as the default folder for the
+    file chooser, only use sd->screenshot_dir when we don't show the
+    save dialog. This should be more transparent for the user.
+
 2008-12-20 jeromeg
 
   * NEWS: updated.
