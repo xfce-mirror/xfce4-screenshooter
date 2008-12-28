@@ -221,17 +221,17 @@ cb_dialog_response (GtkWidget *dlg, int response,
       
       /* Update tooltips according to the chosen option */
       #if GTK_CHECK_VERSION(2,12,0)
-      if (pd->sd->mode == FULLSCREEN)
+      if (pd->sd->region == FULLSCREEN)
       {
         gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
                         _("Take a screenshot of the entire screen"));
       }
-      else if (pd->sd->mode == ACTIVE_WINDOW)
+      else if (pd->sd->region == ACTIVE_WINDOW)
       {
         gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
                         _("Take a screenshot of the active window"));
       }
-      else if (pd->sd->mode == RECTANGLE)
+      else if (pd->sd->region == SELECT)
       {
         gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
    _("Select a region to be captured by clicking a point of the screen "
@@ -311,17 +311,17 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   
   /* Set the tooltips if available */
   #if GTK_CHECK_VERSION(2,12,0)
-  if (pd->sd->mode == FULLSCREEN)
+  if (pd->sd->region == FULLSCREEN)
    {
      gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
                       _("Take a screenshot of the entire screen"));
    }
-  else if (pd->sd->mode == ACTIVE_WINDOW)
+  else if (pd->sd->region == ACTIVE_WINDOW)
     {
       gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
                       _("Take a screenshot of the active window"));
     }
-  else if (pd->sd->mode == RECTANGLE)
+  else if (pd->sd->region == SELECT)
     {
       gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
    _("Select a region to be captured by clicking a point of the screen "

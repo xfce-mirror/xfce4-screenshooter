@@ -86,7 +86,7 @@ static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
 {
   if (gtk_toggle_button_get_active (tb))
     {
-      sd->mode = FULLSCREEN;
+      sd->region = FULLSCREEN;
     }
 }
 
@@ -98,7 +98,7 @@ static void cb_active_window_toggled (GtkToggleButton *tb,
 {
   if (gtk_toggle_button_get_active (tb))
     {
-      sd->mode = ACTIVE_WINDOW;
+      sd->region = ACTIVE_WINDOW;
     }
 }
 
@@ -110,7 +110,7 @@ static void cb_rectangle_toggled (GtkToggleButton *tb,
 {
   if (gtk_toggle_button_get_active (tb))
     {
-      sd->mode = RECTANGLE;
+      sd->region = SELECT;
     }
 }
 
@@ -555,7 +555,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                       FALSE, 0);
   
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fullscreen_button),
-                                (sd->mode == FULLSCREEN));
+                                (sd->region == FULLSCREEN));
   
   #if GTK_CHECK_VERSION(2,12,0)                              
   gtk_widget_set_tooltip_text (fullscreen_button,
@@ -579,7 +579,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                       FALSE, 0);
   
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button),
-                                (sd->mode == ACTIVE_WINDOW));
+                                (sd->region == ACTIVE_WINDOW));
   
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (active_window_button,
@@ -603,7 +603,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                        FALSE, 0);
                        
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button),
-                                (sd->mode == RECTANGLE));
+                                (sd->region == SELECT));
   
   #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (rectangle_button,

@@ -103,7 +103,7 @@ cb_dialog_response (GtkWidget *dialog, int response,
           
       /* Make sure the window manager had time to set the new active
       * window.*/
-      if (sd->mode != RECTANGLE)
+      if (sd->region != SELECT)
         sleep (1);
               
       screenshooter_take_and_output_screenshot (sd);
@@ -197,21 +197,21 @@ int main(int argc, char **argv)
       return 0;
     }
     
-  /* If a mode cli option is given, take the screenshot accordingly. */
+  /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
     {
       /* Set the region to be captured */
       if (window)
         {
-          sd->mode = ACTIVE_WINDOW;    
+          sd->region = ACTIVE_WINDOW;    
         }
       else if (fullscreen)
         {
-          sd->mode = FULLSCREEN;
+          sd->region = FULLSCREEN;
         }
       else if (region)
         {
-          sd->mode = RECTANGLE;
+          sd->region = SELECT;
         }
       
       /* Wether to show the save dialog allowing to choose a filename 

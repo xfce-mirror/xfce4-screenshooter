@@ -31,7 +31,7 @@ static GdkPixbuf
 *get_window_screenshot                (GdkWindow        *window);
 
 static GdkPixbuf
-*get_rectangle_screenshot             ();
+*get_rectangle_screenshot             (void);
 
 
 
@@ -126,7 +126,7 @@ static GdkPixbuf
 static GdkPixbuf
 *get_rectangle_screenshot ()
 {
-  GdkPixbuf *screenshot=NULL;
+  GdkPixbuf *screenshot = NULL;
  
   /* Get display and root window */
   GdkDisplay *display = gdk_display_get_default ();
@@ -282,7 +282,7 @@ static GdkPixbuf
 *sd: a ScreenshotData struct.
 returns: the screenshot in a *GdkPixbuf.
 */
-GdkPixbuf *screenshooter_take_screenshot (gint mode, gint delay)
+GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay)
 {
   GdkPixbuf *screenshot;
   GdkWindow *window = NULL;
@@ -297,28 +297,28 @@ GdkPixbuf *screenshooter_take_screenshot (gint mode, gint delay)
   screen = gdk_screen_get_default ();
   
   /* wait for n=delay seconds */ 
-  if (mode != RECTANGLE)
+  if (region != SELECT)
     sleep (delay);
     
   /* Get the window/desktop we want to screenshot*/  
-  if (mode == FULLSCREEN)
+  if (region == FULLSCREEN)
     {
       window = gdk_get_default_root_window ();
       needs_unref = FALSE;
     } 
-  else if (mode == ACTIVE_WINDOW)
+  else if (region == ACTIVE_WINDOW)
     {
       window = get_active_window (screen, &needs_unref);      
     }
       
-  if (mode == FULLSCREEN || mode == ACTIVE_WINDOW)
+  if (region == FULLSCREEN || region == ACTIVE_WINDOW)
     {
       screenshot = get_window_screenshot (window);
       
       if (needs_unref)
 	      g_object_unref (window);
     }
-  else if (mode == RECTANGLE)
+  else if (region == SELECT)
     {
       screenshot = get_rectangle_screenshot ();
     }
@@ -358,7 +358,7 @@ screenshooter_read_rc_file (gchar               *file,
 {
   XfceRc *rc;
   gint delay = 0;
-  gint mode = FULLSCREEN;
+  gint region = FULLSCREEN;
   gint action = SAVE;
   gint show_save_dialog = 1;
   gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
@@ -374,7 +374,7 @@ screenshooter_read_rc_file (gchar               *file,
         {
           delay = xfce_rc_read_int_entry (rc, "delay", 0);
               
-          mode = xfce_rc_read_int_entry (rc, "mode", FULLSCREEN);
+          region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
               
           action = xfce_rc_read_int_entry (rc, "action", SAVE);
               
@@ -401,7 +401,7 @@ screenshooter_read_rc_file (gchar               *file,
    
   /* And set the sd values */
   sd->delay = delay;
-  sd->mode = mode;
+  sd->region = region;
   sd->action = action;
   sd->show_save_dialog = show_save_dialog;
   sd->screenshot_dir = screenshot_dir;
@@ -429,7 +429,7 @@ screenshooter_write_rc_file (gchar               *file,
   g_return_if_fail (rc != NULL);
   
   xfce_rc_write_int_entry (rc, "delay", sd->delay);
-  xfce_rc_write_int_entry (rc, "mode", sd->mode);
+  xfce_rc_write_int_entry (rc, "region", sd->region);
   xfce_rc_write_int_entry (rc, "action", sd->action);
   xfce_rc_write_int_entry (rc, "show_save_dialog", 
                            sd->show_save_dialog);

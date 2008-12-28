@@ -42,7 +42,7 @@ enum {
   MODE_0,
   FULLSCREEN,
   ACTIVE_WINDOW,
-  RECTANGLE,
+  SELECT,
 };
 
 
@@ -62,7 +62,7 @@ enum {
 /* Struct to store the screenshot options */
 typedef struct
 {
-  gint mode;
+  gint region;
   gint show_save_dialog;
   gint delay;
   gint action;
@@ -76,7 +76,7 @@ ScreenshotData;
 
 
 GdkPixbuf 
-*screenshooter_take_screenshot   (gint                  mode, 
+*screenshooter_take_screenshot   (gint                  region, 
                                   gint                  delay);
 void
 screenshooter_copy_to_clipboard  (GdkPixbuf            *screenshot) ;

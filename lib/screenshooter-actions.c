@@ -22,7 +22,7 @@
 void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
 {
   GdkPixbuf *screenshot = 
-    screenshooter_take_screenshot (sd->mode, sd->delay);
+    screenshooter_take_screenshot (sd->region, sd->delay);
   
   if (sd->action == SAVE)
     {
