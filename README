@@ -1,19 +1,8 @@
-Xfce4 Screenshooter is a plugin for the Xfce panel to take screenshots. The 
-code is designed to be clean and simple, but improvements, fixes or 
-bug reporting are welcome.
+This application allows you to capture the entire screen, the active 
+window or a selected region. You can set the delay that elapses 
+before the screenshot is taken and the action that will be done with 
+the screenshot: save it to a PNG file, copy it to the clipboard, or 
+open it using another application.
 
-Since version 1.0.0 the plugin is compatible with xfce4-panel >= 4.3-svn, 
-with several improvements. Thanks to Jani Monoses who ported the plugin
-to the new structure and added new features.
-	
-Since version 1.1.0, the plugin also ships an executable to take screenshots
-without having the panel applet running. 
-	
-The following command line options are available:
-  -v, --version            Version information
-  -w, --window             Take a screenshot of the active window
-  -d, --delay              Delay in seconds before taking the screenshot
-  -h, --hide               Do not display the save dialog
-  -s, --save               Directory where the screenshot will be saved
-  -p, --preferences        Dialog to set the default save folder
+A plugin for the Xfce panel is also available.
 

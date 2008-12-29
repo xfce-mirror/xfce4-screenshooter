@@ -1,5 +1,9 @@
 2008-12-29 jeromeg
 
+  * README: updated.
+
+2008-12-29 jeromeg
+
   * Fix bug 4748:
     - remove (cb_current_folder_changed).
     - don't connect the signal in (screenshooter_save_screenshot).
