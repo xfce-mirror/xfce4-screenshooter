@@ -245,30 +245,6 @@ static gchar *generate_filename_for_uri(char *uri)
 
 
 
-/* Generate a correct file name when setting a folder in chooser
-GtkFileChooser *chooser: the file chooser we are using.
-gpointer user_data: not used here.
-*/
-static void
-cb_current_folder_changed (GtkFileChooser *chooser, gpointer user_data)
-{
-  gchar *current_folder = 
-    gtk_file_chooser_get_current_folder (GTK_FILE_CHOOSER (chooser));
-  
-  if (current_folder)
-    {
-      gchar *new_filename = generate_filename_for_uri (current_folder);
-      
-      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), 
-                                         new_filename);
-      g_free (new_filename);
-    }
-  
-  g_free (current_folder);
-}
-
-
-
 #ifdef HAVE_GIO
 /* Set sd->app as per the active item in the combobox */
 static void cb_combo_active_item_changed (GtkWidget *box, 
@@ -1038,12 +1014,7 @@ gchar
       gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
       
       g_object_unref (thumbnail);
-      
-      /* We the user opens a folder in the fine_chooser, we set a valid
-      filename */
-      g_signal_connect (G_OBJECT (chooser), "current-folder-changed", 
-                        G_CALLBACK(cb_current_folder_changed), NULL);
-    
+          
       dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
 	    
       /* The user pressed the save button */

@@ -10,6 +10,8 @@
     - fix some remaining crashes when taking a screenshot of the active
       window.
     - only read the preferences file once when opening the application.
+    - don't automatically set filenames in the file chooser, as user set
+      are overriden (bug #4748).
   
   * Enhancements:
     - Use -V for the version CLI option.
