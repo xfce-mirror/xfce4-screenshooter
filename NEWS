@@ -1,5 +1,9 @@
 === Version 1.x.x ===
 
+  The application is now named "Xfce4 Screenshooter", the adress of the
+  SVN trunk has changed and the one of the website too. See the README
+  file.
+
   * Bugfixes: 
     - correctly grab active windows. In particular, menus are grabbed 
       now (bug #4611).
