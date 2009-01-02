@@ -1,5 +1,14 @@
 2009-01-02
 
+  * Improve the compiler flags set.
+  * configure.ac.in:
+    - use @LINGUAS@ instead of copying things from po/LINGUAS manually.
+    - set debugging as full for svn snapshots.
+  * panel-plugin/screenshooter-plugin.c: directly use button instead of
+    pd->button.
+
+2009-01-02
+
   * Post release bump.
   * Fix two compiler warnings.
 

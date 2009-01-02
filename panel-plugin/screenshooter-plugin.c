@@ -156,12 +156,12 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
 {
   /* Make the button unclickable so that the user does not press it while 
 	another screenshot is in progress */
-	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), FALSE);
+	gtk_widget_set_sensitive (GTK_WIDGET (button), FALSE);
 
   screenshooter_take_and_output_screenshot (pd->sd);
   
   /* Make the panel button clickable */
-	gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
+	gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
 }
 
 
