@@ -37,10 +37,7 @@ gint delay = 0;
 
 
 
-/* Set cli options. The -p option creates a conf file named xfce4-screenshooter 
-   in ~/.config/xfce4/. This file only contains one entry, the name of the 
-   default save folder. 
-*/
+/* Set cli options. */
 static GOptionEntry entries[] =
 {
     {    "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
@@ -77,7 +74,7 @@ static GOptionEntry entries[] =
         N_("Application to open the screenshot"),
         NULL
     },
-    { NULL }
+    { NULL, ' ', 0, 0, NULL, NULL, NULL }
 };
 
 static void

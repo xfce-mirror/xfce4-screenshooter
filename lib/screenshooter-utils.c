@@ -283,7 +283,7 @@ returns: the screenshot in a *GdkPixbuf.
 */
 GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay)
 {
-  GdkPixbuf *screenshot;
+  GdkPixbuf *screenshot = NULL;
   GdkWindow *window = NULL;
   GdkScreen *screen;
       

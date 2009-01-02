@@ -171,8 +171,7 @@ plugin: a XfcePanelPlugin (a screenshooter one).
 pd: the associated PluginData.
 */
 static void
-cb_style_set (XfcePanelPlugin *plugin, gpointer ignored,
-                       PluginData *pd)
+cb_style_set (XfcePanelPlugin *plugin, gpointer ignored, PluginData *pd)
 {
   cb_set_size (plugin, xfce_panel_plugin_get_size (plugin), pd);
 }

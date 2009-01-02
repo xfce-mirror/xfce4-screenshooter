@@ -13,7 +13,7 @@ libscreenshooter_la_CFLAGS = \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCEGUI4_CFLAGS@ \
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" -Wall -Werror
 
 libscreenshooter_la_LIBADD = \
   @GTK_LIBS@ \
