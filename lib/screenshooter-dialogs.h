@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2008 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
+ *  Copyright © 2008-2009 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

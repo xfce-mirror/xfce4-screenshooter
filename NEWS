@@ -1,8 +1,8 @@
-=== Version 1.x.x ===
+=== Version 1.4.90 ===
 
   The application is now named "Xfce4 Screenshooter", the adress of the
   SVN trunk has changed and the one of the website too. See the README
-  file.
+  file. xfce4-panel dependency has been bumped to >= 4.4.
 
   * Bugfixes: 
     - correctly grab active windows. In particular, menus are grabbed 
@@ -15,7 +15,7 @@
       window.
     - only read the preferences file once when opening the application.
     - don't automatically set filenames in the file chooser, as user set
-      are overriden (bug #4748).
+      ones are overriden (bug #4748).
   
   * Enhancements:
     - Use -V for the version CLI option.
