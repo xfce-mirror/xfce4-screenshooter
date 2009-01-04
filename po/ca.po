@@ -1,4 +1,4 @@
-# Catalan translation of xfce4-screenshooter-plugin.
+# Catalan translation of xfce4-screenshooter.
 # Copyright (C) 2006 xfce4-screenshooter-plugin's copyright holder.
 # This file is distributed under the same license as the
 # xfce4-screenshooter-plugin package.
@@ -10,10 +10,10 @@
 #: ../src/main.c:181
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
+"Project-Id-Version: xfce4-screenshooter 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-12-28 12:07+0100\n"
-"PO-Revision-Date: 2008-11-30 13:23+0100\n"
+"PO-Revision-Date: 2008-12-28 15:38+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -34,26 +34,24 @@ msgstr "captura-%d.png"
 #: ../lib/screenshooter-dialogs.c:477
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
-msgstr "Fes una captura de pantalla"
+msgstr "Fes una captura"
 
 #: ../lib/screenshooter-dialogs.c:484
-#, fuzzy
 msgid "Take the screenshot"
-msgstr "Fes una captura de pantalla"
+msgstr "Fes la captura"
 
 #: ../lib/screenshooter-dialogs.c:491
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
-msgstr "Capturador de pantalla"
+msgstr "Captura"
 
 #: ../lib/screenshooter-dialogs.c:501
 msgid "Preferences"
-msgstr ""
+msgstr "Preferències"
 
 #: ../lib/screenshooter-dialogs.c:519
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Àrea de captura</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Regió a capturar</span>"
 
 #: ../lib/screenshooter-dialogs.c:551
 msgid "Entire screen"
@@ -63,7 +61,7 @@ msgstr "Pantalla sencera"
 #: ../panel-plugin/screenshooter-plugin.c:227
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
-msgstr "Fes una captura de la pantalla sencera"
+msgstr "Fa una captura de la pantalla sencera"
 
 #: ../lib/screenshooter-dialogs.c:575
 msgid "Active window"
@@ -73,11 +71,11 @@ msgstr "Finestra activa"
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
-msgstr "Fes una captura de la finestra activa"
+msgstr "Fa una captura de la finestra activa"
 
 #: ../lib/screenshooter-dialogs.c:599
 msgid "Select a region"
-msgstr ""
+msgstr "Regió seleccionada"
 
 #: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:237
@@ -87,6 +85,9 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
+"Seleccioneu una regió per capturar-la al fer clic amb el ratolí en un punt "
+"de la pantalla i sense deixar anar el botó del ratolí, arrossegant el ratolí "
+"fins a l'altre cantonada de la regió i deixant anar el botó del ratolí."
 
 #: ../lib/screenshooter-dialogs.c:626
 msgid ""
@@ -97,9 +98,8 @@ msgstr ""
 "de pantalla</span>"
 
 #: ../lib/screenshooter-dialogs.c:672
-#, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Retard en segons abans de fer la captura de pantalla"
+msgstr "Retard en segons abans de fer la captura"
 
 #: ../lib/screenshooter-dialogs.c:681
 msgid "seconds"
@@ -118,18 +118,16 @@ msgid "Save the screenshot to a PNG file"
 msgstr "Desa la captura com a fitxer PNG"
 
 #: ../lib/screenshooter-dialogs.c:776
-#, fuzzy
 msgid "Save by default to:"
-msgstr "Desa en el lloc per defecte:"
+msgstr "Desa per defecte aquí:"
 
 #: ../lib/screenshooter-dialogs.c:792
-#, fuzzy
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right without displaying a save dialog"
 msgstr ""
-"Si està marcat, la captura es desarà en el lloc per defecte indicat a la "
-"dreta. Si no, es mostrarà una finestra de diàleg per desar-lo."
+"Si està marcat, la captura es desarà per defecte en el lloc per defecte "
+"indicat a la dreta sense mostrar la finestra de diàleg de desar"
 
 #: ../lib/screenshooter-dialogs.c:797
 msgid "Default save location"
@@ -160,7 +158,7 @@ msgstr "Obre la captura amb l'aplicació seleccionada"
 #. Application label
 #: ../lib/screenshooter-dialogs.c:910
 msgid "Application:"
-msgstr ""
+msgstr "Aplicació:"
 
 #: ../lib/screenshooter-dialogs.c:957 ../src/main.c:77
 msgid "Application to open the screenshot"
@@ -199,14 +197,14 @@ msgstr ""
 #: ../src/main.c:268
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "«%s» no és un directori vàlid, s'emprarà el directori per defecte."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "Take screenshots of the entire screen,of the active window or of a region"
-msgstr "Fes les captures de la pantalla sencera o de la finestra activa"
+msgstr ""
+"Fes les captures de la pantalla sencera, de la finestra activa o d'una regió"
 
 #~ msgid "Take a screenshot of the whole screen"
 #~ msgstr "Fes una captura de la pantalla sencera"
