@@ -1,0 +1,164 @@
+<html>
+ 	<head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 	<title>Xfce4 Screenshooter</title>
+ 	<link rel="stylesheet" href="../xfce.css" type="text/css">
+ 	</head>
+ 	
+ 	<body>
+ 	
+ 	<h1>Bantuan untuk Xfce Screenshooter</h1>
+ 	
+ 	<h2>Pengenalan</h2>
+ 	
+ 	<p>Aplikasi ini memungkinkan anda untuk menangkap seluruh
+ 	layar, jendela yang aktif atau daerah terpilih. Anda dapat mengatur jeda
+ 	waktu sebelum cuplikan layar diambil dan aksi yang akan dilakukan
+ 	dengan cuplikan layar: simpan ke berkas PNG, salin ke papan klip
+ 	atau buka dengan aplikasi lainnya.</p>
+ 	
+ 	<p>Plugin untuk panel Xfce juga tersedia.</p>
+ 	
+ 	<h2>Menggunakan aplikasi</h2>
+ 	
+ 	<h3>Via antarmuka pengguna</h3>
+ 	
+ 	<p>Untuk menjalankan aplikasi, gunakan item <b>"Ambil Cuplikan Layar"</b> pada
+ 	kategori <b>"Aksesoris"</b> dari menu utama Xfce.</p>
+ 	
+ 	<p>Jendela ini akan ditampilkan:</p>
+ 	
+ 	<img src="images/xfce4-screenshooter-dialog.png" alt="Jendela aplikasi"/>
+ 	
+ 	<h4>Daerah untuk ditangkap</h4>
+	
+ 	<p>Bagian <b>"Daerah untuk ditangkap"</b> menmungkinkan anda untuk mengatur dari apa
+ 	cuplikan layar akan diambil:
+ 	
+ 	<ul>
+ 	<li>"Seluruh layar" mengambil cuplikan layar dari seluruh layar seperti yang anda lihat.</li>
+ 	<li>"Jendela aktif" mengambil cuplikan layar dari  jendela yang aktif, yaitu jendela yang aktif
+ 	sebelum dialog ini muncul, atau jika anda mengatur jeda, adalah jendela yang
+ 	aktif setelah jeda.</li>
+ 	<li>"Pilih daerah" memungkinkan anda untuk memilih daerah yang akan ditangkap dengan
+ 	cara klik pada titik di layar tanpa melepas tombol tetikus,
+ 	tarik tetikus anda ke sudut daerah, lalu lepaskan
+ 	tombol tetikus.</li>
+ 	</ul>
+ 	</p>
+ 	
+ 	<h4>Jeda sebelum mengambil cuplikan layar</h4>
+ 	
+ 	<p>Bagian <b>"Jeda sebelum mengambil cuplikan layar"</b> memungkinkan anda untuk 
+ 	mengatur jeda yang akan berlangsung mulai saat menekan tombol <b>Ambil cuplikan layar</b>
+ 	sampai mengambil cuplikan layar. Jeda ini memungkinkan anda untuk membuka menu atau
+ 	aksi apapun yang ingin anda tampilkan di cuplikan layar.</p>
+ 	
+ 	<h4>Aksi</h4>
+ 	
+ 	<p>Bagian <b>"Aksi"</b> memungkinkan anda untuk menentukan apa yang harus dilakukan
+ 	dengan cuplikan layar. Terdapat tiga pilihan yang tersedia.</p>
+ 	
+ 	<h5>Simpan</h5>
+ 	
+ 	<p>Opsi <b>"Simpan"</b> akan menyimpan cuplikan layar ke berkas PNG.
+ 	Jika anda mencentang kotak <b>"Simpan sebagai standar ke"</b>, cuplikan layar akan
+ 	disimpan ke folder di sebelah kanan setelah anda menekan tombol
+ 	<b>"Ambil cuplikan layar"</b>, tanpa menampilkan dialog simpan apapun. Sebaliknya, dialog simpan
+ 	akan ditampilan, yang juga menampilkan pratayang cuplikan layar. Anda selanjutnya akan
+ 	dapat mengatur lokasi penyimpanan, dan nama berkas.
+ 	</p>
+ 	
+ 	<h5>Salin ke papan klip</h5>
+ 	
+ 	<p>Opsi <b>"Salin ke papan klip"</b> memungkinkan anda untuk merekatkan cuplikan layar
+ 	di aplikasi lain, seperti pemroses kata. Menghentikan aplikasi
+ 	sebelum cuplikan layar direkatkan sering menghapus citra dari papan klip.
+ 	Beberapa manajer papan klip memungkinkan anda untuk mencegah hal ini.</p>
+ 	
+ 	<h5>Buka dengan</h5>
+ 	
+ 	<p>Opsi <b>"Buka dengan"</b> menyimpan cuplikan layar ke direktori sementara
+ 	sistem dan membukanya dengan seperangkat aplikasi menggunakan senarai di bawah.
+ 	Aplikasi yang menyokong citra akan otomatis terdeteksi dan ditambahkan ke 
+ 	senarai.
+ 	</p>
+ 	
+ 	<h3>Via baris perintah</h3>
+ 	
+ 	<p>Opsi baris perintah memungkinkan anda mengambil cuplikan layar secara cepat. 
+ 	Opsi ini juga memungkinkan anda untuk mengatur tombol Prt Scrn di pojok
+ 	kanan pada kebanyakan papan ketik untuk mengambil cuplikan layar. Untuk melakukan
+ 	hal ini, atur pengikat tombol lingkungan desktop anda supaya menjalankan 
+ 	<b>xfce4-screenshooter</b> dengan satu atau beberapa opsi berikut ketika
+ 	tombol Prt Scrn ditekan.</p>
+ 	
+ 	<h4>Opsi baris perintah</h4>
+ 	
+ 	<h5>Opsi -w</h5>
+ 	
+ 	<p>Opsi <b>-w</b> memungkinkan anda untuk mengambil cuplikan layar jendela yang aktif.</p>
+ 	
+ 	<h5>Opsi -f</h5>
+ 	
+ 	<p>Opsi <b>-f</b> memungkinkan anda untuk mengambil cuplikan layar seluruh layar.</p>
+ 	
+ 	<h5>Opsi -r</h5>
+ 	
+ 	<p>Opsi <b>-r</b> memungkinkan anda untuk memilih daerah yang akan
+ 	ditangkap dengan cara klik pada titik di layar tanpa melepas tombol,
+ 	lalu tarik tetikus anda ke sudut lain daerah, kemudian lepaskan tombol
+ 	tetikus.</p>
+ 	
+ 	<h5>Opsi -d</h5>
+ 	
+ 	<p>Opsi <b>-d</b> yang diikuti integer positif memungkinkan anda untuk 
+ 	mengatur jeda sebelum mengambil cuplikan layar ketika opsi <b>-f</b>, <b>-w</b>
+ 	atau <b>-r</b> diberikan.</p>
+ 	
+ 	<h5>Opsi -s</h5>
+ 	
+ 	<p>Opsi <b>-s</b> yang diikuti dengan alamat folder yang telah ada 
+ 	memungkinkan anda untuk mengatur dimana cuplikan layar akan disimpan.
+ 	Opsi ini hanya berdampak jika opsi <b>-f</b>, <b>-w</b> atau <b>-r</b>
+ 	diberikan. Jika dikombinasikan dengan <b>opsi -h</b> (lihat di bawah),
+ 	opsi ini dapat digunakan untuk menyimpan berkas ke alamat tertentu,
+ 	tanpa menampilkan dialog simpan apapun.</p>
+ 	
+ 	<h5>Opsi -h</h5>
+ 	
+ 	<p>Jika anda memberikan opsi <b>-h</b>, cuplikan layar akan disimpan
+ 	tanpa menampilkan dialog simpan apapun. Opsi ini hanya berdampak jika
+ 	opsi <b>-f</b>, <b>-w</b> atau <b>-r</b> diberikan. Opsi <b>-s</b>
+ 	memungkinkan anda untuk mengatur lokasi penyimpanan jika diperlukan.</p>
+ 	
+ 	<h5>Opsi -o</h5>
+ 	
+ 	<p>Jika opsi <b>-o</b> diberikan, diikuti dengan nama aplikasi,
+ 	cuplikan layar akan disimpan di direktori sementara sistem dan dibuka
+ 	dengan aplikasi yang namanya disebutkan setelah -o.
+ 	Opsi ini hanya berdampak jika opsi <b>-f</b>, <b>-w</b>, atau
+ 	<b>-r</b> diberikan.</p>
+ 	
+ 	<h2>Menggunakan plugin untuk panel Xfce</h2>
+ 	
+ 	<h3>Menambah plugin</h3>
+ 	
+ 	<p>Untuk menambah plugin ke panel, klik kanan pada panel dan pilih
+ 	<b>"Tambah Item Baru"</b>. Pilih plugin bernama <b>"Cuplikan Layar"</b>,
+ 	lalu tambahkan.</p>
+ 	
+ 	<h3>Mengatur plugin</h3>
+ 	
+ 	<p>Anda dapat mengatur bagaimana cuplikan layar diambil dengan klik
+ 	kanan pada ekstensi lalu pilih <b>"Konfigurasi"</b>. Dialog pengaturan
+ 	yang serupa dengan dialog aplikasi utama akan muncul. Silakan lihat di atas
+ 	untuk pengaturan yang berbeda.</p>
+ 	
+ 	<h3>Menggunakan plugin</h3>
+ 	
+ 	<p>Untuk mengambil cuplikan layar, cukup klik pada plugin.</p>
+ 	
+ 	</body>
+ 	
+ 	</html> 
