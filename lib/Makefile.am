@@ -14,7 +14,7 @@ libscreenshooter_la_CFLAGS = \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCEGUI4_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
-	-Wall -Wextra -Werror -Wno-unused-parameter \
+	-Wall -Wextra -Wno-unused-parameter \
 	-Wno-missing-field-initializers
 
 libscreenshooter_la_LIBADD = \
