@@ -1,2 +1,9 @@
+* Port "select a region" to use cairo to have transparent rubber banding
+as in thunar and xfdesktop.
+* When selecting a region, Escape should cancel everything.
+* Check for leaks using valgrind.
+* Use the po mecanism for the documentation.
+
 Low priority:
 * Try to get borders captured with compiz.
+* Consider porting the code to use GObjects instead of structs.
