@@ -11,51 +11,59 @@ m4_define([xfce4_screenshooter_version_build], [r@REVISION@])
 m4_define([xfce4_screenshooter_version_tag],   [svn])
 m4_define([xfce4_screenshooter_version], [xfce4_screenshooter_version_major().xfce4_screenshooter_version_minor().xfce4_screenshooter_version_micro()ifelse(xfce4_screenshooter_version_nano(), [], [], [.xfce4_screenshooter_version_nano()])ifelse(xfce4_screenshooter_version_tag(), [svn], [xfce4_screenshooter_version_tag()-xfce4_screenshooter_version_build()], [xfce4_screenshooter_version_tag()])])
 
-dnl *******************************************
-dnl *** Debugging support for SVN snapshots ***
-dnl *******************************************
-m4_define([xfce4_screenshooter_debug_default], [ifelse(xfce4_screenshooter_version_tag(), [svn], [full], [minimum])])
-
 AC_INIT([xfce4-screenshooter], [xfce4_screenshooter_version], [http://bugzilla.xfce.org/], [xfce4-screenshooter])
 
+dnl ***************************
+dnl *** Initialize automake ***
+dnl ***************************
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar])
 AM_CONFIG_HEADER([config.h])
+AM_MAINTAINER_MODE()
 
-AM_MAINTAINER_MODE
+dnl *******************************
+dnl *** Check for UNIX variants ***
+dnl *******************************
+AC_AIX()
+AC_ISC_POSIX()
+AC_MINIX()
 
-dnl Check for UNIX variants
-AC_AIX
-AC_ISC_POSIX
-AC_MINIX
+dnl ********************************
+dnl *** Check for basic programs ***
+dnl ********************************
+AC_PROG_CC()
+AC_PROG_CC_C_O()
+AC_PROG_LD()
+AC_PROG_INSTALL()
+AC_PROG_INTLTOOL()
 
-dnl Check for basic programs
-AC_PROG_CC
-AC_PROG_INSTALL
-AC_PROG_INTLTOOL
-AC_PROG_LIBTOOL
+dnl **************************
+dnl *** Initialize libtool ***
+dnl **************************
+AC_DISABLE_STATIC()
+AC_PROG_LIBTOOL()
 
-dnl Check for standard header files
+dnl **********************************
+dnl *** Check for standard headers ***
+dnl **********************************
 AC_HEADER_STDC
 
-dnl Check for xfce4-panel
-XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.4])
-
-dnl Check for xfce4util
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.4])
-
-dnl Check for xfcegui4
-XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.4])
-
-dnl Check for gtk
+dnl ***********************************
+dnl *** Check for required packages ***
+dnl ***********************************
+XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.4.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.4.0])
+XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.4.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.10.0])
-
-dnl Check for glib
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.12.0])
 
-dnl Optionnal check for gio
+dnl ***********************************
+dnl *** Check for optional packages ***
+dnl ***********************************
 XDT_CHECK_OPTIONAL_PACKAGE([GIO], [gio-2.0], [2.16])
 
-dnl Translations
+dnl ******************************
+dnl *** Check for i18n support ***
+dnl ******************************
 XDT_I18N([@LINGUAS@])
 
 dnl Check for debugging support
@@ -83,11 +91,15 @@ dnl ***************************
 dnl *** Print configuration ***
 dnl ***************************
 
+echo ""
 echo "Build Configuration:"
-
+echo ""
 if test x"$GIO_FOUND" = x"yes"; then
-echo "* Open with support:             yes"
+echo "  * Open with support:             yes"
 else
-echo "* Open with support:             no"
+echo "  * Open with support:             no"
 fi
-
+dnl
+echo "  * Debugging support:             $enable_debug"
+echo ""
+echo "Configure finished, type 'make' to build."
