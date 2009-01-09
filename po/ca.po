@@ -7,12 +7,12 @@
 #
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
-#: ../src/main.c:181
+#: ../src/main.c:179
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-28 12:07+0100\n"
+"POT-Creation-Date: 2009-01-09 18:50+0100\n"
 "PO-Revision-Date: 2008-12-28 15:38+0100\n"
 "Last-Translator: Carles Muñoz Gorriz <carlesmu@internautas.org>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
@@ -31,55 +31,55 @@ msgstr "captura.png"
 msgid "Screenshot-%d.png"
 msgstr "captura-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:477
+#: ../lib/screenshooter-dialogs.c:453
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Fes una captura"
 
-#: ../lib/screenshooter-dialogs.c:484
+#: ../lib/screenshooter-dialogs.c:460
 msgid "Take the screenshot"
 msgstr "Fes la captura"
 
-#: ../lib/screenshooter-dialogs.c:491
+#: ../lib/screenshooter-dialogs.c:467
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Captura"
 
-#: ../lib/screenshooter-dialogs.c:501
+#: ../lib/screenshooter-dialogs.c:477
 msgid "Preferences"
 msgstr "Preferències"
 
-#: ../lib/screenshooter-dialogs.c:519
+#: ../lib/screenshooter-dialogs.c:495
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Regió a capturar</span>"
 
-#: ../lib/screenshooter-dialogs.c:551
+#: ../lib/screenshooter-dialogs.c:527
 msgid "Entire screen"
 msgstr "Pantalla sencera"
 
-#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:55
-#: ../panel-plugin/screenshooter-plugin.c:227
-#: ../panel-plugin/screenshooter-plugin.c:317
+#: ../lib/screenshooter-dialogs.c:538 ../src/main.c:52
+#: ../panel-plugin/screenshooter-plugin.c:226
+#: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the entire screen"
 msgstr "Fa una captura de la pantalla sencera"
 
-#: ../lib/screenshooter-dialogs.c:575
+#: ../lib/screenshooter-dialogs.c:551
 msgid "Active window"
 msgstr "Finestra activa"
 
-#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:51
-#: ../panel-plugin/screenshooter-plugin.c:232
-#: ../panel-plugin/screenshooter-plugin.c:322
+#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:48
+#: ../panel-plugin/screenshooter-plugin.c:231
+#: ../panel-plugin/screenshooter-plugin.c:321
 msgid "Take a screenshot of the active window"
 msgstr "Fa una captura de la finestra activa"
 
-#: ../lib/screenshooter-dialogs.c:599
+#: ../lib/screenshooter-dialogs.c:575
 msgid "Select a region"
 msgstr "Regió seleccionada"
 
-#: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
-#: ../panel-plugin/screenshooter-plugin.c:237
-#: ../panel-plugin/screenshooter-plugin.c:327
+#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:56
+#: ../panel-plugin/screenshooter-plugin.c:236
+#: ../panel-plugin/screenshooter-plugin.c:326
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -89,7 +89,7 @@ msgstr ""
 "de la pantalla i sense deixar anar el botó del ratolí, arrossegant el ratolí "
 "fins a l'altre cantonada de la regió i deixant anar el botó del ratolí."
 
-#: ../lib/screenshooter-dialogs.c:626
+#: ../lib/screenshooter-dialogs.c:602
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -97,31 +97,31 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Retard abans de fer captura "
 "de pantalla</span>"
 
-#: ../lib/screenshooter-dialogs.c:672
+#: ../lib/screenshooter-dialogs.c:648
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Retard en segons abans de fer la captura"
 
-#: ../lib/screenshooter-dialogs.c:681
+#: ../lib/screenshooter-dialogs.c:657
 msgid "seconds"
 msgstr "segons"
 
-#: ../lib/screenshooter-dialogs.c:703
+#: ../lib/screenshooter-dialogs.c:679
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acció</span>"
 
-#: ../lib/screenshooter-dialogs.c:734
+#: ../lib/screenshooter-dialogs.c:710
 msgid "Save"
 msgstr "Desa"
 
-#: ../lib/screenshooter-dialogs.c:747
+#: ../lib/screenshooter-dialogs.c:723
 msgid "Save the screenshot to a PNG file"
 msgstr "Desa la captura com a fitxer PNG"
 
-#: ../lib/screenshooter-dialogs.c:776
+#: ../lib/screenshooter-dialogs.c:752
 msgid "Save by default to:"
 msgstr "Desa per defecte aquí:"
 
-#: ../lib/screenshooter-dialogs.c:792
+#: ../lib/screenshooter-dialogs.c:768
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right without displaying a save dialog"
@@ -129,62 +129,62 @@ msgstr ""
 "Si està marcat, la captura es desarà per defecte en el lloc per defecte "
 "indicat a la dreta sense mostrar la finestra de diàleg de desar"
 
-#: ../lib/screenshooter-dialogs.c:797
+#: ../lib/screenshooter-dialogs.c:773
 msgid "Default save location"
 msgstr "Lloc per defecte on desar"
 
-#: ../lib/screenshooter-dialogs.c:811
+#: ../lib/screenshooter-dialogs.c:787
 msgid "Set the default save location"
 msgstr "Indica el lloc per defecte on desar"
 
-#: ../lib/screenshooter-dialogs.c:833
+#: ../lib/screenshooter-dialogs.c:809
 msgid "Copy to the clipboard"
 msgstr "Copia al porta-retalls"
 
-#: ../lib/screenshooter-dialogs.c:843
+#: ../lib/screenshooter-dialogs.c:819
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 "Copia la captura al porta-retalls i, d'aquesta manera, el podreu enganxar "
 "més endavant"
 
-#: ../lib/screenshooter-dialogs.c:861
+#: ../lib/screenshooter-dialogs.c:837
 msgid "Open with:"
 msgstr "Obre amb:"
 
-#: ../lib/screenshooter-dialogs.c:877
+#: ../lib/screenshooter-dialogs.c:853
 msgid "Open the screenshot with the chosen application"
 msgstr "Obre la captura amb l'aplicació seleccionada"
 
 #. Application label
-#: ../lib/screenshooter-dialogs.c:910
+#: ../lib/screenshooter-dialogs.c:886
 msgid "Application:"
 msgstr "Aplicació:"
 
-#: ../lib/screenshooter-dialogs.c:957 ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:933 ../src/main.c:74
 msgid "Application to open the screenshot"
 msgstr "Aplicació amb la que s'obre la captura"
 
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:977
 msgid "Save screenshot as..."
 msgstr "Desa la captura com…"
 
-#: ../src/main.c:47
+#: ../src/main.c:44
 msgid "Version information"
 msgstr "Informació de la versió"
 
-#: ../src/main.c:65
+#: ../src/main.c:62
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Retard en segons abans de fer la captura de pantalla"
 
-#: ../src/main.c:69
+#: ../src/main.c:66
 msgid "Do not display the save dialog"
 msgstr "No mostris el diàleg d'on desar-la"
 
-#: ../src/main.c:73
+#: ../src/main.c:70
 msgid "Directory where the screenshot will be saved"
 msgstr "Carpeta on la captura es desarà"
 
-#: ../src/main.c:185
+#: ../src/main.c:183
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -194,17 +194,24 @@ msgstr ""
 "Feu %s --help per veure la llista complerta d'opcions disponibles de la "
 "línia d'ordres.\n"
 
-#: ../src/main.c:268
+#: ../src/main.c:266
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "«%s» no és un directori vàlid, s'emprarà el directori per defecte."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#, fuzzy
 msgid ""
-"Take screenshots of the entire screen,of the active window or of a region"
+"Take screenshots of the entire screen, of the active window or of a region"
 msgstr ""
 "Fes les captures de la pantalla sencera, de la finestra activa o d'una regió"
+
+#~ msgid ""
+#~ "Take screenshots of the entire screen,of the active window or of a region"
+#~ msgstr ""
+#~ "Fes les captures de la pantalla sencera, de la finestra activa o d'una "
+#~ "regió"
 
 #~ msgid "Take a screenshot of the whole screen"
 #~ msgstr "Fes una captura de la pantalla sencera"

@@ -6,12 +6,12 @@
 #
 #. Print a message to advise to use help when a non existing cli option is
 #. passed to the executable.
-#: ../src/main.c:181
+#: ../src/main.c:179
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-28 12:07+0100\n"
+"POT-Creation-Date: 2009-01-09 18:50+0100\n"
 "PO-Revision-Date: 2008-12-21 12:54+0100\n"
 "Last-Translator: Fabian Nowak <tiymstery@arcor.de>\n"
 "Language-Team: German <xfce-i18n@xfce.org>\n"
@@ -29,55 +29,55 @@ msgstr "Bildschirmfoto.png"
 msgid "Screenshot-%d.png"
 msgstr "Bildschirmfoto-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:477
+#: ../lib/screenshooter-dialogs.c:453
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Bildschirmfoto erstellen"
 
-#: ../lib/screenshooter-dialogs.c:484
+#: ../lib/screenshooter-dialogs.c:460
 msgid "Take the screenshot"
 msgstr "Bildschirmfoto erstellen"
 
-#: ../lib/screenshooter-dialogs.c:491
+#: ../lib/screenshooter-dialogs.c:467
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
 
-#: ../lib/screenshooter-dialogs.c:501
+#: ../lib/screenshooter-dialogs.c:477
 msgid "Preferences"
 msgstr "Einstellungen"
 
-#: ../lib/screenshooter-dialogs.c:519
+#: ../lib/screenshooter-dialogs.c:495
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aufnahmebereich</span>"
 
-#: ../lib/screenshooter-dialogs.c:551
+#: ../lib/screenshooter-dialogs.c:527
 msgid "Entire screen"
 msgstr "Ganzer Bildschirm"
 
-#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:55
-#: ../panel-plugin/screenshooter-plugin.c:227
-#: ../panel-plugin/screenshooter-plugin.c:317
+#: ../lib/screenshooter-dialogs.c:538 ../src/main.c:52
+#: ../panel-plugin/screenshooter-plugin.c:226
+#: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the entire screen"
 msgstr "Bildschirmfoto des ganzen Bildschirms erstellen"
 
-#: ../lib/screenshooter-dialogs.c:575
+#: ../lib/screenshooter-dialogs.c:551
 msgid "Active window"
 msgstr "Aktives Fenster"
 
-#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:51
-#: ../panel-plugin/screenshooter-plugin.c:232
-#: ../panel-plugin/screenshooter-plugin.c:322
+#: ../lib/screenshooter-dialogs.c:562 ../src/main.c:48
+#: ../panel-plugin/screenshooter-plugin.c:231
+#: ../panel-plugin/screenshooter-plugin.c:321
 msgid "Take a screenshot of the active window"
 msgstr "Bildschirmfoto des aktuellen Fensters erstellen"
 
-#: ../lib/screenshooter-dialogs.c:599
+#: ../lib/screenshooter-dialogs.c:575
 msgid "Select a region"
 msgstr "Bereich auswählen"
 
-#: ../lib/screenshooter-dialogs.c:610 ../src/main.c:59
-#: ../panel-plugin/screenshooter-plugin.c:237
-#: ../panel-plugin/screenshooter-plugin.c:327
+#: ../lib/screenshooter-dialogs.c:586 ../src/main.c:56
+#: ../panel-plugin/screenshooter-plugin.c:236
+#: ../panel-plugin/screenshooter-plugin.c:326
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -87,7 +87,7 @@ msgstr ""
 "Bildschirm klicken, ohne die Maustaste loszulassen, den Mauszeiger dann an "
 "das entgegengesetzte Ende des Bereichs ziehen und die Taste loslassen."
 
-#: ../lib/screenshooter-dialogs.c:626
+#: ../lib/screenshooter-dialogs.c:602
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -95,31 +95,31 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Verzögerung, bevor das "
 "Bildschirmfoto erstellt wird</span>"
 
-#: ../lib/screenshooter-dialogs.c:672
+#: ../lib/screenshooter-dialogs.c:648
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
 
-#: ../lib/screenshooter-dialogs.c:681
+#: ../lib/screenshooter-dialogs.c:657
 msgid "seconds"
 msgstr "Sekunden"
 
-#: ../lib/screenshooter-dialogs.c:703
+#: ../lib/screenshooter-dialogs.c:679
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aktion</span>"
 
-#: ../lib/screenshooter-dialogs.c:734
+#: ../lib/screenshooter-dialogs.c:710
 msgid "Save"
 msgstr "Speichern"
 
-#: ../lib/screenshooter-dialogs.c:747
+#: ../lib/screenshooter-dialogs.c:723
 msgid "Save the screenshot to a PNG file"
 msgstr "Bildschirmfoto als PNG-Datei speichern"
 
-#: ../lib/screenshooter-dialogs.c:776
+#: ../lib/screenshooter-dialogs.c:752
 msgid "Save by default to:"
 msgstr "Voreingestellter Speicherort:"
 
-#: ../lib/screenshooter-dialogs.c:792
+#: ../lib/screenshooter-dialogs.c:768
 #, fuzzy
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
@@ -128,62 +128,62 @@ msgstr ""
 "Wenn dies ausgewählt ist, wird das Bildschirmfoto an dem rechts angegebenen "
 "Speicherort abgelegt. Ansonsten wird ein Dialog angezeigt."
 
-#: ../lib/screenshooter-dialogs.c:797
+#: ../lib/screenshooter-dialogs.c:773
 msgid "Default save location"
 msgstr "Voreingestellter Speicherort"
 
-#: ../lib/screenshooter-dialogs.c:811
+#: ../lib/screenshooter-dialogs.c:787
 msgid "Set the default save location"
 msgstr "Voreingestellten Speicherort angeben"
 
-#: ../lib/screenshooter-dialogs.c:833
+#: ../lib/screenshooter-dialogs.c:809
 msgid "Copy to the clipboard"
 msgstr "In die Zwischenablage kopieren"
 
-#: ../lib/screenshooter-dialogs.c:843
+#: ../lib/screenshooter-dialogs.c:819
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 "Das Bildschirmfoto in die Zwischenablage kopieren, so dass es später "
 "eingefügt werden kann"
 
-#: ../lib/screenshooter-dialogs.c:861
+#: ../lib/screenshooter-dialogs.c:837
 msgid "Open with:"
 msgstr "Öffnen mit:"
 
-#: ../lib/screenshooter-dialogs.c:877
+#: ../lib/screenshooter-dialogs.c:853
 msgid "Open the screenshot with the chosen application"
 msgstr "Bildschirmfoto mit der angegebenen Anwendung öffnen"
 
 #. Application label
-#: ../lib/screenshooter-dialogs.c:910
+#: ../lib/screenshooter-dialogs.c:886
 msgid "Application:"
 msgstr "Anwendung:"
 
-#: ../lib/screenshooter-dialogs.c:957 ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:933 ../src/main.c:74
 msgid "Application to open the screenshot"
 msgstr "Anwendung zum Öffnen des Bildschirmfotos"
 
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:977
 msgid "Save screenshot as..."
 msgstr "Speichere Bildschirmfoto als ..."
 
-#: ../src/main.c:47
+#: ../src/main.c:44
 msgid "Version information"
 msgstr "Versionsinformation"
 
-#: ../src/main.c:65
+#: ../src/main.c:62
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
 
-#: ../src/main.c:69
+#: ../src/main.c:66
 msgid "Do not display the save dialog"
 msgstr "Den Speichern-Dialog nicht anzeigen"
 
-#: ../src/main.c:73
+#: ../src/main.c:70
 msgid "Directory where the screenshot will be saved"
 msgstr "Das Verzeichnis, in dem das Bildschirmfoto gespeichert werden soll"
 
-#: ../src/main.c:185
+#: ../src/main.c:183
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -192,7 +192,7 @@ msgstr ""
 "%s: %s\n"
 "Geben Sie »%s --help« ein, um Informationen über die Verwendung zu erhalten.\n"
 
-#: ../src/main.c:268
+#: ../src/main.c:266
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr ""
@@ -200,11 +200,18 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#, fuzzy
 msgid ""
-"Take screenshots of the entire screen,of the active window or of a region"
+"Take screenshots of the entire screen, of the active window or of a region"
 msgstr ""
 "Bildschirmfoto des ganzen Bildschirms, des aktuellen Fensters oder eines "
 "Bereichs erstellen"
+
+#~ msgid ""
+#~ "Take screenshots of the entire screen,of the active window or of a region"
+#~ msgstr ""
+#~ "Bildschirmfoto des ganzen Bildschirms, des aktuellen Fensters oder eines "
+#~ "Bereichs erstellen"
 
 #~ msgid "Take a screenshot of the whole screen"
 #~ msgstr "Bildschirmfoto des ganzen Bildschirms erstellen"
