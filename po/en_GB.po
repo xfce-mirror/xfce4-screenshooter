@@ -21,31 +21,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../lib/screenshooter-dialogs.c:226
-#, fuzzy
 msgid "Screenshot.png"
-msgstr " Screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:239
-#, fuzzy, c-format
+#, c-format
 msgid "Screenshot-%d.png"
-msgstr " Screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:453
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Take a screenshot"
-msgstr " Take a screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:460
-#, fuzzy
 msgid "Take the screenshot"
-msgstr " Take a screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:467
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Screenshot"
-msgstr " Screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:477
 msgid "Preferences"
@@ -62,9 +58,8 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:538 ../src/main.c:52
 #: ../panel-plugin/screenshooter-plugin.c:226
 #: ../panel-plugin/screenshooter-plugin.c:316
-#, fuzzy
 msgid "Take a screenshot of the entire screen"
-msgstr " Take a screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:551
 msgid "Active window"
@@ -73,9 +68,8 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:562 ../src/main.c:48
 #: ../panel-plugin/screenshooter-plugin.c:231
 #: ../panel-plugin/screenshooter-plugin.c:321
-#, fuzzy
 msgid "Take a screenshot of the active window"
-msgstr " Take a screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:575
 msgid "Select a region"
@@ -97,9 +91,8 @@ msgid ""
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:648
-#, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
-msgstr " Take a screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:657
 msgid "seconds"
@@ -114,9 +107,8 @@ msgid "Save"
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:723
-#, fuzzy
 msgid "Save the screenshot to a PNG file"
-msgstr "Save screenshot as ..."
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:752
 msgid "Save by default to:"
@@ -158,14 +150,12 @@ msgid "Application:"
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:933 ../src/main.c:74
-#, fuzzy
 msgid "Application to open the screenshot"
-msgstr " Take a screenshot"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:977
-#, fuzzy
 msgid "Save screenshot as..."
-msgstr "Save screenshot as ..."
+msgstr ""
 
 #: ../src/main.c:44
 msgid "Version information"
@@ -197,56 +187,6 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr " Take a screenshot"
-
-#, fuzzy
-#~ msgid ""
-#~ "Take screenshots of the entire screen,of the active window or of a region"
-#~ msgstr " Take a screenshot"
-
-#, fuzzy
-#~ msgid "Take a screenshot of the whole screen"
-#~ msgstr " Take a screenshot"
-
-#, fuzzy
-#~ msgid "Screenshooter plugin"
-#~ msgstr "Screenshot delay"
-
-#, fuzzy
-#~ msgid "Take a screenshot of desktop"
-#~ msgstr " Take a screenshot"
-
-#, fuzzy
-#~ msgid "A tool to take screenshots of your desktop or of the active windows"
-#~ msgstr " Take a screenshot"
-
-#, fuzzy
-#~ msgid "Screenshot tool"
-#~ msgstr " Screenshot"
-
-#~ msgid " Screenshot"
-#~ msgstr " Screenshot"
-
-#~ msgid "Take screenshot"
-#~ msgstr "Take screenshot"
-
-#~ msgid "Properties"
-#~ msgstr "Properties"
-
-#~ msgid "Screenshots"
-#~ msgstr "Screenshots"
-
-#~ msgid "Ask for _filename"
-#~ msgstr "Ask for _filename"
-
-#~ msgid "Error grabbing the pointer %d"
-#~ msgstr "Error grabbing the pointer %d"
-
-#~ msgid "Always take shot of the whole screen"
-#~ msgstr "Always take shot of the whole screen"
-
-#~ msgid "Window selection delay"
-#~ msgstr "Window selection delay"
+msgstr ""

@@ -12,7 +12,7 @@
 #: ../src/main.c:179
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-screenshooter-plugin\n"
+"Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-09 18:50+0100\n"
 "PO-Revision-Date: 2008-12-01 15:31-0300\n"
@@ -209,85 +209,3 @@ msgstr ""
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Obter captura da tela inteira ou da janela ativa"
-
-#, fuzzy
-#~ msgid ""
-#~ "Take screenshots of the entire screen,of the active window or of a region"
-#~ msgstr "Obter captura da tela inteira ou da janela ativa"
-
-#~ msgid "Take a screenshot of the whole screen"
-#~ msgstr "Obter uma captura da tela inteira"
-
-#~ msgid "Couldn't find window manager window"
-#~ msgstr "Não foi possível encontrar a janela gerenciadora de janelas"
-
-#~ msgid ""
-#~ "Delay in seconds between pressing the button to take the screenshot and "
-#~ "taking the screenshot"
-#~ msgstr ""
-#~ "Atraso em segundos entre o pressionamento do botão para obter a captura "
-#~ "de tela e obter a captura da tela"
-
-#~ msgid "Modes"
-#~ msgstr "Modos"
-
-#~ msgid "Options"
-#~ msgstr "Opções"
-
-#~ msgid "Show save dialog"
-#~ msgstr "Mostrar o diálogo de salvar"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
-#~ "span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Abrir a imagem da captura "
-#~ "de tela com</span>"
-
-#~ msgid "Dialog to set the default save folder"
-#~ msgstr "Diálogo para configurar a pasta padrão para salvar"
-
-#~ msgid "Screenshooter plugin"
-#~ msgstr "Miniaplicativo Screenshooter"
-
-#~ msgid "Take a screenshot of desktop"
-#~ msgstr "Capturar uma imagem da área de trabalho"
-
-#~ msgid "Default save folder"
-#~ msgstr "Pasta padrão para salvar"
-
-#~ msgid "A tool to take screenshots of your desktop or of the active windows"
-#~ msgstr ""
-#~ "Uma ferramenta para capturar uma imagem da tela da área de trabalho ou da "
-#~ "janela atual"
-
-#~ msgid "Screenshot tool"
-#~ msgstr "Ferramenta de capturar tela"
-
-#~ msgid " Screenshot"
-#~ msgstr " Captura de tela"
-
-#~ msgid "Take screenshot"
-#~ msgstr "Capturar tela"
-
-#, fuzzy
-#~ msgid "Delay before taking the screenshot"
-#~ msgstr "Atraso antes de capturar a tela"
-
-#~ msgid "Properties"
-#~ msgstr "Propriedades"
-
-#~ msgid "Screenshots"
-#~ msgstr "Capturas de Tela"
-
-#~ msgid "Ask for _filename"
-#~ msgstr "Pedir por nome de _arquivo"
-
-#~ msgid "Error grabbing the pointer %d"
-#~ msgstr "Erro ao capturar o ponteiro %d"
-
-#~ msgid "Always take shot of the whole screen"
-#~ msgstr "Sempre capturar a tela inteira"
-
-#~ msgid "Window selection delay"
-#~ msgstr "Atraso na seleÃ§Ã£o de janela"

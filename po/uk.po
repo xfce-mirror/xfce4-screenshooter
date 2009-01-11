@@ -7,7 +7,7 @@
 #: ../src/main.c:179
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-screenshooter-plugin\n"
+"Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-09 18:50+0100\n"
 "PO-Revision-Date: 2008-12-15 13:29+0200\n"
@@ -198,43 +198,3 @@ msgstr ""
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Зробити знімки всього екрану, активного вікна або області"
-
-#~ msgid ""
-#~ "Take screenshots of the entire screen,of the active window or of a region"
-#~ msgstr "Зробити знімки всього екрану, активного вікна або області"
-
-#~ msgid "Couldn't find window manager window"
-#~ msgstr "Не вдається знайти вікно менеджера вікон"
-
-#~ msgid "Modes"
-#~ msgstr "Режими"
-
-#~ msgid "Options"
-#~ msgstr "Опції"
-
-#~ msgid "Show save dialog"
-#~ msgstr "Показати діалог збереження"
-
-#~ msgid "Take a screenshot of the whole screen"
-#~ msgstr "Отримати знімок всього екрану"
-
-#, fuzzy
-#~ msgid ""
-#~ "Delay in seconds between pressing the button to take the screenshot and "
-#~ "taking the screenshot"
-#~ msgstr "Затримка в секундах перед отриманням знімку"
-
-#, fuzzy
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Open the screenshot with</"
-#~ "span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Затримка перед знімком  "
-#~ "екрану    </span>"
-
-#, fuzzy
-#~ msgid "Dialog to set the default save folder"
-#~ msgstr "Призначити типове місце збереження знімків екрану"
-
-#~ msgid "Select a region to be captured"
-#~ msgstr "Виділити область з якої робити знімок"
