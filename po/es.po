@@ -122,13 +122,12 @@ msgid "Save by default to:"
 msgstr "Guardar por defecto como:"
 
 #: ../lib/screenshooter-dialogs.c:768
-#, fuzzy
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right without displaying a save dialog"
 msgstr ""
-"Si está seleccionado, la captura de pantalla se guardará por defecto en el "
-"lugar configurado a la derecha. Si no, aparecerá un diálogo para guardarla."
+"Si habilitado, la captura de pantalla será guardada por defecto a la "
+"localización configurada a la derecha, sin mostrar un diálogo de guardar"
 
 #: ../lib/screenshooter-dialogs.c:773
 msgid "Default save location"
@@ -195,13 +194,11 @@ msgstr ""
 "comandos.\n"
 
 #: ../src/main.c:266
-#, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "%s no es un directorio válido, se empleará el directorio por defecto."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr ""
