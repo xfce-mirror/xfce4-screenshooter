@@ -460,7 +460,7 @@ screenshooter_open_screenshot (gchar *screenshot_path,
           gchar *command = 
             g_strconcat (application, " ", screenshot_path, NULL);
     
-          GError      *error = NULL;
+          GError *error = NULL;
           
           /* Execute the command and show an error dialog if there was 
           * an error. */

@@ -28,9 +28,14 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
     {
       if (sd->show_save_dialog == 1)
         {
+          gchar *home = g_strdup (DEFAULT_SAVE_DIRECTORY);
+          
           screenshooter_save_screenshot (screenshot, 
                                          1, 
-                                         g_strdup (DEFAULT_SAVE_DIRECTORY));
+                                         home);
+                                         
+          if (home != NULL)
+            g_free (home);                                         
         }
       else
         {
@@ -46,15 +51,20 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
   #ifdef HAVE_GIO
   else
     {
+      gchar *tempdir = g_strdup (g_get_tmp_dir ());
+      
       gchar *screenshot_path =
         screenshooter_save_screenshot (screenshot, 
                                        FALSE, 
-                                       g_strdup (g_get_tmp_dir ()));
+                                       tempdir);
       if (screenshot_path != NULL)
         {
           screenshooter_open_screenshot (screenshot_path, sd->app);
           g_free (screenshot_path);
         }
+        
+      if (tempdir != NULL)
+        g_free (tempdir);
     }
   #endif
   

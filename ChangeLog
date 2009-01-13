@@ -1,3 +1,11 @@
+2009-01-13 jeromeg
+
+  Thanks to Jannis and Stephan for the C lesson !
+
+  * lib/screenshooter-dialogs.c: (generate_filename_for_uri) rewritten 
+    to avoid a memory leak on each step of the loop.
+  * lib/screenshooter-actions.c: remove two memory leaks.
+
 2009-01-09
 
   * src/xfce4-screenshooter.desktop.in.in,

@@ -213,34 +213,46 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
  * @uri: uri of the folder for which the filename should be generated.
  * returns: the filename or NULL if *uri == NULL.
 */
-static gchar *generate_filename_for_uri(char *uri)
+static gchar *generate_filename_for_uri (char *uri)
 {
-  gchar *file_name;
-  unsigned int i = 0;
-    
-  if ( uri == NULL )
+  gboolean exists = TRUE;
+  gchar *filename;
+  gchar *basename;
+  gint i;
+
+  if (uri == NULL)
     {
   	  return NULL;
     }      
+
+  basename = g_strdup (_("Screenshot.png"));
+  filename = g_build_filename (uri, basename, NULL);
   
-  file_name = g_strdup (_("Screenshot.png"));
-  
-  /* If the plain filename matches the condition, go for it. */
-  if (g_access (g_build_filename (uri, file_name, NULL), F_OK) != 0) 
+  if (!g_file_test (filename, G_FILE_TEST_EXISTS))
     {
-      return file_name;
+      g_free (filename);
+      
+      return basename;
     }
   
-  /* Else, we find the first n that matches the condition */  
-  do
+  g_free (basename);
+  g_free (filename);
+
+  for (i = 1; exists; ++i)
     {
-      i++;
-      g_free (file_name);
-      file_name = g_strdup_printf (_("Screenshot-%d.png"), i);
+      basename = g_strdup_printf (_("Screenshot-%d.png"), i);
+      filename = g_build_filename (uri, basename, NULL);
+
+      if (!g_file_test (filename, G_FILE_TEST_EXISTS))
+        exists = FALSE;
+
+      if (exists)
+        g_free (basename);
+      
+      g_free (filename);
     }
-  while (g_access (g_build_filename (uri, file_name, NULL), F_OK) == 0);
-    
-  return file_name;
+   
+  return basename;
 }
 
 
