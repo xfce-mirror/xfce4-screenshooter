@@ -4,7 +4,8 @@
     - Fix some compiler warnings.
     - Fix in typo in the desktop file for the application and the 
       plugin.
-    - Plug some leaks when saving a screenshot.
+    - Plug some leaks when saving a screenshot and when saving 
+      preferences in the panel plugin.
   
   * Enhancements:
     - Updated translations.

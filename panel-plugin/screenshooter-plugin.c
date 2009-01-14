@@ -185,8 +185,11 @@ pd: the associated PluginData.
 static void
 screenshooter_plugin_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
-  screenshooter_read_rc_file (xfce_panel_plugin_lookup_rc_file (plugin), 
-                              pd->sd);
+  gchar *rc_file = xfce_panel_plugin_lookup_rc_file (plugin);
+  
+  screenshooter_read_rc_file (rc_file, pd->sd);
+  
+  g_free (rc_file);
 }
 
 
@@ -198,8 +201,11 @@ pd: the associated PluginData.
 static void
 screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
-  screenshooter_write_rc_file (
-  xfce_panel_plugin_save_location (plugin, TRUE), pd->sd);  
+  gchar * rc_file = xfce_panel_plugin_save_location (plugin, TRUE);
+  
+  screenshooter_write_rc_file (rc_file, pd->sd);  
+  
+  g_free (rc_file);
 }
 
 

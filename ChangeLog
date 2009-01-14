@@ -1,5 +1,12 @@
 2009-01-13 jeromeg
 
+  * panel-plugin/screenshooter-plugin.c:
+    - (screenshooter_plugin_read_rc_file) plug a leak.
+    - (screenshooter_plugin_write_rc_file) plug a leak.
+  * NEWS: updated.
+
+2009-01-13 jeromeg
+
   * Update NEWS and TODO.
 
 2009-01-13 jeromeg
