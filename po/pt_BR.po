@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Automatically generated, 2007.
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007.
-# Og Maciel <ogmaciel@gnome.org>, 2008.
+# Og Maciel <ogmaciel@gnome.org>, 2008-2009.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
 # Henrique P Machado <zehrique@gmail.com>, 2008.
 #
@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-09 18:50+0100\n"
-"PO-Revision-Date: 2008-12-01 15:31-0300\n"
-"Last-Translator: Henrique P Machado <zehrique@gmail.com>\n"
+"PO-Revision-Date: 2009-01-16 12:53-0500\n"
+"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -38,9 +38,8 @@ msgid "Take a screenshot"
 msgstr "Capturar uma imagem da tela"
 
 #: ../lib/screenshooter-dialogs.c:460
-#, fuzzy
 msgid "Take the screenshot"
-msgstr "Capturar uma imagem da tela"
+msgstr "Capturar a imagem da tela"
 
 #: ../lib/screenshooter-dialogs.c:467
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
@@ -49,13 +48,12 @@ msgstr " Captura de tela"
 
 #: ../lib/screenshooter-dialogs.c:477
 msgid "Preferences"
-msgstr ""
+msgstr "Preferências"
 
 #: ../lib/screenshooter-dialogs.c:495
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Área para capturar</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Região para capturar</span>"
 
 #: ../lib/screenshooter-dialogs.c:527
 msgid "Entire screen"
@@ -79,7 +77,7 @@ msgstr "Capturar uma imagem da janela atual"
 
 #: ../lib/screenshooter-dialogs.c:575
 msgid "Select a region"
-msgstr ""
+msgstr "Selecionar uma região"
 
 #: ../lib/screenshooter-dialogs.c:586 ../src/main.c:56
 #: ../panel-plugin/screenshooter-plugin.c:236
@@ -89,6 +87,9 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
+"Seleciona uma região para ser capturada ao clicar um ponto na tela sem "
+"soltar o botao do mouse, arrastando o mouse para o outro canto da região, e "
+"largando o botão do mouse."
 
 #: ../lib/screenshooter-dialogs.c:602
 msgid ""
@@ -99,7 +100,6 @@ msgstr ""
 "imagem da tela</span>"
 
 #: ../lib/screenshooter-dialogs.c:648
-#, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Atraso em segundos antes de capturar uma imagem da tela"
 
@@ -120,18 +120,16 @@ msgid "Save the screenshot to a PNG file"
 msgstr "Salvar a captura de tela em um arquivo PNG"
 
 #: ../lib/screenshooter-dialogs.c:752
-#, fuzzy
 msgid "Save by default to:"
-msgstr "Gravar na localização padrão:"
+msgstr "Salvar por padrão em:"
 
 #: ../lib/screenshooter-dialogs.c:768
-#, fuzzy
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right without displaying a save dialog"
 msgstr ""
 "Se marcada, a captura da tela será salva na localização padrão definida à "
-"direita. Caso contrário, um diálogo para salvar será exibido."
+"direita sem exibir o diálogo para salvar"
 
 #: ../lib/screenshooter-dialogs.c:773
 msgid "Default save location"
@@ -162,7 +160,7 @@ msgstr "Abrir a captura de tela com o aplicativo escolhido"
 #. Application label
 #: ../lib/screenshooter-dialogs.c:886
 msgid "Application:"
-msgstr ""
+msgstr "Aplicativo:"
 
 #: ../lib/screenshooter-dialogs.c:933 ../src/main.c:74
 msgid "Application to open the screenshot"
@@ -201,11 +199,10 @@ msgstr ""
 #: ../src/main.c:266
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "%s não é um diretório válido; o diretório padrão será usado."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Obter captura da tela inteira ou da janela ativa"
+msgstr "Obtem uma captura da tela inteira, da janela atual ou de uma região"
