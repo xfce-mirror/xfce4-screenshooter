@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-09 18:50+0100\n"
-"PO-Revision-Date: 2008-12-15 13:29+0200\n"
+"PO-Revision-Date: 2008-01-16 17:56+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -47,8 +47,7 @@ msgstr "Параметри"
 
 #: ../lib/screenshooter-dialogs.c:495
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Область захоплення</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Область захоплення</span>"
 
 #: ../lib/screenshooter-dialogs.c:527
 msgid "Entire screen"
@@ -82,6 +81,9 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
+"Виберіть область для захоплення шляхом клацання мишкою на екрані і без "
+"відпускання кнопки миші пересуньте вказівник в інший кут області і тоді "
+"відпустіть кнопку миші."
 
 #: ../lib/screenshooter-dialogs.c:602
 msgid ""
@@ -116,13 +118,12 @@ msgid "Save by default to:"
 msgstr "Зберегти по замовчанню до:"
 
 #: ../lib/screenshooter-dialogs.c:768
-#, fuzzy
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right without displaying a save dialog"
 msgstr ""
-"Якщо відмічено, знімок буде збережено до типового місця, що визначено "
-"справа, якщо ні, то буде відображено діалог збереження."
+"Якщо відмічено знімок буде збережено до типового місця, що визначено "
+"справа, причому без відображення діалогу збереження"
 
 #: ../lib/screenshooter-dialogs.c:773
 msgid "Default save location"
@@ -151,7 +152,7 @@ msgstr "Відкрити знімок екрану вибраною програ
 #. Application label
 #: ../lib/screenshooter-dialogs.c:886
 msgid "Application:"
-msgstr ""
+msgstr "Програма:"
 
 #: ../lib/screenshooter-dialogs.c:933 ../src/main.c:74
 msgid "Application to open the screenshot"
@@ -190,11 +191,10 @@ msgstr ""
 #: ../src/main.c:266
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "%s не є правильною текою, буде використано типову теку."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Зробити знімки всього екрану, активного вікна або області"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Отримати знімки всього екрану, активного вікна або окремої області"
+
