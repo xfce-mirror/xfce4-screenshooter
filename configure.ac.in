@@ -4,11 +4,11 @@ dnl xfce4-screenshooter
 dnl
 
 m4_define([xfce4_screenshooter_version_major], [1])
-m4_define([xfce4_screenshooter_version_minor], [4])
-m4_define([xfce4_screenshooter_version_micro], [91])
+m4_define([xfce4_screenshooter_version_minor], [5])
+m4_define([xfce4_screenshooter_version_micro], [01])
 m4_define([xfce4_screenshooter_version_nano],  [0]) dnl leave this empty to have no nano version
 m4_define([xfce4_screenshooter_version_build], [r@REVISION@])
-m4_define([xfce4_screenshooter_version_tag],   [svn])
+m4_define([xfce4_screenshooter_version_tag],   [])
 m4_define([xfce4_screenshooter_version], [xfce4_screenshooter_version_major().xfce4_screenshooter_version_minor().xfce4_screenshooter_version_micro()ifelse(xfce4_screenshooter_version_nano(), [], [], [.xfce4_screenshooter_version_nano()])ifelse(xfce4_screenshooter_version_tag(), [svn], [xfce4_screenshooter_version_tag()-xfce4_screenshooter_version_build()], [xfce4_screenshooter_version_tag()])])
 
 AC_INIT([xfce4-screenshooter], [xfce4_screenshooter_version], [http://bugzilla.xfce.org/], [xfce4-screenshooter])
