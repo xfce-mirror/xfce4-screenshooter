@@ -6,9 +6,7 @@ xfce4_screenshooter_CFLAGS = \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCEGUI4_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
-	-I$(top_srcdir)/lib \
-	-Wall -Wextra -Wno-unused-parameter \
-	-Wno-missing-field-initializers
+	-I$(top_srcdir)/lib
 	
 xfce4_screenshooter_LDFLAGS =                       \
 	@GTK_LIBS@ \
