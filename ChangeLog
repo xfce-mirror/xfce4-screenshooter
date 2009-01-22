@@ -1,3 +1,9 @@
+2009-01-22 jeromeg
+
+  * src/main.c: fix a bug which dispalyed the header of the po files
+    when using --help on OpenBSD.
+  * po/: update po files, no string changes though.
+
 2009-01-18 jeromeg
 
   * configure.ac.in: post release bump, add svn tag.

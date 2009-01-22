@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-09 18:50+0100\n"
+"POT-Creation-Date: 2009-01-22 17:31+0100\n"
 "PO-Revision-Date: 2009-01-12 09:33+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (simplified)\n"
@@ -15,137 +15,141 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../lib/screenshooter-dialogs.c:226
+#: ../lib/screenshooter-dialogs.c:228
 msgid "Screenshot.png"
 msgstr "Screenshot.png"
 
-#: ../lib/screenshooter-dialogs.c:239
+#: ../lib/screenshooter-dialogs.c:243
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "Screenshot-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:453
+#: ../lib/screenshooter-dialogs.c:465
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "截屏"
 
-#: ../lib/screenshooter-dialogs.c:460
+#: ../lib/screenshooter-dialogs.c:472
 msgid "Take the screenshot"
 msgstr "截取屏幕"
 
-#: ../lib/screenshooter-dialogs.c:467
+#: ../lib/screenshooter-dialogs.c:479
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "屏幕截图"
 
-#: ../lib/screenshooter-dialogs.c:477
+#: ../lib/screenshooter-dialogs.c:489
 msgid "Preferences"
 msgstr "首选项"
 
-#: ../lib/screenshooter-dialogs.c:495
+#: ../lib/screenshooter-dialogs.c:507
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截取范围</span>"
 
-#: ../lib/screenshooter-dialogs.c:527
+#: ../lib/screenshooter-dialogs.c:539
 msgid "Entire screen"
 msgstr "全屏幕"
 
-#: ../lib/screenshooter-dialogs.c:538
-#: ../src/main.c:52
-#: ../panel-plugin/screenshooter-plugin.c:226
-#: ../panel-plugin/screenshooter-plugin.c:316
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:52
+#: ../panel-plugin/screenshooter-plugin.c:232
+#: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the entire screen"
 msgstr "截取全屏幕图像"
 
-#: ../lib/screenshooter-dialogs.c:551
+#: ../lib/screenshooter-dialogs.c:563
 msgid "Active window"
 msgstr "活动窗口"
 
-#: ../lib/screenshooter-dialogs.c:562
-#: ../src/main.c:48
-#: ../panel-plugin/screenshooter-plugin.c:231
-#: ../panel-plugin/screenshooter-plugin.c:321
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:48
+#: ../panel-plugin/screenshooter-plugin.c:237
+#: ../panel-plugin/screenshooter-plugin.c:327
 msgid "Take a screenshot of the active window"
 msgstr "只截取当前活动窗口图像"
 
-#: ../lib/screenshooter-dialogs.c:575
+#: ../lib/screenshooter-dialogs.c:587
 msgid "Select a region"
 msgstr "选择一个区域"
 
-#: ../lib/screenshooter-dialogs.c:586
-#: ../src/main.c:56
-#: ../panel-plugin/screenshooter-plugin.c:236
-#: ../panel-plugin/screenshooter-plugin.c:326
-msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
+#: ../panel-plugin/screenshooter-plugin.c:242
+#: ../panel-plugin/screenshooter-plugin.c:332
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
 msgstr "按住鼠标左键拖拽后松开以选取要截取的屏幕区域。"
 
-#: ../lib/screenshooter-dialogs.c:602
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+#: ../lib/screenshooter-dialogs.c:614
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+"screenshot</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">延时截图</span>"
 
-#: ../lib/screenshooter-dialogs.c:648
+#: ../lib/screenshooter-dialogs.c:660
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "截图前延迟"
 
-#: ../lib/screenshooter-dialogs.c:657
+#: ../lib/screenshooter-dialogs.c:669
 msgid "seconds"
 msgstr "秒"
 
-#: ../lib/screenshooter-dialogs.c:679
+#: ../lib/screenshooter-dialogs.c:691
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">动作</span>"
 
-#: ../lib/screenshooter-dialogs.c:710
+#: ../lib/screenshooter-dialogs.c:722
 msgid "Save"
 msgstr "保存"
 
-#: ../lib/screenshooter-dialogs.c:723
+#: ../lib/screenshooter-dialogs.c:735
 msgid "Save the screenshot to a PNG file"
 msgstr "保存为 PNG 文件"
 
-#: ../lib/screenshooter-dialogs.c:752
+#: ../lib/screenshooter-dialogs.c:764
 msgid "Save by default to:"
 msgstr "默认保存至:"
 
-#: ../lib/screenshooter-dialogs.c:768
-msgid "If checked, the screenshot will be saved by default to the location set on the right without displaying a save dialog"
-msgstr "若选中此项，截图将会被保存至右边设定好的默认保存位置。否则将会弹出保存对话框"
+#: ../lib/screenshooter-dialogs.c:780
+msgid ""
+"If checked, the screenshot will be saved by default to the location set on "
+"the right without displaying a save dialog"
+msgstr ""
+"若选中此项，截图将会被保存至右边设定好的默认保存位置。否则将会弹出保存对话框"
 
-#: ../lib/screenshooter-dialogs.c:773
+#: ../lib/screenshooter-dialogs.c:785
 msgid "Default save location"
 msgstr "默认保存位置"
 
-#: ../lib/screenshooter-dialogs.c:787
+#: ../lib/screenshooter-dialogs.c:799
 msgid "Set the default save location"
 msgstr "设置默认保存位置"
 
-#: ../lib/screenshooter-dialogs.c:809
+#: ../lib/screenshooter-dialogs.c:821
 msgid "Copy to the clipboard"
 msgstr "复制到剪贴板"
 
-#: ../lib/screenshooter-dialogs.c:819
+#: ../lib/screenshooter-dialogs.c:831
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "复制到剪贴板以便之后粘贴"
 
-#: ../lib/screenshooter-dialogs.c:837
+#: ../lib/screenshooter-dialogs.c:849
 msgid "Open with:"
 msgstr "打开程序:"
 
-#: ../lib/screenshooter-dialogs.c:853
+#: ../lib/screenshooter-dialogs.c:865
 msgid "Open the screenshot with the chosen application"
 msgstr "使用所选程序打开截图"
 
 #. Application label
-#: ../lib/screenshooter-dialogs.c:886
+#: ../lib/screenshooter-dialogs.c:898
 msgid "Application:"
 msgstr "应用程序"
 
-#: ../lib/screenshooter-dialogs.c:933
-#: ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
 msgid "Application to open the screenshot"
 msgstr "用以打开截图的程序"
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:989
 msgid "Save screenshot as..."
 msgstr "截图另存为..."
 
@@ -181,6 +185,6 @@ msgstr "%s 不是一个有效目录，将使用默认目录。"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid "Take screenshots of the entire screen, of the active window or of a region"
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
 msgstr "截取全屏幕或当前活动窗口或某一指定区域图像"
-
