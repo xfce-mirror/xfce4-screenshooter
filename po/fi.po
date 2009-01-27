@@ -2,14 +2,14 @@
 # Copyright (C) 2008 Jérôme Guelfucci
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Elias Julkunen <elias.julkunen@gmail.com>, 2008.
-# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2008.
+# Jari Rahkonen <jari.rahkonen@pp1.inet.fi>, 2008-2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-22 17:31+0100\n"
-"PO-Revision-Date: 2008-12-30 14:56+0200\n"
+"POT-Creation-Date: 2009-01-27 15:23+0200\n"
+"PO-Revision-Date: 2009-01-27 15:24+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -192,7 +192,6 @@ msgstr "%s ei ole kelvollinen kansio, joten käytetään oletuskansiota."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Kaappaa kuva koko näytöstä, aktiivisesta ikkunasta tai näytön alueesta"
+msgstr "Kaappaa kuvia koko näytöstä, aktiivisesta ikkunasta tai näytön alueesta"
