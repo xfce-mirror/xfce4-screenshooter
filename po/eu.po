@@ -3,13 +3,13 @@
 # Copyright (C) 2006 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
 #
-# Piarres Beobide <pi@beobide.net>, 2006, 2008.
+# Piarres Beobide <pi@beobide.net>, 2006, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-01-22 17:31+0100\n"
-"PO-Revision-Date: 2008-11-04 22:52+0100\n"
+"PO-Revision-Date: 2009-01-28 01:25+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "Pantaila-argazkia.png"
 #: ../lib/screenshooter-dialogs.c:243
 #, c-format
 msgid "Screenshot-%d.png"
-msgstr "Pantala-argazkia-%d.png"
+msgstr "Pantaila-argazkia-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:465
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -32,7 +32,6 @@ msgid "Take a screenshot"
 msgstr "Atera pantaila-argazkia bat"
 
 #: ../lib/screenshooter-dialogs.c:472
-#, fuzzy
 msgid "Take the screenshot"
 msgstr "Atera pantaila-argazkia bat"
 
@@ -43,13 +42,11 @@ msgstr "Pantaila-argazkia"
 
 #: ../lib/screenshooter-dialogs.c:489
 msgid "Preferences"
-msgstr ""
+msgstr "Hobespenak"
 
 #: ../lib/screenshooter-dialogs.c:507
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Kapturatzeko eremua</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kapturatzeko eremua</span>"
 
 #: ../lib/screenshooter-dialogs.c:539
 msgid "Entire screen"
@@ -73,7 +70,7 @@ msgstr "Atera leiho aktiboaren pantaila-argazkia"
 
 #: ../lib/screenshooter-dialogs.c:587
 msgid "Select a region"
-msgstr ""
+msgstr "Hautatu eremu bat"
 
 #: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
 #: ../panel-plugin/screenshooter-plugin.c:242
@@ -83,6 +80,9 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
+"Kapturatu behar den eremua aukeratzeko pantailaren puntu bat hautatu "
+"eta sagu botoia askatu gabe arrastratu kurtsorea eremuaren beste ertzera, "
+"han sagu botoia askatuaz."
 
 #: ../lib/screenshooter-dialogs.c:614
 msgid ""
@@ -93,9 +93,8 @@ msgstr ""
 "atera aurretik</span>"
 
 #: ../lib/screenshooter-dialogs.c:660
-#, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Pantaila-argazkia ateratzeko atzerapena segundutan"
+msgstr "Pantaila-argazkia atera aurretiko atzerapena segundotan"
 
 #: ../lib/screenshooter-dialogs.c:669
 msgid "seconds"
@@ -114,19 +113,16 @@ msgid "Save the screenshot to a PNG file"
 msgstr "Gorde pantaila-argazkia PNG fitxategi batetan"
 
 #: ../lib/screenshooter-dialogs.c:764
-#, fuzzy
 msgid "Save by default to:"
-msgstr "Lehenetsitako gordetze kokapena:"
+msgstr "Lehenespenez hemen gorde:"
 
 #: ../lib/screenshooter-dialogs.c:780
-#, fuzzy
 msgid ""
 "If checked, the screenshot will be saved by default to the location set on "
 "the right without displaying a save dialog"
 msgstr ""
-"Hautarik badago, pantaila-argazkia eskuinean ezarritako lehenetsitako "
-"gordetze kokapenean gordeko da. Hala ez badago gordetze elkarrizketa "
-"bistaratuko da."
+"Hautaturik bajadago pantaila-argazkia eskubian ezarritako lehenetsitako "
+"kokalekuan gordeko da gordetze leihorik ireki gabe."
 
 #: ../lib/screenshooter-dialogs.c:785
 msgid "Default save location"
@@ -155,7 +151,7 @@ msgstr "Ireki pantaila-argazkia hautatutako aplikazioarekin"
 #. Application label
 #: ../lib/screenshooter-dialogs.c:898
 msgid "Application:"
-msgstr ""
+msgstr "Aplikazioa:"
 
 #: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
 msgid "Application to open the screenshot"
@@ -193,11 +189,10 @@ msgstr ""
 #: ../src/main.c:266
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "%s ez baliozko direktorio bat, lehenetsitako direktorioa erabiliko da."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Atera leiho aktiboaren edo idazmahai osoaren pantaila-argazkia"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Panataila osoaren, aktibo dagoen leihoaren edo panatailaren eremu baten  pantaila-argazki bat egin"
+
