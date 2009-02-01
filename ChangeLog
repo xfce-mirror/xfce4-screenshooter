@@ -1,3 +1,10 @@
+2009-02-01 jeromeg
+
+  * src/main.c:
+    - don't display the window again after taking a screenshot, this can
+      be annoying and/or surprising.
+    - remove a lot of unneeded white spaces.
+
 2009-01-22 jeromeg
 
   * src/main.c: fix a bug which dispalyed the header of the po files
@@ -33,7 +40,7 @@
 
   Thanks to Jannis and Stephan for the C lesson !
 
-  * lib/screenshooter-dialogs.c: (generate_filename_for_uri) rewritten 
+  * lib/screenshooter-dialogs.c: (generate_filename_for_uri) rewritten
     to avoid a memory leak on each step of the loop.
   * lib/screenshooter-actions.c: remove two memory leaks.
 
@@ -65,7 +72,7 @@
 
   * doc/id: add Indonesian documentation by Andhika Padmawan.
   * doc/fr, doc/C: fix the markup of a title in xfce4-screenshooter.html
-  * configure.ac.in: 
+  * configure.ac.in:
     - add id doc.
     - set version number for next release.
 
@@ -114,7 +121,7 @@
 
 2008-12-28 jeromeg
 
-  * lib/screenshooter-dialogs.c (screenshooter_dialog_new): improve a 
+  * lib/screenshooter-dialogs.c (screenshooter_dialog_new): improve a
     tooltip.
 
 2008-12-28 jeromeg
@@ -167,7 +174,7 @@
 2008-12-20 jeromeg
 
   * doc/C/images: update the screenshot.
-  * doc/C/xfce4-screenshooter.html: 
+  * doc/C/xfce4-screenshooter.html:
     - update with the new options
     - apply a patch by David Mohr to improve some parts.
 
@@ -212,7 +219,7 @@
     Collins patch.
   * lib/screenshooter-dialogs.c: update the dialog for the new mode,
     patch by David Collins.
-  * panel-plugin/screenshooter-plugin.c: update the tooltips for the new 
+  * panel-plugin/screenshooter-plugin.c: update the tooltips for the new
     mode.
   * NEWS: updated.
 
@@ -234,7 +241,7 @@
 2008-12-06 jeromeg
 
   * doc/C/: Start english documentation
-  
+
 2008-12-06 jeromeg
 
   * lib/screenshooter-dialogs.c: add help button to the dialog.
@@ -268,8 +275,8 @@
 
   * lib/screenshooter-utils.c:
     - remove all X code, in particular find_toplevel_window. Instead,
-      use a combination of gdk_window_get_toplevel and 
-      gdk_window_get_frame_extents. This should fix some remaining 
+      use a combination of gdk_window_get_toplevel and
+      gdk_window_get_frame_extents. This should fix some remaining
       crashes with "BadWindow" error.
     - detect the area to screenshot after the delay, rather than before.
   * src/main.c: add a comment.
@@ -291,7 +298,7 @@
 
 2008-12-01 jeromeg
 
-  * lib/screenshooter-dialogs.c: use a custom button instead of the 
+  * lib/screenshooter-dialogs.c: use a custom button instead of the
     stock ok button to be more precise on the action of this button.
 
 2008-12-01 jeromeg
@@ -330,7 +337,7 @@
   * src/main.c:
     - remove preferences CLI option , the application can set the
       default save folder now.
-    - fix the rc file mess. Use xfce_resource_lookup and 
+    - fix the rc file mess. Use xfce_resource_lookup and
       xfce_resource_save_location so that folders get created if they
       don't exist. Thanks to Nick Schermer for helping.
   * lib/screenshooter-utils.{c,h}:
@@ -356,7 +363,7 @@
     - (screenshooter_dialog_new):
       + add some tooltips.
       + also show the save box for the application.
-      + fix the default state of some widgets as suggested by David 
+      + fix the default state of some widgets as suggested by David
         Collins.
 
 2008-11-25 jeromeg
@@ -377,7 +384,7 @@
 
   * lib/screenshooter-dialogs.c:
     - set icon size to 16 for the combobox.
-    - add (cb_save_toggled_sensi) to set to items insensitive 
+    - add (cb_save_toggled_sensi) to set to items insensitive
       when not toggled. Add callback using this function.
     - improve indentation.
     - improve the paddings of the layout a little bit.
@@ -393,7 +400,7 @@
 2008-11-24 jeromeg
 
   * lib/screenshooter-utils.c:
-    - re-add "none" application, fixes the segfault in the plugin 
+    - re-add "none" application, fixes the segfault in the plugin
       dialog.
   * lib/screenshooter-dialogs.c (screenshooter_dialog_new):
     - add a "Application:" label.
@@ -418,7 +425,7 @@
   * lib/screenshooter-utils.{c,h}:
     - fix includes
     - cleanup prototypes
-    - (screenshooter_copy_to_clipboard) Partially apply a patch by 
+    - (screenshooter_copy_to_clipboard) Partially apply a patch by
       David Collins to add copying to clipboard possibility.
     - add post screenshot actions in the ScreenshotData struct, in
       (screenshooter_read_rc_file) and in (screenshooter_write_rc_file)
@@ -432,9 +439,9 @@
     - added to manage post screenshot actions.
   * lib/Mafile.am: add new source files.
   * lib/libscreenshooter.h: include screenshooter-actions.h.
-  * src/main.c, panel-plugin/screenshooter-plugin.c: 
+  * src/main.c, panel-plugin/screenshooter-plugin.c:
     - use (screenshooter_take_and_output_screenshot).
-    
+
 2008-11-16 jeromeg
 
   * lib/screenshooter-utils.c, lib/screenshooter-dialogs.c
@@ -521,7 +528,7 @@
 
 2008-11-12 jeromeg
 
-  * lib/screenshooter-utils.c: 
+  * lib/screenshooter-utils.c:
     - (screenshooter_take_screenshot) rework the window grabbing to try to fix
       bug 4601.
   * src/main.c (main) try to fix 4601:
@@ -540,7 +547,7 @@
 
   * configure.ac.in : get ready for 1.3.9.1.
   * xfce4-screenshooter.1: bump version number.
-  
+
 2008-11-05 jeromeg
 
   * lib/screenshooter-dialogs.c (add_item):
@@ -550,7 +557,7 @@
 2008-11-05 jeromeg
 
   * src/main.c, panel-plugin/screenshooter-plugin.c:
-    - If no application is selected to open the screenshots, show the save 
+    - If no application is selected to open the screenshots, show the save
       dialog as usual. If an application is selected, save the screenshot in
       /tmp without showing the save dialog, and open it with the application.
       The user will then be able to do what he wants to do with the picture, and
@@ -562,8 +569,8 @@
 
   * Add svn tag.
   * Fix the version mess.
-  * lib/screenshooter-utils.c: 
-    - (screenshooter_read_rc_file) apply a patch by Enrico Troger to fix a 
+  * lib/screenshooter-utils.c:
+    - (screenshooter_read_rc_file) apply a patch by Enrico Troger to fix a
       crash.
   * lib/screenshooter-dialogs.c:
     - plug a leak in (cb_default_folder) and in (cb_combo_active_item_changed).
@@ -618,7 +625,7 @@
 
   * lib/screenshooter-dialogs.c:
     - (cb_combo_active_item_changed) free sd->app before setting the new value.
-    - (add_item) free path, unref file and icon, correctly free names. 
+    - (add_item) free path, unref file and icon, correctly free names.
 
 2008-11-01 jeromeg
 
@@ -626,12 +633,12 @@
     - add (cb_combo_active_item_changed), (add_item) and (populate_liststore)
       to manage the combobox stuff.
     - (screenshooter_dialog_new): add the combobox and set signals.
-  * Only build the open with stuff if gio is available.    
+  * Only build the open with stuff if gio is available.
 
 2008-10-28 jeromeg
 
   * lib/screenshooter-utils.{c,h}:
-    - modify (screenshooter_save_screenshot) so that it returns the save 
+    - modify (screenshooter_save_screenshot) so that it returns the save
       location.
     - start implementing (screenshooter_open_screenshot) to open screenshots
       with a given application.
@@ -663,7 +670,7 @@
     - move the generic code to /lib
     - move the panel stuff to /panel-plugin/
     - keep the main application in /src
-  * /lib/screenshooter-utils.{c,h} : 
+  * /lib/screenshooter-utils.{c,h} :
     - move the preferences file stuff here.
   * /src/main.c: save the button's state and load it on startup.
 
@@ -678,19 +685,19 @@
     window, we don't want to get a screenshot of the dialog...
   * src/screenshooter-dialogs.c: don't show the save options and the default
     folder chooser for the main application.
-  * src/screenshooter-utils.c: don't leak GdkWindows when falling back to 
+  * src/screenshooter-utils.c: don't leak GdkWindows when falling back to
     fullscreen.
-  
+
 2008-10-12 jeromeg
 
   * src/screenshooter-dialogs.{c,h}
-    - (screenshooter_dialog_new) Add an argument to create the preferences 
+    - (screenshooter_dialog_new) Add an argument to create the preferences
       dialog for the plugin.
     - add prototypes for internal functions.
   * src/screenshooter-plugin.c:
     - (screenshot_properties_dialog) Use the code from screenshooter-dialogs.c.
     - remove all the obsolete callbacks.
-  * src/main.c: 
+  * src/main.c:
     - (main) Use new arguments for screenshooter_dialog_new.
     - (main) Don't declare variables in the middle of a block.
   * src/screenshooter-utils.{c,h}: fix various indentation incoherences.
@@ -703,16 +710,16 @@
     - new file to handle the different dialogs.
   * src/main.c:
     - include screenshooter-dialogs.h
-    - (main) move the dialog for the preferred directory to 
+    - (main) move the dialog for the preferred directory to
       screenshooter-dialogs.c
     - (main) if no CLI option is given, show a dialog to set options and take a
       screenshot.
   * src/screenshooter-plugin.c: fix indentation of a function.
-  * configure.ac.in: 
+  * configure.ac.in:
     - hardcode the dependence on libxfcegui4.
     - add japanese to the list of translations.
   * src/Makefile.am: add libxfcegui4 flags.
-  * NEWS: updated.  
+  * NEWS: updated.
 
 2008-10-05 jeromeg
 
@@ -730,7 +737,7 @@
 2008-10-05 jeromeg
 
   * Plug some leaks detected by Gauvain Pocentek:
-    - src/main.c: in (main), free sd->screenshot_dir before setting the new 
+    - src/main.c: in (main), free sd->screenshot_dir before setting the new
       value from command line.
     - src/screenshooter-utils.c: in (save_screenshot), free filename before
       getting the user set filename.
@@ -773,11 +780,11 @@
   * AUTHORS: add credit to the Rodent icon theme, not sure it's the right place
     to do so, but it's better than nothing.
   * NEWS: updated.
-    
+
 
 2008-09-14 jeromeg
 
-  * src/{main.c, screenshooter-utils.c}: Use applets-screenshooter icon for 
+  * src/{main.c, screenshooter-utils.c}: Use applets-screenshooter icon for
     preferences dialog and save dialog.
   * NEWS : updated.
 
@@ -786,9 +793,9 @@
   * configure.ac.in: post release bump.
 
 2008-08-23 jeromeg
-  
+
   === 1.3.2 ===
-  
+
   * src/screenshooter-utils.c:
     - (cb_current_folder_changed): new function to update the filename.
     - (save_screenshot): updated to use cb_current_folder_changed.
@@ -826,7 +833,7 @@
     - ported to use mostly gdk functions.
     - BUGFIX: when the active window is the desktop, instead of returning a
       corrupted snapshot of the background image, return the whole desktop view.
-    - drop get_window_property and screenshot_find_active_window which are now 
+    - drop get_window_property and screenshot_find_active_window which are now
       useless.
     - improve indentation of code.
   * src/screenshooter-utils.h:
@@ -848,7 +855,7 @@
 2008-07-17 jeromeg
 
   === 1.3.1 ===
-  
+
   * NEWS: updated.
   * configure.ac.in: get ready for new realease.
 
@@ -868,18 +875,18 @@
 2008-07-15 jeromeg
 
   === 1.3.0 ===
-  
+
   * NEWS, README: updated.
   * configure.ac.in: get ready for new release.
-  * xfce4-screenshooter.1: update version.  
+  * xfce4-screenshooter.1: update version.
 
 2008-07-11 jeromeg
 
-  * src/main.c: 
+  * src/main.c:
     - add a CLI option to set the directory where screenshots are saved.
     - add a CLI option and a rc file to save a default save folder using a dialog.
   * src/screenshooter-utils.c: do not show full filename in save dialog.
-  * xfce4-screenshooter.1: update manpage for the new CLI options.  
+  * xfce4-screenshooter.1: update manpage for the new CLI options.
 
 2008-07-09 jeromeg
 
@@ -921,7 +928,7 @@
 2008-06-27 jeromeg
 
  === 1.2.0 ===
-  
+
   * NEWS, README: updated for new release.
   * configure.ac: remove svn tag, fix the manpage stuff to have make distcheck
     working.
@@ -942,7 +949,7 @@
 
 2008-06-20 08:59 jeromeg
 
-	* src/screenshooter-plugin.c: make labels bold and 
+	* src/screenshooter-plugin.c: make labels bold and
 	  aligned to the left.
 	* po/:
 	  - make update-po.
@@ -955,12 +962,12 @@
 	  - update the code to use this new default.
 	* src/main.c: save screenshots in home by default.
 	* po/: make update-po.
-	  
+
 2008-06-19 16:46 jeromeg
 
-	* po/: 
+	* po/:
 	  - make update-po.
-	  - updated French translation. 
+	  - updated French translation.
 
 2008-06-19 15:09 jeromeg
 
@@ -992,7 +999,7 @@
 2008-06-17 11:52 jeromeg
 
 	* COPYING: added the GPL2 text.
-	* autogen.sh, configure.ac.in: 
+	* autogen.sh, configure.ac.in:
 	  - added some magic of sarts to have the svn versions generated.
 	  - cleaned the versions stuff
 
@@ -1000,12 +1007,12 @@
 
 	* po/: update po files.
 	* src/screenshooter.c: improve a string.
-	
+
 2008-06-08 00:15 jeromeg
 
-	* src/main.c: Add an executable with cli options to take 
-	  screenshots, thanks to Ristretto for the nice example !  
-	* Modify autotools, makefiles and locale files to 
+	* src/main.c: Add an executable with cli options to take
+	  screenshots, thanks to Ristretto for the nice example !
+	* Modify autotools, makefiles and locale files to
 	  build it, thanks to Gauvain Pocentek.
 	* src/screenshooter-utils.h: Add some headers to fix build warnings.
 	* README: update with executable cli options
@@ -1017,7 +1024,7 @@
 	* src/screenshooter-utils.{c,h}: moved generic code here.
 	* src/screenshooter.c: updated to use the generic code.
 	* Update the makefiles and autotools to use new code structure.
-	
+
 2008-06-06 15:35 jeromeg
 
 	* panel-plugin/screenshooter.c:
@@ -1033,7 +1040,7 @@
 	  - button made insensitive while screenshot is taken.
 	* configure.ac: added x11-proto-core to build deps.
 	* README: updated.
-	
+
 2008-05-18 18:25 mmassonnet
 
 	* Fix GCC warnings and bug with delay (Patch from Jerome Guelfucci)
