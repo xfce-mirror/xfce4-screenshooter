@@ -1,12 +1,22 @@
+=== Version 1.5.1 ===
+
+  * Bugfixes:
+    - fix a problem in the po file header which was displayed in
+      --help on OpenBSD.
+    - do not respawn the application after taking a screenshot, it can
+      be annoying.
+
+  * Translations updates.
+
 === Version 1.5.0 ===
 
   * Bugfixes:
     - Fix some compiler warnings.
-    - Fix in typo in the desktop file for the application and the 
+    - Fix in typo in the desktop file for the application and the
       plugin.
-    - Plug some leaks when saving a screenshot and when saving 
+    - Plug some leaks when saving a screenshot and when saving
       preferences in the panel plugin.
-  
+
   * Enhancements:
     - Updated translations.
     - Indonesian documentation.
@@ -17,30 +27,30 @@
   SVN trunk has changed and the one of the website too. See the README
   file. xfce4-panel dependency has been bumped to >= 4.4.
 
-  * Bugfixes: 
-    - correctly grab active windows. In particular, menus are grabbed 
+  * Bugfixes:
+    - correctly grab active windows. In particular, menus are grabbed
       now (bug #4611).
     - correctly save the preferences, even if ~/.config/xfce4 does
       not exist. Thanks to Nick Schermer for the explanations.
-    - when saving the screenshot fails, show an error dialog 
+    - when saving the screenshot fails, show an error dialog
       explaning why it failed.
     - fix some remaining crashes when taking a screenshot of the active
       window.
     - only read the preferences file once when opening the application.
     - don't automatically set filenames in the file chooser, as user set
       ones are overriden (bug #4748).
-  
+
   * Enhancements:
     - Use -V for the version CLI option.
     - Add possibility to copy the screenshot to the clipboard, thanks to
       David Collins.
-    - Add possibility to define region to be captured using the mouse, 
+    - Add possibility to define region to be captured using the mouse,
       thanks to David Collins.
-    - Add CLI options for the region selection and to open the 
+    - Add CLI options for the region selection and to open the
       screenshot with an application.
     - The dialog for the plugin preferences and the application has been
-      totally rewritten to improve the user interface: it should look 
-      cleaner and tooltips have been added. Work started by David 
+      totally rewritten to improve the user interface: it should look
+      cleaner and tooltips have been added. Work started by David
       Collins.
     - When using delay, detect the area to screenshot after the delay,
       and not before, as it caused weird results in some cases.
@@ -68,21 +78,21 @@
 
   * Apply a patch by Enrico Tröger to fix a crash.
   * Plug some additionnal leaks.
-  * If no application is selected to open the screenshots, show the save dialog 
-    as usual. If an application is selected, save the screenshot in /tmp without 
-    showing the save dialog, and open it with the application. The user will 
-    then be able to do what he wants to do with the picture, and to save it 
+  * If no application is selected to open the screenshots, show the save dialog
+    as usual. If an application is selected, save the screenshot in /tmp without
+    showing the save dialog, and open it with the application. The user will
+    then be able to do what he wants to do with the picture, and to save it
     where he wants using the application.
   * Fallback to "exec" icon in the "open with" combo box.
-  * Updated or new translations: 
+  * Updated or new translations:
     Basque (Piarres Beobide e), Brazilian Portuguese (Og Maciel),
     Catalan (Carles Muñoz Gorriz), Czech (Michal Várady),
-    Dutch (Stephan Arts), Finnish (Elias Julkunen), French, 
-    Norwegian Bokmål (Terje Uriansrud), Turkish (Gökmen Görgen), 
+    Dutch (Stephan Arts), Finnish (Elias Julkunen), French,
+    Norwegian Bokmål (Terje Uriansrud), Turkish (Gökmen Görgen),
 
 === Version 1.3.9.0 ===
 
-  * Add a dialog to set the screenshot options and take a screenshot when no 
+  * Add a dialog to set the screenshot options and take a screenshot when no
     CLI option is given to the executable, add a menu entry for the application.
   * Add options to open the screenshot with an application after taking it. This
     depends on GIO.
@@ -90,14 +100,14 @@
   * Add some default icons taken from the Rodent icon theme to make sure the
     applet has an icon.
   * BUGFIX: Plug some remaining leaks and remove some useless code in main.
-  * BUGFIX: Fix a crash when using the screenshooter to take a screenshot of the 
+  * BUGFIX: Fix a crash when using the screenshooter to take a screenshot of the
     desktop when xfdesktop is set up not to display any icons.
   * New and updated translations, thanks to the fabulous translation team.
   * New CLI option to take a screenshot of the desktop.
-  
-  
+
+
 === Version 1.3.2 ===
-  
+
   * BUGFIX: plug some stupid leaks.
   * BUGFIX: when the active window is the desktop, instead of returning a
     corrupted snapshot of the background image, return the whole desktop view.
@@ -109,11 +119,11 @@
     the file chooser to set its save location.
 
 === Version 1.3.1 ===
-  
+
   * BUGFIX: Fix -s switch with relative path.
 
 === Version 1.3.0 ===
-  
+
   * Code cleanup, remove deprecated code.
   * Reduce code duplication between the executable and the plugin.
   * New CLI option to save screenshots without showing a save dialog.
@@ -124,7 +134,7 @@
   * A lot of updated/new translations.
 
 === Version 1.2.0 ===
-  
+
   * Fix gcc warnings.
   * Add manpage taken from Debian package.
   * Cleaned the preferences dialog to make it look like the ones of
@@ -135,7 +145,7 @@
   * Some others code cleanups.
 
 === Version 1.1.0 ===
-  
+
   * Delay now works.
   * Canceling save now works.
   * Executable to take screenshots from cli or with a keybinding.
