@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-22 17:31+0100\n"
+"POT-Creation-Date: 2009-02-07 16:22+0100\n"
 "PO-Revision-Date: 2009-01-11 14:48+0100\n"
 "Last-Translator: Vincent Tunru <projects@vinnl.nl>\n"
 "Language-Team: Dutch <xfce-i18n@xfce.org>\n"
@@ -27,7 +27,6 @@ msgid "Screenshot-%d.png"
 msgstr "Schermafdruk-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:465
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Schermafdruk maken"
 
@@ -36,6 +35,7 @@ msgid "Take the screenshot"
 msgstr "Schermafdruk maken"
 
 #: ../lib/screenshooter-dialogs.c:479
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Schermafdruk"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr "Volledig scherm"
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:52
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the entire screen"
@@ -64,7 +64,7 @@ msgstr "Schermafdruk van het hele scherm maken"
 msgid "Active window"
 msgstr "Actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:48
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid "Take a screenshot of the active window"
@@ -74,7 +74,7 @@ msgstr "Actieve venster"
 msgid "Select a region"
 msgstr "Selecteer een gebied"
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:242
 #: ../panel-plugin/screenshooter-plugin.c:332
 msgid ""
@@ -157,7 +157,7 @@ msgstr "Open de schermafdruk met de gegeven toepassing"
 msgid "Application:"
 msgstr "Toepassing:"
 
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Toepassing om de schermafdruk te openen"
 
@@ -165,23 +165,23 @@ msgstr "Toepassing om de schermafdruk te openen"
 msgid "Save screenshot as..."
 msgstr "Schermafdruk opslaan als..."
 
-#: ../src/main.c:44
+#: ../src/main.c:46
 msgid "Version information"
 msgstr "Versie-informatie"
 
-#: ../src/main.c:62
+#: ../src/main.c:64
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Vertraging in seconden voor het maken van een schermafdruk"
 
-#: ../src/main.c:66
+#: ../src/main.c:68
 msgid "Do not display the save dialog"
 msgstr "Niet vragen waar de schermafdruk opgeslagen moet worden"
 
-#: ../src/main.c:70
+#: ../src/main.c:72
 msgid "Directory where the screenshot will be saved"
 msgstr "Locatie voor de schermafdruk"
 
-#: ../src/main.c:183
+#: ../src/main.c:190
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -190,7 +190,7 @@ msgstr ""
 "%s: %s\n"
 "Probeer %s --help voor een volledige lijst van mogelijke opties.\n"
 
-#: ../src/main.c:266
+#: ../src/main.c:275
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s is geen geldige map, de standaardmap zal worden gebruikt."

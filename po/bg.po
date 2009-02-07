@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-22 17:31+0100\n"
+"POT-Creation-Date: 2009-02-07 16:22+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Adrian Dimitrov <Enzo_01@abv.bg>\n"
 "Language-Team: \n"
@@ -21,7 +21,6 @@ msgid "Screenshot-%d.png"
 msgstr "Screenshot-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:465
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Направи снимка на екрана"
 
@@ -30,6 +29,7 @@ msgid "Take the screenshot"
 msgstr "Вземи снимката"
 
 #: ../lib/screenshooter-dialogs.c:479
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Снимка на екрана"
@@ -47,7 +47,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr "Целия екран"
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:52
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the entire screen"
@@ -57,7 +57,7 @@ msgstr "Направи снимка на целия екран"
 msgid "Active window"
 msgstr "Активния прозорец"
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:48
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid "Take a screenshot of the active window"
@@ -67,7 +67,7 @@ msgstr "Направи снимка на активния прозорец"
 msgid "Select a region"
 msgstr "Избери район"
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:242
 #: ../panel-plugin/screenshooter-plugin.c:332
 msgid ""
@@ -149,7 +149,7 @@ msgstr "Отвори снимката с избраното приложение
 msgid "Application:"
 msgstr "Приложение:"
 
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Приложение за отваряне на снимките"
 
@@ -157,23 +157,23 @@ msgstr "Приложение за отваряне на снимките"
 msgid "Save screenshot as..."
 msgstr "Запиши снимката като..."
 
-#: ../src/main.c:44
+#: ../src/main.c:46
 msgid "Version information"
 msgstr "Информация за версията"
 
-#: ../src/main.c:62
+#: ../src/main.c:64
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Забавяне в секунди преди снимката да бъде направена"
 
-#: ../src/main.c:66
+#: ../src/main.c:68
 msgid "Do not display the save dialog"
 msgstr "Не показвай диалога за запис"
 
-#: ../src/main.c:70
+#: ../src/main.c:72
 msgid "Directory where the screenshot will be saved"
 msgstr "Директория където снимките да бъдат записвани"
 
-#: ../src/main.c:183
+#: ../src/main.c:190
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -182,7 +182,7 @@ msgstr ""
 "%s: %s\n"
 "Опитай %s --help за да видиш пълния списък от налични команди.\n"
 
-#: ../src/main.c:266
+#: ../src/main.c:275
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr ""

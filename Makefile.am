@@ -1,6 +1,6 @@
 @SET_MAKE@
 
-SUBDIRS = lib src panel-plugin po icons doc
+SUBDIRS = lib src panel-plugin po po-doc icons docs
 
 distclean-local:
 	rm -rf *.cache *~
@@ -21,6 +21,6 @@ DISTCLEANFILES =							\
 	intltool-extract						\
 	intltool-merge							\
 	intltool-update
-	
+
 dist_man_MANS = xfce4-screenshooter.1
 

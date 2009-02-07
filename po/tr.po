@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-22 17:31+0100\n"
+"POT-Creation-Date: 2009-02-07 16:22+0100\n"
 "PO-Revision-Date: 2009-01-13 16:32+0200\n"
 "Last-Translator: Samed Beyribey <ras0ir@eventualis.org>\n"
 "Language-Team: Turkish <turkce@pardus.org.tr>\n"
@@ -25,7 +25,6 @@ msgid "Screenshot-%d.png"
 msgstr "resim-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:465
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Ekran görüntüsü al"
 
@@ -34,6 +33,7 @@ msgid "Take the screenshot"
 msgstr "Ekran görüntüsü al"
 
 #: ../lib/screenshooter-dialogs.c:479
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Ekran görüntüsü"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr "Tüm ekran"
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:52
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the entire screen"
@@ -61,7 +61,7 @@ msgstr "Tüm ekranın görüntüsünü al"
 msgid "Active window"
 msgstr "Etkin pencere"
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:48
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid "Take a screenshot of the active window"
@@ -71,7 +71,7 @@ msgstr "Etkin pencerenin ekran görüntüsünü al"
 msgid "Select a region"
 msgstr "Alan seçimi"
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:242
 #: ../panel-plugin/screenshooter-plugin.c:332
 msgid ""
@@ -153,7 +153,7 @@ msgstr "Ekran görüntüsünü seçilen uygulama ile açar"
 msgid "Application:"
 msgstr "Uygulama:"
 
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Ekran görüntüsünü gösterecek uygulama"
 
@@ -161,23 +161,23 @@ msgstr "Ekran görüntüsünü gösterecek uygulama"
 msgid "Save screenshot as..."
 msgstr "Ekran görüntüsünü farklı kaydet..."
 
-#: ../src/main.c:44
+#: ../src/main.c:46
 msgid "Version information"
 msgstr "Sürüm bilgisi"
 
-#: ../src/main.c:62
+#: ../src/main.c:64
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Ekran görüntüsü almayı saniye değerinden geciktir"
 
-#: ../src/main.c:66
+#: ../src/main.c:68
 msgid "Do not display the save dialog"
 msgstr "Kaydetme penceresini gösterme"
 
-#: ../src/main.c:70
+#: ../src/main.c:72
 msgid "Directory where the screenshot will be saved"
 msgstr "Ekran görüntüsünün kaydedileceği dizin"
 
-#: ../src/main.c:183
+#: ../src/main.c:190
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -186,7 +186,7 @@ msgstr ""
 "%s: %s\n"
 "Uygun komut satırı seçeneklerini görmek için, %s --help komutunu deneyiniz.\n"
 
-#: ../src/main.c:266
+#: ../src/main.c:275
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s geçerli bir dizin değil, öntanımlı dizin kullanılacak."

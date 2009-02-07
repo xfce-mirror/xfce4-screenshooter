@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-22 17:31+0100\n"
+"POT-Creation-Date: 2009-02-07 16:22+0100\n"
 "PO-Revision-Date: 2008-11-09 14:52+0900\n"
 "Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -28,7 +28,6 @@ msgid "Screenshot-%d.png"
 msgstr "Screenshot-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:465
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #, fuzzy
 msgid "Take a screenshot"
 msgstr " スクリーンショットを撮ります"
@@ -39,6 +38,7 @@ msgid "Take the screenshot"
 msgstr " スクリーンショットを撮ります"
 
 #: ../lib/screenshooter-dialogs.c:479
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "スクリーンショット"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:52
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 #, fuzzy
@@ -68,7 +68,7 @@ msgstr "デスクトップのスクリーンショットを撮る"
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:48
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid "Take a screenshot of the active window"
@@ -78,7 +78,7 @@ msgstr "アクティブウィンドウのスクリーンショットを撮る"
 msgid "Select a region"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:242
 #: ../panel-plugin/screenshooter-plugin.c:332
 msgid ""
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Application:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
 #, fuzzy
 msgid "Application to open the screenshot"
 msgstr "スクリーンショットを開かない"
@@ -170,23 +170,23 @@ msgstr "スクリーンショットを開かない"
 msgid "Save screenshot as..."
 msgstr "名前をつけて保存..."
 
-#: ../src/main.c:44
+#: ../src/main.c:46
 msgid "Version information"
 msgstr "バージョン情報"
 
-#: ../src/main.c:62
+#: ../src/main.c:64
 msgid "Delay in seconds before taking the screenshot"
 msgstr "スクリーンショットを撮るまでの遅延時間"
 
-#: ../src/main.c:66
+#: ../src/main.c:68
 msgid "Do not display the save dialog"
 msgstr "保存ダイアログを表示しない"
 
-#: ../src/main.c:70
+#: ../src/main.c:72
 msgid "Directory where the screenshot will be saved"
 msgstr "スクリーンショットが保存されるディレクトリ"
 
-#: ../src/main.c:183
+#: ../src/main.c:190
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -195,7 +195,7 @@ msgstr ""
 "%s: %s\n"
 "%s --help で使用可能な全てのコマンドラインオプションが表示されます。\n"
 
-#: ../src/main.c:266
+#: ../src/main.c:275
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr ""

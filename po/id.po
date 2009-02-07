@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.4.91\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-22 17:31+0100\n"
+"POT-Creation-Date: 2009-02-07 16:22+0100\n"
 "PO-Revision-Date: 2009-01-01 15:39+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -25,7 +25,6 @@ msgid "Screenshot-%d.png"
 msgstr "Cuplikanlayar-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:465
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Ambil cuplikan layar"
 
@@ -34,6 +33,7 @@ msgid "Take the screenshot"
 msgstr "Ambil cuplikan layar"
 
 #: ../lib/screenshooter-dialogs.c:479
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Cuplikan Layar"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr "Seluruh layar"
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:52
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the entire screen"
@@ -61,7 +61,7 @@ msgstr "Ambil cuplikan layar dari seluruh layar"
 msgid "Active window"
 msgstr "Jendela aktif"
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:48
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid "Take a screenshot of the active window"
@@ -71,7 +71,7 @@ msgstr "Ambil cuplikan layar jendela yang aktif"
 msgid "Select a region"
 msgstr "Pilih daerah"
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:242
 #: ../panel-plugin/screenshooter-plugin.c:332
 msgid ""
@@ -152,7 +152,7 @@ msgstr "Buka cuplikan layar dengan aplikasi yang dipilih"
 msgid "Application:"
 msgstr "Aplikasi:"
 
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Aplikasi untuk membuka cuplikan layar"
 
@@ -160,23 +160,23 @@ msgstr "Aplikasi untuk membuka cuplikan layar"
 msgid "Save screenshot as..."
 msgstr "Simpan cuplikan layar sebagai..."
 
-#: ../src/main.c:44
+#: ../src/main.c:46
 msgid "Version information"
 msgstr "Informasi versi"
 
-#: ../src/main.c:62
+#: ../src/main.c:64
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Jeda dalam detik sebelum mengambil cuplikan layar"
 
-#: ../src/main.c:66
+#: ../src/main.c:68
 msgid "Do not display the save dialog"
 msgstr "Jangan tampilkan dialog simpan"
 
-#: ../src/main.c:70
+#: ../src/main.c:72
 msgid "Directory where the screenshot will be saved"
 msgstr "Direktori tempat cuplikan layar akan disimpan"
 
-#: ../src/main.c:183
+#: ../src/main.c:190
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -186,7 +186,7 @@ msgstr ""
 "Gunakan %s --help untuk melihat senarai lengkap opsi baris perintah yang "
 "tersedia.\n"
 
-#: ../src/main.c:266
+#: ../src/main.c:275
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s bukan direktori yang sah, direktori standar yang akan digunakan."

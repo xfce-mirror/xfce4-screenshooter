@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-22 17:31+0100\n"
+"POT-Creation-Date: 2009-02-07 16:22+0100\n"
 "PO-Revision-Date: 2009-01-12 20:00+0200\n"
 "Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -29,7 +29,6 @@ msgid "Screenshot-%d.png"
 msgstr "Στιγμιότυπο-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:465
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
 msgstr "Λήψη στιγμιοτύπου οθόνης"
 
@@ -38,6 +37,7 @@ msgid "Take the screenshot"
 msgstr "Λήψη του στιγμιοτύπου οθόνης"
 
 #: ../lib/screenshooter-dialogs.c:479
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Στιγμιότυπο οθόνης"
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Entire screen"
 msgstr "Ολόκληρη την οθόνη"
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:52
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the entire screen"
@@ -66,7 +66,7 @@ msgstr "Λήψη στιγμιοτύπου οθόνης ολόκληρης της
 msgid "Active window"
 msgstr "Ενεργό παράθυρο"
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:48
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid "Take a screenshot of the active window"
@@ -76,7 +76,7 @@ msgstr "Λήψη στιγμιοτύπου οθόνης του ενεργού π�
 msgid "Select a region"
 msgstr "Επιλογή περιοχής"
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:242
 #: ../panel-plugin/screenshooter-plugin.c:332
 msgid ""
@@ -160,7 +160,7 @@ msgstr "Άνοιγμα του στιγμιοτύπου οθόνης με την 
 msgid "Application:"
 msgstr "Εφαρμογή:"
 
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Εφαρμογή να ανοίξει το στιγμιοτύπο οθόνης"
 
@@ -168,23 +168,23 @@ msgstr "Εφαρμογή να ανοίξει το στιγμιοτύπο οθό�
 msgid "Save screenshot as..."
 msgstr "Αποθήκευση στιγμιοτύπου ως ... "
 
-#: ../src/main.c:44
+#: ../src/main.c:46
 msgid "Version information"
 msgstr "Πληροφορίες έκδοσης"
 
-#: ../src/main.c:62
+#: ../src/main.c:64
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Καθυστέρηση σε δευτερόλεπτα πριν την ληψη του στιγμιοτύπου οθόνης"
 
-#: ../src/main.c:66
+#: ../src/main.c:68
 msgid "Do not display the save dialog"
 msgstr "Μη εμφάνιση του διαλόγου αποθήκευσης"
 
-#: ../src/main.c:70
+#: ../src/main.c:72
 msgid "Directory where the screenshot will be saved"
 msgstr "Κατάλογος στον οποίο θα αποθηκευτεί το στιγμιότυπο οθόνης"
 
-#: ../src/main.c:183
+#: ../src/main.c:190
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -194,7 +194,7 @@ msgstr ""
 "Δοκίμασε %s --help για να δεις μία πλήρη λίστα με τις διαθέσιμες επιλογές "
 "της γραμμής εντολών.\n"
 
-#: ../src/main.c:266
+#: ../src/main.c:275
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr ""
