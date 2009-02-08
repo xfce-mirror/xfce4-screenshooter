@@ -1,5 +1,9 @@
 2009-02-07 jeromeg
 
+  * docs/, po-doc, configure.ac.in: add French documentation.
+
+2009-02-07 jeromeg
+
   * docs, po-doc: implement a docbook based help file which is now
     translatable through po files. Some bits are still missing.
   * src/xfce4-screenshooter.desktop.in.in: don't use a verb in the title.

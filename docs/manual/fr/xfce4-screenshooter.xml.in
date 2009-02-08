@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY date "February 2009">
+<!ENTITY version "@PACKAGE_VERSION@">
+<!ENTITY application "@PACKAGE_NAME@">
+]>
+<article id="xfce4-screenshooter" lang="fr">
+
+  <!-- Header -->
+  <articleinfo>
+    <title>Xfce4 Screenshooter</title>
+
+    <pubdate>&date;</pubdate>
+
+    <copyright>
+      <year>2008</year>
+      <year>2009</year>
+      <holder>Jérôme Guelfucci</holder>
+    </copyright><copyright><year>2009.</year><holder>Jérôme Guelfucci (jeromeg@xfce.org)</holder></copyright>
+
+    <legalnotice id="legalnotice">
+      <para>Vous pouvez copier, distribuer et/ou modifier ce document sous les termes de la licences GNU Free Documentation, dans sa version 1.1 ou tout autre version postérieure publiée par la Free Software Foundation; sans 'Invariant Sections', sans 'Front-Cover Texts' et sans 'Back-Cover Texts'. The texte complet de la license est fourni par la <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.</para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Jérôme</firstname>
+        <surname>Guelfucci</surname>
+        <affiliation>
+          <address><email>jeromeg@xfce.org</email></address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <releaseinfo>Ce manuel décrit la version @PACKAGE_VERSION@ de @PACKAGE_NAME@.</releaseinfo>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Introduction à @PACKAGE_VERSION@ of @PACKAGE_NAME@.</title>
+
+    <para>Cette application permet de prendre des captures d'écran de l'écran tout entier, de la fenêtre active ou d'une zone sélectionnée. Il est possible de régler le délai avant la prise de la capture d'écran et l'action à effectuer avec la capture d'écran: la sauvegarder dans un fichier PNG, la copier dans le presse-papier, ou l'ouvrir avec une autre application.</para>
+
+    <para>Une extension pour le tableau de bord de Xfce est aussi disponible.</para>
+
+  </sect1>
+
+  <sect1 id="using-the-application">
+    <title>Utilisation de l'application</title>
+
+    <sect2 id="user-interface">
+      <title>Via l'interface graphique</title>
+
+      <para>Pour lancer l'application, utilisez le lanceur "Capture d'écran", dans la catégorie "Accessoires" du menu principal de Xfce.</para>
+
+      <para>Cette fenêtre apparaîtra alors :</para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>La fenêtre de Xfce4 Screenshooter</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect3 id="region-to-capture">
+        <title>Zone à capturer</title>
+
+        <para>La section <emphasis>"Zone à capturer"</emphasis> permet de choisir la partie de l'écran à capturer :</para>
+
+        <itemizedlist>
+          <listitem>"L'écran tout entier" prend une capture de l'écran tel que vous le voyez, dans sa totalité.</listitem>
+          <listitem>"La fenêtre active" prend une capture de la fenêtre qui est active, c'est à dire celle qui était active avant que cette fenêtre ne soit apparue ou, si vous spécifiez un délai, celle qui est active après que le délai se soit écoulé.</listitem>
+          <listitem>"Sélectionner une zone" vous permet de sélectionner une zone à capturer en cliquant avec la souris sur un point de l'écran sans relacher le bouton de la souris, puis en déplaçant la souris jusqu'à l'autre coin de la zone et enfin en relachant le bouton de la souris.</listitem>
+        </itemizedlist>
+      </sect3>
+
+      <sect3 id="delay">
+        <title>Délai avant la prise de la capture d'écran</title>
+
+        <para>La section <emphasis>"Délai avant la prise de la capture d'écran"</emphasis> permet de régler le délai qui s'écoule entre l'appui sur le bouton <emphasis>"Prendre la capture d'écran"</emphasis> et la prise de la capture d'écran. Cela permet d'ouvrir des menus, d'effectuer une action quelconque à afficher sur la capture d'écran.</para>
+      </sect3>
+
+      <sect3 id="action">
+        <title>Action</title>
+
+        <para>La section <emphasis>"Action"</emphasis> permet de choisir l'action à effectuer avec la capture d'écran. Trois actions sont possibles.</para>
+
+        <sect4 id="save">
+          <title>Sauvegarder</title>
+
+          <para><emphasis>"Sauvegarder"</emphasis> enregistrera la capture d'écran dans un fichier PNG. Si vous cochez la case <emphasis>"Sauvegarder par défaut dans"</emphasis>, la capture d'écran sera enregistrée après l'appui sur le boutton <emphasis>"Prendre la capture d'écran"</emphasis> dans le dossier spécifié à droite, sans afficher de fenêtre de sauvegarde. Sinon, une fenêtre de sauvegarde vous permettra de choisir où la sauvegarder, et sous quel nom.</para>
+        </sect4>
+
+        <sect4 id="copy-to-clipboard">
+          <title>Copier dans le presse papier</title>
+
+          <para><emphasis>"Copier dans le presse papier"</emphasis> permet de coller la capture d'écran dans une autre application, comme un logiciel de traitement de texte. Quitter l'application avant d'avoir collé la capture d'écran provoque souvent son effacement du presse papier, certains gestionnaires de presse papier permettent d'éviter ce problème.</para>
+        </sect4>
+
+        <sect4 id="open-with">
+          <title>Ouvrir avec</title>
+
+          <para><emphasis>"Ouvrir avec"</emphasis> permet d'enregistrer la capture d'écran dans le dossier temporaire du système et de l'ouvrir avec l'application choisie dans le champ en dessous. Les applications permettant d'ouvrir des images sont automatiquement détectées et proposées dans la liste déroulante.</para>
+        </sect4>
+
+      </sect3>
+
+    </sect2>
+
+    <sect2 id="command-line">
+      <title>Via la ligne de commande</title>
+
+      <para>Les options de ligne de commande permettent de prendre des captures d'écran rapidement. Elles permettent aussi de faire fonctionner la touche Prt Scrn en haut à droite de la plus part des claviers. Pour cela, réglez les raccourcis de votre environnement de bureau pour qu'ils lancent xfce4-screenshooter avec une ou plusieurs des options suivantes lorsque la touche Prt Scrn est appuyée.</para>
+
+      <sect3 id="options">
+        <title>Les options en ligne de commande</title>
+
+        <sect4 id="w-option">
+          <title>L'option -w</title>
+
+          <para>L'option <emphasis>-w</emphasis> permet de prendre une capture d'écran de la fenêtre active.</para>
+        </sect4>
+
+        <sect4 id="f-option">
+          <title>L'option -f</title>
+
+          <para>L'option <emphasis>-f</emphasis> permet de prendre une capture d'écran de l'écran tout entier.</para>
+        </sect4>
+
+        <sect4 id="r-option">
+          <title>L'option -r</title>
+
+          <para>L'option <emphasis>-r</emphasis> permet de sélectionner une zone à capturer en cliquant avec la souris sur un point de l'écran sans relacher le bouton de la souris, puis en déplaçant la souris jusqu'à l'autre coin de la zone et enfin en relachant le bouton de la souris.</para>
+        </sect4>
+
+        <sect4 id="d-option">
+          <title>L'option -d</title>
+
+          <para>L'option <emphasis>-d</emphasis> suivie d'un entier positif permet de régler le délai en secondes avant la prise de la capture d'écran lorsque les options <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis> sont données.</para>
+        </sect4>
+
+        <sect4 id="s-option">
+          <title>L'option -s</title>
+
+          <para>L'option <emphasis>-s</emphasis> suivie d'un chemin vers un dossier existant permet de choisir où la capture d'écran est sauvegardée. Elle n'a un effet que si les options <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis> sont données. En combinant cette option avec l'option <emphasis>-h</emphasis>, vous pouvez enregistrer une capture d'écran dans un dossier donné, sans afficher de fenêtre de sauvegarde.</para>
+        </sect4>
+
+        <sect4 id="h-option">
+          <title>L'option -h</title>
+
+          <para>L'option <emphasis>-h</emphasis> permet de sauvegarder les captures d'écran sans afficher de fenêtre de sauvegarde. L'option <emphasis>-s</emphasis> permet de choisir où les sauvegarder. Cette option n'a un effet que si les options <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis> sont données.</para>
+        </sect4>
+
+        <sect4 id="o-option">
+          <title>L'option -o</title>
+
+          <para>L'option <emphasis>-o</emphasis> suivie d'un nom d'application permet de sauvegarder la capture d'écran dans le dossier temporaire du système et de l'ouvrir avec l'application dont le nom est donné après <emphasis>-o</emphasis>. Cette option n'a un effet que si les options <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis> sont données.</para>
+        </sect4>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="panel-plugin">
+    <title>Utilisation de l'extension pour le tableau de bord de Xfce</title>
+
+    <sect2 id="add">
+      <title>Ajout de l'extension</title>
+
+      <para>Pour ajouter l'extension au tableau de bord, cliquez droit sur le tableau de bord et sélectionnez <emphasis>"Ajouter un élément"</emphasis>. Dans la fenêtre qui apparaît, choisissez d'ajouter l'extension nommée <emphasis>"Capture d'écran"</emphasis>. </para>
+    </sect2>
+
+    <sect2 id="set">
+      <title>Configuration de l'extension</title>
+
+      <para>Vous pouvez ensuite configurer la prise des capture d'écran en cliquant droit sur l'icône de l'extension, sur le tableau de bord, et en choisissant <emphasis>"Configurer"</emphasis>. Une fenêtre de configuration similaire à la fenêtre de l'application que vous pouvez voir plus haut apparaît alors. Merci de regarder plus haut pour les différentes options.</para>
+    </sect2>
+
+    <sect2 id="use">
+      <title>Utilisation</title>
+
+      <para>Il suffit ce cliquer sur l'icône de l'extension pour prendre une capture d'écran.</para>
+    </sect2>
+
+  </sect1>
+
+</article>
