@@ -121,12 +121,20 @@ dnl ***************************
 echo ""
 echo "Build Configuration:"
 echo ""
+
 if test x"$GIO_FOUND" = x"yes"; then
 echo "  * Open with support:             yes"
 else
 echo "  * Open with support:             no"
 fi
-dnl
+
 echo "  * Debugging support:             $enable_debug"
+
 echo ""
-echo "Configure finished, type 'make' to build."
+echo "Maintainer Configuration:"
+echo ""
+
+echo "  * Xml2po enabled:                $enable_xml2po"
+echo "  * Xsltproc enabled:              $enable_xsltproc"
+
+echo ""
