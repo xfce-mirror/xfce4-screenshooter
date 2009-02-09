@@ -1,14 +1,14 @@
 # Swedish translation for xfce4-screenshooter-plugin.
-# Copyright (C) 2008 Free Software Foundation, Inc.
+# Copyright (C) 2008, 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
-# Daniel Nylander <po@danielnylander.se>, 2008.
+# Daniel Nylander <po@danielnylander.se>, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-07 16:22+0100\n"
-"PO-Revision-Date: 2008-12-14 20:10+0100\n"
+"POT-Creation-Date: 2009-02-09 15:26+0100\n"
+"PO-Revision-Date: 2009-02-09 15:28+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Område att fånga</span>
 msgid "Entire screen"
 msgstr "Hela skärmen"
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
+#: ../lib/screenshooter-dialogs.c:550
+#: ../src/main.c:54
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the entire screen"
@@ -61,7 +62,8 @@ msgstr "Ta en skärmbild av hela skärmen"
 msgid "Active window"
 msgstr "Aktivt fönster"
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
+#: ../lib/screenshooter-dialogs.c:574
+#: ../src/main.c:50
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid "Take a screenshot of the active window"
@@ -71,22 +73,16 @@ msgstr "Ta en skärmbild av aktivt fönster"
 msgid "Select a region"
 msgstr "Välj ett område"
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
+#: ../lib/screenshooter-dialogs.c:598
+#: ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:242
 #: ../panel-plugin/screenshooter-plugin.c:332
-msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
-msgstr ""
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
+msgstr "Markera ett område att fångas genom att klicka på en punkt av skärmen utan att släppa musknappen, dra sedan muspekaren till andra sidan av området och släpp musknappen."
 
 #: ../lib/screenshooter-dialogs.c:614
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Fördröjning innan skärmbilden "
-"fångas</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Fördröjning innan skärmbilden fångas</span>"
 
 #: ../lib/screenshooter-dialogs.c:660
 msgid "Delay in seconds before the screenshot is taken"
@@ -113,13 +109,8 @@ msgid "Save by default to:"
 msgstr "Spara som standard till:"
 
 #: ../lib/screenshooter-dialogs.c:780
-#, fuzzy
-msgid ""
-"If checked, the screenshot will be saved by default to the location set on "
-"the right without displaying a save dialog"
-msgstr ""
-"Om kryssad kommer skärmbilden att sparas som standard till platsen som "
-"angivits till höger. Om inte kommer en sparningsdialog att visas."
+msgid "If checked, the screenshot will be saved by default to the location set on the right without displaying a save dialog"
+msgstr "Om kryssad kommer skärmbilden att sparas som standard till platsen som angivits till höger, utan att visa en dialogruta."
 
 #: ../lib/screenshooter-dialogs.c:785
 msgid "Default save location"
@@ -148,9 +139,10 @@ msgstr "Öppna skärmbilden med valt program"
 #. Application label
 #: ../lib/screenshooter-dialogs.c:898
 msgid "Application:"
-msgstr ""
+msgstr "Program:"
 
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:945
+#: ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Program att öppna skärmbilden med"
 
@@ -181,17 +173,15 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Prova %s --help för att se en komplett lista över tillgängliga "
-"kommandoradsflaggor.\n"
+"Prova %s --help för att se en komplett lista över tillgängliga kommandoradsflaggor.\n"
 
 #: ../src/main.c:275
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "%s är inte en giltig katalog, standardkatalogen kommer att användas."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Ta skärmbilder för hela skärmen, aktivt fönster eller ett område"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Ta skärmbilder av hela skärmen, aktivt fönster eller ett område"
+
