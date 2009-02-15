@@ -7,6 +7,8 @@
       be annoying.
     - fix build without Gio (#4894).
     - do not use a verb for the desktop file title (#4914).
+    - set the correct folder in the filechooser when using the -s CLI
+      option. Thanks to Enrico Tröger.
 
   * Translations updates.
 

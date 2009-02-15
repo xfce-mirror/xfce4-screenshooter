@@ -1,3 +1,9 @@
+2009-02-15 jeromeg
+
+  * lib/screenshooter-actions.c: correctly set the active folder in the
+    file chooser, this is useful when using the -s cli option. Patch by
+    Enrico Tröger.
+
 2009-02-08 jeromeg
 
   * configure.ac.in: add maintainer information about xml2po and
