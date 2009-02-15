@@ -1,5 +1,10 @@
 2009-02-15 jeromeg
 
+  * docs/, po-docs/, po/: add Japanese documentation and update the
+    Japanese translation. (Hashimoto Masato)
+
+2009-02-15 jeromeg
+
   * lib/screenshooter-actions.c: correctly set the active folder in the
     file chooser, this is useful when using the -s cli option. Patch by
     Enrico Tröger.
