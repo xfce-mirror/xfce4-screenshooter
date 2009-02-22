@@ -75,7 +75,7 @@ AR = ar
 AUTOCONF = ${SHELL} /home/jerome/Développement/xfce4-screenshooter/missing --run autoconf
 AUTOHEADER = ${SHELL} /home/jerome/Développement/xfce4-screenshooter/missing --run autoheader
 AUTOMAKE = ${SHELL} /home/jerome/Développement/xfce4-screenshooter/missing --run automake-1.10
-AWK = gawk
+AWK = mawk
 CATALOGS =  ar.gmo bg.gmo ca.gmo cs.gmo da.gmo de.gmo el.gmo en_GB.gmo es.gmo et.gmo eu.gmo fi.gmo fr.gmo gl.gmo hr.gmo hu.gmo id.gmo it.gmo ja.gmo lv.gmo nb_NO.gmo nl.gmo pl.gmo pt_BR.gmo pt_PT.gmo sq.gmo sv.gmo tr.gmo uk.gmo ur.gmo zh_CN.gmo zh_TW.gmo
 CATOBJEXT = .gmo
 CC = gcc
@@ -176,9 +176,9 @@ OTOOL64 =
 PACKAGE = xfce4-screenshooter
 PACKAGE_BUGREPORT = http://bugzilla.xfce.org/
 PACKAGE_NAME = xfce4-screenshooter
-PACKAGE_STRING = xfce4-screenshooter 1.5.0.1svn-r06658
+PACKAGE_STRING = xfce4-screenshooter 1.5.0.1svn-r06743
 PACKAGE_TARNAME = xfce4-screenshooter
-PACKAGE_VERSION = 1.5.0.1svn-r06658
+PACKAGE_VERSION = 1.5.0.1svn-r06743
 PATH_SEPARATOR = :
 PKG_CONFIG = /usr/bin/pkg-config
 POFILES =  ar.po bg.po ca.po cs.po da.po de.po el.po en_GB.po es.po et.po eu.po fi.po fr.po gl.po hr.po hu.po id.po it.po ja.po lv.po nb_NO.po nl.po pl.po pt_BR.po pt_PT.po sq.po sv.po tr.po uk.po ur.po zh_CN.po zh_TW.po
@@ -191,11 +191,11 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = strip
 USE_NLS = yes
-VERSION = 1.5.0.1svn-r06658
+VERSION = 1.5.0.1svn-r06743
 XGETTEXT = /usr/bin/xgettext
 XGETTEXT_ARGS = --keyword=Q_ --from-code=UTF-8
-XML2PO = /usr/bin/xml2po
-XSLTPROC = /usr/bin/xsltproc
+XML2PO = 
+XSLTPROC = 
 abs_builddir = /home/jerome/Développement/xfce4-screenshooter/docs/manual/ja
 abs_srcdir = /home/jerome/Développement/xfce4-screenshooter/docs/manual/ja
 abs_top_builddir = /home/jerome/Développement/xfce4-screenshooter
@@ -592,8 +592,8 @@ uninstall-am: uninstall-docDATA
 	tags tags-recursive uninstall uninstall-am uninstall-docDATA
 
 
-xfce4-screenshooter.html: $(srcdir)/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl $(srcdir)/xfce4-screenshooter.xml
+#xfce4-screenshooter.html: $(srcdir)/xfce4-screenshooter.xml
+#	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl $(srcdir)/xfce4-screenshooter.xml
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:

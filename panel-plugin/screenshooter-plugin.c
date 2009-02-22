@@ -113,12 +113,22 @@ static gboolean
 cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 {
   GdkPixbuf *pb;
+  
   int width = size - 2 - 2 * MAX (pd->button->style->xthickness,
                                     pd->button->style->ythickness);
 
+  DBG ("Get the icon from the theme");
+  
   pb = xfce_themed_icon_load (SCREENSHOT_ICON_NAME, width);
+
+  DBG ("Set the new icon");
+  
   gtk_image_set_from_pixbuf (GTK_IMAGE (pd->image), pb);
+  
   g_object_unref (pb);
+
+  DBG ("Request size for the plugin");
+  
   gtk_widget_set_size_request (GTK_WIDGET (plugin), size, size);
 
   return TRUE;
@@ -158,6 +168,8 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
 	another screenshot is in progress */
 	gtk_widget_set_sensitive (GTK_WIDGET (button), FALSE);
 
+  DBG ("Start taking the screenshot");
+  
   screenshooter_take_and_output_screenshot (pd->sd);
   
   /* Make the panel button clickable */
@@ -273,12 +285,19 @@ static void
 cb_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
 {
   GtkWidget *dlg;
+
+  DBG ("Create the dialog");
   
   dlg = screenshooter_dialog_new (pd->sd, TRUE);
         
   /* Block the menu to prevent the user from launching several dialogs at
   the same time */
+
+  DBG ("Block the menu");
+  
   xfce_panel_plugin_block_menu (plugin);
+
+  DBG ("Run the dialog");
   
   g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
   
@@ -299,15 +318,21 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
 
   pd->sd = sd;
+
+  DBG ("Initialize the text domain");
   
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
   pd->plugin = plugin;
 
   /* Read the options */
+  DBG ("Read the preferences file");
+
   screenshooter_plugin_read_rc_file (plugin, pd);
   
   /* Create the panel button */
+  DBG ("Create the panel button");
+  
   pd->button = xfce_create_panel_button ();
 
   pd->image = gtk_image_new ();
@@ -316,6 +341,9 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   
   /* Set the tooltips if available */
   #if GTK_CHECK_VERSION(2,12,0)
+  DBG ("Set the default tooltip");
+
+  
   if (pd->sd->region == FULLSCREEN)
    {
      gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
@@ -334,27 +362,42 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
      "other corner of the region, and releasing the mouse button."));
     }
   #endif
-    
+
+  DBG ("Add the button to the panel");
+  
   gtk_widget_show_all (pd->button);
   
   gtk_container_add (GTK_CONTAINER (plugin), pd->button);
+
   xfce_panel_plugin_add_action_widget (plugin, pd->button);
   
   /* Set the callbacks */
+
+  DBG ("Set the clicked callback");
+  
   g_signal_connect (pd->button, "clicked",
                     G_CALLBACK (cb_button_clicked), pd);
+
+  DBG ("Set the free data callback");
 
   g_signal_connect (plugin, "free-data",
                     G_CALLBACK (cb_free_data), pd);
 
+  DBG ("Set the size changed callback");
+
   g_signal_connect (plugin, "size-changed",
                     G_CALLBACK (cb_set_size), pd);
+
+  DBG ("Set the style set callback");
 
   pd->style_id =
       g_signal_connect (plugin, "style-set",
                         G_CALLBACK (cb_style_set), pd);
 
+  DBG ("Set the configuration menu");
+
   xfce_panel_plugin_menu_show_configure (plugin);
+  
   g_signal_connect (plugin, "configure-plugin",
                     G_CALLBACK (cb_properties_dialog), pd);
 }
