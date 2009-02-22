@@ -39,18 +39,24 @@ static GdkWindow
 *get_active_window (GdkScreen *screen, gboolean *needs_unref)
 {
   GdkWindow *window, *window2;
+
+  DBG ("Get the active window");
   
   window = gdk_screen_get_active_window (screen);
             
   /* If there is no active window, we fallback to the whole screen. */      
   if (window == NULL)
     {
+      DBG ("No active window, fallback to the root window");
+
       window = gdk_get_default_root_window ();
       *needs_unref = FALSE;
     }
   else if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
     {
       /* If the active window is the desktop, grab the whole screen */
+      DBG ("The active window is the desktop, fallback to the root window");
+
       g_object_unref (window);
                     
       window = gdk_get_default_root_window ();
@@ -59,6 +65,8 @@ static GdkWindow
   else
     {
       /* Else we find the toplevel window to grab the decorations. */
+      DBG ("Active window is a normal window, grab the toplevel window");
+
       window2 = gdk_window_get_toplevel (window);
       
       g_object_unref (window);
@@ -81,12 +89,18 @@ static GdkPixbuf
   GdkRectangle *rectangle = g_new0 (GdkRectangle, 1);
     
   /* Get the root window */
+  DBG ("Get the root window");
+  
   root = gdk_get_default_root_window ();
+
+  DBG ("Get the frame extents");
   
   gdk_window_get_frame_extents (window, rectangle);
     
   /* Don't grab thing offscreen. */
-    
+
+  DBG ("Make sure we don't grab things offscreen");
+  
   x_orig = rectangle->x;
   y_orig = rectangle->y;
   width  = rectangle->width;
@@ -114,6 +128,9 @@ static GdkPixbuf
   
   /* Take the screenshot from the root GdkWindow, to grab things such as
    * menus. */
+
+  DBG ("Grab the screenshot");
+  
   screenshot = gdk_pixbuf_get_from_drawable (NULL, root, NULL,
                                              x_orig, y_orig, 0, 0,
                                              width, height);
@@ -129,6 +146,8 @@ static GdkPixbuf
   GdkPixbuf *screenshot = NULL;
  
   /* Get root window */
+  DBG ("Get the root window");
+  
   GdkWindow *root_window =  gdk_get_default_root_window ();
   
   GdkGCValues gc_values;
@@ -155,6 +174,8 @@ static GdkPixbuf
   
   /*Set up graphics context for a XOR rectangle that will be drawn as 
    * the user drags the mouse */
+  DBG ("Initialize the graphics context");
+  
   gc_values.function           = GDK_XOR;
   gc_values.line_width         = 0;
   gc_values.line_style         = GDK_LINE_SOLID;
@@ -172,6 +193,8 @@ static GdkPixbuf
   gdk_gc_set_rgb_bg_color (gc, &gc_black);
   
   /* Change cursor to cross-hair */
+  DBG ("Set the cursor");
+  
   grabstatus = gdk_pointer_grab (root_window, FALSE, mask,
                                  NULL, xhair_cursor, GDK_CURRENT_TIME);
   
@@ -188,7 +211,11 @@ static GdkPixbuf
       switch (event->type)
         {
           /* Start dragging the rectangle out */
+     
           case GDK_BUTTON_PRESS:
+
+            DBG ("Start dragging the rectangle");
+            
             x = x2 = x1 = event->button.x;
             y = y2 = y1 = event->button.y;
             w = 0; h = 0;
@@ -196,34 +223,44 @@ static GdkPixbuf
             break;
           
           /* Finish dragging the rectangle out */
-         case GDK_BUTTON_RELEASE:
-           if (pressed)
-             {
-               if (w > 0 && h > 0)
-                 {
-                   /* Remove the rectangle drawn previously */
-                   gdk_draw_rectangle (root_window, 
-                                       gc, 
-                                       FALSE, 
-                                       x, y, w, h);
-                   done = TRUE;
-                 } 
-               else 
-                 {
-                   /* The user has not dragged the mouse, start again */
+          case GDK_BUTTON_RELEASE:
+            if (pressed)
+              {
+                if (w > 0 && h > 0)
+                  {
+                    /* Remove the rectangle drawn previously */
+
+                    DBG ("Remove the rectangle drawn previously");
+                    
+                    gdk_draw_rectangle (root_window, 
+                                        gc, 
+                                        FALSE, 
+                                        x, y, w, h);
+                    done = TRUE;
+                  } 
+                else 
+                  {
+                    /* The user has not dragged the mouse, start again */
+
+                    DBG ("Mouse was not dragged, start agan");
                    
-                   pressed = FALSE;
-                 }
-             }
-           break;
+                    pressed = FALSE;
+                  }
+              }
+          break;
           
           /* The user is moving the mouse */
           case GDK_MOTION_NOTIFY:
             if (pressed)
               {
+                DBG ("Mouse is moving");
+
                 if (w > 0 && h > 0)
                
                 /* Remove the rectangle drawn previously */
+
+                DBG ("Remove the rectangle drawn previously");
+                
                 gdk_draw_rectangle (root_window, 
                                     gc, 
                                     FALSE, 
@@ -238,6 +275,9 @@ static GdkPixbuf
                 h = ABS (y2 - y1);
 
                 /* Draw  the rectangle as the user drags  the mouse */
+
+                DBG ("Draw the new rectangle");
+                
                 if (w > 0 && h > 0)
                   gdk_draw_rectangle (root_window, 
                                       gc, 
@@ -253,13 +293,18 @@ static GdkPixbuf
       
       gdk_event_free (event);
     }
-  
+ 
   if (grabstatus == GDK_GRAB_SUCCESS) 
     {
+      DBG ("Ungrab the pointer");
+
       gdk_pointer_ungrab(GDK_CURRENT_TIME);
     }
   
   /* Get the screenshot's pixbuf */
+
+  DBG ("Get the pixbuf for the screenshot");
+  
   screenshot = gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
                                              x, y, 0, 0, w, h);
   
@@ -367,10 +412,14 @@ screenshooter_read_rc_file (gchar               *file,
   
   if (file != NULL)
     {
+      DBG ("Open the rc file");
+
       rc = xfce_rc_simple_open (file, TRUE);
 
       if (rc != NULL)
         {
+          DBG ("Read the entries");
+
           delay = xfce_rc_read_int_entry (rc, "delay", 0);
               
           region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
@@ -394,11 +443,15 @@ screenshooter_read_rc_file (gchar               *file,
                                           "screenshot_dir", 
                                           DEFAULT_SAVE_DIRECTORY));
         }
+
+      DBG ("Close the rc file");
       
       xfce_rc_close (rc);
     }
    
   /* And set the sd values */
+  DBG ("Set the values of the struct");
+  
   sd->delay = delay;
   sd->region = region;
   sd->action = action;
