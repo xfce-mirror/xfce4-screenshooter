@@ -375,42 +375,51 @@ static void set_default_item (GtkWidget       *combobox,
 {
   GtkTreeModel *model = 
     gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
+  
   GtkTreeIter iter; 
-  gchar *command = NULL;
-  gboolean found = FALSE;
-  
+    
   /* Get the first iter */
-  gtk_tree_model_get_iter_first (model , &iter);
-       
-  /* Loop until finding the appropirate item, if any */
-  do
-    {
-      gtk_tree_model_get (model, &iter, 2, &command, -1);
-      
-      if (g_str_equal (command, sd->app))
+  if (gtk_tree_model_get_iter_first (model , &iter))
+    {     
+      gchar *command = NULL;
+      gboolean found = FALSE;
+
+      /* Loop until finding the appropirate item, if any */
+      do
         {
-          gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), 
-                                         &iter);
+          gtk_tree_model_get (model, &iter, 2, &command, -1);
           
-          found = TRUE;
+          if (g_str_equal (command, sd->app))
+            {
+              gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), 
+                                             &iter);
+              
+              found = TRUE;
+            }
+          
+          g_free (command);      
         }
+      while (gtk_tree_model_iter_next (model, &iter));
       
-      g_free (command);      
+      /* If no suitable item was found, set the first item as active and
+       * set sd->app accordingly. */
+      if (!found)
+        {
+          gtk_tree_model_get_iter_first (model , &iter);
+          gtk_tree_model_get (model, &iter, 2, &command, -1);
+          
+          gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+          
+          g_free (sd->app);
+          
+          sd->app = command;
+        }
     }
-  while (gtk_tree_model_iter_next (model, &iter));
-  
-  /* If no suitable item was found, set the first item as active and
-   * set sd->app accordingly. */
-  if (!found)
+  else
     {
-      gtk_tree_model_get_iter_first (model , &iter);
-      gtk_tree_model_get (model, &iter, 2, &command, -1);
-      
-      gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
-      
       g_free (sd->app);
-      
-      sd->app = command;
+
+      sd->app = g_strdup ("none");
     }
 }                              
 #endif

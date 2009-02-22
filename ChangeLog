@@ -1,5 +1,10 @@
 2009-02-22 jeromeg
 
+  * lib/screenshooter-dialogs.c:
+    (set_default_item) do not look up for a default item if the tree is empty.
+
+2009-02-22 jeromeg
+
   * lib/screenshooter-utils.c: add some additionnal debugging information.
 
 2009-02-22 jeromeg
