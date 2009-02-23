@@ -9,6 +9,7 @@
     - do not use a verb for the desktop file title (#4914).
     - set the correct folder in the filechooser when using the -s CLI
       option. Thanks to Enrico Tröger.
+    - fix a crash of the panel plugin involving the "Open with" list (#4971).
 
   * Translations updates.
 
