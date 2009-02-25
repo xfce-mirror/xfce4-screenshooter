@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-02-07 16:22+0100\n"
-"PO-Revision-Date: 2008-01-16 17:56+0200\n"
+"PO-Revision-Date: 2009-02-24 19:58+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,8 +44,7 @@ msgstr "Параметри"
 
 #: ../lib/screenshooter-dialogs.c:507
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Область захоплення</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Область захоплення</span>"
 
 #: ../lib/screenshooter-dialogs.c:539
 msgid "Entire screen"
@@ -113,7 +112,7 @@ msgstr "Зберегти знімок у файл PNG"
 
 #: ../lib/screenshooter-dialogs.c:764
 msgid "Save by default to:"
-msgstr "Зберегти по замовчанню до:"
+msgstr "Зберегти по замовчанню в:"
 
 #: ../lib/screenshooter-dialogs.c:780
 msgid ""

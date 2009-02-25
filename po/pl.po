@@ -1,198 +1,190 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Piotr Sokół <piotr.sokol@10g.pl>, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: xfce4-screenshooter 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-07 16:22+0100\n"
-"PO-Revision-Date: 2006-04-08 12:19+0900\n"
-"Last-Translator: Piotr Maliński <admin@rk.edu.pl>\n"
-"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2009-01-22 17:31+0100\n"
+"PO-Revision-Date: 2009-02-24 19:44+0100\n"
+"Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
+"Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../lib/screenshooter-dialogs.c:228
-#, fuzzy
 msgid "Screenshot.png"
-msgstr "Zrzut Ekranu"
+msgstr "Zrzut ekranu.png"
 
 #: ../lib/screenshooter-dialogs.c:243
-#, fuzzy, c-format
+#, c-format
 msgid "Screenshot-%d.png"
-msgstr "Zrzut Ekranu"
+msgstr "Zrzut ekranu-%d.png"
 
 #: ../lib/screenshooter-dialogs.c:465
-#, fuzzy
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 msgid "Take a screenshot"
-msgstr "Wykonaj zrzut ekranu"
+msgstr "Zrzut ekranu"
 
 #: ../lib/screenshooter-dialogs.c:472
-#, fuzzy
 msgid "Take the screenshot"
-msgstr "Wykonaj zrzut ekranu"
+msgstr "Wykonaj"
 
 #: ../lib/screenshooter-dialogs.c:479
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
-#, fuzzy
 msgid "Screenshot"
-msgstr "Zrzut Ekranu"
+msgstr "Zrzut ekranu"
 
 #: ../lib/screenshooter-dialogs.c:489
 msgid "Preferences"
-msgstr ""
+msgstr "Preferencje"
 
 #: ../lib/screenshooter-dialogs.c:507
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Rejestrowany obszar</span>"
 
 #: ../lib/screenshooter-dialogs.c:539
 msgid "Entire screen"
-msgstr ""
+msgstr "Cały ekran"
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
+#: ../lib/screenshooter-dialogs.c:550
+#: ../src/main.c:52
 #: ../panel-plugin/screenshooter-plugin.c:232
 #: ../panel-plugin/screenshooter-plugin.c:322
-#, fuzzy
 msgid "Take a screenshot of the entire screen"
-msgstr "Wykonaj zrzut ekranu"
+msgstr "Wykonuje zrzut całego ekranu"
 
 #: ../lib/screenshooter-dialogs.c:563
 msgid "Active window"
-msgstr ""
+msgstr "Bieżące okno"
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
+#: ../lib/screenshooter-dialogs.c:574
+#: ../src/main.c:48
 #: ../panel-plugin/screenshooter-plugin.c:237
 #: ../panel-plugin/screenshooter-plugin.c:327
-#, fuzzy
 msgid "Take a screenshot of the active window"
-msgstr "Wykonaj zrzut ekranu"
+msgstr "Wykonuje zrzut bieżącego okna"
 
 #: ../lib/screenshooter-dialogs.c:587
 msgid "Select a region"
-msgstr ""
+msgstr "Wybrany"
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
+#: ../lib/screenshooter-dialogs.c:598
+#: ../src/main.c:56
 #: ../panel-plugin/screenshooter-plugin.c:242
 #: ../panel-plugin/screenshooter-plugin.c:332
-msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
-msgstr ""
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
+msgstr "Wykonuje zrzut zaznaczonego obszaru"
 
 #: ../lib/screenshooter-dialogs.c:614
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
-msgstr ""
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the screenshot</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opóźnienie</span>"
 
 #: ../lib/screenshooter-dialogs.c:660
-#, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Wykonaj zrzut ekranu"
+msgstr "Określa wartość opóźnienia przed wykonaniem zrzutu ekranu"
 
 #: ../lib/screenshooter-dialogs.c:669
 msgid "seconds"
-msgstr ""
+msgstr "sekund"
 
 #: ../lib/screenshooter-dialogs.c:691
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akcja</span>"
 
 #: ../lib/screenshooter-dialogs.c:722
 msgid "Save"
-msgstr ""
+msgstr "Zapisanie"
 
 #: ../lib/screenshooter-dialogs.c:735
-#, fuzzy
 msgid "Save the screenshot to a PNG file"
-msgstr "Zapisz zrzut ekranu jako..."
+msgstr "Zapisuje zrzut ekranu do pliku .png"
 
 #: ../lib/screenshooter-dialogs.c:764
 msgid "Save by default to:"
-msgstr ""
+msgstr "Domyślne położenie:"
 
 #: ../lib/screenshooter-dialogs.c:780
-msgid ""
-"If checked, the screenshot will be saved by default to the location set on "
-"the right without displaying a save dialog"
-msgstr ""
+msgid "If checked, the screenshot will be saved by default to the location set on the right without displaying a save dialog"
+msgstr "Zapisuje pliki zrzutów ekranu w domyślnym położeniu, nie wyświetlając okna wyboru pliku"
 
 #: ../lib/screenshooter-dialogs.c:785
 msgid "Default save location"
-msgstr ""
+msgstr "Domyślne położenie zapisywania"
 
 #: ../lib/screenshooter-dialogs.c:799
 msgid "Set the default save location"
-msgstr ""
+msgstr "Określa domyślne położenie zapisywanych plików"
 
 #: ../lib/screenshooter-dialogs.c:821
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "Skopiowanie do schowka"
 
 #: ../lib/screenshooter-dialogs.c:831
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
+msgstr "Przygotowywuje wykonany zrzut ekranu do skopiowania za pomocą polecenia „Wklej”"
 
 #: ../lib/screenshooter-dialogs.c:849
 msgid "Open with:"
-msgstr ""
+msgstr "Otwarcie za pomocą:"
 
 #: ../lib/screenshooter-dialogs.c:865
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Otwiera zrzut ekranu za pomocą wybranego programu"
 
 #. Application label
 #: ../lib/screenshooter-dialogs.c:898
 msgid "Application:"
-msgstr ""
+msgstr "Program:"
 
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:945
+#: ../src/main.c:74
 msgid "Application to open the screenshot"
-msgstr "Wykonaj zrzut ekranu"
+msgstr "Otwiera zrzut ekranu za pomocą wybranego programu"
 
 #: ../lib/screenshooter-dialogs.c:989
-#, fuzzy
 msgid "Save screenshot as..."
-msgstr "Zapisz zrzut ekranu jako..."
+msgstr "Wybór pliku"
 
-#: ../src/main.c:46
+#: ../src/main.c:44
 msgid "Version information"
-msgstr ""
+msgstr "Wypisuje informacje o wersji"
 
-#: ../src/main.c:64
+#: ../src/main.c:62
 msgid "Delay in seconds before taking the screenshot"
 msgstr ""
+"Określa wartość opóźnienia przed wykonaniem\n"
+"                          zrzutu ekranu"
 
-#: ../src/main.c:68
+#: ../src/main.c:66
 msgid "Do not display the save dialog"
 msgstr ""
+"Zapisuje pliki zrzutów ekranu w domyślnym położeniu,\n"
+"                          nie wyświetlając okna wyboru pliku"
 
-#: ../src/main.c:72
+#: ../src/main.c:70
 msgid "Directory where the screenshot will be saved"
-msgstr ""
+msgstr "Określa domyślne położenie zapisywanych plików"
 
-#: ../src/main.c:190
+#: ../src/main.c:183
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
+"%s: %s\n"
+"Wpisz „%s --help” aby wypisać pełną listę opcji wiersza poleceń.\n"
 
-#: ../src/main.c:275
+#: ../src/main.c:266
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "„%s” nie jest poprawnym katalogiem. Zostanie użyty domyślny katalog."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Wykonaj zrzut ekranu"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Wykonuje zrzut całego ekranu, bieżącego okna lub wybranego obszaru"
+
