@@ -84,9 +84,14 @@ static GdkPixbuf
 {
   gint x_orig, y_orig;
   gint width, height;
+  
   GdkPixbuf *screenshot;
   GdkWindow *root;
+  
   GdkRectangle *rectangle = g_new0 (GdkRectangle, 1);
+  
+  GdkCursor *cursor;
+  GdkPixbuf *cursor_pixbuf;
     
   /* Get the root window */
   TRACE ("Get the root window");
@@ -134,7 +139,59 @@ static GdkPixbuf
   screenshot = gdk_pixbuf_get_from_drawable (NULL, root, NULL,
                                              x_orig, y_orig, 0, 0,
                                              width, height);
-  
+
+  /* Add the mouse pointer to the grabbed screenshot */
+
+  TRACE ("Get the mouse cursor and its image");
+
+  cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_LEFT_PTR);
+  cursor_pixbuf = gdk_cursor_get_image (cursor);
+
+  if (cursor_pixbuf != NULL)
+    {
+      GdkRectangle rectangle_window, rectangle_cursor;
+      gint cursorx, cursory, xhot, yhot;
+
+      TRACE ("Get the coordinates of the cursor");
+ 	
+      gdk_window_get_pointer (window, &cursorx, &cursory, NULL);
+
+      TRACE ("Get the hot-spot x and y values");
+      
+      sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", &xhot);
+      sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "y_hot"), "%d", &yhot);
+
+      /* rectangle_window stores the window coordinates */
+      rectangle_window.x = x_orig;
+      rectangle_window.y = y_orig;
+      rectangle_window.width = width;
+      rectangle_window.height = height;
+      
+      /* rectangle_cursor stores the cursor coordinates */
+      rectangle_cursor.x = cursorx + x_orig;
+      rectangle_cursor.y = cursory + y_orig;
+      rectangle_cursor.width = gdk_pixbuf_get_width (cursor_pixbuf);
+      rectangle_cursor.height = gdk_pixbuf_get_height (cursor_pixbuf);
+      
+      /* see if the pointer is inside the window */
+      if (gdk_rectangle_intersect (&rectangle_window, &rectangle_cursor, &rectangle_cursor))
+        {
+          TRACE ("Compose the two pixbufs");
+
+          gdk_pixbuf_composite (cursor_pixbuf, screenshot,
+                                cursorx - xhot, cursory - yhot,
+                                rectangle_cursor.width, rectangle_cursor.height,
+                                cursorx - xhot, cursory - yhot,
+                                1.0, 1.0,
+                                GDK_INTERP_BILINEAR,
+                                255);
+        }
+        
+      g_object_unref (cursor_pixbuf);
+    }
+
+  gdk_cursor_unref (cursor);
+
   return screenshot;                                             
 }
 
@@ -347,23 +404,31 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay)
   /* Get the window/desktop we want to screenshot*/  
   if (region == FULLSCREEN)
     {
+      TRACE ("We grab the entire screen");
+
       window = gdk_get_default_root_window ();
       needs_unref = FALSE;
     } 
   else if (region == ACTIVE_WINDOW)
     {
+      TRACE ("We grab the active window");
+
       window = get_active_window (screen, &needs_unref);      
     }
       
   if (region == FULLSCREEN || region == ACTIVE_WINDOW)
     {
+      TRACE ("Get the screenshot of the given window");
+
       screenshot = get_window_screenshot (window);
-      
+          
       if (needs_unref)
 	      g_object_unref (window);
     }
   else if (region == SELECT)
     {
+      TRACE ("Let the user select the region to screenshot");
+
       screenshot = get_rectangle_screenshot ();
     }
 
@@ -381,6 +446,8 @@ void
 screenshooter_copy_to_clipboard (GdkPixbuf *screenshot) 
 {
   GtkClipboard *clipboard;
+
+  TRACE ("Adding the image to the clipboard...");
 
   clipboard = gtk_clipboard_get_for_display (gdk_display_get_default(), 
                                              GDK_SELECTION_CLIPBOARD);
@@ -476,9 +543,13 @@ screenshooter_write_rc_file (gchar               *file,
   
   g_return_if_fail (file != NULL);
 
+  TRACE ("Open the rc file");
+
   rc = xfce_rc_simple_open (file, FALSE);
   
   g_return_if_fail (rc != NULL);
+
+  TRACE ("Write the entries.");
   
   xfce_rc_write_int_entry (rc, "delay", sd->delay);
   xfce_rc_write_int_entry (rc, "region", sd->region);
@@ -489,6 +560,8 @@ screenshooter_write_rc_file (gchar               *file,
   #ifdef HAVE_GIO
   xfce_rc_write_entry (rc, "app", sd->app);
   #endif
+
+  TRACE ("Flush and close the rc file");
 
   xfce_rc_flush (rc);
   
@@ -508,18 +581,24 @@ screenshooter_open_screenshot (gchar *screenshot_path,
 {
   if (screenshot_path != NULL)
     {
+      TRACE ("Path was != NULL");
+
       if (!g_str_equal (application, "none"))
         {
           gchar *command = 
             g_strconcat (application, " ", screenshot_path, NULL);
     
           GError *error = NULL;
+
+          TRACE ("Launch the command");
           
           /* Execute the command and show an error dialog if there was 
           * an error. */
           if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
                                     FALSE, TRUE, &error))
             {
+              TRACE ("An error occured");
+
               xfce_err (error->message);
               g_error_free (error);
             }

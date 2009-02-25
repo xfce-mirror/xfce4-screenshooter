@@ -1,5 +1,11 @@
 2009-02-22 jeromeg
 
+  * lib/screenshooter-utils.c:
+    - (get_window_screenshot) also grab the mouse pointer.
+    - add some additional debugging information.
+
+2009-02-22 jeromeg
+
   * lib/screenshooter-dialogs.c:
     (set_default_item) do not look up for a default item if the tree is empty.
 
