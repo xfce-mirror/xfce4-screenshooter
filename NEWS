@@ -10,6 +10,7 @@
     - set the correct folder in the filechooser when using the -s CLI
       option. Thanks to Enrico Tröger.
     - fix a crash of the panel plugin involving the "Open with" list (#4971).
+    - also take the mouse pointer when taking a screenshot.
 
   * Translations updates.
 

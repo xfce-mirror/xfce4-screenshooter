@@ -2,7 +2,6 @@
 as in thunar and xfdesktop.
 * When selecting a region, Escape should cancel everything.
 * Check for leaks using valgrind.
-* Capture the mouse.
 * Use Xshape to have a transparent background in the generated screenshots.
 
 Rewritte generate_filename_for_uri or remove it. Jannis suggestion:

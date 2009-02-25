@@ -1,4 +1,10 @@
-2009-02-22 jeromeg
+2009-02-25 jeromeg
+
+  * Bump the version number.
+  * Update NEWS.
+  * Update TODO.
+
+2009-02-25 jeromeg
 
   * lib/screenshooter-utils.c:
     - (get_window_screenshot) also grab the mouse pointer.
