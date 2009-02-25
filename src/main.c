@@ -260,13 +260,16 @@ int main(int argc, char **argv)
                 }
               else
                 {
+                  gchar *current_dir = g_get_current_dir ();
+
                   g_free (sd->screenshot_dir);
 
                   sd->screenshot_dir =
-                    g_build_filename (g_get_current_dir (),
+                    g_build_filename (current_dir,
                                       screenshot_dir,
                                       NULL);
 
+                  g_free (current_dir);
                   g_free (screenshot_dir);
                 }
             }

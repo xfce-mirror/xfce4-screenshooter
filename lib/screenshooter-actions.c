@@ -27,10 +27,12 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
   if (sd->action == SAVE)
     {
       if (sd->screenshot_dir == NULL)
-        sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+        {
+          sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+        }
 
       screenshooter_save_screenshot (screenshot,
-                                     TRUE,
+                                     sd->show_save_dialog,
                                      sd->screenshot_dir);
     }
   else if (sd->action == CLIPBOARD)

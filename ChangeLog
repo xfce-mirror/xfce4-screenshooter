@@ -1,5 +1,12 @@
 2009-02-25 jeromeg
 
+  * Last minute bug fixes:
+    - plug a remaining leak.
+    - clean up the actions file.
+    - fix the hide option.
+
+2009-02-25 jeromeg
+
   * Bump the version number.
   * Update NEWS.
   * Update TODO.
