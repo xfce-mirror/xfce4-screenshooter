@@ -148,9 +148,7 @@ cb_free_data (XfcePanelPlugin *plugin, PluginData *pd)
 
   pd->style_id = 0;
   g_free (pd->sd->screenshot_dir);
-  #ifdef HAVE_GIO
   g_free (pd->sd->app);
-  #endif
   g_free (pd->sd);
   g_free (pd);
 }
@@ -237,7 +235,6 @@ cb_dialog_response (GtkWidget *dlg, int response,
       gtk_widget_destroy (dlg);
       
       /* Update tooltips according to the chosen option */
-      #if GTK_CHECK_VERSION(2,12,0)
       if (pd->sd->region == FULLSCREEN)
       {
         gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
@@ -255,7 +252,6 @@ cb_dialog_response (GtkWidget *dlg, int response,
      "without releasing the mouse button, dragging your mouse to the "
      "other corner of the region, and releasing the mouse button."));
       }
-      #endif
       
       /* Unblock the menu and save options */
       xfce_panel_plugin_unblock_menu (pd->plugin);
@@ -340,9 +336,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   gtk_container_add (GTK_CONTAINER (pd->button), GTK_WIDGET (pd->image));
   
   /* Set the tooltips if available */
-  #if GTK_CHECK_VERSION(2,12,0)
   TRACE ("Set the default tooltip");
-
   
   if (pd->sd->region == FULLSCREEN)
    {
@@ -361,7 +355,6 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
      "without releasing the mouse button, dragging your mouse to the "
      "other corner of the region, and releasing the mouse button."));
     }
-  #endif
 
   TRACE ("Add the button to the panel");
   

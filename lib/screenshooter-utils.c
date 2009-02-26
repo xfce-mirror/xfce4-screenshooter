@@ -473,9 +473,7 @@ screenshooter_read_rc_file (gchar               *file,
   gint action = SAVE;
   gint show_save_dialog = 1;
   gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
-  #ifdef HAVE_GIO
   gchar *app = g_strdup ("none");
-  #endif
   
   if (file != NULL)
     {
@@ -496,12 +494,10 @@ screenshooter_read_rc_file (gchar               *file,
           show_save_dialog = 
             xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
               
-          #ifdef HAVE_GIO
           g_free (app);
               
           app = 
             g_strdup (xfce_rc_read_entry (rc, "app", "none"));
-          #endif
            
           g_free (screenshot_dir);
           
@@ -524,9 +520,7 @@ screenshooter_read_rc_file (gchar               *file,
   sd->action = action;
   sd->show_save_dialog = show_save_dialog;
   sd->screenshot_dir = screenshot_dir;
-  #ifdef HAVE_GIO
   sd->app = app;
-  #endif
 }
 
 
@@ -557,9 +551,7 @@ screenshooter_write_rc_file (gchar               *file,
   xfce_rc_write_int_entry (rc, "show_save_dialog", 
                            sd->show_save_dialog);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
-  #ifdef HAVE_GIO
   xfce_rc_write_entry (rc, "app", sd->app);
-  #endif
 
   TRACE ("Flush and close the rc file");
 
@@ -574,7 +566,6 @@ screenshooter_write_rc_file (gchar               *file,
 @screenshot_path: the path to the saved screenshot.
 @application: the command to run the application.
 */
-#ifdef HAVE_GIO
 void
 screenshooter_open_screenshot (gchar *screenshot_path,
                                gchar *application)
@@ -607,4 +598,3 @@ screenshooter_open_screenshot (gchar *screenshot_path,
        }
     }
 }     
-#endif

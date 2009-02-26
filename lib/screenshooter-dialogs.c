@@ -35,11 +35,9 @@ cb_save_toggled                    (GtkToggleButton    *tb,
 static void 
 cb_rectangle_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);                                    
-#ifdef HAVE_GIO                                    
 static void 
 cb_open_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
-#endif
 static void 
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
@@ -60,8 +58,6 @@ cb_delay_spinner_changed           (GtkWidget          *spinner,
                                     ScreenshotData     *sd);
 static gchar 
 *generate_filename_for_uri         (char               *uri);
-
-#ifdef HAVE_GIO                                                
 static void 
 cb_combo_active_item_changed       (GtkWidget          *box, 
                                     ScreenshotData     *sd);
@@ -73,8 +69,8 @@ populate_liststore                 (GtkListStore       *liststore);
 static void 
 set_default_item                   (GtkWidget          *combobox, 
                                     ScreenshotData     *sd);                                               
-                                                                                               
-#endif                                                                                                                                                                         
+
+                                                                                                                                                                      
                                       
 /* Internals */
 
@@ -145,7 +141,6 @@ cb_toggle_set_insensi (GtkToggleButton *tb, GtkWidget *widget)
 
 
 
-#ifdef HAVE_GIO
 /* Set the action when the button is toggled */
 static void cb_open_toggled (GtkToggleButton *tb, ScreenshotData  *sd)
 {
@@ -154,7 +149,6 @@ static void cb_open_toggled (GtkToggleButton *tb, ScreenshotData  *sd)
       sd->action = OPEN;
     }
 }
-#endif
 
 
 
@@ -257,7 +251,6 @@ static gchar *generate_filename_for_uri (char *uri)
 
 
 
-#ifdef HAVE_GIO
 /* Set sd->app as per the active item in the combobox */
 static void cb_combo_active_item_changed (GtkWidget *box, 
                                           ScreenshotData *sd)
@@ -422,7 +415,7 @@ static void set_default_item (GtkWidget       *combobox,
       sd->app = g_strdup ("none");
     }
 }                              
-#endif
+
 
 
                       
@@ -456,7 +449,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
     
   GtkWidget *clipboard_radio_button;
     
-#ifdef HAVE_GIO
   GtkWidget *open_with_alignment;
   GtkWidget *open_with_box, *open_with_radio_button;
   
@@ -465,7 +457,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   GtkListStore *liststore;
   GtkWidget *combobox;
   GtkCellRenderer *renderer, *renderer_pixbuf;
-#endif
   
   /* Create the dialog */
   if (!plugin)
@@ -554,10 +545,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fullscreen_button),
                                 (sd->region == FULLSCREEN));
   
-  #if GTK_CHECK_VERSION(2,12,0)                              
   gtk_widget_set_tooltip_text (fullscreen_button,
                           _("Take a screenshot of the entire screen"));
-  #endif
                                 
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled", 
                     G_CALLBACK (cb_fullscreen_screen_toggled),
@@ -578,10 +567,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button),
                                 (sd->region == ACTIVE_WINDOW));
   
-  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (active_window_button,
                           _("Take a screenshot of the active window"));
-  #endif
                                 
   g_signal_connect (G_OBJECT (active_window_button), "toggled", 
                     G_CALLBACK (cb_active_window_toggled),
@@ -602,12 +589,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button),
                                 (sd->region == SELECT));
   
-  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (rectangle_button,
   _("Select a region to be captured by clicking a point of the screen "
     "without releasing the mouse button, dragging your mouse to the "
     "other corner of the region, and releasing the mouse button."));
-  #endif
   
   g_signal_connect (G_OBJECT (rectangle_button), "toggled", 
                     G_CALLBACK (cb_rectangle_toggled),
@@ -663,11 +648,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (delay_spinner), 
                              sd->delay);
   
-  /* Tooltip needs to be improved */
-  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (delay_spinner,
                 _("Delay in seconds before the screenshot is taken"));  
-  #endif
                              
   gtk_widget_show (delay_spinner);
   
@@ -739,10 +721,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     G_CALLBACK (cb_save_toggled),
                     sd);
   
-  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (save_radio_button,
                                _("Save the screenshot to a PNG file"));
-  #endif                  
   
   gtk_widget_show (save_radio_button);
   
@@ -783,12 +763,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
                     G_CALLBACK (cb_show_save_dialog_toggled), sd);
-  
-  #if GTK_CHECK_VERSION(2,12,0)
+
   gtk_widget_set_tooltip_text (save_checkbox,
   _("If checked, the screenshot will be saved by default to the "
     "location set on the right without displaying a save dialog"));
-  #endif
   
   dir_chooser = 
     gtk_file_chooser_button_new (_("Default save location"), 
@@ -803,10 +781,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_show (dir_chooser);
   
-  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (dir_chooser,
                                _("Set the default save location"));
-  #endif                               
                       
   g_signal_connect (G_OBJECT (dir_chooser), "selection-changed", 
                     G_CALLBACK (cb_default_folder), sd);
@@ -835,11 +811,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_show (clipboard_radio_button);
   
-  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (clipboard_radio_button,
   _("Copy the screenshot to the clipboard so that it can be "
     "pasted later"));
-  #endif
                       
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
                                 (sd->action == CLIPBOARD));
@@ -847,9 +821,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled", 
                     G_CALLBACK (cb_clipboard_toggled),
                     sd);
-  
-#ifdef HAVE_GIO 
-   
+
   /* Open with radio button */
   
   open_with_radio_button = 
@@ -869,10 +841,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     G_CALLBACK (cb_open_toggled),
                     sd);
   
-  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (open_with_radio_button,
   _("Open the screenshot with the chosen application"));
-  #endif
   
   /* Create open with alignment */
   
@@ -949,16 +919,13 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_show_all (combobox); 
   
-  #if GTK_CHECK_VERSION(2,12,0)
   gtk_widget_set_tooltip_text (combobox,
   _("Application to open the screenshot"));
-  #endif
   
   /* Run the callback functions to grey/ungrey the correct widgets */
   
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button),
                        open_with_box);               
-#endif
  
   return dlg;                
 }

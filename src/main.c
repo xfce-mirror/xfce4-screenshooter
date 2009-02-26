@@ -32,9 +32,7 @@ gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean no_save_dialog = FALSE;
 gchar *screenshot_dir;
-#ifdef HAVE_GIO
 gchar *application;
-#endif
 gint delay = 0;
 
 
@@ -72,12 +70,10 @@ static GOptionEntry entries[] =
         N_("Directory where the screenshot will be saved"),
         NULL
     },
-    #ifdef HAVE_GIO
     {   "open", 'o', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &application,
         N_("Application to open the screenshot"),
         NULL
     },
-    #endif
     { NULL, ' ', 0, 0, NULL, NULL, NULL }
 };
 
@@ -232,7 +228,6 @@ int main(int argc, char **argv)
 
       sd->delay = delay;
 
-      #ifdef HAVE_GIO
       if (application != NULL)
         {
           sd->app = application;
@@ -243,7 +238,6 @@ int main(int argc, char **argv)
           sd->app = g_strdup ("none");
           sd->action = SAVE;
         }
-      #endif
 
       /* If the user gave a directory name, verify that it is valid */
       if (screenshot_dir != NULL)
@@ -308,9 +302,7 @@ int main(int argc, char **argv)
     }
 
   g_free (sd->screenshot_dir);
-  #ifdef HAVE_GIO
   g_free (sd->app);
-  #endif
   g_free (sd);
 
   return 0;

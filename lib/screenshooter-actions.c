@@ -39,7 +39,6 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
     {
       screenshooter_copy_to_clipboard (screenshot);
     }
-  #ifdef HAVE_GIO
   else
     {
       gchar *tempdir = g_strdup (g_get_tmp_dir ());
@@ -57,7 +56,6 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
       if (tempdir != NULL)
         g_free (tempdir);
     }
-  #endif
 
   g_object_unref (screenshot);
 }
