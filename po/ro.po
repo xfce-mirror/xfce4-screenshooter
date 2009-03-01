@@ -1,0 +1,198 @@
+# Romanian translation for xfce4-screenshooter.
+# Copyright (C) 2009 THE xfce4-screenshooter COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-screenshooter package.
+# Igor Știrbu <igor.stirbu@gmail.com>, 2009.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-screenshooter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-22 17:31+0100\n"
+"PO-Revision-Date: 2009-03-01 19:05+0200\n"
+"Last-Translator: Igor Știrbu <igor.stirbu@gmail.com>\n"
+"Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../lib/screenshooter-dialogs.c:228
+msgid "Screenshot.png"
+msgstr "Captura.png"
+
+#: ../lib/screenshooter-dialogs.c:243
+#, c-format
+msgid "Screenshot-%d.png"
+msgstr "Captura-%d.png"
+
+#: ../lib/screenshooter-dialogs.c:465
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+msgid "Take a screenshot"
+msgstr "Captură de ecran"
+
+#: ../lib/screenshooter-dialogs.c:472
+msgid "Take the screenshot"
+msgstr "Fă captura de ecran"
+
+#: ../lib/screenshooter-dialogs.c:479
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+msgid "Screenshot"
+msgstr "Captură de ecran"
+
+#: ../lib/screenshooter-dialogs.c:489
+msgid "Preferences"
+msgstr "Preferințe"
+
+#: ../lib/screenshooter-dialogs.c:507
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Regiune de capturat</span>"
+
+#: ../lib/screenshooter-dialogs.c:539
+msgid "Entire screen"
+msgstr "Tot ecranul"
+
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:52
+#: ../panel-plugin/screenshooter-plugin.c:232
+#: ../panel-plugin/screenshooter-plugin.c:322
+msgid "Take a screenshot of the entire screen"
+msgstr "Captura întregului ecran"
+
+#: ../lib/screenshooter-dialogs.c:563
+msgid "Active window"
+msgstr "Fereastra activă"
+
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:48
+#: ../panel-plugin/screenshooter-plugin.c:237
+#: ../panel-plugin/screenshooter-plugin.c:327
+msgid "Take a screenshot of the active window"
+msgstr "Captura ferestrei active"
+
+#: ../lib/screenshooter-dialogs.c:587
+msgid "Select a region"
+msgstr "Regiune selectată"
+
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:56
+#: ../panel-plugin/screenshooter-plugin.c:242
+#: ../panel-plugin/screenshooter-plugin.c:332
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr ""
+"Pentru captura unei anumite regiuni, faceți clic într-un punct al ecranului "
+"fără a elibera butonul mausului, trageți până la colțul opus al regiunii "
+"și apoi eliberați butonul mausului."
+
+#: ../lib/screenshooter-dialogs.c:614
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+"screenshot</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Întârziere înainte de a "
+"face captura</span>"
+
+#: ../lib/screenshooter-dialogs.c:660
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "Întârziere în secunde înainte de a face captura"
+
+#: ../lib/screenshooter-dialogs.c:669
+msgid "seconds"
+msgstr "secunde"
+
+#: ../lib/screenshooter-dialogs.c:691
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acțiune</span>"
+
+#: ../lib/screenshooter-dialogs.c:722
+msgid "Save"
+msgstr "Salvează"
+
+#: ../lib/screenshooter-dialogs.c:735
+msgid "Save the screenshot to a PNG file"
+msgstr "Salvează captura într-un fișier PNG"
+
+#: ../lib/screenshooter-dialogs.c:764
+msgid "Save by default to:"
+msgstr "Salvează implicit în:"
+
+#: ../lib/screenshooter-dialogs.c:780
+msgid ""
+"If checked, the screenshot will be saved by default to the location set on "
+"the right without displaying a save dialog"
+msgstr ""
+"În caz de activare, captura va fi salvată implicit în locația stabilită în "
+"dreapta, fără afișarea dialogului de salvare"
+
+#: ../lib/screenshooter-dialogs.c:785
+msgid "Default save location"
+msgstr "Locația implicită pentru salvare"
+
+#: ../lib/screenshooter-dialogs.c:799
+msgid "Set the default save location"
+msgstr "Alegeți unde se salvează implicit"
+
+#: ../lib/screenshooter-dialogs.c:821
+msgid "Copy to the clipboard"
+msgstr "Copiere în clipboard"
+
+#: ../lib/screenshooter-dialogs.c:831
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "Copiază captura în clipboard pentru a lipi mai târziu"
+
+#: ../lib/screenshooter-dialogs.c:849
+msgid "Open with:"
+msgstr "Deschide cu:"
+
+#: ../lib/screenshooter-dialogs.c:865
+msgid "Open the screenshot with the chosen application"
+msgstr "Deschide captura cu aplicația aleasă:"
+
+#. Application label
+#: ../lib/screenshooter-dialogs.c:898
+msgid "Application:"
+msgstr "Aplicație:"
+
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:74
+msgid "Application to open the screenshot"
+msgstr "Aplicația pentru deschiderea capturii"
+
+#: ../lib/screenshooter-dialogs.c:989
+msgid "Save screenshot as..."
+msgstr "Salvează captura ca..."
+
+#: ../src/main.c:44
+msgid "Version information"
+msgstr "Detalii versiune"
+
+#: ../src/main.c:62
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Întârziere în secunde înainte de a face captura"
+
+#: ../src/main.c:66
+msgid "Do not display the save dialog"
+msgstr "Nu afișa dialogul de salvare"
+
+#: ../src/main.c:70
+msgid "Directory where the screenshot will be saved"
+msgstr "Directorul în care se vor salva capturile"
+
+#: ../src/main.c:183
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"Încercați %s --help pentru a vedea întreaga listă de opțiuni în linie de comandă.\n"
+
+#: ../src/main.c:266
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr "%s nu este un director valid, se va folosi directorul implicit."
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr ""
+"Capturi ale întregului ecran, ferestrei active sau unei regiuni"
