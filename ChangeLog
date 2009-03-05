@@ -1,3 +1,16 @@
+2009-03-05 jeromeg
+
+  * Fix a build problem caused by the bumping of the dependencies.
+  * lib/screenshooter-utils.c:
+    - (get_window_screenshot) add an argument to make the mouse capture optional.
+    - (screenshooter_take_screenshot) ditto
+    - read and save show_mouse in the configuration file.
+    - update the prototypes.
+  * lib/screenshooter-utils.h:
+    - add a show_mouse item to the ScreenshotData structure.
+    - update a prototype.
+  * lib/screenshooter-actions.c: use the new functions arguments. 
+
 2009-02-26 jeromeg
 
   * Bump gtk required to 2.12.

@@ -62,6 +62,7 @@ typedef struct
 {
   gint region;
   gint show_save_dialog;
+  gint show_mouse;
   gint delay;
   gint action;
   gchar *screenshot_dir;
@@ -71,9 +72,10 @@ ScreenshotData;
 
 
 
-GdkPixbuf 
-*screenshooter_take_screenshot   (gint                  region, 
-                                  gint                  delay);
+GdkPixbuf
+*screenshooter_take_screenshot   (gint                  region,
+                                  gint                  delay,
+                                  gboolean              show_mouse);
 void
 screenshooter_copy_to_clipboard  (GdkPixbuf            *screenshot) ;
 
@@ -86,7 +88,7 @@ screenshooter_write_rc_file      (gchar                *file,
                                   ScreenshotData       *sd);
 
 void
-screenshooter_open_screenshot    (gchar *screenshot_path,
-                                  gchar *application);                                  
+screenshooter_open_screenshot    (gchar                *screenshot_path,
+                                  gchar                *application);                                  
 
 #endif                               

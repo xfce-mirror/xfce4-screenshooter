@@ -10,6 +10,7 @@ xfce4_screenshooter_CFLAGS = \
 	
 xfce4_screenshooter_LDFLAGS =                       \
 	@GTK_LIBS@ \
+	@GLIB_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCEGUI4_LIBS@ \
 	$(top_builddir)/lib/libscreenshooter.la

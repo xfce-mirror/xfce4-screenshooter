@@ -28,7 +28,8 @@ static GdkWindow
                                        gboolean         *needs_unref);
 
 static GdkPixbuf 
-*get_window_screenshot                (GdkWindow        *window);
+*get_window_screenshot                (GdkWindow        *window,
+                                       gboolean          show_mouse);
 
 static GdkPixbuf
 *get_rectangle_screenshot             (void);
@@ -80,7 +81,7 @@ static GdkWindow
 
 
 static GdkPixbuf
-*get_window_screenshot (GdkWindow *window)
+*get_window_screenshot (GdkWindow *window, gboolean show_mouse)
 {
   gint x_orig, y_orig;
   gint width, height;
@@ -89,9 +90,6 @@ static GdkPixbuf
   GdkWindow *root;
   
   GdkRectangle *rectangle = g_new0 (GdkRectangle, 1);
-  
-  GdkCursor *cursor;
-  GdkPixbuf *cursor_pixbuf;
     
   /* Get the root window */
   TRACE ("Get the root window");
@@ -144,53 +142,61 @@ static GdkPixbuf
 
   TRACE ("Get the mouse cursor and its image");
 
-  cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_LEFT_PTR);
-  cursor_pixbuf = gdk_cursor_get_image (cursor);
-
-  if (cursor_pixbuf != NULL)
+  if (show_mouse)
     {
-      GdkRectangle rectangle_window, rectangle_cursor;
-      gint cursorx, cursory, xhot, yhot;
+        GdkCursor *cursor;
+        GdkPixbuf *cursor_pixbuf;
 
-      TRACE ("Get the coordinates of the cursor");
- 	
-      gdk_window_get_pointer (window, &cursorx, &cursory, NULL);
+        cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_LEFT_PTR);
+        cursor_pixbuf = gdk_cursor_get_image (cursor);
 
-      TRACE ("Get the hot-spot x and y values");
-      
-      sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", &xhot);
-      sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "y_hot"), "%d", &yhot);
+        if (cursor_pixbuf != NULL)
+          {
+            GdkRectangle rectangle_window, rectangle_cursor;
+            gint cursorx, cursory, xhot, yhot;
 
-      /* rectangle_window stores the window coordinates */
-      rectangle_window.x = x_orig;
-      rectangle_window.y = y_orig;
-      rectangle_window.width = width;
-      rectangle_window.height = height;
-      
-      /* rectangle_cursor stores the cursor coordinates */
-      rectangle_cursor.x = cursorx + x_orig;
-      rectangle_cursor.y = cursory + y_orig;
-      rectangle_cursor.width = gdk_pixbuf_get_width (cursor_pixbuf);
-      rectangle_cursor.height = gdk_pixbuf_get_height (cursor_pixbuf);
-      
-      /* see if the pointer is inside the window */
-      if (gdk_rectangle_intersect (&rectangle_window, &rectangle_cursor, &rectangle_cursor))
-        {
-          TRACE ("Compose the two pixbufs");
-
-          gdk_pixbuf_composite (cursor_pixbuf, screenshot,
-                                cursorx - xhot, cursory - yhot,
-                                rectangle_cursor.width, rectangle_cursor.height,
-                                cursorx - xhot, cursory - yhot,
-                                1.0, 1.0,
-                                GDK_INTERP_BILINEAR,
-                                255);
-        }
+            TRACE ("Get the coordinates of the cursor");
         
-      g_object_unref (cursor_pixbuf);
-    }
+            gdk_window_get_pointer (window, &cursorx, &cursory, NULL);
 
-  gdk_cursor_unref (cursor);
+            TRACE ("Get the hot-spot x and y values");
+            
+            sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", &xhot);
+            sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "y_hot"), "%d", &yhot);
+
+            /* rectangle_window stores the window coordinates */
+            rectangle_window.x = x_orig;
+            rectangle_window.y = y_orig;
+            rectangle_window.width = width;
+            rectangle_window.height = height;
+            
+            /* rectangle_cursor stores the cursor coordinates */
+            rectangle_cursor.x = cursorx + x_orig;
+            rectangle_cursor.y = cursory + y_orig;
+            rectangle_cursor.width = gdk_pixbuf_get_width (cursor_pixbuf);
+            rectangle_cursor.height = gdk_pixbuf_get_height (cursor_pixbuf);
+            
+            /* see if the pointer is inside the window */
+            if (gdk_rectangle_intersect (&rectangle_window,
+                                         &rectangle_cursor,
+                                         &rectangle_cursor))
+              {
+                TRACE ("Compose the two pixbufs");
+
+                gdk_pixbuf_composite (cursor_pixbuf, screenshot,
+                                      cursorx - xhot, cursory - yhot,
+                                      rectangle_cursor.width, rectangle_cursor.height,
+                                      cursorx - xhot, cursory - yhot,
+                                      1.0, 1.0,
+                                      GDK_INTERP_BILINEAR,
+                                      255);
+              }
+              
+            g_object_unref (cursor_pixbuf);
+          }
+
+        gdk_cursor_unref (cursor);
+    }
 
   return screenshot;                                             
 }
@@ -383,7 +389,7 @@ static GdkPixbuf
 *sd: a ScreenshotData struct.
 returns: the screenshot in a *GdkPixbuf.
 */
-GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay)
+GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show_mouse)
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *window = NULL;
@@ -420,7 +426,7 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay)
     {
       TRACE ("Get the screenshot of the given window");
 
-      screenshot = get_window_screenshot (window);
+      screenshot = get_window_screenshot (window, show_mouse);
           
       if (needs_unref)
 	      g_object_unref (window);
@@ -472,6 +478,7 @@ screenshooter_read_rc_file (gchar               *file,
   gint region = FULLSCREEN;
   gint action = SAVE;
   gint show_save_dialog = 1;
+  gint show_mouse = 1;
   gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
   gchar *app = g_strdup ("none");
   
@@ -493,6 +500,9 @@ screenshooter_read_rc_file (gchar               *file,
               
           show_save_dialog = 
             xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
+
+          show_mouse =
+            xfce_rc_read_int_entry (rc, "show_mouse", 1);
               
           g_free (app);
               
@@ -519,6 +529,7 @@ screenshooter_read_rc_file (gchar               *file,
   sd->region = region;
   sd->action = action;
   sd->show_save_dialog = show_save_dialog;
+  sd->show_mouse = show_mouse;
   sd->screenshot_dir = screenshot_dir;
   sd->app = app;
 }
@@ -548,8 +559,8 @@ screenshooter_write_rc_file (gchar               *file,
   xfce_rc_write_int_entry (rc, "delay", sd->delay);
   xfce_rc_write_int_entry (rc, "region", sd->region);
   xfce_rc_write_int_entry (rc, "action", sd->action);
-  xfce_rc_write_int_entry (rc, "show_save_dialog", 
-                           sd->show_save_dialog);
+  xfce_rc_write_int_entry (rc, "show_save_dialog", sd->show_save_dialog);
+  xfce_rc_write_int_entry (rc, "show_mouse", sd->show_mouse);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
   xfce_rc_write_entry (rc, "app", sd->app);
 
