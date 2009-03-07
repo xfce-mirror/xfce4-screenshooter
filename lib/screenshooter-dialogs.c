@@ -449,10 +449,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
     
   GtkWidget *clipboard_radio_button;
     
-  GtkWidget *open_with_alignment;
   GtkWidget *open_with_box, *open_with_radio_button;
-  
-  GtkWidget *application_label;
   
   GtkListStore *liststore;
   GtkWidget *combobox;
@@ -738,6 +735,12 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                              24,
                              0);
 
+  gtk_alignment_set (GTK_ALIGNMENT (save_alignment),
+                     0,
+                     0,
+                     0,
+                     1);
+
   gtk_widget_show (save_alignment);
               
   /* Save box */
@@ -822,6 +825,18 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     G_CALLBACK (cb_clipboard_toggled),
                     sd);
 
+  /* Open with box*/
+  
+  open_with_box = gtk_hbox_new (FALSE, 12);
+  
+  gtk_container_add (GTK_CONTAINER (actions_box), 
+                     open_with_box);
+                     
+  gtk_container_set_border_width (GTK_CONTAINER (open_with_box), 0);
+  
+  gtk_widget_show (open_with_box);
+      
+
   /* Open with radio button */
   
   open_with_radio_button = 
@@ -829,8 +844,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
       _("Open with:"));
   
-  gtk_container_add (GTK_CONTAINER (actions_box), 
-                     open_with_radio_button);
+  gtk_box_pack_start (GTK_BOX (open_with_box), 
+                      open_with_radio_button, FALSE, 
+                      FALSE, 0);
     
   gtk_widget_show (open_with_radio_button);
                       
@@ -840,50 +856,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   g_signal_connect (G_OBJECT (open_with_radio_button), "toggled", 
                     G_CALLBACK (cb_open_toggled),
                     sd);
-  
+   
   gtk_widget_set_tooltip_text (open_with_radio_button,
   _("Open the screenshot with the chosen application"));
   
-  /* Create open with alignment */
-  
-  open_with_alignment = gtk_alignment_new (0, 0, 1, 1);
-  
-  gtk_container_add (GTK_CONTAINER (actions_box), open_with_alignment);
-  
-  gtk_alignment_set_padding (GTK_ALIGNMENT (open_with_alignment),
-                             0,
-                             6,
-                             24,
-                             0);
-  
-  gtk_widget_show (open_with_alignment);
-                    
-  /* Open with box*/
-  
-  open_with_box = gtk_hbox_new (FALSE, 12);
-  
-  gtk_container_add (GTK_CONTAINER (open_with_alignment), 
-                     open_with_box);
-                     
-  gtk_container_set_border_width (GTK_CONTAINER (open_with_box), 0);
-  
-  gtk_widget_show (open_with_box);
-      
-  g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_sensi), open_with_box);
-  
-  /* Application label */
-  
-  application_label = gtk_label_new (_("Application:"));
-  
-  gtk_misc_set_alignment (GTK_MISC (application_label), 0, 0.5);
-		  
-  gtk_widget_show (application_label);
-		  
-  gtk_box_pack_start (GTK_BOX (open_with_box), 
-                      application_label, FALSE, 
-                      FALSE, 0);
-     
   /* Open with combobox */
     
   liststore = gtk_list_store_new (3, GDK_TYPE_PIXBUF, 
@@ -921,11 +897,14 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_set_tooltip_text (combobox,
   _("Application to open the screenshot"));
+
+  g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), combobox);
   
   /* Run the callback functions to grey/ungrey the correct widgets */
   
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button),
-                       open_with_box);               
+                       combobox);               
  
   return dlg;                
 }

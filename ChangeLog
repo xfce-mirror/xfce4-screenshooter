@@ -1,5 +1,11 @@
 2009-03-07 jeromeg
 
+  * lib/screenshooter-dialogs.c: (screenshooter_dialog_new) make
+    the dialog more compact by removing the "Applications" label
+    and putting the combobox on the same line as the radio button.
+
+2009-03-07 jeromeg
+
   * src/main.c: add a CLI option not to capture the mouse pointer.
 
 2009-03-05 jeromeg
