@@ -31,6 +31,7 @@ gboolean window = FALSE;
 gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean no_save_dialog = FALSE;
+gboolean hide_mouse = FALSE;
 gchar *screenshot_dir;
 gchar *application;
 gint delay = 0;
@@ -64,6 +65,10 @@ static GOptionEntry entries[] =
     },
     {   "hide", 'h', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &no_save_dialog,
         N_("Do not display the save dialog"),
+        NULL
+    },
+    {   "mouse", 'm', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &hide_mouse,
+        N_("Do not display the mouse on the screenshot"),
         NULL
     },
     {   "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
@@ -224,6 +229,15 @@ int main(int argc, char **argv)
       else
         {
           sd->show_save_dialog = 1;
+        }
+
+      if (hide_mouse)
+        {
+          sd->show_mouse = 0;
+        }
+      else
+        {
+          sd->show_mouse = 1;
         }
 
       sd->delay = delay;

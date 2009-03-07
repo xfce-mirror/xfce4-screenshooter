@@ -1,3 +1,7 @@
+2009-03-07 jeromeg
+
+  * src/main.c: add a CLI option not to capture the mouse pointer.
+
 2009-03-05 jeromeg
 
   * Fix a build problem caused by the bumping of the dependencies.
