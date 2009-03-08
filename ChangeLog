@@ -1,5 +1,11 @@
 2009-03-08 jeromeg
 
+  * lib/screenshooter-dialogs.c (screenshooter_dialog_new): add some
+    padding for the new check box to separate it from the radio button
+    group.
+
+2009-03-08 jeromeg
+
   * lib/screenshooter-dialogs.c:
     - (screenshooter_dialog_new) Add a check box to show/hide the mouse
       pointer on screenshots.

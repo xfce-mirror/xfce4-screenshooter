@@ -627,7 +627,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
   gtk_box_pack_start (GTK_BOX (area_box), 
                       show_mouse_checkbox, FALSE, 
-                      FALSE, 0);
+                      FALSE, 5);
 
   gtk_widget_show (show_mouse_checkbox);
    
