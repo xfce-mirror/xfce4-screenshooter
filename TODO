@@ -1,6 +1,5 @@
 * Port "select a region" to use cairo to have transparent rubber banding
 as in thunar and xfdesktop.
-* When selecting a region, Escape should cancel everything.
 * Check for leaks using valgrind.
 * Use Xshape to have a transparent background in the generated screenshots.
 

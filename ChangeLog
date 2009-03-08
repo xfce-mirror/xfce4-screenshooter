@@ -1,10 +1,23 @@
 2009-03-08 jeromeg
 
+  Patch from Mike Massonnet.
+
+  * lib/screenshooter-dialogs.c (screenshooter_dialog_new):
+    - use "Ok" and "Cancel" buttons to make the layout cleaner.
+    - do not display a separator to be consistent with other goodies.
+    - improve the label of the mouse check box.
+    - add a subtitile for the dialog.
+    - the dialog does not need to be resizable, widgets are not resized
+      dynamically.
+    - tweak the spacing of the delay spin button box.
+
+2009-03-08 jeromeg
+
   Now, when taking a region screenshot, the Escape key cancels everything.
 
   * lib/screenshooter-actions.c: don't do anything if the screenshot is
     NULL.
-  * lib/screenshooter-utils.c
+  * lib/screenshooter-utils.c:
     - include the keysim header.
     - (get_rectangle_screenshot):
       + grab the keyboard.

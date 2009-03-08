@@ -479,23 +479,26 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   if (!plugin)
     {
       dlg = 
-        xfce_titled_dialog_new_with_buttons (_("Take a screenshot"),
+        xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
-                                             GTK_DIALOG_DESTROY_WITH_PARENT,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT|GTK_DIALOG_NO_SEPARATOR,
                                              GTK_STOCK_HELP,
                                              GTK_RESPONSE_HELP,
-                                             GTK_STOCK_CLOSE, 
+                                             GTK_STOCK_CANCEL, 
                                              GTK_RESPONSE_CANCEL,
-                                             _("Take"), 
+                                             GTK_STOCK_OK, 
                                              GTK_RESPONSE_OK,
                                              NULL);
+
+      xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), 
+                                       _("Take a screenshot"));
     }
   else
     {
       dlg =
         xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
-                                             GTK_DIALOG_DESTROY_WITH_PARENT,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT|GTK_DIALOG_NO_SEPARATOR,
                                              GTK_STOCK_HELP,
                                              GTK_RESPONSE_HELP,
                                              GTK_STOCK_CLOSE, 
@@ -507,6 +510,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
     }                                             
 
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
+  gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
   
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "applets-screenshooter");
@@ -620,7 +624,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Create show mouse checkbox */
 
   show_mouse_checkbox = 
-    gtk_check_button_new_with_label (_("Display the mouse pointer on the screenshot"));
+    gtk_check_button_new_with_label (_("Capture the mouse pointer"));
 
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (show_mouse_checkbox),
                                 (sd->show_mouse == 1));
@@ -669,7 +673,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   /* Create delay spinner */
       
-  delay_spinner_box = gtk_hbox_new(FALSE, 12);
+  delay_spinner_box = gtk_hbox_new(FALSE, 4);
   
   gtk_widget_show (delay_spinner_box);
   
