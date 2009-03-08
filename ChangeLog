@@ -1,3 +1,13 @@
+2009-03-08 jeromeg
+
+  * lib/screenshooter-dialogs.c (screenshooter_dialog_new):
+    - try to make the UI a bit more intuitive by putting the directory
+      chooser on the same line as the radio button and by saying
+      in the save checkbox that it is possible to have no save dialog
+      displayed.
+    - Rename the "Take the screenshot" button to "Take" to decrease
+      the width of the dialog.
+
 2009-03-07 jeromeg
 
   * lib/screenshooter-dialogs.c: (screenshooter_dialog_new) make
