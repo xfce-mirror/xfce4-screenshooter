@@ -34,7 +34,10 @@ cb_save_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void 
 cb_rectangle_toggled               (GtkToggleButton    *tb,
-                                    ScreenshotData     *sd);                                    
+                                    ScreenshotData     *sd);
+static void
+cb_show_mouse_toggled              (GtkToggleButton    *tb,
+                                    ScreenshotData     *sd);
 static void 
 cb_open_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
@@ -107,6 +110,21 @@ static void cb_rectangle_toggled (GtkToggleButton *tb,
   if (gtk_toggle_button_get_active (tb))
     {
       sd->region = SELECT;
+    }
+}
+
+
+
+/* Set whether the mouse should be captured when the button is toggled */
+static void cb_show_mouse_toggled (GtkToggleButton *tb, ScreenshotData   *sd)
+{
+  if (gtk_toggle_button_get_active (tb))
+    {
+      sd->show_mouse = 1;
+    }
+  else
+    {
+      sd->show_mouse = 0;
     }
 }
 
@@ -436,6 +454,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   GtkWidget *active_window_button, 
             *fullscreen_button,
             *rectangle_button;
+
+  GtkWidget *show_mouse_checkbox;
   
   GtkWidget *delay_box, *delay_label, *delay_alignment;
   GtkWidget *delay_spinner_box, *delay_spinner, *seconds_label;
@@ -596,6 +616,23 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     sd);
   
   gtk_widget_show (rectangle_button);
+
+  /* Create show mouse checkbox */
+
+  show_mouse_checkbox = 
+    gtk_check_button_new_with_label (_("Display the mouse pointer on the screenshot"));
+
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (show_mouse_checkbox),
+                                (sd->show_mouse == 1));
+
+  gtk_box_pack_start (GTK_BOX (area_box), 
+                      show_mouse_checkbox, FALSE, 
+                      FALSE, 0);
+
+  gtk_widget_show (show_mouse_checkbox);
+   
+  g_signal_connect (G_OBJECT (show_mouse_checkbox), "toggled", 
+                    G_CALLBACK (cb_show_mouse_toggled), sd);
   
   /* Create delay label */
   
@@ -776,7 +813,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
     gtk_check_button_new_with_label (_("Display the save dialog"));
 
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
-                                (sd->show_save_dialog == 0));
+                                (sd->show_save_dialog == 1));
 
   gtk_widget_set_tooltip_text (save_checkbox,
   _("The save dialog allows you to change the file name and the save"

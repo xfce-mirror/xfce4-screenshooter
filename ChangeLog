@@ -1,5 +1,12 @@
 2009-03-08 jeromeg
 
+  * lib/screenshooter-dialogs.c:
+    - (screenshooter_dialog_new) Add a check box to show/hide the mouse
+      pointer on screenshots.
+    - (cb_show_mouse_toggled) Add the callback for this new check box.
+
+2009-03-08 jeromeg
+
   * lib/screenshooter-dialogs.c (screenshooter_dialog_new):
     - try to make the UI a bit more intuitive by putting the directory
       chooser on the same line as the radio button and by saying
