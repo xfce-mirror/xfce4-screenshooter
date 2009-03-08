@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-08 16:50+0100\n"
-"PO-Revision-Date: 2009-01-27 15:24+0200\n"
+"POT-Creation-Date: 2009-03-08 18:25+0200\n"
+"PO-Revision-Date: 2009-03-08 18:39+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
 "MIME-Version: 1.0\n"
@@ -75,13 +75,12 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
-"Valitaksesi kaapattavan alueen aseta hiiren osoitin haluamasi alueen "
-"kulmaan, paina hiiren vasen painike pohjaan, siirrä osoitin alueen "
-"vastakkaiseen kulmaan ja päästä painike ylös."
+"Aseta hiiren osoitin kaapattavan alueen kulmaan, paina hiiren vasen painike "
+"pohjaan, siirrä osoitin alueen vastakkaiseen kulmaan ja päästä painike ylös."
 
 #: ../lib/screenshooter-dialogs.c:627
 msgid "Capture the mouse pointer"
-msgstr ""
+msgstr "Sisällytä hiiren osoitin"
 
 #: ../lib/screenshooter-dialogs.c:646
 msgid ""
@@ -104,9 +103,8 @@ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tehtävä</span>"
 
 #: ../lib/screenshooter-dialogs.c:758
-#, fuzzy
 msgid "Save in:"
-msgstr "Tallenna"
+msgstr "Tallennuskansio:"
 
 #: ../lib/screenshooter-dialogs.c:772
 msgid "Save the screenshot to a PNG file"
@@ -121,14 +119,14 @@ msgid "Set the default save location"
 msgstr "Valitse oletustallennuskansio"
 
 #: ../lib/screenshooter-dialogs.c:817
-#, fuzzy
 msgid "Display the save dialog"
-msgstr "Älä näytä tallennusdialogia"
+msgstr "Näytä tallennusdialogi"
 
 #: ../lib/screenshooter-dialogs.c:823
 msgid ""
 "The save dialog allows you to change the file name and the save location"
 msgstr ""
+"Tallennusdialogissa voit vaihtaa tiedostonimeä ja tallennuskansiota"
 
 #: ../lib/screenshooter-dialogs.c:844
 msgid "Copy to the clipboard"
@@ -136,7 +134,9 @@ msgstr "Kopioi leikepöydälle"
 
 #: ../lib/screenshooter-dialogs.c:853
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Kopioi kuvakaappaus leikepöydälle, josta voit myöhemmin liittää sen"
+msgstr ""
+"Kopioi kuvakaappaus leikepöydälle, josta voit liittää sen haluamaasi "
+"sovellukseen"
 
 #: ../lib/screenshooter-dialogs.c:880
 msgid "Open with:"
@@ -167,9 +167,8 @@ msgid "Do not display the save dialog"
 msgstr "Älä näytä tallennusdialogia"
 
 #: ../src/main.c:71
-#, fuzzy
 msgid "Do not display the mouse on the screenshot"
-msgstr "Älä näytä tallennusdialogia"
+msgstr "Älä sisällytä hiiren osoitinta kuvakaappaukseen"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
