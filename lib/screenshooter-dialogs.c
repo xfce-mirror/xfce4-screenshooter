@@ -755,7 +755,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   save_radio_button = 
     gtk_radio_button_new_with_mnemonic (NULL, 
-                                        _("Save in:  "));
+                                        _("Save in:"));
   
   gtk_box_pack_start (GTK_BOX (save_box), 
                       save_radio_button, FALSE, 

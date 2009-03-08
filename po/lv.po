@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-07 16:22+0100\n"
+"POT-Creation-Date: 2009-03-08 16:50+0100\n"
 "PO-Revision-Date: 2007-11-16 23:39+0300\n"
 "Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
 "Language-Team: Latvian <rprieditis@inbox.lv>\n"
@@ -15,177 +15,175 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../lib/screenshooter-dialogs.c:228
+#: ../lib/screenshooter-dialogs.c:240
 #, fuzzy
 msgid "Screenshot.png"
 msgstr "Ekrānkopija"
 
-#: ../lib/screenshooter-dialogs.c:243
+#: ../lib/screenshooter-dialogs.c:255
 #, fuzzy, c-format
 msgid "Screenshot-%d.png"
 msgstr "Ekrānkopija"
 
-#: ../lib/screenshooter-dialogs.c:465
-#, fuzzy
-msgid "Take a screenshot"
-msgstr "Bildēt ekrānkopiju"
-
-#: ../lib/screenshooter-dialogs.c:472
-#, fuzzy
-msgid "Take the screenshot"
-msgstr "Bildēt ekrānkopiju"
-
-#: ../lib/screenshooter-dialogs.c:479
+#: ../lib/screenshooter-dialogs.c:482 ../lib/screenshooter-dialogs.c:499
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 #, fuzzy
 msgid "Screenshot"
 msgstr "Ekrānkopija"
 
-#: ../lib/screenshooter-dialogs.c:489
+#: ../lib/screenshooter-dialogs.c:494
+#, fuzzy
+msgid "Take a screenshot"
+msgstr "Bildēt ekrānkopiju"
+
+#: ../lib/screenshooter-dialogs.c:509
 msgid "Preferences"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:507
+#: ../lib/screenshooter-dialogs.c:528
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:539
+#: ../lib/screenshooter-dialogs.c:560
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
-#: ../panel-plugin/screenshooter-plugin.c:232
-#: ../panel-plugin/screenshooter-plugin.c:322
+#: ../lib/screenshooter-dialogs.c:570 ../src/main.c:53
+#: ../panel-plugin/screenshooter-plugin.c:241
+#: ../panel-plugin/screenshooter-plugin.c:344
 #, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr "Bildēt ekrānkopiju"
 
-#: ../lib/screenshooter-dialogs.c:563
+#: ../lib/screenshooter-dialogs.c:582
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
-#: ../panel-plugin/screenshooter-plugin.c:237
-#: ../panel-plugin/screenshooter-plugin.c:327
+#: ../lib/screenshooter-dialogs.c:592 ../src/main.c:49
+#: ../panel-plugin/screenshooter-plugin.c:246
+#: ../panel-plugin/screenshooter-plugin.c:349
 #, fuzzy
 msgid "Take a screenshot of the active window"
 msgstr "Bildēt ekrānkopiju"
 
-#: ../lib/screenshooter-dialogs.c:587
+#: ../lib/screenshooter-dialogs.c:604
 msgid "Select a region"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
-#: ../panel-plugin/screenshooter-plugin.c:242
-#: ../panel-plugin/screenshooter-plugin.c:332
+#: ../lib/screenshooter-dialogs.c:614 ../src/main.c:57
+#: ../panel-plugin/screenshooter-plugin.c:251
+#: ../panel-plugin/screenshooter-plugin.c:354
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:614
+#: ../lib/screenshooter-dialogs.c:627
+msgid "Capture the mouse pointer"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:646
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:660
+#: ../lib/screenshooter-dialogs.c:690
 #, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Bildēt ekrānkopiju"
 
-#: ../lib/screenshooter-dialogs.c:669
+#: ../lib/screenshooter-dialogs.c:698
 msgid "seconds"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:691
+#: ../lib/screenshooter-dialogs.c:720
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:722
-msgid "Save"
+#: ../lib/screenshooter-dialogs.c:758
+msgid "Save in:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:735
+#: ../lib/screenshooter-dialogs.c:772
 #, fuzzy
 msgid "Save the screenshot to a PNG file"
 msgstr "Saglabāt ekrānkopiju kā..."
 
-#: ../lib/screenshooter-dialogs.c:764
-msgid "Save by default to:"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:780
-msgid ""
-"If checked, the screenshot will be saved by default to the location set on "
-"the right without displaying a save dialog"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:785
+#: ../lib/screenshooter-dialogs.c:779
 msgid "Default save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:799
+#: ../lib/screenshooter-dialogs.c:792
 msgid "Set the default save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:821
+#: ../lib/screenshooter-dialogs.c:817
+msgid "Display the save dialog"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:823
+msgid ""
+"The save dialog allows you to change the file name and the save location"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:844
 msgid "Copy to the clipboard"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:831
+#: ../lib/screenshooter-dialogs.c:853
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:849
+#: ../lib/screenshooter-dialogs.c:880
 msgid "Open with:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:865
+#: ../lib/screenshooter-dialogs.c:896
 msgid "Open the screenshot with the chosen application"
 msgstr ""
 
-#. Application label
-#: ../lib/screenshooter-dialogs.c:898
-msgid "Application:"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:934 ../src/main.c:79
 #, fuzzy
 msgid "Application to open the screenshot"
 msgstr "Bildēt ekrānkopiju"
 
-#: ../lib/screenshooter-dialogs.c:989
+#: ../lib/screenshooter-dialogs.c:979
 #, fuzzy
 msgid "Save screenshot as..."
 msgstr "Saglabāt ekrānkopiju kā..."
 
-#: ../src/main.c:46
+#: ../src/main.c:45
 msgid "Version information"
 msgstr ""
 
-#: ../src/main.c:64
+#: ../src/main.c:63
 msgid "Delay in seconds before taking the screenshot"
 msgstr ""
 
-#: ../src/main.c:68
+#: ../src/main.c:67
 msgid "Do not display the save dialog"
 msgstr ""
 
-#: ../src/main.c:72
+#: ../src/main.c:71
+#, fuzzy
+msgid "Do not display the mouse on the screenshot"
+msgstr "Bildēt ekrānkopiju"
+
+#: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
 msgstr ""
 
-#: ../src/main.c:190
+#: ../src/main.c:191
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 
-#: ../src/main.c:275
+#: ../src/main.c:286
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr ""
@@ -196,3 +194,7 @@ msgstr ""
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Bildēt ekrānkopiju"
+
+#, fuzzy
+#~ msgid "Take the screenshot"
+#~ msgstr "Bildēt ekrānkopiju"

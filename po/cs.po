@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-07 16:22+0100\n"
+"POT-Creation-Date: 2009-03-08 16:50+0100\n"
 "PO-Revision-Date: 2009-01-03 20:14+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -16,64 +16,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../lib/screenshooter-dialogs.c:228
+#: ../lib/screenshooter-dialogs.c:240
 msgid "Screenshot.png"
 msgstr "Snímek_obrazovky.jpg"
 
-#: ../lib/screenshooter-dialogs.c:243
+#: ../lib/screenshooter-dialogs.c:255
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "Snímek_obrazovky-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:465
-msgid "Take a screenshot"
-msgstr "Pořídit snímek obrazovky"
-
-#: ../lib/screenshooter-dialogs.c:472
-msgid "Take the screenshot"
-msgstr "Pořídit snímek obrazovky"
-
-#: ../lib/screenshooter-dialogs.c:479
+#: ../lib/screenshooter-dialogs.c:482 ../lib/screenshooter-dialogs.c:499
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Snímek obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:489
+#: ../lib/screenshooter-dialogs.c:494
+msgid "Take a screenshot"
+msgstr "Pořídit snímek obrazovky"
+
+#: ../lib/screenshooter-dialogs.c:509
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: ../lib/screenshooter-dialogs.c:507
+#: ../lib/screenshooter-dialogs.c:528
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímaná oblast</span>"
 
-#: ../lib/screenshooter-dialogs.c:539
+#: ../lib/screenshooter-dialogs.c:560
 msgid "Entire screen"
 msgstr "Celá obrazovka"
 
-#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
-#: ../panel-plugin/screenshooter-plugin.c:232
-#: ../panel-plugin/screenshooter-plugin.c:322
+#: ../lib/screenshooter-dialogs.c:570 ../src/main.c:53
+#: ../panel-plugin/screenshooter-plugin.c:241
+#: ../panel-plugin/screenshooter-plugin.c:344
 msgid "Take a screenshot of the entire screen"
 msgstr "Pořídí snímek celé obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:563
+#: ../lib/screenshooter-dialogs.c:582
 msgid "Active window"
 msgstr "Aktivní okno"
 
-#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
-#: ../panel-plugin/screenshooter-plugin.c:237
-#: ../panel-plugin/screenshooter-plugin.c:327
+#: ../lib/screenshooter-dialogs.c:592 ../src/main.c:49
+#: ../panel-plugin/screenshooter-plugin.c:246
+#: ../panel-plugin/screenshooter-plugin.c:349
 msgid "Take a screenshot of the active window"
 msgstr "Pořídí snímek aktivního okna"
 
-#: ../lib/screenshooter-dialogs.c:587
+#: ../lib/screenshooter-dialogs.c:604
 msgid "Select a region"
 msgstr "Vybraná oblast"
 
-#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
-#: ../panel-plugin/screenshooter-plugin.c:242
-#: ../panel-plugin/screenshooter-plugin.c:332
+#: ../lib/screenshooter-dialogs.c:614 ../src/main.c:57
+#: ../panel-plugin/screenshooter-plugin.c:251
+#: ../panel-plugin/screenshooter-plugin.c:354
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -83,7 +79,11 @@ msgstr ""
 "přesunete kurzor myši do protějšího bodu vybrané oblasti, aniž byste "
 "tlačítko myši uvolnili, a poté tlačítko myši pustíte."
 
-#: ../lib/screenshooter-dialogs.c:614
+#: ../lib/screenshooter-dialogs.c:627
+msgid "Capture the mouse pointer"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:646
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -91,94 +91,93 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Zpoždění před pořízením "
 "snímku obrazovky</span>"
 
-#: ../lib/screenshooter-dialogs.c:660
+#: ../lib/screenshooter-dialogs.c:690
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Zpoždění před pořízením snímku obrazovky v sekundách"
 
-#: ../lib/screenshooter-dialogs.c:669
+#: ../lib/screenshooter-dialogs.c:698
 msgid "seconds"
 msgstr "sekund"
 
-#: ../lib/screenshooter-dialogs.c:691
+#: ../lib/screenshooter-dialogs.c:720
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akce</span>"
 
-#: ../lib/screenshooter-dialogs.c:722
-msgid "Save"
+#: ../lib/screenshooter-dialogs.c:758
+#, fuzzy
+msgid "Save in:"
 msgstr "Uložit"
 
-#: ../lib/screenshooter-dialogs.c:735
+#: ../lib/screenshooter-dialogs.c:772
 msgid "Save the screenshot to a PNG file"
 msgstr "Uložit snímek obrazovky do souboru PNG"
 
-#: ../lib/screenshooter-dialogs.c:764
-msgid "Save by default to:"
-msgstr "Uložit do výchozího umístění:"
-
-#: ../lib/screenshooter-dialogs.c:780
-msgid ""
-"If checked, the screenshot will be saved by default to the location set on "
-"the right without displaying a save dialog"
-msgstr ""
-"Pokud je volba povolena, snímek obrazovky se uloží do výchozího umístění "
-"nastaveného vpravo, aniž by se zobrazilo dialogové okno pro uložení"
-
-#: ../lib/screenshooter-dialogs.c:785
+#: ../lib/screenshooter-dialogs.c:779
 msgid "Default save location"
 msgstr "Výchozí umístění pro ukládání"
 
-#: ../lib/screenshooter-dialogs.c:799
+#: ../lib/screenshooter-dialogs.c:792
 msgid "Set the default save location"
 msgstr "Nastavení výchozího umístění pro ukládání"
 
-#: ../lib/screenshooter-dialogs.c:821
+#: ../lib/screenshooter-dialogs.c:817
+#, fuzzy
+msgid "Display the save dialog"
+msgstr "Nezobrazovat dialogové okno pro ukládání"
+
+#: ../lib/screenshooter-dialogs.c:823
+msgid ""
+"The save dialog allows you to change the file name and the save location"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:844
 msgid "Copy to the clipboard"
 msgstr "Zkopírovat do schránky"
 
-#: ../lib/screenshooter-dialogs.c:831
+#: ../lib/screenshooter-dialogs.c:853
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 "Zkopíruje snímek obrazovky do schránky, aby bylo možné jej později vložit "
 "jinam"
 
-#: ../lib/screenshooter-dialogs.c:849
+#: ../lib/screenshooter-dialogs.c:880
 msgid "Open with:"
 msgstr "Otevřít pomocí:"
 
-#: ../lib/screenshooter-dialogs.c:865
+#: ../lib/screenshooter-dialogs.c:896
 msgid "Open the screenshot with the chosen application"
 msgstr "Otevře snímek obrazovky ve zvolené aplikaci"
 
-#. Application label
-#: ../lib/screenshooter-dialogs.c:898
-msgid "Application:"
-msgstr "Aplikace:"
-
-#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:934 ../src/main.c:79
 msgid "Application to open the screenshot"
 msgstr "Aplikace pro otevírání snímků obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:989
+#: ../lib/screenshooter-dialogs.c:979
 msgid "Save screenshot as..."
 msgstr "Uložit snímek obrazovky jako..."
 
-#: ../src/main.c:46
+#: ../src/main.c:45
 msgid "Version information"
 msgstr "Informace o verzi"
 
-#: ../src/main.c:64
+#: ../src/main.c:63
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Zpoždění před pořízením snímku obrazovky v sekundách"
 
-#: ../src/main.c:68
+#: ../src/main.c:67
 msgid "Do not display the save dialog"
 msgstr "Nezobrazovat dialogové okno pro ukládání"
 
-#: ../src/main.c:72
+#: ../src/main.c:71
+#, fuzzy
+msgid "Do not display the mouse on the screenshot"
+msgstr "Nezobrazovat dialogové okno pro ukládání"
+
+#: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
 msgstr "Adresář pro uložení snímků obrazovky"
 
-#: ../src/main.c:190
+#: ../src/main.c:191
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -187,7 +186,7 @@ msgstr ""
 "%s: %s\n"
 "Úplný výpis dostupných voleb příkazové řádky získáte příkazem %s --help\n"
 
-#: ../src/main.c:275
+#: ../src/main.c:286
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s není platným adresářem, použije se výchozí adresář."
@@ -197,3 +196,19 @@ msgstr "%s není platným adresářem, použije se výchozí adresář."
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Pořizuje snímky celé obrazovky, aktivního okna nebo zvolené oblasti"
+
+#~ msgid "Take the screenshot"
+#~ msgstr "Pořídit snímek obrazovky"
+
+#~ msgid "Save by default to:"
+#~ msgstr "Uložit do výchozího umístění:"
+
+#~ msgid ""
+#~ "If checked, the screenshot will be saved by default to the location set "
+#~ "on the right without displaying a save dialog"
+#~ msgstr ""
+#~ "Pokud je volba povolena, snímek obrazovky se uloží do výchozího umístění "
+#~ "nastaveného vpravo, aniž by se zobrazilo dialogové okno pro uložení"
+
+#~ msgid "Application:"
+#~ msgstr "Aplikace:"
