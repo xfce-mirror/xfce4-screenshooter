@@ -19,6 +19,8 @@
 
 #include "screenshooter-utils.h"
 
+#include <gdk/gdkkeysyms.h>
+
 /* Prototypes */
 
 
@@ -215,7 +217,7 @@ static GdkPixbuf
   
   GdkGCValues gc_values;
   GdkGC *gc;
-  GdkGrabStatus grabstatus;
+  GdkGrabStatus grabstatus_mouse, grabstatus_keyboard;
   
   GdkGCValuesMask values_mask =
     GDK_GC_FUNCTION | GDK_GC_FILL	| GDK_GC_CLIP_MASK | 
@@ -233,6 +235,7 @@ static GdkPixbuf
 
   gboolean pressed = FALSE;
   gboolean done = FALSE;
+  gboolean cancelled = FALSE;
   gint x, y, w, h;
   
   /*Set up graphics context for a XOR rectangle that will be drawn as 
@@ -258,10 +261,13 @@ static GdkPixbuf
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
   
-  grabstatus = gdk_pointer_grab (root_window, FALSE, mask,
+  grabstatus_mouse = gdk_pointer_grab (root_window, FALSE, mask,
                                  NULL, xhair_cursor, GDK_CURRENT_TIME);
+
+  grabstatus_keyboard = gdk_keyboard_grab (root_window, FALSE, GDK_CURRENT_TIME);
   
-  while (!done && grabstatus == GDK_GRAB_SUCCESS)
+  while (!done && grabstatus_mouse == GDK_GRAB_SUCCESS
+               && grabstatus_keyboard == GDK_GRAB_SUCCESS)
     {
       gint x1, y1, x2, y2;
       GdkEvent *event;
@@ -319,15 +325,16 @@ static GdkPixbuf
                 TRACE ("Mouse is moving");
 
                 if (w > 0 && h > 0)
-               
-                /* Remove the rectangle drawn previously */
+                  {
+                    /* Remove the rectangle drawn previously */
 
-                TRACE ("Remove the rectangle drawn previously");
+                     TRACE ("Remove the rectangle drawn previously");
                 
-                gdk_draw_rectangle (root_window, 
-                                    gc, 
-                                    FALSE, 
-                                    x, y, w, h);
+                     gdk_draw_rectangle (root_window, 
+                                         gc, 
+                                         FALSE, 
+                                         x, y, w, h);
+                  }
 
                 x2 = event->motion.x;
                 y2 = event->motion.y;
@@ -349,6 +356,32 @@ static GdkPixbuf
             
               }
             break;
+
+          case GDK_KEY_PRESS:
+            if (event->key.keyval == GDK_Escape)
+              {
+                TRACE ("Escape key was pressed, cancel the screenshot.");
+
+                if (pressed)
+                  {
+                    if (w > 0 && h > 0)
+                      {
+                        /* Remove the rectangle drawn previously */
+
+                         TRACE ("Remove the rectangle drawn previously");
+                    
+                         gdk_draw_rectangle (root_window, 
+                                             gc, 
+                                             FALSE, 
+                                             x, y, w, h);
+                      }
+                  }
+
+                done = TRUE;
+                cancelled = TRUE;
+              }
+
+            break;                       
            
           default: 
             break;
@@ -357,20 +390,29 @@ static GdkPixbuf
       gdk_event_free (event);
     }
  
-  if (grabstatus == GDK_GRAB_SUCCESS) 
+  if (grabstatus_mouse == GDK_GRAB_SUCCESS) 
     {
       TRACE ("Ungrab the pointer");
 
       gdk_pointer_ungrab(GDK_CURRENT_TIME);
     }
+
+  if (grabstatus_keyboard == GDK_GRAB_SUCCESS)
+    {
+      TRACE ("Ungrab the keyboard");
+
+      gdk_keyboard_ungrab (GDK_CURRENT_TIME);
+    }
   
   /* Get the screenshot's pixbuf */
 
-  TRACE ("Get the pixbuf for the screenshot");
-  
-  screenshot = gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
-                                             x, y, 0, 0, w, h);
-  
+  if (!cancelled)
+    {
+      TRACE ("Get the pixbuf for the screenshot");
+      
+      screenshot = gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
+                                                 x, y, 0, 0, w, h);
+    }  
   if (gc!=NULL)
     g_object_unref (gc);
     

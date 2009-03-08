@@ -1,5 +1,18 @@
 2009-03-08 jeromeg
 
+  Now, when taking a region screenshot, the Escape key cancels everything.
+
+  * lib/screenshooter-actions.c: don't do anything if the screenshot is
+    NULL.
+  * lib/screenshooter-utils.c
+    - include the keysim header.
+    - (get_rectangle_screenshot):
+      + grab the keyboard.
+      + cancel the screenshot if escape is pressed.
+      + return NULL if the screenshot was cancelled.
+
+2009-03-08 jeromeg
+
   * lib/screenshooter-dialogs.c (screenshooter_dialog_new): add some
     padding for the new check box to separate it from the radio button
     group.

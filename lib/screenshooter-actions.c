@@ -24,39 +24,43 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
   GdkPixbuf *screenshot =
     screenshooter_take_screenshot (sd->region, sd->delay, sd->show_mouse);
 
-  if (sd->action == SAVE)
+  if (screenshot != NULL)
     {
-      if (sd->screenshot_dir == NULL)
+      if (sd->action == SAVE)
         {
-          sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+          if (sd->screenshot_dir == NULL)
+            {
+              sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+            }
+
+          screenshooter_save_screenshot (screenshot,
+                                         sd->show_save_dialog,
+                                         sd->screenshot_dir);
+        }
+      else if (sd->action == CLIPBOARD)
+        {
+          screenshooter_copy_to_clipboard (screenshot);
+        }
+      else
+        {
+          gchar *tempdir = g_strdup (g_get_tmp_dir ());
+
+          gchar *screenshot_path =
+            screenshooter_save_screenshot (screenshot,
+                                           FALSE,
+                                           tempdir);
+          if (screenshot_path != NULL)
+            {
+              screenshooter_open_screenshot (screenshot_path, sd->app);
+              g_free (screenshot_path);
+            }
+
+          if (tempdir != NULL)
+            g_free (tempdir);
         }
 
-      screenshooter_save_screenshot (screenshot,
-                                     sd->show_save_dialog,
-                                     sd->screenshot_dir);
-    }
-  else if (sd->action == CLIPBOARD)
-    {
-      screenshooter_copy_to_clipboard (screenshot);
-    }
-  else
-    {
-      gchar *tempdir = g_strdup (g_get_tmp_dir ());
-
-      gchar *screenshot_path =
-        screenshooter_save_screenshot (screenshot,
-                                       FALSE,
-                                       tempdir);
-      if (screenshot_path != NULL)
-        {
-          screenshooter_open_screenshot (screenshot_path, sd->app);
-          g_free (screenshot_path);
-        }
-
-      if (tempdir != NULL)
-        g_free (tempdir);
+      g_object_unref (screenshot);
     }
 
-  g_object_unref (screenshot);
 }
 
