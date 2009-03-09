@@ -33,8 +33,6 @@
 
 #include <unistd.h>
 
-#define DEFAULT_SAVE_DIRECTORY xfce_get_homedir ()
-
 
 
 /* Screenshot Modes */
@@ -89,6 +87,9 @@ screenshooter_write_rc_file      (gchar                *file,
 
 void
 screenshooter_open_screenshot    (gchar                *screenshot_path,
-                                  gchar                *application);                                  
+                                  gchar                *application);
+
+gchar
+*screenshooter_get_home_uri      ();
 
 #endif                               

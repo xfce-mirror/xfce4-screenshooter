@@ -30,7 +30,7 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
         {
           if (sd->screenshot_dir == NULL)
             {
-              sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+              sd->screenshot_dir = screenshooter_get_home_uri ();
             }
 
           screenshooter_save_screenshot (screenshot,

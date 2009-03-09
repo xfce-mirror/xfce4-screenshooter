@@ -203,8 +203,9 @@ static void cb_default_folder (GtkWidget       *chooser,
                                ScreenshotData  *sd)
 {
   g_free (sd->screenshot_dir);
+  
   sd->screenshot_dir = 
-    gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
+    gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
 }
 
    
@@ -228,42 +229,54 @@ static void cb_delay_spinner_changed (GtkWidget       *spinner,
 static gchar *generate_filename_for_uri (char *uri)
 {
   gboolean exists = TRUE;
-  gchar *filename;
+  GFile *directory;
+  GFile *file;
   gchar *basename;
   gint i;
 
   if (uri == NULL)
     {
-  	  return NULL;
-    }      
+      TRACE ("URI was NULL");
+
+      return NULL;
+    }
+
+  TRACE ("Get the folder corresponding to the URI");
+
+  directory = g_file_new_for_uri (uri);
 
   basename = g_strdup (_("Screenshot.png"));
-  filename = g_build_filename (uri, basename, NULL);
-  
-  if (!g_file_test (filename, G_FILE_TEST_EXISTS))
+
+  file = g_file_get_child (directory, basename);
+
+  if (!g_file_query_exists (file, NULL))
     {
-      g_free (filename);
+      g_object_unref (file);
+      g_object_unref (directory);
       
       return basename;
     }
-  
+
+  g_object_unref (file);
   g_free (basename);
-  g_free (filename);
 
   for (i = 1; exists; ++i)
     {
       basename = g_strdup_printf (_("Screenshot-%d.png"), i);
-      filename = g_build_filename (uri, basename, NULL);
 
-      if (!g_file_test (filename, G_FILE_TEST_EXISTS))
+      file = g_file_get_child (directory, basename);
+      
+      if (!g_file_query_exists (file, NULL))
         exists = FALSE;
 
       if (exists)
         g_free (basename);
-      
-      g_free (filename);
+
+      g_object_unref (file);
     }
-   
+
+  g_object_unref (directory);
+  
   return basename;
 }
 
@@ -779,8 +792,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
     gtk_file_chooser_button_new (_("Default save location"), 
                                  GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
         
-  gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dir_chooser), 
-                                       sd->screenshot_dir);
+  gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (dir_chooser), 
+                                           sd->screenshot_dir);
   
   gtk_box_pack_start (GTK_BOX (save_box), 
                       dir_chooser, FALSE, 
@@ -966,7 +979,7 @@ gchar
   GError *error = NULL;
   
   /* Generate the filename for the default save location */
-  
+ 
   filename = generate_filename_for_uri (default_dir);
     
   if (show_save_dialog)
@@ -994,8 +1007,8 @@ gchar
       gtk_dialog_set_default_response (GTK_DIALOG (chooser), 
                                        GTK_RESPONSE_ACCEPT);
 
-      gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER (chooser), 
-                                          default_dir);
+      gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (chooser), 
+                                               default_dir);
 
       gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), 
                                          filename);
@@ -1057,6 +1070,8 @@ gchar
             }
 	    
 	  }
+
+  TRACE ("Free the gchars and unref the GFiles");
 
   g_free (filename);
   

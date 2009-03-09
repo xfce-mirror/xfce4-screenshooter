@@ -521,8 +521,10 @@ screenshooter_read_rc_file (gchar               *file,
   gint action = SAVE;
   gint show_save_dialog = 1;
   gint show_mouse = 1;
-  gchar *screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
+  gchar *screenshot_dir = screenshooter_get_home_uri ();
   gchar *app = g_strdup ("none");
+
+  const gchar *home_uri = screenshooter_get_home_uri ();
   
   if (file != NULL)
     {
@@ -556,7 +558,7 @@ screenshooter_read_rc_file (gchar               *file,
           screenshot_dir = 
             g_strdup (xfce_rc_read_entry (rc, 
                                           "screenshot_dir", 
-                                          DEFAULT_SAVE_DIRECTORY));
+                                          home_uri));
         }
 
       TRACE ("Close the rc file");
@@ -650,4 +652,20 @@ screenshooter_open_screenshot (gchar *screenshot_path,
           g_free (command);
        }
     }
-}     
+}
+
+
+
+gchar
+*screenshooter_get_home_uri ()
+{
+  gchar *result = NULL;
+  const gchar *home_path = xfce_get_homedir ();
+  GFile *home = g_file_new_for_path (home_path);
+
+  result = g_file_get_uri (home);
+
+  g_object_unref (home);
+
+  return result;
+}

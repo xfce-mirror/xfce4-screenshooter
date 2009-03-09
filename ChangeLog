@@ -1,3 +1,31 @@
+2009-03-09 jeromeg
+
+  Start porting the application to GIO. From now on,
+  sd->screenshot_dir is an URI to the save directory.
+
+  * src/main.c (main):
+    - don't do anything before gtk is initialized.
+    - use a GFile for the default save directory.
+    - fallback to the home URI if the directory stored in preferences
+      does not exist anymore.
+    - use GIO for the command line argument.
+    - use xfce_err to show an error instead of g_error.
+
+  * lib/screenshooter-actions.c: fallback to the home URI.
+
+  * lib/screenshooter-utils.c:
+    - (screenshooter_read_rc_file) fallback to the home URI.
+    - (screenshooter_get_home_uri) new function to get the URI of the
+      home folder.
+
+  * lib/screenshooter-utils.h: add he prototype of the new function.
+
+  * lib/screenshooter-dialogs.c:
+    - (screenshooter_dialog_new) use uris in the gtk file chooser.
+    - (screenshooter_save_screenshot) use uris in the gtk file chooser.
+    - (cb_default_folder) get the uri instead of the file name.
+    - (generate_filename_for_uri) use GFiles instead of plain paths.
+
 2009-03-08 jeromeg
 
   Patch from Mike Massonnet.

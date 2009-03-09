@@ -160,27 +160,13 @@ cb_dialog_response (GtkWidget *dialog, int response,
 int main(int argc, char **argv)
 {
   GError *cli_error = NULL;
+  GFile *default_save_dir;
 
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
 
-  gchar *rc_file =
-    xfce_resource_lookup (XFCE_RESOURCE_CONFIG,
-                          "xfce4/xfce4-screenshooter");
+  gchar *rc_file;
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-
-  /* Read the preferences */
-
-  screenshooter_read_rc_file (rc_file, sd);
-
-  if (rc_file != NULL)
-    g_free (rc_file);
-
-  /* Check if the directory read from the preferences is valid */
-  if (!g_file_test (sd->screenshot_dir, G_FILE_TEST_IS_DIR))
-    {
-      sd->screenshot_dir = g_strdup (DEFAULT_SAVE_DIRECTORY);
-    }
 
   /* Print a message to advise to use help when a non existing cli option is
   passed to the executable. */
@@ -195,6 +181,28 @@ int main(int argc, char **argv)
           return 1;
         }
     }
+
+  /* Read the preferences */
+
+  rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter");
+
+  screenshooter_read_rc_file (rc_file, sd);
+
+  if (rc_file != NULL)
+    g_free (rc_file);
+
+  /* Check if the directory read from the preferences is valid */
+
+  default_save_dir = g_file_new_for_uri (sd->screenshot_dir);
+  
+  if (!g_file_query_exists (default_save_dir, NULL))
+    {
+      g_free (sd->screenshot_dir);
+
+      sd->screenshot_dir = screenshooter_get_home_uri ();
+    }
+
+  g_object_unref (default_save_dir);
 
   /* Just print the version if we are in version mode */
   if (version)
@@ -256,39 +264,21 @@ int main(int argc, char **argv)
       /* If the user gave a directory name, verify that it is valid */
       if (screenshot_dir != NULL)
         {
-          if (g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR))
+          default_save_dir = g_file_new_for_commandline_arg (screenshot_dir);
+
+          if (g_file_query_exists (default_save_dir, NULL))
             {
-              /* Check if the path is absolute, if not make it
-               * absolute */
-              if (g_path_is_absolute (screenshot_dir))
-                {
-                  g_free (sd->screenshot_dir);
-
-                  sd->screenshot_dir = screenshot_dir;
-                }
-              else
-                {
-                  gchar *current_dir = g_get_current_dir ();
-
-                  g_free (sd->screenshot_dir);
-
-                  sd->screenshot_dir =
-                    g_build_filename (current_dir,
-                                      screenshot_dir,
-                                      NULL);
-
-                  g_free (current_dir);
-                  g_free (screenshot_dir);
-                }
+              g_free (sd->screenshot_dir);
+              sd->screenshot_dir = g_file_get_uri (default_save_dir);
             }
           else
             {
-              g_warning (_("%s is not a valid directory, the default"
-                           " directory will be used."),
-                         screenshot_dir);
-
-              g_free (screenshot_dir);
+              xfce_err (_("%s is not a valid directory, the default"
+                          " directory will be used."), screenshot_dir);
             }
+
+          g_object_unref (default_save_dir);
+          g_free (screenshot_dir);
         }
 
       screenshooter_take_and_output_screenshot (sd);
