@@ -445,11 +445,156 @@ static void set_default_item (GtkWidget       *combobox,
 
       sd->app = g_strdup ("none");
     }
-}                              
+}
 
 
 
-                      
+void cb_progress_upload (goffset current_num_bytes,
+                         goffset total_num_bytes,
+                         gpointer user_data)
+{
+  gdouble fraction = (double) current_num_bytes / (double) total_num_bytes;
+
+  TRACE ("Progress callback!");
+
+  gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (user_data), fraction);
+}
+
+
+
+static void
+cb_finished_upload (GObject *source_object, GAsyncResult *res, gpointer user_data)
+{
+  GError *error = NULL;
+  gboolean success;
+
+  g_return_if_fail (G_LIKELY (G_IS_FILE (source_object)));
+
+  success = g_file_copy_finish (G_FILE (source_object), res, &error);
+
+  if (!success)
+    {
+      xfce_err (error->message);
+
+      g_error_free (error);
+    }
+
+  gtk_widget_destroy (GTK_WIDGET (user_data));
+}
+
+
+
+static void
+cb_transfer_dialog_response (GtkWidget *dialog, int response, GCancellable *cancellable)
+{
+  if (G_LIKELY (response == GTK_RESPONSE_CANCEL))
+    {
+      g_cancellable_cancel (cancellable);
+
+      gtk_widget_destroy (dialog);
+    }
+}
+ 
+
+
+static void
+save_screenshot_to_local_path (GdkPixbuf *screenshot, GFile *save_file)
+{
+  GError *error = NULL;
+  gchar *save_path = g_file_get_path (save_file);
+
+  if (!gdk_pixbuf_save (screenshot, save_path, "png", &error, NULL))
+    {
+      xfce_err ("%s", error->message);
+      
+      g_error_free (error);
+    }
+
+  g_free (save_path);
+}
+
+static void
+save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
+{
+  gchar *save_basename = g_file_get_basename (save_file);
+  gchar *save_path;
+  GFile *save_file_temp;
+
+  GCancellable *cancellable = g_cancellable_new ();
+  
+  GtkWidget *dialog = gtk_dialog_new_with_buttons (_("Transfering the screenshot..."),
+                                                   NULL,
+                                                   GTK_DIALOG_NO_SEPARATOR,
+                                                   GTK_STOCK_CANCEL,
+                                                   GTK_RESPONSE_CANCEL,
+                                                   NULL);
+
+  GtkWidget *progress_bar = gtk_progress_bar_new ();
+
+  save_path = g_build_filename (g_get_tmp_dir (), save_basename, NULL);
+
+  save_file_temp = g_file_new_for_path (save_path);
+
+  save_screenshot_to_local_path (screenshot, save_file_temp);
+
+  gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+  gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+  gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
+  
+  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), 20);
+  gtk_window_set_icon_name (GTK_WINDOW (dialog), "document-save");
+
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG(dialog)->vbox),
+                      progress_bar,
+                      FALSE,
+                      FALSE,
+                      0);
+
+  gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 0);
+
+  gtk_widget_show (progress_bar);
+
+  gtk_widget_show (dialog);
+
+  g_signal_connect (dialog,
+                    "response",
+                    G_CALLBACK (cb_transfer_dialog_response),
+                    cancellable);
+
+  g_file_copy_async (save_file_temp,
+                     save_file,
+                     G_FILE_COPY_OVERWRITE|G_FILE_COPY_BACKUP,
+                     G_PRIORITY_DEFAULT,
+                     cancellable,
+                     (GFileProgressCallback)cb_progress_upload, progress_bar,
+                     (GAsyncReadyCallback)cb_finished_upload, dialog);
+                     
+  g_object_unref (save_file_temp);
+  g_free (save_basename);
+  g_free (save_path);
+}
+
+static void
+save_screenshot_to (GdkPixbuf *screenshot, gchar *save_uri)
+{
+  GFile *save_file = g_file_new_for_uri (save_uri); 
+    
+  /* If the URI is a local one, we save directly */
+
+  if (!screenshooter_is_remote_uri (save_uri))
+    {
+      save_screenshot_to_local_path (screenshot, save_file);
+    }
+  else
+    {
+      save_screenshot_to_remote_location (screenshot, save_file);
+    }
+  
+  g_object_unref (save_file);
+}
+
+
+
 /* Public */
 
 
@@ -969,14 +1114,7 @@ gchar
                                     gboolean        show_save_dialog,
                                     gchar          *default_dir)
 {
-  GdkPixbuf *thumbnail;
   gchar *filename = NULL, *savename = NULL;
-  
-  GtkWidget *preview;
-  GtkWidget *chooser;
-  gint dialog_response;
-  
-  GError *error = NULL;
   
   /* Generate the filename for the default save location */
  
@@ -984,7 +1122,13 @@ gchar
     
   if (show_save_dialog)
 	  {
-	    /* If the user wants a save dialog, we run it, and grab the 
+      GdkPixbuf *thumbnail;
+
+      GtkWidget *preview;
+      GtkWidget *chooser;
+      gint dialog_response;
+
+      /* If the user wants a save dialog, we run it, and grab the 
        * filename the user has chosen. */
 	    
       /* Create the dialog and set its default properties */
@@ -1001,8 +1145,9 @@ gchar
       gtk_window_set_icon_name (GTK_WINDOW (chooser), 
                                 "applets-screenshooter");
                                 
-      gtk_file_chooser_set_do_overwrite_confirmation (
-      GTK_FILE_CHOOSER (chooser), TRUE);
+      gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
+
+      gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), FALSE);
       
       gtk_dialog_set_default_response (GTK_DIALOG (chooser), 
                                        GTK_RESPONSE_ACCEPT);
@@ -1035,41 +1180,26 @@ gchar
       /* The user pressed the save button */
 	    if (dialog_response == GTK_RESPONSE_ACCEPT)
 	      {
-	        /* Get the save location */
-          savename = 
-	          gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (chooser));
-          
-          /* Try to save the screenshot. If it fails, we show an error
-           * dialog */
-          
-          if (!gdk_pixbuf_save (screenshot, savename, 
-                                "png", &error, NULL))
-            {
-              xfce_err ("%s", error->message);
-              
-              g_error_free (error);
-            }
-	      }
+          gchar *save_uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
+
+          gtk_widget_hide (chooser);
+                    
+          save_screenshot_to (screenshot, save_uri);
+
+          g_free (save_uri);
+        }
 	  
-	    gtk_widget_destroy (GTK_WIDGET (chooser));
+	    gtk_widget_destroy (chooser);
 	  }  
 	else
 	  {    
-	    
 	    /* Else, we just save the file in the default folder */
+      gchar *save_uri = g_build_filename (default_dir, filename, NULL);
       
-      savename = g_build_filename (default_dir, filename, NULL);
-	    
-      /* Try to save the screenshot. If it fails, we show an error
-      * dialog */
-      if (!gdk_pixbuf_save (screenshot, savename, "png", &error, NULL))
-            {
-              xfce_err ("%s", error->message);
-              
-              g_error_free (error);
-            }
-	    
-	  }
+      save_screenshot_to (screenshot, save_uri);
+
+      g_free (save_uri);
+    }
 
   TRACE ("Free the gchars and unref the GFiles");
 

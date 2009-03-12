@@ -661,11 +661,22 @@ gchar
 {
   gchar *result = NULL;
   const gchar *home_path = xfce_get_homedir ();
-  GFile *home = g_file_new_for_path (home_path);
 
-  result = g_file_get_uri (home);
-
-  g_object_unref (home);
+  result = g_strconcat ("file://", home_path, NULL);
 
   return result;
+}
+
+
+
+gboolean screenshooter_is_remote_uri (const gchar *uri)
+{
+  g_return_val_if_fail(uri != NULL, FALSE);
+
+  /* if the URI doesn't start  with "file://", we take it as remote */
+
+  if (!g_str_has_prefix (uri, "file:"))
+    return TRUE;
+
+  return FALSE;
 }

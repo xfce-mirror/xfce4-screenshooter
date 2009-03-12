@@ -92,4 +92,7 @@ screenshooter_open_screenshot    (gchar                *screenshot_path,
 gchar
 *screenshooter_get_home_uri      ();
 
+gboolean
+screenshooter_is_remote_uri      (const gchar          *uri);
+
 #endif                               

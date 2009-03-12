@@ -1,3 +1,32 @@
+2009-03-12 jeromeg
+
+  Port the saving of screenshots to GIO. Some things still need to be
+  polished. Some things might be broken, like opening a screenshot with
+  an application.
+
+  * lib/screenshooter-utils.{c,h}:
+    - (screenshooter_get_home_uri) simplify the function.
+    - (screenshooter_is_remote_uri) new function to detect remote uris.
+
+  * lib/screenshooter-dialogs.c:
+    - (cb_progress_upload) new function to set the progress bar of the
+      transfer dialog.
+    - (cb_finished_upload) new function to report errors that could have
+      occurred during the transfer and to close the transfer dialog when
+      we are done.
+    - (cb_transfer_dialog_response) new function to allow a transfer to
+      be cancelled.
+    - (save_screenshot_to_local_path) new function to save a screenshot
+      to a local path.
+    - (save_screenshot_to_remote_location) new function to save a screenshot
+      to a remote place. It saves the screenshot to the temporary directory
+      and copies it to the remote location. A dialog shows the progress of
+      the transfer and offers to cancel it.
+    - (save_screenshot_to) new function to choose between one of the two
+      above save functions.
+    - (screenshooter_save_screenshot) rework the function to use the
+      functions listed above.
+
 2009-03-09 jeromeg
 
   Start porting the application to GIO. From now on,
