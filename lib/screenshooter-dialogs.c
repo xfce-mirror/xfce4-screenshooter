@@ -563,7 +563,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
 
   g_file_copy_async (save_file_temp,
                      save_file,
-                     G_FILE_COPY_OVERWRITE|G_FILE_COPY_BACKUP,
+                     G_FILE_COPY_OVERWRITE,
                      G_PRIORITY_DEFAULT,
                      cancellable,
                      (GFileProgressCallback)cb_progress_upload, progress_bar,
@@ -939,6 +939,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
         
   gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (dir_chooser), 
                                            sd->screenshot_dir);
+
+  gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (dir_chooser), FALSE);
   
   gtk_box_pack_start (GTK_BOX (save_box), 
                       dir_chooser, FALSE, 
