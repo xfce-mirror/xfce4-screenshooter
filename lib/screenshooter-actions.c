@@ -43,20 +43,24 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
         }
       else
         {
-          gchar *tempdir = g_strdup (g_get_tmp_dir ());
+          GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
+
+          gchar *temp_dir_uri = g_file_get_uri (temp_dir);
 
           gchar *screenshot_path =
             screenshooter_save_screenshot (screenshot,
                                            FALSE,
-                                           tempdir);
+                                           temp_dir_uri);
+
           if (screenshot_path != NULL)
             {
               screenshooter_open_screenshot (screenshot_path, sd->app);
               g_free (screenshot_path);
             }
 
-          if (tempdir != NULL)
-            g_free (tempdir);
+          g_free (temp_dir_uri);
+
+          g_object_unref (temp_dir);
         }
 
       g_object_unref (screenshot);

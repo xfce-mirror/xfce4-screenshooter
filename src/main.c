@@ -182,6 +182,8 @@ int main(int argc, char **argv)
         }
     }
 
+  g_thread_init (NULL);
+
   /* Read the preferences */
 
   rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter");

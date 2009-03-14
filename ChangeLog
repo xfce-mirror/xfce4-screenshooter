@@ -1,5 +1,34 @@
 2009-03-12 jeromeg
 
+  Fix most of the issues introduced by the previous commit.
+  Gthread-2.0 >= 2.6.0 is now required.
+
+  * configure.ac.in, src/main.c, src/Makefile.am,
+    panel-plugin/screenshooter-plugin.c, panel-plugin/Makefile.am:
+    add a dependence on gthread and initialize the threads at startup.
+  * TODO: updated.
+  * lib/screenshooter-actions.c: use the URI of the temporary directory
+    and not its path, fixes the open with mode.
+  * lib/screenshooter-dialogs.c:
+    - (cb_progress_upload) add the remaining number of bytes to the
+      progress bar.
+    - (cb_finished_upload) add some debugging information.
+    - (save_screenshot_to_local_path) return the save location.
+    - (save_screenshot_to_remote_location):
+       + tweak the layout of the progress dialog.
+       + run the dialog AFTER starting the copy so that it does not block
+        everything.
+       + delete the temp file after the transfer.
+    - (save_screenshot_to) return the save location when saving to a
+      local destination.
+    - (screenshooter_save_screenshot):
+       + destroy the dialog as early as possible so that it does not
+         block the main loop.
+       + fix the open with mode here too.
+  * autogen.sh: use git svn instead of git svn.
+
+2009-03-12 jeromeg
+
   Port the saving of screenshots to GIO. Some things still need to be
   polished. Some things might be broken, like opening a screenshot with
   an application.

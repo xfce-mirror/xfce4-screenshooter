@@ -3,12 +3,6 @@ as in thunar and xfdesktop.
 * Check for leaks using valgrind.
 * Use Xshape to have a transparent background in the generated screenshots.
 
-Rewritte generate_filename_for_uri or remove it. Jannis suggestion:
-You can use GDir for reading the contents of a directory and you can use 
-regular expressions (GPattern or something) for matching strings against 
-patterns, so why not iterate over the contents of a directory and 
-determine the Screenshots-%d.png file with the largest %d?
-
 Low priority:
 * Try to get borders captured with compiz.
 * Consider porting the code to use GObjects instead of structs.

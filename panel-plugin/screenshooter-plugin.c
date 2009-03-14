@@ -313,6 +313,8 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   PluginData *pd = g_new0 (PluginData, 1);
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
 
+  g_thread_init (NULL);
+
   pd->sd = sd;
 
   TRACE ("Initialize the text domain");

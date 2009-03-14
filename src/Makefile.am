@@ -5,12 +5,14 @@ xfce4_screenshooter_CFLAGS = \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCEGUI4_CFLAGS@ \
+	@GTHREAD_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
 	-I$(top_srcdir)/lib
 	
 xfce4_screenshooter_LDFLAGS =                       \
 	@GTK_LIBS@ \
 	@GLIB_LIBS@ \
+	@GTHREAD_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCEGUI4_LIBS@ \
 	$(top_builddir)/lib/libscreenshooter.la

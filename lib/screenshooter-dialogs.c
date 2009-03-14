@@ -455,9 +455,15 @@ void cb_progress_upload (goffset current_num_bytes,
 {
   gdouble fraction = (double) current_num_bytes / (double) total_num_bytes;
 
-  TRACE ("Progress callback!");
+  gint remaining = (int) total_num_bytes - (int) current_num_bytes;
+
+  gchar *bar_text = g_strdup_printf (_("%i bytes remaining"), remaining);
 
   gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (user_data), fraction);
+
+  gtk_progress_bar_set_text (GTK_PROGRESS_BAR (user_data), bar_text);
+
+  g_free (bar_text);
 }
 
 
@@ -472,8 +478,12 @@ cb_finished_upload (GObject *source_object, GAsyncResult *res, gpointer user_dat
 
   success = g_file_copy_finish (G_FILE (source_object), res, &error);
 
+  TRACE ("The transfer is finished");
+
   if (!success)
     {
+      TRACE ("An error occurred");
+
       xfce_err (error->message);
 
       g_error_free (error);
@@ -489,6 +499,8 @@ cb_transfer_dialog_response (GtkWidget *dialog, int response, GCancellable *canc
 {
   if (G_LIKELY (response == GTK_RESPONSE_CANCEL))
     {
+      TRACE ("Cancel the screenshot");
+
       g_cancellable_cancel (cancellable);
 
       gtk_widget_destroy (dialog);
@@ -497,8 +509,8 @@ cb_transfer_dialog_response (GtkWidget *dialog, int response, GCancellable *canc
  
 
 
-static void
-save_screenshot_to_local_path (GdkPixbuf *screenshot, GFile *save_file)
+static gchar
+*save_screenshot_to_local_path (GdkPixbuf *screenshot, GFile *save_file)
 {
   GError *error = NULL;
   gchar *save_path = g_file_get_path (save_file);
@@ -508,9 +520,15 @@ save_screenshot_to_local_path (GdkPixbuf *screenshot, GFile *save_file)
       xfce_err ("%s", error->message);
       
       g_error_free (error);
-    }
 
-  g_free (save_path);
+      g_free (save_path);
+      
+      return NULL;
+    }
+  else
+    {
+      return save_path;
+    }
 }
 
 static void
@@ -522,7 +540,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
 
   GCancellable *cancellable = g_cancellable_new ();
   
-  GtkWidget *dialog = gtk_dialog_new_with_buttons (_("Transfering the screenshot..."),
+  GtkWidget *dialog = gtk_dialog_new_with_buttons (_("Transfer"),
                                                    NULL,
                                                    GTK_DIALOG_NO_SEPARATOR,
                                                    GTK_STOCK_CANCEL,
@@ -541,7 +559,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
   gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
   
-  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), 20);
+  gtk_container_set_border_width (GTK_CONTAINER (dialog), 20);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "document-save");
 
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG(dialog)->vbox),
@@ -553,8 +571,6 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (progress_bar), 0);
 
   gtk_widget_show (progress_bar);
-
-  gtk_widget_show (dialog);
 
   g_signal_connect (dialog,
                     "response",
@@ -568,22 +584,28 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
                      cancellable,
                      (GFileProgressCallback)cb_progress_upload, progress_bar,
                      (GAsyncReadyCallback)cb_finished_upload, dialog);
+
+  gtk_dialog_run (GTK_DIALOG (dialog));
+
+  g_file_delete (save_file_temp, NULL, NULL);
                      
   g_object_unref (save_file_temp);
   g_free (save_basename);
   g_free (save_path);
 }
 
-static void
-save_screenshot_to (GdkPixbuf *screenshot, gchar *save_uri)
+static gchar
+*save_screenshot_to (GdkPixbuf *screenshot, gchar *save_uri)
 {
-  GFile *save_file = g_file_new_for_uri (save_uri); 
+  GFile *save_file = g_file_new_for_uri (save_uri);
+
+  gchar *result = NULL;
     
   /* If the URI is a local one, we save directly */
 
   if (!screenshooter_is_remote_uri (save_uri))
     {
-      save_screenshot_to_local_path (screenshot, save_file);
+      result = save_screenshot_to_local_path (screenshot, save_file);
     }
   else
     {
@@ -591,6 +613,8 @@ save_screenshot_to (GdkPixbuf *screenshot, gchar *save_uri)
     }
   
   g_object_unref (save_file);
+
+  return result;
 }
 
 
@@ -1128,6 +1152,7 @@ gchar
 
       GtkWidget *preview;
       GtkWidget *chooser;
+      gchar *save_uri = NULL;
       gint dialog_response;
 
       /* If the user wants a save dialog, we run it, and grab the 
@@ -1182,23 +1207,24 @@ gchar
       /* The user pressed the save button */
 	    if (dialog_response == GTK_RESPONSE_ACCEPT)
 	      {
-          gchar *save_uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
-
-          gtk_widget_hide (chooser);
-                    
-          save_screenshot_to (screenshot, save_uri);
-
-          g_free (save_uri);
+          save_uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
         }
 	  
 	    gtk_widget_destroy (chooser);
+
+      if (save_uri != NULL)
+        {
+          savename = save_screenshot_to (screenshot, save_uri);
+
+          g_free (save_uri);
+        }
 	  }  
 	else
 	  {    
 	    /* Else, we just save the file in the default folder */
       gchar *save_uri = g_build_filename (default_dir, filename, NULL);
       
-      save_screenshot_to (screenshot, save_uri);
+      savename = save_screenshot_to (screenshot, save_uri);
 
       g_free (save_uri);
     }
