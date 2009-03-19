@@ -1,3 +1,11 @@
+2009-03-19 jeromeg
+
+  * lib/screenshooter-utils.c:
+    - (get_rectangle_screenshot) use a dotted rectangle, with a 2px
+      wide border.
+    - (screenshooter_open_screenshot) simplify the function.
+    - (screenshooter_get_home_uri) use g_getenv and g_get_homedir.
+
 2009-03-15 jeromeg
 
   * Add the Italian documentation.

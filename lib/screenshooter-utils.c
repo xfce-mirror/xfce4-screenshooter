@@ -243,8 +243,8 @@ static GdkPixbuf
   TRACE ("Initialize the graphics context");
   
   gc_values.function           = GDK_XOR;
-  gc_values.line_width         = 0;
-  gc_values.line_style         = GDK_LINE_SOLID;
+  gc_values.line_width         = 2;
+  gc_values.line_style         = GDK_LINE_ON_OFF_DASH;
   gc_values.fill               = GDK_SOLID;
   gc_values.cap_style          = GDK_CAP_BUTT;
   gc_values.join_style         = GDK_JOIN_MITER;
@@ -625,33 +625,33 @@ void
 screenshooter_open_screenshot (gchar *screenshot_path,
                                gchar *application)
 {
-  if (screenshot_path != NULL)
+  g_return_if_fail (screenshot_path != NULL);
+  
+  TRACE ("Path was != NULL");
+
+  g_return_if_fail (!g_str_equal (application, "none"));
+
+  TRACE ("Application was not none");
+
+  gchar *command = 
+    g_strconcat (application, " ", screenshot_path, NULL);
+
+  GError *error = NULL;
+
+  TRACE ("Launch the command");
+  
+  /* Execute the command and show an error dialog if there was 
+  * an error. */
+  if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
+                            FALSE, TRUE, &error))
     {
-      TRACE ("Path was != NULL");
+      TRACE ("An error occured");
 
-      if (!g_str_equal (application, "none"))
-        {
-          gchar *command = 
-            g_strconcat (application, " ", screenshot_path, NULL);
-    
-          GError *error = NULL;
-
-          TRACE ("Launch the command");
-          
-          /* Execute the command and show an error dialog if there was 
-          * an error. */
-          if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
-                                    FALSE, TRUE, &error))
-            {
-              TRACE ("An error occured");
-
-              xfce_err (error->message);
-              g_error_free (error);
-            }
-          
-          g_free (command);
-       }
+      xfce_err (error->message);
+      g_error_free (error);
     }
+  
+  g_free (command);
 }
 
 
@@ -660,7 +660,10 @@ gchar
 *screenshooter_get_home_uri ()
 {
   gchar *result = NULL;
-  const gchar *home_path = xfce_get_homedir ();
+  const gchar *home_path = g_getenv ("HOME");
+
+  if (!home_path)
+    home_path = g_get_home_dir ();
 
   result = g_strconcat ("file://", home_path, NULL);
 
