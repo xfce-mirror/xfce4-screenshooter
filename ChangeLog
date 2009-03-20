@@ -1,5 +1,12 @@
 2009-03-20 jeromeg
 
+  * lib/screenshooter-dialogs.c (save_screenshot_to_remote_location):
+    - simplify the function.
+    - add a label saying what is happening and saying where the
+      screenshot is being uploaded.
+
+2009-03-20 jeromeg
+
   * lib/screenshooter-dialogs.c: add a lot of missing prototypes.
 
 2009-03-20 jeromeg

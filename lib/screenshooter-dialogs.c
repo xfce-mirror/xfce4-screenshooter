@@ -556,8 +556,11 @@ static void
 save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
 {
   gchar *save_basename = g_file_get_basename (save_file);
-  gchar *save_path;
-  GFile *save_file_temp;
+  gchar *save_path = g_build_filename (g_get_tmp_dir (), save_basename, NULL);
+  GFile *save_file_temp = g_file_new_for_path (save_path);
+
+  GFile *save_parent = g_file_get_parent (save_file);
+  const gchar *parent_uri = g_file_get_uri (save_parent);
 
   GCancellable *cancellable = g_cancellable_new ();
   
@@ -569,10 +572,10 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
                                                    NULL);
 
   GtkWidget *progress_bar = gtk_progress_bar_new ();
+  
+  GtkWidget *label1= gtk_label_new ("");
 
-  save_path = g_build_filename (g_get_tmp_dir (), save_basename, NULL);
-
-  save_file_temp = g_file_new_for_path (save_path);
+  GtkWidget *label2 = gtk_label_new (parent_uri);
 
   save_screenshot_to_local_path (screenshot, save_file_temp);
 
@@ -582,6 +585,30 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 20);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "document-save");
+
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
+
+  gtk_label_set_markup (GTK_LABEL (label1),
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot "
+                          "is being transferred to:</span>"));
+
+  gtk_misc_set_alignment (GTK_MISC (label1), 0, 0.5);
+
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG(dialog)->vbox),
+                      label1,
+                      FALSE,
+                      FALSE,
+                      0);
+
+  gtk_widget_show (label1);
+
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG(dialog)->vbox),
+                      label2,
+                      FALSE,
+                      FALSE,
+                      0);
+
+  gtk_widget_show (label2);
 
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG(dialog)->vbox),
                       progress_bar,
@@ -611,6 +638,8 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   g_file_delete (save_file_temp, NULL, NULL);
                      
   g_object_unref (save_file_temp);
+  g_object_unref (save_parent);
+  g_object_unref (cancellable);
   g_free (save_basename);
   g_free (save_path);
 }
