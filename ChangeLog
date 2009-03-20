@@ -184,6 +184,8 @@
   * Bump glib required version to 2.16.
   * Remove all previous ifdef.
 
+  === 1.5.1 ===
+
 2009-02-25 jeromeg
 
   * Last minute bug fixes:
@@ -267,6 +269,8 @@
 
   * configure.ac.in: post release bump, add svn tag.
 
+  === 1.5.0 ===
+
 2009-01-18 jeromeg
 
   * configure.ac.in: fix a typo in the version number.
@@ -290,7 +294,7 @@
 
 2009-01-13 jeromeg
 
-  Thanks to Jannis and Stephan for the C lesson !
+  Thanks to Jannis and Stephan for the C lesson!
 
   * lib/screenshooter-dialogs.c: (generate_filename_for_uri) rewritten
     to avoid a memory leak on each step of the loop.
@@ -341,6 +345,8 @@
 
   * Post release bump.
   * Fix two compiler warnings.
+
+  === 1.4.90 ===
 
 2009-01-02
 
