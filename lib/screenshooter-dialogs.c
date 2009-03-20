@@ -30,26 +30,26 @@ static void
 cb_active_window_toggled           (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void 
-cb_save_toggled                    (GtkToggleButton    *tb,
-                                    ScreenshotData     *sd);
-static void 
 cb_rectangle_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
 cb_show_mouse_toggled              (GtkToggleButton    *tb,
+                                    ScreenshotData     *sd);                                                                       
+static void 
+cb_save_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
+static void 
+cb_toggle_set_sensi                (GtkToggleButton    *tb, 
+                                    GtkWidget          *widget);
+static void 
+cb_toggle_set_insensi              (GtkToggleButton    *tb, 
+                                    GtkWidget          *widget);
 static void 
 cb_open_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void 
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
-static void 
-cb_toggle_set_sensi                (GtkToggleButton    *tb, 
-                                    GtkWidget          *widget); 
-static void 
-cb_toggle_set_insensi              (GtkToggleButton    *tb, 
-                                    GtkWidget          *widget);                                                                                                               
 static void 
 cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
@@ -71,10 +71,31 @@ static void
 populate_liststore                 (GtkListStore       *liststore);
 static void 
 set_default_item                   (GtkWidget          *combobox, 
-                                    ScreenshotData     *sd);                                               
+                                    ScreenshotData     *sd);
+static void
+cb_progress_upload                 (goffset             current_num_bytes,
+                                    goffset             total_num_bytes,
+                                    gpointer            user_data);
+static void
+cb_finished_upload                 (GObject            *source_object,
+                                    GAsyncResult       *res,
+                                    gpointer            user_data);
+static void
+cb_transfer_dialog_response        (GtkWidget          *dialog,
+                                    int                 response,
+                                    GCancellable       *cancellable);
+static gchar
+*save_screenshot_to_local_path     (GdkPixbuf          *screenshot,
+                                    GFile              *save_file);
+static void
+save_screenshot_to_remote_location (GdkPixbuf          *screenshot,
+                                    GFile              *save_file);
+static gchar
+*save_screenshot_to                (GdkPixbuf          *screenshot,
+                                    gchar *save_uri);                                                               
 
-                                                                                                                                                                      
-                                      
+
+
 /* Internals */
 
 
@@ -449,9 +470,9 @@ static void set_default_item (GtkWidget       *combobox,
 
 
 
-void cb_progress_upload (goffset current_num_bytes,
-                         goffset total_num_bytes,
-                         gpointer user_data)
+static void cb_progress_upload (goffset current_num_bytes,
+                                goffset total_num_bytes,
+                                gpointer user_data)
 {
   gdouble fraction = (double) current_num_bytes / (double) total_num_bytes;
 
