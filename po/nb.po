@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-08 16:50+0100\n"
+"POT-Creation-Date: 2009-03-20 19:34+0100\n"
 "PO-Revision-Date: 2007-07-02 00:22+0200\n"
 "Last-Translator: Terje Uriansrud <terje@uriansrud.net>\n"
 "Language-Team: Norwegian Bokmal\n"
@@ -17,62 +17,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:240
+#: ../lib/screenshooter-dialogs.c:269
 msgid "Screenshot.png"
 msgstr "Skjermbildekopi.png"
 
-#: ../lib/screenshooter-dialogs.c:255
+#: ../lib/screenshooter-dialogs.c:286
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "Skjermbildekopi-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:482 ../lib/screenshooter-dialogs.c:499
+#: ../lib/screenshooter-dialogs.c:481
+#, c-format
+msgid "%i bytes remaining"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:567
+msgid "Transfer"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:592
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
+"transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksjon</span>"
+
+#: ../lib/screenshooter-dialogs.c:714 ../lib/screenshooter-dialogs.c:731
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Skjermbildekopi"
 
-#: ../lib/screenshooter-dialogs.c:494
+#: ../lib/screenshooter-dialogs.c:726
 msgid "Take a screenshot"
 msgstr "Skjermbildekopi"
 
-#: ../lib/screenshooter-dialogs.c:509
+#: ../lib/screenshooter-dialogs.c:741
 msgid "Preferences"
 msgstr "Innstillinger"
 
-#: ../lib/screenshooter-dialogs.c:528
+#: ../lib/screenshooter-dialogs.c:760
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Område som skal tas bilde av</"
 "span>"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:792
 msgid "Entire screen"
 msgstr "Hele skjermen"
 
-#: ../lib/screenshooter-dialogs.c:570 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:802 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:241
-#: ../panel-plugin/screenshooter-plugin.c:344
+#: ../panel-plugin/screenshooter-plugin.c:346
 msgid "Take a screenshot of the entire screen"
 msgstr "Ta skjermbildekopi av hele skjermen"
 
-#: ../lib/screenshooter-dialogs.c:582
+#: ../lib/screenshooter-dialogs.c:814
 msgid "Active window"
 msgstr "Aktivt vindu"
 
-#: ../lib/screenshooter-dialogs.c:592 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:824 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:246
-#: ../panel-plugin/screenshooter-plugin.c:349
+#: ../panel-plugin/screenshooter-plugin.c:351
 msgid "Take a screenshot of the active window"
 msgstr "Ta en skjermbildekopi av det aktive vinduet"
 
-#: ../lib/screenshooter-dialogs.c:604
+#: ../lib/screenshooter-dialogs.c:836
 msgid "Select a region"
 msgstr "Velg et område"
 
-#: ../lib/screenshooter-dialogs.c:614 ../src/main.c:57
+#: ../lib/screenshooter-dialogs.c:846 ../src/main.c:57
 #: ../panel-plugin/screenshooter-plugin.c:251
-#: ../panel-plugin/screenshooter-plugin.c:354
+#: ../panel-plugin/screenshooter-plugin.c:356
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -82,11 +98,11 @@ msgstr ""
 "deretter flytt musepekeren til det andre hjørnet av området, og slipp "
 "knappen."
 
-#: ../lib/screenshooter-dialogs.c:627
+#: ../lib/screenshooter-dialogs.c:859
 msgid "Capture the mouse pointer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:646
+#: ../lib/screenshooter-dialogs.c:883
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
 "screenshot</span>"
@@ -94,67 +110,67 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse før "
 "skjermbildekopien tas</span>"
 
-#: ../lib/screenshooter-dialogs.c:690
+#: ../lib/screenshooter-dialogs.c:927
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Forsinkelse i sekunder før skjermbildekopien tas"
 
-#: ../lib/screenshooter-dialogs.c:698
+#: ../lib/screenshooter-dialogs.c:935
 msgid "seconds"
 msgstr "sekunder"
 
-#: ../lib/screenshooter-dialogs.c:720
+#: ../lib/screenshooter-dialogs.c:957
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksjon</span>"
 
-#: ../lib/screenshooter-dialogs.c:758
+#: ../lib/screenshooter-dialogs.c:995
 #, fuzzy
 msgid "Save in:"
 msgstr "Lagre"
 
-#: ../lib/screenshooter-dialogs.c:772
+#: ../lib/screenshooter-dialogs.c:1009
 msgid "Save the screenshot to a PNG file"
 msgstr "Lagre skjermbildekopien som en PNG fil"
 
-#: ../lib/screenshooter-dialogs.c:779
+#: ../lib/screenshooter-dialogs.c:1016
 msgid "Default save location"
 msgstr "Standard lagringsplass"
 
-#: ../lib/screenshooter-dialogs.c:792
+#: ../lib/screenshooter-dialogs.c:1031
 msgid "Set the default save location"
 msgstr "Sett standard lagringsplass"
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:1056
 #, fuzzy
 msgid "Display the save dialog"
 msgstr "Ikke vis vindu for å lagre"
 
-#: ../lib/screenshooter-dialogs.c:823
+#: ../lib/screenshooter-dialogs.c:1062
 msgid ""
 "The save dialog allows you to change the file name and the save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:844
+#: ../lib/screenshooter-dialogs.c:1083
 msgid "Copy to the clipboard"
 msgstr "Kopier til utklippstavlen"
 
-#: ../lib/screenshooter-dialogs.c:853
+#: ../lib/screenshooter-dialogs.c:1092
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 "Kopier skjermbildekopien til utklippstavlen slik at det kan limes inn senere"
 
-#: ../lib/screenshooter-dialogs.c:880
+#: ../lib/screenshooter-dialogs.c:1119
 msgid "Open with:"
 msgstr "Åpne med:"
 
-#: ../lib/screenshooter-dialogs.c:896
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Open the screenshot with the chosen application"
 msgstr "Åpne skjermbildekopien med valgt program"
 
-#: ../lib/screenshooter-dialogs.c:934 ../src/main.c:79
+#: ../lib/screenshooter-dialogs.c:1173 ../src/main.c:79
 msgid "Application to open the screenshot"
 msgstr "Program for å åpne skjermbildekopier"
 
-#: ../lib/screenshooter-dialogs.c:979
+#: ../lib/screenshooter-dialogs.c:1218
 msgid "Save screenshot as..."
 msgstr "Lagre skjermbildekopi som ..."
 
@@ -179,7 +195,7 @@ msgstr "Ikke vis vindu for å lagre"
 msgid "Directory where the screenshot will be saved"
 msgstr "Mappen hvor skjermbildekopier lagres"
 
-#: ../src/main.c:191
+#: ../src/main.c:177
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -188,7 +204,7 @@ msgstr ""
 "%s: %s\n"
 "Prøv %s --help for å se liste over tilgjengelige kommandolinjeopsjoner.\n"
 
-#: ../src/main.c:286
+#: ../src/main.c:278
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s er ikke en gyldig mappe, standard mappe vil bli benyttet."
