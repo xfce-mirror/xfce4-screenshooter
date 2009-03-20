@@ -811,6 +811,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (show_mouse_checkbox),
                                 (sd->show_mouse == 1));
 
+  gtk_widget_set_sensitive (show_mouse_checkbox, (sd->region != SELECT));
+
   gtk_box_pack_start (GTK_BOX (area_box), 
                       show_mouse_checkbox, FALSE, 
                       FALSE, 5);
@@ -819,6 +821,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
    
   g_signal_connect (G_OBJECT (show_mouse_checkbox), "toggled", 
                     G_CALLBACK (cb_show_mouse_toggled), sd);
+
+  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_insensi), show_mouse_checkbox);
   
   /* Create delay label */
   

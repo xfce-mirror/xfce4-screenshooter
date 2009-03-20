@@ -1,3 +1,9 @@
+2009-03-20 jeromeg
+
+  * lib/screenshooter-dialogs.c: (screenshooter_dialog_new) only
+    set the show mouse checkbox as sensitive if "select a region"
+    is not checked.   
+
 2009-03-19 jeromeg
 
   * lib/screenshooter-utils.c:
