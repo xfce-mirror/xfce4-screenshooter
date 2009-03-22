@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-20 19:34+0100\n"
-"PO-Revision-Date: 2009-03-15 23:24+0900\n"
+"POT-Creation-Date: 2009-03-22 15:48+0900\n"
+"PO-Revision-Date: 2009-03-22 15:52+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -37,11 +37,12 @@ msgid "Transfer"
 msgstr "転送"
 
 #: ../lib/screenshooter-dialogs.c:592
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">アクション</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">スクリーンショットの転送先:</"
+"span>"
 
 #: ../lib/screenshooter-dialogs.c:714 ../lib/screenshooter-dialogs.c:731
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
