@@ -54,6 +54,9 @@ static void
 cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void 
+cb_close_toggled                   (GtkToggleButton    *tb,
+                                    ScreenshotData     *sd);                                  
+static void 
 cb_default_folder                  (GtkWidget          *chooser, 
                                     ScreenshotData     *sd);                                        
 static void 
@@ -204,18 +207,32 @@ static void cb_clipboard_toggled (GtkToggleButton *tb,
 
 
 /* Set sd->show_save_dialog when the button is toggled */
-static void cb_show_save_dialog_toggled (GtkToggleButton *tb,
-                                         ScreenshotData   *sd)
+static void cb_show_save_dialog_toggled (GtkToggleButton *tb, ScreenshotData   *sd)
 {
   if (gtk_toggle_button_get_active (tb))
     {
-      sd->show_save_dialog = 0;
+      sd->show_save_dialog = 1;
     }
   else
     {
-      sd->show_save_dialog = 1;
+      sd->show_save_dialog = 0;
     }
-}                                  
+}
+
+
+
+/* Set sd->close when the button is toggled */
+static void cb_close_toggled  (GtkToggleButton *tb, ScreenshotData   *sd)
+{
+  if (gtk_toggle_button_get_active (tb))
+    {
+      sd->close = 1;
+    }
+  else
+    {
+      sd->close = 0;
+    }
+}                                 
 
 
 
@@ -679,24 +696,27 @@ static gchar
 GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, 
                                      gboolean plugin)
 {
-  GtkWidget *dlg;
+  GtkWidget *dlg, *main_alignment;
   GtkWidget *vbox;
+
+  GtkWidget *capture_table, *actions_table; 
   
-  GtkWidget *area_box, *area_label, *area_alignment;
+  GtkWidget *area_main_box, *area_box, *area_label, *area_alignment;
   GtkWidget *active_window_button, 
             *fullscreen_button,
             *rectangle_button;
 
   GtkWidget *show_mouse_checkbox;
   
-  GtkWidget *delay_box, *delay_label, *delay_alignment;
+  GtkWidget *delay_main_box, *delay_box, *delay_label, *delay_alignment;
   GtkWidget *delay_spinner_box, *delay_spinner, *seconds_label;
+
+  GtkWidget *options_main_box, *options_label, *options_alignment, *options_box;
+  GtkWidget *save_checkbox;
   
-  GtkWidget *actions_box, *actions_label, *actions_alignment;
+  GtkWidget *actions_main_box, *actions_box, *actions_label, *actions_alignment;
   
   GtkWidget *save_box, *save_radio_button;
-  GtkWidget *save_alignment;
-  GtkWidget *save_checkbox;
   GtkWidget *dir_chooser;
     
   GtkWidget *clipboard_radio_button;
@@ -713,7 +733,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
       dlg = 
         xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
-                                             GTK_DIALOG_DESTROY_WITH_PARENT|GTK_DIALOG_NO_SEPARATOR,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT|
+                                             GTK_DIALOG_NO_SEPARATOR,
                                              GTK_STOCK_HELP,
                                              GTK_RESPONSE_HELP,
                                              GTK_STOCK_CANCEL, 
@@ -746,13 +767,40 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "applets-screenshooter");
+
+  /* Create the main alignment for the dialog */
+
+  main_alignment = gtk_alignment_new (0, 0, 1, 1);
+
+  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), main_alignment,
+                      TRUE, TRUE, 0);
+
+  gtk_widget_show (main_alignment);
   
   /* Create the main box for the dialog */
-	vbox = gtk_vbox_new (FALSE, 6);
+  
+	vbox = gtk_vbox_new (FALSE, 10);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
+
+  gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
   gtk_widget_show (vbox);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), vbox,
-                      TRUE, TRUE, 0);   
+  
+
+  /* Create the table to align the differents parts of the top of the UI */
+
+  capture_table = gtk_table_new (2, 2, FALSE);
+
+  gtk_table_set_col_spacings (GTK_TABLE (capture_table), 35);
+
+  gtk_box_pack_start (GTK_BOX (vbox), capture_table, TRUE, TRUE, 0);
+  gtk_widget_show (capture_table);
+
+  /* Create the main box for the regions */
+  
+	area_main_box = gtk_vbox_new (FALSE, 6);
+  gtk_widget_show (area_main_box);
+  gtk_table_attach_defaults (GTK_TABLE (capture_table), area_main_box, 0, 1, 0, 2);
   
   /* Create area label */
   area_label = gtk_label_new ("");
@@ -762,19 +810,15 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 			
   gtk_misc_set_alignment (GTK_MISC (area_label), 0, 0);
   gtk_widget_show (area_label);
-  gtk_container_add (GTK_CONTAINER (vbox), area_label);
+  gtk_container_add (GTK_CONTAINER (area_main_box), area_label);
   
   /* Create area alignment */
   
   area_alignment = gtk_alignment_new (0, 0, 1, 1);
   
-  gtk_container_add (GTK_CONTAINER (vbox), area_alignment);
+  gtk_container_add (GTK_CONTAINER (area_main_box), area_alignment);
   
-  gtk_alignment_set_padding (GTK_ALIGNMENT (area_alignment),
-                             0,
-                             6,
-                             12,
-                             0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (area_alignment), 0, 6, 12, 0);
   
   gtk_widget_show (area_alignment);
   
@@ -787,6 +831,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Create radio buttons for areas to screenshot */
   
   /* Fullscreen */
+  
   fullscreen_button = 
     gtk_radio_button_new_with_mnemonic (NULL, 
                                         _("Entire screen"));
@@ -808,6 +853,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   gtk_widget_show (fullscreen_button);
   
   /* Active window */
+  
   active_window_button = 
     gtk_radio_button_new_with_mnemonic (
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (fullscreen_button)), 
@@ -830,6 +876,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   gtk_widget_show (active_window_button);
   
   /* Rectangle */
+  
   rectangle_button = 
     gtk_radio_button_new_with_mnemonic (
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (fullscreen_button)), 
@@ -874,49 +921,49 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
                     G_CALLBACK (cb_toggle_set_insensi), show_mouse_checkbox);
+
+  /* Create the main box for the delay stuff */
   
+	delay_main_box = gtk_vbox_new (FALSE, 6);
+  gtk_widget_show (delay_main_box);
+
+  gtk_table_attach_defaults (GTK_TABLE (capture_table), delay_main_box, 1, 2, 0, 1);
+    
   /* Create delay label */
   
   delay_label = gtk_label_new ("");
   
   gtk_label_set_markup (GTK_LABEL(delay_label),
   _("<span weight=\"bold\" stretch=\"semiexpanded\">"
-    "Delay before taking the screenshot</span>"));
+    "Delay before capturing</span>"));
   
 	gtk_misc_set_alignment(GTK_MISC (delay_label), 0, 0); 
   gtk_widget_show (delay_label);
-  gtk_container_add (GTK_CONTAINER (vbox), delay_label);
+  gtk_box_pack_start (GTK_BOX (delay_main_box), delay_label, FALSE, FALSE, 0);
   
   /* Create delay alignment */
   
-  delay_alignment = gtk_alignment_new (0, 0, 1, 1);
+  delay_alignment = gtk_alignment_new (0, 0, 0, 0);
+
+  gtk_box_pack_start (GTK_BOX (delay_main_box), delay_alignment, FALSE, FALSE, 0);
   
-  gtk_container_add (GTK_CONTAINER (vbox), delay_alignment);
-  
-  gtk_alignment_set_padding (GTK_ALIGNMENT (delay_alignment),
-                             0,
-                             6,
-                             12,
-                             0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (delay_alignment), 0, 6, 12, 0);
   
   gtk_widget_show (delay_alignment);
   
   /* Create delay box */
   
-  delay_box = gtk_vbox_new (FALSE, 6);
+  delay_box = gtk_vbox_new (FALSE, 0);
   gtk_container_add (GTK_CONTAINER (delay_alignment), delay_box);
   gtk_container_set_border_width (GTK_CONTAINER (delay_box), 0);
   gtk_widget_show (delay_box);
   
   /* Create delay spinner */
       
-  delay_spinner_box = gtk_hbox_new(FALSE, 4);
-  
+  delay_spinner_box = gtk_hbox_new (FALSE, 4);
   gtk_widget_show (delay_spinner_box);
   
-  gtk_box_pack_start (GTK_BOX (delay_box), 
-                      delay_spinner_box, FALSE, 
-                      FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (delay_box), delay_spinner_box, FALSE, FALSE, 0);
 
   delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
   
@@ -928,16 +975,12 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                              
   gtk_widget_show (delay_spinner);
   
-  gtk_box_pack_start (GTK_BOX (delay_spinner_box), 
-                      delay_spinner, FALSE, 
-                      FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (delay_spinner_box), delay_spinner, FALSE, FALSE, 0);
 
   seconds_label = gtk_label_new (_("seconds"));
   gtk_widget_show (seconds_label);
   
-  gtk_box_pack_start (GTK_BOX (delay_spinner_box), 
-                      seconds_label, FALSE, 
-                      FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (delay_spinner_box), seconds_label, FALSE, FALSE, 0);
 
   g_signal_connect (G_OBJECT (delay_spinner), "value-changed",
                     G_CALLBACK (cb_delay_spinner_changed), sd);
@@ -949,7 +992,86 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Set the default state */
   cb_toggle_set_insensi (GTK_TOGGLE_BUTTON (rectangle_button),
                          delay_box);
+
+  /* Create the options box */
+
+  options_main_box = gtk_vbox_new (FALSE, 6);
+
+  gtk_widget_show (options_main_box);
+
+  gtk_table_attach_defaults (GTK_TABLE (capture_table), options_main_box, 1, 2, 1, 2);
+
+  /* Create the options label */
+
+  options_label = gtk_label_new ("");
+
+  gtk_label_set_markup (GTK_LABEL(options_label),
+  _("<span weight=\"bold\" stretch=\"semiexpanded\">After capturing:</span>"));
+  
+	gtk_misc_set_alignment(GTK_MISC (options_label), 0, 0); 
+  gtk_widget_show (options_label);
+  gtk_box_pack_start (GTK_BOX (options_main_box), options_label, FALSE, FALSE, 0);
+
+  /* Create options alignment */
+  
+  options_alignment = gtk_alignment_new (0, 0, 1, 1);
+
+  gtk_container_add (GTK_CONTAINER (options_main_box), options_alignment);
+
+  gtk_alignment_set_padding (GTK_ALIGNMENT (options_alignment), 0, 6, 12, 0);
+                             
+  gtk_widget_show (options_alignment);
+
+  /* Create the options box to be stored in the options alignment*/
+
+  options_box = gtk_vbox_new (FALSE, 0);
+  gtk_container_add (GTK_CONTAINER (options_alignment), options_box);
+  gtk_container_set_border_width (GTK_CONTAINER (options_box), 0);
+  gtk_widget_show (options_box);
+
+  /* Display the save dialog checkbox */          
+              
+  save_checkbox = 
+    gtk_check_button_new_with_label (_("Show the save dialog"));
+
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
+                                (sd->show_save_dialog == 1));
+
+  gtk_widget_set_tooltip_text (save_checkbox,
+  _("The save dialog allows you to change the file name and the save"
+    " location"));
+
+  gtk_box_pack_start (GTK_BOX (options_box), save_checkbox, FALSE, FALSE, 0);
         
+  gtk_widget_show (save_checkbox);
+   
+  g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
+                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
+
+  /* Create the 'close the user interface after taking the screenshot' checkbox */
+  if (!plugin)
+    {
+      GtkWidget *close_checkbox = 
+        gtk_check_button_new_with_label (_("Close the application"));
+
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (close_checkbox),
+                                    (sd->close == 1));
+
+      gtk_box_pack_start (GTK_BOX (options_box), close_checkbox, FALSE, FALSE, 0);
+
+      gtk_widget_show (close_checkbox);
+
+      g_signal_connect (G_OBJECT (close_checkbox), "toggled", 
+                        G_CALLBACK (cb_close_toggled), sd);
+    }
+
+  /* Create the actions main box */
+
+  actions_main_box = gtk_vbox_new (FALSE, 6);
+
+  gtk_box_pack_start (GTK_BOX (vbox), actions_main_box, TRUE, TRUE, 0);
+  gtk_widget_show (actions_main_box);
+
   /* Create actions label */
   
   actions_label = gtk_label_new ("");
@@ -958,46 +1080,33 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 			
   gtk_misc_set_alignment (GTK_MISC (actions_label), 0, 0);
   gtk_widget_show (actions_label);
-  gtk_container_add (GTK_CONTAINER (vbox), actions_label);      
-  
-  /* Create actions alignment */
-  
-  actions_alignment = gtk_alignment_new (0, 0, 1, 1);
-  
-  gtk_container_add (GTK_CONTAINER (vbox), actions_alignment);
-  
-  gtk_alignment_set_padding (GTK_ALIGNMENT (actions_alignment),
-                             0,
-                             6,
-                             12,
-                             0);
-  
-  gtk_widget_show (actions_alignment);
-  
-  /* Create actions box */
-  
-  actions_box = gtk_vbox_new (FALSE, 6);
-  gtk_container_add (GTK_CONTAINER (actions_alignment), actions_box);
-  gtk_container_set_border_width (GTK_CONTAINER (actions_box), 0);
-  gtk_widget_show (actions_box);
+  gtk_box_pack_start (GTK_BOX (actions_main_box), actions_label, FALSE, FALSE, 0);
 
-  /* Save box */
-  
-  save_box = gtk_hbox_new (FALSE, 12);
-  gtk_container_add (GTK_CONTAINER (actions_box), save_box);
-  gtk_container_set_border_width (GTK_CONTAINER (save_box), 0);
-  gtk_widget_show (save_box);
+  /* Create actions alignment */
+
+  actions_alignment = gtk_alignment_new (0, 0, 1, 1);
+
+  gtk_alignment_set_padding (GTK_ALIGNMENT (actions_alignment), 0, 6, 12, 0);
+
+  gtk_box_pack_start (GTK_BOX (actions_main_box), actions_alignment, TRUE, TRUE, 0);
+  gtk_widget_show (actions_alignment);
+
+  /* Create the actions table */
+
+  actions_table = gtk_table_new (3, 2, FALSE);
+
+  gtk_table_set_row_spacings (GTK_TABLE (actions_table), 3);
+  gtk_table_set_col_spacings (GTK_TABLE (actions_table), 15);
+
+  gtk_container_add (GTK_CONTAINER (actions_alignment), actions_table);
+  gtk_widget_show (actions_table);
   
   /* Save option radio button */
   
   save_radio_button = 
     gtk_radio_button_new_with_mnemonic (NULL, 
                                         _("Save in:"));
-  
-  gtk_box_pack_start (GTK_BOX (save_box), 
-                      save_radio_button, FALSE, 
-                      FALSE, 0);
-                        
+                           
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_radio_button),
                                 (sd->action == SAVE));
   
@@ -1010,6 +1119,16 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_show (save_radio_button);
 
+  gtk_table_attach_defaults (GTK_TABLE (actions_table), save_radio_button, 0, 1, 0, 1);
+
+  /* Set the state of the save checkbox */
+
+  gtk_widget_set_sensitive (GTK_WIDGET (save_checkbox),
+                            gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (save_radio_button)));
+
+  g_signal_connect (G_OBJECT (save_radio_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), save_checkbox);
+
   /* Directory chooser */
 
   dir_chooser = 
@@ -1020,71 +1139,25 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                                            sd->screenshot_dir);
 
   gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (dir_chooser), FALSE);
-  
-  gtk_box_pack_start (GTK_BOX (save_box), 
-                      dir_chooser, FALSE, 
-                      FALSE, 0);
-  
+    
   gtk_widget_show (dir_chooser);
   
-  gtk_widget_set_tooltip_text (dir_chooser,
-                               _("Set the default save location"));
-                      
+  gtk_widget_set_tooltip_text (dir_chooser, _("Set the default save location"));
+
   g_signal_connect (G_OBJECT (dir_chooser), "selection-changed", 
                     G_CALLBACK (cb_default_folder), sd);
   
   g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), dir_chooser);
 
-  /* Create save alignment */
-  
-  save_alignment = gtk_alignment_new (0, 0, 1, 1);
+  gtk_table_attach_defaults (GTK_TABLE (actions_table), dir_chooser, 1, 2, 0, 1);
 
-  gtk_container_add (GTK_CONTAINER (actions_box), save_alignment);
-
-  gtk_alignment_set_padding (GTK_ALIGNMENT (save_alignment),
-                             0,
-                             6,
-                             24,
-                             0);
-                             
-  gtk_widget_show (save_alignment);
-              
-  /* Display the save dialog checkbox */          
-              
-  save_checkbox = 
-    gtk_check_button_new_with_label (_("Display the save dialog"));
-
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
-                                (sd->show_save_dialog == 1));
-
-  gtk_widget_set_tooltip_text (save_checkbox,
-  _("The save dialog allows you to change the file name and the save"
-    " location"));
-
-  gtk_container_add (GTK_CONTAINER (save_alignment), save_checkbox);
-
-  gtk_widget_set_sensitive (GTK_WIDGET (save_checkbox),
-                            gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (save_radio_button)));
-        
-  gtk_widget_show (save_checkbox);
-   
-  g_signal_connect (G_OBJECT (save_checkbox), "toggled", 
-                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
-
-  g_signal_connect (G_OBJECT (save_radio_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_sensi), save_checkbox);
- 
   /* Copy to clipboard radio button */
   
   clipboard_radio_button = 
     gtk_radio_button_new_with_mnemonic (
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
       _("Copy to the clipboard"));
-  
-  gtk_box_pack_start (GTK_BOX (actions_box), 
-                      clipboard_radio_button, FALSE, 
-                      FALSE, 0);
   
   gtk_widget_show (clipboard_radio_button);
   
@@ -1099,17 +1172,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     G_CALLBACK (cb_clipboard_toggled),
                     sd);
 
-  /* Open with box*/
-  
-  open_with_box = gtk_hbox_new (FALSE, 12);
-  
-  gtk_container_add (GTK_CONTAINER (actions_box), 
-                     open_with_box);
-                     
-  gtk_container_set_border_width (GTK_CONTAINER (open_with_box), 0);
-  
-  gtk_widget_show (open_with_box);
-      
+  gtk_table_attach_defaults (GTK_TABLE (actions_table), clipboard_radio_button,
+                             0, 1, 1, 2);
 
   /* Open with radio button */
   
@@ -1117,11 +1181,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
     gtk_radio_button_new_with_mnemonic (
       gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
       _("Open with:"));
-  
-  gtk_box_pack_start (GTK_BOX (open_with_box), 
-                      open_with_radio_button, FALSE, 
-                      FALSE, 0);
-    
+     
   gtk_widget_show (open_with_radio_button);
                       
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (open_with_radio_button),
@@ -1133,6 +1193,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
    
   gtk_widget_set_tooltip_text (open_with_radio_button,
   _("Open the screenshot with the chosen application"));
+
+  gtk_table_attach_defaults (GTK_TABLE (actions_table), open_with_radio_button,
+                             0, 1, 2, 3);                    
   
   /* Open with combobox */
     
@@ -1160,9 +1223,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
     
   set_default_item (combobox, sd);
   
-  gtk_box_pack_start (GTK_BOX (open_with_box), 
-                      combobox, FALSE, 
-                      FALSE, 0);
+  gtk_table_attach_defaults (GTK_TABLE (actions_table), combobox, 1, 2, 2, 3);
   
   g_signal_connect (G_OBJECT (combobox), "changed", 
                     G_CALLBACK (cb_combo_active_item_changed), sd);
@@ -1178,7 +1239,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Run the callback functions to grey/ungrey the correct widgets */
   
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button),
-                       combobox);               
+                       combobox);
  
   return dlg;                
 }

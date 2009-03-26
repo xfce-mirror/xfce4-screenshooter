@@ -521,6 +521,7 @@ screenshooter_read_rc_file (gchar               *file,
   gint action = SAVE;
   gint show_save_dialog = 1;
   gint show_mouse = 1;
+  gint close = 1;
   gchar *screenshot_dir = screenshooter_get_home_uri ();
   gchar *app = g_strdup ("none");
 
@@ -547,6 +548,9 @@ screenshooter_read_rc_file (gchar               *file,
 
           show_mouse =
             xfce_rc_read_int_entry (rc, "show_mouse", 1);
+
+          close =
+            xfce_rc_read_int_entry (rc, "close", 1);
               
           g_free (app);
               
@@ -574,6 +578,7 @@ screenshooter_read_rc_file (gchar               *file,
   sd->action = action;
   sd->show_save_dialog = show_save_dialog;
   sd->show_mouse = show_mouse;
+  sd->close = close;
   sd->screenshot_dir = screenshot_dir;
   sd->app = app;
 }
@@ -605,6 +610,7 @@ screenshooter_write_rc_file (gchar               *file,
   xfce_rc_write_int_entry (rc, "action", sd->action);
   xfce_rc_write_int_entry (rc, "show_save_dialog", sd->show_save_dialog);
   xfce_rc_write_int_entry (rc, "show_mouse", sd->show_mouse);
+  xfce_rc_write_int_entry (rc, "close", sd->close);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
   xfce_rc_write_entry (rc, "app", sd->app);
 

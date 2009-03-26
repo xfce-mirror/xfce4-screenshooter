@@ -63,6 +63,7 @@ typedef struct
   gint show_mouse;
   gint delay;
   gint action;
+  gint close;
   gchar *screenshot_dir;
   gchar *app;
 }

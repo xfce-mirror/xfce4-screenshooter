@@ -1,3 +1,17 @@
+2009-03-26 jeromeg
+
+  New improved interface.
+
+  * lib/screenshooter-utils.{c,h}: add a close item to the
+    ScreenshotData structure. Allows the user to choose between
+    closing the application and taking another screenshot.
+  * src/main.c (cb_dialog_response): implement the close stuff.
+  * lib/screenshooter-dialogs.c: Rewrite most of the interface.
+    - use tables to align the widgets.
+    - use a two column layout.
+    - add an option to close/ don't close the application after
+      taking a screenshot.
+
 2009-03-20 jeromeg
 
   * lib/screenshooter-dialogs.c (save_screenshot_to_remote_location):

@@ -109,27 +109,51 @@ cb_dialog_response (GtkWidget *dialog, int response,
           g_error_free (error_help);
         }
     }
-  else
+  else if (response == GTK_RESPONSE_OK)
     {
       gchar *rc_file;
 
-      /* If the response was ok, we take the screenshot */
-      if (response == GTK_RESPONSE_OK)
+      GdkDisplay *display = gdk_display_get_default ();
+
+      gtk_widget_hide (dialog);
+
+      gdk_display_sync (display);
+
+      /* Make sure the window manager had time to set the new active
+      * window.*/
+      if (sd->region != SELECT)
+        sleep (1);
+
+      screenshooter_take_and_output_screenshot (sd);
+
+      if (sd->close == 1)
         {
-          GdkDisplay *display = gdk_display_get_default ();
+          gtk_widget_destroy (dialog);
 
-          gtk_widget_hide (dialog);
+          rc_file =
+            xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
+                                         "xfce4/xfce4-screenshooter",
+                                         TRUE);
 
-          gdk_display_sync (display);
+          /* Save preferences */
 
-          /* Make sure the window manager had time to set the new active
-          * window.*/
-          if (sd->region != SELECT)
-            sleep (1);
+          if (rc_file != NULL)
+            {
+              screenshooter_write_rc_file (rc_file, sd);
 
-          screenshooter_take_and_output_screenshot (sd);
+              g_free (rc_file);
+            }
 
+          gtk_main_quit ();
         }
+      else
+        {
+          gtk_widget_show (dialog);
+        }
+    }
+  else
+    {
+      gchar *rc_file;
 
       gtk_widget_destroy (dialog);
 
