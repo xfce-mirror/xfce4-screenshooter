@@ -714,14 +714,13 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   GtkWidget *options_main_box, *options_label, *options_alignment, *options_box;
   GtkWidget *save_checkbox;
   
-  GtkWidget *actions_main_box, *actions_box, *actions_label, *actions_alignment;
+  GtkWidget *actions_main_box, *actions_label, *actions_alignment;
   
-  GtkWidget *save_box, *save_radio_button;
-  GtkWidget *dir_chooser;
+  GtkWidget *save_radio_button, *dir_chooser;
     
   GtkWidget *clipboard_radio_button;
     
-  GtkWidget *open_with_box, *open_with_radio_button;
+  GtkWidget *open_with_radio_button;
   
   GtkListStore *liststore;
   GtkWidget *combobox;
@@ -791,7 +790,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
   capture_table = gtk_table_new (2, 2, FALSE);
 
-  gtk_table_set_col_spacings (GTK_TABLE (capture_table), 35);
+  gtk_table_set_col_spacings (GTK_TABLE (capture_table), 20);
 
   gtk_box_pack_start (GTK_BOX (vbox), capture_table, TRUE, TRUE, 0);
   gtk_widget_show (capture_table);
@@ -1006,7 +1005,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   options_label = gtk_label_new ("");
 
   gtk_label_set_markup (GTK_LABEL(options_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">After capturing:</span>"));
+  _("<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"));
   
 	gtk_misc_set_alignment(GTK_MISC (options_label), 0, 0); 
   gtk_widget_show (options_label);
@@ -1024,7 +1023,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
   /* Create the options box to be stored in the options alignment*/
 
-  options_box = gtk_vbox_new (FALSE, 0);
+  options_box = gtk_vbox_new (FALSE, 6);
   gtk_container_add (GTK_CONTAINER (options_alignment), options_box);
   gtk_container_set_border_width (GTK_CONTAINER (options_box), 0);
   gtk_widget_show (options_box);
