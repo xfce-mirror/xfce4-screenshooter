@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY date "February 2009">
+<!ENTITY version "@PACKAGE_VERSION@">
+<!ENTITY application "@PACKAGE_NAME@">
+]>
+<article id="xfce4-screenshooter" lang="gl">
+
+  <!-- Header -->
+  <articleinfo>
+    <title>Xfce4 Screenshooter</title>
+
+    <pubdate>&date;</pubdate>
+
+    <copyright>
+      <year>2008</year>
+      <year>2009</year>
+      <holder>Jérôme Guelfucci</holder>
+    </copyright><copyright><year>2008, 2009.</year><holder>Leandro Regueiro (leandro.regueiro@gmail.com)</holder></copyright>
+
+    <legalnotice id="legalnotice">
+      <para>
+        Permission is granted to copy, distribute and/or modify this document
+        under the terms of the GNU Free Documentation License, Version 1.1 or
+        any later version published by the Free Software Foundation; with no
+        Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+        Texts. The complete license text is available from the <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.
+      </para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Jérôme</firstname>
+        <surname>Guelfucci</surname>
+        <affiliation>
+          <address><email>jeromeg@xfce.org</email></address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <releaseinfo>
+      This manual describes version @PACKAGE_VERSION@ of @PACKAGE_NAME@.
+    </releaseinfo>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Introducción a @PACKAGE_NAME@</title>
+
+    <para>
+      This application allows you to capture the entire screen, the
+      active window or a selected region. You can set the delay that
+      elapses before the screenshot is taken and the action that will
+      be done with the screenshot: save it to a PNG file, copy it to
+      the clipboard, or open it using another application.
+    </para>
+
+    <para>
+      A plugin for the Xfce panel is also available.
+    </para>
+
+  </sect1>
+
+  <sect1 id="using-the-application">
+    <title>Uso da aplicación</title>
+
+    <sect2 id="user-interface">
+      <title>A través da interface de usuario</title>
+
+      <para>
+        To launch the application, use the "Screenshot" item in the
+        "Accessories" category of Xfce's main menu.
+      </para>
+
+      <para>
+        This window will be displayed:
+      </para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>The window of Xfce4 Screenshooter</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect3 id="region-to-capture">
+        <title>Zona a capturar</title>
+
+        <para>
+          The <emphasis>"Region to capture"</emphasis> section allows
+          you to set from what the screenshot will be taken:
+        </para>
+
+        <itemizedlist>
+          <listitem>
+            "Entire screen" takes a screenshot of the whole screen as
+            you see it.
+          </listitem>
+          <listitem>
+            "Active window" takes a screenshot of the active window, the
+            one which was active before this dialog appeared, or if you
+            set a delay, the one that is active after the delay.
+          </listitem>
+          <listitem>
+            "Select a region" allows you to select a region to be
+            captured by clicking a point of the screen without releasing
+            the mouse button, dragging your mouse to the other corner of
+            the region, and releasing the mouse button.
+          </listitem>
+        </itemizedlist>
+      </sect3>
+
+      <sect3 id="delay">
+        <title>Retraso antes de facer a captura de pantalla</title>
+
+        <para>
+          The <emphasis>"Delay before taking the screenshot"</emphasis>
+          section allows you to set the delay that will elapse between
+          pressing the <emphasis>"Take the screenshot"</emphasis> button
+          and taking the screenshot. This delay will allow you to open
+          menus or to do whatever action you want to see displayed on
+          the screenshot.
+        </para>
+      </sect3>
+
+      <sect3 id="action">
+        <title>Acción</title>
+
+        <para>
+          The <emphasis>"Action"</emphasis> section allows you to choose
+          what should be done with the screenshot. Three choices are
+          available.
+        </para>
+
+        <sect4 id="save">
+          <title>Gardar</title>
+
+          <para>
+            The <emphasis>"Save"</emphasis> option will save the
+            screenshot to a PNG file. If you check the
+            <emphasis>"Save by default to"</emphasis> checkbox, the
+            screenshot will be saved to the folder on the right after
+            you press the <emphasis>"Take the screenshot"</emphasis>
+            button, without showing any save dialog. Otherwise, a save
+            dialog will be displayed, which also shows a preview of the
+            screenshot. You will then be able to set the save location,
+            and the name of the file.
+          </para>
+        </sect4>
+
+        <sect4 id="copy-to-clipboard">
+          <title>Copiar ó portarretallos</title>
+
+          <para>
+            The <emphasis>"Copy to the clipboard"</emphasis> option
+            allows you to paste the screenshot in another application,
+            such as a word processor. Exiting the application before
+            the screenshot is pasted often removes the image from the
+            clipboard. Some clipboard managers allow you to prevent
+            this.
+          </para>
+        </sect4>
+
+        <sect4 id="open-with">
+          <title>Abrir con</title>
+
+          <para>
+            The <emphasis>"Open with"</emphasis> option saves the
+            screenshot to the system's temporary directory and opens it
+            with the application set using the dropdown list below.
+            Applications which support images are automatically detected
+            and added to the dropdown list.
+          </para>
+        </sect4>
+
+      </sect3>
+
+    </sect2>
+
+    <sect2 id="command-line">
+      <title>A través da liña de comandos</title>
+
+      <para>
+        Command line options allow you to take screenshots quickly. They
+        also allow you to configure the Prt Scrn key on the upper right
+        of most keyboards so that it takes screenshots. To do so,
+        configure the keybindings of your desktop environnement so that
+        it launches xfce4-screenshooter with one or several of the
+        following options when the Prt Scrn key is pressed.
+      </para>
+
+      <sect3 id="options">
+        <title>As opcións de liña de comandos</title>
+
+        <sect4 id="w-option">
+          <title>A opción -w</title>
+
+          <para>
+            The <emphasis>-w</emphasis> option allows you to take a
+            screenshot of the active window.
+          </para>
+        </sect4>
+
+        <sect4 id="f-option">
+          <title>A opción -f</title>
+
+          <para>
+            The <emphasis>-f</emphasis> option allows you to take a
+            screenshot of the entire screen.
+          </para>
+        </sect4>
+
+        <sect4 id="r-option">
+          <title>A opción -r</title>
+
+          <para>
+            The <emphasis>-r</emphasis> option allows you to select a
+            region to be captured by clicking a point of the screen
+            without releasing the mouse button, dragging your mouse to
+            the other corner of the region, and releasing the mouse
+            button.
+          </para>
+        </sect4>
+
+        <sect4 id="d-option">
+          <title>A opción -d</title>
+
+          <para>
+            The <emphasis>-d</emphasis> option followed by a positive
+            integer allows you to set the delay before taking the
+            screenshot when the <emphasis>-f</emphasis>, the
+            <emphasis>-w</emphasis> or the <emphasis>-r</emphasis>
+            option is given.
+          </para>
+        </sect4>
+
+        <sect4 id="s-option">
+          <title>A opción -s</title>
+
+          <para>
+            The <emphasis>-s</emphasis> option followed by the path to
+            an existing folder allows you to set where the screenshots
+            are saved. This option only has an effect if the
+            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or
+            the <emphasis>-r</emphasis> option is given. Combined with
+            the <emphasis>-h</emphasis> option (see below), it can be
+            used to save a file to a given path, without showing any
+            save dialog.
+          </para>
+        </sect4>
+
+        <sect4 id="h-option">
+          <title>A opción -h</title>
+
+          <para>
+            If you give the <emphasis>-h</emphasis> option, the
+            screenshot will be saved without showing any save dialog.
+            This option only has an effect if the
+            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
+            <emphasis>-r</emphasis> option is given. The
+            <emphasis>-s</emphasis> option allows you to set the save
+            location if needed.
+          </para>
+        </sect4>
+
+        <sect4 id="o-option">
+          <title>A opción -o</title>
+
+          <para>
+            If the <emphasis>-o</emphasis> option is given, followed by
+            an application name, the screenshot will be saved to the
+            system's temporary directory and opened with the application
+            whose name is to be given after <emphasis>-o</emphasis>.
+            This option only has an effect if the
+            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
+            <emphasis>-r</emphasis> option is given.
+          </para>
+        </sect4>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="panel-plugin">
+    <title>Usar o engadido no panel de Xfce</title>
+
+    <sect2 id="add">
+      <title>Engadir o engadido</title>
+
+      <para>
+        To add the plugin to the panel, right click on the panel and
+        select <emphasis>"Add New Item"</emphasis>. Select the plugin
+        named <emphasis>"Screenshot"</emphasis>, and add it.
+      </para>
+    </sect2>
+
+    <sect2 id="set">
+      <title>Configurar o engadido</title>
+
+      <para>
+        You can configure how screenshots are taken by right clicking on
+        the plugin and selecting <emphasis>"Configure"</emphasis>. A
+        preferences dialog similar to the dialog of the main application
+        will appear. Please have a look above for the different
+        preferences.
+      </para>
+    </sect2>
+
+    <sect2 id="use">
+      <title>Uso do engadido</title>
+
+      <para>
+        To take a screenshot, just click on the plugin.
+      </para>
+    </sect2>
+
+  </sect1>
+
+</article>
