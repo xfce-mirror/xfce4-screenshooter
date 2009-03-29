@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-28 22:02+0200\n"
+"POT-Creation-Date: 2009-03-29 21:05+0200\n"
 "PO-Revision-Date: 2009-03-28 22:12+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../lib/screenshooter-dialogs.c:286
+#, fuzzy
 msgid "Screenshot.png"
 msgstr "Kuvakaappaus.png"
 
@@ -222,6 +223,10 @@ msgstr ""
 #~ msgstr ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">Viive ennen "
 #~ "kuvakaappauksen ottamista</span>"
+
+#, fuzzy
+#~ msgid "Display the save dialog"
+#~ msgstr "Älä näytä tallennusdialogia"
 
 #~ msgid "Take the screenshot"
 #~ msgstr "Kaappaa kuva"

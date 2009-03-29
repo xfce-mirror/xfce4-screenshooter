@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-20 19:34+0100\n"
+"POT-Creation-Date: 2009-03-29 21:05+0200\n"
 "PO-Revision-Date: 2009-03-10 16:27+0200\n"
 "Last-Translator: Samed Beyribey <ras0ir@eventualis.org>\n"
 "Language-Team: Turkish <turkce@pardus.org.tr>\n"
@@ -15,75 +15,76 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../lib/screenshooter-dialogs.c:269
+#: ../lib/screenshooter-dialogs.c:286
+#, fuzzy
 msgid "Screenshot.png"
 msgstr "resim.png"
 
-#: ../lib/screenshooter-dialogs.c:286
+#: ../lib/screenshooter-dialogs.c:303
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "resim-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:481
+#: ../lib/screenshooter-dialogs.c:498
 #, c-format
 msgid "%i bytes remaining"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:567
+#: ../lib/screenshooter-dialogs.c:584
 msgid "Transfer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:592
+#: ../lib/screenshooter-dialogs.c:609
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Eylem</span>"
 
-#: ../lib/screenshooter-dialogs.c:714 ../lib/screenshooter-dialogs.c:731
+#: ../lib/screenshooter-dialogs.c:733 ../lib/screenshooter-dialogs.c:751
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Ekran görüntüsü"
 
-#: ../lib/screenshooter-dialogs.c:726
+#: ../lib/screenshooter-dialogs.c:746
 msgid "Take a screenshot"
 msgstr "Ekran görüntüsü al"
 
-#: ../lib/screenshooter-dialogs.c:741
+#: ../lib/screenshooter-dialogs.c:761
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: ../lib/screenshooter-dialogs.c:760
+#: ../lib/screenshooter-dialogs.c:807
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Görüntüsü alınacak alan</span>"
 
-#: ../lib/screenshooter-dialogs.c:792
+#: ../lib/screenshooter-dialogs.c:836
 msgid "Entire screen"
 msgstr "Tüm ekran"
 
-#: ../lib/screenshooter-dialogs.c:802 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:846 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:241
 #: ../panel-plugin/screenshooter-plugin.c:346
 msgid "Take a screenshot of the entire screen"
 msgstr "Tüm ekranın görüntüsünü al"
 
-#: ../lib/screenshooter-dialogs.c:814
+#: ../lib/screenshooter-dialogs.c:859
 msgid "Active window"
 msgstr "Etkin pencere"
 
-#: ../lib/screenshooter-dialogs.c:824 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:869 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:246
 #: ../panel-plugin/screenshooter-plugin.c:351
 msgid "Take a screenshot of the active window"
 msgstr "Etkin pencerenin ekran görüntüsünü al"
 
-#: ../lib/screenshooter-dialogs.c:836
+#: ../lib/screenshooter-dialogs.c:882
 msgid "Select a region"
 msgstr "Alan seçimi"
 
-#: ../lib/screenshooter-dialogs.c:846 ../src/main.c:57
+#: ../lib/screenshooter-dialogs.c:892 ../src/main.c:57
 #: ../panel-plugin/screenshooter-plugin.c:251
 #: ../panel-plugin/screenshooter-plugin.c:356
 msgid ""
@@ -94,78 +95,88 @@ msgstr ""
 "Farenin sol tuşuna basılı tutup fareyi hareket ettirerek belirli bir alanı "
 "seçip, o alanın ekran görüntüsünü alabilirsiniz."
 
-#: ../lib/screenshooter-dialogs.c:859
+#: ../lib/screenshooter-dialogs.c:905
 msgid "Capture the mouse pointer"
 msgstr "Fare imlecini yakala"
 
-#: ../lib/screenshooter-dialogs.c:883
+#: ../lib/screenshooter-dialogs.c:936
+#, fuzzy
 msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Ekran görüntüsü almayı "
-"geciktir</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Görüntüsü alınacak alan</span>"
 
-#: ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-dialogs.c:973
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Ekran görüntüsü almayı saniye değerinden geciktir"
 
-#: ../lib/screenshooter-dialogs.c:935
+#: ../lib/screenshooter-dialogs.c:979
 msgid "seconds"
 msgstr "saniye"
 
-#: ../lib/screenshooter-dialogs.c:957
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+#: ../lib/screenshooter-dialogs.c:1008
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Eylem</span>"
 
-#: ../lib/screenshooter-dialogs.c:995
-msgid "Save in:"
-msgstr "Buraya kaydet:"
-
-#: ../lib/screenshooter-dialogs.c:1009
-msgid "Save the screenshot to a PNG file"
-msgstr "Ekran görüntüsünü PNG biçiminde kaydet"
-
-#: ../lib/screenshooter-dialogs.c:1016
-msgid "Default save location"
-msgstr "Öntanımlı kaydetme yeri"
-
-#: ../lib/screenshooter-dialogs.c:1031
-msgid "Set the default save location"
-msgstr "Öntanımlı kaydetme dizini"
-
-#: ../lib/screenshooter-dialogs.c:1056
-msgid "Display the save dialog"
+#: ../lib/screenshooter-dialogs.c:1034
+#, fuzzy
+msgid "Show the save dialog"
 msgstr "Kaydetme penceresini göster"
 
-#: ../lib/screenshooter-dialogs.c:1062
+#: ../lib/screenshooter-dialogs.c:1040
 msgid ""
 "The save dialog allows you to change the file name and the save location"
 msgstr "Kaydetme penceresi dosya adını ve dosya konumunu değiştirmenizi sağlar"
 
-#: ../lib/screenshooter-dialogs.c:1083
+#: ../lib/screenshooter-dialogs.c:1054
+#, fuzzy
+msgid "Close the application"
+msgstr "Uygulama:"
+
+#: ../lib/screenshooter-dialogs.c:1078
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Eylem</span>"
+
+#: ../lib/screenshooter-dialogs.c:1107
+msgid "Save in:"
+msgstr "Buraya kaydet:"
+
+#: ../lib/screenshooter-dialogs.c:1117
+msgid "Save the screenshot to a PNG file"
+msgstr "Ekran görüntüsünü PNG biçiminde kaydet"
+
+#: ../lib/screenshooter-dialogs.c:1134
+msgid "Default save location"
+msgstr "Öntanımlı kaydetme yeri"
+
+#: ../lib/screenshooter-dialogs.c:1144
+msgid "Set the default save location"
+msgstr "Öntanımlı kaydetme dizini"
+
+#: ../lib/screenshooter-dialogs.c:1159
 msgid "Copy to the clipboard"
 msgstr "Panoya kopyala"
 
-#: ../lib/screenshooter-dialogs.c:1092
+#: ../lib/screenshooter-dialogs.c:1164
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 "Ekran görüntüsünü panoya kopyalar daha sonra ihtiyaç duyduğunuzda "
 "yapıştırmak için kullanabilirsiniz"
 
-#: ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-dialogs.c:1182
 msgid "Open with:"
 msgstr "Birlikte aç:"
 
-#: ../lib/screenshooter-dialogs.c:1135
+#: ../lib/screenshooter-dialogs.c:1194
 msgid "Open the screenshot with the chosen application"
 msgstr "Ekran görüntüsünü seçilen uygulama ile açar"
 
-#: ../lib/screenshooter-dialogs.c:1173 ../src/main.c:79
+#: ../lib/screenshooter-dialogs.c:1233 ../src/main.c:79
 msgid "Application to open the screenshot"
 msgstr "Ekran görüntüsünü gösterecek uygulama"
 
-#: ../lib/screenshooter-dialogs.c:1218
+#: ../lib/screenshooter-dialogs.c:1278
 msgid "Save screenshot as..."
 msgstr "Ekran görüntüsünü farklı kaydet..."
 
@@ -189,7 +200,7 @@ msgstr "Ekran görüntüsünde fare imlecini gösterme"
 msgid "Directory where the screenshot will be saved"
 msgstr "Ekran görüntüsünün kaydedileceği dizin"
 
-#: ../src/main.c:177
+#: ../src/main.c:201
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -198,7 +209,7 @@ msgstr ""
 "%s: %s\n"
 "Uygun komut satırı seçeneklerini görmek için, %s --help komutunu deneyiniz.\n"
 
-#: ../src/main.c:278
+#: ../src/main.c:302
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s geçerli bir dizin değil, öntanımlı dizin kullanılacak."
@@ -209,6 +220,17 @@ msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr ""
 "Tüm ekranın, etkin pencerenin veya belirli bir alanın ekran görüntüsünü alır"
+
+#~ msgid ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+#~ "screenshot</span>"
+#~ msgstr ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Ekran görüntüsü almayı "
+#~ "geciktir</span>"
+
+#, fuzzy
+#~ msgid "Display the save dialog"
+#~ msgstr "Kaydetme penceresini gösterme"
 
 #~ msgid "Take the screenshot"
 #~ msgstr "Ekran görüntüsü al"
@@ -222,6 +244,3 @@ msgstr ""
 #~ msgstr ""
 #~ "Seçildiği takdirde, ekran görüntüsü sağ kısımda belirtilen dizine "
 #~ "kaydedilecektir"
-
-#~ msgid "Application:"
-#~ msgstr "Uygulama:"

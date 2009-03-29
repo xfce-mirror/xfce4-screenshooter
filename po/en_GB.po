@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-20 19:34+0100\n"
+"POT-Creation-Date: 2009-03-29 21:05+0200\n"
 "PO-Revision-Date: 2009-01-11 23:29+1100\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB <en@li.org>\n"
@@ -19,75 +19,76 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../lib/screenshooter-dialogs.c:269
+#: ../lib/screenshooter-dialogs.c:286
+#, fuzzy
 msgid "Screenshot.png"
 msgstr "Screenshot.png"
 
-#: ../lib/screenshooter-dialogs.c:286
+#: ../lib/screenshooter-dialogs.c:303
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "Screenshot-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:481
+#: ../lib/screenshooter-dialogs.c:498
 #, c-format
 msgid "%i bytes remaining"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:567
+#: ../lib/screenshooter-dialogs.c:584
 msgid "Transfer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:592
+#: ../lib/screenshooter-dialogs.c:609
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 
-#: ../lib/screenshooter-dialogs.c:714 ../lib/screenshooter-dialogs.c:731
+#: ../lib/screenshooter-dialogs.c:733 ../lib/screenshooter-dialogs.c:751
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Screenshot"
 
-#: ../lib/screenshooter-dialogs.c:726
+#: ../lib/screenshooter-dialogs.c:746
 msgid "Take a screenshot"
 msgstr "Take a screenshot"
 
-#: ../lib/screenshooter-dialogs.c:741
+#: ../lib/screenshooter-dialogs.c:761
 msgid "Preferences"
 msgstr "Preferences"
 
-#: ../lib/screenshooter-dialogs.c:760
+#: ../lib/screenshooter-dialogs.c:807
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 
-#: ../lib/screenshooter-dialogs.c:792
+#: ../lib/screenshooter-dialogs.c:836
 msgid "Entire screen"
 msgstr "Entire screen"
 
-#: ../lib/screenshooter-dialogs.c:802 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:846 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:241
 #: ../panel-plugin/screenshooter-plugin.c:346
 msgid "Take a screenshot of the entire screen"
 msgstr "Take a screenshot of the entire screen"
 
-#: ../lib/screenshooter-dialogs.c:814
+#: ../lib/screenshooter-dialogs.c:859
 msgid "Active window"
 msgstr "Active window"
 
-#: ../lib/screenshooter-dialogs.c:824 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:869 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:246
 #: ../panel-plugin/screenshooter-plugin.c:351
 msgid "Take a screenshot of the active window"
 msgstr "Take a screenshot of the active window"
 
-#: ../lib/screenshooter-dialogs.c:836
+#: ../lib/screenshooter-dialogs.c:882
 msgid "Select a region"
 msgstr "Select a region"
 
-#: ../lib/screenshooter-dialogs.c:846 ../src/main.c:57
+#: ../lib/screenshooter-dialogs.c:892 ../src/main.c:57
 #: ../panel-plugin/screenshooter-plugin.c:251
 #: ../panel-plugin/screenshooter-plugin.c:356
 msgid ""
@@ -99,78 +100,87 @@ msgstr ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 
-#: ../lib/screenshooter-dialogs.c:859
+#: ../lib/screenshooter-dialogs.c:905
 msgid "Capture the mouse pointer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:883
+#: ../lib/screenshooter-dialogs.c:936
+#, fuzzy
 msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 
-#: ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-dialogs.c:973
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Delay in seconds before the screenshot is taken"
 
-#: ../lib/screenshooter-dialogs.c:935
+#: ../lib/screenshooter-dialogs.c:979
 msgid "seconds"
 msgstr "seconds"
 
-#: ../lib/screenshooter-dialogs.c:957
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+#: ../lib/screenshooter-dialogs.c:1008
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:1034
 #, fuzzy
-msgid "Save in:"
-msgstr "Save"
-
-#: ../lib/screenshooter-dialogs.c:1009
-msgid "Save the screenshot to a PNG file"
-msgstr "Save the screenshot to a PNG file"
-
-#: ../lib/screenshooter-dialogs.c:1016
-msgid "Default save location"
-msgstr "Default save location"
-
-#: ../lib/screenshooter-dialogs.c:1031
-msgid "Set the default save location"
-msgstr "Set the default save location"
-
-#: ../lib/screenshooter-dialogs.c:1056
-#, fuzzy
-msgid "Display the save dialog"
+msgid "Show the save dialog"
 msgstr "Do not display the save dialogue"
 
-#: ../lib/screenshooter-dialogs.c:1062
+#: ../lib/screenshooter-dialogs.c:1040
 msgid ""
 "The save dialog allows you to change the file name and the save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1083
+#: ../lib/screenshooter-dialogs.c:1054
+#, fuzzy
+msgid "Close the application"
+msgstr "Application:"
+
+#: ../lib/screenshooter-dialogs.c:1078
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+
+#: ../lib/screenshooter-dialogs.c:1107
+#, fuzzy
+msgid "Save in:"
+msgstr "Save"
+
+#: ../lib/screenshooter-dialogs.c:1117
+msgid "Save the screenshot to a PNG file"
+msgstr "Save the screenshot to a PNG file"
+
+#: ../lib/screenshooter-dialogs.c:1134
+msgid "Default save location"
+msgstr "Default save location"
+
+#: ../lib/screenshooter-dialogs.c:1144
+msgid "Set the default save location"
+msgstr "Set the default save location"
+
+#: ../lib/screenshooter-dialogs.c:1159
 msgid "Copy to the clipboard"
 msgstr "Copy to the clipboard"
 
-#: ../lib/screenshooter-dialogs.c:1092
+#: ../lib/screenshooter-dialogs.c:1164
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Copy the screenshot to the clipboard so that it can be pasted later"
 
-#: ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-dialogs.c:1182
 msgid "Open with:"
 msgstr "Open with:"
 
-#: ../lib/screenshooter-dialogs.c:1135
+#: ../lib/screenshooter-dialogs.c:1194
 msgid "Open the screenshot with the chosen application"
 msgstr "Open the screenshot with the chosen application"
 
-#: ../lib/screenshooter-dialogs.c:1173 ../src/main.c:79
+#: ../lib/screenshooter-dialogs.c:1233 ../src/main.c:79
 msgid "Application to open the screenshot"
 msgstr "Application to open the screenshot"
 
-#: ../lib/screenshooter-dialogs.c:1218
+#: ../lib/screenshooter-dialogs.c:1278
 msgid "Save screenshot as..."
 msgstr "Save screenshot as..."
 
@@ -195,7 +205,7 @@ msgstr "Do not display the save dialogue"
 msgid "Directory where the screenshot will be saved"
 msgstr "Directory where the screenshot will be saved"
 
-#: ../src/main.c:177
+#: ../src/main.c:201
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -204,7 +214,7 @@ msgstr ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 
-#: ../src/main.c:278
+#: ../src/main.c:302
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s is not a valid directory, the default directory will be used."
@@ -215,6 +225,17 @@ msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr ""
 "Take screenshots of the entire screen, of the active window or of a region"
+
+#~ msgid ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+#~ "screenshot</span>"
+#~ msgstr ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+#~ "screenshot</span>"
+
+#, fuzzy
+#~ msgid "Display the save dialog"
+#~ msgstr "Do not display the save dialogue"
 
 #~ msgid "Take the screenshot"
 #~ msgstr "Take the screenshot"
@@ -228,6 +249,3 @@ msgstr ""
 #~ msgstr ""
 #~ "If ticked, the screenshot will be saved by default to the location set on "
 #~ "the right without displaying a save dialogue"
-
-#~ msgid "Application:"
-#~ msgstr "Application:"

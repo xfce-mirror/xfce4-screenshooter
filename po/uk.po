@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-20 19:34+0100\n"
+"POT-Creation-Date: 2009-03-29 21:05+0200\n"
 "PO-Revision-Date: 2009-02-24 19:58+0200\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -15,75 +15,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../lib/screenshooter-dialogs.c:269
+#: ../lib/screenshooter-dialogs.c:286
+#, fuzzy
 msgid "Screenshot.png"
 msgstr "Знімок_екрану.png"
 
-#: ../lib/screenshooter-dialogs.c:286
+#: ../lib/screenshooter-dialogs.c:303
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "Знімок_екрану-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:481
+#: ../lib/screenshooter-dialogs.c:498
 #, c-format
 msgid "%i bytes remaining"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:567
+#: ../lib/screenshooter-dialogs.c:584
 msgid "Transfer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:592
+#: ../lib/screenshooter-dialogs.c:609
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Дія   </span>"
 
-#: ../lib/screenshooter-dialogs.c:714 ../lib/screenshooter-dialogs.c:731
+#: ../lib/screenshooter-dialogs.c:733 ../lib/screenshooter-dialogs.c:751
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Знімок екрану"
 
-#: ../lib/screenshooter-dialogs.c:726
+#: ../lib/screenshooter-dialogs.c:746
 msgid "Take a screenshot"
 msgstr "Отримати знімок"
 
-#: ../lib/screenshooter-dialogs.c:741
+#: ../lib/screenshooter-dialogs.c:761
 msgid "Preferences"
 msgstr "Параметри"
 
-#: ../lib/screenshooter-dialogs.c:760
+#: ../lib/screenshooter-dialogs.c:807
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Область захоплення</span>"
 
-#: ../lib/screenshooter-dialogs.c:792
+#: ../lib/screenshooter-dialogs.c:836
 msgid "Entire screen"
 msgstr "Весь екран"
 
-#: ../lib/screenshooter-dialogs.c:802 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:846 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:241
 #: ../panel-plugin/screenshooter-plugin.c:346
 msgid "Take a screenshot of the entire screen"
 msgstr "Зробити знімок всього екрану"
 
-#: ../lib/screenshooter-dialogs.c:814
+#: ../lib/screenshooter-dialogs.c:859
 msgid "Active window"
 msgstr "Активного вікна"
 
-#: ../lib/screenshooter-dialogs.c:824 ../src/main.c:49
+#: ../lib/screenshooter-dialogs.c:869 ../src/main.c:49
 #: ../panel-plugin/screenshooter-plugin.c:246
 #: ../panel-plugin/screenshooter-plugin.c:351
 msgid "Take a screenshot of the active window"
 msgstr "Зробити знімок активного вікна"
 
-#: ../lib/screenshooter-dialogs.c:836
+#: ../lib/screenshooter-dialogs.c:882
 msgid "Select a region"
 msgstr "Виділеної області"
 
-#: ../lib/screenshooter-dialogs.c:846 ../src/main.c:57
+#: ../lib/screenshooter-dialogs.c:892 ../src/main.c:57
 #: ../panel-plugin/screenshooter-plugin.c:251
 #: ../panel-plugin/screenshooter-plugin.c:356
 msgid ""
@@ -95,78 +96,87 @@ msgstr ""
 "відпускання кнопки миші пересуньте вказівник в інший кут області і тоді "
 "відпустіть кнопку миші."
 
-#: ../lib/screenshooter-dialogs.c:859
+#: ../lib/screenshooter-dialogs.c:905
 msgid "Capture the mouse pointer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:883
+#: ../lib/screenshooter-dialogs.c:936
+#, fuzzy
 msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-"screenshot</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Затримка перед знімком  "
-"екрану    </span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Область захоплення</span>"
 
-#: ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-dialogs.c:973
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Затримка в секундах перед отриманням знімку екрану"
 
-#: ../lib/screenshooter-dialogs.c:935
+#: ../lib/screenshooter-dialogs.c:979
 msgid "seconds"
 msgstr "секунд"
 
-#: ../lib/screenshooter-dialogs.c:957
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+#: ../lib/screenshooter-dialogs.c:1008
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Дія   </span>"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:1034
 #, fuzzy
-msgid "Save in:"
-msgstr "Зберегти"
-
-#: ../lib/screenshooter-dialogs.c:1009
-msgid "Save the screenshot to a PNG file"
-msgstr "Зберегти знімок у файл PNG"
-
-#: ../lib/screenshooter-dialogs.c:1016
-msgid "Default save location"
-msgstr "Типове місце збереження знімків екрану"
-
-#: ../lib/screenshooter-dialogs.c:1031
-msgid "Set the default save location"
-msgstr "Призначити типове місце збереження знімків екрану"
-
-#: ../lib/screenshooter-dialogs.c:1056
-#, fuzzy
-msgid "Display the save dialog"
+msgid "Show the save dialog"
 msgstr "Не відображати діалог збереження"
 
-#: ../lib/screenshooter-dialogs.c:1062
+#: ../lib/screenshooter-dialogs.c:1040
 msgid ""
 "The save dialog allows you to change the file name and the save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1083
+#: ../lib/screenshooter-dialogs.c:1054
+#, fuzzy
+msgid "Close the application"
+msgstr "Програма:"
+
+#: ../lib/screenshooter-dialogs.c:1078
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Дія   </span>"
+
+#: ../lib/screenshooter-dialogs.c:1107
+#, fuzzy
+msgid "Save in:"
+msgstr "Зберегти"
+
+#: ../lib/screenshooter-dialogs.c:1117
+msgid "Save the screenshot to a PNG file"
+msgstr "Зберегти знімок у файл PNG"
+
+#: ../lib/screenshooter-dialogs.c:1134
+msgid "Default save location"
+msgstr "Типове місце збереження знімків екрану"
+
+#: ../lib/screenshooter-dialogs.c:1144
+msgid "Set the default save location"
+msgstr "Призначити типове місце збереження знімків екрану"
+
+#: ../lib/screenshooter-dialogs.c:1159
 msgid "Copy to the clipboard"
 msgstr "Копіювати в буфер обміну"
 
-#: ../lib/screenshooter-dialogs.c:1092
+#: ../lib/screenshooter-dialogs.c:1164
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Копіювати знімок в буфер, що можна було вставити його пізніше"
 
-#: ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-dialogs.c:1182
 msgid "Open with:"
 msgstr "Відкрити з:"
 
-#: ../lib/screenshooter-dialogs.c:1135
+#: ../lib/screenshooter-dialogs.c:1194
 msgid "Open the screenshot with the chosen application"
 msgstr "Відкрити знімок екрану вибраною програмою"
 
-#: ../lib/screenshooter-dialogs.c:1173 ../src/main.c:79
+#: ../lib/screenshooter-dialogs.c:1233 ../src/main.c:79
 msgid "Application to open the screenshot"
 msgstr "Програма для відкриття знімку екрану"
 
-#: ../lib/screenshooter-dialogs.c:1218
+#: ../lib/screenshooter-dialogs.c:1278
 msgid "Save screenshot as..."
 msgstr "Зберегти знімок як..."
 
@@ -191,7 +201,7 @@ msgstr "Не відображати діалог збереження"
 msgid "Directory where the screenshot will be saved"
 msgstr "Тека, де зберігатимуться знімки екрану"
 
-#: ../src/main.c:177
+#: ../src/main.c:201
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -201,7 +211,7 @@ msgstr ""
 "Спробуй %s --help щоб побачити повний список доступних опцій командного "
 "рядка.\n"
 
-#: ../src/main.c:278
+#: ../src/main.c:302
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s не є правильною текою, буде використано типову теку."
@@ -211,6 +221,17 @@ msgstr "%s не є правильною текою, буде використа�
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Отримати знімки всього екрану, активного вікна або окремої області"
+
+#~ msgid ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+#~ "screenshot</span>"
+#~ msgstr ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Затримка перед знімком  "
+#~ "екрану    </span>"
+
+#, fuzzy
+#~ msgid "Display the save dialog"
+#~ msgstr "Не відображати діалог збереження"
 
 #~ msgid "Take the screenshot"
 #~ msgstr "Отримати знімок екрану"
@@ -224,6 +245,3 @@ msgstr "Отримати знімки всього екрану, активно�
 #~ msgstr ""
 #~ "Якщо відмічено знімок буде збережено до типового місця, що визначено "
 #~ "справа, причому без відображення діалогу збереження"
-
-#~ msgid "Application:"
-#~ msgstr "Програма:"
