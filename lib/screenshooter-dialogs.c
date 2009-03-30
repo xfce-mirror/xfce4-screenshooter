@@ -493,9 +493,10 @@ static void cb_progress_upload (goffset current_num_bytes,
 {
   gdouble fraction = (double) current_num_bytes / (double) total_num_bytes;
 
-  gint remaining = (int) total_num_bytes - (int) current_num_bytes;
+  gfloat current = (float) current_num_bytes / 1000;
+  gfloat total = (float) total_num_bytes / 1000;
 
-  gchar *bar_text = g_strdup_printf (_("%i bytes remaining"), remaining);
+  gchar *bar_text = g_strdup_printf (_("%.2fKb of %.2fKb"), current, total);
 
   gtk_progress_bar_set_fraction (GTK_PROGRESS_BAR (user_data), fraction);
 
