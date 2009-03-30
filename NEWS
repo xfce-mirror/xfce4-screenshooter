@@ -6,8 +6,12 @@
   * Enhancements:
     - Add an option in the user interface to hide the mouse pointer
       on screenshots.
+    - Add an option in the application which allows the user to choose
+      whether the application should be closed after taking a screenshot. This
+      allows the user to take several screenshots in a row.
+    - New user interface based on Fabrice Viale's review. The dialog now has a
+      two column layout which makes it more appealing and more usable.
     - Add a CLI option to hide the mouse pointer on screenshots.
-    - Make the main dialog more compact by simplifying the user interface.
     - When selecting a region to be screenshooted, you can now use the Escape
       keyboard key to cancel the operation.
     - Screenshots can now be saved to remote locations that are connected using
