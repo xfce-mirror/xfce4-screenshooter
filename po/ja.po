@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-30 09:11+0200\n"
-"PO-Revision-Date: 2009-03-22 15:52+0900\n"
+"POT-Creation-Date: 2009-04-05 23:48+0900\n"
+"PO-Revision-Date: 2009-03-31 00:32+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../lib/screenshooter-dialogs.c:286
-#, fuzzy
 msgid "Screenshot.png"
 msgstr "Screenshot.png"
 
@@ -31,7 +30,7 @@ msgstr "Screenshot-%d.png"
 #: ../lib/screenshooter-dialogs.c:499
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%.2fKb / %.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:585
 msgid "Transfer"
@@ -103,10 +102,10 @@ msgid "Capture the mouse pointer"
 msgstr "マウスポインタも撮影する"
 
 #: ../lib/screenshooter-dialogs.c:937
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影する領域</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">撮影するまでの遅延時間</span>"
 
 #: ../lib/screenshooter-dialogs.c:974
 msgid "Delay in seconds before the screenshot is taken"
@@ -117,12 +116,10 @@ msgid "seconds"
 msgstr "秒"
 
 #: ../lib/screenshooter-dialogs.c:1009
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">アクション</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影したら</span>"
 
 #: ../lib/screenshooter-dialogs.c:1035
-#, fuzzy
 msgid "Show the save dialog"
 msgstr "保存ダイアログを表示する"
 
@@ -133,7 +130,7 @@ msgstr "保存ダイアログでファイル名と保存場所を変更できま
 
 #: ../lib/screenshooter-dialogs.c:1055
 msgid "Close the application"
-msgstr ""
+msgstr "このアプリケーションを閉じる"
 
 #: ../lib/screenshooter-dialogs.c:1079
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -223,17 +220,3 @@ msgid ""
 msgstr ""
 "画面全体、アクティブウィンドウまたは指定した領域のスクリーンショットを撮りま"
 "す。"
-
-#~ msgid "%i bytes remaining"
-#~ msgstr "残り %i バイト"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-#~ "screenshot</span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">スクリーンショットを撮るま"
-#~ "での遅延時間</span>"
-
-#, fuzzy
-#~ msgid "Display the save dialog"
-#~ msgstr "保存ダイアログを表示しない"
