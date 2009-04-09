@@ -159,13 +159,13 @@ static GdkPixbuf
 
             TRACE ("Get the coordinates of the cursor");
         
-            gdk_window_get_pointer (window, &cursorx, &cursory, NULL);
+            gdk_window_get_pointer (root, &cursorx, &cursory, NULL);
 
-            TRACE ("Get the hot-spot x and y values");
-            
+            TRACE ("Get the cursor hotspot");
+
             sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", &xhot);
             sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "y_hot"), "%d", &yhot);
-
+            
             /* rectangle_window stores the window coordinates */
             rectangle_window.x = x_orig;
             rectangle_window.y = y_orig;
@@ -173,8 +173,8 @@ static GdkPixbuf
             rectangle_window.height = height;
             
             /* rectangle_cursor stores the cursor coordinates */
-            rectangle_cursor.x = cursorx + x_orig;
-            rectangle_cursor.y = cursory + y_orig;
+            rectangle_cursor.x = cursorx;
+            rectangle_cursor.y = cursory;
             rectangle_cursor.width = gdk_pixbuf_get_width (cursor_pixbuf);
             rectangle_cursor.height = gdk_pixbuf_get_height (cursor_pixbuf);
             
@@ -186,9 +186,9 @@ static GdkPixbuf
                 TRACE ("Compose the two pixbufs");
 
                 gdk_pixbuf_composite (cursor_pixbuf, screenshot,
-                                      cursorx - xhot, cursory - yhot,
+                                      cursorx - x_orig -xhot, cursory - y_orig -yhot,
                                       rectangle_cursor.width, rectangle_cursor.height,
-                                      cursorx - xhot, cursory - yhot,
+                                      cursorx - x_orig - xhot, cursory - y_orig -yhot,
                                       1.0, 1.0,
                                       GDK_INTERP_BILINEAR,
                                       255);

@@ -1,3 +1,8 @@
+2009-04-09 jeromeg
+
+  * lib/screenshooter-utils.c: try to fix bug #5204 where the cursor
+    was not displayed at the correct location.
+
 2009-03-30 jeromeg
 
   * CONTRIBUTORS: update the contributors list.
