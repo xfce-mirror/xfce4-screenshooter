@@ -1,0 +1,190 @@
+# Russian translation of xfce4-screenshooter-plugin.
+# Copyright (C) 2009 Denis Koryavov
+# This file is distributed under the same license as the xfce4-screenshooter-plugin package.
+# Denis Koryavov <dkoryavov@yandex.ru>, 2009.
+msgid ""
+msgstr ""
+"Last-Translator: Denis Koryavov <dkoryavov@yandex.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../lib/screenshooter-dialogs.c:228
+msgid "Screenshot.png"
+msgstr "Снимок экрана.png"
+
+#: ../lib/screenshooter-dialogs.c:243
+#, c-format
+msgid "Screenshot-%d.png"
+msgstr "Снимок экрана-%d.png"
+
+#: ../lib/screenshooter-dialogs.c:465
+msgid "Take a screenshot"
+msgstr "Сделать снимок экрана"
+
+#: ../lib/screenshooter-dialogs.c:472
+msgid "Take the screenshot"
+msgstr "Сделать снимок"
+
+#: ../lib/screenshooter-dialogs.c:479
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+msgid "Screenshot"
+msgstr "Снимок экрана"
+
+#: ../lib/screenshooter-dialogs.c:489
+msgid "Preferences"
+msgstr "Параметры"
+
+#: ../lib/screenshooter-dialogs.c:507
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Область для захвата</span>"
+
+#: ../lib/screenshooter-dialogs.c:539
+msgid "Entire screen"
+msgstr "Весь экран"
+
+#: ../lib/screenshooter-dialogs.c:550 ../src/main.c:54
+#: ../panel-plugin/screenshooter-plugin.c:232
+#: ../panel-plugin/screenshooter-plugin.c:322
+msgid "Take a screenshot of the entire screen"
+msgstr "Сделать снимок всего экрана"
+
+#: ../lib/screenshooter-dialogs.c:563
+msgid "Active window"
+msgstr "Активное окно"
+
+#: ../lib/screenshooter-dialogs.c:574 ../src/main.c:50
+#: ../panel-plugin/screenshooter-plugin.c:237
+#: ../panel-plugin/screenshooter-plugin.c:327
+msgid "Take a screenshot of the active window"
+msgstr "Сделать снимок активного окна"
+
+#: ../lib/screenshooter-dialogs.c:587
+msgid "Select a region"
+msgstr "Выделить область"
+
+#: ../lib/screenshooter-dialogs.c:598 ../src/main.c:58
+#: ../panel-plugin/screenshooter-plugin.c:242
+#: ../panel-plugin/screenshooter-plugin.c:332
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr ""
+"Укажите область экрана, которая будет захвачена. С помощью левой кнопки мыши укажите "
+"верхний угол захватываемой области, и, не отпуская кнопки мыши, укажите нижний угол.  "
+"Отпустите кнопку мыши."
+
+#: ../lib/screenshooter-dialogs.c:614
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
+"screenshot</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Задержка перед получением "
+"снимка экрана    </span>"
+
+#: ../lib/screenshooter-dialogs.c:660
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "Задержка в секундах перед выполнением снимка экрана"
+
+#: ../lib/screenshooter-dialogs.c:669
+msgid "seconds"
+msgstr "секунд"
+
+#: ../lib/screenshooter-dialogs.c:691
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
+
+#: ../lib/screenshooter-dialogs.c:722
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../lib/screenshooter-dialogs.c:735
+msgid "Save the screenshot to a PNG file"
+msgstr "Сохранить снимок экрана в файл формата PNG"
+
+#: ../lib/screenshooter-dialogs.c:764
+msgid "Save by default to:"
+msgstr "Сохранять в:"
+
+#: ../lib/screenshooter-dialogs.c:780
+msgid ""
+"If checked, the screenshot will be saved by default to the location set on "
+"the right without displaying a save dialog"
+msgstr ""
+"Если установлено, снимок экрана будет автоматически сохраняться по указанному пути, "
+"без отображения диалога сохранения"
+
+#: ../lib/screenshooter-dialogs.c:785
+msgid "Default save location"
+msgstr "Путь для сохранения снимков по умолчанию"
+
+#: ../lib/screenshooter-dialogs.c:799
+msgid "Set the default save location"
+msgstr "Укажите путь куда следует сохранять снимки экрана"
+
+#: ../lib/screenshooter-dialogs.c:821
+msgid "Copy to the clipboard"
+msgstr "Копировать в буфер обмена"
+
+#: ../lib/screenshooter-dialogs.c:831
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "Копировать снимок экрана в буфер обмена для использования его в дальнешейм"
+
+#: ../lib/screenshooter-dialogs.c:849
+msgid "Open with:"
+msgstr "Открыть с помощью:"
+
+#: ../lib/screenshooter-dialogs.c:865
+msgid "Open the screenshot with the chosen application"
+msgstr "Открыть снимок экрана с помощью выбранного приложения"
+
+#. Application label
+#: ../lib/screenshooter-dialogs.c:898
+msgid "Application:"
+msgstr "Приложение:"
+
+#: ../lib/screenshooter-dialogs.c:945 ../src/main.c:77
+msgid "Application to open the screenshot"
+msgstr "Приложение для открытия снимков экрана"
+
+#: ../lib/screenshooter-dialogs.c:989
+msgid "Save screenshot as..."
+msgstr "Сохранить снимок как..."
+
+#: ../src/main.c:46
+msgid "Version information"
+msgstr "Информация о версии"
+
+#: ../src/main.c:64
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Задержка в секундах перед выполнением снимка"
+
+#: ../src/main.c:68
+msgid "Do not display the save dialog"
+msgstr "Скрывать диалог сохранения"
+
+#: ../src/main.c:72
+msgid "Directory where the screenshot will be saved"
+msgstr "Директория, где будут сохраняться снимки экрана"
+
+#: ../src/main.c:190
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"Запустите программу с опцией %s --help для того, чтобы увидеть весь список опций.\n"
+
+#: ../src/main.c:275
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr "%s не является директорией. Будет использована директория по умолчанию."
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Выполнить снимок всего экрана, активного окна или региона"
