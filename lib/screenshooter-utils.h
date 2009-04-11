@@ -24,8 +24,9 @@
 #include <config.h>
 #endif
 
+#include "screenshooter-global.h"
+
 #include <gtk/gtk.h>
-#include <gdk/gdkx.h>
 #include <glib/gstdio.h>
 
 #include <libxfce4util/libxfce4util.h>
@@ -35,46 +36,6 @@
 
 
 
-/* Screenshot Modes */
-enum {
-  MODE_0,
-  FULLSCREEN,
-  ACTIVE_WINDOW,
-  SELECT,
-};
-
-
-
-/* Possible actions */
-enum {
-  ACTION_0,
-  SAVE,
-  CLIPBOARD,
-  OPEN,
-};
-
-
-
-/* Struct to store the screenshot options */
-typedef struct
-{
-  gint region;
-  gint show_save_dialog;
-  gint show_mouse;
-  gint delay;
-  gint action;
-  gint close;
-  gchar *screenshot_dir;
-  gchar *app;
-}
-ScreenshotData;
-
-
-
-GdkPixbuf
-*screenshooter_take_screenshot   (gint                  region,
-                                  gint                  delay,
-                                  gboolean              show_mouse);
 void
 screenshooter_copy_to_clipboard  (GdkPixbuf            *screenshot) ;
 

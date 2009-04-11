@@ -16,14 +16,26 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
- 
-#ifndef HAVE_SCREENSHOOTER_H
-#define HAVE_SCREENSHOOTER_H
 
-#include "screenshooter-dialogs.h"
-#include "screenshooter-utils.h"
-#include "screenshooter-actions.h"
-#include "screenshooter-capture.h"
+#ifndef __HAVE_CAPTURE_H__
+#define __HAVE_CAPTURE_H__
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include "screenshooter-global.h"
+
+#include <gdk/gdkkeysyms.h>
+#include <gdk/gdkx.h>
+
+#include <libxfce4util/libxfce4util.h>
+
+
+
+GdkPixbuf
+*screenshooter_take_screenshot   (gint                  region,
+                                  gint                  delay,
+                                  gboolean              show_mouse);
 
 #endif

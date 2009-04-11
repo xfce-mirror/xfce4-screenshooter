@@ -16,14 +16,48 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
- 
-#ifndef HAVE_SCREENSHOOTER_H
-#define HAVE_SCREENSHOOTER_H
 
-#include "screenshooter-dialogs.h"
-#include "screenshooter-utils.h"
-#include "screenshooter-actions.h"
-#include "screenshooter-capture.h"
-#include "screenshooter-global.h"
+#ifndef HAVE_GLOBAL_H
+#define HAVE_GLOBAL_H
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+#include <glib.h>
+
+/* Possible actions */
+enum {
+  ACTION_0,
+  SAVE,
+  CLIPBOARD,
+  OPEN,
+};
+
+
+
+/* Struct to store the screenshot options */
+typedef struct
+{
+  gint region;
+  gint show_save_dialog;
+  gint show_mouse;
+  gint delay;
+  gint action;
+  gint close;
+  gchar *screenshot_dir;
+  gchar *app;
+}
+ScreenshotData;
+
+
+
+/* Screenshot Modes */
+enum {
+  MODE_0,
+  FULLSCREEN,
+  ACTIVE_WINDOW,
+  SELECT,
+};
 
 #endif

@@ -21,6 +21,8 @@
 #define __HAVE_ACTIONS_H__
 
 #include "screenshooter-utils.h"
+#include "screenshooter-capture.h"
+#include "screenshooter-global.h"
 #include "screenshooter-dialogs.h"
 
 void screenshooter_take_and_output_screenshot (ScreenshotData *sd);

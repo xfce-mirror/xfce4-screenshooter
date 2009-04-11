@@ -1,5 +1,17 @@
 2009-04-09 jeromeg
 
+  Reorganise the code.
+
+  * lib/screenshooter-global.h: put global structures and enumerations
+    here.
+  * lib/screenshooter-capture.{c,h}: move the code for capturing windows
+    and rectangular areas here.
+  * lib/*.{c,h}: modify the old files to use those new ones.
+  * lib/Makefile.am: add the new files to the source files.
+  * Update the NEWS file.
+
+2009-04-09 jeromeg
+
   * lib/screenshooter-utils.c: try to fix bug #5204 where the cursor
     was not displayed at the correct location.
 

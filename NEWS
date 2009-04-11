@@ -3,6 +3,9 @@
   Gtk+ 2.12 and Glib 2.16 are now required to build the application
   and the panel plugin.
 
+  * Bugs fixed:
+    - The cursor was missplaced when taking a screenshot of a window (Bug #5204).
+
   * Enhancements:
     - Add an option in the user interface to hide the mouse pointer
       on screenshots.
