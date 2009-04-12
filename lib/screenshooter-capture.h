@@ -28,6 +28,7 @@
 
 #include <gdk/gdkkeysyms.h>
 #include <gdk/gdkx.h>
+#include <unistd.h>
 
 #include <libxfce4util/libxfce4util.h>
 

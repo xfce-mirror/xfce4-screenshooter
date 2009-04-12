@@ -780,13 +780,13 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   /* Create the main box for the dialog */
   
-	vbox = gtk_vbox_new (FALSE, 10);
+  vbox = gtk_vbox_new (FALSE, 10);
+  
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
 
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
   gtk_widget_show (vbox);
   
-
   /* Create the table to align the differents parts of the top of the UI */
 
   capture_table = gtk_table_new (2, 2, FALSE);
@@ -798,15 +798,17 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
   /* Create the main box for the regions */
   
-	area_main_box = gtk_vbox_new (FALSE, 6);
+  area_main_box = gtk_vbox_new (FALSE, 6);
   gtk_widget_show (area_main_box);
   gtk_table_attach_defaults (GTK_TABLE (capture_table), area_main_box, 0, 1, 0, 2);
   
   /* Create area label */
+  
   area_label = gtk_label_new ("");
+  
   gtk_label_set_markup (GTK_LABEL (area_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">"
-    "Region to capture</span>"));
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+                          "Region to capture</span>"));
 			
   gtk_misc_set_alignment (GTK_MISC (area_label), 0, 0);
   gtk_widget_show (area_label);
@@ -844,7 +846,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                                 (sd->region == FULLSCREEN));
   
   gtk_widget_set_tooltip_text (fullscreen_button,
-                          _("Take a screenshot of the entire screen"));
+                               _("Take a screenshot of the entire screen"));
                                 
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled", 
                     G_CALLBACK (cb_fullscreen_screen_toggled),
@@ -854,10 +856,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   /* Active window */
   
-  active_window_button = 
-    gtk_radio_button_new_with_mnemonic (
-      gtk_radio_button_get_group (GTK_RADIO_BUTTON (fullscreen_button)), 
-      _("Active window"));
+  active_window_button =
+    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
+                                                 _("Active window"));
                                         
   gtk_box_pack_start (GTK_BOX (area_box), 
                       active_window_button, FALSE, 
@@ -867,7 +868,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                                 (sd->region == ACTIVE_WINDOW));
   
   gtk_widget_set_tooltip_text (active_window_button,
-                          _("Take a screenshot of the active window"));
+                               _("Take a screenshot of the active window"));
                                 
   g_signal_connect (G_OBJECT (active_window_button), "toggled", 
                     G_CALLBACK (cb_active_window_toggled),
@@ -878,9 +879,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Rectangle */
   
   rectangle_button = 
-    gtk_radio_button_new_with_mnemonic (
-      gtk_radio_button_get_group (GTK_RADIO_BUTTON (fullscreen_button)), 
-                                  _("Select a region"));
+    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
+	                                             _("Select a region"));
 
    gtk_box_pack_start (GTK_BOX (area_box), 
                        rectangle_button, FALSE, 
@@ -890,9 +890,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                                 (sd->region == SELECT));
   
   gtk_widget_set_tooltip_text (rectangle_button,
-  _("Select a region to be captured by clicking a point of the screen "
-    "without releasing the mouse button, dragging your mouse to the "
-    "other corner of the region, and releasing the mouse button."));
+                               _("Select a region to be captured by clicking a point of "
+							     "the screen without releasing the mouse button, "
+								 "dragging your mouse to the other corner of the region, "
+								 "and releasing the mouse button."));
   
   g_signal_connect (G_OBJECT (rectangle_button), "toggled", 
                     G_CALLBACK (cb_rectangle_toggled),
@@ -910,6 +911,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
   gtk_widget_set_sensitive (show_mouse_checkbox, (sd->region != SELECT));
 
+  gtk_widget_set_tooltip_text (show_mouse_checkbox,
+                               _("Display the mouse pointer on the screenshot"));
+
   gtk_box_pack_start (GTK_BOX (area_box), 
                       show_mouse_checkbox, FALSE, 
                       FALSE, 5);
@@ -924,7 +928,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
   /* Create the main box for the delay stuff */
   
-	delay_main_box = gtk_vbox_new (FALSE, 6);
+  delay_main_box = gtk_vbox_new (FALSE, 6);
+  
   gtk_widget_show (delay_main_box);
 
   gtk_table_attach_defaults (GTK_TABLE (capture_table), delay_main_box, 1, 2, 0, 1);
@@ -934,13 +939,15 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   delay_label = gtk_label_new ("");
   
   gtk_label_set_markup (GTK_LABEL(delay_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">"
-    "Delay before capturing</span>"));
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+                          "Delay before capturing</span>"));
   
-	gtk_misc_set_alignment(GTK_MISC (delay_label), 0, 0); 
-  gtk_widget_show (delay_label);
+  gtk_misc_set_alignment(GTK_MISC (delay_label), 0, 0);
+
   gtk_box_pack_start (GTK_BOX (delay_main_box), delay_label, FALSE, FALSE, 0);
-  
+   
+  gtk_widget_show (delay_label);
+    
   /* Create delay alignment */
   
   delay_alignment = gtk_alignment_new (0, 0, 0, 0);
@@ -971,7 +978,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                              sd->delay);
   
   gtk_widget_set_tooltip_text (delay_spinner,
-                _("Delay in seconds before the screenshot is taken"));  
+                               _("Delay in seconds before the screenshot is taken"));  
                              
   gtk_widget_show (delay_spinner);
   
@@ -1006,7 +1013,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   options_label = gtk_label_new ("");
 
   gtk_label_set_markup (GTK_LABEL(options_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"));
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">After "
+						  "capturing</span>"));
   
 	gtk_misc_set_alignment(GTK_MISC (options_label), 0, 0); 
   gtk_widget_show (options_label);
@@ -1038,8 +1046,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                                 (sd->show_save_dialog == 1));
 
   gtk_widget_set_tooltip_text (save_checkbox,
-  _("The save dialog allows you to change the file name and the save"
-    " location"));
+                               _("The save dialog allows you to change the file name "
+							     "and the save location"));
 
   gtk_box_pack_start (GTK_BOX (options_box), save_checkbox, FALSE, FALSE, 0);
         
@@ -1056,6 +1064,11 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
 
       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (close_checkbox),
                                     (sd->close == 1));
+
+	  gtk_widget_set_tooltip_text (close_checkbox,
+	                               _("If unchecked, the current window will be displayed "
+								     "again after the screenshot has been taken to allow"
+									 " you to take several screenshots in a row"));
 
       gtk_box_pack_start (GTK_BOX (options_box), close_checkbox, FALSE, FALSE, 0);
 
@@ -1075,8 +1088,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Create actions label */
   
   actions_label = gtk_label_new ("");
+  
   gtk_label_set_markup (GTK_LABEL (actions_label),
-  _("<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"));
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">Action"
+						  "</span>"));
 			
   gtk_misc_set_alignment (GTK_MISC (actions_label), 0, 0);
   gtk_widget_show (actions_label);
@@ -1155,22 +1170,20 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Copy to clipboard radio button */
   
   clipboard_radio_button = 
-    gtk_radio_button_new_with_mnemonic (
-      gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
-      _("Copy to the clipboard"));
+    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
+	                                             _("Copy to the clipboard"));
   
   gtk_widget_show (clipboard_radio_button);
   
   gtk_widget_set_tooltip_text (clipboard_radio_button,
-  _("Copy the screenshot to the clipboard so that it can be "
-    "pasted later"));
+                               _("Copy the screenshot to the clipboard so that it can be "
+                                 "pasted later"));
                       
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
                                 (sd->action == CLIPBOARD));
   
   g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled", 
-                    G_CALLBACK (cb_clipboard_toggled),
-                    sd);
+                    G_CALLBACK (cb_clipboard_toggled), sd);
 
   gtk_table_attach_defaults (GTK_TABLE (actions_table), clipboard_radio_button,
                              0, 1, 1, 2);
@@ -1178,9 +1191,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   /* Open with radio button */
   
   open_with_radio_button = 
-    gtk_radio_button_new_with_mnemonic (
-      gtk_radio_button_get_group (GTK_RADIO_BUTTON (save_radio_button)), 
-      _("Open with:"));
+    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
+	                                             _("Open with:"));
      
   gtk_widget_show (open_with_radio_button);
                       
@@ -1192,23 +1204,21 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
                     sd);
    
   gtk_widget_set_tooltip_text (open_with_radio_button,
-  _("Open the screenshot with the chosen application"));
+                               _("Open the screenshot with the chosen application"));
 
   gtk_table_attach_defaults (GTK_TABLE (actions_table), open_with_radio_button,
-                             0, 1, 2, 3);                    
-  
+                             0, 1, 2, 3);
+ 
   /* Open with combobox */
     
-  liststore = gtk_list_store_new (3, GDK_TYPE_PIXBUF, 
-                                  G_TYPE_STRING, G_TYPE_STRING);
+  liststore = gtk_list_store_new (3, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
   
   combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
   
   renderer = gtk_cell_renderer_text_new ();
   renderer_pixbuf = gtk_cell_renderer_pixbuf_new ();
   
-  gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), 
-                              renderer_pixbuf, FALSE);
+  gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), renderer_pixbuf, FALSE);
   
   gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
   
@@ -1230,16 +1240,14 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd,
   
   gtk_widget_show_all (combobox); 
   
-  gtk_widget_set_tooltip_text (combobox,
-  _("Application to open the screenshot"));
+  gtk_widget_set_tooltip_text (combobox, _("Application to open the screenshot"));
 
   g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), combobox);
   
   /* Run the callback functions to grey/ungrey the correct widgets */
   
-  cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button),
-                       combobox);
+  cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button), combobox);
  
   return dlg;                
 }
@@ -1256,12 +1264,9 @@ gchar
                                     gboolean        show_save_dialog,
                                     gchar          *default_dir)
 {
-  gchar *filename = NULL, *savename = NULL;
-  
-  /* Generate the filename for the default save location */
- 
-  filename = generate_filename_for_uri (default_dir);
-    
+  gchar *filename = generate_filename_for_uri (default_dir);
+  gchar *savename = NULL;
+
   if (show_save_dialog)
 	  {
       GdkPixbuf *thumbnail;
@@ -1285,28 +1290,23 @@ gchar
                                      GTK_RESPONSE_ACCEPT,
                                      NULL);
                                      
-      gtk_window_set_icon_name (GTK_WINDOW (chooser), 
-                                "applets-screenshooter");
+      gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
                                 
       gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser), TRUE);
 
       gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), FALSE);
       
-      gtk_dialog_set_default_response (GTK_DIALOG (chooser), 
-                                       GTK_RESPONSE_ACCEPT);
+      gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
 
-      gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (chooser), 
-                                               default_dir);
+      gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (chooser), default_dir);
 
-      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), 
-                                         filename);
+      gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);
 
       /* Create the preview and the thumbnail */
       
       preview = gtk_image_new ();
                                           
-      gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), 
-                                           preview);
+      gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview);
   
       thumbnail = 
         gdk_pixbuf_scale_simple (screenshot, 

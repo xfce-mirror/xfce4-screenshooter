@@ -1,3 +1,14 @@
+2009-04-12 jeromeg
+
+	* xfce4-screenshooter.1: add the 'mouse' CLI option to the manpage.
+	* lib/screenshooter-dialogs.c:
+	  - improve the indentation in some places.
+	  - use gtk_radio_button_new_with_label_from_widget to create the
+	    radio buttons.
+	  - add some missing tooltips.
+	* lib/screenshooter-utils.h: remove a useless include.
+	* lib/screenshooter-capture.h: add the missing unistd.h include.	
+
 2009-04-09 jeromeg
 
 	Reorganise the code.
