@@ -1,5 +1,12 @@
 2009-04-12 jeromeg
 
+	* src/main.c:
+	  - improve the indentation.
+	  - use g_spawn_command_line_async to launch the help.
+	* lib/screenshooter-capture.c: fix a typo.
+
+2009-04-12 jeromeg
+
 	* xfce4-screenshooter.1: add the 'mouse' CLI option to the manpage.
 	* lib/screenshooter-dialogs.c:
 	  - improve the indentation in some places.

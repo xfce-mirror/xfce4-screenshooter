@@ -41,7 +41,7 @@ gint delay = 0;
 /* Set cli options. */
 static GOptionEntry entries[] =
 {
-    {    "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
+    {   "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
         N_("Version information"),
         NULL
     },
@@ -59,7 +59,7 @@ static GOptionEntry entries[] =
            "other corner of the region, and releasing the mouse button."),
         NULL
     },
-    {		"delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,
+    {  "delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,
        N_("Delay in seconds before taking the screenshot"),
        NULL
     },
@@ -92,18 +92,14 @@ cb_dialog_response (GtkWidget *dlg, int response, ScreenshotData *sd);
 
 
 static void
-cb_dialog_response (GtkWidget *dialog, int response,
-                    ScreenshotData *sd)
+cb_dialog_response (GtkWidget *dialog, int response, ScreenshotData *sd)
 {
   if (response == GTK_RESPONSE_HELP)
     {
       GError *error_help = NULL;
 
-      /* Launch the help page and show an error dialog if there was
-       * an error. */
-      if (!xfce_exec_on_screen (gdk_screen_get_default (),
-                                "xfhelp4 xfce4-screenshooter.html",
-                                FALSE, TRUE, &error_help))
+      /* Launch the help page and show an error dialog if there was an error. */
+      if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
         {
           xfce_err (error_help->message);
           g_error_free (error_help);
@@ -130,10 +126,9 @@ cb_dialog_response (GtkWidget *dialog, int response,
         {
           gtk_widget_destroy (dialog);
 
-          rc_file =
-            xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
-                                         "xfce4/xfce4-screenshooter",
-                                         TRUE);
+          rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
+                                                 "xfce4/xfce4-screenshooter",
+                                                 TRUE);
 
           /* Save preferences */
 
@@ -157,10 +152,9 @@ cb_dialog_response (GtkWidget *dialog, int response,
 
       gtk_widget_destroy (dialog);
 
-      rc_file =
-        xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
-                                     "xfce4/xfce4-screenshooter",
-                                     TRUE);
+      rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
+                                             "xfce4/xfce4-screenshooter",
+                                             TRUE);
 
       /* Save preferences */
 
@@ -201,7 +195,9 @@ int main(int argc, char **argv)
           g_print (_("%s: %s\nTry %s --help to see a full list of"
                      " available command line options.\n"),
                    PACKAGE, cli_error->message, PACKAGE_NAME);
+				   
           g_error_free (cli_error);
+		  
           return 1;
         }
     }
@@ -234,6 +230,7 @@ int main(int argc, char **argv)
   if (version)
     {
       g_print ("%s\n", PACKAGE_STRING);
+	  
       return 0;
     }
 
@@ -253,26 +250,13 @@ int main(int argc, char **argv)
         {
           sd->region = SELECT;
         }
-
+	  
       /* Wether to show the save dialog allowing to choose a filename
        * and a save location */
-      if (no_save_dialog)
-        {
-          sd->show_save_dialog = 0;
-        }
-      else
-        {
-          sd->show_save_dialog = 1;
-        }
+      no_save_dialog ? (sd->show_save_dialog = 0) : (sd->show_save_dialog = 1);
 
-      if (hide_mouse)
-        {
-          sd->show_mouse = 0;
-        }
-      else
-        {
-          sd->show_mouse = 1;
-        }
+      /* Whether to display the mouse pointer on the screenshot */
+      hide_mouse ? (sd->show_mouse = 0) : (sd->show_mouse = 1);
 
       sd->delay = delay;
 
@@ -318,13 +302,9 @@ int main(int argc, char **argv)
 
       dialog = screenshooter_dialog_new (sd, FALSE);
 
-      gtk_window_set_type_hint(GTK_WINDOW (dialog),
-                               GDK_WINDOW_TYPE_HINT_NORMAL);
+      gtk_window_set_type_hint(GTK_WINDOW (dialog), GDK_WINDOW_TYPE_HINT_NORMAL);
 
-      g_signal_connect (dialog,
-                        "response",
-                        G_CALLBACK (cb_dialog_response),
-                        sd);
+      g_signal_connect (dialog, "response", G_CALLBACK (cb_dialog_response), sd);
 
       gtk_widget_show (dialog);
 

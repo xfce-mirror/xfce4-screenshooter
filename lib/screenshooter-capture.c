@@ -308,7 +308,7 @@ static GdkPixbuf
                   {
                     /* The user has not dragged the mouse, start again */
 
-                    TRACE ("Mouse was not dragged, start agan");
+                    TRACE ("Mouse was not dragged, start again");
                    
                     pressed = FALSE;
                   }
