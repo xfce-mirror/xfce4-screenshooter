@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.4.91\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-03-30 09:11+0200\n"
-"PO-Revision-Date: 2009-01-01 15:39+0700\n"
+"PO-Revision-Date: 2009-04-09 21:45-0400\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../lib/screenshooter-dialogs.c:286
-#, fuzzy
 msgid "Screenshot.png"
 msgstr "Cuplikanlayar.png"
 
@@ -28,18 +27,19 @@ msgstr "Cuplikanlayar-%d.png"
 #: ../lib/screenshooter-dialogs.c:499
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%.2fKb dari %.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:585
 msgid "Transfer"
-msgstr ""
+msgstr "Transfer"
 
 #: ../lib/screenshooter-dialogs.c:610
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksi</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Cuplikan layar sedang "
+"ditransfer ke:</span>"
 
 #: ../lib/screenshooter-dialogs.c:734 ../lib/screenshooter-dialogs.c:752
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -98,14 +98,13 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:906
 msgid "Capture the mouse pointer"
-msgstr ""
+msgstr "Tangkap penunjuk tetikus"
 
 #: ../lib/screenshooter-dialogs.c:937
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Daerah akan ditangkap</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Jeda sebelum menangkap</span>"
 
 #: ../lib/screenshooter-dialogs.c:974
 msgid "Delay in seconds before the screenshot is taken"
@@ -116,33 +115,31 @@ msgid "seconds"
 msgstr "detik"
 
 #: ../lib/screenshooter-dialogs.c:1009
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksi</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Setelah menangkap</span>"
 
 #: ../lib/screenshooter-dialogs.c:1035
-#, fuzzy
 msgid "Show the save dialog"
-msgstr "Jangan tampilkan dialog simpan"
+msgstr "Tampilkan dialog simpan"
 
 #: ../lib/screenshooter-dialogs.c:1041
 msgid ""
 "The save dialog allows you to change the file name and the save location"
 msgstr ""
+"Dialog simpan mengizinkan anda untuk mengubah nama berkas dan lokasi "
+"penyimpanan"
 
 #: ../lib/screenshooter-dialogs.c:1055
-#, fuzzy
 msgid "Close the application"
-msgstr "Aplikasi:"
+msgstr "Tutup aplikasi"
 
 #: ../lib/screenshooter-dialogs.c:1079
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksi</span>"
 
 #: ../lib/screenshooter-dialogs.c:1108
-#, fuzzy
 msgid "Save in:"
-msgstr "Simpan"
+msgstr "Simpan di:"
 
 #: ../lib/screenshooter-dialogs.c:1118
 msgid "Save the screenshot to a PNG file"
@@ -193,9 +190,8 @@ msgid "Do not display the save dialog"
 msgstr "Jangan tampilkan dialog simpan"
 
 #: ../src/main.c:71
-#, fuzzy
 msgid "Do not display the mouse on the screenshot"
-msgstr "Jangan tampilkan dialog simpan"
+msgstr "Jangan tampilkan tetikus di cuplikan layar"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -218,11 +214,11 @@ msgstr "%s bukan direktori yang sah, direktori standar yang akan digunakan."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr ""
-"Ambil cuplikan layar seluruh layar,atau jendela yang aktif atau sebuah daerah"
+"Ambil cuplikan layar dari seluruh layar, dari jendela yang aktif atau "
+"dari sebuah daerah"
 
 #~ msgid ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
@@ -231,7 +227,6 @@ msgstr ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">Jeda sebelum mengambil "
 #~ "cuplikan layar</span>"
 
-#, fuzzy
 #~ msgid "Display the save dialog"
 #~ msgstr "Jangan tampilkan dialog simpan"
 
