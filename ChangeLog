@@ -1,3 +1,19 @@
+2009-04-16 jeromeg
+
+	* panel-plugin/screenshooter-plugin.c:
+	  - remove the wrong XFCE_PANEL_PLUGIN_REGISTER_INTERNAL macro call,
+	    the plugin is external.
+	  - add (set_panel_button_tooltip) to simplify the code, this function
+	    sets the tooltip according to the area to be captured.
+	  - use g_spawn_command_line_async to laucnh the help window.
+	  - improve the indentation in some places.
+	* lib/screenshooter-utils.c:
+	  - improve the indentation in some places.
+	  - (screenshooter_open_screenshot):
+	    + declare the variables at the beginning of the code block.
+            + use g_spawn_command_line_async to launch the applications.
+	* lib/screenshooter-dialogs.c: improve the indentation.
+
 2009-04-12 jeromeg
 
 	* src/main.c:

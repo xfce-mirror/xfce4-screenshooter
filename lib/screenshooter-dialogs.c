@@ -694,8 +694,7 @@ static gchar
 /* Build the preferences dialog.
 @sd: a ScreenshotData to set the options.
 */
-GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, 
-                                     gboolean plugin)
+GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 {
   GtkWidget *dlg, *main_alignment;
   GtkWidget *vbox;

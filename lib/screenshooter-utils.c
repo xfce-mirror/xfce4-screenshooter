@@ -36,8 +36,9 @@ screenshooter_copy_to_clipboard (GdkPixbuf *screenshot)
 
   TRACE ("Adding the image to the clipboard...");
 
-  clipboard = gtk_clipboard_get_for_display (gdk_display_get_default(), 
-                                             GDK_SELECTION_CLIPBOARD);
+  clipboard =
+    gtk_clipboard_get_for_display (gdk_display_get_default(), GDK_SELECTION_CLIPBOARD);
+
   gtk_clipboard_set_image (clipboard, screenshot);
 
   gtk_clipboard_store (clipboard);
@@ -60,7 +61,7 @@ screenshooter_read_rc_file (gchar               *file,
   gint action = SAVE;
   gint show_save_dialog = 1;
   gint show_mouse = 1;
-  gint close = 1;
+  gint close_app = 1;
   gchar *screenshot_dir = screenshooter_get_home_uri ();
   gchar *app = g_strdup ("none");
 
@@ -88,7 +89,7 @@ screenshooter_read_rc_file (gchar               *file,
           show_mouse =
             xfce_rc_read_int_entry (rc, "show_mouse", 1);
 
-          close =
+          close_app =
             xfce_rc_read_int_entry (rc, "close", 1);
               
           g_free (app);
@@ -117,7 +118,7 @@ screenshooter_read_rc_file (gchar               *file,
   sd->action = action;
   sd->show_save_dialog = show_save_dialog;
   sd->show_mouse = show_mouse;
-  sd->close = close;
+  sd->close = close_app;
   sd->screenshot_dir = screenshot_dir;
   sd->app = app;
 }
@@ -167,9 +168,11 @@ screenshooter_write_rc_file (gchar               *file,
 @application: the command to run the application.
 */
 void
-screenshooter_open_screenshot (gchar *screenshot_path,
-                               gchar *application)
+screenshooter_open_screenshot (gchar *screenshot_path, gchar *application)
 {
+  gchar *command;
+  GError *error = NULL;
+
   g_return_if_fail (screenshot_path != NULL);
   
   TRACE ("Path was != NULL");
@@ -178,17 +181,13 @@ screenshooter_open_screenshot (gchar *screenshot_path,
 
   TRACE ("Application was not none");
 
-  gchar *command = 
-    g_strconcat (application, " ", screenshot_path, NULL);
-
-  GError *error = NULL;
+  command = g_strconcat (application, " ", screenshot_path, NULL);
 
   TRACE ("Launch the command");
   
   /* Execute the command and show an error dialog if there was 
   * an error. */
-  if (!xfce_exec_on_screen (gdk_screen_get_default (), command, 
-                            FALSE, TRUE, &error))
+  if (!g_spawn_command_line_async (command, &error))
     {
       TRACE ("An error occured");
 

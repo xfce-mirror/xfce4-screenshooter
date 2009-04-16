@@ -94,11 +94,9 @@ static void
 cb_style_set                         (XfcePanelPlugin      *plugin, 
                                       gpointer              ignored,
                                       PluginData           *pd);
-                                       
-                                              
 
-/* Register the panel plugin */
-XFCE_PANEL_PLUGIN_REGISTER_INTERNAL (screenshooter_plugin_construct);
+static void
+set_panel_button_tooltip             (PluginData           *pd);
 
 
 
@@ -221,12 +219,11 @@ screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 
 
 /* Callback for dialog response:
-   Update the tooltips if using gtk >= 2.12.
+   Update the tooltips.
    Unblock the plugin contextual menu.
    Save the options in the rc file.*/
 static void
-cb_dialog_response (GtkWidget *dlg, int response,
-                    PluginData *pd)
+cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
 {
   if (response == GTK_RESPONSE_OK)
     {
@@ -235,23 +232,7 @@ cb_dialog_response (GtkWidget *dlg, int response,
       gtk_widget_destroy (dlg);
       
       /* Update tooltips according to the chosen option */
-      if (pd->sd->region == FULLSCREEN)
-      {
-        gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                        _("Take a screenshot of the entire screen"));
-      }
-      else if (pd->sd->region == ACTIVE_WINDOW)
-      {
-        gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                        _("Take a screenshot of the active window"));
-      }
-      else if (pd->sd->region == SELECT)
-      {
-        gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-   _("Select a region to be captured by clicking a point of the screen "
-     "without releasing the mouse button, dragging your mouse to the "
-     "other corner of the region, and releasing the mouse button."));
-      }
+      set_panel_button_tooltip (pd);
       
       /* Unblock the menu and save options */
       xfce_panel_plugin_unblock_menu (pd->plugin);
@@ -264,9 +245,7 @@ cb_dialog_response (GtkWidget *dlg, int response,
               
       /* Execute the help and show an error dialog if there was 
        * an error. */
-      if (!xfce_exec_on_screen (gdk_screen_get_default (),
-                                "xfhelp4 xfce4-screenshooter.html", 
-                                FALSE, TRUE, &error_help))
+      if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
         {
           xfce_err (error_help->message);
           g_error_free (error_help);
@@ -297,10 +276,34 @@ cb_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   
   g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
   
-  g_signal_connect (dlg, "response", G_CALLBACK (cb_dialog_response),
-                    pd);
+  g_signal_connect (dlg, "response", G_CALLBACK (cb_dialog_response), pd);
 
   gtk_widget_show (dlg);
+}
+
+
+
+static void
+set_panel_button_tooltip (PluginData *pd)
+{
+  if (pd->sd->region == FULLSCREEN)
+    {
+      gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
+                                   _("Take a screenshot of the entire screen"));
+    }
+  else if (pd->sd->region == ACTIVE_WINDOW)
+    {
+      gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
+                                   _("Take a screenshot of the active window"));
+    }
+  else if (pd->sd->region == SELECT)
+    {
+      gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
+                                   _("Select a region to be captured by clicking a "
+                                     "point of the screen without releasing the mouse "
+                                     "button, dragging your mouse to the other corner "
+                                     "of the region, and releasing the mouse button."));
+    }
 }
 
 
@@ -340,23 +343,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   /* Set the tooltips if available */
   TRACE ("Set the default tooltip");
   
-  if (pd->sd->region == FULLSCREEN)
-   {
-     gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                      _("Take a screenshot of the entire screen"));
-   }
-  else if (pd->sd->region == ACTIVE_WINDOW)
-    {
-      gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-                      _("Take a screenshot of the active window"));
-    }
-  else if (pd->sd->region == SELECT)
-    {
-      gtk_widget_set_tooltip_text (GTK_WIDGET (pd->button),
-   _("Select a region to be captured by clicking a point of the screen "
-     "without releasing the mouse button, dragging your mouse to the "
-     "other corner of the region, and releasing the mouse button."));
-    }
+  set_panel_button_tooltip (pd);
 
   TRACE ("Add the button to the panel");
   
@@ -370,30 +357,24 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
 
   TRACE ("Set the clicked callback");
   
-  g_signal_connect (pd->button, "clicked",
-                    G_CALLBACK (cb_button_clicked), pd);
+  g_signal_connect (pd->button, "clicked", G_CALLBACK (cb_button_clicked), pd);
 
   TRACE ("Set the free data callback");
 
-  g_signal_connect (plugin, "free-data",
-                    G_CALLBACK (cb_free_data), pd);
+  g_signal_connect (plugin, "free-data", G_CALLBACK (cb_free_data), pd);
 
   TRACE ("Set the size changed callback");
 
-  g_signal_connect (plugin, "size-changed",
-                    G_CALLBACK (cb_set_size), pd);
+  g_signal_connect (plugin, "size-changed", G_CALLBACK (cb_set_size), pd);
 
   TRACE ("Set the style set callback");
 
-  pd->style_id =
-      g_signal_connect (plugin, "style-set",
-                        G_CALLBACK (cb_style_set), pd);
+  pd->style_id = g_signal_connect (plugin, "style-set", G_CALLBACK (cb_style_set), pd);
 
   TRACE ("Set the configuration menu");
 
   xfce_panel_plugin_menu_show_configure (plugin);
   
-  g_signal_connect (plugin, "configure-plugin",
-                    G_CALLBACK (cb_properties_dialog), pd);
+  g_signal_connect (plugin, "configure-plugin", G_CALLBACK (cb_properties_dialog), pd);
 }
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (screenshooter_plugin_construct);
