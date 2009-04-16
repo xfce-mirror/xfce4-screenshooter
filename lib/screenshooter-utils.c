@@ -52,9 +52,10 @@ screenshooter_copy_to_clipboard (GdkPixbuf *screenshot)
 @dir_only: if true, only read the screenshot_dir.
 */
 void
-screenshooter_read_rc_file (gchar               *file, 
-                            ScreenshotData      *sd)
+screenshooter_read_rc_file (gchar *file, ScreenshotData *sd)
 {
+  const gchar *home_uri = screenshooter_get_home_uri ();
+
   XfceRc *rc;
   gint delay = 0;
   gint region = FULLSCREEN;
@@ -62,10 +63,8 @@ screenshooter_read_rc_file (gchar               *file,
   gint show_save_dialog = 1;
   gint show_mouse = 1;
   gint close_app = 1;
-  gchar *screenshot_dir = screenshooter_get_home_uri ();
+  gchar *screenshot_dir = g_strdup (home_uri);
   gchar *app = g_strdup ("none");
-
-  const gchar *home_uri = screenshooter_get_home_uri ();
   
   if (file != NULL)
     {
@@ -78,31 +77,18 @@ screenshooter_read_rc_file (gchar               *file,
           TRACE ("Read the entries");
 
           delay = xfce_rc_read_int_entry (rc, "delay", 0);
-              
           region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
-              
           action = xfce_rc_read_int_entry (rc, "action", SAVE);
-              
-          show_save_dialog = 
-            xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
-
-          show_mouse =
-            xfce_rc_read_int_entry (rc, "show_mouse", 1);
-
-          close_app =
-            xfce_rc_read_int_entry (rc, "close", 1);
+          show_save_dialog = xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
+          show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
+          close_app = xfce_rc_read_int_entry (rc, "close", 1);
               
           g_free (app);
-              
-          app = 
-            g_strdup (xfce_rc_read_entry (rc, "app", "none"));
+          app = g_strdup (xfce_rc_read_entry (rc, "app", "none"));
            
           g_free (screenshot_dir);
-          
-          screenshot_dir = 
-            g_strdup (xfce_rc_read_entry (rc, 
-                                          "screenshot_dir", 
-                                          home_uri));
+          screenshot_dir =
+            g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", home_uri));
         }
 
       TRACE ("Close the rc file");
@@ -130,8 +116,7 @@ screenshooter_read_rc_file (gchar               *file,
 @sd: a ScreenshotData.
 */
 void
-screenshooter_write_rc_file (gchar               *file, 
-                             ScreenshotData      *sd)
+screenshooter_write_rc_file (gchar *file, ScreenshotData *sd)
 {
   XfceRc *rc;
   

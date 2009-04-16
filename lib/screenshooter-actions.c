@@ -44,13 +44,9 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
       else
         {
           GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
-
           gchar *temp_dir_uri = g_file_get_uri (temp_dir);
-
           gchar *screenshot_path =
-            screenshooter_save_screenshot (screenshot,
-                                           FALSE,
-                                           temp_dir_uri);
+            screenshooter_save_screenshot (screenshot, FALSE, temp_dir_uri);
 
           if (screenshot_path != NULL)
             {

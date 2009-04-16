@@ -258,8 +258,8 @@ static GdkPixbuf
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
   
-  grabstatus_mouse = gdk_pointer_grab (root_window, FALSE, mask,
-                                 NULL, xhair_cursor, GDK_CURRENT_TIME);
+  grabstatus_mouse =
+    gdk_pointer_grab (root_window, FALSE, mask, NULL, xhair_cursor, GDK_CURRENT_TIME);
 
   grabstatus_keyboard = gdk_keyboard_grab (root_window, FALSE, GDK_CURRENT_TIME);
   
@@ -407,10 +407,11 @@ static GdkPixbuf
     {
       TRACE ("Get the pixbuf for the screenshot");
       
-      screenshot = gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
-                                                 x, y, 0, 0, w, h);
-    }  
-  if (gc!=NULL)
+      screenshot =
+        gdk_pixbuf_get_from_drawable (NULL, root_window, NULL, x, y, 0, 0, w, h);
+    }
+
+  if (gc != NULL)
     g_object_unref (gc);
     
   gdk_cursor_unref (xhair_cursor);
@@ -424,10 +425,23 @@ static GdkPixbuf
 
 
 
-/* Takes the screenshot with the options given in sd.
-*sd: a ScreenshotData struct.
-returns: the screenshot in a *GdkPixbuf.
-*/
+/**
+ * screenshooter_take_screenshot:
+ * @region: the region to be screenshoted. It can be FULLSCREEN, ACTIVE_WINDOW or SELECT.
+ * @delay: the delay before the screenshot is taken, in seconds.
+ * @mouse: whether the mouse pointer should be displayed on the screenshot.
+ *
+ * Takes a screenshot with the given options. If @region is FULLSCREEN, the screenshot
+ * is taken after @delay seconds. If @region is ACTIVE_WINDOW, a delay of @delay seconds
+ * ellapses, then the active window is detected and captured. If @region is SELECT, @delay
+ * will be ignored and the user will have to select a portion of the screen with the
+ * mouse.
+ *
+ * @show_mouse is only taken into account when @region is FULLSCREEN or ACTIVE_WINDOW.
+ *
+ * Return value: a #GdkPixbuf containing the screenshot or %NULL (if @region is SELECT,
+ * the user can cancel the operation).
+ **/
 GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show_mouse)
 {
   GdkPixbuf *screenshot = NULL;

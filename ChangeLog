@@ -1,5 +1,15 @@
 2009-04-16 jeromeg
 
+	* lib/screenshooter-actions.c: minor indentation change.
+	* lib/screenshooter-utils.c:
+	  - minor indentation improvements.
+	  - (screenshooter_read_rc_file) only get the home uri once.
+	* lib/screenshooter-capture.c:
+	  - minor indentation improvements.
+	  - correctly document (screenshooter_take_screenshot).
+
+2009-04-16 jeromeg
+
 	* panel-plugin/screenshooter-plugin.c:
 	  - remove the wrong XFCE_PANEL_PLUGIN_REGISTER_INTERNAL macro call,
 	    the plugin is external.
