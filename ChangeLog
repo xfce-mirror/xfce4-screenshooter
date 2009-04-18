@@ -1,3 +1,12 @@
+2009-04-18 jeromeg
+
+	* lib/screenshooter-utils.c: start to add G_LIKELY and G_UNLIKELY macros.
+	* lib/screenshooter-dialogs.c:
+	  - more indentation improvements.
+	  - start to add G_LIKELY and G_UNLIKELY macros.
+	* lib/screenshooter-capture.c: start to add G_LIKELY and G_UNLIKELY macros.
+	* lib/screenshooter-capture.h: add the glib header.
+
 2009-04-16 jeromeg
 
 	* lib/screenshooter-actions.c: minor indentation change.

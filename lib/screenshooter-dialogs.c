@@ -104,8 +104,7 @@ static gchar
 
 
 /* Set the captured area when the button is toggled */
-static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
-                                          ScreenshotData   *sd)
+static void cb_fullscreen_screen_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
     {
@@ -116,8 +115,7 @@ static void cb_fullscreen_screen_toggled (GtkToggleButton *tb,
 
 
 /* Set the captured area when the button is toggled */
-static void cb_active_window_toggled (GtkToggleButton *tb,
-                                      ScreenshotData   *sd)
+static void cb_active_window_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
     {
@@ -128,8 +126,7 @@ static void cb_active_window_toggled (GtkToggleButton *tb,
 
 
 /* Set the captured when the button is toggled */
-static void cb_rectangle_toggled (GtkToggleButton *tb,
-                                  ScreenshotData   *sd)
+static void cb_rectangle_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
     {
@@ -209,14 +206,7 @@ static void cb_clipboard_toggled (GtkToggleButton *tb,
 /* Set sd->show_save_dialog when the button is toggled */
 static void cb_show_save_dialog_toggled (GtkToggleButton *tb, ScreenshotData   *sd)
 {
-  if (gtk_toggle_button_get_active (tb))
-    {
-      sd->show_save_dialog = 1;
-    }
-  else
-    {
-      sd->show_save_dialog = 0;
-    }
+  gtk_toggle_button_get_active (tb) ? (sd->show_save_dialog = 1) : (sd->show_save_dialog = 0);
 }
 
 
@@ -224,36 +214,26 @@ static void cb_show_save_dialog_toggled (GtkToggleButton *tb, ScreenshotData   *
 /* Set sd->close when the button is toggled */
 static void cb_close_toggled  (GtkToggleButton *tb, ScreenshotData   *sd)
 {
-  if (gtk_toggle_button_get_active (tb))
-    {
-      sd->close = 1;
-    }
-  else
-    {
-      sd->close = 0;
-    }
+  gtk_toggle_button_get_active (tb) ? (sd->close = 1) : (sd->close = 0);
+
 }                                 
 
 
 
 /* Set sd->screenshot_dir when the user changed the value in the file chooser */
-static void cb_default_folder (GtkWidget       *chooser, 
-                               ScreenshotData  *sd)
+static void cb_default_folder (GtkWidget *chooser, ScreenshotData  *sd)
 {
   g_free (sd->screenshot_dir);
   
-  sd->screenshot_dir = 
-    gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
+  sd->screenshot_dir = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
 }
 
    
 
 /* Set the delay according to the spinner */
-static void cb_delay_spinner_changed (GtkWidget       *spinner, 
-                                      ScreenshotData  *sd)
+static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 {
-  sd->delay = 
-    gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
+  sd->delay = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
 }
 
 
@@ -272,7 +252,7 @@ static gchar *generate_filename_for_uri (char *uri)
   gchar *basename;
   gint i;
 
-  if (uri == NULL)
+  if (G_UNLIKELY (uri == NULL))
     {
       TRACE ("URI was NULL");
 
@@ -321,8 +301,7 @@ static gchar *generate_filename_for_uri (char *uri)
 
 
 /* Set sd->app as per the active item in the combobox */
-static void cb_combo_active_item_changed (GtkWidget *box, 
-                                          ScreenshotData *sd)
+static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
 {
   GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
   GtkTreeIter iter;
@@ -369,41 +348,41 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
       
       g_object_get (G_OBJECT (icon), "names", &names, NULL);
            
-      if (names != NULL)
+      if (G_LIKELY (names != NULL))
         {
           if (names[0] != NULL)
             {
-              pixbuf = 
-                gtk_icon_theme_load_icon (icon_theme, 
-                                          names[0], 
-                                          ICON_SIZE,
-                                          GTK_ICON_LOOKUP_GENERIC_FALLBACK,
-                                          NULL);
+              pixbuf = gtk_icon_theme_load_icon (icon_theme, 
+                                                 names[0], 
+                                                 ICON_SIZE,
+                                                 GTK_ICON_LOOKUP_GENERIC_FALLBACK,
+                                                 NULL);
             }                                          
           
           g_strfreev (names);                                        
         }
     }
   
-  if (pixbuf == NULL)
+  if (G_UNLIKELY (pixbuf == NULL))
     {
-      pixbuf = 
-        gtk_icon_theme_load_icon (icon_theme, "exec", ICON_SIZE,
-                                  GTK_ICON_LOOKUP_GENERIC_FALLBACK,
-                                  NULL);
+      pixbuf = gtk_icon_theme_load_icon (icon_theme, "exec", ICON_SIZE,
+                                         GTK_ICON_LOOKUP_GENERIC_FALLBACK,
+                                         NULL);
     }
   
   /* Add to the liststore */
   gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
           
-  gtk_list_store_set (GTK_LIST_STORE (liststore), &iter, 0, pixbuf, 1, 
-                      name, 2, command, -1);
+  gtk_list_store_set (GTK_LIST_STORE (liststore), &iter,
+                      0, pixbuf,
+                      1, name,
+                      2, command,
+                      -1);
   
   /* Free the stuff */      
   g_free (command);
   g_free (name);
-  if (pixbuf != NULL)
-    g_object_unref (pixbuf);
+  g_object_unref (pixbuf);
   g_object_unref (icon);
 }
 
@@ -421,7 +400,7 @@ static void populate_liststore (GtkListStore *liststore)
   list_app = g_app_info_get_all_for_type (content_type);
   
   /* Add them to the liststore */
-  if (list_app != NULL)
+  if (G_LIKELY (list_app != NULL))
     {
       g_list_foreach (list_app, (GFunc) add_item, liststore);
             
@@ -432,16 +411,14 @@ static void populate_liststore (GtkListStore *liststore)
 
 
 /* Select the sd->app item in the combobox */
-static void set_default_item (GtkWidget       *combobox, 
-                              ScreenshotData  *sd)
+static void set_default_item (GtkWidget *combobox, ScreenshotData *sd)
 {
-  GtkTreeModel *model = 
-    gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
+  GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
   
   GtkTreeIter iter; 
     
   /* Get the first iter */
-  if (gtk_tree_model_get_iter_first (model , &iter))
+  if (G_LIKELY (gtk_tree_model_get_iter_first (model , &iter)))
     {     
       gchar *command = NULL;
       gboolean found = FALSE;
@@ -465,7 +442,7 @@ static void set_default_item (GtkWidget       *combobox,
       
       /* If no suitable item was found, set the first item as active and
        * set sd->app accordingly. */
-      if (!found)
+      if (G_UNLIKELY (!found))
         {
           gtk_tree_model_get_iter_first (model , &iter);
           gtk_tree_model_get (model, &iter, 2, &command, -1);
@@ -513,13 +490,13 @@ cb_finished_upload (GObject *source_object, GAsyncResult *res, gpointer user_dat
   GError *error = NULL;
   gboolean success;
 
-  g_return_if_fail (G_LIKELY (G_IS_FILE (source_object)));
+  g_return_if_fail (G_IS_FILE (source_object));
 
   success = g_file_copy_finish (G_FILE (source_object), res, &error);
 
   TRACE ("The transfer is finished");
 
-  if (!success)
+  if (G_UNLIKELY (!success))
     {
       TRACE ("An error occurred");
 
@@ -554,12 +531,11 @@ static gchar
   GError *error = NULL;
   gchar *save_path = g_file_get_path (save_file);
 
-  if (!gdk_pixbuf_save (screenshot, save_path, "png", &error, NULL))
+  if (G_UNLIKELY (!gdk_pixbuf_save (screenshot, save_path, "png", &error, NULL)))
     {
       xfce_err ("%s", error->message);
       
       g_error_free (error);
-
       g_free (save_path);
       
       return NULL;
@@ -579,7 +555,6 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
 
   GFile *save_parent = g_file_get_parent (save_file);
   const gchar *parent_uri = g_file_get_uri (save_parent);
-
   GCancellable *cancellable = g_cancellable_new ();
   
   GtkWidget *dialog = gtk_dialog_new_with_buttons (_("Transfer"),
@@ -590,9 +565,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
                                                    NULL);
 
   GtkWidget *progress_bar = gtk_progress_bar_new ();
-  
   GtkWidget *label1= gtk_label_new ("");
-
   GtkWidget *label2 = gtk_label_new (parent_uri);
 
   save_screenshot_to_local_path (screenshot, save_file_temp);
@@ -638,9 +611,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
 
   gtk_widget_show (progress_bar);
 
-  g_signal_connect (dialog,
-                    "response",
-                    G_CALLBACK (cb_transfer_dialog_response),
+  g_signal_connect (dialog, "response", G_CALLBACK (cb_transfer_dialog_response),
                     cancellable);
 
   g_file_copy_async (save_file_temp,
@@ -648,8 +619,8 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
                      G_FILE_COPY_OVERWRITE,
                      G_PRIORITY_DEFAULT,
                      cancellable,
-                     (GFileProgressCallback)cb_progress_upload, progress_bar,
-                     (GAsyncReadyCallback)cb_finished_upload, dialog);
+                     (GFileProgressCallback) cb_progress_upload, progress_bar,
+                     (GAsyncReadyCallback) cb_finished_upload, dialog);
 
   gtk_dialog_run (GTK_DIALOG (dialog));
 
@@ -666,7 +637,6 @@ static gchar
 *save_screenshot_to (GdkPixbuf *screenshot, gchar *save_uri)
 {
   GFile *save_file = g_file_new_for_uri (save_uri);
-
   gchar *result = NULL;
     
   /* If the URI is a local one, we save directly */
@@ -742,8 +712,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                                              GTK_RESPONSE_OK,
                                              NULL);
 
-      xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), 
-                                       _("Take a screenshot"));
+      xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Take a screenshot"));
     }
   else
     {
@@ -772,8 +741,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
 
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), main_alignment,
-                      TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), main_alignment, TRUE, TRUE, 0);
 
   gtk_widget_show (main_alignment);
   
@@ -890,13 +858,12 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   gtk_widget_set_tooltip_text (rectangle_button,
                                _("Select a region to be captured by clicking a point of "
-							     "the screen without releasing the mouse button, "
-								 "dragging your mouse to the other corner of the region, "
-								 "and releasing the mouse button."));
+                                 "the screen without releasing the mouse button, "
+                                 "dragging your mouse to the other corner of the region, "
+								                 "and releasing the mouse button."));
   
-  g_signal_connect (G_OBJECT (rectangle_button), "toggled", 
-                    G_CALLBACK (cb_rectangle_toggled),
-                    sd);
+  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
+                    G_CALLBACK (cb_rectangle_toggled), sd);
   
   gtk_widget_show (rectangle_button);
 
@@ -973,8 +940,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 
   delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
   
-  gtk_spin_button_set_value (GTK_SPIN_BUTTON (delay_spinner), 
-                             sd->delay);
+  gtk_spin_button_set_value (GTK_SPIN_BUTTON (delay_spinner), sd->delay);
   
   gtk_widget_set_tooltip_text (delay_spinner,
                                _("Delay in seconds before the screenshot is taken"));  
@@ -996,8 +962,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                     G_CALLBACK (cb_toggle_set_insensi), delay_box);
   
   /* Set the default state */
-  cb_toggle_set_insensi (GTK_TOGGLE_BUTTON (rectangle_button),
-                         delay_box);
+  cb_toggle_set_insensi (GTK_TOGGLE_BUTTON (rectangle_button), delay_box);
 
   /* Create the options box */
 
@@ -1013,7 +978,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 
   gtk_label_set_markup (GTK_LABEL(options_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">After "
-						  "capturing</span>"));
+						              "capturing</span>"));
   
 	gtk_misc_set_alignment(GTK_MISC (options_label), 0, 0); 
   gtk_widget_show (options_label);
@@ -1038,15 +1003,14 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 
   /* Display the save dialog checkbox */          
               
-  save_checkbox = 
-    gtk_check_button_new_with_label (_("Show the save dialog"));
+  save_checkbox = gtk_check_button_new_with_label (_("Show the save dialog"));
 
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
                                 (sd->show_save_dialog == 1));
 
   gtk_widget_set_tooltip_text (save_checkbox,
                                _("The save dialog allows you to change the file name "
-							     "and the save location"));
+                                 "and the save location"));
 
   gtk_box_pack_start (GTK_BOX (options_box), save_checkbox, FALSE, FALSE, 0);
         
@@ -1064,10 +1028,10 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (close_checkbox),
                                     (sd->close == 1));
 
-	  gtk_widget_set_tooltip_text (close_checkbox,
-	                               _("If unchecked, the current window will be displayed "
-								     "again after the screenshot has been taken to allow"
-									 " you to take several screenshots in a row"));
+	    gtk_widget_set_tooltip_text (close_checkbox,
+	                                 _("If unchecked, the current window will be displayed "
+                                     "again after the screenshot has been taken to allow"
+									                   " you to take several screenshots in a row"));
 
       gtk_box_pack_start (GTK_BOX (options_box), close_checkbox, FALSE, FALSE, 0);
 
@@ -1090,7 +1054,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   gtk_label_set_markup (GTK_LABEL (actions_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">Action"
-						  "</span>"));
+						              "</span>"));
 			
   gtk_misc_set_alignment (GTK_MISC (actions_label), 0, 0);
   gtk_widget_show (actions_label);
@@ -1117,19 +1081,15 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   /* Save option radio button */
   
-  save_radio_button = 
-    gtk_radio_button_new_with_mnemonic (NULL, 
-                                        _("Save in:"));
+  save_radio_button = gtk_radio_button_new_with_mnemonic (NULL, _("Save in:"));
                            
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_radio_button),
                                 (sd->action == SAVE));
   
   g_signal_connect (G_OBJECT (save_radio_button), "toggled", 
-                    G_CALLBACK (cb_save_toggled),
-                    sd);
+                    G_CALLBACK (cb_save_toggled), sd);
   
-  gtk_widget_set_tooltip_text (save_radio_button,
-                               _("Save the screenshot to a PNG file"));
+  gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
   
   gtk_widget_show (save_radio_button);
 
@@ -1146,7 +1106,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   /* Directory chooser */
 
   dir_chooser = 
-    gtk_file_chooser_button_new (_("Default save location"), 
+    gtk_file_chooser_button_new (_("Default save location"),
                                  GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
         
   gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (dir_chooser), 
@@ -1199,8 +1159,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                                 (sd->action == OPEN));
   
   g_signal_connect (G_OBJECT (open_with_radio_button), "toggled", 
-                    G_CALLBACK (cb_open_toggled),
-                    sd);
+                    G_CALLBACK (cb_open_toggled), sd);
    
   gtk_widget_set_tooltip_text (open_with_radio_button,
                                _("Open the screenshot with the chosen application"));
@@ -1221,11 +1180,9 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   
   gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
   
-  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), 
-                                  renderer, "text", 1, NULL);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer, "text", 1, NULL);
                                   
-  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), 
-                                  renderer_pixbuf,
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer_pixbuf,
                                   "pixbuf", 0, NULL);                                  
   
   populate_liststore (liststore);
@@ -1320,14 +1277,14 @@ gchar
       dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
 	    
       /* The user pressed the save button */
-	    if (dialog_response == GTK_RESPONSE_ACCEPT)
+	    if (G_LIKELY (dialog_response == GTK_RESPONSE_ACCEPT))
 	      {
           save_uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
         }
 	  
 	    gtk_widget_destroy (chooser);
 
-      if (save_uri != NULL)
+      if (G_LIKELY (save_uri != NULL))
         {
           savename = save_screenshot_to (screenshot, save_uri);
 

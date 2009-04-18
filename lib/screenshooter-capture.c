@@ -45,7 +45,7 @@ static GdkWindow
   window = gdk_screen_get_active_window (screen);
             
   /* If there is no active window, we fallback to the whole screen. */      
-  if (window == NULL)
+  if (G_UNLIKELY (window == NULL))
     {
       TRACE ("No active window, fallback to the root window");
 
@@ -149,7 +149,7 @@ static GdkPixbuf
         cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_LEFT_PTR);
         cursor_pixbuf = gdk_cursor_get_image (cursor);
 
-        if (cursor_pixbuf != NULL)
+        if (G_LIKELY (cursor_pixbuf != NULL))
           {
             GdkRectangle rectangle_window, rectangle_cursor;
             gint cursorx, cursory, xhot, yhot;
@@ -403,7 +403,7 @@ static GdkPixbuf
   
   /* Get the screenshot's pixbuf */
 
-  if (!cancelled)
+  if (G_LIKELY (!cancelled))
     {
       TRACE ("Get the pixbuf for the screenshot");
       
@@ -411,7 +411,7 @@ static GdkPixbuf
         gdk_pixbuf_get_from_drawable (NULL, root_window, NULL, x, y, 0, 0, w, h);
     }
 
-  if (gc != NULL)
+  if (G_LIKELY (gc != NULL))
     g_object_unref (gc);
     
   gdk_cursor_unref (xhair_cursor);

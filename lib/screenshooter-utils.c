@@ -66,13 +66,13 @@ screenshooter_read_rc_file (gchar *file, ScreenshotData *sd)
   gchar *screenshot_dir = g_strdup (home_uri);
   gchar *app = g_strdup ("none");
   
-  if (file != NULL)
+  if (G_LIKELY (file != NULL))
     {
       TRACE ("Open the rc file");
 
       rc = xfce_rc_simple_open (file, TRUE);
 
-      if (rc != NULL)
+      if (G_LIKELY (rc != NULL))
         {
           TRACE ("Read the entries");
 
@@ -172,7 +172,7 @@ screenshooter_open_screenshot (gchar *screenshot_path, gchar *application)
   
   /* Execute the command and show an error dialog if there was 
   * an error. */
-  if (!g_spawn_command_line_async (command, &error))
+  if (G_UNLIKELY (!g_spawn_command_line_async (command, &error)))
     {
       TRACE ("An error occured");
 
@@ -191,7 +191,7 @@ gchar
   gchar *result = NULL;
   const gchar *home_path = g_getenv ("HOME");
 
-  if (!home_path)
+  if (G_UNLIKELY (!home_path))
     home_path = g_get_home_dir ();
 
   result = g_strconcat ("file://", home_path, NULL);
@@ -207,7 +207,7 @@ gboolean screenshooter_is_remote_uri (const gchar *uri)
 
   /* if the URI doesn't start  with "file://", we take it as remote */
 
-  if (!g_str_has_prefix (uri, "file:"))
+  if (G_UNLIKELY (!g_str_has_prefix (uri, "file:")))
     return TRUE;
 
   return FALSE;
