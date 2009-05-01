@@ -1,19 +1,19 @@
 plugindir = $(libexecdir)/xfce4/panel-plugins
 plugin_PROGRAMS = xfce4-screenshooter-plugin
 
-xfce4_screenshooter_plugin_CFLAGS =						\
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
-	-I$(top_srcdir)								\
-	-I$(top_srcdir)/lib							\
+xfce4_screenshooter_plugin_CFLAGS =	\
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"	\
+	-I$(top_srcdir)	\
+	-I$(top_srcdir)/lib	\
 	@LIBXFCE4PANEL_CFLAGS@ \
 	@GTHREAD_CFLAGS@
 
-xfce4_screenshooter_plugin_LDFLAGS =						\
+xfce4_screenshooter_plugin_LDFLAGS = \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
 	$(top_builddir)/lib/libscreenshooter.la
 
-xfce4_screenshooter_plugin_SOURCES =						\
+xfce4_screenshooter_plugin_SOURCES = \
 	screenshooter-plugin.c
 	
 # .desktop file

@@ -185,8 +185,7 @@ screenshooter_open_screenshot (gchar *screenshot_path, gchar *application)
 
 
 
-gchar
-*screenshooter_get_home_uri ()
+gchar *screenshooter_get_home_uri ()
 {
   gchar *result = NULL;
   const gchar *home_path = g_getenv ("HOME");
@@ -212,3 +211,19 @@ gboolean screenshooter_is_remote_uri (const gchar *uri)
 
   return FALSE;
 }
+
+
+
+gchar *rot13 (gchar *string)
+{
+  gchar *result = string;
+ 
+  for (; *string; string++)
+    if (*string >= 'a' && *string <= 'z')
+      *string = (*string - 'a' + 13) % 26 + 'a';
+    else if (*string >= 'A' && *string <= 'Z')
+      *string = (*string - 'A' + 13) % 26 + 'A';
+
+  return result;
+}
+

@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2008-2009 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
+ *  Copyright © 2009 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -15,50 +15,24 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
- */
+ * */
 
-#ifndef HAVE_GLOBAL_H
-#define HAVE_GLOBAL_H
+#ifndef __HAVE_ZIMAGEZ_H__
+#define __HAVE_ZIMAGEZ_H__
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
 
 #include <glib.h>
+#include <glib/gstdio.h>
 
-/* Possible actions */
-enum {
-  ACTION_0,
-  SAVE,
-  CLIPBOARD,
-  OPEN,
-  UPLOAD,
-};
+#include <xmlrpc-c/base.h>
+#include <xmlrpc-c/client.h>
+
+#include "screenshooter-utils.h"
 
 
-
-/* Struct to store the screenshot options */
-typedef struct
-{
-  gint region;
-  gint show_save_dialog;
-  gint show_mouse;
-  gint delay;
-  gint action;
-  gint close;
-  gchar *screenshot_dir;
-  gchar *app;
-}
-ScreenshotData;
-
-
-
-/* Screenshot Modes */
-enum {
-  MODE_0,
-  FULLSCREEN,
-  ACTIVE_WINDOW,
-  SELECT,
-};
+gboolean screenshooter_upload_to_zimagez (const gchar *image_path);
 
 #endif

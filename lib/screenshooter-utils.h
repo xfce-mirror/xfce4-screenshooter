@@ -55,4 +55,7 @@ gchar
 gboolean
 screenshooter_is_remote_uri      (const gchar          *uri);
 
+gchar
+*rot13                           (gchar                *string);
+
 #endif                               

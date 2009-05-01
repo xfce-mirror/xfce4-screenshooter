@@ -24,43 +24,50 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
   GdkPixbuf *screenshot =
     screenshooter_take_screenshot (sd->region, sd->delay, sd->show_mouse);
 
-  if (screenshot != NULL)
+  g_return_if_fail (screenshot != NULL);
+  
+  if (sd->action == SAVE)
     {
-      if (sd->action == SAVE)
+      if (sd->screenshot_dir == NULL)
         {
-          if (sd->screenshot_dir == NULL)
-            {
-              sd->screenshot_dir = screenshooter_get_home_uri ();
-            }
-
-          screenshooter_save_screenshot (screenshot,
-                                         sd->show_save_dialog,
-                                         sd->screenshot_dir);
+          sd->screenshot_dir = screenshooter_get_home_uri ();
         }
-      else if (sd->action == CLIPBOARD)
-        {
-          screenshooter_copy_to_clipboard (screenshot);
-        }
-      else
-        {
-          GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
-          gchar *temp_dir_uri = g_file_get_uri (temp_dir);
-          gchar *screenshot_path =
-            screenshooter_save_screenshot (screenshot, FALSE, temp_dir_uri);
 
-          if (screenshot_path != NULL)
+      screenshooter_save_screenshot (screenshot,
+                                     sd->show_save_dialog,
+                                     sd->screenshot_dir);
+    }
+  else if (sd->action == CLIPBOARD)
+    {
+      screenshooter_copy_to_clipboard (screenshot);
+    }
+  else
+    {
+      GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
+      gchar *temp_dir_uri = g_file_get_uri (temp_dir);
+      gchar *screenshot_path =
+        screenshooter_save_screenshot (screenshot, FALSE, temp_dir_uri);
+
+      if (screenshot_path != NULL)
+        {
+          if (sd->action == OPEN)
             {
               screenshooter_open_screenshot (screenshot_path, sd->app);
-              g_free (screenshot_path);
+            }
+          else
+            {
+              screenshooter_upload_to_zimagez (screenshot_path);
             }
 
-          g_free (temp_dir_uri);
-
-          g_object_unref (temp_dir);
+          g_free (screenshot_path);
         }
 
-      g_object_unref (screenshot);
+      g_free (temp_dir_uri);
+      g_object_unref (temp_dir);
     }
+
+  g_object_unref (screenshot);
+
 
 }
 

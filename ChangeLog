@@ -1,3 +1,33 @@
+2009-05-01 jeromeg
+
+	This still needs a lot of polishment, but let's make things public.
+
+	* src/Makefile.am, panel-plugin/Makefile.am: change the linking order.
+	* lib/screenshooter-zimagez.c:
+	  - (warn_if_fault_occurred) to warn if an error occured during the XML
+	    transaction.
+	  - (screenshooter_upload_to_zimagez) to upload the screenshot. Still needs
+	    a lot of polish, but at least it works.
+	* TODO: updated.
+
+2009-04-19 jeromeg
+
+	* src/main.c:
+	  - sort the CLI options by alphabetical order.
+	  - add an upload CLI option.
+	  - add some G_LIKELY and G_UNLIKELY macros.
+	* lib/screenshooter-actions.c:
+	  - add some G_LIKELY and G_UNLIKELY macros.
+	  - call the upload function when the user requested it.
+	* lib/screenshooter-utils.{c,h}: add a (rot13) function to encode the
+	  password before sending it.
+	* lib/screenshooter-zimagez.{c,h}: two new files to support the upload
+	  of screenshots to ZimageZ.com, a free Web hosting solution.
+	* lib/screenshooter-global.h: add the upload option.
+	* lib/Makefile.am: add the two new files to the source.
+	* configure.ac.in: check for xmlrpc-c, this is a bit uggly, but xmlrpc-c
+	  does not provide a .pc file...
+
 2009-04-18 jeromeg
 
 	* lib/screenshooter-utils.c: start to add G_LIKELY and G_UNLIKELY macros.

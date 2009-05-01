@@ -1,21 +1,22 @@
 bin_PROGRAMS = xfce4-screenshooter
 	
 xfce4_screenshooter_CFLAGS = \
+	-I$(top_srcdir)/lib \
 	@GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCEGUI4_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
-	-I$(top_srcdir)/lib
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 	
-xfce4_screenshooter_LDFLAGS =                       \
+xfce4_screenshooter_LDFLAGS = \
+	$(top_builddir)/lib/libscreenshooter.la \
 	@GTK_LIBS@ \
 	@GLIB_LIBS@ \
 	@GTHREAD_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
-	@LIBXFCEGUI4_LIBS@ \
-	$(top_builddir)/lib/libscreenshooter.la
+	@LIBXFCEGUI4_LIBS@
+
 	
 xfce4_screenshooter_SOURCES	= \
 	main.c		

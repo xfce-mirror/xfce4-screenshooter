@@ -32,6 +32,7 @@ gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean no_save_dialog = FALSE;
 gboolean hide_mouse = FALSE;
+gboolean upload = FALSE;
 gchar *screenshot_dir;
 gchar *application;
 gint delay = 0;
@@ -41,45 +42,63 @@ gint delay = 0;
 /* Set cli options. */
 static GOptionEntry entries[] =
 {
-    {   "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
-        N_("Version information"),
-        NULL
-    },
-    {   "window", 'w', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &window,
-        N_("Take a screenshot of the active window"),
-        NULL
-    },
-    {   "fullscreen", 'f', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &fullscreen,
-        N_("Take a screenshot of the entire screen"),
-        NULL
-    },
-    {   "region", 'r', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &region,
-        N_("Select a region to be captured by clicking a point of the screen "
-           "without releasing the mouse button, dragging your mouse to the "
-           "other corner of the region, and releasing the mouse button."),
-        NULL
-    },
-    {  "delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,
-       N_("Delay in seconds before taking the screenshot"),
-       NULL
-    },
-    {   "hide", 'h', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &no_save_dialog,
-        N_("Do not display the save dialog"),
-        NULL
-    },
-    {   "mouse", 'm', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &hide_mouse,
-        N_("Do not display the mouse on the screenshot"),
-        NULL
-    },
-    {   "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
-        N_("Directory where the screenshot will be saved"),
-        NULL
-    },
-    {   "open", 'o', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &application,
-        N_("Application to open the screenshot"),
-        NULL
-    },
-    { NULL, ' ', 0, 0, NULL, NULL, NULL }
+  {
+    "delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,
+    N_("Delay in seconds before taking the screenshot"),
+    NULL
+  },
+  {
+    "fullscreen", 'f', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &fullscreen,
+    N_("Take a screenshot of the entire screen"),
+    NULL
+  },
+  {
+    "hide", 'h', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &no_save_dialog,
+    N_("Do not display the save dialog"),
+    NULL
+  },
+  {
+    "mouse", 'm', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &hide_mouse,
+    N_("Do not display the mouse on the screenshot"),
+    NULL
+  },
+  {
+    "open", 'o', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &application,
+    N_("Application to open the screenshot"),
+    NULL
+  },
+  {
+    "region", 'r', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &region,
+    N_("Select a region to be captured by clicking a point of the screen "
+       "without releasing the mouse button, dragging your mouse to the "
+       "other corner of the region, and releasing the mouse button."),
+    NULL
+  },
+  {
+    "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
+    N_("Directory where the screenshot will be saved"),
+    NULL
+  },
+  {
+    "upload", 'u', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &upload,
+    N_("Upload the screenshot to ZimageZ©, a free Web hosting solution"),
+    NULL
+  },
+  {
+    "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
+    N_("Version information"),
+    NULL
+  },
+  {
+    "window", 'w', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &window,
+    N_("Take a screenshot of the active window"),
+    NULL
+  },
+  {
+    NULL, ' ', 0, 0, NULL,
+    NULL,
+    NULL
+  }
 };
 
 static void
@@ -210,14 +229,14 @@ int main(int argc, char **argv)
 
   screenshooter_read_rc_file (rc_file, sd);
 
-  if (rc_file != NULL)
+  if (G_LIKELY (rc_file != NULL))
     g_free (rc_file);
 
   /* Check if the directory read from the preferences is valid */
 
   default_save_dir = g_file_new_for_uri (sd->screenshot_dir);
   
-  if (!g_file_query_exists (default_save_dir, NULL))
+  if (G_UNLIKELY (!g_file_query_exists (default_save_dir, NULL)))
     {
       g_free (sd->screenshot_dir);
 
@@ -265,6 +284,11 @@ int main(int argc, char **argv)
           sd->app = application;
           sd->action = OPEN;
         }
+      else if (upload)
+        {
+          sd->app = g_strdup ("none");
+          sd->action = UPLOAD;
+        }
       else
         {
           sd->app = g_strdup ("none");
@@ -276,7 +300,7 @@ int main(int argc, char **argv)
         {
           default_save_dir = g_file_new_for_commandline_arg (screenshot_dir);
 
-          if (g_file_query_exists (default_save_dir, NULL))
+          if (G_LIKELY (g_file_query_exists (default_save_dir, NULL)))
             {
               g_free (sd->screenshot_dir);
               sd->screenshot_dir = g_file_get_uri (default_save_dir);
