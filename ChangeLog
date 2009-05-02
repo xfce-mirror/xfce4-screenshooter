@@ -1,3 +1,22 @@
+2009-05-02 jeromeg
+
+	* lib/screenshooter-zimagez.{c,h}:
+	  - (warn_if_fault_occurred) should be static.
+	  - add some comments.
+	  - (screenshooter_upload_to_zimagez) now returns a gchar* containing
+	    the name of the uploaded image and NULL is the upload failed.
+	  - (screenshooter_display_zimagez_links) new function which shows a
+	    dialog to present the different links to the uploaded image. At
+	    the moment, plain GtkLinkButtons are used, this still needs to be
+	    improved.
+	  - (open_url_hook) hook to open the links using xdg-open.
+	* lib/screenshooter-actions.c:
+	  - use constants where possible.
+	  - use (screenshooter_display_zimagez_links) to display the result of
+	    the upload.
+	* lib/screenshooter-utils.{c,h}, lib/screenshooter-dialogs.{c,h}:
+	  use constants where possible.
+
 2009-05-01 jeromeg
 
 	This still needs a lot of polishment, but let's make things public.

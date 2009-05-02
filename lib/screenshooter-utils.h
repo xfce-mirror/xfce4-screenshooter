@@ -46,8 +46,8 @@ screenshooter_write_rc_file      (gchar                *file,
                                   ScreenshotData       *sd);
 
 void
-screenshooter_open_screenshot    (gchar                *screenshot_path,
-                                  gchar                *application);
+screenshooter_open_screenshot    (const gchar          *screenshot_path,
+                                  const gchar          *application);
 
 gchar
 *screenshooter_get_home_uri      ();

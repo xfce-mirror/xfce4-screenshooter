@@ -48,13 +48,18 @@
 static gboolean
 warn_if_fault_occurred      (xmlrpc_env * const    envP);
 
+static void
+open_url_hook               (GtkLinkButton        *button,
+                             const gchar          *link,
+                             gpointer             user_data);
+
 
 
 /* Private */
 
 
 
-gboolean warn_if_fault_occurred (xmlrpc_env * const envP)
+static gboolean warn_if_fault_occurred (xmlrpc_env * const envP)
 {
   gboolean error_occured = FALSE;
 
@@ -73,13 +78,41 @@ gboolean warn_if_fault_occurred (xmlrpc_env * const envP)
   return error_occured;
 }
 
+
+static void
+open_url_hook (GtkLinkButton *button, const gchar *link, gpointer user_data)
+{
+  const gchar *command = g_strconcat ("xdg-open ", link, NULL);
+  GError *error = NULL;
+
+  if (!g_spawn_command_line_async (command, &error))
+    {
+      TRACE ("An error occured");
+
+      xfce_err (error->message);
+      g_error_free (error);
+    }
+}
   
 
 /* Public */
 
 
 
-gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
+/**
+ * screenshooter_upload_to_zimagez:
+ * @image_path: the local path of the image that should be uploaded to
+ * ZimageZ.com.
+ *
+ * Uploads the image whose path is @image_path: a dialog asks for the user
+ * login, password, a title for the image and a comment; then the image is
+ * uploaded.
+ *
+ * Returns: NULL is the upload fail, a #gchar* with the name of the image on
+ * Zimagez.com (see the API at the beginning of this file for more details).
+ **/
+   
+gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 {
   xmlrpc_env env;
   xmlrpc_value *resultP;
@@ -240,7 +273,7 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
 
       g_free (password);
 
-      return FALSE;
+      return NULL;
     }
 
   /* Start the user session */
@@ -256,7 +289,7 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
       xmlrpc_env_clean (&env);
       xmlrpc_client_cleanup ();
 
-      return FALSE;
+      return NULL;
     }
 
   TRACE ("Read the login response");
@@ -273,7 +306,7 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
           xmlrpc_env_clean (&env);
           xmlrpc_client_cleanup ();
 
-          return FALSE;
+          return NULL;
         }
 
        if (!response)
@@ -285,7 +318,7 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
            xmlrpc_env_clean (&env);
            xmlrpc_client_cleanup ();
 
-           return FALSE;
+           return NULL;
          }
     }
   /* Else we read the string response to get the session ID */
@@ -299,7 +332,7 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
           xmlrpc_env_clean (&env);
           xmlrpc_client_cleanup ();
 
-          return FALSE;
+          return NULL;
         }
     }
 
@@ -315,7 +348,7 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
       xmlrpc_env_clean (&env);
       xmlrpc_client_cleanup ();
 
-      return FALSE;
+      return NULL;
     }
 
   /* If the response is a boolean, there was an error */
@@ -330,7 +363,7 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
           xmlrpc_env_clean (&env);
           xmlrpc_client_cleanup ();
 
-          return FALSE;
+          return NULL;
         }
 
        if (!response)
@@ -342,7 +375,7 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
            xmlrpc_env_clean (&env);
            xmlrpc_client_cleanup ();
 
-           return FALSE;
+           return NULL;
          }
     }
   /* Else we get the file name */
@@ -357,11 +390,8 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
           xmlrpc_env_clean (&env);
           xmlrpc_client_cleanup ();
 
-          return FALSE;
+          return NULL;
         }
-
-      TRACE (_("The screenshot was uploaded to http://www.zimagez.com/zimage/%s.php"),
-                 online_file_name);
     }
 
   xmlrpc_DECREF (resultP);
@@ -376,5 +406,80 @@ gboolean screenshooter_upload_to_zimagez (const gchar *image_path)
   xmlrpc_env_clean (&env);
   xmlrpc_client_cleanup ();
 
-  return TRUE;
+  return g_strdup (online_file_name);
 }
+
+
+
+void screenshooter_display_zimagez_links (const gchar *upload_name)
+{
+  GtkWidget *dialog;
+  GtkWidget *image_link, *thumbnail_link, *small_thumbnail_link;
+
+  gchar *image_url =
+    g_strdup_printf ("http://www.zimagez.com/zimage/%s.php", upload_name);
+  gchar *thumbnail_url =
+    g_strdup_printf ("http://www.zimagez.com/miniature/%s.php", upload_name);
+  gchar *small_thumbnail_url =
+    g_strdup_printf ("http://www.zimagez.com/avatar/%s.php", upload_name);
+
+  dialog =
+    xfce_titled_dialog_new_with_buttons (_("My screenshot on ZimageZ©"),
+                                         NULL,
+                                         GTK_DIALOG_NO_SEPARATOR,
+                                         GTK_STOCK_CLOSE,
+                                         GTK_RESPONSE_CLOSE,
+                                         NULL);
+
+  gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), 20);
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
+
+  gtk_window_set_icon_name (GTK_WINDOW (dialog), "applications-internet");
+
+  gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
+
+  /* Create the image link */
+                                          
+  image_link =
+    gtk_link_button_new_with_label (image_url, _("Link to the full-size screenshot"));
+
+  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), image_link);
+
+  /* Create the thumbnail link */
+
+  thumbnail_link =
+    gtk_link_button_new_with_label (thumbnail_url,
+                                    _("Link to a thumbnail of the screenshot"));
+
+  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), thumbnail_link);
+
+  /* Create the small thumbnail link */
+
+  small_thumbnail_link =
+    gtk_link_button_new_with_label (small_thumbnail_url,
+                                    _("Link to a small thumbnail of the screenshot"));
+
+  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), small_thumbnail_link);
+
+  /* Set the url hook for the buttons */
+
+  gtk_link_button_set_uri_hook ((GtkLinkButtonUriFunc) open_url_hook, NULL, NULL);
+
+  /* Show the dialog and run it */
+  gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
+
+  gtk_dialog_run (GTK_DIALOG (dialog));
+
+  gtk_widget_destroy (dialog);
+
+  /* Ugly hack to make sure the dialog is not displayed anymore */
+  while (gtk_events_pending ())
+    gtk_main_iteration_do (FALSE);
+
+  g_free (image_url);
+  g_free (thumbnail_url);
+  g_free (small_thumbnail_url);
+}
+
+  

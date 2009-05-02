@@ -63,7 +63,7 @@ static void
 cb_delay_spinner_changed           (GtkWidget          *spinner, 
                                     ScreenshotData     *sd);
 static gchar 
-*generate_filename_for_uri         (char               *uri);
+*generate_filename_for_uri         (const gchar        *uri);
 static void 
 cb_combo_active_item_changed       (GtkWidget          *box, 
                                     ScreenshotData     *sd);
@@ -244,7 +244,7 @@ static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
  * @uri: uri of the folder for which the filename should be generated.
  * returns: the filename or NULL if *uri == NULL.
 */
-static gchar *generate_filename_for_uri (char *uri)
+static gchar *generate_filename_for_uri (const gchar *uri)
 {
   gboolean exists = TRUE;
   GFile *directory;
@@ -1218,7 +1218,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 gchar 
 *screenshooter_save_screenshot     (GdkPixbuf      *screenshot, 
                                     gboolean        show_save_dialog,
-                                    gchar          *default_dir)
+                                    const gchar    *default_dir)
 {
   gchar *filename = generate_filename_for_uri (default_dir);
   gchar *savename = NULL;

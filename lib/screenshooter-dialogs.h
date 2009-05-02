@@ -43,5 +43,5 @@ GtkWidget
 gchar 
 *screenshooter_save_screenshot     (GdkPixbuf           *screenshot, 
                                     gboolean             show_save_dialog,
-                                    gchar               *default_dir);
+                                    const gchar         *default_dir);
 #endif                                    

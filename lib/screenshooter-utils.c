@@ -153,7 +153,7 @@ screenshooter_write_rc_file (gchar *file, ScreenshotData *sd)
 @application: the command to run the application.
 */
 void
-screenshooter_open_screenshot (gchar *screenshot_path, gchar *application)
+screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *application)
 {
   gchar *command;
   GError *error = NULL;
@@ -172,7 +172,7 @@ screenshooter_open_screenshot (gchar *screenshot_path, gchar *application)
   
   /* Execute the command and show an error dialog if there was 
   * an error. */
-  if (G_UNLIKELY (!g_spawn_command_line_async (command, &error)))
+  if (!g_spawn_command_line_async (command, &error))
     {
       TRACE ("An error occured");
 

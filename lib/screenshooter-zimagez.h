@@ -33,6 +33,7 @@
 #include "screenshooter-utils.h"
 
 
-gboolean screenshooter_upload_to_zimagez (const gchar *image_path);
+gchar *screenshooter_upload_to_zimagez     (const gchar *image_path);
+void   screenshooter_display_zimagez_links (const gchar *upload_name);
 
 #endif
