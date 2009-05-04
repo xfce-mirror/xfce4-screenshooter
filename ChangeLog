@@ -1,5 +1,18 @@
 2009-05-04 jeromeg
 
+	* lib/screenshooter-zimagez.c:
+	  - (screenshooter_upload_to_zimagez):
+	    + use a GtkTable to improve the layout.
+	    + add a cancel button to the dialog.
+	    + display a warning if the password/user name was not correct
+	      when respawning the dialog.
+	    + make the labels left aligned and vertically centered to
+	      improve the look of the dialog.
+	    + tweak the layout by adding an alignment.
+	  - (screenshooter_display_zimagez_links) document this function.
+
+2009-05-04 jeromeg
+
 	* lib/screenshooter-zimagez.c: loop until the user has entered the
 	  correct user/password couple.
 

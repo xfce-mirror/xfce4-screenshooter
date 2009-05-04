@@ -106,10 +106,12 @@ open_url_hook (GtkLinkButton *button, const gchar *link, gpointer user_data)
  *
  * Uploads the image whose path is @image_path: a dialog asks for the user
  * login, password, a title for the image and a comment; then the image is
- * uploaded.
+ * uploaded. The dialog is shown again with a warning is the password did
+ * match the user name. The user can also cancel the upload procedure.
  *
- * Returns: NULL is the upload fail, a #gchar* with the name of the image on
- * Zimagez.com (see the API at the beginning of this file for more details).
+ * Returns: NULL is the upload failed or was cancelled, a #gchar* with the name of
+ * the image on Zimagez.com (see the API at the beginning of this file for more
+ * details).
  **/
    
 gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
@@ -137,7 +139,8 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   GtkWidget *dialog;
   GtkWidget *information_label;
-  GtkWidget *user_hbox, *password_hbox, *title_hbox, *comment_hbox;
+  GtkWidget *vbox, *main_alignment;
+  GtkWidget *table;
   GtkWidget *user_entry, *password_entry, *title_entry, *comment_entry;
   GtkWidget *user_label, *password_label, *title_label, *comment_label;
 
@@ -147,91 +150,120 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
     xfce_titled_dialog_new_with_buttons (_("Details about the screenshot for ZimageZ©"),
                                          NULL,
                                          GTK_DIALOG_NO_SEPARATOR,
+                                         GTK_STOCK_CANCEL,
+                                         GTK_RESPONSE_CANCEL,
                                          GTK_STOCK_OK,
                                          GTK_RESPONSE_OK,
                                          NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), 20);
   gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
 
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "gtk-info");
 
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
+  /* Create the main alignment for the dialog */
+
+  main_alignment = gtk_alignment_new (0, 0, 1, 1);
+
+  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
+  
+  /* Create the main box for the dialog */
+  
+  vbox = gtk_vbox_new (FALSE, 10);
+  
+  gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
+
+  gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
+
   /* Create the information label */
 
   information_label =
-    gtk_label_new (_("Please file the following fields with your ZimageZ© user name and "
-                     "password."));
+    gtk_label_new (_("Please file the following fields with your ZimageZ© \n"
+                     "user name, passsword and details about the screenshot."));
 
-  /* Create the user box */
+  gtk_misc_set_alignment (GTK_MISC (information_label), 0, 0);
 
-  user_hbox = gtk_hbox_new (FALSE, 6);
+  gtk_container_add (GTK_CONTAINER (vbox), information_label);
 
-  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), user_hbox);
+  /* Create the layout table */
+
+  table = gtk_table_new (4, 2, FALSE);
+
+  gtk_table_set_col_spacings (GTK_TABLE (table), 6);
+  gtk_table_set_row_spacings (GTK_TABLE (table), 12);
+
+  gtk_container_add (GTK_CONTAINER (vbox), table);
 
   /* Create the user label */
   user_label = gtk_label_new (_("User:"));
 
-  gtk_container_add (GTK_CONTAINER (user_hbox), user_label);
+  gtk_misc_set_alignment (GTK_MISC (user_label), 0, 0.5);
+
+  gtk_table_attach (GTK_TABLE (table), user_label,
+                    0, 1,
+                    0, 1,
+                    GTK_FILL, GTK_FILL,
+                    0, 0);
 
   /* Create the user entry */
   user_entry = gtk_entry_new ();
 
-  gtk_container_add (GTK_CONTAINER (user_hbox), user_entry);
-
-  /* Create the password box */
-
-  password_hbox = gtk_hbox_new (FALSE, 6);
-
-  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), password_hbox);
+  gtk_table_attach_defaults (GTK_TABLE (table), user_entry, 1, 2, 0, 1);
 
   /* Create the password label */
   password_label = gtk_label_new (_("Password:"));
 
-  gtk_container_add (GTK_CONTAINER (password_hbox), password_label);
+  gtk_misc_set_alignment (GTK_MISC (password_label), 0, 0.5);
+
+  gtk_table_attach (GTK_TABLE (table), password_label,
+                    0, 1,
+                    1, 2,
+                    GTK_FILL, GTK_FILL,
+                    0, 0);
 
   /* Create the password entry */
   password_entry = gtk_entry_new ();
 
   gtk_entry_set_visibility (GTK_ENTRY (password_entry), FALSE);
 
-  gtk_container_add (GTK_CONTAINER (password_hbox), password_entry);
-
-  /* Create the title box */
-
-  title_hbox = gtk_hbox_new (FALSE, 6);
-
-  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), title_hbox);
+  gtk_table_attach_defaults (GTK_TABLE (table), password_entry, 1, 2, 1, 2);
 
   /* Create the title label */
   title_label = gtk_label_new (_("Title:"));
 
-  gtk_container_add (GTK_CONTAINER (title_hbox), title_label);
+  gtk_misc_set_alignment (GTK_MISC (title_label), 0, 0.5);
+
+  gtk_table_attach (GTK_TABLE (table), title_label,
+                    0, 1,
+                    2, 3,
+                    GTK_FILL, GTK_FILL,
+                    0, 0);
 
   /* Create the title entry */
   title_entry = gtk_entry_new ();
 
-  gtk_container_add (GTK_CONTAINER (title_hbox), title_entry);
-
-  /* Create the comment box */
-
-  comment_hbox = gtk_hbox_new (FALSE, 6);
-
-  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), comment_hbox);
+  gtk_table_attach_defaults (GTK_TABLE (table), title_entry, 1, 2, 2, 3);
 
   /* Create the comment label */
   comment_label = gtk_label_new (_("Comment:"));
 
-  gtk_container_add (GTK_CONTAINER (comment_hbox), comment_label);
+  gtk_misc_set_alignment (GTK_MISC (comment_label), 0, 0.5);
+
+  gtk_table_attach (GTK_TABLE (table), comment_label,
+                    0, 1,
+                    3, 4,
+                    GTK_FILL, GTK_FILL,
+                    0, 0);
 
   /* Create the comment entry */
   comment_entry = gtk_entry_new ();
 
-  gtk_container_add (GTK_CONTAINER (comment_hbox), comment_entry);
+  gtk_table_attach_defaults (GTK_TABLE (table), comment_entry, 1, 2, 3, 4);
 
-  /* Show the dialog */
+  /* Show the widgets of the dialog main box*/
 
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
 
@@ -249,14 +281,20 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
       xmlrpc_env_clean (&env);
       xmlrpc_client_cleanup ();
 
-      g_free (password);
-
       return NULL;
     }
 
   while (!response)
     {
-      gtk_dialog_run (GTK_DIALOG (dialog));
+      gint dialog_response = gtk_dialog_run (GTK_DIALOG (dialog));
+
+      if (dialog_response == GTK_RESPONSE_CANCEL)
+        {
+          xmlrpc_env_clean (&env);
+          xmlrpc_client_cleanup ();
+
+          return NULL;
+        }
     
       user = g_strdup (gtk_entry_get_text (GTK_ENTRY (user_entry)));
       password = g_strdup (gtk_entry_get_text (GTK_ENTRY (password_entry)));
@@ -336,6 +374,13 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
           response = 1;
         }
+
+      if (!response)
+        gtk_label_set_markup (GTK_LABEL (information_label),
+                              _("<span weight=\"bold\" foreground=\"darkred\" "
+                                "stretch=\"semiexpanded\">The user and the password you"
+                                " entered do not match.</span>"));
+
     }
 
   xmlrpc_DECREF (resultP);
@@ -420,6 +465,14 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
 
 
+/**
+ * screenshooter_display_zimagez_links:
+ * @upload_name: the name of the image on ZimageZ.com
+ *
+ * Shows a dialog linking to the different images hosted on ZimageZ.com:
+ * the full size image, the large thumbnail and the small thumbnail.
+ * Links can be clicked to open the given page in a browser.
+ **/
 void screenshooter_display_zimagez_links (const gchar *upload_name)
 {
   GtkWidget *dialog;
