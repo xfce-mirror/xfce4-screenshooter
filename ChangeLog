@@ -1,3 +1,8 @@
+2009-05-04 jeromeg
+
+	* lib/screenshooter-zimagez.c: loop until the user has entered the
+	  correct user/password couple.
+
 2009-05-02 jeromeg
 
 	* lib/screenshooter-zimagez.{c,h}:

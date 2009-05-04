@@ -115,7 +115,8 @@ open_url_hook (GtkLinkButton *button, const gchar *link, gpointer user_data)
 gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 {
   xmlrpc_env env;
-  xmlrpc_value *resultP;
+  xmlrpc_value *resultP = NULL;
+  xmlrpc_bool response = 0;
 
   const gchar * const serverurl = "http://www.zimagez.com/apiXml.php";
   const gchar * const method_login = "apiXml.xmlrpcLogin";
@@ -124,11 +125,11 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   gchar *data;
   gchar *password = NULL;
-  const gchar *user;
-  const gchar *title;
-  const gchar *comment;
+  gchar *user = NULL;
+  gchar *title = NULL;
+  gchar *comment = NULL;
+  gchar *encoded_password = NULL;
   const gchar *encoded_data;
-  const gchar *encoded_password;
   const gchar *file_name = g_path_get_basename (image_path);
   const gchar *online_file_name;
   const gchar *login_response;
@@ -234,30 +235,7 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
 
-  gtk_dialog_run (GTK_DIALOG (dialog));
-
-  user = g_strdup (gtk_entry_get_text (GTK_ENTRY (user_entry)));
-  password = g_strdup (gtk_entry_get_text (GTK_ENTRY (password_entry)));
-  title = g_strdup (gtk_entry_get_text (GTK_ENTRY (title_entry)));
-  comment = g_strdup (gtk_entry_get_text (GTK_ENTRY (comment_entry)));
-
-  gtk_widget_destroy (dialog);
-
-  while (gtk_events_pending ())
-    gtk_main_iteration_do (FALSE);
-
-  encoded_password = g_strreverse (rot13 (password));
-
-  TRACE ("User: %s Password: %s", user, encoded_password);
-
-  /* Get the contents of the image file and encode it to base64 */
-  g_file_get_contents (image_path, &data, &data_length, NULL);
-
-  encoded_data = g_base64_encode ((guchar*)data, data_length);
-
-  g_free (data);
-
-  /* Start the user session */
+  /* Start the user XML RPC session */
 
   TRACE ("Initiate the RPC environment");
   xmlrpc_env_init(&env);
@@ -276,67 +254,98 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
       return NULL;
     }
 
-  /* Start the user session */
-  TRACE ("Call the login method");
-
-  resultP = xmlrpc_client_call (&env, serverurl, method_login,
-                                "(ss)", user, encoded_password);
-
-  g_free (password);
-
-  if (warn_if_fault_occurred (&env))
+  while (!response)
     {
-      xmlrpc_env_clean (&env);
-      xmlrpc_client_cleanup ();
+      gtk_dialog_run (GTK_DIALOG (dialog));
+    
+      user = g_strdup (gtk_entry_get_text (GTK_ENTRY (user_entry)));
+      password = g_strdup (gtk_entry_get_text (GTK_ENTRY (password_entry)));
+      title = g_strdup (gtk_entry_get_text (GTK_ENTRY (title_entry)));
+      comment = g_strdup (gtk_entry_get_text (GTK_ENTRY (comment_entry)));
+    
+      gtk_widget_hide (dialog);
+    
+      while (gtk_events_pending ())
+        gtk_main_iteration_do (FALSE);
+    
+      encoded_password = g_strreverse (rot13 (password));
+    
+      TRACE ("User: %s Password: %s", user, encoded_password);
 
-      return NULL;
-    }
-
-  TRACE ("Read the login response");
-
-  /* If the response is a boolean, there was an error */
-  if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
-    {
-      xmlrpc_bool response;
-
-      xmlrpc_read_bool (&env, resultP, &response);
-
+      /* Start the user session */
+      TRACE ("Call the login method");
+     
+      resultP = xmlrpc_client_call (&env, serverurl, method_login,
+                                    "(ss)", user, encoded_password);
+     
       if (warn_if_fault_occurred (&env))
         {
           xmlrpc_env_clean (&env);
           xmlrpc_client_cleanup ();
 
+          g_free (user);
+          g_free (password);
+          g_free (title);
+          g_free (comment);
+          g_free (encoded_password);
+     
           return NULL;
         }
 
-       if (!response)
-         {
-           xfce_err (_("The username or the password you gave is incorrect."));
-
-           TRACE ("Incorrect password/login");
-
-           xmlrpc_env_clean (&env);
-           xmlrpc_client_cleanup ();
-
-           return NULL;
-         }
-    }
-  /* Else we read the string response to get the session ID */
-  else
-    {
-      TRACE ("Read the session ID");
-      xmlrpc_read_string (&env, resultP, (const gchar ** const)&login_response);
-
-      if (warn_if_fault_occurred (&env))
+      TRACE ("Read the login response");
+    
+      /* If the response is a boolean, there was an error */
+      if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
         {
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
+          xmlrpc_read_bool (&env, resultP, &response);
+    
+          if (warn_if_fault_occurred (&env))
+            {
+              xmlrpc_env_clean (&env);
+              xmlrpc_client_cleanup ();
 
-          return NULL;
+              g_free (user);
+              g_free (password);
+              g_free (title);
+              g_free (comment);
+              g_free (encoded_password);
+        
+              return NULL;
+            }
+       
+        }
+      /* Else we read the string response to get the session ID */
+      else
+        {
+          TRACE ("Read the session ID");
+          xmlrpc_read_string (&env, resultP, (const gchar ** const)&login_response);
+    
+          if (warn_if_fault_occurred (&env))
+            {
+              xmlrpc_env_clean (&env);
+              xmlrpc_client_cleanup ();
+
+              g_free (user);
+              g_free (password);
+              g_free (title);
+              g_free (comment);
+              g_free (encoded_password);
+    
+              return NULL;
+            }
+
+          response = 1;
         }
     }
 
   xmlrpc_DECREF (resultP);
+  
+  /* Get the contents of the image file and encode it to base64 */
+  g_file_get_contents (image_path, &data, &data_length, NULL);
+
+  encoded_data = g_base64_encode ((guchar*)data, data_length);
+
+  g_free (data);
 
   TRACE ("Call the upload method");
   resultP = xmlrpc_client_call (&env, serverurl, method_upload,
