@@ -1,5 +1,16 @@
 2009-05-04 jeromeg
 
+	* lib/sexy-url-label.{c,h}: add the sexy_url_label taken from
+	  libsexy.
+	* lib/screenshooter-zimagez.{c,h}:
+	  - add a link to ZimageZ so that users can create an account easily.
+	  - add tooltips for the different entries.
+	  - if one of the fiels is empty when the dialog is validated, show it
+            again and ask the user to fill all the fields.
+	  - plug some leaks and fix a double free issue.
+
+2009-05-04 jeromeg
+
 	* lib/screenshooter-zimagez.c:
 	  - (screenshooter_upload_to_zimagez):
 	    + use a GtkTable to improve the layout.

@@ -51,7 +51,10 @@ warn_if_fault_occurred      (xmlrpc_env * const    envP);
 static void
 open_url_hook               (GtkLinkButton        *button,
                              const gchar          *link,
-                             gpointer             user_data);
+                             gpointer              user_data);
+
+static void
+open_zimagez_link            (gpointer             unused);
 
 
 
@@ -87,11 +90,18 @@ open_url_hook (GtkLinkButton *button, const gchar *link, gpointer user_data)
 
   if (!g_spawn_command_line_async (command, &error))
     {
-      TRACE ("An error occured");
+      TRACE ("An error occured when opening the URL");
 
       xfce_err (error->message);
       g_error_free (error);
     }
+}
+
+
+
+static void open_zimagez_link (gpointer unused)
+{
+  open_url_hook (NULL, "http://www.zimagez.com", NULL);
 }
   
 
@@ -180,9 +190,16 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   /* Create the information label */
 
-  information_label =
-    gtk_label_new (_("Please file the following fields with your ZimageZ© \n"
-                     "user name, passsword and details about the screenshot."));
+  information_label = sexy_url_label_new ();
+
+  /* Note for translators : make sure to put the <a>....</a> on the first line */
+  sexy_url_label_set_markup (SEXY_URL_LABEL (information_label),
+                             _("Please file the following fields with your "
+                               "<a href=\"http://www.zimagez.com\">ZimageZ©</a> \n"
+                               "user name, passsword and details about the screenshot."));
+
+  g_signal_connect_swapped (G_OBJECT (information_label), "url-activated",
+                            G_CALLBACK (open_zimagez_link), NULL);
 
   gtk_misc_set_alignment (GTK_MISC (information_label), 0, 0);
 
@@ -211,6 +228,11 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   /* Create the user entry */
   user_entry = gtk_entry_new ();
 
+  gtk_widget_set_tooltip_text (user_entry,
+                               _("Your Zimagez user name, if you do not have one yet"
+                                 "please create one on the Web page linked above"));
+                                            
+
   gtk_table_attach_defaults (GTK_TABLE (table), user_entry, 1, 2, 0, 1);
 
   /* Create the password label */
@@ -226,6 +248,8 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   /* Create the password entry */
   password_entry = gtk_entry_new ();
+
+  gtk_widget_set_tooltip_text (password_entry, _("The password for the user above"));
 
   gtk_entry_set_visibility (GTK_ENTRY (password_entry), FALSE);
 
@@ -245,6 +269,10 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   /* Create the title entry */
   title_entry = gtk_entry_new ();
 
+  gtk_widget_set_tooltip_text (title_entry,
+                               _("The title of the screenshot, it will be used when"
+                                 " displaying the screenshot on ZimageZ"));
+
   gtk_table_attach_defaults (GTK_TABLE (table), title_entry, 1, 2, 2, 3);
 
   /* Create the comment label */
@@ -260,6 +288,10 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   /* Create the comment entry */
   comment_entry = gtk_entry_new ();
+
+  gtk_widget_set_tooltip_text (title_entry,
+                               _("A comment on the screenshot, it will be used when"
+                                 " displaying the screenshot on ZimageZ"));
 
   gtk_table_attach_defaults (GTK_TABLE (table), comment_entry, 1, 2, 3, 4);
 
@@ -300,15 +332,38 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
       password = g_strdup (gtk_entry_get_text (GTK_ENTRY (password_entry)));
       title = g_strdup (gtk_entry_get_text (GTK_ENTRY (title_entry)));
       comment = g_strdup (gtk_entry_get_text (GTK_ENTRY (comment_entry)));
-    
-      gtk_widget_hide (dialog);
+
+      if ((dialog_response == GTK_RESPONSE_OK) && (g_str_equal (user, "") ||
+                                                   g_str_equal (password, "") ||
+                                                   g_str_equal (title, "") ||
+                                                   g_str_equal (comment, "")))
+        {
+          TRACE ("One of the fields was empty, let the user file it.");
+
+          gtk_label_set_markup (GTK_LABEL (information_label),
+                                _("<span weight=\"bold\" foreground=\"darkred\" "
+                                  "stretch=\"semiexpanded\">You must fill all the "
+                                  " fields.</span>"));
+
+          g_free (user);
+          g_free (password);
+          g_free (title);
+          g_free (comment);
+
+          continue;
+        }
+      else
+        {
+          TRACE ("All fields were filed");
+          gtk_widget_hide (dialog);
+        }
     
       while (gtk_events_pending ())
         gtk_main_iteration_do (FALSE);
     
-      encoded_password = g_strreverse (rot13 (password));
+      encoded_password = g_strdup (g_strreverse (rot13 (password)));
     
-      TRACE ("User: %s Password: %s", user, encoded_password);
+      TRACE ("User: %s", user);
 
       /* Start the user session */
       TRACE ("Call the login method");
@@ -384,6 +439,9 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
     }
 
   xmlrpc_DECREF (resultP);
+
+  g_free (password);
+  g_free (encoded_password);
   
   /* Get the contents of the image file and encode it to base64 */
   g_file_get_contents (image_path, &data, &data_length, NULL);
@@ -397,6 +455,10 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
                                 "(sssss)", encoded_data, file_name, title, comment,
                                 login_response);
 
+  g_free (user);
+  g_free (title);
+  g_free (comment);
+
   if (warn_if_fault_occurred (&env))
     {
       xmlrpc_env_clean (&env);
@@ -408,9 +470,9 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   /* If the response is a boolean, there was an error */
   if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
     {
-      xmlrpc_bool response;
+      xmlrpc_bool response_upload;
 
-      xmlrpc_read_bool (&env, resultP, &response);
+      xmlrpc_read_bool (&env, resultP, &response_upload);
 
       if (warn_if_fault_occurred (&env))
         {
@@ -420,7 +482,7 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
           return NULL;
         }
 
-       if (!response)
+       if (!response_upload)
          {
            xfce_err (_("An error occurred while uploading the screenshot."));
 
