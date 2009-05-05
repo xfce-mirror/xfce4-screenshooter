@@ -4,8 +4,6 @@ as in thunar and xfdesktop.
 * Use Xshape to have a transparent background in the generated screenshots.
 * Remove every call to xfce_err with a gtk_message_dialog.
 * the Zimagez code needs a lot of error checking.
-* The login dialog is uggly.
-* the upload adress is only passed in the debug statements at the moment.
 
 Low priority:
 * Try to get borders captured with compiz.

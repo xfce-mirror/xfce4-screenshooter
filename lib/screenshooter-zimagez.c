@@ -103,7 +103,7 @@ static void open_zimagez_link (gpointer unused)
 {
   open_url_hook (NULL, "http://www.zimagez.com", NULL);
 }
-  
+
 
 /* Public */
 
@@ -123,7 +123,7 @@ static void open_zimagez_link (gpointer unused)
  * the image on Zimagez.com (see the API at the beginning of this file for more
  * details).
  **/
-   
+
 gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 {
   xmlrpc_env env;
@@ -170,6 +170,7 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
 
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "gtk-info");
+  gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
@@ -179,11 +180,11 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
-  
+
   /* Create the main box for the dialog */
-  
+
   vbox = gtk_vbox_new (FALSE, 10);
-  
+
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
 
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
@@ -231,7 +232,7 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   gtk_widget_set_tooltip_text (user_entry,
                                _("Your Zimagez user name, if you do not have one yet"
                                  "please create one on the Web page linked above"));
-                                            
+
 
   gtk_table_attach_defaults (GTK_TABLE (table), user_entry, 1, 2, 0, 1);
 
@@ -327,7 +328,7 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
           return NULL;
         }
-    
+
       user = g_strdup (gtk_entry_get_text (GTK_ENTRY (user_entry)));
       password = g_strdup (gtk_entry_get_text (GTK_ENTRY (password_entry)));
       title = g_strdup (gtk_entry_get_text (GTK_ENTRY (title_entry)));
@@ -357,20 +358,20 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
           TRACE ("All fields were filed");
           gtk_widget_hide (dialog);
         }
-    
+
       while (gtk_events_pending ())
         gtk_main_iteration_do (FALSE);
-    
+
       encoded_password = g_strdup (g_strreverse (rot13 (password)));
-    
+
       TRACE ("User: %s", user);
 
       /* Start the user session */
       TRACE ("Call the login method");
-     
+
       resultP = xmlrpc_client_call (&env, serverurl, method_login,
                                     "(ss)", user, encoded_password);
-     
+
       if (warn_if_fault_occurred (&env))
         {
           xmlrpc_env_clean (&env);
@@ -381,17 +382,17 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
           g_free (title);
           g_free (comment);
           g_free (encoded_password);
-     
+
           return NULL;
         }
 
       TRACE ("Read the login response");
-    
+
       /* If the response is a boolean, there was an error */
       if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
         {
           xmlrpc_read_bool (&env, resultP, &response);
-    
+
           if (warn_if_fault_occurred (&env))
             {
               xmlrpc_env_clean (&env);
@@ -402,17 +403,17 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
               g_free (title);
               g_free (comment);
               g_free (encoded_password);
-        
+
               return NULL;
             }
-       
+
         }
       /* Else we read the string response to get the session ID */
       else
         {
           TRACE ("Read the session ID");
           xmlrpc_read_string (&env, resultP, (const gchar ** const)&login_response);
-    
+
           if (warn_if_fault_occurred (&env))
             {
               xmlrpc_env_clean (&env);
@@ -423,7 +424,7 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
               g_free (title);
               g_free (comment);
               g_free (encoded_password);
-    
+
               return NULL;
             }
 
@@ -440,9 +441,11 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   xmlrpc_DECREF (resultP);
 
+  gtk_widget_destroy (dialog);
+
   g_free (password);
   g_free (encoded_password);
-  
+
   /* Get the contents of the image file and encode it to base64 */
   g_file_get_contents (image_path, &data, &data_length, NULL);
 
@@ -564,7 +567,7 @@ void screenshooter_display_zimagez_links (const gchar *upload_name)
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
   /* Create the image link */
-                                          
+
   image_link =
     gtk_link_button_new_with_label (image_url, _("Link to the full-size screenshot"));
 
@@ -606,4 +609,4 @@ void screenshooter_display_zimagez_links (const gchar *upload_name)
   g_free (small_thumbnail_url);
 }
 
-  
+

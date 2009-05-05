@@ -1,3 +1,8 @@
+2009-05-05 jeromeg
+
+	* lib/screenshooter-zimagez.c: make the dialog unresizable and destroy
+          it when we are done. Remove useless blank spaces.
+
 2009-05-04 jeromeg
 
 	* lib/sexy-url-label.{c,h}: add the sexy_url_label taken from
