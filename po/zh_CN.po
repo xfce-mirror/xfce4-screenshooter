@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-03-30 09:11+0200\n"
-"PO-Revision-Date: 2009-01-12 09:33+0800\n"
+"PO-Revision-Date: 2009-05-08 02:24+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (simplified)\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../lib/screenshooter-dialogs.c:286
-#, fuzzy
 msgid "Screenshot.png"
 msgstr "Screenshot.png"
 
@@ -28,18 +27,18 @@ msgstr "Screenshot-%d.png"
 #: ../lib/screenshooter-dialogs.c:499
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%2$.2fKb中的%1$.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:585
 msgid "Transfer"
-msgstr ""
+msgstr "传送"
 
 #: ../lib/screenshooter-dialogs.c:610
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">动作</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">这张截图将会被"
+"传送至: </span>"
 
 #: ../lib/screenshooter-dialogs.c:734 ../lib/screenshooter-dialogs.c:752
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -94,13 +93,12 @@ msgstr "按住鼠标左键拖拽后松开以选取要截取的屏幕区域。"
 
 #: ../lib/screenshooter-dialogs.c:906
 msgid "Capture the mouse pointer"
-msgstr ""
+msgstr "截取鼠标指针"
 
 #: ../lib/screenshooter-dialogs.c:937
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截取范围</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截图前延迟</span>"
 
 #: ../lib/screenshooter-dialogs.c:974
 msgid "Delay in seconds before the screenshot is taken"
@@ -111,33 +109,29 @@ msgid "seconds"
 msgstr "秒"
 
 #: ../lib/screenshooter-dialogs.c:1009
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">动作</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截图之后</span>"
 
 #: ../lib/screenshooter-dialogs.c:1035
-#, fuzzy
 msgid "Show the save dialog"
-msgstr "不弹出保存对话框"
+msgstr "显示保存对话框"
 
 #: ../lib/screenshooter-dialogs.c:1041
 msgid ""
 "The save dialog allows you to change the file name and the save location"
-msgstr ""
+msgstr "保存对话框允许您改变默认保存的文件名和位置"
 
 #: ../lib/screenshooter-dialogs.c:1055
-#, fuzzy
 msgid "Close the application"
-msgstr "应用程序"
+msgstr "关闭程序"
 
 #: ../lib/screenshooter-dialogs.c:1079
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">动作</span>"
 
 #: ../lib/screenshooter-dialogs.c:1108
-#, fuzzy
 msgid "Save in:"
-msgstr "保存"
+msgstr "保存在:"
 
 #: ../lib/screenshooter-dialogs.c:1118
 msgid "Save the screenshot to a PNG file"
@@ -188,9 +182,8 @@ msgid "Do not display the save dialog"
 msgstr "不弹出保存对话框"
 
 #: ../src/main.c:71
-#, fuzzy
 msgid "Do not display the mouse on the screenshot"
-msgstr "不弹出保存对话框"
+msgstr "不抓取鼠标光标"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
