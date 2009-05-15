@@ -45,41 +45,34 @@
 
 
 
-static gboolean
-warn_if_fault_occurred      (xmlrpc_env * const    envP);
-
-static void
-open_url_hook               (GtkLinkButton        *button,
-                             const gchar          *link,
-                             gpointer              user_data);
-
-static void
-open_zimagez_link            (gpointer             unused);
+static void              open_url_hook             (GtkLinkButton     *button,
+                                                    const gchar       *link,
+                                                    gpointer           user_data);
+static void              open_zimagez_link         (gpointer           unused);
+static ScreenshooterJob *zimagez_upload_to_zimagez (const gchar       *file_name);
+static gboolean          zimagez_upload_job        (ScreenshooterJob  *job,
+                                                    GValueArray       *param_values,
+                                                    GError           **error);
+static void              cb_ask_for_information    (ScreenshooterJob  *job,
+                                                    GtkListStore      *liststore,
+                                                    const gchar       *message,
+                                                    gpointer           unused);
+static void              cb_image_uploaded         (ScreenshooterJob  *job,
+                                                    gchar             *upload_name,
+                                                    gpointer           unused);
+static void              cb_error                  (ExoJob            *job,
+                                                    GError            *error,
+                                                    gpointer           unused);
+static void              cb_finished               (ExoJob            *job,
+                                                    GtkWidget         *dialog);
+static void              cb_update_info            (ExoJob            *job,
+                                                    gchar             *message,
+                                                    GtkWidget         *label);
 
 
 
 /* Private */
 
-
-
-static gboolean warn_if_fault_occurred (xmlrpc_env * const envP)
-{
-  gboolean error_occured = FALSE;
-
-  if (envP->fault_occurred)
-    {
-      TRACE ("An error occured during the XML transaction %s, %d",
-             envP->fault_string, envP->fault_code );
-
-      xfce_err (_("An error occurred during the XML exchange: %s (%d).\n The screenshot "
-                  "could not be uploaded."),
-                envP->fault_string, envP->fault_code );
-
-      error_occured = TRUE;
-    }
-
-  return error_occured;
-}
 
 
 static void
@@ -105,27 +98,24 @@ static void open_zimagez_link (gpointer unused)
 }
 
 
-/* Public */
 
-
-
-/**
- * screenshooter_upload_to_zimagez:
- * @image_path: the local path of the image that should be uploaded to
- * ZimageZ.com.
- *
- * Uploads the image whose path is @image_path: a dialog asks for the user
- * login, password, a title for the image and a comment; then the image is
- * uploaded. The dialog is shown again with a warning is the password did
- * match the user name. The user can also cancel the upload procedure.
- *
- * Returns: NULL is the upload failed or was cancelled, a #gchar* with the name of
- * the image on Zimagez.com (see the API at the beginning of this file for more
- * details).
- **/
-
-gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
+static gboolean
+zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **error)
 {
+  const gchar *encoded_data;
+  const gchar *image_path;
+  gchar *comment = g_strdup ("");
+  gchar *data = NULL;
+  gchar *encoded_password = NULL;
+  gchar *file_name = NULL;
+  gchar *login_response = NULL;
+  gchar *online_file_name = NULL;
+  gchar *password = g_strdup ("");
+  gchar *title = g_strdup ("");
+  gchar *user = g_strdup ("");
+
+  gsize data_length;
+
   xmlrpc_env env;
   xmlrpc_value *resultP = NULL;
   xmlrpc_bool response = 0;
@@ -135,18 +125,487 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   const gchar * const method_logout = "apiXml.xmlrpcLogout";
   const gchar * const method_upload = "apiXml.xmlrpcUpload";
 
-  gchar *data;
-  gchar *password = NULL;
-  gchar *user = NULL;
-  gchar *title = NULL;
-  gchar *comment = NULL;
-  gchar *encoded_password = NULL;
-  const gchar *encoded_data;
-  const gchar *file_name = g_path_get_basename (image_path);
-  const gchar *online_file_name;
-  const gchar *login_response;
-  gsize data_length;
+  GtkTreeIter iter;
+  GtkListStore *liststore;
 
+  g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
+  g_return_val_if_fail (param_values != NULL, FALSE);
+  g_return_val_if_fail (param_values->n_values == 1, FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[0]), FALSE);
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+  if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
+    return FALSE;
+
+  /* Get the path of the image that is to be uploaded */
+  image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
+
+  /* Start the user XML RPC session */
+
+  exo_job_info_message (EXO_JOB (job), _("Initialize the connexion..."));
+
+  TRACE ("Initialize the RPC environment");
+  xmlrpc_env_init(&env);
+
+  TRACE ("Initialize the RPC client");
+  xmlrpc_client_init2 (&env, XMLRPC_CLIENT_NO_FLAGS, PACKAGE_NAME, PACKAGE_VERSION,
+                       NULL, 0);
+
+  if (env.fault_occurred)
+    {
+      GError *tmp_error =
+        g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
+                     _("An error occurred during the XML exchange: %s (%d).\n "
+                       "The screenshot could not be uploaded."),
+                     env.fault_string, env.fault_code);
+
+      xmlrpc_env_clean (&env);
+      xmlrpc_client_cleanup ();
+
+      g_propagate_error (error, tmp_error);
+
+      return FALSE;
+    }
+
+  TRACE ("Get the information liststore ready.");
+
+  liststore = gtk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
+
+  TRACE ("Append the user");
+
+  gtk_list_store_append (liststore, &iter);
+  gtk_list_store_set (liststore, &iter,
+                      0, g_strdup ("user"),
+                      1, user,
+                      -1);
+
+  TRACE ("Append the password");
+
+  gtk_list_store_append (liststore, &iter);
+  gtk_list_store_set (liststore, &iter,
+                      0, g_strdup ("password"),
+                      1, password,
+                      -1);
+
+  TRACE ("Append the title");
+
+  gtk_list_store_append (liststore, &iter);
+  gtk_list_store_set (liststore, &iter,
+                      0, g_strdup ("title"),
+                      1, title,
+                      -1);
+
+  TRACE ("Append the comment");
+
+  gtk_list_store_append (liststore, &iter);
+  gtk_list_store_set (liststore, &iter,
+                      0, g_strdup ("comment"),
+                      1, comment,
+                      -1);
+
+  TRACE ("Ask for the user information");
+
+  screenshooter_job_ask_info (job, liststore,
+                              _("Please file the following fields with your "
+                                "<a href=\"http://www.zimagez.com\">ZimageZ©</a> \n"
+                                "user name, passsword and details about the screenshot."));
+
+  gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
+
+  do
+    {
+      gchar *field_name = NULL;
+      gchar *field_value = NULL;
+
+      gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
+                          0, &field_name,
+                          1, &field_value,
+                          -1);
+
+      if (g_str_equal (field_name, "user"))
+        {
+          user = g_strdup (field_value);
+        }
+      else if (g_str_equal (field_name, "password"))
+        {
+          password = g_strdup (field_value);
+        }
+      else if (g_str_equal (field_name, "title"))
+        {
+          title = g_strdup (field_value);
+        }
+      else if (g_str_equal (field_name, "comment"))
+        {
+          comment = g_strdup (field_value);
+        }
+
+      g_free (field_name);
+      g_free (field_value);
+    }
+  while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
+
+  if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
+    {
+      xmlrpc_env_clean (&env);
+      xmlrpc_client_cleanup ();
+
+      TRACE ("The upload job was cancelled.");
+
+      return FALSE;
+    }
+
+  while (!response)
+    {
+      gboolean empty_field = FALSE;
+
+      if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
+        {
+          xmlrpc_env_clean (&env);
+          xmlrpc_client_cleanup ();
+
+          g_free (user);
+          g_free (password);
+          g_free (title);
+          g_free (comment);
+          if (encoded_password != NULL)
+            g_free (encoded_password);
+
+          TRACE ("The upload job was cancelled.");
+
+          return FALSE;
+        }
+
+      exo_job_info_message (EXO_JOB (job), _("Check the user information..."));
+
+      /* Test if one of the information fields is empty */
+      TRACE ("Check for empty fields");
+      gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
+
+      do
+        {
+          gchar *field = NULL;
+
+          gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter, 1, &field, -1);
+          empty_field = g_str_equal (field, "");
+
+          g_free (field);
+        }
+      while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
+
+      if (empty_field)
+        {
+          TRACE ("One of the fields was empty, let the user file it.");
+
+          screenshooter_job_ask_info (job, liststore,
+                                      _("<span weight=\"bold\" foreground=\"darkred\" "
+                                        "stretch=\"semiexpanded\">You must fill all the "
+                                        " fields.</span>"));
+          continue;
+        }
+
+      encoded_password = g_strdup (g_strreverse (rot13 (password)));
+
+      TRACE ("User: %s", user);
+
+      /* Start the user session */
+      TRACE ("Call the login method");
+
+      exo_job_info_message (EXO_JOB (job), _("Login on ZimageZ.com..."));
+
+      resultP = xmlrpc_client_call (&env, serverurl, method_login,
+                                    "(ss)", user, encoded_password);
+
+      if (env.fault_occurred)
+        {
+          GError *tmp_error =
+            g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
+                         _("An error occurred during the XML exchange: %s (%d).\n "
+                           "The screenshot could not be uploaded."),
+                         env.fault_string, env.fault_code);
+
+          xmlrpc_env_clean (&env);
+          xmlrpc_client_cleanup ();
+
+          g_free (user);
+          g_free (password);
+          g_free (title);
+          g_free (comment);
+          g_free (encoded_password);
+
+          g_propagate_error (error, tmp_error);
+
+          return FALSE;
+        }
+
+      TRACE ("Read the login response");
+
+      /* If the response is a boolean, there was an error */
+      if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
+        {
+          xmlrpc_read_bool (&env, resultP, &response);
+
+          if (env.fault_occurred)
+            {
+              GError *tmp_error =
+                g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
+                             _("An error occurred during the XML exchange: %s (%d).\n "
+                               "The screenshot could not be uploaded."),
+                             env.fault_string, env.fault_code);
+
+              xmlrpc_env_clean (&env);
+              xmlrpc_client_cleanup ();
+
+              g_free (user);
+              g_free (password);
+              g_free (title);
+              g_free (comment);
+              g_free (encoded_password);
+
+              g_propagate_error (error, tmp_error);
+
+              return FALSE;
+            }
+        }
+      /* Else we read the string response to get the session ID */
+      else
+        {
+          TRACE ("Read the session ID");
+          xmlrpc_read_string (&env, resultP, (const gchar ** const)&login_response);
+
+          if (env.fault_occurred)
+           {
+             GError *tmp_error =
+               g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
+                            _("An error occurred during the XML exchange: %s (%d).\n "
+                              "The screenshot could not be uploaded."),
+                            env.fault_string, env.fault_code);
+
+             xmlrpc_env_clean (&env);
+             xmlrpc_client_cleanup ();
+
+             g_free (user);
+             g_free (password);
+             g_free (title);
+             g_free (comment);
+             g_free (encoded_password);
+
+             g_propagate_error (error, tmp_error);
+
+             return FALSE;
+           }
+
+          response = 1;
+        }
+
+      if (!response)
+        {
+          /* Login failed, erase the password and ask for the correct on to the
+             user */
+          gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
+
+          do
+            {
+              gchar *field_name = NULL;
+
+              gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter, 0, &field_name, -1);
+
+              if (g_str_equal (field_name, "password"))
+                {
+                  gtk_list_store_set (liststore, &iter, 1, g_strdup (""), -1);
+
+                  g_free (field_name);
+
+                  break;
+                }
+
+              g_free (field_name);
+            }
+          while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
+
+          screenshooter_job_ask_info (job, liststore,
+                                      _("<span weight=\"bold\" foreground=\"darkred\" "
+                                        "stretch=\"semiexpanded\">The user and the "
+                                        "password you entered do not match. "
+                                        "Please correct this.</span>"));
+
+          gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
+
+          do
+            {
+              gchar *field_name = NULL;
+              gchar *field_value = NULL;
+        
+              gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
+                                  0, &field_name,
+                                  1, &field_value,
+                                  -1);
+        
+              if (g_str_equal (field_name, "user"))
+                {
+                  user = g_strdup (field_value);
+                }
+              else if (g_str_equal (field_name, "password"))
+                {
+                  password = g_strdup (field_value);
+                }
+              else if (g_str_equal (field_name, "title"))
+                {
+                  title = g_strdup (field_value);
+                }
+              else if (g_str_equal (field_name, "comment"))
+                {
+                  comment = g_strdup (field_value);
+                }
+        
+              g_free (field_name);
+              g_free (field_value);
+            }
+          while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
+        }
+    }
+
+  xmlrpc_DECREF (resultP);
+
+  g_free (user);
+  g_free (password);
+  g_free (encoded_password);
+
+  /* Get the contents of the image file and encode it to base64 */
+  g_file_get_contents (image_path, &data, &data_length, NULL);
+
+  encoded_data = g_base64_encode ((guchar*)data, data_length);
+
+  g_free (data);
+
+  /* Get the basename of the image path */
+  file_name = g_path_get_basename (image_path);
+
+  exo_job_info_message (EXO_JOB (job), _("Upload the screenshot..."));
+
+  TRACE ("Call the upload method");
+  resultP = xmlrpc_client_call (&env, serverurl, method_upload,
+                                "(sssss)", encoded_data, file_name, title, comment,
+                                login_response);
+
+  g_free (title);
+  g_free (comment);
+  g_free (file_name);
+
+  if (env.fault_occurred)
+    {
+      GError *tmp_error =
+        g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
+                     _("An error occurred during the XML exchange: %s (%d).\n "
+                       "The screenshot could not be uploaded."),
+                     env.fault_string, env.fault_code);
+
+      xmlrpc_env_clean (&env);
+      xmlrpc_client_cleanup ();
+
+      g_propagate_error (error, tmp_error);
+
+      return FALSE;
+    }
+
+  /* If the response is a boolean, there was an error */
+  if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
+    {
+      xmlrpc_bool response_upload;
+
+      xmlrpc_read_bool (&env, resultP, &response_upload);
+
+      if (env.fault_occurred)
+        {
+          GError *tmp_error =
+            g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
+                         _("An error occurred during the XML exchange: %s (%d).\n "
+                           "The screenshot could not be uploaded."),
+                         env.fault_string, env.fault_code);
+
+          xmlrpc_env_clean (&env);
+          xmlrpc_client_cleanup ();
+
+          g_propagate_error (error, tmp_error);
+
+          return FALSE;
+        }
+
+      if (!response_upload)
+        {
+          GError *tmp_error =
+            g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
+                         _("An error occurred while uploading the screenshot."));
+
+          xmlrpc_env_clean (&env);
+          xmlrpc_client_cleanup ();
+
+          g_propagate_error (error, tmp_error);
+
+          return FALSE;
+        }
+    }
+  /* Else we get the file name */
+  else
+    {
+      xmlrpc_read_string (&env, resultP, (const char **)&online_file_name);
+
+      TRACE ("The screenshot has been uploaded, get the file name.");
+
+      if (env.fault_occurred)
+        {
+          GError *tmp_error =
+            g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
+                         _("An error occurred during the XML exchange: %s (%d).\n "
+                           "The screenshot could not be uploaded."),
+                         env.fault_string, env.fault_code);
+
+          xmlrpc_env_clean (&env);
+          xmlrpc_client_cleanup ();
+
+          g_propagate_error (error, tmp_error);
+
+          return FALSE;
+        }
+    }
+
+  xmlrpc_DECREF (resultP);
+
+  /* End the user session */
+
+  exo_job_info_message (EXO_JOB (job), _("Close the session on ZimageZ.com..."));
+
+  TRACE ("Closing the user session");
+
+  xmlrpc_client_call (&env, serverurl, method_logout, "(s)", login_response);
+
+  TRACE ("Cleanup the XMLRPC session");
+  xmlrpc_env_clean (&env);
+  xmlrpc_client_cleanup ();
+
+  screenshooter_job_image_uploaded (job, online_file_name);
+
+  return TRUE;
+}
+
+
+
+static ScreenshooterJob
+*zimagez_upload_to_zimagez (const gchar *file_path)
+{
+  g_return_val_if_fail (file_path != NULL, NULL);
+
+  return screenshooter_simple_job_launch (zimagez_upload_job, 1,
+                                          G_TYPE_STRING, file_path);
+}
+
+
+
+static void
+cb_ask_for_information (ScreenshooterJob *job,
+                        GtkListStore     *liststore,
+                        const gchar      *message,
+                        gpointer          unused)
+{
   GtkWidget *dialog;
   GtkWidget *information_label;
   GtkWidget *vbox, *main_alignment;
@@ -154,7 +613,15 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   GtkWidget *user_entry, *password_entry, *title_entry, *comment_entry;
   GtkWidget *user_label, *password_label, *title_label, *comment_label;
 
-  /* Get the user information */
+  GtkTreeIter iter;
+  gint response;
+
+  g_return_if_fail (SCREENSHOOTER_IS_JOB (job));
+  g_return_if_fail (GTK_IS_LIST_STORE (liststore));
+  g_return_if_fail (message != NULL);
+
+  TRACE ("Create the dialog to ask for user information.");
+
   /* Create the information dialog */
   dialog =
     xfce_titled_dialog_new_with_buttons (_("Details about the screenshot for ZimageZ©"),
@@ -175,39 +642,29 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
-
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
 
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
-
   vbox = gtk_vbox_new (FALSE, 10);
 
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
-
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
   /* Create the information label */
-
   information_label = sexy_url_label_new ();
 
-  /* Note for translators : make sure to put the <a>....</a> on the first line */
-  sexy_url_label_set_markup (SEXY_URL_LABEL (information_label),
-                             _("Please file the following fields with your "
-                               "<a href=\"http://www.zimagez.com\">ZimageZ©</a> \n"
-                               "user name, passsword and details about the screenshot."));
+  sexy_url_label_set_markup (SEXY_URL_LABEL (information_label), message);
 
   g_signal_connect_swapped (G_OBJECT (information_label), "url-activated",
                             G_CALLBACK (open_zimagez_link), NULL);
 
   gtk_misc_set_alignment (GTK_MISC (information_label), 0, 0);
-
   gtk_container_add (GTK_CONTAINER (vbox), information_label);
 
   /* Create the layout table */
-
   table = gtk_table_new (4, 2, FALSE);
 
   gtk_table_set_col_spacings (GTK_TABLE (table), 6);
@@ -240,7 +697,6 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   password_label = gtk_label_new (_("Password:"));
 
   gtk_misc_set_alignment (GTK_MISC (password_label), 0, 0.5);
-
   gtk_table_attach (GTK_TABLE (table), password_label,
                     0, 1,
                     1, 2,
@@ -253,14 +709,12 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   gtk_widget_set_tooltip_text (password_entry, _("The password for the user above"));
 
   gtk_entry_set_visibility (GTK_ENTRY (password_entry), FALSE);
-
   gtk_table_attach_defaults (GTK_TABLE (table), password_entry, 1, 2, 1, 2);
 
   /* Create the title label */
   title_label = gtk_label_new (_("Title:"));
 
   gtk_misc_set_alignment (GTK_MISC (title_label), 0, 0.5);
-
   gtk_table_attach (GTK_TABLE (table), title_label,
                     0, 1,
                     2, 3,
@@ -280,7 +734,6 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
   comment_label = gtk_label_new (_("Comment:"));
 
   gtk_misc_set_alignment (GTK_MISC (comment_label), 0, 0.5);
-
   gtk_table_attach (GTK_TABLE (table), comment_label,
                     0, 1,
                     3, 4,
@@ -296,258 +749,142 @@ gchar *screenshooter_upload_to_zimagez (const gchar *image_path)
 
   gtk_table_attach_defaults (GTK_TABLE (table), comment_entry, 1, 2, 3, 4);
 
-  /* Show the widgets of the dialog main box*/
+  /* Set the values */
+  gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
+
+  do
+    {
+      gchar *field_name = NULL;
+      gchar *field_value = NULL;
+
+      gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
+                          0, &field_name,
+                          1, &field_value,
+                          -1);
+
+      if (g_str_equal (field_name, "user"))
+        {
+          gtk_entry_set_text (GTK_ENTRY (user_entry), field_value);
+        }
+      else if (g_str_equal (field_name, "password"))
+        {
+          gtk_entry_set_text (GTK_ENTRY (password_entry), field_value);
+        }
+      else if (g_str_equal (field_name, "title"))
+        {
+          gtk_entry_set_text (GTK_ENTRY (title_entry), field_value);
+        }
+      else if (g_str_equal (field_name, "comment"))
+        {
+          gtk_entry_set_text (GTK_ENTRY (comment_entry), field_value);
+        }
+
+      g_free (field_name);
+      g_free (field_value);
+    }
+  while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
 
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
 
-  /* Start the user XML RPC session */
+  response = gtk_dialog_run (GTK_DIALOG (dialog));
 
-  TRACE ("Initiate the RPC environment");
-  xmlrpc_env_init(&env);
+  gtk_widget_hide (dialog);
 
-  TRACE ("Initiate the RPC client");
-  xmlrpc_client_init2 (&env, XMLRPC_CLIENT_NO_FLAGS, PACKAGE_NAME, PACKAGE_VERSION,
-                       NULL, 0);
-
-  if (warn_if_fault_occurred (&env))
+  if (response == GTK_RESPONSE_CANCEL)
     {
-      xmlrpc_env_clean (&env);
-      xmlrpc_client_cleanup ();
+      g_signal_handlers_disconnect_matched (job,
+                                            G_SIGNAL_MATCH_FUNC,
+                                            0, 0, NULL,
+                                            cb_image_uploaded,
+                                            NULL);
+    
+      g_signal_handlers_disconnect_matched (job,
+                                            G_SIGNAL_MATCH_FUNC,
+                                            0, 0, NULL,
+                                            cb_error,
+                                            NULL);
+    
+      g_signal_handlers_disconnect_matched (job,
+                                            G_SIGNAL_MATCH_FUNC,
+                                            0, 0, NULL,
+                                            cb_ask_for_information,
+                                            NULL);
+    
+      g_signal_handlers_disconnect_matched (job,
+                                            G_SIGNAL_MATCH_FUNC,
+                                            0, 0, NULL,
+                                            cb_update_info,
+                                            NULL);
+    
+      g_signal_handlers_disconnect_matched (job,
+                                            G_SIGNAL_MATCH_FUNC,
+                                            0, 0, NULL,
+                                            cb_finished,
+                                            NULL);
 
-      return NULL;
+      exo_job_cancel (EXO_JOB (job));
     }
-
-  while (!response)
+  else if (response == GTK_RESPONSE_OK)
     {
-      gint dialog_response = gtk_dialog_run (GTK_DIALOG (dialog));
+      gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
 
-      if (dialog_response == GTK_RESPONSE_CANCEL)
+      do
         {
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
+          gchar *field_name = NULL;
 
-          return NULL;
-        }
+          gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
+                              0, &field_name, -1);
 
-      user = g_strdup (gtk_entry_get_text (GTK_ENTRY (user_entry)));
-      password = g_strdup (gtk_entry_get_text (GTK_ENTRY (password_entry)));
-      title = g_strdup (gtk_entry_get_text (GTK_ENTRY (title_entry)));
-      comment = g_strdup (gtk_entry_get_text (GTK_ENTRY (comment_entry)));
-
-      if ((dialog_response == GTK_RESPONSE_OK) && (g_str_equal (user, "") ||
-                                                   g_str_equal (password, "") ||
-                                                   g_str_equal (title, "") ||
-                                                   g_str_equal (comment, "")))
-        {
-          TRACE ("One of the fields was empty, let the user file it.");
-
-          gtk_label_set_markup (GTK_LABEL (information_label),
-                                _("<span weight=\"bold\" foreground=\"darkred\" "
-                                  "stretch=\"semiexpanded\">You must fill all the "
-                                  " fields.</span>"));
-
-          g_free (user);
-          g_free (password);
-          g_free (title);
-          g_free (comment);
-
-          continue;
-        }
-      else
-        {
-          TRACE ("All fields were filed");
-          gtk_widget_hide (dialog);
-        }
-
-      while (gtk_events_pending ())
-        gtk_main_iteration_do (FALSE);
-
-      encoded_password = g_strdup (g_strreverse (rot13 (password)));
-
-      TRACE ("User: %s", user);
-
-      /* Start the user session */
-      TRACE ("Call the login method");
-
-      resultP = xmlrpc_client_call (&env, serverurl, method_login,
-                                    "(ss)", user, encoded_password);
-
-      if (warn_if_fault_occurred (&env))
-        {
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
-
-          g_free (user);
-          g_free (password);
-          g_free (title);
-          g_free (comment);
-          g_free (encoded_password);
-
-          return NULL;
-        }
-
-      TRACE ("Read the login response");
-
-      /* If the response is a boolean, there was an error */
-      if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
-        {
-          xmlrpc_read_bool (&env, resultP, &response);
-
-          if (warn_if_fault_occurred (&env))
+          if (g_str_equal (field_name, "user"))
             {
-              xmlrpc_env_clean (&env);
-              xmlrpc_client_cleanup ();
-
-              g_free (user);
-              g_free (password);
-              g_free (title);
-              g_free (comment);
-              g_free (encoded_password);
-
-              return NULL;
+              gtk_list_store_set (liststore, &iter,
+                                  1, gtk_entry_get_text (GTK_ENTRY (user_entry)),
+                                  -1);
+            }
+          else if (g_str_equal (field_name, "password"))
+            {
+              gtk_list_store_set (liststore, &iter,
+                                  1, gtk_entry_get_text (GTK_ENTRY (password_entry)),
+                                  -1);
+            }
+          else if (g_str_equal (field_name, "title"))
+            {
+              gtk_list_store_set (liststore, &iter,
+                                  1, gtk_entry_get_text (GTK_ENTRY (title_entry)),
+                                  -1);
+            }
+          else if (g_str_equal (field_name, "comment"))
+            {
+              gtk_list_store_set (liststore, &iter,
+                                  1, gtk_entry_get_text (GTK_ENTRY (comment_entry)),
+                                  -1);
             }
 
+          g_free (field_name);
         }
-      /* Else we read the string response to get the session ID */
-      else
-        {
-          TRACE ("Read the session ID");
-          xmlrpc_read_string (&env, resultP, (const gchar ** const)&login_response);
-
-          if (warn_if_fault_occurred (&env))
-            {
-              xmlrpc_env_clean (&env);
-              xmlrpc_client_cleanup ();
-
-              g_free (user);
-              g_free (password);
-              g_free (title);
-              g_free (comment);
-              g_free (encoded_password);
-
-              return NULL;
-            }
-
-          response = 1;
-        }
-
-      if (!response)
-        gtk_label_set_markup (GTK_LABEL (information_label),
-                              _("<span weight=\"bold\" foreground=\"darkred\" "
-                                "stretch=\"semiexpanded\">The user and the password you"
-                                " entered do not match.</span>"));
-
+      while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
     }
-
-  xmlrpc_DECREF (resultP);
 
   gtk_widget_destroy (dialog);
-
-  g_free (password);
-  g_free (encoded_password);
-
-  /* Get the contents of the image file and encode it to base64 */
-  g_file_get_contents (image_path, &data, &data_length, NULL);
-
-  encoded_data = g_base64_encode ((guchar*)data, data_length);
-
-  g_free (data);
-
-  TRACE ("Call the upload method");
-  resultP = xmlrpc_client_call (&env, serverurl, method_upload,
-                                "(sssss)", encoded_data, file_name, title, comment,
-                                login_response);
-
-  g_free (user);
-  g_free (title);
-  g_free (comment);
-
-  if (warn_if_fault_occurred (&env))
-    {
-      xmlrpc_env_clean (&env);
-      xmlrpc_client_cleanup ();
-
-      return NULL;
-    }
-
-  /* If the response is a boolean, there was an error */
-  if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
-    {
-      xmlrpc_bool response_upload;
-
-      xmlrpc_read_bool (&env, resultP, &response_upload);
-
-      if (warn_if_fault_occurred (&env))
-        {
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
-
-          return NULL;
-        }
-
-       if (!response_upload)
-         {
-           xfce_err (_("An error occurred while uploading the screenshot."));
-
-           TRACE ("Error while uploading the screenshot.");
-
-           xmlrpc_env_clean (&env);
-           xmlrpc_client_cleanup ();
-
-           return NULL;
-         }
-    }
-  /* Else we get the file name */
-  else
-    {
-      xmlrpc_read_string (&env, resultP, (const char **)&online_file_name);
-
-      TRACE ("The screenshot has been uploaded, get the file name.");
-
-      if (warn_if_fault_occurred (&env))
-        {
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
-
-          return NULL;
-        }
-    }
-
-  xmlrpc_DECREF (resultP);
-
-  /* End the user session */
-
-  TRACE ("Closing the user session");
-
-  xmlrpc_client_call (&env, serverurl, method_logout, "(s)", login_response);
-
-  TRACE ("Cleanup the XMLRPC session");
-  xmlrpc_env_clean (&env);
-  xmlrpc_client_cleanup ();
-
-  return g_strdup (online_file_name);
 }
 
 
 
-/**
- * screenshooter_display_zimagez_links:
- * @upload_name: the name of the image on ZimageZ.com
- *
- * Shows a dialog linking to the different images hosted on ZimageZ.com:
- * the full size image, the large thumbnail and the small thumbnail.
- * Links can be clicked to open the given page in a browser.
- **/
-void screenshooter_display_zimagez_links (const gchar *upload_name)
+static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gpointer unused)
 {
   GtkWidget *dialog;
   GtkWidget *image_link, *thumbnail_link, *small_thumbnail_link;
 
-  gchar *image_url =
-    g_strdup_printf ("http://www.zimagez.com/zimage/%s.php", upload_name);
-  gchar *thumbnail_url =
+  gchar *image_url;
+  gchar *thumbnail_url;
+  gchar *small_thumbnail_url;
+
+  g_return_if_fail (upload_name != NULL);
+
+  image_url = g_strdup_printf ("http://www.zimagez.com/zimage/%s.php", upload_name);
+  thumbnail_url =
     g_strdup_printf ("http://www.zimagez.com/miniature/%s.php", upload_name);
-  gchar *small_thumbnail_url =
+  small_thumbnail_url =
     g_strdup_printf ("http://www.zimagez.com/avatar/%s.php", upload_name);
 
   dialog =
@@ -567,14 +904,12 @@ void screenshooter_display_zimagez_links (const gchar *upload_name)
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
   /* Create the image link */
-
   image_link =
     gtk_link_button_new_with_label (image_url, _("Link to the full-size screenshot"));
 
   gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), image_link);
 
   /* Create the thumbnail link */
-
   thumbnail_link =
     gtk_link_button_new_with_label (thumbnail_url,
                                     _("Link to a thumbnail of the screenshot"));
@@ -582,7 +917,6 @@ void screenshooter_display_zimagez_links (const gchar *upload_name)
   gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), thumbnail_link);
 
   /* Create the small thumbnail link */
-
   small_thumbnail_link =
     gtk_link_button_new_with_label (small_thumbnail_url,
                                     _("Link to a small thumbnail of the screenshot"));
@@ -590,7 +924,6 @@ void screenshooter_display_zimagez_links (const gchar *upload_name)
   gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), small_thumbnail_link);
 
   /* Set the url hook for the buttons */
-
   gtk_link_button_set_uri_hook ((GtkLinkButtonUriFunc) open_url_hook, NULL, NULL);
 
   /* Show the dialog and run it */
@@ -600,13 +933,133 @@ void screenshooter_display_zimagez_links (const gchar *upload_name)
 
   gtk_widget_destroy (dialog);
 
-  /* Ugly hack to make sure the dialog is not displayed anymore */
-  while (gtk_events_pending ())
-    gtk_main_iteration_do (FALSE);
-
   g_free (image_url);
   g_free (thumbnail_url);
   g_free (small_thumbnail_url);
 }
 
 
+
+static void cb_error (ExoJob *job, GError *error, gpointer unused)
+{
+  GtkWidget *dialog;
+
+  g_return_if_fail (error != NULL);
+
+  dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_NO_SEPARATOR | GTK_DIALOG_MODAL,
+                                   GTK_MESSAGE_ERROR,
+                                   GTK_BUTTONS_CLOSE,
+                                   "%s", error->message);
+
+  gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_destroy (dialog);
+}
+
+
+
+static void cb_finished (ExoJob *job, GtkWidget *dialog)
+{
+  g_return_if_fail (EXO_IS_JOB (job));
+  g_return_if_fail (GTK_IS_DIALOG (dialog));
+
+  g_signal_handlers_disconnect_matched (job,
+                                        G_SIGNAL_MATCH_FUNC,
+                                        0, 0, NULL,
+                                        cb_image_uploaded,
+                                        NULL);
+
+  g_signal_handlers_disconnect_matched (job,
+                                        G_SIGNAL_MATCH_FUNC,
+                                        0, 0, NULL,
+                                        cb_error,
+                                        NULL);
+
+  g_signal_handlers_disconnect_matched (job,
+                                        G_SIGNAL_MATCH_FUNC,
+                                        0, 0, NULL,
+                                        cb_ask_for_information,
+                                        NULL);
+
+  g_signal_handlers_disconnect_matched (job,
+                                        G_SIGNAL_MATCH_FUNC,
+                                        0, 0, NULL,
+                                        cb_update_info,
+                                        NULL);
+
+  g_signal_handlers_disconnect_matched (job,
+                                        G_SIGNAL_MATCH_FUNC,
+                                        0, 0, NULL,
+                                        cb_finished,
+                                        NULL);
+
+  g_object_unref (G_OBJECT (job));
+
+  gtk_widget_destroy (dialog);
+
+  gtk_main_quit ();
+}
+
+
+
+static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
+{
+  g_return_if_fail (EXO_IS_JOB (job));
+  g_return_if_fail (GTK_IS_LABEL (label));
+
+  gtk_label_set_text (GTK_LABEL (label), message);
+}
+
+
+
+/* Public */
+
+
+
+/**
+ * screenshooter_upload_to_zimagez:
+ * @image_path: the local path of the image that should be uploaded to
+ * ZimageZ.com.
+ *
+ * Uploads the image whose path is @image_path: a dialog asks for the user
+ * login, password, a title for the image and a comment; then the image is
+ * uploaded. The dialog is shown again with a warning is the password did
+ * match the user name. The user can also cancel the upload procedure.
+ *
+ **/
+
+void screenshooter_upload_to_zimagez (const gchar *image_path)
+{
+  ScreenshooterJob *job;
+  GtkWidget *dialog = NULL;
+  GtkWidget *label;
+
+  g_return_if_fail (image_path != NULL);
+
+  dialog =
+    gtk_dialog_new_with_buttons (_("Uploading to ZimageZ..."),
+                                 NULL,
+                                 GTK_DIALOG_NO_SEPARATOR,
+                                 NULL);
+
+  gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
+  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), 20);
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
+  gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
+  gtk_window_set_icon_name (GTK_WINDOW (dialog), "gtk-info");
+
+  label = gtk_label_new ("");
+  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), label);
+  gtk_widget_show (label);
+
+  job = zimagez_upload_to_zimagez (image_path);
+
+  g_signal_connect (job, "ask", (GCallback) cb_ask_for_information, NULL);
+  g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, NULL);
+  g_signal_connect (job, "error", (GCallback) cb_error, NULL);
+  g_signal_connect (job, "finished", (GCallback) cb_finished, dialog);
+  g_signal_connect (job, "info-message", (GCallback) cb_update_info, label);
+
+  gtk_widget_show (dialog);
+
+  gtk_main ();
+}

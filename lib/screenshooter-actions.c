@@ -56,11 +56,7 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
             }
           else
             {
-              const gchar *upload_name =
-                screenshooter_upload_to_zimagez (screenshot_path);
-
-              if (upload_name != NULL)
-                screenshooter_display_zimagez_links (upload_name);
+              screenshooter_upload_to_zimagez (screenshot_path);
             }
         }
 

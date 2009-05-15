@@ -1,3 +1,25 @@
+2009-05-15 jeromeg
+
+	* src/main.c:
+	  - add the glib and stdlib headers.
+	  - use RETURN_SUCCESS and RETURN_FAILURE instead of 0 and 1.
+	* lib/exo-simple-job.{c,h}, lib/exo-job.{c,h}: take the job framework
+	  from Exo written by Jannis Pohlmann. Thank you Jannis!
+	* lib/screenshooter-job.{c,h}, lib/screenshooter-simple-job.{c,h}:
+	  ScreenshooterJob is based on ExoJob, it provides to additional signals,
+	  ask and image-uploaded.
+	* lib/screenshooter-marshal.list: add some marshallers for the new
+	  signals.
+	* lib/screenshooter-zimagez.{c,h}: port the existing code to use a
+	  ScreenshooterJob. Thanks to Jannis for his great help! This fixes
+	  a bunch of problems that occured with the previous implementation.
+	  The dialogs still need to be polished.
+	* lib/screenshooter-actions.c: use the new function.
+	* lib/Makefile.am:
+	  - add some magic to generate the marshallers.
+	  - sort the source files by alphabetical order.
+	* configure.ac.in: bump the GThreads required version to 2.16.
+
 2009-05-05 jeromeg
 
 	* lib/screenshooter-zimagez.c: make the dialog unresizable and destroy

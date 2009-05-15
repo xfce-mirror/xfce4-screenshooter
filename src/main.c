@@ -22,6 +22,8 @@
 #endif
 
 #include "libscreenshooter.h"
+#include <glib.h>
+#include <stdlib.h>
 
 
 
@@ -194,7 +196,7 @@ cb_dialog_response (GtkWidget *dialog, int response, ScreenshotData *sd)
 
 
 
-int main(int argc, char **argv)
+int main (int argc, char **argv)
 {
   GError *cli_error = NULL;
   GFile *default_save_dir;
@@ -214,14 +216,15 @@ int main(int argc, char **argv)
           g_print (_("%s: %s\nTry %s --help to see a full list of"
                      " available command line options.\n"),
                    PACKAGE, cli_error->message, PACKAGE_NAME);
-				   
+
           g_error_free (cli_error);
-		  
-          return 1;
+
+          return EXIT_FAILURE;
         }
     }
 
-  g_thread_init (NULL);
+  if (!g_thread_supported ())
+    g_thread_init (NULL);
 
   /* Read the preferences */
 
@@ -235,7 +238,7 @@ int main(int argc, char **argv)
   /* Check if the directory read from the preferences is valid */
 
   default_save_dir = g_file_new_for_uri (sd->screenshot_dir);
-  
+
   if (G_UNLIKELY (!g_file_query_exists (default_save_dir, NULL)))
     {
       g_free (sd->screenshot_dir);
@@ -249,8 +252,8 @@ int main(int argc, char **argv)
   if (version)
     {
       g_print ("%s\n", PACKAGE_STRING);
-	  
-      return 0;
+
+      return EXIT_SUCCESS;
     }
 
   /* If a region cli option is given, take the screenshot accordingly.*/
@@ -269,7 +272,7 @@ int main(int argc, char **argv)
         {
           sd->region = SELECT;
         }
-	  
+
       /* Wether to show the save dialog allowing to choose a filename
        * and a save location */
       no_save_dialog ? (sd->show_save_dialog = 0) : (sd->show_save_dialog = 1);
@@ -339,5 +342,7 @@ int main(int argc, char **argv)
   g_free (sd->app);
   g_free (sd);
 
-  return 0;
+  TRACE ("Ciao");
+
+  return EXIT_SUCCESS;
 }

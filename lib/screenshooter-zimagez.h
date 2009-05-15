@@ -31,10 +31,11 @@
 #include <xmlrpc-c/client.h>
 
 #include "screenshooter-utils.h"
+#include "screenshooter-simple-job.h"
 #include "sexy-url-label.h"
 
 
-gchar *screenshooter_upload_to_zimagez     (const gchar *image_path);
-void   screenshooter_display_zimagez_links (const gchar *upload_name);
+void screenshooter_upload_to_zimagez (const gchar *image_path);
+
 
 #endif
