@@ -25,7 +25,7 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
     screenshooter_take_screenshot (sd->region, sd->delay, sd->show_mouse);
 
   g_return_if_fail (screenshot != NULL);
-  
+
   if (sd->action == SAVE)
     {
       if (sd->screenshot_dir == NULL)

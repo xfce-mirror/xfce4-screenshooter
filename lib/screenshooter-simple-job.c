@@ -51,12 +51,12 @@ screenshooter_simple_job_get_type (void)
 
   if (G_UNLIKELY (type == G_TYPE_INVALID))
     {
-      type = g_type_register_static_simple (SCREENSHOOTER_TYPE_JOB, 
+      type = g_type_register_static_simple (SCREENSHOOTER_TYPE_JOB,
                                             "ScreenshooterSimpleJob",
                                             sizeof (ScreenshooterSimpleJobClass),
                                             (GClassInitFunc) screenshooter_simple_job_class_init,
                                             sizeof (ScreenshooterSimpleJob),
-                                            NULL, 
+                                            NULL,
                                             0);
     }
 
@@ -114,7 +114,7 @@ screenshooter_simple_job_execute (ExoJob  *job,
     {
       g_assert (err != NULL || exo_job_is_cancelled (job));
 
-      /* set error if the job was cancelled. otherwise just propagate 
+      /* set error if the job was cancelled. otherwise just propagate
        * the results of the processing function */
       if (exo_job_set_error_if_cancelled (job, error))
         {

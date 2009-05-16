@@ -173,7 +173,8 @@ void screenshooter_job_ask_info (ScreenshooterJob *job,
   g_return_if_fail (format != NULL);
 
   if (G_UNLIKELY (exo_job_is_cancelled (EXO_JOB (job))))
-  
+    return;
+
   va_start (va_args, format);
   message = g_strdup_vprintf (format, va_args);
   va_end (va_args);

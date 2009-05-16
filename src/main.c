@@ -122,7 +122,7 @@ cb_dialog_response (GtkWidget *dialog, int response, ScreenshotData *sd)
       /* Launch the help page and show an error dialog if there was an error. */
       if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
         {
-          xfce_err (error_help->message);
+          screenshooter_error ("%s", error_help->message);
           g_error_free (error_help);
         }
     }
@@ -310,8 +310,10 @@ int main (int argc, char **argv)
             }
           else
             {
-              xfce_err (_("%s is not a valid directory, the default"
-                          " directory will be used."), screenshot_dir);
+              screenshooter_error ("%s",
+                                   _("%s is not a valid directory, the default"
+                                     " directory will be used."),
+                                   screenshot_dir);
             }
 
           g_object_unref (default_save_dir);

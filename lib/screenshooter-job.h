@@ -66,7 +66,7 @@ void  screenshooter_job_ask_info       (ScreenshooterJob *job,
                                         GtkListStore     *info,
                                         const gchar      *format,
                                         ...);
-                                        
+
 
 void  screenshooter_job_image_uploaded (ScreenshooterJob *job,
                                         const gchar      *file_name);

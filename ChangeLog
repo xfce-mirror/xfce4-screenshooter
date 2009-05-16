@@ -1,3 +1,14 @@
+2009-05-16 jeromeg
+
+	* src/screenshooter-utils.{c,h}: add (screenshooter_error) which shows
+	  an error using a GtkMessageDialog.
+	* lib/*, panel-plugin/screenshooter-plugin.c, src/main.c:
+	  - use (screenshooter_error) instead of (xfce_err).
+	  - remove some trailing white spaces.
+	* lib/screenshooter-job.c (screenshooter_job_ask_info): add a missing return,
+	  when the job has been cancelled.
+	* TODO: updated.
+
 2009-05-15 jeromeg
 
 	* src/main.c:

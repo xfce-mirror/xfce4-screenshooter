@@ -34,28 +34,17 @@
 
 
 
-void
-screenshooter_copy_to_clipboard  (GdkPixbuf            *screenshot) ;
+void screenshooter_copy_to_clipboard (GdkPixbuf      *screenshot) ;
+void screenshooter_read_rc_file      (gchar          *file,
+                                      ScreenshotData *sd);
+void screenshooter_write_rc_file     (gchar          *file,
+                                      ScreenshotData *sd);
+void screenshooter_open_screenshot   (const gchar    *screenshot_path,
+                                      const gchar    *application);
+gchar *screenshooter_get_home_uri    ();
+gboolean screenshooter_is_remote_uri (const gchar    *uri);
+gchar *rot13                         (gchar          *string);
+void screenshooter_error             (const gchar    *format,
+                                      ...);
 
-void 
-screenshooter_read_rc_file       (gchar                *file, 
-                                  ScreenshotData       *sd);
-                                  
-void 
-screenshooter_write_rc_file      (gchar                *file, 
-                                  ScreenshotData       *sd);
-
-void
-screenshooter_open_screenshot    (const gchar          *screenshot_path,
-                                  const gchar          *application);
-
-gchar
-*screenshooter_get_home_uri      ();
-
-gboolean
-screenshooter_is_remote_uri      (const gchar          *uri);
-
-gchar
-*rot13                           (gchar                *string);
-
-#endif                               
+#endif

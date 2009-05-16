@@ -28,7 +28,7 @@ G_BEGIN_DECLS
 /**
  * ExoSimpleJobFunc:
  * @job            : an #ExoJob.
- * @param_values   : a #GValueArray of the #GValue<!---->s passed to 
+ * @param_values   : a #GValueArray of the #GValue<!---->s passed to
  *                   exo_simple_job_launch().
  * @error          : return location for errors.
  *

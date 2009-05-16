@@ -47,7 +47,7 @@ typedef struct
 
   GtkWidget *button;
   GtkWidget *image;
-  
+
   int style_id;
   ScreenshotData *sd;
 }
@@ -56,42 +56,42 @@ PluginData;
 
 
 /* Protoypes */
-                                   
-static void 
+
+static void
 screenshooter_plugin_construct       (XfcePanelPlugin      *plugin);
 
-static void 
-screenshooter_plugin_read_rc_file    (XfcePanelPlugin      *plugin, 
-                                      PluginData           *pd);  
-              
-static void 
-screenshooter_plugin_write_rc_file   (XfcePanelPlugin      *plugin, 
+static void
+screenshooter_plugin_read_rc_file    (XfcePanelPlugin      *plugin,
                                       PluginData           *pd);
 
-static gboolean 
-cb_set_size                          (XfcePanelPlugin      *plugin, 
-                                      int                   size, 
+static void
+screenshooter_plugin_write_rc_file   (XfcePanelPlugin      *plugin,
                                       PluginData           *pd);
-                                   
-static void 
+
+static gboolean
+cb_set_size                          (XfcePanelPlugin      *plugin,
+                                      int                   size,
+                                      PluginData           *pd);
+
+static void
 cb_properties_dialog                 (XfcePanelPlugin      *plugin,
                                       PluginData           *pd);
-                                      
+
 static void
-cb_dialog_response                   (GtkWidget            *dlg, 
+cb_dialog_response                   (GtkWidget            *dlg,
                                       int                   response,
-                                      PluginData           *pd);
-                                   
-static void 
-cb_free_data                         (XfcePanelPlugin      *plugin, 
-                                      PluginData           *pd);
-                                  
-static void 
-cb_button_clicked                    (GtkWidget            *button, 
                                       PluginData           *pd);
 
 static void
-cb_style_set                         (XfcePanelPlugin      *plugin, 
+cb_free_data                         (XfcePanelPlugin      *plugin,
+                                      PluginData           *pd);
+
+static void
+cb_button_clicked                    (GtkWidget            *button,
+                                      PluginData           *pd);
+
+static void
+cb_style_set                         (XfcePanelPlugin      *plugin,
                                       gpointer              ignored,
                                       PluginData           *pd);
 
@@ -104,29 +104,29 @@ set_panel_button_tooltip             (PluginData           *pd);
 
 
 
-/* Modify the size of the panel button 
-Returns TRUE if succesful. 
+/* Modify the size of the panel button
+Returns TRUE if succesful.
 */
 static gboolean
 cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 {
   GdkPixbuf *pb;
-  
+
   int width = size - 2 - 2 * MAX (pd->button->style->xthickness,
                                     pd->button->style->ythickness);
 
   TRACE ("Get the icon from the theme");
-  
+
   pb = xfce_themed_icon_load (SCREENSHOT_ICON_NAME, width);
 
   TRACE ("Set the new icon");
-  
+
   gtk_image_set_from_pixbuf (GTK_IMAGE (pd->image), pb);
-  
+
   g_object_unref (pb);
 
   TRACE ("Request size for the plugin");
-  
+
   gtk_widget_set_size_request (GTK_WIDGET (plugin), size, size);
 
   return TRUE;
@@ -136,7 +136,7 @@ cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 
 /* Free the panel plugin data stored in pd
 plugin: a XfcePanelPlugin (a screenshooter one).
-pd: the associated PluginData. 
+pd: the associated PluginData.
 */
 static void
 cb_free_data (XfcePanelPlugin *plugin, PluginData *pd)
@@ -160,14 +160,14 @@ pd: the PluginData storing the options for taking the screenshot.
 static void
 cb_button_clicked (GtkWidget *button, PluginData *pd)
 {
-  /* Make the button unclickable so that the user does not press it while 
+  /* Make the button unclickable so that the user does not press it while
 	another screenshot is in progress */
 	gtk_widget_set_sensitive (GTK_WIDGET (button), FALSE);
 
   TRACE ("Start taking the screenshot");
-  
+
   screenshooter_take_and_output_screenshot (pd->sd);
-  
+
   /* Make the panel button clickable */
 	gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
 }
@@ -194,9 +194,9 @@ static void
 screenshooter_plugin_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
   gchar *rc_file = xfce_panel_plugin_lookup_rc_file (plugin);
-  
+
   screenshooter_read_rc_file (rc_file, pd->sd);
-  
+
   g_free (rc_file);
 }
 
@@ -210,9 +210,9 @@ static void
 screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
   gchar * rc_file = xfce_panel_plugin_save_location (plugin, TRUE);
-  
-  screenshooter_write_rc_file (rc_file, pd->sd);  
-  
+
+  screenshooter_write_rc_file (rc_file, pd->sd);
+
   g_free (rc_file);
 }
 
@@ -230,24 +230,24 @@ cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
       g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
 
       gtk_widget_destroy (dlg);
-      
+
       /* Update tooltips according to the chosen option */
       set_panel_button_tooltip (pd);
-      
+
       /* Unblock the menu and save options */
       xfce_panel_plugin_unblock_menu (pd->plugin);
       screenshooter_plugin_write_rc_file (pd->plugin, pd);
     }
-    
+
   if (response == GTK_RESPONSE_HELP)
     {
       GError *error_help = NULL;
-              
-      /* Execute the help and show an error dialog if there was 
+
+      /* Execute the help and show an error dialog if there was
        * an error. */
       if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
         {
-          xfce_err (error_help->message);
+          screenshooter_error ("%s", error_help->message);
           g_error_free (error_help);
         }
     }
@@ -262,20 +262,20 @@ cb_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   GtkWidget *dlg;
 
   TRACE ("Create the dialog");
-  
+
   dlg = screenshooter_dialog_new (pd->sd, TRUE);
-        
+
   /* Block the menu to prevent the user from launching several dialogs at
   the same time */
 
   TRACE ("Block the menu");
-  
+
   xfce_panel_plugin_block_menu (plugin);
 
   TRACE ("Run the dialog");
-  
+
   g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
-  
+
   g_signal_connect (dlg, "response", G_CALLBACK (cb_dialog_response), pd);
 
   gtk_widget_show (dlg);
@@ -321,7 +321,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   pd->sd = sd;
 
   TRACE ("Initialize the text domain");
-  
+
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
   pd->plugin = plugin;
@@ -330,33 +330,33 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   TRACE ("Read the preferences file");
 
   screenshooter_plugin_read_rc_file (plugin, pd);
-  
+
   /* Create the panel button */
   TRACE ("Create the panel button");
-  
+
   pd->button = xfce_create_panel_button ();
 
   pd->image = gtk_image_new ();
 
   gtk_container_add (GTK_CONTAINER (pd->button), GTK_WIDGET (pd->image));
-  
+
   /* Set the tooltips if available */
   TRACE ("Set the default tooltip");
-  
+
   set_panel_button_tooltip (pd);
 
   TRACE ("Add the button to the panel");
-  
+
   gtk_widget_show_all (pd->button);
-  
+
   gtk_container_add (GTK_CONTAINER (plugin), pd->button);
 
   xfce_panel_plugin_add_action_widget (plugin, pd->button);
-  
+
   /* Set the callbacks */
 
   TRACE ("Set the clicked callback");
-  
+
   g_signal_connect (pd->button, "clicked", G_CALLBACK (cb_button_clicked), pd);
 
   TRACE ("Set the free data callback");
@@ -374,7 +374,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   TRACE ("Set the configuration menu");
 
   xfce_panel_plugin_menu_show_configure (plugin);
-  
+
   g_signal_connect (plugin, "configure-plugin", G_CALLBACK (cb_properties_dialog), pd);
 }
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (screenshooter_plugin_construct);

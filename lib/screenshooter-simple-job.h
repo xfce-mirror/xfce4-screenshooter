@@ -34,7 +34,7 @@ G_BEGIN_DECLS
 /**
  * ScreenshooterSimpleJobFunc:
  * @job            : a #ScreenshooterJob.
- * @param_values   : a #GValueArray of the #GValue<!---->s passed to 
+ * @param_values   : a #GValueArray of the #GValue<!---->s passed to
  *                   screenshooter_simple_job_launch().
  * @error          : return location for errors.
  *

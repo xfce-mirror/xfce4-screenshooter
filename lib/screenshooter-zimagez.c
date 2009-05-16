@@ -85,7 +85,7 @@ open_url_hook (GtkLinkButton *button, const gchar *link, gpointer user_data)
     {
       TRACE ("An error occured when opening the URL");
 
-      xfce_err (error->message);
+      screenshooter_error ("%s", error->message);
       g_error_free (error);
     }
 }
@@ -434,12 +434,12 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
             {
               gchar *field_name = NULL;
               gchar *field_value = NULL;
-        
+
               gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
                                   0, &field_name,
                                   1, &field_value,
                                   -1);
-        
+
               if (g_str_equal (field_name, "user"))
                 {
                   user = g_strdup (field_value);
@@ -456,7 +456,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
                 {
                   comment = g_strdup (field_value);
                 }
-        
+
               g_free (field_name);
               g_free (field_value);
             }
@@ -797,25 +797,25 @@ cb_ask_for_information (ScreenshooterJob *job,
                                             0, 0, NULL,
                                             cb_image_uploaded,
                                             NULL);
-    
+
       g_signal_handlers_disconnect_matched (job,
                                             G_SIGNAL_MATCH_FUNC,
                                             0, 0, NULL,
                                             cb_error,
                                             NULL);
-    
+
       g_signal_handlers_disconnect_matched (job,
                                             G_SIGNAL_MATCH_FUNC,
                                             0, 0, NULL,
                                             cb_ask_for_information,
                                             NULL);
-    
+
       g_signal_handlers_disconnect_matched (job,
                                             G_SIGNAL_MATCH_FUNC,
                                             0, 0, NULL,
                                             cb_update_info,
                                             NULL);
-    
+
       g_signal_handlers_disconnect_matched (job,
                                             G_SIGNAL_MATCH_FUNC,
                                             0, 0, NULL,

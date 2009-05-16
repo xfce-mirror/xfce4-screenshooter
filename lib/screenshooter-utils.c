@@ -30,7 +30,7 @@
 * @screenshot: the screenshot
 */
 void
-screenshooter_copy_to_clipboard (GdkPixbuf *screenshot) 
+screenshooter_copy_to_clipboard (GdkPixbuf *screenshot)
 {
   GtkClipboard *clipboard;
 
@@ -65,7 +65,7 @@ screenshooter_read_rc_file (gchar *file, ScreenshotData *sd)
   gint close_app = 1;
   gchar *screenshot_dir = g_strdup (home_uri);
   gchar *app = g_strdup ("none");
-  
+
   if (G_LIKELY (file != NULL))
     {
       TRACE ("Open the rc file");
@@ -82,23 +82,23 @@ screenshooter_read_rc_file (gchar *file, ScreenshotData *sd)
           show_save_dialog = xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
           show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
           close_app = xfce_rc_read_int_entry (rc, "close", 1);
-              
+
           g_free (app);
           app = g_strdup (xfce_rc_read_entry (rc, "app", "none"));
-           
+
           g_free (screenshot_dir);
           screenshot_dir =
             g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", home_uri));
         }
 
       TRACE ("Close the rc file");
-      
+
       xfce_rc_close (rc);
     }
-   
+
   /* And set the sd values */
   TRACE ("Set the values of the struct");
-  
+
   sd->delay = delay;
   sd->region = region;
   sd->action = action;
@@ -119,17 +119,17 @@ void
 screenshooter_write_rc_file (gchar *file, ScreenshotData *sd)
 {
   XfceRc *rc;
-  
+
   g_return_if_fail (file != NULL);
 
   TRACE ("Open the rc file");
 
   rc = xfce_rc_simple_open (file, FALSE);
-  
+
   g_return_if_fail (rc != NULL);
 
   TRACE ("Write the entries.");
-  
+
   xfce_rc_write_int_entry (rc, "delay", sd->delay);
   xfce_rc_write_int_entry (rc, "region", sd->region);
   xfce_rc_write_int_entry (rc, "action", sd->action);
@@ -142,7 +142,7 @@ screenshooter_write_rc_file (gchar *file, ScreenshotData *sd)
   TRACE ("Flush and close the rc file");
 
   xfce_rc_flush (rc);
-  
+
   xfce_rc_close (rc);
 }
 
@@ -159,7 +159,7 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
   GError *error = NULL;
 
   g_return_if_fail (screenshot_path != NULL);
-  
+
   TRACE ("Path was != NULL");
 
   g_return_if_fail (!g_str_equal (application, "none"));
@@ -169,17 +169,17 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
   command = g_strconcat (application, " ", screenshot_path, NULL);
 
   TRACE ("Launch the command");
-  
-  /* Execute the command and show an error dialog if there was 
+
+  /* Execute the command and show an error dialog if there was
   * an error. */
   if (!g_spawn_command_line_async (command, &error))
     {
       TRACE ("An error occured");
 
-      xfce_err (error->message);
+      screenshooter_error ("%s", error->message);
       g_error_free (error);
     }
-  
+
   g_free (command);
 }
 
@@ -217,7 +217,7 @@ gboolean screenshooter_is_remote_uri (const gchar *uri)
 gchar *rot13 (gchar *string)
 {
   gchar *result = string;
- 
+
   for (; *string; string++)
     if (*string >= 'a' && *string <= 'z')
       *string = (*string - 'a' + 13) % 26 + 'a';
@@ -225,5 +225,37 @@ gchar *rot13 (gchar *string)
       *string = (*string - 'A' + 13) % 26 + 'A';
 
   return result;
+}
+
+
+
+/**
+ * screenshooter_error:
+ * @format: printf()-style format string
+ * @...: arguments for @format
+ *
+ * Shows a modal error dialog with the given error text. Blocks until the user
+ * clicks the OK button.
+ **/
+void screenshooter_error (const gchar *format, ...)
+{
+  va_list va_args = NULL;
+  gchar *message = NULL;
+  GtkWidget *dialog;
+
+  g_return_if_fail (format != NULL);
+
+  va_start (va_args, format);
+  message = g_strdup_vprintf (format, va_args);
+  va_end (va_args);
+
+  dialog =
+    gtk_message_dialog_new (NULL, GTK_DIALOG_NO_SEPARATOR, GTK_MESSAGE_ERROR,
+                            GTK_BUTTONS_OK, "%s", message);
+
+  gtk_dialog_run (GTK_DIALOG (dialog));
+  gtk_widget_destroy  (dialog);
+
+  g_free (message);
 }
 

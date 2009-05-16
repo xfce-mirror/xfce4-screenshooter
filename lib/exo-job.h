@@ -42,7 +42,7 @@ struct _ExoJobClass
 
   /* virtual methods */
   gboolean   (*execute)      (ExoJob      *job,
-                              GError     **error); 
+                              GError     **error);
 
   /* signals */
   void       (*error)        (ExoJob      *job,

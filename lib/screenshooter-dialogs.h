@@ -19,7 +19,7 @@
 
 #ifndef __HAVE_DIALOGS_H__
 #define __HAVE_DIALOGS_H__
- 
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -37,11 +37,9 @@
 
 
 
-GtkWidget   
-*screenshooter_dialog_new          (ScreenshotData      *sd, 
-                                    gboolean             plugin);
-gchar 
-*screenshooter_save_screenshot     (GdkPixbuf           *screenshot, 
-                                    gboolean             show_save_dialog,
-                                    const gchar         *default_dir);
-#endif                                    
+GtkWidget *screenshooter_dialog_new  (ScreenshotData *sd,
+                                      gboolean        plugin);
+gchar *screenshooter_save_screenshot (GdkPixbuf      *screenshot,
+                                      gboolean        show_save_dialog,
+                                      const gchar    *default_dir);
+#endif

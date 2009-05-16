@@ -2,7 +2,6 @@
 as in thunar and xfdesktop.
 * Check for leaks using valgrind.
 * Use Xshape to have a transparent background in the generated screenshots.
-* Remove every call to xfce_err with a gtk_message_dialog.
 * the Zimagez code needs a lot of error checking.
 
 Low priority:
