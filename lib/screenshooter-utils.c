@@ -52,7 +52,7 @@ screenshooter_copy_to_clipboard (GdkPixbuf *screenshot)
 @dir_only: if true, only read the screenshot_dir.
 */
 void
-screenshooter_read_rc_file (gchar *file, ScreenshotData *sd)
+screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 {
   const gchar *home_uri = screenshooter_get_home_uri ();
 
@@ -116,7 +116,7 @@ screenshooter_read_rc_file (gchar *file, ScreenshotData *sd)
 @sd: a ScreenshotData.
 */
 void
-screenshooter_write_rc_file (gchar *file, ScreenshotData *sd)
+screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
 {
   XfceRc *rc;
 

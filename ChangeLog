@@ -1,6 +1,14 @@
+2009-05-17 jeromeg
+
+	* lib/screenshooter-utils.{c,h}: use a constant in
+	  (screenshooter_read_rc_file) and (screenshooter_write_rc_file).
+	* src/main.c:
+	  - use a constant for the rc file.
+	  - don't save the preferences in the callback but in (main).
+
 2009-05-16 jeromeg
 
-	* src/screenshooter-utils.{c,h}: add (screenshooter_error) which shows
+	* lib/screenshooter-utils.{c,h}: add (screenshooter_error) which shows
 	  an error using a GtkMessageDialog.
 	* lib/*, panel-plugin/screenshooter-plugin.c, src/main.c:
 	  - use (screenshooter_error) instead of (xfce_err).

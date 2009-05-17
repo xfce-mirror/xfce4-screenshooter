@@ -128,8 +128,6 @@ cb_dialog_response (GtkWidget *dialog, int response, ScreenshotData *sd)
     }
   else if (response == GTK_RESPONSE_OK)
     {
-      gchar *rc_file;
-
       GdkDisplay *display = gdk_display_get_default ();
 
       gtk_widget_hide (dialog);
@@ -146,20 +144,6 @@ cb_dialog_response (GtkWidget *dialog, int response, ScreenshotData *sd)
       if (sd->close == 1)
         {
           gtk_widget_destroy (dialog);
-
-          rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
-                                                 "xfce4/xfce4-screenshooter",
-                                                 TRUE);
-
-          /* Save preferences */
-
-          if (rc_file != NULL)
-            {
-              screenshooter_write_rc_file (rc_file, sd);
-
-              g_free (rc_file);
-            }
-
           gtk_main_quit ();
         }
       else
@@ -169,23 +153,7 @@ cb_dialog_response (GtkWidget *dialog, int response, ScreenshotData *sd)
     }
   else
     {
-      gchar *rc_file;
-
       gtk_widget_destroy (dialog);
-
-      rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
-                                             "xfce4/xfce4-screenshooter",
-                                             TRUE);
-
-      /* Save preferences */
-
-      if (rc_file != NULL)
-        {
-          screenshooter_write_rc_file (rc_file, sd);
-
-          g_free (rc_file);
-        }
-
       gtk_main_quit ();
     }
 }
@@ -203,7 +171,7 @@ int main (int argc, char **argv)
 
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
 
-  gchar *rc_file;
+  const gchar *rc_file;
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -227,16 +195,10 @@ int main (int argc, char **argv)
     g_thread_init (NULL);
 
   /* Read the preferences */
-
   rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter");
-
   screenshooter_read_rc_file (rc_file, sd);
 
-  if (G_LIKELY (rc_file != NULL))
-    g_free (rc_file);
-
   /* Check if the directory read from the preferences is valid */
-
   default_save_dir = g_file_new_for_uri (sd->screenshot_dir);
 
   if (G_UNLIKELY (!g_file_query_exists (default_save_dir, NULL)))
@@ -326,18 +288,24 @@ int main (int argc, char **argv)
   else
     {
       GtkWidget *dialog;
+      const gchar *preferences_file =
+        xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
+                                     "xfce4/xfce4-screenshooter",
+                                     TRUE);
 
       /* Set the dialog up */
 
       dialog = screenshooter_dialog_new (sd, FALSE);
 
-      gtk_window_set_type_hint(GTK_WINDOW (dialog), GDK_WINDOW_TYPE_HINT_NORMAL);
-
       g_signal_connect (dialog, "response", G_CALLBACK (cb_dialog_response), sd);
-
       gtk_widget_show (dialog);
 
       gtk_main ();
+
+      /* Save preferences */
+      if (preferences_file != NULL)
+        screenshooter_write_rc_file (preferences_file, sd);
+
     }
 
   g_free (sd->screenshot_dir);
