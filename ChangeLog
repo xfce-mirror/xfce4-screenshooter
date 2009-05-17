@@ -1,5 +1,12 @@
 2009-05-17 jeromeg
 
+	* lib/screenshooter-zimagez.c:
+	  - (zimagez_upload_job) remove a useless cancel check before the loop.
+	  - (cb_ask_for_information) do not disconnect handlers before
+	    cancelling the job, only before destroying it.
+
+2009-05-17 jeromeg
+
 	* lib/screenshooter-utils.{c,h}: use a constant in
 	  (screenshooter_read_rc_file) and (screenshooter_write_rc_file).
 	* src/main.c:

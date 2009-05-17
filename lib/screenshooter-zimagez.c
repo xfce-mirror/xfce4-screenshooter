@@ -244,16 +244,6 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
     }
   while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
 
-  if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
-    {
-      xmlrpc_env_clean (&env);
-      xmlrpc_client_cleanup ();
-
-      TRACE ("The upload job was cancelled.");
-
-      return FALSE;
-    }
-
   while (!response)
     {
       gboolean empty_field = FALSE;
@@ -792,36 +782,6 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   if (response == GTK_RESPONSE_CANCEL)
     {
-      g_signal_handlers_disconnect_matched (job,
-                                            G_SIGNAL_MATCH_FUNC,
-                                            0, 0, NULL,
-                                            cb_image_uploaded,
-                                            NULL);
-
-      g_signal_handlers_disconnect_matched (job,
-                                            G_SIGNAL_MATCH_FUNC,
-                                            0, 0, NULL,
-                                            cb_error,
-                                            NULL);
-
-      g_signal_handlers_disconnect_matched (job,
-                                            G_SIGNAL_MATCH_FUNC,
-                                            0, 0, NULL,
-                                            cb_ask_for_information,
-                                            NULL);
-
-      g_signal_handlers_disconnect_matched (job,
-                                            G_SIGNAL_MATCH_FUNC,
-                                            0, 0, NULL,
-                                            cb_update_info,
-                                            NULL);
-
-      g_signal_handlers_disconnect_matched (job,
-                                            G_SIGNAL_MATCH_FUNC,
-                                            0, 0, NULL,
-                                            cb_finished,
-                                            NULL);
-
       exo_job_cancel (EXO_JOB (job));
     }
   else if (response == GTK_RESPONSE_OK)
