@@ -955,8 +955,6 @@ static void cb_finished (ExoJob *job, GtkWidget *dialog)
   g_object_unref (G_OBJECT (job));
 
   gtk_widget_destroy (dialog);
-
-  gtk_main_quit ();
 }
 
 
@@ -1019,7 +1017,5 @@ void screenshooter_upload_to_zimagez (const gchar *image_path)
   g_signal_connect (job, "finished", (GCallback) cb_finished, dialog);
   g_signal_connect (job, "info-message", (GCallback) cb_update_info, label);
 
-  gtk_widget_show (dialog);
-
-  gtk_main ();
+  gtk_dialog_run (GTK_DIALOG (dialog));
 }

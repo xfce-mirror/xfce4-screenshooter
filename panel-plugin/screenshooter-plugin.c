@@ -319,6 +319,8 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   g_thread_init (NULL);
 
   pd->sd = sd;
+  /* The panel plugin ignores the close settings, as in command line */
+  pd->sd->cli = TRUE;
 
   TRACE ("Initialize the text domain");
 

@@ -1,4 +1,22 @@
-2009-05-17 jeromeg
+2009-05-18 jeromeg
+
+	* lib/screenshooter-global.h: add a cli gboolean to the ScreenshotData
+	  structure. Combined with the close member of the structure, this
+	  allows to close the application or not depending on how the
+	  executable is called.
+	* src/main.c, lib/screenshooter-actions.{c,h}: move the dialog
+	  stuff to (screenshooter_take_and_output_screenshot) which is
+	  from now on a GSourceFunc. It returns TRUE if we want to take
+	  another screenshot, else it quits the main loop and returns
+	  FALSE. It is called via g_idle_add in (main), which allows us
+	  to always have a main loop. The workaround consisting in
+	  sleep (1) before taking a screenshot seems useless now.
+	* lib/screenshooter-zimagez.c: don't start and exit a main
+	  loop here, run the dialog instead of showing it.
+	* panel-plugin/screenshooter-plugin.c: set the cli member of the
+	  structure to false when initializing the plugin.
+
+2009-05-18 jeromeg
 
 	* lib/screenshooter-utils.c (screenshooter_error),
 	  lib/screenshooter-job.c (screenshooter_job_ask_info):

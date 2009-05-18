@@ -19,12 +19,73 @@
 
 #include "screenshooter-actions.h"
 
-void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
-{
-  GdkPixbuf *screenshot =
-    screenshooter_take_screenshot (sd->region, sd->delay, sd->show_mouse);
 
-  g_return_if_fail (screenshot != NULL);
+
+static void     cb_help_response (GtkWidget *dlg,
+                                  gint       response,
+                                  gpointer   unused);
+
+
+
+/* Internals */
+
+
+
+static void
+cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
+{
+  if (response == GTK_RESPONSE_HELP)
+    {
+      GError *error_help = NULL;
+
+      g_signal_stop_emission_by_name (dialog, "response");
+
+      /* Launch the help page and show an error dialog if there was an error. */
+      if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
+        {
+          screenshooter_error ("%s", error_help->message);
+          g_error_free (error_help);
+        }
+    }
+}
+
+
+
+/* Public */
+
+
+
+gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
+{
+  GdkPixbuf *screenshot;
+
+  if (sd->cli == FALSE)
+    {
+      GtkWidget *dialog;
+      gint response;
+
+      /* Set the dialog up */
+      dialog = screenshooter_dialog_new (sd, FALSE);
+      g_signal_connect (dialog, "response", (GCallback) cb_help_response, NULL);
+
+      response = gtk_dialog_run (GTK_DIALOG (dialog));
+
+      if (response == GTK_RESPONSE_OK)
+        {
+          gtk_widget_hide (dialog);
+        }
+      else
+        {
+          gtk_widget_destroy (dialog);
+          gtk_main_quit ();
+
+          return FALSE;
+        }
+    }
+
+  screenshot = screenshooter_take_screenshot (sd->region, sd->delay, sd->show_mouse);
+
+  g_return_val_if_fail (screenshot != NULL, FALSE);
 
   if (sd->action == SAVE)
     {
@@ -64,5 +125,13 @@ void screenshooter_take_and_output_screenshot (ScreenshotData *sd)
     }
 
   g_object_unref (screenshot);
+
+  if ((sd->cli == TRUE) || (sd->close == 1))
+    {
+      gtk_main_quit ();
+      return FALSE;
+    }
+  else
+    return TRUE;
 }
 

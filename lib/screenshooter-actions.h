@@ -26,6 +26,6 @@
 #include "screenshooter-dialogs.h"
 #include "screenshooter-zimagez.h"
 
-void screenshooter_take_and_output_screenshot (ScreenshotData *sd);
+gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd);
 
 #endif

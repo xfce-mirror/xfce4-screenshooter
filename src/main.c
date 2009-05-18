@@ -103,61 +103,6 @@ static GOptionEntry entries[] =
   }
 };
 
-static void
-cb_dialog_response (GtkWidget *dlg, int response, ScreenshotData *sd);
-
-
-
-/* Internals */
-
-
-
-static void
-cb_dialog_response (GtkWidget *dialog, int response, ScreenshotData *sd)
-{
-  if (response == GTK_RESPONSE_HELP)
-    {
-      GError *error_help = NULL;
-
-      /* Launch the help page and show an error dialog if there was an error. */
-      if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
-        {
-          screenshooter_error ("%s", error_help->message);
-          g_error_free (error_help);
-        }
-    }
-  else if (response == GTK_RESPONSE_OK)
-    {
-      GdkDisplay *display = gdk_display_get_default ();
-
-      gtk_widget_hide (dialog);
-
-      gdk_display_sync (display);
-
-      /* Make sure the window manager had time to set the new active
-      * window.*/
-      if (sd->region != SELECT)
-        sleep (1);
-
-      screenshooter_take_and_output_screenshot (sd);
-
-      if (sd->close == 1)
-        {
-          gtk_widget_destroy (dialog);
-          gtk_main_quit ();
-        }
-      else
-        {
-          gtk_widget_show (dialog);
-        }
-    }
-  else
-    {
-      gtk_widget_destroy (dialog);
-      gtk_main_quit ();
-    }
-}
-
 
 
 /* Main */
@@ -221,6 +166,8 @@ int main (int argc, char **argv)
   /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
     {
+      sd->cli = TRUE;
+
       /* Set the region to be captured */
       if (window)
         {
@@ -281,31 +228,27 @@ int main (int argc, char **argv)
           g_object_unref (default_save_dir);
           g_free (screenshot_dir);
         }
-
-      screenshooter_take_and_output_screenshot (sd);
     }
-  /* Else we just show up the main application */
+  /* Else we show a dialog which allows to set the screenshot options */
   else
     {
-      GtkWidget *dialog;
+      sd->cli = FALSE;
+    }
+
+  g_idle_add ((GSourceFunc) screenshooter_take_and_output_screenshot, sd);
+
+  gtk_main ();
+
+  /* Save preferences */
+  if (!(fullscreen || window || region))
+    {
       const gchar *preferences_file =
         xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
                                      "xfce4/xfce4-screenshooter",
                                      TRUE);
 
-      /* Set the dialog up */
-
-      dialog = screenshooter_dialog_new (sd, FALSE);
-
-      g_signal_connect (dialog, "response", G_CALLBACK (cb_dialog_response), sd);
-      gtk_widget_show (dialog);
-
-      gtk_main ();
-
-      /* Save preferences */
       if (preferences_file != NULL)
         screenshooter_write_rc_file (preferences_file, sd);
-
     }
 
   g_free (sd->screenshot_dir);
