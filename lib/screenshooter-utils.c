@@ -239,7 +239,7 @@ gchar *rot13 (gchar *string)
  **/
 void screenshooter_error (const gchar *format, ...)
 {
-  va_list va_args = NULL;
+  va_list va_args;
   gchar *message = NULL;
   GtkWidget *dialog;
 

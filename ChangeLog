@@ -1,5 +1,12 @@
 2009-05-17 jeromeg
 
+	* lib/screenshooter-utils.c (screenshooter_error),
+	  lib/screenshooter-job.c (screenshooter_job_ask_info):
+	  do not initialize va_list to NULL, that's wrong and useless.
+	  Thanks to Enrico Tröger.
+
+2009-05-17 jeromeg
+
 	* lib/screenshooter-zimagez.c:
 	  - (zimagez_upload_job) remove a useless cancel check before the loop.
 	  - (cb_ask_for_information) do not disconnect handlers before

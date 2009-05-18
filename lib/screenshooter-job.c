@@ -165,7 +165,7 @@ void screenshooter_job_ask_info (ScreenshooterJob *job,
                                  const gchar      *format,
                                  ...)
 {
-  va_list va_args = NULL;
+  va_list va_args;
   gchar *message;
 
   g_return_if_fail (SCREENSHOOTER_IS_JOB (job));
