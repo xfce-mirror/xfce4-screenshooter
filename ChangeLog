@@ -1,5 +1,13 @@
 2009-05-18 jeromeg
 
+	* lib/screenshooter-dialogs.c:
+	  - (screenshooter_dialog_new) add a radio button for uploading in the
+	    actions. Indent some comments correctly.
+	  - (cb_zimagez_toggled) add a callback for the radio button.
+	  - remove some useless comments.
+
+2009-05-18 jeromeg
+
 	* lib/screenshooter-global.h: add a cli gboolean to the ScreenshotData
 	  structure. Combined with the close member of the structure, this
 	  allows to close the application or not depending on how the
