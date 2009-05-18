@@ -49,7 +49,8 @@ static void              open_url_hook             (GtkLinkButton     *button,
                                                     const gchar       *link,
                                                     gpointer           user_data);
 static void              open_zimagez_link         (gpointer           unused);
-static ScreenshooterJob *zimagez_upload_to_zimagez (const gchar       *file_name);
+static ScreenshooterJob *zimagez_upload_to_zimagez (const gchar       *file_name,
+                                                    gchar             *last_user);
 static gboolean          zimagez_upload_job        (ScreenshooterJob  *job,
                                                     GValueArray       *param_values,
                                                     GError           **error);
@@ -112,7 +113,8 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   gchar *online_file_name = NULL;
   gchar *password = g_strdup ("");
   gchar *title = g_strdup ("");
-  gchar *user = g_strdup ("");
+  gchar *user;
+  gchar **last_user;
 
   gsize data_length;
 
@@ -130,12 +132,17 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
-  g_return_val_if_fail (param_values->n_values == 1, FALSE);
+  g_return_val_if_fail (param_values->n_values == 2, FALSE);
   g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[0]), FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_POINTER (&param_values->values[1]), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
     return FALSE;
+
+  /* Get the last user */
+  last_user = g_value_get_pointer (g_value_array_get_nth (param_values, 1));
+  user = g_strdup (*last_user);
 
   /* Get the path of the image that is to be uploaded */
   image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
@@ -456,6 +463,9 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   xmlrpc_DECREF (resultP);
 
+  g_free (*last_user);
+  *last_user = g_strdup (user);
+
   g_free (user);
   g_free (password);
   g_free (encoded_password);
@@ -580,12 +590,13 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
 
 static ScreenshooterJob
-*zimagez_upload_to_zimagez (const gchar *file_path)
+*zimagez_upload_to_zimagez (const gchar *file_path, gchar *last_user)
 {
   g_return_val_if_fail (file_path != NULL, NULL);
 
-  return screenshooter_simple_job_launch (zimagez_upload_job, 1,
-                                          G_TYPE_STRING, file_path);
+  return screenshooter_simple_job_launch (zimagez_upload_job, 2,
+                                          G_TYPE_STRING, file_path,
+                                          G_TYPE_POINTER, &last_user);
 }
 
 
@@ -977,6 +988,7 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
  * screenshooter_upload_to_zimagez:
  * @image_path: the local path of the image that should be uploaded to
  * ZimageZ.com.
+ * @last_user: the last user name used, to pre-fill the user field.
  *
  * Uploads the image whose path is @image_path: a dialog asks for the user
  * login, password, a title for the image and a comment; then the image is
@@ -985,11 +997,12 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
  *
  **/
 
-void screenshooter_upload_to_zimagez (const gchar *image_path)
+void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
 {
   ScreenshooterJob *job;
-  GtkWidget *dialog = NULL;
-  GtkWidget *label;
+  GtkWidget *dialog;
+  GtkWidget *label, *status_label;
+  GtkWidget *main_box, *main_alignment;
 
   g_return_if_fail (image_path != NULL);
 
@@ -1000,16 +1013,39 @@ void screenshooter_upload_to_zimagez (const gchar *image_path)
                                  NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), 20);
   gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
   gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "gtk-info");
 
-  label = gtk_label_new ("");
-  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), label);
-  gtk_widget_show (label);
+  /* Create the main alignment for the dialog */
+  main_alignment = gtk_alignment_new (0, 0, 1, 1);
 
-  job = zimagez_upload_to_zimagez (image_path);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 6, 6);
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
+
+  /* Create the main box for the dialog */
+  main_box = gtk_vbox_new (FALSE, 10);
+
+  gtk_container_set_border_width (GTK_CONTAINER (main_box), 12);
+  gtk_container_add (GTK_CONTAINER (main_alignment), main_box);
+
+  /* Status label*/
+  status_label = gtk_label_new ("");
+
+  gtk_label_set_markup (GTK_LABEL (status_label),
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+                          "Status</span>"));
+
+  gtk_misc_set_alignment (GTK_MISC (status_label), 0, 0);
+  gtk_container_add (GTK_CONTAINER (main_box), status_label);
+
+  /* Information label */
+  label = gtk_label_new ("");
+  gtk_container_add (GTK_CONTAINER (main_box), label);
+
+  gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
+
+  job = zimagez_upload_to_zimagez (image_path, last_user);
 
   g_signal_connect (job, "ask", (GCallback) cb_ask_for_information, NULL);
   g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, NULL);

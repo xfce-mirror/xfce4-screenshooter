@@ -35,7 +35,8 @@
 #include "sexy-url-label.h"
 
 
-void screenshooter_upload_to_zimagez (const gchar *image_path);
+void screenshooter_upload_to_zimagez (const gchar *image_path,
+                                      gchar       *last_user);
 
 
 #endif

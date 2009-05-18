@@ -1,5 +1,11 @@
 2009-05-18 jeromeg
 
+	* Improve the status dialog of the upload to ZimageZ.
+	* Remember the last ZimageZ user name and put it in the user field
+	  when displaying the dialog for the first time.
+
+2009-05-18 jeromeg
+
 	* lib/screenshooter-dialogs.c:
 	  - (screenshooter_dialog_new) add a radio button for uploading in the
 	    actions. Indent some comments correctly.

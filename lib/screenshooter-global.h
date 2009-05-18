@@ -48,6 +48,7 @@ typedef struct
   gint close;
   gchar *screenshot_dir;
   gchar *app;
+  gchar *last_user;
   gboolean cli;
 }
 ScreenshotData;

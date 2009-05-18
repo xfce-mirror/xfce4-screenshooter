@@ -773,7 +773,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   gtk_table_attach_defaults (GTK_TABLE (capture_table), area_main_box, 0, 1, 0, 2);
 
   /* Create area label */
-
   area_label = gtk_label_new ("");
 
   gtk_label_set_markup (GTK_LABEL (area_label),

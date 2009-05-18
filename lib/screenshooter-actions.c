@@ -117,7 +117,7 @@ gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
             }
           else
             {
-              screenshooter_upload_to_zimagez (screenshot_path);
+              screenshooter_upload_to_zimagez (screenshot_path, sd->last_user);
             }
         }
 

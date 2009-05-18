@@ -65,6 +65,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gint close_app = 1;
   gchar *screenshot_dir = g_strdup (home_uri);
   gchar *app = g_strdup ("none");
+  gchar *last_user = g_strdup ("");
 
   if (G_LIKELY (file != NULL))
     {
@@ -85,6 +86,9 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 
           g_free (app);
           app = g_strdup (xfce_rc_read_entry (rc, "app", "none"));
+
+          g_free (last_user);
+          last_user = g_strdup (xfce_rc_read_entry (rc, "last_user", ""));
 
           g_free (screenshot_dir);
           screenshot_dir =
@@ -107,6 +111,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->close = close_app;
   sd->screenshot_dir = screenshot_dir;
   sd->app = app;
+  sd->last_user = last_user;
 }
 
 
@@ -138,6 +143,7 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   xfce_rc_write_int_entry (rc, "close", sd->close);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
   xfce_rc_write_entry (rc, "app", sd->app);
+  xfce_rc_write_entry (rc, "last_user", sd->last_user);
 
   TRACE ("Flush and close the rc file");
 
