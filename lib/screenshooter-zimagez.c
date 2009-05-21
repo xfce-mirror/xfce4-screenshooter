@@ -45,10 +45,9 @@
 
 
 
-static void              open_url_hook             (GtkLinkButton     *button,
-                                                    const gchar       *link,
+static void              open_url_hook             (SexyUrlLabel      *url_label,
+                                                    gchar             *url,
                                                     gpointer           user_data);
-static void              open_zimagez_link         (gpointer           unused);
 static ScreenshooterJob *zimagez_upload_to_zimagez (const gchar       *file_name,
                                                     gchar             *last_user);
 static gboolean          zimagez_upload_job        (ScreenshooterJob  *job,
@@ -77,9 +76,9 @@ static void              cb_update_info            (ExoJob            *job,
 
 
 static void
-open_url_hook (GtkLinkButton *button, const gchar *link, gpointer user_data)
+open_url_hook (SexyUrlLabel *url_label, gchar *url, gpointer user_data)
 {
-  const gchar *command = g_strconcat ("xdg-open ", link, NULL);
+  const gchar *command = g_strconcat ("xdg-open ", url, NULL);
   GError *error = NULL;
 
   if (!g_spawn_command_line_async (command, &error))
@@ -89,13 +88,6 @@ open_url_hook (GtkLinkButton *button, const gchar *link, gpointer user_data)
       screenshooter_error ("%s", error->message);
       g_error_free (error);
     }
-}
-
-
-
-static void open_zimagez_link (gpointer unused)
-{
-  open_url_hook (NULL, "http://www.zimagez.com", NULL);
 }
 
 
@@ -659,8 +651,9 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   sexy_url_label_set_markup (SEXY_URL_LABEL (information_label), message);
 
-  g_signal_connect_swapped (G_OBJECT (information_label), "url-activated",
-                            G_CALLBACK (open_zimagez_link), NULL);
+  g_signal_connect (G_OBJECT (information_label), "url-activated",
+                    G_CALLBACK (open_url_hook), NULL);
+
 
   gtk_misc_set_alignment (GTK_MISC (information_label), 0, 0);
   gtk_container_add (GTK_CONTAINER (vbox), information_label);
@@ -844,11 +837,15 @@ cb_ask_for_information (ScreenshooterJob *job,
 static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gpointer unused)
 {
   GtkWidget *dialog;
+  GtkWidget *main_alignment, *vbox;
+  GtkWidget *link_label;
   GtkWidget *image_link, *thumbnail_link, *small_thumbnail_link;
+  GtkWidget *example_label, *html_label, *bb_label;
+  GtkWidget *html_code_label, *bb_code_label;
 
-  gchar *image_url;
-  gchar *thumbnail_url;
-  gchar *small_thumbnail_url;
+  const gchar *image_url, *thumbnail_url, *small_thumbnail_url;
+  const gchar *image_markup, *thumbnail_markup, *small_thumbnail_markup;
+  const gchar *html_code, *bb_code;
 
   g_return_if_fail (upload_name != NULL);
 
@@ -857,7 +854,19 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gpoint
     g_strdup_printf ("http://www.zimagez.com/miniature/%s.php", upload_name);
   small_thumbnail_url =
     g_strdup_printf ("http://www.zimagez.com/avatar/%s.php", upload_name);
-
+  image_markup =
+    g_strdup_printf ("<a href=\"%s\">Full size image</a>", image_url);
+  thumbnail_markup =
+    g_strdup_printf ("<a href=\"%s\">Large thumbnail</a>", thumbnail_url);
+  small_thumbnail_markup =
+    g_strdup_printf ("<a href=\"%s\">Small thumbnail</a>", small_thumbnail_url);
+  html_code =
+    g_strdup_printf ("<a href=\"%s\">\n  <img src=\"%s\" />\n</a>",
+                     image_url, thumbnail_url);
+  bb_code =
+    g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", image_url, thumbnail_url);
+    
+  /* Dialog */
   dialog =
     xfce_titled_dialog_new_with_buttons (_("My screenshot on ZimageZ©"),
                                          NULL,
@@ -867,46 +876,91 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gpoint
                                          NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), 20);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
+  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog)->vbox), 0);
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 12);
 
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "applications-internet");
 
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
-  /* Create the image link */
-  image_link =
-    gtk_link_button_new_with_label (image_url, _("Link to the full-size screenshot"));
+  /* Create the main alignment for the dialog */
+  main_alignment = gtk_alignment_new (0, 0, 1, 1);
 
-  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), image_link);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
+  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
+
+  /* Create the main box for the dialog */
+  vbox = gtk_vbox_new (FALSE, 10);
+
+  gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
+  gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
+
+  /* Links bold label */
+  link_label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (link_label), 
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+                          "Links</span>"));
+  gtk_misc_set_alignment (GTK_MISC (link_label), 0, 0);
+  gtk_container_add (GTK_CONTAINER (vbox), link_label);
+
+  /* Create the image link */
+  image_link = sexy_url_label_new ();
+  sexy_url_label_set_markup (SEXY_URL_LABEL (image_link), image_markup);
+  gtk_misc_set_alignment (GTK_MISC (image_link), 0, 0);
+  g_signal_connect (G_OBJECT (image_link), "url-activated",
+                    G_CALLBACK (open_url_hook), NULL);
+  gtk_container_add (GTK_CONTAINER (vbox), image_link);
 
   /* Create the thumbnail link */
-  thumbnail_link =
-    gtk_link_button_new_with_label (thumbnail_url,
-                                    _("Link to a thumbnail of the screenshot"));
-
-  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), thumbnail_link);
+  thumbnail_link = sexy_url_label_new ();
+  sexy_url_label_set_markup (SEXY_URL_LABEL (thumbnail_link), thumbnail_markup);
+  gtk_misc_set_alignment (GTK_MISC (thumbnail_link), 0, 0);
+  g_signal_connect (G_OBJECT (thumbnail_link), "url-activated",
+                    G_CALLBACK (open_url_hook), NULL);
+  gtk_container_add (GTK_CONTAINER (vbox), thumbnail_link);
 
   /* Create the small thumbnail link */
-  small_thumbnail_link =
-    gtk_link_button_new_with_label (small_thumbnail_url,
-                                    _("Link to a small thumbnail of the screenshot"));
+  small_thumbnail_link = sexy_url_label_new ();
+  sexy_url_label_set_markup (SEXY_URL_LABEL (small_thumbnail_link), small_thumbnail_markup);
+  gtk_misc_set_alignment (GTK_MISC (small_thumbnail_link), 0, 0);
+  g_signal_connect (G_OBJECT (small_thumbnail_link), "url-activated",
+                    G_CALLBACK (open_url_hook), NULL);
+  gtk_container_add (GTK_CONTAINER (vbox), small_thumbnail_link);
 
-  gtk_container_add (GTK_CONTAINER (GTK_DIALOG(dialog)->vbox), small_thumbnail_link);
+  /* Examples bold label */
+  example_label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (example_label), 
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+                          "Code for a thumbnail pointing to the full size image</span>"));
+  gtk_misc_set_alignment (GTK_MISC (example_label), 0, 0);
+  gtk_container_add (GTK_CONTAINER (vbox), example_label);
 
-  /* Set the url hook for the buttons */
-  gtk_link_button_set_uri_hook ((GtkLinkButtonUriFunc) open_url_hook, NULL, NULL);
+  /* HTML title */
+  html_label = gtk_label_new (_("HTML:"));
+  gtk_misc_set_alignment (GTK_MISC (html_label), 0, 0);
+  gtk_container_add (GTK_CONTAINER (vbox), html_label);
+
+  /* HTML code label */
+  html_code_label = gtk_label_new (html_code);
+  gtk_misc_set_alignment (GTK_MISC (html_code_label), 0.1, 0);
+  gtk_label_set_selectable (GTK_LABEL (html_code_label), TRUE);
+  gtk_container_add (GTK_CONTAINER (vbox), html_code_label);
+
+  /* BB title */
+  bb_label = gtk_label_new (_("BB code for forums:"));
+  gtk_misc_set_alignment (GTK_MISC (bb_label), 0, 0);
+  gtk_container_add (GTK_CONTAINER (vbox), bb_label);
+
+  /* BB code label */
+  bb_code_label = gtk_label_new (bb_code);
+  gtk_misc_set_alignment (GTK_MISC (bb_code_label), 0.1, 0);
+  gtk_label_set_selectable (GTK_LABEL (bb_code_label), TRUE);
+  gtk_container_add (GTK_CONTAINER (vbox), bb_code_label);
 
   /* Show the dialog and run it */
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
-
   gtk_dialog_run (GTK_DIALOG (dialog));
-
   gtk_widget_destroy (dialog);
-
-  g_free (image_url);
-  g_free (thumbnail_url);
-  g_free (small_thumbnail_url);
 }
 
 

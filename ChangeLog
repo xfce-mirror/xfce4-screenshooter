@@ -1,3 +1,13 @@
+2009-05-21 jeromeg
+
+	* lib/screenshooter-zimagez.c:
+	  - remove (open_zimagez_link) and use (open_url_hook) in all
+		  cases.
+		- (cb_image_uploaded) improve the dialog by using SexyUrl labels
+		  instead of link buttons and by showing two usage examples, in
+			HTML and in BB code.
+		- (cb_image_uploaded) use constants for all strings.
+
 2009-05-18 jeromeg
 
 	* Improve the status dialog of the upload to ZimageZ.
