@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-30 09:11+0200\n"
+"POT-Creation-Date: 2009-05-21 15:01+0200\n"
 "PO-Revision-Date: 2009-01-03 20:14+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -16,77 +16,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../lib/screenshooter-dialogs.c:286
+#: ../lib/screenshooter-dialogs.c:275
 #, fuzzy
 msgid "Screenshot.png"
 msgstr "Snímek_obrazovky.jpg"
 
-#: ../lib/screenshooter-dialogs.c:303
+#: ../lib/screenshooter-dialogs.c:292
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "Snímek_obrazovky-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:499
+#: ../lib/screenshooter-dialogs.c:485
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:585
+#: ../lib/screenshooter-dialogs.c:569
 msgid "Transfer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:610
+#: ../lib/screenshooter-dialogs.c:592
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akce</span>"
 
-#: ../lib/screenshooter-dialogs.c:734 ../lib/screenshooter-dialogs.c:752
+#: ../lib/screenshooter-dialogs.c:710 ../lib/screenshooter-dialogs.c:727
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Snímek obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:747
+#: ../lib/screenshooter-dialogs.c:722
 msgid "Take a screenshot"
 msgstr "Pořídit snímek obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:762
+#: ../lib/screenshooter-dialogs.c:737
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: ../lib/screenshooter-dialogs.c:808
+#: ../lib/screenshooter-dialogs.c:779
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímaná oblast</span>"
 
-#: ../lib/screenshooter-dialogs.c:837
+#: ../lib/screenshooter-dialogs.c:806
 msgid "Entire screen"
 msgstr "Celá obrazovka"
 
-#: ../lib/screenshooter-dialogs.c:847 ../src/main.c:53
-#: ../panel-plugin/screenshooter-plugin.c:241
-#: ../panel-plugin/screenshooter-plugin.c:346
+#: ../lib/screenshooter-dialogs.c:816 ../src/main.c:54
+#: ../panel-plugin/screenshooter-plugin.c:292
 msgid "Take a screenshot of the entire screen"
 msgstr "Pořídí snímek celé obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:860
+#: ../lib/screenshooter-dialogs.c:827
 msgid "Active window"
 msgstr "Aktivní okno"
 
-#: ../lib/screenshooter-dialogs.c:870 ../src/main.c:49
-#: ../panel-plugin/screenshooter-plugin.c:246
-#: ../panel-plugin/screenshooter-plugin.c:351
+#: ../lib/screenshooter-dialogs.c:837 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:297
 msgid "Take a screenshot of the active window"
 msgstr "Pořídí snímek aktivního okna"
 
-#: ../lib/screenshooter-dialogs.c:883
+#: ../lib/screenshooter-dialogs.c:848
 msgid "Select a region"
 msgstr "Vybraná oblast"
 
-#: ../lib/screenshooter-dialogs.c:893 ../src/main.c:57
-#: ../panel-plugin/screenshooter-plugin.c:251
-#: ../panel-plugin/screenshooter-plugin.c:356
+#: ../lib/screenshooter-dialogs.c:858 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:302
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -96,113 +93,292 @@ msgstr ""
 "přesunete kurzor myši do protějšího bodu vybrané oblasti, aniž byste "
 "tlačítko myši uvolnili, a poté tlačítko myši pustíte."
 
-#: ../lib/screenshooter-dialogs.c:906
+#: ../lib/screenshooter-dialogs.c:870
 msgid "Capture the mouse pointer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:937
+#: ../lib/screenshooter-dialogs.c:878
+#, fuzzy
+msgid "Display the mouse pointer on the screenshot"
+msgstr "Nezobrazovat dialogové okno pro ukládání"
+
+#: ../lib/screenshooter-dialogs.c:903
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímaná oblast</span>"
 
-#: ../lib/screenshooter-dialogs.c:974
+#: ../lib/screenshooter-dialogs.c:938
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Zpoždění před pořízením snímku obrazovky v sekundách"
 
-#: ../lib/screenshooter-dialogs.c:980
+#: ../lib/screenshooter-dialogs.c:944
 msgid "seconds"
 msgstr "sekund"
 
-#: ../lib/screenshooter-dialogs.c:1009
+#: ../lib/screenshooter-dialogs.c:970
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akce</span>"
 
-#: ../lib/screenshooter-dialogs.c:1035
+#. Display the save dialog checkbox
+#: ../lib/screenshooter-dialogs.c:993
 #, fuzzy
 msgid "Show the save dialog"
 msgstr "Nezobrazovat dialogové okno pro ukládání"
 
-#: ../lib/screenshooter-dialogs.c:1041
+#: ../lib/screenshooter-dialogs.c:999
 msgid ""
 "The save dialog allows you to change the file name and the save location"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1055
+#: ../lib/screenshooter-dialogs.c:1013
 #, fuzzy
 msgid "Close the application"
 msgstr "Aplikace:"
 
-#: ../lib/screenshooter-dialogs.c:1079
+#: ../lib/screenshooter-dialogs.c:1019
+msgid ""
+"If unchecked, the current window will be displayed again after the "
+"screenshot has been taken to allow you to take several screenshots in a row"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1042
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akce</span>"
 
-#: ../lib/screenshooter-dialogs.c:1108
+#. Save option radio button
+#: ../lib/screenshooter-dialogs.c:1067
 #, fuzzy
 msgid "Save in:"
 msgstr "Uložit"
 
-#: ../lib/screenshooter-dialogs.c:1118
+#: ../lib/screenshooter-dialogs.c:1075
 msgid "Save the screenshot to a PNG file"
 msgstr "Uložit snímek obrazovky do souboru PNG"
 
-#: ../lib/screenshooter-dialogs.c:1135
+#: ../lib/screenshooter-dialogs.c:1090
 msgid "Default save location"
 msgstr "Výchozí umístění pro ukládání"
 
-#: ../lib/screenshooter-dialogs.c:1145
+#: ../lib/screenshooter-dialogs.c:1100
 msgid "Set the default save location"
 msgstr "Nastavení výchozího umístění pro ukládání"
 
-#: ../lib/screenshooter-dialogs.c:1160
+#: ../lib/screenshooter-dialogs.c:1113
 msgid "Copy to the clipboard"
 msgstr "Zkopírovat do schránky"
 
-#: ../lib/screenshooter-dialogs.c:1165
+#: ../lib/screenshooter-dialogs.c:1118
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 "Zkopíruje snímek obrazovky do schránky, aby bylo možné jej později vložit "
 "jinam"
 
-#: ../lib/screenshooter-dialogs.c:1183
+#: ../lib/screenshooter-dialogs.c:1133
 msgid "Open with:"
 msgstr "Otevřít pomocí:"
 
-#: ../lib/screenshooter-dialogs.c:1195
+#: ../lib/screenshooter-dialogs.c:1144
 msgid "Open the screenshot with the chosen application"
 msgstr "Otevře snímek obrazovky ve zvolené aplikaci"
 
-#: ../lib/screenshooter-dialogs.c:1234 ../src/main.c:79
+#: ../lib/screenshooter-dialogs.c:1177 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Aplikace pro otevírání snímků obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:1279
+#: ../lib/screenshooter-dialogs.c:1188
+msgid "Host on ZimageZ"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1194
+msgid "Host the screenshot on ZimageZ, a free online image hosting service"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1237
 msgid "Save screenshot as..."
 msgstr "Uložit snímek obrazovky jako..."
 
-#: ../src/main.c:45
-msgid "Version information"
-msgstr "Informace o verzi"
+#. Start the user XML RPC session
+#: ../lib/screenshooter-zimagez.c:144
+msgid "Initialize the connexion..."
+msgstr ""
 
-#: ../src/main.c:63
+#: ../lib/screenshooter-zimagez.c:157 ../lib/screenshooter-zimagez.c:311
+#: ../lib/screenshooter-zimagez.c:340 ../lib/screenshooter-zimagez.c:368
+#: ../lib/screenshooter-zimagez.c:490 ../lib/screenshooter-zimagez.c:513
+#: ../lib/screenshooter-zimagez.c:550
+#, c-format
+msgid ""
+"An error occurred during the XML exchange: %s (%d).\n"
+" The screenshot could not be uploaded."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:208
+msgid ""
+"Please file the following fields with your <a href=\"http://www.zimagez.com"
+"\">ZimageZ©</a> \n"
+"user name, passsword and details about the screenshot."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:267
+msgid "Check the user information..."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:289
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
+"must fill all the  fields.</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímaná oblast</span>"
+
+#: ../lib/screenshooter-zimagez.c:302
+msgid "Login on ZimageZ.com..."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:415
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
+"user and the password you entered do not match. Please correct this.</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akce</span>"
+
+#: ../lib/screenshooter-zimagez.c:475
+#, fuzzy
+msgid "Upload the screenshot..."
+msgstr "Pořídit snímek obrazovky"
+
+#: ../lib/screenshooter-zimagez.c:529
+#, c-format
+msgid "An error occurred while uploading the screenshot."
+msgstr ""
+
+#. End the user session
+#: ../lib/screenshooter-zimagez.c:567
+msgid "Close the session on ZimageZ.com..."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:620
+#, fuzzy
+msgid "Details about the screenshot for ZimageZ©"
+msgstr "Zpoždění před pořízením snímku obrazovky v sekundách"
+
+#. Create the user label
+#: ../lib/screenshooter-zimagez.c:670
+msgid "User:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:684
+msgid ""
+"Your Zimagez user name, if you do not have one yetplease create one on the "
+"Web page linked above"
+msgstr ""
+
+#. Create the password label
+#: ../lib/screenshooter-zimagez.c:691
+msgid "Password:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:703
+msgid "The password for the user above"
+msgstr ""
+
+#. Create the title label
+#: ../lib/screenshooter-zimagez.c:709
+msgid "Title:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:722
+msgid ""
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr ""
+
+#. Create the comment label
+#: ../lib/screenshooter-zimagez.c:728
+msgid "Comment:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:741
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:871
+msgid "My screenshot on ZimageZ©"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:901
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akce</span>"
+
+#: ../lib/screenshooter-zimagez.c:933
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
+"to the full size image</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Zpoždění před pořízením "
+"snímku obrazovky</span>"
+
+#. HTML title
+#: ../lib/screenshooter-zimagez.c:939
+msgid "HTML:"
+msgstr ""
+
+#. BB title
+#: ../lib/screenshooter-zimagez.c:950
+msgid "BB code for forums:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:1064
+msgid "Uploading to ZimageZ..."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:1090
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akce</span>"
+
+#. Open Link
+#: ../lib/sexy-url-label.c:176
+#, fuzzy
+msgid "_Open Link"
+msgstr "Otevřít pomocí:"
+
+#. Copy Link Address
+#: ../lib/sexy-url-label.c:188
+msgid "Copy _Link Address"
+msgstr ""
+
+#: ../src/main.c:49
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Zpoždění před pořízením snímku obrazovky v sekundách"
 
-#: ../src/main.c:67
+#: ../src/main.c:59
 msgid "Do not display the save dialog"
 msgstr "Nezobrazovat dialogové okno pro ukládání"
 
-#: ../src/main.c:71
+#: ../src/main.c:64
 #, fuzzy
 msgid "Do not display the mouse on the screenshot"
 msgstr "Nezobrazovat dialogové okno pro ukládání"
 
-#: ../src/main.c:75
+#: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
 msgstr "Adresář pro uložení snímků obrazovky"
 
-#: ../src/main.c:201
+#: ../src/main.c:86
+msgid "Upload the screenshot to ZimageZ©, a free Web hosting solution"
+msgstr ""
+
+#: ../src/main.c:91
+msgid "Version information"
+msgstr "Informace o verzi"
+
+#: ../src/main.c:129
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -211,7 +387,7 @@ msgstr ""
 "%s: %s\n"
 "Úplný výpis dostupných voleb příkazové řádky získáte příkazem %s --help\n"
 
-#: ../src/main.c:302
+#: ../src/main.c:223
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s není platným adresářem, použije se výchozí adresář."
@@ -222,19 +398,13 @@ msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Pořizuje snímky celé obrazovky, aktivního okna nebo zvolené oblasti"
 
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-#~ "screenshot</span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Zpoždění před pořízením "
-#~ "snímku obrazovky</span>"
+#, fuzzy
+#~ msgid "Applicatio to open the screenshot"
+#~ msgstr "Aplikace pro otevírání snímků obrazovky"
 
 #, fuzzy
 #~ msgid "Display the save dialog"
 #~ msgstr "Nezobrazovat dialogové okno pro ukládání"
-
-#~ msgid "Take the screenshot"
-#~ msgstr "Pořídit snímek obrazovky"
 
 #~ msgid "Save by default to:"
 #~ msgstr "Uložit do výchozího umístění:"

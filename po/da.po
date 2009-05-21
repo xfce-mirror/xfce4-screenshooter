@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.5.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-30 09:11+0200\n"
+"POT-Creation-Date: 2009-05-21 15:01+0200\n"
 "PO-Revision-Date: 2009-03-30 16:20+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -18,178 +18,368 @@ msgstr ""
 "X-Poedit-Country: DENMARK\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../lib/screenshooter-dialogs.c:286
+#: ../lib/screenshooter-dialogs.c:275
 msgid "Screenshot.png"
 msgstr "Skærmbillede.png"
 
-#: ../lib/screenshooter-dialogs.c:303
+#: ../lib/screenshooter-dialogs.c:292
 #, c-format
 msgid "Screenshot-%d.png"
 msgstr "Skærmbillede-%d.png"
 
-#: ../lib/screenshooter-dialogs.c:499
+#: ../lib/screenshooter-dialogs.c:485
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb af %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:585
+#: ../lib/screenshooter-dialogs.c:569
 msgid "Transfer"
 msgstr "Overførsel"
 
-#: ../lib/screenshooter-dialogs.c:610
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Skærmbilledet bliver overført til:</span>"
+#: ../lib/screenshooter-dialogs.c:592
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
+"transferred to:</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Skærmbilledet bliver overført "
+"til:</span>"
 
-#: ../lib/screenshooter-dialogs.c:734
-#: ../lib/screenshooter-dialogs.c:752
+#: ../lib/screenshooter-dialogs.c:710 ../lib/screenshooter-dialogs.c:727
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Skærmbillede"
 
-#: ../lib/screenshooter-dialogs.c:747
+#: ../lib/screenshooter-dialogs.c:722
 msgid "Take a screenshot"
 msgstr "Tag et skærmbillede"
 
-#: ../lib/screenshooter-dialogs.c:762
+#: ../lib/screenshooter-dialogs.c:737
 msgid "Preferences"
 msgstr "Indstillinger"
 
-#: ../lib/screenshooter-dialogs.c:808
+#: ../lib/screenshooter-dialogs.c:779
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Område til kopiering</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Område til kopiering</span>"
 
-#: ../lib/screenshooter-dialogs.c:837
+#: ../lib/screenshooter-dialogs.c:806
 msgid "Entire screen"
 msgstr "Hele skærmen"
 
-#: ../lib/screenshooter-dialogs.c:847
-#: ../src/main.c:53
-#: ../panel-plugin/screenshooter-plugin.c:241
-#: ../panel-plugin/screenshooter-plugin.c:346
+#: ../lib/screenshooter-dialogs.c:816 ../src/main.c:54
+#: ../panel-plugin/screenshooter-plugin.c:292
 msgid "Take a screenshot of the entire screen"
 msgstr "Tag et skærmbillede af hele skærmen"
 
-#: ../lib/screenshooter-dialogs.c:860
+#: ../lib/screenshooter-dialogs.c:827
 msgid "Active window"
 msgstr "Aktive vindue"
 
-#: ../lib/screenshooter-dialogs.c:870
-#: ../src/main.c:49
-#: ../panel-plugin/screenshooter-plugin.c:246
-#: ../panel-plugin/screenshooter-plugin.c:351
+#: ../lib/screenshooter-dialogs.c:837 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:297
 msgid "Take a screenshot of the active window"
 msgstr "Tag et skærmbillede af det aktive vindue"
 
-#: ../lib/screenshooter-dialogs.c:883
+#: ../lib/screenshooter-dialogs.c:848
 msgid "Select a region"
 msgstr "Markér et område"
 
-#: ../lib/screenshooter-dialogs.c:893
-#: ../src/main.c:57
-#: ../panel-plugin/screenshooter-plugin.c:251
-#: ../panel-plugin/screenshooter-plugin.c:356
-msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
-msgstr "Markér et område til kopiering ved at klikke et startpunkt på skærmen uden at slippe museknappen, og trække musen til slutpunkt af området, og derefter slippe museknappen."
+#: ../lib/screenshooter-dialogs.c:858 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:302
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr ""
+"Markér et område til kopiering ved at klikke et startpunkt på skærmen uden "
+"at slippe museknappen, og trække musen til slutpunkt af området, og derefter "
+"slippe museknappen."
 
-#: ../lib/screenshooter-dialogs.c:906
+#: ../lib/screenshooter-dialogs.c:870
 msgid "Capture the mouse pointer"
 msgstr "Fang musemarkøren"
 
-#: ../lib/screenshooter-dialogs.c:937
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse inden billede tages</span>"
+#: ../lib/screenshooter-dialogs.c:878
+#, fuzzy
+msgid "Display the mouse pointer on the screenshot"
+msgstr "Vis ikke musen på skærmbilledet"
 
-#: ../lib/screenshooter-dialogs.c:974
+#: ../lib/screenshooter-dialogs.c:903
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse inden billede "
+"tages</span>"
+
+#: ../lib/screenshooter-dialogs.c:938
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Forsinkelse i sekunder før skærmbilledet bliver taget"
 
-#: ../lib/screenshooter-dialogs.c:980
+#: ../lib/screenshooter-dialogs.c:944
 msgid "seconds"
 msgstr "sekunder"
 
-#: ../lib/screenshooter-dialogs.c:1009
+#: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Efter billedet er taget</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Efter billedet er taget</span>"
 
-#: ../lib/screenshooter-dialogs.c:1035
+#. Display the save dialog checkbox
+#: ../lib/screenshooter-dialogs.c:993
 msgid "Show the save dialog"
 msgstr "Vis gem-dialogen"
 
-#: ../lib/screenshooter-dialogs.c:1041
-msgid "The save dialog allows you to change the file name and the save location"
+#: ../lib/screenshooter-dialogs.c:999
+msgid ""
+"The save dialog allows you to change the file name and the save location"
 msgstr "Gemmedialogen tillader dig at ændre filnavnet og placeringen"
 
-#: ../lib/screenshooter-dialogs.c:1055
+#: ../lib/screenshooter-dialogs.c:1013
 msgid "Close the application"
 msgstr "Afslut programmet"
 
-#: ../lib/screenshooter-dialogs.c:1079
+#: ../lib/screenshooter-dialogs.c:1019
+msgid ""
+"If unchecked, the current window will be displayed again after the "
+"screenshot has been taken to allow you to take several screenshots in a row"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1042
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Handling</span>"
 
-#: ../lib/screenshooter-dialogs.c:1108
+#. Save option radio button
+#: ../lib/screenshooter-dialogs.c:1067
 msgid "Save in:"
 msgstr "Gem i:"
 
-#: ../lib/screenshooter-dialogs.c:1118
+#: ../lib/screenshooter-dialogs.c:1075
 msgid "Save the screenshot to a PNG file"
 msgstr "Gem skærmbilledet til en PNG-fil"
 
-#: ../lib/screenshooter-dialogs.c:1135
+#: ../lib/screenshooter-dialogs.c:1090
 msgid "Default save location"
 msgstr "Standard-placering af fil"
 
-#: ../lib/screenshooter-dialogs.c:1145
+#: ../lib/screenshooter-dialogs.c:1100
 msgid "Set the default save location"
 msgstr "Indstil standard-placering af fil"
 
-#: ../lib/screenshooter-dialogs.c:1160
+#: ../lib/screenshooter-dialogs.c:1113
 msgid "Copy to the clipboard"
 msgstr "Kopiér til klippebordet"
 
-#: ../lib/screenshooter-dialogs.c:1165
+#: ../lib/screenshooter-dialogs.c:1118
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopiér skærmbilledet til klippebordet for senere indsætning"
 
-#: ../lib/screenshooter-dialogs.c:1183
+#: ../lib/screenshooter-dialogs.c:1133
 msgid "Open with:"
 msgstr "Åbn med:"
 
-#: ../lib/screenshooter-dialogs.c:1195
+#: ../lib/screenshooter-dialogs.c:1144
 msgid "Open the screenshot with the chosen application"
 msgstr "Åbn skærmbilledet med det valgte program"
 
-#: ../lib/screenshooter-dialogs.c:1234
-#: ../src/main.c:79
+#: ../lib/screenshooter-dialogs.c:1177 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Program til åbning af skærmbilledet"
 
-#: ../lib/screenshooter-dialogs.c:1279
+#: ../lib/screenshooter-dialogs.c:1188
+msgid "Host on ZimageZ"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1194
+msgid "Host the screenshot on ZimageZ, a free online image hosting service"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1237
 msgid "Save screenshot as..."
 msgstr "Gem skærmbillede som..."
 
-#: ../src/main.c:45
-msgid "Version information"
-msgstr "Versionsinformation"
+#. Start the user XML RPC session
+#: ../lib/screenshooter-zimagez.c:144
+msgid "Initialize the connexion..."
+msgstr ""
 
-#: ../src/main.c:63
+#: ../lib/screenshooter-zimagez.c:157 ../lib/screenshooter-zimagez.c:311
+#: ../lib/screenshooter-zimagez.c:340 ../lib/screenshooter-zimagez.c:368
+#: ../lib/screenshooter-zimagez.c:490 ../lib/screenshooter-zimagez.c:513
+#: ../lib/screenshooter-zimagez.c:550
+#, c-format
+msgid ""
+"An error occurred during the XML exchange: %s (%d).\n"
+" The screenshot could not be uploaded."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:208
+msgid ""
+"Please file the following fields with your <a href=\"http://www.zimagez.com"
+"\">ZimageZ©</a> \n"
+"user name, passsword and details about the screenshot."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:267
+msgid "Check the user information..."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:289
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
+"must fill all the  fields.</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Område til kopiering</span>"
+
+#: ../lib/screenshooter-zimagez.c:302
+msgid "Login on ZimageZ.com..."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:415
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
+"user and the password you entered do not match. Please correct this.</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Skærmbilledet bliver overført "
+"til:</span>"
+
+#: ../lib/screenshooter-zimagez.c:475
+#, fuzzy
+msgid "Upload the screenshot..."
+msgstr "Tag et skærmbillede"
+
+#: ../lib/screenshooter-zimagez.c:529
+#, c-format
+msgid "An error occurred while uploading the screenshot."
+msgstr ""
+
+#. End the user session
+#: ../lib/screenshooter-zimagez.c:567
+msgid "Close the session on ZimageZ.com..."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:620
+#, fuzzy
+msgid "Details about the screenshot for ZimageZ©"
+msgstr "Forsinkelse i sekunder før skærmbilledet bliver taget"
+
+#. Create the user label
+#: ../lib/screenshooter-zimagez.c:670
+msgid "User:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:684
+msgid ""
+"Your Zimagez user name, if you do not have one yetplease create one on the "
+"Web page linked above"
+msgstr ""
+
+#. Create the password label
+#: ../lib/screenshooter-zimagez.c:691
+msgid "Password:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:703
+msgid "The password for the user above"
+msgstr ""
+
+#. Create the title label
+#: ../lib/screenshooter-zimagez.c:709
+msgid "Title:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:722
+msgid ""
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr ""
+
+#. Create the comment label
+#: ../lib/screenshooter-zimagez.c:728
+msgid "Comment:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:741
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:871
+msgid "My screenshot on ZimageZ©"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:901
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Handling</span>"
+
+#: ../lib/screenshooter-zimagez.c:933
+#, fuzzy
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
+"to the full size image</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse før skærmbilledet "
+"tages</span>"
+
+#. HTML title
+#: ../lib/screenshooter-zimagez.c:939
+msgid "HTML:"
+msgstr ""
+
+#. BB title
+#: ../lib/screenshooter-zimagez.c:950
+msgid "BB code for forums:"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:1064
+msgid "Uploading to ZimageZ..."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:1090
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Handling</span>"
+
+#. Open Link
+#: ../lib/sexy-url-label.c:176
+#, fuzzy
+msgid "_Open Link"
+msgstr "Åbn med:"
+
+#. Copy Link Address
+#: ../lib/sexy-url-label.c:188
+msgid "Copy _Link Address"
+msgstr ""
+
+#: ../src/main.c:49
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Forsinkelse i sekunder før skærmbilledet tages"
 
-#: ../src/main.c:67
+#: ../src/main.c:59
 msgid "Do not display the save dialog"
 msgstr "Vis ikke gem-dialogen"
 
-#: ../src/main.c:71
+#: ../src/main.c:64
 msgid "Do not display the mouse on the screenshot"
 msgstr "Vis ikke musen på skærmbilledet"
 
-#: ../src/main.c:75
+#: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
 msgstr "Katalog hvor skærmbilledet vil blive gemt"
 
-#: ../src/main.c:201
+#: ../src/main.c:86
+msgid "Upload the screenshot to ZimageZ©, a free Web hosting solution"
+msgstr ""
+
+#: ../src/main.c:91
+msgid "Version information"
+msgstr "Versionsinformation"
+
+#: ../src/main.c:129
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -198,36 +388,35 @@ msgstr ""
 "%s: %s\n"
 "Prøv %s --help for at se en liste med mulige kommandolinjetilvalg.\n"
 
-#: ../src/main.c:302
+#: ../src/main.c:223
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s er ikke et gyldigt katalog. Standardkataloget vil blive brugt."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Tag skærmbillede af hele skærmen, af det aktive vindue eller af et område"
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr ""
+"Tag skærmbillede af hele skærmen, af det aktive vindue eller af et område"
+
+#, fuzzy
+#~ msgid "Applicatio to open the screenshot"
+#~ msgstr "Program til åbning af skærmbilledet"
 
 #~ msgid "%i bytes remaining"
 #~ msgstr "%i byte tilbage"
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before taking the "
-#~ "screenshot</span>"
-#~ msgstr ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse før "
-#~ "skærmbilledet tages</span>"
 
 #, fuzzy
 #~ msgid "Display the save dialog"
 #~ msgstr "Vis ikke gem-dialogen"
-#~ msgid "Take the screenshot"
-#~ msgstr "Tag et skærmbillede"
+
 #~ msgid "Save by default to:"
 #~ msgstr "Gem som standard til:"
+
 #~ msgid ""
 #~ "If checked, the screenshot will be saved by default to the location set "
 #~ "on the right without displaying a save dialog"
 #~ msgstr ""
 #~ "Hvis afkrydset, vil skærmbilledet som standard blive gemt til stedet "
 #~ "indstillet til højre uden visning af gem-dialog"
-
