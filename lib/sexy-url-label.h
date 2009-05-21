@@ -26,6 +26,7 @@ typedef struct _SexyUrlLabel      SexyUrlLabel;
 typedef struct _SexyUrlLabelClass SexyUrlLabelClass;
 
 #include <gtk/gtk.h>
+#include <libxfce4util/libxfce4util.h>
 
 #define SEXY_TYPE_URL_LABEL (sexy_url_label_get_type())
 #define SEXY_URL_LABEL(obj) \

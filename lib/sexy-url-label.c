@@ -173,7 +173,7 @@ sexy_url_label_init(SexyUrlLabel *url_label)
 	priv->popup_menu = gtk_menu_new();
 
 	/* Open Link */
-	item = gtk_image_menu_item_new_with_mnemonic("_Open Link");
+	item = gtk_image_menu_item_new_with_mnemonic(_("_Open Link"));
 	gtk_widget_show(item);
 	gtk_menu_shell_append(GTK_MENU_SHELL(priv->popup_menu), item);
 
@@ -185,7 +185,7 @@ sexy_url_label_init(SexyUrlLabel *url_label)
 	gtk_widget_show(image);
 
 	/* Copy Link Address */
-	item = gtk_image_menu_item_new_with_mnemonic("Copy _Link Address");
+	item = gtk_image_menu_item_new_with_mnemonic(_("Copy _Link Address"));
 	gtk_widget_show(item);
 	gtk_menu_shell_append(GTK_MENU_SHELL(priv->popup_menu), item);
 

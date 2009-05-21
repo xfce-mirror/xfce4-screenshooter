@@ -1,5 +1,12 @@
 2009-05-21 jeromeg
 
+	* lib/sexy-url-label.{c,h}: mark some strings as translatable and
+	  include the libxfce4util header to have the "_" translation
+		function.
+	* po/POTFILES.in: add the new translatable files. 
+
+2009-05-21 jeromeg
+
 	* lib/screenshooter-zimagez.c:
 	  - remove (open_zimagez_link) and use (open_url_hook) in all
 		  cases.
