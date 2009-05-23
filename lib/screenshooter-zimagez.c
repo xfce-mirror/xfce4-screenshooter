@@ -101,6 +101,9 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   gchar *comment = g_strdup ("");
   gchar *data = NULL;
   gchar *encoded_password = NULL;
+  gchar *escaped_file_name;
+  gchar *escaped_title;
+  gchar *escaped_comment;
   gchar *file_name = NULL;
   gchar *login_response = NULL;
   gchar *online_file_name = NULL;
@@ -258,6 +261,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   while (!response)
     {
       gboolean empty_field = FALSE;
+      gchar *escaped_user, *escaped_password;
 
       if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
         {
@@ -305,6 +309,8 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
         }
 
       encoded_password = g_strdup (g_strreverse (rot13 (password)));
+      escaped_password = g_markup_escape_text (encoded_password, -1);
+      escaped_user = g_markup_escape_text (user, -1);
 
       TRACE ("User: %s", user);
 
@@ -314,7 +320,10 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
       exo_job_info_message (EXO_JOB (job), _("Login on ZimageZ.com..."));
 
       resultP = xmlrpc_client_call (&env, serverurl, method_login,
-                                    "(ss)", user, encoded_password);
+                                    "(ss)", escaped_user, escaped_password);
+
+      g_free (escaped_password);
+      g_free (escaped_user);
 
       if (env.fault_occurred)
         {
@@ -484,13 +493,22 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   /* Get the basename of the image path */
   file_name = g_path_get_basename (image_path);
 
+  /* Escape the strings before passing them to xmlrpc-c */
+  escaped_file_name = g_markup_escape_text (file_name, -1);
+  escaped_title = g_markup_escape_text (title, -1);
+  escaped_comment = g_markup_escape_text (comment, -1);
+
   exo_job_info_message (EXO_JOB (job), _("Upload the screenshot..."));
 
   TRACE ("Call the upload method");
   resultP = xmlrpc_client_call (&env, serverurl, method_upload,
-                                "(sssss)", encoded_data, file_name, title, comment,
+                                "(sssss)", encoded_data, escaped_file_name, 
+                                escaped_title, escaped_comment,
                                 login_response);
 
+  g_free (escaped_file_name);
+  g_free (escaped_title);
+  g_free (escaped_comment);
   g_free (title);
   g_free (comment);
   g_free (file_name);
@@ -1042,17 +1060,9 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
 
 static void cb_error (ExoJob *job, GError *error, gpointer unused)
 {
-  GtkWidget *dialog;
-
   g_return_if_fail (error != NULL);
 
-  dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_NO_SEPARATOR | GTK_DIALOG_MODAL,
-                                   GTK_MESSAGE_ERROR,
-                                   GTK_BUTTONS_CLOSE,
-                                   "%s", error->message);
-
-  gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_destroy (dialog);
+  screenshooter_error ("%s", error->message); 
 }
 
 
