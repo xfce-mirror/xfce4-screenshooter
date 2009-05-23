@@ -1,5 +1,10 @@
 2009-05-23 jeromeg
 
+	* configure.ac.in: check for libcurl, it is needed by the
+	  xmlrpc-c stuff.
+
+2009-05-23 jeromeg
+
 	* src/main.c:
 	  - save the last user when we are in CLI.
 		- free the last user when exiting.
