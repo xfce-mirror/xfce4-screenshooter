@@ -59,7 +59,7 @@ static void              cb_ask_for_information    (ScreenshooterJob  *job,
                                                     gpointer           unused);
 static void              cb_image_uploaded         (ScreenshooterJob  *job,
                                                     gchar             *upload_name,
-                                                    gpointer           unused);
+                                                    gchar             *last_user);
 static void              cb_error                  (ExoJob            *job,
                                                     GError            *error,
                                                     gpointer           unused);
@@ -97,6 +97,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 {
   const gchar *encoded_data;
   const gchar *image_path;
+  const gchar *last_user;
   gchar *comment = g_strdup ("");
   gchar *data = NULL;
   gchar *encoded_password = NULL;
@@ -106,7 +107,6 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   gchar *password = g_strdup ("");
   gchar *title = g_strdup ("");
   gchar *user;
-  gchar **last_user;
 
   gsize data_length;
 
@@ -126,15 +126,27 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   g_return_val_if_fail (param_values != NULL, FALSE);
   g_return_val_if_fail (param_values->n_values == 2, FALSE);
   g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[0]), FALSE);
-  g_return_val_if_fail (G_VALUE_HOLDS_POINTER (&param_values->values[1]), FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[1]), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
     return FALSE;
 
   /* Get the last user */
-  last_user = g_value_get_pointer (g_value_array_get_nth (param_values, 1));
-  user = g_strdup (*last_user);
+  last_user = g_value_get_string (g_value_array_get_nth (param_values, 1));
+  user = g_strdup (last_user);
+
+  if (user == NULL)
+    user = g_strdup ("");
+
+  if (!g_utf8_validate (user, -1, NULL))
+    {
+      g_free (user);
+      user = g_strdup ("");
+    }
+
+  g_object_set_data_full (G_OBJECT (job), "user", 
+                          g_strdup (user), (GDestroyNotify) g_free);
 
   /* Get the path of the image that is to be uploaded */
   image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
@@ -455,8 +467,8 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   xmlrpc_DECREF (resultP);
 
-  g_free (*last_user);
-  *last_user = g_strdup (user);
+  g_object_set_data_full (G_OBJECT (job), "user", 
+                          g_strdup (user), (GDestroyNotify) g_free);
 
   g_free (user);
   g_free (password);
@@ -588,7 +600,7 @@ static ScreenshooterJob
 
   return screenshooter_simple_job_launch (zimagez_upload_job, 2,
                                           G_TYPE_STRING, file_path,
-                                          G_TYPE_POINTER, &last_user);
+                                          G_TYPE_STRING, last_user);
 }
 
 
@@ -834,7 +846,7 @@ cb_ask_for_information (ScreenshooterJob *job,
 
 
 
-static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gpointer unused)
+static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar *last_user)
 {
   GtkWidget *dialog;
   GtkWidget *main_alignment, *vbox;
@@ -846,6 +858,8 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gpoint
   const gchar *image_url, *thumbnail_url, *small_thumbnail_url;
   const gchar *image_markup, *thumbnail_markup, *small_thumbnail_markup;
   const gchar *html_code, *bb_code;
+
+  gchar *last_user_temp;
 
   g_return_if_fail (upload_name != NULL);
 
@@ -865,6 +879,17 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gpoint
                      image_url, thumbnail_url);
   bb_code =
     g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", image_url, thumbnail_url);
+
+  /* Set the last user */
+  if (last_user != NULL)
+    g_free (last_user);
+
+  last_user_temp = g_object_get_data (G_OBJECT (job), "user");
+
+  if (last_user_temp == NULL)
+    last_user_temp = g_strdup ("");
+
+  last_user = g_strdup (last_user_temp);
     
   /* Dialog */
   dialog =
@@ -1049,6 +1074,7 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
  * uploaded. The dialog is shown again with a warning is the password did
  * match the user name. The user can also cancel the upload procedure.
  *
+ * Last user is updated with the given user name if the upload was successful.
  **/
 
 void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
@@ -1102,7 +1128,7 @@ void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
   job = zimagez_upload_to_zimagez (image_path, last_user);
 
   g_signal_connect (job, "ask", (GCallback) cb_ask_for_information, NULL);
-  g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, NULL);
+  g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, last_user);
   g_signal_connect (job, "error", (GCallback) cb_error, NULL);
   g_signal_connect (job, "finished", (GCallback) cb_finished, dialog);
   g_signal_connect (job, "info-message", (GCallback) cb_update_info, label);

@@ -1,3 +1,12 @@
+2009-05-23 jeromeg
+
+	* lib/screenshooter-zimage.c, try to fix the last user issue:
+	  - set the user as data of the job.
+		- give the string and not a pointer to the string to the job.
+		- only accept valid utf8 strings as users.
+		- update the last user in (cb_image_uploaded).
+	* TODO: update the todo list.
+
 2009-05-21 jeromeg
 
 	* lib/sexy-url-label.{c,h}: mark some strings as translatable and
