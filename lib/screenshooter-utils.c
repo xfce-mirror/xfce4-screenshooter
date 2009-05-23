@@ -271,7 +271,7 @@ void screenshooter_error (const gchar *format, ...)
   va_end (va_args);
 
   dialog =
-    gtk_message_dialog_new (NULL, GTK_DIALOG_NO_SEPARATOR, GTK_MESSAGE_ERROR,
+    gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR,
                             GTK_BUTTONS_OK, "%s", message);
 
   gtk_dialog_run (GTK_DIALOG (dialog));
