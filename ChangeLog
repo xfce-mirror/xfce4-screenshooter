@@ -1,5 +1,14 @@
 2009-05-24 jeromeg
 
+Escape all strings before sending them to the server.
+
+Uploading still does not work if the user, the password, the comment 
+or the title contains a non alphanumerical caracter, but this should
+improve things a bit a XML expects escaped strings. Use our own error
+function in (cb_error).
+
+2009-05-24 jeromeg
+
 Use a valid dialog flag for the GtkMessageDialog.
 
 2009-05-23 jeromeg
