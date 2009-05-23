@@ -287,7 +287,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
           gchar *field = NULL;
 
           gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter, 1, &field, -1);
-          empty_field = g_str_equal (field, "");
+          empty_field = empty_field || g_str_equal (field, "");
 
           g_free (field);
         }
