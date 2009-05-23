@@ -78,6 +78,8 @@ if test x"$XMLRPC_CONFIG" != x"no"; then
   AC_MSG_CHECKING([XMLRPC_LIBS])
   XMLRPC_LIBS="`$XMLRPC_CONFIG --libs client`"
   AC_MSG_RESULT([$XMLRPC_LIBS])
+
+  AC_DEFINE([HAVE_XMLRPC], [1], [Xmlrpc-c was found on the system])
 fi
 AM_CONDITIONAL([HAVE_XMLRPC], [test x"$XMLRPC_CONFIG" != x"no"])
 AC_SUBST([XMLRPC_CFLAGS])

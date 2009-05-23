@@ -1,5 +1,12 @@
 2009-05-23 jeromeg
 
+Fix the build of the ZimageZ stuff and improve the results dialog.
+
+The results dialog now uses GtkTextViews in GtkFrames instead of labels,
+alignments have also been added to enhance the look.
+
+2009-05-23 jeromeg
+
 	* Only build the ZimageZ stuff if the dependencies are
 	  installed. Makes libcurl and xmlrpc-c optional.
 

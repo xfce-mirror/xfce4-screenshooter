@@ -853,7 +853,12 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   GtkWidget *link_label;
   GtkWidget *image_link, *thumbnail_link, *small_thumbnail_link;
   GtkWidget *example_label, *html_label, *bb_label;
-  GtkWidget *html_code_label, *bb_code_label;
+  GtkWidget *html_code_view, *bb_code_view;
+  GtkWidget *html_frame, *bb_frame;
+  GtkWidget *links_alignment, *code_alignment;
+  GtkWidget *links_box, *code_box;
+
+  GtkTextBuffer *html_buffer, *bb_buffer;
 
   const gchar *image_url, *thumbnail_url, *small_thumbnail_url;
   const gchar *image_markup, *thumbnail_markup, *small_thumbnail_markup;
@@ -910,8 +915,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
 
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
-
-  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 10, 10);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
@@ -928,13 +932,24 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   gtk_misc_set_alignment (GTK_MISC (link_label), 0, 0);
   gtk_container_add (GTK_CONTAINER (vbox), link_label);
 
+  /* Links alignment */
+  links_alignment = gtk_alignment_new (0, 0, 1, 1);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (links_alignment), 0, 0, 12, 0);
+  gtk_container_add (GTK_CONTAINER (vbox), links_alignment);
+
+  /* Links box */
+  links_box = gtk_vbox_new (FALSE, 10);
+  gtk_container_set_border_width (GTK_CONTAINER (links_box), 0);
+  gtk_container_add (GTK_CONTAINER (links_alignment), links_box);
+
   /* Create the image link */
   image_link = sexy_url_label_new ();
   sexy_url_label_set_markup (SEXY_URL_LABEL (image_link), image_markup);
   gtk_misc_set_alignment (GTK_MISC (image_link), 0, 0);
   g_signal_connect (G_OBJECT (image_link), "url-activated",
                     G_CALLBACK (open_url_hook), NULL);
-  gtk_container_add (GTK_CONTAINER (vbox), image_link);
+  gtk_widget_set_tooltip_text (image_link, image_url);
+  gtk_container_add (GTK_CONTAINER (links_box), image_link);
 
   /* Create the thumbnail link */
   thumbnail_link = sexy_url_label_new ();
@@ -942,7 +957,8 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   gtk_misc_set_alignment (GTK_MISC (thumbnail_link), 0, 0);
   g_signal_connect (G_OBJECT (thumbnail_link), "url-activated",
                     G_CALLBACK (open_url_hook), NULL);
-  gtk_container_add (GTK_CONTAINER (vbox), thumbnail_link);
+  gtk_widget_set_tooltip_text (thumbnail_link, thumbnail_url);
+  gtk_container_add (GTK_CONTAINER (links_box), thumbnail_link);
 
   /* Create the small thumbnail link */
   small_thumbnail_link = sexy_url_label_new ();
@@ -950,7 +966,8 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   gtk_misc_set_alignment (GTK_MISC (small_thumbnail_link), 0, 0);
   g_signal_connect (G_OBJECT (small_thumbnail_link), "url-activated",
                     G_CALLBACK (open_url_hook), NULL);
-  gtk_container_add (GTK_CONTAINER (vbox), small_thumbnail_link);
+  gtk_widget_set_tooltip_text (small_thumbnail_link, small_thumbnail_url);
+  gtk_container_add (GTK_CONTAINER (links_box), small_thumbnail_link);
 
   /* Examples bold label */
   example_label = gtk_label_new ("");
@@ -960,32 +977,65 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   gtk_misc_set_alignment (GTK_MISC (example_label), 0, 0);
   gtk_container_add (GTK_CONTAINER (vbox), example_label);
 
-  /* HTML title */
-  html_label = gtk_label_new (_("HTML:"));
-  gtk_misc_set_alignment (GTK_MISC (html_label), 0, 0);
-  gtk_container_add (GTK_CONTAINER (vbox), html_label);
+  /* BB alignment */
+  code_alignment = gtk_alignment_new (0, 0, 1, 1);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (code_alignment), 0, 0, 12, 0);
+  gtk_container_add (GTK_CONTAINER (vbox), code_alignment);
 
-  /* HTML code label */
-  html_code_label = gtk_label_new (html_code);
-  gtk_misc_set_alignment (GTK_MISC (html_code_label), 0.1, 0);
-  gtk_label_set_selectable (GTK_LABEL (html_code_label), TRUE);
-  gtk_container_add (GTK_CONTAINER (vbox), html_code_label);
+  /* Links box */
+  code_box = gtk_vbox_new (FALSE, 10);
+  gtk_container_set_border_width (GTK_CONTAINER (code_box), 0);
+  gtk_container_add (GTK_CONTAINER (code_alignment), code_box);
+
+  /* HTML title */
+  html_label = gtk_label_new (_("HTML"));
+  gtk_misc_set_alignment (GTK_MISC (html_label), 0, 0);
+  gtk_container_add (GTK_CONTAINER (code_box), html_label);
+
+  /* HTML frame */
+  html_frame = gtk_frame_new (NULL);
+  gtk_frame_set_shadow_type (GTK_FRAME (html_frame), GTK_SHADOW_IN);
+  gtk_container_add (GTK_CONTAINER (code_box), html_frame);
+
+  /* HTML code text view */
+  html_buffer = gtk_text_buffer_new (NULL);
+  gtk_text_buffer_set_text (html_buffer, html_code, -1);
+
+  html_code_view = gtk_text_view_new_with_buffer (html_buffer);
+  gtk_text_view_set_left_margin (GTK_TEXT_VIEW (html_code_view),
+                                 10);
+  gtk_text_view_set_editable (GTK_TEXT_VIEW (html_code_view),
+                              FALSE);
+  gtk_container_add (GTK_CONTAINER (html_frame), html_code_view);
 
   /* BB title */
-  bb_label = gtk_label_new (_("BB code for forums:"));
+  bb_label = gtk_label_new (_("BBCode for forums"));
   gtk_misc_set_alignment (GTK_MISC (bb_label), 0, 0);
-  gtk_container_add (GTK_CONTAINER (vbox), bb_label);
+  gtk_container_add (GTK_CONTAINER (code_box), bb_label);
 
-  /* BB code label */
-  bb_code_label = gtk_label_new (bb_code);
-  gtk_misc_set_alignment (GTK_MISC (bb_code_label), 0.1, 0);
-  gtk_label_set_selectable (GTK_LABEL (bb_code_label), TRUE);
-  gtk_container_add (GTK_CONTAINER (vbox), bb_code_label);
+  /* BB frame */
+  bb_frame = gtk_frame_new (NULL);
+  gtk_frame_set_shadow_type (GTK_FRAME (bb_frame), GTK_SHADOW_IN);
+  gtk_container_add (GTK_CONTAINER (code_box), bb_frame);
+
+  /* HTML code text view */
+  bb_buffer = gtk_text_buffer_new (NULL);
+  gtk_text_buffer_set_text (bb_buffer, bb_code, -1);
+
+  bb_code_view = gtk_text_view_new_with_buffer (bb_buffer);
+  gtk_text_view_set_left_margin (GTK_TEXT_VIEW (bb_code_view),
+                                 10);
+  gtk_text_view_set_editable (GTK_TEXT_VIEW (bb_code_view),
+                              FALSE);
+  gtk_container_add (GTK_CONTAINER (bb_frame), bb_code_view);
 
   /* Show the dialog and run it */
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
   gtk_dialog_run (GTK_DIALOG (dialog));
   gtk_widget_destroy (dialog);
+
+  g_object_unref (html_buffer);
+  g_object_unref (bb_buffer);
 }
 
 
