@@ -50,9 +50,13 @@ cb_open_toggled                    (GtkToggleButton    *tb,
 static void
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
+#ifdef HAVE_XMLRPC
+#ifdef HAVE_CURL
 static void
 cb_zimagez_toggled                 (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
+#endif
+#endif
 static void
 cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
@@ -203,6 +207,8 @@ static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 
 
+#ifdef HAVE_XMLRPC
+#ifdef HAVE_CURL
 static void cb_zimagez_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
@@ -210,6 +216,8 @@ static void cb_zimagez_toggled (GtkToggleButton *tb, ScreenshotData *sd)
       sd->action = UPLOAD;
     }
 }
+#endif
+#endif
 
 
 /* Set sd->show_save_dialog when the button is toggled */
@@ -697,7 +705,13 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 
   GtkWidget *save_radio_button, *dir_chooser;
 
-  GtkWidget *clipboard_radio_button, *zimagez_radio_button, *open_with_radio_button;
+  GtkWidget *clipboard_radio_button, *open_with_radio_button;
+
+#ifdef HAVE_XMLRPC
+#ifdef HAVE_CURL
+  GtkWidget *zimagez_radio_button;
+#endif
+#endif
 
   GtkListStore *liststore;
   GtkWidget *combobox;
@@ -1183,6 +1197,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button), combobox);
 
   /* Upload to zimagez radio button */
+#ifdef HAVE_XMLRPC
+#ifdef HAVE_CURL
   zimagez_radio_button = 
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
 	                                               _("Host on ZimageZ"));
@@ -1201,6 +1217,8 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                              0, 1, 3, 4);
 
   gtk_widget_show (zimagez_radio_button);
+#endif
+#endif
 
   return dlg;
 }

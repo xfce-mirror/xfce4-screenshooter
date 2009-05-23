@@ -1,5 +1,10 @@
 2009-05-23 jeromeg
 
+	* Only build the ZimageZ stuff if the dependencies are
+	  installed. Makes libcurl and xmlrpc-c optional.
+
+2009-05-23 jeromeg
+
 	* configure.ac.in: check for libcurl, it is needed by the
 	  xmlrpc-c stuff.
 

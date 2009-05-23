@@ -32,7 +32,11 @@ enum {
   SAVE,
   CLIPBOARD,
   OPEN,
+#ifdef HAVE_XMLRPC
+#ifdef HAVE_CURL
   UPLOAD,
+#endif
+#endif
 };
 
 
@@ -48,7 +52,11 @@ typedef struct
   gint close;
   gchar *screenshot_dir;
   gchar *app;
+#ifdef HAVE_XMLRPC
+#ifdef HAVE_CURL
   gchar *last_user;
+#endif
+#endif
   gboolean cli;
 }
 ScreenshotData;
