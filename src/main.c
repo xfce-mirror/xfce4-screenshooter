@@ -89,7 +89,7 @@ static GOptionEntry entries[] =
 #ifdef HAVE_CURL  
   {
     "upload", 'u', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &upload,
-    N_("Upload the screenshot to ZimageZ©, a free Web hosting solution"),
+    N_("Host the screenshot on ZimageZ, a free online image hosting service"),
     NULL
   },
 #endif

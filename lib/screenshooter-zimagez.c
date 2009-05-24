@@ -18,7 +18,7 @@
  * */
 
 
-/* XML-RPC API for ZimageZ.com */
+/* XML-RPC API for ZimageZ */
 
 /* URL of the API: http://www.zimagez.com/apiXml.php
 
@@ -221,7 +221,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   screenshooter_job_ask_info (job, liststore,
                               _("Please file the following fields with your "
-                                "<a href=\"http://www.zimagez.com\">ZimageZ©</a> \n"
+                                "<a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
                                 "user name, passsword and details about the screenshot."));
 
   gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
@@ -317,7 +317,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
       /* Start the user session */
       TRACE ("Call the login method");
 
-      exo_job_info_message (EXO_JOB (job), _("Login on ZimageZ.com..."));
+      exo_job_info_message (EXO_JOB (job), _("Login on ZimageZ..."));
 
       resultP = xmlrpc_client_call (&env, serverurl, method_login,
                                     "(ss)", escaped_user, escaped_password);
@@ -436,7 +436,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
                                       _("<span weight=\"bold\" foreground=\"darkred\" "
                                         "stretch=\"semiexpanded\">The user and the "
                                         "password you entered do not match. "
-                                        "Please correct this.</span>"));
+                                        "Please retry.</span>"));
 
           gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
 
@@ -594,7 +594,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   /* End the user session */
 
-  exo_job_info_message (EXO_JOB (job), _("Close the session on ZimageZ.com..."));
+  exo_job_info_message (EXO_JOB (job), _("Close the session on ZimageZ..."));
 
   TRACE ("Closing the user session");
 
@@ -647,7 +647,7 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the information dialog */
   dialog =
-    xfce_titled_dialog_new_with_buttons (_("Details about the screenshot for ZimageZ©"),
+    xfce_titled_dialog_new_with_buttons (_("Details about the screenshot for ZimageZ"),
                                          NULL,
                                          GTK_DIALOG_NO_SEPARATOR,
                                          GTK_STOCK_CANCEL,
@@ -666,41 +666,31 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
-
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
   vbox = gtk_vbox_new (FALSE, 10);
-
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
   /* Create the information label */
   information_label = sexy_url_label_new ();
-
   sexy_url_label_set_markup (SEXY_URL_LABEL (information_label), message);
-
   g_signal_connect (G_OBJECT (information_label), "url-activated",
                     G_CALLBACK (open_url_hook), NULL);
-
-
   gtk_misc_set_alignment (GTK_MISC (information_label), 0, 0);
   gtk_container_add (GTK_CONTAINER (vbox), information_label);
 
   /* Create the layout table */
   table = gtk_table_new (4, 2, FALSE);
-
   gtk_table_set_col_spacings (GTK_TABLE (table), 6);
   gtk_table_set_row_spacings (GTK_TABLE (table), 12);
-
   gtk_container_add (GTK_CONTAINER (vbox), table);
 
   /* Create the user label */
   user_label = gtk_label_new (_("User:"));
-
   gtk_misc_set_alignment (GTK_MISC (user_label), 0, 0.5);
-
   gtk_table_attach (GTK_TABLE (table), user_label,
                     0, 1,
                     0, 1,
@@ -709,17 +699,13 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the user entry */
   user_entry = gtk_entry_new ();
-
   gtk_widget_set_tooltip_text (user_entry,
                                _("Your Zimagez user name, if you do not have one yet"
                                  "please create one on the Web page linked above"));
-
-
   gtk_table_attach_defaults (GTK_TABLE (table), user_entry, 1, 2, 0, 1);
 
   /* Create the password label */
   password_label = gtk_label_new (_("Password:"));
-
   gtk_misc_set_alignment (GTK_MISC (password_label), 0, 0.5);
   gtk_table_attach (GTK_TABLE (table), password_label,
                     0, 1,
@@ -729,34 +715,27 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the password entry */
   password_entry = gtk_entry_new ();
-
   gtk_widget_set_tooltip_text (password_entry, _("The password for the user above"));
-
   gtk_entry_set_visibility (GTK_ENTRY (password_entry), FALSE);
   gtk_table_attach_defaults (GTK_TABLE (table), password_entry, 1, 2, 1, 2);
 
   /* Create the title label */
   title_label = gtk_label_new (_("Title:"));
-
   gtk_misc_set_alignment (GTK_MISC (title_label), 0, 0.5);
   gtk_table_attach (GTK_TABLE (table), title_label,
                     0, 1,
                     2, 3,
                     GTK_FILL, GTK_FILL,
                     0, 0);
-
   /* Create the title entry */
   title_entry = gtk_entry_new ();
-
   gtk_widget_set_tooltip_text (title_entry,
                                _("The title of the screenshot, it will be used when"
                                  " displaying the screenshot on ZimageZ"));
-
   gtk_table_attach_defaults (GTK_TABLE (table), title_entry, 1, 2, 2, 3);
 
   /* Create the comment label */
   comment_label = gtk_label_new (_("Comment:"));
-
   gtk_misc_set_alignment (GTK_MISC (comment_label), 0, 0.5);
   gtk_table_attach (GTK_TABLE (table), comment_label,
                     0, 1,
@@ -766,11 +745,9 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the comment entry */
   comment_entry = gtk_entry_new ();
-
   gtk_widget_set_tooltip_text (title_entry,
                                _("A comment on the screenshot, it will be used when"
                                  " displaying the screenshot on ZimageZ"));
-
   gtk_table_attach_defaults (GTK_TABLE (table), comment_entry, 1, 2, 3, 4);
 
   /* Set the values */
@@ -809,9 +786,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
 
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
-
   response = gtk_dialog_run (GTK_DIALOG (dialog));
-
   gtk_widget_hide (dialog);
 
   if (response == GTK_RESPONSE_CANCEL)
@@ -916,7 +891,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
     
   /* Dialog */
   dialog =
-    xfce_titled_dialog_new_with_buttons (_("My screenshot on ZimageZ©"),
+    xfce_titled_dialog_new_with_buttons (_("My screenshot on ZimageZ"),
                                          NULL,
                                          GTK_DIALOG_NO_SEPARATOR,
                                          GTK_STOCK_CLOSE,
@@ -926,9 +901,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
   gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog)->vbox), 0);
   gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 12);
-
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "applications-internet");
-
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
@@ -938,7 +911,6 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
 
   /* Create the main box for the dialog */
   vbox = gtk_vbox_new (FALSE, 10);
-
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
@@ -995,7 +967,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   gtk_misc_set_alignment (GTK_MISC (example_label), 0, 0);
   gtk_container_add (GTK_CONTAINER (vbox), example_label);
 
-  /* BB alignment */
+  /* Code alignment */
   code_alignment = gtk_alignment_new (0, 0, 1, 1);
   gtk_alignment_set_padding (GTK_ALIGNMENT (code_alignment), 0, 0, 12, 0);
   gtk_container_add (GTK_CONTAINER (vbox), code_alignment);
@@ -1036,7 +1008,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   gtk_frame_set_shadow_type (GTK_FRAME (bb_frame), GTK_SHADOW_IN);
   gtk_container_add (GTK_CONTAINER (code_box), bb_frame);
 
-  /* HTML code text view */
+  /* BBcode text view */
   bb_buffer = gtk_text_buffer_new (NULL);
   gtk_text_buffer_set_text (bb_buffer, bb_code, -1);
 
@@ -1103,7 +1075,6 @@ static void cb_finished (ExoJob *job, GtkWidget *dialog)
                                         NULL);
 
   g_object_unref (G_OBJECT (job));
-
   gtk_widget_destroy (dialog);
 }
 
@@ -1147,7 +1118,7 @@ void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
   g_return_if_fail (image_path != NULL);
 
   dialog =
-    gtk_dialog_new_with_buttons (_("Uploading to ZimageZ..."),
+    gtk_dialog_new_with_buttons (_("ZimageZ"),
                                  NULL,
                                  GTK_DIALOG_NO_SEPARATOR,
                                  NULL);
@@ -1159,23 +1130,19 @@ void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
 
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
-
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 6, 6);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
   main_box = gtk_vbox_new (FALSE, 10);
-
   gtk_container_set_border_width (GTK_CONTAINER (main_box), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), main_box);
 
   /* Status label*/
   status_label = gtk_label_new ("");
-
   gtk_label_set_markup (GTK_LABEL (status_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Status</span>"));
-
   gtk_misc_set_alignment (GTK_MISC (status_label), 0, 0);
   gtk_container_add (GTK_CONTAINER (main_box), status_label);
 

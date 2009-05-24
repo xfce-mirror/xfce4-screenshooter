@@ -1,5 +1,9 @@
 2009-05-24 jeromeg
 
+Make strings consistent, improve them a bit and tweak the indentation.
+
+2009-05-24 jeromeg
+
 Escape all strings before sending them to the server.
 
 Uploading still does not work if the user, the password, the comment 
