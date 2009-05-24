@@ -304,7 +304,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
           screenshooter_job_ask_info (job, liststore,
                                       _("<span weight=\"bold\" foreground=\"darkred\" "
                                         "stretch=\"semiexpanded\">You must fill all the "
-                                        " fields.</span>"));
+                                        "fields.</span>"));
           continue;
         }
 
