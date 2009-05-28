@@ -33,7 +33,7 @@
 #include "screenshooter-utils.h"
 #include "screenshooter-simple-job.h"
 #include "sexy-url-label.h"
-
+#include "katze-throbber.h"
 
 void screenshooter_upload_to_zimagez (const gchar *image_path,
                                       gchar       *last_user);

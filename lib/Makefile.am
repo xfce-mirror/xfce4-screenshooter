@@ -34,6 +34,7 @@ libscreenshooter_la_SOURCES +=	\
 	$(libscreenshooter_built_sources) \
   exo-job.c exo-job.h \
 	exo-simple-job.c exo-simple-job.h \
+	katze-throbber.c katze-throbber.h \
 	screenshooter-job.c screenshooter-job.h \
 	screenshooter-simple-job.c screenshooter-simple-job.h \
 	screenshooter-zimagez.c screenshooter-zimagez.h \

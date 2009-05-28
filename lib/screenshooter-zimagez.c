@@ -1113,6 +1113,7 @@ void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
   ScreenshooterJob *job;
   GtkWidget *dialog;
   GtkWidget *label, *status_label;
+  GtkWidget *hbox, *throbber;
   GtkWidget *main_box, *main_alignment;
 
   g_return_if_fail (image_path != NULL);
@@ -1124,13 +1125,13 @@ void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
                                  NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
+  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 0);
   gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "gtk-info");
 
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 6, 6);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 0, 0, 6, 6);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
@@ -1138,13 +1139,23 @@ void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
   gtk_container_set_border_width (GTK_CONTAINER (main_box), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), main_box);
 
+  /* Top horizontal box for the throbber */
+  hbox= gtk_hbox_new (FALSE, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (hbox), 0);
+  gtk_container_add (GTK_CONTAINER (main_box), hbox);
+
+  /* Add the throbber */
+  throbber = katze_throbber_new ();
+  katze_throbber_set_animated (KATZE_THROBBER (throbber), TRUE);
+  gtk_box_pack_end (GTK_BOX (hbox), throbber, FALSE, FALSE, 0);
+
   /* Status label*/
   status_label = gtk_label_new ("");
   gtk_label_set_markup (GTK_LABEL (status_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Status</span>"));
   gtk_misc_set_alignment (GTK_MISC (status_label), 0, 0);
-  gtk_container_add (GTK_CONTAINER (main_box), status_label);
+  gtk_box_pack_start (GTK_BOX (hbox), status_label, FALSE, FALSE, 0);
 
   /* Information label */
   label = gtk_label_new ("");
