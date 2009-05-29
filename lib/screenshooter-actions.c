@@ -130,8 +130,9 @@ gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
 
   g_object_unref (screenshot);
 
-  if ((sd->cli == TRUE) || (sd->close == 1))
+  if (sd->close == 1)
     {
+      TRACE ("Exit the main loop");
       gtk_main_quit ();
       return FALSE;
     }

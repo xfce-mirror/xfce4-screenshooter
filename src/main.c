@@ -174,6 +174,7 @@ int main (int argc, char **argv)
   if (fullscreen || window || region)
     {
       sd->cli = TRUE;
+      sd->close = 1;
 
       /* Set the region to be captured */
       if (window)

@@ -1317,7 +1317,6 @@ gchar
     }
 
   TRACE ("Free the gchars and unref the GFiles");
-
   g_free (filename);
 
   return savename;

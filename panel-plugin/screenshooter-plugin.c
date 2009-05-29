@@ -319,36 +319,33 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   g_thread_init (NULL);
 
   pd->sd = sd;
-  /* The panel plugin ignores the close settings, as in command line */
-  pd->sd->cli = TRUE;
+  pd->plugin = plugin;
 
   TRACE ("Initialize the text domain");
-
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
-
-  pd->plugin = plugin;
 
   /* Read the options */
   TRACE ("Read the preferences file");
-
   screenshooter_plugin_read_rc_file (plugin, pd);
+
+  /* We want to take only one screenshot as in CLI, but not to close the main
+     loop after taking a screenshot */
+  pd->sd->cli = TRUE;
+  pd->sd->close = 0;
 
   /* Create the panel button */
   TRACE ("Create the panel button");
-
   pd->button = xfce_create_panel_button ();
 
   pd->image = gtk_image_new ();
 
   gtk_container_add (GTK_CONTAINER (pd->button), GTK_WIDGET (pd->image));
 
-  /* Set the tooltips if available */
+  /* Set the tooltips */
   TRACE ("Set the default tooltip");
-
   set_panel_button_tooltip (pd);
 
   TRACE ("Add the button to the panel");
-
   gtk_widget_show_all (pd->button);
 
   gtk_container_add (GTK_CONTAINER (plugin), pd->button);
@@ -356,25 +353,19 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   xfce_panel_plugin_add_action_widget (plugin, pd->button);
 
   /* Set the callbacks */
-
   TRACE ("Set the clicked callback");
-
   g_signal_connect (pd->button, "clicked", G_CALLBACK (cb_button_clicked), pd);
 
   TRACE ("Set the free data callback");
-
   g_signal_connect (plugin, "free-data", G_CALLBACK (cb_free_data), pd);
 
   TRACE ("Set the size changed callback");
-
   g_signal_connect (plugin, "size-changed", G_CALLBACK (cb_set_size), pd);
 
   TRACE ("Set the style set callback");
-
   pd->style_id = g_signal_connect (plugin, "style-set", G_CALLBACK (cb_style_set), pd);
 
   TRACE ("Set the configuration menu");
-
   xfce_panel_plugin_menu_show_configure (plugin);
 
   g_signal_connect (plugin, "configure-plugin", G_CALLBACK (cb_properties_dialog), pd);

@@ -1,3 +1,12 @@
+2009-05-29 jeromeg
+
+Fix a crash in the panel plugin.
+
+Use sd->cli and sd->close correctly so that it does not exit the main
+loop when running the panel plugin which makes it crash. Simplify the 
+code a bit and set the members of the structure correctly when 
+initializing the application and the plugin.
+
 2009-05-28 jeromeg
 
 Add a throbber to notify activity during the ZimageZ upload.
