@@ -41,12 +41,12 @@
     </authorgroup>
 
     <releaseinfo>
-      This manual describes version &version; of &application;.
+      This manual describes version &version; of Xfce4 Screenshooter.
     </releaseinfo>
   </articleinfo>
 
   <sect1 id="intro">
-    <title>Introduction to &application;</title>
+    <title>Introduction to Xfce4 Screenshooter</title>
 
     <para>
       This application allows you to capture the entire screen, the
@@ -54,6 +54,13 @@
       elapses before the screenshot is taken and the action that will
       be done with the screenshot: save it to a PNG file, copy it to
       the clipboard, or open it using another application.
+    </para>
+
+    <para>
+      If activated on build, you can also host your screenshots on
+      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, 
+      a free online image hosting service. The CURL and XMLRPC-C libraries
+      are required.
     </para>
 
     <para>
@@ -117,15 +124,32 @@
       </sect3>
 
       <sect3 id="delay">
-        <title>Delay before taking the screenshot</title>
+        <title>Delay before capturing</title>
 
         <para>
-          The <emphasis>"Delay before taking the screenshot"</emphasis>
+          The <emphasis>"Delay before capturing"</emphasis>
           section allows you to set the delay that will elapse between
-          pressing the <emphasis>"Take the screenshot"</emphasis> button
-          and taking the screenshot. This delay will allow you to open
-          menus or to do whatever action you want to see displayed on
-          the screenshot.
+          pressing the <emphasis>"OK"</emphasis> button and taking the 
+          screenshot. This delay will allow you to open menus or to do 
+          whatever action you want to see displayed on the screenshot.
+        </para>
+      </sect3>
+
+      <sect3 id="after-capturing">
+        <title>After capturing</title>
+
+        <para>
+          The <emphasis>"Show the save dialog"</emphasis> option 
+          is described below, in the <emphasis>"Action"</emphasis> 
+          section.
+        </para>
+
+        <para>
+          The <emphasis>"Close the application"</emphasis> option
+          allows you, if unchecked, to take several screenshots in 
+          a row. If checked, the application will be closed once 
+          the screenshot has been taken and the action you selected 
+          executed.
         </para>
       </sect3>
 
@@ -134,24 +158,35 @@
 
         <para>
           The <emphasis>"Action"</emphasis> section allows you to choose
-          what should be done with the screenshot. Three choices are
-          available.
+          what should be done with the screenshot.
         </para>
 
         <sect4 id="save">
-          <title>Save</title>
+          <title>Save in</title>
 
           <para>
-            The <emphasis>"Save"</emphasis> option will save the
-            screenshot to a PNG file. If you check the
-            <emphasis>"Save by default to"</emphasis> checkbox, the
+            The <emphasis>"Save in"</emphasis> option will save the
+            screenshot to a PNG file. If you don't check the
+            <emphasis>"Show the save dialog"</emphasis> checkbox in the
+            <emphasis>"After capturing"</emphasis> section, the
             screenshot will be saved to the folder on the right after
-            you press the <emphasis>"Take the screenshot"</emphasis>
-            button, without showing any save dialog. Otherwise, a save
-            dialog will be displayed, which also shows a preview of the
-            screenshot. You will then be able to set the save location,
-            and the name of the file.
+            you press the <emphasis>"OK"</emphasis> button, without 
+            showing any save dialog. Otherwise, a save dialog will be 
+            displayed, which also shows a preview of the screenshot. 
+            You will then be able to set the save location, and the 
+            name of the file.
           </para>
+
+          <para>
+            Xfce4 Screenshooter is also able to save the screenshot to
+            any remote file system supported by GVfs, such as FTP, SAMBA,
+            SFTP, remote computers accessible via SSH... You just need to
+            connect this remote file system using 
+            <emphasis>gvfs-connect</emphasis> or
+            <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink>
+            and it will be available in the left column of the save dialog.
+          </para>
+
         </sect4>
 
         <sect4 id="copy-to-clipboard">
@@ -173,14 +208,70 @@
           <para>
             The <emphasis>"Open with"</emphasis> option saves the
             screenshot to the system's temporary directory and opens it
-            with the application set using the dropdown list below.
+            with the application set using the dropdown list on the right.
             Applications which support images are automatically detected
             and added to the dropdown list.
           </para>
         </sect4>
 
-      </sect3>
+        <sect4 id="zimagez">
+          <title>Host on ZimageZ</title>
+          
+          <para>
+            The <emphasis>"Host on ZimageZ"</emphasis> option allow you
+            to host your screenshot on this free online hosting service,
+            so that you can share it easily with other people. ZimageZ
+            automatically generates a large and a small thumbnail of your
+            screenshot, which can be used to create thumbnails pointing to
+            the full size screenshot.
+          </para>
 
+          <para>
+            After pressing the <emphasis>"OK"</emphasis> button, you will
+            be shown this dialog:
+          </para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-login-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>The dialog to host a screenshot on ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+          <para>
+            If you do not have a ZimageZ user name, you will need to create
+            one on the <ulink type="http" url="http://www.zimagez.com">
+            ZimageZ website</ulink>. Several languages are available on this
+            website, you can switch between using the menu up right. You must
+            fill all fields of this dialog. Once you click the 
+            <emphasis>"OK"</emphasis> button, the upload will start.
+          </para>
+          
+          <para>
+            The dialog below will give you the links to the full size screenshot, the
+            large thumbnail, the small thumbnails, as well examples of HTML and BBcode
+            to create a thumbnail pointing to the full size screenshot:
+          </para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-result-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>The dialog giving the links to your screenshot on ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+        </sect4>
+      </sect3>
     </sect2>
 
     <sect2 id="command-line">
@@ -188,7 +279,7 @@
 
       <para>
         Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Prt Scrn key on the upper right
+        also allow you to configure the Print Screen key on the upper right
         of most keyboards so that it takes screenshots. To do so,
         configure the keybindings of your desktop environnement so that
         it launches xfce4-screenshooter with one or several of the
@@ -277,6 +368,18 @@
             an application name, the screenshot will be saved to the
             system's temporary directory and opened with the application
             whose name is to be given after <emphasis>-o</emphasis>.
+            This option only has an effect if the
+            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
+            <emphasis>-r</emphasis> option is given.
+          </para>
+        </sect4>
+
+        <sect4 id="u-option">
+          <title> The -u option</title>
+
+          <para>
+            If the <emphasis>-u</emphasis> option is given, the screenshot
+            will be hosted on ZimageZ. See above for more details.
             This option only has an effect if the
             <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
             <emphasis>-r</emphasis> option is given.

@@ -32,13 +32,15 @@
       </author>
     </authorgroup>
 
-    <releaseinfo>Ce manuel décrit la version @PACKAGE_VERSION@ de @PACKAGE_NAME@.</releaseinfo>
+    <releaseinfo>Ce manuel décrit la version @PACKAGE_VERSION@ de Xfce4 Screenshooter.</releaseinfo>
   </articleinfo>
 
   <sect1 id="intro">
-    <title>Introduction à @PACKAGE_VERSION@ of @PACKAGE_NAME@.</title>
+    <title>Introduction à Xfce4 Screenshooter</title>
 
     <para>Cette application permet de prendre des captures d'écran de l'écran tout entier, de la fenêtre active ou d'une zone sélectionnée. Il est possible de régler le délai avant la prise de la capture d'écran et l'action à effectuer avec la capture d'écran: la sauvegarder dans un fichier PNG, la copier dans le presse-papier, ou l'ouvrir avec une autre application.</para>
+
+    <para>Si activé lors de la compilation, vous pouvez aussi héberger vos captures d'écran sur <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, une solution en ligne gratuite d'hébergement d'images. Les bibliothèques CURL et XMLRPC-C sont requises.</para>
 
     <para>Une extension pour le tableau de bord de Xfce est aussi disponible.</para>
 
@@ -79,20 +81,31 @@
       </sect3>
 
       <sect3 id="delay">
-        <title>Délai avant la prise de la capture d'écran</title>
+        <title>Délai avant la capture</title>
 
-        <para>La section <emphasis>"Délai avant la prise de la capture d'écran"</emphasis> permet de régler le délai qui s'écoule entre l'appui sur le bouton <emphasis>"Prendre la capture d'écran"</emphasis> et la prise de la capture d'écran. Cela permet d'ouvrir des menus, d'effectuer une action quelconque à afficher sur la capture d'écran.</para>
+        <para>La section <emphasis>"Délai avant la capture"</emphasis> permet de régler le délai qui s'écoule entre l'appui sur le bouton <emphasis>"OK"</emphasis> et la prise de la capture d'écran. Cela permet d'ouvrir des menus, d'effectuer une action quelconque à afficher sur la capture d'écran.</para>
+      </sect3>
+
+      <sect3 id="after-capturing">
+        <title>Après la capture</title>
+
+        <para>L'option <emphasis>"Afficher la fenêtre de sauvegarde"</emphasis> est décrite ci-dessous, dans la section <emphasis>"Action"</emphasis>.</para>
+
+        <para>L'option <emphasis>"Fermer l'application"</emphasis> permet, si désactivée, de prendre plusieurs captures d'écran à la suite. Si activée, l'application sera fermée une fois la capture d'écran prise et l'action sélectionnée éxécutée.</para>
       </sect3>
 
       <sect3 id="action">
         <title>Action</title>
 
-        <para>La section <emphasis>"Action"</emphasis> permet de choisir l'action à effectuer avec la capture d'écran. Trois actions sont possibles.</para>
+        <para>La section <emphasis>"Action"</emphasis> permet de choisir l'action à effectuer avec la capture d'écran.</para>
 
         <sect4 id="save">
-          <title>Sauvegarder</title>
+          <title>Sauvegarder dans</title>
 
-          <para><emphasis>"Sauvegarder"</emphasis> enregistrera la capture d'écran dans un fichier PNG. Si vous cochez la case <emphasis>"Sauvegarder par défaut dans"</emphasis>, la capture d'écran sera enregistrée après l'appui sur le boutton <emphasis>"Prendre la capture d'écran"</emphasis> dans le dossier spécifié à droite, sans afficher de fenêtre de sauvegarde. Sinon, une fenêtre de sauvegarde vous permettra de choisir où la sauvegarder, et sous quel nom.</para>
+          <para><emphasis>"Sauvegarder"</emphasis> enregistrera la capture d'écran dans un fichier PNG. Si vous ne cochez pas la case <emphasis>"Afficher la fenêtre de sauvegarde"</emphasis>, la capture d'écran sera enregistrée après l'appui sur le boutton <emphasis>"OK"</emphasis> dans le dossier spécifié à droite, sans afficher de fenêtre de sauvegarde. Sinon, une fenêtre de sauvegarde vous permettra de choisir où la sauvegarder, et sous quel nom.</para>
+
+          <para>Xfce4 Screenshooter peut aussi sauvegarder la capture d'écran dans n'importe quel système de fichiers virtuel pris en charge par GVfs, comme FTP, SAMBA, SFTP, machines à distance accessibles via SSH... Il suffit de connecter ces systèmes de fichiers distants à l'aide de <emphasis>gvfs-connect</emphasis> ou de <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink>, puis ils seront disponible dans la colonne de gauche de la fenêtre de suavegarde.</para>
+
         </sect4>
 
         <sect4 id="copy-to-clipboard">
@@ -104,17 +117,52 @@
         <sect4 id="open-with">
           <title>Ouvrir avec</title>
 
-          <para><emphasis>"Ouvrir avec"</emphasis> permet d'enregistrer la capture d'écran dans le dossier temporaire du système et de l'ouvrir avec l'application choisie dans le champ en dessous. Les applications permettant d'ouvrir des images sont automatiquement détectées et proposées dans la liste déroulante.</para>
+          <para><emphasis>"Ouvrir avec"</emphasis> permet d'enregistrer la capture d'écran dans le dossier temporaire du système et de l'ouvrir avec l'application choisie dans la liste déroulante à droite. Les applications permettant d'ouvrir des images sont automatiquement détectées et proposées dans la liste déroulante.</para>
         </sect4>
 
-      </sect3>
+        <sect4 id="zimagez">
+          <title>Héberger sur ZimageZ</title>
+          
+          <para>L'option <emphasis>"Héberger sur ZimageZ"</emphasis> permet d'héberger votre capture d'écran sur ce service en ligne gratuit d'hébergement d'images, ce qui permet de la partager facilement avec d'autres personnes. ZimageZ génère automatiquement une grande et une petite miniature de votre capture d'écran, qui peuvent être utilisées pour créer des miniatures qui pointent sur l'image en taill réelle.</para>
 
+          <para>Après avoir appuyé sur le bouton <emphasis>"OK"</emphasis>, cette fenêtre s'affichera :</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-login-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>La fenêtre pour héberger une capture d'écran sur ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+          <para>Si vous n'avez pas pas de nom d'utilisateur ZimageZ, il vous faudra en créer un sur le <ulink type="http" url="http://www.zimagez.com"> site Internet de ZimageZ</ulink>. Plusieurs langues sont disponibles sur ce site, vous pouvez en changer en utilisant le menu en haut à droite. Vous devez remplir tous les champs de cette fenêtre. Une fois que vous avez validé, la mise en ligne commencera.</para>
+          
+          <para>La fenêtre ci-dessous vous donne les liens vers la capture d'écran en taille réelle, la grande et la petite miniature, ainsi que des exemples de code HTML et BBcode pour construire une miniature qui pointe vers la capture d'écran taille réelle :</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-result-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>La fenêtre qui donne les liens vers votre capture d'écran sur ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+        </sect4>
+      </sect3>
     </sect2>
 
     <sect2 id="command-line">
       <title>Via la ligne de commande</title>
 
-      <para>Les options de ligne de commande permettent de prendre des captures d'écran rapidement. Elles permettent aussi de faire fonctionner la touche Prt Scrn en haut à droite de la plus part des claviers. Pour cela, réglez les raccourcis de votre environnement de bureau pour qu'ils lancent xfce4-screenshooter avec une ou plusieurs des options suivantes lorsque la touche Prt Scrn est appuyée.</para>
+      <para>Les options de ligne de commande permettent de prendre des captures d'écran rapidement. Elles permettent aussi de faire fonctionner la touche Print Screen en haut à droite de la plus part des claviers. Pour cela, réglez les raccourcis de votre environnement de bureau pour qu'ils lancent xfce4-screenshooter avec une ou plusieurs des options suivantes lorsque la touche Prt Scrn est appuyée.</para>
 
       <sect3 id="options">
         <title>Les options en ligne de commande</title>
@@ -159,6 +207,12 @@
           <title>L'option -o</title>
 
           <para>L'option <emphasis>-o</emphasis> suivie d'un nom d'application permet de sauvegarder la capture d'écran dans le dossier temporaire du système et de l'ouvrir avec l'application dont le nom est donné après <emphasis>-o</emphasis>. Cette option n'a un effet que si les options <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis> sont données.</para>
+        </sect4>
+
+        <sect4 id="u-option">
+          <title>L'option -u</title>
+
+          <para>L'option <emphasis>-u</emphasis> permet d'héberger la capture d'écran sur ZimageZ. Cette option n'a un effet que si les options <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis> sont données.</para>
         </sect4>
       </sect3>
     </sect2>

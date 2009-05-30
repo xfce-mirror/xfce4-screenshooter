@@ -32,13 +32,22 @@
       </author>
     </authorgroup>
 
-    <releaseinfo>Questo manuale descrive la versione @PACKAGE_VERSION@ di @PACKAGE_NAME@.</releaseinfo>
+    <releaseinfo>
+      This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter.
+    </releaseinfo>
   </articleinfo>
 
   <sect1 id="intro">
-    <title>Introduzione a @PACKAGE_NAME@.</title>
+    <title>Introduction to Xfce4 Screenshooter</title>
 
     <para>Questa applicazione consente di catturare l'intero schermo, la finestra attiva o una regione selezionata. È possibile anche impostare il ritardo prima che l'istantanea venga scattata e l'azione da eseguire con l'istantanea: salvarla in un file PNG, copiarla negli appunti o aprirla utilizzando un'altra applicazione.</para>
+
+    <para>
+      If activated on build, you can also host your screenshots on
+      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, 
+      a free online image hosting service. The CURL and XMLRPC-C libraries
+      are required.
+    </para>
 
     <para>Un plugin per il pannello di Xfce è già disponibile</para>
 
@@ -79,20 +88,69 @@
       </sect3>
 
       <sect3 id="delay">
-        <title>Ritardo prima di scattare l'istantanea</title>
+        <title>Delay before capturing</title>
 
-        <para>La sezione <emphasis>«Tempo da attendere prima di scattare l'istantanea»</emphasis> permette di impostare il ritardo tra la pressione del pulsante <emphasis>«Scatta l'istantanea»</emphasis> e l'effettiva cattura dell'istantanea. Questo ritardo consente di aprire i menu o preparare qualsiasi altra operazione che si desidera venga catturata dall'istantanea.</para>
+        <para>
+          The <emphasis>"Delay before capturing"</emphasis>
+          section allows you to set the delay that will elapse between
+          pressing the <emphasis>"OK"</emphasis> button and taking the 
+          screenshot. This delay will allow you to open menus or to do 
+          whatever action you want to see displayed on the screenshot.
+        </para>
+      </sect3>
+
+      <sect3 id="after-capturing">
+        <title>After capturing</title>
+
+        <para>
+          The <emphasis>"Show the save dialog"</emphasis> option 
+          is described below, in the <emphasis>"Action"</emphasis> 
+          section.
+        </para>
+
+        <para>
+          The <emphasis>"Close the application"</emphasis> option
+          allows you, if unchecked, to take several screenshots in 
+          a row. If checked, the application will be closed once 
+          the screenshot has been taken and the action you selected 
+          executed.
+        </para>
       </sect3>
 
       <sect3 id="action">
         <title>Azione</title>
 
-        <para>La sezione <emphasis>«Azione»</emphasis> permette di scegliere l'operazione da eseguire con l'istantanea. Sono disponibili tre possibilità:</para>
+        <para>
+          The <emphasis>"Action"</emphasis> section allows you to choose
+          what should be done with the screenshot.
+        </para>
 
         <sect4 id="save">
-          <title>Salva</title>
+          <title>Save in</title>
 
-          <para>L'opzione <emphasis>«Salva»</emphasis> salverà l'istantanea in un file PNG. Se è abilitata l'opzione <emphasis>«Di norma, salva in:»</emphasis>, l'istantanea verrà salvata nella cartella sulla destra subito dopo aver premuto il pulsante <emphasis>«Scatta l'istantanea»</emphasis>, senza mostrare alcuna finestra di conferma. Diversamente, verrà visualizzata una finestra di conferma, in cui è anche mostrata un'anteprima dell'istantanea. In questo modo sarà possibile impostare la posizione di salvataggio e il nome del file.</para>
+          <para>
+            The <emphasis>"Save in"</emphasis> option will save the
+            screenshot to a PNG file. If you don't check the
+            <emphasis>"Show the save dialog"</emphasis> checkbox in the
+            <emphasis>"After capturing"</emphasis> section, the
+            screenshot will be saved to the folder on the right after
+            you press the <emphasis>"OK"</emphasis> button, without 
+            showing any save dialog. Otherwise, a save dialog will be 
+            displayed, which also shows a preview of the screenshot. 
+            You will then be able to set the save location, and the 
+            name of the file.
+          </para>
+
+          <para>
+            Xfce4 Screenshooter is also able to save the screenshot to
+            any remote file system supported by GVfs, such as FTP, SAMBA,
+            SFTP, remote computers accessible via SSH... You just need to
+            connect this remote file system using 
+            <emphasis>gvfs-connect</emphasis> or
+            <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink>
+            and it will be available in the left column of the save dialog.
+          </para>
+
         </sect4>
 
         <sect4 id="copy-to-clipboard">
@@ -104,17 +162,86 @@
         <sect4 id="open-with">
           <title>Apri con</title>
 
-          <para>L'opzione <emphasis>«Apri con»</emphasis> salva l'istantanea nella cartella temporanea di sistema e la apre con l'applicazione impostata utilizzando la lista a comparsa. Le applicazioni che supportano le immagine vengono rilevate automaticamente e aggiunte all'elenco.</para>
+          <para>
+            The <emphasis>"Open with"</emphasis> option saves the
+            screenshot to the system's temporary directory and opens it
+            with the application set using the dropdown list on the right.
+            Applications which support images are automatically detected
+            and added to the dropdown list.
+          </para>
         </sect4>
 
-      </sect3>
+        <sect4 id="zimagez">
+          <title>Host on ZimageZ</title>
+          
+          <para>
+            The <emphasis>"Host on ZimageZ"</emphasis> option allow you
+            to host your screenshot on this free online hosting service,
+            so that you can share it easily with other people. ZimageZ
+            automatically generates a large and a small thumbnail of your
+            screenshot, which can be used to create thumbnails pointing to
+            the full size screenshot.
+          </para>
 
+          <para>
+            After pressing the <emphasis>"OK"</emphasis> button, you will
+            be shown this dialog:
+          </para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-login-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>The dialog to host a screenshot on ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+          <para>
+            If you do not have a ZimageZ user name, you will need to create
+            one on the <ulink type="http" url="http://www.zimagez.com">
+            ZimageZ website</ulink>. Several languages are available on this
+            website, you can switch between using the menu up right. You must
+            fill all fields of this dialog. Once you click the 
+            <emphasis>"OK"</emphasis> button, the upload will start.
+          </para>
+          
+          <para>
+            The dialog below will give you the links to the full size screenshot, the
+            large thumbnail, the small thumbnails, as well examples of HTML and BBcode
+            to create a thumbnail pointing to the full size screenshot:
+          </para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-result-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>The dialog giving the links to your screenshot on ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+        </sect4>
+      </sect3>
     </sect2>
 
     <sect2 id="command-line">
       <title>Attraverso la linea di comando</title>
 
-      <para>Le opzioni da linea di comando forniscono un metodo veloce per catturare un'istantanea. Esse consentono anche di configurare il tasto «Prt Scrn» (presente in alto a sinistra nella maggior parte delle tastiere) in modo da utilizzarlo per catturare delle istantanee. Per farlo, occorre configurare il keybinding del proprio ambiente grafico in modo che xfce4-screenshooter venga lanciato con una o più delle seguenti opzioni nel momento in cui viene premuto il tasto «Prt Scrn».</para>
+      <para>
+        Command line options allow you to take screenshots quickly. They
+        also allow you to configure the Print Screen key on the upper right
+        of most keyboards so that it takes screenshots. To do so,
+        configure the keybindings of your desktop environnement so that
+        it launches xfce4-screenshooter with one or several of the
+        following options when the Prt Scrn key is pressed.
+      </para>
 
       <sect3 id="options">
         <title>Le opzioni per la linea di comando</title>
@@ -159,6 +286,18 @@
           <title>L'opzione -o</title>
 
           <para>Se è fornita l'opzione <emphasis>-o</emphasis>, seguita dal nome di una applicazione, l'istantanea verrà salvata nella cartella temporanea di sistema e aperta con il programma il cui comando di avvio è fornito dopo l'opzione <emphasis>-o</emphasis>. Questa opzione è applicabile solamente se è fornito l'argomento <emphasis>-f</emphasis>,<emphasis>-w</emphasis> o <emphasis>-r</emphasis>.</para>
+        </sect4>
+
+        <sect4 id="u-option">
+          <title> The -u option</title>
+
+          <para>
+            If the <emphasis>-u</emphasis> option is given, the screenshot
+            will be hosted on ZimageZ. See above for more details.
+            This option only has an effect if the
+            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
+            <emphasis>-r</emphasis> option is given.
+          </para>
         </sect4>
       </sect3>
     </sect2>
