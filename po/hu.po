@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 09:46+0200\n"
+"POT-Creation-Date: 2009-05-31 14:02+0200\n"
 "PO-Revision-Date: 2009-05-26 06:50+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
@@ -195,7 +195,8 @@ msgstr "Képernyőkép mentése mint..."
 
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
-msgid "Initialize the connexion..."
+#, fuzzy
+msgid "Initialize the connection..."
 msgstr "Kapcsolat létrehozása..."
 
 #: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
@@ -265,8 +266,9 @@ msgid "User:"
 msgstr "Felhasználó:"
 
 #: ../lib/screenshooter-zimagez.c:703
+#, fuzzy
 msgid ""
-"Your Zimagez user name, if you do not have one yetplease create one on the "
+"Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
 "A ZiamgeZ felhasználóneved, ha még nincs, készíthetsz egyet a fent "

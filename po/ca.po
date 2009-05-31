@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 09:46+0200\n"
+"POT-Creation-Date: 2009-05-31 14:02+0200\n"
 "PO-Revision-Date: 2009-05-26 18:22+0100\n"
 "Last-Translator: Harald Servat <redcrash@gmail.com>\n"
 "Language-Team: Catalan <xfce-i18n@xfce.org>\n"
@@ -206,7 +206,8 @@ msgstr "Desa la captura com…"
 
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
-msgid "Initialize the connexion..."
+#, fuzzy
+msgid "Initialize the connection..."
 msgstr "Iniciar la connexió..."
 
 #: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
@@ -285,8 +286,9 @@ msgid "User:"
 msgstr "Usuari:"
 
 #: ../lib/screenshooter-zimagez.c:703
+#, fuzzy
 msgid ""
-"Your Zimagez user name, if you do not have one yetplease create one on the "
+"Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
 "El vostre nom d'usuari de ZimageZ. Si no en teniu cap, creeu-ne un visitant "

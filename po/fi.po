@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 09:46+0200\n"
+"POT-Creation-Date: 2009-05-31 14:02+0200\n"
 "PO-Revision-Date: 2009-03-28 22:12+0200\n"
 "Last-Translator: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>\n"
 "Language-Team: Finnish\n"
@@ -196,7 +196,7 @@ msgstr "Tallenna kaappaus nimellä..."
 
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
-msgid "Initialize the connexion..."
+msgid "Initialize the connection..."
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
@@ -267,7 +267,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:703
 msgid ""
-"Your Zimagez user name, if you do not have one yetplease create one on the "
+"Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
 

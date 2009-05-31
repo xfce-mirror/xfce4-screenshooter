@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.4.91\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 09:46+0200\n"
+"POT-Creation-Date: 2009-05-31 14:02+0200\n"
 "PO-Revision-Date: 2008-11-04 23:27+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
@@ -212,7 +212,7 @@ msgstr "Ruaj foto ekrani si ..."
 
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
-msgid "Initialize the connexion..."
+msgid "Initialize the connection..."
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
@@ -285,7 +285,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:703
 msgid ""
-"Your Zimagez user name, if you do not have one yetplease create one on the "
+"Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
 

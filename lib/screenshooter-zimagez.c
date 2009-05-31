@@ -156,7 +156,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   /* Start the user XML RPC session */
 
-  exo_job_info_message (EXO_JOB (job), _("Initialize the connexion..."));
+  exo_job_info_message (EXO_JOB (job), _("Initialize the connection..."));
 
   TRACE ("Initialize the RPC environment");
   xmlrpc_env_init(&env);
@@ -701,7 +701,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   user_entry = gtk_entry_new ();
   gtk_widget_set_tooltip_text (user_entry,
                                _("Your Zimagez user name, if you do not have one yet"
-                                 "please create one on the Web page linked above"));
+                                 " please create one on the Web page linked above"));
   gtk_table_attach_defaults (GTK_TABLE (table), user_entry, 1, 2, 0, 1);
 
   /* Create the password label */

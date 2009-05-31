@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 09:46+0200\n"
+"POT-Creation-Date: 2009-05-31 14:02+0200\n"
 "PO-Revision-Date: 2009-05-24 16:42+0200\n"
 "Last-Translator: Jérôme Guelfucci <jeromeg@xfce.org>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
@@ -201,7 +201,7 @@ msgstr "Enregistrer la capture d'écran sous..."
 
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
-msgid "Initialize the connexion..."
+msgid "Initialize the connection..."
 msgstr "Initialisation de la connexion..."
 
 #: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
@@ -249,7 +249,7 @@ msgid ""
 msgstr ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">L' "
 "utilisateur et le mot de passe entrés ne correspondent pas. Merci de "
-"réessayer."
+"réessayer.</span>"
 
 #: ../lib/screenshooter-zimagez.c:501
 msgid "Upload the screenshot..."
@@ -277,11 +277,11 @@ msgstr "Utilisateur :"
 
 #: ../lib/screenshooter-zimagez.c:703
 msgid ""
-"Your Zimagez user name, if you do not have one yetplease create one on the "
+"Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
 "Votre identifiant ZimageZ, si bous n'en avez pas encore un, créez le en "
-"cliquant sur  le lien ci-dessus"
+"cliquant sur le lien ci-dessus"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:708
