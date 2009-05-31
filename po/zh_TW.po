@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-24 17:03+0200\n"
+"POT-Creation-Date: 2009-05-31 09:46+0200\n"
 "PO-Revision-Date: 2007-03-10 18:05+0800\n"
 "Last-Translator: Dsewnr Lu <dsewnr@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -299,6 +299,21 @@ msgid ""
 "on ZimageZ"
 msgstr ""
 
+#: ../lib/screenshooter-zimagez.c:870
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:872
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:874
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr ""
+
 #: ../lib/screenshooter-zimagez.c:894
 #, fuzzy
 msgid "My screenshot on ZimageZ"
@@ -324,11 +339,11 @@ msgstr ""
 msgid "BBCode for forums"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1121
+#: ../lib/screenshooter-zimagez.c:1122
 msgid "ZimageZ"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1144
+#: ../lib/screenshooter-zimagez.c:1155
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr ""
 
@@ -370,7 +385,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 
-#: ../src/main.c:234
+#: ../src/main.c:235
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr ""

@@ -867,11 +867,11 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   small_thumbnail_url =
     g_strdup_printf ("http://www.zimagez.com/avatar/%s.php", upload_name);
   image_markup =
-    g_strdup_printf ("<a href=\"%s\">Full size image</a>", image_url);
+    g_strdup_printf (_("<a href=\"%s\">Full size image</a>"), image_url);
   thumbnail_markup =
-    g_strdup_printf ("<a href=\"%s\">Large thumbnail</a>", thumbnail_url);
+    g_strdup_printf (_("<a href=\"%s\">Large thumbnail</a>"), thumbnail_url);
   small_thumbnail_markup =
-    g_strdup_printf ("<a href=\"%s\">Small thumbnail</a>", small_thumbnail_url);
+    g_strdup_printf (_("<a href=\"%s\">Small thumbnail</a>"), small_thumbnail_url);
   html_code =
     g_strdup_printf ("<a href=\"%s\">\n  <img src=\"%s\" />\n</a>",
                      image_url, thumbnail_url);

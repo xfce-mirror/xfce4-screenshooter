@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-24 17:03+0200\n"
+"POT-Creation-Date: 2009-05-31 09:46+0200\n"
 "PO-Revision-Date: 2007-07-02 00:22+0200\n"
 "Last-Translator: Terje Uriansrud <terje@uriansrud.net>\n"
 "Language-Team: Norwegian Bokmal\n"
@@ -311,6 +311,21 @@ msgid ""
 "on ZimageZ"
 msgstr ""
 
+#: ../lib/screenshooter-zimagez.c:870
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:872
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:874
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr ""
+
 #: ../lib/screenshooter-zimagez.c:894
 #, fuzzy
 msgid "My screenshot on ZimageZ"
@@ -340,11 +355,11 @@ msgstr ""
 msgid "BBCode for forums"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1121
+#: ../lib/screenshooter-zimagez.c:1122
 msgid "ZimageZ"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1144
+#: ../lib/screenshooter-zimagez.c:1155
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksjon</span>"
@@ -390,7 +405,7 @@ msgstr ""
 "%s: %s\n"
 "Prøv %s --help for å se liste over tilgjengelige kommandolinjeopsjoner.\n"
 
-#: ../src/main.c:234
+#: ../src/main.c:235
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s er ikke en gyldig mappe, standard mappe vil bli benyttet."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-24 17:03+0200\n"
+"POT-Creation-Date: 2009-05-31 09:46+0200\n"
 "PO-Revision-Date: 2009-01-11 14:48+0100\n"
 "Last-Translator: Vincent Tunru <projects@vinnl.nl>\n"
 "Language-Team: Dutch <xfce-i18n@xfce.org>\n"
@@ -311,6 +311,21 @@ msgid ""
 "on ZimageZ"
 msgstr ""
 
+#: ../lib/screenshooter-zimagez.c:870
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:872
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:874
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr ""
+
 #: ../lib/screenshooter-zimagez.c:894
 #, fuzzy
 msgid "My screenshot on ZimageZ"
@@ -340,11 +355,11 @@ msgstr ""
 msgid "BBCode for forums"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1121
+#: ../lib/screenshooter-zimagez.c:1122
 msgid "ZimageZ"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1144
+#: ../lib/screenshooter-zimagez.c:1155
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Actie</span>"
@@ -390,7 +405,7 @@ msgstr ""
 "%s: %s\n"
 "Probeer %s --help voor een volledige lijst van mogelijke opties.\n"
 
-#: ../src/main.c:234
+#: ../src/main.c:235
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s is geen geldige map, de standaardmap zal worden gebruikt."

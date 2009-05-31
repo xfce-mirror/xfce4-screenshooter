@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-24 17:03+0200\n"
+"POT-Creation-Date: 2009-05-31 09:46+0200\n"
 "PO-Revision-Date: 2009-03-10 13:07+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish\n"
@@ -310,6 +310,21 @@ msgid ""
 "on ZimageZ"
 msgstr ""
 
+#: ../lib/screenshooter-zimagez.c:870
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:872
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:874
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr ""
+
 #: ../lib/screenshooter-zimagez.c:894
 #, fuzzy
 msgid "My screenshot on ZimageZ"
@@ -337,11 +352,11 @@ msgstr ""
 msgid "BBCode for forums"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1121
+#: ../lib/screenshooter-zimagez.c:1122
 msgid "ZimageZ"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1144
+#: ../lib/screenshooter-zimagez.c:1155
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akcja</span>"
@@ -393,7 +408,7 @@ msgstr ""
 "%s: %s\n"
 "Wpisz „%s --help” aby wypisać pełną listę opcji wiersza poleceń.\n"
 
-#: ../src/main.c:234
+#: ../src/main.c:235
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "„%s” nie jest poprawnym katalogiem. Zostanie użyty domyślny katalog."
