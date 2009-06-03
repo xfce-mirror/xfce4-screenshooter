@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY date "February 2009">
+<!ENTITY version "@PACKAGE_VERSION@">
+<!ENTITY application "@PACKAGE_NAME@">
+]>
+<article id="xfce4-screenshooter" lang="tr">
+
+  <!-- Header -->
+  <articleinfo>
+    <title>Xfce4 Ekran Görüntüsü Eklentisi</title>
+
+    <pubdate>&date;</pubdate>
+
+    <copyright>
+      <year>2008</year>
+      <year>2009</year>
+      <holder>Jérôme Guelfucci</holder>
+    </copyright><copyright><year>2009</year><holder>Samed Beyribey (ras0ir@eventualis.org)</holder></copyright>
+
+    <legalnotice id="legalnotice">
+      <para>Bu dokümanın dağıtımı, kopyalanması ve/veya düzenlenmesi GNU Özgür Belgeleme Lisansı 1.1 sürümü ve daha sonraki sürümleri de dahil olmak üzere, ancak değişmesi imkansız biçimde olmamak kaydı ile serbesttir. Lisansın tamamına <ulink type="http" url="http://www.gnu.org/">Özgür Yazılım Vakfı</ulink> sitesinden ulaşabilirsiniz.</para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Jérôme</firstname>
+        <surname>Guelfucci</surname>
+        <affiliation>
+          <address><email>jeromeg@xfce.org</email></address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <releaseinfo>Bu rehber Xfce4 Ekran Görüntüsü eklentisinin @PACKAGE_VERSION@ sürümüne ilişkindir.</releaseinfo>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Xfce4 Ekran Görüntüsü Hakkında</title>
+
+    <para>Bu uygulama, tüm ekranın veya seçilen bölgenin yahut etkin pencerenin ekran görüntüsünü almanızı sağlar. Ekran görüntüsü almadan önce beklenecek süreyi ayarlayabileceğiniz gibi şu işlemleri de uygulamanız mümkündür: PNG dosyası olarak kayıt, panoya kopyalama veya başka bir uygulama kullanarak alınan ekran görüntüsünü görüntülemek. </para>
+
+    <para>Eğer inşa sırasında etkinleştirilmişse, ekran görüntülerinizi <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink> isimli ücretsiz resim barındırma servisinde yayınlayabilirsiniz. Bu özellikten yararlanabilmek için CURL ve XMLRPC-C kitaplıklarının sisteminizde bulunması gerekmektedir.</para>
+
+    <para>Ayrıca Xfce paneli için bir eklenti de bulunmaktadır.</para>
+
+  </sect1>
+
+  <sect1 id="using-the-application">
+    <title>Uygulamayı kullanmak</title>
+
+    <sect2 id="user-interface">
+      <title>Kullanıcı arabirimi vasıtasıyla</title>
+
+      <para>Uygulamayı çalıştırmak için, Xfce menüsünde yer alan "Donatılar" bölümündeki "Ekran Görüntüsü" ögesini kullanabilirsiniz. </para>
+
+      <para>Bu pencere gösterilecektir:</para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>Xfce4 Ekran Görüntüsü penceresi</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect3 id="region-to-capture">
+        <title>Görüntüsü alınacak alan</title>
+
+        <para><emphasis>"Görüntüsü alınacak alan"</emphasis> bölümü ekran görüntüsünü hangi şekillerde alabileceğinizi belirler: </para>
+
+        <itemizedlist>
+          <listitem>"Tüm Ekran" ekranda gördüğünüz tüm öğeleri ekran görüntüsüne dahil eder.</listitem>
+          <listitem>"Etkin pencere" kaydetme seçeneğinin yer aldığı menü gösterilmeden önce o an gösterilen pencerenin ekran görüntüsünü alır. Eğer ekran görüntüsü almayı geciktir seçeneğini kullanıyorsanız, beklenecek süreden sonra etkin pencerenin ekran görüntüsü alınır. </listitem>
+          <listitem>"Alan seçimi" fare kullanarak seçeceğiniz alan içerisinde yer alan öğeleri ekran görüntüsüne dahil etmenizi sağlar.</listitem>
+        </itemizedlist>
+      </sect3>
+
+      <sect3 id="delay">
+        <title>Ekran görüntüsü almayı geciktir</title>
+
+        <para><emphasis>"Ekran görüntüsü almayı geciktir"</emphasis> seçeneği <emphasis>"Ekran Görüntüsü Al"</emphasis> düğmesine tıklandıktan sonra belirleyeceğiniz süre kadar beklendikten sonra ekran görüntüsü almanızı sağlar. </para>
+      </sect3>
+
+      <sect3 id="after-capturing">
+        <title>Ekran görüntüsünün alınmasının ardından yapılacak işlemler</title>
+
+        <para><emphasis>"Kaydetme penceresini göster"</emphasis>  seçeneği aşağıda <emphasis>"Eylem"</emphasis> kısmında açıklanmaktadır. </para>
+
+        <para><emphasis>"Uygulamayı kapat"</emphasis> seçeneği eğer işaretlenmemişse birden fazla ekran görüntüsü almanızı sağlar. İşaretlenmiş ise, ekran görüntüsü yapmış olduğunuz tercihe göre alınacak ve uygulama kapatılacaktır. </para>
+      </sect3>
+
+      <sect3 id="action">
+        <title>Eylem</title>
+
+        <para><emphasis>"Eylem"</emphasis> kısmı ekran görüntüsü alındıktan sonra yapılacak işlemleri belirlemenizi sağlar.</para>
+
+        <sect4 id="save">
+          <title>Buraya Kaydet</title>
+
+          <para><emphasis>"Buraya Kaydet"</emphasis> seçeneği ekran görüntüsünü PNG biçiminde kaydeder. <emphasis>"Kaydetme penceresini göster"</emphasis> seçeneğini işaretlemezseniz, ekran görüntüsü, <emphasis>"Görüntü alındıktan sonra"</emphasis> kısmında yer alan, ekran görüntüsünün kaydedileceği dizine kaydedilir. Eğer işaretlemişseniz, kaydetme penceresi, önizleme resmiyle birlikte gösterilecektir.</para>
+
+          <para>Xfce4 Ekran Görüntüsü Uygulaması GVfs tarafından desteklenen FTP, SAMBA, SFTP, SSH gibi uzaktaki dosya sistemlerine ekran görüntüsünü kaydedebilir. Sadece <emphasis>gvfs-connect</emphasis> veya <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> ile bir uzaktaki dosya sistemine bağlanmış olmanız yeterlidir. </para>
+
+        </sect4>
+
+        <sect4 id="copy-to-clipboard">
+          <title>Panoya kopyala</title>
+
+          <para><emphasis>"Panoya kopyala"</emphasis> seçeneği ekran görüntüsünü başka uygulamalara, özellikle kelime işlemcilere yapıştırmanızı sağlar. Uygulamayı kapattığınızda pano geçmişi silinebilir.</para>
+        </sect4>
+
+        <sect4 id="open-with">
+          <title>Birlikte aç</title>
+
+          <para><emphasis>"Birlikte aç"</emphasis> seçeneği ekran görüntüsünü sistemin tampon belleğine kaydeder ve harici bir uygulama kullanarak o ekran görüntüsünü açar. Resim dosyalarını açma kapasitesine sahip uygulamalar listede otomatik sıralanmaktadır.</para>
+        </sect4>
+
+        <sect4 id="zimagez">
+          <title>ZimageZ üzerinde yayınla</title>
+          
+          <para><emphasis>"ZimageZ üzerinde yayınla"</emphasis> seçeneği ekran görüntünüzü, ücretsiz bir resim barındırma servisi olan ZimageZ servisine aktarılmasını sağlar. ZimageZ otomatik olarak ekran görüntünüzün büyük ve küçük önizlemelerini oluşturur.</para>
+
+          <para><emphasis>"Ekran görüntüsü al"</emphasis> düğmesine bastıktan sonra, şu menü gösterilecektir:</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-login-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>ZimageZ servisine resim aktarma menüsü</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+          <para>Eğer bir ZimageZ hesabınız yoksa, <ulink type="http" url="http://www.zimagez.com"> ZimageZ web sitesine</ulink> giderek kendinize bir hesap açabilirsiniz. ZimageZ birden fazla dili desteklemektedir. Bu alandaki tüm bölümleri doldurmanız gerekmektedir. </para>
+          
+          <para>Aşağıdaki menü ekran görüntüsü, büyük ve küçük önizleme, HTML kodu ve BBCode için gerekli bağlantıları size gösterecektir:</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-result-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>ZimageZ bağlantı adresleri menüsü</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+        </sect4>
+      </sect3>
+    </sect2>
+
+    <sect2 id="command-line">
+      <title>Komut satırı vasıtasıyla kullanım</title>
+
+      <para>Komut satırı seçenekleri hızlıca ekran görüntüsü almanızı sağlar. Ayrıca klavyedeki Print Screen tuşuna işlev atamanız için de komut satırı komutlarını kullanabilirsiniz. </para>
+
+      <sect3 id="options">
+        <title>Komut satırı seçenekleri</title>
+
+        <sect4 id="w-option">
+          <title>-w seçeneği</title>
+
+          <para><emphasis>-w</emphasis> seçeneği etkin pencerenin ekran görüntüsünü almanızı sağlar.</para>
+        </sect4>
+
+        <sect4 id="f-option">
+          <title>-f seçeneği</title>
+
+          <para><emphasis>-f</emphasis> seçeneği tüm ekranın ekran görüntüsünü almanızı sağlar.</para>
+        </sect4>
+
+        <sect4 id="r-option">
+          <title>-r seçeneği</title>
+
+          <para><emphasis>-r</emphasis> seçeneği belirleyeceğiniz kısmın ekran görüntüsünü almanızı sağlar.</para>
+        </sect4>
+
+        <sect4 id="d-option">
+          <title>-d seçeneği</title>
+
+          <para><emphasis>-d</emphasis> seçeneği ekran görüntüsü almadan önce beklenecek süreyi belirlemenizi sağlar. <emphasis>-f</emphasis>, <emphasis>-w</emphasis>,<emphasis>-r</emphasis> seçenekleri ile birlikte kullanılır.</para>
+        </sect4>
+
+        <sect4 id="s-option">
+          <title>-s seçeneği</title>
+
+          <para><emphasis>-s</emphasis> seçeneği komutla beraber verilen dizin içerisine ekran görüntüsünü kaydetmenizi sağlar. <emphasis>-w</emphasis>,<emphasis>-f</emphasis>,<emphasis>-r</emphasis> seçenekleri ile kullanılabilir. </para>
+        </sect4>
+
+        <sect4 id="h-option">
+          <title>-h seçeneği</title>
+
+          <para><emphasis>-h</emphasis> seçeneği ekran görüntüsünü herhangi bir kaydetme penceresi göstermeden kaydetmenizi sağlar. <emphasis>-w</emphasis>,<emphasis>-f</emphasis><emphasis>-r</emphasis> ve <emphasis>-s</emphasis> seçenekleri ile birlikte kullanılabilir.</para>
+        </sect4>
+
+        <sect4 id="o-option">
+          <title>-o seçeneği</title>
+
+          <para><emphasis>-o</emphasis> seçeneği, ekran görüntüsünü açacak uygulama ile birlikte verildiğinde, ekran görüntüsünü tampon belleğe kaydedip, ekran görüntüsünü komutta verilen uygulama ile açar. <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ve <emphasis>-r</emphasis> seçenekleri ile birlikte kullanılabilir.</para>
+        </sect4>
+
+        <sect4 id="u-option">
+          <title>-u seçeneği</title>
+
+          <para><emphasis>-u</emphasis> seçeneği ekran görüntüsünü ZimageZ servisine aktarmanızı sağlar. <emphasis>-w</emphasis>,<emphasis>-f</emphasis> ve <emphasis>-r</emphasis> seçenekleri ile birlikte kullanılabilir.</para>
+        </sect4>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="panel-plugin">
+    <title>Xfce panel eklentisi vasıtasıyla kullanmak</title>
+
+    <sect2 id="add">
+      <title>Eklentiyi eklemek</title>
+
+      <para>Eklentiyi panele eklemek için, panele sağ tıklayıp, <emphasis>"Yeni Öğeler Ekle"</emphasis> seçeneğine tıklamanız gerekmektedir. Açılan listeden <emphasis>"Ekran Görüntüsü"</emphasis> ögesini seçmeniz yeterlidir.</para>
+    </sect2>
+
+    <sect2 id="set">
+      <title>Eklentiyi ayarlamak</title>
+
+      <para>Ekran görüntüsünün nasıl alınacağına ilişkin ayarları panele eklediğiniz ögeye sağ tıklayıp <emphasis>"Özellikler"</emphasis> seçeneğine tıklamak suretiyle yapabilirsiniz. Eklenti,  esas uygulamaya benzer bir menü sunmaktadır. </para>
+    </sect2>
+
+    <sect2 id="use">
+      <title>Eklentiyi kullanmak</title>
+
+      <para>Ekran görüntüsü almak için eklentiye tıklamanız yeterlidir.</para>
+    </sect2>
+
+  </sect1>
+
+</article>

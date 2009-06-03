@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-31 14:02+0200\n"
-"PO-Revision-Date: 2009-05-31 12:49+0200\n"
+"PO-Revision-Date: 2009-06-02 19:49+0200\n"
 "Last-Translator: Samed Beyribey <ras0ir@eventualis.org>\n"
 "Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -34,14 +34,11 @@ msgid "Transfer"
 msgstr "Aktar"
 
 #: ../lib/screenshooter-dialogs.c:600
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
-"transferred to:</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Ekran görüntüsü aktarılıyor:</"
-"span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekran görüntüsü aktarılıyor:</span>"
 
-#: ../lib/screenshooter-dialogs.c:724 ../lib/screenshooter-dialogs.c:741
+#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:741
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
@@ -57,14 +54,14 @@ msgstr "Tercihler"
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Görüntüsü alınacak alan</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Görüntüsü alınacak alan</span>"
 
 #: ../lib/screenshooter-dialogs.c:820
 msgid "Entire screen"
 msgstr "Tüm ekran"
 
-#: ../lib/screenshooter-dialogs.c:830 ../src/main.c:58
+#: ../lib/screenshooter-dialogs.c:830
+#: ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:292
 msgid "Take a screenshot of the entire screen"
 msgstr "Tüm ekranın görüntüsünü al"
@@ -73,7 +70,8 @@ msgstr "Tüm ekranın görüntüsünü al"
 msgid "Active window"
 msgstr "Etkin pencere"
 
-#: ../lib/screenshooter-dialogs.c:851 ../src/main.c:104
+#: ../lib/screenshooter-dialogs.c:851
+#: ../src/main.c:104
 #: ../panel-plugin/screenshooter-plugin.c:297
 msgid "Take a screenshot of the active window"
 msgstr "Etkin pencerenin ekran görüntüsünü al"
@@ -82,15 +80,11 @@ msgstr "Etkin pencerenin ekran görüntüsünü al"
 msgid "Select a region"
 msgstr "Alan seçimi"
 
-#: ../lib/screenshooter-dialogs.c:872 ../src/main.c:78
+#: ../lib/screenshooter-dialogs.c:872
+#: ../src/main.c:78
 #: ../panel-plugin/screenshooter-plugin.c:302
-msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
-msgstr ""
-"Farenin sol tuşuna basılı tutup fareyi hareket ettirerek belirli bir alanı "
-"seçip, o alanın ekran görüntüsünü alabilirsiniz."
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
+msgstr "Farenin sol tuşuna basılı tutup fareyi hareket ettirerek belirli bir alanı seçip, o alanın ekran görüntüsünü alabilirsiniz."
 
 #: ../lib/screenshooter-dialogs.c:884
 msgid "Capture the mouse pointer"
@@ -101,11 +95,8 @@ msgid "Display the mouse pointer on the screenshot"
 msgstr "Ekran görüntüsünde fare imlecini göster"
 
 #: ../lib/screenshooter-dialogs.c:917
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Görüntü almadan önce "
-"beklenecek süre</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Görüntü almadan önce beklenecek süre</span>"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Delay in seconds before the screenshot is taken"
@@ -117,9 +108,7 @@ msgstr "saniye"
 
 #: ../lib/screenshooter-dialogs.c:984
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Görüntü alındıktan sonra</"
-"span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Görüntü alındıktan sonra</span>"
 
 #. Display the save dialog checkbox
 #: ../lib/screenshooter-dialogs.c:1007
@@ -127,8 +116,7 @@ msgid "Show the save dialog"
 msgstr "Kaydetme penceresini göster"
 
 #: ../lib/screenshooter-dialogs.c:1013
-msgid ""
-"The save dialog allows you to change the file name and the save location"
+msgid "The save dialog allows you to change the file name and the save location"
 msgstr "Kaydetme penceresi dosya adını ve dosya konumunu değiştirmenizi sağlar"
 
 #: ../lib/screenshooter-dialogs.c:1027
@@ -136,12 +124,8 @@ msgid "Close the application"
 msgstr "Uygulamayı kapat"
 
 #: ../lib/screenshooter-dialogs.c:1033
-msgid ""
-"If unchecked, the current window will be displayed again after the "
-"screenshot has been taken to allow you to take several screenshots in a row"
-msgstr ""
-"Eğer işaretlenmemişse, belli bir sıra dahilinde ekran görüntüleri alındıktan "
-"sonra ana pencere tekrar gösterilecektir"
+msgid "If unchecked, the current window will be displayed again after the screenshot has been taken to allow you to take several screenshots in a row"
+msgstr "Eğer işaretlenmemişse, belli bir sıra dahilinde ekran görüntüleri alındıktan sonra ana pencere tekrar gösterilecektir"
 
 #: ../lib/screenshooter-dialogs.c:1056
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -170,9 +154,7 @@ msgstr "Panoya kopyala"
 
 #: ../lib/screenshooter-dialogs.c:1132
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
-"Ekran görüntüsünü panoya kopyalar daha sonra ihtiyaç duyduğunuzda "
-"yapıştırmak için kullanabilirsiniz"
+msgstr "Ekran görüntüsünü panoya kopyalar daha sonra ihtiyaç duyduğunuzda yapıştırmak için kullanabilirsiniz"
 
 #: ../lib/screenshooter-dialogs.c:1147
 msgid "Open with:"
@@ -182,7 +164,8 @@ msgstr "Birlikte aç:"
 msgid "Open the screenshot with the chosen application"
 msgstr "Ekran görüntüsünü seçilen uygulama ile açar"
 
-#: ../lib/screenshooter-dialogs.c:1191 ../src/main.c:73
+#: ../lib/screenshooter-dialogs.c:1191
+#: ../src/main.c:73
 msgid "Application to open the screenshot"
 msgstr "Ekran görüntüsünü gösterecek uygulama"
 
@@ -190,10 +173,10 @@ msgstr "Ekran görüntüsünü gösterecek uygulama"
 msgid "Host on ZimageZ"
 msgstr "ZimageZ üzerinde yayınla"
 
-#: ../lib/screenshooter-dialogs.c:1210 ../src/main.c:92
+#: ../lib/screenshooter-dialogs.c:1210
+#: ../src/main.c:92
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
-"Ekran görüntüsünü ücretsiz resim yükleme servisi ZimageZ servisine aktarır"
+msgstr "Ekran görüntüsünü ücretsiz resim yükleme servisi ZimageZ servisine aktarır"
 
 #: ../lib/screenshooter-dialogs.c:1255
 msgid "Save screenshot as..."
@@ -201,13 +184,15 @@ msgstr "Ekran görüntüsünü farklı kaydet..."
 
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
-#, fuzzy
 msgid "Initialize the connection..."
 msgstr "Bağlantıyı başlat..."
 
-#: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
-#: ../lib/screenshooter-zimagez.c:361 ../lib/screenshooter-zimagez.c:389
-#: ../lib/screenshooter-zimagez.c:520 ../lib/screenshooter-zimagez.c:543
+#: ../lib/screenshooter-zimagez.c:172
+#: ../lib/screenshooter-zimagez.c:332
+#: ../lib/screenshooter-zimagez.c:361
+#: ../lib/screenshooter-zimagez.c:389
+#: ../lib/screenshooter-zimagez.c:520
+#: ../lib/screenshooter-zimagez.c:543
 #: ../lib/screenshooter-zimagez.c:580
 #, c-format
 msgid ""
@@ -219,12 +204,10 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:223
 msgid ""
-"Please file the following fields with your <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Please file the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Lütfen aşağıdaki kısımları <a href=\"http://www.zimagez.com\">ZimageZ</a> "
-"üzerindeki \n"
+"Lütfen aşağıdaki kısımları <a href=\"http://www.zimagez.com\">ZimageZ</a> üzerindeki \n"
 "kullanıcı adı, parolanız ve diğer detayları kullanarak doldurunuz. "
 
 #: ../lib/screenshooter-zimagez.c:283
@@ -232,25 +215,16 @@ msgid "Check the user information..."
 msgstr "Kullanıcı bilgilerini kontrol et..."
 
 #: ../lib/screenshooter-zimagez.c:305
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
-"must fill all the fields.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Tüm "
-"alanları doldurmalısınız.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Tüm alanları doldurmalısınız.</span>"
 
 #: ../lib/screenshooter-zimagez.c:320
 msgid "Login on ZimageZ..."
 msgstr "ZimageZ servisine giriş yap..."
 
 #: ../lib/screenshooter-zimagez.c:436
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
-"user and the password you entered do not match. Please retry.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Girmiş "
-"olduğunuz kullanıcı adı ve parola birbirini tutmuyor. Lütfen tekrar deneyin."
-"</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Girmiş olduğunuz kullanıcı adı ve parola birbirini tutmuyor. Lütfen tekrar deneyin.</span>"
 
 #: ../lib/screenshooter-zimagez.c:501
 msgid "Upload the screenshot..."
@@ -276,13 +250,8 @@ msgid "User:"
 msgstr "Kullanıcı Adı:"
 
 #: ../lib/screenshooter-zimagez.c:703
-#, fuzzy
-msgid ""
-"Your Zimagez user name, if you do not have one yet please create one on the "
-"Web page linked above"
-msgstr ""
-"Zimagez kullanıcı adınız, eğer henüz bir kullanıcı oluşturmamışsanız "
-"yukarıdaki bağlantıyı kullanarak oluşturabilirsiniz"
+msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
+msgstr "Zimagez kullanıcı adınız, eğer henüz bir kullanıcı oluşturmamışsanız yukarıdaki bağlantıyı kullanarak oluşturabilirsiniz"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:708
@@ -299,12 +268,8 @@ msgid "Title:"
 msgstr "Başlık:"
 
 #: ../lib/screenshooter-zimagez.c:733
-msgid ""
-"The title of the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
-msgstr ""
-"Ekran görüntüsü için isim, ZimageZ üzerinde ekran görüntüsü gösterilirken "
-"kullanılacaktır"
+msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
+msgstr "Ekran görüntüsü için isim, ZimageZ üzerinde ekran görüntüsü gösterilirken kullanılacaktır"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:738
@@ -312,12 +277,8 @@ msgid "Comment:"
 msgstr "Yorum:"
 
 #: ../lib/screenshooter-zimagez.c:749
-msgid ""
-"A comment on the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
-msgstr ""
-"Ekran görüntüsü için yorum, ZimageZ üzerinde ekran görüntüsü gösterilirken "
-"kullanılacaktır "
+msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
+msgstr "Ekran görüntüsü için yorum, ZimageZ üzerinde ekran görüntüsü gösterilirken kullanılacaktır "
 
 #: ../lib/screenshooter-zimagez.c:870
 #, c-format
@@ -343,12 +304,8 @@ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Bağlantılar</span>"
 
 #: ../lib/screenshooter-zimagez.c:965
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
-"to the full size image</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Tam boyut için kullanılacak "
-"önizleme resmi kodu</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tam boyut için kullanılacak önizleme resmi kodu</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:981
@@ -414,10 +371,8 @@ msgstr "%s geçerli bir dizin değil, öntanımlı dizin kullanılacak."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
-msgstr ""
-"Tüm ekranın, etkin pencerenin veya belirli bir alanın ekran görüntüsünü alır"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Tüm ekranın, etkin pencerenin veya belirli bir alanın ekran görüntüsünü alır"
 
 #, fuzzy
 #~ msgid "Tak a screenshot of the entire screen"
@@ -430,13 +385,12 @@ msgstr ""
 #, fuzzy
 #~ msgid "Display the save dialog"
 #~ msgstr "Kaydetme penceresini gösterme"
-
 #~ msgid "Save by default to:"
 #~ msgstr "Öntanımlı kaydetme yeri:"
-
 #~ msgid ""
 #~ "If checked, the screenshot will be saved by default to the location set "
 #~ "on the right without displaying a save dialog"
 #~ msgstr ""
 #~ "Seçildiği takdirde, ekran görüntüsü sağ kısımda belirtilen dizine "
 #~ "kaydedilecektir"
+

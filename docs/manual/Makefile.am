@@ -4,7 +4,8 @@ SUBDIRS = \
 	fr \
 	it \
 	gl \
-	ja
+	ja \
+	tr
 
 EXTRA_DIST = \
 	xfce-nochunk.xsl
