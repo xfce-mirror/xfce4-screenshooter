@@ -69,16 +69,11 @@ gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
       g_signal_connect (dialog, "response", (GCallback) cb_help_response, NULL);
 
       response = gtk_dialog_run (GTK_DIALOG (dialog));
+      gtk_widget_destroy (dialog);
 
-      if (response == GTK_RESPONSE_OK)
+      if (response != GTK_RESPONSE_OK)
         {
-          gtk_widget_hide (dialog);
-        }
-      else
-        {
-          gtk_widget_destroy (dialog);
           gtk_main_quit ();
-
           return FALSE;
         }
     }

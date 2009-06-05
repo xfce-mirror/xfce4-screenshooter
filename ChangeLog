@@ -1,3 +1,11 @@
+2009-06-05 jeromeg
+
+Try to fix bug #5424.
+
+Destroy the main dialog before doing anything else. Normally, this will
+prevent this dialog from remaining displayed on the screen and being
+captured instead of the active window.
+
 2009-06-03 jeromeg
 
 Add the autotools stuff for the Turkish translation.
