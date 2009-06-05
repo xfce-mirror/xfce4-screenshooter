@@ -1,5 +1,13 @@
 2009-06-05 jeromeg
 
+Reimplement an old workaround to fix screenshots without delay.
+
+If the delay is NULL, and under some vague conditions, there is
+no active window detected. Waiting 1 second before doing anything is a
+lame hack which fixes this issue.
+
+2009-06-05 jeromeg
+
 Try to fix bug #5424.
 
 Destroy the main dialog before doing anything else. Normally, this will
