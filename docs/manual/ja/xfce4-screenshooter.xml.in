@@ -16,7 +16,7 @@
       <year>2008</year>
       <year>2009</year>
       <holder>Jérôme Guelfucci</holder>
-    </copyright><copyright><year>2009.</year><holder>Masato Hashimoto (cabezon.hashimoto@gmail.com)</holder></copyright>
+    </copyright><copyright><year>2009.</year><holder>Masato Hashimoto (hashimo@xfce.org)</holder></copyright>
 
     <legalnotice id="legalnotice">
       <para>フリーソフトウェア財団が公表する GNU フリー文書利用許諾契約書の第1.1版、あるいはそれ以降のいずれかの版の条件下において、この文書の複製、配布および/または変更が許可されます。変更出来ない箇所、表紙文および裏表紙文があってはいけません。この利用許諾契約書の全文は<ulink type="http" url="http://www.gnu.org/">フリーソフトウェア財団</ulink>から取得する事ができます。</para>
@@ -32,22 +32,15 @@
       </author>
     </authorgroup>
 
-    <releaseinfo>
-      This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter.
-    </releaseinfo>
+    <releaseinfo>この説明書は Xfce4 スクリーンシューター のバージョン @PACKAGE_VERSION@ について書かれています。</releaseinfo>
   </articleinfo>
 
   <sect1 id="intro">
-    <title>Introduction to Xfce4 Screenshooter</title>
+    <title>Xfce4 スクリーンシューターの紹介</title>
 
     <para>このアプリケーションは、画面全体、アクティブウィンドウ、または選択した領域のスクリーンショットを撮影します。撮影までの遅延時間や、撮影したスクリーンショットに対する操作 (PNG ファイルに保存、クリップボードにコピー、または他のアプリケーションで開く) を指定できます。</para>
 
-    <para>
-      If activated on build, you can also host your screenshots on
-      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, 
-      a free online image hosting service. The CURL and XMLRPC-C libraries
-      are required.
-    </para>
+    <para>ビルド時に有効にしていれば、スクリーンショットをフリーのオンラインイメージホスティングサービス <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink> で公開することもできます。その場合は CURL および XMLRPC-C ライブラリが必要です。</para>
 
     <para>Xfce パネル用プラグインも用意されています。</para>
 
@@ -88,105 +81,51 @@
       </sect3>
 
       <sect3 id="delay">
-        <title>Delay before capturing</title>
+        <title>撮影するまでの遅延時間</title>
 
-        <para>
-          The <emphasis>"Delay before capturing"</emphasis>
-          section allows you to set the delay that will elapse between
-          pressing the <emphasis>"OK"</emphasis> button and taking the 
-          screenshot. This delay will allow you to open menus or to do 
-          whatever action you want to see displayed on the screenshot.
-        </para>
+        <para><emphasis>"スクリーンショットを撮るまでの遅延時間"</emphasis> セクションでは、<emphasis>「OK」</emphasis> ボタンがクリックされてから実際にスクリーンショットを撮るまでの遅延時間を指定できます。この遅延により、開いたメニューなどあらゆる操作のスクリーンショットを撮影することができます。</para>
       </sect3>
 
       <sect3 id="after-capturing">
-        <title>After capturing</title>
+        <title>撮影したら</title>
 
-        <para>
-          The <emphasis>"Show the save dialog"</emphasis> option 
-          is described below, in the <emphasis>"Action"</emphasis> 
-          section.
-        </para>
+        <para><emphasis>"保存ダイアログを表示する"</emphasis> オプションは <emphasis>"アクション"</emphasis> 節で説明します。</para>
 
-        <para>
-          The <emphasis>"Close the application"</emphasis> option
-          allows you, if unchecked, to take several screenshots in 
-          a row. If checked, the application will be closed once 
-          the screenshot has been taken and the action you selected 
-          executed.
-        </para>
+        <para><emphasis>"アプリケーションを閉じる"</emphasis> オプションでは、チェックマークをつけると1枚のスクリーンショットを撮影した後にアプリケーションを閉じ、選択されたアクションを実行します。チェックマークをつけなければ、複数のスクリーンショットを続けて撮影できます。</para>
       </sect3>
 
       <sect3 id="action">
         <title>アクション</title>
 
-        <para>
-          The <emphasis>"Action"</emphasis> section allows you to choose
-          what should be done with the screenshot.
-        </para>
+        <para><emphasis>"アクション"</emphasis> セクションでは、撮影したスクリーンショットに対する操作を選択できます。</para>
 
         <sect4 id="save">
-          <title>Save in</title>
+          <title>保存する</title>
 
-          <para>
-            The <emphasis>"Save in"</emphasis> option will save the
-            screenshot to a PNG file. If you don't check the
-            <emphasis>"Show the save dialog"</emphasis> checkbox in the
-            <emphasis>"After capturing"</emphasis> section, the
-            screenshot will be saved to the folder on the right after
-            you press the <emphasis>"OK"</emphasis> button, without 
-            showing any save dialog. Otherwise, a save dialog will be 
-            displayed, which also shows a preview of the screenshot. 
-            You will then be able to set the save location, and the 
-            name of the file.
-          </para>
+          <para><emphasis>"保存する"</emphasis> オプションは、スクリーンショットを PNG ファイルに保存します。<emphasis>"撮影したら"</emphasis> セクションの <emphasis>"保存ダイアログを表示する"</emphasis> チェックボックスにチェックマークがつけられてない場合、スクリーンショットは <emphasis>「OK」</emphasis> ボタンが押された後、保存ダイアログを表示せずに右で指定された場所に保存されます。チェックマークがつけられてる場合はスクリーンショットのプレビューが確認できる保存ダイアログが表示され、保存場所やファイル名を指定できます</para>
 
-          <para>
-            Xfce4 Screenshooter is also able to save the screenshot to
-            any remote file system supported by GVfs, such as FTP, SAMBA,
-            SFTP, remote computers accessible via SSH... You just need to
-            connect this remote file system using 
-            <emphasis>gvfs-connect</emphasis> or
-            <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink>
-            and it will be available in the left column of the save dialog.
-          </para>
+          <para>Xfce4 スクリーンシューターはスクリーンショットを、FTP、SAMBA、SFTP、SSH 経由でアクセス可能なリモートコンピュータなど、GVfs がサポートするリモートファイルシステムに保存することもできます。リモートファイルシステムへの接続には <emphasis>gvfs-connect</emphasis> または <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> が必要で、利用可能な接続先は保存ダイアログの左カラムに表示されます。</para>
 
         </sect4>
 
         <sect4 id="copy-to-clipboard">
           <title>クリップボードにコピーする</title>
 
-          <para><emphasis>"クリップボードにコピーする"</emphasis> オプションは、スクリーンショットをワードプロセッサなど他のアプリケーションに貼り付けることができるように、クリップボードへコピーします。スクリーンショットを貼り付ける前にこのアプリケーションを終了すると画像は破棄されます。一部のクリップボードマネージャを使用することでこれを回避できます。</para>
+          <para><emphasis>"クリップボードにコピーする"</emphasis> オプションは、スクリーンショットをワードプロセッサなど他のアプリケーションに貼り付けることができるようにクリップボードへコピーします。スクリーンショットを貼り付ける前にこのアプリケーションを終了すると画像は破棄されます。一部のクリップボードマネージャを使用することでこれを回避できます。</para>
         </sect4>
 
         <sect4 id="open-with">
           <title>アプリケーションで開く</title>
 
-          <para>
-            The <emphasis>"Open with"</emphasis> option saves the
-            screenshot to the system's temporary directory and opens it
-            with the application set using the dropdown list on the right.
-            Applications which support images are automatically detected
-            and added to the dropdown list.
-          </para>
+          <para><emphasis>"アプリケーションで開く"</emphasis> オプションは、スクリーンショットをシステムの作業ディレクトリに保存し、右のドロップダウンリストで指定されたアプリケーションで開きます。画像をサポートするアプリケーションは自動的に検出され、ドロップダウンリストに追加されます。</para>
         </sect4>
 
         <sect4 id="zimagez">
-          <title>Host on ZimageZ</title>
+          <title>ZimageZ で公開する</title>
           
-          <para>
-            The <emphasis>"Host on ZimageZ"</emphasis> option allow you
-            to host your screenshot on this free online hosting service,
-            so that you can share it easily with other people. ZimageZ
-            automatically generates a large and a small thumbnail of your
-            screenshot, which can be used to create thumbnails pointing to
-            the full size screenshot.
-          </para>
+          <para><emphasis>"ZimageZ で公開する"</emphasis> オプションでは、撮影したスクリーンショットをフリーのオンラインホスティングサービスで公開し、他の人と簡単に共有することができます。ZimageZ はフルサイズのスクリーンショット、フルサイズスクリーンショットを指し示すために使用される、大きな、および小さなサムネイルを自動生成します。</para>
 
-          <para>
-            After pressing the <emphasis>"OK"</emphasis> button, you will
-            be shown this dialog:
-          </para>
+          <para><emphasis>「OK」</emphasis> ボタンを押すと、以下のダイアログが表示されます:</para>
 
           <screenshot>
             <mediaobject>
@@ -195,25 +134,14 @@
               </imageobject>
 
               <textobject>
-                <phrase>The dialog to host a screenshot on ZimageZ</phrase>
+                <phrase>ZimageZ でスクリーンショットを公開するためのダイアログ</phrase>
               </textobject>
             </mediaobject>
           </screenshot>
 
-          <para>
-            If you do not have a ZimageZ user name, you will need to create
-            one on the <ulink type="http" url="http://www.zimagez.com">
-            ZimageZ website</ulink>. Several languages are available on this
-            website, you can switch between using the menu up right. You must
-            fill all fields of this dialog. Once you click the 
-            <emphasis>"OK"</emphasis> button, the upload will start.
-          </para>
+          <para>ZimageZ のユーザ名を持っていない場合、<ulink type="http" url="http://www.zimagez.com">ZimageZ ウェブサイト</ulink> で作成して下さい。このウェブサイトはいくつかの言語で利用可能で、右上のメニューから切り換えることができます。このダイアログのすべてのフィールドに入力してください。<emphasis>「OK」</emphasis> ボタンをクリックすると、アップロードが開始されます。</para>
           
-          <para>
-            The dialog below will give you the links to the full size screenshot, the
-            large thumbnail, the small thumbnails, as well examples of HTML and BBcode
-            to create a thumbnail pointing to the full size screenshot:
-          </para>
+          <para>以下のダイアログでは、フルサイズスクリーンショット、大きなサムネイル、小さなサムネイルへのリンク、およびフルサイズスクリーンショットを指し示すサムネイルの HTML および BB コードのサンプルが表示されます。</para>
 
           <screenshot>
             <mediaobject>
@@ -222,7 +150,7 @@
               </imageobject>
 
               <textobject>
-                <phrase>The dialog giving the links to your screenshot on ZimageZ</phrase>
+                <phrase>ZimageZ 上のスクリーンショットへのリンクを表示するダイアログ</phrase>
               </textobject>
             </mediaobject>
           </screenshot>
@@ -234,14 +162,7 @@
     <sect2 id="command-line">
       <title>コマンドラインから</title>
 
-      <para>
-        Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Print Screen key on the upper right
-        of most keyboards so that it takes screenshots. To do so,
-        configure the keybindings of your desktop environnement so that
-        it launches xfce4-screenshooter with one or several of the
-        following options when the Prt Scrn key is pressed.
-      </para>
+      <para>コマンドラインオプションを使用すると、スクリーンショットの撮影を速やかに行えます。これらを Print Screen キー (多くのキーボードの右上部にあります) に割り当ててスクリーンショットを撮ることができます。デスクトップ環境のキーバインド設定で、xfce4-screenshooter コマンドに以下のいくつかのオプションをつけて設定してください。</para>
 
       <sect3 id="options">
         <title>コマンドラインオプション</title>
@@ -273,31 +194,25 @@
         <sect4 id="s-option">
           <title>-s オプション</title>
 
-          <para><emphasis>-s</emphasis> オプションは続く既存のフォルダへのパスに、撮影したスクリーンショットを保存します。このオプションは <emphasis>-f</emphasis>、<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定された場合のみ機能します。<emphasis>-h</emphasis> オプション (後述) との組み合わせで、保存ダイアログを表示せずに指定したパスに保存します。</para>
+          <para><emphasis>-s</emphasis> オプションは続く既存のフォルダへのパスに、撮影したスクリーンショットを保存します。このオプションは <emphasis>-f</emphasis>、<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定されている場合のみ機能します。<emphasis>-h</emphasis> オプション (後述) との組み合わせで、保存ダイアログを表示せずに指定したパスに保存します。</para>
         </sect4>
 
         <sect4 id="h-option">
           <title>-h オプション</title>
 
-          <para><emphasis>-h</emphasis> オプションを指定した場合、スクリーンショットは保存ダイアログを表示せずに保存されます。このオプションは <emphasis>-f</emphasis>、<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプションが指定された場合のみ機能します。必要であれば <emphasis>-s</emphasis> オプションで保存場所を指定できます。</para>
+          <para><emphasis>-h</emphasis> オプションを指定した場合、スクリーンショットは保存ダイアログを表示せずに保存されます。このオプションは <emphasis>-f</emphasis>、<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定されている場合のみ機能します。必要であれば <emphasis>-s</emphasis> オプションで保存場所を指定できます。</para>
         </sect4>
 
         <sect4 id="o-option">
           <title>-o オプション</title>
 
-          <para><emphasis>-o</emphasis> オプションが指定された場合、スクリーンショットはシステムの作業ディレクトリに保存され、<emphasis>-o</emphasis> オプションの後に指定されたアプリケーションで開きます。このオプションは <emphasis>-f</emphasis>、<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプションが指定された場合のみ機能します。</para>
+          <para><emphasis>-o</emphasis> オプションが指定された場合、スクリーンショットはシステムの作業ディレクトリに保存され、<emphasis>-o</emphasis> オプションの後に指定されたアプリケーションで開きます。このオプションは <emphasis>-f</emphasis>、<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定されている場合のみ機能します。</para>
         </sect4>
 
         <sect4 id="u-option">
-          <title> The -u option</title>
+          <title>-u オプション</title>
 
-          <para>
-            If the <emphasis>-u</emphasis> option is given, the screenshot
-            will be hosted on ZimageZ. See above for more details.
-            This option only has an effect if the
-            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para><emphasis>-u</emphasis> オプションを設定した場合、スクリーンショットは ZimageZ にアップロードされます。詳細は前述の説明を参照してください。このオプションは <emphasis>-f</emphasis>、<emphasis>-w</emphasis> または <emphasis>-r</emphasis> オプションのいずれかが指定されている場合のみ機能します。</para>
         </sect4>
       </sect3>
     </sect2>
