@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 14:02+0200\n"
-"PO-Revision-Date: 2009-04-16 23:40+0900\n"
+"POT-Creation-Date: 2009-06-06 21:19+0900\n"
+"PO-Revision-Date: 2009-06-06 21:12+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -187,11 +187,12 @@ msgstr "スクリーンショットを開くアプリケーションを設定し
 
 #: ../lib/screenshooter-dialogs.c:1204
 msgid "Host on ZimageZ"
-msgstr ""
+msgstr "ZimageZ で公開する"
 
 #: ../lib/screenshooter-dialogs.c:1210 ../src/main.c:92
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr ""
+"スクリーンショットをフリーのウェブホスティングサービス ZimageZ で公開します"
 
 #: ../lib/screenshooter-dialogs.c:1255
 msgid "Save screenshot as..."
@@ -200,7 +201,7 @@ msgstr "名前をつけてスクリーンショットを保存..."
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
 msgid "Initialize the connection..."
-msgstr ""
+msgstr "接続を初期化しています..."
 
 #: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
 #: ../lib/screenshooter-zimagez.c:361 ../lib/screenshooter-zimagez.c:389
@@ -211,6 +212,8 @@ msgid ""
 "An error occurred during the XML exchange: %s (%d).\n"
 " The screenshot could not be uploaded."
 msgstr ""
+"XML 交換中にエラーが発生しました: %s (%d)\n"
+"スクリーンショットをアップロードできませんでした。"
 
 #: ../lib/screenshooter-zimagez.c:223
 msgid ""
@@ -218,154 +221,159 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
+"<a href=\"http://www.zimagez.com\">ZimageZ</a> のユーザ名、パスワード、および"
+"スクリーンショットについての\n"
+"詳細を入力してください。"
 
 #: ../lib/screenshooter-zimagez.c:283
 msgid "Check the user information..."
-msgstr ""
+msgstr "ユーザ情報をチェックしています..."
 
 #: ../lib/screenshooter-zimagez.c:305
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影する領域</span>"
+msgstr ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">すべて"
+"のフィールドに入力してください。</span>"
 
 #: ../lib/screenshooter-zimagez.c:320
 msgid "Login on ZimageZ..."
-msgstr ""
+msgstr "ZimageZ にログインしています..."
 
 #: ../lib/screenshooter-zimagez.c:436
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">スクリーンショットの転送先:</"
-"span>"
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">入力さ"
+"れたユーザとパスワードがマッチしません。\n"
+"再入力してください。</span>"
 
 #: ../lib/screenshooter-zimagez.c:501
-#, fuzzy
 msgid "Upload the screenshot..."
-msgstr "名前をつけてスクリーンショットを保存..."
+msgstr "スクリーンショットをアップロードしています..."
 
 #: ../lib/screenshooter-zimagez.c:559
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr ""
+msgstr "スクリーンショットのアップロード中にエラーが発生しました。"
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:597
 msgid "Close the session on ZimageZ..."
-msgstr ""
+msgstr "ZimageZ のセッションを終了しています..."
 
 #: ../lib/screenshooter-zimagez.c:650
-#, fuzzy
 msgid "Details about the screenshot for ZimageZ"
-msgstr "スクリーンショットを撮るまでの遅延秒数を指定できます"
+msgstr "ZimageZ 用スクリーンショットについての詳細"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:692
 msgid "User:"
-msgstr ""
+msgstr "ユーザ:"
 
 #: ../lib/screenshooter-zimagez.c:703
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
+"ZimageZ のユーザ名を入力してください。まだアカウントを持っていない場合には上"
+"にリンクされているウェブページから作成して下さい。"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:708
 msgid "Password:"
-msgstr ""
+msgstr "パスワード:"
 
 #: ../lib/screenshooter-zimagez.c:718
 msgid "The password for the user above"
-msgstr ""
+msgstr "ユーザのパスワードを入力してください"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:723
 msgid "Title:"
-msgstr ""
+msgstr "タイトル:"
 
 #: ../lib/screenshooter-zimagez.c:733
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr ""
+"スクリーンショットのタイトルを設定してください。これは ZimageZ で表示する際に"
+"使用されます。"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:738
 msgid "Comment:"
-msgstr ""
+msgstr "コメント:"
 
 #: ../lib/screenshooter-zimagez.c:749
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr ""
+"スクリーンショットのコメントを設定できます。これは ZimageZ で表示する際に使用"
+"されます"
 
 #: ../lib/screenshooter-zimagez.c:870
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr ""
+msgstr "<a href=\"%s\">フルサイズ画像</a>"
 
 #: ../lib/screenshooter-zimagez.c:872
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">大きいサムネイル</a>"
 
 #: ../lib/screenshooter-zimagez.c:874
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">小さいサムネイル</a>"
 
 #: ../lib/screenshooter-zimagez.c:894
-#, fuzzy
 msgid "My screenshot on ZimageZ"
-msgstr "スクリーンショットを撮るまでの遅延秒数を指定できます"
+msgstr "ZimageZ 上のスクリーンショット"
 
 #: ../lib/screenshooter-zimagez.c:920
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">アクション</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">リンク</span>"
 
 #: ../lib/screenshooter-zimagez.c:965
-#, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影する領域</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">フルサイズ画像へリンクするサム"
+"ネイルのコード</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:981
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1002
 msgid "BBCode for forums"
-msgstr ""
+msgstr "フォーラム用 BB コード"
 
 #: ../lib/screenshooter-zimagez.c:1122
 msgid "ZimageZ"
-msgstr ""
+msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1155
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">アクション</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ステータス</span>"
 
 #. Open Link
 #: ../lib/sexy-url-label.c:176
-#, fuzzy
 msgid "_Open Link"
-msgstr "アプリケーションで開く:"
+msgstr "リンクを開く(_O)"
 
 #. Copy Link Address
 #: ../lib/sexy-url-label.c:188
 msgid "Copy _Link Address"
-msgstr ""
+msgstr "リンクアドレスのコピー(_L)"
 
 #: ../src/main.c:53
 msgid "Delay in seconds before taking the screenshot"
@@ -410,10 +418,10 @@ msgstr ""
 "画面全体、アクティブウィンドウまたは指定した領域のスクリーンショットを撮りま"
 "す。"
 
-#, fuzzy
-#~ msgid "Tak a screenshot of the entire screen"
-#~ msgstr "画面全体のスクリーンショットを撮ります"
+#~ msgid "Uploading to ZimageZ..."
+#~ msgstr "ZimageZ へアップロードしています..."
 
-#, fuzzy
-#~ msgid "Applicatio to open the screenshot"
-#~ msgstr "スクリーンショットを開くアプリケーションを設定します"
+#~ msgid "Upload the screenshot to ZimageZ©, a free Web hosting solution"
+#~ msgstr ""
+#~ "スクリーンショットをフリーウェブホスティングサービス ZimageZ© にアップロー"
+#~ "ドします"
