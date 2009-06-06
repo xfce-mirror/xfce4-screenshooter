@@ -465,7 +465,7 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
   /* WORKAROUND: always sleep at least 1 second so that
    * the dialog has the time to disappear. */
   if (region != SELECT)
-    sleep (delay);
+    (delay > 0) ? sleep (delay) : sleep (1);
 
   /* Get the window/desktop we want to screenshot*/
   if (region == FULLSCREEN)
