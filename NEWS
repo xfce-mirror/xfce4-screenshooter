@@ -1,12 +1,15 @@
 === Version x.x.x ===
 
   Gtk+ 2.12 and Glib 2.16 are now required to build the application
-  and the panel plugin.
+  and the panel plugin. Xml-rpc and libcurl are now optionnal dependencies,
+  they should be replaced by libsoup in the future.
 
   * Bugs fixed:
     - The cursor was missplaced when taking a screenshot of a window (Bug #5204).
 
   * Enhancements:
+    - Add an optional action to host screenshots on ZimageZ, a free online image
+      hosting solution.
     - Add an option in the user interface to hide the mouse pointer on screenshots.
     - Add an option in the application which allows the user to choose
       whether the application should be closed after taking a screenshot. This
@@ -18,6 +21,7 @@
       keyboard key to cancel the operation.
     - Screenshots can now be saved to remote locations that are connected using
       gvfs-connect or Gigolo.
+    - Updated translations for the application and the documentation.
 
 === Version 1.5.1 ===
 

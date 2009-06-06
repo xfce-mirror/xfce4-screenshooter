@@ -447,6 +447,7 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
   GdkPixbuf *screenshot = NULL;
   GdkWindow *window = NULL;
   GdkScreen *screen;
+  GdkDisplay *display;
 
   /* gdk_get_default_root_window () does not need to be unrefed,
    * needs_unref enables us to unref *window only if a non default
@@ -456,11 +457,15 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
   /* Get the screen on which the screenshot should be taken */
   screen = gdk_screen_get_default ();
 
+  /* Sync the display */
+  display = gdk_display_get_default ();
+  gdk_display_sync (display);
+
   /* wait for n=delay seconds */
   /* WORKAROUND: always sleep at least 1 second so that
    * the dialog has the time to disappear. */
   if (region != SELECT)
-    (delay > 0 ) ? sleep (delay): sleep (delay + 1);
+    sleep (delay);
 
   /* Get the window/desktop we want to screenshot*/
   if (region == FULLSCREEN)
