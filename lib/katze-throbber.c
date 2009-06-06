@@ -860,7 +860,7 @@ katze_throbber_expose_event (GtkWidget*      widget,
 
             if (!throbber->static_pixbuf)
             {
-                g_warning (_("Named icon '%s' couldn't be loaded"),
+                g_warning ("Named icon '%s' couldn't be loaded",
                            throbber->static_icon_name);
                 katze_assign (throbber->static_icon_name, NULL);
                 g_object_notify (G_OBJECT (throbber), "static-icon-name");
@@ -873,7 +873,7 @@ katze_throbber_expose_event (GtkWidget*      widget,
 
             if (!throbber->static_pixbuf)
             {
-                g_warning (_("Stock icon '%s' couldn't be loaded"),
+                g_warning ("Stock icon '%s' couldn't be loaded",
                            throbber->static_stock_id);
                 katze_assign (throbber->static_stock_id, NULL);
                 g_object_notify (G_OBJECT (throbber), "static-stock-id");
@@ -939,7 +939,7 @@ katze_throbber_expose_event (GtkWidget*      widget,
         }
         else
         {
-            g_warning (_("Animation frames are broken"));
+            g_warning ("Animation frames are broken");
             katze_assign (throbber->icon_name, NULL);
             katze_object_assign (throbber->pixbuf, NULL);
 
