@@ -1,86 +1,85 @@
-# Indonesian translations for xfce4-screenshooter-plugin package.
-# Copyright (C) 2006 Daniel Bobadilla Leal.
-# This file is distributed under the same license as the xfce4-screenshooter-plugin package.
-# Andhika Padmawan <andhika.padmawan@gmail.com>, 2009.
+# Vietnamese translations for i package.
+# Copyright (C) 2009 THE i'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the i package.
+# Automatically generated, 2009.
+# Nguyen Quoc Vinh <kureikain@gmail.com>, 2009. http://axcoto.info/vincent
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-screenshooter-plugin 1.4.91\n"
+"Project-Id-Version: i 18n.xfce.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-31 14:02+0200\n"
-"PO-Revision-Date: 2009-06-10 23:39+0700\n"
-"Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
-"Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2009-05-31 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../lib/screenshooter-dialogs.c:283
 msgid "Screenshot.png"
-msgstr "Cuplikanlayar.png"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:300
 #, c-format
 msgid "Screenshot-%d.png"
-msgstr "Cuplikanlayar-%d.png"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:493
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%.2fKb dari %.2fKb"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:577
 msgid "Transfer"
-msgstr "Transfer"
+msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:600
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Cuplikan layar sedang "
-"ditransfer ke:</span>"
 
 #: ../lib/screenshooter-dialogs.c:724 ../lib/screenshooter-dialogs.c:741
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
-msgstr "Cuplikan Layar"
+msgstr "Ảnh chụp màn hình"
 
 #: ../lib/screenshooter-dialogs.c:736
 msgid "Take a screenshot"
-msgstr "Ambil cuplikan layar"
+msgstr "Tạo ảnh chụp màn hình"
 
 #: ../lib/screenshooter-dialogs.c:751
 msgid "Preferences"
-msgstr "Pengaturan"
+msgstr "Tuỳ chỉnh"
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Daerah akan ditangkap</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vùng chụp</span>"
 
 #: ../lib/screenshooter-dialogs.c:820
 msgid "Entire screen"
-msgstr "Seluruh layar"
+msgstr "Toàn bộ màn hình"
 
 #: ../lib/screenshooter-dialogs.c:830 ../src/main.c:58
 #: ../panel-plugin/screenshooter-plugin.c:292
 msgid "Take a screenshot of the entire screen"
-msgstr "Ambil cuplikan layar dari seluruh layar"
+msgstr "Tạo ảnh chụp toàn bộ màn hình"
 
 #: ../lib/screenshooter-dialogs.c:841
 msgid "Active window"
-msgstr "Jendela aktif"
+msgstr "Của sổ đang kích hoạt"
 
 #: ../lib/screenshooter-dialogs.c:851 ../src/main.c:104
 #: ../panel-plugin/screenshooter-plugin.c:297
 msgid "Take a screenshot of the active window"
-msgstr "Ambil cuplikan layar jendela yang aktif"
+msgstr "Tạo một ảnh chụp của cửa sổ đang kích hoạt"
 
 #: ../lib/screenshooter-dialogs.c:862
 msgid "Select a region"
-msgstr "Pilih daerah"
+msgstr "Chọn vùng"
 
 #: ../lib/screenshooter-dialogs.c:872 ../src/main.c:78
 #: ../panel-plugin/screenshooter-plugin.c:302
@@ -89,119 +88,116 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
-"Pilih daerah yang ingin ditangkap dengan klik pada titik di layar tanpa "
-"melepas tombol tetikus, tarik tetikus anda ke sudut yang lain, lalu lepas "
-"tombol tetikus."
+"Chọn một vùng để chụp bằng cách nhấn vào một điểm trên màn hình và không "
+"thả nút chuột, rê chuột đến góc còn lại của vùng "
+"rồi thả nút chuột."
 
 #: ../lib/screenshooter-dialogs.c:884
 msgid "Capture the mouse pointer"
-msgstr "Tangkap penunjuk tetikus"
+msgstr "Chụp ảnh chuột"
 
 #: ../lib/screenshooter-dialogs.c:892
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Tampilkan penunjuk tetikus di cuplikan layar"
+msgstr "Hiển thị chuột trên ảnh"
 
 #: ../lib/screenshooter-dialogs.c:917
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Jeda sebelum menangkap</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Tạm dừng trước khi chụp</span>"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Jeda dalam detik sebelum cuplikan layar diambil"
+msgstr "Số giây để hoãn trước khi ảnh được chụp"
 
 #: ../lib/screenshooter-dialogs.c:958
 msgid "seconds"
-msgstr "detik"
+msgstr "giây"
 
 #: ../lib/screenshooter-dialogs.c:984
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Setelah menangkap</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Sau khi chụp</span>"
 
 #. Display the save dialog checkbox
 #: ../lib/screenshooter-dialogs.c:1007
 msgid "Show the save dialog"
-msgstr "Tampilkan dialog simpan"
+msgstr "Hiển thị hộp thoại lưu"
 
 #: ../lib/screenshooter-dialogs.c:1013
 msgid ""
 "The save dialog allows you to change the file name and the save location"
 msgstr ""
-"Dialog simpan mengizinkan anda untuk mengubah nama berkas dan lokasi "
-"penyimpanan"
+"Hộp thoại lưu cho phép bạn đổi tên tập tin ảnh và vị trí lưu"
 
 #: ../lib/screenshooter-dialogs.c:1027
 msgid "Close the application"
-msgstr "Tutup aplikasi"
+msgstr "Đóng ứng dụng"
 
 #: ../lib/screenshooter-dialogs.c:1033
 msgid ""
 "If unchecked, the current window will be displayed again after the "
 "screenshot has been taken to allow you to take several screenshots in a row"
 msgstr ""
-"Jika tidak dicentang, jendela saat ini akan ditampilkan lagi setelah "
-"cuplikan layar telah diambil sehingga anda dapat mengambil beberapa "
-"cuplikan layar secara berurutan"
+"Nếu bỏ chọn, cửa sổ hiện tại sẽ được hiển thị lại sau khi "
+"ảnh đã được chụp và cho phép bạn chụp nhiều ảnh khác"
 
 #: ../lib/screenshooter-dialogs.c:1056
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksi</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Hành động</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:1081
 msgid "Save in:"
-msgstr "Simpan di:"
+msgstr "Lưu ở:"
 
 #: ../lib/screenshooter-dialogs.c:1089
 msgid "Save the screenshot to a PNG file"
-msgstr "Simpan cuplikan layar sebagai berkas PNG"
+msgstr "Lưu ảnh chụp màn hình thành tập tin PNG"
 
 #: ../lib/screenshooter-dialogs.c:1104
 msgid "Default save location"
-msgstr "Lokasi penyimpanan standar"
+msgstr "Vị trí lưu mặc định"
 
 #: ../lib/screenshooter-dialogs.c:1114
 msgid "Set the default save location"
-msgstr "Atur lokasi penyimpanan standar"
+msgstr "Thiết lập vị trí lưu mặc đinh"
 
 #: ../lib/screenshooter-dialogs.c:1127
 msgid "Copy to the clipboard"
-msgstr "Salin ke papan klip"
+msgstr "Sao chép vào bộ đệm"
 
 #: ../lib/screenshooter-dialogs.c:1132
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Simpan cuplikan layar ke papan klip agar dapat direkatkan nanti"
+msgstr "Sao chép ảnh chụp màn hình đến bộ đệm để bạn có thể sao chép nó sau"
 
 #: ../lib/screenshooter-dialogs.c:1147
 msgid "Open with:"
-msgstr "Buka dengan:"
+msgstr "Mở với:"
 
 #: ../lib/screenshooter-dialogs.c:1158
 msgid "Open the screenshot with the chosen application"
-msgstr "Buka cuplikan layar dengan aplikasi yang dipilih"
+msgstr "Mở ảnh chụp với ứng dụng đã chọn"
 
 #: ../lib/screenshooter-dialogs.c:1191 ../src/main.c:73
 msgid "Application to open the screenshot"
-msgstr "Aplikasi untuk membuka cuplikan layar"
+msgstr "Ứng dụng để mở ảnh chụp"
 
 #: ../lib/screenshooter-dialogs.c:1204
 msgid "Host on ZimageZ"
-msgstr "Simpan di ZimageZ"
+msgstr "Lưu trực tuyến trên ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1210 ../src/main.c:92
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Simpan cuplikan layar di ZimageZ, layanan penyimpanan citra daring gratis"
+msgstr "Lưu trực tuyến trên ZimageZ, một dịch vụ hosting ảnh trực tuyến miễn phí"
 
 #: ../lib/screenshooter-dialogs.c:1255
 msgid "Save screenshot as..."
-msgstr "Simpan cuplikan layar sebagai..."
+msgstr "Lưu ảnh chụp thành..."
 
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
 msgid "Initialize the connection..."
-msgstr "Menginisialisasi koneksi..."
+msgstr "Khỏi tạo kết nối"
 
 #: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
 #: ../lib/screenshooter-zimagez.c:361 ../lib/screenshooter-zimagez.c:389
@@ -212,8 +208,8 @@ msgid ""
 "An error occurred during the XML exchange: %s (%d).\n"
 " The screenshot could not be uploaded."
 msgstr ""
-"Galat terjadi ketika penukaran XML: %s (%d).\n"
-" Cuplikan layar tak dapat diunggah."
+"Có lỗi xảy ra trong khi Ảnh ko thể upload được %s (%d)."
+
 
 #: ../lib/screenshooter-zimagez.c:223
 msgid ""
@@ -221,130 +217,136 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Silakan isi ruang kosong berikut dengan nama pengguna, dan sandi "
-"<a href=\"http://www.zimagez.com\">ZimageZ</a> anda, \n"
-"beserta detail dari cuplikan layar."
+"Hãy điền vào những trường sau với tên, mật khẩu <a href=\"http://www.zimagez.com"
+"\">ZimageZ</a> \n"
+"của bạn và chi tiết về ảnh chụp màn hình."
+
 
 #: ../lib/screenshooter-zimagez.c:283
 msgid "Check the user information..."
-msgstr "Cek informasi pengguna..."
+msgstr "Kiểm tra thông tin người dùng"
 
 #: ../lib/screenshooter-zimagez.c:305
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Anda "
-"harus mengisi semua ruang kosong.</span>"
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Bạn "
+"phải điền vào tất cả các trường.</span>"
+
 
 #: ../lib/screenshooter-zimagez.c:320
 msgid "Login on ZimageZ..."
-msgstr "Log masuk ke ZimageZ..."
+msgstr "Đăng nhập ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:436
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Nama "
-"dan sandi yang anda masukkan tidak sesuai. Silakan ulangi.</span>"
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Tên& mật khẩu "
+"bạn đã nhập ko khớp nhau. Hãy thử lại.</span>"
+
 
 #: ../lib/screenshooter-zimagez.c:501
 msgid "Upload the screenshot..."
-msgstr "Unggah cuplikan layar"
+msgstr "Tải ảnh chụp màn hình lên..."
 
 #: ../lib/screenshooter-zimagez.c:559
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "Galat terjadi ketika menggunggah cuplikan layar."
+msgstr "Một lỗi đã xảy ra trong khi đang tải ảnh lên"
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:597
 msgid "Close the session on ZimageZ..."
-msgstr "Menutup sesi di ZimageZ..."
+msgstr "Đóng phiên làm việc trên ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:650
 msgid "Details about the screenshot for ZimageZ"
-msgstr "Detail tentang cuplikan layar untuk ZimageZ"
+msgstr "Thông tin ảnh trên ZimageZ"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:692
 msgid "User:"
-msgstr "Pengguna:"
+msgstr "Người dùng:"
 
 #: ../lib/screenshooter-zimagez.c:703
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
-"Nama pengguna ZimageZ anda, jika anda belum memilikinya silakan buat pada "
-"tautan halaman web di atas"
+"Tên đăng nhập trên ZimageZ của ban, nếu bạn chưa có thì hãy tạo một tài khoản "
+"từ liên kết trên"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:708
 msgid "Password:"
-msgstr "Sandi:"
+msgstr "Mật khẩu"
 
 #: ../lib/screenshooter-zimagez.c:718
 msgid "The password for the user above"
-msgstr "Sandi untuk pengguna di atas"
+msgstr "Mật khẩu cho người dùng trên"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:723
 msgid "Title:"
-msgstr "Judul:"
+msgstr "Tiêu đề:"
 
 #: ../lib/screenshooter-zimagez.c:733
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr ""
-"Judul cuplikan layar, judul akan digunakan ketika menampilkan cuplikan layar "
-"di ZimageZ"
+"Tiêu đề của ảnh chụp, nó sẽ được dùng khi hiển thị ảnh "
+"trên ZimageZ"
+
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:738
 msgid "Comment:"
-msgstr "Komentar:"
+msgstr "Chú thích:"
 
 #: ../lib/screenshooter-zimagez.c:749
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr ""
-"Komentar di cuplikan layar, komentar akan digunakan ketika menampilkan "
-"cuplikan layar di ZimageZ"
+"Chú thích ảnh, nó sẽ được dùng khi hiển thị ảnh "
+"trên ZimageZ"
+
 
 #: ../lib/screenshooter-zimagez.c:870
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr "<a href=\"%s\">Citra ukuran penuh</a>"
+msgstr "<a href=\"%s\">Kích thước ảnh</a>"
 
 #: ../lib/screenshooter-zimagez.c:872
 #, c-format
-msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr "<a href=\"%s\">Miniatur besar</a>"
+msgid "<a href=\"%s\">Ảnh thumbnail lớn</a>"
+msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:874
 #, c-format
-msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr "<a href=\"%s\">Miniatur kecil</a>"
+msgid "<a href=\"%s\">Ảnh thumbnail nhỏ</a>"
+msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:894
 msgid "My screenshot on ZimageZ"
-msgstr "Cuplikan layar saya di ZimageZ"
+msgstr "Ảnh chụp màn hình của tôi trên ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:920
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tautan</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Các liên kết</span>"
 
 #: ../lib/screenshooter-zimagez.c:965
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Kode untuk miniatur agar "
-"menunjuk ke citra ukuran penuh</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Mã cho một thumbnail trỏ "
+"đến ảnh với kích thước gốc</span>"
+
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:981
@@ -354,7 +356,7 @@ msgstr "HTML"
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1002
 msgid "BBCode for forums"
-msgstr "BBCode untuk forum"
+msgstr "BBCode dùng trong các diễn đàn"
 
 #: ../lib/screenshooter-zimagez.c:1122
 msgid "ZimageZ"
@@ -362,37 +364,37 @@ msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1155
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tình trạng</span>"
 
 #. Open Link
 #: ../lib/sexy-url-label.c:176
 msgid "_Open Link"
-msgstr "_Buka Tautan"
+msgstr "_Mở liên kết"
 
 #. Copy Link Address
 #: ../lib/sexy-url-label.c:188
 msgid "Copy _Link Address"
-msgstr "Salin Alamat _Taut"
+msgstr "Sao chép địa chỉ _Liên kết"
 
 #: ../src/main.c:53
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Jeda dalam detik sebelum mengambil cuplikan layar"
+msgstr "Số giây hoãn trước khi chụp"
 
 #: ../src/main.c:63
 msgid "Do not display the save dialog"
-msgstr "Jangan tampilkan dialog simpan"
+msgstr "Đừng hiển thị hộp thoại lưu"
 
 #: ../src/main.c:68
 msgid "Do not display the mouse on the screenshot"
-msgstr "Jangan tampilkan tetikus di cuplikan layar"
+msgstr "Không hiển thị chuột trên ảnh"
 
 #: ../src/main.c:85
 msgid "Directory where the screenshot will be saved"
-msgstr "Direktori tempat cuplikan layar akan disimpan"
+msgstr "Thư mục nơi ảnh được lưu"
 
 #: ../src/main.c:99
 msgid "Version information"
-msgstr "Informasi versi"
+msgstr "Thông tin phiên bản"
 
 #: ../src/main.c:136
 #, c-format
@@ -401,39 +403,16 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Gunakan %s --help untuk melihat senarai lengkap opsi baris perintah yang "
-"tersedia.\n"
+"Thử %s --help để xem danh sách đầy đủ của các tuỳ chọn dòng lệnh khả dụng.\n"
 
 #: ../src/main.c:235
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s bukan direktori yang sah, direktori standar yang akan digunakan."
+msgstr "%s không trỏ tới một thư mục nào cả, thư mục mặc định sẽ được sử dụng."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr ""
-"Ambil cuplikan layar dari seluruh layar, dari jendela yang aktif atau dari "
-"sebuah daerah"
-
-#, fuzzy
-#~ msgid "Tak a screenshot of the entire screen"
-#~ msgstr "Ambil cuplikan layar dari seluruh layar"
-
-#, fuzzy
-#~ msgid "Applicatio to open the screenshot"
-#~ msgstr "Aplikasi untuk membuka cuplikan layar"
-
-#~ msgid "Display the save dialog"
-#~ msgstr "Jangan tampilkan dialog simpan"
-
-#~ msgid "Save by default to:"
-#~ msgstr "Simpan dengan sendirinya ke:"
-
-#~ msgid ""
-#~ "If checked, the screenshot will be saved by default to the location set "
-#~ "on the right without displaying a save dialog"
-#~ msgstr ""
-#~ "Jika diperiksa, cuplikan layar akan tersimpan dengan sendirinya di lokasi "
-#~ "yang diatur di sebelah kanan tanpa menampilkan dialog penyimpanan."
+"Chụp toàn bộ màn hình, hay cửa sổ đang kích hoạt hay một vùng màn hình"
