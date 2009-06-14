@@ -4,10 +4,13 @@ before the screenshot is taken and the action that will be done with
 the screenshot: save it to a PNG file, copy it to the clipboard, or 
 open it using another application.
 
+If activated on build, you can also host your screenshots on ZimageZ, 
+a free online image hosting service. The CURL and XMLRPC-C libraries
+are required.
+
 A plugin for the Xfce panel is also available.
 
 You can grab the development version with subversion by running:
 svn co http://svn.xfce.org/svn/goodies/xfce4-screenshooter/trunk/ xfce4-screenshooter
 
-The documentation is available in the doc/ folder of the source tree and
-on the website: http://goodies.xfce.org/projects/applications/xfce4-screenshooter
+The documentation is available in the doc/ folder of the source tree.
