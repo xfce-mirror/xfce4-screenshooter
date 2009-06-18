@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-31 14:02+0200\n"
-"PO-Revision-Date: 2009-06-10 20:01-0300\n"
+"PO-Revision-Date: 2009-06-18 14:43-0300\n"
 "Last-Translator: elega <elega@elega.com.ar>\n"
 "Language-Team: Spanish <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgstr "Seleccionar una región"
 #: ../src/main.c:78
 #: ../panel-plugin/screenshooter-plugin.c:302
 msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
-msgstr "Seleccione una zona para ser capturada haciendo click en un punto de la pantalla sin soltar el botón del ratón, arrastrando el ratón a la otra esquina de la zona y soltando el botón del ratón."
+msgstr "Seleccione una zona para ser capturada haciendo clic en un punto de la pantalla sin soltar el botón del ratón, arrastrando el ratón a la otra esquina de la zona y soltando el botón del ratón."
 
 #: ../lib/screenshooter-dialogs.c:884
 msgid "Capture the mouse pointer"
@@ -189,7 +189,7 @@ msgstr "Guardar la captura de pantalla como..."
 #. Start the user XML RPC session
 #: ../lib/screenshooter-zimagez.c:159
 msgid "Initialize the connection..."
-msgstr "Iniciar la conexión..."
+msgstr "Iniciando la conexión..."
 
 #: ../lib/screenshooter-zimagez.c:172
 #: ../lib/screenshooter-zimagez.c:332
@@ -211,12 +211,12 @@ msgid ""
 "Please file the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Por favor, complete los siguientes campos con su <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
-"nombre de usuario, contraseña y detalles acerca de la captura de pantalla."
+"Por favor, complete los siguientes campos con su nombre de usuario en <a href=\"http://www.zimagez.com\">ZimageZ</a>, \n"
+"contraseña y detalles sobre la captura de pantalla."
 
 #: ../lib/screenshooter-zimagez.c:283
 msgid "Check the user information..."
-msgstr "Compruebe la información del usuario..."
+msgstr "Comprobando la información del usuario..."
 
 #: ../lib/screenshooter-zimagez.c:305
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
@@ -224,7 +224,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Usted debe llenar todos l
 
 #: ../lib/screenshooter-zimagez.c:320
 msgid "Login on ZimageZ..."
-msgstr "Iniciar sesión en ZimageZ..."
+msgstr "Iniciando sesión en ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:436
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
@@ -232,7 +232,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">El usuario y la contrase�
 
 #: ../lib/screenshooter-zimagez.c:501
 msgid "Upload the screenshot..."
-msgstr "Subir la captura de pantalla..."
+msgstr "Subiendo la captura de pantalla..."
 
 #: ../lib/screenshooter-zimagez.c:559
 #, c-format
@@ -242,7 +242,7 @@ msgstr "Se ha producido un error al subir la captura de pantalla."
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:597
 msgid "Close the session on ZimageZ..."
-msgstr "Cerrar la sesión en ZimageZ..."
+msgstr "Cerrando la sesión en ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:650
 msgid "Details about the screenshot for ZimageZ"
@@ -264,7 +264,7 @@ msgstr "Contraseña:"
 
 #: ../lib/screenshooter-zimagez.c:718
 msgid "The password for the user above"
-msgstr "La contraseña para el usuario anterior"
+msgstr "La contraseña para el usuario ingresado"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:723
@@ -319,7 +319,7 @@ msgstr "HTML"
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1002
 msgid "BBCode for forums"
-msgstr "BBconde de foros"
+msgstr "BBcode para foros"
 
 #: ../lib/screenshooter-zimagez.c:1122
 msgid "ZimageZ"
