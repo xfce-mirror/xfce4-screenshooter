@@ -74,9 +74,11 @@ stamp-screenshooter-marshal.h: screenshooter-marshal.list Makefile
 	&& echo timestamp > $(@F)
 
 screenshooter-marshal.c: screenshooter-marshal.list Makefile
-	( cd $(srcdir) && glib-genmarshal \
-		--prefix=_screenshooter_marshal \
-		--body screenshooter-marshal.list ) >> xgen-emc \
+	cd $(srcdir) \
+	&& echo "#include \"screenshooter-marshal.h\"" > xgen-emc \
+	&& glib-genmarshal \
+	--prefix=_screenshooter_marshal \
+	--body screenshooter-marshal.list >> xgen-emc \
 	&& cp xgen-emc screenshooter-marshal.c \
 	&& rm -f xgen-emc
 

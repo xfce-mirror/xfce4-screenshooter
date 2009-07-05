@@ -158,7 +158,7 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
   va_list var_args;
   GValue value = { 0, };
   gchar *error_message;
-  gint n;
+  guint n;
 
   /* allocate and initialize the simple job */
   simple_job = g_object_new (SCREENSHOOTER_TYPE_SIMPLE_JOB, NULL);

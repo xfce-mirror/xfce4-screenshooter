@@ -206,11 +206,7 @@ static GdkPixbuf
 *get_rectangle_screenshot (void)
 {
   GdkPixbuf *screenshot = NULL;
-
-  /* Get root window */
-  TRACE ("Get the root window");
-
-  GdkWindow *root_window =  gdk_get_default_root_window ();
+  GdkWindow *root_window;
 
   GdkGCValues gc_values;
   GdkGC *gc;
@@ -234,6 +230,10 @@ static GdkPixbuf
   gboolean done = FALSE;
   gboolean cancelled = FALSE;
   gint x, y, w, h;
+
+  /* Get root window */
+  TRACE ("Get the root window");
+  root_window = gdk_get_default_root_window ();
 
   /*Set up graphics context for a XOR rectangle that will be drawn as
    * the user drags the mouse */

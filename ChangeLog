@@ -1,6 +1,14 @@
+2009-07-05 jeromeg
+
+Fix build with full debugging. Factorise some code.
+
+The code now builds with the flags set by xfce4-dev-tools in trunk. Do
+not escape user and password in screenshooter-zimagez.c, it fails. Move
+some code to extra functions in this file.
+
 2009-06-16 jeromeg
 
-Post release version bump. Re-add svn tag.:wq
+Post release version bump. Re-add svn tag.
 
 2009-06-14 jeromeg
 

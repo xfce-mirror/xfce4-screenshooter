@@ -266,7 +266,7 @@ static gchar *generate_filename_for_uri (const gchar *uri)
   gboolean exists = TRUE;
   GFile *directory;
   GFile *file;
-  gchar *basename;
+  gchar *base_name;
   gint i;
 
   if (G_UNLIKELY (uri == NULL))
@@ -277,42 +277,40 @@ static gchar *generate_filename_for_uri (const gchar *uri)
     }
 
   TRACE ("Get the folder corresponding to the URI");
-
   directory = g_file_new_for_uri (uri);
+  base_name = g_strdup (_("Screenshot.png"));
 
-  basename = g_strdup (_("Screenshot.png"));
-
-  file = g_file_get_child (directory, basename);
+  file = g_file_get_child (directory, base_name);
 
   if (!g_file_query_exists (file, NULL))
     {
       g_object_unref (file);
       g_object_unref (directory);
 
-      return basename;
+      return base_name;
     }
 
   g_object_unref (file);
-  g_free (basename);
+  g_free (base_name);
 
   for (i = 1; exists; ++i)
     {
-      basename = g_strdup_printf (_("Screenshot-%d.png"), i);
+      base_name = g_strdup_printf (_("Screenshot-%d.png"), i);
 
-      file = g_file_get_child (directory, basename);
+      file = g_file_get_child (directory, base_name);
 
       if (!g_file_query_exists (file, NULL))
         exists = FALSE;
 
       if (exists)
-        g_free (basename);
+        g_free (base_name);
 
       g_object_unref (file);
     }
 
   g_object_unref (directory);
 
-  return basename;
+  return base_name;
 }
 
 

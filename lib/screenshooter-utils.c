@@ -206,7 +206,7 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
 
 
 
-gchar *screenshooter_get_home_uri ()
+gchar *screenshooter_get_home_uri (void)
 {
   gchar *result = NULL;
   const gchar *home_path = g_getenv ("HOME");

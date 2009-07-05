@@ -48,6 +48,7 @@
 static void              open_url_hook             (SexyUrlLabel      *url_label,
                                                     gchar             *url,
                                                     gpointer           user_data);
+static gboolean          has_empty_field           (GtkListStore      *liststore);
 static ScreenshooterJob *zimagez_upload_to_zimagez (const gchar       *file_name,
                                                     gchar             *last_user);
 static gboolean          zimagez_upload_job        (ScreenshooterJob  *job,
@@ -88,6 +89,30 @@ open_url_hook (SexyUrlLabel *url_label, gchar *url, gpointer user_data)
       screenshooter_error ("%s", error->message);
       g_error_free (error);
     }
+}
+
+
+
+static gboolean
+has_empty_field (GtkListStore *liststore)
+{
+  GtkTreeIter iter;
+  gboolean result = FALSE;
+  
+  gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
+
+  do
+    {
+      gchar *field = NULL;
+
+      gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter, 1, &field, -1);
+      result = result || g_str_equal (field, "");
+
+      g_free (field);
+    }
+  while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
+
+  return result;
 }
 
 
@@ -155,7 +180,6 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
 
   /* Start the user XML RPC session */
-
   exo_job_info_message (EXO_JOB (job), _("Initialize the connection..."));
 
   TRACE ("Initialize the RPC environment");
@@ -182,11 +206,9 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
     }
 
   TRACE ("Get the information liststore ready.");
-
   liststore = gtk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
 
   TRACE ("Append the user");
-
   gtk_list_store_append (liststore, &iter);
   gtk_list_store_set (liststore, &iter,
                       0, g_strdup ("user"),
@@ -194,7 +216,6 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
                       -1);
 
   TRACE ("Append the password");
-
   gtk_list_store_append (liststore, &iter);
   gtk_list_store_set (liststore, &iter,
                       0, g_strdup ("password"),
@@ -202,7 +223,6 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
                       -1);
 
   TRACE ("Append the title");
-
   gtk_list_store_append (liststore, &iter);
   gtk_list_store_set (liststore, &iter,
                       0, g_strdup ("title"),
@@ -210,14 +230,11 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
                       -1);
 
   TRACE ("Append the comment");
-
   gtk_list_store_append (liststore, &iter);
   gtk_list_store_set (liststore, &iter,
                       0, g_strdup ("comment"),
                       1, comment,
                       -1);
-
-  TRACE ("Ask for the user information");
 
   screenshooter_job_ask_info (job, liststore,
                               _("Please file the following fields with your "
@@ -260,9 +277,6 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   while (!response)
     {
-      gboolean empty_field = FALSE;
-      gchar *escaped_user, *escaped_password;
-
       if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
         {
           xmlrpc_env_clean (&env);
@@ -283,24 +297,9 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
       exo_job_info_message (EXO_JOB (job), _("Check the user information..."));
 
       /* Test if one of the information fields is empty */
-      TRACE ("Check for empty fields");
-      gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
-
-      do
-        {
-          gchar *field = NULL;
-
-          gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter, 1, &field, -1);
-          empty_field = empty_field || g_str_equal (field, "");
-
-          g_free (field);
-        }
-      while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
-
-      if (empty_field)
+      if (has_empty_field (liststore))
         {
           TRACE ("One of the fields was empty, let the user file it.");
-
           screenshooter_job_ask_info (job, liststore,
                                       _("<span weight=\"bold\" foreground=\"darkred\" "
                                         "stretch=\"semiexpanded\">You must fill all the "
@@ -309,8 +308,6 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
         }
 
       encoded_password = g_strdup (g_strreverse (rot13 (password)));
-      escaped_password = g_markup_escape_text (encoded_password, -1);
-      escaped_user = g_markup_escape_text (user, -1);
 
       TRACE ("User: %s", user);
 
@@ -320,10 +317,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
       exo_job_info_message (EXO_JOB (job), _("Login on ZimageZ..."));
 
       resultP = xmlrpc_client_call (&env, serverurl, method_login,
-                                    "(ss)", escaped_user, escaped_password);
-
-      g_free (escaped_password);
-      g_free (escaped_user);
+                                    "(ss)", user, encoded_password);
 
       if (env.fault_occurred)
         {
