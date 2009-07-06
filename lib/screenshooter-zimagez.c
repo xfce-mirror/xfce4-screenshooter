@@ -43,7 +43,13 @@
 
 #include "screenshooter-zimagez.h"
 
-
+typedef enum
+{
+  USER,
+  PASSWORD,
+  TITLE,
+  COMMENT,
+} ZimagezInformation;
 
 static void              open_url_hook             (SexyUrlLabel      *url_label,
                                                     gchar             *url,
@@ -206,36 +212,37 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
     }
 
   TRACE ("Get the information liststore ready.");
-  liststore = gtk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
+  liststore = gtk_list_store_new (2, G_TYPE_INT, G_TYPE_STRING);
 
   TRACE ("Append the user");
   gtk_list_store_append (liststore, &iter);
   gtk_list_store_set (liststore, &iter,
-                      0, g_strdup ("user"),
+                      0, USER,
                       1, user,
                       -1);
 
   TRACE ("Append the password");
   gtk_list_store_append (liststore, &iter);
   gtk_list_store_set (liststore, &iter,
-                      0, g_strdup ("password"),
+                      0, PASSWORD,
                       1, password,
                       -1);
 
   TRACE ("Append the title");
   gtk_list_store_append (liststore, &iter);
   gtk_list_store_set (liststore, &iter,
-                      0, g_strdup ("title"),
+                      0, TITLE,
                       1, title,
                       -1);
 
   TRACE ("Append the comment");
   gtk_list_store_append (liststore, &iter);
   gtk_list_store_set (liststore, &iter,
-                      0, g_strdup ("comment"),
+                      0, COMMENT,
                       1, comment,
                       -1);
 
+  TRACE ("Ask the user to fill the information items.");
   screenshooter_job_ask_info (job, liststore,
                               _("Please file the following fields with your "
                                 "<a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
@@ -245,32 +252,32 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   do
     {
-      gchar *field_name = NULL;
+      gint field_index;
       gchar *field_value = NULL;
 
       gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
-                          0, &field_name,
+                          0, &field_index,
                           1, &field_value,
                           -1);
 
-      if (g_str_equal (field_name, "user"))
+      switch (field_index)
         {
-          user = g_strdup (field_value);
-        }
-      else if (g_str_equal (field_name, "password"))
-        {
-          password = g_strdup (field_value);
-        }
-      else if (g_str_equal (field_name, "title"))
-        {
-          title = g_strdup (field_value);
-        }
-      else if (g_str_equal (field_name, "comment"))
-        {
-          comment = g_strdup (field_value);
+          case USER: 
+            user = g_strdup (field_value);
+            break;
+          case PASSWORD: 
+            password = g_strdup (field_value);
+            break;
+          case TITLE:
+            title = g_strdup (field_value);
+            break;
+          case COMMENT:
+            comment = g_strdup (field_value);
+            break;
+          default:
+            break;
         }
 
-      g_free (field_name);
       g_free (field_value);
     }
   while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
@@ -409,20 +416,15 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
           do
             {
-              gchar *field_name = NULL;
+              gint field_index;
 
-              gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter, 0, &field_name, -1);
+              gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter, 0, &field_index, -1);
 
-              if (g_str_equal (field_name, "password"))
+              if (field_index == PASSWORD)
                 {
                   gtk_list_store_set (liststore, &iter, 1, g_strdup (""), -1);
-
-                  g_free (field_name);
-
                   break;
                 }
-
-              g_free (field_name);
             }
           while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
 
@@ -436,32 +438,32 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
           do
             {
-              gchar *field_name = NULL;
+              gint field_index;
               gchar *field_value = NULL;
 
               gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
-                                  0, &field_name,
+                                  0, &field_index,
                                   1, &field_value,
                                   -1);
 
-              if (g_str_equal (field_name, "user"))
+              switch (field_index)
                 {
-                  user = g_strdup (field_value);
-                }
-              else if (g_str_equal (field_name, "password"))
-                {
-                  password = g_strdup (field_value);
-                }
-              else if (g_str_equal (field_name, "title"))
-                {
-                  title = g_strdup (field_value);
-                }
-              else if (g_str_equal (field_name, "comment"))
-                {
-                  comment = g_strdup (field_value);
+                  case USER:
+                    user = g_strdup (field_value);
+                    break;
+                  case PASSWORD:
+                    password = g_strdup (field_value);
+                    break;
+                  case TITLE:
+                    title = g_strdup (field_value);
+                    break;
+                  case COMMENT:
+                    comment = g_strdup (field_value);
+                    break;
+                  default:
+                    break;
                 }
 
-              g_free (field_name);
               g_free (field_value);
             }
           while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
@@ -749,32 +751,31 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   do
     {
-      gchar *field_name = NULL;
+      gint field_index;
       gchar *field_value = NULL;
 
       gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
-                          0, &field_name,
+                          0, &field_index,
                           1, &field_value,
                           -1);
-
-      if (g_str_equal (field_name, "user"))
+      switch (field_index)
         {
-          gtk_entry_set_text (GTK_ENTRY (user_entry), field_value);
+          case USER:
+            gtk_entry_set_text (GTK_ENTRY (user_entry), field_value);
+            break;
+          case PASSWORD:
+            gtk_entry_set_text (GTK_ENTRY (password_entry), field_value);
+            break;
+          case TITLE:
+            gtk_entry_set_text (GTK_ENTRY (title_entry), field_value);
+            break;
+          case COMMENT:
+            gtk_entry_set_text (GTK_ENTRY (comment_entry), field_value);
+            break;
+          default:
+            break;
         }
-      else if (g_str_equal (field_name, "password"))
-        {
-          gtk_entry_set_text (GTK_ENTRY (password_entry), field_value);
-        }
-      else if (g_str_equal (field_name, "title"))
-        {
-          gtk_entry_set_text (GTK_ENTRY (title_entry), field_value);
-        }
-      else if (g_str_equal (field_name, "comment"))
-        {
-          gtk_entry_set_text (GTK_ENTRY (comment_entry), field_value);
-        }
-
-      g_free (field_name);
+      
       g_free (field_value);
     }
   while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
@@ -793,37 +794,36 @@ cb_ask_for_information (ScreenshooterJob *job,
 
       do
         {
-          gchar *field_name = NULL;
+          gint field_index;
 
           gtk_tree_model_get (GTK_TREE_MODEL (liststore), &iter,
-                              0, &field_name, -1);
+                              0, &field_index, -1);
 
-          if (g_str_equal (field_name, "user"))
+          switch (field_index)
             {
-              gtk_list_store_set (liststore, &iter,
-                                  1, gtk_entry_get_text (GTK_ENTRY (user_entry)),
-                                  -1);
+              case USER:
+                gtk_list_store_set (liststore, &iter,
+                                    1, gtk_entry_get_text (GTK_ENTRY (user_entry)),
+                                    -1);
+                break;
+              case PASSWORD:
+                gtk_list_store_set (liststore, &iter,
+                                    1, gtk_entry_get_text (GTK_ENTRY (password_entry)),
+                                    -1);
+                break;
+              case TITLE:
+                gtk_list_store_set (liststore, &iter,
+                                    1, gtk_entry_get_text (GTK_ENTRY (title_entry)),
+                                    -1);
+                break;
+              case COMMENT:
+                gtk_list_store_set (liststore, &iter,
+                                    1, gtk_entry_get_text (GTK_ENTRY (comment_entry)),
+                                    -1);
+                break;
+              default:
+                break;
             }
-          else if (g_str_equal (field_name, "password"))
-            {
-              gtk_list_store_set (liststore, &iter,
-                                  1, gtk_entry_get_text (GTK_ENTRY (password_entry)),
-                                  -1);
-            }
-          else if (g_str_equal (field_name, "title"))
-            {
-              gtk_list_store_set (liststore, &iter,
-                                  1, gtk_entry_get_text (GTK_ENTRY (title_entry)),
-                                  -1);
-            }
-          else if (g_str_equal (field_name, "comment"))
-            {
-              gtk_list_store_set (liststore, &iter,
-                                  1, gtk_entry_get_text (GTK_ENTRY (comment_entry)),
-                                  -1);
-            }
-
-          g_free (field_name);
         }
       while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
     }
