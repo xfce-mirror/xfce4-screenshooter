@@ -1,5 +1,13 @@
 2009-07-07 jeromeg
 
+Fix ZimageZ login with UTF-8 characters.
+
+g_strreverse should not be used with UTF-8 strings! Also fix the error
+checking for the logout method, which is by the way broken (upstream
+has been contacted for this).
+
+2009-07-07 jeromeg
+
 Use libsoup instead of XMLRPC-C.
 
 Add libsoup as a dependency, remove the XMLRPC-C stuff. Factorize the

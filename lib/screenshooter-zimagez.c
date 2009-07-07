@@ -378,7 +378,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
           continue;
         }
 
-      encoded_password = g_strdup (g_strreverse (rot13 (password)));
+      encoded_password = g_utf8_strreverse (rot13 (password), -1);
 
       TRACE ("User: %s", user);
       TRACE ("Encoded password: %s", encoded_password);
@@ -598,10 +598,8 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
              G_TYPE_STRING, login_response,
              G_TYPE_INVALID);
 
-  if (tmp_error)
-    g_error_free (tmp_error);
-
-  g_value_unset (&response_value);
+  if (G_IS_VALUE (&response_value))
+    g_value_unset (&response_value);
 
   /* Clean the soup session */
   soup_session_abort (session);
@@ -609,6 +607,13 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   g_free (login_response);
 
   screenshooter_job_image_uploaded (job, online_file_name);
+
+  if (tmp_error)
+    {
+      g_propagate_error (error, tmp_error);
+
+      return FALSE;
+    }
 
   return TRUE;
 }
