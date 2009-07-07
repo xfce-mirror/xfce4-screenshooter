@@ -3,12 +3,19 @@ noinst_LTLIBRARIES = \
 
 libscreenshooter_la_SOURCES =	\
 	$(libscreenshooter_built_sources) \
+  exo-job.c exo-job.h \
+	exo-simple-job.c exo-simple-job.h \
+	katze-throbber.c katze-throbber.h \
 	libscreenshooter.h \
+  sexy-url-label.c sexy-url-label.h \
 	screenshooter-actions.c screenshooter-actions.h \
 	screenshooter-capture.c screenshooter-capture.h \
   screenshooter-dialogs.c screenshooter-dialogs.h \
 	screenshooter-global.h \
-	screenshooter-utils.c screenshooter-utils.h 
+	screenshooter-job.c screenshooter-job.h \
+	screenshooter-simple-job.c screenshooter-simple-job.h \
+	screenshooter-utils.c screenshooter-utils.h \ 
+	screenshooter-zimagez.c screenshooter-zimagez.h
 
 libscreenshooter_la_CFLAGS = \
 	-I$(top_srcdir)	\
@@ -16,35 +23,18 @@ libscreenshooter_la_CFLAGS = \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCEGUI4_CFLAGS@ \
+	@SOUP_CFLAGS@ \
   -DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 	
 libscreenshooter_la_LIBADD = \
   @GTK_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCEGUI4_LIBS@ \
-  @GLIB_LIBS@
-
-if HAVE_XMLRPC
-if HAVE_CURL
+  @GLIB_LIBS@ \
+	@SOUP_LIBS@
 
 libscreenshooter_built_sources = \
 	screenshooter-marshal.c screenshooter-marshal.h
-
-libscreenshooter_la_SOURCES +=	\
-	$(libscreenshooter_built_sources) \
-  exo-job.c exo-job.h \
-	exo-simple-job.c exo-simple-job.h \
-	katze-throbber.c katze-throbber.h \
-	screenshooter-job.c screenshooter-job.h \
-	screenshooter-simple-job.c screenshooter-simple-job.h \
-	screenshooter-zimagez.c screenshooter-zimagez.h \
-  sexy-url-label.c sexy-url-label.h
-
-libscreenshooter_la_CFLAGS += \
-	$(XMLRPC_CFLAGS)
-
-libscreenshooter_la_LIBADD += \
-	$(XMLRPC_LIBS) -lxmlrpc_client
 
 ##
 ## Rules to auto-generate built sources
@@ -84,6 +74,3 @@ screenshooter-marshal.c: screenshooter-marshal.list Makefile
 
 EXTRA_DIST = \
 	screenshooter-marshal.list
-
-endif
-endif

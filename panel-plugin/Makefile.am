@@ -6,12 +6,14 @@ xfce4_screenshooter_plugin_CFLAGS =	\
 	-I$(top_srcdir)	\
 	-I$(top_srcdir)/lib	\
 	@LIBXFCE4PANEL_CFLAGS@ \
-	@GTHREAD_CFLAGS@
+	@GTHREAD_CFLAGS@ \
+	@SOUP_CFLAGS@
 
 xfce4_screenshooter_plugin_LDFLAGS = \
+	$(top_builddir)/lib/libscreenshooter.la \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
-	$(top_builddir)/lib/libscreenshooter.la
+	@SOUP_LIBS@
 
 xfce4_screenshooter_plugin_SOURCES = \
 	screenshooter-plugin.c

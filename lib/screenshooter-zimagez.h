@@ -26,9 +26,7 @@
 
 #include <glib.h>
 #include <glib/gstdio.h>
-
-#include <xmlrpc-c/base.h>
-#include <xmlrpc-c/client.h>
+#include <libsoup/soup.h>
 
 #include "screenshooter-utils.h"
 #include "screenshooter-simple-job.h"

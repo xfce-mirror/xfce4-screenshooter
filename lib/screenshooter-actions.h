@@ -24,12 +24,7 @@
 #include "screenshooter-capture.h"
 #include "screenshooter-global.h"
 #include "screenshooter-dialogs.h"
-
-#ifdef HAVE_XMLRPC
-#ifdef HAVE_CURL
 #include "screenshooter-zimagez.h"
-#endif
-#endif
 
 gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd);
 

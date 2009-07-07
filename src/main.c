@@ -34,11 +34,7 @@ gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean no_save_dialog = FALSE;
 gboolean hide_mouse = FALSE;
-#ifdef HAVE_XMLRPC
-#ifdef HAVE_CURL
 gboolean upload = FALSE;
-#endif
-#endif
 gchar *screenshot_dir;
 gchar *application;
 gint delay = 0;
@@ -85,15 +81,11 @@ static GOptionEntry entries[] =
     N_("Directory where the screenshot will be saved"),
     NULL
   },
-#ifdef HAVE_XMLRPC
-#ifdef HAVE_CURL  
   {
     "upload", 'u', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &upload,
     N_("Host the screenshot on ZimageZ, a free online image hosting service"),
     NULL
   },
-#endif
-#endif
   {
     "version", 'V', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &version,
     N_("Version information"),
@@ -204,15 +196,11 @@ int main (int argc, char **argv)
           sd->app = application;
           sd->action = OPEN;
         }
-#ifdef HAVE_XMLRPC
-#ifdef HAVE_CURL
       else if (upload)
         {
           sd->app = g_strdup ("none");
           sd->action = UPLOAD;
         }
-#endif
-#endif
       else
         {
           sd->app = g_strdup ("none");
@@ -262,8 +250,6 @@ int main (int argc, char **argv)
       if (preferences_file != NULL)
         screenshooter_write_rc_file (preferences_file, sd);
     }
-#ifdef HAVE_XMLRPC
-#ifdef HAVE_CURL
   else if (sd->action == UPLOAD)
     {
       const gchar *preferences_file =
@@ -287,16 +273,10 @@ int main (int argc, char **argv)
             }
         }
     }
-#endif
-#endif
 
   g_free (sd->screenshot_dir);
   g_free (sd->app);
-#ifdef HAVE_XMLRPC
-#ifdef HAVE_CURL
   g_free (sd->last_user);
-#endif
-#endif
   g_free (sd);
 
   TRACE ("Ciao");

@@ -7,6 +7,7 @@ xfce4_screenshooter_CFLAGS = \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCEGUI4_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
+	@SOUP_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 	
 xfce4_screenshooter_LDFLAGS = \
@@ -14,6 +15,7 @@ xfce4_screenshooter_LDFLAGS = \
 	@GTK_LIBS@ \
 	@GLIB_LIBS@ \
 	@GTHREAD_LIBS@ \
+	@SOUP_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCEGUI4_LIBS@
 

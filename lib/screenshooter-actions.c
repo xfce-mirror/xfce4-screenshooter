@@ -110,14 +110,10 @@ gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
             {
               screenshooter_open_screenshot (screenshot_path, sd->app);
             }
-#ifdef HAVE_XMLRPC
-#ifdef HAVE_CURL
           else
             {
               screenshooter_upload_to_zimagez (screenshot_path, sd->last_user);
             }
-#endif
-#endif
         }
 
       g_object_unref (temp_dir);

@@ -54,6 +54,12 @@ typedef enum
 static void              open_url_hook             (SexyUrlLabel      *url_label,
                                                     gchar             *url,
                                                     gpointer           user_data);
+static gboolean          do_xmlrpc                 (SoupSession       *session,
+                                                    const gchar       *uri,
+                                                    const gchar       *method,
+                                                    GError           **error,
+                                                    GValue            *retval,
+                                                    ...);
 static gboolean          has_empty_field           (GtkListStore      *liststore);
 static ScreenshooterJob *zimagez_upload_to_zimagez (const gchar       *file_name,
                                                     gchar             *last_user);
@@ -100,11 +106,94 @@ open_url_hook (SexyUrlLabel *url_label, gchar *url, gpointer user_data)
 
 
 static gboolean
+do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
+           GError **error, GValue *retval, ...)
+{
+  SoupMessage *msg;
+  va_list args;
+  GValueArray *params;
+  GError *err = NULL;
+  char *body;
+
+  va_start (args, retval);
+  params = soup_value_array_from_args (args);
+  va_end (args);
+
+  body =
+    soup_xmlrpc_build_method_call (method, params->values,
+                                   params->n_values);
+  g_value_array_free (params);
+
+  if (!body)
+    {
+      err = g_error_new (SOUP_XMLRPC_FAULT,
+                         SOUP_XMLRPC_FAULT_APPLICATION_ERROR,
+                         _("An error occured when creating the XMLRPC"
+                           " request."));
+      g_propagate_error (error, err);
+
+      return FALSE;
+    }
+
+  msg = soup_message_new ("POST", uri);
+  soup_message_set_request (msg, "text/xml", SOUP_MEMORY_TAKE,
+                            body, strlen (body));
+  soup_session_send_message (session, msg);
+
+  if (!SOUP_STATUS_IS_SUCCESSFUL (msg->status_code))
+    {
+      TRACE ("Error during the XMLRPC exchange: %d %s\n",
+             msg->status_code, msg->reason_phrase);
+
+      err = g_error_new (SOUP_XMLRPC_FAULT,
+                         SOUP_XMLRPC_FAULT_TRANSPORT_ERROR,
+                         _("An error occured when transfering the data"
+                           " to ZimageZ."));
+      g_propagate_error (error, err);
+      g_object_unref (msg);
+
+      return FALSE;
+    }
+
+  if (!soup_xmlrpc_parse_method_response (msg->response_body->data,
+                                          msg->response_body->length,
+                                          retval, &err))
+    {
+      if (err)
+        {
+          TRACE ("Fault when parsing the response: %d %s\n",
+                 err->code, err->message);
+
+          g_propagate_error (error, err);
+        }
+      else
+        {
+          TRACE ("Unable to parse the response, and no error...");
+
+          err = g_error_new (SOUP_XMLRPC_FAULT,
+                             SOUP_XMLRPC_FAULT_APPLICATION_ERROR,
+                             _("An error occured when parsing the response"
+                               " from ZimageZ."));
+          g_propagate_error (error, err);
+        }
+
+      g_object_unref (msg);
+      return FALSE;
+    }
+
+  g_object_unref (msg);
+
+  return TRUE;
+}
+
+
+
+static gboolean
 has_empty_field (GtkListStore *liststore)
 {
   GtkTreeIter iter;
   gboolean result = FALSE;
-  
+
   gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
 
   do
@@ -132,9 +221,6 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   gchar *comment = g_strdup ("");
   gchar *data = NULL;
   gchar *encoded_password = NULL;
-  gchar *escaped_file_name;
-  gchar *escaped_title;
-  gchar *escaped_comment;
   gchar *file_name = NULL;
   gchar *login_response = NULL;
   gchar *online_file_name = NULL;
@@ -143,18 +229,18 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   gchar *user;
 
   gsize data_length;
+  gboolean response = FALSE;
 
-  xmlrpc_env env;
-  xmlrpc_value *resultP = NULL;
-  xmlrpc_bool response = 0;
+  const gchar *serverurl = g_strdup ("http://www.zimagez.com/apiXml.php");
+  const gchar *method_login = g_strdup ("apiXml.xmlrpcLogin");
+  const gchar *method_logout = g_strdup ("apiXml.xmlrpcLogout");
+  const gchar *method_upload = g_strdup ("apiXml.xmlrpcUpload");
+  SoupSession *session;
 
-  const gchar * const serverurl = "http://www.zimagez.com/apiXml.php";
-  const gchar * const method_login = "apiXml.xmlrpcLogin";
-  const gchar * const method_logout = "apiXml.xmlrpcLogout";
-  const gchar * const method_upload = "apiXml.xmlrpcUpload";
-
+  GError *tmp_error;
   GtkTreeIter iter;
   GtkListStore *liststore;
+  GValue response_value;
 
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
@@ -179,37 +265,15 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
       user = g_strdup ("");
     }
 
-  g_object_set_data_full (G_OBJECT (job), "user", 
+  g_object_set_data_full (G_OBJECT (job), "user",
                           g_strdup (user), (GDestroyNotify) g_free);
 
   /* Get the path of the image that is to be uploaded */
   image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
 
-  /* Start the user XML RPC session */
+  /* Start the user soup session */
   exo_job_info_message (EXO_JOB (job), _("Initialize the connection..."));
-
-  TRACE ("Initialize the RPC environment");
-  xmlrpc_env_init(&env);
-
-  TRACE ("Initialize the RPC client");
-  xmlrpc_client_init2 (&env, XMLRPC_CLIENT_NO_FLAGS, PACKAGE_NAME, PACKAGE_VERSION,
-                       NULL, 0);
-
-  if (env.fault_occurred)
-    {
-      GError *tmp_error =
-        g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
-                     _("An error occurred during the XML exchange: %s (%d).\n "
-                       "The screenshot could not be uploaded."),
-                     env.fault_string, env.fault_code);
-
-      xmlrpc_env_clean (&env);
-      xmlrpc_client_cleanup ();
-
-      g_propagate_error (error, tmp_error);
-
-      return FALSE;
-    }
+  session = soup_session_sync_new ();
 
   TRACE ("Get the information liststore ready.");
   liststore = gtk_list_store_new (2, G_TYPE_INT, G_TYPE_STRING);
@@ -262,10 +326,10 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
       switch (field_index)
         {
-          case USER: 
+          case USER:
             user = g_strdup (field_value);
             break;
-          case PASSWORD: 
+          case PASSWORD:
             password = g_strdup (field_value);
             break;
           case TITLE:
@@ -286,8 +350,8 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
     {
       if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
         {
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
+          soup_session_abort (session);
+          g_object_unref (session);
 
           g_free (user);
           g_free (password);
@@ -317,33 +381,27 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
       encoded_password = g_strdup (g_strreverse (rot13 (password)));
 
       TRACE ("User: %s", user);
+      TRACE ("Encoded password: %s", encoded_password);
 
       /* Start the user session */
       TRACE ("Call the login method");
 
       exo_job_info_message (EXO_JOB (job), _("Login on ZimageZ..."));
 
-      resultP = xmlrpc_client_call (&env, serverurl, method_login,
-                                    "(ss)", user, encoded_password);
-
-      if (env.fault_occurred)
+      if (!do_xmlrpc (session, serverurl, method_login,
+                      &tmp_error, &response_value,
+                      G_TYPE_STRING, user,
+                      G_TYPE_STRING, encoded_password,
+                      G_TYPE_INVALID))
         {
-          GError *tmp_error =
-            g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
-                         _("An error occurred during the XML exchange: %s (%d).\n "
-                           "The screenshot could not be uploaded."),
-                         env.fault_string, env.fault_code);
+          g_propagate_error (error, tmp_error);
+          soup_session_abort (session);
+          g_object_unref (session);
 
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
-
-          g_free (user);
           g_free (password);
           g_free (title);
           g_free (comment);
           g_free (encoded_password);
-
-          g_propagate_error (error, tmp_error);
 
           return FALSE;
         }
@@ -351,62 +409,40 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
       TRACE ("Read the login response");
 
       /* If the response is a boolean, there was an error */
-      if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
+      if (G_VALUE_HOLDS_BOOLEAN (&response_value))
         {
-          xmlrpc_read_bool (&env, resultP, &response);
-
-          if (env.fault_occurred)
-            {
-              GError *tmp_error =
-                g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
-                             _("An error occurred during the XML exchange: %s (%d).\n "
-                               "The screenshot could not be uploaded."),
-                             env.fault_string, env.fault_code);
-
-              xmlrpc_env_clean (&env);
-              xmlrpc_client_cleanup ();
-
-              g_free (user);
-              g_free (password);
-              g_free (title);
-              g_free (comment);
-              g_free (encoded_password);
-
-              g_propagate_error (error, tmp_error);
-
-              return FALSE;
-            }
+          response = g_value_get_boolean (&response_value);
         }
       /* Else we read the string response to get the session ID */
-      else
+      else if (G_VALUE_HOLDS_STRING (&response_value))
         {
           TRACE ("Read the session ID");
-          xmlrpc_read_string (&env, resultP, (const gchar ** const)&login_response);
-
-          if (env.fault_occurred)
-           {
-             GError *tmp_error =
-               g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
-                            _("An error occurred during the XML exchange: %s (%d).\n "
-                              "The screenshot could not be uploaded."),
-                            env.fault_string, env.fault_code);
-
-             xmlrpc_env_clean (&env);
-             xmlrpc_client_cleanup ();
-
-             g_free (user);
-             g_free (password);
-             g_free (title);
-             g_free (comment);
-             g_free (encoded_password);
-
-             g_propagate_error (error, tmp_error);
-
-             return FALSE;
-           }
-
-          response = 1;
+          login_response = g_strdup (g_value_get_string (&response_value));
+          response = TRUE;
         }
+      /* We received an unexpected reply */
+      else
+        {
+          GError *tmp_err =
+            g_error_new (SOUP_XMLRPC_FAULT,
+                         SOUP_XMLRPC_FAULT_PARSE_ERROR_NOT_WELL_FORMED,
+                         "%s", _("An unexpected reply from ZimageZ was received."
+                                 " The upload of the screenshot failed."));
+          soup_session_abort (session);
+          g_object_unref (session);
+
+          g_free (user);
+          g_free (password);
+          g_free (title);
+          g_free (comment);
+          g_free (encoded_password);
+
+          g_propagate_error (error, tmp_err);
+
+          return FALSE;
+        }
+
+      g_value_unset (&response_value);
 
       if (!response)
         {
@@ -470,9 +506,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
         }
     }
 
-  xmlrpc_DECREF (resultP);
-
-  g_object_set_data_full (G_OBJECT (job), "user", 
+  g_object_set_data_full (G_OBJECT (job), "user",
                           g_strdup (user), (GDestroyNotify) g_free);
 
   g_free (user);
@@ -489,36 +523,26 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   /* Get the basename of the image path */
   file_name = g_path_get_basename (image_path);
 
-  /* Escape the strings before passing them to xmlrpc-c */
-  escaped_file_name = g_markup_escape_text (file_name, -1);
-  escaped_title = g_markup_escape_text (title, -1);
-  escaped_comment = g_markup_escape_text (comment, -1);
-
   exo_job_info_message (EXO_JOB (job), _("Upload the screenshot..."));
 
   TRACE ("Call the upload method");
-  resultP = xmlrpc_client_call (&env, serverurl, method_upload,
-                                "(sssss)", encoded_data, escaped_file_name, 
-                                escaped_title, escaped_comment,
-                                login_response);
+  do_xmlrpc (session, serverurl, method_upload,
+             &tmp_error, &response_value,
+             G_TYPE_STRING, encoded_data,
+             G_TYPE_STRING, file_name,
+             G_TYPE_STRING, title,
+             G_TYPE_STRING, comment,
+             G_TYPE_STRING, login_response,
+             G_TYPE_INVALID);
 
-  g_free (escaped_file_name);
-  g_free (escaped_title);
-  g_free (escaped_comment);
   g_free (title);
   g_free (comment);
   g_free (file_name);
 
-  if (env.fault_occurred)
+  if (tmp_error)
     {
-      GError *tmp_error =
-        g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
-                     _("An error occurred during the XML exchange: %s (%d).\n "
-                       "The screenshot could not be uploaded."),
-                     env.fault_string, env.fault_code);
-
-      xmlrpc_env_clean (&env);
-      xmlrpc_client_cleanup ();
+      soup_session_abort (session);
+      g_object_unref (session);
 
       g_propagate_error (error, tmp_error);
 
@@ -526,79 +550,63 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
     }
 
   /* If the response is a boolean, there was an error */
-  if (xmlrpc_value_type (resultP) == XMLRPC_TYPE_BOOL)
+  if (G_VALUE_HOLDS_BOOLEAN (&response_value))
     {
-      xmlrpc_bool response_upload;
-
-      xmlrpc_read_bool (&env, resultP, &response_upload);
-
-      if (env.fault_occurred)
+      if (!g_value_get_boolean (&response_value))
         {
-          GError *tmp_error =
-            g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
-                         _("An error occurred during the XML exchange: %s (%d).\n "
-                           "The screenshot could not be uploaded."),
-                         env.fault_string, env.fault_code);
-
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
-
-          g_propagate_error (error, tmp_error);
-
-          return FALSE;
-        }
-
-      if (!response_upload)
-        {
-          GError *tmp_error =
+          GError *tmp_err =
             g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
                          _("An error occurred while uploading the screenshot."));
 
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
-
-          g_propagate_error (error, tmp_error);
+          soup_session_abort (session);
+          g_object_unref (session);
+          g_propagate_error (error, tmp_err);
 
           return FALSE;
         }
     }
   /* Else we get the file name */
+  else if (G_VALUE_HOLDS_STRING (&response_value))
+    {
+      TRACE ("The screenshot has been uploaded, get the file name.");
+      online_file_name = g_strdup (g_value_get_string (&response_value));
+    }
+  /* We received un unexpected reply */
   else
     {
-      xmlrpc_read_string (&env, resultP, (const char **)&online_file_name);
+      GError *tmp_err =
+        g_error_new (SOUP_XMLRPC_FAULT,
+                     SOUP_XMLRPC_FAULT_PARSE_ERROR_NOT_WELL_FORMED,
+                     "%s", _("An unexpected reply from ZimageZ was received."
+                       " The upload of the screenshot failed."));
+      soup_session_abort (session);
+      g_object_unref (session);
+      g_propagate_error (error, tmp_err);
 
-      TRACE ("The screenshot has been uploaded, get the file name.");
-
-      if (env.fault_occurred)
-        {
-          GError *tmp_error =
-            g_error_new (G_IO_ERROR, G_IO_ERROR_FAILED,
-                         _("An error occurred during the XML exchange: %s (%d).\n "
-                           "The screenshot could not be uploaded."),
-                         env.fault_string, env.fault_code);
-
-          xmlrpc_env_clean (&env);
-          xmlrpc_client_cleanup ();
-
-          g_propagate_error (error, tmp_error);
-
-          return FALSE;
-        }
+      return FALSE;
     }
 
-  xmlrpc_DECREF (resultP);
+  g_value_unset (&response_value);
 
   /* End the user session */
-
   exo_job_info_message (EXO_JOB (job), _("Close the session on ZimageZ..."));
 
   TRACE ("Closing the user session");
 
-  xmlrpc_client_call (&env, serverurl, method_logout, "(s)", login_response);
+  do_xmlrpc (session, serverurl, method_logout,
+             &tmp_error, &response_value,
+             G_TYPE_STRING, login_response,
+             G_TYPE_INVALID);
 
-  TRACE ("Cleanup the XMLRPC session");
-  xmlrpc_env_clean (&env);
-  xmlrpc_client_cleanup ();
+  if (tmp_error)
+    g_error_free (tmp_error);
+
+  g_value_unset (&response_value);
+
+  /* Clean the soup session */
+  soup_session_abort (session);
+  g_object_unref (session);
+  g_free (login_response);
 
   screenshooter_job_image_uploaded (job, online_file_name);
 
@@ -775,7 +783,7 @@ cb_ask_for_information (ScreenshooterJob *job,
           default:
             break;
         }
-      
+
       g_free (field_value);
     }
   while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
@@ -882,7 +890,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
     last_user_temp = g_strdup ("");
 
   last_user = g_strdup (last_user_temp);
-    
+
   /* Dialog */
   dialog =
     xfce_titled_dialog_new_with_buttons (_("My screenshot on ZimageZ"),
@@ -910,7 +918,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
 
   /* Links bold label */
   link_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL (link_label), 
+  gtk_label_set_markup (GTK_LABEL (link_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Links</span>"));
   gtk_misc_set_alignment (GTK_MISC (link_label), 0, 0);
@@ -955,7 +963,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
 
   /* Examples bold label */
   example_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL (example_label), 
+  gtk_label_set_markup (GTK_LABEL (example_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Code for a thumbnail pointing to the full size image</span>"));
   gtk_misc_set_alignment (GTK_MISC (example_label), 0, 0);
@@ -1028,7 +1036,7 @@ static void cb_error (ExoJob *job, GError *error, gpointer unused)
 {
   g_return_if_fail (error != NULL);
 
-  screenshooter_error ("%s", error->message); 
+  screenshooter_error ("%s", error->message);
 }
 
 

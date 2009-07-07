@@ -56,34 +56,7 @@ XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.4.0])
 XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.16.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.12.0])
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.16.0])
-
-dnl ************************************
-dnl *** Check for optional packages ***
-dnl ************************************
-
-XDT_CHECK_OPTIONAL_PACKAGE([CURL], [libcurl], [7])
-
-dnl **************************
-dnl *** Check for xmlrpc-c ***
-dnl **************************
-
-XMLRPC_LIBS=""
-XMLRPC_CFLAGS=""
-AC_PATH_PROG([XMLRPC_CONFIG], [xmlrpc-c-config], [no])
-if test x"$XMLRPC_CONFIG" != x"no"; then
-  AC_MSG_CHECKING([XMLRPC_CFLAGS])
-  XMLRPC_CFLAGS="`$XMLRPC_CONFIG --cflags client`"
-  AC_MSG_RESULT([$XMLRPC_CFLAGS])
-
-  AC_MSG_CHECKING([XMLRPC_LIBS])
-  XMLRPC_LIBS="`$XMLRPC_CONFIG --libs client`"
-  AC_MSG_RESULT([$XMLRPC_LIBS])
-
-  AC_DEFINE([HAVE_XMLRPC], [1], [Xmlrpc-c was found on the system])
-fi
-AM_CONDITIONAL([HAVE_XMLRPC], [test x"$XMLRPC_CONFIG" != x"no"])
-AC_SUBST([XMLRPC_CFLAGS])
-AC_SUBST([XMLRPC_LIBS])
+XDT_CHECK_PACKAGE([SOUP], [libsoup-2.4], [2.26.0])
 
 dnl **************************
 dnl *** Check for xsltproc ***
@@ -164,15 +137,6 @@ echo "Build Configuration:"
 echo ""
 
 echo "  * Debugging support:             $enable_debug"
-if test x"$CURL_FOUND" = x"yes"; then
-  if test x"$XMLRPC_CONFIG" != x"no"; then
-    echo "  * ZimageZ support:               yes"
-  else
-    echo "  * ZimageZ support:               no"
-  fi
-else
-  echo "  * ZimageZ support:               no"
-fi
 
 echo ""
 echo "Maintainer Configuration:"
