@@ -38,9 +38,15 @@
   <sect1 id="intro">
     <title>Xfce4 スクリーンシューターの紹介</title>
 
-    <para>このアプリケーションは、画面全体、アクティブウィンドウ、または選択した領域のスクリーンショットを撮影します。撮影までの遅延時間や、撮影したスクリーンショットに対する操作 (PNG ファイルに保存、クリップボードにコピー、または他のアプリケーションで開く) を指定できます。</para>
-
-    <para>ビルド時に有効にしていれば、スクリーンショットをフリーのオンラインイメージホスティングサービス <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink> で公開することもできます。その場合は CURL および XMLRPC-C ライブラリが必要です。</para>
+    <para>
+      This application allows you to capture the entire screen, the
+      active window or a selected region. You can set the delay that
+      elapses before the screenshot is taken and the action that will
+      be done with the screenshot: save it to a PNG file, copy it to
+      the clipboard, open it using another application, or host it on
+      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, 
+      a free online image hosting service.
+    </para>
 
     <para>Xfce パネル用プラグインも用意されています。</para>
 

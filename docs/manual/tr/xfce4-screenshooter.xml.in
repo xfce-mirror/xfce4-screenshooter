@@ -38,9 +38,15 @@
   <sect1 id="intro">
     <title>Xfce4 Ekran Görüntüsü Hakkında</title>
 
-    <para>Bu uygulama, tüm ekranın veya seçilen bölgenin yahut etkin pencerenin ekran görüntüsünü almanızı sağlar. Ekran görüntüsü almadan önce beklenecek süreyi ayarlayabileceğiniz gibi şu işlemleri de uygulamanız mümkündür: PNG dosyası olarak kayıt, panoya kopyalama veya başka bir uygulama kullanarak alınan ekran görüntüsünü görüntülemek. </para>
-
-    <para>Eğer inşa sırasında etkinleştirilmişse, ekran görüntülerinizi <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink> isimli ücretsiz resim barındırma servisinde yayınlayabilirsiniz. Bu özellikten yararlanabilmek için CURL ve XMLRPC-C kitaplıklarının sisteminizde bulunması gerekmektedir.</para>
+    <para>
+      This application allows you to capture the entire screen, the
+      active window or a selected region. You can set the delay that
+      elapses before the screenshot is taken and the action that will
+      be done with the screenshot: save it to a PNG file, copy it to
+      the clipboard, open it using another application, or host it on
+      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, 
+      a free online image hosting service.
+    </para>
 
     <para>Ayrıca Xfce paneli için bir eklenti de bulunmaktadır.</para>
 

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce-screenshooter\n"
-"POT-Creation-Date: 2009-05-31 00:15+0200\n"
+"POT-Creation-Date: 2009-07-08 00:07+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Lars Christian Jensen <larschrjensen@gmail.com>\n"
 "Language-Team: Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
@@ -19,21 +19,36 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:90(None)
-msgid "@@image: 'images/xfce4-screenshooter-dialog.png'; md5=4deee4014eb81c2da3f90353ecb27a3b"
-msgstr "@@image: 'images/xfce4-screenshooter-dialog.png'; md5=4deee4014eb81c2da3f90353ecb27a3b"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:85(None)
+#, fuzzy
+msgid ""
+"@@image: 'images/xfce4-screenshooter-dialog.png'; "
+"md5=81327b7424d7b3498e19f2c8d4675b16"
+msgstr ""
+"@@image: 'images/xfce4-screenshooter-dialog.png'; "
+"md5=4deee4014eb81c2da3f90353ecb27a3b"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:237(None)
-msgid "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=90801d9f563892b813fb680fa6c7dc66"
-msgstr "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=90801d9f563892b813fb680fa6c7dc66"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:232(None)
+#, fuzzy
+msgid ""
+"@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
+"md5=c8102c88e978eb7ef63994f2648f5ae6"
+msgstr ""
+"@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
+"md5=90801d9f563892b813fb680fa6c7dc66"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:264(None)
-msgid "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=b626fbaeac959c97506f87bc3e93407a"
-msgstr "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=b626fbaeac959c97506f87bc3e93407a"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:259(None)
+#, fuzzy
+msgid ""
+"@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
+"md5=468def960a376d5a856f2fcb3b35daf1"
+msgstr ""
+"@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
+"md5=b626fbaeac959c97506f87bc3e93407a"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:12(title)
 msgid "Xfce4 Screenshooter"
@@ -52,8 +67,20 @@ msgid "Jérôme Guelfucci"
 msgstr "Jérôme Guelfucci"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:23(para)
-msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
-msgstr "Der gives hermed tilladelse til kopiere, distribuere og/eller ændre dette dokument under betingelserne af GNU Free Documentation License, Version 1.1 eller enhver senere version udgivet af Free Software Foundation, med ingen ufravigelige dele; ingen forsidetekst, og ingen bagsidetekst. Hele licensteksten er til rådighed på <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License, Version 1.1 or any later "
+"version published by the Free Software Foundation; with no Invariant "
+"Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The "
+"complete license text is available from the <ulink type=\"http\" url="
+"\"http://www.gnu.org/\">Free Software Foundation</ulink>."
+msgstr ""
+"Der gives hermed tilladelse til kopiere, distribuere og/eller ændre dette "
+"dokument under betingelserne af GNU Free Documentation License, Version 1.1 "
+"eller enhver senere version udgivet af Free Software Foundation, med ingen "
+"ufravigelige dele; ingen forsidetekst, og ingen bagsidetekst. Hele "
+"licensteksten er til rådighed på <ulink type=\"http\" url=\"http://www.gnu."
+"org/\">Free Software Foundation</ulink>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:35(firstname)
 msgid "Jérôme"
@@ -69,249 +96,469 @@ msgstr "jeromeg@xfce.org"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:43(releaseinfo)
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
-msgstr "Denne manual beskriver version Xfce4 Screenshooter version @PACKAGE_VERSION@."
+msgstr ""
+"Denne manual beskriver version Xfce4 Screenshooter version @PACKAGE_VERSION@."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:49(title)
 msgid "Introduction to Xfce4 Screenshooter"
 msgstr "Introduktion til Xfce4 Screenshooter"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:51(para)
-msgid "This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action that will be done with the screenshot: save it to a PNG file, copy it to the clipboard, or open it using another application."
-msgstr "Dette program giver dig mulighed for at tage et billede af hele skærmen, det aktive vindue eller en markeret region. Du kan indstille forsinkelsen før billedet er taget og handlingen med billeder udføres: gemme det som en PNG-fil, kopiere det til udklipsholderen eller åbne det med et andet program."
+#, fuzzy
+msgid ""
+"This application allows you to capture the entire screen, the active window "
+"or a selected region. You can set the delay that elapses before the "
+"screenshot is taken and the action that will be done with the screenshot: "
+"save it to a PNG file, copy it to the clipboard, open it using another "
+"application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com"
+"\">ZimageZ</ulink>, a free online image hosting service."
+msgstr ""
+"Dette program giver dig mulighed for at tage et billede af hele skærmen, det "
+"aktive vindue eller en markeret region. Du kan indstille forsinkelsen før "
+"billedet er taget og handlingen med billeder udføres: gemme det som en PNG-"
+"fil, kopiere det til udklipsholderen eller åbne det med et andet program."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:59(para)
-msgid "If activated on build, you can also host your screenshots on <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online image hosting service. The CURL and XMLRPC-C libraries are required."
-msgstr "Hvis aktiveret ved bygning, kan du også hoste dine skærmbilleder på <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, en gratis billed-hosting-tjeneste på nettet. Bibliotekerne CURL og XMLRPC-C er påkrævet."
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:66(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:61(para)
 msgid "A plugin for the Xfce panel is also available."
 msgstr "Et udvidelsesmodul til panelet i Xfce er også tilgængeligt."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:73(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:68(title)
 msgid "Using the application"
 msgstr "Brug af programmet"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:76(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:71(title)
 msgid "Via the user interface"
 msgstr "Vha. brugergrænsefladen"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:78(para)
-msgid "To launch the application, use the \"Screenshot\" item in the \"Accessories\" category of Xfce's main menu."
-msgstr "For at starte programmet skal du bruge \"Skærmbillede\"-elementet i kategorien \"Tilbehør\" fra hovedmenuen i Xfce."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:73(para)
+msgid ""
+"To launch the application, use the \"Screenshot\" item in the \"Accessories"
+"\" category of Xfce's main menu."
+msgstr ""
+"For at starte programmet skal du bruge \"Skærmbillede\"-elementet i "
+"kategorien \"Tilbehør\" fra hovedmenuen i Xfce."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:83(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:78(para)
 msgid "This window will be displayed:"
 msgstr "Dette vindue vil blive vist:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:94(phrase)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:89(phrase)
 msgid "The window of Xfce4 Screenshooter"
 msgstr "Vinduet i Xfce4 Screenshooter"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:100(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:95(title)
 msgid "Region to capture"
 msgstr "Område der skal tages et billede af"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:102(para)
-msgid "The <emphasis>\"Region to capture\"</emphasis> section allows you to set from what the screenshot will be taken:"
-msgstr "Tilvalget <emphasis>\"Område der skal tages billede af\"</emphasis> tillader dig at indstille, hvorfra skærmbilledet skal tages:"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:97(para)
+msgid ""
+"The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
+"from what the screenshot will be taken:"
+msgstr ""
+"Tilvalget <emphasis>\"Område der skal tages billede af\"</emphasis> tillader "
+"dig at indstille, hvorfra skærmbilledet skal tages:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:108(listitem)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:103(listitem)
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr "\"Hele skærmen\" tager et skærmbillede af hele skærmen, som du ser den."
+msgstr ""
+"\"Hele skærmen\" tager et skærmbillede af hele skærmen, som du ser den."
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:107(listitem)
+msgid ""
+"\"Active window\" takes a screenshot of the active window, the one which was "
+"active before this dialog appeared, or if you set a delay, the one that is "
+"active after the delay."
+msgstr ""
+"\"Aktive vindue\" tager et billede af det aktive vindue, hvilket er det der, "
+"var aktivt før denne dialog kom frem, eller hvis du indstiller en "
+"forsinkelse, er det vinduet, der er aktivt efter udløb af forsinkelsen."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:112(listitem)
-msgid "\"Active window\" takes a screenshot of the active window, the one which was active before this dialog appeared, or if you set a delay, the one that is active after the delay."
-msgstr "\"Aktive vindue\" tager et billede af det aktive vindue, hvilket er det der, var aktivt før denne dialog kom frem, eller hvis du indstiller en forsinkelse, er det vinduet, der er aktivt efter udløb af forsinkelsen."
+msgid ""
+"\"Select a region\" allows you to select a region to be captured by clicking "
+"a point of the screen without releasing the mouse button, dragging your "
+"mouse to the other corner of the region, and releasing the mouse button."
+msgstr ""
+"\"Vælg et område\" tillader dig at vælge det område der skal tages et "
+"billede af, ved at klikke på et punkt på skærmen, og uden at slippe musen, "
+"trække den til det modsatte hjørne af regionen og slippe museknappen."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:117(listitem)
-msgid "\"Select a region\" allows you to select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
-msgstr "\"Vælg et område\" tillader dig at vælge det område der skal tages et billede af, ved at klikke på et punkt på skærmen, og uden at slippe musen, trække den til det modsatte hjørne af regionen og slippe museknappen."
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:127(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:122(title)
 msgid "Delay before capturing"
 msgstr "Forsinkelse før indfangning"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:129(para)
-msgid "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to set the delay that will elapse between pressing the <emphasis>\"OK\"</emphasis> button and taking the screenshot. This delay will allow you to open menus or to do whatever action you want to see displayed on the screenshot."
-msgstr "Tilvalget <emphasis>\"Forsinkelse før skærmbilledet bliver taget\"</emphasis>, tillader dig at indstille den tid, der går fra du trykker på <emphasis>\"O.k.\"</emphasis>-knappen, og til at skærmbilledet rent faktisk bliver taget. Denne forsinkelse giver dig tid til at åbne menuer, eller udføre enhver handling du ønsker at vist i skærmbilledet."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:124(para)
+msgid ""
+"The <emphasis>\"Delay before capturing\"</emphasis> section allows you to "
+"set the delay that will elapse between pressing the <emphasis>\"OK\"</"
+"emphasis> button and taking the screenshot. This delay will allow you to "
+"open menus or to do whatever action you want to see displayed on the "
+"screenshot."
+msgstr ""
+"Tilvalget <emphasis>\"Forsinkelse før skærmbilledet bliver taget\"</"
+"emphasis>, tillader dig at indstille den tid, der går fra du trykker på "
+"<emphasis>\"O.k.\"</emphasis>-knappen, og til at skærmbilledet rent faktisk "
+"bliver taget. Denne forsinkelse giver dig tid til at åbne menuer, eller "
+"udføre enhver handling du ønsker at vist i skærmbilledet."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:139(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:134(title)
 msgid "After capturing"
 msgstr "Efter indfangning"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:141(para)
-msgid "The <emphasis>\"Show the save dialog\"</emphasis> option is described below, in the <emphasis>\"Action\"</emphasis> section."
-msgstr "Tilvalget The <emphasis>\"Vis gemvinduet\"</emphasis>, er beskrevet herunder i sektionen <emphasis>\"Handling\"</emphasis>."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:136(para)
+msgid ""
+"The <emphasis>\"Show the save dialog\"</emphasis> option is described below, "
+"in the <emphasis>\"Action\"</emphasis> section."
+msgstr ""
+"Tilvalget The <emphasis>\"Vis gemvinduet\"</emphasis>, er beskrevet herunder "
+"i sektionen <emphasis>\"Handling\"</emphasis>."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
-msgid "The <emphasis>\"Close the application\"</emphasis> option allows you, if unchecked, to take several screenshots in a row. If checked, the application will be closed once the screenshot has been taken and the action you selected executed."
-msgstr "Tilvalget <emphasis>\"Luk dette program\"</emphasis> lader dig, hvis det ikke er afkydset, tage adskillige skærmbilleder lige efter hinanden. Hvis afkrydset vil programmet blive lukket så snart skærmbilledet er taget, og den handling du har valgt, er udført."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:142(para)
+msgid ""
+"The <emphasis>\"Close the application\"</emphasis> option allows you, if "
+"unchecked, to take several screenshots in a row. If checked, the application "
+"will be closed once the screenshot has been taken and the action you "
+"selected executed."
+msgstr ""
+"Tilvalget <emphasis>\"Luk dette program\"</emphasis> lader dig, hvis det "
+"ikke er afkydset, tage adskillige skærmbilleder lige efter hinanden. Hvis "
+"afkrydset vil programmet blive lukket så snart skærmbilledet er taget, og "
+"den handling du har valgt, er udført."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:157(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:152(title)
 msgid "Action"
 msgstr "Handling"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:159(para)
-msgid "The <emphasis>\"Action\"</emphasis> section allows you to choose what should be done with the screenshot."
-msgstr "Tilvalget <emphasis>\"Handling\"</emphasis> giver dig mulighed for at vælge, hvad der skal gøres med skærmbilledet."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:154(para)
+msgid ""
+"The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
+"be done with the screenshot."
+msgstr ""
+"Tilvalget <emphasis>\"Handling\"</emphasis> giver dig mulighed for at vælge, "
+"hvad der skal gøres med skærmbilledet."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:165(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:160(title)
 msgid "Save in"
 msgstr "Gem i"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:167(para)
-msgid "The <emphasis>\"Save in\"</emphasis> option will save the screenshot to a PNG file. If you don't check the <emphasis>\"Show the save dialog\"</emphasis> checkbox in the <emphasis>\"After capturing\"</emphasis> section, the screenshot will be saved to the folder on the right after you press the <emphasis>\"OK\"</emphasis> button, without showing any save dialog. Otherwise, a save dialog will be displayed, which also shows a preview of the screenshot. You will then be able to set the save location, and the name of the file."
-msgstr "Tilvalget <emphasis>\"Gem i\"</emphasis>, gemmer skærmbilledet som en PNG-fil. Hvis du ikke afkrydser <emphasis>\"Vis gemvinduet\"</emphasis>-feltet i sektionen <emphasis>\"Efter indfangning\"</emphasis>, vil skærmbilledet blive gemt i mappen til højre, lige efter du trykker på <emphasis>\"O.k.\"</emphasis>-knappen, uden at vise et gemvindue. Ellers vil gemvinduet blive vist sammen med en forhåndsvisning af skærmbilledet. Du vil så kunne indstille, hvor det skal gemmes, samt navnet på filen."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:162(para)
+msgid ""
+"The <emphasis>\"Save in\"</emphasis> option will save the screenshot to a "
+"PNG file. If you don't check the <emphasis>\"Show the save dialog\"</"
+"emphasis> checkbox in the <emphasis>\"After capturing\"</emphasis> section, "
+"the screenshot will be saved to the folder on the right after you press the "
+"<emphasis>\"OK\"</emphasis> button, without showing any save dialog. "
+"Otherwise, a save dialog will be displayed, which also shows a preview of "
+"the screenshot. You will then be able to set the save location, and the name "
+"of the file."
+msgstr ""
+"Tilvalget <emphasis>\"Gem i\"</emphasis>, gemmer skærmbilledet som en PNG-"
+"fil. Hvis du ikke afkrydser <emphasis>\"Vis gemvinduet\"</emphasis>-feltet i "
+"sektionen <emphasis>\"Efter indfangning\"</emphasis>, vil skærmbilledet "
+"blive gemt i mappen til højre, lige efter du trykker på <emphasis>\"O.k.\"</"
+"emphasis>-knappen, uden at vise et gemvindue. Ellers vil gemvinduet blive "
+"vist sammen med en forhåndsvisning af skærmbilledet. Du vil så kunne "
+"indstille, hvor det skal gemmes, samt navnet på filen."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:180(para)
-msgid "Xfce4 Screenshooter is also able to save the screenshot to any remote file system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers accessible via SSH... You just need to connect this remote file system using <emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left column of the save dialog."
-msgstr "Xfce4 Screenshooter er også i stand til at gemme skærmbilledet på et eksternt filsystem understøttet af GVfs, så som FTP, SAMBA, SFTP, fjerncomputere der er tilgængelige via SSH... Du skal blot forbinde dette eksterne filsystem ved at bruge <emphasis>gvfs-connect</emphasis> eller <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> og det vil være tilgængeligt i den venstre kolonne af gemvinduet."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:175(para)
+msgid ""
+"Xfce4 Screenshooter is also able to save the screenshot to any remote file "
+"system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers "
+"accessible via SSH... You just need to connect this remote file system using "
+"<emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www."
+"uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left "
+"column of the save dialog."
+msgstr ""
+"Xfce4 Screenshooter er også i stand til at gemme skærmbilledet på et "
+"eksternt filsystem understøttet af GVfs, så som FTP, SAMBA, SFTP, "
+"fjerncomputere der er tilgængelige via SSH... Du skal blot forbinde dette "
+"eksterne filsystem ved at bruge <emphasis>gvfs-connect</emphasis> eller "
+"<ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> og "
+"det vil være tilgængeligt i den venstre kolonne af gemvinduet."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:193(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:188(title)
 msgid "Copy to the clipboard"
 msgstr "Kopiér til udklipsholderen"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:195(para)
-msgid "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to paste the screenshot in another application, such as a word processor. Exiting the application before the screenshot is pasted often removes the image from the clipboard. Some clipboard managers allow you to prevent this."
-msgstr "Tilvalget <emphasis>\"Kopiér til udklipsholder\"</emphasis>, lader dig indsætte skærmbilledet i et andet program, så som en tekstbehandler. Afsluttes programmet før skærmbilledet er indsat, vil billedet ofte blive slettet fra udklipsholderen. Nogle udklipsholdere kan dog undgå dette."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:190(para)
+msgid ""
+"The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to "
+"paste the screenshot in another application, such as a word processor. "
+"Exiting the application before the screenshot is pasted often removes the "
+"image from the clipboard. Some clipboard managers allow you to prevent this."
+msgstr ""
+"Tilvalget <emphasis>\"Kopiér til udklipsholder\"</emphasis>, lader dig "
+"indsætte skærmbilledet i et andet program, så som en tekstbehandler. "
+"Afsluttes programmet før skærmbilledet er indsat, vil billedet ofte blive "
+"slettet fra udklipsholderen. Nogle udklipsholdere kan dog undgå dette."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:206(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:201(title)
 msgid "Open with"
 msgstr "Åbn med"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:208(para)
-msgid "The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the system's temporary directory and opens it with the application set using the dropdown list on the right. Applications which support images are automatically detected and added to the dropdown list."
-msgstr "Tilvalget <emphasis>\"Åbn med\"</emphasis> gemmer skærmbilledet i systemets midlertidige katalog og åbner det med valgte program, ved at bruge rullegardinlisten herunder. Programmer der understøtter billeder er automatisk fundet og tilføjet til rullegardinlisten."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:203(para)
+msgid ""
+"The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the "
+"system's temporary directory and opens it with the application set using the "
+"dropdown list on the right. Applications which support images are "
+"automatically detected and added to the dropdown list."
+msgstr ""
+"Tilvalget <emphasis>\"Åbn med\"</emphasis> gemmer skærmbilledet i systemets "
+"midlertidige katalog og åbner det med valgte program, ved at bruge "
+"rullegardinlisten herunder. Programmer der understøtter billeder er "
+"automatisk fundet og tilføjet til rullegardinlisten."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:218(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:213(title)
 msgid "Host on ZimageZ"
 msgstr "Host på ZimageZ"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:220(para)
-msgid "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your screenshot on this free online hosting service, so that you can share it easily with other people. ZimageZ automatically generates a large and a small thumbnail of your screenshot, which can be used to create thumbnails pointing to the full size screenshot."
-msgstr "Tilvalget <emphasis>\"host på ZimageZ\"</emphasis> lader dig hoste dit skærmbillede på denne gratis hostingtjeneste på nettet, så du nemt kan dele det med andre mennesker. ZimageZ opretter automatisk en stort og en lille miniature af dit skærmbillede, som kan bruges til at lave miniaturer, der peger til skærmbilledet i fuld størrelse."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:215(para)
+msgid ""
+"The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your "
+"screenshot on this free online hosting service, so that you can share it "
+"easily with other people. ZimageZ automatically generates a large and a "
+"small thumbnail of your screenshot, which can be used to create thumbnails "
+"pointing to the full size screenshot."
+msgstr ""
+"Tilvalget <emphasis>\"host på ZimageZ\"</emphasis> lader dig hoste dit "
+"skærmbillede på denne gratis hostingtjeneste på nettet, så du nemt kan dele "
+"det med andre mennesker. ZimageZ opretter automatisk en stort og en lille "
+"miniature af dit skærmbillede, som kan bruges til at lave miniaturer, der "
+"peger til skærmbilledet i fuld størrelse."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:229(para)
-msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown this dialog:"
-msgstr "Efter du trykker på <emphasis>\"O.k.\"</emphasis>-knappen, vil dette vindue blive vist:"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:224(para)
+msgid ""
+"After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
+"this dialog:"
+msgstr ""
+"Efter du trykker på <emphasis>\"O.k.\"</emphasis>-knappen, vil dette vindue "
+"blive vist:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:241(phrase)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:236(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
 msgstr "Vinduet til at hoste et skærmbillede på ZimageZ"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:246(para)
-msgid "If you do not have a ZimageZ user name, you will need to create one on the <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. Several languages are available on this website, you can switch between using the menu up right. You must fill all fields of this dialog. Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
-msgstr "Hvis du ikke har et ZimageZ-brugernavn, skal du oprette et på <ulink type=\"http\" url=\"http://www.zimagez.com\"> netstedet for ZimageZ</ulink>. Adskillige sprog er tilgængelige på dette netsted. Du kan skifte ved at bruge den øverste menu til højre. Du skal udfylde alle felter i dette vindue. Når du først klikker på <emphasis>\"O.k.\"</emphasis>-knappen vil overførslen begynde."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:241(para)
+msgid ""
+"If you do not have a ZimageZ user name, you will need to create one on the "
+"<ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</"
+"ulink>. Several languages are available on this website, you can switch "
+"between using the menu up right. You must fill all fields of this dialog. "
+"Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
+msgstr ""
+"Hvis du ikke har et ZimageZ-brugernavn, skal du oprette et på <ulink type="
+"\"http\" url=\"http://www.zimagez.com\"> netstedet for ZimageZ</ulink>. "
+"Adskillige sprog er tilgængelige på dette netsted. Du kan skifte ved at "
+"bruge den øverste menu til højre. Du skal udfylde alle felter i dette "
+"vindue. Når du først klikker på <emphasis>\"O.k.\"</emphasis>-knappen vil "
+"overførslen begynde."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:255(para)
-msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
-msgstr "Dette vindue vil give dig henvisninger til skærmbilledet i fuld størrelse, den store miniatur, den lille miniture, såvel som eksempler på HTML og BBkode til at lave en minature, der peger til skærmbilledet i fuld størrelse:"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:250(para)
+msgid ""
+"The dialog below will give you the links to the full size screenshot, the "
+"large thumbnail, the small thumbnails, as well examples of HTML and BBcode "
+"to create a thumbnail pointing to the full size screenshot:"
+msgstr ""
+"Dette vindue vil give dig henvisninger til skærmbilledet i fuld størrelse, "
+"den store miniatur, den lille miniture, såvel som eksempler på HTML og "
+"BBkode til at lave en minature, der peger til skærmbilledet i fuld størrelse:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:268(phrase)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:263(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
 msgstr "Vinduet der giver dig henvisningerne til dit skærmbillede på ZimageZ"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:278(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:273(title)
 msgid "Via command line"
 msgstr "Vha. kommandolinjen"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:280(para)
-msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the keybindings of your desktop environnement so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
-msgstr "Kommandlinjetilvalg lader dig tage skærmbilleder hurtigt. De lader dig også indstille knappen Print Screen, som findes i det øverste højre hjørne på de fleste tastaturer, til at tage skærmbilledet. For at gøre dette, skal du indstille tastaturgenvejene i dit skrivebordsmiljø, således at det starter xfce4-screenshooter, med en eller flere af de følgende tilvalg, når der trykkes på Prt Scrn-knappen."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:275(para)
+msgid ""
+"Command line options allow you to take screenshots quickly. They also allow "
+"you to configure the Print Screen key on the upper right of most keyboards "
+"so that it takes screenshots. To do so, configure the keybindings of your "
+"desktop environnement so that it launches xfce4-screenshooter with one or "
+"several of the following options when the Prt Scrn key is pressed."
+msgstr ""
+"Kommandlinjetilvalg lader dig tage skærmbilleder hurtigt. De lader dig også "
+"indstille knappen Print Screen, som findes i det øverste højre hjørne på de "
+"fleste tastaturer, til at tage skærmbilledet. For at gøre dette, skal du "
+"indstille tastaturgenvejene i dit skrivebordsmiljø, således at det starter "
+"xfce4-screenshooter, med en eller flere af de følgende tilvalg, når der "
+"trykkes på Prt Scrn-knappen."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:290(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:285(title)
 msgid "The command line options"
 msgstr "Kommandolinjetilvalg"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:293(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:288(title)
 msgid "The -w option"
 msgstr "Tilvalget -w"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:295(para)
-msgid "The <emphasis>-w</emphasis> option allows you to take a screenshot of the active window."
-msgstr "Tilvalget <emphasis>-w</emphasis>, lader dig tage et skærmbillede af det aktive vindue."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:290(para)
+msgid ""
+"The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
+"active window."
+msgstr ""
+"Tilvalget <emphasis>-w</emphasis>, lader dig tage et skærmbillede af det "
+"aktive vindue."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:302(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:297(title)
 msgid "The -f option"
 msgstr "Tilvalget -f"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:304(para)
-msgid "The <emphasis>-f</emphasis> option allows you to take a screenshot of the entire screen."
-msgstr "Tilvalget <emphasis>-f</emphasis>, lader dig tage et skærmbillede af hele skærmen."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:299(para)
+msgid ""
+"The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
+"entire screen."
+msgstr ""
+"Tilvalget <emphasis>-f</emphasis>, lader dig tage et skærmbillede af hele "
+"skærmen."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:311(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:306(title)
 msgid "The -r option"
 msgstr "Tilvalget -r"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:313(para)
-msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
-msgstr "Tilvalget <emphasis>-r</emphasis>, lader dig vælge et område, der skal tages et billede af, ved at klikke på et punkt på skærmen, og uden at slippe museknappen, trække musen til det modsatte hjørne af det område, og så slippe museknappen."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:308(para)
+msgid ""
+"The <emphasis>-r</emphasis> option allows you to select a region to be "
+"captured by clicking a point of the screen without releasing the mouse "
+"button, dragging your mouse to the other corner of the region, and releasing "
+"the mouse button."
+msgstr ""
+"Tilvalget <emphasis>-r</emphasis>, lader dig vælge et område, der skal tages "
+"et billede af, ved at klikke på et punkt på skærmen, og uden at slippe "
+"museknappen, trække musen til det modsatte hjørne af det område, og så "
+"slippe museknappen."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:323(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:318(title)
 msgid "The -d option"
 msgstr "Tilvalget -d"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:325(para)
-msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "Tilvalget <emphasis>-d</emphasis> efterfulgt af et positivt heltal, lader dig indstille en forsinkelse før skærmbilledet bliver taget med tilvalget <emphasis>-f</emphasis>, <emphasis>-w</emphasis> eller <emphasis>-r</emphasis>."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:320(para)
+msgid ""
+"The <emphasis>-d</emphasis> option followed by a positive integer allows you "
+"to set the delay before taking the screenshot when the <emphasis>-f</"
+"emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option "
+"is given."
+msgstr ""
+"Tilvalget <emphasis>-d</emphasis> efterfulgt af et positivt heltal, lader "
+"dig indstille en forsinkelse før skærmbilledet bliver taget med tilvalget "
+"<emphasis>-f</emphasis>, <emphasis>-w</emphasis> eller <emphasis>-r</"
+"emphasis>."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:335(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:330(title)
 msgid "The -s option"
 msgstr "Tilvalget -s"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:337(para)
-msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option is given. Combined with the <emphasis>-h</emphasis> option (see below), it can be used to save a file to a given path, without showing any save dialog."
-msgstr "Tilvalget <emphasis>-s</emphasis> efterfulgt af stien til en eksisterende mappe, lader dig indstille, hvortil skærmbilledet skal gemmes. Dette tilvalg virker kun ,hvis man bruger den sammen med tilvalget <emphasis>-f</emphasis>, <emphasis>-w</emphasis> eller <emphasis>-r</emphasis>. Kombineret med tilvalget <emphasis>-h</emphasis> (se herunder), kan den bruges til at gemme en fil til en bestemt sti, uden at vise nogen gem-vindue."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:332(para)
+msgid ""
+"The <emphasis>-s</emphasis> option followed by the path to an existing "
+"folder allows you to set where the screenshots are saved. This option only "
+"has an effect if the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or "
+"the <emphasis>-r</emphasis> option is given. Combined with the <emphasis>-h</"
+"emphasis> option (see below), it can be used to save a file to a given path, "
+"without showing any save dialog."
+msgstr ""
+"Tilvalget <emphasis>-s</emphasis> efterfulgt af stien til en eksisterende "
+"mappe, lader dig indstille, hvortil skærmbilledet skal gemmes. Dette tilvalg "
+"virker kun ,hvis man bruger den sammen med tilvalget <emphasis>-f</"
+"emphasis>, <emphasis>-w</emphasis> eller <emphasis>-r</emphasis>. Kombineret "
+"med tilvalget <emphasis>-h</emphasis> (se herunder), kan den bruges til at "
+"gemme en fil til en bestemt sti, uden at vise nogen gem-vindue."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:350(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:345(title)
 msgid "The -h option"
 msgstr "Tilvalget -h"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:352(para)
-msgid "If you give the <emphasis>-h</emphasis> option, the screenshot will be saved without showing any save dialog. This option only has an effect if the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option is given. The <emphasis>-s</emphasis> option allows you to set the save location if needed."
-msgstr "Hvis du angiver tilvalget <emphasis>-h</emphasis>, vil skærmbilledet automatisk blive gemt uden at vise nogen gem-vindue. Dette tilvalg virker kun, hvis det bruges sammen med tilvalget <emphasis>-f</emphasis>, <emphasis>-w</emphasis> eller <emphasis>-r</emphasis>. Tilvalget <emphasis>s-</emphasis>, lader dig indstille hvor det skal gemmes, hvis der er behov herfor."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:347(para)
+msgid ""
+"If you give the <emphasis>-h</emphasis> option, the screenshot will be saved "
+"without showing any save dialog. This option only has an effect if the "
+"<emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</"
+"emphasis> option is given. The <emphasis>-s</emphasis> option allows you to "
+"set the save location if needed."
+msgstr ""
+"Hvis du angiver tilvalget <emphasis>-h</emphasis>, vil skærmbilledet "
+"automatisk blive gemt uden at vise nogen gem-vindue. Dette tilvalg virker "
+"kun, hvis det bruges sammen med tilvalget <emphasis>-f</emphasis>, "
+"<emphasis>-w</emphasis> eller <emphasis>-r</emphasis>. Tilvalget <emphasis>s-"
+"</emphasis>, lader dig indstille hvor det skal gemmes, hvis der er behov "
+"herfor."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:364(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
 msgid "The -o option"
 msgstr "Tilvalget -o"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:366(para)
-msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "Hvis tilvalget <emphasis>-o</emphasis> er angivet, efterfulgt af et programnavn, vil skærmbilledet blive gemt i systemets midlertidige katalog og blive åbnet med det program der er nævnt efter tilvalget <emphasis>-o</emphasis>. Dette tilvalg virker kun, hvis det bruges sammen med tilvalget <emphasis>-f</emphasis>, <emphasis>-w</emphasis> eller <emphasis>-r</emphasis>."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:361(para)
+msgid ""
+"If the <emphasis>-o</emphasis> option is given, followed by an application "
+"name, the screenshot will be saved to the system's temporary directory and "
+"opened with the application whose name is to be given after <emphasis>-o</"
+"emphasis>. This option only has an effect if the <emphasis>-f</emphasis>, "
+"the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr ""
+"Hvis tilvalget <emphasis>-o</emphasis> er angivet, efterfulgt af et "
+"programnavn, vil skærmbilledet blive gemt i systemets midlertidige katalog "
+"og blive åbnet med det program der er nævnt efter tilvalget <emphasis>-o</"
+"emphasis>. Dette tilvalg virker kun, hvis det bruges sammen med tilvalget "
+"<emphasis>-f</emphasis>, <emphasis>-w</emphasis> eller <emphasis>-r</"
+"emphasis>."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:378(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:373(title)
 msgid "The -u option"
 msgstr "Tilvalget -u"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:380(para)
-msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "Hvis tilvalget <emphasis>-u</emphasis> er angivet, vil skærmbilledet blive hostet på ZimageZ. Se ovenstående for flere detaljer. Dette tilvalg virker kun hvis tilvalget <emphasis>-f</emphasis>,<emphasis>-w</emphasis>eller <emphasis>-r</emphasis> er angivet."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:375(para)
+msgid ""
+"If the <emphasis>-u</emphasis> option is given, the screenshot will be "
+"hosted on ZimageZ. See above for more details. This option only has an "
+"effect if the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the "
+"<emphasis>-r</emphasis> option is given."
+msgstr ""
+"Hvis tilvalget <emphasis>-u</emphasis> er angivet, vil skærmbilledet blive "
+"hostet på ZimageZ. Se ovenstående for flere detaljer. Dette tilvalg virker "
+"kun hvis tilvalget <emphasis>-f</emphasis>,<emphasis>-w</emphasis>eller "
+"<emphasis>-r</emphasis> er angivet."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:393(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:388(title)
 msgid "Using the plugin for the Xfce panel"
 msgstr "Brug af udvidelsesmodulet til panelet i Xfce"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:396(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:391(title)
 msgid "Adding the plugin"
 msgstr "Tilføjelse af udvidelsesmodulet"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:398(para)
-msgid "To add the plugin to the panel, right click on the panel and select <emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>\"Screenshot\"</emphasis>, and add it."
-msgstr "For at tilføje udvidelsesmodulet; højreklik på panelet og vælg <emphasis>\"Tilføj nyt element\"<\"emphasis>. Vælg det udvidelsesmodul der hedder <emphasis>\"Skærmbillede\"<emphasis>, og tilføj det."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:393(para)
+msgid ""
+"To add the plugin to the panel, right click on the panel and select "
+"<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
+"\"Screenshot\"</emphasis>, and add it."
+msgstr ""
+"For at tilføje udvidelsesmodulet; højreklik på panelet og vælg <emphasis>"
+"\"Tilføj nyt element\"<\"emphasis>. Vælg det udvidelsesmodul der hedder "
+"<emphasis>\"Skærmbillede\"<emphasis>, og tilføj det."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:406(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:401(title)
 msgid "Setting the plugin up"
 msgstr "Indstilling af udvidelsesmodulet"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:408(para)
-msgid "You can configure how screenshots are taken by right clicking on the plugin and selecting <emphasis>\"Configure\"</emphasis>. A preferences dialog similar to the dialog of the main application will appear. Please have a look above for the different preferences."
-msgstr "Du kan indstille, hvordan skærmbilleder bliver taget ved at højreklikke på udvidelsesmodulet og vælge <emphasis>\"Indstil\"<emphasis>. En indstillingsmenu, der ligner indstillingsmenuen til hovedprogrammet, vil vise sig. Se venligst ovenfor, for diverse indstillinger."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:403(para)
+msgid ""
+"You can configure how screenshots are taken by right clicking on the plugin "
+"and selecting <emphasis>\"Configure\"</emphasis>. A preferences dialog "
+"similar to the dialog of the main application will appear. Please have a "
+"look above for the different preferences."
+msgstr ""
+"Du kan indstille, hvordan skærmbilleder bliver taget ved at højreklikke på "
+"udvidelsesmodulet og vælge <emphasis>\"Indstil\"<emphasis>. En "
+"indstillingsmenu, der ligner indstillingsmenuen til hovedprogrammet, vil "
+"vise sig. Se venligst ovenfor, for diverse indstillinger."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:418(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:413(title)
 msgid "Using the plugin"
 msgstr "Brug af udvidelsesmodulet"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:420(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:415(para)
 msgid "To take a screenshot, just click on the plugin."
 msgstr "For at tage et skærmbillede; klik da bare på udvidelsesmodulet."
 
@@ -324,6 +571,15 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
+#~ msgid ""
+#~ "If activated on build, you can also host your screenshots on <ulink type="
+#~ "\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online "
+#~ "image hosting service. The CURL and XMLRPC-C libraries are required."
+#~ msgstr ""
+#~ "Hvis aktiveret ved bygning, kan du også hoste dine skærmbilleder på "
+#~ "<ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, en "
+#~ "gratis billed-hosting-tjeneste på nettet. Bibliotekerne CURL og XMLRPC-C "
+#~ "er påkrævet."
+
 #~ msgid "Introduction to @PACKAGE_NAME@"
 #~ msgstr "Introduktion til @PACKAGE_NAME@"
-

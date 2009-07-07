@@ -38,9 +38,7 @@
   <sect1 id="intro">
     <title>Introduction à Xfce4 Screenshooter</title>
 
-    <para>Cette application permet de prendre des captures d'écran de l'écran tout entier, de la fenêtre active ou d'une zone sélectionnée. Il est possible de régler le délai avant la prise de la capture d'écran et l'action à effectuer avec la capture d'écran: la sauvegarder dans un fichier PNG, la copier dans le presse-papier, ou l'ouvrir avec une autre application.</para>
-
-    <para>Si activé lors de la compilation, vous pouvez aussi héberger vos captures d'écran sur <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, une solution en ligne gratuite d'hébergement d'images. Les bibliothèques CURL et XMLRPC-C sont requises.</para>
+    <para>Cette application permet de prendre des captures d'écran de l'écran tout entier, de la fenêtre active ou d'une zone sélectionnée. Il est possible de régler le délai avant la prise de la capture d'écran et l'action à effectuer avec la capture d'écran: la sauvegarder dans un fichier PNG, la copier dans le presse-papier, de l'ouvrir avec une autre application ou de l'héberger sur <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, une solution gratuite d'hébergement d'images.</para>
 
     <para>Une extension pour le tableau de bord de Xfce est aussi disponible.</para>
 

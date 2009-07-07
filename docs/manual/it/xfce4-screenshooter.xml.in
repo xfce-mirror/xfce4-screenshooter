@@ -40,13 +40,14 @@
   <sect1 id="intro">
     <title>Introduction to Xfce4 Screenshooter</title>
 
-    <para>Questa applicazione consente di catturare l'intero schermo, la finestra attiva o una regione selezionata. È possibile anche impostare il ritardo prima che l'istantanea venga scattata e l'azione da eseguire con l'istantanea: salvarla in un file PNG, copiarla negli appunti o aprirla utilizzando un'altra applicazione.</para>
-
     <para>
-      If activated on build, you can also host your screenshots on
+      This application allows you to capture the entire screen, the
+      active window or a selected region. You can set the delay that
+      elapses before the screenshot is taken and the action that will
+      be done with the screenshot: save it to a PNG file, copy it to
+      the clipboard, open it using another application, or host it on
       <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, 
-      a free online image hosting service. The CURL and XMLRPC-C libraries
-      are required.
+      a free online image hosting service.
     </para>
 
     <para>Un plugin per il pannello di Xfce è già disponibile</para>

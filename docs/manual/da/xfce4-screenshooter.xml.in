@@ -32,21 +32,20 @@
       </author>
     </authorgroup>
 
-    <releaseinfo>
-      This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter.
-    </releaseinfo>
+    <releaseinfo>Denne manual beskriver version Xfce4 Screenshooter version @PACKAGE_VERSION@.</releaseinfo>
   </articleinfo>
 
   <sect1 id="intro">
-    <title>Introduction to Xfce4 Screenshooter</title>
-
-    <para>Dette program giver dig mulighed for at tage et billede af hele skærmen, det aktive vindue eller en markeret region. Du kan indstille forsinkelsen før billedet er taget og handlingen med billeder udføres: gemme det som en PNG-fil, kopiere det til udklipsholderen eller åbne det med et andet program.</para>
+    <title>Introduktion til Xfce4 Screenshooter</title>
 
     <para>
-      If activated on build, you can also host your screenshots on
+      This application allows you to capture the entire screen, the
+      active window or a selected region. You can set the delay that
+      elapses before the screenshot is taken and the action that will
+      be done with the screenshot: save it to a PNG file, copy it to
+      the clipboard, open it using another application, or host it on
       <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, 
-      a free online image hosting service. The CURL and XMLRPC-C libraries
-      are required.
+      a free online image hosting service.
     </para>
 
     <para>Et udvidelsesmodul til panelet i Xfce er også tilgængeligt.</para>
@@ -88,68 +87,30 @@
       </sect3>
 
       <sect3 id="delay">
-        <title>Delay before capturing</title>
+        <title>Forsinkelse før indfangning</title>
 
-        <para>
-          The <emphasis>"Delay before capturing"</emphasis>
-          section allows you to set the delay that will elapse between
-          pressing the <emphasis>"OK"</emphasis> button and taking the 
-          screenshot. This delay will allow you to open menus or to do 
-          whatever action you want to see displayed on the screenshot.
-        </para>
+        <para>Tilvalget <emphasis>"Forsinkelse før skærmbilledet bliver taget"</emphasis>, tillader dig at indstille den tid, der går fra du trykker på <emphasis>"O.k."</emphasis>-knappen, og til at skærmbilledet rent faktisk bliver taget. Denne forsinkelse giver dig tid til at åbne menuer, eller udføre enhver handling du ønsker at vist i skærmbilledet.</para>
       </sect3>
 
       <sect3 id="after-capturing">
-        <title>After capturing</title>
+        <title>Efter indfangning</title>
 
-        <para>
-          The <emphasis>"Show the save dialog"</emphasis> option 
-          is described below, in the <emphasis>"Action"</emphasis> 
-          section.
-        </para>
+        <para>Tilvalget The <emphasis>"Vis gemvinduet"</emphasis>, er beskrevet herunder i sektionen <emphasis>"Handling"</emphasis>.</para>
 
-        <para>
-          The <emphasis>"Close the application"</emphasis> option
-          allows you, if unchecked, to take several screenshots in 
-          a row. If checked, the application will be closed once 
-          the screenshot has been taken and the action you selected 
-          executed.
-        </para>
+        <para>Tilvalget <emphasis>"Luk dette program"</emphasis> lader dig, hvis det ikke er afkydset, tage adskillige skærmbilleder lige efter hinanden. Hvis afkrydset vil programmet blive lukket så snart skærmbilledet er taget, og den handling du har valgt, er udført.</para>
       </sect3>
 
       <sect3 id="action">
         <title>Handling</title>
 
-        <para>
-          The <emphasis>"Action"</emphasis> section allows you to choose
-          what should be done with the screenshot.
-        </para>
+        <para>Tilvalget <emphasis>"Handling"</emphasis> giver dig mulighed for at vælge, hvad der skal gøres med skærmbilledet.</para>
 
         <sect4 id="save">
-          <title>Save in</title>
+          <title>Gem i</title>
 
-          <para>
-            The <emphasis>"Save in"</emphasis> option will save the
-            screenshot to a PNG file. If you don't check the
-            <emphasis>"Show the save dialog"</emphasis> checkbox in the
-            <emphasis>"After capturing"</emphasis> section, the
-            screenshot will be saved to the folder on the right after
-            you press the <emphasis>"OK"</emphasis> button, without 
-            showing any save dialog. Otherwise, a save dialog will be 
-            displayed, which also shows a preview of the screenshot. 
-            You will then be able to set the save location, and the 
-            name of the file.
-          </para>
+          <para>Tilvalget <emphasis>"Gem i"</emphasis>, gemmer skærmbilledet som en PNG-fil. Hvis du ikke afkrydser <emphasis>"Vis gemvinduet"</emphasis>-feltet i sektionen <emphasis>"Efter indfangning"</emphasis>, vil skærmbilledet blive gemt i mappen til højre, lige efter du trykker på <emphasis>"O.k."</emphasis>-knappen, uden at vise et gemvindue. Ellers vil gemvinduet blive vist sammen med en forhåndsvisning af skærmbilledet. Du vil så kunne indstille, hvor det skal gemmes, samt navnet på filen.</para>
 
-          <para>
-            Xfce4 Screenshooter is also able to save the screenshot to
-            any remote file system supported by GVfs, such as FTP, SAMBA,
-            SFTP, remote computers accessible via SSH... You just need to
-            connect this remote file system using 
-            <emphasis>gvfs-connect</emphasis> or
-            <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink>
-            and it will be available in the left column of the save dialog.
-          </para>
+          <para>Xfce4 Screenshooter er også i stand til at gemme skærmbilledet på et eksternt filsystem understøttet af GVfs, så som FTP, SAMBA, SFTP, fjerncomputere der er tilgængelige via SSH... Du skal blot forbinde dette eksterne filsystem ved at bruge <emphasis>gvfs-connect</emphasis> eller <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> og det vil være tilgængeligt i den venstre kolonne af gemvinduet.</para>
 
         </sect4>
 
@@ -162,31 +123,15 @@
         <sect4 id="open-with">
           <title>Åbn med</title>
 
-          <para>
-            The <emphasis>"Open with"</emphasis> option saves the
-            screenshot to the system's temporary directory and opens it
-            with the application set using the dropdown list on the right.
-            Applications which support images are automatically detected
-            and added to the dropdown list.
-          </para>
+          <para>Tilvalget <emphasis>"Åbn med"</emphasis> gemmer skærmbilledet i systemets midlertidige katalog og åbner det med valgte program, ved at bruge rullegardinlisten herunder. Programmer der understøtter billeder er automatisk fundet og tilføjet til rullegardinlisten.</para>
         </sect4>
 
         <sect4 id="zimagez">
-          <title>Host on ZimageZ</title>
+          <title>Host på ZimageZ</title>
           
-          <para>
-            The <emphasis>"Host on ZimageZ"</emphasis> option allow you
-            to host your screenshot on this free online hosting service,
-            so that you can share it easily with other people. ZimageZ
-            automatically generates a large and a small thumbnail of your
-            screenshot, which can be used to create thumbnails pointing to
-            the full size screenshot.
-          </para>
+          <para>Tilvalget <emphasis>"host på ZimageZ"</emphasis> lader dig hoste dit skærmbillede på denne gratis hostingtjeneste på nettet, så du nemt kan dele det med andre mennesker. ZimageZ opretter automatisk en stort og en lille miniature af dit skærmbillede, som kan bruges til at lave miniaturer, der peger til skærmbilledet i fuld størrelse.</para>
 
-          <para>
-            After pressing the <emphasis>"OK"</emphasis> button, you will
-            be shown this dialog:
-          </para>
+          <para>Efter du trykker på <emphasis>"O.k."</emphasis>-knappen, vil dette vindue blive vist:</para>
 
           <screenshot>
             <mediaobject>
@@ -195,25 +140,14 @@
               </imageobject>
 
               <textobject>
-                <phrase>The dialog to host a screenshot on ZimageZ</phrase>
+                <phrase>Vinduet til at hoste et skærmbillede på ZimageZ</phrase>
               </textobject>
             </mediaobject>
           </screenshot>
 
-          <para>
-            If you do not have a ZimageZ user name, you will need to create
-            one on the <ulink type="http" url="http://www.zimagez.com">
-            ZimageZ website</ulink>. Several languages are available on this
-            website, you can switch between using the menu up right. You must
-            fill all fields of this dialog. Once you click the 
-            <emphasis>"OK"</emphasis> button, the upload will start.
-          </para>
+          <para>Hvis du ikke har et ZimageZ-brugernavn, skal du oprette et på <ulink type="http" url="http://www.zimagez.com"> netstedet for ZimageZ</ulink>. Adskillige sprog er tilgængelige på dette netsted. Du kan skifte ved at bruge den øverste menu til højre. Du skal udfylde alle felter i dette vindue. Når du først klikker på <emphasis>"O.k."</emphasis>-knappen vil overførslen begynde.</para>
           
-          <para>
-            The dialog below will give you the links to the full size screenshot, the
-            large thumbnail, the small thumbnails, as well examples of HTML and BBcode
-            to create a thumbnail pointing to the full size screenshot:
-          </para>
+          <para>Dette vindue vil give dig henvisninger til skærmbilledet i fuld størrelse, den store miniatur, den lille miniture, såvel som eksempler på HTML og BBkode til at lave en minature, der peger til skærmbilledet i fuld størrelse:</para>
 
           <screenshot>
             <mediaobject>
@@ -222,7 +156,7 @@
               </imageobject>
 
               <textobject>
-                <phrase>The dialog giving the links to your screenshot on ZimageZ</phrase>
+                <phrase>Vinduet der giver dig henvisningerne til dit skærmbillede på ZimageZ</phrase>
               </textobject>
             </mediaobject>
           </screenshot>
@@ -234,14 +168,7 @@
     <sect2 id="command-line">
       <title>Vha. kommandolinjen</title>
 
-      <para>
-        Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Print Screen key on the upper right
-        of most keyboards so that it takes screenshots. To do so,
-        configure the keybindings of your desktop environnement so that
-        it launches xfce4-screenshooter with one or several of the
-        following options when the Prt Scrn key is pressed.
-      </para>
+      <para>Kommandlinjetilvalg lader dig tage skærmbilleder hurtigt. De lader dig også indstille knappen Print Screen, som findes i det øverste højre hjørne på de fleste tastaturer, til at tage skærmbilledet. For at gøre dette, skal du indstille tastaturgenvejene i dit skrivebordsmiljø, således at det starter xfce4-screenshooter, med en eller flere af de følgende tilvalg, når der trykkes på Prt Scrn-knappen.</para>
 
       <sect3 id="options">
         <title>Kommandolinjetilvalg</title>
@@ -289,15 +216,9 @@
         </sect4>
 
         <sect4 id="u-option">
-          <title> The -u option</title>
+          <title>Tilvalget -u</title>
 
-          <para>
-            If the <emphasis>-u</emphasis> option is given, the screenshot
-            will be hosted on ZimageZ. See above for more details.
-            This option only has an effect if the
-            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>Hvis tilvalget <emphasis>-u</emphasis> er angivet, vil skærmbilledet blive hostet på ZimageZ. Se ovenstående for flere detaljer. Dette tilvalg virker kun hvis tilvalget <emphasis>-f</emphasis>,<emphasis>-w</emphasis>eller <emphasis>-r</emphasis> er angivet.</para>
         </sect4>
       </sect3>
     </sect2>
