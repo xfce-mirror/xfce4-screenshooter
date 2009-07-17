@@ -1,3 +1,10 @@
+=== Version 1.x.x ===
+
+  * The XMLRPC-C dependency has been replaced by libsoup.
+  
+  * Bugs fixed:
+    - UTF-8 characters in user name or password caused a login failure.
+
 === Version 1.6.0 ===
 
   Gtk+ 2.12 and Glib 2.16 are now required to build the application
