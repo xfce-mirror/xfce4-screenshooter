@@ -21,9 +21,9 @@
 
 
 
-static void     cb_help_response (GtkWidget *dlg,
-                                  gint       response,
-                                  gpointer   unused);
+static void cb_help_response (GtkWidget *dlg,
+                              gint       response,
+                              gpointer   unused);
 
 
 
@@ -78,16 +78,15 @@ gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
         }
     }
 
-  screenshot = screenshooter_take_screenshot (sd->region, sd->delay, sd->show_mouse);
+  screenshot =
+    screenshooter_take_screenshot (sd->region, sd->delay, sd->show_mouse);
 
   g_return_val_if_fail (screenshot != NULL, FALSE);
 
   if (sd->action == SAVE)
     {
       if (sd->screenshot_dir == NULL)
-        {
-          sd->screenshot_dir = screenshooter_get_home_uri ();
-        }
+        sd->screenshot_dir = screenshooter_get_home_uri ();
 
       screenshooter_save_screenshot (screenshot,
                                      sd->show_save_dialog,
