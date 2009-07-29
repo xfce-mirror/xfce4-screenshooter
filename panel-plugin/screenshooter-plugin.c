@@ -4,7 +4,7 @@
  *  Copyright © 2005,2006 Daniel Bobadilla Leal <dbobadil@dcc.uchile.cl>
  *  Copyright © 2005 Jasper Huijsmans <jasper@xfce.org>
  *  Copyright © 2006 Jani Monoses <jani@ubuntu.com>
- *  Copyright © 2008-2009 Jérôme Guelfucci <jerome.guelfucci@gmail.com>
+ *  Copyright © 2008-2009 Jérôme Guelfucci <jeromeg@xfce.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
