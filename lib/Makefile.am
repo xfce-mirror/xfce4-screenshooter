@@ -14,7 +14,7 @@ libscreenshooter_la_SOURCES =	\
 	screenshooter-global.h \
 	screenshooter-job.c screenshooter-job.h \
 	screenshooter-simple-job.c screenshooter-simple-job.h \
-	screenshooter-utils.c screenshooter-utils.h \ 
+	screenshooter-utils.c screenshooter-utils.h \
 	screenshooter-zimagez.c screenshooter-zimagez.h
 
 libscreenshooter_la_CFLAGS = \

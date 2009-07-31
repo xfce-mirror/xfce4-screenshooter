@@ -6,6 +6,17 @@ Fixed the Indonesian documentation sub-directory, the autotools scripts were
 incomplete.
 Updated Italian and Galician documentation translation.
 
+2009-07-30 jeromeg
+
+Fix all warnings when running the autogen script.
+
+Remove the AC_AIX, AC_ISC_POSIX and AC_MINIX macros which seem useless
+and trigger a lot of warnings. Add the AC_USE_SYSTEM_EXTENSIONS macro
+to configure.ac.in.
+
+Do not use GNU make specific rules in {panel-plugin,src}/Makefile.am
+and remove some trailing spaces in lib/Makefile.am.
+
 2009-07-29 jeromeg
 
 Use my Xfce adress everywhere.
