@@ -6,6 +6,18 @@ Fixed the Indonesian documentation sub-directory, the autotools scripts were
 incomplete.
 Updated Italian and Galician documentation translation.
 
+2009-07-31 jeromeg
+
+Use a non-recursive Makefile.am to build the sources.
+
+The non-recursive Makefile.am is used to build the convenience library,
+the main application and the panel plugin. This reduces the build time
+and it is no longer necessary to clean the whole project before build
+to test changes in the convenience library.
+
+Recursive make files are still used for the translations, the 
+documentation and the icons.
+
 2009-07-30 jeromeg
 
 Fix all warnings when running the autogen script.
