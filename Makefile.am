@@ -2,7 +2,7 @@
 
 AUTOMAKE_OPTIONS = subdir-objects
 
-SUBDIRS = po po-doc icons docs
+SUBDIRS = po po-doc docs
 
 bin_PROGRAMS = src/xfce4-screenshooter
 
@@ -77,7 +77,7 @@ lib/screenshooter-marshal.c: lib/screenshooter-marshal.list
 
 # Main application
 src_xfce4_screenshooter_CFLAGS = \
-	-I$(top_srcdir)/lib \
+	-Ilib/ \
 	@GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
@@ -87,16 +87,16 @@ src_xfce4_screenshooter_CFLAGS = \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 	
 src_xfce4_screenshooter_LDFLAGS = \
-	$(top_builddir)/lib/libscreenshooter.la \
 	@GTK_LIBS@ \
 	@GLIB_LIBS@ \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCEGUI4_LIBS@
+
+src_xfce4_screenshooter_LDADD = lib/libscreenshooter.la
 	
-src_xfce4_screenshooter_SOURCES	= \
-	src/main.c
+src_xfce4_screenshooter_SOURCES = src/main.c
 
 # Desktop file for the application
 app_desktopdir = $(datadir)/applications
@@ -116,31 +116,55 @@ plugin_PROGRAMS = panel-plugin/xfce4-screenshooter-plugin
 panel_plugin_xfce4_screenshooter_plugin_CFLAGS =	\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"	\
 	-I$(top_srcdir)	\
-	-I$(top_srcdir)/lib	\
+	-Ilib/	\
 	@LIBXFCE4PANEL_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
 	@SOUP_CFLAGS@
 
 panel_plugin_xfce4_screenshooter_plugin_LDFLAGS = \
-	$(top_builddir)/lib/libscreenshooter.la \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@
+
+panel_plugin_xfce4_screenshooter_plugin_LDADD = lib/libscreenshooter.la
 
 panel_plugin_xfce4_screenshooter_plugin_SOURCES = \
 	panel-plugin/screenshooter-plugin.c
 
 # Panel plugin desktop file
-panel_desktop_in_in_files = panel-plugin/screenshooter.desktop.in.in
-panel_desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
-
 panel_desktopdir = $(datadir)/xfce4/panel-plugins
-panel_desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+panel_desktop_in_in_files = panel-plugin/screenshooter.desktop.in.in
+panel_desktop_in_files = $(panel_desktop_in_in_files:.desktop.in.in=.desktop.in)
+panel_desktop_DATA = $(panel_desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 panel-plugin/screenshooter.desktop.in: panel-plugin/screenshooter.desktop.in.in
 	sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" 	\
 		$< > $@
+
+# Fallback icons
+
+# 48x48 icons
+48iconsdir = $(datadir)/icons/hicolor/48x48/apps
+48icons_DATA = icons/48x48/applets-screenshooter.png
+
+# Scalable icons
+scaliconsdir = $(datadir)/icons/hicolor/scalable/apps
+scalicons_DATA = icons/scalable/applets-screenshooter.svg
+
+# Update the icon cache
+gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
+
+install-data-hook:
+	@-if test -z "$(DESTDIR)"; then								\
+		echo "Updating Gtk icon cache.";						\
+		$(gtk_update_icon_cache);								\
+	else														\
+		echo "*** Icon cache not updated. Remember to run:";	\
+		echo "***";												\
+		echo "***   $(gtk_update_icon_cache)";					\
+		echo "***";												\
+	fi
 
 # Extra dist and distclean rules
 EXTRA_DIST = \
@@ -150,7 +174,9 @@ EXTRA_DIST = \
 	intltool-update.in \
 	lib/screenshooter-marshal.list \
 	$(app_desktop_in_in_files) \
-	$(panel_desktop_in_in_files)
+	$(panel_desktop_in_in_files) \
+	$(48icons_DATA) \
+	$(scalicons_DATA)
 
 DISTCLEANFILES = \
 	intltool-extract \

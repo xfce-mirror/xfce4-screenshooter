@@ -6,6 +6,17 @@ Fixed the Indonesian documentation sub-directory, the autotools scripts were
 incomplete.
 Updated Italian and Galician documentation translation.
 
+2009-08-01 jeromeg
+
+Add the icons' rules to the toplevel Makefile.am.
+
+Fix various regressions due to the switch to a non-recursive Makefile:
+make -j was broken (fixed by using LDADD) and the desktop file for the
+panel plugin was not installed because of some copy/paste errors.
+
+Still to be done: add the rules for the documentation to the toplevel
+Makefile.am.
+
 2009-07-31 jeromeg
 
 Use a non-recursive Makefile.am to build the sources.
