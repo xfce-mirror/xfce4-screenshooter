@@ -8,6 +8,18 @@ Updated Italian and Galician documentation translation.
 
 2009-08-02 jeromeg
 
+Simplify (screenshooter_take_and_output_screenshot).
+
+Now, the main dialog of the application is created once in main.c
+and hidden/shown when necessary. The idle func is now only responsible
+for taking the screenshot and hidding/showing the dialog when needed.
+
+Add a dialog member to the ScreenshotData struct, set it correctly in
+the panel plugin and in the application. Fix some indentation in the
+panel plugin code.
+
+2009-08-02 jeromeg
+
 Add the doc rules to the toplevel Makefile.am.
 
 Also remove all the Makefile.am in the documentation directory.

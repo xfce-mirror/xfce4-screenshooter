@@ -105,6 +105,37 @@ static GOptionEntry entries[] =
 
 
 
+static void
+cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
+{
+  if (response == GTK_RESPONSE_HELP)
+    {
+      GError *error_help = NULL;
+
+      g_signal_stop_emission_by_name (dialog, "response");
+
+      /* Launch the help page and show an error dialog if there was an error. */
+      if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
+        {
+          screenshooter_error ("%s", error_help->message);
+          g_error_free (error_help);
+        }
+    }
+  else if (response == GTK_RESPONSE_OK)
+    {
+      gtk_widget_hide (dialog);
+      g_idle_add ((GSourceFunc) screenshooter_take_and_output_screenshot, sd);
+    }
+  else
+    {
+      gtk_widget_destroy (dialog);
+      gtk_main_quit ();
+    }
+}
+
+
+
+
 /* Main */
 
 
@@ -116,6 +147,7 @@ int main (int argc, char **argv)
   const gchar *rc_file;
 
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
+  sd->dialog = NULL;
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -228,14 +260,23 @@ int main (int argc, char **argv)
           g_object_unref (default_save_dir);
           g_free (screenshot_dir);
         }
+
+      g_idle_add ((GSourceFunc) screenshooter_take_and_output_screenshot,
+                  sd);
     }
   /* Else we show a dialog which allows to set the screenshot options */
   else
     {
-      sd->cli = FALSE;
-    }
+      GtkWidget *dialog;
 
-  g_idle_add ((GSourceFunc) screenshooter_take_and_output_screenshot, sd);
+      sd->cli = FALSE;
+
+      /* Set the dialog up */
+      dialog = screenshooter_dialog_new (sd, FALSE);
+      g_signal_connect (dialog, "response", (GCallback) cb_dialog_response, sd);
+      sd->dialog = dialog;
+      gtk_widget_show (dialog);
+    }
 
   gtk_main ();
 

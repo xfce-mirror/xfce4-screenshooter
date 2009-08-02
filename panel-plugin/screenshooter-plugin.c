@@ -142,7 +142,7 @@ static void
 cb_free_data (XfcePanelPlugin *plugin, PluginData *pd)
 {
   if (pd->style_id)
-  	g_signal_handler_disconnect (plugin, pd->style_id);
+    g_signal_handler_disconnect (plugin, pd->style_id);
 
   pd->style_id = 0;
   g_free (pd->sd->screenshot_dir);
@@ -162,14 +162,14 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
 {
   /* Make the button unclickable so that the user does not press it while
 	another screenshot is in progress */
-	gtk_widget_set_sensitive (GTK_WIDGET (button), FALSE);
+  gtk_widget_set_sensitive (GTK_WIDGET (button), FALSE);
 
   TRACE ("Start taking the screenshot");
 
   screenshooter_take_and_output_screenshot (pd->sd);
 
   /* Make the panel button clickable */
-	gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
+  gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
 }
 
 
@@ -332,6 +332,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
      loop after taking a screenshot */
   pd->sd->cli = TRUE;
   pd->sd->close = 0;
+  pd->sd->dialog = NULL;
 
   /* Create the panel button */
   TRACE ("Create the panel button");

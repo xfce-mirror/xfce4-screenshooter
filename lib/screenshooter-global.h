@@ -25,6 +25,7 @@
 #endif
 
 #include <glib.h>
+#include <gtk/gtk.h>
 
 /* Possible actions */
 enum {
@@ -50,6 +51,7 @@ typedef struct
   gchar *app;
   gchar *last_user;
   gboolean cli;
+  GtkWidget *dialog;
 }
 ScreenshotData;
 
