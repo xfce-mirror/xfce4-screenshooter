@@ -462,10 +462,8 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
   gdk_display_sync (display);
 
   /* wait for n=delay seconds */
-  /* WORKAROUND: always sleep at least 1 second so that
-   * the dialog has the time to disappear. */
   if (region != SELECT)
-    (delay > 0) ? sleep (delay) : sleep (1);
+    sleep (delay);
 
   /* Get the window/desktop we want to screenshot*/
   if (region == FULLSCREEN)
@@ -489,7 +487,7 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
       screenshot = get_window_screenshot (window, show_mouse);
 
       if (needs_unref)
-	      g_object_unref (window);
+        g_object_unref (window);
     }
   else if (region == SELECT)
     {
@@ -499,5 +497,5 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
     }
 
 
-	return screenshot;
+  return screenshot;
 }

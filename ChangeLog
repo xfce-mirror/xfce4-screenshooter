@@ -8,6 +8,13 @@ Updated Italian and Galician documentation translation.
 
 2009-08-02 jeromeg
 
+Remove the ugly sleep one second workaround.
+
+Now that the idle func no longer creates the dialog, it shouldn't
+be needed anymore. This needs some testing on a low computer.
+
+2009-08-02 jeromeg
+
 Simplify (screenshooter_take_and_output_screenshot).
 
 Now, the main dialog of the application is created once in main.c
