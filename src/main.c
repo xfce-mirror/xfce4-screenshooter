@@ -32,7 +32,6 @@ gboolean version = FALSE;
 gboolean window = FALSE;
 gboolean region = FALSE;
 gboolean fullscreen = FALSE;
-gboolean no_save_dialog = FALSE;
 gboolean hide_mouse = FALSE;
 gboolean upload = FALSE;
 gchar *screenshot_dir;
@@ -52,11 +51,6 @@ static GOptionEntry entries[] =
   {
     "fullscreen", 'f', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &fullscreen,
     N_("Take a screenshot of the entire screen"),
-    NULL
-  },
-  {
-    "hide", 'h', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &no_save_dialog,
-    N_("Do not display the save dialog"),
     NULL
   },
   {
@@ -210,10 +204,6 @@ int main (int argc, char **argv)
         {
           sd->region = SELECT;
         }
-
-      /* Wether to show the save dialog allowing to choose a filename
-       * and a save location */
-      no_save_dialog ? (sd->show_save_dialog = 0) : (sd->show_save_dialog = 1);
 
       /* Whether to display the mouse pointer on the screenshot */
       hide_mouse ? (sd->show_mouse = 0) : (sd->show_mouse = 1);

@@ -54,9 +54,6 @@ static void
 cb_zimagez_toggled                 (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
-cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
-                                    ScreenshotData     *sd);
-static void
 cb_default_folder                  (GtkWidget          *chooser,
                                     ScreenshotData     *sd);
 static void
@@ -206,14 +203,6 @@ static void cb_zimagez_toggled (GtkToggleButton *tb, ScreenshotData *sd)
     {
       sd->action = UPLOAD;
     }
-}
-
-
-
-/* Set sd->show_save_dialog when the button is toggled */
-static void cb_show_save_dialog_toggled (GtkToggleButton *tb, ScreenshotData *sd)
-{
-  gtk_toggle_button_get_active (tb) ? (sd->show_save_dialog = 1) : (sd->show_save_dialog = 0);
 }
 
 
@@ -677,9 +666,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   GtkWidget *delay_main_box, *delay_box, *delay_label, *delay_alignment;
   GtkWidget *delay_spinner_box, *delay_spinner, *seconds_label;
 
-  GtkWidget *options_main_box, *options_label, *options_alignment, *options_box;
-  GtkWidget *save_checkbox;
-
   GtkWidget *actions_main_box, *actions_label, *actions_alignment;
   GtkWidget *save_radio_button, *dir_chooser;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
@@ -831,7 +817,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   /* Rectangle */
   rectangle_button =
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
-	                                             _("Select a region"));
+                                                 _("Select a region"));
 
    gtk_box_pack_start (GTK_BOX (area_box),
                        rectangle_button, FALSE,
@@ -844,7 +830,7 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
                                _("Select a region to be captured by clicking a point of "
                                  "the screen without releasing the mouse button, "
                                  "dragging your mouse to the other corner of the region, "
-								                 "and releasing the mouse button."));
+                                 "and releasing the mouse button."));
 
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
                     G_CALLBACK (cb_rectangle_toggled), sd);
@@ -942,56 +928,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   /* Set the default state */
   cb_toggle_set_insensi (GTK_TOGGLE_BUTTON (rectangle_button), delay_box);
 
-  /* Create the options box */
-  options_main_box = gtk_vbox_new (FALSE, 6);
-
-  gtk_widget_show (options_main_box);
-
-  gtk_table_attach_defaults (GTK_TABLE (capture_table), options_main_box, 1, 2, 1, 2);
-
-  /* Create the options label */
-  options_label = gtk_label_new ("");
-
-  gtk_label_set_markup (GTK_LABEL(options_label),
-                        _("<span weight=\"bold\" stretch=\"semiexpanded\">After "
-						              "capturing</span>"));
-
-	gtk_misc_set_alignment(GTK_MISC (options_label), 0, 0);
-  gtk_widget_show (options_label);
-  gtk_box_pack_start (GTK_BOX (options_main_box), options_label, FALSE, FALSE, 0);
-
-  /* Create options alignment */
-  options_alignment = gtk_alignment_new (0, 0, 1, 1);
-
-  gtk_container_add (GTK_CONTAINER (options_main_box), options_alignment);
-
-  gtk_alignment_set_padding (GTK_ALIGNMENT (options_alignment), 0, 6, 12, 0);
-
-  gtk_widget_show (options_alignment);
-
-  /* Create the options box to be stored in the options alignment*/
-  options_box = gtk_vbox_new (FALSE, 6);
-  gtk_container_add (GTK_CONTAINER (options_alignment), options_box);
-  gtk_container_set_border_width (GTK_CONTAINER (options_box), 0);
-  gtk_widget_show (options_box);
-
-  /* Display the save dialog checkbox */
-  save_checkbox = gtk_check_button_new_with_label (_("Show the save dialog"));
-
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_checkbox),
-                                (sd->show_save_dialog == 1));
-
-  gtk_widget_set_tooltip_text (save_checkbox,
-                               _("The save dialog allows you to change the file name "
-                                 "and the save location"));
-
-  gtk_box_pack_start (GTK_BOX (options_box), save_checkbox, FALSE, FALSE, 0);
-
-  gtk_widget_show (save_checkbox);
-
-  g_signal_connect (G_OBJECT (save_checkbox), "toggled",
-                    G_CALLBACK (cb_show_save_dialog_toggled), sd);
-
   /* Create the actions main box */
   actions_main_box = gtk_vbox_new (FALSE, 6);
 
@@ -1041,13 +977,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
   gtk_widget_show (save_radio_button);
 
   gtk_table_attach_defaults (GTK_TABLE (actions_table), save_radio_button, 0, 1, 0, 1);
-
-  /* Set the state of the save checkbox */
-  gtk_widget_set_sensitive (GTK_WIDGET (save_checkbox),
-                            gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (save_radio_button)));
-
-  g_signal_connect (G_OBJECT (save_radio_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_sensi), save_checkbox);
 
   /* Directory chooser */
   dir_chooser =

@@ -40,7 +40,7 @@ gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
         sd->screenshot_dir = screenshooter_get_home_uri ();
 
       screenshooter_save_screenshot (screenshot,
-                                     sd->show_save_dialog,
+                                     TRUE,
                                      sd->screenshot_dir);
     }
   else if (sd->action == CLIPBOARD)

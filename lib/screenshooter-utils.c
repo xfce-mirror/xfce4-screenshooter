@@ -60,7 +60,6 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gint delay = 0;
   gint region = FULLSCREEN;
   gint action = SAVE;
-  gint show_save_dialog = 1;
   gint show_mouse = 1;
   gchar *screenshot_dir = g_strdup (home_uri);
   gchar *app = g_strdup ("none");
@@ -79,7 +78,6 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           delay = xfce_rc_read_int_entry (rc, "delay", 0);
           region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
           action = xfce_rc_read_int_entry (rc, "action", SAVE);
-          show_save_dialog = xfce_rc_read_int_entry (rc, "show_save_dialog", 1);
           show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
 
           g_free (app);
@@ -104,7 +102,6 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->delay = delay;
   sd->region = region;
   sd->action = action;
-  sd->show_save_dialog = show_save_dialog;
   sd->show_mouse = show_mouse;
   sd->screenshot_dir = screenshot_dir;
   sd->app = app;
@@ -135,7 +132,6 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   xfce_rc_write_int_entry (rc, "delay", sd->delay);
   xfce_rc_write_int_entry (rc, "region", sd->region);
   xfce_rc_write_int_entry (rc, "action", sd->action);
-  xfce_rc_write_int_entry (rc, "show_save_dialog", sd->show_save_dialog);
   xfce_rc_write_int_entry (rc, "show_mouse", sd->show_mouse);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
   xfce_rc_write_entry (rc, "app", sd->app);
