@@ -46,12 +46,10 @@ typedef struct
   gint show_mouse;
   gint delay;
   gint action;
-  gint close;
+  gboolean plugin;
   gchar *screenshot_dir;
   gchar *app;
   gchar *last_user;
-  gboolean cli;
-  GtkWidget *dialog;
 }
 ScreenshotData;
 

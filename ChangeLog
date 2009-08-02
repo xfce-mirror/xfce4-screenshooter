@@ -8,6 +8,13 @@ Updated Italian and Galician documentation translation.
 
 2009-08-02 jeromeg
 
+Remove the option to take several screenshots in a row.
+
+This option creates a lot of technical issues which are currently
+painful to fix. Moreover, I want to keep things simple in the future.
+
+2009-08-02 jeromeg
+
 Remove the ugly sleep one second workaround.
 
 Now that the idle func no longer creates the dialog, it shouldn't

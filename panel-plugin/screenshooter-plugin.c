@@ -330,9 +330,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
 
   /* We want to take only one screenshot as in CLI, but not to close the main
      loop after taking a screenshot */
-  pd->sd->cli = TRUE;
-  pd->sd->close = 0;
-  pd->sd->dialog = NULL;
+  pd->sd->plugin = TRUE;
 
   /* Create the panel button */
   TRACE ("Create the panel button");

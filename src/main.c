@@ -123,7 +123,7 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
     }
   else if (response == GTK_RESPONSE_OK)
     {
-      gtk_widget_hide (dialog);
+      gtk_widget_destroy (dialog);
       g_idle_add ((GSourceFunc) screenshooter_take_and_output_screenshot, sd);
     }
   else
@@ -147,7 +147,7 @@ int main (int argc, char **argv)
   const gchar *rc_file;
 
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
-  sd->dialog = NULL;
+  sd->plugin = FALSE;
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -197,9 +197,6 @@ int main (int argc, char **argv)
   /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
     {
-      sd->cli = TRUE;
-      sd->close = 1;
-
       /* Set the region to be captured */
       if (window)
         {
@@ -269,19 +266,16 @@ int main (int argc, char **argv)
     {
       GtkWidget *dialog;
 
-      sd->cli = FALSE;
-
       /* Set the dialog up */
       dialog = screenshooter_dialog_new (sd, FALSE);
       g_signal_connect (dialog, "response", (GCallback) cb_dialog_response, sd);
-      sd->dialog = dialog;
       gtk_widget_show (dialog);
     }
 
   gtk_main ();
 
   /* Save preferences */
-  if (!sd->cli)
+  if (!(fullscreen || window || region))
     {
       const gchar *preferences_file =
         xfce_resource_save_location (XFCE_RESOURCE_CONFIG,

@@ -71,18 +71,8 @@ gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
 
   g_object_unref (screenshot);
 
-  if (sd->close == 1)
-    {
-      if (sd->dialog)
-        gtk_widget_destroy (sd->dialog);
-
-      gtk_main_quit ();
-    }
-  else
-    {
-      if (sd->dialog)
-        gtk_widget_show (sd->dialog);
-    }
+  if (!sd->plugin)
+    gtk_main_quit ();
 
   return FALSE;
 }

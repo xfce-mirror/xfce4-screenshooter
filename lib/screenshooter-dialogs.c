@@ -57,9 +57,6 @@ static void
 cb_show_save_dialog_toggled        (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
-cb_close_toggled                   (GtkToggleButton    *tb,
-                                    ScreenshotData     *sd);
-static void
 cb_default_folder                  (GtkWidget          *chooser,
                                     ScreenshotData     *sd);
 static void
@@ -217,15 +214,6 @@ static void cb_zimagez_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 static void cb_show_save_dialog_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   gtk_toggle_button_get_active (tb) ? (sd->show_save_dialog = 1) : (sd->show_save_dialog = 0);
-}
-
-
-
-/* Set sd->close when the button is toggled */
-static void cb_close_toggled  (GtkToggleButton *tb, ScreenshotData   *sd)
-{
-  gtk_toggle_button_get_active (tb) ? (sd->close = 1) : (sd->close = 0);
-
 }
 
 
@@ -1003,28 +991,6 @@ GtkWidget *screenshooter_dialog_new (ScreenshotData  *sd, gboolean plugin)
 
   g_signal_connect (G_OBJECT (save_checkbox), "toggled",
                     G_CALLBACK (cb_show_save_dialog_toggled), sd);
-
-  /* Create the 'close the user interface after taking the screenshot' checkbox */
-  if (!plugin)
-    {
-      GtkWidget *close_checkbox =
-        gtk_check_button_new_with_label (_("Close the application"));
-
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (close_checkbox),
-                                    (sd->close == 1));
-
-	    gtk_widget_set_tooltip_text (close_checkbox,
-	                                 _("If unchecked, the current window will be displayed "
-                                     "again after the screenshot has been taken to allow"
-									                   " you to take several screenshots in a row"));
-
-      gtk_box_pack_start (GTK_BOX (options_box), close_checkbox, FALSE, FALSE, 0);
-
-      gtk_widget_show (close_checkbox);
-
-      g_signal_connect (G_OBJECT (close_checkbox), "toggled",
-                        G_CALLBACK (cb_close_toggled), sd);
-    }
 
   /* Create the actions main box */
   actions_main_box = gtk_vbox_new (FALSE, 6);
