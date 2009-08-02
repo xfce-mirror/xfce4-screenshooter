@@ -2,7 +2,7 @@
 
 AUTOMAKE_OPTIONS = subdir-objects
 
-SUBDIRS = po po-doc docs
+SUBDIRS = po po-doc
 
 bin_PROGRAMS = src/xfce4-screenshooter
 
@@ -166,6 +166,161 @@ install-data-hook:
 		echo "***";												\
 	fi
 
+# Documentation
+noinst_DATA = \
+	docs/manual/C/xfce4-screenshooter.xml	\
+	docs/manual/da/xfce4-screenshooter.xml \
+	docs/manual/es/xfce4-screenshooter.xml \
+	docs/manual/fr/xfce4-screenshooter.xml \
+	docs/manual/gl/xfce4-screenshooter.xml \
+	docs/manual/it/xfce4-screenshooter.xml \
+	docs/manual/ja/xfce4-screenshooter.xml \
+	docs/manual/tr/xfce4-screenshooter.xml
+
+# C documentation
+cdocdir = $(datadir)/xfce4/doc/C
+cdoc_DATA = docs/manual/C/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/C/xfce4-screenshooter.html: docs/manual/C/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/C/xfce4-screenshooter.xml
+endif
+endif
+
+cimagesdir = $(datadir)/xfce4/doc/C/images
+cimages_DATA = \
+	docs/manual/C/images/xfce4-screenshooter-dialog.png \
+	docs/manual/C/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/C/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# Danish documentation
+dadocdir = $(datadir)/xfce4/doc/da
+dadoc_DATA = docs/manual/da/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/da/xfce4-screenshooter.html: docs/manual/da/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/da/xfce4-screenshooter.xml
+endif
+endif
+
+daimagesdir = $(datadir)/xfce4/doc/da/images
+daimages_DATA = \
+	docs/manual/da/images/xfce4-screenshooter-dialog.png \
+	docs/manual/da/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/da/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# Spanish documentation
+esdocdir = $(datadir)/xfce4/doc/es
+esdoc_DATA = docs/manual/es/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/es/xfce4-screenshooter.html: docs/manual/es/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/es/xfce4-screenshooter.xml
+endif
+endif
+
+esimagesdir = $(datadir)/xfce4/doc/es/images
+esimages_DATA = \
+	docs/manual/es/images/xfce4-screenshooter-dialog.png \
+	docs/manual/es/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/es/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# French documentation
+frdocdir = $(datadir)/xfce4/doc/fr
+frdoc_DATA = docs/manual/fr/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/fr/xfce4-screenshooter.html: docs/manual/fr/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/fr/xfce4-screenshooter.xml
+endif
+endif
+
+frimagesdir = $(datadir)/xfce4/doc/fr/images
+frimages_DATA = \
+	docs/manual/fr/images/xfce4-screenshooter-dialog.png \
+	docs/manual/fr/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/fr/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# Galician documentation
+gldocdir = $(datadir)/xfce4/doc/gl
+gldoc_DATA = docs/manual/gl/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/gl/xfce4-screenshooter.html: docs/manual/gl/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/gl/xfce4-screenshooter.xml
+endif
+endif
+
+glimagesdir = $(datadir)/xfce4/doc/gl/images
+glimages_DATA = \
+	docs/manual/gl/images/xfce4-screenshooter-dialog.png \
+	docs/manual/gl/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/gl/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# Indonesian documentation
+iddocdir = $(datadir)/xfce4/doc/id
+iddoc_DATA = docs/manual/id/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/id/xfce4-screenshooter.html: docs/manual/id/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/id/xfce4-screenshooter.xml
+endif
+endif
+
+idimagesdir = $(datadir)/xfce4/doc/id/images
+idimages_DATA = \
+	docs/manual/id/images/xfce4-screenshooter-dialog.png \
+	docs/manual/id/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/id/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# Italian documentation
+itdocdir = $(datadir)/xfce4/doc/it
+itdoc_DATA = docs/manual/it/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/it/xfce4-screenshooter.html: docs/manual/it/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/it/xfce4-screenshooter.xml
+endif
+endif
+
+itimagesdir = $(datadir)/xfce4/doc/it/images
+itimages_DATA = \
+	docs/manual/it/images/xfce4-screenshooter-dialog.png \
+	docs/manual/it/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/it/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# Japanese documentation
+jadocdir = $(datadir)/xfce4/doc/ja
+jadoc_DATA = docs/manual/ja/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/ja/xfce4-screenshooter.html: docs/manual/ja/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ja/xfce4-screenshooter.xml
+endif
+endif
+
+jaimagesdir = $(datadir)/xfce4/doc/ja/images
+jaimages_DATA = \
+	docs/manual/ja/images/xfce4-screenshooter-dialog.png \
+	docs/manual/ja/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/ja/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# Turkish documentation
+trdocdir = $(datadir)/xfce4/doc/tr
+trdoc_DATA = docs/manual/tr/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/tr/xfce4-screenshooter.html: docs/manual/tr/xfce4-screenshooter.xml
+	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/tr/xfce4-screenshooter.xml
+endif
+endif
+
+trimagesdir = $(datadir)/xfce4/doc/tr/images
+trimages_DATA = \
+	docs/manual/tr/images/xfce4-screenshooter-dialog.png \
+	docs/manual/tr/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/tr/images/xfce4-screenshooter-zimagez-result-dialog.png
+
 # Extra dist and distclean rules
 EXTRA_DIST = \
 	README	\
@@ -176,7 +331,18 @@ EXTRA_DIST = \
 	$(app_desktop_in_in_files) \
 	$(panel_desktop_in_in_files) \
 	$(48icons_DATA) \
-	$(scalicons_DATA)
+	$(scalicons_DATA) \
+	docs/manual/xfce-nochunk.xsl \
+	$(noinst_DATA) \
+	$(cdoc_DATA) $(cimages_DATA) \
+	$(dadoc_DATA) $(daimages_DATA) \
+	$(esdoc_DATA) $(esimages_DATA) \
+	$(frdoc_DATA) $(frimages_DATA) \
+	$(gldoc_DATA) $(glimages_DATA) \
+	$(itdoc_DATA) $(itimages_DATA) \
+	$(iddoc_DATA) $(idimages_DATA) \
+	$(jadoc_DATA) $(jaimages_DATA) \
+	$(trdoc_DATA) $(trimages_DATA)
 
 DISTCLEANFILES = \
 	intltool-extract \

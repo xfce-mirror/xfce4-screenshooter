@@ -6,6 +6,12 @@ Fixed the Indonesian documentation sub-directory, the autotools scripts were
 incomplete.
 Updated Italian and Galician documentation translation.
 
+2009-08-02 jeromeg
+
+Add the doc rules to the toplevel Makefile.am.
+
+Also remove all the Makefile.am in the documentation directory.
+
 2009-08-01 jeromeg
 
 Add the icons' rules to the toplevel Makefile.am.
