@@ -72,6 +72,8 @@ populate_liststore                 (GtkListStore       *liststore);
 static void
 set_default_item                   (GtkWidget          *combobox,
                                     ScreenshotData     *sd);
+static GdkPixbuf
+*screenshot_get_thumbnail          (GdkPixbuf          *screenshot);
 static void
 cb_progress_upload                 (goffset             current_num_bytes,
                                     goffset             total_num_bytes,
@@ -92,7 +94,7 @@ save_screenshot_to_remote_location (GdkPixbuf          *screenshot,
                                     GFile              *save_file);
 static gchar
 *save_screenshot_to                (GdkPixbuf          *screenshot,
-                                    gchar *save_uri);
+                                    gchar              *save_uri);
 
 
 
@@ -445,6 +447,33 @@ static void set_default_item (GtkWidget *combobox, ScreenshotData *sd)
 
       sd->app = g_strdup ("none");
     }
+}
+
+
+
+static GdkPixbuf
+*screenshot_get_thumbnail (GdkPixbuf *screenshot)
+{
+  gint width, height, i;
+  GdkPixbuf *thumbnail;
+
+  width = gdk_pixbuf_get_width (screenshot);
+  height = gdk_pixbuf_get_height (screenshot);
+
+  if (width > height)
+    i = width / 150;
+  else
+    i = height / 150;
+
+  if (i == 0)
+    return gdk_pixbuf_copy (screenshot);
+
+  thumbnail = gdk_pixbuf_scale_simple (screenshot,
+                                       width/i,
+                                       height/i,
+                                       GDK_INTERP_BILINEAR);
+
+  return thumbnail;
 }
 
 
@@ -1154,11 +1183,7 @@ gchar
 
       gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview);
 
-      thumbnail =
-        gdk_pixbuf_scale_simple (screenshot,
-                                 gdk_pixbuf_get_width(screenshot)/5,
-                                 gdk_pixbuf_get_height(screenshot)/5,
-                                 GDK_INTERP_BILINEAR);
+      thumbnail = screenshot_get_thumbnail (screenshot);
 
       gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
 

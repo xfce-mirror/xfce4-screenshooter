@@ -6,6 +6,18 @@ Fixed the Indonesian documentation sub-directory, the autotools scripts were
 incomplete.
 Updated Italian and Galician documentation translation.
 
+2009-08-03 jeromeg
+
+Improve the creation of the save dialog's thumbnail.
+
+The thumbnail's width and height now have a maximum of 150 pixels, if
+they are less than 150 pixels, use the screenshot itself as a
+thumbnail.
+
+2009-08-02 jeromeg
+
+Always show the save dialog when we save a screenshot.
+
 2009-08-02 jeromeg
 
 Remove the option to take several screenshots in a row.
