@@ -226,7 +226,6 @@ int main (int argc, char **argv)
   if (G_UNLIKELY (!g_file_query_exists (default_save_dir, NULL)))
     {
       g_free (sd->screenshot_dir);
-
       sd->screenshot_dir = screenshooter_get_home_uri ();
     }
 
@@ -272,7 +271,7 @@ int main (int argc, char **argv)
           sd->action = SAVE;
         }
 
-      /* If the user gave a directory name, verify that it is valid */
+      /* If the user gave a directory name, check that it is valid */
       if (screenshot_dir != NULL)
         {
           default_save_dir = g_file_new_for_commandline_arg (screenshot_dir);
@@ -290,6 +289,12 @@ int main (int argc, char **argv)
 
           g_object_unref (default_save_dir);
           g_free (screenshot_dir);
+        }
+      /* Else we fallback to the home directory */
+      else
+        {
+          g_free (sd->screenshot_dir);
+          sd->screenshot_dir = screenshooter_get_home_uri ();
         }
 
       g_idle_add ((GSourceFunc) screenshooter_take_screenshot_idle, sd);

@@ -8,6 +8,10 @@ Updated Italian and Galician documentation translation.
 
 2009-08-03 jeromeg
 
+If the user does not specify a save location, fallback to home.
+
+2009-08-03 jeromeg
+
 Fix a crash in the panel plugin and improve cli options handling.
 
 Don't exit the gtk main loop when running the panel plugin, or the
