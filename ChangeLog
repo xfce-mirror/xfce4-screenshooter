@@ -8,6 +8,15 @@ Updated Italian and Galician documentation translation.
 
 2009-08-03 jeromeg
 
+Reenable the old active window workaround.
+
+In some cases, the WM/X server does not update the active window
+quickly enough. When running the application and taking a screenshot
+of the active window this can create a corrupted screenshot. Adding
+a one second delay in that case fixes this issue.
+
+2009-08-03 jeromeg
+
 Improve the creation of the save dialog's thumbnail.
 
 The thumbnail's width and height now have a maximum of 150 pixels, if

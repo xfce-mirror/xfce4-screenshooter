@@ -442,7 +442,7 @@ static GdkPixbuf
  * Return value: a #GdkPixbuf containing the screenshot or %NULL (if @region is SELECT,
  * the user can cancel the operation).
  **/
-GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show_mouse)
+GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show_mouse, gboolean plugin)
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *window = NULL;
@@ -462,8 +462,16 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
   gdk_display_sync (display);
 
   /* wait for n=delay seconds */
+  /* Workaround: sleep at least one second to make sure the
+   * WM/X server hast time to select the new active window after
+   * the dialog is closed */
   if (region != SELECT)
-    sleep (delay);
+    {
+      if (region == ACTIVE_WINDOW && !plugin)
+        delay ? sleep (delay): sleep (1);
+      else
+        sleep (delay);
+    }
 
   /* Get the window/desktop we want to screenshot*/
   if (region == FULLSCREEN)

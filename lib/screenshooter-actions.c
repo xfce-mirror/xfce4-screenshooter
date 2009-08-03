@@ -29,8 +29,10 @@ gboolean screenshooter_take_and_output_screenshot (ScreenshotData *sd)
 {
   GdkPixbuf *screenshot;
 
-  screenshot =
-    screenshooter_take_screenshot (sd->region, sd->delay, sd->show_mouse);
+  screenshot = screenshooter_take_screenshot (sd->region,
+                                              sd->delay,
+                                              sd->show_mouse,
+                                              sd->plugin);
 
   g_return_val_if_fail (screenshot != NULL, FALSE);
 
