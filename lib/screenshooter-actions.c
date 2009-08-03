@@ -54,7 +54,7 @@ gboolean screenshooter_take_screenshot_idle (ScreenshotData *sd)
 
   if (sd->screenshot != NULL)
     g_idle_add ((GSourceFunc) screenshooter_action_idle, sd);
-  else
+  else if (!sd->plugin)
     gtk_main_quit ();
 
   return FALSE;
@@ -73,7 +73,8 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
   if (response == GTK_RESPONSE_CANCEL)
     {
       gtk_widget_destroy (dialog);
-      gtk_main_quit ();
+      if (!sd->plugin)
+        gtk_main_quit ();
       return FALSE;
     }
 

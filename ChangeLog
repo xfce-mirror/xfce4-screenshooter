@@ -8,6 +8,19 @@ Updated Italian and Galician documentation translation.
 
 2009-08-03 jeromeg
 
+Fix a crash in the panel plugin and improve cli options handling.
+
+Don't exit the gtk main loop when running the panel plugin, or the
+panel plugin will be killed.
+
+Don't accept two region options or two action options. Warn the user
+that mouse, delay and action option are ignored when passed without a
+region option. At the moment, those error and warning messages are only
+displayed in logs or in a terminal. I don't think it's worth showing an
+error dialog for this.
+
+2009-08-03 jeromeg
+
 Rainy day. Major interface rethinking.
 
 This new interface is based on a suggestion by Yves-Alexis Pérez. The

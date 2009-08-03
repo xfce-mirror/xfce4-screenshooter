@@ -32,7 +32,7 @@ gboolean version = FALSE;
 gboolean window = FALSE;
 gboolean region = FALSE;
 gboolean fullscreen = FALSE;
-gboolean hide_mouse = FALSE;
+gboolean mouse = FALSE;
 gboolean upload = FALSE;
 gchar *screenshot_dir;
 gchar *application;
@@ -54,8 +54,8 @@ static GOptionEntry entries[] =
     NULL
   },
   {
-    "mouse", 'm', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &hide_mouse,
-    N_("Do not display the mouse on the screenshot"),
+    "mouse", 'm', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &mouse,
+    N_("Display the mouse on the screenshot"),
     NULL
   },
   {
@@ -139,6 +139,11 @@ int main (int argc, char **argv)
   GError *cli_error = NULL;
   GFile *default_save_dir;
   const gchar *rc_file;
+  const gchar *conflict_error =
+    _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
+  const gchar *ignore_error =
+    _("The --%s option is only used when --fullscreen, --window or"
+      " --region is given. It will be ignored.\n");
 
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   sd->plugin = FALSE;
@@ -160,6 +165,53 @@ int main (int argc, char **argv)
           return EXIT_FAILURE;
         }
     }
+
+  /* Exit if two region options were given */
+  if (window && fullscreen)
+    {
+      g_printerr (conflict_error, "window", "fullscreen");
+      return EXIT_FAILURE;
+    }
+  else if (window && region)
+    {
+      g_printerr (conflict_error, "window", "region");
+      return EXIT_FAILURE;
+    }
+  else if (fullscreen && region)
+    {
+      g_printerr (conflict_error, "fullscreen", "region");
+      return EXIT_FAILURE;
+    }
+
+  /* Exit if two actions options were given */
+  if (upload && (application != NULL))
+    {
+      g_printerr (conflict_error, "upload", "open");
+      return EXIT_FAILURE;
+    }
+  else if (upload && (screenshot_dir != NULL))
+    {
+      g_printerr (conflict_error, "upload", "save");
+      return EXIT_FAILURE;
+    }
+  else if ((application != NULL) && (screenshot_dir != NULL))
+    {
+      g_printerr (conflict_error, "open", "save");
+      return EXIT_FAILURE;
+    }
+
+  /* Warn that action options, mouse and delay will be ignored in 
+   * non-cli mode */
+  if ((application != NULL) && !(fullscreen || window || region))
+    g_printerr (ignore_error, "open");
+  if ((screenshot_dir != NULL)  && !(fullscreen || window || region ))
+    g_printerr (ignore_error, "save");
+  if (upload && !(fullscreen || window || region))
+    g_printerr (ignore_error, "upload");
+  if (delay && !(fullscreen || window || region))
+    g_printerr (ignore_error, "delay");
+  if (mouse && !(fullscreen || window || region))
+    g_printerr (ignore_error, "mouse");
 
   if (!g_thread_supported ())
     g_thread_init (NULL);
@@ -193,20 +245,14 @@ int main (int argc, char **argv)
     {
       /* Set the region to be captured */
       if (window)
-        {
-          sd->region = ACTIVE_WINDOW;
-        }
+        sd->region = ACTIVE_WINDOW;
       else if (fullscreen)
-        {
-          sd->region = FULLSCREEN;
-        }
+        sd->region = FULLSCREEN;
       else if (region)
-        {
-          sd->region = SELECT;
-        }
+        sd->region = SELECT;
 
       /* Whether to display the mouse pointer on the screenshot */
-      hide_mouse ? (sd->show_mouse = 0) : (sd->show_mouse = 1);
+      mouse ? (sd->show_mouse = 1) : (sd->show_mouse = 0);
 
       sd->delay = delay;
 
@@ -237,12 +283,10 @@ int main (int argc, char **argv)
               sd->screenshot_dir = g_file_get_uri (default_save_dir);
             }
           else
-            {
               screenshooter_error ("%s",
                                    _("%s is not a valid directory, the default"
                                      " directory will be used."),
                                    screenshot_dir);
-            }
 
           g_object_unref (default_save_dir);
           g_free (screenshot_dir);
