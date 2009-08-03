@@ -50,6 +50,7 @@ typedef struct
   gchar *screenshot_dir;
   gchar *app;
   gchar *last_user;
+  GdkPixbuf *screenshot;
 }
 ScreenshotData;
 

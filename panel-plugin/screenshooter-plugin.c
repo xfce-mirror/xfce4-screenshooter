@@ -111,22 +111,17 @@ static gboolean
 cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 {
   GdkPixbuf *pb;
-
   int width = size - 2 - 2 * MAX (pd->button->style->xthickness,
                                     pd->button->style->ythickness);
 
   TRACE ("Get the icon from the theme");
-
   pb = xfce_themed_icon_load (SCREENSHOT_ICON_NAME, width);
 
   TRACE ("Set the new icon");
-
   gtk_image_set_from_pixbuf (GTK_IMAGE (pd->image), pb);
-
   g_object_unref (pb);
 
   TRACE ("Request size for the plugin");
-
   gtk_widget_set_size_request (GTK_WIDGET (plugin), size, size);
 
   return TRUE;
@@ -166,7 +161,7 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
 
   TRACE ("Start taking the screenshot");
 
-  screenshooter_take_and_output_screenshot (pd->sd);
+  screenshooter_take_screenshot_idle (pd->sd);
 
   /* Make the panel button clickable */
   gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
@@ -196,7 +191,6 @@ screenshooter_plugin_read_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
   gchar *rc_file = xfce_panel_plugin_lookup_rc_file (plugin);
 
   screenshooter_read_rc_file (rc_file, pd->sd);
-
   g_free (rc_file);
 }
 
@@ -209,10 +203,9 @@ pd: the associated PluginData.
 static void
 screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 {
-  gchar * rc_file = xfce_panel_plugin_save_location (plugin, TRUE);
+  gchar *rc_file = xfce_panel_plugin_save_location (plugin, TRUE);
 
   screenshooter_write_rc_file (rc_file, pd->sd);
-
   g_free (rc_file);
 }
 
@@ -228,7 +221,6 @@ cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
   if (response == GTK_RESPONSE_OK)
     {
       g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
-
       gtk_widget_destroy (dlg);
 
       /* Update tooltips according to the chosen option */
@@ -238,8 +230,7 @@ cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
       xfce_panel_plugin_unblock_menu (pd->plugin);
       screenshooter_plugin_write_rc_file (pd->plugin, pd);
     }
-
-  if (response == GTK_RESPONSE_HELP)
+  else if (response == GTK_RESPONSE_HELP)
     {
       GError *error_help = NULL;
 
@@ -262,22 +253,16 @@ cb_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   GtkWidget *dlg;
 
   TRACE ("Create the dialog");
-
-  dlg = screenshooter_dialog_new (pd->sd, TRUE);
+  dlg = screenshooter_region_dialog_new (pd->sd, TRUE);
 
   /* Block the menu to prevent the user from launching several dialogs at
   the same time */
-
   TRACE ("Block the menu");
-
   xfce_panel_plugin_block_menu (plugin);
 
   TRACE ("Run the dialog");
-
   g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
-
   g_signal_connect (dlg, "response", G_CALLBACK (cb_dialog_response), pd);
-
   gtk_widget_show (dlg);
 }
 

@@ -8,6 +8,23 @@ Updated Italian and Galician documentation translation.
 
 2009-08-03 jeromeg
 
+Rainy day. Major interface rethinking.
+
+This new interface is based on a suggestion by Yves-Alexis Pérez. The
+former main dialog is split into two dialogs: one for selecting the
+region to be captured and the delay, while the second one displays a
+preview of the screenshot and lists the available actions.
+
+The main application shows the first dialog, then the second one. If
+one of the region cli options is given, the screenshot is taken
+accordingly and the second dialog is displayed.
+
+The panel plugin uses the first dialog as a configuration dialog. When
+you click the plugin, the screenshot is taken and the second dialog is
+shown.
+
+2009-08-03 jeromeg
+
 Reenable the old active window workaround.
 
 In some cases, the WM/X server does not update the active window

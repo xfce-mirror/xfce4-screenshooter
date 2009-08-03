@@ -118,7 +118,7 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
   else if (response == GTK_RESPONSE_OK)
     {
       gtk_widget_destroy (dialog);
-      g_idle_add ((GSourceFunc) screenshooter_take_and_output_screenshot, sd);
+      g_idle_add ((GSourceFunc) screenshooter_take_screenshot_idle, sd);
     }
   else
     {
@@ -248,8 +248,7 @@ int main (int argc, char **argv)
           g_free (screenshot_dir);
         }
 
-      g_idle_add ((GSourceFunc) screenshooter_take_and_output_screenshot,
-                  sd);
+      g_idle_add ((GSourceFunc) screenshooter_take_screenshot_idle, sd);
     }
   /* Else we show a dialog which allows to set the screenshot options */
   else
@@ -257,7 +256,7 @@ int main (int argc, char **argv)
       GtkWidget *dialog;
 
       /* Set the dialog up */
-      dialog = screenshooter_dialog_new (sd, FALSE);
+      dialog = screenshooter_region_dialog_new (sd, FALSE);
       g_signal_connect (dialog, "response", (GCallback) cb_dialog_response, sd);
       gtk_widget_show (dialog);
     }
