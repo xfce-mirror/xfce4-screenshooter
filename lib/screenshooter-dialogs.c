@@ -645,7 +645,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   GtkWidget *dlg, *main_alignment;
   GtkWidget *vbox;
 
-  GtkWidget *capture_table;
+  GtkWidget *layout_table;
 
   GtkWidget *area_main_box, *area_box, *area_label, *area_alignment;
   GtkWidget *active_window_button,
@@ -709,15 +709,15 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_widget_show (vbox);
 
   /* Create the table to align the differents parts of the top of the UI */
-  capture_table = gtk_table_new (2, 2, FALSE);
-  gtk_table_set_col_spacings (GTK_TABLE (capture_table), 20);
-  gtk_box_pack_start (GTK_BOX (vbox), capture_table, TRUE, TRUE, 0);
-  gtk_widget_show (capture_table);
+  layout_table = gtk_table_new (2, 2, FALSE);
+  gtk_table_set_col_spacings (GTK_TABLE (layout_table), 20);
+  gtk_box_pack_start (GTK_BOX (vbox), layout_table, TRUE, TRUE, 0);
+  gtk_widget_show (layout_table);
 
   /* Create the main box for the regions */
   area_main_box = gtk_vbox_new (FALSE, 6);
   gtk_widget_show (area_main_box);
-  gtk_table_attach_defaults (GTK_TABLE (capture_table), area_main_box, 0, 1, 0, 2);
+  gtk_table_attach_defaults (GTK_TABLE (layout_table), area_main_box, 0, 1, 0, 2);
 
   /* Create area label */
   area_label = gtk_label_new ("");
@@ -811,7 +811,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   /* Create the main box for the delay stuff */
   delay_main_box = gtk_vbox_new (FALSE, 6);
   gtk_widget_show (delay_main_box);
-  gtk_table_attach_defaults (GTK_TABLE (capture_table), delay_main_box, 1, 2, 0, 1);
+  gtk_table_attach_defaults (GTK_TABLE (layout_table), delay_main_box, 1, 2, 0, 1);
 
   /* Create delay label */
   delay_label = gtk_label_new ("");
@@ -872,15 +872,15 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *dlg, *main_alignment;
   GtkWidget *vbox;
 
-  GtkWidget *main_table, *actions_table;
+  GtkWidget *layout_table, *actions_table;
 
-  GtkWidget *actions_main_box, *actions_label, *actions_alignment;
-  GtkWidget *save_radio_button, *dir_chooser;
+  GtkWidget *left_box, *actions_label, *actions_alignment;
+  GtkWidget *save_box, *save_radio_button, *dir_chooser;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
   GtkWidget *zimagez_radio_button;
 
   GtkListStore *liststore;
-  GtkWidget *combobox;
+  GtkWidget *combobox, *open_box;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
   GtkWidget *preview, *preview_frame, *preview_alignment, *preview_label;
@@ -917,15 +917,15 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_widget_show (vbox);
 
   /* Create the table to align the differents parts of the top of the UI */
-  main_table = gtk_table_new (1, 2, FALSE);
-  gtk_table_set_col_spacings (GTK_TABLE (main_table), 30);
-  gtk_box_pack_start (GTK_BOX (vbox), main_table, TRUE, TRUE, 0);
-  gtk_widget_show (main_table);
+  layout_table = gtk_table_new (1, 2, FALSE);
+  gtk_table_set_col_spacings (GTK_TABLE (layout_table), 30);
+  gtk_box_pack_start (GTK_BOX (vbox), layout_table, TRUE, TRUE, 0);
+  gtk_widget_show (layout_table);
 
   /* Create the actions main box */
-  actions_main_box = gtk_vbox_new (FALSE, 6);
-  gtk_table_attach_defaults (GTK_TABLE (main_table), actions_main_box, 0, 1, 0, 1);
-  gtk_widget_show (actions_main_box);
+  left_box = gtk_vbox_new (FALSE, 6);
+  gtk_table_attach_defaults (GTK_TABLE (layout_table), left_box, 0, 1, 0, 1);
+  gtk_widget_show (left_box);
 
   /* Create actions label */
   actions_label = gtk_label_new ("");
@@ -934,12 +934,12 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                           "</span>"));
   gtk_misc_set_alignment (GTK_MISC (actions_label), 0, 0);
   gtk_widget_show (actions_label);
-  gtk_box_pack_start (GTK_BOX (actions_main_box), actions_label, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (left_box), actions_label, FALSE, FALSE, 0);
 
   /* Create actions alignment */
   actions_alignment = gtk_alignment_new (0, 0, 1, 1);
   gtk_alignment_set_padding (GTK_ALIGNMENT (actions_alignment), 0, 6, 12, 0);
-  gtk_box_pack_start (GTK_BOX (actions_main_box), actions_alignment, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (left_box), actions_alignment, TRUE, TRUE, 0);
   gtk_widget_show (actions_alignment);
 
   /* Create the actions table */
@@ -1048,7 +1048,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                         _("<span weight=\"bold\" stretch=\"semiexpanded\"> Preview "
                           "</span>"));
   gtk_frame_set_label_widget (GTK_FRAME (preview_frame), preview_label);
-  gtk_table_attach_defaults (GTK_TABLE (main_table), preview_frame, 1, 2, 0, 1);
+  gtk_table_attach_defaults (GTK_TABLE (layout_table), preview_frame, 1, 2, 0, 1);
   gtk_widget_show (preview_label);
   gtk_widget_show (preview_frame);
 
