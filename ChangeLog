@@ -8,6 +8,14 @@ Updated Italian and Galician documentation translation.
 
 2009-08-05 jeromeg
 
+Improve the layout of the actions dialog.
+
+Use horizontal boxes instead of a table to place the combobox and the
+file chooser. This makes the dialog smaller and saves a lot of wasted
+space.
+
+2009-08-05 jeromeg
+
 Rename some widgets.
 
 2009-08-03 jeromeg
