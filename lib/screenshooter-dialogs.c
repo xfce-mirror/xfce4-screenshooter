@@ -55,6 +55,10 @@ static void
 cb_horodate_toggled                (GtkToggleButton    *togglebutton,
                                     ScreenshotData     *sd);
 static void
+cb_hide_horodate                   (GtkToggleButton    *togglebutton,
+                                    GtkWidget          *widget);
+
+static void
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
@@ -226,7 +230,7 @@ static void cb_default_folder (GtkWidget *chooser, ScreenshotData  *sd)
 
 
 
-static void cb_hide_save_align (GtkToggleButton *togglebutton, GtkWidget *widget)
+static void cb_hide_horodate (GtkToggleButton *togglebutton, GtkWidget *widget)
 {
   if (gtk_toggle_button_get_active (togglebutton))
     gtk_widget_show (widget);
@@ -927,7 +931,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   GtkWidget *left_box;
   GtkWidget *actions_label, *actions_alignment, *actions_box;
-  GtkWidget *save_box, *save_radio_button, *dir_chooser, *save_alignment;
+  GtkWidget *save_box, *save_radio_button, *dir_chooser;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
   GtkWidget *zimagez_radio_button;
 
@@ -1033,24 +1037,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (save_box), dir_chooser, TRUE, TRUE, 0);
   gtk_widget_show (dir_chooser);
 
-  /* Save alignment */
-  save_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (save_alignment), 0, 6, 16, 0);
-  gtk_box_pack_start (GTK_BOX (actions_box), save_alignment, TRUE, TRUE, 0);
-  gtk_widget_show (save_alignment);
-  g_signal_connect (G_OBJECT (save_radio_button), "toggled",
-                    G_CALLBACK (cb_hide_save_align), save_alignment);
-
-  /* Create the horodate checkbox */
-  horodate_checkbox =
-    gtk_check_button_new_with_label (_("Horodate the capture"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (horodate_checkbox),
-                                sd->horodate);
-  g_signal_connect (horodate_checkbox, "toggled",
-                    (GCallback) cb_horodate_toggled, sd);
-  gtk_container_add (GTK_CONTAINER (save_alignment), horodate_checkbox);
-  gtk_widget_show (horodate_checkbox);
-
   /* Copy to clipboard radio button */
   clipboard_radio_button =
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
@@ -1120,6 +1106,18 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                     G_CALLBACK (cb_zimagez_toggled), sd);
   gtk_box_pack_start (GTK_BOX (actions_box), zimagez_radio_button, FALSE, FALSE, 0);
   gtk_widget_show (zimagez_radio_button);
+
+  /* Create the horodate checkbox */
+  horodate_checkbox =
+    gtk_check_button_new_with_label (_("Horodate the capture"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (horodate_checkbox),
+                                sd->horodate);
+  g_signal_connect (horodate_checkbox, "toggled",
+                    (GCallback) cb_horodate_toggled, sd);
+  g_signal_connect (save_radio_button, "toggled",
+                    (GCallback) cb_hide_horodate, horodate_checkbox);
+  gtk_box_pack_start (GTK_BOX (left_box), horodate_checkbox, FALSE, FALSE, 5);
+  gtk_widget_show (horodate_checkbox);
 
   /* Right table for the right of the UI */
   right_table = gtk_table_new (2, 1, FALSE);
