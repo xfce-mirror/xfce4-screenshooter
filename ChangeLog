@@ -6,6 +6,17 @@ Fixed the Indonesian documentation sub-directory, the autotools scripts were
 incomplete.
 Updated Italian and Galician documentation translation.
 
+2009-08-07 jeromeg
+
+Rework the actions dialog to add horodating.
+
+Add two new options: the title of the capture is now customizable and
+is used to generate the name of the saved captures. It is now also
+possible to append the date and the time of capturing to the name of
+the saved file (TODO: check if "horodating" exists in English).
+
+Fix a leak in the panel plugin.
+
 2009-08-05 jeromeg
 
 Improve the layout of the actions dialog.

@@ -40,7 +40,11 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd);
 GtkWidget *screenshooter_region_dialog_new  (ScreenshotData *sd,
                                              gboolean        plugin);
 gchar     *screenshooter_save_screenshot    (GdkPixbuf      *screenshot,
-                                             const gchar    *directory);
+                                             const gchar    *directory,
+                                             const gchar    *title,
+                                             gboolean        horodate);
+
+
 
 
 #endif

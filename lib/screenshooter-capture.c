@@ -461,6 +461,8 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
   display = gdk_display_get_default ();
   gdk_display_sync (display);
 
+  gdk_window_process_all_updates ();
+
   /* wait for n=delay seconds */
   /* Workaround: sleep at least one second to make sure the
    * WM/X server hast time to select the new active window after

@@ -28,6 +28,7 @@
 
 #include <gtk/gtk.h>
 #include <glib/gstdio.h>
+#include <time.h>
 
 #include <libxfce4util/libxfce4util.h>
 #include <libxfcegui4/libxfcegui4.h>
@@ -46,5 +47,7 @@ gboolean screenshooter_is_remote_uri (const gchar    *uri);
 gchar *rot13                         (gchar          *string);
 void screenshooter_error             (const gchar    *format,
                                       ...);
+gchar *screenshooter_get_date_hour   (void);
+
 
 #endif

@@ -61,7 +61,9 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gint region = FULLSCREEN;
   gint action = SAVE;
   gint show_mouse = 1;
+  gboolean horodate = FALSE;
   gchar *screenshot_dir = g_strdup (home_uri);
+  gchar *title = g_strdup ("Screenshot");
   gchar *app = g_strdup ("none");
   gchar *last_user = g_strdup ("");
 
@@ -79,6 +81,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
           action = xfce_rc_read_int_entry (rc, "action", SAVE);
           show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
+          horodate = xfce_rc_read_bool_entry (rc, "horodate", FALSE);
 
           g_free (app);
           app = g_strdup (xfce_rc_read_entry (rc, "app", "none"));
@@ -89,6 +92,9 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           g_free (screenshot_dir);
           screenshot_dir =
             g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", home_uri));
+
+          g_free (title);
+          title = g_strdup (xfce_rc_read_entry (rc, "title", "Screenshot"));
         }
 
       TRACE ("Close the rc file");
@@ -103,7 +109,9 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->region = region;
   sd->action = action;
   sd->show_mouse = show_mouse;
+  sd->horodate = horodate;
   sd->screenshot_dir = screenshot_dir;
+  sd->title = title;
   sd->app = app;
   sd->last_user = last_user;
 }
@@ -133,7 +141,9 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   xfce_rc_write_int_entry (rc, "region", sd->region);
   xfce_rc_write_int_entry (rc, "action", sd->action);
   xfce_rc_write_int_entry (rc, "show_mouse", sd->show_mouse);
+  xfce_rc_write_bool_entry (rc, "horodate", sd->horodate);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
+  xfce_rc_write_entry (rc, "title", sd->title);
   xfce_rc_write_entry (rc, "app", sd->app);
   xfce_rc_write_entry (rc, "last_user", sd->last_user);
 
@@ -158,7 +168,8 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
 
   TRACE ("Path was != NULL");
 
-  g_return_if_fail (!g_str_equal (application, "none"));
+  if (!g_str_equal (application, "none"))
+    return;
 
   TRACE ("Application was not none");
 
@@ -254,4 +265,39 @@ void screenshooter_error (const gchar *format, ...)
 
   g_free (message);
 }
+
+gchar *screenshooter_get_date_hour (void)
+{
+  time_t now = time (0);
+  struct tm *tm;
+  gchar *tmp, *result, *converted;
+  gchar **split;
+  gsize length;
+  gchar buffer[512];
+
+  tm = localtime (&now);
+
+  converted = g_locale_from_utf8 ("%x-%X", -1, NULL, NULL, NULL);
+  if (G_UNLIKELY (converted == NULL))
+    converted = g_strdup ("");
+
+  length = strftime (buffer, sizeof (buffer), converted, tm);
+
+  if (G_UNLIKELY (length == 0))
+    {
+      TRACE ("Buffer is NULL");
+      buffer[0] = '\0';
+    }
+
+  tmp = g_locale_to_utf8 (buffer, -1, NULL, NULL, NULL);
+  split = g_strsplit (tmp, "/", 0);
+  result = g_strjoinv (NULL, split);
+
+  g_strfreev (split);
+  g_free (converted);
+  g_free (tmp);
+
+  return result;
+}
+
 

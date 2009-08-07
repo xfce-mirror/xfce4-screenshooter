@@ -47,7 +47,9 @@ typedef struct
   gint delay;
   gint action;
   gboolean plugin;
+  gboolean horodate;
   gchar *screenshot_dir;
+  gchar *title;
   gchar *app;
   gchar *last_user;
   GdkPixbuf *screenshot;

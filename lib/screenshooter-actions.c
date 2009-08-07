@@ -83,7 +83,10 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
       if (sd->screenshot_dir == NULL)
         sd->screenshot_dir = screenshooter_get_home_uri ();
 
-      screenshooter_save_screenshot (sd->screenshot, sd->screenshot_dir);
+      screenshooter_save_screenshot (sd->screenshot,
+                                     sd->screenshot_dir,
+                                     sd->title,
+                                     sd->horodate);
     }
   else if (sd->action == CLIPBOARD)
     {
@@ -94,7 +97,10 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
       GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
       const gchar *temp_dir_uri = g_file_get_uri (temp_dir);
       const gchar *screenshot_path =
-        screenshooter_save_screenshot (sd->screenshot, temp_dir_uri);
+        screenshooter_save_screenshot (sd->screenshot,
+                                       temp_dir_uri,
+                                       sd->title,
+                                       sd->horodate);
 
       if (screenshot_path != NULL)
         {

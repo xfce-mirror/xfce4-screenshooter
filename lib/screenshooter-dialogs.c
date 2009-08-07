@@ -49,6 +49,12 @@ static void
 cb_open_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
+cb_title_entry_changed             (GtkEditable        *editable,
+                                    ScreenshotData     *sd);
+static void
+cb_horodate_toggled                (GtkToggleButton    *togglebutton,
+                                    ScreenshotData     *sd);
+static void
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
@@ -61,7 +67,9 @@ static void
 cb_delay_spinner_changed           (GtkWidget          *spinner,
                                     ScreenshotData     *sd);
 static gchar
-*generate_filename_for_uri         (const gchar        *uri);
+*generate_filename_for_uri         (const gchar        *uri,
+                                    const gchar        *title,
+                                    gboolean            horodate);
 static void
 cb_combo_active_item_changed       (GtkWidget          *box,
                                     ScreenshotData     *sd);
@@ -176,6 +184,23 @@ static void cb_open_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 
 
+static void cb_title_entry_changed (GtkEditable *editable,
+                                    ScreenshotData *sd)
+{
+  g_free (sd->title);
+  sd->title = gtk_editable_get_chars (editable, 0, -1);
+}
+
+
+
+static void cb_horodate_toggled (GtkToggleButton *togglebutton,
+                                 ScreenshotData *sd)
+{
+  sd->horodate = gtk_toggle_button_get_active (togglebutton);
+}
+
+
+
 static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
@@ -201,6 +226,16 @@ static void cb_default_folder (GtkWidget *chooser, ScreenshotData  *sd)
 
 
 
+static void cb_hide_save_align (GtkToggleButton *togglebutton, GtkWidget *widget)
+{
+  if (gtk_toggle_button_get_active (togglebutton))
+    gtk_widget_show (widget);
+  else
+    gtk_widget_hide (widget);
+}
+
+
+
 /* Set the delay according to the spinner */
 static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 {
@@ -209,18 +244,27 @@ static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 
 
 
-/* Generates filename Screenshot-n.png (where n is the first integer
- * greater than 0) so that Screenshot-n.jpg does not exist in the folder
- * whose URI is *uri.
+/* If @horodate is true, generates a file name @title - date - hour - n.png,
+ * where n is the lowest integer such as this file does not exist in the @uri
+ * folder.
+ * Else, generates a file name @title-n.png, where n is the lowest integer 
+ * such as this file does not exist in the @uri folder.
+ * 
  * @uri: uri of the folder for which the filename should be generated.
+ * @title: the main title of the file name.
+ * @horodate: whether the date and the hour should be appended to the file name.
+ *
  * returns: the filename or NULL if *uri == NULL.
 */
-static gchar *generate_filename_for_uri (const gchar *uri)
+static gchar *generate_filename_for_uri (const gchar *uri,
+                                         const gchar *title,
+                                         gboolean horodate)
 {
   gboolean exists = TRUE;
   GFile *directory;
   GFile *file;
   gchar *base_name;
+  const gchar *date_hour = screenshooter_get_date_hour ();
   gint i;
 
   if (G_UNLIKELY (uri == NULL))
@@ -232,7 +276,10 @@ static gchar *generate_filename_for_uri (const gchar *uri)
 
   TRACE ("Get the folder corresponding to the URI");
   directory = g_file_new_for_uri (uri);
-  base_name = g_strdup (_("Screenshot.png"));
+  if (!horodate)
+    base_name = g_strconcat (title, ".png", NULL);
+  else
+    base_name = g_strconcat (title, " - ", date_hour, ".png", NULL);
 
   file = g_file_get_child (directory, base_name);
 
@@ -249,7 +296,14 @@ static gchar *generate_filename_for_uri (const gchar *uri)
 
   for (i = 1; exists; ++i)
     {
-      base_name = g_strdup_printf (_("Screenshot-%d.png"), i);
+      const gchar *extension =
+        g_strdup_printf ("-%d.png", i);
+
+      if (!horodate)
+         base_name = g_strconcat (title, extension, NULL);
+       else
+         base_name = g_strconcat (title, " - ", date_hour, extension, NULL);
+
       file = g_file_get_child (directory, base_name);
 
       if (!g_file_query_exists (file, NULL))
@@ -864,18 +918,16 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
 
 
-/* Build the preferences dialog.
-@sd: a ScreenshotData to set the options.
-*/
 GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 {
   GtkWidget *dlg, *main_alignment;
   GtkWidget *vbox;
 
-  GtkWidget *layout_table;
+  GtkWidget *layout_table, *right_table;
 
-  GtkWidget *left_box, *actions_label, *actions_alignment, *actions_box;
-  GtkWidget *save_box, *save_radio_button, *dir_chooser;
+  GtkWidget *left_box;
+  GtkWidget *actions_label, *actions_alignment, *actions_box;
+  GtkWidget *save_box, *save_radio_button, *dir_chooser, *save_alignment;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
   GtkWidget *zimagez_radio_button;
 
@@ -883,7 +935,9 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *combobox, *open_box;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
-  GtkWidget *preview, *preview_frame, *preview_alignment, *preview_label;
+  GtkWidget *capture_info_box;
+  GtkWidget *title_box, *title_label, *title_entry, *horodate_checkbox;
+  GtkWidget *preview, *preview_box, *preview_label;
   GdkPixbuf *thumbnail;
 
   dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
@@ -916,7 +970,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
   gtk_widget_show (vbox);
 
-  /* Create the table to align the differents parts of the top of the UI */
+  /* Create the table to align the two columns of the UI */
   layout_table = gtk_table_new (1, 2, FALSE);
   gtk_table_set_col_spacings (GTK_TABLE (layout_table), 30);
   gtk_box_pack_start (GTK_BOX (vbox), layout_table, TRUE, TRUE, 0);
@@ -951,7 +1005,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   /* Create the save horizontal box */
   save_box = gtk_hbox_new (FALSE, 6);
   gtk_container_set_border_width (GTK_CONTAINER (save_box), 0);
-  gtk_box_pack_start (GTK_BOX (actions_box), save_box, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (actions_box), save_box, FALSE, FALSE, 0);
   gtk_widget_show (save_box);
 
   /* Save option radio button */
@@ -961,7 +1015,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                     G_CALLBACK (cb_save_toggled), sd);
   gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
-  gtk_box_pack_start (GTK_BOX (save_box), save_radio_button, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (save_box), save_radio_button, FALSE, FALSE, 0);
   gtk_widget_show (save_radio_button);
 
   /* Directory chooser */
@@ -979,6 +1033,24 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (save_box), dir_chooser, TRUE, TRUE, 0);
   gtk_widget_show (dir_chooser);
 
+  /* Save alignment */
+  save_alignment = gtk_alignment_new (0, 0, 1, 1);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (save_alignment), 0, 6, 16, 0);
+  gtk_box_pack_start (GTK_BOX (actions_box), save_alignment, TRUE, TRUE, 0);
+  gtk_widget_show (save_alignment);
+  g_signal_connect (G_OBJECT (save_radio_button), "toggled",
+                    G_CALLBACK (cb_hide_save_align), save_alignment);
+
+  /* Create the horodate checkbox */
+  horodate_checkbox =
+    gtk_check_button_new_with_label (_("Horodate the capture"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (horodate_checkbox),
+                                sd->horodate);
+  g_signal_connect (horodate_checkbox, "toggled",
+                    (GCallback) cb_horodate_toggled, sd);
+  gtk_container_add (GTK_CONTAINER (save_alignment), horodate_checkbox);
+  gtk_widget_show (horodate_checkbox);
+
   /* Copy to clipboard radio button */
   clipboard_radio_button =
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
@@ -990,13 +1062,13 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                 (sd->action == CLIPBOARD));
   g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled",
                     G_CALLBACK (cb_clipboard_toggled), sd);
-  gtk_box_pack_start (GTK_BOX (actions_box), clipboard_radio_button, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (actions_box), clipboard_radio_button, FALSE, FALSE, 0);
   gtk_widget_show (clipboard_radio_button);
 
   /* Horizontal box for the open with stuff */
   open_box = gtk_hbox_new (FALSE, 6);
   gtk_container_set_border_width (GTK_CONTAINER (open_box), 0);
-  gtk_box_pack_start (GTK_BOX (actions_box), open_box, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (actions_box), open_box, FALSE, FALSE, 0);
   gtk_widget_show (open_box);
 
   /* Open with radio button */
@@ -1009,7 +1081,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                     G_CALLBACK (cb_open_toggled), sd);
   gtk_widget_set_tooltip_text (open_with_radio_button,
                                _("Open the screenshot with the chosen application"));
-  gtk_box_pack_start (GTK_BOX (open_box), open_with_radio_button, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (open_box), open_with_radio_button, FALSE, FALSE, 0);
   gtk_widget_show (open_with_radio_button);
 
   /* Open with combobox */
@@ -1046,44 +1118,88 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                  "image hosting service"));
   g_signal_connect (G_OBJECT (zimagez_radio_button), "toggled",
                     G_CALLBACK (cb_zimagez_toggled), sd);
-  gtk_box_pack_start (GTK_BOX (actions_box), zimagez_radio_button, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (actions_box), zimagez_radio_button, FALSE, FALSE, 0);
   gtk_widget_show (zimagez_radio_button);
 
-  /* Preview of the screenshot */
-  preview_frame = gtk_frame_new ("");
+  /* Right table for the right of the UI */
+  right_table = gtk_table_new (2, 1, FALSE);
+  gtk_table_set_row_spacings (GTK_TABLE (right_table), 12);
+  gtk_table_attach_defaults (GTK_TABLE (layout_table), right_table, 1, 2, 0, 1);
+  gtk_widget_show (right_table);
+
+  /* Preview box */
+  preview_box = gtk_vbox_new (FALSE, 6);
+  gtk_container_set_border_width (GTK_CONTAINER (preview_box), 0);
+  gtk_table_attach_defaults (GTK_TABLE (right_table), preview_box, 0, 1, 0, 1);
+  gtk_widget_show (preview_box);
+
+  /* Preview label*/
   preview_label = gtk_label_new ("");
   gtk_label_set_markup (GTK_LABEL (preview_label),
-                        _("<span weight=\"bold\" stretch=\"semiexpanded\"> Preview "
-                          "</span>"));
-  gtk_frame_set_label_widget (GTK_FRAME (preview_frame), preview_label);
-  gtk_table_attach_defaults (GTK_TABLE (layout_table), preview_frame, 1, 2, 0, 1);
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+                          "Preview</span>"));
+  gtk_misc_set_alignment (GTK_MISC (preview_label), 0, 0.5);
+  gtk_box_pack_start (GTK_BOX (preview_box), preview_label, FALSE, FALSE, 0);
   gtk_widget_show (preview_label);
-  gtk_widget_show (preview_frame);
 
-  preview_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (preview_alignment), 8, 8, 8, 8);
-  gtk_container_add (GTK_CONTAINER (preview_frame), preview_alignment);
-  gtk_widget_show (preview_alignment);
-
+  /* The preview image */
   thumbnail = screenshot_get_thumbnail (sd->screenshot);
   preview = gtk_image_new_from_pixbuf (thumbnail);
-  gtk_container_add (GTK_CONTAINER (preview_alignment), preview);
+  gtk_box_pack_start (GTK_BOX (preview_box), preview, FALSE, FALSE, 0);
   g_object_unref (thumbnail);
   gtk_widget_show (preview);
+
+  /* Create the capture_info box */
+  capture_info_box = gtk_vbox_new (FALSE, 6);
+  gtk_container_set_border_width (GTK_CONTAINER (capture_info_box), 0);
+  gtk_table_attach_defaults (GTK_TABLE (right_table), capture_info_box, 0, 1, 1, 2);
+  gtk_widget_show (capture_info_box);
+
+  /* Create the title horizontal box */
+  title_box = gtk_hbox_new (FALSE, 6);
+  gtk_container_set_border_width (GTK_CONTAINER (title_box), 0);
+  gtk_box_pack_start (GTK_BOX (capture_info_box), title_box, TRUE, TRUE, 0);
+  gtk_widget_show (title_box);
+
+  /* Create the title label */
+  title_label = gtk_label_new ("Title:");
+  gtk_misc_set_alignment (GTK_MISC (title_label), 0, 0.5);
+  gtk_box_pack_start (GTK_BOX (title_box), title_label, FALSE, FALSE, 0);
+  gtk_widget_show (title_label);
+
+  /* Create the title entry */
+  title_entry = gtk_entry_new ();
+  gtk_entry_set_text (GTK_ENTRY (title_entry), sd->title);
+  g_signal_connect (title_entry, "changed",
+                    (GCallback) cb_title_entry_changed, sd);
+  gtk_box_pack_start (GTK_BOX (title_box), title_entry, TRUE, TRUE, 0);
+  gtk_widget_show (title_entry);
+
+
 
   return dlg;
 }
 
 
 
-/* Saves the screenshot in the given directory.
- * @screenshot: a GdkPixbuf containing our screenshot
- * @directory: the default save location.
+/* Saves the @screenshot in the given @directory using
+ * @title and @horodate to generate the file name.
+ *
+ * @screenshot: a GdkPixbuf containing the screenshot.
+ * @directory: the save location.
+ * @title: the title of the screenshot.
+ * @horodate: whether the date and the hour should be added to
+ * the file name.
+ *
+ * Returns: a string containing the path to the saved file.
  */
 gchar
-*screenshooter_save_screenshot (GdkPixbuf *screenshot, const gchar *directory)
+*screenshooter_save_screenshot (GdkPixbuf *screenshot,
+                                const gchar *directory,
+                                const gchar *title,
+                                gboolean horodate)
 {
-  gchar *filename = generate_filename_for_uri (directory);
+  gchar *filename = generate_filename_for_uri (directory, title, horodate);
   gchar *savename = NULL;
   gchar *save_uri = g_build_filename (directory, filename, NULL);
 

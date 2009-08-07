@@ -141,7 +141,9 @@ cb_free_data (XfcePanelPlugin *plugin, PluginData *pd)
 
   pd->style_id = 0;
   g_free (pd->sd->screenshot_dir);
+  g_free (pd->sd->title);
   g_free (pd->sd->app);
+  g_free (pd->sd->last_user);
   g_free (pd->sd);
   g_free (pd);
 }
