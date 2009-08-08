@@ -231,7 +231,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
   GFile *directory;
   GFile *file;
   gchar *base_name;
-  const gchar *date = screenshooter_get_date ();
+  const gchar *date = screenshooter_get_date (TRUE);
   const gchar *current_time = screenshooter_get_time ();
   gint i;
 

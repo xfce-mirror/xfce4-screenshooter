@@ -218,7 +218,9 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   const gchar *encoded_data;
   const gchar *image_path;
   const gchar *last_user;
-  gchar *comment = g_strdup ("");
+  const gchar *date = screenshooter_get_date (FALSE);
+  const gchar *current_time = screenshooter_get_time ();
+  gchar *comment = g_strdup_printf (_("Taken on %s, at %s"), date, current_time);
   gchar *data = NULL;
   gchar *encoded_password = NULL;
   gchar *file_name = NULL;

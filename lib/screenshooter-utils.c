@@ -309,11 +309,11 @@ gchar *screenshooter_get_time (void)
   return result;
 }
 
-gchar *screenshooter_get_date (void)
+gchar *screenshooter_get_date (gboolean strip_slashes)
 {
   GDate *date = g_date_new ();
   gchar *result;
-  gchar **split;
+  gchar **split = NULL;
   gchar buffer[512];
   gsize length;
 
@@ -327,8 +327,13 @@ gchar *screenshooter_get_date (void)
       buffer[0] = '\0';
     }
 
-  split = g_strsplit (buffer, "/", 0);
-  result = g_strjoinv (NULL, split);
+  if (strip_slashes)
+    {
+      split = g_strsplit (buffer, "/", 0);
+      result = g_strjoinv (NULL, split);
+    }
+  else
+    result = g_strdup (buffer);
 
   g_strfreev (split);
   g_free (date);
