@@ -141,9 +141,7 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   xfce_rc_write_int_entry (rc, "region", sd->region);
   xfce_rc_write_int_entry (rc, "action", sd->action);
   xfce_rc_write_int_entry (rc, "show_mouse", sd->show_mouse);
-  xfce_rc_write_bool_entry (rc, "horodate", sd->horodate);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
-  xfce_rc_write_entry (rc, "title", sd->title);
   xfce_rc_write_entry (rc, "app", sd->app);
   xfce_rc_write_entry (rc, "last_user", sd->last_user);
 
@@ -277,7 +275,7 @@ gchar *screenshooter_get_date_hour (void)
 
   tm = localtime (&now);
 
-  converted = g_locale_from_utf8 ("%x-%X", -1, NULL, NULL, NULL);
+  converted = g_locale_from_utf8 ("%x - %X", -1, NULL, NULL, NULL);
   if (G_UNLIKELY (converted == NULL))
     converted = g_strdup ("");
 

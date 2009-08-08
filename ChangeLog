@@ -1,3 +1,13 @@
+2009-08-08 jeromeg
+
+Remove the horodate checkbox and title entry.
+
+Try to set some sane defaults: always append the date and the time to
+the file name, the default title being "Screenshot". The title and
+horodating options are still setable in the configuration file.
+
+Fix the date format and always save the preferences in the main app.
+
 2009-08-08 mmassonnet
 
 Update documentation translations

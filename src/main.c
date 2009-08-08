@@ -313,39 +313,7 @@ int main (int argc, char **argv)
   gtk_main ();
 
   /* Save preferences */
-  if (!(fullscreen || window || region))
-    {
-      const gchar *preferences_file =
-        xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
-                                     "xfce4/xfce4-screenshooter",
-                                     TRUE);
-
-      if (preferences_file != NULL)
-        screenshooter_write_rc_file (preferences_file, sd);
-    }
-  else if (sd->action == UPLOAD)
-    {
-      const gchar *preferences_file =
-        xfce_resource_save_location (XFCE_RESOURCE_CONFIG,
-                                     "xfce4/xfce4-screenshooter",
-                                     TRUE);
-      if (preferences_file != NULL)
-        {
-          XfceRc *rc;
-
-          TRACE ("Open the rc file");
-          rc = xfce_rc_simple_open (preferences_file, FALSE);
-
-          if (rc != NULL)
-            {
-                xfce_rc_write_entry (rc, "last_user", sd->last_user);
-
-                TRACE ("Flush and close the rc file");
-                xfce_rc_flush (rc);
-                xfce_rc_close (rc);
-            }
-        }
-    }
+  screenshooter_write_rc_file (rc_file, sd);
 
   g_free (sd->screenshot_dir);
   g_free (sd->title);

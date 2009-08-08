@@ -49,16 +49,6 @@ static void
 cb_open_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
-cb_title_entry_changed             (GtkEditable        *editable,
-                                    ScreenshotData     *sd);
-static void
-cb_horodate_toggled                (GtkToggleButton    *togglebutton,
-                                    ScreenshotData     *sd);
-static void
-cb_hide_horodate                   (GtkToggleButton    *togglebutton,
-                                    GtkWidget          *widget);
-
-static void
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
@@ -188,23 +178,6 @@ static void cb_open_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 
 
-static void cb_title_entry_changed (GtkEditable *editable,
-                                    ScreenshotData *sd)
-{
-  g_free (sd->title);
-  sd->title = gtk_editable_get_chars (editable, 0, -1);
-}
-
-
-
-static void cb_horodate_toggled (GtkToggleButton *togglebutton,
-                                 ScreenshotData *sd)
-{
-  sd->horodate = gtk_toggle_button_get_active (togglebutton);
-}
-
-
-
 static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
@@ -226,16 +199,6 @@ static void cb_default_folder (GtkWidget *chooser, ScreenshotData  *sd)
 {
   g_free (sd->screenshot_dir);
   sd->screenshot_dir = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
-}
-
-
-
-static void cb_hide_horodate (GtkToggleButton *togglebutton, GtkWidget *widget)
-{
-  if (gtk_toggle_button_get_active (togglebutton))
-    gtk_widget_show (widget);
-  else
-    gtk_widget_hide (widget);
 }
 
 
@@ -927,7 +890,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *dlg, *main_alignment;
   GtkWidget *vbox;
 
-  GtkWidget *layout_table, *right_table;
+  GtkWidget *layout_table;
 
   GtkWidget *left_box;
   GtkWidget *actions_label, *actions_alignment, *actions_box;
@@ -939,8 +902,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *combobox, *open_box;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
-  GtkWidget *capture_info_box;
-  GtkWidget *title_box, *title_label, *title_entry, *horodate_checkbox;
   GtkWidget *preview, *preview_box, *preview_label;
   GdkPixbuf *thumbnail;
 
@@ -1107,28 +1068,10 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (actions_box), zimagez_radio_button, FALSE, FALSE, 0);
   gtk_widget_show (zimagez_radio_button);
 
-  /* Create the horodate checkbox */
-  horodate_checkbox =
-    gtk_check_button_new_with_label (_("Horodate the capture"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (horodate_checkbox),
-                                sd->horodate);
-  g_signal_connect (horodate_checkbox, "toggled",
-                    (GCallback) cb_horodate_toggled, sd);
-  g_signal_connect (save_radio_button, "toggled",
-                    (GCallback) cb_hide_horodate, horodate_checkbox);
-  gtk_box_pack_start (GTK_BOX (left_box), horodate_checkbox, FALSE, FALSE, 5);
-  gtk_widget_show (horodate_checkbox);
-
-  /* Right table for the right of the UI */
-  right_table = gtk_table_new (2, 1, FALSE);
-  gtk_table_set_row_spacings (GTK_TABLE (right_table), 12);
-  gtk_table_attach_defaults (GTK_TABLE (layout_table), right_table, 1, 2, 0, 1);
-  gtk_widget_show (right_table);
-
   /* Preview box */
   preview_box = gtk_vbox_new (FALSE, 6);
   gtk_container_set_border_width (GTK_CONTAINER (preview_box), 0);
-  gtk_table_attach_defaults (GTK_TABLE (right_table), preview_box, 0, 1, 0, 1);
+  gtk_table_attach_defaults (GTK_TABLE (layout_table), preview_box, 1, 2, 0, 1);
   gtk_widget_show (preview_box);
 
   /* Preview label*/
@@ -1146,34 +1089,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (preview_box), preview, FALSE, FALSE, 0);
   g_object_unref (thumbnail);
   gtk_widget_show (preview);
-
-  /* Create the capture_info box */
-  capture_info_box = gtk_vbox_new (FALSE, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (capture_info_box), 0);
-  gtk_table_attach_defaults (GTK_TABLE (right_table), capture_info_box, 0, 1, 1, 2);
-  gtk_widget_show (capture_info_box);
-
-  /* Create the title horizontal box */
-  title_box = gtk_hbox_new (FALSE, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (title_box), 0);
-  gtk_box_pack_start (GTK_BOX (capture_info_box), title_box, TRUE, TRUE, 0);
-  gtk_widget_show (title_box);
-
-  /* Create the title label */
-  title_label = gtk_label_new ("Title:");
-  gtk_misc_set_alignment (GTK_MISC (title_label), 0, 0.5);
-  gtk_box_pack_start (GTK_BOX (title_box), title_label, FALSE, FALSE, 0);
-  gtk_widget_show (title_label);
-
-  /* Create the title entry */
-  title_entry = gtk_entry_new ();
-  gtk_entry_set_text (GTK_ENTRY (title_entry), sd->title);
-  g_signal_connect (title_entry, "changed",
-                    (GCallback) cb_title_entry_changed, sd);
-  gtk_box_pack_start (GTK_BOX (title_box), title_entry, TRUE, TRUE, 0);
-  gtk_widget_show (title_entry);
-
-
 
   return dlg;
 }
