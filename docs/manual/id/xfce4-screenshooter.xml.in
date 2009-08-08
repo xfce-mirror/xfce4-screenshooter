@@ -4,7 +4,7 @@
 <!ENTITY version "@PACKAGE_VERSION@">
 <!ENTITY application "@PACKAGE_NAME@">
 ]>
-<article id="xfce4-screenshooter" lang="gl">
+<article id="xfce4-screenshooter" lang="id">
 
   <!-- Header -->
   <articleinfo>
@@ -16,16 +16,10 @@
       <year>2008</year>
       <year>2009</year>
       <holder>Jérôme Guelfucci</holder>
-    </copyright><copyright><year>2008, 2009.</year><holder>Leandro Regueiro (leandro.regueiro@gmail.com)</holder></copyright>
+    </copyright><copyright><year>2009.</year><holder>Andhika Padmawan (andhika.padmawan@gmail.com)</holder></copyright>
 
     <legalnotice id="legalnotice">
-      <para>
-        Permission is granted to copy, distribute and/or modify this document
-        under the terms of the GNU Free Documentation License, Version 1.1 or
-        any later version published by the Free Software Foundation; with no
-        Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
-        Texts. The complete license text is available from the <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.
-      </para>
+      <para>Izin diberikan untuk menyalin, mendistribusikan dan/atau memodifikasi dokumen ini di bawah perjanjian Lisensi Dokumentasi Bebas GNU, versi 1.1 atau versi apapun setelahnya yang dipublikasikan oleh Free Software Foundation; tanpa Bagian Invarian, tanpa Teks Sampul-Depan, dan tanpa Teks Sampul-Belakang. Teks lisensi selengkapnya tersedia dari <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.</para>
     </legalnotice>
 
     <authorgroup>
@@ -38,13 +32,11 @@
       </author>
     </authorgroup>
 
-    <releaseinfo>
-      This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter.
-    </releaseinfo>
+    <releaseinfo>Manual ini menjelaskan versi @PACKAGE_VERSION@ dari Xfce4 Screenshooter.</releaseinfo>
   </articleinfo>
 
   <sect1 id="intro">
-    <title>Introdución a Xfce4 Screenshooter</title>
+    <title>Pengantar Xfce4 Screenshooter</title>
 
     <para>
       This application allows you to capture the entire screen, the
@@ -56,22 +48,19 @@
       a free online image hosting service.
     </para>
 
-    <para>Tamén hai un engadido para o panel de Xfce.</para>
+    <para>Plugin untuk panel Xfce juga tersedia.</para>
 
   </sect1>
 
   <sect1 id="using-the-application">
-    <title>Uso da aplicación</title>
+    <title>Menggunakan aplikasi</title>
 
     <sect2 id="user-interface">
-      <title>A través da interface de usuario</title>
+      <title>Via antarmuka pengguna</title>
 
-      <para>
-        To launch the application, use the "Screenshot" item in the
-        "Accessories" category of Xfce's main menu.
-      </para>
+      <para>Untuk menjalankan aplikasi, gunakan item "Cuplikan layar" di kategori "Aksesoris" dari menu utama Xfce.</para>
 
-      <para>Mostrarase esta ventá:</para>
+      <para>Jendela ini akan tampak:</para>
 
       <screenshot>
         <mediaobject>
@@ -80,52 +69,31 @@
           </imageobject>
 
           <textobject>
-            <phrase>A ventá de Xfce4 Screenshooter</phrase>
+            <phrase>Jendela Xfce4 Screenshooter</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
 
       <sect3 id="region-to-capture">
-        <title>Zona a capturar</title>
+        <title>Daerah untuk ditangkap</title>
 
-        <para>
-          The <emphasis>"Region to capture"</emphasis> section allows
-          you to set from what the screenshot will be taken:
-        </para>
+        <para>Bagian <emphasis>"Daerah akan ditangkap"</emphasis> memungkinkan anda untuk mengatur dari apa cuplikan layar akan diambil:</para>
 
         <itemizedlist>
-          <listitem>
-            "Entire screen" takes a screenshot of the whole screen as
-            you see it.
-          </listitem>
-          <listitem>
-            "Active window" takes a screenshot of the active window, the
-            one which was active before this dialog appeared, or if you
-            set a delay, the one that is active after the delay.
-          </listitem>
-          <listitem>
-            "Select a region" allows you to select a region to be
-            captured by clicking a point of the screen without releasing
-            the mouse button, dragging your mouse to the other corner of
-            the region, and releasing the mouse button.
-          </listitem>
+          <listitem>"Seluruh layar" mengambil cuplikan layar dari seluruh layar yang anda lihat.</listitem>
+          <listitem>"Jendela aktif" mengambil cuplikan layar dari jendela yang aktif, jendela yang aktif sebelum dialog ini muncul, atau jika anda mengatur jeda, jendela yang aktif setelah jeda.</listitem>
+          <listitem>"Pilih daerah" memungkinkan anda untuk memilih daerah yang akan ditangkap dengan klik pada titik di layar lalu tanpa melepas tombol tetikus, tarik tetikus anda ke sudut lain di daerah layar, setelah itu lepas tombol tetikus.</listitem>
         </itemizedlist>
       </sect3>
 
       <sect3 id="delay">
-        <title>Atraso antes da captura</title>
+        <title>Jeda sebelum menangkap</title>
 
-        <para>
-          The <emphasis>"Delay before capturing"</emphasis>
-          section allows you to set the delay that will elapse between
-          pressing the <emphasis>"OK"</emphasis> button and taking the 
-          screenshot. This delay will allow you to open menus or to do 
-          whatever action you want to see displayed on the screenshot.
-        </para>
+        <para>Bagian <emphasis>"Jeda sebelum menangkap"</emphasis> memungkinkan anda untuk mengatur jeda yang akan berlangsung di antara menekan tombol <emphasis>"OK"</emphasis> dan mengambil cuplikan layar. Jeda ini akan memungkinkan anda untuk membuka menu atau melakukan aksi apapun yang ingin anda lihat ditampilkan pada cuplikan layar.</para>
       </sect3>
 
       <sect3 id="after-capturing">
-        <title>Despois de capturar</title>
+        <title>Setelah menangkap</title>
 
         <para>
           The <emphasis>"Show the save dialog"</emphasis> option 
@@ -143,7 +111,7 @@
       </sect3>
 
       <sect3 id="action">
-        <title>Acción</title>
+        <title>Aksi</title>
 
         <para>
           The <emphasis>"Action"</emphasis> section allows you to choose
@@ -151,7 +119,7 @@
         </para>
 
         <sect4 id="save">
-          <title>Gardar en</title>
+          <title>Simpan di</title>
 
           <para>
             The <emphasis>"Save in"</emphasis> option will save the
@@ -179,7 +147,7 @@
         </sect4>
 
         <sect4 id="copy-to-clipboard">
-          <title>Copiar ó portarretallos</title>
+          <title>Salin ke papan klip</title>
 
           <para>
             The <emphasis>"Copy to the clipboard"</emphasis> option
@@ -192,7 +160,7 @@
         </sect4>
 
         <sect4 id="open-with">
-          <title>Abrir con</title>
+          <title>Buka dengan</title>
 
           <para>
             The <emphasis>"Open with"</emphasis> option saves the
@@ -204,7 +172,7 @@
         </sect4>
 
         <sect4 id="zimagez">
-          <title>Host on ZimageZ</title>
+          <title>Simpan di ZimageZ</title>
           
           <para>
             The <emphasis>"Host on ZimageZ"</emphasis> option allow you
@@ -227,7 +195,7 @@
               </imageobject>
 
               <textobject>
-                <phrase>The dialog to host a screenshot on ZimageZ</phrase>
+                <phrase>Dialog untuk menyimpan cuplikan layar di ZimageZ</phrase>
               </textobject>
             </mediaobject>
           </screenshot>
@@ -254,7 +222,7 @@
               </imageobject>
 
               <textobject>
-                <phrase>The dialog giving the links to your screenshot on ZimageZ</phrase>
+                <phrase>Dialog memberikan tautan ke cuplikan layar anda di ZimageZ</phrase>
               </textobject>
             </mediaobject>
           </screenshot>
@@ -264,7 +232,7 @@
     </sect2>
 
     <sect2 id="command-line">
-      <title>A través da liña de comandos</title>
+      <title>Via baris perintah</title>
 
       <para>
         Command line options allow you to take screenshots quickly. They
@@ -276,10 +244,10 @@
       </para>
 
       <sect3 id="options">
-        <title>As opcións de liña de comandos</title>
+        <title>Opsi baris perintah</title>
 
         <sect4 id="w-option">
-          <title>A opción -w</title>
+          <title>Opsi -w</title>
 
           <para>
             The <emphasis>-w</emphasis> option allows you to take a
@@ -288,7 +256,7 @@
         </sect4>
 
         <sect4 id="f-option">
-          <title>A opción -f</title>
+          <title>Opsi -f</title>
 
           <para>
             The <emphasis>-f</emphasis> option allows you to take a
@@ -297,7 +265,7 @@
         </sect4>
 
         <sect4 id="r-option">
-          <title>A opción -r</title>
+          <title>Opsi -r</title>
 
           <para>
             The <emphasis>-r</emphasis> option allows you to select a
@@ -309,7 +277,7 @@
         </sect4>
 
         <sect4 id="d-option">
-          <title>A opción -d</title>
+          <title>Opsi -d</title>
 
           <para>
             The <emphasis>-d</emphasis> option followed by a positive
@@ -321,7 +289,7 @@
         </sect4>
 
         <sect4 id="s-option">
-          <title>A opción -s</title>
+          <title>Opsi -s</title>
 
           <para>
             The <emphasis>-s</emphasis> option followed by the path to
@@ -336,7 +304,7 @@
         </sect4>
 
         <sect4 id="h-option">
-          <title>A opción -h</title>
+          <title>Opsi -h</title>
 
           <para>
             If you give the <emphasis>-h</emphasis> option, the
@@ -350,7 +318,7 @@
         </sect4>
 
         <sect4 id="o-option">
-          <title>A opción -o</title>
+          <title>Opsi -o</title>
 
           <para>
             If the <emphasis>-o</emphasis> option is given, followed by
@@ -364,7 +332,7 @@
         </sect4>
 
         <sect4 id="u-option">
-          <title>A opción -u</title>
+          <title>Opsi -u</title>
 
           <para>
             If the <emphasis>-u</emphasis> option is given, the screenshot
@@ -379,10 +347,10 @@
   </sect1>
 
   <sect1 id="panel-plugin">
-    <title>Usar o engadido no panel de Xfce</title>
+    <title>Menggunakan plugin untuk panel Xfce</title>
 
     <sect2 id="add">
-      <title>Engadir o engadido</title>
+      <title>Menambah plugin</title>
 
       <para>
         To add the plugin to the panel, right click on the panel and
@@ -392,7 +360,7 @@
     </sect2>
 
     <sect2 id="set">
-      <title>Configurar o engadido</title>
+      <title>Mengatur plugin</title>
 
       <para>
         You can configure how screenshots are taken by right clicking on
@@ -404,9 +372,9 @@
     </sect2>
 
     <sect2 id="use">
-      <title>Uso do engadido</title>
+      <title>Menggunakan plugin</title>
 
-      <para>Para capturar a pantalla, simplemente prema no engadido.</para>
+      <para>Untuk mengambil cuplikan layar, cukup klik pada plugin.</para>
     </sect2>
 
   </sect1>
