@@ -1,5 +1,11 @@
 2009-08-08 jeromeg
 
+Use the XDG pictures directory as the default save location.
+
+If it does not exist, use the home directory as a fallback.
+
+2009-08-08 jeromeg
+
 Remove the horodate checkbox and title entry.
 
 Try to set some sane defaults: always append the date and the time to

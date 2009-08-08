@@ -54,7 +54,7 @@ screenshooter_copy_to_clipboard (GdkPixbuf *screenshot)
 void
 screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 {
-  const gchar *home_uri = screenshooter_get_home_uri ();
+  const gchar *default_uri = screenshooter_get_xdg_image_dir_uri ();
 
   XfceRc *rc;
   gint delay = 0;
@@ -62,7 +62,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gint action = SAVE;
   gint show_mouse = 1;
   gboolean horodate = FALSE;
-  gchar *screenshot_dir = g_strdup (home_uri);
+  gchar *screenshot_dir = g_strdup (default_uri);
   gchar *title = g_strdup ("Screenshot");
   gchar *app = g_strdup ("none");
   gchar *last_user = g_strdup ("");
@@ -91,7 +91,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 
           g_free (screenshot_dir);
           screenshot_dir =
-            g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", home_uri));
+            g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", default_uri));
 
           g_free (title);
           title = g_strdup (xfce_rc_read_entry (rc, "title", "Screenshot"));
@@ -203,6 +203,22 @@ gchar *screenshooter_get_home_uri (void)
   return result;
 }
 
+
+
+gchar *screenshooter_get_xdg_image_dir_uri (void)
+{
+  gchar *result, *tmp;
+
+  tmp = g_strdup (g_get_user_special_dir (G_USER_DIRECTORY_PICTURES));
+
+  if (tmp == NULL)
+    return screenshooter_get_home_uri ();
+
+  result = g_strconcat ("file://", tmp, NULL);
+  g_free (tmp);
+
+  return result;
+}
 
 
 gboolean screenshooter_is_remote_uri (const gchar *uri)

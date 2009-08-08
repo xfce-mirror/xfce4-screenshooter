@@ -81,7 +81,7 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
   if (sd->action == SAVE)
     {
       if (sd->screenshot_dir == NULL)
-        sd->screenshot_dir = screenshooter_get_home_uri ();
+        sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
 
       screenshooter_save_screenshot (sd->screenshot,
                                      sd->screenshot_dir,

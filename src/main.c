@@ -290,12 +290,6 @@ int main (int argc, char **argv)
           g_object_unref (default_save_dir);
           g_free (screenshot_dir);
         }
-      /* Else we fallback to the home directory */
-      else
-        {
-          g_free (sd->screenshot_dir);
-          sd->screenshot_dir = screenshooter_get_home_uri ();
-        }
 
       g_idle_add ((GSourceFunc) screenshooter_take_screenshot_idle, sd);
     }

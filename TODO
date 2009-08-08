@@ -1,7 +1,5 @@
 Before next release:
 
-* Save captures in the XDG images directory by default, fallback to home
-if it does not exist.
 * Port "select a region" to use cairo to have transparent rubber banding
 as in thunar and xfdesktop (only when the screen is composited).
 
