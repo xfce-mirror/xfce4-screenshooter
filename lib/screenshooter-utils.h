@@ -48,7 +48,8 @@ gboolean screenshooter_is_remote_uri       (const gchar    *uri);
 gchar *rot13                               (gchar          *string);
 void screenshooter_error                   (const gchar    *format,
                                             ...);
-gchar *screenshooter_get_date_hour         (void);
+gchar *screenshooter_get_date              (void);
+gchar *screenshooter_get_time              (void);
 
 
 #endif

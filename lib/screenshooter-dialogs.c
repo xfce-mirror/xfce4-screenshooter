@@ -231,7 +231,8 @@ static gchar *generate_filename_for_uri (const gchar *uri,
   GFile *directory;
   GFile *file;
   gchar *base_name;
-  const gchar *date_hour = screenshooter_get_date_hour ();
+  const gchar *date = screenshooter_get_date ();
+  const gchar *current_time = screenshooter_get_time ();
   gint i;
 
   if (G_UNLIKELY (uri == NULL))
@@ -246,7 +247,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
   if (!horodate)
     base_name = g_strconcat (title, ".png", NULL);
   else
-    base_name = g_strconcat (title, " - ", date_hour, ".png", NULL);
+    base_name = g_strconcat (title, " - ", date, " - ", current_time, ".png", NULL);
 
   file = g_file_get_child (directory, base_name);
 
@@ -269,7 +270,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
       if (!horodate)
          base_name = g_strconcat (title, extension, NULL);
        else
-         base_name = g_strconcat (title, " - ", date_hour, extension, NULL);
+         base_name = g_strconcat (title, " - ", date, " - ", current_time, extension, NULL);
 
       file = g_file_get_child (directory, base_name);
 

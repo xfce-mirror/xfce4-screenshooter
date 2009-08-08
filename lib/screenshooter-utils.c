@@ -280,18 +280,17 @@ void screenshooter_error (const gchar *format, ...)
   g_free (message);
 }
 
-gchar *screenshooter_get_date_hour (void)
+gchar *screenshooter_get_time (void)
 {
   time_t now = time (0);
-  struct tm *tm;
-  gchar *tmp, *result, *converted;
-  gchar **split;
+  const struct tm *tm;
+  gchar *result, *converted;
   gsize length;
   gchar buffer[512];
 
   tm = localtime (&now);
 
-  converted = g_locale_from_utf8 ("%x - %X", -1, NULL, NULL, NULL);
+  converted = g_locale_from_utf8 ("%X", -1, NULL, NULL, NULL);
   if (G_UNLIKELY (converted == NULL))
     converted = g_strdup ("");
 
@@ -303,15 +302,36 @@ gchar *screenshooter_get_date_hour (void)
       buffer[0] = '\0';
     }
 
-  tmp = g_locale_to_utf8 (buffer, -1, NULL, NULL, NULL);
-  split = g_strsplit (tmp, "/", 0);
-  result = g_strjoinv (NULL, split);
+  result = g_locale_to_utf8 (buffer, -1, NULL, NULL, NULL);
 
-  g_strfreev (split);
   g_free (converted);
-  g_free (tmp);
 
   return result;
 }
 
+gchar *screenshooter_get_date (void)
+{
+  GDate *date = g_date_new ();
+  gchar *result;
+  gchar **split;
+  gchar buffer[512];
+  gsize length;
 
+  g_date_set_time_t (date, time (NULL));
+
+  length = g_date_strftime (buffer, sizeof (buffer), "%x", date);
+
+  if (G_UNLIKELY (length == 0))
+    {
+      TRACE ("Buffer is NULL");
+      buffer[0] = '\0';
+    }
+
+  split = g_strsplit (buffer, "/", 0);
+  result = g_strjoinv (NULL, split);
+
+  g_strfreev (split);
+  g_free (date);
+
+  return result;
+}

@@ -1,5 +1,9 @@
 2009-08-08 jeromeg
 
+Split the function to get the date and the time.
+
+2009-08-08 jeromeg
+
 Use the XDG pictures directory as the default save location.
 
 If it does not exist, use the home directory as a fallback.
