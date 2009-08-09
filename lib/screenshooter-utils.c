@@ -61,9 +61,9 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gint region = FULLSCREEN;
   gint action = SAVE;
   gint show_mouse = 1;
-  gboolean horodate = FALSE;
+  gboolean horodate = TRUE;
   gchar *screenshot_dir = g_strdup (default_uri);
-  gchar *title = g_strdup ("Screenshot");
+  gchar *title = g_strdup (_("Screenshot"));
   gchar *app = g_strdup ("none");
   gchar *last_user = g_strdup ("");
 
@@ -81,7 +81,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
           action = xfce_rc_read_int_entry (rc, "action", SAVE);
           show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
-          horodate = xfce_rc_read_bool_entry (rc, "horodate", FALSE);
+          horodate = xfce_rc_read_bool_entry (rc, "horodate", TRUE);
 
           g_free (app);
           app = g_strdup (xfce_rc_read_entry (rc, "app", "none"));
@@ -94,7 +94,8 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
             g_strdup (xfce_rc_read_entry (rc, "screenshot_dir", default_uri));
 
           g_free (title);
-          title = g_strdup (xfce_rc_read_entry (rc, "title", "Screenshot"));
+          title =
+            g_strdup (xfce_rc_read_entry (rc, "title", _("Screenshot")));
         }
 
       TRACE ("Close the rc file");
@@ -339,4 +340,19 @@ gchar *screenshooter_get_date (gboolean strip_slashes)
   g_free (date);
 
   return result;
+}
+
+
+
+void screenshooter_open_help (void)
+{
+  GError *error_help = NULL;
+
+  /* Launch the help page and show an error dialog if there was an error. */
+  if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html",
+                                   &error_help))
+    {
+      screenshooter_error ("%s", error_help->message);
+      g_error_free (error_help);
+    }
 }

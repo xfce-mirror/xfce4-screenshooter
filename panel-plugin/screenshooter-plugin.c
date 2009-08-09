@@ -233,17 +233,7 @@ cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
       screenshooter_plugin_write_rc_file (pd->plugin, pd);
     }
   else if (response == GTK_RESPONSE_HELP)
-    {
-      GError *error_help = NULL;
-
-      /* Execute the help and show an error dialog if there was
-       * an error. */
-      if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
-        {
-          screenshooter_error ("%s", error_help->message);
-          g_error_free (error_help);
-        }
-    }
+    screenshooter_open_help ();
 }
 
 

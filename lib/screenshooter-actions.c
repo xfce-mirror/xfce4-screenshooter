@@ -26,16 +26,8 @@ cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
 {
   if (response == GTK_RESPONSE_HELP)
     {
-      GError *error_help = NULL;
-
       g_signal_stop_emission_by_name (dialog, "response");
-
-      /* Launch the help page and show an error dialog if there was an error. */
-      if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html", &error_help))
-        {
-          screenshooter_error ("%s", error_help->message);
-          g_error_free (error_help);
-        }
+      screenshooter_open_help ();
     }
 }
 
