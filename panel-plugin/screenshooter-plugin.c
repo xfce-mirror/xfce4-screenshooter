@@ -255,6 +255,9 @@ cb_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
   TRACE ("Run the dialog");
   g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
   g_signal_connect (dlg, "response", G_CALLBACK (cb_dialog_response), pd);
+  g_signal_connect (dlg, "key-press-event",
+                    (GCallback) screenshooter_f1_key, NULL);
+
   gtk_widget_show (dlg);
 }
 

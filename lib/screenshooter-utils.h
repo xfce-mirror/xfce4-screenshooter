@@ -27,6 +27,7 @@
 #include "screenshooter-global.h"
 
 #include <gtk/gtk.h>
+#include <gdk/gdkkeysyms.h>
 #include <glib/gstdio.h>
 #include <time.h>
 
@@ -48,9 +49,13 @@ gboolean  screenshooter_is_remote_uri         (const gchar    *uri);
 gchar    *rot13                               (gchar          *string);
 void      screenshooter_error                 (const gchar    *format,
                                                ...);
-gchar    *screenshooter_get_date              (gboolean strip_slashes);
+gchar    *screenshooter_get_date              (gboolean        strip_slashes);
 gchar    *screenshooter_get_time              (void);
 void      screenshooter_open_help             (void);
+gboolean  screenshooter_f1_key                (GtkWidget      *widget,
+                                               GdkEventKey    *event,
+                                               gpointer        user_data);
+
 
 
 #endif

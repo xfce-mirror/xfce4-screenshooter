@@ -356,3 +356,18 @@ void screenshooter_open_help (void)
       g_error_free (error_help);
     }
 }
+
+
+
+gboolean
+screenshooter_f1_key (GtkWidget *widget, GdkEventKey *event, gpointer user_data)
+{
+  if (event->keyval == GDK_F1)
+    {
+      screenshooter_open_help ();
+      return TRUE;
+    }
+
+  return FALSE;
+}
+

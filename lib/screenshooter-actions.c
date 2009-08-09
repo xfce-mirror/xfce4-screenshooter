@@ -59,6 +59,8 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
 
   g_signal_connect (dialog, "response",
                     (GCallback) cb_help_response, NULL);
+  g_signal_connect (dialog, "key-press-event",
+                    (GCallback) screenshooter_f1_key, NULL);
 
   response = gtk_dialog_run (GTK_DIALOG (dialog));
 
