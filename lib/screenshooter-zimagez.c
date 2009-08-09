@@ -62,7 +62,8 @@ static gboolean          do_xmlrpc                 (SoupSession       *session,
                                                     ...);
 static gboolean          has_empty_field           (GtkListStore      *liststore);
 static ScreenshooterJob *zimagez_upload_to_zimagez (const gchar       *file_name,
-                                                    gchar             *last_user);
+                                                    gchar             *last_user,
+                                                    gchar             *title);
 static gboolean          zimagez_upload_job        (ScreenshooterJob  *job,
                                                     GValueArray       *param_values,
                                                     GError           **error);
@@ -204,6 +205,7 @@ has_empty_field (GtkListStore *liststore)
       result = result || g_str_equal (field, "");
 
       g_free (field);
+
     }
   while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
 
@@ -227,7 +229,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   gchar *login_response = NULL;
   gchar *online_file_name = NULL;
   gchar *password = g_strdup ("");
-  gchar *title = g_strdup ("");
+  gchar *title;
   gchar *user;
 
   gsize data_length;
@@ -246,9 +248,10 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
-  g_return_val_if_fail (param_values->n_values == 2, FALSE);
+  g_return_val_if_fail (param_values->n_values == 3, FALSE);
   g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[0]), FALSE);
   g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[1]), FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[2]), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
@@ -269,6 +272,17 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   g_object_set_data_full (G_OBJECT (job), "user",
                           g_strdup (user), (GDestroyNotify) g_free);
+
+  /* Get the default title */
+  title = g_strdup (g_value_get_string (g_value_array_get_nth (param_values, 2)));
+  if (title == NULL)
+    title = g_strdup ("");
+
+  if (!g_utf8_validate (title, -1, NULL))
+    {
+      g_free (title);
+      title = g_strdup ("");
+    }
 
   /* Get the path of the image that is to be uploaded */
   image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
@@ -623,13 +637,16 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
 
 static ScreenshooterJob
-*zimagez_upload_to_zimagez (const gchar *file_path, gchar *last_user)
+*zimagez_upload_to_zimagez (const gchar *file_path,
+                            gchar *last_user,
+                            gchar *title)
 {
   g_return_val_if_fail (file_path != NULL, NULL);
 
-  return screenshooter_simple_job_launch (zimagez_upload_job, 2,
+  return screenshooter_simple_job_launch (zimagez_upload_job, 3,
                                           G_TYPE_STRING, file_path,
-                                          G_TYPE_STRING, last_user);
+                                          G_TYPE_STRING, last_user,
+                                          G_TYPE_STRING, title);
 }
 
 
@@ -1108,6 +1125,7 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
  * @image_path: the local path of the image that should be uploaded to
  * ZimageZ.com.
  * @last_user: the last user name used, to pre-fill the user field.
+ * @title: a default title, to pre-fill the title field.
  *
  * Uploads the image whose path is @image_path: a dialog asks for the user
  * login, password, a title for the image and a comment; then the image is
@@ -1117,7 +1135,9 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
  * Last user is updated with the given user name if the upload was successful.
  **/
 
-void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
+void screenshooter_upload_to_zimagez (const gchar *image_path,
+                                      gchar       *last_user,
+                                      gchar       *title)
 {
   ScreenshooterJob *job;
   GtkWidget *dialog;
@@ -1172,7 +1192,7 @@ void screenshooter_upload_to_zimagez (const gchar *image_path, gchar *last_user)
 
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
 
-  job = zimagez_upload_to_zimagez (image_path, last_user);
+  job = zimagez_upload_to_zimagez (image_path, last_user, title);
 
   g_signal_connect (job, "ask", (GCallback) cb_ask_for_information, NULL);
   g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, last_user);

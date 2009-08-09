@@ -107,7 +107,7 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
           if (sd->action == OPEN)
             screenshooter_open_screenshot (screenshot_path, sd->app);
           else
-            screenshooter_upload_to_zimagez (screenshot_path, sd->last_user);
+            screenshooter_upload_to_zimagez (screenshot_path, sd->last_user, sd->title);
         }
 
       g_object_unref (temp_dir);
