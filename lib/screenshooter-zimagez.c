@@ -730,6 +730,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   gtk_widget_set_tooltip_text (user_entry,
                                _("Your Zimagez user name, if you do not have one yet"
                                  " please create one on the Web page linked above"));
+  gtk_entry_set_activates_default (GTK_ENTRY (user_entry), TRUE);
   gtk_table_attach_defaults (GTK_TABLE (table), user_entry, 1, 2, 0, 1);
 
   /* Create the password label */
@@ -745,6 +746,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   password_entry = gtk_entry_new ();
   gtk_widget_set_tooltip_text (password_entry, _("The password for the user above"));
   gtk_entry_set_visibility (GTK_ENTRY (password_entry), FALSE);
+  gtk_entry_set_activates_default (GTK_ENTRY (password_entry), TRUE);
   gtk_table_attach_defaults (GTK_TABLE (table), password_entry, 1, 2, 1, 2);
 
   /* Create the title label */
@@ -760,6 +762,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   gtk_widget_set_tooltip_text (title_entry,
                                _("The title of the screenshot, it will be used when"
                                  " displaying the screenshot on ZimageZ"));
+  gtk_entry_set_activates_default (GTK_ENTRY (title_entry), TRUE);
   gtk_table_attach_defaults (GTK_TABLE (table), title_entry, 1, 2, 2, 3);
 
   /* Create the comment label */
@@ -776,6 +779,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   gtk_widget_set_tooltip_text (title_entry,
                                _("A comment on the screenshot, it will be used when"
                                  " displaying the screenshot on ZimageZ"));
+  gtk_entry_set_activates_default (GTK_ENTRY (comment_entry), TRUE);
   gtk_table_attach_defaults (GTK_TABLE (table), comment_entry, 1, 2, 3, 4);
 
   /* Set the values */
