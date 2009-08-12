@@ -1,5 +1,13 @@
 2009-08-12 jeromeg
 
+Add a scroll feature for the panel plugin.
+
+When scrolling the panel plugin button, the region to be
+screenshooted is changed. This is faster than opening the
+preferences dialog.
+
+2009-08-12 jeromeg
+
 First implementation of a nice rubber banding.
 
 When the screen is composited, use a nicer area selection mecanism. Draw

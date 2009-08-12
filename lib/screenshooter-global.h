@@ -58,9 +58,9 @@ ScreenshotData;
 
 
 
-/* Screenshot Modes */
+/* Screenshot regions */
 enum {
-  MODE_0,
+  REGION_0,
   FULLSCREEN,
   ACTIVE_WINDOW,
   SELECT,

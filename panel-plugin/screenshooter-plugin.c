@@ -90,6 +90,11 @@ static void
 cb_button_clicked                    (GtkWidget            *button,
                                       PluginData           *pd);
 
+static gboolean
+cb_button_scrolled                   (GtkWidget            *widget,
+                                      GdkEventScroll       *event,
+                                      PluginData *pd);
+
 static void
 cb_style_set                         (XfcePanelPlugin      *plugin,
                                       gpointer              ignored,
@@ -167,6 +172,37 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
 
   /* Make the panel button clickable */
   gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
+}
+
+
+
+static gboolean cb_button_scrolled (GtkWidget *widget,
+                                    GdkEventScroll *event,
+                                    PluginData *pd)
+{
+  switch (event->direction)
+    {
+      case GDK_SCROLL_UP:
+      case GDK_SCROLL_RIGHT:
+        pd->sd->region += 1;
+        if (pd->sd->region > SELECT)
+          pd->sd->region = FULLSCREEN;
+        set_panel_button_tooltip (pd);
+        gtk_widget_trigger_tooltip_query (pd->button);
+        return TRUE;
+      case GDK_SCROLL_DOWN:
+      case GDK_SCROLL_LEFT:
+        pd->sd->region -= 1;
+        if (pd->sd->region == REGION_0)
+          pd->sd->region = SELECT;
+        set_panel_button_tooltip (pd);
+        gtk_widget_trigger_tooltip_query (pd->button);
+        return TRUE;
+      default:
+        return FALSE;
+    }
+
+  return FALSE;
 }
 
 
@@ -325,28 +361,26 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   set_panel_button_tooltip (pd);
 
   TRACE ("Add the button to the panel");
+  gtk_container_add (GTK_CONTAINER (plugin), pd->button);
+  xfce_panel_plugin_add_action_widget (plugin, pd->button);
   gtk_widget_show_all (pd->button);
 
-  gtk_container_add (GTK_CONTAINER (plugin), pd->button);
-
-  xfce_panel_plugin_add_action_widget (plugin, pd->button);
-
   /* Set the callbacks */
-  TRACE ("Set the clicked callback");
-  g_signal_connect (pd->button, "clicked", G_CALLBACK (cb_button_clicked), pd);
+  g_signal_connect (pd->button, "clicked",
+                    (GCallback) cb_button_clicked, pd);
+  g_signal_connect (pd->button, "scroll-event",
+                    (GCallback) cb_button_scrolled, pd);
+  g_signal_connect (plugin, "free-data",
+                    (GCallback) cb_free_data, pd);
+  g_signal_connect (plugin, "size-changed",
+                    (GCallback) cb_set_size, pd);
 
-  TRACE ("Set the free data callback");
-  g_signal_connect (plugin, "free-data", G_CALLBACK (cb_free_data), pd);
+  pd->style_id = g_signal_connect (plugin, "style-set",
+                                   (GCallback) cb_style_set, pd);
 
-  TRACE ("Set the size changed callback");
-  g_signal_connect (plugin, "size-changed", G_CALLBACK (cb_set_size), pd);
-
-  TRACE ("Set the style set callback");
-  pd->style_id = g_signal_connect (plugin, "style-set", G_CALLBACK (cb_style_set), pd);
-
-  TRACE ("Set the configuration menu");
+  /* Set the configuration menu */
   xfce_panel_plugin_menu_show_configure (plugin);
-
-  g_signal_connect (plugin, "configure-plugin", G_CALLBACK (cb_properties_dialog), pd);
+  g_signal_connect (plugin, "configure-plugin",
+                    (GCallback) cb_properties_dialog, pd);
 }
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (screenshooter_plugin_construct);
