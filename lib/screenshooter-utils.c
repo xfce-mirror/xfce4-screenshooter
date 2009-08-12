@@ -167,12 +167,13 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
 
   TRACE ("Path was != NULL");
 
-  if (!g_str_equal (application, "none"))
+  if (g_str_equal (application, "none"))
     return;
 
   TRACE ("Application was not none");
 
-  command = g_strconcat (application, " ", screenshot_path, NULL);
+  command = g_strconcat (application, " ",
+                         "\"", screenshot_path, "\"", NULL);
 
   TRACE ("Launch the command");
 

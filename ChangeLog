@@ -1,5 +1,12 @@
 2009-08-12 jeromeg
 
+Fix opening of screenshots with an application.
+
+A test was incorrect, and escaping the screenshot path is safer in
+most cases.
+
+2009-08-12 jeromeg
+
 Add a scroll feature for the panel plugin.
 
 When scrolling the panel plugin button, the region to be
