@@ -1,3 +1,16 @@
+2009-08-12 jeromeg
+
+First implementation of a nice rubber banding.
+
+When the screen is composited, use a nicer area selection mecanism. Draw
+a fullscreen transparent window which is darker than the normal view.
+When the user draws a rectangle with the mouse, show the "normal" view
+in this rectangle: the area which will be grabbed is normal, the rest 
+of the screen is darker. 
+
+A "traditionnal" rubber banding ala Thunar or Xfdesktop could be nicer,
+this has to be investigated.
+
 2009-08-09 jeromeg
 
 Pressing F1 now opens the help page.

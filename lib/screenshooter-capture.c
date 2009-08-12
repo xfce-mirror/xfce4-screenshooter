@@ -21,13 +21,46 @@
 
 
 
+/* Rubberband data */
+typedef struct
+{
+  gboolean left_pressed;
+  gboolean rubber_banding;
+  gint x;
+  gint y;
+  gint x_root;
+  gint y_root;
+  GdkRectangle rectangle;
+  GdkRectangle rectangle_root;
+} RubberBandData;
+
+
+
 /* Prototypes */
 
 
 
-static GdkWindow *get_active_window (GdkScreen *screen, gboolean *needs_unref);
-static GdkPixbuf *get_window_screenshot (GdkWindow *window, gboolean show_mouse);
-static GdkPixbuf *get_rectangle_screenshot (void);
+static GdkWindow *get_active_window                   (GdkScreen      *screen,
+                                                       gboolean       *needs_unref);
+static GdkPixbuf *get_window_screenshot               (GdkWindow      *window,
+                                                       gboolean        show_mouse);
+static GdkPixbuf *get_rectangle_screenshot            (void);
+static gboolean   cb_key_pressed                      (GtkWidget      *widget,
+                                                       GdkEventKey    *event,
+                                                       gboolean       *cancelled);
+static gboolean   cb_expose                           (GtkWidget      *widget,
+                                                       GdkEventExpose *event,
+                                                       RubberBandData *rbdata);
+static gboolean   cb_button_pressed                   (GtkWidget      *widget,
+                                                       GdkEventButton *event,
+                                                       RubberBandData *rbdata);
+static gboolean   cb_button_released                  (GtkWidget      *widget,
+                                                       GdkEventButton *event,
+                                                       RubberBandData *rbdata);
+static gboolean   cb_motion_notify                    (GtkWidget      *widget,
+                                                       GdkEventMotion *event,
+                                                       RubberBandData *rbdata);
+static GdkPixbuf *get_rectangle_screenshot_composited (void);
 
 
 
@@ -196,6 +229,295 @@ static GdkPixbuf
 
         gdk_cursor_unref (cursor);
     }
+
+  return screenshot;
+}
+
+
+
+/* Callbacks for the rubber banding function */
+static gboolean cb_key_pressed (GtkWidget   *widget,
+                                GdkEventKey *event,
+                                gboolean    *cancelled)
+{
+  if (event->keyval == GDK_Escape)
+    {
+      gtk_widget_hide (widget);
+      *cancelled = TRUE;
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+
+
+static gboolean cb_expose (GtkWidget *widget,
+                           GdkEventExpose *event,
+                           RubberBandData *rbdata)
+{
+  GdkRectangle *rects = NULL;
+  gint n_rects = 0, i;
+
+  TRACE ("Expose event received.");
+
+  gdk_region_get_rectangles(event->region, &rects, &n_rects);
+
+  if (rbdata->rubber_banding)
+    {
+      GdkRectangle intersect;
+      cairo_t *cr;
+
+      cr = gdk_cairo_create (GDK_DRAWABLE (widget->window));
+      cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+
+      for (i = 0; i < n_rects; ++i)
+        {
+          /* Restore the transparent background */
+          cairo_set_source_rgba (cr, 0, 0, 0, 0.8);
+          gdk_cairo_rectangle (cr, &rects[i]);
+          cairo_fill (cr);
+
+          if (!gdk_rectangle_intersect (&rects[i],
+                                        &rbdata->rectangle,
+                                        &intersect))
+            {
+              continue;
+            }
+
+          /* Paint the rubber banding rectangles */
+          cairo_set_source_rgba (cr, 1.0f, 1.0f, 1.0f, 0.0f);
+          gdk_cairo_rectangle (cr, &intersect);
+          cairo_fill (cr);
+        }
+
+      cairo_destroy(cr);
+    }
+  else
+    {
+      cairo_t *cr;
+
+      /* Draw the transparent background */
+      cr = gdk_cairo_create (GDK_DRAWABLE (widget->window));
+      cairo_set_source_rgba (cr, 0, 0, 0, 0.8);
+      cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+
+      for (i = 0; i < n_rects; ++i)
+        {
+            gdk_cairo_rectangle (cr, &rects[i]);
+            cairo_fill (cr);
+        }
+
+      cairo_destroy(cr);
+    }
+
+  g_free (rects);
+
+  return FALSE;
+}
+
+
+
+static gboolean cb_button_pressed (GtkWidget *widget,
+                                   GdkEventButton *event,
+                                   RubberBandData *rbdata)
+{
+  if (event->button == 1)
+    {
+      TRACE ("Left button pressed");
+
+      rbdata->left_pressed = TRUE;
+      rbdata->x = event->x;
+      rbdata->y = event->y;
+      rbdata->x_root = event->x_root;
+      rbdata->y_root = event->y_root;
+
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+
+
+static gboolean cb_button_released (GtkWidget *widget,
+                                    GdkEventButton *event,
+                                    RubberBandData *rbdata)
+{
+  if (event->button == 1)
+    {
+      if (rbdata->rubber_banding)
+        {
+          gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
+          return TRUE;
+        }
+      else
+        rbdata->left_pressed = rbdata->rubber_banding = FALSE;
+    }
+
+  return FALSE;
+}
+
+
+
+static gboolean cb_motion_notify (GtkWidget *widget,
+                                  GdkEventMotion *event,
+                                  RubberBandData *rbdata)
+{
+  if (rbdata->left_pressed)
+    {
+      GdkRectangle *new_rect, *new_rect_root;
+      GdkRectangle old_rect, intersect;
+      GdkRegion *region;
+
+      TRACE ("Mouse is moving with left button pressed");
+
+      new_rect = &rbdata->rectangle;
+      new_rect_root = &rbdata->rectangle_root;
+
+      if (!rbdata->rubber_banding)
+        {
+          /* This is the start of a rubber banding */
+          rbdata->rubber_banding = TRUE;
+          old_rect.x = rbdata->x;
+          old_rect.y = rbdata->y;
+          old_rect.height = old_rect.width = 1;
+        }
+      else
+        {
+          /* Rubber banding has already started, update it */
+          old_rect.x = new_rect->x;
+          old_rect.y = new_rect->y;
+          old_rect.width = new_rect->width;
+          old_rect.height = new_rect->height;
+        }
+
+      /* Get the new rubber banding rectangle */
+      new_rect->x = MIN (rbdata->x , event->x);
+      new_rect->y = MIN (rbdata->y, event->y);
+      new_rect->width = ABS (rbdata->x - event->x) + 1;
+      new_rect->height = ABS (rbdata->y - event->y) +1;
+
+      new_rect_root->x = MIN (rbdata->x_root , event->x_root);
+      new_rect_root->y = MIN (rbdata->y_root, event->y_root);
+      new_rect_root->width = ABS (rbdata->x_root - event->x_root) + 1;
+      new_rect_root->height = ABS (rbdata->y_root - event->y_root) +1;
+
+      region = gdk_region_rectangle (&old_rect);
+      gdk_region_union_with_rect (region, new_rect);
+
+      /* Try to be smart: don't send the expose event for regions which
+       * have already been painted */
+      if (gdk_rectangle_intersect (&old_rect, new_rect, &intersect)
+          && intersect.width > 2 && intersect.height > 2)
+        {
+          GdkRegion *region_intersect;
+
+          intersect.x += 1;
+          intersect.width -= 2;
+          intersect.y += 1;
+          intersect.height -= 2;
+
+          region_intersect = gdk_region_rectangle(&intersect);
+          gdk_region_subtract(region, region_intersect);
+          gdk_region_destroy(region_intersect);
+        }
+
+      gdk_window_invalidate_region (widget->window, region, TRUE);
+      gdk_region_destroy (region);
+
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+
+static GdkPixbuf
+*get_rectangle_screenshot_composited (void)
+{
+  GtkWidget *window;
+  RubberBandData rbdata;
+  gboolean cancelled = FALSE;
+  GdkPixbuf *screenshot;
+  GdkWindow *root;
+  GdkCursor *xhair_cursor = gdk_cursor_new (GDK_CROSSHAIR);
+
+  /* Initialize the rubber band data */
+  rbdata.left_pressed = FALSE;
+  rbdata.rubber_banding = FALSE;
+  rbdata.x = rbdata.y = 0;
+
+  /* Create the fullscreen window on which the rubber banding
+   * will be drawn. */
+  window = gtk_dialog_new ();
+  gtk_window_set_decorated (GTK_WINDOW (window), FALSE);
+  gtk_window_set_deletable (GTK_WINDOW (window), FALSE);
+  gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
+  gtk_widget_set_app_paintable (window, TRUE);
+  gtk_widget_add_events (window,
+                         GDK_BUTTON_RELEASE_MASK | GDK_BUTTON_PRESS_MASK |
+                         GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK |
+                         GDK_KEY_PRESS_MASK);
+  gtk_widget_set_colormap (window,
+                           gdk_screen_get_rgba_colormap (gdk_screen_get_default ()));
+
+  /* Connect to the interesting signals */
+  g_signal_connect (window, "key-press-event",
+                    (GCallback) cb_key_pressed, &cancelled);
+  g_signal_connect (window, "expose-event",
+                    (GCallback) cb_expose, &rbdata);
+  g_signal_connect (window, "button-press-event",
+                    (GCallback) cb_button_pressed, &rbdata);
+  g_signal_connect (window, "button-release-event",
+                    (GCallback) cb_button_released, &rbdata);
+  g_signal_connect (window, "motion-notify-event",
+                    (GCallback) cb_motion_notify, &rbdata);
+
+  /* This window is not managed by the window manager, we have to set everything
+   * ourselves */
+  gtk_widget_realize (window);
+  gdk_window_set_cursor (window->window, xhair_cursor);
+  gdk_window_set_override_redirect (window->window, TRUE);
+  gtk_widget_set_size_request (window,
+                               gdk_screen_get_width (gdk_screen_get_default ()),
+                               gdk_screen_get_height (gdk_screen_get_default ()));
+  gdk_window_raise (window->window);
+  gtk_widget_show_now (window);
+  gtk_widget_grab_focus (window);
+  gdk_flush ();
+
+  /* Grab the mouse and the keyboard to prevent any interaction with other 
+   * applications */
+  gdk_keyboard_grab (window->window, FALSE, GDK_CURRENT_TIME);
+  gdk_pointer_grab (window->window, TRUE, 0, NULL, NULL, GDK_CURRENT_TIME);
+
+  gtk_dialog_run (GTK_DIALOG (window));
+  gtk_widget_destroy (window);
+  gdk_cursor_unref (xhair_cursor);
+
+  if (cancelled)
+    return NULL;
+
+  screenshot = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
+                               TRUE,
+                               8,
+                               rbdata.rectangle.width,
+                               rbdata.rectangle.height);
+
+  /* Grab the screenshot on the main window */
+  root = gdk_get_default_root_window ();
+  gdk_pixbuf_get_from_drawable (screenshot, root, NULL,
+                                rbdata.rectangle_root.x,
+                                rbdata.rectangle_root.y,
+                                0, 0,
+                                rbdata.rectangle.width,
+                                rbdata.rectangle.height);
+
+  /* Ungrab the mouse and the keyboard */
+  gdk_pointer_ungrab (GDK_CURRENT_TIME);
+  gdk_keyboard_ungrab (GDK_CURRENT_TIME);
+  gdk_flush ();
 
   return screenshot;
 }
@@ -502,8 +824,10 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
   else if (region == SELECT)
     {
       TRACE ("Let the user select the region to screenshot");
-
-      screenshot = get_rectangle_screenshot ();
+      if (!gdk_screen_is_composited (screen))
+        screenshot = get_rectangle_screenshot ();
+      else
+        screenshot = get_rectangle_screenshot_composited ();
     }
 
 
