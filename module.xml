@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Xfce4 Screenshooter</name>
+  <shortdesc xml:lang="en">An application to take screenshots</shortdesc>
+  <homepage rdf:resource="http://goodies.xfce.org/projects/applications/xfce4-screenshooter"/>
+  <mailing-list rdf:resource="http://foo-projects.org/mailman/listinfo/xfce/"/>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Jérôme Guelfucci</foaf:name>
+      <foaf:mbox>mailto:jeromeg@xfce.org</foaf:mbox>
+      <gnome:userid>jeromeg</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+</Project>

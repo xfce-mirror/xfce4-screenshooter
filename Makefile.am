@@ -59,9 +59,9 @@ BUILT_SOURCES =	$(lib_libscreenshooter_built_sources)
 lib/screenshooter-marshal.h: lib/stamp-screenshooter-marshal.h
 	@true
 lib/stamp-screenshooter-marshal.h: lib/screenshooter-marshal.list
-	( cd $(top_srcdir)/lib && glib-genmarshal \
+	cd $(top_srcdir)/lib && (glib-genmarshal \
 		--prefix=_screenshooter_marshal \
-		--header screenshooter-marshal.list ) >> xgen-emh \
+		--header screenshooter-marshal.list) >> xgen-emh \
 	&& ( cmp -s xgen-emh screenshooter-marshal.h || cp xgen-emh screenshooter-marshal.h ) \
 	&& rm -f xgen-emh \
 	&& echo timestamp > $(@F)
