@@ -1,3 +1,14 @@
+2009-08-25 jeromeg
+
+Various fixes for the build system.
+
+Use latest Xfce-dev-tools to get rid of revision and linguas
+substitution, remove the LINGUAS file. Use git instead of svn in the
+version generation.
+
+Fix distcheck by cleaning some pathes in Makefile.am and adding some
+temporary files to POTFILES.skip.
+
 2009-08-14 jeromeg
 
 Generate the marshall header in lib/.
