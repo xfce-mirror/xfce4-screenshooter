@@ -1,10 +1,11 @@
 Before next release:
 
-* Port "select a region" to use cairo to have transparent rubber banding
-as in thunar and xfdesktop (only when the screen is composited).
-
-Long term:
 * Use Xshape to have a transparent background in the generated screenshots.
+* Improve the cairo rubber banding: allow the user to compute the size of
+  the rectangle (as with a Gimp selection for example). The Enter key
+  would be used to validate the selection.
+* When the screen is composited, show the selection instructions using a
+  transparent label.
 
 Low priority:
 
