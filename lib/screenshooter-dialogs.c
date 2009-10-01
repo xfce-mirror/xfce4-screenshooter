@@ -20,7 +20,8 @@
 #include "screenshooter-dialogs.h"
 
 #define ICON_SIZE 16
-#define THUMB_SIZE 200
+#define THUMB_X_SIZE 200
+#define THUMB_Y_SIZE 125
 
 /* Prototypes */
 
@@ -460,9 +461,9 @@ static GdkPixbuf
   height = gdk_pixbuf_get_height (screenshot);
 
   if (width > height)
-    i = width / THUMB_SIZE;
+    i = width / THUMB_X_SIZE;
   else
-    i = height / THUMB_SIZE;
+    i = height / THUMB_Y_SIZE;
 
   if (i == 0)
     return gdk_pixbuf_copy (screenshot);
