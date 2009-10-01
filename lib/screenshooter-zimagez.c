@@ -222,6 +222,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   const gchar *last_user;
   const gchar *date = screenshooter_get_date (FALSE);
   const gchar *current_time = screenshooter_get_time ();
+  const gchar *proxy_uri;
   gchar *comment = g_strdup_printf (_("Taken on %s, at %s"), date, current_time);
   gchar *data = NULL;
   gchar *encoded_password = NULL;
@@ -240,6 +241,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   const gchar *method_logout = g_strdup ("apiXml.xmlrpcLogout");
   const gchar *method_upload = g_strdup ("apiXml.xmlrpcUpload");
   SoupSession *session;
+  SoupURI *soup_proxy_uri;
 
   GError *tmp_error;
   GtkTreeIter iter;
@@ -290,6 +292,16 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   /* Start the user soup session */
   exo_job_info_message (EXO_JOB (job), _("Initialize the connection..."));
   session = soup_session_sync_new ();
+
+  /* Set the proxy URI if any */
+  proxy_uri = g_getenv ("http_proxy");
+
+  if (proxy_uri != NULL)
+    {
+      soup_proxy_uri = soup_uri_new (proxy_uri);
+      g_object_set (session, "proxy-uri", soup_proxy_uri, NULL);
+      soup_uri_free (soup_proxy_uri);
+    }
 
   TRACE ("Get the information liststore ready.");
   liststore = gtk_list_store_new (2, G_TYPE_INT, G_TYPE_STRING);
