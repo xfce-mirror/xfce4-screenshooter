@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-31 14:02+0200\n"
-"PO-Revision-Date: 2009-07-13 18:48+0100\n"
+"PO-Revision-Date: 2009-09-19 11:50+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgstr "Mostrar o punteiro do rato na captura de pantalla"
 
 #: ../lib/screenshooter-dialogs.c:917
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Espera antes da captura</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tempo de espera antes da captura</span>"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Delay in seconds before the screenshot is taken"
@@ -118,7 +118,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Despois da captura</span>
 #. Display the save dialog checkbox
 #: ../lib/screenshooter-dialogs.c:1007
 msgid "Show the save dialog"
-msgstr "Mostrar o diálogo de gardar"
+msgstr "Mostrar o diálogo de gardado"
 
 #: ../lib/screenshooter-dialogs.c:1013
 msgid "The save dialog allows you to change the file name and the save location"
@@ -155,7 +155,7 @@ msgstr "Definir a localización predeterminada para gardar"
 
 #: ../lib/screenshooter-dialogs.c:1127
 msgid "Copy to the clipboard"
-msgstr "Copiar ó portarretallos"
+msgstr "Copiar ao portarretallos"
 
 #: ../lib/screenshooter-dialogs.c:1132
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
@@ -176,12 +176,12 @@ msgstr "Aplicación ca que abrir a captura de pantalla"
 
 #: ../lib/screenshooter-dialogs.c:1204
 msgid "Host on ZimageZ"
-msgstr "Almacenar en ZimageZ"
+msgstr "Gardar en ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1210
 #: ../src/main.c:92
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Almacenar a captura en ZimageZ, un servizo de almacenamento de imaxes en liña gratuito"
+msgstr "Gardar a captura en ZimageZ, un servizo de almacenamento de imaxes en liña gratuito"
 
 #: ../lib/screenshooter-dialogs.c:1255
 msgid "Save screenshot as..."
