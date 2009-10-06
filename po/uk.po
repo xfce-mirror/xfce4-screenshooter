@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-31 14:02+0200\n"
-"PO-Revision-Date: 2009-10-03 18:41+0300\n"
+"PO-Revision-Date: 2009-10-06 18:07+0300\n"
 "Last-Translator: Andriy Matkovsky <sidius.ua@gmail.com>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,6 @@ msgid "%.2fKb of %.2fKb"
 msgstr "%.2fКб з %.2fКб"
 
 #: ../lib/screenshooter-dialogs.c:577
-#, fuzzy
 msgid "Transfer"
 msgstr "Передача"
 
@@ -285,12 +284,12 @@ msgid "<a href=\"%s\">Full size image</a>"
 msgstr "<a href=\"%s\">Повнорозмірне зображення</a>"
 
 #: ../lib/screenshooter-zimagez.c:872
-#, fuzzy, c-format
+#, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr "<a href=\"%s\">Велике зображення попереднього перегляду</a>"
 
 #: ../lib/screenshooter-zimagez.c:874
-#, fuzzy, c-format
+#, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
 msgstr "<a href=\"%s\">Маленьке зображення попереднього перегляду</a>"
 
