@@ -116,6 +116,8 @@ do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
   GError *err = NULL;
   char *body;
 
+  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
   va_start (args, retval);
   params = soup_value_array_from_args (args);
   va_end (args);
@@ -243,7 +245,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   SoupSession *session;
   SoupURI *soup_proxy_uri;
 
-  GError *tmp_error;
+  GError *tmp_error = NULL;
   GtkTreeIter iter;
   GtkListStore *liststore;
   GValue response_value;
