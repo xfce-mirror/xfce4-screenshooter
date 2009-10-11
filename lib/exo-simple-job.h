@@ -35,7 +35,7 @@ G_BEGIN_DECLS
  * Used by the #ExoSimpleJob to process the @job. See exo_simple_job_launch()
  * for further details.
  *
- * Return value: %TRUE on success, %FALSE in case of an error.
+ * Returns: %TRUE on success, %FALSE in case of an error.
  **/
 typedef gboolean (*ExoSimpleJobFunc) (ExoJob      *job,
                                       GValueArray *param_values,

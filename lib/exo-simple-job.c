@@ -38,9 +38,21 @@
 #include "exo-job.h"
 #include "exo-simple-job.h"
 
+/**
+ * SECTION: exo-simple-job
+ * @title: ExoSimpleJob
+ * @short_description: Simple interface to execute functions asynchronously
+ * @include: exo/exo.h
+ * @see_also: <link linkend="ExoJob">ExoJob</link>
+ *
+ * <link linkend="ExoSimpleJob">ExoSimpleJob</link> can be used to execute
+ * functions asynchronously in an #ExoJob wrapper object. It is easier to
+ * use than the #GThread system and provides basic signals to follow the
+ * progress of an operation.
+ **/
 
 
-static void     exo_simple_job_class_init (ExoSimpleJobClass *klass);
+
 static void     exo_simple_job_finalize   (GObject           *object);
 static gboolean exo_simple_job_execute    (ExoJob            *job,
                                            GError           **error);
@@ -52,54 +64,43 @@ struct _ExoSimpleJobClass
   ExoJobClass __parent__;
 };
 
+/**
+ * ExoSimpleJob:
+ *
+ * The #ExoSimpleJob struct contains only private fields and should not be
+ * directly accessed.
+ **/
 struct _ExoSimpleJob
 {
-  ExoJob           __parent__;
   ExoSimpleJobFunc func;
   GValueArray     *param_values;
+  ExoJob           __parent__;
 };
 
 
 
-static GObjectClass *exo_simple_job_parent_class;
-
-
-
-GType
-exo_simple_job_get_type (void)
-{
-  static GType type = G_TYPE_INVALID;
-
-  if (G_UNLIKELY (type == G_TYPE_INVALID))
-    {
-      type = g_type_register_static_simple (EXO_TYPE_JOB,
-                                            "ExoSimpleJob",
-                                            sizeof (ExoSimpleJobClass),
-                                            (GClassInitFunc) exo_simple_job_class_init,
-                                            sizeof (ExoSimpleJob),
-                                            NULL,
-                                            0);
-    }
-
-  return type;
-}
+G_DEFINE_TYPE (ExoSimpleJob, exo_simple_job, EXO_TYPE_JOB)
 
 
 
 static void
 exo_simple_job_class_init (ExoSimpleJobClass *klass)
 {
-  ExoJobClass *exojob_class;
-  GObjectClass   *gobject_class;
-
-  /* determine the parent type class */
-  exo_simple_job_parent_class = g_type_class_peek_parent (klass);
+  ExoJobClass  *exojob_class;
+  GObjectClass *gobject_class;
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->finalize = exo_simple_job_finalize;
 
   exojob_class = EXO_JOB_CLASS (klass);
   exojob_class->execute = exo_simple_job_execute;
+}
+
+
+
+static void
+exo_simple_job_init (ExoSimpleJob *simple_job)
+{
 }
 
 
@@ -168,13 +169,73 @@ exo_simple_job_execute (ExoJob  *job,
  * An example could be:
  *
  * <informalexample><programlisting>
- * exo_simple_job_launch (list_directory_job, 1, G_TYPE_FILE, file);
+ * static gboolean 
+ * list_directory (ExoJob      *job,
+ *                 GValueArray *param_values,
+ *                 GError     **error)
+ * {
+ *   GFileEnumerator *enumerator;
+ *   GFileInfo       *info;
+ *   GError          *err = NULL;
+ *   GFile           *directory;
+ *
+ *   if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
+ *     return FALSE;
+ *
+ *   directory = g_value_get_object (g_value_array_get_nth (param_values, 0));
+ *
+ *   enumerator = g_file_enumerate_children (directory, 
+ *                                           "standard::display-name",
+ *                                           G_FILE_QUERY_INFO_NONE,
+ *                                           exo_job_get_cancellable (job),
+ *                                           &err);
+ *
+ *   if (err != NULL) 
+ *     {
+ *       g_propagate_error (error, err);
+ *       return FALSE;
+ *     }
+ *
+ *   while (TRUE)
+ *     {
+ *       info = g_file_enumerator_next_file (enumerator, 
+ *                                           exo_job_get_cancellable (job),
+ *                                           &err);
+ *
+ *       if (info == NULL)
+ *         break;
+ *
+ *       exo_job_info_message (job, _("Child: %s"), 
+ *                             g_file_info_get_display_name (info));
+ *
+ *       g_object_unref (info);
+ *     }
+ *
+ *   g_object_unref (enumerator);
+ *
+ *   if (err != NULL)
+ *     {
+ *       g_propagate_error (error, err);
+ *       return FALSE;
+ *     }
+ *   else
+ *     {
+ *       return TRUE;
+ *     }
+ * }
+ *
+ * ...
+ *
+ * GFile *file = g_file_new_for_path ("/home/user");
+ * ExoJob *job = exo_simple_job_launch (list_directory, 1, G_TYPE_FILE, file);
+ * g_signal_connect (job, "info-message", G_CALLBACK (update_some_widget), widget);
+ * g_signal_connect (job, "finished", G_CALLBACK (unref_the_job_object), NULL);
  * </programlisting></informalexample>
  *
- * The caller is responsible to release the returned object using
- * g_object_unref() when no longer needed.
+ * The caller is responsible to release the returned #ExoJob object 
+ * using g_object_unref() when no longer needed.
  *
- * Return value: the launched #ExoJob.
+ * Returns: the launched #ExoJob.
  **/
 ExoJob*
 exo_simple_job_launch (ExoSimpleJobFunc func,
@@ -217,3 +278,4 @@ exo_simple_job_launch (ExoSimpleJobFunc func,
   /* launch the job */
   return exo_job_launch (EXO_JOB (simple_job));
 }
+
