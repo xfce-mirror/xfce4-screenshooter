@@ -73,7 +73,7 @@ static void              cb_ask_for_information    (ScreenshooterJob  *job,
                                                     gpointer           unused);
 static void              cb_image_uploaded         (ScreenshooterJob  *job,
                                                     gchar             *upload_name,
-                                                    gchar             *last_user);
+                                                    gchar            **last_user);
 static void              cb_error                  (ExoJob            *job,
                                                     GError            *error,
                                                     gpointer           unused);
@@ -883,7 +883,7 @@ cb_ask_for_information (ScreenshooterJob *job,
 
 
 
-static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar *last_user)
+static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar **last_user)
 {
   GtkWidget *dialog;
   GtkWidget *main_alignment, *vbox;
@@ -923,15 +923,15 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
     g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", image_url, thumbnail_url);
 
   /* Set the last user */
-  if (last_user != NULL)
-    g_free (last_user);
+  if (*last_user != NULL)
+    g_free (*last_user);
 
   last_user_temp = g_object_get_data (G_OBJECT (job), "user");
 
   if (last_user_temp == NULL)
     last_user_temp = g_strdup ("");
 
-  last_user = g_strdup (last_user_temp);
+  *last_user = g_strdup (last_user_temp);
 
   /* Dialog */
   dialog =
@@ -1154,7 +1154,7 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
  **/
 
 void screenshooter_upload_to_zimagez (const gchar *image_path,
-                                      gchar       *last_user,
+                                      gchar       **last_user,
                                       gchar       *title)
 {
   ScreenshooterJob *job;
@@ -1210,7 +1210,7 @@ void screenshooter_upload_to_zimagez (const gchar *image_path,
 
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
 
-  job = zimagez_upload_to_zimagez (image_path, last_user, title);
+  job = zimagez_upload_to_zimagez (image_path, *last_user, title);
 
   g_signal_connect (job, "ask", (GCallback) cb_ask_for_information, NULL);
   g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, last_user);

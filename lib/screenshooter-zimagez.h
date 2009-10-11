@@ -33,9 +33,9 @@
 #include "sexy-url-label.h"
 #include "katze-throbber.h"
 
-void screenshooter_upload_to_zimagez (const gchar *image_path,
-                                      gchar       *last_user,
-                                      gchar       *title);
+void screenshooter_upload_to_zimagez (const gchar  *image_path,
+                                      gchar       **last_user,
+                                      gchar        *title);
 
 
 #endif
