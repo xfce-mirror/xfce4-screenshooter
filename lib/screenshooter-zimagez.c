@@ -904,6 +904,7 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
   gchar *last_user_temp;
 
   g_return_if_fail (upload_name != NULL);
+  g_return_if_fail (last_user == NULL || *last_user == NULL);
 
   image_url = g_strdup_printf ("http://www.zimagez.com/zimage/%s.php", upload_name);
   thumbnail_url =
@@ -921,10 +922,6 @@ static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar 
                      image_url, thumbnail_url);
   bb_code =
     g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", image_url, thumbnail_url);
-
-  /* Set the last user */
-  if (*last_user != NULL)
-    g_free (*last_user);
 
   last_user_temp = g_object_get_data (G_OBJECT (job), "user");
 
@@ -1153,9 +1150,10 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
  * Last user is updated with the given user name if the upload was successful.
  **/
 
-void screenshooter_upload_to_zimagez (const gchar *image_path,
-                                      gchar       **last_user,
-                                      gchar       *title)
+void screenshooter_upload_to_zimagez (const gchar  *image_path,
+                                      gchar        *last_user,
+                                      gchar       **new_last_user,
+                                      gchar        *title)
 {
   ScreenshooterJob *job;
   GtkWidget *dialog;
@@ -1164,6 +1162,7 @@ void screenshooter_upload_to_zimagez (const gchar *image_path,
   GtkWidget *main_box, *main_alignment;
 
   g_return_if_fail (image_path != NULL);
+  g_return_if_fail (new_last_user == NULL || *new_last_user == NULL);
 
   dialog =
     gtk_dialog_new_with_buttons (_("ZimageZ"),
@@ -1210,10 +1209,10 @@ void screenshooter_upload_to_zimagez (const gchar *image_path,
 
   gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
 
-  job = zimagez_upload_to_zimagez (image_path, *last_user, title);
+  job = zimagez_upload_to_zimagez (image_path, last_user, title);
 
   g_signal_connect (job, "ask", (GCallback) cb_ask_for_information, NULL);
-  g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, last_user);
+  g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, new_last_user);
   g_signal_connect (job, "error", (GCallback) cb_error, NULL);
   g_signal_connect (job, "finished", (GCallback) cb_finished, dialog);
   g_signal_connect (job, "info-message", (GCallback) cb_update_info, label);

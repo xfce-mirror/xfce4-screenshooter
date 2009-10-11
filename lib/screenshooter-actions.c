@@ -101,7 +101,20 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
           if (sd->action == OPEN)
             screenshooter_open_screenshot (screenshot_path, sd->app);
           else
-            screenshooter_upload_to_zimagez (screenshot_path, &sd->last_user, sd->title);
+            {
+              gchar *new_last_user = NULL;
+
+              screenshooter_upload_to_zimagez (screenshot_path,
+                                               sd->last_user,
+                                               &new_last_user,
+                                               sd->title);
+
+              if (new_last_user)
+                {
+                  g_free (sd->last_user);
+                  sd->last_user = new_last_user;
+                }
+            }
         }
 
       g_object_unref (temp_dir);

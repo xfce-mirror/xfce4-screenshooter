@@ -34,7 +34,8 @@
 #include "katze-throbber.h"
 
 void screenshooter_upload_to_zimagez (const gchar  *image_path,
-                                      gchar       **last_user,
+                                      gchar        *last_user,
+                                      gchar       **new_last_user,
                                       gchar        *title);
 
 
