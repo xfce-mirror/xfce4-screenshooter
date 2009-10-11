@@ -106,8 +106,8 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
 
               screenshooter_upload_to_zimagez (screenshot_path,
                                                sd->last_user,
-                                               &new_last_user,
-                                               sd->title);
+                                               sd->title,
+                                               &new_last_user);
 
               if (new_last_user)
                 {
