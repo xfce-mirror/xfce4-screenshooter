@@ -883,7 +883,9 @@ cb_ask_for_information (ScreenshooterJob *job,
 
 
 
-static void cb_image_uploaded (ScreenshooterJob *job, gchar *upload_name, gchar **last_user)
+static void cb_image_uploaded (ScreenshooterJob  *job,
+                               gchar             *upload_name,
+                               gchar            **last_user)
 {
   GtkWidget *dialog;
   GtkWidget *main_alignment, *vbox;
@@ -1141,13 +1143,17 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
  * ZimageZ.com.
  * @last_user: the last user name used, to pre-fill the user field.
  * @title: a default title, to pre-fill the title field.
+ * @new_last_user: address of the string used to store the new user
+ * if the upload is succesful.
  *
  * Uploads the image whose path is @image_path: a dialog asks for the user
  * login, password, a title for the image and a comment; then the image is
  * uploaded. The dialog is shown again with a warning is the password did
- * match the user name. The user can also cancel the upload procedure.
+ * not match the user name. The user can also cancel the upload procedure.
  *
- * Last user is updated with the given user name if the upload was successful.
+ * If the upload was succesful, @new_last_user points to the user name for
+ * which the upload was done.
+ *
  **/
 
 void screenshooter_upload_to_zimagez (const gchar  *image_path,
