@@ -1,9 +1,12 @@
 === Version 1.x.x ===
 
   * The XMLRPC-C dependency has been replaced by libsoup.
+  * Switch to a non-recursive Makefile.am. This reduces the build time
+    and centralizes the build information.
   
   * Bugs fixed:
     - UTF-8 characters in user name or password caused a login failure.
+    - Fix all warnings triggered by running autogen.sh.
 
 === Version 1.6.0 ===
 
