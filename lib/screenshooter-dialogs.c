@@ -1114,14 +1114,8 @@ gchar
                                 const gchar *title,
                                 gboolean horodate)
 {
-  gchar *filename = generate_filename_for_uri (directory, title, horodate);
-  gchar *savename = NULL;
-  gchar *save_uri = g_build_filename (directory, filename, NULL);
+  const gchar *filename = generate_filename_for_uri (directory, title, horodate);
+  const gchar *save_uri = g_build_filename (directory, filename, NULL);
 
-  savename = save_screenshot_to (screenshot, save_uri);
-
-  g_free (save_uri);
-  g_free (filename);
-
-  return savename;
+  return save_screenshot_to (screenshot, save_uri);
 }
