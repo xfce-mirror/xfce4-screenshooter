@@ -61,6 +61,9 @@ cb_default_folder                  (GtkWidget          *chooser,
 static void
 cb_delay_spinner_changed           (GtkWidget          *spinner,
                                     ScreenshotData     *sd);
+static void
+cb_title_entry_changed             (GtkEditable        *editable,
+                                    ScreenshotData     *sd);
 static gchar
 *generate_filename_for_uri         (const gchar        *uri,
                                     const gchar        *title,
@@ -98,7 +101,7 @@ save_screenshot_to_remote_location (GdkPixbuf          *screenshot,
                                     GFile              *save_file);
 static gchar
 *save_screenshot_to                (GdkPixbuf          *screenshot,
-                                    gchar              *save_uri);
+                                    const gchar        *save_uri);
 
 
 
@@ -208,6 +211,15 @@ static void cb_default_folder (GtkWidget *chooser, ScreenshotData  *sd)
 static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 {
   sd->delay = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
+}
+
+
+
+static void cb_title_entry_changed (GtkEditable *editable, ScreenshotData *sd)
+{
+  g_free (sd->title);
+
+  sd->title = gtk_editable_get_chars (editable, 0, -1);
 }
 
 
@@ -555,9 +567,7 @@ static gchar
       return NULL;
     }
   else
-    {
-      return save_path;
-    }
+    return save_path;
 }
 
 static void
@@ -640,7 +650,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
 }
 
 static gchar
-*save_screenshot_to (GdkPixbuf *screenshot, gchar *save_uri)
+*save_screenshot_to (GdkPixbuf *screenshot, const gchar *save_uri)
 {
   GFile *save_file = g_file_new_for_uri (save_uri);
   gchar *result = NULL;
@@ -904,7 +914,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *combobox, *open_box;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
-  GtkWidget *preview, *preview_box, *preview_label;
+  GtkWidget *preview, *preview_box, *preview_label, *title_entry;
   GdkPixbuf *thumbnail;
 
   dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
@@ -1091,6 +1101,15 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (preview_box), preview, FALSE, FALSE, 0);
   g_object_unref (thumbnail);
   gtk_widget_show (preview);
+
+  /* Title entry */
+  title_entry = gtk_entry_new ();
+  gtk_entry_set_text (GTK_ENTRY (title_entry), sd->title);
+  gtk_box_pack_start (GTK_BOX (preview_box), title_entry, FALSE, FALSE, 0);
+  gtk_widget_set_tooltip_text (title_entry, _("Title of the screenshot"));
+  g_signal_connect (G_OBJECT (title_entry), "changed",
+                    G_CALLBACK (cb_title_entry_changed), sd);
+  gtk_widget_show (title_entry);
 
   return dlg;
 }
