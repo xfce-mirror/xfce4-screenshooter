@@ -56,13 +56,7 @@ static void
 cb_zimagez_toggled                 (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
-cb_default_folder                  (GtkWidget          *chooser,
-                                    ScreenshotData     *sd);
-static void
 cb_delay_spinner_changed           (GtkWidget          *spinner,
-                                    ScreenshotData     *sd);
-static void
-cb_title_entry_changed             (GtkEditable        *editable,
                                     ScreenshotData     *sd);
 static gchar
 *generate_filename_for_uri         (const gchar        *uri,
@@ -198,28 +192,10 @@ static void cb_zimagez_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 
 
-/* Set sd->screenshot_dir when the user changed the value in the file chooser */
-static void cb_default_folder (GtkWidget *chooser, ScreenshotData  *sd)
-{
-  g_free (sd->screenshot_dir);
-  sd->screenshot_dir = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
-}
-
-
-
 /* Set the delay according to the spinner */
 static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 {
   sd->delay = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
-}
-
-
-
-static void cb_title_entry_changed (GtkEditable *editable, ScreenshotData *sd)
-{
-  g_free (sd->title);
-
-  sd->title = gtk_editable_get_chars (editable, 0, -1);
 }
 
 
@@ -890,7 +866,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   GtkWidget *left_box;
   GtkWidget *actions_label, *actions_alignment, *actions_box;
-  GtkWidget *save_box, *save_radio_button, *dir_chooser;
+  GtkWidget *save_radio_button;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
   GtkWidget *zimagez_radio_button;
 
@@ -898,7 +874,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *combobox, *open_box;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
-  GtkWidget *preview, *preview_box, *preview_label, *title_entry;
+  GtkWidget *preview, *preview_box, *preview_label;
   GdkPixbuf *thumbnail;
 
   dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
@@ -956,33 +932,14 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_container_add (GTK_CONTAINER (actions_alignment), actions_box);
   gtk_container_set_border_width (GTK_CONTAINER (actions_box), 0);
 
-  /* Create the save horizontal box */
-  save_box = gtk_hbox_new (FALSE, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (save_box), 0);
-  gtk_box_pack_start (GTK_BOX (actions_box), save_box, FALSE, FALSE, 0);
-
   /* Save option radio button */
-  save_radio_button = gtk_radio_button_new_with_mnemonic (NULL, _("Save in:"));
+  save_radio_button = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_radio_button),
                                 (sd->action == SAVE));
   g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                     G_CALLBACK (cb_save_toggled), sd);
   gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
-  gtk_box_pack_start (GTK_BOX (save_box), save_radio_button, FALSE, FALSE, 0);
-
-  /* Directory chooser */
-  dir_chooser =
-    gtk_file_chooser_button_new (_("Default save location"),
-                                 GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-  gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (dir_chooser),
-                                           sd->screenshot_dir);
-  gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (dir_chooser), FALSE);
-  gtk_widget_set_tooltip_text (dir_chooser, _("Set the default save location"));
-  g_signal_connect (G_OBJECT (dir_chooser), "selection-changed",
-                    G_CALLBACK (cb_default_folder), sd);
-  g_signal_connect (G_OBJECT (save_radio_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_sensi), dir_chooser);
-  gtk_box_pack_start (GTK_BOX (save_box), dir_chooser, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (actions_box), save_radio_button, FALSE, FALSE, 0);
 
   /* Copy to clipboard radio button */
   clipboard_radio_button =
@@ -1068,14 +1025,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (preview_box), preview, FALSE, FALSE, 0);
   g_object_unref (thumbnail);
 
-  /* Title entry */
-  title_entry = gtk_entry_new ();
-  gtk_entry_set_text (GTK_ENTRY (title_entry), sd->title);
-  gtk_box_pack_start (GTK_BOX (preview_box), title_entry, FALSE, FALSE, 0);
-  gtk_widget_set_tooltip_text (title_entry, _("Title of the screenshot"));
-  g_signal_connect (G_OBJECT (title_entry), "changed",
-                    G_CALLBACK (cb_title_entry_changed), sd);
-
   gtk_widget_show_all (GTK_DIALOG (dlg)->vbox);
 
   return dlg;
@@ -1098,10 +1047,53 @@ gchar
 *screenshooter_save_screenshot (GdkPixbuf *screenshot,
                                 const gchar *directory,
                                 const gchar *title,
-                                gboolean horodate)
+                                gboolean horodate,
+                                gboolean save_dialog)
 {
   const gchar *filename = generate_filename_for_uri (directory, title, horodate);
-  const gchar *save_uri = g_build_filename (directory, filename, NULL);
+  gchar *save_uri = g_build_filename (directory, filename, NULL);
+  gchar *result;
 
-  return save_screenshot_to (screenshot, save_uri);
+  if (save_dialog)
+  {
+    GtkWidget *chooser;
+    gint dialog_response;
+
+    chooser =
+      gtk_file_chooser_dialog_new (_("Save screenshot as..."),
+                                   NULL,
+                                   GTK_FILE_CHOOSER_ACTION_SAVE,
+                                   GTK_STOCK_CANCEL,
+                                   GTK_RESPONSE_CANCEL,
+                                   GTK_STOCK_SAVE,
+                                   GTK_RESPONSE_ACCEPT,
+                                   NULL);
+
+    gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
+    gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser),
+                                                    TRUE);
+    gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), FALSE);
+    gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
+    gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (chooser), directory);
+    gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);
+
+    dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
+
+    if (G_LIKELY (dialog_response == GTK_RESPONSE_ACCEPT))
+      {
+        g_free (save_uri);
+        save_uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
+        result = save_screenshot_to (screenshot, save_uri);
+      }
+    else
+      result = NULL;
+
+    gtk_widget_destroy (chooser);
+  }
+  else
+    result = save_screenshot_to (screenshot, save_uri);
+
+  g_free (save_uri);
+
+  return result;
 }

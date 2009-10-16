@@ -62,8 +62,8 @@ static gboolean          do_xmlrpc                 (SoupSession       *session,
                                                     ...);
 static gboolean          has_empty_field           (GtkListStore      *liststore);
 static ScreenshooterJob *zimagez_upload_to_zimagez (const gchar       *file_name,
-                                                    gchar             *last_user,
-                                                    gchar             *title);
+                                                    const gchar       *last_user,
+                                                    const gchar       *title);
 static gboolean          zimagez_upload_job        (ScreenshooterJob  *job,
                                                     GValueArray       *param_values,
                                                     GError           **error);
@@ -652,8 +652,8 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
 static ScreenshooterJob
 *zimagez_upload_to_zimagez (const gchar *file_path,
-                            gchar *last_user,
-                            gchar *title)
+                            const gchar *last_user,
+                            const gchar *title)
 {
   g_return_val_if_fail (file_path != NULL, NULL);
 
