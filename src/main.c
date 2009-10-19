@@ -217,7 +217,7 @@ int main (int argc, char **argv)
   if (G_UNLIKELY (!g_file_query_exists (default_save_dir, NULL)))
     {
       g_free (sd->screenshot_dir);
-      sd->screenshot_dir = screenshooter_get_home_uri ();
+      sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
     }
 
   g_object_unref (default_save_dir);

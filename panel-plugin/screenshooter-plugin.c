@@ -331,6 +331,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   /* Initialise the data structs */
   PluginData *pd = g_new0 (PluginData, 1);
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
+  GFile *default_save_dir;
 
   g_thread_init (NULL);
 
@@ -343,6 +344,17 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   /* Read the options */
   TRACE ("Read the preferences file");
   screenshooter_plugin_read_rc_file (plugin, pd);
+
+  /* Check if the directory read from the preferences is valid */
+  default_save_dir = g_file_new_for_uri (sd->screenshot_dir);
+
+  if (G_UNLIKELY (!g_file_query_exists (default_save_dir, NULL)))
+    {
+      g_free (pd->sd->screenshot_dir);
+      pd->sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
+    }
+
+  g_object_unref (default_save_dir);
 
   /* We want to take only one screenshot as in CLI, but not to close the main
      loop after taking a screenshot */
