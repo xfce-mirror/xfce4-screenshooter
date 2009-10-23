@@ -104,8 +104,8 @@ app_desktop_DATA = $(app_desktop_in_files:.desktop.in=.desktop)
 
 src/xfce4-screenshooter.desktop.in: src/xfce4-screenshooter.desktop.in.in
 	$(AM_V_GEN) ( \
-		sed -e "s^@PLUGIN_PATH@^$(libexecdir)/applications^" 	\
-			$< > $@
+		sed -e "s^@PLUGIN_PATH@^$(libexecdir)/applications^" \
+			$< > $@ \
 	)
 
 # Panel plugin
@@ -139,8 +139,8 @@ panel_desktop_DATA = $(panel_desktop_in_files:.desktop.in=.desktop)
 
 panel-plugin/screenshooter.desktop.in: panel-plugin/screenshooter.desktop.in.in
 	$(AM_V_GEN) ( \
-		sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" 	\
-			$< > $@
+		sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" \
+			$< > $@ \
 	)
 
 # Fallback icons
