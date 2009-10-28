@@ -1,6 +1,5 @@
 Before next release:
 
-* Use Xshape to have a transparent background in the generated screenshots.
 * Improve the cairo rubber banding: allow the user to compute the size of
   the rectangle (as with a Gimp selection for example). The Enter key
   would be used to validate the selection.

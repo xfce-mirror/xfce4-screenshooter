@@ -41,9 +41,11 @@ typedef struct
 
 
 static GdkWindow *get_active_window                   (GdkScreen      *screen,
-                                                       gboolean       *needs_unref);
+                                                       gboolean       *needs_unref,
+                                                       gboolean       *border);
 static GdkPixbuf *get_window_screenshot               (GdkWindow      *window,
-                                                       gboolean        show_mouse);
+                                                       gboolean        show_mouse,
+                                                       gboolean        border);
 static GdkPixbuf *get_rectangle_screenshot            (void);
 static gboolean   cb_key_pressed                      (GtkWidget      *widget,
                                                        GdkEventKey    *event,
@@ -69,7 +71,9 @@ static GdkPixbuf *get_rectangle_screenshot_composited (void);
 
 
 static GdkWindow
-*get_active_window (GdkScreen *screen, gboolean *needs_unref)
+*get_active_window (GdkScreen *screen,
+                    gboolean  *needs_unref,
+                    gboolean  *border)
 {
   GdkWindow *window, *window2;
 
@@ -84,6 +88,7 @@ static GdkWindow
 
       window = gdk_get_default_root_window ();
       *needs_unref = FALSE;
+      *border = FALSE;
     }
   else if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
     {
@@ -94,6 +99,7 @@ static GdkWindow
 
       window = gdk_get_default_root_window ();
       *needs_unref = FALSE;
+      *border = FALSE;
     }
   else
     {
@@ -105,6 +111,7 @@ static GdkWindow
       g_object_unref (window);
 
       window = window2;
+      *border = TRUE;
     }
 
   return window;
@@ -112,8 +119,35 @@ static GdkWindow
 
 
 
+static Window
+find_wm_window (Window xid)
+{
+  Window root, parent, *children;
+  unsigned int nchildren;
+
+  do
+    {
+      if (XQueryTree (GDK_DISPLAY (), xid, &root,
+                      &parent, &children, &nchildren) == 0)
+        {
+          g_warning ("Couldn't find window manager window");
+          return None;
+        }
+
+      if (root == parent)
+        return xid;
+
+      xid = parent;
+    }
+  while (TRUE);
+}
+
+
+
 static GdkPixbuf
-*get_window_screenshot (GdkWindow *window, gboolean show_mouse)
+*get_window_screenshot (GdkWindow *window,
+                        gboolean show_mouse,
+                        gboolean border)
 {
   gint x_orig, y_orig;
   gint width, height;
@@ -121,25 +155,31 @@ static GdkPixbuf
   GdkPixbuf *screenshot;
   GdkWindow *root;
 
-  GdkRectangle *rectangle = g_new0 (GdkRectangle, 1);
+  GdkRectangle rectangle;
 
   /* Get the root window */
   TRACE ("Get the root window");
 
   root = gdk_get_default_root_window ();
 
-  TRACE ("Get the frame extents");
+  if (border)
+    {
+      Window xwindow = GDK_WINDOW_XWINDOW (window);
+      window = gdk_window_foreign_new (find_wm_window (xwindow));
+    }
 
-  gdk_window_get_frame_extents (window, rectangle);
+  gdk_drawable_get_size (window, &rectangle.width, &rectangle.height);
+  gdk_window_get_origin (window, &rectangle.x, &rectangle.y);
+
 
   /* Don't grab thing offscreen. */
 
   TRACE ("Make sure we don't grab things offscreen");
 
-  x_orig = rectangle->x;
-  y_orig = rectangle->y;
-  width  = rectangle->width;
-  height = rectangle->height;
+  x_orig = rectangle.x;
+  y_orig = rectangle.y;
+  width  = rectangle.width;
+  height = rectangle.height;
 
   if (x_orig < 0)
     {
@@ -159,8 +199,6 @@ static GdkPixbuf
   if (y_orig + height > gdk_screen_height ())
     height = gdk_screen_height () - y_orig;
 
-  g_free (rectangle);
-
   /* Take the screenshot from the root GdkWindow, to grab things such as
    * menus. */
 
@@ -170,14 +208,99 @@ static GdkPixbuf
                                              x_orig, y_orig, 0, 0,
                                              width, height);
 
-  /* Add the mouse pointer to the grabbed screenshot */
+  /* Code adapted from gnome-screenshot:
+   * Copyright (C) 2001-2006  Jonathan Blandford <jrb@alum.mit.edu>
+   * Copyright (C) 2008 Cosimo Cecchi <cosimoc@gnome.org>
+   */
+  if (border)
+    {
+      /* Use XShape to make the background transparent */
+      XRectangle *rectangles;
+      GdkPixbuf *tmp;
+      int rectangle_count, rectangle_order, i;
 
-  TRACE ("Get the mouse cursor and its image");
+      rectangles = XShapeGetRectangles (GDK_DISPLAY (),
+                                        GDK_WINDOW_XWINDOW (window),
+                                        ShapeBounding,
+                                        &rectangle_count,
+                                        &rectangle_order);
+
+      if (rectangles && rectangle_count > 0 && window != root)
+        {
+          gboolean has_alpha = gdk_pixbuf_get_has_alpha (screenshot);
+
+          tmp = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width, height);
+          gdk_pixbuf_fill (tmp, 0);
+
+          for (i = 0; i < rectangle_count; i++)
+            {
+              gint rec_x, rec_y;
+              gint rec_width, rec_height;
+              gint y;
+
+              rec_x = rectangles[i].x;
+              rec_y = rectangles[i].y;
+              rec_width = rectangles[i].width;
+              rec_height = rectangles[i].height;
+
+              if (rectangle.x < 0)
+                {
+                  rec_x += rectangle.x;
+                  rec_x = MAX(rec_x, 0);
+                  rec_width += rectangle.x;
+                }
+
+              if (rectangle.y < 0)
+                {
+                  rec_y += rectangle.y;
+                  rec_y = MAX(rec_y, 0);
+                  rec_height += rectangle.y;
+                }
+
+              if (x_orig + rec_x + rec_width > gdk_screen_width ())
+                rec_width = gdk_screen_width () - x_orig - rec_x;
+
+              if (y_orig + rec_y + rec_height > gdk_screen_height ())
+                rec_height = gdk_screen_height () - y_orig - rec_y;
+
+              for (y = rec_y; y < rec_y + rec_height; y++)
+                {
+                  guchar *src_pixels, *dest_pixels;
+                  gint x;
+
+                  src_pixels = gdk_pixbuf_get_pixels (screenshot)
+                             + y * gdk_pixbuf_get_rowstride(screenshot)
+                             + rec_x * (has_alpha ? 4 : 3);
+                  dest_pixels = gdk_pixbuf_get_pixels (tmp)
+                              + y * gdk_pixbuf_get_rowstride (tmp)
+                              + rec_x * 4;
+
+                  for (x = 0; x < rec_width; x++)
+                    {
+                      *dest_pixels++ = *src_pixels++;
+                      *dest_pixels++ = *src_pixels++;
+                      *dest_pixels++ = *src_pixels++;
+
+                      if (has_alpha)
+                        *dest_pixels++ = *src_pixels++;
+                      else
+                        *dest_pixels++ = 255;
+                    }
+                }
+            }
+
+          g_object_unref (screenshot);
+          screenshot = tmp;
+        }
+    }
 
   if (show_mouse)
     {
         GdkCursor *cursor;
         GdkPixbuf *cursor_pixbuf;
+
+        /* Add the mouse pointer to the grabbed screenshot */
+        TRACE ("Get the mouse cursor and its image");
 
         cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_LEFT_PTR);
         cursor_pixbuf = gdk_cursor_get_image (cursor);
@@ -764,12 +887,16 @@ static GdkPixbuf
  * Return value: a #GdkPixbuf containing the screenshot or %NULL (if @region is SELECT,
  * the user can cancel the operation).
  **/
-GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show_mouse, gboolean plugin)
+GdkPixbuf *screenshooter_take_screenshot (gint     region,
+                                          gint     delay,
+                                          gboolean show_mouse,
+                                          gboolean plugin)
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *window = NULL;
   GdkScreen *screen;
   GdkDisplay *display;
+  gboolean border;
 
   /* gdk_get_default_root_window () does not need to be unrefed,
    * needs_unref enables us to unref *window only if a non default
@@ -804,19 +931,20 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
 
       window = gdk_get_default_root_window ();
       needs_unref = FALSE;
+      border = FALSE;
     }
   else if (region == ACTIVE_WINDOW)
     {
       TRACE ("We grab the active window");
 
-      window = get_active_window (screen, &needs_unref);
+      window = get_active_window (screen, &needs_unref, &border);
     }
 
   if (region == FULLSCREEN || region == ACTIVE_WINDOW)
     {
       TRACE ("Get the screenshot of the given window");
 
-      screenshot = get_window_screenshot (window, show_mouse);
+      screenshot = get_window_screenshot (window, show_mouse, border);
 
       if (needs_unref)
         g_object_unref (window);
@@ -829,7 +957,6 @@ GdkPixbuf *screenshooter_take_screenshot (gint region, gint delay, gboolean show
       else
         screenshot = get_rectangle_screenshot_composited ();
     }
-
 
   return screenshot;
 }
