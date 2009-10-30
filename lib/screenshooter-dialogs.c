@@ -1040,6 +1040,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
  * @title: the title of the screenshot.
  * @timestamp: whether the date and the hour should be added to
  * the file name.
+ * @save_dialog: whether a save dialog should be displayed to
+ * let the user set a custom save location
  *
  * Returns: a string containing the path to the saved file.
  */
