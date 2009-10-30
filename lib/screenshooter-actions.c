@@ -86,7 +86,7 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
       save_location = screenshooter_save_screenshot (sd->screenshot,
                                                      sd->screenshot_dir,
                                                      sd->title,
-                                                     sd->horodate,
+                                                     sd->timestamp,
                                                      TRUE);
 
       if (save_location)
@@ -111,7 +111,7 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
         screenshooter_save_screenshot (sd->screenshot,
                                        temp_dir_uri,
                                        sd->title,
-                                       sd->horodate,
+                                       sd->timestamp,
                                        FALSE);
 
       if (screenshot_path != NULL)

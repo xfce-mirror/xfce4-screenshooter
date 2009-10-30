@@ -61,7 +61,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gint region = FULLSCREEN;
   gint action = SAVE;
   gint show_mouse = 1;
-  gboolean horodate = TRUE;
+  gboolean timestamp = TRUE;
   gchar *screenshot_dir = g_strdup (default_uri);
   gchar *title = g_strdup (_("Screenshot"));
   gchar *app = g_strdup ("none");
@@ -81,7 +81,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
           action = xfce_rc_read_int_entry (rc, "action", SAVE);
           show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
-          horodate = xfce_rc_read_bool_entry (rc, "horodate", TRUE);
+          timestamp = xfce_rc_read_bool_entry (rc, "timestamp", TRUE);
 
           g_free (app);
           app = g_strdup (xfce_rc_read_entry (rc, "app", "none"));
@@ -110,7 +110,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->region = region;
   sd->action = action;
   sd->show_mouse = show_mouse;
-  sd->horodate = horodate;
+  sd->timestamp = timestamp;
   sd->screenshot_dir = screenshot_dir;
   sd->title = title;
   sd->app = app;

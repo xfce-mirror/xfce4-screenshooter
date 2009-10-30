@@ -61,7 +61,7 @@ cb_delay_spinner_changed           (GtkWidget          *spinner,
 static gchar
 *generate_filename_for_uri         (const gchar        *uri,
                                     const gchar        *title,
-                                    gboolean            horodate);
+                                    gboolean            timestamp);
 static void
 cb_combo_active_item_changed       (GtkWidget          *box,
                                     ScreenshotData     *sd);
@@ -200,7 +200,7 @@ static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 
 
 
-/* If @horodate is true, generates a file name @title - date - hour - n.png,
+/* If @timestamp is true, generates a file name @title - date - hour - n.png,
  * where n is the lowest integer such as this file does not exist in the @uri
  * folder.
  * Else, generates a file name @title-n.png, where n is the lowest integer 
@@ -208,13 +208,13 @@ static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
  * 
  * @uri: uri of the folder for which the filename should be generated.
  * @title: the main title of the file name.
- * @horodate: whether the date and the hour should be appended to the file name.
+ * @timestamp: whether the date and the hour should be appended to the file name.
  *
  * returns: the filename or NULL if *uri == NULL.
 */
 static gchar *generate_filename_for_uri (const gchar *uri,
                                          const gchar *title,
-                                         gboolean horodate)
+                                         gboolean timestamp)
 {
   gboolean exists = TRUE;
   GFile *directory;
@@ -233,7 +233,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
 
   TRACE ("Get the folder corresponding to the URI");
   directory = g_file_new_for_uri (uri);
-  if (!horodate)
+  if (!timestamp)
     base_name = g_strconcat (title, ".png", NULL);
   else
     base_name = g_strconcat (title, " - ", date, " - ", current_time, ".png", NULL);
@@ -256,7 +256,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
       const gchar *extension =
         g_strdup_printf ("-%d.png", i);
 
-      if (!horodate)
+      if (!timestamp)
          base_name = g_strconcat (title, extension, NULL);
        else
          base_name = g_strconcat (title, " - ", date, " - ", current_time, extension, NULL);
@@ -1033,12 +1033,12 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
 
 /* Saves the @screenshot in the given @directory using
- * @title and @horodate to generate the file name.
+ * @title and @timestamp to generate the file name.
  *
  * @screenshot: a GdkPixbuf containing the screenshot.
  * @directory: the save location.
  * @title: the title of the screenshot.
- * @horodate: whether the date and the hour should be added to
+ * @timestamp: whether the date and the hour should be added to
  * the file name.
  *
  * Returns: a string containing the path to the saved file.
@@ -1047,10 +1047,10 @@ gchar
 *screenshooter_save_screenshot (GdkPixbuf *screenshot,
                                 const gchar *directory,
                                 const gchar *title,
-                                gboolean horodate,
+                                gboolean timestamp,
                                 gboolean save_dialog)
 {
-  const gchar *filename = generate_filename_for_uri (directory, title, horodate);
+  const gchar *filename = generate_filename_for_uri (directory, title, timestamp);
   gchar *save_uri = g_build_filename (directory, filename, NULL);
   gchar *result;
 
