@@ -273,9 +273,8 @@ int main (int argc, char **argv)
               sd->screenshot_dir = g_file_get_uri (default_save_dir);
             }
           else
-              screenshooter_error ("%s",
-                                   _("%s is not a valid directory, the default"
-                                     " directory will be used."),
+              screenshooter_error (_("%s is not a valid directory, the default"
+                                   " directory will be used."),
                                    screenshot_dir);
 
           g_object_unref (default_save_dir);
