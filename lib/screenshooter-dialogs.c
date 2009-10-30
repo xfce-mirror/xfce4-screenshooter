@@ -1042,6 +1042,9 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
  * the file name.
  * @save_dialog: whether a save dialog should be displayed to
  * let the user set a custom save location
+ * @show_preview: if @save_dialog is true, @show_preview will
+ * decide whether the save dialog should display a preview of
+ * @screenshot.
  *
  * Returns: a string containing the path to the saved file.
  */
@@ -1050,7 +1053,8 @@ gchar
                                 const gchar *directory,
                                 const gchar *title,
                                 gboolean timestamp,
-                                gboolean save_dialog)
+                                gboolean save_dialog,
+                                gboolean show_preview)
 {
   const gchar *filename = generate_filename_for_uri (directory, title, timestamp);
   gchar *save_uri = g_build_filename (directory, filename, NULL);
@@ -1078,6 +1082,26 @@ gchar
     gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
     gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (chooser), directory);
     gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);
+
+    if(show_preview)
+      {
+        GtkWidget *preview;
+        GdkPixbuf *thumbnail;
+
+        /* Create the preview and the thumbnail */
+        preview = gtk_image_new ();
+        gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview);
+
+        thumbnail =
+          gdk_pixbuf_scale_simple (screenshot,
+                                   gdk_pixbuf_get_width(screenshot)/5,
+                                   gdk_pixbuf_get_height(screenshot)/5,
+                                   GDK_INTERP_BILINEAR);
+
+        gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
+
+        g_object_unref (thumbnail);
+      }
 
     dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
 

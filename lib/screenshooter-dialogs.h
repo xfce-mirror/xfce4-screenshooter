@@ -43,7 +43,8 @@ gchar     *screenshooter_save_screenshot    (GdkPixbuf      *screenshot,
                                              const gchar    *directory,
                                              const gchar    *title,
                                              gboolean        timestamp,
-                                             gboolean        save_dialog);
+                                             gboolean        save_dialog,
+                                             gboolean        show_preview);
 
 
 
