@@ -47,6 +47,7 @@ typedef struct
   gint delay;
   gint action;
   gboolean plugin;
+  gboolean action_specified;
   gboolean horodate;
   gchar *screenshot_dir;
   gchar *title;

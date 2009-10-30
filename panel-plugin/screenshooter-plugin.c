@@ -360,6 +360,9 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
      loop after taking a screenshot */
   pd->sd->plugin = TRUE;
 
+  /* We want the actions dialog to be always displayed */
+  pd->sd->action_specified = FALSE;
+
   /* Create the panel button */
   TRACE ("Create the panel button");
   pd->button = xfce_create_panel_button ();

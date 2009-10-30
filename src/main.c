@@ -211,6 +211,9 @@ int main (int argc, char **argv)
   rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter");
   screenshooter_read_rc_file (rc_file, sd);
 
+  /* Default to no action specified */
+  sd->action_specified = FALSE;
+
   /* Check if the directory read from the preferences is valid */
   default_save_dir = g_file_new_for_uri (sd->screenshot_dir);
 
@@ -250,11 +253,13 @@ int main (int argc, char **argv)
         {
           sd->app = application;
           sd->action = OPEN;
+          sd->action_specified = TRUE;
         }
       else if (upload)
         {
           sd->app = g_strdup ("none");
           sd->action = UPLOAD;
+          sd->action_specified = TRUE;
         }
       else
         {
@@ -271,6 +276,7 @@ int main (int argc, char **argv)
             {
               g_free (sd->screenshot_dir);
               sd->screenshot_dir = g_file_get_uri (default_save_dir);
+              sd->action_specified = TRUE;
             }
           else
               screenshooter_error (_("%s is not a valid directory, the default"

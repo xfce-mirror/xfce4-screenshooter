@@ -54,22 +54,26 @@ gboolean screenshooter_take_screenshot_idle (ScreenshotData *sd)
 
 gboolean screenshooter_action_idle (ScreenshotData *sd)
 {
-  GtkWidget *dialog = screenshooter_actions_dialog_new (sd);
-  gint response;
-
-  g_signal_connect (dialog, "response",
-                    (GCallback) cb_help_response, NULL);
-  g_signal_connect (dialog, "key-press-event",
-                    (GCallback) screenshooter_f1_key, NULL);
-
-  response = gtk_dialog_run (GTK_DIALOG (dialog));
-
-  if (response == GTK_RESPONSE_CANCEL)
+  if (!sd->action_specified)
     {
+      GtkWidget *dialog = screenshooter_actions_dialog_new (sd);
+      gint response;
+
+      g_signal_connect (dialog, "response",
+                        (GCallback) cb_help_response, NULL);
+      g_signal_connect (dialog, "key-press-event",
+                        (GCallback) screenshooter_f1_key, NULL);
+
+      response = gtk_dialog_run (GTK_DIALOG (dialog));
+
       gtk_widget_destroy (dialog);
-      if (!sd->plugin)
-        gtk_main_quit ();
-      return FALSE;
+
+      if (response == GTK_RESPONSE_CANCEL)
+        {
+          if (!sd->plugin)
+            gtk_main_quit ();
+          return FALSE;
+        }
     }
 
   if (sd->action == SAVE)
@@ -137,7 +141,6 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
   if (!sd->plugin)
     gtk_main_quit ();
 
-  gtk_widget_destroy (dialog);
   g_object_unref (sd->screenshot);
 
   return FALSE;
