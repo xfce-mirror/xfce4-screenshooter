@@ -41,7 +41,7 @@ screenshooter_copy_to_clipboard (GdkPixbuf *screenshot)
 
   gtk_clipboard_set_image (clipboard, screenshot);
 
-  gtk_clipboard_store (clipboard);
+  //gtk_clipboard_store (clipboard);
 }
 
 
