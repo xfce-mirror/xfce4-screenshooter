@@ -941,18 +941,21 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
   gtk_box_pack_start (GTK_BOX (actions_box), save_radio_button, FALSE, FALSE, 0);
 
-  /* Copy to clipboard radio button */
-  clipboard_radio_button =
-    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
-                                                 _("Copy to the clipboard"));
-  gtk_widget_set_tooltip_text (clipboard_radio_button,
-                               _("Copy the screenshot to the clipboard so that it can be "
-                                 "pasted later"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
-                                (sd->action == CLIPBOARD));
-  g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled",
-                    G_CALLBACK (cb_clipboard_toggled), sd);
-  gtk_box_pack_start (GTK_BOX (actions_box), clipboard_radio_button, FALSE, FALSE, 0);
+  if (sd->plugin || screenshooter_clipboard_manager ())
+    {
+      /* Copy to clipboard radio button */
+      clipboard_radio_button =
+        gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
+                                                     _("Copy to the clipboard"));
+      gtk_widget_set_tooltip_text (clipboard_radio_button,
+                                   _("Copy the screenshot to the clipboard so that it can be "
+                                     "pasted later"));
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
+                                    (sd->action == CLIPBOARD));
+      g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled",
+                        G_CALLBACK (cb_clipboard_toggled), sd);
+      gtk_box_pack_start (GTK_BOX (actions_box), clipboard_radio_button, FALSE, FALSE, 0);
+    }
 
   /* Horizontal box for the open with stuff */
   open_box = gtk_hbox_new (FALSE, 6);

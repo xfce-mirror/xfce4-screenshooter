@@ -55,6 +55,8 @@ void      screenshooter_open_help             (void);
 gboolean  screenshooter_f1_key                (GtkWidget      *widget,
                                                GdkEventKey    *event,
                                                gpointer        user_data);
+gboolean  screenshooter_clipboard_manager     (void);
+
 
 
 
