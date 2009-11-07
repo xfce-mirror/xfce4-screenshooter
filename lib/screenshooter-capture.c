@@ -655,7 +655,6 @@ static GdkPixbuf
 
   GdkGCValues gc_values;
   GdkGC *gc;
-  GdkGrabStatus grabstatus_mouse, grabstatus_keyboard;
 
   GdkGCValuesMask values_mask =
     GDK_GC_FUNCTION | GDK_GC_FILL	| GDK_GC_CLIP_MASK |
@@ -703,13 +702,10 @@ static GdkPixbuf
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
 
-  grabstatus_mouse =
-    gdk_pointer_grab (root_window, FALSE, mask, NULL, xhair_cursor, GDK_CURRENT_TIME);
+  gdk_pointer_grab (root_window, FALSE, mask, NULL, xhair_cursor, GDK_CURRENT_TIME);
+  gdk_keyboard_grab (root_window, FALSE, GDK_CURRENT_TIME);
 
-  grabstatus_keyboard = gdk_keyboard_grab (root_window, FALSE, GDK_CURRENT_TIME);
-
-  while (!done && grabstatus_mouse == GDK_GRAB_SUCCESS
-               && grabstatus_keyboard == GDK_GRAB_SUCCESS)
+  while (!done)
     {
       gint x1, y1, x2, y2;
       GdkEvent *event;
@@ -832,19 +828,8 @@ static GdkPixbuf
       gdk_event_free (event);
     }
 
-  if (grabstatus_mouse == GDK_GRAB_SUCCESS)
-    {
-      TRACE ("Ungrab the pointer");
-
-      gdk_pointer_ungrab(GDK_CURRENT_TIME);
-    }
-
-  if (grabstatus_keyboard == GDK_GRAB_SUCCESS)
-    {
-      TRACE ("Ungrab the keyboard");
-
-      gdk_keyboard_ungrab (GDK_CURRENT_TIME);
-    }
+  gdk_pointer_ungrab(GDK_CURRENT_TIME);
+  gdk_keyboard_ungrab (GDK_CURRENT_TIME);
 
   /* Get the screenshot's pixbuf */
 
