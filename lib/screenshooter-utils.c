@@ -369,15 +369,3 @@ screenshooter_f1_key (GtkWidget *widget, GdkEventKey *event, gpointer user_data)
 
   return FALSE;
 }
-
-gboolean
-screenshooter_clipboard_manager (void)
-{
-  Display *display;
-  Atom atom;
-
-  display = GDK_DISPLAY ();
-  atom = XInternAtom (display, "CLIPBOARD_MANAGER", FALSE);
-  return XGetSelectionOwner (display, atom);
-}
-

@@ -941,7 +941,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
   gtk_box_pack_start (GTK_BOX (actions_box), save_radio_button, FALSE, FALSE, 0);
 
-  if (sd->plugin || screenshooter_clipboard_manager ())
+  if (sd->plugin ||
+      gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
     {
       /* Copy to clipboard radio button */
       clipboard_radio_button =
