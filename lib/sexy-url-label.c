@@ -494,7 +494,7 @@ copy_link_activate_cb(GtkMenuItem *menu_item, SexyUrlLabel *url_label)
 		return;
 
 	clipboard = gtk_widget_get_clipboard(GTK_WIDGET(url_label),
-										 GDK_SELECTION_PRIMARY);
+										 GDK_SELECTION_CLIPBOARD);
 
 	gtk_clipboard_set_text(clipboard, priv->active_link->url,
 						   strlen(priv->active_link->url));
