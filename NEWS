@@ -3,10 +3,47 @@
   * The XMLRPC-C dependency has been replaced by libsoup.
   * Switch to a non-recursive Makefile.am. This reduces the build time
     and centralizes the build information.
-  
+
+  * New features:
+    - Scrolling the panel plugin button changes the area to be captured.
+    - When compositing is on, use a nice partially transparent rubber-banding,
+      still needs some polishing.
+    - F1 opens the help page.
+    - Automatically fill the title and comment fields in the ZimageZ upload
+      information dialog.
+    - Make enter validate the upload in the ZimageZ upload information dialog.
+    - Use the XDG image directory as the default directory for saving
+      screenshots. If it does not exist, fallback to $HOME.
+    - Major interface rethinking:
+      + This new interface is based on a suggestion by Yves-Alexis Pérez. The
+        former main dialog is split into two dialogs: one for selecting the
+        region to be captured and the delay, while the second one displays a
+        preview of the screenshot and lists the available actions.
+      + The main application shows the first dialog, then the second one. If
+        one of the region cli options is given, the screenshot is taken
+        accordingly and the second dialog is displayed.
+      + The panel plugin uses the first dialog as a configuration dialog. When
+        you click the plugin, the screenshot is taken and the second dialog is
+        shown.
+
   * Bugs fixed:
     - UTF-8 characters in user name or password caused a login failure.
     - Fix all warnings triggered by running autogen.sh.
+    - Fix the ZimageZ upload when behind a proxy.
+    - Fix copying of links in the ZimageZ upload finished dialog.
+    - When capturing a window with rounded corners, don't capture the
+      background of the window but make the screenshot transparent instead.
+    - Make sure the save folder in the panel plugin preferences is valid.
+    - Don't show the copy to clipboard option in the application if no
+      clipboard manager is running as the screenshot won't be preserved
+      after closing the application anyway in that case.
+    - Allow xfce4-screenshooter -r to be used as a command for a keybinding.
+    - Allow silent build.
+    - Fix most pre-build warnings.
+    - Escape screenshots path when opening them with an application.
+    - Plug some leaks in the application and in the panel plugin.
+    - Do not accept conflicting CLI options. Warn the user when he uses
+      CLI options which are not coherent.
 
 === Version 1.6.0 ===
 
