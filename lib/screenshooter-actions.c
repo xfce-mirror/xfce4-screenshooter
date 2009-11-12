@@ -68,7 +68,7 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
 
       gtk_widget_destroy (dialog);
 
-      if (response == GTK_RESPONSE_CANCEL)
+      if (response == GTK_RESPONSE_CANCEL || response == GTK_RESPONSE_DELETE_EVENT)
         {
           if (!sd->plugin)
             gtk_main_quit ();
