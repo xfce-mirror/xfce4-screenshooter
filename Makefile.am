@@ -184,7 +184,7 @@ cdoc_DATA = docs/manual/C/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/C/xfce4-screenshooter.html: docs/manual/C/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/C/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/C/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/C/xfce4-screenshooter.xml
 endif
 endif
 
@@ -200,7 +200,7 @@ dadoc_DATA = docs/manual/da/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/da/xfce4-screenshooter.html: docs/manual/da/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/da/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/da/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/da/xfce4-screenshooter.xml
 endif
 endif
 
@@ -216,7 +216,7 @@ esdoc_DATA = docs/manual/es/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/es/xfce4-screenshooter.html: docs/manual/es/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/es/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/es/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/es/xfce4-screenshooter.xml
 endif
 endif
 
@@ -232,7 +232,7 @@ frdoc_DATA = docs/manual/fr/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/fr/xfce4-screenshooter.html: docs/manual/fr/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/fr/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/fr/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/fr/xfce4-screenshooter.xml
 endif
 endif
 
@@ -248,7 +248,7 @@ gldoc_DATA = docs/manual/gl/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/gl/xfce4-screenshooter.html: docs/manual/gl/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/gl/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/gl/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/gl/xfce4-screenshooter.xml
 endif
 endif
 
@@ -264,7 +264,7 @@ iddoc_DATA = docs/manual/id/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/id/xfce4-screenshooter.html: docs/manual/id/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/id/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/id/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/id/xfce4-screenshooter.xml
 endif
 endif
 
@@ -280,7 +280,7 @@ itdoc_DATA = docs/manual/it/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/it/xfce4-screenshooter.html: docs/manual/it/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/it/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/it/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/it/xfce4-screenshooter.xml
 endif
 endif
 
@@ -296,7 +296,7 @@ jadoc_DATA = docs/manual/ja/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/ja/xfce4-screenshooter.html: docs/manual/ja/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ja/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/ja/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ja/xfce4-screenshooter.xml
 endif
 endif
 
@@ -312,7 +312,7 @@ trdoc_DATA = docs/manual/tr/xfce4-screenshooter.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
 docs/manual/tr/xfce4-screenshooter.html: docs/manual/tr/xfce4-screenshooter.xml
-	$(XSLTPROC) $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/tr/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/tr/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/tr/xfce4-screenshooter.xml
 endif
 endif
 
