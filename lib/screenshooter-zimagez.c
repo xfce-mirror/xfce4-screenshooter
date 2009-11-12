@@ -238,10 +238,10 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   gsize data_length;
   gboolean response = FALSE;
 
-  const gchar *serverurl = g_strdup ("http://www.zimagez.com/apiXml.php");
-  const gchar *method_login = g_strdup ("apiXml.xmlrpcLogin");
-  const gchar *method_logout = g_strdup ("apiXml.xmlrpcLogout");
-  const gchar *method_upload = g_strdup ("apiXml.xmlrpcUpload");
+  const gchar *serverurl = "http://www.zimagez.com/apiXml.php";
+  const gchar *method_login = "apiXml.xmlrpcLogin";
+  const gchar *method_logout = "apiXml.xmlrpcLogout";
+  const gchar *method_upload = "apiXml.xmlrpcUpload";
   SoupSession *session;
   SoupURI *soup_proxy_uri;
 
