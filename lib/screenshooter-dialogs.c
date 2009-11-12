@@ -643,6 +643,30 @@ static gchar
   return result;
 }
 
+static void
+preview_drag_begin (GtkWidget *widget, GdkDragContext *context, gpointer data)
+{
+  GdkPixbuf *pixbuf = data;
+  gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
+}
+
+static void
+preview_drag_data_get (GtkWidget *widget, GdkDragContext *context, GtkSelectionData *selection_data,
+                       guint info, guint utime, gpointer data)
+{
+  GdkPixbuf *pixbuf = data;
+  gtk_selection_data_set_pixbuf (selection_data, pixbuf);
+}
+
+static void
+preview_drag_end (GtkWidget *widget, GdkDragContext *context, gpointer data)
+{
+  /* Try to put ourself on top again */
+  GtkWidget *dlg = data;
+  gtk_window_present (GTK_WINDOW (dlg));
+}
+
+
 
 
 /* Public */
@@ -857,6 +881,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
 
 
+
 GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 {
   GtkWidget *dlg, *main_alignment;
@@ -874,7 +899,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *combobox, *open_box;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
-  GtkWidget *preview, *preview_box, *preview_label;
+  GtkWidget *preview, *preview_ebox, *preview_box, *preview_label;
   GdkPixbuf *thumbnail;
 
   dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
@@ -1025,9 +1050,18 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   /* The preview image */
   thumbnail = screenshot_get_thumbnail (sd->screenshot);
+  preview_ebox = gtk_event_box_new ();
   preview = gtk_image_new_from_pixbuf (thumbnail);
-  gtk_box_pack_start (GTK_BOX (preview_box), preview, FALSE, FALSE, 0);
   g_object_unref (thumbnail);
+  gtk_container_add (GTK_CONTAINER (preview_ebox), preview);
+  gtk_box_pack_start (GTK_BOX (preview_box), preview_ebox, FALSE, FALSE, 0);
+
+  /* DND for the preview image */
+  gtk_drag_source_set (preview_ebox, GDK_BUTTON1_MASK, NULL, 0, GDK_ACTION_COPY);
+  gtk_drag_source_add_image_targets (preview_ebox);
+  g_signal_connect (preview_ebox, "drag-begin", G_CALLBACK (preview_drag_begin), thumbnail);
+  g_signal_connect (preview_ebox, "drag-data-get", G_CALLBACK (preview_drag_data_get), sd->screenshot);
+  g_signal_connect (preview_ebox, "drag-end", G_CALLBACK (preview_drag_end), dlg);
 
   gtk_widget_show_all (GTK_DIALOG (dlg)->vbox);
 
@@ -1089,12 +1123,14 @@ gchar
 
     if(show_preview)
       {
-        GtkWidget *preview;
+        GtkWidget *preview, *preview_ebox;
         GdkPixbuf *thumbnail;
 
         /* Create the preview and the thumbnail */
+        preview_ebox = gtk_event_box_new ();
         preview = gtk_image_new ();
-        gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview);
+        gtk_container_add (GTK_CONTAINER (preview_ebox), preview);
+        gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview_ebox);
 
         thumbnail =
           gdk_pixbuf_scale_simple (screenshot,
@@ -1103,8 +1139,16 @@ gchar
                                    GDK_INTERP_BILINEAR);
 
         gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
-
         g_object_unref (thumbnail);
+
+        /* DND for the preview image */
+        gtk_drag_source_set (preview_ebox, GDK_BUTTON1_MASK, NULL, 0, GDK_ACTION_COPY);
+        gtk_drag_source_add_image_targets (preview_ebox);
+        g_signal_connect (preview_ebox, "drag-begin", G_CALLBACK (preview_drag_begin), thumbnail);
+        g_signal_connect (preview_ebox, "drag-data-get", G_CALLBACK (preview_drag_data_get), screenshot);
+        g_signal_connect (preview_ebox, "drag-end", G_CALLBACK (preview_drag_end), chooser);
+
+        gtk_widget_show (preview);
       }
 
     dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
