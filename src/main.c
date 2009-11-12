@@ -208,7 +208,7 @@ int main (int argc, char **argv)
     g_thread_init (NULL);
 
   /* Read the preferences */
-  rc_file = xfce_resource_lookup (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter");
+  rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
   screenshooter_read_rc_file (rc_file, sd);
 
   /* Default to no action specified */
