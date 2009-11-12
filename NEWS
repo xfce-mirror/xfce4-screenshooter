@@ -25,6 +25,8 @@
       + The panel plugin uses the first dialog as a configuration dialog. When
         you click the plugin, the screenshot is taken and the second dialog is
         shown.
+    - Allow drag and dropping of the preview to other applications in order to
+      paste the screenshot (Mike Massonnet).
 
   * Bugs fixed:
     - UTF-8 characters in user name or password caused a login failure.
@@ -44,6 +46,8 @@
     - Plug some leaks in the application and in the panel plugin.
     - Do not accept conflicting CLI options. Warn the user when he uses
       CLI options which are not coherent.
+    - Correctly save preferences, even if the rc file does not exist 
+      (Mike Massonnet).
 
 === Version 1.6.0 ===
 
