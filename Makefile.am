@@ -190,7 +190,8 @@ endif
 
 cimagesdir = $(datadir)/xfce4/doc/C/images
 cimages_DATA = \
-	docs/manual/C/images/xfce4-screenshooter-dialog.png \
+	docs/manual/C/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/C/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/C/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/C/images/xfce4-screenshooter-zimagez-result-dialog.png
 

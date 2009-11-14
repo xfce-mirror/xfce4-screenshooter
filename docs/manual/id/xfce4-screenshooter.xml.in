@@ -16,10 +16,15 @@
       <year>2008</year>
       <year>2009</year>
       <holder>Jérôme Guelfucci</holder>
+    </copyright>
+
+    <copyright>
+      <year>2009</year>
+      <holder>Sam Swift</holder>
     </copyright><copyright><year>2009.</year><holder>Andhika Padmawan (andhika.padmawan@gmail.com)</holder></copyright>
 
     <legalnotice id="legalnotice">
-      <para>Izin diberikan untuk menyalin, mendistribusikan dan/atau memodifikasi dokumen ini di bawah perjanjian Lisensi Dokumentasi Bebas GNU, versi 1.1 atau versi apapun setelahnya yang dipublikasikan oleh Free Software Foundation; tanpa Bagian Invarian, tanpa Teks Sampul-Depan, dan tanpa Teks Sampul-Belakang. Teks lisensi selengkapnya tersedia dari <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.</para>
+      <para>Izin diberikan untuk menyalin, mendistribusikan dan/atau memodifikasi dokumen ini di bawah perjanjian Lisensi Dokumentasi Bebas GNU, versi 1.1 atau versi mapapun setelahnya yang dipublikasikan oleh Free Software Foundation; tanpa Bagian Invarian, tanpa Teks Sampul-Depan, dan tanpa Teks Sampul-Belakang. Teks lisensi selengkapnya tersedia dari <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.</para>
     </legalnotice>
 
     <authorgroup>
@@ -30,21 +35,28 @@
           <address><email>jeromeg@xfce.org</email></address>
         </affiliation>
       </author>
+      <author>
+        <firstname>Sam</firstname>
+        <surname>Swift</surname>
+        <affiliation>
+          <address><email>renmush@gmail.com</email></address>
+        </affiliation>
+      </author>
     </authorgroup>
 
     <releaseinfo>Manual ini menjelaskan versi @PACKAGE_VERSION@ dari Xfce4 Screenshooter.</releaseinfo>
   </articleinfo>
 
   <sect1 id="intro">
-    <title>Pengantar Xfce4 Screenshooter</title>
+    <title>Pengantar ke Xfce4 Screenshooter</title>
 
     <para>
       This application allows you to capture the entire screen, the
       active window or a selected region. You can set the delay that
-      elapses before the screenshot is taken and the action that will
-      be done with the screenshot: save it to a PNG file, copy it to
-      the clipboard, open it using another application, or host it on
-      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, 
+      elapses before the screenshot is taken and the action to be
+      performed afterwards: save the screenshot to a PNG file, copy it
+      to the clipboard, open it using another application, or host it on
+      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>,
       a free online image hosting service.
     </para>
 
@@ -58,14 +70,14 @@
     <sect2 id="user-interface">
       <title>Via antarmuka pengguna</title>
 
-      <para>Untuk menjalankan aplikasi, gunakan item "Cuplikan layar" di kategori "Aksesoris" dari menu utama Xfce.</para>
+      <para>Untuk menjalankan aplikasi, gunakan item "Cuplikan Layar" di kategori "Aksesoris" dari menu utama Xfce.</para>
 
       <para>Jendela ini akan tampak:</para>
 
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="images/xfce4-screenshooter-dialog.png" format="PNG"/>
+            <imagedata fileref="images/xfce4-screenshooter-dialog1.png" format="PNG"/>
           </imageobject>
 
           <textobject>
@@ -74,119 +86,135 @@
         </mediaobject>
       </screenshot>
 
-      <sect3 id="region-to-capture">
+      <sect4 id="region-to-capture">
         <title>Daerah untuk ditangkap</title>
 
-        <para>Bagian <emphasis>"Daerah akan ditangkap"</emphasis> memungkinkan anda untuk mengatur dari apa cuplikan layar akan diambil:</para>
+        <para>
+          The <emphasis>"Region to capture"</emphasis> section allows
+          you to set what the screenshot will be taken of:
+        </para>
 
         <itemizedlist>
           <listitem>"Seluruh layar" mengambil cuplikan layar dari seluruh layar yang anda lihat.</listitem>
-          <listitem>"Jendela aktif" mengambil cuplikan layar dari jendela yang aktif, jendela yang aktif sebelum dialog ini muncul, atau jika anda mengatur jeda, jendela yang aktif setelah jeda.</listitem>
-          <listitem>"Pilih daerah" memungkinkan anda untuk memilih daerah yang akan ditangkap dengan klik pada titik di layar lalu tanpa melepas tombol tetikus, tarik tetikus anda ke sudut lain di daerah layar, setelah itu lepas tombol tetikus.</listitem>
+          <listitem>
+            "Active window" takes a screenshot of the active window.
+            This will be the one that was active before this dialog
+            appeared, or if you set a delay, the one that is active
+            after the delay.
+          </listitem>
+          <listitem>
+            "Select a region" allows you to select a region to be
+            captured by clicking and dragging a rectangle over the area
+            of screen that you wish to capture, before releasing the
+            mouse button.
+          </listitem>
         </itemizedlist>
-      </sect3>
+      </sect4>
 
-      <sect3 id="delay">
+      <sect4 id="include-pointer">
+        <title>Capturing the pointer</title>
+
+        <para>
+          The <emphasis>"Capture the mouse pointer"</emphasis>
+          option allows you to select whether or not the screenshot will
+          include the mouse pointer.
+        </para>
+      </sect4>
+
+      <sect4 id="delay">
         <title>Jeda sebelum menangkap</title>
 
-        <para>Bagian <emphasis>"Jeda sebelum menangkap"</emphasis> memungkinkan anda untuk mengatur jeda yang akan berlangsung di antara menekan tombol <emphasis>"OK"</emphasis> dan mengambil cuplikan layar. Jeda ini akan memungkinkan anda untuk membuka menu atau melakukan aksi apapun yang ingin anda lihat ditampilkan pada cuplikan layar.</para>
-      </sect3>
+        <para>
+          The <emphasis>"Delay before capturing"</emphasis>
+          section allows you to set the delay that will elapse between
+          pressing the <emphasis>"OK"</emphasis> button and screenshot
+          being taken. This delay will allow you to open menus or to
+          perform whatever action you require to see displayed in the
+          screenshot.
+        </para>
+      </sect4>
+    </sect2>
+    
+    <sect3 id="after-capturing">
+      <title>Setelah menangkap</title>
+      
+      <para>
+        After pressing the <emphasis>"OK"</emphasis> button a second
+        window will be displayed:
+      </para>
 
-      <sect3 id="after-capturing">
-        <title>Setelah menangkap</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog2.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>The window of Xfce4 Screenshooter after taking a
+            screenshot</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect4 id="preview">
+        <title>Preview</title> 
 
         <para>
-          The <emphasis>"Show the save dialog"</emphasis> option 
-          is described below, in the <emphasis>"Action"</emphasis> 
-          section.
+          The <emphasis>"Preview"</emphasis> section displays a
+          thumbnail of the screenshot.
         </para>
+      </sect4>
 
-        <para>
-          The <emphasis>"Close the application"</emphasis> option
-          allows you, if unchecked, to take several screenshots in 
-          a row. If checked, the application will be closed once 
-          the screenshot has been taken and the action you selected 
-          executed.
-        </para>
-      </sect3>
-
-      <sect3 id="action">
+      <sect4 id="action">
         <title>Aksi</title>
 
         <para>
           The <emphasis>"Action"</emphasis> section allows you to choose
-          what should be done with the screenshot.
+          what should be performed on the screenshot.
         </para>
 
-        <sect4 id="save">
-          <title>Simpan di</title>
+        <sect5 id="save">
+          <title>Save</title>
 
           <para>
-            The <emphasis>"Save in"</emphasis> option will save the
-            screenshot to a PNG file. If you don't check the
-            <emphasis>"Show the save dialog"</emphasis> checkbox in the
-            <emphasis>"After capturing"</emphasis> section, the
-            screenshot will be saved to the folder on the right after
-            you press the <emphasis>"OK"</emphasis> button, without 
-            showing any save dialog. Otherwise, a save dialog will be 
-            displayed, which also shows a preview of the screenshot. 
-            You will then be able to set the save location, and the 
-            name of the file.
+            The <emphasis>"Save"</emphasis> option will save the
+            screenshot to a PNG file. A save dialog will be
+            displayed. You will be able to set the save location, and
+            the name of the file.
           </para>
 
-          <para>
-            Xfce4 Screenshooter is also able to save the screenshot to
-            any remote file system supported by GVfs, such as FTP, SAMBA,
-            SFTP, remote computers accessible via SSH... You just need to
-            connect this remote file system using 
-            <emphasis>gvfs-connect</emphasis> or
-            <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink>
-            and it will be available in the left column of the save dialog.
-          </para>
+          <para>Xfce4 Screenshooter juga dapat menyimpan cuplikan layar ke sistem berkas jarak jauh apapun yang didukung oleh GVfs, seperti FTP, SAMBA, SFTP, komputer jarak jauh yang dapat diakses via SSH... Anda hanya perlu menyambung ke sistem berkas jarak jauh ini menggunakan <emphasis>gvfs-connect</emphasis> atau <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> dan itu akan tersedia di kolom sebelah kiri dialog simpan.</para>
+        </sect5>
 
-        </sect4>
-
-        <sect4 id="copy-to-clipboard">
+        <sect5 id="copy-to-clipboard">
           <title>Salin ke papan klip</title>
 
           <para>
             The <emphasis>"Copy to the clipboard"</emphasis> option
             allows you to paste the screenshot in another application,
-            such as a word processor. Exiting the application before
-            the screenshot is pasted often removes the image from the
-            clipboard. Some clipboard managers allow you to prevent
-            this.
+            such as a word processor. This option is only available when
+            a clipboard manager is running.
           </para>
-        </sect4>
+        </sect5>
 
-        <sect4 id="open-with">
+        <sect5 id="open-with">
           <title>Buka dengan</title>
 
           <para>
             The <emphasis>"Open with"</emphasis> option saves the
             screenshot to the system's temporary directory and opens it
-            with the application set using the dropdown list on the right.
+            with the application chosen from the drop-down list.
             Applications which support images are automatically detected
-            and added to the dropdown list.
+            and added to the drop-down list.
           </para>
-        </sect4>
+        </sect5>
 
-        <sect4 id="zimagez">
+        <sect5 id="zimagez">
           <title>Simpan di ZimageZ</title>
           
-          <para>
-            The <emphasis>"Host on ZimageZ"</emphasis> option allow you
-            to host your screenshot on this free online hosting service,
-            so that you can share it easily with other people. ZimageZ
-            automatically generates a large and a small thumbnail of your
-            screenshot, which can be used to create thumbnails pointing to
-            the full size screenshot.
-          </para>
+          <para>Opsi <emphasis>"Simpan di ZimageZ"</emphasis> memungkinkan anda untuk menyimpan cuplikan layar anda di layanan penyimpanan daring gratis, sehingga anda dapat membaginya dengan mudah kepada orang lain. ZimageZ secara otomatis membuat miniatur besar dan kecil dari cuplikan layar anda, yang dapat digunakan untuk membuat miniatur yang mengarah ke cuplikan layar ukuran penuh.</para>
 
-          <para>
-            After pressing the <emphasis>"OK"</emphasis> button, you will
-            be shown this dialog:
-          </para>
+          <para>Setelah menekan tombol <emphasis>"OK"</emphasis>, anda akan ditampilkan dialog ini:</para>
 
           <screenshot>
             <mediaobject>
@@ -200,20 +228,9 @@
             </mediaobject>
           </screenshot>
 
-          <para>
-            If you do not have a ZimageZ user name, you will need to create
-            one on the <ulink type="http" url="http://www.zimagez.com">
-            ZimageZ website</ulink>. Several languages are available on this
-            website, you can switch between using the menu up right. You must
-            fill all fields of this dialog. Once you click the 
-            <emphasis>"OK"</emphasis> button, the upload will start.
-          </para>
+          <para>Jika anda tidak memiliki nama pengguna ZimageZ, anda perlu membuatnya di <ulink type="http" url="http://www.zimagez.com"> situs web ZimageZ</ulink>. Beberapa bahasa tersedia di situs web ini, anda dapat menggantinya menggunakan menu di kanan atas. Anda harus mengisi semua bagian di dialog ini. Ketika anda klik tombol <emphasis>"OK"</emphasis>, pengunggahan akan dimulai.</para>
           
-          <para>
-            The dialog below will give you the links to the full size screenshot, the
-            large thumbnail, the small thumbnails, as well examples of HTML and BBcode
-            to create a thumbnail pointing to the full size screenshot:
-          </para>
+          <para>Dialog di bawah akan memberikan anda tautan ke cuplikan layar ukuran penuh, miniatur besar, miniatur kecil, dan juga contoh HTML dan BBcode untuk membuat miniatur yang mengarah ke cuplikan layar ukuran penuh:</para>
 
           <screenshot>
             <mediaobject>
@@ -227,18 +244,18 @@
             </mediaobject>
           </screenshot>
 
-        </sect4>
-      </sect3>
-    </sect2>
+        </sect5>
+      </sect4>
+    </sect3>
 
     <sect2 id="command-line">
       <title>Via baris perintah</title>
 
       <para>
         Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Print Screen key on the upper right
-        of most keyboards so that it takes screenshots. To do so,
-        configure the keybindings of your desktop environnement so that
+        also allow you to configure the Print Screen key on the upper
+        right of most keyboards so that it takes screenshots. To do so,
+        configure the key-bindings of your desktop environment so that
         it launches xfce4-screenshooter with one or several of the
         following options when the Prt Scrn key is pressed.
       </para>
@@ -249,19 +266,13 @@
         <sect4 id="w-option">
           <title>Opsi -w</title>
 
-          <para>
-            The <emphasis>-w</emphasis> option allows you to take a
-            screenshot of the active window.
-          </para>
+          <para>Opsi <emphasis>-w</emphasis> memungkinkan anda untuk mengambil cuplikan layar dari jendela yang aktif.</para>
         </sect4>
 
         <sect4 id="f-option">
           <title>Opsi -f</title>
 
-          <para>
-            The <emphasis>-f</emphasis> option allows you to take a
-            screenshot of the entire screen.
-          </para>
+          <para>Opsi <emphasis>-f</emphasis> memungkinkan anda untuk mengambil cuplikan layar seluruh layar.</para>
         </sect4>
 
         <sect4 id="r-option">
@@ -269,10 +280,9 @@
 
           <para>
             The <emphasis>-r</emphasis> option allows you to select a
-            region to be captured by clicking a point of the screen
-            without releasing the mouse button, dragging your mouse to
-            the other corner of the region, and releasing the mouse
-            button.
+            region to be captured by clicking and dragging a rectangle
+            over the area of screen that you wish to capture, before
+            releasing the mouse button.
           </para>
         </sect4>
 
@@ -282,8 +292,8 @@
           <para>
             The <emphasis>-d</emphasis> option followed by a positive
             integer allows you to set the delay before taking the
-            screenshot when the <emphasis>-f</emphasis>, the
-            <emphasis>-w</emphasis> or the <emphasis>-r</emphasis>
+            screenshot when the <emphasis>-w</emphasis>, the
+            <emphasis>-f</emphasis> or the <emphasis>-r</emphasis>
             option is given.
           </para>
         </sect4>
@@ -295,25 +305,8 @@
             The <emphasis>-s</emphasis> option followed by the path to
             an existing folder allows you to set where the screenshots
             are saved. This option only has an effect if the
-            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or
-            the <emphasis>-r</emphasis> option is given. Combined with
-            the <emphasis>-h</emphasis> option (see below), it can be
-            used to save a file to a given path, without showing any
-            save dialog.
-          </para>
-        </sect4>
-
-        <sect4 id="h-option">
-          <title>Opsi -h</title>
-
-          <para>
-            If you give the <emphasis>-h</emphasis> option, the
-            screenshot will be saved without showing any save dialog.
-            This option only has an effect if the
-            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
-            <emphasis>-r</emphasis> option is given. The
-            <emphasis>-s</emphasis> option allows you to set the save
-            location if needed.
+            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or
+            the <emphasis>-r</emphasis> option is given.
           </para>
         </sect4>
 
@@ -326,7 +319,7 @@
             system's temporary directory and opened with the application
             whose name is to be given after <emphasis>-o</emphasis>.
             This option only has an effect if the
-            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
+            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
             <emphasis>-r</emphasis> option is given.
           </para>
         </sect4>
@@ -338,7 +331,7 @@
             If the <emphasis>-u</emphasis> option is given, the screenshot
             will be hosted on ZimageZ. See above for more details.
             This option only has an effect if the
-            <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the
+            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
             <emphasis>-r</emphasis> option is given.
           </para>
         </sect4>
@@ -347,24 +340,20 @@
   </sect1>
 
   <sect1 id="panel-plugin">
-    <title>Menggunakan plugin untuk panel Xfce</title>
+    <title>Using the Xfce panel plugin</title>
 
     <sect2 id="add">
       <title>Menambah plugin</title>
 
-      <para>
-        To add the plugin to the panel, right click on the panel and
-        select <emphasis>"Add New Item"</emphasis>. Select the plugin
-        named <emphasis>"Screenshot"</emphasis>, and add it.
-      </para>
+      <para>Untuk menambah plugin ke panel, klik kanan di panel lalu pilih <emphasis>"Tambah Item Baru"</emphasis>. Pilih plugin bernama <emphasis>"Cuplikan Layar"</emphasis>, lalu tambahkan.</para>
     </sect2>
 
     <sect2 id="set">
-      <title>Mengatur plugin</title>
+      <title>Configuring the plugin</title>
 
       <para>
         You can configure how screenshots are taken by right clicking on
-        the plugin and selecting <emphasis>"Configure"</emphasis>. A
+        the plugin and selecting <emphasis>"Properties"</emphasis>. A
         preferences dialog similar to the dialog of the main application
         will appear. Please have a look above for the different
         preferences.
@@ -374,7 +363,11 @@
     <sect2 id="use">
       <title>Menggunakan plugin</title>
 
-      <para>Untuk mengambil cuplikan layar, cukup klik pada plugin.</para>
+      <para>
+        To take a screenshot, just click on the plugin. You can use the
+        scroll wheel on the plugin button to switch between the different
+        regions to be captured.
+      </para>
     </sect2>
 
   </sect1>

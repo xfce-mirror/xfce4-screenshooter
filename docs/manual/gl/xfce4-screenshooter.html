@@ -1,173 +1,112 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Xfce4 Screenshooter</title><link rel="stylesheet" href="../xfce.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"><link rel="home" href="#xfce4-screenshooter" title="Xfce4 Screenshooter"><link rel="next" href="#intro" title="Introdución a Xfce4 Screenshooter"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" lang="gl"><div class="titlepage"><div><div><h2 class="title"><a name="xfce4-screenshooter"></a>Xfce4 Screenshooter</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Jérôme</span> <span class="surname">Guelfucci</span></h3><div class="affiliation"><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:jeromeg@xfce.org">jeromeg@xfce.org</a>&gt;</code></p></div></div></div></div></div><div><span xmlns="http://www.w3.org/TR/xhtml1/transitional" class="releaseinfo">
-      This manual describes version 1.6.0.1svn-r07896 of Xfce4 Screenshooter.
-    <br></br></span></div><div><p class="copyright">Copyright © 2008, 2009 Jérôme Guelfucci</p></div><div><p class="copyright">Copyright © 2008, 2009. Leandro Regueiro (leandro.regueiro@gmail.com)</p></div><div><div class="legalnotice"><a name="legalnotice"></a><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Xfce4 Screenshooter</title><link rel="stylesheet" href="../xfce.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="#xfce4-screenshooter" title="Xfce4 Screenshooter"><link rel="next" href="#intro" title="Introdución a Xfce4 Screenshooter"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="gl" class="article" title="Xfce4 Screenshooter"><div class="titlepage"><div><div><h2 class="title"><a name="xfce4-screenshooter"></a>Xfce4 Screenshooter</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Jérôme</span> <span class="surname">Guelfucci</span></h3><div class="affiliation"><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:jeromeg@xfce.org">jeromeg@xfce.org</a>&gt;</code></p></div></div></div><div class="author"><h3 class="author"><span class="firstname">Sam</span> <span class="surname">Swift</span></h3><div class="affiliation"><div class="address"><p><code class="email">&lt;<a class="email" href="mailto:renmush@gmail.com">renmush@gmail.com</a>&gt;</code></p></div></div></div></div></div><div><span xmlns="http://www.w3.org/TR/xhtml1/transitional" class="releaseinfo">Este manual describe a versión 1.6.0.1git-19daa1c de Xfce4 Screenshooter.<br></br></span></div><div><p class="copyright">Copyright © 2008, 2009 Jérôme Guelfucci</p></div><div><p class="copyright">Copyright © 2009 Sam Swift</p></div><div><p class="copyright">Copyright © 2008, 2009. Leandro Regueiro (leandro.regueiro@gmail.com)</p></div><div><div class="legalnotice" title="Aviso Legal"><a name="legalnotice"></a><p>
         Permission is granted to copy, distribute and/or modify this document
         under the terms of the GNU Free Documentation License, Version 1.1 or
         any later version published by the Free Software Foundation; with no
         Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
         Texts. The complete license text is available from the <a class="ulink" href="http://www.gnu.org/" target="_top">Free Software Foundation</a>.
-      </p></div></div><div><p class="pubdate">February 2009</p></div></div><hr></div><div class="toc"><p><b>Índice</b></p><dl><dt><span class="sect1"><a href="#intro">Introdución a Xfce4 Screenshooter</a></span></dt><dt><span class="sect1"><a href="#using-the-application">Uso da aplicación</a></span></dt><dd><dl><dt><span class="sect2"><a href="#user-interface">A través da interface de usuario</a></span></dt><dt><span class="sect2"><a href="#command-line">A través da liña de comandos</a></span></dt></dl></dd><dt><span class="sect1"><a href="#panel-plugin">Usar o engadido no panel de Xfce</a></span></dt><dd><dl><dt><span class="sect2"><a href="#add">Engadir o engadido</a></span></dt><dt><span class="sect2"><a href="#set">Configurar o engadido</a></span></dt><dt><span class="sect2"><a href="#use">Uso do engadido</a></span></dt></dl></dd></dl></div><div class="sect1" lang="gl"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="intro"></a>Introdución a Xfce4 Screenshooter</h2></div></div></div><p>
+      </p></div></div><div><p class="pubdate">February 2009</p></div></div><hr></div><div class="toc"><p><b>Índice</b></p><dl><dt><span class="sect1"><a href="#intro">Introdución a Xfce4 Screenshooter</a></span></dt><dt><span class="sect1"><a href="#using-the-application">Uso da aplicación</a></span></dt><dd><dl><dt><span class="sect2"><a href="#user-interface">A través da interface de usuario</a></span></dt><dt><span class="sect2"><a href="#command-line">A través da liña de comandos</a></span></dt></dl></dd><dt><span class="sect1"><a href="#panel-plugin">Using the Xfce panel plugin</a></span></dt><dd><dl><dt><span class="sect2"><a href="#add">Engadir o engadido</a></span></dt><dt><span class="sect2"><a href="#set">Configuring the plugin</a></span></dt><dt><span class="sect2"><a href="#use">Uso do engadido</a></span></dt></dl></dd></dl></div><div class="sect1" title="Introdución a Xfce4 Screenshooter"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="intro"></a>Introdución a Xfce4 Screenshooter</h2></div></div></div><p>
       This application allows you to capture the entire screen, the
       active window or a selected region. You can set the delay that
-      elapses before the screenshot is taken and the action that will
-      be done with the screenshot: save it to a PNG file, copy it to
-      the clipboard, open it using another application, or host it on
-      <a class="ulink" href="http://www.zimagez.com" target="_top">ZimageZ</a>, 
+      elapses before the screenshot is taken and the action to be
+      performed afterwards: save the screenshot to a PNG file, copy it
+      to the clipboard, open it using another application, or host it on
+      <a class="ulink" href="http://www.zimagez.com" target="_top">ZimageZ</a>,
       a free online image hosting service.
-    </p><p>Tamén hai un engadido para o panel de Xfce.</p></div><div class="sect1" lang="gl"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="using-the-application"></a>Uso da aplicación</h2></div></div></div><div class="sect2" lang="gl"><div class="titlepage"><div><div><h3 class="title"><a name="user-interface"></a>A través da interface de usuario</h3></div></div></div><p>
-        To launch the application, use the "Screenshot" item in the
-        "Accessories" category of Xfce's main menu.
-      </p><p>Mostrarase esta ventá:</p><div class="screenshot"><div class="mediaobject"><img src="images/xfce4-screenshooter-dialog.png" alt="A ventá de Xfce4 Screenshooter"></div></div><div class="sect3" lang="gl"><div class="titlepage"><div><div><h4 class="title"><a name="region-to-capture"></a>Zona a capturar</h4></div></div></div><p>
+    </p><p>Tamén hai un engadido para o panel de Xfce.</p></div><div class="sect1" title="Uso da aplicación"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="using-the-application"></a>Uso da aplicación</h2></div></div></div><div class="sect2" title="A través da interface de usuario"><div class="titlepage"><div><div><h3 class="title"><a name="user-interface"></a>A través da interface de usuario</h3></div></div></div><p>Para iniciar a aplicación use o elemento "Captura de pantalla" na categoría "Accesorios" do menú principal de Xfce.</p><p>Mostrarase esta ventá:</p><div class="screenshot"><div class="mediaobject"><img src="images/xfce4-screenshooter-dialog1.png" alt="A ventá de Xfce4 Screenshooter"></div></div><div class="sect4" title="Zona a capturar"><div class="titlepage"><div><div><h5 class="title"><a name="region-to-capture"></a>Zona a capturar</h5></div></div></div><p>
           The <span class="emphasis"><em>"Region to capture"</em></span> section allows
-          you to set from what the screenshot will be taken:
-        </p><div class="itemizedlist"><ul type="disc"><li>
-            "Entire screen" takes a screenshot of the whole screen as
-            you see it.
-          </li><li>
-            "Active window" takes a screenshot of the active window, the
-            one which was active before this dialog appeared, or if you
-            set a delay, the one that is active after the delay.
-          </li><li>
+          you to set what the screenshot will be taken of:
+        </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">"Toda a pantalla" toma unha captura de pantalla da pantalla completa tal como a ve vostede.</li><li class="listitem">
+            "Active window" takes a screenshot of the active window.
+            This will be the one that was active before this dialog
+            appeared, or if you set a delay, the one that is active
+            after the delay.
+          </li><li class="listitem">
             "Select a region" allows you to select a region to be
-            captured by clicking a point of the screen without releasing
-            the mouse button, dragging your mouse to the other corner of
-            the region, and releasing the mouse button.
-          </li></ul></div></div><div class="sect3" lang="gl"><div class="titlepage"><div><div><h4 class="title"><a name="delay"></a>Atraso antes da captura</h4></div></div></div><p>
+            captured by clicking and dragging a rectangle over the area
+            of screen that you wish to capture, before releasing the
+            mouse button.
+          </li></ul></div></div><div class="sect4" title="Capturing the pointer"><div class="titlepage"><div><div><h5 class="title"><a name="include-pointer"></a>Capturing the pointer</h5></div></div></div><p>
+          The <span class="emphasis"><em>"Capture the mouse pointer"</em></span>
+          option allows you to select whether or not the screenshot will
+          include the mouse pointer.
+        </p></div><div class="sect4" title="Atraso antes da captura"><div class="titlepage"><div><div><h5 class="title"><a name="delay"></a>Atraso antes da captura</h5></div></div></div><p>
           The <span class="emphasis"><em>"Delay before capturing"</em></span>
           section allows you to set the delay that will elapse between
-          pressing the <span class="emphasis"><em>"OK"</em></span> button and taking the 
-          screenshot. This delay will allow you to open menus or to do 
-          whatever action you want to see displayed on the screenshot.
-        </p></div><div class="sect3" lang="gl"><div class="titlepage"><div><div><h4 class="title"><a name="after-capturing"></a>Despois de capturar</h4></div></div></div><p>
-          The <span class="emphasis"><em>"Show the save dialog"</em></span> option 
-          is described below, in the <span class="emphasis"><em>"Action"</em></span> 
-          section.
-        </p><p>
-          The <span class="emphasis"><em>"Close the application"</em></span> option
-          allows you, if unchecked, to take several screenshots in 
-          a row. If checked, the application will be closed once 
-          the screenshot has been taken and the action you selected 
-          executed.
-        </p></div><div class="sect3" lang="gl"><div class="titlepage"><div><div><h4 class="title"><a name="action"></a>Acción</h4></div></div></div><p>
+          pressing the <span class="emphasis"><em>"OK"</em></span> button and screenshot
+          being taken. This delay will allow you to open menus or to
+          perform whatever action you require to see displayed in the
+          screenshot.
+        </p></div></div><div class="sect3" title="Despois de capturar"><div class="titlepage"><div><div><h4 class="title"><a name="after-capturing"></a>Despois de capturar</h4></div></div></div><p>
+        After pressing the <span class="emphasis"><em>"OK"</em></span> button a second
+        window will be displayed:
+      </p><div class="screenshot"><div class="mediaobject"><img src="images/xfce4-screenshooter-dialog2.png" alt="The window of Xfce4 Screenshooter after taking a screenshot"></div></div><div class="sect4" title="Preview"><div class="titlepage"><div><div><h5 class="title"><a name="preview"></a>Preview</h5></div></div></div><p>
+          The <span class="emphasis"><em>"Preview"</em></span> section displays a
+          thumbnail of the screenshot.
+        </p></div><div class="sect4" title="Acción"><div class="titlepage"><div><div><h5 class="title"><a name="action"></a>Acción</h5></div></div></div><p>
           The <span class="emphasis"><em>"Action"</em></span> section allows you to choose
-          what should be done with the screenshot.
-        </p><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="save"></a>Gardar en</h5></div></div></div><p>
-            The <span class="emphasis"><em>"Save in"</em></span> option will save the
-            screenshot to a PNG file. If you don't check the
-            <span class="emphasis"><em>"Show the save dialog"</em></span> checkbox in the
-            <span class="emphasis"><em>"After capturing"</em></span> section, the
-            screenshot will be saved to the folder on the right after
-            you press the <span class="emphasis"><em>"OK"</em></span> button, without 
-            showing any save dialog. Otherwise, a save dialog will be 
-            displayed, which also shows a preview of the screenshot. 
-            You will then be able to set the save location, and the 
-            name of the file.
-          </p><p>
-            Xfce4 Screenshooter is also able to save the screenshot to
-            any remote file system supported by GVfs, such as FTP, SAMBA,
-            SFTP, remote computers accessible via SSH... You just need to
-            connect this remote file system using 
-            <span class="emphasis"><em>gvfs-connect</em></span> or
-            <a class="ulink" href="http://www.uvena.de/gigolo/" target="_top">Gigolo</a>
-            and it will be available in the left column of the save dialog.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="copy-to-clipboard"></a>Copiar ó portarretallos</h5></div></div></div><p>
+          what should be performed on the screenshot.
+        </p><div class="sect5" title="Save"><div class="titlepage"><div><div><h6 class="title"><a name="save"></a>Save</h6></div></div></div><p>
+            The <span class="emphasis"><em>"Save"</em></span> option will save the
+            screenshot to a PNG file. A save dialog will be
+            displayed. You will be able to set the save location, and
+            the name of the file.
+          </p><p>Xfce4 Screenshooter tamén ten a capacidade de gardar a captura de pantalla en calquera sistema de ficheiros remoto soportado por GVfs, como FTP, SAMBA, SFTP, ordenadores remotos accesibles mediante SSH... Só ten que conectarse a este sistema de ficheiros remoto usando <span class="emphasis"><em>gvfs-connect</em></span> ou <a class="ulink" href="http://www.uvena.de/gigolo/" target="_top">Gigolo</a> e estará dispoñible na columna da esquerda do menú de gardar.</p></div><div class="sect5" title="Copiar ó portarretallos"><div class="titlepage"><div><div><h6 class="title"><a name="copy-to-clipboard"></a>Copiar ó portarretallos</h6></div></div></div><p>
             The <span class="emphasis"><em>"Copy to the clipboard"</em></span> option
             allows you to paste the screenshot in another application,
-            such as a word processor. Exiting the application before
-            the screenshot is pasted often removes the image from the
-            clipboard. Some clipboard managers allow you to prevent
-            this.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="open-with"></a>Abrir con</h5></div></div></div><p>
+            such as a word processor. This option is only available when
+            a clipboard manager is running.
+          </p></div><div class="sect5" title="Abrir con"><div class="titlepage"><div><div><h6 class="title"><a name="open-with"></a>Abrir con</h6></div></div></div><p>
             The <span class="emphasis"><em>"Open with"</em></span> option saves the
             screenshot to the system's temporary directory and opens it
-            with the application set using the dropdown list on the right.
+            with the application chosen from the drop-down list.
             Applications which support images are automatically detected
-            and added to the dropdown list.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="zimagez"></a>Host on ZimageZ</h5></div></div></div><p>
-            The <span class="emphasis"><em>"Host on ZimageZ"</em></span> option allow you
-            to host your screenshot on this free online hosting service,
-            so that you can share it easily with other people. ZimageZ
-            automatically generates a large and a small thumbnail of your
-            screenshot, which can be used to create thumbnails pointing to
-            the full size screenshot.
-          </p><p>
-            After pressing the <span class="emphasis"><em>"OK"</em></span> button, you will
-            be shown this dialog:
-          </p><div class="screenshot"><div class="mediaobject"><img src="images/xfce4-screenshooter-zimagez-login-dialog.png" alt="The dialog to host a screenshot on ZimageZ"></div></div><p>
-            If you do not have a ZimageZ user name, you will need to create
-            one on the <a class="ulink" href="http://www.zimagez.com" target="_top">
-            ZimageZ website</a>. Several languages are available on this
-            website, you can switch between using the menu up right. You must
-            fill all fields of this dialog. Once you click the 
-            <span class="emphasis"><em>"OK"</em></span> button, the upload will start.
-          </p><p>
-            The dialog below will give you the links to the full size screenshot, the
-            large thumbnail, the small thumbnails, as well examples of HTML and BBcode
-            to create a thumbnail pointing to the full size screenshot:
-          </p><div class="screenshot"><div class="mediaobject"><img src="images/xfce4-screenshooter-zimagez-result-dialog.png" alt="The dialog giving the links to your screenshot on ZimageZ"></div></div></div></div></div><div class="sect2" lang="gl"><div class="titlepage"><div><div><h3 class="title"><a name="command-line"></a>A través da liña de comandos</h3></div></div></div><p>
+            and added to the drop-down list.
+          </p></div><div class="sect5" title="Gardar en ZimageZ"><div class="titlepage"><div><div><h6 class="title"><a name="zimagez"></a>Gardar en ZimageZ</h6></div></div></div><p>A opción <span class="emphasis"><em>"Gardar en ZimageZ"</em></span> permítelle gardar a súa captura de pantalla neste servizo de aloxamento en liña gratuíto, de forma que poida compartila facilmente con outra xente. ZimageZ xera automaticamente unha miniatura grande e outra pequena da súa captura de pantalla, as cales se poden usar para crear miniaturas que apunten á captura de pantalla a tamaño completo.</p><p>Despois de premer no botón <span class="emphasis"><em>"Aceptar"</em></span> háselle mostrar este diálogo:</p><div class="screenshot"><div class="mediaobject"><img src="images/xfce4-screenshooter-zimagez-login-dialog.png" alt="O diálogo para gardar unha captura de pantalla en ZimageZ"></div></div><p>Se non ten un nome de usuario de ZimageZ, terá que crear un no <a class="ulink" href="http://www.zimagez.com" target="_top">sitio web de ZimageZ</a>. Hai varios idiomas dispoñibles neste sitio web, e pode cambiar de idioma usando o menú na esquina superior dereita. Debe cubrir tódolos campos deste diálogo. Unha vez que prema no botón <span class="emphasis"><em>"Aceptar"</em></span> comezará a suba do ficheiro.</p><p>O diálogo de embaixo proporciónalle ligazóns á captura de pantalla a tamaño completo, á miniatura grande e á pequena, así como exemplos de HTML e BBcode para crear unha miniatura que apunte á captura de pantalla a tamaño completo:</p><div class="screenshot"><div class="mediaobject"><img src="images/xfce4-screenshooter-zimagez-result-dialog.png" alt="O diálogo que proporciona as ligazóns á súa captura de pantalla en ZimageZ"></div></div></div></div></div><div class="sect2" title="A través da liña de comandos"><div class="titlepage"><div><div><h3 class="title"><a name="command-line"></a>A través da liña de comandos</h3></div></div></div><p>
         Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Print Screen key on the upper right
-        of most keyboards so that it takes screenshots. To do so,
-        configure the keybindings of your desktop environnement so that
+        also allow you to configure the Print Screen key on the upper
+        right of most keyboards so that it takes screenshots. To do so,
+        configure the key-bindings of your desktop environment so that
         it launches xfce4-screenshooter with one or several of the
         following options when the Prt Scrn key is pressed.
-      </p><div class="sect3" lang="gl"><div class="titlepage"><div><div><h4 class="title"><a name="options"></a>As opcións de liña de comandos</h4></div></div></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="w-option"></a>A opción -w</h5></div></div></div><p>
-            The <span class="emphasis"><em>-w</em></span> option allows you to take a
-            screenshot of the active window.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="f-option"></a>A opción -f</h5></div></div></div><p>
-            The <span class="emphasis"><em>-f</em></span> option allows you to take a
-            screenshot of the entire screen.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="r-option"></a>A opción -r</h5></div></div></div><p>
+      </p><div class="sect3" title="As opcións de liña de comandos"><div class="titlepage"><div><div><h4 class="title"><a name="options"></a>As opcións de liña de comandos</h4></div></div></div><div class="sect4" title="A opción -w"><div class="titlepage"><div><div><h5 class="title"><a name="w-option"></a>A opción -w</h5></div></div></div><p>A opción <span class="emphasis"><em>-w</em></span> permítelle realizar unha captura de pantalla da ventá activa.</p></div><div class="sect4" title="A opción -f"><div class="titlepage"><div><div><h5 class="title"><a name="f-option"></a>A opción -f</h5></div></div></div><p>A opción <span class="emphasis"><em>-f</em></span> permítelle realizar unha captura de pantalla de toda a pantalla.</p></div><div class="sect4" title="A opción -r"><div class="titlepage"><div><div><h5 class="title"><a name="r-option"></a>A opción -r</h5></div></div></div><p>
             The <span class="emphasis"><em>-r</em></span> option allows you to select a
-            region to be captured by clicking a point of the screen
-            without releasing the mouse button, dragging your mouse to
-            the other corner of the region, and releasing the mouse
-            button.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="d-option"></a>A opción -d</h5></div></div></div><p>
+            region to be captured by clicking and dragging a rectangle
+            over the area of screen that you wish to capture, before
+            releasing the mouse button.
+          </p></div><div class="sect4" title="A opción -d"><div class="titlepage"><div><div><h5 class="title"><a name="d-option"></a>A opción -d</h5></div></div></div><p>
             The <span class="emphasis"><em>-d</em></span> option followed by a positive
             integer allows you to set the delay before taking the
-            screenshot when the <span class="emphasis"><em>-f</em></span>, the
-            <span class="emphasis"><em>-w</em></span> or the <span class="emphasis"><em>-r</em></span>
+            screenshot when the <span class="emphasis"><em>-w</em></span>, the
+            <span class="emphasis"><em>-f</em></span> or the <span class="emphasis"><em>-r</em></span>
             option is given.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="s-option"></a>A opción -s</h5></div></div></div><p>
+          </p></div><div class="sect4" title="A opción -s"><div class="titlepage"><div><div><h5 class="title"><a name="s-option"></a>A opción -s</h5></div></div></div><p>
             The <span class="emphasis"><em>-s</em></span> option followed by the path to
             an existing folder allows you to set where the screenshots
             are saved. This option only has an effect if the
-            <span class="emphasis"><em>-f</em></span>, the <span class="emphasis"><em>-w</em></span> or
-            the <span class="emphasis"><em>-r</em></span> option is given. Combined with
-            the <span class="emphasis"><em>-h</em></span> option (see below), it can be
-            used to save a file to a given path, without showing any
-            save dialog.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="h-option"></a>A opción -h</h5></div></div></div><p>
-            If you give the <span class="emphasis"><em>-h</em></span> option, the
-            screenshot will be saved without showing any save dialog.
-            This option only has an effect if the
-            <span class="emphasis"><em>-f</em></span>, the <span class="emphasis"><em>-w</em></span> or the
-            <span class="emphasis"><em>-r</em></span> option is given. The
-            <span class="emphasis"><em>-s</em></span> option allows you to set the save
-            location if needed.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="o-option"></a>A opción -o</h5></div></div></div><p>
+            <span class="emphasis"><em>-w</em></span>, the <span class="emphasis"><em>-f</em></span> or
+            the <span class="emphasis"><em>-r</em></span> option is given.
+          </p></div><div class="sect4" title="A opción -o"><div class="titlepage"><div><div><h5 class="title"><a name="o-option"></a>A opción -o</h5></div></div></div><p>
             If the <span class="emphasis"><em>-o</em></span> option is given, followed by
             an application name, the screenshot will be saved to the
             system's temporary directory and opened with the application
             whose name is to be given after <span class="emphasis"><em>-o</em></span>.
             This option only has an effect if the
-            <span class="emphasis"><em>-f</em></span>, the <span class="emphasis"><em>-w</em></span> or the
+            <span class="emphasis"><em>-w</em></span>, the <span class="emphasis"><em>-f</em></span> or the
             <span class="emphasis"><em>-r</em></span> option is given.
-          </p></div><div class="sect4" lang="gl"><div class="titlepage"><div><div><h5 class="title"><a name="u-option"></a>A opción -u</h5></div></div></div><p>
+          </p></div><div class="sect4" title="A opción -u"><div class="titlepage"><div><div><h5 class="title"><a name="u-option"></a>A opción -u</h5></div></div></div><p>
             If the <span class="emphasis"><em>-u</em></span> option is given, the screenshot
             will be hosted on ZimageZ. See above for more details.
             This option only has an effect if the
-            <span class="emphasis"><em>-f</em></span>, the <span class="emphasis"><em>-w</em></span> or the
+            <span class="emphasis"><em>-w</em></span>, the <span class="emphasis"><em>-f</em></span> or the
             <span class="emphasis"><em>-r</em></span> option is given.
-          </p></div></div></div></div><div class="sect1" lang="gl"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="panel-plugin"></a>Usar o engadido no panel de Xfce</h2></div></div></div><div class="sect2" lang="gl"><div class="titlepage"><div><div><h3 class="title"><a name="add"></a>Engadir o engadido</h3></div></div></div><p>
-        To add the plugin to the panel, right click on the panel and
-        select <span class="emphasis"><em>"Add New Item"</em></span>. Select the plugin
-        named <span class="emphasis"><em>"Screenshot"</em></span>, and add it.
-      </p></div><div class="sect2" lang="gl"><div class="titlepage"><div><div><h3 class="title"><a name="set"></a>Configurar o engadido</h3></div></div></div><p>
+          </p></div></div></div></div><div class="sect1" title="Using the Xfce panel plugin"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="panel-plugin"></a>Using the Xfce panel plugin</h2></div></div></div><div class="sect2" title="Engadir o engadido"><div class="titlepage"><div><div><h3 class="title"><a name="add"></a>Engadir o engadido</h3></div></div></div><p>Para engadir o engadido ao panel, prema co botón dereito e seleccione  <span class="emphasis"><em>"Engadir novo elemento"</em></span>. Seleccione o engadido chamado <span class="emphasis"><em>"Captura de pantalla"</em></span>, e engádao.</p></div><div class="sect2" title="Configuring the plugin"><div class="titlepage"><div><div><h3 class="title"><a name="set"></a>Configuring the plugin</h3></div></div></div><p>
         You can configure how screenshots are taken by right clicking on
-        the plugin and selecting <span class="emphasis"><em>"Configure"</em></span>. A
+        the plugin and selecting <span class="emphasis"><em>"Properties"</em></span>. A
         preferences dialog similar to the dialog of the main application
         will appear. Please have a look above for the different
         preferences.
-      </p></div><div class="sect2" lang="gl"><div class="titlepage"><div><div><h3 class="title"><a name="use"></a>Uso do engadido</h3></div></div></div><p>Para capturar a pantalla, simplemente prema no engadido.</p></div></div></div></body></html>
+      </p></div><div class="sect2" title="Uso do engadido"><div class="titlepage"><div><div><h3 class="title"><a name="use"></a>Uso do engadido</h3></div></div></div><p>
+        To take a screenshot, just click on the plugin. You can use the
+        scroll wheel on the plugin button to switch between the different
+        regions to be captured.
+      </p></div></div></div></body></html>

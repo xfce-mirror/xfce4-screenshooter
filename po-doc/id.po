@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
-"POT-Creation-Date: 2009-05-31 00:15+0200\n"
+"POT-Creation-Date: 2009-11-15 00:21+0100\n"
 "PO-Revision-Date: 2009-08-11 00:20-0400\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -17,30 +17,44 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:90(None)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:97(None)
+#, fuzzy
 msgid ""
-"@@image: 'images/xfce4-screenshooter-dialog.png'; "
-"md5=4deee4014eb81c2da3f90353ecb27a3b"
+"@@image: 'images/xfce4-screenshooter-dialog1.png'; "
+"md5=ceb772964fa6ca07e5a09b9b9962ed18"
 msgstr ""
 "@@image: 'images/xfce4-screenshooter-dialog.png'; "
 "md5=4deee4014eb81c2da3f90353ecb27a3b"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:237(None)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:169(None)
+#, fuzzy
+msgid ""
+"@@image: 'images/xfce4-screenshooter-dialog2.png'; "
+"md5=fa48885f54ca6ab5dfc980fb216025e0"
+msgstr ""
+"@@image: 'images/xfce4-screenshooter-dialog.png'; "
+"md5=4deee4014eb81c2da3f90353ecb27a3b"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:260(None)
+#, fuzzy
 msgid ""
 "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
-"md5=90801d9f563892b813fb680fa6c7dc66"
+"md5=c8102c88e978eb7ef63994f2648f5ae6"
 msgstr ""
 "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
 "md5=90801d9f563892b813fb680fa6c7dc66"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:264(None)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:289(None)
+#, fuzzy
 msgid ""
 "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
-"md5=b626fbaeac959c97506f87bc3e93407a"
+"md5=468def960a376d5a856f2fcb3b35daf1"
 msgstr ""
 "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
 "md5=b626fbaeac959c97506f87bc3e93407a"
@@ -54,6 +68,7 @@ msgid "2008"
 msgstr "2008"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:18(year)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:23(year)
 msgid "2009"
 msgstr "2009"
 
@@ -61,7 +76,11 @@ msgstr "2009"
 msgid "Jérôme Guelfucci"
 msgstr "Jérôme Guelfucci"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:23(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:24(holder)
+msgid "Sam Swift"
+msgstr ""
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:28(para)
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License, Version 1.1 or any later "
@@ -77,34 +96,48 @@ msgstr ""
 "Sampul-Belakang. Teks lisensi selengkapnya tersedia dari <ulink type=\"http"
 "\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:35(firstname)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:40(firstname)
 msgid "Jérôme"
 msgstr "Jérôme"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:36(surname)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:41(surname)
 msgid "Guelfucci"
 msgstr "Guelfucci"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:38(email)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:43(email)
 msgid "jeromeg@xfce.org"
 msgstr "jeromeg@xfce.org"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:43(releaseinfo)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:47(firstname)
+msgid "Sam"
+msgstr ""
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:48(surname)
+msgid "Swift"
+msgstr ""
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:50(email)
+msgid "renmush@gmail.com"
+msgstr ""
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:55(releaseinfo)
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
 msgstr ""
 "Manual ini menjelaskan versi @PACKAGE_VERSION@ dari Xfce4 Screenshooter."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:49(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:61(title)
 msgid "Introduction to Xfce4 Screenshooter"
 msgstr "Pengantar ke Xfce4 Screenshooter"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:51(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:63(para)
+#, fuzzy
 msgid ""
 "This application allows you to capture the entire screen, the active window "
 "or a selected region. You can set the delay that elapses before the "
-"screenshot is taken and the action that will be done with the screenshot: "
-"save it to a PNG file, copy it to the clipboard, or open it using another "
-"application."
+"screenshot is taken and the action to be performed afterwards: save the "
+"screenshot to a PNG file, copy it to the clipboard, open it using another "
+"application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com"
+"\">ZimageZ</ulink>, a free online image hosting service."
 msgstr ""
 "Aplikasi ini memungkinkan anda untuk menangkap seluruh layar, jendela yang "
 "aktif atau daerah terpilih. Anda dapat mengatur jeda yang diperlukan sebelum "
@@ -112,30 +145,19 @@ msgstr ""
 "menyimpannya dalam berkas PNG, salin ke papan klip, atau membukanya dengan "
 "aplikasi lain."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:59(para)
-msgid ""
-"If activated on build, you can also host your screenshots on <ulink type="
-"\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online image "
-"hosting service. The CURL and XMLRPC-C libraries are required."
-msgstr ""
-"Jika diaktifkan ketika membangun, anda dapat menyimpan cuplikan layar di "
-"<ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, "
-"sebuah layanan penyimpanan citra daring gratis. Pustaka CURL dan XMLRPC-C "
-"diperlukan."
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:66(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:73(para)
 msgid "A plugin for the Xfce panel is also available."
 msgstr "Plugin untuk panel Xfce juga tersedia."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:73(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:80(title)
 msgid "Using the application"
 msgstr "Menggunakan aplikasi"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:76(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:83(title)
 msgid "Via the user interface"
 msgstr "Via antarmuka pengguna"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:78(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:85(para)
 msgid ""
 "To launch the application, use the \"Screenshot\" item in the \"Accessories"
 "\" category of Xfce's main menu."
@@ -143,130 +165,144 @@ msgstr ""
 "Untuk menjalankan aplikasi, gunakan item \"Cuplikan Layar\" di kategori "
 "\"Aksesoris\" dari menu utama Xfce."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:83(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:90(para)
 msgid "This window will be displayed:"
 msgstr "Jendela ini akan tampak:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:94(phrase)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:101(phrase)
 msgid "The window of Xfce4 Screenshooter"
 msgstr "Jendela Xfce4 Screenshooter"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:100(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:107(title)
 msgid "Region to capture"
 msgstr "Daerah untuk ditangkap"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:102(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:109(para)
+#, fuzzy
 msgid ""
 "The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
-"from what the screenshot will be taken:"
+"what the screenshot will be taken of:"
 msgstr ""
 "Bagian <emphasis>\"Daerah akan ditangkap\"</emphasis> memungkinkan anda "
 "untuk mengatur dari apa cuplikan layar akan diambil:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:108(listitem)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:115(listitem)
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr "\"Seluruh layar\" mengambil cuplikan layar dari seluruh layar yang "
-"anda lihat."
+msgstr ""
+"\"Seluruh layar\" mengambil cuplikan layar dari seluruh layar yang anda "
+"lihat."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:112(listitem)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:119(listitem)
+#, fuzzy
 msgid ""
-"\"Active window\" takes a screenshot of the active window, the one which was "
-"active before this dialog appeared, or if you set a delay, the one that is "
-"active after the delay."
+"\"Active window\" takes a screenshot of the active window. This will be the "
+"one that was active before this dialog appeared, or if you set a delay, the "
+"one that is active after the delay."
 msgstr ""
 "\"Jendela aktif\" mengambil cuplikan layar dari jendela yang aktif, jendela "
 "yang aktif sebelum dialog ini muncul, atau jika anda mengatur jeda, jendela "
 "yang aktif setelah jeda."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:117(listitem)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:125(listitem)
+#, fuzzy
 msgid ""
 "\"Select a region\" allows you to select a region to be captured by clicking "
-"a point of the screen without releasing the mouse button, dragging your "
-"mouse to the other corner of the region, and releasing the mouse button."
+"and dragging a rectangle over the area of screen that you wish to capture, "
+"before releasing the mouse button."
 msgstr ""
 "\"Pilih daerah\" memungkinkan anda untuk memilih daerah yang akan ditangkap "
 "dengan klik pada titik di layar lalu tanpa melepas tombol tetikus, tarik "
 "tetikus anda ke sudut lain di daerah layar, setelah itu lepas tombol tetikus."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:127(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:135(title)
+msgid "Capturing the pointer"
+msgstr ""
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:137(para)
+#, fuzzy
+msgid ""
+"The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to "
+"select whether or not the screenshot will include the mouse pointer."
+msgstr ""
+"Bagian <emphasis>\"Daerah akan ditangkap\"</emphasis> memungkinkan anda "
+"untuk mengatur dari apa cuplikan layar akan diambil:"
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:145(title)
 msgid "Delay before capturing"
 msgstr "Jeda sebelum menangkap"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:129(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
+#, fuzzy
 msgid ""
 "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to "
 "set the delay that will elapse between pressing the <emphasis>\"OK\"</"
-"emphasis> button and taking the screenshot. This delay will allow you to "
-"open menus or to do whatever action you want to see displayed on the "
+"emphasis> button and screenshot being taken. This delay will allow you to "
+"open menus or to perform whatever action you require to see displayed in the "
 "screenshot."
 msgstr ""
 "Bagian <emphasis>\"Jeda sebelum menangkap\"</emphasis> memungkinkan anda "
-"untuk mengatur jeda yang akan berlangsung di antara menekan tombol "
-"<emphasis>\"OK\"</emphasis> dan mengambil cuplikan layar. Jeda ini akan "
-"memungkinkan anda untuk membuka menu atau melakukan aksi apapun yang ingin "
-"anda lihat nantinya ditampilkan pada cuplikan layar."
+"untuk mengatur jeda yang akan berlangsung di antara menekan tombol <emphasis>"
+"\"OK\"</emphasis> dan mengambil cuplikan layar. Jeda ini akan memungkinkan "
+"anda untuk membuka menu atau melakukan aksi apapun yang ingin anda lihat "
+"nantinya ditampilkan pada cuplikan layar."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:139(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:159(title)
 msgid "After capturing"
 msgstr "Setelah menangkap"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:141(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:161(para)
+#, fuzzy
 msgid ""
-"The <emphasis>\"Show the save dialog\"</emphasis> option is described below, "
-"in the <emphasis>\"Action\"</emphasis> section."
+"After pressing the <emphasis>\"OK\"</emphasis> button a second window will "
+"be displayed:"
 msgstr ""
-"Opsi <emphasis>\"Tampilkan dialog simpan\"</emphasis> dijelaskan di bawah, "
-"di dalam bagian <emphasis>\"Aksi\"</emphasis>."
+"Setelah menekan tombol <emphasis>\"OK\"</emphasis>, anda akan ditampilkan "
+"dialog ini:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
-msgid ""
-"The <emphasis>\"Close the application\"</emphasis> option allows you, if "
-"unchecked, to take several screenshots in a row. If checked, the application "
-"will be closed once the screenshot has been taken and the action you "
-"selected executed."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:173(phrase)
+#, fuzzy
+msgid "The window of Xfce4 Screenshooter after taking a screenshot"
+msgstr "Jendela Xfce4 Screenshooter"
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:180(title)
+msgid "Preview"
 msgstr ""
-"Opsi <emphasis>\"Tutup aplikasi\"</emphasis> memungkinkan anda, jika "
-"tidak dicentang, untuk mengambil beberapa cuplikan layar dalam satu baris. "
-"Jika dicentang, aplikasi akan ditutup ketika cuplikan layar telah diambil "
-"dan aksi yang anda pilih telah dieksekusi."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:157(title)
-msgid "Action"
-msgstr "Aksi"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:159(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:182(para)
+#, fuzzy
 msgid ""
-"The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
-"be done with the screenshot."
+"The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
+"screenshot."
 msgstr ""
 "Bagian <emphasis>\"Aksi\"</emphasis> memungkinkan anda untuk memilih apa "
 "yang harus dilakukan dengan cuplikan layar."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:165(title)
-msgid "Save in"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:189(title)
+msgid "Action"
+msgstr "Aksi"
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:191(para)
+#, fuzzy
+msgid ""
+"The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
+"be performed on the screenshot."
+msgstr ""
+"Bagian <emphasis>\"Aksi\"</emphasis> memungkinkan anda untuk memilih apa "
+"yang harus dilakukan dengan cuplikan layar."
+
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:197(title)
+#, fuzzy
+msgid "Save"
 msgstr "Simpan di"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:167(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:199(para)
 msgid ""
-"The <emphasis>\"Save in\"</emphasis> option will save the screenshot to a "
-"PNG file. If you don't check the <emphasis>\"Show the save dialog\"</"
-"emphasis> checkbox in the <emphasis>\"After capturing\"</emphasis> section, "
-"the screenshot will be saved to the folder on the right after you press the "
-"<emphasis>\"OK\"</emphasis> button, without showing any save dialog. "
-"Otherwise, a save dialog will be displayed, which also shows a preview of "
-"the screenshot. You will then be able to set the save location, and the name "
-"of the file."
+"The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG "
+"file. A save dialog will be displayed. You will be able to set the save "
+"location, and the name of the file."
 msgstr ""
-"Opsi <emphasis>\"Simpan di\"</emphasis> akan menyimpan cuplikan layar ke "
-"dalam berkas PNG. Jika anda tidak mencentang kotak cek <emphasis>\"Tampilkan "
-"dialog simpan\"</emphasis> di bagian <emphasis>\"Setelah menangkap\"</"
-"emphasis>, cuplikan layar akan disimpan di folder di sebelah kanan setelah "
-"menekan tombol <emphasis>\"OK\"</emphasis>, tanpa menampilkan dialog simpan "
-"apapun. Sebaliknya, sebuah dialog simpan akan ditampilkan, yang juga "
-"menampilkan pratilik cuplikan layar. Selanjutnya anda akan dapat mengatur "
-"lokasi penyimpanan, dan nama berkas."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:180(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:206(para)
 msgid ""
 "Xfce4 Screenshooter is also able to save the screenshot to any remote file "
 "system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers "
@@ -278,49 +314,50 @@ msgstr ""
 "Xfce4 Screenshooter juga dapat menyimpan cuplikan layar ke sistem berkas "
 "jarak jauh apapun yang didukung oleh GVfs, seperti FTP, SAMBA, SFTP, "
 "komputer jarak jauh yang dapat diakses via SSH... Anda hanya perlu "
-"menyambung ke sistem berkas jarak jauh ini menggunakan <emphasis>gvfs-connect"
-"</emphasis> atau <ulink type=\"http\" url=\"http://www.uvena.de/gigolo"
-"/\">Gigolo</ulink> dan itu akan tersedia di kolom sebelah kiri dialog "
+"menyambung ke sistem berkas jarak jauh ini menggunakan <emphasis>gvfs-"
+"connect</emphasis> atau <ulink type=\"http\" url=\"http://www.uvena.de/"
+"gigolo/\">Gigolo</ulink> dan itu akan tersedia di kolom sebelah kiri dialog "
 "simpan."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:193(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:218(title)
 msgid "Copy to the clipboard"
 msgstr "Salin ke papan klip"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:195(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:220(para)
+#, fuzzy
 msgid ""
 "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to "
-"paste the screenshot in another application, such as a word processor. "
-"Exiting the application before the screenshot is pasted often removes the "
-"image from the clipboard. Some clipboard managers allow you to prevent this."
+"paste the screenshot in another application, such as a word processor. This "
+"option is only available when a clipboard manager is running."
 msgstr ""
 "Opsi <emphasis>\"Salin ke papan klip\"</emphasis> memungkinkan anda untuk "
-"merekatkan cuplikan layar ke aplikasi lain, seperti pengolah kata. "
-"Keluar dari aplikasi sebelum cuplikan layar direkatkan sering menghapus "
-"citra dari papan klip. Beberapa manajer papan klip memungkinkan anda untuk "
-"mencegah hal ini."
+"merekatkan cuplikan layar ke aplikasi lain, seperti pengolah kata. Keluar "
+"dari aplikasi sebelum cuplikan layar direkatkan sering menghapus citra dari "
+"papan klip. Beberapa manajer papan klip memungkinkan anda untuk mencegah hal "
+"ini."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:206(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:229(title)
 msgid "Open with"
 msgstr "Buka dengan"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:208(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:231(para)
+#, fuzzy
 msgid ""
 "The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the "
-"system's temporary directory and opens it with the application set using the "
-"dropdown list on the right. Applications which support images are "
-"automatically detected and added to the dropdown list."
+"system's temporary directory and opens it with the application chosen from "
+"the drop-down list. Applications which support images are automatically "
+"detected and added to the drop-down list."
 msgstr ""
 "Opsi <emphasis>\"Buka dengan\"</emphasis> menyimpan cuplikan layar ke "
 "direktori sementara sistem dan membukanya dengan aplikasi yang diatur "
 "menggunakan senarai taruh bawah di sebelah kanan. Aplikasi yang mendukung "
 "citra akan secara otomatis terdeteksi dan ditambahkan ke senarai taruh bawah."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:218(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:241(title)
 msgid "Host on ZimageZ"
 msgstr "Simpan di ZimageZ"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:220(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:243(para)
 msgid ""
 "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your "
 "screenshot on this free online hosting service, so that you can share it "
@@ -329,13 +366,13 @@ msgid ""
 "pointing to the full size screenshot."
 msgstr ""
 "Opsi <emphasis>\"Simpan di ZimageZ\"</emphasis> memungkinkan anda untuk "
-"menyimpan cuplikan layar anda di layanan penyimpanan daring gratis, "
-"sehingga anda dapat membaginya dengan mudah kepada orang lain. ZimageZ "
-"secara otomatis membuat miniatur besar dan kecil dari cuplikan layar anda, "
-"yang dapat digunakan untuk membuat miniatur yang mengarah ke cuplikan layar "
+"menyimpan cuplikan layar anda di layanan penyimpanan daring gratis, sehingga "
+"anda dapat membaginya dengan mudah kepada orang lain. ZimageZ secara "
+"otomatis membuat miniatur besar dan kecil dari cuplikan layar anda, yang "
+"dapat digunakan untuk membuat miniatur yang mengarah ke cuplikan layar "
 "ukuran penuh."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:229(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:252(para)
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
 "this dialog:"
@@ -343,11 +380,11 @@ msgstr ""
 "Setelah menekan tombol <emphasis>\"OK\"</emphasis>, anda akan ditampilkan "
 "dialog ini:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:241(phrase)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
 msgstr "Dialog untuk menyimpan cuplikan layar di ZimageZ"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:246(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:269(para)
 msgid ""
 "If you do not have a ZimageZ user name, you will need to create one on the "
 "<ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</"
@@ -362,7 +399,7 @@ msgstr ""
 "ini. Ketika anda klik tombol <emphasis>\"OK\"</emphasis>, pengunggahan akan "
 "dimulai."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:255(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:279(para)
 msgid ""
 "The dialog below will give you the links to the full size screenshot, the "
 "large thumbnail, the small thumbnails, as well examples of HTML and BBcode "
@@ -372,39 +409,39 @@ msgstr ""
 "miniatur besar, miniatur kecil, dan juga contoh HTML dan BBcode untuk "
 "membuat miniatur yang mengarah ke cuplikan layar ukuran penuh:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:268(phrase)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
 msgstr "Dialog memberikan tautan ke cuplikan layar anda di ZimageZ"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:278(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:303(title)
 msgid "Via command line"
 msgstr "Via baris perintah"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:280(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:305(para)
+#, fuzzy
 msgid ""
 "Command line options allow you to take screenshots quickly. They also allow "
 "you to configure the Print Screen key on the upper right of most keyboards "
-"so that it takes screenshots. To do so, configure the keybindings of your "
-"desktop environnement so that it launches xfce4-screenshooter with one or "
+"so that it takes screenshots. To do so, configure the key-bindings of your "
+"desktop environment so that it launches xfce4-screenshooter with one or "
 "several of the following options when the Prt Scrn key is pressed."
 msgstr ""
 "Opsi baris perintah memungkinkan anda untuk mengambil cuplikan layar secara "
 "cepat. Opsi baris perintah juga memungkinkan anda untuk mengatur tombol "
 "Print Screen yang berada di sebelah kanan atas pada kebanyakan papan ketik "
-"sehingga dapat mengambil cuplikan layar. Untuk melakukan ini, atur "
-"pengikat kunci lingkungan desktop anda sehingga akan menjalankan "
-"xfce4-screenshooter dengan satu atau beberapa opsi berikut ketika tombol "
-"Prt Scrn ditekan."
+"sehingga dapat mengambil cuplikan layar. Untuk melakukan ini, atur pengikat "
+"kunci lingkungan desktop anda sehingga akan menjalankan xfce4-screenshooter "
+"dengan satu atau beberapa opsi berikut ketika tombol Prt Scrn ditekan."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:290(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:315(title)
 msgid "The command line options"
 msgstr "Opsi baris perintah"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:293(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:318(title)
 msgid "The -w option"
 msgstr "Opsi -w"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:295(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:320(para)
 msgid ""
 "The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
 "active window."
@@ -412,11 +449,11 @@ msgstr ""
 "Opsi <emphasis>-w</emphasis> memungkinkan anda untuk mengambil cuplikan "
 "layar dari jendela yang aktif."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:302(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:327(title)
 msgid "The -f option"
 msgstr "Opsi -f"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:304(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:329(para)
 msgid ""
 "The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
 "entire screen."
@@ -424,89 +461,68 @@ msgstr ""
 "Opsi <emphasis>-f</emphasis> memungkinkan anda untuk mengambil cuplikan "
 "layar seluruh layar."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:311(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:336(title)
 msgid "The -r option"
 msgstr "Opsi -r"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:313(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:338(para)
+#, fuzzy
 msgid ""
 "The <emphasis>-r</emphasis> option allows you to select a region to be "
-"captured by clicking a point of the screen without releasing the mouse "
-"button, dragging your mouse to the other corner of the region, and releasing "
-"the mouse button."
+"captured by clicking and dragging a rectangle over the area of screen that "
+"you wish to capture, before releasing the mouse button."
 msgstr ""
 "Opsi <emphasis>-r</emphasis> memungkinkan anda untuk memilih daerah yang "
 "akan ditangkap dengan cara klik pada titik di layar tanpa melepas tombol "
 "tetikus, tarik tetikus anda ke pojok daerah lain, lalu lepaskan tombol "
 "tetikus."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:323(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:347(title)
 msgid "The -d option"
 msgstr "Opsi -d"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:325(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:349(para)
+#, fuzzy
 msgid ""
 "The <emphasis>-d</emphasis> option followed by a positive integer allows you "
-"to set the delay before taking the screenshot when the <emphasis>-f</"
-"emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option "
+"to set the delay before taking the screenshot when the <emphasis>-w</"
+"emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
 "is given."
 msgstr ""
 "Opsi <emphasis>-d</emphasis> yang diikuti dengan bilangan positif "
 "memungkinkan anda untuk mengatur jeda sebelum mengambil cuplikan layar "
-"ketika opsi <emphasis>-f</emphasis>, <emphasis>-w</emphasis> atau "
-"<emphasis>-r</emphasis> diberikan."
+"ketika opsi <emphasis>-f</emphasis>, <emphasis>-w</emphasis> atau <emphasis>-"
+"r</emphasis> diberikan."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:335(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
 msgid "The -s option"
 msgstr "Opsi -s"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:337(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:361(para)
+#, fuzzy
 msgid ""
 "The <emphasis>-s</emphasis> option followed by the path to an existing "
 "folder allows you to set where the screenshots are saved. This option only "
-"has an effect if the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or "
-"the <emphasis>-r</emphasis> option is given. Combined with the <emphasis>-h</"
-"emphasis> option (see below), it can be used to save a file to a given path, "
-"without showing any save dialog."
+"has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or "
+"the <emphasis>-r</emphasis> option is given."
 msgstr ""
-"Opsi <emphasis>-s</emphasis> yang diikuti dengan alamat ke folder yang ada "
-"memungkinkan anda untuk mengatur dimana cuplikan layar akan disimpan. Opsi "
-"ini hanya mempunyai efek jika opsi <emphasis>-f</emphasis>, <emphasis>-w</"
-"emphasis> atau <emphasis>-r</emphasis> diberikan. Bila dikombinasikan dengan "
-"opsi <emphasis>-h</emphasis> (lihat di bawah), maka dapat digunakan untuk "
-"menyimpan berkas ke alamat yang diberikan, tanpa menampilkan dialog "
-"penyimpanan apapun."
+"Opsi <emphasis>-d</emphasis> yang diikuti dengan bilangan positif "
+"memungkinkan anda untuk mengatur jeda sebelum mengambil cuplikan layar "
+"ketika opsi <emphasis>-f</emphasis>, <emphasis>-w</emphasis> atau <emphasis>-"
+"r</emphasis> diberikan."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:350(title)
-msgid "The -h option"
-msgstr "Opsi -h"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:352(para)
-msgid ""
-"If you give the <emphasis>-h</emphasis> option, the screenshot will be saved "
-"without showing any save dialog. This option only has an effect if the "
-"<emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the <emphasis>-r</"
-"emphasis> option is given. The <emphasis>-s</emphasis> option allows you to "
-"set the save location if needed."
-msgstr ""
-"Jika anda memberikan opsi <emphasis>-h</emphasis>, cuplikan layar akan "
-"disimpan tanpa menampilkan dialog penyimpanan apapun. Opsi ini hanya "
-"mempunyai efek jika opsi <emphasis>-f</emphasis>, <emphasis>-w</"
-"emphasis> atau <emphasis>-r</emphasis> diberikan. Opsi <emphasis>-s</"
-"emphasis> memungkinkan anda untuk mengatur lokasi penyimpanan jika "
-"diperlukan."
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:364(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:371(title)
 msgid "The -o option"
 msgstr "Opsi -o"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:366(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:373(para)
+#, fuzzy
 msgid ""
 "If the <emphasis>-o</emphasis> option is given, followed by an application "
 "name, the screenshot will be saved to the system's temporary directory and "
 "opened with the application whose name is to be given after <emphasis>-o</"
-"emphasis>. This option only has an effect if the <emphasis>-f</emphasis>, "
-"the <emphasis>-w</emphasis> or the <emphasis>-r</emphasis> option is given."
+"emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, "
+"the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
 "Jika opsi <emphasis>-o</emphasis> diberikan, diikuti dengan sebuah nama "
 "aplikasi, cuplikan layar akan disimpan ke direktori sementara sistem dan "
@@ -514,65 +530,159 @@ msgstr ""
 "emphasis>. Opsi ini hanya mempunyai efek jika opsi <emphasis>-f</emphasis>, "
 "<emphasis>-w</emphasis> atau <emphasis>-r</emphasis> diberikan."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:378(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:385(title)
 msgid "The -u option"
 msgstr "Opsi -u"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:380(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:387(para)
+#, fuzzy
 msgid ""
 "If the <emphasis>-u</emphasis> option is given, the screenshot will be "
 "hosted on ZimageZ. See above for more details. This option only has an "
-"effect if the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the "
+"effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
 "<emphasis>-r</emphasis> option is given."
 msgstr ""
-"Jika opsi <emphasis>-u</emphasis> diberikan, cuplikan layar akan disimpan "
-"di ZimageZ. Lihat di atas untuk keterangan lebih lanjut. Opsi ini hanya "
+"Jika opsi <emphasis>-u</emphasis> diberikan, cuplikan layar akan disimpan di "
+"ZimageZ. Lihat di atas untuk keterangan lebih lanjut. Opsi ini hanya "
 "mempunyai efek jika opsi <emphasis>-f</emphasis>, <emphasis>-w</emphasis> "
 "atau <emphasis>-r</emphasis> diberikan."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:393(title)
-msgid "Using the plugin for the Xfce panel"
-msgstr "Menggunakan plugin untuk panel Xfce"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:400(title)
+#, fuzzy
+msgid "Using the Xfce panel plugin"
+msgstr "Menggunakan plugin"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:396(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:403(title)
 msgid "Adding the plugin"
 msgstr "Menambah plugin"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:398(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:405(para)
 msgid ""
 "To add the plugin to the panel, right click on the panel and select "
 "<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
 "\"Screenshot\"</emphasis>, and add it."
 msgstr ""
-"Untuk menambah plugin ke panel, klik kanan di panel lalu pilih "
-"<emphasis>\"Tambah Item Baru\"</emphasis>. Pilih plugin bernama <emphasis>"
-"\"Cuplikan Layar\"</emphasis>, lalu tambahkan."
+"Untuk menambah plugin ke panel, klik kanan di panel lalu pilih <emphasis>"
+"\"Tambah Item Baru\"</emphasis>. Pilih plugin bernama <emphasis>\"Cuplikan "
+"Layar\"</emphasis>, lalu tambahkan."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:406(title)
-msgid "Setting the plugin up"
-msgstr "Mengatur plugin"
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:413(title)
+#, fuzzy
+msgid "Configuring the plugin"
+msgstr "Menggunakan plugin"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:408(para)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:415(para)
+#, fuzzy
 msgid ""
 "You can configure how screenshots are taken by right clicking on the plugin "
-"and selecting <emphasis>\"Configure\"</emphasis>. A preferences dialog "
+"and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog "
 "similar to the dialog of the main application will appear. Please have a "
 "look above for the different preferences."
 msgstr ""
-"Anda dapat mengatur bagaimana cuplikan layar diambil dengan klik kanan "
-"pada plugin <emphasis>\"Atur\"</emphasis>. Dialog pengaturan yang "
-"mirip dengan dialog aplikasi utama akan muncul. Silakan lihat di atas "
-"untuk mengetahui perbedaan pengaturannya."
+"Anda dapat mengatur bagaimana cuplikan layar diambil dengan klik kanan pada "
+"plugin <emphasis>\"Atur\"</emphasis>. Dialog pengaturan yang mirip dengan "
+"dialog aplikasi utama akan muncul. Silakan lihat di atas untuk mengetahui "
+"perbedaan pengaturannya."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:418(title)
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:425(title)
 msgid "Using the plugin"
 msgstr "Menggunakan plugin"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:420(para)
-msgid "To take a screenshot, just click on the plugin."
-msgstr "Untuk mengambil cuplikan layar, cukup klik pada plugin."
+#: ../docs/manual/C/xfce4-screenshooter.xml.in:427(para)
+msgid ""
+"To take a screenshot, just click on the plugin. You can use the scroll wheel "
+"on the plugin button to switch between the different regions to be captured."
+msgstr ""
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:0(None)
 msgid "translator-credits"
 msgstr "Andhika Padmawan <andhika.padmawan@gmail.com>, 2009."
+
+#~ msgid ""
+#~ "If activated on build, you can also host your screenshots on <ulink type="
+#~ "\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online "
+#~ "image hosting service. The CURL and XMLRPC-C libraries are required."
+#~ msgstr ""
+#~ "Jika diaktifkan ketika membangun, anda dapat menyimpan cuplikan layar di "
+#~ "<ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, "
+#~ "sebuah layanan penyimpanan citra daring gratis. Pustaka CURL dan XMLRPC-C "
+#~ "diperlukan."
+
+#~ msgid ""
+#~ "The <emphasis>\"Show the save dialog\"</emphasis> option is described "
+#~ "below, in the <emphasis>\"Action\"</emphasis> section."
+#~ msgstr ""
+#~ "Opsi <emphasis>\"Tampilkan dialog simpan\"</emphasis> dijelaskan di "
+#~ "bawah, di dalam bagian <emphasis>\"Aksi\"</emphasis>."
+
+#~ msgid ""
+#~ "The <emphasis>\"Close the application\"</emphasis> option allows you, if "
+#~ "unchecked, to take several screenshots in a row. If checked, the "
+#~ "application will be closed once the screenshot has been taken and the "
+#~ "action you selected executed."
+#~ msgstr ""
+#~ "Opsi <emphasis>\"Tutup aplikasi\"</emphasis> memungkinkan anda, jika "
+#~ "tidak dicentang, untuk mengambil beberapa cuplikan layar dalam satu "
+#~ "baris. Jika dicentang, aplikasi akan ditutup ketika cuplikan layar telah "
+#~ "diambil dan aksi yang anda pilih telah dieksekusi."
+
+#~ msgid ""
+#~ "The <emphasis>\"Save in\"</emphasis> option will save the screenshot to a "
+#~ "PNG file. If you don't check the <emphasis>\"Show the save dialog\"</"
+#~ "emphasis> checkbox in the <emphasis>\"After capturing\"</emphasis> "
+#~ "section, the screenshot will be saved to the folder on the right after "
+#~ "you press the <emphasis>\"OK\"</emphasis> button, without showing any "
+#~ "save dialog. Otherwise, a save dialog will be displayed, which also shows "
+#~ "a preview of the screenshot. You will then be able to set the save "
+#~ "location, and the name of the file."
+#~ msgstr ""
+#~ "Opsi <emphasis>\"Simpan di\"</emphasis> akan menyimpan cuplikan layar ke "
+#~ "dalam berkas PNG. Jika anda tidak mencentang kotak cek <emphasis>"
+#~ "\"Tampilkan dialog simpan\"</emphasis> di bagian <emphasis>\"Setelah "
+#~ "menangkap\"</emphasis>, cuplikan layar akan disimpan di folder di sebelah "
+#~ "kanan setelah menekan tombol <emphasis>\"OK\"</emphasis>, tanpa "
+#~ "menampilkan dialog simpan apapun. Sebaliknya, sebuah dialog simpan akan "
+#~ "ditampilkan, yang juga menampilkan pratilik cuplikan layar. Selanjutnya "
+#~ "anda akan dapat mengatur lokasi penyimpanan, dan nama berkas."
+
+#~ msgid ""
+#~ "The <emphasis>-s</emphasis> option followed by the path to an existing "
+#~ "folder allows you to set where the screenshots are saved. This option "
+#~ "only has an effect if the <emphasis>-f</emphasis>, the <emphasis>-w</"
+#~ "emphasis> or the <emphasis>-r</emphasis> option is given. Combined with "
+#~ "the <emphasis>-h</emphasis> option (see below), it can be used to save a "
+#~ "file to a given path, without showing any save dialog."
+#~ msgstr ""
+#~ "Opsi <emphasis>-s</emphasis> yang diikuti dengan alamat ke folder yang "
+#~ "ada memungkinkan anda untuk mengatur dimana cuplikan layar akan disimpan. "
+#~ "Opsi ini hanya mempunyai efek jika opsi <emphasis>-f</emphasis>, "
+#~ "<emphasis>-w</emphasis> atau <emphasis>-r</emphasis> diberikan. Bila "
+#~ "dikombinasikan dengan opsi <emphasis>-h</emphasis> (lihat di bawah), maka "
+#~ "dapat digunakan untuk menyimpan berkas ke alamat yang diberikan, tanpa "
+#~ "menampilkan dialog penyimpanan apapun."
+
+#~ msgid "The -h option"
+#~ msgstr "Opsi -h"
+
+#~ msgid ""
+#~ "If you give the <emphasis>-h</emphasis> option, the screenshot will be "
+#~ "saved without showing any save dialog. This option only has an effect if "
+#~ "the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the "
+#~ "<emphasis>-r</emphasis> option is given. The <emphasis>-s</emphasis> "
+#~ "option allows you to set the save location if needed."
+#~ msgstr ""
+#~ "Jika anda memberikan opsi <emphasis>-h</emphasis>, cuplikan layar akan "
+#~ "disimpan tanpa menampilkan dialog penyimpanan apapun. Opsi ini hanya "
+#~ "mempunyai efek jika opsi <emphasis>-f</emphasis>, <emphasis>-w</emphasis> "
+#~ "atau <emphasis>-r</emphasis> diberikan. Opsi <emphasis>-s</emphasis> "
+#~ "memungkinkan anda untuk mengatur lokasi penyimpanan jika diperlukan."
+
+#~ msgid "Using the plugin for the Xfce panel"
+#~ msgstr "Menggunakan plugin untuk panel Xfce"
+
+#~ msgid "Setting the plugin up"
+#~ msgstr "Mengatur plugin"
+
+#~ msgid "To take a screenshot, just click on the plugin."
+#~ msgstr "Untuk mengambil cuplikan layar, cukup klik pada plugin."
