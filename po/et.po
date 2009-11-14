@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 14:02+0200\n"
+"POT-Creation-Date: 2009-11-15 00:29+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: kristjan <kristjan.siimson@gmail.com>\n"
 "Language-Team: \n"
@@ -10,74 +10,66 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../lib/screenshooter-dialogs.c:283
-#, fuzzy
-msgid "Screenshot.png"
-msgstr "Ekraanipilt.png"
-
-#: ../lib/screenshooter-dialogs.c:300
-#, c-format
-msgid "Screenshot-%d.png"
-msgstr "Ekraanipilt-%d.png"
-
-#: ../lib/screenshooter-dialogs.c:493
+#: ../lib/screenshooter-dialogs.c:478
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:577
+#: ../lib/screenshooter-dialogs.c:560
 msgid "Transfer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:600
+#: ../lib/screenshooter-dialogs.c:581
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Toiming</span>"
 
-#: ../lib/screenshooter-dialogs.c:724 ../lib/screenshooter-dialogs.c:741
+#: ../lib/screenshooter-dialogs.c:697 ../lib/screenshooter-dialogs.c:714
+#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Ekraanipilt"
 
-#: ../lib/screenshooter-dialogs.c:736
+#: ../lib/screenshooter-dialogs.c:709
 msgid "Take a screenshot"
 msgstr "Tee ekraanipilt"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:724
 msgid "Preferences"
 msgstr "Eelistused"
 
-#: ../lib/screenshooter-dialogs.c:793
+#: ../lib/screenshooter-dialogs.c:754
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pildistatav ala</span>"
 
-#: ../lib/screenshooter-dialogs.c:820
+#: ../lib/screenshooter-dialogs.c:774
 msgid "Entire screen"
 msgstr "Kogu ekraan"
 
-#: ../lib/screenshooter-dialogs.c:830 ../src/main.c:58
-#: ../panel-plugin/screenshooter-plugin.c:292
+#: ../lib/screenshooter-dialogs.c:781 ../src/main.c:53
+#: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "Tee ekraanipilt kogu ekraanist"
 
-#: ../lib/screenshooter-dialogs.c:841
+#: ../lib/screenshooter-dialogs.c:789
 msgid "Active window"
 msgstr "Käsilolev aken"
 
-#: ../lib/screenshooter-dialogs.c:851 ../src/main.c:104
-#: ../panel-plugin/screenshooter-plugin.c:297
+#: ../lib/screenshooter-dialogs.c:796 ../src/main.c:90
+#: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
 msgstr "Tee ekraanipilt käsilolevast aknast"
 
-#: ../lib/screenshooter-dialogs.c:862
+#: ../lib/screenshooter-dialogs.c:804
 msgid "Select a region"
 msgstr "Vali ala"
 
-#: ../lib/screenshooter-dialogs.c:872 ../src/main.c:78
-#: ../panel-plugin/screenshooter-plugin.c:302
+#: ../lib/screenshooter-dialogs.c:809 ../src/main.c:68
+#: ../panel-plugin/screenshooter-plugin.c:318
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -86,242 +78,232 @@ msgstr ""
 "Pildistatava ala valimiseks klõpsake ekraanile ilma nuppu lahti laskmata, "
 "lohistage osuti teise valitava ala otsa, ning laske hiirenupp lahti."
 
-#: ../lib/screenshooter-dialogs.c:884
+#: ../lib/screenshooter-dialogs.c:819
 msgid "Capture the mouse pointer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:892
+#: ../lib/screenshooter-dialogs.c:824
 #, fuzzy
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Salvestusdialoogi mitte näidata"
 
-#: ../lib/screenshooter-dialogs.c:917
+#: ../lib/screenshooter-dialogs.c:840
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pildistatav ala</span>"
 
-#: ../lib/screenshooter-dialogs.c:952
+#: ../lib/screenshooter-dialogs.c:862
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Viivitus sekundites enne ekraanipildi tegemist"
 
-#: ../lib/screenshooter-dialogs.c:958
+#: ../lib/screenshooter-dialogs.c:865
 msgid "seconds"
 msgstr "sekundit"
 
-#: ../lib/screenshooter-dialogs.c:984
-#, fuzzy
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Toiming</span>"
-
-#. Display the save dialog checkbox
-#: ../lib/screenshooter-dialogs.c:1007
-#, fuzzy
-msgid "Show the save dialog"
-msgstr "Salvestusdialoogi mitte näidata"
-
-#: ../lib/screenshooter-dialogs.c:1013
-msgid ""
-"The save dialog allows you to change the file name and the save location"
+#: ../lib/screenshooter-dialogs.c:917
+msgid "Action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1027
-#, fuzzy
-msgid "Close the application"
-msgstr "Rakendus:"
-
-#: ../lib/screenshooter-dialogs.c:1033
-msgid ""
-"If unchecked, the current window will be displayed again after the "
-"screenshot has been taken to allow you to take several screenshots in a row"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:1056
+#: ../lib/screenshooter-dialogs.c:945
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Toiming</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1081
+#: ../lib/screenshooter-dialogs.c:961
 #, fuzzy
-msgid "Save in:"
+msgid "Save"
 msgstr "Salvesta"
 
-#: ../lib/screenshooter-dialogs.c:1089
+#: ../lib/screenshooter-dialogs.c:966
 msgid "Save the screenshot to a PNG file"
 msgstr "Salvesta ekraanipilt PNG-säilikuna"
 
-#: ../lib/screenshooter-dialogs.c:1104
-msgid "Default save location"
-msgstr "Vaikimisi salvestamise asukoht"
-
-#: ../lib/screenshooter-dialogs.c:1114
-msgid "Set the default save location"
-msgstr "Määrake vaikimisi salvestamise asukoht"
-
-#: ../lib/screenshooter-dialogs.c:1127
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Copy to the clipboard"
 msgstr "Kopeeri lõikepuhvrisse"
 
-#: ../lib/screenshooter-dialogs.c:1132
+#: ../lib/screenshooter-dialogs.c:977
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopeeri ekraanipilt lõikepuhvrisse, et seda hiljem asetada"
 
-#: ../lib/screenshooter-dialogs.c:1147
+#: ../lib/screenshooter-dialogs.c:994
 msgid "Open with:"
 msgstr "Ava kasutades:"
 
-#: ../lib/screenshooter-dialogs.c:1158
+#: ../lib/screenshooter-dialogs.c:1000
 msgid "Open the screenshot with the chosen application"
 msgstr "Ava ekraanipilt valitud rakendusega"
 
-#: ../lib/screenshooter-dialogs.c:1191 ../src/main.c:73
+#: ../lib/screenshooter-dialogs.c:1018 ../src/main.c:63
 msgid "Application to open the screenshot"
 msgstr "Ekraanipildi avamise rakendus"
 
-#: ../lib/screenshooter-dialogs.c:1204
+#: ../lib/screenshooter-dialogs.c:1028
 msgid "Host on ZimageZ"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1210 ../src/main.c:92
+#: ../lib/screenshooter-dialogs.c:1032 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1255
+#: ../lib/screenshooter-dialogs.c:1046
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Toiming</span>"
+
+#: ../lib/screenshooter-dialogs.c:1107
 msgid "Save screenshot as..."
 msgstr "Salvesta ekraanipilt kui..."
 
-#. Start the user XML RPC session
-#: ../lib/screenshooter-zimagez.c:159
+#: ../lib/screenshooter-zimagez.c:134
+#, c-format
+msgid "An error occured when creating the XMLRPC request."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:153
+#, c-format
+msgid "An error occured when transfering the data to ZimageZ."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:178
+#, c-format
+msgid "An error occured when parsing the response from ZimageZ."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:228
+#, c-format
+msgid "Taken on %s, at %s"
+msgstr ""
+
+#. Start the user soup session
+#: ../lib/screenshooter-zimagez.c:295
 msgid "Initialize the connection..."
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
-#: ../lib/screenshooter-zimagez.c:361 ../lib/screenshooter-zimagez.c:389
-#: ../lib/screenshooter-zimagez.c:520 ../lib/screenshooter-zimagez.c:543
-#: ../lib/screenshooter-zimagez.c:580
-#, c-format
-msgid ""
-"An error occurred during the XML exchange: %s (%d).\n"
-" The screenshot could not be uploaded."
-msgstr ""
-
-#: ../lib/screenshooter-zimagez.c:223
+#: ../lib/screenshooter-zimagez.c:341
 msgid ""
 "Please file the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:283
+#: ../lib/screenshooter-zimagez.c:398
 msgid "Check the user information..."
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:305
+#: ../lib/screenshooter-zimagez.c:405
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pildistatav ala</span>"
 
-#: ../lib/screenshooter-zimagez.c:320
+#: ../lib/screenshooter-zimagez.c:419
 msgid "Login on ZimageZ..."
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:436
+#: ../lib/screenshooter-zimagez.c:459 ../lib/screenshooter-zimagez.c:610
+msgid ""
+"An unexpected reply from ZimageZ was received. The upload of the screenshot "
+"failed."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:498
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Toiming</span>"
 
-#: ../lib/screenshooter-zimagez.c:501
+#: ../lib/screenshooter-zimagez.c:556
 #, fuzzy
 msgid "Upload the screenshot..."
 msgstr "Tee ekraanipilt"
 
-#: ../lib/screenshooter-zimagez.c:559
+#: ../lib/screenshooter-zimagez.c:589
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr ""
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:597
+#: ../lib/screenshooter-zimagez.c:622
 msgid "Close the session on ZimageZ..."
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:650
+#: ../lib/screenshooter-zimagez.c:692
 #, fuzzy
 msgid "Details about the screenshot for ZimageZ"
 msgstr "Viivitus sekundites enne ekraanipildi tegemist"
 
 #. Create the user label
-#: ../lib/screenshooter-zimagez.c:692
+#: ../lib/screenshooter-zimagez.c:734
 msgid "User:"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:703
+#: ../lib/screenshooter-zimagez.c:745
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
 
 #. Create the password label
-#: ../lib/screenshooter-zimagez.c:708
+#: ../lib/screenshooter-zimagez.c:751
 msgid "Password:"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:718
+#: ../lib/screenshooter-zimagez.c:761
 msgid "The password for the user above"
 msgstr ""
 
 #. Create the title label
-#: ../lib/screenshooter-zimagez.c:723
+#: ../lib/screenshooter-zimagez.c:767
 msgid "Title:"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:733
+#: ../lib/screenshooter-zimagez.c:777
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr ""
 
 #. Create the comment label
-#: ../lib/screenshooter-zimagez.c:738
+#: ../lib/screenshooter-zimagez.c:783
 msgid "Comment:"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:749
+#: ../lib/screenshooter-zimagez.c:794
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:870
+#: ../lib/screenshooter-zimagez.c:917
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:872
+#: ../lib/screenshooter-zimagez.c:919
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:874
+#: ../lib/screenshooter-zimagez.c:921
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:894
+#: ../lib/screenshooter-zimagez.c:937
 #, fuzzy
 msgid "My screenshot on ZimageZ"
 msgstr "Viivitus sekundites enne ekraanipildi tegemist"
 
-#: ../lib/screenshooter-zimagez.c:920
+#: ../lib/screenshooter-zimagez.c:963
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Toiming</span>"
 
-#: ../lib/screenshooter-zimagez.c:965
+#: ../lib/screenshooter-zimagez.c:1008
 #, fuzzy
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
@@ -331,20 +313,20 @@ msgstr ""
 "tegemist</span>"
 
 #. HTML title
-#: ../lib/screenshooter-zimagez.c:981
+#: ../lib/screenshooter-zimagez.c:1024
 msgid "HTML"
 msgstr ""
 
 #. BB title
-#: ../lib/screenshooter-zimagez.c:1002
+#: ../lib/screenshooter-zimagez.c:1045
 msgid "BBCode for forums"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1122
+#: ../lib/screenshooter-zimagez.c:1174
 msgid "ZimageZ"
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:1155
+#: ../lib/screenshooter-zimagez.c:1207
 #, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Toiming</span>"
@@ -360,28 +342,36 @@ msgstr "Ava kasutades:"
 msgid "Copy _Link Address"
 msgstr ""
 
-#: ../src/main.c:53
+#: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Viivitus sekundites enne ekraanipildi tegemist"
 
-#: ../src/main.c:63
-msgid "Do not display the save dialog"
-msgstr "Salvestusdialoogi mitte näidata"
-
-#: ../src/main.c:68
+#: ../src/main.c:58
 #, fuzzy
-msgid "Do not display the mouse on the screenshot"
+msgid "Display the mouse on the screenshot"
 msgstr "Salvestusdialoogi mitte näidata"
 
-#: ../src/main.c:85
+#: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
 msgstr "Kataloog kuhu ekraanipildid salvestatakse"
 
-#: ../src/main.c:99
+#: ../src/main.c:85
 msgid "Version information"
 msgstr "Versiooniteave"
 
+#: ../src/main.c:134
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr ""
+
 #: ../src/main.c:136
+#, c-format
+msgid ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
+msgstr ""
+
+#: ../src/main.c:150
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -390,7 +380,7 @@ msgstr ""
 "%s: %s\n"
 "%s --help Näitab täieliku loendit käsurea valikutest.\n"
 
-#: ../src/main.c:235
+#: ../src/main.c:282
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s ei ole korrektne asukoht, kasutatakse vaikimisi kataloogi."
@@ -400,6 +390,35 @@ msgstr "%s ei ole korrektne asukoht, kasutatakse vaikimisi kataloogi."
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Tehke ekraanipildid tervest ekraanist, käsilolevast aknast või alast"
+
+#, fuzzy
+#~ msgid "Screenshot.png"
+#~ msgstr "Ekraanipilt.png"
+
+#~ msgid "Screenshot-%d.png"
+#~ msgstr "Ekraanipilt-%d.png"
+
+#, fuzzy
+#~ msgid ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
+#~ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Toiming</span>"
+
+#, fuzzy
+#~ msgid "Show the save dialog"
+#~ msgstr "Salvestusdialoogi mitte näidata"
+
+#, fuzzy
+#~ msgid "Close the application"
+#~ msgstr "Rakendus:"
+
+#~ msgid "Default save location"
+#~ msgstr "Vaikimisi salvestamise asukoht"
+
+#~ msgid "Set the default save location"
+#~ msgstr "Määrake vaikimisi salvestamise asukoht"
+
+#~ msgid "Do not display the save dialog"
+#~ msgstr "Salvestusdialoogi mitte näidata"
 
 #, fuzzy
 #~ msgid "Tak a screenshot of the entire screen"

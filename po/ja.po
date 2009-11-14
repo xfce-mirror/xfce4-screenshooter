@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-11 23:23+0900\n"
+"POT-Creation-Date: 2009-11-15 00:29+0100\n"
 "PO-Revision-Date: 2009-11-11 23:22+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -35,49 +35,49 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">スクリーンショットの転送先:</"
 "span>"
 
-#: ../lib/screenshooter-dialogs.c:673 ../lib/screenshooter-dialogs.c:690
-#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:697 ../lib/screenshooter-dialogs.c:714
+#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "スクリーンショット"
 
-#: ../lib/screenshooter-dialogs.c:685
+#: ../lib/screenshooter-dialogs.c:709
 msgid "Take a screenshot"
 msgstr "スクリーンショットを撮影します"
 
-#: ../lib/screenshooter-dialogs.c:700
+#: ../lib/screenshooter-dialogs.c:724
 msgid "Preferences"
 msgstr "設定"
 
-#: ../lib/screenshooter-dialogs.c:730
+#: ../lib/screenshooter-dialogs.c:754
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影する領域</span>"
 
-#: ../lib/screenshooter-dialogs.c:750
+#: ../lib/screenshooter-dialogs.c:774
 msgid "Entire screen"
 msgstr "画面全体"
 
-#: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:781 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "画面全体のスクリーンショットを撮ります"
 
-#: ../lib/screenshooter-dialogs.c:765
+#: ../lib/screenshooter-dialogs.c:789
 msgid "Active window"
 msgstr "アクティブウィンドウ"
 
-#: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
+#: ../lib/screenshooter-dialogs.c:796 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
 msgstr "アクティブウィンドウのスクリーンショットを撮ります"
 
-#: ../lib/screenshooter-dialogs.c:780
+#: ../lib/screenshooter-dialogs.c:804
 msgid "Select a region"
 msgstr "選択した領域"
 
-#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
+#: ../lib/screenshooter-dialogs.c:809 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:318
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -87,81 +87,81 @@ msgstr ""
 "画面の一点をクリックおよびそこからドラッグし、マウスボタンを離したところまで"
 "の矩形領域を撮ります。"
 
-#: ../lib/screenshooter-dialogs.c:795
+#: ../lib/screenshooter-dialogs.c:819
 msgid "Capture the mouse pointer"
 msgstr "マウスポインタも撮影する"
 
-#: ../lib/screenshooter-dialogs.c:800
+#: ../lib/screenshooter-dialogs.c:824
 msgid "Display the mouse pointer on the screenshot"
 msgstr "スクリーンショットにマウスポインタを表示します"
 
-#: ../lib/screenshooter-dialogs.c:816
+#: ../lib/screenshooter-dialogs.c:840
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">撮影するまでの遅延時間</span>"
 
-#: ../lib/screenshooter-dialogs.c:838
+#: ../lib/screenshooter-dialogs.c:862
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "スクリーンショットを撮るまでの遅延秒数を指定できます"
 
-#: ../lib/screenshooter-dialogs.c:841
+#: ../lib/screenshooter-dialogs.c:865
 msgid "seconds"
 msgstr "秒"
 
-#: ../lib/screenshooter-dialogs.c:892
+#: ../lib/screenshooter-dialogs.c:917
 msgid "Action"
 msgstr "アクション"
 
-#: ../lib/screenshooter-dialogs.c:920
+#: ../lib/screenshooter-dialogs.c:945
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">アクション</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:936
+#: ../lib/screenshooter-dialogs.c:961
 msgid "Save"
 msgstr "保存する"
 
-#: ../lib/screenshooter-dialogs.c:941
+#: ../lib/screenshooter-dialogs.c:966
 msgid "Save the screenshot to a PNG file"
 msgstr "スクリーンショットを PNG ファイルに保存します"
 
-#: ../lib/screenshooter-dialogs.c:950
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Copy to the clipboard"
 msgstr "クリップボードにコピーする"
 
-#: ../lib/screenshooter-dialogs.c:952
+#: ../lib/screenshooter-dialogs.c:977
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 "後で貼り付けることができるよう、クリップボードにスクリーンショットをコピーし"
 "ます。"
 
-#: ../lib/screenshooter-dialogs.c:969
+#: ../lib/screenshooter-dialogs.c:994
 msgid "Open with:"
 msgstr "アプリケーションで開く:"
 
-#: ../lib/screenshooter-dialogs.c:975
+#: ../lib/screenshooter-dialogs.c:1000
 msgid "Open the screenshot with the chosen application"
 msgstr "選択したアプリケーションでスクリーンショットを開きます"
 
-#: ../lib/screenshooter-dialogs.c:993 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:1018 ../src/main.c:63
 msgid "Application to open the screenshot"
 msgstr "スクリーンショットを開くアプリケーションを設定します"
 
-#: ../lib/screenshooter-dialogs.c:1003
+#: ../lib/screenshooter-dialogs.c:1028
 msgid "Host on ZimageZ"
 msgstr "ZimageZ で公開する"
 
-#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1032 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr ""
 "スクリーンショットをフリーのウェブホスティングサービス ZimageZ で公開します"
 
-#: ../lib/screenshooter-dialogs.c:1021
+#: ../lib/screenshooter-dialogs.c:1046
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">プレビュー</span>"
 
-#: ../lib/screenshooter-dialogs.c:1073
+#: ../lib/screenshooter-dialogs.c:1107
 msgid "Save screenshot as..."
 msgstr "名前をつけてスクリーンショットを保存..."
 

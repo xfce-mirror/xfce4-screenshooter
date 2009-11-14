@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.4.91\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-31 14:02+0200\n"
+"POT-Creation-Date: 2009-11-15 00:29+0100\n"
 "PO-Revision-Date: 2009-06-10 23:39+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -15,25 +15,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../lib/screenshooter-dialogs.c:283
-msgid "Screenshot.png"
-msgstr "Cuplikanlayar.png"
-
-#: ../lib/screenshooter-dialogs.c:300
-#, c-format
-msgid "Screenshot-%d.png"
-msgstr "Cuplikanlayar-%d.png"
-
-#: ../lib/screenshooter-dialogs.c:493
+#: ../lib/screenshooter-dialogs.c:478
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb dari %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:577
+#: ../lib/screenshooter-dialogs.c:560
 msgid "Transfer"
 msgstr "Transfer"
 
-#: ../lib/screenshooter-dialogs.c:600
+#: ../lib/screenshooter-dialogs.c:581
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
@@ -41,49 +32,51 @@ msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Cuplikan layar sedang "
 "ditransfer ke:</span>"
 
-#: ../lib/screenshooter-dialogs.c:724 ../lib/screenshooter-dialogs.c:741
+#: ../lib/screenshooter-dialogs.c:697 ../lib/screenshooter-dialogs.c:714
+#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Cuplikan Layar"
 
-#: ../lib/screenshooter-dialogs.c:736
+#: ../lib/screenshooter-dialogs.c:709
 msgid "Take a screenshot"
 msgstr "Ambil cuplikan layar"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:724
 msgid "Preferences"
 msgstr "Pengaturan"
 
-#: ../lib/screenshooter-dialogs.c:793
+#: ../lib/screenshooter-dialogs.c:754
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Daerah akan ditangkap</span>"
 
-#: ../lib/screenshooter-dialogs.c:820
+#: ../lib/screenshooter-dialogs.c:774
 msgid "Entire screen"
 msgstr "Seluruh layar"
 
-#: ../lib/screenshooter-dialogs.c:830 ../src/main.c:58
-#: ../panel-plugin/screenshooter-plugin.c:292
+#: ../lib/screenshooter-dialogs.c:781 ../src/main.c:53
+#: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "Ambil cuplikan layar dari seluruh layar"
 
-#: ../lib/screenshooter-dialogs.c:841
+#: ../lib/screenshooter-dialogs.c:789
 msgid "Active window"
 msgstr "Jendela aktif"
 
-#: ../lib/screenshooter-dialogs.c:851 ../src/main.c:104
-#: ../panel-plugin/screenshooter-plugin.c:297
+#: ../lib/screenshooter-dialogs.c:796 ../src/main.c:90
+#: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
 msgstr "Ambil cuplikan layar jendela yang aktif"
 
-#: ../lib/screenshooter-dialogs.c:862
+#: ../lib/screenshooter-dialogs.c:804
 msgid "Select a region"
 msgstr "Pilih daerah"
 
-#: ../lib/screenshooter-dialogs.c:872 ../src/main.c:78
-#: ../panel-plugin/screenshooter-plugin.c:302
+#: ../lib/screenshooter-dialogs.c:809 ../src/main.c:68
+#: ../panel-plugin/screenshooter-plugin.c:318
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -93,143 +86,124 @@ msgstr ""
 "melepas tombol tetikus, tarik tetikus anda ke sudut yang lain, lalu lepas "
 "tombol tetikus."
 
-#: ../lib/screenshooter-dialogs.c:884
+#: ../lib/screenshooter-dialogs.c:819
 msgid "Capture the mouse pointer"
 msgstr "Tangkap penunjuk tetikus"
 
-#: ../lib/screenshooter-dialogs.c:892
+#: ../lib/screenshooter-dialogs.c:824
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Tampilkan penunjuk tetikus di cuplikan layar"
 
-#: ../lib/screenshooter-dialogs.c:917
+#: ../lib/screenshooter-dialogs.c:840
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Jeda sebelum menangkap</span>"
 
-#: ../lib/screenshooter-dialogs.c:952
+#: ../lib/screenshooter-dialogs.c:862
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Jeda dalam detik sebelum cuplikan layar diambil"
 
-#: ../lib/screenshooter-dialogs.c:958
+#: ../lib/screenshooter-dialogs.c:865
 msgid "seconds"
 msgstr "detik"
 
-#: ../lib/screenshooter-dialogs.c:984
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
+#: ../lib/screenshooter-dialogs.c:917
+msgid "Action"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Setelah menangkap</span>"
 
-#. Display the save dialog checkbox
-#: ../lib/screenshooter-dialogs.c:1007
-msgid "Show the save dialog"
-msgstr "Tampilkan dialog simpan"
-
-#: ../lib/screenshooter-dialogs.c:1013
-msgid ""
-"The save dialog allows you to change the file name and the save location"
-msgstr ""
-"Dialog simpan mengizinkan anda untuk mengubah nama berkas dan lokasi "
-"penyimpanan"
-
-#: ../lib/screenshooter-dialogs.c:1027
-msgid "Close the application"
-msgstr "Tutup aplikasi"
-
-#: ../lib/screenshooter-dialogs.c:1033
-msgid ""
-"If unchecked, the current window will be displayed again after the "
-"screenshot has been taken to allow you to take several screenshots in a row"
-msgstr ""
-"Jika tidak dicentang, jendela saat ini akan ditampilkan lagi setelah "
-"cuplikan layar telah diambil sehingga anda dapat mengambil beberapa "
-"cuplikan layar secara berurutan"
-
-#: ../lib/screenshooter-dialogs.c:1056
+#: ../lib/screenshooter-dialogs.c:945
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksi</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1081
-msgid "Save in:"
+#: ../lib/screenshooter-dialogs.c:961
+#, fuzzy
+msgid "Save"
 msgstr "Simpan di:"
 
-#: ../lib/screenshooter-dialogs.c:1089
+#: ../lib/screenshooter-dialogs.c:966
 msgid "Save the screenshot to a PNG file"
 msgstr "Simpan cuplikan layar sebagai berkas PNG"
 
-#: ../lib/screenshooter-dialogs.c:1104
-msgid "Default save location"
-msgstr "Lokasi penyimpanan standar"
-
-#: ../lib/screenshooter-dialogs.c:1114
-msgid "Set the default save location"
-msgstr "Atur lokasi penyimpanan standar"
-
-#: ../lib/screenshooter-dialogs.c:1127
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Copy to the clipboard"
 msgstr "Salin ke papan klip"
 
-#: ../lib/screenshooter-dialogs.c:1132
+#: ../lib/screenshooter-dialogs.c:977
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Simpan cuplikan layar ke papan klip agar dapat direkatkan nanti"
 
-#: ../lib/screenshooter-dialogs.c:1147
+#: ../lib/screenshooter-dialogs.c:994
 msgid "Open with:"
 msgstr "Buka dengan:"
 
-#: ../lib/screenshooter-dialogs.c:1158
+#: ../lib/screenshooter-dialogs.c:1000
 msgid "Open the screenshot with the chosen application"
 msgstr "Buka cuplikan layar dengan aplikasi yang dipilih"
 
-#: ../lib/screenshooter-dialogs.c:1191 ../src/main.c:73
+#: ../lib/screenshooter-dialogs.c:1018 ../src/main.c:63
 msgid "Application to open the screenshot"
 msgstr "Aplikasi untuk membuka cuplikan layar"
 
-#: ../lib/screenshooter-dialogs.c:1204
+#: ../lib/screenshooter-dialogs.c:1028
 msgid "Host on ZimageZ"
 msgstr "Simpan di ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1210 ../src/main.c:92
+#: ../lib/screenshooter-dialogs.c:1032 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Simpan cuplikan layar di ZimageZ, layanan penyimpanan citra daring gratis"
+msgstr ""
+"Simpan cuplikan layar di ZimageZ, layanan penyimpanan citra daring gratis"
 
-#: ../lib/screenshooter-dialogs.c:1255
+#: ../lib/screenshooter-dialogs.c:1046
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tautan</span>"
+
+#: ../lib/screenshooter-dialogs.c:1107
 msgid "Save screenshot as..."
 msgstr "Simpan cuplikan layar sebagai..."
 
-#. Start the user XML RPC session
-#: ../lib/screenshooter-zimagez.c:159
+#: ../lib/screenshooter-zimagez.c:134
+#, fuzzy, c-format
+msgid "An error occured when creating the XMLRPC request."
+msgstr "Galat terjadi ketika menggunggah cuplikan layar."
+
+#: ../lib/screenshooter-zimagez.c:153
+#, fuzzy, c-format
+msgid "An error occured when transfering the data to ZimageZ."
+msgstr "Galat terjadi ketika menggunggah cuplikan layar."
+
+#: ../lib/screenshooter-zimagez.c:178
+#, fuzzy, c-format
+msgid "An error occured when parsing the response from ZimageZ."
+msgstr "Galat terjadi ketika menggunggah cuplikan layar."
+
+#: ../lib/screenshooter-zimagez.c:228
+#, c-format
+msgid "Taken on %s, at %s"
+msgstr ""
+
+#. Start the user soup session
+#: ../lib/screenshooter-zimagez.c:295
 msgid "Initialize the connection..."
 msgstr "Menginisialisasi koneksi..."
 
-#: ../lib/screenshooter-zimagez.c:172 ../lib/screenshooter-zimagez.c:332
-#: ../lib/screenshooter-zimagez.c:361 ../lib/screenshooter-zimagez.c:389
-#: ../lib/screenshooter-zimagez.c:520 ../lib/screenshooter-zimagez.c:543
-#: ../lib/screenshooter-zimagez.c:580
-#, c-format
-msgid ""
-"An error occurred during the XML exchange: %s (%d).\n"
-" The screenshot could not be uploaded."
-msgstr ""
-"Galat terjadi ketika penukaran XML: %s (%d).\n"
-" Cuplikan layar tak dapat diunggah."
-
-#: ../lib/screenshooter-zimagez.c:223
+#: ../lib/screenshooter-zimagez.c:341
 msgid ""
 "Please file the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Silakan isi ruang kosong berikut dengan nama pengguna, dan sandi "
-"<a href=\"http://www.zimagez.com\">ZimageZ</a> anda, \n"
+"Silakan isi ruang kosong berikut dengan nama pengguna, dan sandi <a href="
+"\"http://www.zimagez.com\">ZimageZ</a> anda, \n"
 "beserta detail dari cuplikan layar."
 
-#: ../lib/screenshooter-zimagez.c:283
+#: ../lib/screenshooter-zimagez.c:398
 msgid "Check the user information..."
 msgstr "Cek informasi pengguna..."
 
-#: ../lib/screenshooter-zimagez.c:305
+#: ../lib/screenshooter-zimagez.c:405
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
@@ -237,11 +211,17 @@ msgstr ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Anda "
 "harus mengisi semua ruang kosong.</span>"
 
-#: ../lib/screenshooter-zimagez.c:320
+#: ../lib/screenshooter-zimagez.c:419
 msgid "Login on ZimageZ..."
 msgstr "Log masuk ke ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:436
+#: ../lib/screenshooter-zimagez.c:459 ../lib/screenshooter-zimagez.c:610
+msgid ""
+"An unexpected reply from ZimageZ was received. The upload of the screenshot "
+"failed."
+msgstr ""
+
+#: ../lib/screenshooter-zimagez.c:498
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
@@ -249,30 +229,30 @@ msgstr ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Nama "
 "dan sandi yang anda masukkan tidak sesuai. Silakan ulangi.</span>"
 
-#: ../lib/screenshooter-zimagez.c:501
+#: ../lib/screenshooter-zimagez.c:556
 msgid "Upload the screenshot..."
 msgstr "Unggah cuplikan layar"
 
-#: ../lib/screenshooter-zimagez.c:559
+#: ../lib/screenshooter-zimagez.c:589
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "Galat terjadi ketika menggunggah cuplikan layar."
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:597
+#: ../lib/screenshooter-zimagez.c:622
 msgid "Close the session on ZimageZ..."
 msgstr "Menutup sesi di ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:650
+#: ../lib/screenshooter-zimagez.c:692
 msgid "Details about the screenshot for ZimageZ"
 msgstr "Detail tentang cuplikan layar untuk ZimageZ"
 
 #. Create the user label
-#: ../lib/screenshooter-zimagez.c:692
+#: ../lib/screenshooter-zimagez.c:734
 msgid "User:"
 msgstr "Pengguna:"
 
-#: ../lib/screenshooter-zimagez.c:703
+#: ../lib/screenshooter-zimagez.c:745
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
@@ -281,20 +261,20 @@ msgstr ""
 "tautan halaman web di atas"
 
 #. Create the password label
-#: ../lib/screenshooter-zimagez.c:708
+#: ../lib/screenshooter-zimagez.c:751
 msgid "Password:"
 msgstr "Sandi:"
 
-#: ../lib/screenshooter-zimagez.c:718
+#: ../lib/screenshooter-zimagez.c:761
 msgid "The password for the user above"
 msgstr "Sandi untuk pengguna di atas"
 
 #. Create the title label
-#: ../lib/screenshooter-zimagez.c:723
+#: ../lib/screenshooter-zimagez.c:767
 msgid "Title:"
 msgstr "Judul:"
 
-#: ../lib/screenshooter-zimagez.c:733
+#: ../lib/screenshooter-zimagez.c:777
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
@@ -303,11 +283,11 @@ msgstr ""
 "di ZimageZ"
 
 #. Create the comment label
-#: ../lib/screenshooter-zimagez.c:738
+#: ../lib/screenshooter-zimagez.c:783
 msgid "Comment:"
 msgstr "Komentar:"
 
-#: ../lib/screenshooter-zimagez.c:749
+#: ../lib/screenshooter-zimagez.c:794
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
@@ -315,30 +295,30 @@ msgstr ""
 "Komentar di cuplikan layar, komentar akan digunakan ketika menampilkan "
 "cuplikan layar di ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:870
+#: ../lib/screenshooter-zimagez.c:917
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
 msgstr "<a href=\"%s\">Citra ukuran penuh</a>"
 
-#: ../lib/screenshooter-zimagez.c:872
+#: ../lib/screenshooter-zimagez.c:919
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr "<a href=\"%s\">Miniatur besar</a>"
 
-#: ../lib/screenshooter-zimagez.c:874
+#: ../lib/screenshooter-zimagez.c:921
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
 msgstr "<a href=\"%s\">Miniatur kecil</a>"
 
-#: ../lib/screenshooter-zimagez.c:894
+#: ../lib/screenshooter-zimagez.c:937
 msgid "My screenshot on ZimageZ"
 msgstr "Cuplikan layar saya di ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:920
+#: ../lib/screenshooter-zimagez.c:963
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tautan</span>"
 
-#: ../lib/screenshooter-zimagez.c:965
+#: ../lib/screenshooter-zimagez.c:1008
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
@@ -347,20 +327,20 @@ msgstr ""
 "menunjuk ke citra ukuran penuh</span>"
 
 #. HTML title
-#: ../lib/screenshooter-zimagez.c:981
+#: ../lib/screenshooter-zimagez.c:1024
 msgid "HTML"
 msgstr "HTML"
 
 #. BB title
-#: ../lib/screenshooter-zimagez.c:1002
+#: ../lib/screenshooter-zimagez.c:1045
 msgid "BBCode for forums"
 msgstr "BBCode untuk forum"
 
-#: ../lib/screenshooter-zimagez.c:1122
+#: ../lib/screenshooter-zimagez.c:1174
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:1155
+#: ../lib/screenshooter-zimagez.c:1207
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
@@ -374,27 +354,36 @@ msgstr "_Buka Tautan"
 msgid "Copy _Link Address"
 msgstr "Salin Alamat _Taut"
 
-#: ../src/main.c:53
+#: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Jeda dalam detik sebelum mengambil cuplikan layar"
 
-#: ../src/main.c:63
-msgid "Do not display the save dialog"
-msgstr "Jangan tampilkan dialog simpan"
-
-#: ../src/main.c:68
-msgid "Do not display the mouse on the screenshot"
+#: ../src/main.c:58
+#, fuzzy
+msgid "Display the mouse on the screenshot"
 msgstr "Jangan tampilkan tetikus di cuplikan layar"
 
-#: ../src/main.c:85
+#: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
 msgstr "Direktori tempat cuplikan layar akan disimpan"
 
-#: ../src/main.c:99
+#: ../src/main.c:85
 msgid "Version information"
 msgstr "Informasi versi"
 
+#: ../src/main.c:134
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr ""
+
 #: ../src/main.c:136
+#, c-format
+msgid ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
+msgstr ""
+
+#: ../src/main.c:150
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -404,7 +393,7 @@ msgstr ""
 "Gunakan %s --help untuk melihat senarai lengkap opsi baris perintah yang "
 "tersedia.\n"
 
-#: ../src/main.c:235
+#: ../src/main.c:282
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s bukan direktori yang sah, direktori standar yang akan digunakan."
@@ -416,6 +405,54 @@ msgid ""
 msgstr ""
 "Ambil cuplikan layar dari seluruh layar, dari jendela yang aktif atau dari "
 "sebuah daerah"
+
+#~ msgid "Screenshot.png"
+#~ msgstr "Cuplikanlayar.png"
+
+#~ msgid "Screenshot-%d.png"
+#~ msgstr "Cuplikanlayar-%d.png"
+
+#~ msgid ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
+#~ msgstr ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Setelah menangkap</span>"
+
+#~ msgid "Show the save dialog"
+#~ msgstr "Tampilkan dialog simpan"
+
+#~ msgid ""
+#~ "The save dialog allows you to change the file name and the save location"
+#~ msgstr ""
+#~ "Dialog simpan mengizinkan anda untuk mengubah nama berkas dan lokasi "
+#~ "penyimpanan"
+
+#~ msgid "Close the application"
+#~ msgstr "Tutup aplikasi"
+
+#~ msgid ""
+#~ "If unchecked, the current window will be displayed again after the "
+#~ "screenshot has been taken to allow you to take several screenshots in a "
+#~ "row"
+#~ msgstr ""
+#~ "Jika tidak dicentang, jendela saat ini akan ditampilkan lagi setelah "
+#~ "cuplikan layar telah diambil sehingga anda dapat mengambil beberapa "
+#~ "cuplikan layar secara berurutan"
+
+#~ msgid "Default save location"
+#~ msgstr "Lokasi penyimpanan standar"
+
+#~ msgid "Set the default save location"
+#~ msgstr "Atur lokasi penyimpanan standar"
+
+#~ msgid ""
+#~ "An error occurred during the XML exchange: %s (%d).\n"
+#~ " The screenshot could not be uploaded."
+#~ msgstr ""
+#~ "Galat terjadi ketika penukaran XML: %s (%d).\n"
+#~ " Cuplikan layar tak dapat diunggah."
+
+#~ msgid "Do not display the save dialog"
+#~ msgstr "Jangan tampilkan dialog simpan"
 
 #, fuzzy
 #~ msgid "Tak a screenshot of the entire screen"
