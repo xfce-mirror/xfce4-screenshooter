@@ -1,14 +1,14 @@
 # Indonesian translations for xfce4-screenshooter-plugin package.
 # Copyright (C) 2006 Daniel Bobadilla Leal.
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
-# Andhika Padmawan <andhika.padmawan@gmail.com>, 2009.
 #
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.4.91\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-15 00:29+0100\n"
-"PO-Revision-Date: 2009-06-10 23:39+0700\n"
+"PO-Revision-Date: 2009-11-15 21:39+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,7 @@ msgstr "detik"
 
 #: ../lib/screenshooter-dialogs.c:917
 msgid "Action"
-msgstr ""
+msgstr "Aksi"
 
 #: ../lib/screenshooter-dialogs.c:945
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -118,9 +118,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksi</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:961
-#, fuzzy
 msgid "Save"
-msgstr "Simpan di:"
+msgstr "Simpan"
 
 #: ../lib/screenshooter-dialogs.c:966
 msgid "Save the screenshot to a PNG file"
@@ -156,33 +155,29 @@ msgstr ""
 "Simpan cuplikan layar di ZimageZ, layanan penyimpanan citra daring gratis"
 
 #: ../lib/screenshooter-dialogs.c:1046
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tautan</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pratilik</span>"
 
 #: ../lib/screenshooter-dialogs.c:1107
 msgid "Save screenshot as..."
 msgstr "Simpan cuplikan layar sebagai..."
 
-#: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#: ../lib/screenshooter-zimagez.c:134, c-format
 msgid "An error occured when creating the XMLRPC request."
-msgstr "Galat terjadi ketika menggunggah cuplikan layar."
+msgstr "Galat terjadi ketika membuat permintaan XMLRPC."
 
-#: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#: ../lib/screenshooter-zimagez.c:153, c-format
 msgid "An error occured when transfering the data to ZimageZ."
-msgstr "Galat terjadi ketika menggunggah cuplikan layar."
+msgstr "Galat terjadi ketika mengirimkan data ke ZimageZ."
 
-#: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#: ../lib/screenshooter-zimagez.c:178, c-format
 msgid "An error occured when parsing the response from ZimageZ."
-msgstr "Galat terjadi ketika menggunggah cuplikan layar."
+msgstr "Galat terjadi ketika mengurai balasan dari ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:228
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Diambil di %s, pada %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:295
@@ -220,6 +215,8 @@ msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr ""
+"Sebuah balasan yang tak diharapkan dari ZimageZ telah diterima. Pengunggahan "
+"cuplikan layar gagal."
 
 #: ../lib/screenshooter-zimagez.c:498
 msgid ""
@@ -359,9 +356,8 @@ msgid "Delay in seconds before taking the screenshot"
 msgstr "Jeda dalam detik sebelum mengambil cuplikan layar"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "Jangan tampilkan tetikus di cuplikan layar"
+msgstr "Tampilkan tetikus di cuplikan layar"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -374,7 +370,7 @@ msgstr "Informasi versi"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Konflik opsi: --%s dan --%s tak dapat digunakan secara bersamaan.\n"
 
 #: ../src/main.c:136
 #, c-format
@@ -382,6 +378,8 @@ msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr ""
+"Opsi --%s hanya digunakan ketika --fullscreen, --window atau --region "
+"diberikan. Opsi ini akan diabaikan.\n"
 
 #: ../src/main.c:150
 #, c-format
