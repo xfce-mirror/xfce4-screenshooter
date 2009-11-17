@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.5.0.1svn-r06642\n"
-"POT-Creation-Date: 2009-11-16 01:13+0900\n"
-"PO-Revision-Date: 2009-08-26 22:01+0900\n"
+"POT-Creation-Date: 2009-11-17 23:33+0900\n"
+"PO-Revision-Date: 2009-11-17 23:30+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -19,29 +19,26 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:97(None)
-#, fuzzy
 msgid ""
 "@@image: 'images/xfce4-screenshooter-dialog1.png'; "
 "md5=ceb772964fa6ca07e5a09b9b9962ed18"
 msgstr ""
-"@@image: 'images/xfce4-screenshooter-dialog.png'; "
-"md5=81327b7424d7b3498e19f2c8d4675b16"
+"@@image: 'images/xfce4-screenshooter-dialog1.png'; "
+"md5=ceb772964fa6ca07e5a09b9b9962ed18"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:169(None)
-#, fuzzy
 msgid ""
 "@@image: 'images/xfce4-screenshooter-dialog2.png'; "
 "md5=fa48885f54ca6ab5dfc980fb216025e0"
 msgstr ""
-"@@image: 'images/xfce4-screenshooter-dialog.png'; "
-"md5=81327b7424d7b3498e19f2c8d4675b16"
+"@@image: 'images/xfce4-screenshooter-dialog2.png'; "
+"md5=fa48885f54ca6ab5dfc980fb216025e0"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:260(None)
-#, fuzzy
 msgid ""
 "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
 "md5=c8102c88e978eb7ef63994f2648f5ae6"
@@ -52,7 +49,6 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:289(None)
-#, fuzzy
 msgid ""
 "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
 "md5=468def960a376d5a856f2fcb3b35daf1"
@@ -79,7 +75,7 @@ msgstr "Jérôme Guelfucci"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:24(holder)
 msgid "Sam Swift"
-msgstr ""
+msgstr "Sam Swift"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:28(para)
 msgid ""
@@ -110,15 +106,15 @@ msgstr "jeromeg@xfce.org"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:47(firstname)
 msgid "Sam"
-msgstr ""
+msgstr "Sam"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:48(surname)
 msgid "Swift"
-msgstr ""
+msgstr "Swift"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:50(email)
 msgid "renmush@gmail.com"
-msgstr ""
+msgstr "renmush@gmail.com"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:55(releaseinfo)
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
@@ -131,7 +127,6 @@ msgid "Introduction to Xfce4 Screenshooter"
 msgstr "Xfce4 スクリーンシューターの紹介"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:63(para)
-#, fuzzy
 msgid ""
 "This application allows you to capture the entire screen, the active window "
 "or a selected region. You can set the delay that elapses before the "
@@ -143,7 +138,9 @@ msgstr ""
 "このアプリケーションは、画面全体、アクティブウィンドウ、または選択した領域の"
 "スクリーンショットを撮影します。撮影までの遅延時間や、撮影したスクリーン"
 "ショットに対する操作 (PNG ファイルに保存、クリップボードにコピー、または他の"
-"アプリケーションで開く) を指定できます。"
+"アプリケーションで開く) を指定できます。あるいは、フリーオンラインイメージホ"
+"スティングサービス <ulink type=\"http\" url=\"http://www.zimagez.com"
+"\">ZimageZ</ulink> で公開することもできます。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:73(para)
 msgid "A plugin for the Xfce panel is also available."
@@ -178,7 +175,6 @@ msgid "Region to capture"
 msgstr "撮影する領域"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:109(para)
-#, fuzzy
 msgid ""
 "The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
 "what the screenshot will be taken of:"
@@ -192,7 +188,6 @@ msgstr ""
 "\"画面全体\" は表示されている画面全体のスクリーンショットを撮影します。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:119(listitem)
-#, fuzzy
 msgid ""
 "\"Active window\" takes a screenshot of the active window. This will be the "
 "one that was active before this dialog appeared, or if you set a delay, the "
@@ -204,34 +199,31 @@ msgstr ""
 "ウになります。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:125(listitem)
-#, fuzzy
 msgid ""
 "\"Select a region\" allows you to select a region to be captured by clicking "
 "and dragging a rectangle over the area of screen that you wish to capture, "
 "before releasing the mouse button."
 msgstr ""
 "\"選択した領域\" は、画面の一点をクリックおよびそこからドラッグし、マウスボタ"
-"ンを離したところまでの矩形領域を撮ります。"
+"ンを離したところまでの矩形領域を撮影します。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:135(title)
 msgid "Capturing the pointer"
-msgstr ""
+msgstr "マウスポインタも撮影する"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:137(para)
-#, fuzzy
 msgid ""
 "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to "
 "select whether or not the screenshot will include the mouse pointer."
 msgstr ""
-"<emphasis>\"撮影する領域\"</emphasis> セクションでは、何のスクリーンショット"
-"を撮影するかを指定できます:"
+"<emphasis>\"マウスポインタも撮影する\"</emphasis> オプションでは、スクリーン"
+"ショットにマウスポインタも含めるかどうか選択できます。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:145(title)
 msgid "Delay before capturing"
 msgstr "撮影するまでの遅延時間"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
-#, fuzzy
 msgid ""
 "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to "
 "set the delay that will elapse between pressing the <emphasis>\"OK\"</"
@@ -239,47 +231,44 @@ msgid ""
 "open menus or to perform whatever action you require to see displayed in the "
 "screenshot."
 msgstr ""
-"<emphasis>\"スクリーンショットを撮るまでの遅延時間\"</emphasis> セクションで"
-"は、<emphasis>「OK」</emphasis> ボタンがクリックされてから実際にスクリーン"
-"ショットを撮るまでの遅延時間を指定できます。この遅延により、開いたメニューな"
-"どあらゆる操作のスクリーンショットを撮影することができます。"
+"<emphasis>\"撮影するまでの遅延時間\"</emphasis> セクションでは、<emphasis>"
+"「OK」</emphasis> ボタンがクリックされてから実際にスクリーンショットを撮るま"
+"での遅延時間を指定できます。この遅延により、開いたメニューなどあらゆる操作の"
+"スクリーンショットを撮影することができます。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:159(title)
 msgid "After capturing"
 msgstr "撮影したら"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:161(para)
-#, fuzzy
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button a second window will "
 "be displayed:"
 msgstr ""
-"<emphasis>「OK」</emphasis> ボタンを押すと、以下のダイアログが表示されます:"
+"<emphasis>「OK」</emphasis> ボタンを押すと、以下のウィンドウが表示されます:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:173(phrase)
-#, fuzzy
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
-msgstr "Xfce4 スクリーンショットのウィンドウ"
+msgstr ""
+"スクリーンショットを撮影したあとの Xfce4 スクリーンシューターのウィンドウ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:180(title)
 msgid "Preview"
-msgstr ""
+msgstr "プレビュー"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:182(para)
-#, fuzzy
 msgid ""
 "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
 "screenshot."
 msgstr ""
-"<emphasis>\"アクション\"</emphasis> セクションでは、撮影したスクリーンショッ"
-"トに対する操作を選択できます。"
+"<emphasis>\"プレビュー\"</emphasis> セクションには、スクリーンショットのプレ"
+"ビューが表示されます。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:189(title)
 msgid "Action"
 msgstr "アクション"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:191(para)
-#, fuzzy
 msgid ""
 "The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
 "be performed on the screenshot."
@@ -288,7 +277,6 @@ msgstr ""
 "トに対する操作を選択できます。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:197(title)
-#, fuzzy
 msgid "Save"
 msgstr "保存する"
 
@@ -298,6 +286,9 @@ msgid ""
 "file. A save dialog will be displayed. You will be able to set the save "
 "location, and the name of the file."
 msgstr ""
+"<emphasis>\"保存する\"</emphasis> オプションは、スクリーンショットを PNG ファ"
+"イルに保存します。保存ダイアログが表示され、保存場所およびファイル名を指定で"
+"きます。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:206(para)
 msgid ""
@@ -320,7 +311,6 @@ msgid "Copy to the clipboard"
 msgstr "クリップボードにコピーする"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:220(para)
-#, fuzzy
 msgid ""
 "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to "
 "paste the screenshot in another application, such as a word processor. This "
@@ -328,16 +318,14 @@ msgid ""
 msgstr ""
 "<emphasis>\"クリップボードにコピーする\"</emphasis> オプションは、スクリーン"
 "ショットをワードプロセッサなど他のアプリケーションに貼り付けることができるよ"
-"うにクリップボードへコピーします。スクリーンショットを貼り付ける前にこのアプ"
-"リケーションを終了すると画像は破棄されます。一部のクリップボードマネージャを"
-"使用することでこれを回避できます。"
+"うにクリップボードへコピーします。このオプションはクリップボードマネージャが"
+"起動されている場合のみ利用できます。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:229(title)
 msgid "Open with"
 msgstr "アプリケーションで開く"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:231(para)
-#, fuzzy
 msgid ""
 "The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the "
 "system's temporary directory and opens it with the application chosen from "
@@ -411,7 +399,6 @@ msgid "Via command line"
 msgstr "コマンドラインから"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:305(para)
-#, fuzzy
 msgid ""
 "Command line options allow you to take screenshots quickly. They also allow "
 "you to configure the Print Screen key on the upper right of most keyboards "
@@ -419,11 +406,11 @@ msgid ""
 "desktop environment so that it launches xfce4-screenshooter with one or "
 "several of the following options when the Prt Scrn key is pressed."
 msgstr ""
-"コマンドラインオプションを使用すると、スクリーンショットの撮影を速やかに行え"
-"ます。これらを Print Screen キー (多くのキーボードの右上部にあります) に割り"
-"当ててスクリーンショットを撮ることができます。デスクトップ環境のキーバインド"
-"設定で、xfce4-screenshooter コマンドに以下のいくつかのオプションをつけて設定"
-"してください。"
+"コマンドラインオプションを使用するとスクリーンショットの撮影を速やかに行えま"
+"す。これらを Print Screen キー (多くのキーボードの右上部にあります) に割り当"
+"ててスクリーンショットを撮影することができます。デスクトップ環境のキーバイン"
+"ド設定で、xfce4-screenshooter コマンドに以下のいくつかのオプションをつけて設"
+"定してください。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:315(title)
 msgid "The command line options"
@@ -458,53 +445,49 @@ msgid "The -r option"
 msgstr "-r オプション"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:338(para)
-#, fuzzy
 msgid ""
 "The <emphasis>-r</emphasis> option allows you to select a region to be "
 "captured by clicking and dragging a rectangle over the area of screen that "
 "you wish to capture, before releasing the mouse button."
 msgstr ""
 "<emphasis>-r</emphasis> オプションは、画面の一点をクリックおよびそこからド"
-"ラッグし、マウスボタンを離したところまでの矩形領域を撮ります。"
+"ラッグし、マウスボタンを離したところまでの矩形領域を撮影します。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:347(title)
 msgid "The -d option"
 msgstr "-d オプション"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:349(para)
-#, fuzzy
 msgid ""
 "The <emphasis>-d</emphasis> option followed by a positive integer allows you "
 "to set the delay before taking the screenshot when the <emphasis>-w</"
 "emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
 "is given."
 msgstr ""
-"<emphasis>-d</emphasis> オプションは、<emphasis>-f</emphasis>、 <emphasis>-"
-"w</emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定された"
-"際に、続く正の整数の秒数分経過した後にスクリーンショットを撮影します。"
+"<emphasis>-d</emphasis> オプションは、<emphasis>-w</emphasis>、<emphasis>-f</"
+"emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定されたと"
+"きに、続く正数の秒数分経過した後にスクリーンショットを撮影します。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
 msgid "The -s option"
 msgstr "-s オプション"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:361(para)
-#, fuzzy
 msgid ""
 "The <emphasis>-s</emphasis> option followed by the path to an existing "
 "folder allows you to set where the screenshots are saved. This option only "
 "has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or "
 "the <emphasis>-r</emphasis> option is given."
 msgstr ""
-"<emphasis>-d</emphasis> オプションは、<emphasis>-f</emphasis>、 <emphasis>-"
-"w</emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定された"
-"際に、続く正の整数の秒数分経過した後にスクリーンショットを撮影します。"
+"<emphasis>-s</emphasis> オプションは、その後に指定された既存のパスにスクリー"
+"ンショットを保存します。このオプションは <emphasis>-w</emphasis>、<emphasis>-"
+"f</emphasis>、または <emphasis>-r</emphasis> が指定された場合のみ機能します。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:371(title)
 msgid "The -o option"
 msgstr "-o オプション"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:373(para)
-#, fuzzy
 msgid ""
 "If the <emphasis>-o</emphasis> option is given, followed by an application "
 "name, the screenshot will be saved to the system's temporary directory and "
@@ -514,8 +497,8 @@ msgid ""
 msgstr ""
 "<emphasis>-o</emphasis> オプションが指定された場合、スクリーンショットはシス"
 "テムの作業ディレクトリに保存され、<emphasis>-o</emphasis> オプションの後に指"
-"定されたアプリケーションで開きます。このオプションは <emphasis>-f</"
-"emphasis>、<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプション"
+"定されたアプリケーションで開きます。このオプションは <emphasis>-w</"
+"emphasis>、<emphasis>-f</emphasis>、または <emphasis>-r</emphasis> オプション"
 "のいずれかが指定されている場合のみ機能します。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:385(title)
@@ -523,22 +506,20 @@ msgid "The -u option"
 msgstr "-u オプション"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:387(para)
-#, fuzzy
 msgid ""
 "If the <emphasis>-u</emphasis> option is given, the screenshot will be "
 "hosted on ZimageZ. See above for more details. This option only has an "
 "effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
 "<emphasis>-r</emphasis> option is given."
 msgstr ""
-"<emphasis>-u</emphasis> オプションを設定した場合、スクリーンショットは "
-"ZimageZ にアップロードされます。詳細は前述の説明を参照してください。このオプ"
-"ションは <emphasis>-f</emphasis>、<emphasis>-w</emphasis> または <emphasis>-"
-"r</emphasis> オプションのいずれかが指定されている場合のみ機能します。"
+"<emphasis>-u</emphasis> オプションが設定された場合、スクリーンショットは "
+"ZimageZ にアップロードされます。詳細は前述の説明をご覧ください。このオプショ"
+"ンは <emphasis>-w</emphasis>、<emphasis>-f</emphasis> または <emphasis>-r</"
+"emphasis> オプションのいずれかが指定されている場合のみ機能します。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:400(title)
-#, fuzzy
 msgid "Using the Xfce panel plugin"
-msgstr "プラグインを使う"
+msgstr "Xfce パネルプラグインを使う"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:403(title)
 msgid "Adding the plugin"
@@ -555,21 +536,20 @@ msgstr ""
 "ト\"</emphasis> を選択し、追加してください。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:413(title)
-#, fuzzy
 msgid "Configuring the plugin"
-msgstr "プラグインを使う"
+msgstr "プラグインの設定"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:415(para)
-#, fuzzy
 msgid ""
 "You can configure how screenshots are taken by right clicking on the plugin "
 "and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog "
 "similar to the dialog of the main application will appear. Please have a "
 "look above for the different preferences."
 msgstr ""
-"スクリーンショットの撮影方法の設定はプラグインアイコン上で右クリックし、"
-"<emphasis>\"設定\"</emphasis> を選択します。メインアプリケーションのダイアロ"
-"グと同様の設定ダイアログが表示されます。"
+"スクリーンショットの撮影方法を設定するにはプラグインアイコン上で右クリック"
+"し、<emphasis>\"プロパティ\"</emphasis> を選択します。メインアプリケーション"
+"のダイアログと同様の設定ダイアログが表示されます。各設定については前述の説明"
+"をご覧ください。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:425(title)
 msgid "Using the plugin"
@@ -580,6 +560,9 @@ msgid ""
 "To take a screenshot, just click on the plugin. You can use the scroll wheel "
 "on the plugin button to switch between the different regions to be captured."
 msgstr ""
+"スクリーンショットを撮影するには、プラグインをクリックします。プラグインボタ"
+"ン上でマウスホイールを回転させることで撮影する領域を切り替えることができま"
+"す。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:0(None)
