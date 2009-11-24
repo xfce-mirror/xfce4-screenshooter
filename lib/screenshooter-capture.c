@@ -577,6 +577,7 @@ static GdkPixbuf
   gtk_window_set_decorated (GTK_WINDOW (window), FALSE);
   gtk_window_set_deletable (GTK_WINDOW (window), FALSE);
   gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
+  gtk_dialog_set_has_separator (GTK_DIALOG (window), FALSE);
   gtk_widget_set_app_paintable (window, TRUE);
   gtk_widget_add_events (window,
                          GDK_BUTTON_RELEASE_MASK | GDK_BUTTON_PRESS_MASK |
