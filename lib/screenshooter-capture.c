@@ -90,6 +90,15 @@ static GdkWindow
       *needs_unref = FALSE;
       *border = FALSE;
     }
+  else if (G_UNLIKELY (gdk_window_is_destroyed (window)))
+    {
+      TRACE ("The active window is destroyed, fallback to the root window.");
+
+      g_object_unref (window);
+      window = gdk_get_default_root_window ();
+      *needs_unref = FALSE;
+      *border = FALSE;
+    }
   else if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
     {
       /* If the active window is the desktop, grab the whole screen */
