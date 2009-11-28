@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-15 00:29+0100\n"
-"PO-Revision-Date: 2009-06-06 18:33+0400\n"
+"POT-Creation-Date: 2009-11-28 21:00+0300\n"
+"PO-Revision-Date: 2009-11-26 21:35+0300\n"
 "Last-Translator: Denis Koryavov <dkoryavov@yandex.ru>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:478
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%.2fКб из %.2fКб"
 
 #: ../lib/screenshooter-dialogs.c:560
 msgid "Transfer"
@@ -112,7 +112,7 @@ msgstr "сек."
 
 #: ../lib/screenshooter-dialogs.c:917
 msgid "Action"
-msgstr ""
+msgstr "Действие"
 
 #: ../lib/screenshooter-dialogs.c:945
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -120,9 +120,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:961
-#, fuzzy
 msgid "Save"
-msgstr "Сохранить в:"
+msgstr "Сохранить"
 
 #: ../lib/screenshooter-dialogs.c:966
 msgid "Save the screenshot to a PNG file"
@@ -160,33 +159,34 @@ msgstr ""
 "ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1046
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ссылки</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Предварительный просмотр</"
+"span>"
 
 #: ../lib/screenshooter-dialogs.c:1107
 msgid "Save screenshot as..."
 msgstr "Сохранить снимок как..."
 
 #: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "An error occured when creating the XMLRPC request."
-msgstr "Произошла ошибка при загрузке снимка экрана."
+msgstr "Произошла ошибка при создании запроса XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "An error occured when transfering the data to ZimageZ."
-msgstr "Произошла ошибка при загрузке снимка экрана."
+msgstr "Не удалось передать изображение на сервер ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "An error occured when parsing the response from ZimageZ."
-msgstr "Произошла ошибка при загрузке снимка экрана."
+msgstr "Произошла ошибка при разборе ответа от сервера ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:228
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Получен на %s, в %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:295
@@ -224,6 +224,8 @@ msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr ""
+"Получен неожиданный ответ от сервера ZimageZ. Не удалось загрузить снимок "
+"экрана."
 
 #: ../lib/screenshooter-zimagez.c:498
 msgid ""
@@ -363,9 +365,8 @@ msgid "Delay in seconds before taking the screenshot"
 msgstr "Задержка в секундах перед выполнением снимка"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "Скрывать курсор мыши на снимке экрана"
+msgstr "Отображать курсор мыши на снимке экрана"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -379,6 +380,8 @@ msgstr "Информация о версии"
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr ""
+"Конфликт параметров: --%s и --%s не могут быть использованы в одно и то же "
+"время\n"
 
 #: ../src/main.c:136
 #, c-format
@@ -386,6 +389,8 @@ msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr ""
+"Параметр --%s используется только с параметрами --fullscreen, --window или --"
+"region. Он будет проигнорирован.\n"
 
 #: ../src/main.c:150
 #, c-format
