@@ -44,21 +44,13 @@
       </author>
     </authorgroup>
 
-    <releaseinfo>Denne manual beskriver version Xfce4 Screenshooter version @PACKAGE_VERSION@.</releaseinfo>
+    <releaseinfo>Denne manual beskriver Xfce4 Screenshooter version @PACKAGE_VERSION@.</releaseinfo>
   </articleinfo>
 
   <sect1 id="intro">
     <title>Introduktion til Xfce4 Screenshooter</title>
 
-    <para>
-      This application allows you to capture the entire screen, the
-      active window or a selected region. You can set the delay that
-      elapses before the screenshot is taken and the action to be
-      performed afterwards: save the screenshot to a PNG file, copy it
-      to the clipboard, open it using another application, or host it on
-      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>,
-      a free online image hosting service.
-    </para>
+    <para>Dette program giver dig mulighed for at tage et billede af hele skærmen, det aktive vindue eller et markeret område. Du kan indstille forsinkelsen før billedet er taget og handlingen med billeder udføres: gemme det som en PNG-fil, kopiere det til udklipsholderen, åbne det med et andet program eller hoste det på <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, en gratis tjeneste til billedopbevaring online.</para>
 
     <para>Et udvidelsesmodul til panelet i Xfce er også tilgængeligt.</para>
 
@@ -89,59 +81,32 @@
       <sect4 id="region-to-capture">
         <title>Område der skal tages et billede af</title>
 
-        <para>
-          The <emphasis>"Region to capture"</emphasis> section allows
-          you to set what the screenshot will be taken of:
-        </para>
+        <para>Sektionen <emphasis>"Område der skal tages billede af"</emphasis> tillader dig at indstille, hvorfra skærmbilledet skal tages:</para>
 
         <itemizedlist>
           <listitem>"Hele skærmen" tager et skærmbillede af hele skærmen, som du ser den.</listitem>
-          <listitem>
-            "Active window" takes a screenshot of the active window.
-            This will be the one that was active before this dialog
-            appeared, or if you set a delay, the one that is active
-            after the delay.
-          </listitem>
-          <listitem>
-            "Select a region" allows you to select a region to be
-            captured by clicking and dragging a rectangle over the area
-            of screen that you wish to capture, before releasing the
-            mouse button.
-          </listitem>
+          <listitem>"Aktive vindue" tager et billede af det aktive vindue. Det vil blive det, der var aktivt før denne dialog kom frem, eller hvis du indstiller en forsinkelse, er det vinduet, der er aktivt efter udløb af forsinkelsen.</listitem>
+          <listitem>"Vælg et område" tillader dig at vælge et område der skal tages et billede af, ved at klikke på et punkt på skærmen, og uden at slippe musen, trække den til det modsatte hjørne af området og slippe museknappen.</listitem>
         </itemizedlist>
       </sect4>
 
       <sect4 id="include-pointer">
-        <title>Capturing the pointer</title>
+        <title>Indfangning af markøren</title>
 
-        <para>
-          The <emphasis>"Capture the mouse pointer"</emphasis>
-          option allows you to select whether or not the screenshot will
-          include the mouse pointer.
-        </para>
+        <para>Tilvalget <emphasis>"Indfangning af musemarkøren"</emphasis> tillader dig at indstille om skærmbilledet skal indeholde musemarkøren eller ej.</para>
       </sect4>
 
       <sect4 id="delay">
         <title>Forsinkelse før indfangning</title>
 
-        <para>
-          The <emphasis>"Delay before capturing"</emphasis>
-          section allows you to set the delay that will elapse between
-          pressing the <emphasis>"OK"</emphasis> button and screenshot
-          being taken. This delay will allow you to open menus or to
-          perform whatever action you require to see displayed in the
-          screenshot.
-        </para>
+        <para>Sektionen <emphasis>"Forsinkelse før skærmbilledet bliver taget"</emphasis>, tillader dig at indstille den tid, der går fra du trykker på knappen <emphasis>"O.k."</emphasis> , og til at skærmbilledet rent faktisk bliver taget. Denne forsinkelse giver dig tid til at åbne menuer, eller udføre enhver handling du ønsker at vist på skærmbilledet.</para>
       </sect4>
     </sect2>
     
     <sect3 id="after-capturing">
       <title>Efter indfangning</title>
       
-      <para>
-        After pressing the <emphasis>"OK"</emphasis> button a second
-        window will be displayed:
-      </para>
+      <para>Efter tryk på knappen <emphasis>"O.k."</emphasis> et nyt vindue vil blive vist:</para>
 
       <screenshot>
         <mediaobject>
@@ -150,38 +115,26 @@
           </imageobject>
 
           <textobject>
-            <phrase>The window of Xfce4 Screenshooter after taking a
-            screenshot</phrase>
+            <phrase>Vinduet i Xfce4 Screenshooter efter et skærmbillede er blevet taget</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
 
       <sect4 id="preview">
-        <title>Preview</title> 
+        <title>Forhåndsvis</title> 
 
-        <para>
-          The <emphasis>"Preview"</emphasis> section displays a
-          thumbnail of the screenshot.
-        </para>
+        <para>Sektionen <emphasis>"Forhåndvis"</emphasis> viser en miniature af skærmbilledet.</para>
       </sect4>
 
       <sect4 id="action">
         <title>Handling</title>
 
-        <para>
-          The <emphasis>"Action"</emphasis> section allows you to choose
-          what should be performed on the screenshot.
-        </para>
+        <para>Sektionen <emphasis>"Handling"</emphasis> giver dig mulighed for at vælge, hvad der skal gøres med skærmbilledet.</para>
 
         <sect5 id="save">
-          <title>Save</title>
+          <title>Gem</title>
 
-          <para>
-            The <emphasis>"Save"</emphasis> option will save the
-            screenshot to a PNG file. A save dialog will be
-            displayed. You will be able to set the save location, and
-            the name of the file.
-          </para>
+          <para>Tilvalget <emphasis>"Gem"</emphasis> vil gemme skærmbilledet til en PNG-fil. En dialog til gem vil blive vist. Du kan indstille placeringen samt navnet på filen.</para>
 
           <para>Xfce4 Screenshooter er også i stand til at gemme skærmbilledet på et eksternt filsystem understøttet af GVfs, så som FTP, SAMBA, SFTP, fjerncomputere der er tilgængelige via SSH... Du skal blot forbinde dette eksterne filsystem ved at bruge <emphasis>gvfs-connect</emphasis> eller <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> og det vil være tilgængeligt i den venstre kolonne af gemvinduet.</para>
         </sect5>
@@ -189,24 +142,13 @@
         <sect5 id="copy-to-clipboard">
           <title>Kopiér til udklipsholderen</title>
 
-          <para>
-            The <emphasis>"Copy to the clipboard"</emphasis> option
-            allows you to paste the screenshot in another application,
-            such as a word processor. This option is only available when
-            a clipboard manager is running.
-          </para>
+          <para>Tilvalget <emphasis>"Kopiér til udklipsholder"</emphasis>, lader dig indsætte skærmbilledet i et andet program, så som en tekstbehandler. Dette tilvalg er kun tilrådighed når en udklipsholderhåndtering kører.</para>
         </sect5>
 
         <sect5 id="open-with">
           <title>Åbn med</title>
 
-          <para>
-            The <emphasis>"Open with"</emphasis> option saves the
-            screenshot to the system's temporary directory and opens it
-            with the application chosen from the drop-down list.
-            Applications which support images are automatically detected
-            and added to the drop-down list.
-          </para>
+          <para>Tilvalget <emphasis>"Åbn med"</emphasis> gemmer skærmbilledet i systemets midlertidige katalog og åbner det med valgte program, ved at bruge rullegardinlisten. Programmer der understøtter billeder er automatisk fundet og tilføjet til rullegardinlisten.</para>
         </sect5>
 
         <sect5 id="zimagez">
@@ -251,14 +193,7 @@
     <sect2 id="command-line">
       <title>Vha. kommandolinjen</title>
 
-      <para>
-        Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Print Screen key on the upper
-        right of most keyboards so that it takes screenshots. To do so,
-        configure the key-bindings of your desktop environment so that
-        it launches xfce4-screenshooter with one or several of the
-        following options when the Prt Scrn key is pressed.
-      </para>
+      <para>Kommandlinjetilvalg lader dig tage skærmbilleder hurtigt. De lader dig også indstille tasten Print Screen, som findes i det øverste højre hjørne på de fleste tastaturer, til at tage skærmbilleder. For at gøre dette, skal du indstille tastaturgenvejene i dit skrivebordsmiljø, således at det starter xfce4-screenshooter, med en eller flere af de følgende tilvalg, når der trykkes på Prt Scrn-knappen.</para>
 
       <sect3 id="options">
         <title>Kommandolinjetilvalg</title>
@@ -278,96 +213,55 @@
         <sect4 id="r-option">
           <title>Tilvalget -r</title>
 
-          <para>
-            The <emphasis>-r</emphasis> option allows you to select a
-            region to be captured by clicking and dragging a rectangle
-            over the area of screen that you wish to capture, before
-            releasing the mouse button.
-          </para>
+          <para>Tilvalget <emphasis>-r</emphasis>, lader dig vælge et område, der skal tages et billede af, ved at klikke på et punkt på skærmen, og uden at slippe museknappen, trække musen til det modsatte hjørne af det område, og så slippe museknappen.</para>
         </sect4>
 
         <sect4 id="d-option">
           <title>Tilvalget -d</title>
 
-          <para>
-            The <emphasis>-d</emphasis> option followed by a positive
-            integer allows you to set the delay before taking the
-            screenshot when the <emphasis>-w</emphasis>, the
-            <emphasis>-f</emphasis> or the <emphasis>-r</emphasis>
-            option is given.
-          </para>
+          <para>Tilvalget <emphasis>-d</emphasis> efterfulgt af et positivt heltal, lader dig indstille en forsinkelse før skærmbilledet bliver taget med tilvalget <emphasis>-w</emphasis>, <emphasis>-f</emphasis> eller <emphasis>-r</emphasis> er angivet.</para>
         </sect4>
 
         <sect4 id="s-option">
           <title>Tilvalget -s</title>
 
-          <para>
-            The <emphasis>-s</emphasis> option followed by the path to
-            an existing folder allows you to set where the screenshots
-            are saved. This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or
-            the <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>Tilvalget <emphasis>-d</emphasis> efterfulgt af stien til en eksisterende mappe lader dig indstille hvor skærmbilledet bliver gemt. Dette tilvalg virker kun hvis <emphasis>-w</emphasis>, <emphasis>-f</emphasis> eller <emphasis>-r</emphasis> er angivet.</para>
         </sect4>
 
         <sect4 id="o-option">
           <title>Tilvalget -o</title>
 
-          <para>
-            If the <emphasis>-o</emphasis> option is given, followed by
-            an application name, the screenshot will be saved to the
-            system's temporary directory and opened with the application
-            whose name is to be given after <emphasis>-o</emphasis>.
-            This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>Hvis tilvalget <emphasis>-o</emphasis> er angivet, efterfulgt af et programnavn, vil skærmbilledet blive gemt i systemets midlertidige katalog og blive åbnet med det program der er nævnt efter tilvalget <emphasis>-o</emphasis>. Dette tilvalg virker kun hvis <emphasis>-w</emphasis>, <emphasis>-f</emphasis> eller <emphasis>-r</emphasis> er angivet.</para>
         </sect4>
 
         <sect4 id="u-option">
           <title>Tilvalget -u</title>
 
-          <para>
-            If the <emphasis>-u</emphasis> option is given, the screenshot
-            will be hosted on ZimageZ. See above for more details.
-            This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>Hvis tilvalget <emphasis>-u</emphasis> er angivet, vil skærmbilledet blive hostet på ZimageZ. Se ovenstående for flere detaljer. Dette tilvalg virker kun hvis tilvalget <emphasis>-w</emphasis>,<emphasis>-f</emphasis>eller <emphasis>-r</emphasis> er angivet.</para>
         </sect4>
       </sect3>
     </sect2>
   </sect1>
 
   <sect1 id="panel-plugin">
-    <title>Using the Xfce panel plugin</title>
+    <title>Brug af paneludvidelsesmodulet til Xfce</title>
 
     <sect2 id="add">
       <title>Tilføjelse af udvidelsesmodulet</title>
 
-      <para>For at tilføje udvidelsesmodulet; højreklik på panelet og vælg <emphasis>"Tilføj nyt element""emphasis&gt;. V"Sk, og tilf</emphasis></para>
+      <para>For at tilføje udvidelsesmodulet; højreklik på panelet og vælg <emphasis>"Tilføj nyt element"</emphasis>. Vælg det udvidelsesmodul der hedder <emphasis>"Skærmbillede"</emphasis>, og tilføj det.</para>
     </sect2>
 
     <sect2 id="set">
-      <title>Configuring the plugin</title>
+      <title>Indstilling af udvidelsesmodulet</title>
 
-      <para>
-        You can configure how screenshots are taken by right clicking on
-        the plugin and selecting <emphasis>"Properties"</emphasis>. A
-        preferences dialog similar to the dialog of the main application
-        will appear. Please have a look above for the different
-        preferences.
-      </para>
+      <para>Du kan indstille, hvordan skærmbilleder bliver taget ved at højreklikke på udvidelsesmodulet og vælge <emphasis>"Egenskaber"</emphasis>. En indstillingsmenu, der ligner indstillingsmenuen til hovedprogrammet, vil vise sig. Se venligst ovenfor, for diverse indstillinger.</para>
     </sect2>
 
     <sect2 id="use">
       <title>Brug af udvidelsesmodulet</title>
 
-      <para>
-        To take a screenshot, just click on the plugin. You can use the
-        scroll wheel on the plugin button to switch between the different
-        regions to be captured.
-      </para>
+      <para>For at tage et skærmbillede skal du bare klikke på udvidelsesmoduler. Du kan bruge rullehjulet på udvidelsesmodulet til at skifte mellem de forskellige områder der skal tages.</para>
     </sect2>
 
   </sect1>

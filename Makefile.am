@@ -170,6 +170,7 @@ install-data-hook:
 # Documentation
 noinst_DATA = \
 	docs/manual/C/xfce4-screenshooter.xml	\
+	docs/manual/ast/xfce4-screenshooter.xml \
 	docs/manual/ca/xfce4-screenshooter.xml \
 	docs/manual/da/xfce4-screenshooter.xml \
 	docs/manual/es/xfce4-screenshooter.xml \
@@ -178,6 +179,24 @@ noinst_DATA = \
 	docs/manual/it/xfce4-screenshooter.xml \
 	docs/manual/ja/xfce4-screenshooter.xml \
 	docs/manual/tr/xfce4-screenshooter.xml
+
+# Asturian documentation
+astdocdir = $(datadir)/xfce4/doc/ast
+astdoc_DATA = docs/manual/ast/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/ast/xfce4-screenshooter.html: docs/manual/ast/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/ast/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ast/xfce4-screenshooter.xml
+endif
+endif
+
+astimagesdir = $(datadir)/xfce4/doc/ast/images
+astimages_DATA = \
+	docs/manual/ast/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/ast/images/xfce4-screenshooter-dialog2.png \
+	docs/manual/ast/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/ast/images/xfce4-screenshooter-zimagez-result-dialog.png
+
 
 # C documentation
 cdocdir = $(datadir)/xfce4/doc/C
@@ -356,6 +375,7 @@ EXTRA_DIST = \
 	$(scalicons_DATA) \
 	docs/manual/xfce-nochunk.xsl \
 	$(noinst_DATA) \
+	$(ast_DATA) $(astimages_DATA) \
 	$(cdoc_DATA) $(cimages_DATA) \
 	$(dadoc_DATA) $(daimages_DATA) \
 	$(esdoc_DATA) $(esimages_DATA) \

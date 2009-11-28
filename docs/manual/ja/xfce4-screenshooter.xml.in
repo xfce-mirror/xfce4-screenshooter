@@ -50,15 +50,7 @@
   <sect1 id="intro">
     <title>Xfce4 スクリーンシューターの紹介</title>
 
-    <para>
-      This application allows you to capture the entire screen, the
-      active window or a selected region. You can set the delay that
-      elapses before the screenshot is taken and the action to be
-      performed afterwards: save the screenshot to a PNG file, copy it
-      to the clipboard, open it using another application, or host it on
-      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>,
-      a free online image hosting service.
-    </para>
+    <para>このアプリケーションは、画面全体、アクティブウィンドウ、または選択した領域のスクリーンショットを撮影します。撮影までの遅延時間や、撮影したスクリーンショットに対する操作 (PNG ファイルに保存、クリップボードにコピー、または他のアプリケーションで開く) を指定できます。あるいは、フリーオンラインイメージホスティングサービス <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink> で公開することもできます。</para>
 
     <para>Xfce パネル用プラグインも用意されています。</para>
 
@@ -89,59 +81,32 @@
       <sect4 id="region-to-capture">
         <title>撮影する領域</title>
 
-        <para>
-          The <emphasis>"Region to capture"</emphasis> section allows
-          you to set what the screenshot will be taken of:
-        </para>
+        <para><emphasis>"撮影する領域"</emphasis> セクションでは、何のスクリーンショットを撮影するかを指定できます:</para>
 
         <itemizedlist>
           <listitem>"画面全体" は表示されている画面全体のスクリーンショットを撮影します。</listitem>
-          <listitem>
-            "Active window" takes a screenshot of the active window.
-            This will be the one that was active before this dialog
-            appeared, or if you set a delay, the one that is active
-            after the delay.
-          </listitem>
-          <listitem>
-            "Select a region" allows you to select a region to be
-            captured by clicking and dragging a rectangle over the area
-            of screen that you wish to capture, before releasing the
-            mouse button.
-          </listitem>
+          <listitem>"アクティブウィンドウ" はアクティブウィンドウのスクリーンショットを撮影します。それはこのダイアログが表示される直前にアクティブであったウィンドウか、遅延時間が設定されている場合には遅延時間の経過時点でアクティブであったウィンドウになります。</listitem>
+          <listitem>"選択した領域" は、画面の一点をクリックおよびそこからドラッグし、マウスボタンを離したところまでの矩形領域を撮影します。</listitem>
         </itemizedlist>
       </sect4>
 
       <sect4 id="include-pointer">
-        <title>Capturing the pointer</title>
+        <title>マウスポインタも撮影する</title>
 
-        <para>
-          The <emphasis>"Capture the mouse pointer"</emphasis>
-          option allows you to select whether or not the screenshot will
-          include the mouse pointer.
-        </para>
+        <para><emphasis>"マウスポインタも撮影する"</emphasis> オプションでは、スクリーンショットにマウスポインタも含めるかどうか選択できます。</para>
       </sect4>
 
       <sect4 id="delay">
         <title>撮影するまでの遅延時間</title>
 
-        <para>
-          The <emphasis>"Delay before capturing"</emphasis>
-          section allows you to set the delay that will elapse between
-          pressing the <emphasis>"OK"</emphasis> button and screenshot
-          being taken. This delay will allow you to open menus or to
-          perform whatever action you require to see displayed in the
-          screenshot.
-        </para>
+        <para><emphasis>"撮影するまでの遅延時間"</emphasis> セクションでは、<emphasis>「OK」</emphasis> ボタンがクリックされてから実際にスクリーンショットを撮るまでの遅延時間を指定できます。この遅延により、開いたメニューなどあらゆる操作のスクリーンショットを撮影することができます。</para>
       </sect4>
     </sect2>
     
     <sect3 id="after-capturing">
       <title>撮影したら</title>
       
-      <para>
-        After pressing the <emphasis>"OK"</emphasis> button a second
-        window will be displayed:
-      </para>
+      <para><emphasis>「OK」</emphasis> ボタンを押すと、以下のウィンドウが表示されます:</para>
 
       <screenshot>
         <mediaobject>
@@ -150,38 +115,26 @@
           </imageobject>
 
           <textobject>
-            <phrase>The window of Xfce4 Screenshooter after taking a
-            screenshot</phrase>
+            <phrase>スクリーンショットを撮影したあとの Xfce4 スクリーンシューターのウィンドウ</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
 
       <sect4 id="preview">
-        <title>Preview</title> 
+        <title>プレビュー</title> 
 
-        <para>
-          The <emphasis>"Preview"</emphasis> section displays a
-          thumbnail of the screenshot.
-        </para>
+        <para><emphasis>"プレビュー"</emphasis> セクションには、スクリーンショットのプレビューが表示されます。</para>
       </sect4>
 
       <sect4 id="action">
         <title>アクション</title>
 
-        <para>
-          The <emphasis>"Action"</emphasis> section allows you to choose
-          what should be performed on the screenshot.
-        </para>
+        <para><emphasis>"アクション"</emphasis> セクションでは、撮影したスクリーンショットに対する操作を選択できます。</para>
 
         <sect5 id="save">
-          <title>Save</title>
+          <title>保存する</title>
 
-          <para>
-            The <emphasis>"Save"</emphasis> option will save the
-            screenshot to a PNG file. A save dialog will be
-            displayed. You will be able to set the save location, and
-            the name of the file.
-          </para>
+          <para><emphasis>"保存する"</emphasis> オプションは、スクリーンショットを PNG ファイルに保存します。保存ダイアログが表示され、保存場所およびファイル名を指定できます。</para>
 
           <para>Xfce4 スクリーンシューターはスクリーンショットを、FTP、SAMBA、SFTP、SSH 経由でアクセス可能なリモートコンピュータなど、GVfs がサポートするリモートファイルシステムに保存することもできます。リモートファイルシステムへの接続には <emphasis>gvfs-connect</emphasis> または <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> が必要で、利用可能な接続先は保存ダイアログの左カラムに表示されます。</para>
         </sect5>
@@ -189,24 +142,13 @@
         <sect5 id="copy-to-clipboard">
           <title>クリップボードにコピーする</title>
 
-          <para>
-            The <emphasis>"Copy to the clipboard"</emphasis> option
-            allows you to paste the screenshot in another application,
-            such as a word processor. This option is only available when
-            a clipboard manager is running.
-          </para>
+          <para><emphasis>"クリップボードにコピーする"</emphasis> オプションは、スクリーンショットをワードプロセッサなど他のアプリケーションに貼り付けることができるようにクリップボードへコピーします。このオプションはクリップボードマネージャが起動されている場合のみ利用できます。</para>
         </sect5>
 
         <sect5 id="open-with">
           <title>アプリケーションで開く</title>
 
-          <para>
-            The <emphasis>"Open with"</emphasis> option saves the
-            screenshot to the system's temporary directory and opens it
-            with the application chosen from the drop-down list.
-            Applications which support images are automatically detected
-            and added to the drop-down list.
-          </para>
+          <para><emphasis>"アプリケーションで開く"</emphasis> オプションは、スクリーンショットをシステムの作業ディレクトリに保存し、右のドロップダウンリストで指定されたアプリケーションで開きます。画像をサポートするアプリケーションは自動的に検出され、ドロップダウンリストに追加されます。</para>
         </sect5>
 
         <sect5 id="zimagez">
@@ -251,14 +193,7 @@
     <sect2 id="command-line">
       <title>コマンドラインから</title>
 
-      <para>
-        Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Print Screen key on the upper
-        right of most keyboards so that it takes screenshots. To do so,
-        configure the key-bindings of your desktop environment so that
-        it launches xfce4-screenshooter with one or several of the
-        following options when the Prt Scrn key is pressed.
-      </para>
+      <para>コマンドラインオプションを使用するとスクリーンショットの撮影を速やかに行えます。これらを Print Screen キー (多くのキーボードの右上部にあります) に割り当ててスクリーンショットを撮影することができます。デスクトップ環境のキーバインド設定で、xfce4-screenshooter コマンドに以下のいくつかのオプションをつけて設定してください。</para>
 
       <sect3 id="options">
         <title>コマンドラインオプション</title>
@@ -278,69 +213,38 @@
         <sect4 id="r-option">
           <title>-r オプション</title>
 
-          <para>
-            The <emphasis>-r</emphasis> option allows you to select a
-            region to be captured by clicking and dragging a rectangle
-            over the area of screen that you wish to capture, before
-            releasing the mouse button.
-          </para>
+          <para><emphasis>-r</emphasis> オプションは、画面の一点をクリックおよびそこからドラッグし、マウスボタンを離したところまでの矩形領域を撮影します。</para>
         </sect4>
 
         <sect4 id="d-option">
           <title>-d オプション</title>
 
-          <para>
-            The <emphasis>-d</emphasis> option followed by a positive
-            integer allows you to set the delay before taking the
-            screenshot when the <emphasis>-w</emphasis>, the
-            <emphasis>-f</emphasis> or the <emphasis>-r</emphasis>
-            option is given.
-          </para>
+          <para><emphasis>-d</emphasis> オプションは、<emphasis>-w</emphasis>、<emphasis>-f</emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定されたときに、続く正数の秒数分経過した後にスクリーンショットを撮影します。</para>
         </sect4>
 
         <sect4 id="s-option">
           <title>-s オプション</title>
 
-          <para>
-            The <emphasis>-s</emphasis> option followed by the path to
-            an existing folder allows you to set where the screenshots
-            are saved. This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or
-            the <emphasis>-r</emphasis> option is given.
-          </para>
+          <para><emphasis>-s</emphasis> オプションは、その後に指定された既存のパスにスクリーンショットを保存します。このオプションは <emphasis>-w</emphasis>、<emphasis>-f</emphasis>、または <emphasis>-r</emphasis> が指定された場合のみ機能します。</para>
         </sect4>
 
         <sect4 id="o-option">
           <title>-o オプション</title>
 
-          <para>
-            If the <emphasis>-o</emphasis> option is given, followed by
-            an application name, the screenshot will be saved to the
-            system's temporary directory and opened with the application
-            whose name is to be given after <emphasis>-o</emphasis>.
-            This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para><emphasis>-o</emphasis> オプションが指定された場合、スクリーンショットはシステムの作業ディレクトリに保存され、<emphasis>-o</emphasis> オプションの後に指定されたアプリケーションで開きます。このオプションは <emphasis>-w</emphasis>、<emphasis>-f</emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定されている場合のみ機能します。</para>
         </sect4>
 
         <sect4 id="u-option">
           <title>-u オプション</title>
 
-          <para>
-            If the <emphasis>-u</emphasis> option is given, the screenshot
-            will be hosted on ZimageZ. See above for more details.
-            This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para><emphasis>-u</emphasis> オプションが設定された場合、スクリーンショットは ZimageZ にアップロードされます。詳細は前述の説明をご覧ください。このオプションは <emphasis>-w</emphasis>、<emphasis>-f</emphasis> または <emphasis>-r</emphasis> オプションのいずれかが指定されている場合のみ機能します。</para>
         </sect4>
       </sect3>
     </sect2>
   </sect1>
 
   <sect1 id="panel-plugin">
-    <title>Using the Xfce panel plugin</title>
+    <title>Xfce パネルプラグインを使う</title>
 
     <sect2 id="add">
       <title>プラグインの追加</title>
@@ -349,25 +253,15 @@
     </sect2>
 
     <sect2 id="set">
-      <title>Configuring the plugin</title>
+      <title>プラグインの設定</title>
 
-      <para>
-        You can configure how screenshots are taken by right clicking on
-        the plugin and selecting <emphasis>"Properties"</emphasis>. A
-        preferences dialog similar to the dialog of the main application
-        will appear. Please have a look above for the different
-        preferences.
-      </para>
+      <para>スクリーンショットの撮影方法を設定するにはプラグインアイコン上で右クリックし、<emphasis>"プロパティ"</emphasis> を選択します。メインアプリケーションのダイアログと同様の設定ダイアログが表示されます。各設定については前述の説明をご覧ください。</para>
     </sect2>
 
     <sect2 id="use">
       <title>プラグインを使う</title>
 
-      <para>
-        To take a screenshot, just click on the plugin. You can use the
-        scroll wheel on the plugin button to switch between the different
-        regions to be captured.
-      </para>
+      <para>スクリーンショットを撮影するには、プラグインをクリックします。プラグインボタン上でマウスホイールを回転させることで撮影する領域を切り替えることができます。</para>
     </sect2>
 
   </sect1>

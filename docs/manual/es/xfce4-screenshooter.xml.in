@@ -50,15 +50,7 @@
   <sect1 id="intro">
     <title>Introducción a Xfce4 Screenshooter</title>
 
-    <para>
-      This application allows you to capture the entire screen, the
-      active window or a selected region. You can set the delay that
-      elapses before the screenshot is taken and the action to be
-      performed afterwards: save the screenshot to a PNG file, copy it
-      to the clipboard, open it using another application, or host it on
-      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>,
-      a free online image hosting service.
-    </para>
+    <para>Esta aplicación le permite capturar toda la pantalla, la ventana activa o una región seleccionada. Puede establecer la demora que transcurre antes de tomar la captura de pantalla y la acción que debe realizarse después: guardar la imagen a un archivo PNG, copiarla al portapapeles, abrirla con otra aplicación, o alojarla en </para>
 
     <para>También está disponible un complemento para el panel de XFCE.</para>
 
@@ -89,59 +81,32 @@
       <sect4 id="region-to-capture">
         <title>Región a capturar</title>
 
-        <para>
-          The <emphasis>"Region to capture"</emphasis> section allows
-          you to set what the screenshot will be taken of:
-        </para>
+        <para>La sección <emphasis>"Región a capturar"</emphasis> le permite establecer lo que la captura de pantalla tomará:</para>
 
         <itemizedlist>
           <listitem>"Toda la pantalla" toma una captura de toda pantalla como la vemos.</listitem>
-          <listitem>
-            "Active window" takes a screenshot of the active window.
-            This will be the one that was active before this dialog
-            appeared, or if you set a delay, the one that is active
-            after the delay.
-          </listitem>
-          <listitem>
-            "Select a region" allows you to select a region to be
-            captured by clicking and dragging a rectangle over the area
-            of screen that you wish to capture, before releasing the
-            mouse button.
-          </listitem>
+          <listitem>"Ventana activa" toma una captura de pantalla de la ventana activa. Esta será la que estaba activa antes del cuadro de diálogo que aparece, o si se establece una demora, la que se activa después de ésta.</listitem>
+          <listitem>"Seleccionar una región" le permite seleccionar la región que se va a capturar haciendo clic y arrastrando un rectángulo sobre el área de la pantalla que desea capturar antes de soltar el botón del ratón.</listitem>
         </itemizedlist>
       </sect4>
 
       <sect4 id="include-pointer">
-        <title>Capturing the pointer</title>
+        <title>Capturando el punto</title>
 
-        <para>
-          The <emphasis>"Capture the mouse pointer"</emphasis>
-          option allows you to select whether or not the screenshot will
-          include the mouse pointer.
-        </para>
+        <para>La opción <emphasis>"Capturar el puntero del ratón"</emphasis> le permite seleccionar si desea o no que la captura de pantalla incluye el puntero del ratón.</para>
       </sect4>
 
       <sect4 id="delay">
         <title>Demora antes de capturar</title>
 
-        <para>
-          The <emphasis>"Delay before capturing"</emphasis>
-          section allows you to set the delay that will elapse between
-          pressing the <emphasis>"OK"</emphasis> button and screenshot
-          being taken. This delay will allow you to open menus or to
-          perform whatever action you require to see displayed in the
-          screenshot.
-        </para>
+        <para>La sección <emphasis>"Retraso antes de capturar"emphasis&gt; le permite configurar la demora entre el momento en que se pulsa el bot"Aceptar"emphasis&gt;, y se toma la captura de pantalla. </emphasis></para>
       </sect4>
     </sect2>
     
     <sect3 id="after-capturing">
       <title>Después de capturar</title>
       
-      <para>
-        After pressing the <emphasis>"OK"</emphasis> button a second
-        window will be displayed:
-      </para>
+      <para>Después de pulsar el  botón<emphasis>"Aceptar"</emphasis> se mostrará una segunda ventana:</para>
 
       <screenshot>
         <mediaobject>
@@ -150,38 +115,26 @@
           </imageobject>
 
           <textobject>
-            <phrase>The window of Xfce4 Screenshooter after taking a
-            screenshot</phrase>
+            <phrase>La ventana de Xfce4 Screenshooter después de tomar una captura de pantalla</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
 
       <sect4 id="preview">
-        <title>Preview</title> 
+        <title>Previsualización</title> 
 
-        <para>
-          The <emphasis>"Preview"</emphasis> section displays a
-          thumbnail of the screenshot.
-        </para>
+        <para>La sección <emphasis>"Previsualización"</emphasis> le muestra una miniatura de la captura de pantalla.</para>
       </sect4>
 
       <sect4 id="action">
         <title>Acción</title>
 
-        <para>
-          The <emphasis>"Action"</emphasis> section allows you to choose
-          what should be performed on the screenshot.
-        </para>
+        <para>La sección <emphasis>"Acción"</emphasis> le permite elegir qué hacer con la captura de pantalla.</para>
 
         <sect5 id="save">
-          <title>Save</title>
+          <title>Guardar</title>
 
-          <para>
-            The <emphasis>"Save"</emphasis> option will save the
-            screenshot to a PNG file. A save dialog will be
-            displayed. You will be able to set the save location, and
-            the name of the file.
-          </para>
+          <para>La opción <emphasis>"Guardar " </emphasis> guardará la captura de pantalla en un archivo PNG. Un diálogo de guardar se mostrará. Usted será capaz de establecer la ubicación de almacenamiento, y el nombre del archivo.</para>
 
           <para>Xfce4 Screenshooter también es capaz de guardar la captura de pantalla a cualquier sistema de archivos remoto apoyado por GVfs, tales como FTP, SAMBA, SFTP, ordenadores remotos accesibles a través de SSH ... Sólo tiene que conectar el sistema de archivos remoto usando <emphasis>gvfs-connect</emphasis> o <ulink type="http" url="http://www.uvena.de/gigolo/">Gigoloulink&gt; y estar</ulink></para>
         </sect5>
@@ -189,24 +142,13 @@
         <sect5 id="copy-to-clipboard">
           <title>Copiar al portapapeles</title>
 
-          <para>
-            The <emphasis>"Copy to the clipboard"</emphasis> option
-            allows you to paste the screenshot in another application,
-            such as a word processor. This option is only available when
-            a clipboard manager is running.
-          </para>
+          <para>La opción <emphasis>"Copiar al portapapeles"</emphasis> le permite pegar la imagen en otra aplicación, como por ejemplo un procesador de textos. Esta opción sólo está disponible cuando un gestor de portapapeles se está ejecutando.</para>
         </sect5>
 
         <sect5 id="open-with">
           <title>Abrir con</title>
 
-          <para>
-            The <emphasis>"Open with"</emphasis> option saves the
-            screenshot to the system's temporary directory and opens it
-            with the application chosen from the drop-down list.
-            Applications which support images are automatically detected
-            and added to the drop-down list.
-          </para>
+          <para>La opción <emphasis>"Abrir con"</emphasis> guarda la captura de pantalla en el sistema de directorio temporal y la abre con la aplicación seleccionada en el menú desplegable. Las aplicaciones con apoyo de imágenes se detectan automáticamente y se añadirán a la lista desplegable.</para>
         </sect5>
 
         <sect5 id="zimagez">
@@ -251,14 +193,7 @@
     <sect2 id="command-line">
       <title> A través de línea de comandos</title>
 
-      <para>
-        Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Print Screen key on the upper
-        right of most keyboards so that it takes screenshots. To do so,
-        configure the key-bindings of your desktop environment so that
-        it launches xfce4-screenshooter with one or several of the
-        following options when the Prt Scrn key is pressed.
-      </para>
+      <para>Las opciones de línea de comandos le permite tomar capturas de pantalla rápidamente. También le permite configurar la tecla Imprimir Pantalla en la parte superior derecha de la mayoría de los teclados para que realice capturas de pantalla. Para ello, configure el teclado de su entorno de escritorio para iniciar xfce4-screenshooter con una o varias de las siguientes opciones cuando la tecla Prt Scrn es presionada.</para>
 
       <sect3 id="options">
         <title>Opciones de línea de comandos</title>
@@ -278,69 +213,38 @@
         <sect4 id="r-option">
           <title>La opción -r</title>
 
-          <para>
-            The <emphasis>-r</emphasis> option allows you to select a
-            region to be captured by clicking and dragging a rectangle
-            over the area of screen that you wish to capture, before
-            releasing the mouse button.
-          </para>
+          <para>La opción <emphasis>-remphasis&gt; le permite seleccionar la regi</emphasis></para>
         </sect4>
 
         <sect4 id="d-option">
           <title>La opción -d</title>
 
-          <para>
-            The <emphasis>-d</emphasis> option followed by a positive
-            integer allows you to set the delay before taking the
-            screenshot when the <emphasis>-w</emphasis>, the
-            <emphasis>-f</emphasis> or the <emphasis>-r</emphasis>
-            option is given.
-          </para>
+          <para>La opción <emphasis>-d</emphasis> seguida por un número entero positivo le permite establecer la demora antes de tomar la captura de pantalla cuando se da la opción <emphasis>-w</emphasis>, la <emphasis>-f</emphasis> o la <emphasis>-r</emphasis>.</para>
         </sect4>
 
         <sect4 id="s-option">
           <title>La opción -s</title>
 
-          <para>
-            The <emphasis>-s</emphasis> option followed by the path to
-            an existing folder allows you to set where the screenshots
-            are saved. This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or
-            the <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>La opción <emphasis>-s</emphasis> seguida por un número entero positivo le permite establecer la demora antes de tomar la captura de pantalla, Ésta opción sólo tiene efecto si da la opción <emphasis>-w</emphasis>, la <emphasis>-f</emphasis> o la <emphasis>-r</emphasis>.</para>
         </sect4>
 
         <sect4 id="o-option">
           <title>La opción -o</title>
 
-          <para>
-            If the <emphasis>-o</emphasis> option is given, followed by
-            an application name, the screenshot will be saved to the
-            system's temporary directory and opened with the application
-            whose name is to be given after <emphasis>-o</emphasis>.
-            This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>Si da la opción <emphasis>-o</emphasis> seguida del nombre de una aplicación, la captura de pantalla se guardará en el directorio temporal del sistema y se abrirá con la aplicación cuyo nombre se ha dado después de <emphasis>-o</emphasis>. Ésta opción sólo tiene efecto si da la opción <emphasis>-w</emphasis>, la <emphasis>-f</emphasis> o la <emphasis>-r</emphasis>.</para>
         </sect4>
 
         <sect4 id="u-option">
           <title>La opción -u</title>
 
-          <para>
-            If the <emphasis>-u</emphasis> option is given, the screenshot
-            will be hosted on ZimageZ. See above for more details.
-            This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>Si da la opción <emphasis>-u</emphasis> la captura de pantalla se aloja en ZimageZ. Véase más arriba para más detalles. Ésta opción sólo tiene efecto si se da la opción <emphasis>-f</emphasis>, la <emphasis>-w</emphasis> o la <emphasis>-r</emphasis>.</para>
         </sect4>
       </sect3>
     </sect2>
   </sect1>
 
   <sect1 id="panel-plugin">
-    <title>Using the Xfce panel plugin</title>
+    <title>Utilizando el complemento de panel Xfce</title>
 
     <sect2 id="add">
       <title>Añadiendo el complemento</title>
@@ -349,25 +253,15 @@
     </sect2>
 
     <sect2 id="set">
-      <title>Configuring the plugin</title>
+      <title>Configurando el complemento</title>
 
-      <para>
-        You can configure how screenshots are taken by right clicking on
-        the plugin and selecting <emphasis>"Properties"</emphasis>. A
-        preferences dialog similar to the dialog of the main application
-        will appear. Please have a look above for the different
-        preferences.
-      </para>
+      <para>Puede configurar cómo se toman capturas de pantalla haciendo clic derecho sobre el complemento y seleccionar <emphasis>"Propiedades"</emphasis>. Aparecerá un cuadro de diálogo de preferencias similar al cuadro de diálogo de la aplicación principal. Por favor, eche un vistazo sobre las diferentes preferencias.</para>
     </sect2>
 
     <sect2 id="use">
       <title>Utilizando el complemento</title>
 
-      <para>
-        To take a screenshot, just click on the plugin. You can use the
-        scroll wheel on the plugin button to switch between the different
-        regions to be captured.
-      </para>
+      <para>Para hacer una captura de pantalla, haga clic en el complemento. Usted puede utilizar la rueda de desplazamiento en el botón de complemento para cambiar entre las diferentes regiones a ser capturadas.</para>
     </sect2>
 
   </sect1>
