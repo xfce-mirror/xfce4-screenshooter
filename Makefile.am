@@ -170,6 +170,7 @@ install-data-hook:
 # Documentation
 noinst_DATA = \
 	docs/manual/C/xfce4-screenshooter.xml	\
+	docs/manual/ca/xfce4-screenshooter.xml \
 	docs/manual/da/xfce4-screenshooter.xml \
 	docs/manual/es/xfce4-screenshooter.xml \
 	docs/manual/fr/xfce4-screenshooter.xml \
@@ -194,6 +195,25 @@ cimages_DATA = \
 	docs/manual/C/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/C/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/C/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+
+# Catalan documentation
+cadocdir = $(datadir)/xfce4/doc/ca
+cadoc_DATA = docs/manual/ca/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/ca/xfce4-screenshooter.html: docs/manual/ca/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/ca/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ca/xfce4-screenshooter.xml
+endif
+endif
+
+caimagesdir = $(datadir)/xfce4/doc/ca/images
+caimages_DATA = \
+	docs/manual/ca/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/ca/images/xfce4-screenshooter-dialog2.png \
+	docs/manual/ca/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/ca/images/xfce4-screenshooter-zimagez-result-dialog.png
+
 
 # Danish documentation
 dadocdir = $(datadir)/xfce4/doc/da

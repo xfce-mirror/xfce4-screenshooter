@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY date "February 2009">
+<!ENTITY version "@PACKAGE_VERSION@">
+<!ENTITY application "@PACKAGE_NAME@">
+]>
+<article id="xfce4-screenshooter" lang="ca">
+
+  <!-- Header -->
+  <articleinfo>
+    <title>Capturador de pantalla de Xfce4</title>
+
+    <pubdate>&date;</pubdate>
+
+    <copyright>
+      <year>2008</year>
+      <year>2009</year>
+      <holder>Jérôme Guelfucci</holder>
+    </copyright>
+
+    <copyright>
+      <year>2009</year>
+      <holder>Sam Swift</holder>
+    </copyright>
+
+    <legalnotice id="legalnotice">
+      <para>Teniu el dret de còpia, distribució i/o modificació d'aquest document segons els termes de la llicència «GNU Free Documentation», versió 1.1 o qualsevol posterior publicada per la Free Software Foundation; sense seccions invariables, sense textos de portada i sense textos de contraportada («with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts»). El text complert de la llicència està disponible a <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.</para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Jérôme</firstname>
+        <surname>Guelfucci</surname>
+        <affiliation>
+          <address><email>jeromeg@xfce.org</email></address>
+        </affiliation>
+      </author>
+      <author>
+        <firstname>Sam</firstname>
+        <surname>Swift</surname>
+        <affiliation>
+          <address><email>renmush@gmail.com</email></address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <releaseinfo>Aquest manual descriu la versió @PACKAGE_VERSION@ del capturador de pantalles de Xfce4.</releaseinfo>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Introducció al capturador de pantalla de Xfce4</title>
+
+    <para>Aquesta aplicació us permet fer captures de tota la pantalla, de la finestra activa o d'una regió seleccionada. Podeu fixar el retard fins que es realitza la captura i el que es farà amb ella: desar-la com a un fitxer PNG, copiar-la al porta-retalls, obrir-la amb alguna aplicació o bé hostatjar-la a  <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, un servei gratuït i en línia per hostatjar imatges.</para>
+
+    <para>També hi ha un connector pel quadre Xfce.</para>
+
+  </sect1>
+
+  <sect1 id="using-the-application">
+    <title>Ús de l'aplicació</title>
+
+    <sect2 id="user-interface">
+      <title>Mitjançant la interfície d'usuari</title>
+
+      <para>Per executar l'aplicació, empreu l'element «Captura» de la categoria «Accessoris» del menú principal de Xfce.</para>
+
+      <para>S'us mostrarà aquesta finestra:</para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog1.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>La finestra del capturador de pantalla de Xfce4</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect4 id="region-to-capture">
+        <title>Regió a capturar</title>
+
+        <para>La secció <emphasis>«Regió a capturar»</emphasis> us permet fixar el que serà capturat:</para>
+
+        <itemizedlist>
+          <listitem>«Tota la pantalla» fa la captura de la pantalla sencera tal i com la veieu.</listitem>
+          <listitem>«Finestra activa» fa la captura de la finestra activa, aquella que estava activa just abans de que es mostrés aquest diàleg, o, en cas de que hageu seleccionat un retard, aquella que estigui activa després del retard.</listitem>
+          <listitem>«Regió seleccionada» us permet seleccionar una regió fent clic en un punt de la pantalla i, sense deixat anar el botó del ratolí, arrossegant el ratolí fins l'altre cantonada de la regió on ja podreu deixar-lo anar.</listitem>
+        </itemizedlist>
+      </sect4>
+
+      <sect4 id="include-pointer">
+        <title>Capturar el punter</title>
+
+        <para>La secció <emphasis>«Capturar el punter»</emphasis> us permet triar si voleu que la vostra captura inclogui o no el punter del ratolí.</para>
+      </sect4>
+
+      <sect4 id="delay">
+        <title>Retard abans de la captura</title>
+
+        <para>La secció <emphasis>«Retard abans de fer la captura»</emphasis> us permet fixar un de temps que transcorrerà entre el clic al botó <emphasis>«D'acord»</emphasis> i la captura en sí mateixa. Aquest retard us permetrà obrir menús o fer qualsevulla acció que voleu fer per que es mostri a la captura.</para>
+      </sect4>
+    </sect2>
+    
+    <sect3 id="after-capturing">
+      <title>Després de fer la captura</title>
+      
+      <para>Després d'apretar el botó <emphasis>«D'acord»</emphasis> s'us mostrarà aquest diàleg:</para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog2.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>La finestra del capturador de pantalla de Xfce4 després de fer una captura</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect4 id="preview">
+        <title>Previsualitzar</title> 
+
+        <para>La secció <emphasis>«Previsualització»</emphasis> permet mostrar una petita representació de la captura.</para>
+      </sect4>
+
+      <sect4 id="action">
+        <title>Acció</title>
+
+        <para>La secció <emphasis>«Acció»</emphasis> us permet triar què s'hauria de fer amb la captura.</para>
+
+        <sect5 id="save">
+          <title>Desar</title>
+
+          <para>L'opció <emphasis>«Desar»</emphasis> permet desar la captura de pantalla com a fitxer de tipus PNG. Es mostrarà un diàleg per a que indiqueu amb quin nom voleu desar-lo i on.</para>
+
+          <para>El capturador de pantalla de Xfce4 també pot desar la captura en un sistema de fitxers remots que sigui compatible amb GVfs, com poden ser FTP, SAMBA, SFTP, màquines remotes accessibles mitjançant SSH… Només us caldrà connectar el sistema de fitxers remots amb <emphasis>gvfs-connect</emphasis> o amb <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> i estarà disponible a la columna esquerra de la finestra de diàleg.</para>
+        </sect5>
+
+        <sect5 id="copy-to-clipboard">
+          <title>Copia al porta-retalls</title>
+
+          <para>L'opció <emphasis>«Copia al porta-retalls</emphasis> us permet enganxar la captura en alguna altra aplicació, com pot ser un processador de texts. Aquesta opció només està disponible quan el gestor del porta-retalls s'està executant.</para>
+        </sect5>
+
+        <sect5 id="open-with">
+          <title>Obre amb</title>
+
+          <para>L'opció <emphasis>«Obre amb»</emphasis> desa la captura en el directori temporal del sistema i l'obre amb l'aplicació marcada en la llista desplegable de la dreta. Les aplicacions que permeten el tractament d'imatges són detectades automàticament i afegides a la llista desplegable.</para>
+        </sect5>
+
+        <sect5 id="zimagez">
+          <title>Emmagatzemar a ZimageZ</title>
+          
+          <para>L'opció d'<emphasis>«Emmagatzemar a ZimageZ»</emphasis> us permet guardar la captura en aquest servei gratuït d'emmagatzematge i així la podreu compartir amb facilitat amb altre gent. ZimageZ genera automàticament una miniatura gran i petita de la captura que permeten crear enllaços a la imatge a mida natural.</para>
+
+          <para>Després d'apretar el botó <emphasis>«D'acord»</emphasis> s'us mostrarà aquest diàleg:</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-login-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>El diàleg per emmagatzemar una captura a ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+          <para>Si no teniu un nom d'usuari a ZimageZ, us caldrà crear-vos un al <ulink type="http" url="http://www.zimagez.com">lloc web ZimageZ</ulink>. El lloc web està disponible en moltes llengües i podeu canviar-la emprant el menú superior dret. Haureu d'omplir tots els camps de la finestra. Un cop hageu fet clic al botó <emphasis>«D'acord»</emphasis> començarà la pujada.</para>
+          
+          <para>El següent diàleg us mostrarà els enllaços a la captura a mida natural, com a miniatura gran, com a miniatura petita i també us mostrarà exemples HTML i BBcode per crear enllaços amb miniatures que dirigeixin a la captura a mida natural:</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-result-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>El diàleg mostrant els enllaços a la captura a ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+        </sect5>
+      </sect4>
+    </sect3>
+
+    <sect2 id="command-line">
+      <title>Línia d'ordres</title>
+
+      <para>Les opcions de la línia d'ordres us permeten fer captures més ràpidament. També us permeten configurar la tecla d'impressió de pantalla de la part superior dreta de la majoria dels teclats per fer captures de pantalla. Per fer-ho, configureu l'assignació de tecles del vostre entorn d'escriptori per a que llenci «xfce4-screenshooter» quan es pitgi la tecla d'impressió de pantalla.</para>
+
+      <sect3 id="options">
+        <title>Opcions de la línia d'ordres</title>
+
+        <sect4 id="w-option">
+          <title>L'opció -w</title>
+
+          <para>L'opció <emphasis>-w</emphasis> us permetrà fer una captura de la finestra activa.</para>
+        </sect4>
+
+        <sect4 id="f-option">
+          <title>L'opció -f</title>
+
+          <para>l'opció <emphasis>-f</emphasis> us permetrà fer una captura de tota la pantalla.</para>
+        </sect4>
+
+        <sect4 id="r-option">
+          <title>L'opció -r</title>
+
+          <para>L'opció <emphasis>-r</emphasis> us permet seleccionar una regió per capturar al fer clic en un punt de la pantalla i, sense deixar anar el botó del ratolí, arrossegar el ratolí a l'altra cantonada de la regió en la que ja es pot deixar anar el botó del ratolí.</para>
+        </sect4>
+
+        <sect4 id="d-option">
+          <title>L'opció -d</title>
+
+          <para>L'opció <emphasis>-d</emphasis> seguida per un nombre enter positiu us permet fixar el retard per la captura quan alguna de les opcions <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o<emphasis>-r</emphasis> s'introdueixen.</para>
+        </sect4>
+
+        <sect4 id="s-option">
+          <title>L'opció -s</title>
+
+          <para>L'opció <emphasis>-d</emphasis> seguida per un nombre enter positiu us permet fixar el retard per la captura quan alguna de les opcions <emphasis>-f</emphasis>, <emphasis>-w</emphasis> o<emphasis>-r</emphasis> s'han introduït.</para>
+        </sect4>
+
+        <sect4 id="o-option">
+          <title>L'opció -o</title>
+
+          <para>Si es passa l'opció <emphasis>-o</emphasis> seguida pel nom d'una aplicació, la captura es desarà en el directori temporal del sistema i s'obrirà amb l'aplicació introduïda. Aquesta opció només funciona en combinació amb alguna de les opcions <emphasis>-f</emphasis>, <emphasis>-w</emphasis> o <emphasis>-r</emphasis>.</para>
+        </sect4>
+
+        <sect4 id="u-option">
+          <title>L'opció -u</title>
+
+          <para>La captura de la pantalla serà emmagatzemada a ZimageZ si si s'activa l'opció <emphasis>-u</emphasis>. Mireu amunt per a més detalls. Aquesta opció només té efecte si les opcions <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o <emphasis>-r</emphasis> s'han activat.</para>
+        </sect4>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="panel-plugin">
+    <title>Ús del connector del panell Xfce</title>
+
+    <sect2 id="add">
+      <title>Afegir el connector</title>
+
+      <para>Per afegir el connector al quadre, feu clic amb el botó dret al quadre i seleccioneu <emphasis>«Afegeix element nous…»</emphasis>. Seleccioneu el connector anomenat <emphasis>«Captura»</emphasis> i ja està.</para>
+    </sect2>
+
+    <sect2 id="set">
+      <title>Configurant el connector</title>
+
+      <para>Podeu configurar com es fan les captures fent clic amb el botó dret sobre el connector i seleccionant <emphasis>«Propietats»</emphasis>. S'us mostrarà un diàleg de preferències molt semblant al de l'aplicació. Podeu donar un cop d'ull allà per les diferents opcions.</para>
+    </sect2>
+
+    <sect2 id="use">
+      <title>Ús del connector</title>
+
+      <para>Només cal fer clic al connector per a fer una captura de pantalla. Podeu emprar la roda del ratolí sobre el connector per a canviar entre les diferents regions a capturar.</para>
+    </sect2>
+
+  </sect1>
+
+</article>
