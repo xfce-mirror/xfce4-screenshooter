@@ -2,7 +2,6 @@
 # Copyright (C) 2007 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Jeff Bailes <thepizzaking@gmail.com>, 2007.
-# , fuzzy
 # . Print a message to advise to use help when a non existing cli option is
 # . passed to the executable.
 #
@@ -12,7 +11,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-15 00:29+0100\n"
-"PO-Revision-Date: 2009-08-18 13:14+1000\n"
+"PO-Revision-Date: 2009-11-29 15:06+1100\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +113,7 @@ msgstr "seconds"
 
 #: ../lib/screenshooter-dialogs.c:917
 msgid "Action"
-msgstr ""
+msgstr "Action"
 
 #: ../lib/screenshooter-dialogs.c:945
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -122,9 +121,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:961
-#, fuzzy
 msgid "Save"
-msgstr "Save in:"
+msgstr "Save"
 
 #: ../lib/screenshooter-dialogs.c:966
 msgid "Save the screenshot to a PNG file"
@@ -159,33 +157,32 @@ msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Host the screenshot on ZimageZ, a free online image hosting service"
 
 #: ../lib/screenshooter-dialogs.c:1046
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 
 #: ../lib/screenshooter-dialogs.c:1107
 msgid "Save screenshot as..."
 msgstr "Save screenshot as..."
 
 #: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "An error occured when creating the XMLRPC request."
-msgstr "An error occurred while uploading the screenshot."
+msgstr "An error occurred when creating the XMLRPC request."
 
 #: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "An error occured when transfering the data to ZimageZ."
-msgstr "An error occurred while uploading the screenshot."
+msgstr "An error occurred when transferring the data to ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "An error occured when parsing the response from ZimageZ."
-msgstr "An error occurred while uploading the screenshot."
+msgstr "An error occurred when parsing the response from ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:228
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Taken on %s, at %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:295
@@ -223,6 +220,8 @@ msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr ""
+"An unexpected reply from ZimageZ was received. The upload of the screenshot "
+"failed."
 
 #: ../lib/screenshooter-zimagez.c:498
 msgid ""
@@ -362,9 +361,8 @@ msgid "Delay in seconds before taking the screenshot"
 msgstr "Delay in seconds before taking the screenshot"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "Do not display the mouse on the screenshot"
+msgstr "Display the mouse on the screenshot"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -377,7 +375,7 @@ msgstr "Version information"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 
 #: ../src/main.c:136
 #, c-format
@@ -385,6 +383,8 @@ msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
 
 #: ../src/main.c:150
 #, c-format
