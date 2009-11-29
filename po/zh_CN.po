@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-29 11:58+0100\n"
-"PO-Revision-Date: 2009-11-29 19:06+0800\n"
+"PO-Revision-Date: 2009-11-29 19:20+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -175,7 +175,7 @@ msgstr "解析 ZimageZ 的响应时出现一个错误。"
 #: ../lib/screenshooter-zimagez.c:230
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr "截取 %s，在 %s"
+msgstr "截图日期 %s，时间 %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:297
