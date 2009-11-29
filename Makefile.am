@@ -246,7 +246,8 @@ endif
 
 daimagesdir = $(datadir)/xfce4/doc/da/images
 daimages_DATA = \
-	docs/manual/da/images/xfce4-screenshooter-dialog.png \
+	docs/manual/da/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/da/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/da/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/da/images/xfce4-screenshooter-zimagez-result-dialog.png
 
@@ -262,7 +263,8 @@ endif
 
 esimagesdir = $(datadir)/xfce4/doc/es/images
 esimages_DATA = \
-	docs/manual/es/images/xfce4-screenshooter-dialog.png \
+	docs/manual/es/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/es/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/es/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/es/images/xfce4-screenshooter-zimagez-result-dialog.png
 
@@ -278,7 +280,8 @@ endif
 
 frimagesdir = $(datadir)/xfce4/doc/fr/images
 frimages_DATA = \
-	docs/manual/fr/images/xfce4-screenshooter-dialog.png \
+	docs/manual/fr/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/fr/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/fr/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/fr/images/xfce4-screenshooter-zimagez-result-dialog.png
 
@@ -294,7 +297,8 @@ endif
 
 glimagesdir = $(datadir)/xfce4/doc/gl/images
 glimages_DATA = \
-	docs/manual/gl/images/xfce4-screenshooter-dialog.png \
+	docs/manual/gl/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/gl/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/gl/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/gl/images/xfce4-screenshooter-zimagez-result-dialog.png
 
@@ -310,7 +314,8 @@ endif
 
 idimagesdir = $(datadir)/xfce4/doc/id/images
 idimages_DATA = \
-	docs/manual/id/images/xfce4-screenshooter-dialog.png \
+	docs/manual/id/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/id/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/id/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/id/images/xfce4-screenshooter-zimagez-result-dialog.png
 
@@ -326,7 +331,8 @@ endif
 
 itimagesdir = $(datadir)/xfce4/doc/it/images
 itimages_DATA = \
-	docs/manual/it/images/xfce4-screenshooter-dialog.png \
+	docs/manual/it/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/it/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/it/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/it/images/xfce4-screenshooter-zimagez-result-dialog.png
 
@@ -359,7 +365,8 @@ endif
 
 trimagesdir = $(datadir)/xfce4/doc/tr/images
 trimages_DATA = \
-	docs/manual/tr/images/xfce4-screenshooter-dialog.png \
+	docs/manual/tr/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/tr/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/tr/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/tr/images/xfce4-screenshooter-zimagez-result-dialog.png
 
