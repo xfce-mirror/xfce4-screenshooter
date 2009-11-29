@@ -363,6 +363,25 @@ trimages_DATA = \
 	docs/manual/tr/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/tr/images/xfce4-screenshooter-zimagez-result-dialog.png
 
+
+# Siplified Chinese documentation
+zhcndocdir = $(datadir)/xfce4/doc/zh_CN
+zhcndoc_DATA = docs/manual/zh_CN/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/zh_CN/xfce4-screenshooter.html: docs/manual/zh_CN/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/zh_CN/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/zh_CN/xfce4-screenshooter.xml
+endif
+endif
+
+zhcnimagesdir = $(datadir)/xfce4/doc/zh_CN/images
+zhcnimages_DATA = \
+	docs/manual/zh_CN/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/zh_CN/images/xfce4-screenshooter-dialog2.png \
+	docs/manual/zh_CN/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/zh_CN/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+
 # Extra dist and distclean rules
 EXTRA_DIST = \
 	README	\
