@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.4.91\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-15 00:29+0100\n"
+"POT-Creation-Date: 2009-11-29 09:53+0100\n"
 "PO-Revision-Date: 2009-11-15 21:39+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -162,16 +162,19 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pratilik</span>"
 msgid "Save screenshot as..."
 msgstr "Simpan cuplikan layar sebagai..."
 
-#: ../lib/screenshooter-zimagez.c:134, c-format
-msgid "An error occured when creating the XMLRPC request."
+#: ../lib/screenshooter-zimagez.c:134
+#, fuzzy, c-format
+msgid "An error occurred when creating the XMLRPC request."
 msgstr "Galat terjadi ketika membuat permintaan XMLRPC."
 
-#: ../lib/screenshooter-zimagez.c:153, c-format
-msgid "An error occured when transfering the data to ZimageZ."
+#: ../lib/screenshooter-zimagez.c:153
+#, fuzzy, c-format
+msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "Galat terjadi ketika mengirimkan data ke ZimageZ."
 
-#: ../lib/screenshooter-zimagez.c:178, c-format
-msgid "An error occured when parsing the response from ZimageZ."
+#: ../lib/screenshooter-zimagez.c:178
+#, fuzzy, c-format
+msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Galat terjadi ketika mengurai balasan dari ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:228

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-15 00:29+0100\n"
+"POT-Creation-Date: 2009-11-29 09:53+0100\n"
 "PO-Revision-Date: 2009-06-02 19:49+0200\n"
 "Last-Translator: Samed Beyribey <ras0ir@eventualis.org>\n"
 "Language-Team: Turkish <turkce@pardus.org.tr>\n"
@@ -168,17 +168,17 @@ msgstr "Ekran görüntüsünü farklı kaydet..."
 
 #: ../lib/screenshooter-zimagez.c:134
 #, fuzzy, c-format
-msgid "An error occured when creating the XMLRPC request."
+msgid "An error occurred when creating the XMLRPC request."
 msgstr "Ekran görüntüsü aktarılırken bir hata meydana geldi."
 
 #: ../lib/screenshooter-zimagez.c:153
 #, fuzzy, c-format
-msgid "An error occured when transfering the data to ZimageZ."
+msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "Ekran görüntüsü aktarılırken bir hata meydana geldi."
 
 #: ../lib/screenshooter-zimagez.c:178
 #, fuzzy, c-format
-msgid "An error occured when parsing the response from ZimageZ."
+msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Ekran görüntüsü aktarılırken bir hata meydana geldi."
 
 #: ../lib/screenshooter-zimagez.c:228

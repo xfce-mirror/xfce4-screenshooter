@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-15 00:29+0100\n"
+"POT-Creation-Date: 2009-11-29 09:53+0100\n"
 "PO-Revision-Date: 2009-11-15 16:58+0100\n"
 "Last-Translator: Douart Patrick <patrick.2@laposte.net>\n"
 "Language-Team: French <xfce-i18n@xfce.org>\n"
@@ -164,18 +164,18 @@ msgid "Save screenshot as..."
 msgstr "Enregistrer la capture d'écran sous..."
 
 #: ../lib/screenshooter-zimagez.c:134
-#, c-format
-msgid "An error occured when creating the XMLRPC request."
+#, fuzzy, c-format
+msgid "An error occurred when creating the XMLRPC request."
 msgstr "\tUne erreur s'est produite lors de la création de la requête XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:153
-#, c-format
-msgid "An error occured when transfering the data to ZimageZ."
+#, fuzzy, c-format
+msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "Une erreur s'est produite lors du transfert de données à ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:178
-#, c-format
-msgid "An error occured when parsing the response from ZimageZ."
+#, fuzzy, c-format
+msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Une erreur s'est produite lors de l'analyse de la réponse de ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:228
@@ -375,8 +375,8 @@ msgstr "Informations sur la version"
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr ""
-"Options contradictoires : --%s and --%s ne peuvent pas être utilisées en même "
-"temps.\n"
+"Options contradictoires : --%s and --%s ne peuvent pas être utilisées en "
+"même temps.\n"
 
 #: ../src/main.c:136
 #, c-format
@@ -411,4 +411,3 @@ msgid ""
 msgstr ""
 "Prendre une capture d'écran de l'écran tout entier, de la fenêtre active ou "
 "d'une zone"
-

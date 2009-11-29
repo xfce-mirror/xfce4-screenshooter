@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-15 00:29+0100\n"
+"POT-Creation-Date: 2009-11-29 09:53+0100\n"
 "PO-Revision-Date: 2009-09-19 11:50+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -173,17 +173,17 @@ msgstr "Gardar a captura de pantalla coma..."
 
 #: ../lib/screenshooter-zimagez.c:134
 #, fuzzy, c-format
-msgid "An error occured when creating the XMLRPC request."
+msgid "An error occurred when creating the XMLRPC request."
 msgstr "Produciuse un erro mentres se subía a captura."
 
 #: ../lib/screenshooter-zimagez.c:153
 #, fuzzy, c-format
-msgid "An error occured when transfering the data to ZimageZ."
+msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "Produciuse un erro mentres se subía a captura."
 
 #: ../lib/screenshooter-zimagez.c:178
 #, fuzzy, c-format
-msgid "An error occured when parsing the response from ZimageZ."
+msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Produciuse un erro mentres se subía a captura."
 
 #: ../lib/screenshooter-zimagez.c:228

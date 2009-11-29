@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-15 00:29+0100\n"
+"POT-Creation-Date: 2009-11-29 09:53+0100\n"
 "PO-Revision-Date: 2009-10-21 13:36+0100\n"
 "Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
 "Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
@@ -170,17 +170,17 @@ msgstr "Saglabāt ekrānkopiju kā..."
 
 #: ../lib/screenshooter-zimagez.c:134
 #, fuzzy, c-format
-msgid "An error occured when creating the XMLRPC request."
+msgid "An error occurred when creating the XMLRPC request."
 msgstr "Notika kļūda pie ekrānkopijas augšupielādes."
 
 #: ../lib/screenshooter-zimagez.c:153
 #, fuzzy, c-format
-msgid "An error occured when transfering the data to ZimageZ."
+msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "Notika kļūda pie ekrānkopijas augšupielādes."
 
 #: ../lib/screenshooter-zimagez.c:178
 #, fuzzy, c-format
-msgid "An error occured when parsing the response from ZimageZ."
+msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Notika kļūda pie ekrānkopijas augšupielādes."
 
 #: ../lib/screenshooter-zimagez.c:228

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-15 00:29+0100\n"
+"POT-Creation-Date: 2009-11-29 09:53+0100\n"
 "PO-Revision-Date: 2009-07-20 15:17+0100\n"
 "Last-Translator: Piotr Sokół <piotr.sokol@10g.pl>\n"
 "Language-Team: Polish\n"
@@ -163,17 +163,17 @@ msgstr "Wybór pliku"
 
 #: ../lib/screenshooter-zimagez.c:134
 #, fuzzy, c-format
-msgid "An error occured when creating the XMLRPC request."
+msgid "An error occurred when creating the XMLRPC request."
 msgstr "Wystąpił błąd podczas wysyłania obrazu."
 
 #: ../lib/screenshooter-zimagez.c:153
 #, fuzzy, c-format
-msgid "An error occured when transfering the data to ZimageZ."
+msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "Wystąpił błąd podczas wysyłania obrazu."
 
 #: ../lib/screenshooter-zimagez.c:178
 #, fuzzy, c-format
-msgid "An error occured when parsing the response from ZimageZ."
+msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Wystąpił błąd podczas wysyłania obrazu."
 
 #: ../lib/screenshooter-zimagez.c:228
