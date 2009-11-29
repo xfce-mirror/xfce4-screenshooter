@@ -164,17 +164,17 @@ msgid "Save screenshot as..."
 msgstr "Enregistrer la capture d'écran sous..."
 
 #: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr "\tUne erreur s'est produite lors de la création de la requête XMLRPC."
+msgstr "Une erreur s'est produite lors de la création de la requête XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "Une erreur s'est produite lors du transfert de données à ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Une erreur s'est produite lors de l'analyse de la réponse de ZimageZ."
 
@@ -191,7 +191,6 @@ msgid "Initialize the connection..."
 msgstr "Initialisation de la connexion..."
 
 #: ../lib/screenshooter-zimagez.c:343
-#, fuzzy
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
