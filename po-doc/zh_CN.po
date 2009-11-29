@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "POT-Creation-Date: 2009-11-15 00:21+0100\n"
-"PO-Revision-Date: 2009-11-29 12:55+0800\n"
+"PO-Revision-Date: 2009-11-29 14:23+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (simplified) <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -277,6 +277,10 @@ msgid ""
 "uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left "
 "column of the save dialog."
 msgstr ""
+"Xfce4 屏幕截图工具同样能够将截图保存到任何 GVfs 支持的远程文件系统上，例如 FTP、"
+"SAMBA、SFTP 或者通过 SSH 连接的远程计算机。您只需要通过 <emphasis>gvfs-connect</"
+"emphasis> 或者 <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</"
+"ulink> 连接至远程计算机，该计算机就会出现在保存对话框的左侧栏上。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:218(title)
 msgid "Copy to the clipboard"
@@ -288,6 +292,8 @@ msgid ""
 "paste the screenshot in another application, such as a word processor. This "
 "option is only available when a clipboard manager is running."
 msgstr ""
+"<emphasis>“复制至剪贴板”</emphasis> 选项允许您粘贴截图至另外的应用程序，例如"
+"文本处理软件。该选项仅当剪贴板管理器运行时有效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:229(title)
 msgid "Open with"
@@ -300,6 +306,9 @@ msgid ""
 "the drop-down list. Applications which support images are automatically "
 "detected and added to the drop-down list."
 msgstr ""
+"<emphasis>“以...打开”</emphasis> 选项保存屏幕截图至系统的缓存目录，并使用您从"
+"下拉列表中选择的应用程序将其打开。本程序将会自动检测支持图像的应用程序并将其"
+"添加至下拉列表之中。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:241(title)
 msgid "Host on ZimageZ"
@@ -313,16 +322,20 @@ msgid ""
 "small thumbnail of your screenshot, which can be used to create thumbnails "
 "pointing to the full size screenshot."
 msgstr ""
+"<emphasis>“上传至 ZimageZ”</emphasis> 选项将会将截图上传至 ZimageZ 这个免费的"
+"在线图像存储服务从而方便地与他人共享。ZimageZ 自动生成您上传的图像的大小两幅"
+"缩略图，可以用做指向完整大小图像的缩略图链接。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:252(para)
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
 "this dialog:"
 msgstr ""
+"按下 <emphasis>\"OK\"</emphasis> 按钮后，下面对话框将会出现:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
-msgstr ""
+msgstr "上传屏幕截图至 ZimageZ 的对话框"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:269(para)
 msgid ""
@@ -332,6 +345,11 @@ msgid ""
 "between using the menu up right. You must fill all fields of this dialog. "
 "Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
 msgstr ""
+"如果您未拥有一个 ZimageZ 用户名，您需要在 "
+"<ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ 网站</"
+"ulink>上创建一个用户。该网站支持多种语言，您可以使用右上角的菜单进行切换。"
+"您必须填写本对话框中的所有项目。当您点击 <emphasis>\"OK\"</emphasis> 按钮后，"
+"上传就会开始。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:279(para)
 msgid ""
@@ -339,10 +357,13 @@ msgid ""
 "large thumbnail, the small thumbnails, as well examples of HTML and BBcode "
 "to create a thumbnail pointing to the full size screenshot:"
 msgstr ""
+"下面的对话框将会提供您在 ZimageZ 上该幅截图的完整大小，大缩略图和小缩略图的"
+"链接，此外还提供 HTML 和 BBcode 的代码例子以便您创建指向完整大小图像的缩略图"
+"链接。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr ""
+msgstr "提供您在 ZimageZ 上的屏幕截图链接的对话框"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:303(title)
 msgid "Via command line"
@@ -356,6 +377,10 @@ msgid ""
 "desktop environment so that it launches xfce4-screenshooter with one or "
 "several of the following options when the Prt Scrn key is pressed."
 msgstr ""
+"命令行选项允许您快速的进行屏幕截图。使用命令行操作同样允许您配置使用通常在"
+"键盘左上角的 Print Screen 按键进行屏幕截图。要这样做，请配置您桌面环境中的"
+"键盘快捷键绑定以在按下 Prt Scrn 键时以下一个或多个选项运行 "
+"xfce4-screenshooter。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:315(title)
 msgid "The command line options"
@@ -370,6 +395,7 @@ msgid ""
 "The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
 "active window."
 msgstr ""
+"<emphasis>-w</emphasis> 选项允许您截取当前活动窗口的图像。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:327(title)
 msgid "The -f option"
@@ -380,6 +406,7 @@ msgid ""
 "The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
 "entire screen."
 msgstr ""
+"<emphasis>-f</emphasis> 选项允许您截取整个屏幕的图像。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:336(title)
 msgid "The -r option"
@@ -391,6 +418,8 @@ msgid ""
 "captured by clicking and dragging a rectangle over the area of screen that "
 "you wish to capture, before releasing the mouse button."
 msgstr ""
+"<emphasis>-r</emphasis> 选项允许您通过点击并拖拽鼠标后松开选择截取屏幕上一个"
+"矩形区域。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:347(title)
 msgid "The -d option"
@@ -403,6 +432,9 @@ msgid ""
 "emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
 "is given."
 msgstr ""
+"给定 <emphasis>-d</emphasis> 选项，后接一个正整数以设置截图前延时。"
+"此选项仅在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者"
+"<emphasis>-r</emphasis> 选项时生效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
 msgid "The -s option"
@@ -415,6 +447,9 @@ msgid ""
 "has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or "
 "the <emphasis>-r</emphasis> option is given."
 msgstr ""
+"给定 <emphasis>-s</emphasis> 选项，后接一个已存在目录的路径，截图将会保存至"
+"该目录。此选项仅在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者"
+"<emphasis>-r</emphasis> 选项时生效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:371(title)
 msgid "The -o option"
@@ -428,6 +463,10 @@ msgid ""
 "emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, "
 "the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
+"给定 <emphasis>-o</emphasis> 选项，后接一个程序名，截图将会保存在系统的缓存"
+"目录，然后使用该程序打开截图。此选项仅在给定 "
+"<emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者 <emphasis>-r</emphasis> "
+"选项时生效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:385(title)
 msgid "The -u option"
@@ -440,7 +479,7 @@ msgid ""
 "effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
 "<emphasis>-r</emphasis> option is given."
 msgstr ""
-"如果给定 <emphasis>-u</emphasis> 选项，截图将会上传至 ZimageZ。查看上面章节以"
+"给定 <emphasis>-u</emphasis> 选项，截图将会上传至 ZimageZ。查看上面章节以"
 "获得详细信息。此选项仅在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者"
 "<emphasis>-r</emphasis> 选项时生效。"
 
