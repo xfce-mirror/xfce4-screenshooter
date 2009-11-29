@@ -90,7 +90,7 @@ static GdkWindow
       *needs_unref = FALSE;
       *border = FALSE;
     }
-  else if (G_UNLIKELY (gdk_window_is_destroyed (window)))
+  else if (G_UNLIKELY (GDK_WINDOW_DESTROYED (window)))
     {
       TRACE ("The active window is destroyed, fallback to the root window.");
 
