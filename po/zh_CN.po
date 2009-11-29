@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-29 11:58+0100\n"
-"PO-Revision-Date: 2009-11-29 14:26+0800\n"
+"PO-Revision-Date: 2009-11-29 19:06+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -156,17 +156,17 @@ msgid "Save screenshot as..."
 msgstr "截图另存为..."
 
 #: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when creating the XMLRPC request."
 msgstr "创建 XMLRPC 请求时出现一个错误。"
 
 #: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "传送数据至 ZimageZ 时出现一个错误。"
 
 #: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "解析 ZimageZ 的响应时出现一个错误。"
 
@@ -183,7 +183,6 @@ msgid "Initialize the connection..."
 msgstr "初始化连接..."
 
 #: ../lib/screenshooter-zimagez.c:343
-#, fuzzy
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
