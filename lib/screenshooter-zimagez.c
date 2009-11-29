@@ -792,7 +792,7 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the comment entry */
   comment_entry = gtk_entry_new ();
-  gtk_widget_set_tooltip_text (title_entry,
+  gtk_widget_set_tooltip_text (comment_entry,
                                _("A comment on the screenshot, it will be used when"
                                  " displaying the screenshot on ZimageZ"));
   gtk_entry_set_activates_default (GTK_ENTRY (comment_entry), TRUE);
