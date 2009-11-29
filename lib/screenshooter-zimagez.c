@@ -97,7 +97,7 @@ open_url_hook (SexyUrlLabel *url_label, gchar *url, gpointer user_data)
 
   if (!g_spawn_command_line_async (command, &error))
     {
-      TRACE ("An error occured when opening the URL");
+      TRACE ("An error occurred when opening the URL");
 
       screenshooter_error ("%s", error->message);
       g_error_free (error);
@@ -131,7 +131,7 @@ do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
     {
       err = g_error_new (SOUP_XMLRPC_FAULT,
                          SOUP_XMLRPC_FAULT_APPLICATION_ERROR,
-                         _("An error occured when creating the XMLRPC"
+                         _("An error occurred when creating the XMLRPC"
                            " request."));
       g_propagate_error (error, err);
 
@@ -150,7 +150,7 @@ do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
 
       err = g_error_new (SOUP_XMLRPC_FAULT,
                          SOUP_XMLRPC_FAULT_TRANSPORT_ERROR,
-                         _("An error occured when transfering the data"
+                         _("An error occurred when transferring the data"
                            " to ZimageZ."));
       g_propagate_error (error, err);
       g_object_unref (msg);
@@ -175,7 +175,7 @@ do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
 
           err = g_error_new (SOUP_XMLRPC_FAULT,
                              SOUP_XMLRPC_FAULT_APPLICATION_ERROR,
-                             _("An error occured when parsing the response"
+                             _("An error occurred when parsing the response"
                                " from ZimageZ."));
           g_propagate_error (error, err);
         }
