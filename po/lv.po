@@ -9,15 +9,14 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-29 11:58+0100\n"
-"PO-Revision-Date: 2009-10-21 13:36+0100\n"
-"Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
+"PO-Revision-Date: 2009-11-29 11:18+0100\n"
+"Last-Translator: Rihards Priedītis <rprieditis@gmail.com>\n"
 "Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
-"2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
 #: ../lib/screenshooter-dialogs.c:478
 #, c-format
@@ -29,15 +28,13 @@ msgid "Transfer"
 msgstr "Pārsūtīt"
 
 #: ../lib/screenshooter-dialogs.c:581
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
-"transferred to:</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Ekrāna kopija tiek pārsūtīta "
-"uz:</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekrāna kopija tiek pārsūtīta uz:</span>"
 
-#: ../lib/screenshooter-dialogs.c:697 ../lib/screenshooter-dialogs.c:714
-#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:697
+#: ../lib/screenshooter-dialogs.c:714
+#: ../lib/screenshooter-dialogs.c:905
+#: ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
@@ -60,7 +57,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ķeramais reģions</span>
 msgid "Entire screen"
 msgstr "Visu ekrānu"
 
-#: ../lib/screenshooter-dialogs.c:781 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:781
+#: ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "Uzņemt visa ekrāna ekrānkopiju"
@@ -69,7 +67,8 @@ msgstr "Uzņemt visa ekrāna ekrānkopiju"
 msgid "Active window"
 msgstr "Aktīvais logs"
 
-#: ../lib/screenshooter-dialogs.c:796 ../src/main.c:90
+#: ../lib/screenshooter-dialogs.c:796
+#: ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
 msgstr "Uzņemt aktīvā loga ekrānkopiju"
@@ -78,15 +77,11 @@ msgstr "Uzņemt aktīvā loga ekrānkopiju"
 msgid "Select a region"
 msgstr "Atlasīt reģionu"
 
-#: ../lib/screenshooter-dialogs.c:809 ../src/main.c:68
+#: ../lib/screenshooter-dialogs.c:809
+#: ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:318
-msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
-msgstr ""
-"Atlasīt reģionu kuru uzņemt. Klikšķiniet uz ekrāna neatlaižot peli un "
-"velciet peli līdz nākamajam reģiona stūrim, pēc tam atlaižiet peles pogu."
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
+msgstr "Atlasīt reģionu kuru uzņemt. Klikšķiniet uz ekrāna neatlaižot peli un velciet peli līdz nākamajam reģiona stūrim, pēc tam atlaižiet peles pogu."
 
 #: ../lib/screenshooter-dialogs.c:819
 msgid "Capture the mouse pointer"
@@ -97,11 +92,8 @@ msgid "Display the mouse pointer on the screenshot"
 msgstr "Attēlot peles kursoru ekrānkopijā"
 
 #: ../lib/screenshooter-dialogs.c:840
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Aizture pirms uzņemšanas</"
-"span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aizture pirms uzņemšanas</span>"
 
 #: ../lib/screenshooter-dialogs.c:862
 msgid "Delay in seconds before the screenshot is taken"
@@ -113,7 +105,7 @@ msgstr "sekundes"
 
 #: ../lib/screenshooter-dialogs.c:917
 msgid "Action"
-msgstr ""
+msgstr "Darbība"
 
 #: ../lib/screenshooter-dialogs.c:945
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -121,9 +113,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Darbības</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:961
-#, fuzzy
 msgid "Save"
-msgstr "Saglabāt iekš:"
+msgstr "Saglabāt"
 
 #: ../lib/screenshooter-dialogs.c:966
 msgid "Save the screenshot to a PNG file"
@@ -145,7 +136,8 @@ msgstr "Atvērt ar:"
 msgid "Open the screenshot with the chosen application"
 msgstr "Atvērt ekrānkopiju ar izvēlēto lietotni"
 
-#: ../lib/screenshooter-dialogs.c:1018 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:1018
+#: ../src/main.c:63
 msgid "Application to open the screenshot"
 msgstr "Lietotne ar kuru atvērt ekrānkopiju"
 
@@ -153,42 +145,40 @@ msgstr "Lietotne ar kuru atvērt ekrānkopiju"
 msgid "Host on ZimageZ"
 msgstr "Izstādīt uz ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1032 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1032
+#: ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
-"Izstādīt ekrānkopiju uz ZimageZ, bezmaksas tiešsaistes attēlu izstādīšanas "
-"pakalpojums"
+msgstr "Izstādīt ekrānkopiju uz ZimageZ, bezmaksas tiešsaistes attēlu izstādīšanas pakalpojums"
 
 #: ../lib/screenshooter-dialogs.c:1046
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Saites</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Priekšskatījums</span>"
 
 #: ../lib/screenshooter-dialogs.c:1107
 msgid "Save screenshot as..."
 msgstr "Saglabāt ekrānkopiju kā..."
 
 #: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr "Notika kļūda pie ekrānkopijas augšupielādes."
+msgstr "Notika kļūda pie XMLRPC pieprasījuma izveidošanas."
 
 #: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr "Notika kļūda pie ekrānkopijas augšupielādes."
+msgstr "Notika kļūda pie datu sūtīšanas uz ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr "Notika kļūda pie ekrānkopijas augšupielādes."
+msgstr "Notika kļūda pie ZimageZ atbildes parsēšanas."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:230
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Uzņemts %s, %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:297
@@ -196,14 +186,11 @@ msgid "Initialize the connection..."
 msgstr "Savienojuma inicializācija..."
 
 #: ../lib/screenshooter-zimagez.c:343
-#, fuzzy
 msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Lūdzu aizpildiet sekojošos laukus ar savu <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Lūdzu aizpildiet sekojošos laukus ar savu <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "lietotāja vārdu, paroli un ekrānkopijas detaļām."
 
 #: ../lib/screenshooter-zimagez.c:400
@@ -211,30 +198,21 @@ msgid "Check the user information..."
 msgstr "Lietotāja informācijas pārbaudīšana..."
 
 #: ../lib/screenshooter-zimagez.c:407
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
-"must fill all the fields.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Jums "
-"ir jāaizpilda visi lauki.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Jums ir jāaizpilda visi lauki.</span>"
 
 #: ../lib/screenshooter-zimagez.c:421
 msgid "Login on ZimageZ..."
 msgstr "ZimageZ pieteikšanās..."
 
-#: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
-msgid ""
-"An unexpected reply from ZimageZ was received. The upload of the screenshot "
-"failed."
-msgstr ""
+#: ../lib/screenshooter-zimagez.c:461
+#: ../lib/screenshooter-zimagez.c:612
+msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
+msgstr "Negaidīta atbilde saņemta no ZimageZ. Ekrāna kopijas augšupielāde neizdevās."
 
 #: ../lib/screenshooter-zimagez.c:500
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
-"user and the password you entered do not match. Please retry.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded"
-"\">Lietotāja vārds un parole nesakrīt. Lūdzu mēģiniet vēlreiz.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Lietotāja vārds un parole nesakrīt. Lūdzu mēģiniet vēlreiz.</span>"
 
 #: ../lib/screenshooter-zimagez.c:558
 msgid "Upload the screenshot..."
@@ -260,12 +238,8 @@ msgid "User:"
 msgstr "Lietotājs:"
 
 #: ../lib/screenshooter-zimagez.c:747
-msgid ""
-"Your Zimagez user name, if you do not have one yet please create one on the "
-"Web page linked above"
-msgstr ""
-"Jūsu ZimageZ lietotāja vārds, ja jums nav tāda, lūdzu izveidojiet to augstāk "
-"norādītājā vietnē"
+msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
+msgstr "Jūsu ZimageZ lietotāja vārds, ja jums nav tāda, lūdzu izveidojiet to augstāk norādītājā vietnē"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:753
@@ -282,9 +256,7 @@ msgid "Title:"
 msgstr "Virsraksts:"
 
 #: ../lib/screenshooter-zimagez.c:779
-msgid ""
-"The title of the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr "Ekrānkopijas virsraksts, tiks lietots attēla attēlošanai uz ZimageZ"
 
 #. Create the comment label
@@ -293,9 +265,7 @@ msgid "Comment:"
 msgstr "Komentārs:"
 
 #: ../lib/screenshooter-zimagez.c:796
-msgid ""
-"A comment on the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr "Komentārs par ekrānkopiju, tas tiks attēlots kopā ar attēlu uz ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:919
@@ -322,12 +292,8 @@ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Saites</span>"
 
 #: ../lib/screenshooter-zimagez.c:1010
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
-"to the full size image</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Sīktēla kods, kurš norāda uz "
-"pilna izmēra attēlu</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Sīktēla kods, kurš norāda uz pilna izmēra attēlu</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1026
@@ -362,9 +328,8 @@ msgid "Delay in seconds before taking the screenshot"
 msgstr "Aizture sekundēs pirms ekrānkopijas uzņemšanas"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "Nerādīt peli uz ekrānkopijas"
+msgstr "Attēlot peles kursoru uz ekrāna kopijas"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -377,14 +342,12 @@ msgstr "Versijas informācija"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Konfliktējošās opcijas: --%s un --%s nevar tikt lietotas vienlaicīgi.\n"
 
 #: ../src/main.c:136
 #, c-format
-msgid ""
-"The --%s option is only used when --fullscreen, --window or --region is "
-"given. It will be ignored.\n"
-msgstr ""
+msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
+msgstr "Opcija --%s tiek lietota tikai tad, kad tiek lietotats --fullscreen, --window vai --region. Opcija tiek ignorēta.\n"
 
 #: ../src/main.c:150
 #, c-format
@@ -393,8 +356,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Mēģiniet %s --help , lai redzētu pilnu pieejamo komandas līnijas iespēju "
-"sarakstu.\n"
+"Mēģiniet %s --help , lai redzētu pilnu pieejamo komandas līnijas iespēju sarakstu.\n"
 
 #: ../src/main.c:282
 #, c-format
@@ -403,32 +365,25 @@ msgstr "%s nav derīgā direktorija, noklusētā direktorija tiks izmantota."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Uzņemt pilna ekrāna, aktīva loga, vai reģiona kopiju"
 
 #~ msgid "Screenshot.png"
 #~ msgstr "Ekrānkopija.png"
-
 #~ msgid "Screenshot-%d.png"
 #~ msgstr "Ekrānkopija-%d.png"
-
 #~ msgid ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
 #~ msgstr ""
 #~ "<span weight=\"bold\" stretch=\"semiexpanded\">Pēc uzņemšanas</span>"
-
 #~ msgid "Show the save dialog"
 #~ msgstr "Rādīt saglabāšanas dialogu"
-
 #~ msgid ""
 #~ "The save dialog allows you to change the file name and the save location"
 #~ msgstr ""
 #~ "Saglabāšanas dialogs ļauj mainīt faila nosaukumu un saglabāšanas vietu"
-
 #~ msgid "Close the application"
 #~ msgstr "Aizvērt lietotni"
-
 #~ msgid ""
 #~ "If unchecked, the current window will be displayed again after the "
 #~ "screenshot has been taken to allow you to take several screenshots in a "
@@ -436,20 +391,16 @@ msgstr "Uzņemt pilna ekrāna, aktīva loga, vai reģiona kopiju"
 #~ msgstr ""
 #~ "Ja neatzīmēts, pašreizējais logs tiks attēlots atkal pēc ekrānkopijas "
 #~ "uzņemšanas, lai jūs varat uzņemt vairākus ekrānakopijas rindā"
-
 #~ msgid "Default save location"
 #~ msgstr "Noklusēta saglabāšanas vieta"
-
 #~ msgid "Set the default save location"
 #~ msgstr "Uzstādīt noklusēto saglabāšanas vietu"
-
 #~ msgid ""
 #~ "An error occurred during the XML exchange: %s (%d).\n"
 #~ " The screenshot could not be uploaded."
 #~ msgstr ""
 #~ "Notika kļūda XML apmaiņas laikā: %s (%d).\n"
 #~ " Ekrānkopiju nevarēja augšupielādēt."
-
 #~ msgid "Do not display the save dialog"
 #~ msgstr "Nerādīt saglabāšanas logu"
 
@@ -460,3 +411,4 @@ msgstr "Uzņemt pilna ekrāna, aktīva loga, vai reģiona kopiju"
 #, fuzzy
 #~ msgid "Applicatio to open the screenshot"
 #~ msgstr "Bildēt ekrānkopiju"
+
