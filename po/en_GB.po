@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-29 11:58+0100\n"
-"PO-Revision-Date: 2009-11-29 15:06+1100\n"
+"PO-Revision-Date: 2009-11-29 22:31+1100\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -165,17 +165,17 @@ msgid "Save screenshot as..."
 msgstr "Save screenshot as..."
 
 #: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when creating the XMLRPC request."
 msgstr "An error occurred when creating the XMLRPC request."
 
 #: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "An error occurred when transferring the data to ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "An error occurred when parsing the response from ZimageZ."
 
@@ -192,13 +192,12 @@ msgid "Initialize the connection..."
 msgstr "Initialise the connection..."
 
 #: ../lib/screenshooter-zimagez.c:343
-#, fuzzy
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Please file the following fields with your <a href=\"http://www.zimagez.com"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 
