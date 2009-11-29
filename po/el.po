@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-29 09:53+0100\n"
+"POT-Creation-Date: 2009-11-29 11:58+0100\n"
 "PO-Revision-Date: 2009-06-19 17:42-0800\n"
 "Last-Translator: Evaggelos Balaskas <ebalaskas@ebalaskas.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -187,19 +187,22 @@ msgstr "Παρουσιάστηκε ένα σφάλμα κατά το ανέβα�
 msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Παρουσιάστηκε ένα σφάλμα κατά το ανέβασμα του στιγμιότυπου."
 
-#: ../lib/screenshooter-zimagez.c:228
+#. For translators: the first wildcard is the date, the second one the time,
+#. * e.g. "Taken on 12/31/99, at 23:13:48".
+#: ../lib/screenshooter-zimagez.c:230
 #, c-format
 msgid "Taken on %s, at %s"
 msgstr ""
 
 #. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:295
+#: ../lib/screenshooter-zimagez.c:297
 msgid "Initialize the connection..."
 msgstr "Αρχικοποίηση της σύνδεσης..."
 
-#: ../lib/screenshooter-zimagez.c:341
+#: ../lib/screenshooter-zimagez.c:343
+#, fuzzy
 msgid ""
-"Please file the following fields with your <a href=\"http://www.zimagez.com"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
@@ -207,11 +210,11 @@ msgstr ""
 "\"http://www.zimagez.com\">ZimageZ</a> \n"
 "όνομα χρήστη, συνθηματικό και τις λεπτομέρειες σχετικά με το στιγμιότυπο."
 
-#: ../lib/screenshooter-zimagez.c:398
+#: ../lib/screenshooter-zimagez.c:400
 msgid "Check the user information..."
 msgstr "Ελέγξτε τις πληροφορίες του χρήστη."
 
-#: ../lib/screenshooter-zimagez.c:405
+#: ../lib/screenshooter-zimagez.c:407
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
@@ -219,17 +222,17 @@ msgstr ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Πρέπει "
 "να συμπληρώσετε όλα τα πεδία.</span>"
 
-#: ../lib/screenshooter-zimagez.c:419
+#: ../lib/screenshooter-zimagez.c:421
 msgid "Login on ZimageZ..."
 msgstr "Σύνδεση στο ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:459 ../lib/screenshooter-zimagez.c:610
+#: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr ""
 
-#: ../lib/screenshooter-zimagez.c:498
+#: ../lib/screenshooter-zimagez.c:500
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
@@ -238,30 +241,30 @@ msgstr ""
 "όνομα χρήστη και το συνθηματικό που εισάγεται δεν ταιριάζουν. Παρακαλώ "
 "δοκιμάστε πάλι.</span>"
 
-#: ../lib/screenshooter-zimagez.c:556
+#: ../lib/screenshooter-zimagez.c:558
 msgid "Upload the screenshot..."
 msgstr "Ανέβασμα του στιγμιότυπου..."
 
-#: ../lib/screenshooter-zimagez.c:589
+#: ../lib/screenshooter-zimagez.c:591
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "Παρουσιάστηκε ένα σφάλμα κατά το ανέβασμα του στιγμιότυπου."
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:622
+#: ../lib/screenshooter-zimagez.c:624
 msgid "Close the session on ZimageZ..."
 msgstr "Κλείσιμο της συνεδρίας στο ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:692
+#: ../lib/screenshooter-zimagez.c:694
 msgid "Details about the screenshot for ZimageZ"
 msgstr "Λεπτομέρειες σχετικά με το στιγμιότυπο για το ZimageZ"
 
 #. Create the user label
-#: ../lib/screenshooter-zimagez.c:734
+#: ../lib/screenshooter-zimagez.c:736
 msgid "User:"
 msgstr "Χρήστης:"
 
-#: ../lib/screenshooter-zimagez.c:745
+#: ../lib/screenshooter-zimagez.c:747
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
@@ -270,20 +273,20 @@ msgstr ""
 "δημιουργείστε στην παραπάνω ιστοσελίδα "
 
 #. Create the password label
-#: ../lib/screenshooter-zimagez.c:751
+#: ../lib/screenshooter-zimagez.c:753
 msgid "Password:"
 msgstr "Συνθηματικό:"
 
-#: ../lib/screenshooter-zimagez.c:761
+#: ../lib/screenshooter-zimagez.c:763
 msgid "The password for the user above"
 msgstr "Το συνθηματικό για τον παραπάνω χρήστη"
 
 #. Create the title label
-#: ../lib/screenshooter-zimagez.c:767
+#: ../lib/screenshooter-zimagez.c:769
 msgid "Title:"
 msgstr "Τίτλος:"
 
-#: ../lib/screenshooter-zimagez.c:777
+#: ../lib/screenshooter-zimagez.c:779
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
@@ -292,11 +295,11 @@ msgstr ""
 "στιγμιότυπο στο ZimageZ"
 
 #. Create the comment label
-#: ../lib/screenshooter-zimagez.c:783
+#: ../lib/screenshooter-zimagez.c:785
 msgid "Comment:"
 msgstr "Σχόλιο:"
 
-#: ../lib/screenshooter-zimagez.c:794
+#: ../lib/screenshooter-zimagez.c:796
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
@@ -304,30 +307,30 @@ msgstr ""
 "Ένα σχόλιο στο στιγμιότυπο, θα χρησιμοποιηθεί όταν θα εμφανίζεται το "
 "στιγμιότυπο στο ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:917
+#: ../lib/screenshooter-zimagez.c:919
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
 msgstr "<a href=\"%s\">Πλήρες μέγεθος εικόνα</a>"
 
-#: ../lib/screenshooter-zimagez.c:919
+#: ../lib/screenshooter-zimagez.c:921
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr "<a href=\"%s\">Μεγάλη μικρογραφία</a>"
 
-#: ../lib/screenshooter-zimagez.c:921
+#: ../lib/screenshooter-zimagez.c:923
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
 msgstr "<a href=\"%s\">Μικρή μικρογραφία</a>"
 
-#: ../lib/screenshooter-zimagez.c:937
+#: ../lib/screenshooter-zimagez.c:939
 msgid "My screenshot on ZimageZ"
 msgstr "Το στιγμιότυπό μου στο ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:963
+#: ../lib/screenshooter-zimagez.c:965
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Σύνδεσμοι</span>"
 
-#: ../lib/screenshooter-zimagez.c:1008
+#: ../lib/screenshooter-zimagez.c:1010
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
@@ -336,20 +339,20 @@ msgstr ""
 "που δείχνει σε μία ολόκληρη μεγάλου μεγέθους εικόνα</span>"
 
 #. HTML title
-#: ../lib/screenshooter-zimagez.c:1024
+#: ../lib/screenshooter-zimagez.c:1026
 msgid "HTML"
 msgstr "HTML"
 
 #. BB title
-#: ../lib/screenshooter-zimagez.c:1045
+#: ../lib/screenshooter-zimagez.c:1047
 msgid "BBCode for forums"
 msgstr "BBCode για forums"
 
-#: ../lib/screenshooter-zimagez.c:1174
+#: ../lib/screenshooter-zimagez.c:1176
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:1207
+#: ../lib/screenshooter-zimagez.c:1209
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Κατάσταση</span>"
 
