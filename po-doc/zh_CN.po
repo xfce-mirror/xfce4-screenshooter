@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "POT-Creation-Date: 2009-11-15 00:21+0100\n"
-"PO-Revision-Date: 2009-11-29 12:44+0800\n"
+"PO-Revision-Date: 2009-11-29 12:55+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (simplified) <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -346,7 +346,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:303(title)
 msgid "Via command line"
-msgstr ""
+msgstr "通过命令行"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:305(para)
 msgid ""
@@ -359,11 +359,11 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:315(title)
 msgid "The command line options"
-msgstr ""
+msgstr "命令行选项"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:318(title)
 msgid "The -w option"
-msgstr ""
+msgstr "-w 选项"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:320(para)
 msgid ""
@@ -373,7 +373,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:327(title)
 msgid "The -f option"
-msgstr ""
+msgstr "-f 选项"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:329(para)
 msgid ""
@@ -383,7 +383,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:336(title)
 msgid "The -r option"
-msgstr ""
+msgstr "-r 选项"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:338(para)
 msgid ""
@@ -394,7 +394,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:347(title)
 msgid "The -d option"
-msgstr ""
+msgstr "-d 选项"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:349(para)
 msgid ""
@@ -406,7 +406,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
 msgid "The -s option"
-msgstr ""
+msgstr "-s 选项"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:361(para)
 msgid ""
@@ -418,7 +418,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:371(title)
 msgid "The -o option"
-msgstr ""
+msgstr "-o 选项"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:373(para)
 msgid ""
@@ -431,7 +431,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:385(title)
 msgid "The -u option"
-msgstr ""
+msgstr "-u 选项"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:387(para)
 msgid ""
@@ -440,6 +440,9 @@ msgid ""
 "effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
 "<emphasis>-r</emphasis> option is given."
 msgstr ""
+"如果给定 <emphasis>-u</emphasis> 选项，截图将会上传至 ZimageZ。查看上面章节以"
+"获得详细信息。此选项仅在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者"
+"<emphasis>-r</emphasis> 选项时生效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:400(title)
 msgid "Using the Xfce panel plugin"
@@ -455,6 +458,8 @@ msgid ""
 "<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
 "\"Screenshot\"</emphasis>, and add it."
 msgstr ""
+"要添加该插件至面板，请在面板上单击右键，选择 <emphasis>“添加新项目”</emphasis>。"
+"选择名为 <emphasis>“屏幕截图”</emphasis> 的插件然后添加。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:413(title)
 msgid "Configuring the plugin"
@@ -467,6 +472,9 @@ msgid ""
 "similar to the dialog of the main application will appear. Please have a "
 "look above for the different preferences."
 msgstr ""
+"通过右键点击该插件按钮并选择 <emphasis>“属性”</emphasis> 选项，您可以配置该"
+"截图插件。一个与主程序的对话框相似的首选项对话框将会出现。请查看上面章节对"
+"不同选项的介绍。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:425(title)
 msgid "Using the plugin"
