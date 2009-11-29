@@ -340,7 +340,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   TRACE ("Ask the user to fill the information items.");
   screenshooter_job_ask_info (job, liststore,
-                              _("Please file the following fields with your "
+                              _("Please fill the following fields with your "
                                 "<a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
                                 "user name, passsword and details about the screenshot."));
 
