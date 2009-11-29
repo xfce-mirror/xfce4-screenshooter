@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-15 00:29+0100\n"
-"PO-Revision-Date: 2009-11-16 23:26+0800\n"
+"PO-Revision-Date: 2009-11-29 14:26+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">这张截图将会被传送至: </span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">这张截图将会被传送至:</span>"
 
 #: ../lib/screenshooter-dialogs.c:697 ../lib/screenshooter-dialogs.c:714
 #: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
@@ -141,11 +141,11 @@ msgstr "用以打开截图的程序"
 
 #: ../lib/screenshooter-dialogs.c:1028
 msgid "Host on ZimageZ"
-msgstr "上传至ZimageZ"
+msgstr "上传至 ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1032 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "上传屏幕截图至ZimageZ，一个免费的在线存储图片服务"
+msgstr "上传屏幕截图至 ZimageZ，一个免费的在线存储图片服务"
 
 #: ../lib/screenshooter-dialogs.c:1046
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -173,7 +173,7 @@ msgstr "解析 ZimageZ 的响应时出现一个错误。"
 #: ../lib/screenshooter-zimagez.c:228
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "截取 %s，在 %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:295
@@ -186,7 +186,7 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"填写以下栏目，包括您的<a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"填写以下项目，包括您的<a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "用户名，密码以及截图的详细信息。"
 
 #: ../lib/screenshooter-zimagez.c:398
@@ -203,14 +203,13 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:419
 msgid "Login on ZimageZ..."
-msgstr "登录到ZimageZ..."
+msgstr "登录到 ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:459 ../lib/screenshooter-zimagez.c:610
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr ""
-"收到一个未预期的来自 ZimageZ 的回复。上传屏幕截图失败。"
+msgstr "收到一个未预期的来自 ZimageZ 的回复。上传屏幕截图失败。"
 
 #: ../lib/screenshooter-zimagez.c:498
 msgid ""
@@ -232,11 +231,11 @@ msgstr "上传屏幕截图时出现一个错误。"
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:622
 msgid "Close the session on ZimageZ..."
-msgstr "结束与ZimageZ的会话..."
+msgstr "结束与 ZimageZ 的会话..."
 
 #: ../lib/screenshooter-zimagez.c:692
 msgid "Details about the screenshot for ZimageZ"
-msgstr "放上ZimageZ的关于截图的详细信息"
+msgstr "放上 ZimageZ 的关于截图的详细信息"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:734
@@ -248,7 +247,7 @@ msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
-"您的ZimageZ用户名，如果您还未拥有一个ZimageZ用户名，请点击上方的网页链接创建"
+"您的 ZimageZ 用户名，如果您还未拥有一个 ZimageZ 用户名，请点击上方的网页链接创建"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:751
@@ -268,7 +267,7 @@ msgstr "标题:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "屏幕截图的标题，将会在ZimageZ上显示该截图时出现"
+msgstr "屏幕截图的标题，将会在 ZimageZ 上显示该截图时出现"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:783
@@ -279,7 +278,7 @@ msgstr "注释:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "屏幕截图的注释，将会在ZimageZ上显示该截图时出现"
+msgstr "屏幕截图的注释，将会在 ZimageZ 上显示该截图时出现"
 
 #: ../lib/screenshooter-zimagez.c:917
 #, c-format
@@ -298,7 +297,7 @@ msgstr "<a href=\"%s\">小缩略图</a>"
 
 #: ../lib/screenshooter-zimagez.c:937
 msgid "My screenshot on ZimageZ"
-msgstr "我在ZimageZ上的截图"
+msgstr "我在 ZimageZ 上的截图"
 
 #: ../lib/screenshooter-zimagez.c:963
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
@@ -320,7 +319,7 @@ msgstr "HTML"
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1045
 msgid "BBCode for forums"
-msgstr "在论坛中使用的BBCode"
+msgstr "在论坛中使用的 BBCode"
 
 #: ../lib/screenshooter-zimagez.c:1174
 msgid "ZimageZ"
@@ -367,8 +366,8 @@ msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr ""
-"--%s 选项只当给定 --fullscreen, --window 或者 --region 当中的一个时生效。"
-"该选项将被忽略。\n"
+"--%s 选项只当给定 --fullscreen, --window 或者 --region 当中的一个时生效。该选"
+"项将被忽略。\n"
 
 #: ../src/main.c:150
 #, c-format
