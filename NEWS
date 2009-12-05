@@ -48,6 +48,9 @@
       CLI options which are not coherent.
     - Correctly save preferences, even if the rc file does not exist 
       (Mike Massonnet).
+    - One second is now the minimal delay when using the interactive
+      mode. This caused the screenshooter dialog to be partially displayed
+      on the screenshot in some cases.
 
 === Version 1.6.0 ===
 
