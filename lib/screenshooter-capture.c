@@ -908,16 +908,8 @@ GdkPixbuf *screenshooter_take_screenshot (gint     region,
   gdk_window_process_all_updates ();
 
   /* wait for n=delay seconds */
-  /* Workaround: sleep at least one second to make sure the
-   * WM/X server hast time to select the new active window after
-   * the dialog is closed */
   if (region != SELECT)
-    {
-      if (region == ACTIVE_WINDOW && !plugin)
-        delay ? sleep (delay): sleep (1);
-      else
-        sleep (delay);
-    }
+    sleep (delay);
 
   /* Get the window/desktop we want to screenshot*/
   if (region == FULLSCREEN)

@@ -36,7 +36,7 @@ gboolean mouse = FALSE;
 gboolean upload = FALSE;
 gchar *screenshot_dir;
 gchar *application;
-gint delay = 0;
+gint delay = 1;
 
 
 
@@ -247,7 +247,10 @@ int main (int argc, char **argv)
       /* Whether to display the mouse pointer on the screenshot */
       mouse ? (sd->show_mouse = 1) : (sd->show_mouse = 0);
 
-      sd->delay = delay;
+      if (delay > 0)
+        sd->delay = delay;
+      else
+        delay = 1;
 
       if (application != NULL)
         {

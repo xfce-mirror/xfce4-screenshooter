@@ -55,7 +55,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   const gchar *default_uri = screenshooter_get_xdg_image_dir_uri ();
 
   XfceRc *rc;
-  gint delay = 0;
+  gint delay = 1;
   gint region = FULLSCREEN;
   gint action = SAVE;
   gint show_mouse = 1;
@@ -103,6 +103,10 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 
   /* And set the sd values */
   TRACE ("Set the values of the struct");
+
+  /* Don't accept null delay */
+  if (delay == 0)
+    delay = 1;
 
   sd->delay = delay;
   sd->region = region;
