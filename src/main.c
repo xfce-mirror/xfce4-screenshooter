@@ -36,7 +36,7 @@ gboolean mouse = FALSE;
 gboolean upload = FALSE;
 gchar *screenshot_dir;
 gchar *application;
-gint delay = 1;
+gint delay = 0;
 
 
 
@@ -247,10 +247,7 @@ int main (int argc, char **argv)
       /* Whether to display the mouse pointer on the screenshot */
       mouse ? (sd->show_mouse = 1) : (sd->show_mouse = 0);
 
-      if (delay > 0)
-        sd->delay = delay;
-      else
-        delay = 1;
+      sd->delay = delay;
 
       if (application != NULL)
         {
@@ -296,6 +293,10 @@ int main (int argc, char **argv)
   else
     {
       GtkWidget *dialog;
+
+      /* Use 0 as the minimal delay */
+      if (sd->delay == 0)
+        sd->delay = 1;
 
       /* Set the dialog up */
       dialog = screenshooter_region_dialog_new (sd, FALSE);
