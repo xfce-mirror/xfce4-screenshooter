@@ -4,18 +4,20 @@
 # This file is distributed under the same license as the xfce package.
 #
 # Piarres Beobide <pi@beobide.net>, 2006, 2008, 2009.
+# Piarres Beobide <pi+debian@beobide.net>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-29 11:58+0100\n"
-"PO-Revision-Date: 2009-06-14 00:00+0200\n"
-"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
-"Language-Team: Euskara <debian-l10n-basque@lists.debian.org>\n"
+"PO-Revision-Date: 2009-12-15 12:33+0100\n"
+"Last-Translator: Piarres Beobide <pi+debian@beobide.net>\n"
+"Language-Team: Basque <debian-l10n-basque@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../lib/screenshooter-dialogs.c:478
 #, c-format
@@ -113,7 +115,7 @@ msgstr "segundu"
 
 #: ../lib/screenshooter-dialogs.c:917
 msgid "Action"
-msgstr ""
+msgstr "Ekintza"
 
 #: ../lib/screenshooter-dialogs.c:945
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -121,9 +123,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekintza</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:961
-#, fuzzy
 msgid "Save"
-msgstr "Gorde hemen:"
+msgstr "Gorde"
 
 #: ../lib/screenshooter-dialogs.c:966
 msgid "Save the screenshot to a PNG file"
@@ -159,35 +160,31 @@ msgstr ""
 "Ipini irudia ZimageZ-en, doako sare bidezko irudi ostalaritza zerbitzu bat"
 
 #: ../lib/screenshooter-dialogs.c:1046
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Loturak</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aurreikusi</span>"
 
 #: ../lib/screenshooter-dialogs.c:1107
 msgid "Save screenshot as..."
 msgstr "Gorde pantaila-argazkia honela ..."
 
-#: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#: ../lib/screenshooter-zimagez.c:134, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr "Erreore bat gertatu da irudia igotzerakoan."
+msgstr "Errore bat gertatu da XMLRPC eskaera sortzerakoan"
 
-#: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#: ../lib/screenshooter-zimagez.c:153, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr "Erreore bat gertatu da irudia igotzerakoan."
+msgstr "Errore bat gertatu da datuak ZimageZ-ra bidaltzean."
 
-#: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#: ../lib/screenshooter-zimagez.c:178, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr "Erreore bat gertatu da irudia igotzerakoan."
+msgstr "Errore bat gertatu da ZimageZ-ko erantzuna analizatzean."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:230
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "%s-en artua, %s-ean"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:297
@@ -195,7 +192,6 @@ msgid "Initialize the connection..."
 msgstr "Abiarazi konexioa...."
 
 #: ../lib/screenshooter-zimagez.c:343
-#, fuzzy
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
@@ -226,6 +222,8 @@ msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr ""
+"Espero ez zen erantzun bat eskuratu da ZimageZ-tik. Pantaila-argazki igoerak "
+"huts egin du."
 
 #: ../lib/screenshooter-zimagez.c:500
 msgid ""
@@ -363,12 +361,11 @@ msgstr "Kopiatu _lotura helbidea"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Pantaila-argazkia ateratzeko atzerapena segundutan"
+msgstr "Pantaila-argazkia ateratzeko atzerapena segundotan"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "Ez erakutsi sagua pantaila-argazkian"
+msgstr "Bistarazi sagua pantaila-argazkian"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -381,7 +378,7 @@ msgstr "Bertsio argibideak"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Aukera elkar-jotzea: --%s eta --%s ezin dira aldi berean erabili.\n"
 
 #: ../src/main.c:136
 #, c-format
@@ -389,6 +386,8 @@ msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr ""
+"--%s aukera --fullscreen, --window edo --region aukera ematean bakarrik "
+"erabiltzen da. Baztertua izango da.\n"
 
 #: ../src/main.c:150
 #, c-format
