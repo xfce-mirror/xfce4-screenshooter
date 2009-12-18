@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: xfce-i18n@xfce.org\n"
 "POT-Creation-Date: 2009-11-15 00:21+0100\n"
-"PO-Revision-Date: 2009-12-18 16:03+0100\n"
+"PO-Revision-Date: 2009-12-18 18:34+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,29 +20,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+# CAMBIAR!!!!
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:97(None)
 msgid "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e5a09b9b9962ed18"
-msgstr ""
+msgstr "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e5a09b9b9962ed18"
 
+# CAMBIAR!!!!
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:169(None)
 msgid "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5dfc980fb216025e0"
-msgstr ""
+msgstr "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5dfc980fb216025e0"
 
+# CAMBIAR!!!!
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:260(None)
 msgid "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c8102c88e978eb7ef63994f2648f5ae6"
-msgstr ""
+msgstr "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c8102c88e978eb7ef63994f2648f5ae6"
 
+# CAMBIAR!!!!
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:289(None)
 msgid "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468def960a376d5a856f2fcb3b35daf1"
-msgstr ""
+msgstr "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468def960a376d5a856f2fcb3b35daf1"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:12(title)
 msgid "Xfce4 Screenshooter"
@@ -142,14 +146,12 @@ msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
 msgstr "\"Toda a pantalla\" toma unha captura de pantalla da pantalla completa tal como a ve vostede."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:119(listitem)
-#, fuzzy
 msgid "\"Active window\" takes a screenshot of the active window. This will be the one that was active before this dialog appeared, or if you set a delay, the one that is active after the delay."
 msgstr "\"Fiestra activa\" realiza unha captura de pantalla da fiestra activa, sendo esta a que estaba activa antes de que aparecera este diálogo, ou se se define un tempo de espera, a que estea activa cando remate dito tempo de espera."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:125(listitem)
-#, fuzzy
 msgid "\"Select a region\" allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
-msgstr "\"Seleccionar unha zona\" permítelle seleccionar a zona a capturar premendo nun punto da pantalla sen soltar o botón do rato, arrastrando o punteiro do rato á esquina oposta da zona, e soltando o botón do rato."
+msgstr "\"Seleccionar unha zona\" permítelle seleccionar a zona a capturar premendo nun punto da pantalla e sen soltar o botón do rato, arrastrando o punteiro do rato á esquina oposta da zona, e soltando o botón do rato."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:135(title)
 msgid "Capturing the pointer"
@@ -164,7 +166,6 @@ msgid "Delay before capturing"
 msgstr "Atraso antes da captura"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
-#, fuzzy
 msgid "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to set the delay that will elapse between pressing the <emphasis>\"OK\"</emphasis> button and screenshot being taken. This delay will allow you to open menus or to perform whatever action you require to see displayed in the screenshot."
 msgstr "A sección <emphasis>\"Tempo de espera antes da captura\"</emphasis> permítelle definir o tempo de espera que transcorrerá dende que se prema o botón <emphasis>\"Aceptar\"</emphasis> ata que se realice a captura de pantalla. Este tempo de espera permitiralle abrir menús ou facer calquera acción que desexe que se vexa na captura de pantalla."
 
@@ -185,9 +186,8 @@ msgid "Preview"
 msgstr "Vista previa"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:182(para)
-#, fuzzy
 msgid "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the screenshot."
-msgstr "A sección <emphasis>\"Acción\"</emphasis> permítelle escoller que se vai facer ca captura de pantalla."
+msgstr "A sección <emphasis>\"Vista previa\"</emphasis> mostra unha miniatura da captura de pantalla."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:189(title)
 msgid "Action"
@@ -214,18 +214,16 @@ msgid "Copy to the clipboard"
 msgstr "Copiar ó portarretallos"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:220(para)
-#, fuzzy
 msgid "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to paste the screenshot in another application, such as a word processor. This option is only available when a clipboard manager is running."
-msgstr "A opción <emphasis>\"Copiar ao portarretallos\"</emphasis> permítelle pegar a captura de pantalla noutra aplicación, coma un procesador de textos. Saír da aplicación antes de que se pegue a captura de pantalla a miúdo provoca que a imaxe se elimine do portarretallos. Algúns xestores de portarretallos permítenlle evitar isto."
+msgstr "A opción <emphasis>\"Copiar ao portarretallos\"</emphasis> permítelle pegar a captura de pantalla noutra aplicación, por exemplo nun procesador de textos. Esta opción só está dispoñible cando se está executando un xestor de portarretallos."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:229(title)
 msgid "Open with"
 msgstr "Abrir con"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:231(para)
-#, fuzzy
 msgid "The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the system's temporary directory and opens it with the application chosen from the drop-down list. Applications which support images are automatically detected and added to the drop-down list."
-msgstr "A opción <emphasis>\"Abrir con\"</emphasis> garda a captura de pantalla no directorio temporal do sistema e ábrea ca aplicación definida usando a lista despregable da dereita. A aplicacións que soportan imaxes detéctanse automaticamente e engádense á lista despregable."
+msgstr "A opción <emphasis>\"Abrir con\"</emphasis> garda a captura de pantalla no directorio temporal do sistema e ábrea co aplicativo seleccionado na lista despregable da dereita. Os aplicativos que soportan imaxes detéctanse automaticamente e engádense á lista despregable."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:241(title)
 msgid "Host on ZimageZ"
@@ -260,7 +258,6 @@ msgid "Via command line"
 msgstr "A través da liña de comandos"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:305(para)
-#, fuzzy
 msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
 msgstr "As opcións de liña de comandos permítenlle realizar capturas de pantalla rapidamente. Tamén lle permiten configurar a tecla Imprimir pantalla que está na parte superior dereita da maior parte dos teclados de xeito que realice capturas de pantalla. Para facer isto, configure as asociacións de teclas do seu ambiente de escritorio de forma que inicie xfce4-screenshooter con unha ou varias das seguintes opcións cando se prema a tecla Impr pant."
 
@@ -289,36 +286,32 @@ msgid "The -r option"
 msgstr "A opción -r"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:338(para)
-#, fuzzy
 msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
-msgstr "A opción <emphasis>-r</emphasis> permítelle seleccionar unha zona que se vai capturar premendo nun punto da pantalla sen soltar o botón do rato, e arrastrando o punteiro á esquina oposta da zona, e soltando o botón do rato."
+msgstr "A opción <emphasis>-r</emphasis> permítelle seleccionar a zona que se vai capturar premendo nun punto da pantalla e sen soltar o botón do rato, arrastrando o punteiro ata a esquina oposta da zona, e soltando o botón do rato."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:347(title)
 msgid "The -d option"
 msgstr "A opción -d"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:349(para)
-#, fuzzy
 msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "A opción <emphasis>-d</emphasis> seguida por un número enteiro positivo permítelle definir o tempo de espera antes de realizar a captura de pantalla cando se proporciona a opción <emphasis>-f</emphasis>, a opción <emphasis>-w</emphasis> ou a opción <emphasis>-r</emphasis>."
+msgstr "A opción <emphasis>-d</emphasis> seguida por un número enteiro positivo permítelle definir o tempo de espera antes de realizar a captura de pantalla cando se proporciona a opción <emphasis>-w</emphasis>, a opción <emphasis>-f</emphasis> ou a opción <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
 msgid "The -s option"
 msgstr "A opción -s"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:361(para)
-#, fuzzy
 msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "A opción <emphasis>-d</emphasis> seguida por un número enteiro positivo permítelle definir o tempo de espera antes de realizar a captura de pantalla cando se proporciona a opción <emphasis>-f</emphasis>, a opción <emphasis>-w</emphasis> ou a opción <emphasis>-r</emphasis>."
+msgstr "A opción <emphasis>-s</emphasis> seguida pola ruta dun cartafol existente permítelle definir onde se gardan as capturas de pantalla. Esta opción só ten efecto se proporciona a opción <emphasis>-w</emphasis>, a opción <emphasis>-f</emphasis> ou a opción <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:371(title)
 msgid "The -o option"
 msgstr "A opción -o"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:373(para)
-#, fuzzy
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "Se se proporciona a opción <emphasis>-o</emphasis> seguida por un nome de aplicación, a captura de pantalla gardarase no directorio temporal do sistema e abrirase ca aplicación cuxo nome se indicou despois da opción <emphasis>-o</emphasis>. Esta opción só ten efecto se se proporciona a opción <emphasis>-f</emphasis>, a opción <emphasis>-w</emphasis> ou a opción <emphasis>-r</emphasis>."
+msgstr "Se se proporciona a opción <emphasis>-o</emphasis>, seguida por un nome de aplicativo, a captura de pantalla gardarase no directorio temporal do sistema e abrirase co aplicativo cuxo nome se indicou despois da opción <emphasis>-o</emphasis>. Esta opción só ten efecto se se proporciona a opción  a opción <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou a opción <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:385(title)
 msgid "The -u option"
@@ -354,7 +347,7 @@ msgstr "Uso do engadido"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:427(para)
 msgid "To take a screenshot, just click on the plugin. You can use the scroll wheel on the plugin button to switch between the different regions to be captured."
-msgstr "Para realizar unha captura de pantalla simplemente prema no engadido. Pode usar a roda do rato sobre o botón do engadido para escoller a rexión a capturar."
+msgstr "Para realizar unha captura de pantalla simplemente prema no engadido. Pode usar a roda do rato sobre o botón do engadido para escoller a zona a capturar."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:0(None)
