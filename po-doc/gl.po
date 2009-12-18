@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: xfce-i18n@xfce.org\n"
-"POT-Creation-Date: 2009-11-29 10:31+0100\n"
-"PO-Revision-Date: 2009-09-19 11:50+0100\n"
+"POT-Creation-Date: 2009-11-15 00:21+0100\n"
+"PO-Revision-Date: 2009-12-18 16:03+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -23,33 +23,25 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:97(None)
-msgid ""
-"@@image: 'images/xfce4-screenshooter-dialog1.png'; "
-"md5=ceb772964fa6ca07e5a09b9b9962ed18"
+msgid "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e5a09b9b9962ed18"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:169(None)
-msgid ""
-"@@image: 'images/xfce4-screenshooter-dialog2.png'; "
-"md5=fa48885f54ca6ab5dfc980fb216025e0"
+msgid "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5dfc980fb216025e0"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:260(None)
-msgid ""
-"@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
-"md5=c8102c88e978eb7ef63994f2648f5ae6"
+msgid "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c8102c88e978eb7ef63994f2648f5ae6"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:289(None)
-msgid ""
-"@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
-"md5=468def960a376d5a856f2fcb3b35daf1"
+msgid "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468def960a376d5a856f2fcb3b35daf1"
 msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:12(title)
@@ -71,16 +63,10 @@ msgstr "Jérôme Guelfucci"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:24(holder)
 msgid "Sam Swift"
-msgstr ""
+msgstr "Sam Swift"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:28(para)
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License, Version 1.1 or any later "
-"version published by the Free Software Foundation; with no Invariant "
-"Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The "
-"complete license text is available from the <ulink type=\"http\" url="
-"\"http://www.gnu.org/\">Free Software Foundation</ulink>."
+msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
 msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:40(firstname)
@@ -97,40 +83,27 @@ msgstr "jeromeg@xfce.org"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:47(firstname)
 msgid "Sam"
-msgstr ""
+msgstr "Sam"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:48(surname)
 msgid "Swift"
-msgstr ""
+msgstr "Swift"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:50(email)
 msgid "renmush@gmail.com"
-msgstr ""
+msgstr "renmush@gmail.com"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:55(releaseinfo)
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
-msgstr ""
-"Este manual describe a versión @PACKAGE_VERSION@ de Xfce4 Screenshooter."
+msgstr "Este manual describe a versión @PACKAGE_VERSION@ de Xfce4 Screenshooter."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:61(title)
 msgid "Introduction to Xfce4 Screenshooter"
 msgstr "Introdución a Xfce4 Screenshooter"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:63(para)
-#, fuzzy
-msgid ""
-"This application allows you to capture the entire screen, the active window "
-"or a selected region. You can set the delay that elapses before the "
-"screenshot is taken and the action to be performed afterwards: save the "
-"screenshot to a PNG file, copy it to the clipboard, open it using another "
-"application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com"
-"\">ZimageZ</ulink>, a free online image hosting service."
-msgstr ""
-"Esta aplicación permítelle capturar a pantalla completa, a ventá activa ou "
-"unha zona seleccionada. Pode definir o tempo de espera que transcorre antes "
-"de que se tome a captura de pantalla e a acción que se realizará ca captura "
-"de pantalla: gardala nun ficheiro PNG, copiala ao portarretallos, ou abrila "
-"usando outra aplicación."
+msgid "This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action to be performed afterwards: save the screenshot to a PNG file, copy it to the clipboard, open it using another application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online image hosting service."
+msgstr "Este aplicativo permítelle capturar toda a pantalla, a fiestra activa ou unha zona seleccionada. Pode definir o tempo de espera que transcorre antes de que se tome a captura de pantalla e a acción que se realizará ca captura de pantalla: gardala nun ficheiro PNG, copiala ao portarretallos, abrila usando outro aplicativo, ou aloxala en <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, un servizo de aloxamento de imaxes en liña gratuito."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:73(para)
 msgid "A plugin for the Xfce panel is also available."
@@ -145,75 +118,46 @@ msgid "Via the user interface"
 msgstr "A través da interface de usuario"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:85(para)
-msgid ""
-"To launch the application, use the \"Screenshot\" item in the \"Accessories"
-"\" category of Xfce's main menu."
-msgstr ""
-"Para iniciar a aplicación use o elemento \"Captura de pantalla\" na "
-"categoría \"Accesorios\" do menú principal de Xfce."
+msgid "To launch the application, use the \"Screenshot\" item in the \"Accessories\" category of Xfce's main menu."
+msgstr "Para iniciar a aplicación use o elemento \"Captura de pantalla\" na categoría \"Accesorios\" do menú principal de Xfce."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:90(para)
 msgid "This window will be displayed:"
-msgstr "Mostrarase esta ventá:"
+msgstr "Mostrarase esta fiestra:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:101(phrase)
 msgid "The window of Xfce4 Screenshooter"
-msgstr "A ventá de Xfce4 Screenshooter"
+msgstr "A fiestra de Xfce4 Screenshooter"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:107(title)
 msgid "Region to capture"
 msgstr "Zona a capturar"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:109(para)
-#, fuzzy
-msgid ""
-"The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
-"what the screenshot will be taken of:"
-msgstr ""
-"A sección <emphasis>\"Zona a capturar\"</emphasis> permítelle definir de "
-"onde se vai tomar a captura de pantalla:"
+msgid "The <emphasis>\"Region to capture\"</emphasis> section allows you to set what the screenshot will be taken of:"
+msgstr "A sección <emphasis>\"Zona a capturar\"</emphasis> permítelle definir de onde se vai tomar a captura de pantalla:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:115(listitem)
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr ""
-"\"Toda a pantalla\" toma unha captura de pantalla da pantalla completa tal "
-"como a ve vostede."
+msgstr "\"Toda a pantalla\" toma unha captura de pantalla da pantalla completa tal como a ve vostede."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:119(listitem)
 #, fuzzy
-msgid ""
-"\"Active window\" takes a screenshot of the active window. This will be the "
-"one that was active before this dialog appeared, or if you set a delay, the "
-"one that is active after the delay."
-msgstr ""
-"\"Ventá activa\" realiza unha captura de pantalla da ventá activa, sendo "
-"esta a que estaba activa antes de que aparecera este diálogo, ou se se "
-"define un tempo de espera, a que estea activa cando remate dito tempo de "
-"espera."
+msgid "\"Active window\" takes a screenshot of the active window. This will be the one that was active before this dialog appeared, or if you set a delay, the one that is active after the delay."
+msgstr "\"Fiestra activa\" realiza unha captura de pantalla da fiestra activa, sendo esta a que estaba activa antes de que aparecera este diálogo, ou se se define un tempo de espera, a que estea activa cando remate dito tempo de espera."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:125(listitem)
 #, fuzzy
-msgid ""
-"\"Select a region\" allows you to select a region to be captured by clicking "
-"and dragging a rectangle over the area of screen that you wish to capture, "
-"before releasing the mouse button."
-msgstr ""
-"\"Seleccionar unha zona\" permítelle seleccionar a zona a capturar premendo "
-"nun punto da pantalla sen soltar o botón do rato, arrastrando o punteiro do "
-"rato á esquina oposta da zona, e soltando o botón do rato."
+msgid "\"Select a region\" allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
+msgstr "\"Seleccionar unha zona\" permítelle seleccionar a zona a capturar premendo nun punto da pantalla sen soltar o botón do rato, arrastrando o punteiro do rato á esquina oposta da zona, e soltando o botón do rato."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:135(title)
 msgid "Capturing the pointer"
-msgstr ""
+msgstr "Capturar o punteiro"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:137(para)
-#, fuzzy
-msgid ""
-"The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to "
-"select whether or not the screenshot will include the mouse pointer."
-msgstr ""
-"A sección <emphasis>\"Zona a capturar\"</emphasis> permítelle definir de "
-"onde se vai tomar a captura de pantalla:"
+msgid "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to select whether or not the screenshot will include the mouse pointer."
+msgstr "A sección <emphasis>\"Capturar o punteiro do rato\"</emphasis> permítelle definir se se inclúe na captura de pantalla o punteiro do rato:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:145(title)
 msgid "Delay before capturing"
@@ -221,90 +165,49 @@ msgstr "Atraso antes da captura"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
 #, fuzzy
-msgid ""
-"The <emphasis>\"Delay before capturing\"</emphasis> section allows you to "
-"set the delay that will elapse between pressing the <emphasis>\"OK\"</"
-"emphasis> button and screenshot being taken. This delay will allow you to "
-"open menus or to perform whatever action you require to see displayed in the "
-"screenshot."
-msgstr ""
-"A sección <emphasis>\"Tempo de espera antes da captura\"</emphasis> "
-"permítelle definir o tempo de espera que transcorrerá dende que se prema o "
-"botón <emphasis>\"Aceptar\"</emphasis> ata que se realice a captura de "
-"pantalla. Este tempo de espera permitiralle abrir menús ou facer calquera "
-"acción que desexe que se vexa na captura de pantalla."
+msgid "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to set the delay that will elapse between pressing the <emphasis>\"OK\"</emphasis> button and screenshot being taken. This delay will allow you to open menus or to perform whatever action you require to see displayed in the screenshot."
+msgstr "A sección <emphasis>\"Tempo de espera antes da captura\"</emphasis> permítelle definir o tempo de espera que transcorrerá dende que se prema o botón <emphasis>\"Aceptar\"</emphasis> ata que se realice a captura de pantalla. Este tempo de espera permitiralle abrir menús ou facer calquera acción que desexe que se vexa na captura de pantalla."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:159(title)
 msgid "After capturing"
 msgstr "Despois de capturar"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:161(para)
-#, fuzzy
-msgid ""
-"After pressing the <emphasis>\"OK\"</emphasis> button a second window will "
-"be displayed:"
-msgstr ""
-"Despois de premer no botón <emphasis>\"Aceptar\"</emphasis> háselle mostrar "
-"este diálogo:"
+msgid "After pressing the <emphasis>\"OK\"</emphasis> button a second window will be displayed:"
+msgstr "Despois de premer no botón <emphasis>\"Aceptar\"</emphasis> háselle mostrar unha segunda fiestra:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:173(phrase)
-#, fuzzy
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
-msgstr "A ventá de Xfce4 Screenshooter"
+msgstr "A fiestra de Xfce4 Screenshooter despois de realizar unha captura de pantalla"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:180(title)
 msgid "Preview"
-msgstr ""
+msgstr "Vista previa"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:182(para)
 #, fuzzy
-msgid ""
-"The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
-"screenshot."
-msgstr ""
-"A sección <emphasis>\"Acción\"</emphasis> permítelle escoller que se vai "
-"facer ca captura de pantalla."
+msgid "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the screenshot."
+msgstr "A sección <emphasis>\"Acción\"</emphasis> permítelle escoller que se vai facer ca captura de pantalla."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:189(title)
 msgid "Action"
 msgstr "Acción"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:191(para)
-#, fuzzy
-msgid ""
-"The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
-"be performed on the screenshot."
-msgstr ""
-"A sección <emphasis>\"Acción\"</emphasis> permítelle escoller que se vai "
-"facer ca captura de pantalla."
+msgid "The <emphasis>\"Action\"</emphasis> section allows you to choose what should be performed on the screenshot."
+msgstr "A sección <emphasis>\"Acción\"</emphasis> permítelle escoller que se vai facer ca captura de pantalla."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:197(title)
-#, fuzzy
 msgid "Save"
-msgstr "Gardar en"
+msgstr "Gardar"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:199(para)
-msgid ""
-"The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG "
-"file. A save dialog will be displayed. You will be able to set the save "
-"location, and the name of the file."
-msgstr ""
+msgid "The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG file. A save dialog will be displayed. You will be able to set the save location, and the name of the file."
+msgstr "A opción <emphasis>\"Gardar\"</emphasis> gardará a captura de pantalla nun ficheiro PNG. Mostrarase un diálogo para que poida seleccionar onde se vai gardar e o nome do ficheiro."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:206(para)
-msgid ""
-"Xfce4 Screenshooter is also able to save the screenshot to any remote file "
-"system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers "
-"accessible via SSH... You just need to connect this remote file system using "
-"<emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www."
-"uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left "
-"column of the save dialog."
-msgstr ""
-"Xfce4 Screenshooter tamén ten a capacidade de gardar a captura de pantalla "
-"en calquera sistema de ficheiros remoto soportado por GVfs, como FTP, SAMBA, "
-"SFTP, ordenadores remotos accesibles mediante SSH... Só ten que conectarse a "
-"este sistema de ficheiros remoto usando <emphasis>gvfs-connect</emphasis> ou "
-"<ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> e "
-"estará dispoñible na columna da esquerda do menú de gardar."
+msgid "Xfce4 Screenshooter is also able to save the screenshot to any remote file system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers accessible via SSH... You just need to connect this remote file system using <emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left column of the save dialog."
+msgstr "Xfce4 Screenshooter tamén ten a capacidade de gardar a captura de pantalla en calquera sistema de ficheiros remoto soportado por GVfs, como FTP, SAMBA, SFTP, ordenadores remotos accesibles mediante SSH... Só ten que conectarse a este sistema de ficheiros remoto usando <emphasis>gvfs-connect</emphasis> ou <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> e estará dispoñible na columna da esquerda do menú de gardar."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:218(title)
 msgid "Copy to the clipboard"
@@ -312,16 +215,8 @@ msgstr "Copiar ó portarretallos"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:220(para)
 #, fuzzy
-msgid ""
-"The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to "
-"paste the screenshot in another application, such as a word processor. This "
-"option is only available when a clipboard manager is running."
-msgstr ""
-"A opción <emphasis>\"Copiar ao portarretallos\"</emphasis> permítelle pegar "
-"a captura de pantalla noutra aplicación, coma un procesador de textos. Saír "
-"da aplicación antes de que se pegue a captura de pantalla a miúdo provoca "
-"que a imaxe se elimine do portarretallos. Algúns xestores de portarretallos "
-"permítenlle evitar isto."
+msgid "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to paste the screenshot in another application, such as a word processor. This option is only available when a clipboard manager is running."
+msgstr "A opción <emphasis>\"Copiar ao portarretallos\"</emphasis> permítelle pegar a captura de pantalla noutra aplicación, coma un procesador de textos. Saír da aplicación antes de que se pegue a captura de pantalla a miúdo provoca que a imaxe se elimine do portarretallos. Algúns xestores de portarretallos permítenlle evitar isto."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:229(title)
 msgid "Open with"
@@ -329,77 +224,36 @@ msgstr "Abrir con"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:231(para)
 #, fuzzy
-msgid ""
-"The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the "
-"system's temporary directory and opens it with the application chosen from "
-"the drop-down list. Applications which support images are automatically "
-"detected and added to the drop-down list."
-msgstr ""
-"A opción <emphasis>\"Abrir con\"</emphasis> garda a captura de pantalla no "
-"directorio temporal do sistema e ábrea ca aplicación definida usando a lista "
-"despregable da dereita. A aplicacións que soportan imaxes detéctanse "
-"automaticamente e engádense á lista despregable."
+msgid "The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the system's temporary directory and opens it with the application chosen from the drop-down list. Applications which support images are automatically detected and added to the drop-down list."
+msgstr "A opción <emphasis>\"Abrir con\"</emphasis> garda a captura de pantalla no directorio temporal do sistema e ábrea ca aplicación definida usando a lista despregable da dereita. A aplicacións que soportan imaxes detéctanse automaticamente e engádense á lista despregable."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:241(title)
 msgid "Host on ZimageZ"
 msgstr "Gardar en ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:243(para)
-msgid ""
-"The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your "
-"screenshot on this free online hosting service, so that you can share it "
-"easily with other people. ZimageZ automatically generates a large and a "
-"small thumbnail of your screenshot, which can be used to create thumbnails "
-"pointing to the full size screenshot."
-msgstr ""
-"A opción <emphasis>\"Gardar en ZimageZ\"</emphasis> permítelle gardar a súa "
-"captura de pantalla neste servizo de aloxamento en liña gratuíto, de forma "
-"que poida compartila facilmente con outra xente. ZimageZ xera "
-"automaticamente unha miniatura grande e outra pequena da súa captura de "
-"pantalla, as cales se poden usar para crear miniaturas que apunten á captura "
-"de pantalla a tamaño completo."
+msgid "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your screenshot on this free online hosting service, so that you can share it easily with other people. ZimageZ automatically generates a large and a small thumbnail of your screenshot, which can be used to create thumbnails pointing to the full size screenshot."
+msgstr "A opción <emphasis>\"Gardar en ZimageZ\"</emphasis> permítelle gardar a súa captura de pantalla neste servizo de aloxamento en liña gratuíto, de forma que poida compartila facilmente con outra xente. ZimageZ xera automaticamente unha miniatura grande e outra pequena da súa captura de pantalla, as cales se poden usar para crear miniaturas que apunten á captura de pantalla a tamaño completo."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:252(para)
-msgid ""
-"After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
-"this dialog:"
-msgstr ""
-"Despois de premer no botón <emphasis>\"Aceptar\"</emphasis> háselle mostrar "
-"este diálogo:"
+msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown this dialog:"
+msgstr "Despois de premer no botón <emphasis>\"Aceptar\"</emphasis> háselle mostrar este diálogo:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
 msgstr "O diálogo para gardar unha captura de pantalla en ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:269(para)
-msgid ""
-"If you do not have a ZimageZ user name, you will need to create one on the "
-"<ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</"
-"ulink>. Several languages are available on this website, you can switch "
-"between using the menu up right. You must fill all fields of this dialog. "
-"Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
-msgstr ""
-"Se non ten un nome de usuario de ZimageZ, terá que crear un no <ulink type="
-"\"http\" url=\"http://www.zimagez.com\">sitio web de ZimageZ</ulink>. Hai "
-"varios idiomas dispoñibles neste sitio web, e pode cambiar de idioma usando "
-"o menú na esquina superior dereita. Debe cubrir tódolos campos deste "
-"diálogo. Unha vez que prema no botón <emphasis>\"Aceptar\"</emphasis> "
-"comezará a suba do ficheiro."
+msgid "If you do not have a ZimageZ user name, you will need to create one on the <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. Several languages are available on this website, you can switch between using the menu up right. You must fill all fields of this dialog. Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
+msgstr "Se non ten un nome de usuario de ZimageZ, terá que crear un no <ulink type=\"http\" url=\"http://www.zimagez.com\">sitio web de ZimageZ</ulink>. Hai varios idiomas dispoñibles neste sitio web, e pode cambiar de idioma usando o menú na esquina superior dereita. Debe cubrir tódolos campos deste diálogo. Unha vez que prema no botón <emphasis>\"Aceptar\"</emphasis> comezará a suba do ficheiro."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:279(para)
-msgid ""
-"The dialog below will give you the links to the full size screenshot, the "
-"large thumbnail, the small thumbnails, as well examples of HTML and BBcode "
-"to create a thumbnail pointing to the full size screenshot:"
-msgstr ""
-"O diálogo de embaixo proporciónalle ligazóns á captura de pantalla a tamaño "
-"completo, á miniatura grande e á pequena, así como exemplos de HTML e BBcode "
-"para crear unha miniatura que apunte á captura de pantalla a tamaño completo:"
+msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
+msgstr "O diálogo de embaixo proporciónalle ligazóns á captura de pantalla a tamaño completo, á miniatura grande e á pequena, así como exemplos de HTML e BBcode para crear unha miniatura que apunte á captura de pantalla a tamaño completo:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr ""
-"O diálogo que proporciona as ligazóns á súa captura de pantalla en ZimageZ"
+msgstr "O diálogo que proporciona as ligazóns á súa captura de pantalla en ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:303(title)
 msgid "Via command line"
@@ -407,19 +261,8 @@ msgstr "A través da liña de comandos"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:305(para)
 #, fuzzy
-msgid ""
-"Command line options allow you to take screenshots quickly. They also allow "
-"you to configure the Print Screen key on the upper right of most keyboards "
-"so that it takes screenshots. To do so, configure the key-bindings of your "
-"desktop environment so that it launches xfce4-screenshooter with one or "
-"several of the following options when the Prt Scrn key is pressed."
-msgstr ""
-"As opcións de liña de comandos permítenlle realizar capturas de pantalla "
-"rapidamente. Tamén lle permiten configurar a tecla Imprimir pantalla que "
-"está na parte superior dereita da maior parte dos teclados de xeito que "
-"realice capturas de pantalla. Para facer isto, configure as asociacións de "
-"teclas do seu ambiente de escritorio de forma que inicie xfce4-screenshooter "
-"con unha ou varias das seguintes opcións cando se prema a tecla Impr pant."
+msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
+msgstr "As opcións de liña de comandos permítenlle realizar capturas de pantalla rapidamente. Tamén lle permiten configurar a tecla Imprimir pantalla que está na parte superior dereita da maior parte dos teclados de xeito que realice capturas de pantalla. Para facer isto, configure as asociacións de teclas do seu ambiente de escritorio de forma que inicie xfce4-screenshooter con unha ou varias das seguintes opcións cando se prema a tecla Impr pant."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:315(title)
 msgid "The command line options"
@@ -430,24 +273,16 @@ msgid "The -w option"
 msgstr "A opción -w"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:320(para)
-msgid ""
-"The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
-"active window."
-msgstr ""
-"A opción <emphasis>-w</emphasis> permítelle realizar unha captura de "
-"pantalla da ventá activa."
+msgid "The <emphasis>-w</emphasis> option allows you to take a screenshot of the active window."
+msgstr "A opción <emphasis>-w</emphasis> permítelle realizar unha captura de pantalla da fiestra activa."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:327(title)
 msgid "The -f option"
 msgstr "A opción -f"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:329(para)
-msgid ""
-"The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
-"entire screen."
-msgstr ""
-"A opción <emphasis>-f</emphasis> permítelle realizar unha captura de "
-"pantalla de toda a pantalla."
+msgid "The <emphasis>-f</emphasis> option allows you to take a screenshot of the entire screen."
+msgstr "A opción <emphasis>-f</emphasis> permítelle realizar unha captura de pantalla de toda a pantalla."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:336(title)
 msgid "The -r option"
@@ -455,14 +290,8 @@ msgstr "A opción -r"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:338(para)
 #, fuzzy
-msgid ""
-"The <emphasis>-r</emphasis> option allows you to select a region to be "
-"captured by clicking and dragging a rectangle over the area of screen that "
-"you wish to capture, before releasing the mouse button."
-msgstr ""
-"A opción <emphasis>-r</emphasis> permítelle seleccionar unha zona que se vai "
-"capturar premendo nun punto da pantalla sen soltar o botón do rato, e "
-"arrastrando o punteiro á esquina oposta da zona, e soltando o botón do rato."
+msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
+msgstr "A opción <emphasis>-r</emphasis> permítelle seleccionar unha zona que se vai capturar premendo nun punto da pantalla sen soltar o botón do rato, e arrastrando o punteiro á esquina oposta da zona, e soltando o botón do rato."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:347(title)
 msgid "The -d option"
@@ -470,16 +299,8 @@ msgstr "A opción -d"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:349(para)
 #, fuzzy
-msgid ""
-"The <emphasis>-d</emphasis> option followed by a positive integer allows you "
-"to set the delay before taking the screenshot when the <emphasis>-w</"
-"emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
-"is given."
-msgstr ""
-"A opción <emphasis>-d</emphasis> seguida por un número enteiro positivo "
-"permítelle definir o tempo de espera antes de realizar a captura de pantalla "
-"cando se proporciona a opción <emphasis>-f</emphasis>, a opción <emphasis>-"
-"w</emphasis> ou a opción <emphasis>-r</emphasis>."
+msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr "A opción <emphasis>-d</emphasis> seguida por un número enteiro positivo permítelle definir o tempo de espera antes de realizar a captura de pantalla cando se proporciona a opción <emphasis>-f</emphasis>, a opción <emphasis>-w</emphasis> ou a opción <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
 msgid "The -s option"
@@ -487,16 +308,8 @@ msgstr "A opción -s"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:361(para)
 #, fuzzy
-msgid ""
-"The <emphasis>-s</emphasis> option followed by the path to an existing "
-"folder allows you to set where the screenshots are saved. This option only "
-"has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or "
-"the <emphasis>-r</emphasis> option is given."
-msgstr ""
-"A opción <emphasis>-d</emphasis> seguida por un número enteiro positivo "
-"permítelle definir o tempo de espera antes de realizar a captura de pantalla "
-"cando se proporciona a opción <emphasis>-f</emphasis>, a opción <emphasis>-"
-"w</emphasis> ou a opción <emphasis>-r</emphasis>."
+msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr "A opción <emphasis>-d</emphasis> seguida por un número enteiro positivo permítelle definir o tempo de espera antes de realizar a captura de pantalla cando se proporciona a opción <emphasis>-f</emphasis>, a opción <emphasis>-w</emphasis> ou a opción <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:371(title)
 msgid "The -o option"
@@ -504,84 +317,44 @@ msgstr "A opción -o"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:373(para)
 #, fuzzy
-msgid ""
-"If the <emphasis>-o</emphasis> option is given, followed by an application "
-"name, the screenshot will be saved to the system's temporary directory and "
-"opened with the application whose name is to be given after <emphasis>-o</"
-"emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, "
-"the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
-"Se se proporciona a opción <emphasis>-o</emphasis> seguida por un nome de "
-"aplicación, a captura de pantalla gardarase no directorio temporal do "
-"sistema e abrirase ca aplicación cuxo nome se indicou despois da opción "
-"<emphasis>-o</emphasis>. Esta opción só ten efecto se se proporciona a "
-"opción <emphasis>-f</emphasis>, a opción <emphasis>-w</emphasis> ou a opción "
-"<emphasis>-r</emphasis>."
+msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr "Se se proporciona a opción <emphasis>-o</emphasis> seguida por un nome de aplicación, a captura de pantalla gardarase no directorio temporal do sistema e abrirase ca aplicación cuxo nome se indicou despois da opción <emphasis>-o</emphasis>. Esta opción só ten efecto se se proporciona a opción <emphasis>-f</emphasis>, a opción <emphasis>-w</emphasis> ou a opción <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:385(title)
 msgid "The -u option"
 msgstr "A opción -u"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:387(para)
-#, fuzzy
-msgid ""
-"If the <emphasis>-u</emphasis> option is given, the screenshot will be "
-"hosted on ZimageZ. See above for more details. This option only has an "
-"effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
-"<emphasis>-r</emphasis> option is given."
-msgstr ""
-"Se se proporciona a opción <emphasis>-u</emphasis> hase gardar a captura de "
-"pantalla en ZimageZ. Consulte enriba para obter máis detalles. Esta opción "
-"só ten efecto se se proporcionan a opción <emphasis>-f</emphasis>, a opción "
-"<emphasis>-w</emphasis> ou a opción <emphasis>-r</emphasis>."
+msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr "Se se proporciona a opción <emphasis>-u</emphasis> hase gardar a captura de pantalla en ZimageZ. Consulte enriba para obter máis detalles. Esta opción só ten efecto se se proporcionan a opción <emphasis>-w</emphasis>, a opción <emphasis>-f</emphasis> ou a opción <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:400(title)
-#, fuzzy
 msgid "Using the Xfce panel plugin"
-msgstr "Uso do engadido"
+msgstr "Uso do engadido do panel de Xfce"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:403(title)
 msgid "Adding the plugin"
 msgstr "Engadir o engadido"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:405(para)
-msgid ""
-"To add the plugin to the panel, right click on the panel and select "
-"<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
-"\"Screenshot\"</emphasis>, and add it."
-msgstr ""
-"Para engadir o engadido ao panel, prema co botón dereito e seleccione  "
-"<emphasis>\"Engadir novo elemento\"</emphasis>. Seleccione o engadido "
-"chamado <emphasis>\"Captura de pantalla\"</emphasis>, e engádao."
+msgid "To add the plugin to the panel, right click on the panel and select <emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>\"Screenshot\"</emphasis>, and add it."
+msgstr "Para engadir o engadido ao panel, prema co botón dereito e seleccione  <emphasis>\"Engadir novo elemento\"</emphasis>. Seleccione o engadido chamado <emphasis>\"Captura de pantalla\"</emphasis>, e engádao."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:413(title)
-#, fuzzy
 msgid "Configuring the plugin"
-msgstr "Uso do engadido"
+msgstr "Configurar o engadido"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:415(para)
-#, fuzzy
-msgid ""
-"You can configure how screenshots are taken by right clicking on the plugin "
-"and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog "
-"similar to the dialog of the main application will appear. Please have a "
-"look above for the different preferences."
-msgstr ""
-"Pode configurar como se realizan as capturas de pantalla premendo co botón "
-"dereito no engadido e seleccionando <emphasis>\"Configurar\"</emphasis>. "
-"Aparecerá un diálogo de preferencias semellante ao diálogo da aplicación "
-"principal. Bótelle unha ollada ao texto anterior para coñecer as diferentes "
-"preferencias."
+msgid "You can configure how screenshots are taken by right clicking on the plugin and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog similar to the dialog of the main application will appear. Please have a look above for the different preferences."
+msgstr "Pode configurar como se realizan as capturas de pantalla premendo co botón dereito no engadido e seleccionando <emphasis>\"Propiedades\"</emphasis>. Aparecerá un diálogo de preferencias semellante ao diálogo da aplicación principal. Bótelle unha ollada ao texto anterior para coñecer as diferentes preferencias."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:425(title)
 msgid "Using the plugin"
 msgstr "Uso do engadido"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:427(para)
-msgid ""
-"To take a screenshot, just click on the plugin. You can use the scroll wheel "
-"on the plugin button to switch between the different regions to be captured."
-msgstr ""
+msgid "To take a screenshot, just click on the plugin. You can use the scroll wheel on the plugin button to switch between the different regions to be captured."
+msgstr "Para realizar unha captura de pantalla simplemente prema no engadido. Pode usar a roda do rato sobre o botón do engadido para escoller a rexión a capturar."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:0(None)
@@ -601,14 +374,12 @@ msgstr ""
 #~ "pantalla en <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</"
 #~ "ulink>, un servizo de aloxamento de imaxes en liña gratuíto. Para isto "
 #~ "requírense as librerías CURL e XMLRPC-C."
-
 #~ msgid ""
 #~ "The <emphasis>\"Show the save dialog\"</emphasis> option is described "
 #~ "below, in the <emphasis>\"Action\"</emphasis> section."
 #~ msgstr ""
 #~ "A opción <emphasis>\"Mostrar o diálogo de gardado\"</emphasis> descríbese "
 #~ "embaixo, na sección <emphasis>\"Acción\"</emphasis>."
-
 #~ msgid ""
 #~ "The <emphasis>\"Close the application\"</emphasis> option allows you, if "
 #~ "unchecked, to take several screenshots in a row. If checked, the "
@@ -619,7 +390,6 @@ msgstr ""
 #~ "desmarcada, realizar varias capturas de pantalla seguidas. Se está "
 #~ "marcada a aplicación pecharase despois de realizar a captura de pantalla "
 #~ "e de executar a acción seleccionada."
-
 #~ msgid ""
 #~ "The <emphasis>\"Save in\"</emphasis> option will save the screenshot to a "
 #~ "PNG file. If you don't check the <emphasis>\"Show the save dialog\"</"
@@ -639,7 +409,6 @@ msgstr ""
 #~ "mostrarase un diálogo de gardado, o cal tamén mostrará unha "
 #~ "previsualización da captura de pantalla. Entón poderá definir a "
 #~ "localización onde se gardará e mailo nome do ficheiro."
-
 #~ msgid ""
 #~ "The <emphasis>-s</emphasis> option followed by the path to an existing "
 #~ "folder allows you to set where the screenshots are saved. This option "
@@ -655,10 +424,8 @@ msgstr ""
 #~ "emphasis>. Combinada ca opción <emphasis>-h</emphasis> (mirar embaixo) "
 #~ "pódese usar para gardar un ficheiro nunha ruta determinada, sen mostrar "
 #~ "ningún diálogo de gardado."
-
 #~ msgid "The -h option"
 #~ msgstr "A opción -h"
-
 #~ msgid ""
 #~ "If you give the <emphasis>-h</emphasis> option, the screenshot will be "
 #~ "saved without showing any save dialog. This option only has an effect if "
@@ -672,15 +439,12 @@ msgstr ""
 #~ "<emphasis>-w</emphasis> ou a opción <emphasis>-r</emphasis>. A opción "
 #~ "<emphasis>-s</emphasis> permítelle definir a localización onde se gardará "
 #~ "se for necesario."
-
 #~ msgid "Using the plugin for the Xfce panel"
 #~ msgstr "Usar o engadido no panel de Xfce"
-
 #~ msgid "Setting the plugin up"
 #~ msgstr "Configurar o engadido"
-
 #~ msgid "To take a screenshot, just click on the plugin."
 #~ msgstr "Para capturar a pantalla, simplemente prema no engadido."
-
 #~ msgid "Introduction to @PACKAGE_NAME@"
 #~ msgstr "Introducción a @PACKAGE_NAME@"
+
