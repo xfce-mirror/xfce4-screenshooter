@@ -389,6 +389,15 @@ zhcnimages_DATA = \
 	docs/manual/zh_CN/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 
+.PHONY: ChangeLog
+
+ChangeLog: Makefile
+	(GIT_DIR=$(top_srcdir)/.git git log > .changelog.tmp \
+	&& mv .changelog.tmp ChangeLog; rm -f .changelog.tmp) \
+	|| (touch ChangeLog; echo 'Git directory not found: installing possibly empty changelog.' >&2)
+
+dist-hook: ChangeLog
+
 # Extra dist and distclean rules
 EXTRA_DIST = \
 	README	\
@@ -402,8 +411,9 @@ EXTRA_DIST = \
 	$(scalicons_DATA) \
 	docs/manual/xfce-nochunk.xsl \
 	$(noinst_DATA) \
-	$(ast_DATA) $(astimages_DATA) \
+	$(astdoc_DATA) $(astimages_DATA) \
 	$(cdoc_DATA) $(cimages_DATA) \
+	$(cadoc_DATA) $(caimages_DATA) \
 	$(dadoc_DATA) $(daimages_DATA) \
 	$(esdoc_DATA) $(esimages_DATA) \
 	$(frdoc_DATA) $(frimages_DATA) \
@@ -411,7 +421,8 @@ EXTRA_DIST = \
 	$(itdoc_DATA) $(itimages_DATA) \
 	$(iddoc_DATA) $(idimages_DATA) \
 	$(jadoc_DATA) $(jaimages_DATA) \
-	$(trdoc_DATA) $(trimages_DATA)
+	$(trdoc_DATA) $(trimages_DATA) \
+	$(zhcndoc_DATA) $(zhcnimages_DATA)
 
 DISTCLEANFILES = \
 	intltool-extract \
