@@ -20,7 +20,7 @@
         region to be captured and the delay, while the second one displays a
         preview of the screenshot and lists the available actions.
       + The main application shows the first dialog, then the second one. If
-        one of the region cli options is given, the screenshot is taken
+        one of the region CLI options is given, the screenshot is taken
         accordingly and the second dialog is displayed.
       + The panel plugin uses the first dialog as a configuration dialog. When
         you click the plugin, the screenshot is taken and the second dialog is
