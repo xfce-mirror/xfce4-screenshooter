@@ -21,7 +21,7 @@
 
 
 
-/* Rubberband data */
+/* Rubberband data for composited environment */
 typedef struct
 {
   gboolean left_pressed;
@@ -34,6 +34,16 @@ typedef struct
   GdkRectangle rectangle_root;
 } RubberBandData;
 
+/* For non-composited environments */
+typedef struct
+{
+  gboolean pressed;
+  gboolean cancelled;
+  GdkRectangle *rectangle;
+  gint x1, y1, x2, y2;
+  GdkGC *gc;
+  GdkWindow *root_window;
+} RbData;
 
 
 /* Prototypes */
@@ -657,6 +667,138 @@ static GdkPixbuf
 
 
 
+static GdkFilterReturn
+region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
+{
+  XEvent *x_event = (XEvent *) xevent;
+
+  switch (x_event->type)
+    {
+      /* Start dragging the rectangle out */
+      case ButtonPress:
+        TRACE ("Start dragging the rectangle");
+
+        rbdata->rectangle->x = rbdata->x2 = rbdata->x1 = x_event->xkey.x_root;
+        rbdata->rectangle->y = rbdata->y2 = rbdata->y1 = x_event->xkey.y_root;
+        rbdata->rectangle->width = 0;
+        rbdata->rectangle->height = 0;
+        rbdata->pressed = TRUE;
+
+        return GDK_FILTER_REMOVE;
+      break;
+
+      /* Finish dragging the rectangle out */
+      case ButtonRelease:
+        if (rbdata->pressed)
+          {
+            if (rbdata->rectangle->width > 0 && rbdata->rectangle->height > 0)
+              {
+                /* Remove the rectangle drawn previously */
+
+                TRACE ("Remove the rectangle drawn previously");
+
+                gdk_draw_rectangle (rbdata->root_window,
+                                    rbdata->gc,
+                                    FALSE,
+                                    rbdata->rectangle->x,
+                                    rbdata->rectangle->y,
+                                    rbdata->rectangle->width,
+                                    rbdata->rectangle->height);
+
+                gtk_main_quit ();
+              }
+            else
+              {
+                /* The user has not dragged the mouse, start again */
+
+                TRACE ("Mouse was not dragged, start again");
+
+                rbdata->pressed = FALSE;
+              }
+          }
+        return GDK_FILTER_REMOVE;
+      break;
+
+      /* The user is moving the mouse */
+      case MotionNotify:
+        if (rbdata->pressed)
+          {
+            TRACE ("Mouse is moving");
+
+            if (rbdata->rectangle->width > 0 && rbdata->rectangle->height > 0)
+              {
+                /* Remove the rectangle drawn previously */
+
+                TRACE ("Remove the rectangle drawn previously");
+                gdk_draw_rectangle (rbdata->root_window,
+                                    rbdata->gc,
+                                    FALSE,
+                                    rbdata->rectangle->x,
+                                    rbdata->rectangle->y,
+                                    rbdata->rectangle->width,
+                                    rbdata->rectangle->height);
+              }
+
+            rbdata->x2 = x_event->xkey.x_root;
+            rbdata->y2 = x_event->xkey.y_root;
+
+            rbdata->rectangle->x = MIN (rbdata->x1, rbdata->x2);
+            rbdata->rectangle->y = MIN (rbdata->y1, rbdata->y2);
+            rbdata->rectangle->width = ABS (rbdata->x2 - rbdata->x1);
+            rbdata->rectangle->height = ABS (rbdata->y2 - rbdata->y1);
+
+            /* Draw  the rectangle as the user drags the mouse */
+            TRACE ("Draw the new rectangle");
+            if (rbdata->rectangle->width > 0 && rbdata->rectangle->height > 0)
+              gdk_draw_rectangle (rbdata->root_window,
+                                  rbdata->gc,
+                                  FALSE,
+                                  rbdata->rectangle->x,
+                                  rbdata->rectangle->y,
+                                  rbdata->rectangle->width,
+                                  rbdata->rectangle->height);
+          }
+        return GDK_FILTER_REMOVE;
+        break;
+
+      case KeyPress:
+        if (x_event->xkey.keycode == XKeysymToKeycode (gdk_display, XK_Escape))
+          {
+            TRACE ("Escape key was pressed, cancel the screenshot.");
+
+            if (rbdata->pressed)
+              {
+                if (rbdata->rectangle->width > 0 && rbdata->rectangle->height > 0)
+                  {
+                    /* Remove the rectangle drawn previously */
+
+                    TRACE ("Remove the rectangle drawn previously");
+
+                    gdk_draw_rectangle (rbdata->root_window,
+                                        rbdata->gc,
+                                        FALSE,
+                                        rbdata->rectangle->x,
+                                        rbdata->rectangle->y,
+                                        rbdata->rectangle->width,
+                                        rbdata->rectangle->height);
+                  }
+              }
+
+            rbdata->cancelled = TRUE;
+            gtk_main_quit ();
+            return GDK_FILTER_REMOVE;
+          }
+        break;
+
+      default:
+        break;
+    }
+
+  return GDK_FILTER_CONTINUE;
+}
+
+
+
 static GdkPixbuf
 *get_rectangle_screenshot (void)
 {
@@ -667,7 +809,7 @@ static GdkPixbuf
   GdkGC *gc;
 
   GdkGCValuesMask values_mask =
-    GDK_GC_FUNCTION | GDK_GC_FILL	| GDK_GC_CLIP_MASK |
+    GDK_GC_FUNCTION | GDK_GC_FILL | GDK_GC_CLIP_MASK |
     GDK_GC_SUBWINDOW | GDK_GC_CLIP_X_ORIGIN | GDK_GC_CLIP_Y_ORIGIN |
     GDK_GC_EXPOSURES | GDK_GC_LINE_WIDTH | GDK_GC_LINE_STYLE |
     GDK_GC_CAP_STYLE | GDK_GC_JOIN_STYLE;
@@ -680,10 +822,7 @@ static GdkPixbuf
     GDK_BUTTON_RELEASE_MASK;
   GdkCursor *xhair_cursor = gdk_cursor_new (GDK_CROSSHAIR);
 
-  gboolean pressed = FALSE;
-  gboolean done = FALSE;
-  gboolean cancelled = FALSE;
-  gint x, y, w, h;
+  RbData rbdata;
 
   /* Get root window */
   TRACE ("Get the root window");
@@ -715,140 +854,39 @@ static GdkPixbuf
   gdk_pointer_grab (root_window, FALSE, mask, NULL, xhair_cursor, GDK_CURRENT_TIME);
   gdk_keyboard_grab (root_window, FALSE, GDK_CURRENT_TIME);
 
-  while (!done)
-    {
-      gint x1, y1, x2, y2;
-      GdkEvent *event;
+  /* Initialize the rubber band data */
+  TRACE ("Initialize the rubber band data");
+  rbdata.root_window = root_window;
+  rbdata.gc = gc;
+  rbdata.pressed = FALSE;
+  rbdata.cancelled = FALSE;
+  rbdata.rectangle = g_new0 (GdkRectangle, 1);
 
-      event = gdk_event_get ();
+  /* Set the filter function to handle the GDK events */
+  TRACE ("Add the events filter");
+  gdk_window_add_filter (root_window, (GdkFilterFunc) region_filter_func, &rbdata);
 
-      if (event == NULL)
-        continue;
+  gdk_flush ();
 
-      switch (event->type)
-        {
-          /* Start dragging the rectangle out */
+  gtk_main ();
 
-          case GDK_BUTTON_PRESS:
-
-            TRACE ("Start dragging the rectangle");
-
-            x = x2 = x1 = event->button.x;
-            y = y2 = y1 = event->button.y;
-            w = 0; h = 0;
-            pressed = TRUE;
-            break;
-
-          /* Finish dragging the rectangle out */
-          case GDK_BUTTON_RELEASE:
-            if (pressed)
-              {
-                if (w > 0 && h > 0)
-                  {
-                    /* Remove the rectangle drawn previously */
-
-                    TRACE ("Remove the rectangle drawn previously");
-
-                    gdk_draw_rectangle (root_window,
-                                        gc,
-                                        FALSE,
-                                        x, y, w, h);
-                    done = TRUE;
-                  }
-                else
-                  {
-                    /* The user has not dragged the mouse, start again */
-
-                    TRACE ("Mouse was not dragged, start again");
-
-                    pressed = FALSE;
-                  }
-              }
-          break;
-
-          /* The user is moving the mouse */
-          case GDK_MOTION_NOTIFY:
-            if (pressed)
-              {
-                TRACE ("Mouse is moving");
-
-                if (w > 0 && h > 0)
-                  {
-                    /* Remove the rectangle drawn previously */
-
-                     TRACE ("Remove the rectangle drawn previously");
-
-                     gdk_draw_rectangle (root_window,
-                                         gc,
-                                         FALSE,
-                                         x, y, w, h);
-                  }
-
-                x2 = event->motion.x;
-                y2 = event->motion.y;
-
-                x = MIN (x1, x2);
-                y = MIN (y1, y2);
-                w = ABS (x2 - x1);
-                h = ABS (y2 - y1);
-
-                /* Draw  the rectangle as the user drags  the mouse */
-
-                TRACE ("Draw the new rectangle");
-
-                if (w > 0 && h > 0)
-                  gdk_draw_rectangle (root_window,
-                                      gc,
-                                      FALSE,
-                                      x, y, w, h);
-
-              }
-            break;
-
-          case GDK_KEY_PRESS:
-            if (event->key.keyval == GDK_Escape)
-              {
-                TRACE ("Escape key was pressed, cancel the screenshot.");
-
-                if (pressed)
-                  {
-                    if (w > 0 && h > 0)
-                      {
-                        /* Remove the rectangle drawn previously */
-
-                         TRACE ("Remove the rectangle drawn previously");
-
-                         gdk_draw_rectangle (root_window,
-                                             gc,
-                                             FALSE,
-                                             x, y, w, h);
-                      }
-                  }
-
-                done = TRUE;
-                cancelled = TRUE;
-              }
-
-            break;
-
-          default:
-            break;
-        }
-
-      gdk_event_free (event);
-    }
+  gdk_window_remove_filter (root_window, (GdkFilterFunc) region_filter_func, &rbdata);
 
   gdk_pointer_ungrab(GDK_CURRENT_TIME);
   gdk_keyboard_ungrab (GDK_CURRENT_TIME);
 
   /* Get the screenshot's pixbuf */
-
-  if (G_LIKELY (!cancelled))
+  if (G_LIKELY (!rbdata.cancelled))
     {
       TRACE ("Get the pixbuf for the screenshot");
 
       screenshot =
-        gdk_pixbuf_get_from_drawable (NULL, root_window, NULL, x, y, 0, 0, w, h);
+        gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
+                                      rbdata.rectangle->x,
+                                      rbdata.rectangle->y,
+                                      0, 0,
+                                      rbdata.rectangle->width,
+                                      rbdata.rectangle->height);
     }
 
   if (G_LIKELY (gc != NULL))
