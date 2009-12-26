@@ -1219,11 +1219,11 @@ void screenshooter_upload_to_zimagez (const gchar  *image_path,
 
   job = zimagez_upload_to_zimagez (image_path, last_user, title);
 
-  g_signal_connect (job, "ask", (GCallback) cb_ask_for_information, NULL);
-  g_signal_connect (job, "image-uploaded", (GCallback) cb_image_uploaded, new_last_user);
-  g_signal_connect (job, "error", (GCallback) cb_error, NULL);
-  g_signal_connect (job, "finished", (GCallback) cb_finished, dialog);
-  g_signal_connect (job, "info-message", (GCallback) cb_update_info, label);
+  g_signal_connect (job, "ask", G_CALLBACK (cb_ask_for_information), NULL);
+  g_signal_connect (job, "image-uploaded", G_CALLBACK (cb_image_uploaded), new_last_user);
+  g_signal_connect (job, "error", G_CALLBACK (cb_error), NULL);
+  g_signal_connect (job, "finished", G_CALLBACK (cb_finished), dialog);
+  g_signal_connect (job, "info-message", G_CALLBACK (cb_update_info), label);
 
   gtk_dialog_run (GTK_DIALOG (dialog));
 }

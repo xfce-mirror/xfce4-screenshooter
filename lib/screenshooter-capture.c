@@ -606,15 +606,15 @@ static GdkPixbuf
 
   /* Connect to the interesting signals */
   g_signal_connect (window, "key-press-event",
-                    (GCallback) cb_key_pressed, &cancelled);
+                    G_CALLBACK (cb_key_pressed), &cancelled);
   g_signal_connect (window, "expose-event",
-                    (GCallback) cb_expose, &rbdata);
+                    G_CALLBACK (cb_expose), &rbdata);
   g_signal_connect (window, "button-press-event",
-                    (GCallback) cb_button_pressed, &rbdata);
+                    G_CALLBACK (cb_button_pressed), &rbdata);
   g_signal_connect (window, "button-release-event",
-                    (GCallback) cb_button_released, &rbdata);
+                    G_CALLBACK (cb_button_released), &rbdata);
   g_signal_connect (window, "motion-notify-event",
-                    (GCallback) cb_motion_notify, &rbdata);
+                    G_CALLBACK (cb_motion_notify), &rbdata);
 
   /* This window is not managed by the window manager, we have to set everything
    * ourselves */

@@ -382,20 +382,20 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
 
   /* Set the callbacks */
   g_signal_connect (pd->button, "clicked",
-                    (GCallback) cb_button_clicked, pd);
+                    G_CALLBACK (cb_button_clicked), pd);
   g_signal_connect (pd->button, "scroll-event",
-                    (GCallback) cb_button_scrolled, pd);
+                    G_CALLBACK (cb_button_scrolled), pd);
   g_signal_connect (plugin, "free-data",
-                    (GCallback) cb_free_data, pd);
+                    G_CALLBACK (cb_free_data), pd);
   g_signal_connect (plugin, "size-changed",
-                    (GCallback) cb_set_size, pd);
+                    G_CALLBACK (cb_set_size), pd);
 
   pd->style_id = g_signal_connect (plugin, "style-set",
-                                   (GCallback) cb_style_set, pd);
+                                   G_CALLBACK (cb_style_set), pd);
 
   /* Set the configuration menu */
   xfce_panel_plugin_menu_show_configure (plugin);
   g_signal_connect (plugin, "configure-plugin",
-                    (GCallback) cb_properties_dialog, pd);
+                    G_CALLBACK (cb_properties_dialog), pd);
 }
 XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (screenshooter_plugin_construct);

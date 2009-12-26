@@ -301,9 +301,9 @@ int main (int argc, char **argv)
       /* Set the dialog up */
       dialog = screenshooter_region_dialog_new (sd, FALSE);
       g_signal_connect (dialog, "response",
-                        (GCallback) cb_dialog_response, sd);
+                        G_CALLBACK (cb_dialog_response), sd);
       g_signal_connect (dialog, "key-press-event",
-                        (GCallback) screenshooter_f1_key, NULL);
+                        G_CALLBACK (screenshooter_f1_key), NULL);
       gtk_widget_show (dialog);
     }
 
