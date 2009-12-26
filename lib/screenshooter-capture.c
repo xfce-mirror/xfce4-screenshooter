@@ -39,7 +39,7 @@ typedef struct
 {
   gboolean pressed;
   gboolean cancelled;
-  GdkRectangle *rectangle;
+  GdkRectangle rectangle;
   gint x1, y1; /* holds the position where the mouse was pressed */
   GdkGC *gc;
   GdkWindow *root_window;
@@ -679,10 +679,10 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       case ButtonPress:
         TRACE ("Start dragging the rectangle");
 
-        rbdata->rectangle->x = rbdata->x1 = x_event->xkey.x_root;
-        rbdata->rectangle->y = rbdata->y1 = x_event->xkey.y_root;
-        rbdata->rectangle->width = 0;
-        rbdata->rectangle->height = 0;
+        rbdata->rectangle.x = rbdata->x1 = x_event->xkey.x_root;
+        rbdata->rectangle.y = rbdata->y1 = x_event->xkey.y_root;
+        rbdata->rectangle.width = 0;
+        rbdata->rectangle.height = 0;
         rbdata->pressed = TRUE;
 
         return GDK_FILTER_REMOVE;
@@ -692,7 +692,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       case ButtonRelease:
         if (rbdata->pressed)
           {
-            if (rbdata->rectangle->width > 0 && rbdata->rectangle->height > 0)
+            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
               {
                 /* Remove the rectangle drawn previously */
 
@@ -701,10 +701,10 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                 gdk_draw_rectangle (rbdata->root_window,
                                     rbdata->gc,
                                     FALSE,
-                                    rbdata->rectangle->x,
-                                    rbdata->rectangle->y,
-                                    rbdata->rectangle->width,
-                                    rbdata->rectangle->height);
+                                    rbdata->rectangle.x,
+                                    rbdata->rectangle.y,
+                                    rbdata->rectangle.width,
+                                    rbdata->rectangle.height);
 
                 gtk_main_quit ();
               }
@@ -726,7 +726,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
           {
             TRACE ("Mouse is moving");
 
-            if (rbdata->rectangle->width > 0 && rbdata->rectangle->height > 0)
+            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
               {
                 /* Remove the rectangle drawn previously */
 
@@ -734,30 +734,30 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                 gdk_draw_rectangle (rbdata->root_window,
                                     rbdata->gc,
                                     FALSE,
-                                    rbdata->rectangle->x,
-                                    rbdata->rectangle->y,
-                                    rbdata->rectangle->width,
-                                    rbdata->rectangle->height);
+                                    rbdata->rectangle.x,
+                                    rbdata->rectangle.y,
+                                    rbdata->rectangle.width,
+                                    rbdata->rectangle.height);
               }
 
             x2 = x_event->xkey.x_root;
             y2 = x_event->xkey.y_root;
 
-            rbdata->rectangle->x = MIN (rbdata->x1, x2);
-            rbdata->rectangle->y = MIN (rbdata->y1, y2);
-            rbdata->rectangle->width = ABS (x2 - rbdata->x1);
-            rbdata->rectangle->height = ABS (y2 - rbdata->y1);
+            rbdata->rectangle.x = MIN (rbdata->x1, x2);
+            rbdata->rectangle.y = MIN (rbdata->y1, y2);
+            rbdata->rectangle.width = ABS (x2 - rbdata->x1);
+            rbdata->rectangle.height = ABS (y2 - rbdata->y1);
 
             /* Draw  the rectangle as the user drags the mouse */
             TRACE ("Draw the new rectangle");
-            if (rbdata->rectangle->width > 0 && rbdata->rectangle->height > 0)
+            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
               gdk_draw_rectangle (rbdata->root_window,
                                   rbdata->gc,
                                   FALSE,
-                                  rbdata->rectangle->x,
-                                  rbdata->rectangle->y,
-                                  rbdata->rectangle->width,
-                                  rbdata->rectangle->height);
+                                  rbdata->rectangle.x,
+                                  rbdata->rectangle.y,
+                                  rbdata->rectangle.width,
+                                  rbdata->rectangle.height);
           }
         return GDK_FILTER_REMOVE;
         break;
@@ -769,7 +769,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
             if (rbdata->pressed)
               {
-                if (rbdata->rectangle->width > 0 && rbdata->rectangle->height > 0)
+                if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
                   {
                     /* Remove the rectangle drawn previously */
 
@@ -778,10 +778,10 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                     gdk_draw_rectangle (rbdata->root_window,
                                         rbdata->gc,
                                         FALSE,
-                                        rbdata->rectangle->x,
-                                        rbdata->rectangle->y,
-                                        rbdata->rectangle->width,
-                                        rbdata->rectangle->height);
+                                        rbdata->rectangle.x,
+                                        rbdata->rectangle.y,
+                                        rbdata->rectangle.width,
+                                        rbdata->rectangle.height);
                   }
               }
 
@@ -861,7 +861,6 @@ static GdkPixbuf
   rbdata.gc = gc;
   rbdata.pressed = FALSE;
   rbdata.cancelled = FALSE;
-  rbdata.rectangle = g_new0 (GdkRectangle, 1);
 
   /* Set the filter function to handle the GDK events */
   TRACE ("Add the events filter");
@@ -883,11 +882,11 @@ static GdkPixbuf
 
       screenshot =
         gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
-                                      rbdata.rectangle->x,
-                                      rbdata.rectangle->y,
+                                      rbdata.rectangle.x,
+                                      rbdata.rectangle.y,
                                       0, 0,
-                                      rbdata.rectangle->width,
-                                      rbdata.rectangle->height);
+                                      rbdata.rectangle.width,
+                                      rbdata.rectangle.height);
     }
 
   if (G_LIKELY (gc != NULL))
