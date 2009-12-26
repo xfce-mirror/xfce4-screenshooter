@@ -40,7 +40,7 @@ typedef struct
   gboolean pressed;
   gboolean cancelled;
   GdkRectangle *rectangle;
-  gint x1, y1, x2, y2;
+  gint x1, y1; /* holds the position where the mouse was pressed */
   GdkGC *gc;
   GdkWindow *root_window;
 } RbData;
@@ -671,6 +671,7 @@ static GdkFilterReturn
 region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 {
   XEvent *x_event = (XEvent *) xevent;
+  gint x2 = 0, y2 = 0;
 
   switch (x_event->type)
     {
@@ -678,8 +679,8 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       case ButtonPress:
         TRACE ("Start dragging the rectangle");
 
-        rbdata->rectangle->x = rbdata->x2 = rbdata->x1 = x_event->xkey.x_root;
-        rbdata->rectangle->y = rbdata->y2 = rbdata->y1 = x_event->xkey.y_root;
+        rbdata->rectangle->x = rbdata->x1 = x_event->xkey.x_root;
+        rbdata->rectangle->y = rbdata->y1 = x_event->xkey.y_root;
         rbdata->rectangle->width = 0;
         rbdata->rectangle->height = 0;
         rbdata->pressed = TRUE;
@@ -739,13 +740,13 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                                     rbdata->rectangle->height);
               }
 
-            rbdata->x2 = x_event->xkey.x_root;
-            rbdata->y2 = x_event->xkey.y_root;
+            x2 = x_event->xkey.x_root;
+            y2 = x_event->xkey.y_root;
 
-            rbdata->rectangle->x = MIN (rbdata->x1, rbdata->x2);
-            rbdata->rectangle->y = MIN (rbdata->y1, rbdata->y2);
-            rbdata->rectangle->width = ABS (rbdata->x2 - rbdata->x1);
-            rbdata->rectangle->height = ABS (rbdata->y2 - rbdata->y1);
+            rbdata->rectangle->x = MIN (rbdata->x1, x2);
+            rbdata->rectangle->y = MIN (rbdata->y1, y2);
+            rbdata->rectangle->width = ABS (x2 - rbdata->x1);
+            rbdata->rectangle->height = ABS (y2 - rbdata->y1);
 
             /* Draw  the rectangle as the user drags the mouse */
             TRACE ("Draw the new rectangle");
