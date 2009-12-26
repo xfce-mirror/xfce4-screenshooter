@@ -33,6 +33,8 @@
     - Fix all warnings triggered by running autogen.sh.
     - Fix the ZimageZ upload when behind a proxy.
     - Fix copying of links in the ZimageZ upload finished dialog.
+    - Fix 100% CPU usage when selecting a region in a non composited
+      environment (spotted by Gauvain Pocentek).
     - When capturing a window with rounded corners, don't capture the
       background of the window but make the screenshot transparent instead.
     - Make sure the save folder in the panel plugin preferences is valid.
