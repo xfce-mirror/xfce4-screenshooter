@@ -190,7 +190,6 @@ static GdkPixbuf
   gdk_drawable_get_size (window, &rectangle.width, &rectangle.height);
   gdk_window_get_origin (window, &rectangle.x, &rectangle.y);
 
-
   /* Don't grab thing offscreen. */
 
   TRACE ("Make sure we don't grab things offscreen");
@@ -403,7 +402,7 @@ static gboolean cb_expose (GtkWidget *widget,
 
   TRACE ("Expose event received.");
 
-  gdk_region_get_rectangles(event->region, &rects, &n_rects);
+  gdk_region_get_rectangles (event->region, &rects, &n_rects);
 
   if (rbdata->rubber_banding)
     {
@@ -433,7 +432,7 @@ static gboolean cb_expose (GtkWidget *widget,
           cairo_fill (cr);
         }
 
-      cairo_destroy(cr);
+      cairo_destroy (cr);
     }
   else
     {
@@ -450,7 +449,7 @@ static gboolean cb_expose (GtkWidget *widget,
             cairo_fill (cr);
         }
 
-      cairo_destroy(cr);
+      cairo_destroy (cr);
     }
 
   g_free (rects);
