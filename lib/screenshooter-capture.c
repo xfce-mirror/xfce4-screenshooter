@@ -50,29 +50,32 @@ typedef struct
 
 
 
-static GdkWindow *get_active_window                   (GdkScreen      *screen,
-                                                       gboolean       *needs_unref,
-                                                       gboolean       *border);
-static GdkPixbuf *get_window_screenshot               (GdkWindow      *window,
-                                                       gboolean        show_mouse,
-                                                       gboolean        border);
-static GdkPixbuf *get_rectangle_screenshot            (void);
-static gboolean   cb_key_pressed                      (GtkWidget      *widget,
-                                                       GdkEventKey    *event,
-                                                       gboolean       *cancelled);
-static gboolean   cb_expose                           (GtkWidget      *widget,
-                                                       GdkEventExpose *event,
-                                                       RubberBandData *rbdata);
-static gboolean   cb_button_pressed                   (GtkWidget      *widget,
-                                                       GdkEventButton *event,
-                                                       RubberBandData *rbdata);
-static gboolean   cb_button_released                  (GtkWidget      *widget,
-                                                       GdkEventButton *event,
-                                                       RubberBandData *rbdata);
-static gboolean   cb_motion_notify                    (GtkWidget      *widget,
-                                                       GdkEventMotion *event,
-                                                       RubberBandData *rbdata);
-static GdkPixbuf *get_rectangle_screenshot_composited (void);
+static GdkWindow       *get_active_window                   (GdkScreen      *screen,
+                                                             gboolean       *needs_unref,
+                                                             gboolean       *border);
+static GdkPixbuf       *get_window_screenshot               (GdkWindow      *window,
+                                                             gboolean        show_mouse,
+                                                             gboolean        border);
+static GdkFilterReturn  region_filter_func                  (GdkXEvent      *xevent,
+                                                             GdkEvent       *event,
+                                                             RbData         *rbdata);
+static GdkPixbuf       *get_rectangle_screenshot            (void);
+static gboolean         cb_key_pressed                      (GtkWidget      *widget,
+                                                             GdkEventKey    *event,
+                                                             gboolean       *cancelled);
+static gboolean         cb_expose                           (GtkWidget      *widget,
+                                                             GdkEventExpose *event,
+                                                             RubberBandData *rbdata);
+static gboolean         cb_button_pressed                   (GtkWidget      *widget,
+                                                             GdkEventButton *event,
+                                                             RubberBandData *rbdata);
+static gboolean         cb_button_released                  (GtkWidget      *widget,
+                                                             GdkEventButton *event,
+                                                             RubberBandData *rbdata);
+static gboolean         cb_motion_notify                    (GtkWidget      *widget,
+                                                             GdkEventMotion *event,
+                                                             RubberBandData *rbdata);
+static GdkPixbuf       *get_rectangle_screenshot_composited (void);
 
 
 
