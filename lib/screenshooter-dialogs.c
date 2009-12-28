@@ -301,8 +301,8 @@ static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
 static void add_item (GAppInfo *app_info, GtkWidget *liststore)
 {
   GtkTreeIter iter;
-  gchar *command = g_strdup (g_app_info_get_executable (app_info));
-  gchar *name = g_strdup (g_app_info_get_name (app_info));
+  const gchar *command = g_app_info_get_executable (app_info);
+  const gchar *name = g_app_info_get_name (app_info);
   GIcon *icon = g_app_info_get_icon (app_info);
   GdkPixbuf *pixbuf = NULL;
   GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
@@ -332,8 +332,6 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
                       -1);
 
   /* Free the stuff */
-  g_free (command);
-  g_free (name);
   g_object_unref (pixbuf);
   g_object_unref (icon);
   gtk_icon_info_free (icon_info);
