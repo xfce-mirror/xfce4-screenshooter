@@ -306,38 +306,14 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
   GIcon *icon = g_app_info_get_icon (app_info);
   GdkPixbuf *pixbuf = NULL;
   GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
+  GtkIconInfo *icon_info;
 
-  /* Get the icon */
-  if (G_IS_LOADABLE_ICON (icon))
-    {
-      GFile *file = g_file_icon_get_file (G_FILE_ICON (icon));
-      gchar *path = g_file_get_path (file);
+  icon_info =
+    gtk_icon_theme_lookup_by_gicon (icon_theme, icon,
+                                    ICON_SIZE,
+                                    GTK_ICON_LOOKUP_GENERIC_FALLBACK);
 
-      pixbuf =
-        gdk_pixbuf_new_from_file_at_size (path, ICON_SIZE,
-                                          ICON_SIZE, NULL);
-
-      g_free (path);
-      g_object_unref (file);
-    }
-  else
-    {
-      gchar **names = NULL;
-
-      g_object_get (G_OBJECT (icon), "names", &names, NULL);
-
-      if (G_LIKELY (names != NULL))
-        {
-          if (names[0] != NULL)
-            pixbuf = gtk_icon_theme_load_icon (icon_theme,
-                                               names[0],
-                                               ICON_SIZE,
-                                               GTK_ICON_LOOKUP_GENERIC_FALLBACK,
-                                               NULL);
-
-          g_strfreev (names);
-        }
-    }
+  pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
 
   if (G_UNLIKELY (pixbuf == NULL))
     {
@@ -360,6 +336,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
   g_free (name);
   g_object_unref (pixbuf);
   g_object_unref (icon);
+  gtk_icon_info_free (icon_info);
 }
 
 
