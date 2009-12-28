@@ -1,6 +1,7 @@
 === Version 1.x.x ===
 
   * The XMLRPC-C dependency has been replaced by libsoup.
+  * Gtk 2.14 is now required to compile.
   * Switch to a non-recursive Makefile.am. This reduces the build time
     and centralizes the build information.
 
