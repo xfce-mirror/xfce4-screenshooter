@@ -10,9 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-29 11:58+0100\n"
-"PO-Revision-Date: 2009-12-18 15:24+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.xfce.org\n"
+"POT-Creation-Date: 2010-01-07 17:01+0000\n"
+"PO-Revision-Date: 2010-01-08 14:20+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,22 +20,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../lib/screenshooter-dialogs.c:478
+#: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb de %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
 msgstr "Transferir"
 
-#: ../lib/screenshooter-dialogs.c:581
+#: ../lib/screenshooter-dialogs.c:556
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vaise transferir a captura de pantalla a:</span>"
 
-#: ../lib/screenshooter-dialogs.c:697
-#: ../lib/screenshooter-dialogs.c:714
-#: ../lib/screenshooter-dialogs.c:905
+#: ../lib/screenshooter-dialogs.c:672
+#: ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:880
 #: ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -43,127 +43,127 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vaise transferir a captur
 msgid "Screenshot"
 msgstr "Captura de pantalla"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
 msgstr "Facer unha captura de pantalla"
 
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../lib/screenshooter-dialogs.c:754
+#: ../lib/screenshooter-dialogs.c:729
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zona a capturar</span>"
 
-#: ../lib/screenshooter-dialogs.c:774
+#: ../lib/screenshooter-dialogs.c:749
 msgid "Entire screen"
 msgstr "Toda a pantalla"
 
-#: ../lib/screenshooter-dialogs.c:781
+#: ../lib/screenshooter-dialogs.c:756
 #: ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "Facer a captura de pantalla de toda a pantalla"
 
-#: ../lib/screenshooter-dialogs.c:789
+#: ../lib/screenshooter-dialogs.c:764
 msgid "Active window"
-msgstr "Ventá activa"
+msgstr "Fiestra activa"
 
-#: ../lib/screenshooter-dialogs.c:796
+#: ../lib/screenshooter-dialogs.c:771
 #: ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
-msgstr "Facer unha captura de pantalla da ventá activa"
+msgstr "Facer unha captura de pantalla da fiestra activa"
 
-#: ../lib/screenshooter-dialogs.c:804
+#: ../lib/screenshooter-dialogs.c:779
 msgid "Select a region"
 msgstr "Seleccionar unha zona"
 
-#: ../lib/screenshooter-dialogs.c:809
+#: ../lib/screenshooter-dialogs.c:784
 #: ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:318
 msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
 msgstr "Seleccione unha zona para capturar premendo nun punto da pantalla sen soltar o botón do rato, arrastrando o rato á esquina oposta da zona, e soltando o botón do rato."
 
-#: ../lib/screenshooter-dialogs.c:819
+#: ../lib/screenshooter-dialogs.c:794
 msgid "Capture the mouse pointer"
 msgstr "Capturar o punteiro do rato"
 
-#: ../lib/screenshooter-dialogs.c:824
+#: ../lib/screenshooter-dialogs.c:799
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Mostrar o punteiro do rato na captura de pantalla"
 
-#: ../lib/screenshooter-dialogs.c:840
+#: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tempo de espera antes da captura</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Demora antes da captura</span>"
 
-#: ../lib/screenshooter-dialogs.c:862
+#: ../lib/screenshooter-dialogs.c:837
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Retraso en segundos antes de facer a captura"
+msgstr "Demora en segundos antes de facer a captura"
 
-#: ../lib/screenshooter-dialogs.c:865
+#: ../lib/screenshooter-dialogs.c:840
 msgid "seconds"
 msgstr "segundos"
 
-#: ../lib/screenshooter-dialogs.c:917
+#: ../lib/screenshooter-dialogs.c:892
 msgid "Action"
 msgstr "Acción"
 
-#: ../lib/screenshooter-dialogs.c:945
+#: ../lib/screenshooter-dialogs.c:920
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acción</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:961
+#: ../lib/screenshooter-dialogs.c:936
 msgid "Save"
 msgstr "Gardar"
 
-#: ../lib/screenshooter-dialogs.c:966
+#: ../lib/screenshooter-dialogs.c:941
 msgid "Save the screenshot to a PNG file"
 msgstr "Gardar a captura de pantalla nun ficheiro PNG"
 
-#: ../lib/screenshooter-dialogs.c:975
+#: ../lib/screenshooter-dialogs.c:950
 msgid "Copy to the clipboard"
 msgstr "Copiar ao portarretallos"
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:952
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Copiar a captura de pantalla ó portarretallos para que se poida pegar despois"
+msgstr "Copiar a captura de pantalla ao portarretallos para que se poida pegar despois"
 
-#: ../lib/screenshooter-dialogs.c:994
+#: ../lib/screenshooter-dialogs.c:969
 msgid "Open with:"
 msgstr "Abrir con:"
 
-#: ../lib/screenshooter-dialogs.c:1000
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Open the screenshot with the chosen application"
-msgstr "Abrir a captura de pantalla ca aplicación escollida"
+msgstr "Abrir a captura de pantalla co aplicativo escollido"
 
-#: ../lib/screenshooter-dialogs.c:1018
+#: ../lib/screenshooter-dialogs.c:993
 #: ../src/main.c:63
 msgid "Application to open the screenshot"
-msgstr "Aplicación ca que abrir a captura de pantalla"
+msgstr "Aplicativo co que abrir a captura de pantalla"
 
-#: ../lib/screenshooter-dialogs.c:1028
+#: ../lib/screenshooter-dialogs.c:1003
 msgid "Host on ZimageZ"
 msgstr "Gardar en ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1032
+#: ../lib/screenshooter-dialogs.c:1007
 #: ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Gardar a captura en ZimageZ, un servizo de almacenamento de imaxes en liña gratuito"
 
-#: ../lib/screenshooter-dialogs.c:1046
+#: ../lib/screenshooter-dialogs.c:1021
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vista previa</span>"
 
-#: ../lib/screenshooter-dialogs.c:1107
+#: ../lib/screenshooter-dialogs.c:1082
 msgid "Save screenshot as..."
-msgstr "Gardar a captura de pantalla coma..."
+msgstr "Gardar a captura de pantalla como..."
 
 #: ../lib/screenshooter-zimagez.c:134
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr "Produciuse un erro ao crear a solicitude XMLRPC."
+msgstr "Produciuse un erro ao crear a petición XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:153
 #, c-format
@@ -199,11 +199,11 @@ msgstr "Comprobar a información de usuario..."
 
 #: ../lib/screenshooter-zimagez.c:407
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
-msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Debe cubrir tódolos campos.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Debe cubrir todos os campos.</span>"
 
 #: ../lib/screenshooter-zimagez.c:421
 msgid "Login on ZimageZ..."
-msgstr "Iniciando sesión en ZimageZ..."
+msgstr "Iniciando a sesión en ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:461
 #: ../lib/screenshooter-zimagez.c:612
@@ -221,7 +221,7 @@ msgstr "Subir a captura..."
 #: ../lib/screenshooter-zimagez.c:591
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "Produciuse un erro mentres se subía a captura."
+msgstr "Produciuse un erro ao subir a captura."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:624
@@ -316,7 +316,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Estado</span>"
 #. Open Link
 #: ../lib/sexy-url-label.c:176
 msgid "_Open Link"
-msgstr "_Abrir ligazón"
+msgstr "_Abrir a ligazón"
 
 #. Copy Link Address
 #: ../lib/sexy-url-label.c:188
@@ -325,7 +325,7 @@ msgstr "Copiar o enderezo da _ligazón"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Retraso en segundos antes de facer a captura"
+msgstr "Demora en segundos antes de facer a captura"
 
 #: ../src/main.c:58
 msgid "Display the mouse on the screenshot"
@@ -342,7 +342,7 @@ msgstr "Información da versión"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Opcións en conflito: non se poden usar --%s e --%s á vez.\n"
+msgstr "Opcións en conflito: non se poden usar á vez --%s e --%s.\n"
 
 #: ../src/main.c:136
 #, c-format
@@ -366,7 +366,7 @@ msgstr "%s non é un directorio válido, hase usar o directorio predeterminado."
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Facer capturas de pantalla de toda a pantalla, da ventá activa ou dunha zona"
+msgstr "Facer capturas de pantalla de toda a pantalla, da fiestra activa ou dunha zona"
 
 #~ msgid "Screenshot.png"
 #~ msgstr "Captura de pantalla.png"
