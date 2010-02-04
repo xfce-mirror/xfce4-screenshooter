@@ -107,9 +107,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Művelet</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:936
-#, fuzzy
 msgid "Save"
-msgstr "Mentés ide:"
+msgstr "Mentés"
 
 #: ../lib/screenshooter-dialogs.c:941
 msgid "Save the screenshot to a PNG file"
@@ -144,26 +143,25 @@ msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Képernyőkép megosztása a ZimageZ nevű ingyenes online képmegosztó oldalon"
 
 #: ../lib/screenshooter-dialogs.c:1021
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Hivatkozások</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Előnézet</span>"
 
 #: ../lib/screenshooter-dialogs.c:1082
 msgid "Save screenshot as..."
 msgstr "Képernyőkép mentése másként…"
 
 #: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when creating the XMLRPC request."
 msgstr "Hiba történt az XMLRPC kérés létrehozásakor."
 
 #: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "Hiba történt az adatok átvitelekor a ZimageZ oldalra."
 
 #: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "Hiba történt a ZimageZ válaszának elemzésekor."
 
@@ -172,7 +170,7 @@ msgstr "Hiba történt a ZimageZ válaszának elemzésekor."
 #: ../lib/screenshooter-zimagez.c:230
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Készült ezen: %s, ekkor: %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:297
@@ -180,7 +178,6 @@ msgid "Initialize the connection..."
 msgstr "Kapcsolat előkészítése…"
 
 #: ../lib/screenshooter-zimagez.c:343
-#, fuzzy
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
