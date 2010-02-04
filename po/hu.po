@@ -319,9 +319,8 @@ msgid "Delay in seconds before taking the screenshot"
 msgstr "Késleltetés a képernyőkép készítése előtt másodpercben"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "Ne jelenjen meg az egér a képernyőképen"
+msgstr "Az egér jelenjen meg a képernyőképen"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -334,12 +333,12 @@ msgstr "Verzióinformációk"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Ütköző kapcsolók: --%s és --%s nem használható egyszerre.\n"
 
 #: ../src/main.c:136
 #, c-format
 msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
-msgstr ""
+msgstr "A --%s kapcsoló csak a --fullscreen, --window vagy --region megadásakor használható. Figyelmen kívül marad.\n"
 
 #: ../src/main.c:150
 #, c-format
