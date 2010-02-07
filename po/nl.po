@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Stephan Arts <stephan@xfce.org>, 2008.
 # Vincent Tunru <projects@vinnl.nl>, 2008.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-17 12:00+0100\n"
-"PO-Revision-Date: 2009-11-29 11:42+0100\n"
+"POT-Creation-Date: 2010-02-07 12:01+0100\n"
+"PO-Revision-Date: 2010-02-07 16:38+0100\n"
 "Last-Translator: Vincent Tunru <projects@vinnl.nl>\n"
 "Language-Team: Dutch <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,8 +30,10 @@ msgstr "Overdracht"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">De schermafdruk wordt overgedragen naar:</span>"
 
-#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
-#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:672
+#: ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:880
+#: ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
@@ -54,7 +56,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Gebied om een schermafdru
 msgid "Entire screen"
 msgstr "Volledig scherm"
 
-#: ../lib/screenshooter-dialogs.c:756 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:756
+#: ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "Schermafdruk van het hele scherm maken"
@@ -63,16 +66,18 @@ msgstr "Schermafdruk van het hele scherm maken"
 msgid "Active window"
 msgstr "Actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:771 ../src/main.c:90
+#: ../lib/screenshooter-dialogs.c:771
+#: ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
-msgstr "Actieve venster"
+msgstr "Maak een schermafdruk van het actieve venster"
 
 #: ../lib/screenshooter-dialogs.c:779
 msgid "Select a region"
 msgstr "Selecteer een gebied"
 
-#: ../lib/screenshooter-dialogs.c:784 ../src/main.c:68
+#: ../lib/screenshooter-dialogs.c:784
+#: ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:318
 msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
 msgstr "Selecteer een gebied om een schermafdruk door te klikken op een hoek van het gebied zonder de muisknop zo te laten. Sleep vervolgens de muis naar de andere hoek en laat de muisknop los."
@@ -130,15 +135,17 @@ msgstr "Openen met:"
 msgid "Open the screenshot with the chosen application"
 msgstr "Open de schermafdruk met de gegeven toepassing"
 
-#: ../lib/screenshooter-dialogs.c:993 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:993
+#: ../src/main.c:63
 msgid "Application to open the screenshot"
-msgstr "Toepassing om de schermafdruk te openen"
+msgstr "Toepassing om de schermafdruk mee te openen"
 
 #: ../lib/screenshooter-dialogs.c:1003
 msgid "Host on ZimageZ"
 msgstr "Uploaden naar ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1007
+#: ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "De schermadruk uploaden naar ZimageZ, een gratis online dienst om afbeeldingen te bewaren"
 
@@ -195,7 +202,8 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Al
 msgid "Login on ZimageZ..."
 msgstr "Aan het inloggen bij ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
+#: ../lib/screenshooter-zimagez.c:461
+#: ../lib/screenshooter-zimagez.c:612
 msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
 msgstr "Onverwacht antwoord van ZimageZ, upload mislukt."
 
@@ -359,52 +367,55 @@ msgstr "Schermafdruk maken van het gehele scherm, het actieve venster of van een
 
 #~ msgid "Screenshot.png"
 #~ msgstr "Schermafdruk.png"
-
 #~ msgid "Screenshot-%d.png"
 #~ msgstr "Schermafdruk-%d.png"
-
-#~ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-#~ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Na het maken van de schermafdruk</span>"
-
+#~ msgid ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
+#~ msgstr ""
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">Na het maken van de "
+#~ "schermafdruk</span>"
 #~ msgid "Show the save dialog"
 #~ msgstr "Opslaan-dialoogvenster weergeven"
-
-#~ msgid "The save dialog allows you to change the file name and the save location"
-#~ msgstr "In het opslaan-dialoogvenster kunt u de bestandsnaam en opslaglocatie wijzigen"
-
+#~ msgid ""
+#~ "The save dialog allows you to change the file name and the save location"
+#~ msgstr ""
+#~ "In het opslaan-dialoogvenster kunt u de bestandsnaam en opslaglocatie "
+#~ "wijzigen"
 #~ msgid "Close the application"
 #~ msgstr "Toepassing sluiten"
-
-#~ msgid "If unchecked, the current window will be displayed again after the screenshot has been taken to allow you to take several screenshots in a row"
-#~ msgstr "Wanneer deze optie niet is aangevinkt zal het huidige venster opnieuw weergegeven worden na het maken van een schermafdruk zodat u meerdere schermafdrukken op rij kunt maken"
-
+#~ msgid ""
+#~ "If unchecked, the current window will be displayed again after the "
+#~ "screenshot has been taken to allow you to take several screenshots in a "
+#~ "row"
+#~ msgstr ""
+#~ "Wanneer deze optie niet is aangevinkt zal het huidige venster opnieuw "
+#~ "weergegeven worden na het maken van een schermafdruk zodat u meerdere "
+#~ "schermafdrukken op rij kunt maken"
 #~ msgid "Default save location"
 #~ msgstr "Standaard opslaglocatie"
-
 #~ msgid "Set the default save location"
 #~ msgstr "Standaard-opslaglocatie instellen"
-
 #~ msgid ""
 #~ "An error occurred during the XML exchange: %s (%d).\n"
 #~ " The screenshot could not be uploaded."
 #~ msgstr ""
 #~ "Kon de schermafdruk niet uploaden.\n"
 #~ "Fout bij het uitwisselen van XML: %s (%d)"
-
 #~ msgid "Do not display the save dialog"
 #~ msgstr "Niet vragen waar de schermafdruk opgeslagen moet worden"
-
 #~ msgid "Tak a screenshot of the entire screen"
 #~ msgstr "Schermafdruk van het hele scherm maken"
-
 #~ msgid "Applicatio to open the screenshot"
 #~ msgstr "Toepassing om de schermafdruk te openen"
-
 #~ msgid "Display the save dialog"
 #~ msgstr "Niet vragen waar de schermafdruk opgeslagen moet worden"
-
 #~ msgid "Save by default to:"
 #~ msgstr "Standaard-opslaglocatie:"
+#~ msgid ""
+#~ "If checked, the screenshot will be saved by default to the location set "
+#~ "on the right without displaying a save dialog"
+#~ msgstr ""
+#~ "Als deze optie is aangevinkt zal de schermafdruk standaard opgeslagen "
+#~ "worden in de locatie die hiernaast is aangegeven. Zo niet zal elke keer "
+#~ "worden gevraagd waar de afdruk opgeslagen moet worden."
 
-#~ msgid "If checked, the screenshot will be saved by default to the location set on the right without displaying a save dialog"
-#~ msgstr "Als deze optie is aangevinkt zal de schermafdruk standaard opgeslagen worden in de locatie die hiernaast is aangegeven. Zo niet zal elke keer worden gevraagd waar de afdruk opgeslagen moet worden."
