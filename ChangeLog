@@ -1,3 +1,200 @@
+commit f35a21362a6ea6ae1c377847f218a68e879450fe
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sun Feb 7 14:53:12 2010 +0100
+
+    Build all the available documentation translations.
+
+commit 2049c8b40feaf09a0a36ed22839b1c9328cb58f1
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:   Fri Feb 5 00:46:11 2010 +0100
+
+    l10n: Updated Hungarian (hu) translation to 100%
+    
+    New status: 75 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 84bcef5202968ac20df9036adf5b903a6cdbf3b6
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:   Fri Feb 5 00:43:37 2010 +0100
+
+    l10n: Updated Hungarian (hu) translation to 96%
+    
+    New status: 72 messages complete with 1 fuzzy and 2 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 1b34ae770ad6031c272e95028ae81fb76336f517
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:   Fri Feb 5 00:39:21 2010 +0100
+
+    l10n: Updated Hungarian (hu) translation to 86%
+    
+    New status: 65 messages complete with 7 fuzzies and 3 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 8cdea0f32cd5ad0083291e6a05f85abd07552ae6
+Author: Jari Rahkonen <jari.rahkonen@pp1.inet.fi>
+Date:   Thu Jan 28 13:24:07 2010 +0100
+
+    l10n: Updated Finnish (fi) translation to 100%
+    
+    New status: 75 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 004a71ea008a13b3eeecad4f91d3432981f6344d
+Author: Timo Verbeek <timoverbeek10@hotmail.com>
+Date:   Sun Jan 17 17:12:20 2010 +0100
+
+    l10n: Updated Dutch (Flemish) (nl) translation to 100%
+    
+    New status: 75 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 57d93fb0faa79b067f51d623dc5235b500eca13f
+Author: Andhika Padmawan <andhika.padmawan@gmail.com>
+Date:   Mon Jan 11 10:19:43 2010 -0500
+
+    l10n: Updated Indonesian (id) translation to 100%
+    
+    New status: 75 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit b755758c240721d71273a1ebc963c8925daa9a8b
+Author: Andhika Padmawan <andhika.padmawan@gmail.com>
+Date:   Mon Jan 11 10:15:58 2010 -0500
+
+    l10n: Updated Indonesian (id) translation to 98%
+    
+    New status: 74 messages complete with 1 fuzzy and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 257b33aa1218a3ac183f2b22ad3b3d0ecdfdcfc9
+Author: Leandro Regueiro <leandro.regueiro@gmail.com>
+Date:   Fri Jan 8 18:26:24 2010 +0100
+
+    l10n: Updates to Galician (gl) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit cce19aa859b02d7e0dab26a42e277101a36bf90f
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Jan 2 12:45:13 2010 +0100
+
+    Update copyright information.
+
+commit 6cd1124df34ccdeac184d3d56437fadedca9ce87
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Mon Dec 28 17:08:38 2009 +0100
+
+    Update NEWS file.
+
+commit 9833ac54cd49d0a571c7959be6f116da44a3877f
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Mon Dec 28 17:06:11 2009 +0100
+
+    Gtk 2.14 is required now.
+
+commit b65639e0b04ef3ba86eba0fa10d245704fe50fca
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Mon Dec 28 17:03:11 2009 +0100
+
+    Use constants for strings in (add_item).
+
+commit 02a13603076badc8d323b3db6d4f2351f1cdb977
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Mon Dec 28 17:01:53 2009 +0100
+
+    Simplify the icon handling in the combobox.
+
+commit 1938669ea8ac46a2c2af6b193918ecf7cc8c92ac
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 26 13:53:16 2009 +0100
+
+    Add a missing prototype.
+
+commit 1c5210763715c03f1db9846b1a37dfc7431ed9c5
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 26 12:45:59 2009 +0100
+
+    Use G_CALLBACK instead of casting to a GCallback.
+
+commit d0f9e8981961efaf661d43bb9c5c8cbd6a8261ea
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 26 12:28:53 2009 +0100
+
+    Fix indentation in some places.
+
+commit f6aa05f8ff212a9a5aae2f03baa2529eceea2816
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 26 12:14:02 2009 +0100
+
+    Update the NEWS file.
+
+commit cfb05aa6d24c4bd7d2dc4167d9359b62c3bb7bf3
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 26 12:12:18 2009 +0100
+
+    Don't use a pointer for the rubberband rectangle.
+
+commit e893b3268d73322dc383263e214df14675c0a6c0
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 26 12:07:07 2009 +0100
+
+    No need to save the current mouse position.
+
+commit 354644d4c949c75ac3aaecf437a87090693a12fc
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 26 00:04:00 2009 +0100
+
+    Rework the region selection when not composited.
+    
+    As spotted by Gauvain Pocentek, the "while" loop in the previous code
+    was not the best thing in the world as it lead to 100% CPU usage during
+    the selection. Instead, we use a filter function. This needs testing and
+    it would be great to share some code with the composited version.
+
+commit c8638fd855a3174dbbd358764e46a86f6cc510bf
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Fri Dec 25 18:56:56 2009 +0100
+
+    Fix a typo in NEWS.
+
+commit edd9205e55a8304e71e869be4c5c6610de3466e4
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Fri Dec 25 18:51:07 2009 +0100
+
+    Make AUTHORS file clearer.
+
+commit b0534e07bf328c30774cb3f485b3f7da5f2b8543
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Fri Dec 25 18:49:11 2009 +0100
+
+    Update the TODO file.
+
+commit 59f6e988ab298d98c0fc6f9e85b1fd81ace5779e
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 19 12:36:14 2009 +0100
+
+    Delete pot file.
+
+commit 62763d9226ac2f7d5849de57617dc0f27602b2bd
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 19 12:28:21 2009 +0100
+
+    Fix distcheck
+
+commit 5ad59bbffbdb049cdd74dc2575885d2894aad62b
+Author: Jérôme Guelfucci <jeromeg@xfce.org>
+Date:   Sat Dec 19 12:21:37 2009 +0100
+
+    Generate ChengeLog in distcheck, fix docs.
+
 commit b1aa44efa23a3b80e37669c55c05b4d44cbeddd4
 Author: Xu Meihong <mhuntxu@gmail.com>
 Date:   Fri Dec 18 17:57:52 2009 +0000

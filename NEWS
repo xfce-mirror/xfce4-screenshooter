@@ -1,4 +1,4 @@
-=== Version 1.x.x ===
+=== Version 1.7.9 ===
 
   * The XMLRPC-C dependency has been replaced by libsoup.
   * Gtk 2.14 is now required to compile.
@@ -54,6 +54,9 @@
     - One second is now the minimal delay when using the interactive
       mode. This caused the screenshooter dialog to be partially displayed
       on the screenshot in some cases.
+
+  * A lot of updated translations for the application, the panel plugin and the
+    documentation. Thanks to the Xfce translation team!
 
 === Version 1.6.0 ===
 
