@@ -56,15 +56,7 @@
   <sect1 id="intro">
     <title>Introdución a Xfce4 Screenshooter</title>
 
-    <para>
-      This application allows you to capture the entire screen, the
-      active window or a selected region. You can set the delay that
-      elapses before the screenshot is taken and the action to be
-      performed afterwards: save the screenshot to a PNG file, copy it
-      to the clipboard, open it using another application, or host it on
-      <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>,
-      a free online image hosting service.
-    </para>
+    <para>Este aplicativo permítelle capturar toda a pantalla, a fiestra activa ou unha zona seleccionada. Pode definir o tempo de espera que transcorre antes de que se tome a captura de pantalla e a acción que se realizará ca captura de pantalla: gardala nun ficheiro PNG, copiala ao portarretallos, abrila usando outro aplicativo, ou aloxala en <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, un servizo de aloxamento de imaxes en liña gratuito.</para>
 
     <para>Tamén hai un engadido para o panel de Xfce.</para>
 
@@ -78,7 +70,7 @@
 
       <para>Para iniciar a aplicación use o elemento "Captura de pantalla" na categoría "Accesorios" do menú principal de Xfce.</para>
 
-      <para>Mostrarase esta ventá:</para>
+      <para>Mostrarase esta fiestra:</para>
 
       <screenshot>
         <mediaobject>
@@ -87,7 +79,7 @@
           </imageobject>
 
           <textobject>
-            <phrase>A ventá de Xfce4 Screenshooter</phrase>
+            <phrase>A fiestra de Xfce4 Screenshooter</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -95,59 +87,32 @@
       <sect4 id="region-to-capture">
         <title>Zona a capturar</title>
 
-        <para>
-          The <emphasis>"Region to capture"</emphasis> section allows
-          you to set what the screenshot will be taken of:
-        </para>
+        <para>A sección <emphasis>"Zona a capturar"</emphasis> permítelle definir de onde se vai tomar a captura de pantalla:</para>
 
         <itemizedlist>
           <listitem>"Toda a pantalla" toma unha captura de pantalla da pantalla completa tal como a ve vostede.</listitem>
-          <listitem>
-            "Active window" takes a screenshot of the active window.
-            This will be the one that was active before this dialog
-            appeared, or if you set a delay, the one that is active
-            after the delay.
-          </listitem>
-          <listitem>
-            "Select a region" allows you to select a region to be
-            captured by clicking and dragging a rectangle over the area
-            of screen that you wish to capture, before releasing the
-            mouse button.
-          </listitem>
+          <listitem>"Fiestra activa" realiza unha captura de pantalla da fiestra activa, sendo esta a que estaba activa antes de que aparecera este diálogo, ou se se define un tempo de espera, a que estea activa cando remate dito tempo de espera.</listitem>
+          <listitem>"Seleccionar unha zona" permítelle seleccionar a zona a capturar premendo nun punto da pantalla e sen soltar o botón do rato, arrastrando o punteiro do rato á esquina oposta da zona, e soltando o botón do rato.</listitem>
         </itemizedlist>
       </sect4>
 
       <sect4 id="include-pointer">
-        <title>Capturing the pointer</title>
+        <title>Capturar o punteiro</title>
 
-        <para>
-          The <emphasis>"Capture the mouse pointer"</emphasis>
-          option allows you to select whether or not the screenshot will
-          include the mouse pointer.
-        </para>
+        <para>A sección <emphasis>"Capturar o punteiro do rato"</emphasis> permítelle definir se se inclúe na captura de pantalla o punteiro do rato:</para>
       </sect4>
 
       <sect4 id="delay">
         <title>Atraso antes da captura</title>
 
-        <para>
-          The <emphasis>"Delay before capturing"</emphasis>
-          section allows you to set the delay that will elapse between
-          pressing the <emphasis>"OK"</emphasis> button and screenshot
-          being taken. This delay will allow you to open menus or to
-          perform whatever action you require to see displayed in the
-          screenshot.
-        </para>
+        <para>A sección <emphasis>"Tempo de espera antes da captura"</emphasis> permítelle definir o tempo de espera que transcorrerá dende que se prema o botón <emphasis>"Aceptar"</emphasis> ata que se realice a captura de pantalla. Este tempo de espera permitiralle abrir menús ou facer calquera acción que desexe que se vexa na captura de pantalla.</para>
       </sect4>
     </sect2>
     
     <sect3 id="after-capturing">
       <title>Despois de capturar</title>
       
-      <para>
-        After pressing the <emphasis>"OK"</emphasis> button a second
-        window will be displayed:
-      </para>
+      <para>Despois de premer no botón <emphasis>"Aceptar"</emphasis> háselle mostrar unha segunda fiestra:</para>
 
       <screenshot>
         <mediaobject>
@@ -156,38 +121,26 @@
           </imageobject>
 
           <textobject>
-            <phrase>The window of Xfce4 Screenshooter after taking a
-            screenshot</phrase>
+            <phrase>A fiestra de Xfce4 Screenshooter despois de realizar unha captura de pantalla</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
 
       <sect4 id="preview">
-        <title>Preview</title> 
+        <title>Vista previa</title> 
 
-        <para>
-          The <emphasis>"Preview"</emphasis> section displays a
-          thumbnail of the screenshot.
-        </para>
+        <para>A sección <emphasis>"Vista previa"</emphasis> mostra unha miniatura da captura de pantalla.</para>
       </sect4>
 
       <sect4 id="action">
         <title>Acción</title>
 
-        <para>
-          The <emphasis>"Action"</emphasis> section allows you to choose
-          what should be performed on the screenshot.
-        </para>
+        <para>A sección <emphasis>"Acción"</emphasis> permítelle escoller que se vai facer ca captura de pantalla.</para>
 
         <sect5 id="save">
-          <title>Save</title>
+          <title>Gardar</title>
 
-          <para>
-            The <emphasis>"Save"</emphasis> option will save the
-            screenshot to a PNG file. A save dialog will be
-            displayed. You will be able to set the save location, and
-            the name of the file.
-          </para>
+          <para>A opción <emphasis>"Gardar"</emphasis> gardará a captura de pantalla nun ficheiro PNG. Mostrarase un diálogo para que poida seleccionar onde se vai gardar e o nome do ficheiro.</para>
 
           <para>Xfce4 Screenshooter tamén ten a capacidade de gardar a captura de pantalla en calquera sistema de ficheiros remoto soportado por GVfs, como FTP, SAMBA, SFTP, ordenadores remotos accesibles mediante SSH... Só ten que conectarse a este sistema de ficheiros remoto usando <emphasis>gvfs-connect</emphasis> ou <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> e estará dispoñible na columna da esquerda do menú de gardar.</para>
         </sect5>
@@ -195,24 +148,13 @@
         <sect5 id="copy-to-clipboard">
           <title>Copiar ó portarretallos</title>
 
-          <para>
-            The <emphasis>"Copy to the clipboard"</emphasis> option
-            allows you to paste the screenshot in another application,
-            such as a word processor. This option is only available when
-            a clipboard manager is running.
-          </para>
+          <para>A opción <emphasis>"Copiar ao portarretallos"</emphasis> permítelle pegar a captura de pantalla noutra aplicación, por exemplo nun procesador de textos. Esta opción só está dispoñible cando se está executando un xestor de portarretallos.</para>
         </sect5>
 
         <sect5 id="open-with">
           <title>Abrir con</title>
 
-          <para>
-            The <emphasis>"Open with"</emphasis> option saves the
-            screenshot to the system's temporary directory and opens it
-            with the application chosen from the drop-down list.
-            Applications which support images are automatically detected
-            and added to the drop-down list.
-          </para>
+          <para>A opción <emphasis>"Abrir con"</emphasis> garda a captura de pantalla no directorio temporal do sistema e ábrea co aplicativo seleccionado na lista despregable da dereita. Os aplicativos que soportan imaxes detéctanse automaticamente e engádense á lista despregable.</para>
         </sect5>
 
         <sect5 id="zimagez">
@@ -257,14 +199,7 @@
     <sect2 id="command-line">
       <title>A través da liña de comandos</title>
 
-      <para>
-        Command line options allow you to take screenshots quickly. They
-        also allow you to configure the Print Screen key on the upper
-        right of most keyboards so that it takes screenshots. To do so,
-        configure the key-bindings of your desktop environment so that
-        it launches xfce4-screenshooter with one or several of the
-        following options when the Prt Scrn key is pressed.
-      </para>
+      <para>As opcións de liña de comandos permítenlle realizar capturas de pantalla rapidamente. Tamén lle permiten configurar a tecla Imprimir pantalla que está na parte superior dereita da maior parte dos teclados de xeito que realice capturas de pantalla. Para facer isto, configure as asociacións de teclas do seu ambiente de escritorio de forma que inicie xfce4-screenshooter con unha ou varias das seguintes opcións cando se prema a tecla Impr pant.</para>
 
       <sect3 id="options">
         <title>As opcións de liña de comandos</title>
@@ -272,7 +207,7 @@
         <sect4 id="w-option">
           <title>A opción -w</title>
 
-          <para>A opción <emphasis>-w</emphasis> permítelle realizar unha captura de pantalla da ventá activa.</para>
+          <para>A opción <emphasis>-w</emphasis> permítelle realizar unha captura de pantalla da fiestra activa.</para>
         </sect4>
 
         <sect4 id="f-option">
@@ -284,69 +219,38 @@
         <sect4 id="r-option">
           <title>A opción -r</title>
 
-          <para>
-            The <emphasis>-r</emphasis> option allows you to select a
-            region to be captured by clicking and dragging a rectangle
-            over the area of screen that you wish to capture, before
-            releasing the mouse button.
-          </para>
+          <para>A opción <emphasis>-r</emphasis> permítelle seleccionar a zona que se vai capturar premendo nun punto da pantalla e sen soltar o botón do rato, arrastrando o punteiro ata a esquina oposta da zona, e soltando o botón do rato.</para>
         </sect4>
 
         <sect4 id="d-option">
           <title>A opción -d</title>
 
-          <para>
-            The <emphasis>-d</emphasis> option followed by a positive
-            integer allows you to set the delay before taking the
-            screenshot when the <emphasis>-w</emphasis>, the
-            <emphasis>-f</emphasis> or the <emphasis>-r</emphasis>
-            option is given.
-          </para>
+          <para>A opción <emphasis>-d</emphasis> seguida por un número enteiro positivo permítelle definir o tempo de espera antes de realizar a captura de pantalla cando se proporciona a opción <emphasis>-w</emphasis>, a opción <emphasis>-f</emphasis> ou a opción <emphasis>-r</emphasis>.</para>
         </sect4>
 
         <sect4 id="s-option">
           <title>A opción -s</title>
 
-          <para>
-            The <emphasis>-s</emphasis> option followed by the path to
-            an existing folder allows you to set where the screenshots
-            are saved. This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or
-            the <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>A opción <emphasis>-s</emphasis> seguida pola ruta dun cartafol existente permítelle definir onde se gardan as capturas de pantalla. Esta opción só ten efecto se proporciona a opción <emphasis>-w</emphasis>, a opción <emphasis>-f</emphasis> ou a opción <emphasis>-r</emphasis>.</para>
         </sect4>
 
         <sect4 id="o-option">
           <title>A opción -o</title>
 
-          <para>
-            If the <emphasis>-o</emphasis> option is given, followed by
-            an application name, the screenshot will be saved to the
-            system's temporary directory and opened with the application
-            whose name is to be given after <emphasis>-o</emphasis>.
-            This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>Se se proporciona a opción <emphasis>-o</emphasis>, seguida por un nome de aplicativo, a captura de pantalla gardarase no directorio temporal do sistema e abrirase co aplicativo cuxo nome se indicou despois da opción <emphasis>-o</emphasis>. Esta opción só ten efecto se se proporciona a opción  a opción <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou a opción <emphasis>-r</emphasis>.</para>
         </sect4>
 
         <sect4 id="u-option">
           <title>A opción -u</title>
 
-          <para>
-            If the <emphasis>-u</emphasis> option is given, the screenshot
-            will be hosted on ZimageZ. See above for more details.
-            This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the
-            <emphasis>-r</emphasis> option is given.
-          </para>
+          <para>Se se proporciona a opción <emphasis>-u</emphasis> hase gardar a captura de pantalla en ZimageZ. Consulte enriba para obter máis detalles. Esta opción só ten efecto se se proporcionan a opción <emphasis>-w</emphasis>, a opción <emphasis>-f</emphasis> ou a opción <emphasis>-r</emphasis>.</para>
         </sect4>
       </sect3>
     </sect2>
   </sect1>
 
   <sect1 id="panel-plugin">
-    <title>Using the Xfce panel plugin</title>
+    <title>Uso do engadido do panel de Xfce</title>
 
     <sect2 id="add">
       <title>Engadir o engadido</title>
@@ -355,25 +259,15 @@
     </sect2>
 
     <sect2 id="set">
-      <title>Configuring the plugin</title>
+      <title>Configurar o engadido</title>
 
-      <para>
-        You can configure how screenshots are taken by right clicking on
-        the plugin and selecting <emphasis>"Properties"</emphasis>. A
-        preferences dialog similar to the dialog of the main application
-        will appear. Please have a look above for the different
-        preferences.
-      </para>
+      <para>Pode configurar como se realizan as capturas de pantalla premendo co botón dereito no engadido e seleccionando <emphasis>"Propiedades"</emphasis>. Aparecerá un diálogo de preferencias semellante ao diálogo da aplicación principal. Bótelle unha ollada ao texto anterior para coñecer as diferentes preferencias.</para>
     </sect2>
 
     <sect2 id="use">
       <title>Uso do engadido</title>
 
-      <para>
-        To take a screenshot, just click on the plugin. You can use the
-        scroll wheel on the plugin button to switch between the different
-        regions to be captured.
-      </para>
+      <para>Para realizar unha captura de pantalla simplemente prema no engadido. Pode usar a roda do rato sobre o botón do engadido para escoller a zona a capturar.</para>
     </sect2>
 
   </sect1>

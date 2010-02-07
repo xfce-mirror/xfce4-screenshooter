@@ -176,9 +176,12 @@ noinst_DATA = \
 	docs/manual/es/xfce4-screenshooter.xml \
 	docs/manual/fr/xfce4-screenshooter.xml \
 	docs/manual/gl/xfce4-screenshooter.xml \
+	docs/manual/id/xfce4-screenshooter.xml \
 	docs/manual/it/xfce4-screenshooter.xml \
 	docs/manual/ja/xfce4-screenshooter.xml \
-	docs/manual/tr/xfce4-screenshooter.xml
+	docs/manual/pt/xfce4-screenshooter.xml \
+	docs/manual/tr/xfce4-screenshooter.xml \
+	docs/manual/zh_CN/xfce4-screenshooter.xml
 
 # Asturian documentation
 astdocdir = $(datadir)/xfce4/doc/ast
@@ -250,6 +253,23 @@ daimages_DATA = \
 	docs/manual/da/images/xfce4-screenshooter-dialog2.png \
 	docs/manual/da/images/xfce4-screenshooter-zimagez-login-dialog.png \
 	docs/manual/da/images/xfce4-screenshooter-zimagez-result-dialog.png
+
+# Portuguese documentation
+ptdocdir = $(datadir)/xfce4/doc/pt
+ptdoc_DATA = docs/manual/pt/xfce4-screenshooter.html
+if MAINTAINER_MODE
+if ENABLE_XSLTPROC
+docs/manual/pt/xfce4-screenshooter.html: docs/manual/pt/xfce4-screenshooter.xml
+	$(XSLTPROC) -o docs/manual/pt/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/pt/xfce4-screenshooter.xml
+endif
+endif
+
+ptimagesdir = $(datadir)/xfce4/doc/pt/images
+ptimages_DATA = \
+	docs/manual/pt/images/xfce4-screenshooter-dialog1.png \
+	docs/manual/pt/images/xfce4-screenshooter-dialog2.png \
+	docs/manual/pt/images/xfce4-screenshooter-zimagez-login-dialog.png \
+	docs/manual/pt/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # Spanish documentation
 esdocdir = $(datadir)/xfce4/doc/es
@@ -421,6 +441,7 @@ EXTRA_DIST = \
 	$(itdoc_DATA) $(itimages_DATA) \
 	$(iddoc_DATA) $(idimages_DATA) \
 	$(jadoc_DATA) $(jaimages_DATA) \
+	$(ptdoc_DATA) $(ptimages_DATA) \
 	$(trdoc_DATA) $(trimages_DATA) \
 	$(zhcndoc_DATA) $(zhcnimages_DATA)
 

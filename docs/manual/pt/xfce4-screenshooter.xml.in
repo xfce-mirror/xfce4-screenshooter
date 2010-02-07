@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY date "February 2009">
+<!ENTITY version "@PACKAGE_VERSION@">
+<!ENTITY application "@PACKAGE_NAME@">
+]>
+<article id="xfce4-screenshooter" lang="pt">
+
+  <!-- Header -->
+  <articleinfo>
+    <title>Xfce4 Screenshooter</title>
+
+    <pubdate>&date;</pubdate>
+
+    <copyright>
+      <year>2008</year>
+      <year>2009</year>
+      <holder>Jérôme Guelfucci</holder>
+    </copyright>
+
+    <copyright>
+      <year>2009</year>
+      <holder>Sam Swift</holder>
+    </copyright>
+
+    <legalnotice id="legalnotice">
+      <para>É garantida a permissão a copiar, distribuir e/ou modificar este documento nos termos da GNU Free Documentation License, versão 1.1 ou mais recente conforme publicada pela Free Software Foundation; sem Secções Invariantes, sem textos de capa e contra-capa. Pode consultar a licença integralmente em <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>.</para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Jérôme</firstname>
+        <surname>Guelfucci</surname>
+        <affiliation>
+          <address><email>jeromeg@xfce.org</email></address>
+        </affiliation>
+      </author>
+      <author>
+        <firstname>Sam</firstname>
+        <surname>Swift</surname>
+        <affiliation>
+          <address><email>renmush@gmail.com</email></address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <releaseinfo>Este manual descreve a versão @PACKAGE_VERSION@ do Xfce4 Screenshooter.</releaseinfo>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Introdução ao Xfce4 Screenshooter</title>
+
+    <para>Esta aplicação permite-lhe capturar a totalidade do ecrã, a janela activa ou uma zona específica. Pode definir o atraso entre tirar uma captura e a acção a realizar posteriormente: gravar para um ficheiro PNG, copiar para a área de transferência, abri-la utilizando outra aplicação ou aloja-la no <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, um serviço de alojamento de imagens gratuito.</para>
+
+    <para>Também está disponível um plugin para o painel Xfce.</para>
+
+  </sect1>
+
+  <sect1 id="using-the-application">
+    <title>Utilizando a aplicação</title>
+
+    <sect2 id="user-interface">
+      <title>Através da interface do utilizador</title>
+
+      <para>Para executar a aplicação, use o item "Captura de ecrã" na categoria "Accessórios" do menu Xfce.</para>
+
+      <para>Esta janela será apresentada:</para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog1.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>A janela do Xfce4 Screenshooter</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect4 id="region-to-capture">
+        <title>Zona a capturar</title>
+
+        <para>A secção <emphasis>"Zona a capturar"</emphasis> permite-lhe definir a zona à qual pretende pretende tirar a captura:</para>
+
+        <itemizedlist>
+          <listitem>"Ecrã inteiro" tira uma captura da totalidade do ecrã tal qual como o vê.</listitem>
+          <listitem>"Janela activa" tira uma captura da janela activa. Esta opção será a que está activa antes de aparecer o diálogo ou, se definir um atraso, a que estará activa depois desse atraso.</listitem>
+          <listitem>"Seleccione uma zona" permite-lhe seleccionar a zona a capturar através de um clique no rato e formando um rectângulo sobre a área que pretende capturar, antes de largar o botão do rato.</listitem>
+        </itemizedlist>
+      </sect4>
+
+      <sect4 id="include-pointer">
+        <title>Capturando o ponteiro</title>
+
+        <para>A opção <emphasis>"Capturar ponteiro do rato"</emphasis> permite-lhe escolher se o ponteiro do rato deve ou não aparecer na captura de ecrã.</para>
+      </sect4>
+
+      <sect4 id="delay">
+        <title>Atraso antes de captura</title>
+
+        <para>A secção <emphasis>"Atraso antes de captura"</emphasis> permite-lhe definir o atraso que decorre entre pressionar o botão <emphasis>"OK"</emphasis> e a captura. Este atraso irá permitir-lhe abrir menus ou executar qualquer acção que pretende ver apresentada na captura de ecrã.</para>
+      </sect4>
+    </sect2>
+    
+    <sect3 id="after-capturing">
+      <title>Depois de capturar</title>
+      
+      <para>Depois de pressionar o botão <emphasis>"OK"</emphasis> uma segunda janela será apresentada:</para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog2.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>A janela do Xfce4 Screenshooter depois de tirar uma captura</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect4 id="preview">
+        <title>Pré-visualizar</title> 
+
+        <para>A secção <emphasis>"Prá-visualizar"</emphasis> apresenta uma miniatura da captura.</para>
+      </sect4>
+
+      <sect4 id="action">
+        <title>Acção</title>
+
+        <para>A secção <emphasis>"Acção"</emphasis> permite-lhe escolher o que deve ser executado na captura de ecrã.</para>
+
+        <sect5 id="save">
+          <title>Gravar</title>
+
+          <para>A opção <emphasis>"Gravar"</emphasis> grava a captura para um ficheiro PNG. Uma janela de gravação será apresentada. Será capaz de definir o local de gravação e o nome do ficheiro.</para>
+
+          <para>Xfce4 Screenshooter também é capaz de gravar a captura para qualquer sistema de ficheiros remoto que tenha suporte a GVfs, tais como FTP, SAMBA, SFTP, computadores remotos acessíveis por SSH... Só precisa de ligar-se a este sistema de ficheiros remoto usando <emphasis>gvfs-connect</emphasis> ou o <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> e estará disponível na coluna esquerda da janela de gravação.</para>
+        </sect5>
+
+        <sect5 id="copy-to-clipboard">
+          <title>Copiar para a área de transferência</title>
+
+          <para>A opção <emphasis>"Copiar para a área de transferência"</emphasis> permite-lhe colar a captura noutra aplicação (ex:processador de texto). Esta opção apenas está disponível se o gestor da área de transferência estiver em execução.</para>
+        </sect5>
+
+        <sect5 id="open-with">
+          <title>Abrir com</title>
+
+          <para>A opção <emphasis>"Abrir com"</emphasis> grava a captura num directório temporário e abre-a com a aplicação escolhida na lista. As aplicações que têm suporte a imagens são automaticamente detectadas e adicionadas à lista.</para>
+        </sect5>
+
+        <sect5 id="zimagez">
+          <title>Alojar em ZimageZ</title>
+          
+          <para>A opção <emphasis>"Alojar em ZimageZ"</emphasis> permite-lhe alojar a captura neste serviço de alojamento gratuito, de modo a que a possa partilhar com outras pessoas. O ZmageZ gera automaticamente duas miniaturas da captura, uma grande e uma pequena, que podem ser utilizadas para criar miniaturas apontando para a captura em tamanho real.</para>
+
+          <para>Depois de pressionar o botão <emphasis>"OK"</emphasis>, será apresentado esta janela:</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-login-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>A janela para alojar uma captura de ecrã em ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+          <para>Se não tiver um nome de utilizador ZimageZ, precisa criar um no <ulink type="http" url="http://www.zimagez.com"> sítio web ZimageZ</ulink>. No sítio, estão disponíveis diversos idiomas que pode alterar usando o menu no canto superior direito. Tem que preencher todos os campos da janela . Ao clicar no botão <emphasis>"OK"</emphasis>, o envio iniciará.</para>
+          
+          <para>A janela em baixo irá dar-lhe as ligações para a captura em tamanho real, para a miniatura grande, para a miniatura pequena bem como exemplos HTML e BBcode para criar uma miniatura apontando para a captura em tamanho real:</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-result-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>A janela que indica as ligações da sua captura em Zimage Z</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+        </sect5>
+      </sect4>
+    </sect3>
+
+    <sect2 id="command-line">
+      <title>Através da linha de comandos</title>
+
+      <para>As opções da linha de comandos permitem-lhe tirar capturas rapidamente. Também lhe permitem configurar a tecla Print Screen para tirar as capturas. Para o fazer, configure as teclas de atalho do seu ambiente de trabalho para executar o xfce4-screenshooter com uma ou mais das seguintes opções ao pressionar tecla Print Screen.</para>
+
+      <sect3 id="options">
+        <title>As opções da linha de comandos</title>
+
+        <sect4 id="w-option">
+          <title>A opção -w</title>
+
+          <para>A opção <emphasis>-w</emphasis> permite-lhe tirar uma captura da janela activa.</para>
+        </sect4>
+
+        <sect4 id="f-option">
+          <title>A opção -f</title>
+
+          <para>A opção <emphasis>-f</emphasis> permite-lhe tirar uma captura do ecrã inteiro.</para>
+        </sect4>
+
+        <sect4 id="r-option">
+          <title>A opção -r</title>
+
+          <para>A opção <emphasis>-r</emphasis> permite-lhe seleccionar a zona a capturar através de clique e arrastamento para formar um rectângulo sobre a área a capturar, antes de largar o botão do rato.</para>
+        </sect4>
+
+        <sect4 id="d-option">
+          <title>A opção -d</title>
+
+          <para>A opção <emphasis>-d</emphasis> seguida de um número inteiro positivo permite-lhe definir o atraso para tirar a captura quando fot indicada a opção <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis></para>
+        </sect4>
+
+        <sect4 id="s-option">
+          <title>A opção -s</title>
+
+          <para>A opção <emphasis>-s</emphasis> seguida do caminho de uma pasta existente permite-lhe definir o local de gravação das capturas. Esta opção apenas terá efeito se for indicada a opção <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis>.</para>
+        </sect4>
+
+        <sect4 id="o-option">
+          <title>A opção -o</title>
+
+          <para>Se indicar a opção <emphasis>-o</emphasis>, seguida do nome da aplicação, a captura será gravada num directório temporário e aberta com a aplicação cujo nome for indicado depois da opção <emphasis>-o</emphasis>. Esta opção apenas terá efeito se for dada a opção <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis>.</para>
+        </sect4>
+
+        <sect4 id="u-option">
+          <title>A opção -u</title>
+
+          <para>Se indicar a opção <emphasis>"-u"</emphasis>, a captura será alojada em ZimageZ. Veja acima para mais detalhes. Esta opção apenas terá efeito se for indicada a opção <emphasis>-w</emphasis>, <emphasis>-f</emphasis> ou <emphasis>-r</emphasis>.</para>
+        </sect4>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="panel-plugin">
+    <title>Utilizando o plugin do painel Xfce</title>
+
+    <sect2 id="add">
+      <title>Adicionando o plugin</title>
+
+      <para>Para adicionar o plugin ao painel, clique direito com o rato sobre o painel e seleccione <emphasis>"Adicionar Novo Item"</emphasis>. Seleccione o plugin <emphasis>"Captura de ecrã"</emphasis> e adicione-o.</para>
+    </sect2>
+
+    <sect2 id="set">
+      <title>Configurando o plugin</title>
+
+      <para>Pode configurar o modo como as capturas são obtidas com clique direito no plugin e seleccionar <emphasis>"Propriedades"</emphasis>. Uma janela de preferências similar à da janela principal da aplicação aparecerá. Por favor, preste atenção às diferentes preferências.</para>
+    </sect2>
+
+    <sect2 id="use">
+      <title>Utilizando o plugin</title>
+
+      <para>Para tirar uma captura, clique no plugin. Pode usar a roda de deslocação no botão de plugin para alternar entre as diferentes zonas a capturar.</para>
+    </sect2>
+
+  </sect1>
+
+</article>
