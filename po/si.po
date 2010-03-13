@@ -43,11 +43,11 @@ msgstr "තිරපිටපතක් ගන්න"
 
 #: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
-msgstr ""
+msgstr "වරණ"
 
 #: ../lib/screenshooter-dialogs.c:729
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">හසුකරගත යුතු කලාපය</span>"
 
 #: ../lib/screenshooter-dialogs.c:749
 msgid "Entire screen"
@@ -78,11 +78,11 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:794
 msgid "Capture the mouse pointer"
-msgstr ""
+msgstr "මවුස් පොයින්ටරය හසුකරගන්න"
 
 #: ../lib/screenshooter-dialogs.c:799
 msgid "Display the mouse pointer on the screenshot"
-msgstr ""
+msgstr "තිරපිටපත මත මවුස් පොයින්ටරය පෙන්වන්න"
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -90,11 +90,11 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:837
 msgid "Delay in seconds before the screenshot is taken"
-msgstr ""
+msgstr "තිරපිටපත ගැනීමේ දී පමා කළ යුතු කාලය තත්පරවලින්"
 
 #: ../lib/screenshooter-dialogs.c:840
 msgid "seconds"
-msgstr ""
+msgstr "තත්පර"
 
 #: ../lib/screenshooter-dialogs.c:892
 msgid "Action"
@@ -102,7 +102,7 @@ msgstr "ක්‍රියාව"
 
 #: ../lib/screenshooter-dialogs.c:920
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ක්‍රියාව</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:936
