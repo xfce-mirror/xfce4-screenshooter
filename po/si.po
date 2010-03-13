@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Danishka Navin, 2010.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
@@ -26,9 +26,7 @@ msgid "Transfer"
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:556
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
-"transferred to:</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
@@ -37,11 +35,11 @@ msgstr ""
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
-msgstr ""
+msgstr "තිරපිටපත"
 
 #: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
-msgstr ""
+msgstr "තිරපිටපතක් ගන්න"
 
 #: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
@@ -53,7 +51,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:749
 msgid "Entire screen"
-msgstr ""
+msgstr "සම්පූර්ණ තිරය"
 
 #: ../lib/screenshooter-dialogs.c:756 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:308
@@ -62,7 +60,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:764
 msgid "Active window"
-msgstr ""
+msgstr "සක්‍රිය කවුළුව"
 
 #: ../lib/screenshooter-dialogs.c:771 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
@@ -71,14 +69,11 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:779
 msgid "Select a region"
-msgstr ""
+msgstr "කලාපයක් තෝරන්න"
 
 #: ../lib/screenshooter-dialogs.c:784 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:318
-msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:794
@@ -90,8 +85,7 @@ msgid "Display the mouse pointer on the screenshot"
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:815
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:837
@@ -184,8 +178,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:343
 msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
 
@@ -194,9 +187,7 @@ msgid "Check the user information..."
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:407
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
-"must fill all the fields.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:421
@@ -204,15 +195,11 @@ msgid "Login on ZimageZ..."
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
-msgid ""
-"An unexpected reply from ZimageZ was received. The upload of the screenshot "
-"failed."
+msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:500
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
-"user and the password you entered do not match. Please retry.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:558
@@ -239,9 +226,7 @@ msgid "User:"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:747
-msgid ""
-"Your Zimagez user name, if you do not have one yet please create one on the "
-"Web page linked above"
+msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
 msgstr ""
 
 #. Create the password label
@@ -259,9 +244,7 @@ msgid "Title:"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:779
-msgid ""
-"The title of the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr ""
 
 #. Create the comment label
@@ -270,9 +253,7 @@ msgid "Comment:"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:796
-msgid ""
-"A comment on the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:919
@@ -299,9 +280,7 @@ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:1010
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
-"to the full size image</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
 msgstr ""
 
 #. HTML title
@@ -355,9 +334,7 @@ msgstr ""
 
 #: ../src/main.c:136
 #, c-format
-msgid ""
-"The --%s option is only used when --fullscreen, --window or --region is "
-"given. It will be ignored.\n"
+msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
 msgstr ""
 
 #: ../src/main.c:150
@@ -374,7 +351,5 @@ msgstr ""
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
 msgstr ""
-
