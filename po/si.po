@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-13 12:01+0100\n"
+"POT-Creation-Date: 2010-03-14 12:01+0100\n"
 "PO-Revision-Date: 2010-03-13 18:09+0530\n"
 "Last-Translator: Danishka Navin\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -23,11 +23,11 @@ msgstr "%.2fKb of %.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
-msgstr ""
+msgstr "මාරු කරන්න"
 
 #: ../lib/screenshooter-dialogs.c:556
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">තිරපිටපත වෙතට මාරු කරමින්:</span>"
 
 #: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
 #: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-utils.c:64
@@ -74,7 +74,7 @@ msgstr "කලාපයක් තෝරන්න"
 #: ../lib/screenshooter-dialogs.c:784 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:318
 msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
-msgstr ""
+msgstr "තිරයෙහි කිසියම් තැනක් ක්ලික් කොට මවුස බොත්තම මුදා නොහැර මවුසය අදාළ කලාපයේ අනිත් කෙළවර වෙත ඇදගෙන යාමෙන් හසු කරගැනීමට අවශ්‍ය කලාපය තෝරන්න"
 
 #: ../lib/screenshooter-dialogs.c:794
 msgid "Capture the mouse pointer"
@@ -86,7 +86,7 @@ msgstr "තිරපිටපත මත මවුස් පොයින්ටර
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">හසුකරගැනීමට පළමු ප්‍රමාද කළ යුතු කාලය</span>"
 
 #: ../lib/screenshooter-dialogs.c:837
 msgid "Delay in seconds before the screenshot is taken"
@@ -115,7 +115,7 @@ msgstr "තිරපිටපත PNG ගොනුවකට සුරකින්
 
 #: ../lib/screenshooter-dialogs.c:950
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "ක්ලිප්බෝඩ් එක මතට පිටපත් කරන්න"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
