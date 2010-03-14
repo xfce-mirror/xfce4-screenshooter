@@ -286,30 +286,31 @@ msgstr ""
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1026
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1047
 msgid "BBCode for forums"
-msgstr ""
+msgstr "ෆෝරම සඳහා BBCode"
 
 #: ../lib/screenshooter-zimagez.c:1176
+#, fuzzy
 msgid "ZimageZ"
-msgstr ""
+msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1209
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\"> තත්ත්වය</span>"
 
 #. Open Link
 #: ../lib/sexy-url-label.c:176
 msgid "_Open Link"
-msgstr ""
+msgstr "සබැඳිය විවෘත කරන්න (_O)"
 
 #. Copy Link Address
 #: ../lib/sexy-url-label.c:188
 msgid "Copy _Link Address"
-msgstr ""
+msgstr "සබැඳි ලිපිනය පිටපත් කරන්න (_L)"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
@@ -325,7 +326,7 @@ msgstr ""
 
 #: ../src/main.c:85
 msgid "Version information"
-msgstr ""
+msgstr "වෙළුම් තොරතුරු"
 
 #: ../src/main.c:134
 #, c-format
