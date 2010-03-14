@@ -223,7 +223,7 @@ msgstr ""
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:736
 msgid "User:"
-msgstr ""
+msgstr "පරිශීලක:"
 
 #: ../lib/screenshooter-zimagez.c:747
 msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
@@ -232,11 +232,11 @@ msgstr ""
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:753
 msgid "Password:"
-msgstr ""
+msgstr "මුරපදය:"
 
 #: ../lib/screenshooter-zimagez.c:763
 msgid "The password for the user above"
-msgstr ""
+msgstr "ඉහත පරිශීලකයා සඳහා මුරපදය"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:769
@@ -250,7 +250,7 @@ msgstr ""
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:785
 msgid "Comment:"
-msgstr ""
+msgstr "සටහන:"
 
 #: ../lib/screenshooter-zimagez.c:796
 msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
@@ -259,17 +259,17 @@ msgstr ""
 #: ../lib/screenshooter-zimagez.c:919
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr ""
+msgstr "<a href=\"%s\">සම්පූර්ණ ප්‍රමාණයේ පිංතූර</a>"
 
 #: ../lib/screenshooter-zimagez.c:921
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">විශාල  සිගිති රූ</a>"
 
 #: ../lib/screenshooter-zimagez.c:923
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">කුඩා සිගිති රූ</a>"
 
 #: ../lib/screenshooter-zimagez.c:939
 msgid "My screenshot on ZimageZ"
@@ -277,7 +277,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:965
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">සබැඳි</span>"
 
 #: ../lib/screenshooter-zimagez.c:1010
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
@@ -294,7 +294,6 @@ msgid "BBCode for forums"
 msgstr "ෆෝරම සඳහා BBCode"
 
 #: ../lib/screenshooter-zimagez.c:1176
-#, fuzzy
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
