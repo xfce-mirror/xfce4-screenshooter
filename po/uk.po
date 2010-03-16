@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-29 11:58+0100\n"
+"POT-Creation-Date: 2010-03-16 06:01+0100\n"
 "PO-Revision-Date: 2009-10-06 18:07+0300\n"
 "Last-Translator: Andriy Matkovsky <sidius.ua@gmail.com>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
@@ -15,175 +15,160 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../lib/screenshooter-dialogs.c:478
+#: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fКб з %.2fКб"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
 msgstr "Передача"
 
-#: ../lib/screenshooter-dialogs.c:581
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
-"transferred to:</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Знімок пересилається на  </"
-"span>"
+#: ../lib/screenshooter-dialogs.c:556
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Знімок пересилається на  </span>"
 
-#: ../lib/screenshooter-dialogs.c:697 ../lib/screenshooter-dialogs.c:714
-#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Знімок екрану"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
 msgstr "Отримати знімок"
 
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
 msgstr "Параметри"
 
-#: ../lib/screenshooter-dialogs.c:754
+#: ../lib/screenshooter-dialogs.c:729
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Область захоплення</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Область захоплення</span>"
 
-#: ../lib/screenshooter-dialogs.c:774
+#: ../lib/screenshooter-dialogs.c:749
 msgid "Entire screen"
 msgstr "Весь екран"
 
-#: ../lib/screenshooter-dialogs.c:781 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:756 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "Зробити знімок всього екрану"
 
-#: ../lib/screenshooter-dialogs.c:789
+#: ../lib/screenshooter-dialogs.c:764
 msgid "Active window"
 msgstr "Активного вікна"
 
-#: ../lib/screenshooter-dialogs.c:796 ../src/main.c:90
+#: ../lib/screenshooter-dialogs.c:771 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
 msgstr "Зробити знімок активного вікна"
 
-#: ../lib/screenshooter-dialogs.c:804
+#: ../lib/screenshooter-dialogs.c:779
 msgid "Select a region"
 msgstr "Виділеної області"
 
-#: ../lib/screenshooter-dialogs.c:809 ../src/main.c:68
+#: ../lib/screenshooter-dialogs.c:784 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:318
-msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
-msgstr ""
-"Виберіть область для захоплення шляхом клацання мишкою на екрані і без "
-"відпускання кнопки миші пересуньте вказівник в інший кут області і тоді "
-"відпустіть кнопку миші."
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
+msgstr "Виберіть область для захоплення шляхом клацання мишкою на екрані і без відпускання кнопки миші пересуньте вказівник в інший кут області і тоді відпустіть кнопку миші."
 
-#: ../lib/screenshooter-dialogs.c:819
+#: ../lib/screenshooter-dialogs.c:794
 msgid "Capture the mouse pointer"
 msgstr "Показувати курсор миші"
 
-#: ../lib/screenshooter-dialogs.c:824
+#: ../lib/screenshooter-dialogs.c:799
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Показувати курсор миші на знімку"
 
-#: ../lib/screenshooter-dialogs.c:840
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Затримка перед знімком</span>"
+#: ../lib/screenshooter-dialogs.c:815
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Затримка перед знімком</span>"
 
-#: ../lib/screenshooter-dialogs.c:862
+#: ../lib/screenshooter-dialogs.c:837
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Затримка в секундах перед отриманням знімку екрану"
 
-#: ../lib/screenshooter-dialogs.c:865
+#: ../lib/screenshooter-dialogs.c:840
 msgid "seconds"
 msgstr "секунд"
 
-#: ../lib/screenshooter-dialogs.c:917
+#: ../lib/screenshooter-dialogs.c:892
 msgid "Action"
-msgstr ""
+msgstr "Дія"
 
-#: ../lib/screenshooter-dialogs.c:945
+#: ../lib/screenshooter-dialogs.c:920
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Дія   </span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:961
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:936
 msgid "Save"
-msgstr "Зберегти в:"
+msgstr "Зберегти"
 
-#: ../lib/screenshooter-dialogs.c:966
+#: ../lib/screenshooter-dialogs.c:941
 msgid "Save the screenshot to a PNG file"
 msgstr "Зберегти знімок у файл PNG"
 
-#: ../lib/screenshooter-dialogs.c:975
+#: ../lib/screenshooter-dialogs.c:950
 msgid "Copy to the clipboard"
 msgstr "Копіювати в буфер обміну"
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:952
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Копіювати знімок в буфер, що можна було вставити його пізніше"
 
-#: ../lib/screenshooter-dialogs.c:994
+#: ../lib/screenshooter-dialogs.c:969
 msgid "Open with:"
 msgstr "Відкрити з:"
 
-#: ../lib/screenshooter-dialogs.c:1000
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Open the screenshot with the chosen application"
 msgstr "Відкрити знімок екрану вибраною програмою"
 
-#: ../lib/screenshooter-dialogs.c:1018 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:993 ../src/main.c:63
 msgid "Application to open the screenshot"
 msgstr "Програма для відкриття знімку екрану"
 
-#: ../lib/screenshooter-dialogs.c:1028
+#: ../lib/screenshooter-dialogs.c:1003
 msgid "Host on ZimageZ"
 msgstr "Розмістити на ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1032 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Розмістити знімок на ZimageZ, вільний сервіс для розміщення зображень"
 
-#: ../lib/screenshooter-dialogs.c:1046
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:1021
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Посилання</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Перегляд</span>"
 
-#: ../lib/screenshooter-dialogs.c:1107
+#: ../lib/screenshooter-dialogs.c:1082
 msgid "Save screenshot as..."
 msgstr "Зберегти знімок як..."
 
 #: ../lib/screenshooter-zimagez.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr "Сталась помилка під час завантаження знімку."
+msgstr "Сталась помилка під час створення запиту XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:153
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr "Сталась помилка під час завантаження знімку."
+msgstr "Сталась помилка під час передачі данних в ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:178
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr "Сталась помилка під час завантаження знімку."
+msgstr "Сталась помилка під час розбору відповіді з ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:230
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Взято %s, в %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:297
@@ -191,44 +176,32 @@ msgid "Initialize the connection..."
 msgstr "Почати з'єднання..."
 
 #: ../lib/screenshooter-zimagez.c:343
-#, fuzzy
 msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Будь ласка, заповніть відповідні поля Вашими ім'ям користувача, паролем та "
-"інформацією щодо знімку на <a href=\"http://www.zimagez.com\">ZimageZ</a>"
+"Будь ласка заповніть відповідні поля Вашим <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"ім'ям користувача, паролем і деталями як на знімку екрану."
 
 #: ../lib/screenshooter-zimagez.c:400
 msgid "Check the user information..."
 msgstr "Перевірте інформацію про користувача..."
 
 #: ../lib/screenshooter-zimagez.c:407
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
-"must fill all the fields.</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Ви маєте заповнити всі поля</"
-"span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ви маєте заповнити всі поля</span>"
 
 #: ../lib/screenshooter-zimagez.c:421
 msgid "Login on ZimageZ..."
 msgstr "Вхід на ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
-msgid ""
-"An unexpected reply from ZimageZ was received. The upload of the screenshot "
-"failed."
-msgstr ""
+msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
+msgstr "Отримано несподівану відповідь від ZimageZ. Не вдалось завантажити знімок екрану."
 
 #: ../lib/screenshooter-zimagez.c:500
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
-"user and the password you entered do not match. Please retry.</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Ім'я користувача та пароль, "
-"що Ви ввели, не підходять. Будь ласка, спробуйте ще раз.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ім'я користувача та пароль, що Ви ввели, не підходять. Будь ласка, спробуйте ще раз.</span>"
 
 #: ../lib/screenshooter-zimagez.c:558
 msgid "Upload the screenshot..."
@@ -254,11 +227,8 @@ msgid "User:"
 msgstr "Користувач:"
 
 #: ../lib/screenshooter-zimagez.c:747
-msgid ""
-"Your Zimagez user name, if you do not have one yet please create one on the "
-"Web page linked above"
-msgstr ""
-"Ваше ім'я користувача на Zimagez. Якщо немає, то зареєструйтесь на веб-сайті"
+msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
+msgstr "Ваше ім'я користувача на Zimagez. Якщо немає, то зареєструйтесь на веб-сайті"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:753
@@ -275,9 +245,7 @@ msgid "Title:"
 msgstr "Заголовок:"
 
 #: ../lib/screenshooter-zimagez.c:779
-msgid ""
-"The title of the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr "Заголовок знімку. Буде використано при відображенні на ZimageZ"
 
 #. Create the comment label
@@ -286,9 +254,7 @@ msgid "Comment:"
 msgstr "Комментар"
 
 #: ../lib/screenshooter-zimagez.c:796
-msgid ""
-"A comment on the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr "Комментар до знімку. Буде використано при відображенні на ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:919
@@ -315,12 +281,8 @@ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Посилання</span>"
 
 #: ../lib/screenshooter-zimagez.c:1010
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
-"to the full size image</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Код для попереднього "
-"перекладу, що веде до оригіналу</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Код для попереднього перекладу, що веде до оригіналу</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1026
@@ -355,9 +317,8 @@ msgid "Delay in seconds before taking the screenshot"
 msgstr "Затримка в секундах перед отриманням знімку"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "Не показувати курсор на знімку"
+msgstr "Відображати курсор миші на знімку"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -370,14 +331,12 @@ msgstr "Інформація про версію"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Параметри конфліктують: --%s та --%s не можуть застосовуватись одночасно.\n"
 
 #: ../src/main.c:136
 #, c-format
-msgid ""
-"The --%s option is only used when --fullscreen, --window or --region is "
-"given. It will be ignored.\n"
-msgstr ""
+msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
+msgstr "--%s опція може бути тільки разом з --fullscreen, --window чи --region опціями. Ігноруємо.\n"
 
 #: ../src/main.c:150
 #, c-format
@@ -386,8 +345,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Спробуйте, %s --help щоб побачити повний список доступних опцій командного "
-"рядка.\n"
+"Спробуйте, %s --help щоб побачити повний список доступних опцій командного рядка.\n"
 
 #: ../src/main.c:282
 #, c-format
@@ -396,8 +354,7 @@ msgstr "%s не є правильною текою, буде використа�
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Отримати знімки всього екрану, активного вікна або окремої області"
 
 #~ msgid "Screenshot.png"
@@ -406,27 +363,20 @@ msgstr "Отримати знімки всього екрану, активно�
 #~ msgid "Screenshot-%d.png"
 #~ msgstr "Знімок_екрану-%d.png"
 
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
+#~ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
 #~ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Після знімку</span>"
 
 #~ msgid "Show the save dialog"
 #~ msgstr "Відображати діалог збереження"
 
-#~ msgid ""
-#~ "The save dialog allows you to change the file name and the save location"
+#~ msgid "The save dialog allows you to change the file name and the save location"
 #~ msgstr "Діалог збереження дозволяє Вам змінити назву файлу та теку"
 
 #~ msgid "Close the application"
 #~ msgstr "Закрити програму"
 
-#~ msgid ""
-#~ "If unchecked, the current window will be displayed again after the "
-#~ "screenshot has been taken to allow you to take several screenshots in a "
-#~ "row"
-#~ msgstr ""
-#~ "Якщо вимкнено, то це вікно буде знову показано після створення знімку для "
-#~ "того, щоб Ви могли зробити декільки знімків підряд"
+#~ msgid "If unchecked, the current window will be displayed again after the screenshot has been taken to allow you to take several screenshots in a row"
+#~ msgstr "Якщо вимкнено, то це вікно буде знову показано після створення знімку для того, щоб Ви могли зробити декільки знімків підряд"
 
 #~ msgid "Default save location"
 #~ msgstr "Типове місце збереження знімків екрану"
@@ -444,24 +394,17 @@ msgstr "Отримати знімки всього екрану, активно�
 #~ msgid "Do not display the save dialog"
 #~ msgstr "Не відображати діалог збереження"
 
-#, fuzzy
 #~ msgid "Tak a screenshot of the entire screen"
 #~ msgstr "Зробити знімок всього екрану"
 
-#, fuzzy
 #~ msgid "Applicatio to open the screenshot"
 #~ msgstr "Програма для відкриття знімку екрану"
 
-#, fuzzy
 #~ msgid "Display the save dialog"
 #~ msgstr "Не відображати діалог збереження"
 
 #~ msgid "Save by default to:"
 #~ msgstr "Зберегти по замовчанню в:"
 
-#~ msgid ""
-#~ "If checked, the screenshot will be saved by default to the location set "
-#~ "on the right without displaying a save dialog"
-#~ msgstr ""
-#~ "Якщо відмічено знімок буде збережено до типового місця, що визначено "
-#~ "справа, причому без відображення діалогу збереження"
+#~ msgid "If checked, the screenshot will be saved by default to the location set on the right without displaying a save dialog"
+#~ msgstr "Якщо відмічено знімок буде збережено до типового місця, що визначено справа, причому без відображення діалогу збереження"
