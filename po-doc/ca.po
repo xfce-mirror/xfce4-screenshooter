@@ -233,7 +233,7 @@ msgstr "Puja-la a ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in243(para)
 msgid "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your screenshot on this free online hosting service, so that you can share it easily with other people. ZimageZ automatically generates a large and a small thumbnail of your screenshot, which can be used to create thumbnails pointing to the full size screenshot."
-msgstr ""
+msgstr "L'opció <emphasis>\"Emmagatzema a ZimageZ\"</emphasis> us permet emmagatzemar les vostres captures de pantalla en aquest lloc d'emmagatzematge en línia gratuït per tal que pogueu compartir-la amb d'altra gent. ZimageZ genera de forma automàtica miniatures grans i petites de la vostra captura de pantalla, els quals es poden fer servir per a crear miniatures que apuntin a la captura de tamany complet."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in252(para)
 msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown this dialog:"
@@ -245,7 +245,7 @@ msgstr "El diàleg per pujar la captura a ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in269(para)
 msgid "If you do not have a ZimageZ user name, you will need to create one on the <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. Several languages are available on this website, you can switch between using the menu up right. You must fill all fields of this dialog. Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
-msgstr ""
+msgstr "Si no disposeu de compte d'usuari a ZimageZ, n'haureu de crear un al <ulink type=\"http\" url=\"http://www.zimagez.com\"> lloc web ZimageZ</ulink>. Aquest lloc web està disponibla en diversos idiomes; podeu canviar-lo al menú que hi ha a dalt a la dreta. Haureu d'omplir els camps del diàleg i un cop estigueu premeu a <emphasis>\"Acceptar\"</emphasis> i la imatge s'enviarà."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in279(para)
 msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
@@ -321,7 +321,7 @@ msgstr "L'opció -u"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in387(para)
 msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Si doneu l'opció <emphasis>-u</emphasis> la captura de pantalla s'emmagatzemarà a ZimageZ. Veieu més amunt per a més detalls. Aquesta opció només té efecte si la doneu amb les opcions: <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o <emphasis>-r</emphasis>"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in400(title)
 msgid "Using the Xfce panel plugin"
