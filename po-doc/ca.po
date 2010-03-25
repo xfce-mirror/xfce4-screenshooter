@@ -249,7 +249,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in279(para)
 msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
-msgstr ""
+msgstr "El diàleg que hi ha a continuació us donarà els enllaços a una captura de pantalla a tamany complet, a grans miniatures, a petites miniatures i a exemples de HTML i BBcode per a crear miniatures que apunten a una captura de pantalla completa:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
@@ -261,7 +261,7 @@ msgstr "Via línia de comandes"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in305(para)
 msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
-msgstr ""
+msgstr "Les opcions de línia de comandes us permeten fer captures de pantalla de forma ràpida. També us permeten configurar la tecla \"Impr Pant\" que hi ha a la part superior dreta de la majoria de teclats per a fer les captures de pantalla. Per a fer-ho, establiu enllaços de teclat al vostre entorn d'escriptori de tal forma que llenci xfce4-screenshooter amb una o diverses de les següents opcions quan s'apreti \"Impr Pant\"."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in315(title)
 msgid "The command line options"
@@ -297,7 +297,7 @@ msgstr "L'opció -d"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in349(para)
 msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "L'opció <emphasis>-d</emphasis> seguida d'un número enter positiu us permet establir el retard abans de fer la captura de pantalla quan es donen les opcions <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in359(title)
 msgid "The -s option"
@@ -305,7 +305,7 @@ msgstr "L'opció -s"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in361(para)
 msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "L'opció <emphasis>-s</emphasis> seguida d'un camí a una carpeta existent us permetrà triar on desar les captures de pantalla. Aquesta opció només té efecte si heu donat les opcions <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in371(title)
 msgid "The -o option"
@@ -313,7 +313,7 @@ msgstr "L'opció -o"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in373(para)
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Si es passa l'opció <emphasis>-o</emphasis> seguida del nom d'una aplicació, la captura de pantalla serà desada al directori temporal del sistema i s'obrirà amb l'aplicació indicada. Aquesta opció només té efecte si hi heu donat les opcions <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in385(title)
 msgid "The -u option"
