@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-29 11:58+0100\n"
+"POT-Creation-Date: 2010-05-10 22:01+0000\n"
 "PO-Revision-Date: 2008-06-17 12:27+0100\n"
 "Last-Translator: Jérôme Guelfucci <jeromeg@xfce.org>\n"
 "Language-Team: Croatian <mario.danic@gmail.com>\n"
@@ -15,23 +15,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../lib/screenshooter-dialogs.c:478
+#: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
+msgstr "Prijenos"
+
+#: ../lib/screenshooter-dialogs.c:556
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:581
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
-"transferred to:</span>"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:697 ../lib/screenshooter-dialogs.c:714
-#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
@@ -39,125 +37,121 @@ msgstr ""
 msgid "Screenshot"
 msgstr " Screenshot"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:684
 #, fuzzy
 msgid "Take a screenshot"
 msgstr " Uhvati screenshot"
 
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:754
+#: ../lib/screenshooter-dialogs.c:729
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:774
+#: ../lib/screenshooter-dialogs.c:749
 msgid "Entire screen"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:781 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:756 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:308
 #, fuzzy
 msgid "Take a screenshot of the entire screen"
 msgstr "Uhvati screenshot desktopa"
 
-#: ../lib/screenshooter-dialogs.c:789
+#: ../lib/screenshooter-dialogs.c:764
 msgid "Active window"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:796 ../src/main.c:90
+#: ../lib/screenshooter-dialogs.c:771 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
 msgstr "Uhvati screenshot trenutnog prozora"
 
-#: ../lib/screenshooter-dialogs.c:804
+#: ../lib/screenshooter-dialogs.c:779
 msgid "Select a region"
-msgstr ""
+msgstr "Odaberi regiju"
 
-#: ../lib/screenshooter-dialogs.c:809 ../src/main.c:68
+#: ../lib/screenshooter-dialogs.c:784 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:318
-msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:819
+#: ../lib/screenshooter-dialogs.c:794
 msgid "Capture the mouse pointer"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:824
+#: ../lib/screenshooter-dialogs.c:799
 #, fuzzy
 msgid "Display the mouse pointer on the screenshot"
 msgstr " Uhvati screenshot"
 
-#: ../lib/screenshooter-dialogs.c:840
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+#: ../lib/screenshooter-dialogs.c:815
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:862
+#: ../lib/screenshooter-dialogs.c:837
 #, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Odgoda u sekundama prije hvatanja screenshota"
 
-#: ../lib/screenshooter-dialogs.c:865
+#: ../lib/screenshooter-dialogs.c:840
 msgid "seconds"
-msgstr ""
+msgstr "sekunde"
 
-#: ../lib/screenshooter-dialogs.c:917
+#: ../lib/screenshooter-dialogs.c:892
 msgid "Action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:945
+#: ../lib/screenshooter-dialogs.c:920
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr ""
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:961
+#: ../lib/screenshooter-dialogs.c:936
 msgid "Save"
-msgstr ""
+msgstr "Spremi"
 
-#: ../lib/screenshooter-dialogs.c:966
+#: ../lib/screenshooter-dialogs.c:941
 #, fuzzy
 msgid "Save the screenshot to a PNG file"
 msgstr "Snimi screenshot kao ..."
 
-#: ../lib/screenshooter-dialogs.c:975
+#: ../lib/screenshooter-dialogs.c:950
 msgid "Copy to the clipboard"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:952
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:994
+#: ../lib/screenshooter-dialogs.c:969
 msgid "Open with:"
-msgstr ""
+msgstr "Otvori pomoću"
 
-#: ../lib/screenshooter-dialogs.c:1000
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Open the screenshot with the chosen application"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1018 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:993 ../src/main.c:63
 #, fuzzy
 msgid "Application to open the screenshot"
 msgstr " Uhvati screenshot"
 
-#: ../lib/screenshooter-dialogs.c:1028
+#: ../lib/screenshooter-dialogs.c:1003
 msgid "Host on ZimageZ"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1032 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1046
+#: ../lib/screenshooter-dialogs.c:1021
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1107
+#: ../lib/screenshooter-dialogs.c:1082
 #, fuzzy
 msgid "Save screenshot as..."
 msgstr "Snimi screenshot kao ..."
@@ -191,8 +185,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:343
 msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
 
@@ -201,9 +194,7 @@ msgid "Check the user information..."
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:407
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
-"must fill all the fields.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:421
@@ -211,15 +202,11 @@ msgid "Login on ZimageZ..."
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
-msgid ""
-"An unexpected reply from ZimageZ was received. The upload of the screenshot "
-"failed."
+msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:500
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
-"user and the password you entered do not match. Please retry.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:558
@@ -245,18 +232,16 @@ msgstr "Odgoda u sekundama prije hvatanja screenshota"
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:736
 msgid "User:"
-msgstr ""
+msgstr "Korisnik"
 
 #: ../lib/screenshooter-zimagez.c:747
-msgid ""
-"Your Zimagez user name, if you do not have one yet please create one on the "
-"Web page linked above"
+msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
 msgstr ""
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:753
 msgid "Password:"
-msgstr ""
+msgstr "Lozinka"
 
 #: ../lib/screenshooter-zimagez.c:763
 msgid "The password for the user above"
@@ -268,9 +253,7 @@ msgid "Title:"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:779
-msgid ""
-"The title of the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr ""
 
 #. Create the comment label
@@ -279,9 +262,7 @@ msgid "Comment:"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:796
-msgid ""
-"A comment on the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:919
@@ -309,9 +290,7 @@ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:1010
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
-"to the full size image</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
 msgstr ""
 
 #. HTML title
@@ -335,12 +314,12 @@ msgstr ""
 #. Open Link
 #: ../lib/sexy-url-label.c:176
 msgid "_Open Link"
-msgstr ""
+msgstr "_Otvori poveznicu"
 
 #. Copy Link Address
 #: ../lib/sexy-url-label.c:188
 msgid "Copy _Link Address"
-msgstr ""
+msgstr "Kopiraj_adresu poveznice"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
@@ -366,9 +345,7 @@ msgstr ""
 
 #: ../src/main.c:136
 #, c-format
-msgid ""
-"The --%s option is only used when --fullscreen, --window or --region is "
-"given. It will be ignored.\n"
+msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
 msgstr ""
 
 #: ../src/main.c:150
@@ -378,8 +355,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Pokušajte %s --help kako biste vidjeli potpunu listu dostupni command-line "
-"parametara.\n"
+"Pokušajte %s --help kako biste vidjeli potpunu listu dostupni command-line parametara.\n"
 
 #: ../src/main.c:282
 #, c-format
@@ -389,22 +365,17 @@ msgstr ""
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 #, fuzzy
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Uhvati screenshot trenutnog prozora"
 
-#, fuzzy
 #~ msgid "Screenshot.png"
 #~ msgstr " Screenshot"
 
-#, fuzzy
 #~ msgid "Screenshot-%d.png"
 #~ msgstr " Screenshot"
 
-#, fuzzy
 #~ msgid "Tak a screenshot of the entire screen"
 #~ msgstr "Uhvati screenshot desktopa"
 
-#, fuzzy
 #~ msgid "Applicatio to open the screenshot"
 #~ msgstr " Uhvati screenshot"
