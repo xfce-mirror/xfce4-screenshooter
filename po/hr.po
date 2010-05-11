@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-10 22:01+0000\n"
+"POT-Creation-Date: 2010-05-11 22:02+0000\n"
 "PO-Revision-Date: 2008-06-17 12:27+0100\n"
 "Last-Translator: Jérôme Guelfucci <jeromeg@xfce.org>\n"
 "Language-Team: Croatian <mario.danic@gmail.com>\n"
@@ -44,7 +44,7 @@ msgstr " Uhvati screenshot"
 
 #: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
-msgstr ""
+msgstr "Osobitosti"
 
 #: ../lib/screenshooter-dialogs.c:729
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
@@ -52,7 +52,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:749
 msgid "Entire screen"
-msgstr ""
+msgstr "Cijeli zaslon"
 
 #: ../lib/screenshooter-dialogs.c:756 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:308
@@ -62,7 +62,7 @@ msgstr "Uhvati screenshot desktopa"
 
 #: ../lib/screenshooter-dialogs.c:764
 msgid "Active window"
-msgstr ""
+msgstr "Aktivni prozor"
 
 #: ../lib/screenshooter-dialogs.c:771 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
