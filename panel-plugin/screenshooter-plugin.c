@@ -29,8 +29,7 @@ t */
 #include <gdk/gdkx.h>
 
 #include <libxfcegui4/libxfcegui4.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
-#include <libxfce4panel/xfce-panel-convenience.h>
+#include <libxfce4panel/libxfce4panel.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
