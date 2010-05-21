@@ -94,11 +94,11 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           g_free (title);
           title =
             g_strdup (xfce_rc_read_entry (rc, "title", _("Screenshot")));
+
+          TRACE ("Close the rc file");
+
+          xfce_rc_close (rc);
         }
-
-      TRACE ("Close the rc file");
-
-      xfce_rc_close (rc);
     }
 
   /* And set the sd values */
