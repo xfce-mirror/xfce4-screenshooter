@@ -9,14 +9,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Russian\n"
 "X-Poedit-Country: Russian Federation\n"
+"X-Poedit-Language: Russian\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in97(None)
-#, fuzzy
 msgid "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e5a09b9b9962ed18"
 msgstr "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e5a09b9b9962ed18"
 
@@ -24,7 +23,6 @@ msgstr "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in169(None)
-#, fuzzy
 msgid "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5dfc980fb216025e0"
 msgstr "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5dfc980fb216025e0"
 
@@ -32,7 +30,6 @@ msgstr "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5d
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in260(None)
-#, fuzzy
 msgid "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c8102c88e978eb7ef63994f2648f5ae6"
 msgstr "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c8102c88e978eb7ef63994f2648f5ae6"
 
@@ -40,7 +37,6 @@ msgstr "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c810
 #. you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../docs/manual/C/xfce4-screenshooter.xml.in289(None)
-#, fuzzy
 msgid "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468def960a376d5a856f2fcb3b35daf1"
 msgstr "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468def960a376d5a856f2fcb3b35daf1"
 
@@ -67,7 +63,7 @@ msgstr "Sam Swift"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in28(para)
 msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
-msgstr ""
+msgstr "Каждый имеет право воспроизводить, распространять и/или вносить изменения в настоящий Документ в соответствии с условиями GNU Free Documentation License, Версией 1.1 или любой более поздней версией, опубликованной Free Software Foundation; данный Документ не содержит Неизменяемых разделов, текстов помещаемых на первой и последней страницах обложек. Полный текст лицензии доступен по ссылке <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in40(firstname)
 msgid "Jérôme"
@@ -99,7 +95,7 @@ msgstr "Это руководство описывает версию @PACKAGE_V
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in61(title)
 msgid "Introduction to Xfce4 Screenshooter"
-msgstr ""
+msgstr "Вступление к программе"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in63(para)
 msgid "This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action to be performed afterwards: save the screenshot to a PNG file, copy it to the clipboard, open it using another application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online image hosting service."
@@ -119,7 +115,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in85(para)
 msgid "To launch the application, use the \"Screenshot\" item in the \"Accessories\" category of Xfce's main menu."
-msgstr ""
+msgstr "Для запуска программы используйте \"Снимок экрана\" в категории \"Инструменты\" главного меню Xfce."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in90(para)
 msgid "This window will be displayed:"
