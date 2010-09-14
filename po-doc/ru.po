@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Russian\n"
 "X-Poedit-Country: Russian Federation\n"
+"X-Poedit-Language: Russian\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -227,121 +227,121 @@ msgstr "Опция <emphasis>\"Разместить на сервере ZimageZ\
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in252(para)
 msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown this dialog:"
-msgstr ""
+msgstr "После нажатия кнопки <emphasis>\"OK\"</emphasis>, появится следующее диалоговое окно: "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
-msgstr ""
+msgstr "Диалог размещения снимка экрана на сервере ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in269(para)
 msgid "If you do not have a ZimageZ user name, you will need to create one on the <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. Several languages are available on this website, you can switch between using the menu up right. You must fill all fields of this dialog. Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
-msgstr ""
+msgstr "Если вы не являетесь пользователем ZimageZ, вам следует зарегистрироваться на сайте <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. На данном сайте доступно несколько языков, между которыми можно переключаться, используя меню вверху справа. Необходимо заполнить все поля данной формы. После нажатия кнопки <emphasis>\"OK\"</emphasis>, начнется загрузка. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in279(para)
 msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
-msgstr ""
+msgstr "Диалоговое окно ниже предоставляет ссылки на полноразмерный снимок, большой и маленький образцы, а также примеры HTML и BBcode кодов для создания пиктограммы, перенаправляющей на полноразмерный снимок: "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr ""
+msgstr "Диалог отображающий ссылки на ваш снимок экрана на сервере ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in303(title)
 msgid "Via command line"
-msgstr ""
+msgstr "С помощью командной строки"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in305(para)
 msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
-msgstr ""
+msgstr "Параметры командной строки позволяют быстро делать снимки. Они также позволяют настроить кнопку Print Screen, расположенную вверху справа на большинстве клавиатур, на выполнение снимков. Для этого необходимо настроить \"горячие клавиши\" рабочей среды таким образом, чтобы при нажатии клавиши Print Screen запускалась программа xfce4-screenshooter с одним или несколькими необходимыми параметрами. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in315(title)
 msgid "The command line options"
-msgstr ""
+msgstr "Параметры командной строки"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in318(title)
 msgid "The -w option"
-msgstr ""
+msgstr "Параметр -w"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in320(para)
 msgid "The <emphasis>-w</emphasis> option allows you to take a screenshot of the active window."
-msgstr ""
+msgstr "Параметр <emphasis>-w</emphasis> позволяет сделать снимок активного окна. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in327(title)
 msgid "The -f option"
-msgstr ""
+msgstr "Параметр -f"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in329(para)
 msgid "The <emphasis>-f</emphasis> option allows you to take a screenshot of the entire screen."
-msgstr ""
+msgstr "Параметр <emphasis>-f</emphasis>  позволяет сделать снимок всего экрана. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in336(title)
 msgid "The -r option"
-msgstr ""
+msgstr "Параметр -r"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in338(para)
 msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
-msgstr ""
+msgstr "Параметр <emphasis>-r</emphasis> позволяет выделить область для снимка следующим образом: щелкнуть в нужной точке экрана, не отпуская кнопку мыши, переместить курсор в противоположный угол области и отпустить кнопку мыши.  "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in347(title)
 msgid "The -d option"
-msgstr ""
+msgstr "Параметр -d"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in349(para)
 msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Параметр <emphasis>-d</emphasis>  со следующим за ним положительным целым числом позволяет установить задержку перед снятием изображения, когда заданы параметры <emphasis>-w</emphasis>, <emphasis>-f</emphasis> или <emphasis>-r</emphasis>. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in359(title)
 msgid "The -s option"
-msgstr ""
+msgstr "Параметр -s"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in361(para)
 msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Параметр <emphasis>-s</emphasis> с указанным за ним путем к существующему каталогу позволяет установить место для сохранения снимков. Данный параметр имеет значение только при применении параметров -f, -w или -r. Совместно с параметром -h (см. ниже), данный параметр может быть использован для сохранения файла по указанному пути без отображения диалога сохранения. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in371(title)
 msgid "The -o option"
-msgstr ""
+msgstr "Параметр -o"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in373(para)
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Если задан параметр <emphasis>-o</emphasis> со следующим за ним названием приложения, то снимок будет сохранен во временном каталоге системы и открыт с помощью приложения, название которого указано после параметра -o. Данный параметр имеет значение только при применении параметров <emphasis>-w</emphasis>, <emphasis>-f</emphasis> или <emphasis>-r</emphasis>. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in385(title)
 msgid "The -u option"
-msgstr ""
+msgstr "Параметр -u"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in387(para)
 msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr " Если задан параметр -u, снимок будет размещен на сервере ZimageZ. Детали см. выше. Данный параметр имеет значение только при применении параметров <emphasis>-w</emphasis>, <emphasis>-f</emphasis> или <emphasis>-r</emphasis>. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in400(title)
 msgid "Using the Xfce panel plugin"
-msgstr ""
+msgstr "Использование модуля для панели Xfce"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in403(title)
 msgid "Adding the plugin"
-msgstr ""
+msgstr "Добавление модуля\r\n"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in405(para)
 msgid "To add the plugin to the panel, right click on the panel and select <emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>\"Screenshot\"</emphasis>, and add it."
-msgstr ""
+msgstr "Для добавления модуля на панель необходимо щелкнуть правой кнопкой мыши по панели и выбрать в появившемся меню пункт  <emphasis>\"Добавить новый элемент\"</emphasis>. Далее нужно выбрать модуль с именем <emphasis>\"Снимок экрана\"</emphasis> и добавить его. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in413(title)
 msgid "Configuring the plugin"
-msgstr ""
+msgstr "Настройка модуля\r\n"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in415(para)
 msgid "You can configure how screenshots are taken by right clicking on the plugin and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog similar to the dialog of the main application will appear. Please have a look above for the different preferences."
-msgstr ""
+msgstr "Существует возможность настроить параметры снятия снимков, щелкнув правой кнопкой мыши по значку модуля и выбрав в появившемся меню пункт <emphasis>\"Параметры\"</emphasis>. Откроется диалоговое окно настроек, похожее на главное окно приложения. Подробнее о различных настройках см. выше. "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in425(title)
 msgid "Using the plugin"
-msgstr ""
+msgstr "Использования модуля\r\n"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in427(para)
 msgid "To take a screenshot, just click on the plugin. You can use the scroll wheel on the plugin button to switch between the different regions to be captured."
-msgstr ""
+msgstr "Чтобы сделать снимок, необходимо нажать на значок модуля.  Можно использовать "
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in0(None)
 msgid "translator-credits"
-msgstr ""
+msgstr "Copyright © 2010 Денис Корявов (dkoryavov@pingwinsoft.ru)"
