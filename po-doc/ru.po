@@ -1,10 +1,14 @@
-# 
+# Translation of xfce4-screenshooter help to russian.
+# Copyright 2008, 2009 Jérôme Guelfucci
+# Copyright Andriy Kovtun <kovtunos@yandex.ru>, 2010.
+# Copyright Denis Koryavov <dkoryavov@yandex.ru>, 2010.
+
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter.master-docs\n"
 "POT-Creation-Date: 2009-11-15 00:21+0100\n"
 "PO-Revision-Date: 2010-05-15 15:36+0300\n"
-"Last-Translator: Andriy Kovtun <kovtunos@yandex.ru>\n"
+"Last-Translator: Denis Koryavov <dkoryavov@yandex.ru> \n"
 "Language-Team: Russian <xfce4-dev@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -319,7 +323,7 @@ msgstr "Использование модуля для панели Xfce"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in403(title)
 msgid "Adding the plugin"
-msgstr "Добавление модуля\r\n"
+msgstr "Добавление модуля"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in405(para)
 msgid "To add the plugin to the panel, right click on the panel and select <emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>\"Screenshot\"</emphasis>, and add it."
@@ -327,7 +331,7 @@ msgstr "Для добавления модуля на панель необхо�
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in413(title)
 msgid "Configuring the plugin"
-msgstr "Настройка модуля\r\n"
+msgstr "Настройка модуля"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in415(para)
 msgid "You can configure how screenshots are taken by right clicking on the plugin and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog similar to the dialog of the main application will appear. Please have a look above for the different preferences."
@@ -335,7 +339,7 @@ msgstr "Существует возможность настроить пара�
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in425(title)
 msgid "Using the plugin"
-msgstr "Использования модуля\r\n"
+msgstr "Использования модуля"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in427(para)
 msgid "To take a screenshot, just click on the plugin. You can use the scroll wheel on the plugin button to switch between the different regions to be captured."
