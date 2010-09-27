@@ -1,0 +1,383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-screenshooter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-26 10:02+0000\n"
+"PO-Revision-Date: 2010-09-27 23:58+0100\n"
+"Last-Translator: Michal Löffler <lofflermichalloffler@gmail.com>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Slovak\n"
+"X-Poedit-Country: SLOVAKIA\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+
+#: ../lib/screenshooter-dialogs.c:453
+#, c-format
+msgid "%.2fKb of %.2fKb"
+msgstr "%.2fKb z %.2fKb"
+
+#: ../lib/screenshooter-dialogs.c:535
+msgid "Transfer"
+msgstr "Prenos"
+
+#: ../lib/screenshooter-dialogs.c:556
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímka obrazovky sa prenáša do:</span>"
+
+#: ../lib/screenshooter-dialogs.c:672
+#: ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:880
+#: ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-utils.c:96
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+msgid "Screenshot"
+msgstr "Snímka obrazovky"
+
+#: ../lib/screenshooter-dialogs.c:684
+msgid "Take a screenshot"
+msgstr "Vytvoríť snímku obrazovky"
+
+#: ../lib/screenshooter-dialogs.c:699
+msgid "Preferences"
+msgstr "Predvoľby"
+
+#: ../lib/screenshooter-dialogs.c:729
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímaná oblasť</span>"
+
+#: ../lib/screenshooter-dialogs.c:749
+msgid "Entire screen"
+msgstr "Celá obrazovka"
+
+#: ../lib/screenshooter-dialogs.c:756
+#: ../src/main.c:53
+#: ../panel-plugin/screenshooter-plugin.c:307
+msgid "Take a screenshot of the entire screen"
+msgstr "Vytvoriť snímku celej obrazovky"
+
+#: ../lib/screenshooter-dialogs.c:764
+msgid "Active window"
+msgstr "Aktívne okno"
+
+#: ../lib/screenshooter-dialogs.c:771
+#: ../src/main.c:90
+#: ../panel-plugin/screenshooter-plugin.c:312
+msgid "Take a screenshot of the active window"
+msgstr "Vytvoriť snímku aktívneho okna"
+
+#: ../lib/screenshooter-dialogs.c:779
+msgid "Select a region"
+msgstr "Vyberte oblasť"
+
+#: ../lib/screenshooter-dialogs.c:784
+#: ../src/main.c:68
+#: ../panel-plugin/screenshooter-plugin.c:317
+#, fuzzy
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
+msgstr "Označte snímanú oblasť kliknutím v začiatočnom bode, ťahaním kurzora bez uvoľnenia tlačídla do opačného rohu vybranej oblasti a následným uvoľnením tlačidla myši."
+
+#: ../lib/screenshooter-dialogs.c:794
+msgid "Capture the mouse pointer"
+msgstr "Zachytí kurzor myši"
+
+#: ../lib/screenshooter-dialogs.c:799
+msgid "Display the mouse pointer on the screenshot"
+msgstr "Zobraziť kurzor myši na snímke"
+
+#: ../lib/screenshooter-dialogs.c:815
+#, fuzzy
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Oneskorenie pred vytvorením snímky</span>"
+
+#: ../lib/screenshooter-dialogs.c:837
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "Oneskorenie pred vytvorením snímky v sekundách"
+
+#: ../lib/screenshooter-dialogs.c:840
+msgid "seconds"
+msgstr "sekúnd"
+
+#: ../lib/screenshooter-dialogs.c:892
+msgid "Action"
+msgstr "Akcia"
+
+#: ../lib/screenshooter-dialogs.c:920
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akcia</span>"
+
+#. Save option radio button
+#: ../lib/screenshooter-dialogs.c:936
+msgid "Save"
+msgstr "Uložiť"
+
+#: ../lib/screenshooter-dialogs.c:941
+#, fuzzy
+msgid "Save the screenshot to a PNG file"
+msgstr "Uložiť snímku do súboru PNG"
+
+#: ../lib/screenshooter-dialogs.c:950
+msgid "Copy to the clipboard"
+msgstr "Kopírovať do schránky"
+
+#: ../lib/screenshooter-dialogs.c:952
+#, fuzzy
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "Kopírovať snímku do schránky, aby mohla byť neskôr skopírovaná inam"
+
+#: ../lib/screenshooter-dialogs.c:969
+msgid "Open with:"
+msgstr "Otvoriť v:"
+
+#: ../lib/screenshooter-dialogs.c:975
+#, fuzzy
+msgid "Open the screenshot with the chosen application"
+msgstr "Otvoriť snímku obrazovky vo vybranom programe"
+
+#: ../lib/screenshooter-dialogs.c:993
+#: ../src/main.c:63
+msgid "Application to open the screenshot"
+msgstr "Aplikácia pre otváranie snímok obrazovky"
+
+#: ../lib/screenshooter-dialogs.c:1003
+#, fuzzy
+msgid "Host on ZimageZ"
+msgstr "Hostovať na galérii ZimageZ"
+
+#: ../lib/screenshooter-dialogs.c:1007
+#: ../src/main.c:80
+#, fuzzy
+msgid "Host the screenshot on ZimageZ, a free online image hosting service"
+msgstr "Hostovať na galérii ZimageZ, bezplatnej online službe pre hostovanie obrázkov"
+
+#: ../lib/screenshooter-dialogs.c:1021
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Náhľad</span>"
+
+#: ../lib/screenshooter-dialogs.c:1082
+msgid "Save screenshot as..."
+msgstr "Uložiť snímku obrazovky ako..."
+
+#: ../lib/screenshooter-zimagez.c:134
+#, c-format
+msgid "An error occurred when creating the XMLRPC request."
+msgstr "Pri vytváraní XMLRPC požiadavky došlo k chybe."
+
+#: ../lib/screenshooter-zimagez.c:153
+#, fuzzy, c-format
+msgid "An error occurred when transferring the data to ZimageZ."
+msgstr "Pri prenose dát do galérie ZimageZ došlo k chybe."
+
+#: ../lib/screenshooter-zimagez.c:178
+#, fuzzy, c-format
+msgid "An error occurred when parsing the response from ZimageZ."
+msgstr "Pri spracovaní odpovede z galérie ZimageZ došlo k chybe."
+
+#. For translators: the first wildcard is the date, the second one the time,
+#. * e.g. "Taken on 12/31/99, at 23:13:48".
+#: ../lib/screenshooter-zimagez.c:230
+#, fuzzy, c-format
+msgid "Taken on %s, at %s"
+msgstr "Vytvorené %s o %s"
+
+#. Start the user soup session
+#: ../lib/screenshooter-zimagez.c:297
+msgid "Initialize the connection..."
+msgstr "Inicializácia spojenia..."
+
+#: ../lib/screenshooter-zimagez.c:343
+#, fuzzy
+msgid ""
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"user name, passsword and details about the screenshot."
+msgstr ""
+"Prosím vyplňte do nasledujúcich polí vaše užívateľské meno, heslo a podrobnosti o snímke obrazovky v galérii<a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"user name, passsword and details about the screenshot."
+
+#: ../lib/screenshooter-zimagez.c:400
+msgid "Check the user information..."
+msgstr "Overovanie údajov o užívateľovi..."
+
+#: ../lib/screenshooter-zimagez.c:407
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Musíte vyplniť všetky polia.</span>"
+
+#: ../lib/screenshooter-zimagez.c:421
+msgid "Login on ZimageZ..."
+msgstr "Prihlasovanie do galérie ZimageZ..."
+
+#: ../lib/screenshooter-zimagez.c:461
+#: ../lib/screenshooter-zimagez.c:612
+msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
+msgstr "Bola prijatá neočakávaná odpoveď z galérie ZimageZ. Odoslanie snímku zlyhalo."
+
+#: ../lib/screenshooter-zimagez.c:500
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Zadané uživateľské meno a heslo sú nesprávne. Zadajte ich znovu, prosím.</span>"
+
+#: ../lib/screenshooter-zimagez.c:558
+#, fuzzy
+msgid "Upload the screenshot..."
+msgstr "Odoslať snímku na web..."
+
+#: ../lib/screenshooter-zimagez.c:591
+#, c-format
+msgid "An error occurred while uploading the screenshot."
+msgstr "Pri odosielaní snímky na web došlo k chybe."
+
+#. End the user session
+#: ../lib/screenshooter-zimagez.c:624
+#, fuzzy
+msgid "Close the session on ZimageZ..."
+msgstr "Zavrieť reláciu na galérii ZimageZ..."
+
+#: ../lib/screenshooter-zimagez.c:694
+msgid "Details about the screenshot for ZimageZ"
+msgstr "Podrobnosti o snímke obrazovky pre galériu ZimageZ"
+
+#. Create the user label
+#: ../lib/screenshooter-zimagez.c:736
+msgid "User:"
+msgstr "Užívateľ:"
+
+#: ../lib/screenshooter-zimagez.c:747
+#, fuzzy
+msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
+msgstr "Vaše užívateľské meno v galérii ZimageZ. Ak ešte nemáte účet, prosím vytvorte si ho na webovej stránke uvedenej hore"
+
+#. Create the password label
+#: ../lib/screenshooter-zimagez.c:753
+msgid "Password:"
+msgstr "Heslo:"
+
+#: ../lib/screenshooter-zimagez.c:763
+msgid "The password for the user above"
+msgstr "Heslo pre horeuvedeného uživateľa"
+
+#. Create the title label
+#: ../lib/screenshooter-zimagez.c:769
+msgid "Title:"
+msgstr "Názov"
+
+#: ../lib/screenshooter-zimagez.c:779
+msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
+msgstr "Názov snímky obrazovky, bude použitý pri zobrazovaní snímky v galérii ZimageZ"
+
+#. Create the comment label
+#: ../lib/screenshooter-zimagez.c:785
+msgid "Comment:"
+msgstr "Komentár:"
+
+#: ../lib/screenshooter-zimagez.c:796
+msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
+msgstr "Komentár snímky, bude použitý pri zobrazení tejto snímky v galérii ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:919
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr "<a href=\"%s\">Obrázok v plnom rozlíšení</a>"
+
+#: ../lib/screenshooter-zimagez.c:921
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr "<a href=\"%s\">Veľký náhľad</a>"
+
+#: ../lib/screenshooter-zimagez.c:923
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr "<a href=\"%s\">Malý náhľad</a>"
+
+#: ../lib/screenshooter-zimagez.c:939
+msgid "My screenshot on ZimageZ"
+msgstr "Moja snímka v galérii ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:965
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Odkazy</span>"
+
+#: ../lib/screenshooter-zimagez.c:1010
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kód pre náhľad odkazujúci na obrázok v plnom rozlíšení</span>"
+
+#. HTML title
+#: ../lib/screenshooter-zimagez.c:1026
+msgid "HTML"
+msgstr "HTML"
+
+#. BB title
+#: ../lib/screenshooter-zimagez.c:1047
+#, fuzzy
+msgid "BBCode for forums"
+msgstr "Kód BBCode pre diskusné fóra"
+
+#: ../lib/screenshooter-zimagez.c:1176
+msgid "ZimageZ"
+msgstr "ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:1209
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stav</span>"
+
+#. Open Link
+#: ../lib/sexy-url-label.c:176
+msgid "_Open Link"
+msgstr "_Otvoriť odkaz"
+
+#. Copy Link Address
+#: ../lib/sexy-url-label.c:188
+#, fuzzy
+msgid "Copy _Link Address"
+msgstr "Kopírovať adresu _odkazu"
+
+#: ../src/main.c:48
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Oneskorenie pred vytvorením snímky obrazovky v sekundách"
+
+#: ../src/main.c:58
+msgid "Display the mouse on the screenshot"
+msgstr "Zobrazovať myš na snímke obrazovky"
+
+#: ../src/main.c:75
+msgid "Directory where the screenshot will be saved"
+msgstr "Adresár pre ukladanie snímkov obrazovky"
+
+#: ../src/main.c:85
+msgid "Version information"
+msgstr "Informácie o verzii"
+
+#: ../src/main.c:134
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr "Konflikt volieb: --%s a --%s nie je možné použiť naraz.\n"
+
+#: ../src/main.c:136
+#, c-format
+msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
+msgstr "Voľba --%s sa používa iba pri súčasnom použití jednej z volieb --fullscreen, --window alebo --region. Voĺba bude ignorovaná.\n"
+
+#: ../src/main.c:150
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"Úplný zoznam dostupných volieb získate príkazom %s --help\n"
+
+#: ../src/main.c:282
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr "%s nie je platným adresárom, bude použitý východzí adresár."
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid "Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Vytvorí snímku celej obrazovky, aktívneho okna, alebo vybranej oblasti"
+
