@@ -1,14 +1,16 @@
-# Japanese translation of the xfce4-screenshooter package.
-# Copyright (C) 2009 Jérôme Guelfucci
-# This file is distributed under the same license as the xfce4-screenshooter
-# package.
-# Masato Hashimoto <cabezon.hashimoto@gmail.com>, 2009.
+# Japanese translations for xfce4-screenshooter-plugin package
+# xfce4-screenshooter-plugin パッケージに対する英訳.
+# Copyright (C) 2008 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce package.
+# HASHIMOTO Masato <cabezon.hashimoto@gmail.com>, 2008.
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-screenshooter 1.5.0.1svn-r06642\n"
-"POT-Creation-Date: 2009-11-29 10:31+0100\n"
-"PO-Revision-Date: 2009-11-29 14:59+0900\n"
+"Project-Id-Version: xfce 4-screenshooter-plugin 1.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-27 19:44+0900\n"
+"PO-Revision-Date: 2009-11-29 20:19+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "MIME-Version: 1.0\n"
@@ -16,647 +18,449 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:97(None)
+#: ../lib/screenshooter-dialogs.c:453
+#, c-format
+msgid "%.2fKb of %.2fKb"
+msgstr "%.2fKb / %.2fKb"
+
+#: ../lib/screenshooter-dialogs.c:535
+msgid "Transfer"
+msgstr "転送"
+
+#: ../lib/screenshooter-dialogs.c:556
 msgid ""
-"@@image: 'images/xfce4-screenshooter-dialog1.png'; "
-"md5=ceb772964fa6ca07e5a09b9b9962ed18"
+"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
+"transferred to:</span>"
 msgstr ""
-"@@image: 'images/xfce4-screenshooter-dialog1.png'; "
-"md5=ceb772964fa6ca07e5a09b9b9962ed18"
+"<span weight=\"bold\" stretch=\"semiexpanded\">スクリーンショットの転送先:</"
+"span>"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:169(None)
+#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-utils.c:96
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+msgid "Screenshot"
+msgstr "スクリーンショット"
+
+#: ../lib/screenshooter-dialogs.c:684
+msgid "Take a screenshot"
+msgstr "スクリーンショットを撮影します"
+
+#: ../lib/screenshooter-dialogs.c:699
+msgid "Preferences"
+msgstr "設定"
+
+#: ../lib/screenshooter-dialogs.c:729
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影する領域</span>"
+
+#: ../lib/screenshooter-dialogs.c:749
+msgid "Entire screen"
+msgstr "画面全体"
+
+#: ../lib/screenshooter-dialogs.c:756 ../src/main.c:53
+#: ../panel-plugin/screenshooter-plugin.c:308
+msgid "Take a screenshot of the entire screen"
+msgstr "画面全体のスクリーンショットを撮ります"
+
+#: ../lib/screenshooter-dialogs.c:764
+msgid "Active window"
+msgstr "アクティブウィンドウ"
+
+#: ../lib/screenshooter-dialogs.c:771 ../src/main.c:90
+#: ../panel-plugin/screenshooter-plugin.c:313
+msgid "Take a screenshot of the active window"
+msgstr "アクティブウィンドウのスクリーンショットを撮ります"
+
+#: ../lib/screenshooter-dialogs.c:779
+msgid "Select a region"
+msgstr "選択した領域"
+
+#: ../lib/screenshooter-dialogs.c:784 ../src/main.c:68
+#: ../panel-plugin/screenshooter-plugin.c:318
 msgid ""
-"@@image: 'images/xfce4-screenshooter-dialog2.png'; "
-"md5=fa48885f54ca6ab5dfc980fb216025e0"
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
 msgstr ""
-"@@image: 'images/xfce4-screenshooter-dialog2.png'; "
-"md5=fa48885f54ca6ab5dfc980fb216025e0"
+"画面の一点をクリックおよびそこからドラッグし、マウスボタンを離したところまで"
+"の矩形領域を撮ります。"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:260(None)
-msgid ""
-"@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
-"md5=c8102c88e978eb7ef63994f2648f5ae6"
-msgstr ""
-"@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
-"md5=c8102c88e978eb7ef63994f2648f5ae6"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:289(None)
-msgid ""
-"@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
-"md5=468def960a376d5a856f2fcb3b35daf1"
-msgstr ""
-"@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
-"md5=468def960a376d5a856f2fcb3b35daf1"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:12(title)
-msgid "Xfce4 Screenshooter"
-msgstr "Xfce4 スクリーンシューター"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:17(year)
-msgid "2008"
-msgstr "2008"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:18(year)
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:23(year)
-msgid "2009"
-msgstr "2009"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:19(holder)
-msgid "Jérôme Guelfucci"
-msgstr "Jérôme Guelfucci"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:24(holder)
-msgid "Sam Swift"
-msgstr "Sam Swift"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:28(para)
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License, Version 1.1 or any later "
-"version published by the Free Software Foundation; with no Invariant "
-"Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The "
-"complete license text is available from the <ulink type=\"http\" url="
-"\"http://www.gnu.org/\">Free Software Foundation</ulink>."
-msgstr ""
-"フリーソフトウェア財団が公表する GNU フリー文書利用許諾契約書の第1.1版、ある"
-"いはそれ以降のいずれかの版の条件下において、この文書の複製、配布および/または"
-"変更が許可されます。変更出来ない箇所、表紙文および裏表紙文があってはいけませ"
-"ん。この利用許諾契約書の全文は<ulink type=\"http\" url=\"http://www.gnu.org/"
-"\">フリーソフトウェア財団</ulink>から取得する事ができます。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:40(firstname)
-msgid "Jérôme"
-msgstr "Jérôme"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:41(surname)
-msgid "Guelfucci"
-msgstr "Guelfucci"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:43(email)
-msgid "jeromeg@xfce.org"
-msgstr "jeromeg@xfce.org"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:47(firstname)
-msgid "Sam"
-msgstr "Sam"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:48(surname)
-msgid "Swift"
-msgstr "Swift"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:50(email)
-msgid "renmush@gmail.com"
-msgstr "renmush@gmail.com"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:55(releaseinfo)
-msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
-msgstr ""
-"この説明書は Xfce4 スクリーンシューター のバージョン @PACKAGE_VERSION@ につい"
-"て書かれています。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:61(title)
-msgid "Introduction to Xfce4 Screenshooter"
-msgstr "Xfce4 スクリーンシューターの紹介"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:63(para)
-msgid ""
-"This application allows you to capture the entire screen, the active window "
-"or a selected region. You can set the delay that elapses before the "
-"screenshot is taken and the action to be performed afterwards: save the "
-"screenshot to a PNG file, copy it to the clipboard, open it using another "
-"application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com"
-"\">ZimageZ</ulink>, a free online image hosting service."
-msgstr ""
-"このアプリケーションは、画面全体、アクティブウィンドウ、または選択した領域の"
-"スクリーンショットを撮影します。撮影までの遅延時間や、撮影したスクリーン"
-"ショットに対する操作 (PNG ファイルに保存、クリップボードにコピー、または他の"
-"アプリケーションで開く) を指定できます。あるいは、フリーオンラインイメージホ"
-"スティングサービス <ulink type=\"http\" url=\"http://www.zimagez.com"
-"\">ZimageZ</ulink> で公開することもできます。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:73(para)
-msgid "A plugin for the Xfce panel is also available."
-msgstr "Xfce パネル用プラグインも用意されています。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:80(title)
-msgid "Using the application"
-msgstr "アプリケーションを使う"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:83(title)
-msgid "Via the user interface"
-msgstr "ユーザインターフェイスから"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:85(para)
-msgid ""
-"To launch the application, use the \"Screenshot\" item in the \"Accessories"
-"\" category of Xfce's main menu."
-msgstr ""
-"アプリケーションの起動は、Xfce メインメニューの \"アクセサリ\" カテゴリから "
-"\"スクリーンショット\" を選択します。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:90(para)
-msgid "This window will be displayed:"
-msgstr "以下のウィンドウが表示されます:"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:101(phrase)
-msgid "The window of Xfce4 Screenshooter"
-msgstr "Xfce4 スクリーンショットのウィンドウ"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:107(title)
-msgid "Region to capture"
-msgstr "撮影する領域"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:109(para)
-msgid ""
-"The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
-"what the screenshot will be taken of:"
-msgstr ""
-"<emphasis>\"撮影する領域\"</emphasis> セクションでは、何のスクリーンショット"
-"を撮影するかを指定できます:"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:115(listitem)
-msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr ""
-"\"画面全体\" は表示されている画面全体のスクリーンショットを撮影します。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:119(listitem)
-msgid ""
-"\"Active window\" takes a screenshot of the active window. This will be the "
-"one that was active before this dialog appeared, or if you set a delay, the "
-"one that is active after the delay."
-msgstr ""
-"\"アクティブウィンドウ\" はアクティブウィンドウのスクリーンショットを撮影しま"
-"す。それはこのダイアログが表示される直前にアクティブであったウィンドウか、遅"
-"延時間が設定されている場合には遅延時間の経過時点でアクティブであったウィンド"
-"ウになります。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:125(listitem)
-msgid ""
-"\"Select a region\" allows you to select a region to be captured by clicking "
-"and dragging a rectangle over the area of screen that you wish to capture, "
-"before releasing the mouse button."
-msgstr ""
-"\"選択した領域\" は、画面の一点をクリックおよびそこからドラッグし、マウスボタ"
-"ンを離したところまでの矩形領域を撮影します。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:135(title)
-msgid "Capturing the pointer"
+#: ../lib/screenshooter-dialogs.c:794
+msgid "Capture the mouse pointer"
 msgstr "マウスポインタも撮影する"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:137(para)
+#: ../lib/screenshooter-dialogs.c:799
+msgid "Display the mouse pointer on the screenshot"
+msgstr "スクリーンショットにマウスポインタを表示します"
+
+#: ../lib/screenshooter-dialogs.c:815
 msgid ""
-"The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to "
-"select whether or not the screenshot will include the mouse pointer."
+"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
-"<emphasis>\"マウスポインタも撮影する\"</emphasis> オプションでは、スクリーン"
-"ショットにマウスポインタも含めるかどうか選択できます。"
+"<span weight=\"bold\" stretch=\"semiexpanded\">撮影するまでの遅延時間</span>"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:145(title)
-msgid "Delay before capturing"
-msgstr "撮影するまでの遅延時間"
+#: ../lib/screenshooter-dialogs.c:837
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "スクリーンショットを撮るまでの遅延秒数を指定できます"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
-msgid ""
-"The <emphasis>\"Delay before capturing\"</emphasis> section allows you to "
-"set the delay that will elapse between pressing the <emphasis>\"OK\"</"
-"emphasis> button and screenshot being taken. This delay will allow you to "
-"open menus or to perform whatever action you require to see displayed in the "
-"screenshot."
-msgstr ""
-"<emphasis>\"撮影するまでの遅延時間\"</emphasis> セクションでは、<emphasis>"
-"「OK」</emphasis> ボタンがクリックされてから実際にスクリーンショットを撮るま"
-"での遅延時間を指定できます。この遅延により、開いたメニューなどあらゆる操作の"
-"スクリーンショットを撮影することができます。"
+#: ../lib/screenshooter-dialogs.c:840
+msgid "seconds"
+msgstr "秒"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:159(title)
-msgid "After capturing"
-msgstr "撮影したら"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:161(para)
-msgid ""
-"After pressing the <emphasis>\"OK\"</emphasis> button a second window will "
-"be displayed:"
-msgstr ""
-"<emphasis>「OK」</emphasis> ボタンを押すと、以下のウィンドウが表示されます:"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:173(phrase)
-msgid "The window of Xfce4 Screenshooter after taking a screenshot"
-msgstr ""
-"スクリーンショットを撮影したあとの Xfce4 スクリーンシューターのウィンドウ"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:180(title)
-msgid "Preview"
-msgstr "プレビュー"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:182(para)
-msgid ""
-"The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
-"screenshot."
-msgstr ""
-"<emphasis>\"プレビュー\"</emphasis> セクションには、スクリーンショットのプレ"
-"ビューが表示されます。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:189(title)
+#: ../lib/screenshooter-dialogs.c:892
 msgid "Action"
 msgstr "アクション"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:191(para)
-msgid ""
-"The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
-"be performed on the screenshot."
-msgstr ""
-"<emphasis>\"アクション\"</emphasis> セクションでは、撮影したスクリーンショッ"
-"トに対する操作を選択できます。"
+#: ../lib/screenshooter-dialogs.c:920
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">アクション</span>"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:197(title)
+#. Save option radio button
+#: ../lib/screenshooter-dialogs.c:936
 msgid "Save"
 msgstr "保存する"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:199(para)
-msgid ""
-"The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG "
-"file. A save dialog will be displayed. You will be able to set the save "
-"location, and the name of the file."
-msgstr ""
-"<emphasis>\"保存する\"</emphasis> オプションは、スクリーンショットを PNG ファ"
-"イルに保存します。保存ダイアログが表示され、保存場所およびファイル名を指定で"
-"きます。"
+#: ../lib/screenshooter-dialogs.c:941
+msgid "Save the screenshot to a PNG file"
+msgstr "スクリーンショットを PNG ファイルに保存します"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:206(para)
-msgid ""
-"Xfce4 Screenshooter is also able to save the screenshot to any remote file "
-"system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers "
-"accessible via SSH... You just need to connect this remote file system using "
-"<emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www."
-"uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left "
-"column of the save dialog."
-msgstr ""
-"Xfce4 スクリーンシューターはスクリーンショットを、FTP、SAMBA、SFTP、SSH 経由"
-"でアクセス可能なリモートコンピュータなど、GVfs がサポートするリモートファイル"
-"システムに保存することもできます。リモートファイルシステムへの接続には "
-"<emphasis>gvfs-connect</emphasis> または <ulink type=\"http\" url=\"http://"
-"www.uvena.de/gigolo/\">Gigolo</ulink> が必要で、利用可能な接続先は保存ダイア"
-"ログの左カラムに表示されます。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:218(title)
+#: ../lib/screenshooter-dialogs.c:950
 msgid "Copy to the clipboard"
 msgstr "クリップボードにコピーする"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:220(para)
-msgid ""
-"The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to "
-"paste the screenshot in another application, such as a word processor. This "
-"option is only available when a clipboard manager is running."
+#: ../lib/screenshooter-dialogs.c:952
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
-"<emphasis>\"クリップボードにコピーする\"</emphasis> オプションは、スクリーン"
-"ショットをワードプロセッサなど他のアプリケーションに貼り付けることができるよ"
-"うにクリップボードへコピーします。このオプションはクリップボードマネージャが"
-"起動されている場合のみ利用できます。"
+"後で貼り付けることができるよう、クリップボードにスクリーンショットをコピーし"
+"ます。"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:229(title)
-msgid "Open with"
-msgstr "アプリケーションで開く"
+#: ../lib/screenshooter-dialogs.c:969
+msgid "Open with:"
+msgstr "アプリケーションで開く:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:231(para)
-msgid ""
-"The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the "
-"system's temporary directory and opens it with the application chosen from "
-"the drop-down list. Applications which support images are automatically "
-"detected and added to the drop-down list."
-msgstr ""
-"<emphasis>\"アプリケーションで開く\"</emphasis> オプションは、スクリーン"
-"ショットをシステムの作業ディレクトリに保存し、右のドロップダウンリストで指定"
-"されたアプリケーションで開きます。画像をサポートするアプリケーションは自動的"
-"に検出され、ドロップダウンリストに追加されます。"
+#: ../lib/screenshooter-dialogs.c:975
+msgid "Open the screenshot with the chosen application"
+msgstr "選択したアプリケーションでスクリーンショットを開きます"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:241(title)
+#: ../lib/screenshooter-dialogs.c:993 ../src/main.c:63
+msgid "Application to open the screenshot"
+msgstr "スクリーンショットを開くアプリケーションを設定します"
+
+#: ../lib/screenshooter-dialogs.c:1003
 msgid "Host on ZimageZ"
 msgstr "ZimageZ で公開する"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:243(para)
-msgid ""
-"The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your "
-"screenshot on this free online hosting service, so that you can share it "
-"easily with other people. ZimageZ automatically generates a large and a "
-"small thumbnail of your screenshot, which can be used to create thumbnails "
-"pointing to the full size screenshot."
+#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:80
+msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr ""
-"<emphasis>\"ZimageZ で公開する\"</emphasis> オプションでは、撮影したスクリー"
-"ンショットをフリーのオンラインホスティングサービスで公開し、他の人と簡単に共"
-"有することができます。ZimageZ はフルサイズのスクリーンショットと、フルサイズ"
-"スクリーンショットを指し示すために使用される、大きな、および小さなサムネイル"
-"を自動生成します。"
+"スクリーンショットをフリーのウェブホスティングサービス ZimageZ で公開します"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:252(para)
+#: ../lib/screenshooter-dialogs.c:1021
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">プレビュー</span>"
+
+#: ../lib/screenshooter-dialogs.c:1082
+msgid "Save screenshot as..."
+msgstr "名前をつけてスクリーンショットを保存..."
+
+#: ../lib/screenshooter-zimagez.c:134
+#, c-format
+msgid "An error occurred when creating the XMLRPC request."
+msgstr "XMLRPC リクエストの生成中にエラーが発生しました。"
+
+#: ../lib/screenshooter-zimagez.c:153
+#, c-format
+msgid "An error occurred when transferring the data to ZimageZ."
+msgstr "ZimageZ へのデータ転送中にエラーが発生しました。"
+
+#: ../lib/screenshooter-zimagez.c:178
+#, c-format
+msgid "An error occurred when parsing the response from ZimageZ."
+msgstr "ZimageZ からの応答の解析中にエラーが発生しました。"
+
+#. For translators: the first wildcard is the date, the second one the time,
+#. * e.g. "Taken on 12/31/99, at 23:13:48".
+#: ../lib/screenshooter-zimagez.c:230
+#, c-format
+msgid "Taken on %s, at %s"
+msgstr "撮影日: %s %s"
+
+#. Start the user soup session
+#: ../lib/screenshooter-zimagez.c:297
+msgid "Initialize the connection..."
+msgstr "接続を初期化しています..."
+
+#: ../lib/screenshooter-zimagez.c:343
 msgid ""
-"After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
-"this dialog:"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com"
+"\">ZimageZ</a> \n"
+"user name, passsword and details about the screenshot."
 msgstr ""
-"<emphasis>「OK」</emphasis> ボタンを押すと、以下のダイアログが表示されます:"
+"<a href=\"http://www.zimagez.com\">ZimageZ</a> のユーザ名、パスワード、および"
+"スクリーンショットについての\n"
+"詳細を入力してください。"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:264(phrase)
-msgid "The dialog to host a screenshot on ZimageZ"
-msgstr "ZimageZ でスクリーンショットを公開するためのダイアログ"
+#: ../lib/screenshooter-zimagez.c:400
+msgid "Check the user information..."
+msgstr "ユーザ情報をチェックしています..."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:269(para)
+#: ../lib/screenshooter-zimagez.c:407
 msgid ""
-"If you do not have a ZimageZ user name, you will need to create one on the "
-"<ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</"
-"ulink>. Several languages are available on this website, you can switch "
-"between using the menu up right. You must fill all fields of this dialog. "
-"Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
+"must fill all the fields.</span>"
 msgstr ""
-"ZimageZ のユーザ名を持っていない場合、<ulink type=\"http\" url=\"http://www."
-"zimagez.com\">ZimageZ ウェブサイト</ulink> で作成して下さい。このウェブサイト"
-"はいくつかの言語で利用可能で、右上のメニューから切り換えることができます。こ"
-"のダイアログのすべてのフィールドに入力してください。<emphasis>「OK」</"
-"emphasis> ボタンをクリックすると、アップロードが開始されます。"
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">すべて"
+"のフィールドに入力してください。</span>"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:279(para)
+#: ../lib/screenshooter-zimagez.c:421
+msgid "Login on ZimageZ..."
+msgstr "ZimageZ にログインしています..."
+
+#: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
 msgid ""
-"The dialog below will give you the links to the full size screenshot, the "
-"large thumbnail, the small thumbnails, as well examples of HTML and BBcode "
-"to create a thumbnail pointing to the full size screenshot:"
+"An unexpected reply from ZimageZ was received. The upload of the screenshot "
+"failed."
 msgstr ""
-"以下のダイアログでは、フルサイズスクリーンショット、大きなサムネイル、小さな"
-"サムネイルへのリンク、およびフルサイズスクリーンショットを指し示すサムネイル"
-"の HTML および BB コードのサンプルが表示されます。"
+"ZimageZ から想定外の応答を受信しました。スクリーンショットのアップロードは失"
+"敗しました。"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:293(phrase)
-msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr "ZimageZ 上のスクリーンショットへのリンクを表示するダイアログ"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:303(title)
-msgid "Via command line"
-msgstr "コマンドラインから"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:305(para)
+#: ../lib/screenshooter-zimagez.c:500
 msgid ""
-"Command line options allow you to take screenshots quickly. They also allow "
-"you to configure the Print Screen key on the upper right of most keyboards "
-"so that it takes screenshots. To do so, configure the key-bindings of your "
-"desktop environment so that it launches xfce4-screenshooter with one or "
-"several of the following options when the Prt Scrn key is pressed."
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
+"user and the password you entered do not match. Please retry.</span>"
 msgstr ""
-"コマンドラインオプションを使用するとスクリーンショットの撮影を速やかに行えま"
-"す。これらを Print Screen キー (多くのキーボードの右上部にあります) に割り当"
-"ててスクリーンショットを撮影することができます。デスクトップ環境のキーバイン"
-"ド設定で、xfce4-screenshooter コマンドに以下のいくつかのオプションをつけて設"
-"定してください。"
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">入力さ"
+"れたユーザとパスワードがマッチしません。\n"
+"再入力してください。</span>"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:315(title)
-msgid "The command line options"
-msgstr "コマンドラインオプション"
+#: ../lib/screenshooter-zimagez.c:558
+msgid "Upload the screenshot..."
+msgstr "スクリーンショットをアップロードしています..."
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:318(title)
-msgid "The -w option"
-msgstr "-w オプション"
+#: ../lib/screenshooter-zimagez.c:591
+#, c-format
+msgid "An error occurred while uploading the screenshot."
+msgstr "スクリーンショットのアップロード中にエラーが発生しました。"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:320(para)
+#. End the user session
+#: ../lib/screenshooter-zimagez.c:624
+msgid "Close the session on ZimageZ..."
+msgstr "ZimageZ のセッションを終了しています..."
+
+#: ../lib/screenshooter-zimagez.c:694
+msgid "Details about the screenshot for ZimageZ"
+msgstr "ZimageZ 用スクリーンショットについての詳細"
+
+#. Create the user label
+#: ../lib/screenshooter-zimagez.c:736
+msgid "User:"
+msgstr "ユーザ:"
+
+#: ../lib/screenshooter-zimagez.c:747
 msgid ""
-"The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
-"active window."
+"Your Zimagez user name, if you do not have one yet please create one on the "
+"Web page linked above"
 msgstr ""
-"<emphasis>-w</emphasis> オプションは、アクティブウィンドウのスクリーンショッ"
-"トを撮影します。"
+"ZimageZ のユーザ名を入力してください。まだアカウントを持っていない場合には上"
+"にリンクされているウェブページから作成して下さい。"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:327(title)
-msgid "The -f option"
-msgstr "-f オプション"
+#. Create the password label
+#: ../lib/screenshooter-zimagez.c:753
+msgid "Password:"
+msgstr "パスワード:"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:329(para)
+#: ../lib/screenshooter-zimagez.c:763
+msgid "The password for the user above"
+msgstr "ユーザのパスワードを入力してください"
+
+#. Create the title label
+#: ../lib/screenshooter-zimagez.c:769
+msgid "Title:"
+msgstr "タイトル:"
+
+#: ../lib/screenshooter-zimagez.c:779
 msgid ""
-"The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
-"entire screen."
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
 msgstr ""
-"<emphasis>-f</emphasis> オプションは、画面全体のスクリーンショットを撮影しま"
+"スクリーンショットのタイトルを設定してください。これは ZimageZ で表示する際に"
+"使用されます。"
+
+#. Create the comment label
+#: ../lib/screenshooter-zimagez.c:785
+msgid "Comment:"
+msgstr "コメント:"
+
+#: ../lib/screenshooter-zimagez.c:796
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr ""
+"スクリーンショットのコメントを設定できます。これは ZimageZ で表示する際に使用"
+"されます"
+
+#: ../lib/screenshooter-zimagez.c:919
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr "<a href=\"%s\">フルサイズ画像</a>"
+
+#: ../lib/screenshooter-zimagez.c:921
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr "<a href=\"%s\">大きいサムネイル</a>"
+
+#: ../lib/screenshooter-zimagez.c:923
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr "<a href=\"%s\">小さいサムネイル</a>"
+
+#: ../lib/screenshooter-zimagez.c:939
+msgid "My screenshot on ZimageZ"
+msgstr "ZimageZ 上のスクリーンショット"
+
+#: ../lib/screenshooter-zimagez.c:965
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">リンク</span>"
+
+#: ../lib/screenshooter-zimagez.c:1010
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
+"to the full size image</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">フルサイズ画像へリンクするサム"
+"ネイルのコード</span>"
+
+#. HTML title
+#: ../lib/screenshooter-zimagez.c:1026
+msgid "HTML"
+msgstr "HTML"
+
+#. BB title
+#: ../lib/screenshooter-zimagez.c:1047
+msgid "BBCode for forums"
+msgstr "フォーラム用 BB コード"
+
+#: ../lib/screenshooter-zimagez.c:1176
+msgid "ZimageZ"
+msgstr "ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:1209
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ステータス</span>"
+
+#. Open Link
+#: ../lib/sexy-url-label.c:176
+msgid "_Open Link"
+msgstr "リンクを開く(_O)"
+
+#. Copy Link Address
+#: ../lib/sexy-url-label.c:188
+msgid "Copy _Link Address"
+msgstr "リンクアドレスのコピー(_L)"
+
+#: ../src/main.c:48
+msgid "Delay in seconds before taking the screenshot"
+msgstr "スクリーンショットを撮るまでの遅延時間"
+
+#: ../src/main.c:58
+msgid "Display the mouse on the screenshot"
+msgstr "マウスポインタも撮影する"
+
+#: ../src/main.c:75
+msgid "Directory where the screenshot will be saved"
+msgstr "スクリーンショットを保存するディレクトリ"
+
+#: ../src/main.c:85
+msgid "Version information"
+msgstr "バージョン情報"
+
+#: ../src/main.c:134
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr "オプションの衝突: --%s と --%s は同時に使用できません。\n"
+
+#: ../src/main.c:136
+#, c-format
+msgid ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
+msgstr ""
+"--%s オプションは --fullscreen、--window、または --region が指定された時のみ"
+"使用できます。これは無視されます。\n"
+
+#: ../src/main.c:150
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr ""
+"%s: %s\n"
+"%s --help で使用可能なすべてのコマンドラインオプションが表示されます。\n"
+
+#: ../src/main.c:282
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr ""
+"%s は有効なディレクトリではありません。デフォルトディレクトリを使用します。"
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr ""
+"画面全体、アクティブウィンドウまたは指定した領域のスクリーンショットを撮りま"
 "す。"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:336(title)
-msgid "The -r option"
-msgstr "-r オプション"
+#~ msgid "Default save location"
+#~ msgstr "デフォルトの保存場所"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:338(para)
-msgid ""
-"The <emphasis>-r</emphasis> option allows you to select a region to be "
-"captured by clicking and dragging a rectangle over the area of screen that "
-"you wish to capture, before releasing the mouse button."
-msgstr ""
-"<emphasis>-r</emphasis> オプションは、画面の一点をクリックおよびそこからド"
-"ラッグし、マウスボタンを離したところまでの矩形領域を撮影します。"
+#~ msgid "Set the default save location"
+#~ msgstr "デフォルトの保存場所を設定します"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:347(title)
-msgid "The -d option"
-msgstr "-d オプション"
+#~ msgid "Screenshot.png"
+#~ msgstr "Screenshot.png"
 
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:349(para)
-msgid ""
-"The <emphasis>-d</emphasis> option followed by a positive integer allows you "
-"to set the delay before taking the screenshot when the <emphasis>-w</"
-"emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
-"is given."
-msgstr ""
-"<emphasis>-d</emphasis> オプションは、<emphasis>-w</emphasis>、<emphasis>-f</"
-"emphasis>、または <emphasis>-r</emphasis> オプションのいずれかが指定されたと"
-"きに、続く正数の秒数分経過した後にスクリーンショットを撮影します。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
-msgid "The -s option"
-msgstr "-s オプション"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:361(para)
-msgid ""
-"The <emphasis>-s</emphasis> option followed by the path to an existing "
-"folder allows you to set where the screenshots are saved. This option only "
-"has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or "
-"the <emphasis>-r</emphasis> option is given."
-msgstr ""
-"<emphasis>-s</emphasis> オプションは、その後に指定された既存のパスにスクリー"
-"ンショットを保存します。このオプションは <emphasis>-w</emphasis>、<emphasis>-"
-"f</emphasis>、または <emphasis>-r</emphasis> が指定された場合のみ機能します。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:371(title)
-msgid "The -o option"
-msgstr "-o オプション"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:373(para)
-msgid ""
-"If the <emphasis>-o</emphasis> option is given, followed by an application "
-"name, the screenshot will be saved to the system's temporary directory and "
-"opened with the application whose name is to be given after <emphasis>-o</"
-"emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, "
-"the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
-"<emphasis>-o</emphasis> オプションが指定された場合、スクリーンショットはシス"
-"テムの作業ディレクトリに保存され、<emphasis>-o</emphasis> オプションの後に指"
-"定されたアプリケーションで開きます。このオプションは <emphasis>-w</"
-"emphasis>、<emphasis>-f</emphasis>、または <emphasis>-r</emphasis> オプション"
-"のいずれかが指定されている場合のみ機能します。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:385(title)
-msgid "The -u option"
-msgstr "-u オプション"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:387(para)
-msgid ""
-"If the <emphasis>-u</emphasis> option is given, the screenshot will be "
-"hosted on ZimageZ. See above for more details. This option only has an "
-"effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
-"<emphasis>-r</emphasis> option is given."
-msgstr ""
-"<emphasis>-u</emphasis> オプションが設定された場合、スクリーンショットは "
-"ZimageZ にアップロードされます。詳細は前述の説明をご覧ください。このオプショ"
-"ンは <emphasis>-w</emphasis>、<emphasis>-f</emphasis> または <emphasis>-r</"
-"emphasis> オプションのいずれかが指定されている場合のみ機能します。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:400(title)
-msgid "Using the Xfce panel plugin"
-msgstr "Xfce パネルプラグインを使う"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:403(title)
-msgid "Adding the plugin"
-msgstr "プラグインの追加"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:405(para)
-msgid ""
-"To add the plugin to the panel, right click on the panel and select "
-"<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
-"\"Screenshot\"</emphasis>, and add it."
-msgstr ""
-"パネルへのプラグインの追加は、パネル上で右クリックし、<emphasis>\"新しいアイ"
-"テムの追加\"</emphasis> を選択します。プラグイン <emphasis>\"スクリーンショッ"
-"ト\"</emphasis> を選択し、追加してください。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:413(title)
-msgid "Configuring the plugin"
-msgstr "プラグインの設定"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:415(para)
-msgid ""
-"You can configure how screenshots are taken by right clicking on the plugin "
-"and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog "
-"similar to the dialog of the main application will appear. Please have a "
-"look above for the different preferences."
-msgstr ""
-"スクリーンショットの撮影方法を設定するにはプラグインアイコン上で右クリック"
-"し、<emphasis>\"プロパティ\"</emphasis> を選択します。メインアプリケーション"
-"のダイアログと同様の設定ダイアログが表示されます。各設定については前述の説明"
-"をご覧ください。"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:425(title)
-msgid "Using the plugin"
-msgstr "プラグインを使う"
-
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:427(para)
-msgid ""
-"To take a screenshot, just click on the plugin. You can use the scroll wheel "
-"on the plugin button to switch between the different regions to be captured."
-msgstr ""
-"スクリーンショットを撮影するには、プラグインをクリックします。プラグインボタ"
-"ン上でマウスホイールを回転させることで撮影する領域を切り替えることができま"
-"す。"
-
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: ../docs/manual/C/xfce4-screenshooter.xml.in:0(None)
-msgid "translator-credits"
-msgstr "Masato Hashimoto <hashimo@xfce.org>, 2009."
+#~ msgid "Screenshot-%d.png"
+#~ msgstr "Screenshot-%d.png"
 
 #~ msgid ""
-#~ "If activated on build, you can also host your screenshots on <ulink type="
-#~ "\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online "
-#~ "image hosting service. The CURL and XMLRPC-C libraries are required."
-#~ msgstr ""
-#~ "ビルド時に有効にしていれば、スクリーンショットをフリーのオンラインイメージ"
-#~ "ホスティングサービス <ulink type=\"http\" url=\"http://www.zimagez.com"
-#~ "\">ZimageZ</ulink> で公開することもできます。その場合は CURL および "
-#~ "XMLRPC-C ライブラリが必要です。"
+#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
+#~ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影したら</span>"
+
+#~ msgid "Show the save dialog"
+#~ msgstr "保存ダイアログを表示する"
 
 #~ msgid ""
-#~ "The <emphasis>\"Show the save dialog\"</emphasis> option is described "
-#~ "below, in the <emphasis>\"Action\"</emphasis> section."
-#~ msgstr ""
-#~ "<emphasis>\"保存ダイアログを表示する\"</emphasis> オプションは <emphasis>"
-#~ "\"アクション\"</emphasis> 節で説明します。"
+#~ "The save dialog allows you to change the file name and the save location"
+#~ msgstr "保存ダイアログでファイル名と保存場所を変更できます"
+
+#~ msgid "Close the application"
+#~ msgstr "このアプリケーションを閉じる"
 
 #~ msgid ""
-#~ "The <emphasis>\"Close the application\"</emphasis> option allows you, if "
-#~ "unchecked, to take several screenshots in a row. If checked, the "
-#~ "application will be closed once the screenshot has been taken and the "
-#~ "action you selected executed."
+#~ "If unchecked, the current window will be displayed again after the "
+#~ "screenshot has been taken to allow you to take several screenshots in a "
+#~ "row"
 #~ msgstr ""
-#~ "<emphasis>\"アプリケーションを閉じる\"</emphasis> オプションでは、チェック"
-#~ "マークをつけると1枚のスクリーンショットを撮影した後にアプリケーションを閉"
-#~ "じ、選択されたアクションを実行します。チェックマークをつけなければ、複数の"
-#~ "スクリーンショットを続けて撮影できます。"
+#~ "チェックマークをつけなければ、このウィンドウがスクリーンショットの撮影後に"
+#~ "再び表示され、連続してスクリーンショットを撮影することができます。"
+
+#~ msgid "Do not display the save dialog"
+#~ msgstr "保存ダイアログを表示しない"
 
 #~ msgid ""
-#~ "The <emphasis>\"Save in\"</emphasis> option will save the screenshot to a "
-#~ "PNG file. If you don't check the <emphasis>\"Show the save dialog\"</"
-#~ "emphasis> checkbox in the <emphasis>\"After capturing\"</emphasis> "
-#~ "section, the screenshot will be saved to the folder on the right after "
-#~ "you press the <emphasis>\"OK\"</emphasis> button, without showing any "
-#~ "save dialog. Otherwise, a save dialog will be displayed, which also shows "
-#~ "a preview of the screenshot. You will then be able to set the save "
-#~ "location, and the name of the file."
+#~ "An error occurred during the XML exchange: %s (%d).\n"
+#~ " The screenshot could not be uploaded."
 #~ msgstr ""
-#~ "<emphasis>\"保存する\"</emphasis> オプションは、スクリーンショットを PNG "
-#~ "ファイルに保存します。<emphasis>\"撮影したら\"</emphasis> セクションの "
-#~ "<emphasis>\"保存ダイアログを表示する\"</emphasis> チェックボックスにチェッ"
-#~ "クマークがつけられてない場合、スクリーンショットは <emphasis>「OK」</"
-#~ "emphasis> ボタンが押された後、保存ダイアログを表示せずに右で指定された場所"
-#~ "に保存されます。チェックマークがつけられてる場合はスクリーンショットのプレ"
-#~ "ビューが確認できる保存ダイアログが表示され、保存場所やファイル名を指定でき"
-#~ "ます"
+#~ "XML 交換中にエラーが発生しました: %s (%d)\n"
+#~ "スクリーンショットをアップロードできませんでした。"
 
-#~ msgid ""
-#~ "The <emphasis>-s</emphasis> option followed by the path to an existing "
-#~ "folder allows you to set where the screenshots are saved. This option "
-#~ "only has an effect if the <emphasis>-f</emphasis>, the <emphasis>-w</"
-#~ "emphasis> or the <emphasis>-r</emphasis> option is given. Combined with "
-#~ "the <emphasis>-h</emphasis> option (see below), it can be used to save a "
-#~ "file to a given path, without showing any save dialog."
+#~ msgid "Uploading to ZimageZ..."
+#~ msgstr "ZimageZ へアップロードしています..."
+
+#~ msgid "Upload the screenshot to ZimageZ©, a free Web hosting solution"
 #~ msgstr ""
-#~ "<emphasis>-s</emphasis> オプションは続く既存のフォルダへのパスに、撮影した"
-#~ "スクリーンショットを保存します。このオプションは <emphasis>-f</emphasis>、"
-#~ "<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプションのいずれ"
-#~ "かが指定されている場合のみ機能します。<emphasis>-h</emphasis> オプション "
-#~ "(後述) との組み合わせで、保存ダイアログを表示せずに指定したパスに保存しま"
-#~ "す。"
-
-#~ msgid "The -h option"
-#~ msgstr "-h オプション"
-
-#~ msgid ""
-#~ "If you give the <emphasis>-h</emphasis> option, the screenshot will be "
-#~ "saved without showing any save dialog. This option only has an effect if "
-#~ "the <emphasis>-f</emphasis>, the <emphasis>-w</emphasis> or the "
-#~ "<emphasis>-r</emphasis> option is given. The <emphasis>-s</emphasis> "
-#~ "option allows you to set the save location if needed."
-#~ msgstr ""
-#~ "<emphasis>-h</emphasis> オプションを指定した場合、スクリーンショットは保存"
-#~ "ダイアログを表示せずに保存されます。このオプションは <emphasis>-f</"
-#~ "emphasis>、<emphasis>-w</emphasis>、または <emphasis>-r</emphasis> オプ"
-#~ "ションのいずれかが指定されている場合のみ機能します。必要であれば "
-#~ "<emphasis>-s</emphasis> オプションで保存場所を指定できます。"
-
-#~ msgid "Using the plugin for the Xfce panel"
-#~ msgstr "Xfce パネル用プラグインを使う"
-
-#~ msgid "Setting the plugin up"
-#~ msgstr "プラグインの設定"
-
-#~ msgid "To take a screenshot, just click on the plugin."
-#~ msgstr ""
-#~ "パネル上のプラグインアイコンをクリックするだけで、スクリーンショットの撮影"
-#~ "が行えます。"
-
-#~ msgid "Introduction to @PACKAGE_NAME@"
-#~ msgstr "@PACKAGE_NAME@ の紹介"
+#~ "スクリーンショットをフリーウェブホスティングサービス ZimageZ© にアップロー"
+#~ "ドします"
