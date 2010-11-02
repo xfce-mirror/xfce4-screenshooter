@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: http://bugzilla.xfce.org\n"
 "POT-Creation-Date: 2010-01-07 17:01+0000\n"
-"PO-Revision-Date: 2010-01-08 14:20+0100\n"
+"PO-Revision-Date: 2010-11-02 18:20+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -67,13 +67,13 @@ msgstr "Facer a captura de pantalla de toda a pantalla"
 
 #: ../lib/screenshooter-dialogs.c:764
 msgid "Active window"
-msgstr "Fiestra activa"
+msgstr "Xanela activa"
 
 #: ../lib/screenshooter-dialogs.c:771
 #: ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
-msgstr "Facer unha captura de pantalla da fiestra activa"
+msgstr "Facer unha captura de pantalla da xanela activa"
 
 #: ../lib/screenshooter-dialogs.c:779
 msgid "Select a region"
@@ -356,7 +356,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Execute %s --help para ver unha lista completa das opcións dispoñibles.\n"
+"Execute %s --help para ver unha lista completa das opcións de liña de ordes dispoñibles.\n"
 
 #: ../src/main.c:282
 #, c-format
@@ -366,7 +366,7 @@ msgstr "%s non é un directorio válido, hase usar o directorio predeterminado."
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Facer capturas de pantalla de toda a pantalla, da fiestra activa ou dunha zona"
+msgstr "Facer capturas de pantalla de toda a pantalla, da xanela activa ou dunha zona"
 
 #~ msgid "Screenshot.png"
 #~ msgstr "Captura de pantalla.png"
