@@ -2,21 +2,21 @@
 # Copyright (C) 2008, 2009 Jérôme Guelfucci; 2009 Sam Swift
 # This file is distributed under the same license as the xfce4-screenshooter package.
 # Michal Löffler <lofflermichalloffler@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-15 16:03+0000\n"
+"POT-Creation-Date: 2010-11-23 17:03+0000\n"
 "PO-Revision-Date: 2010-11-07 18:53+0100\n"
 "Last-Translator: Michal Löffler <lofflermichalloffler@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 "X-Poedit-Language: Slovak\n"
 "X-Poedit-Country: SLOVAKIA\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
@@ -31,10 +31,8 @@ msgstr "Prenos"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímka obrazovky sa prenáša do:</span>"
 
-#: ../lib/screenshooter-dialogs.c:672
-#: ../lib/screenshooter-dialogs.c:689
-#: ../lib/screenshooter-dialogs.c:880
-#: ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
@@ -57,8 +55,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímaná oblasť</span>"
 msgid "Entire screen"
 msgstr "Celá obrazovka"
 
-#: ../lib/screenshooter-dialogs.c:756
-#: ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:756 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:307
 msgid "Take a screenshot of the entire screen"
 msgstr "Vytvorí snímku celej obrazovky"
@@ -67,8 +64,7 @@ msgstr "Vytvorí snímku celej obrazovky"
 msgid "Active window"
 msgstr "Aktívne okno"
 
-#: ../lib/screenshooter-dialogs.c:771
-#: ../src/main.c:90
+#: ../lib/screenshooter-dialogs.c:771 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:312
 msgid "Take a screenshot of the active window"
 msgstr "Vytvorí snímku aktívneho okna"
@@ -77,8 +73,7 @@ msgstr "Vytvorí snímku aktívneho okna"
 msgid "Select a region"
 msgstr "Vybrať oblasť"
 
-#: ../lib/screenshooter-dialogs.c:784
-#: ../src/main.c:68
+#: ../lib/screenshooter-dialogs.c:784 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:317
 #, fuzzy
 msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
@@ -138,8 +133,7 @@ msgstr "Otvoriť v:"
 msgid "Open the screenshot with the chosen application"
 msgstr "Otvorí snímku obrazovky vo vybranom programe"
 
-#: ../lib/screenshooter-dialogs.c:993
-#: ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:993 ../src/main.c:63
 msgid "Application to open the screenshot"
 msgstr "Aplikácia pre otváranie snímok obrazovky"
 
@@ -147,8 +141,7 @@ msgstr "Aplikácia pre otváranie snímok obrazovky"
 msgid "Host on ZimageZ"
 msgstr "Nahrať do galérie ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1007
-#: ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Nahrá snímku do galérie ZimageZ, bezplatnej online služby pre hostovanie obrázkov"
 
@@ -207,8 +200,7 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Mu
 msgid "Login on ZimageZ..."
 msgstr "Prihlasovanie do galérie ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:461
-#: ../lib/screenshooter-zimagez.c:612
+#: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
 msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
 msgstr "Bola prijatá neočakávaná odpoveď z galérie ZimageZ. Nahrávanie snímky zlyhalo."
 
@@ -306,7 +298,6 @@ msgstr "HTML"
 
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1047
-#, fuzzy
 msgid "BBCode for forums"
 msgstr "Kód BBCode pre diskusné fóra"
 
@@ -372,4 +363,3 @@ msgstr "%s nie je platným adresárom, bude použitý východzí adresár."
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Vytvorí snímku celej obrazovky, aktívneho okna, alebo vybranej oblasti"
-
