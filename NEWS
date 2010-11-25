@@ -1,3 +1,9 @@
+=== Version x.x.x ===
+
+  * Bugs fixed:
+    - Fix build with Xfce's master branch.
+    - Remove obsolote 'hide' CLI option from the manpage.
+
 === Version 1.7.9 ===
 
   * The XMLRPC-C dependency has been replaced by libsoup.
