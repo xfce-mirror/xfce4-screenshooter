@@ -24,7 +24,6 @@ lib_libscreenshooter_la_SOURCES =	\
 	lib/exo-simple-job.c lib/exo-simple-job.h \
 	lib/katze-throbber.c lib/katze-throbber.h \
 	lib/libscreenshooter.h \
-  lib/sexy-url-label.c lib/sexy-url-label.h \
 	lib/screenshooter-actions.c lib/screenshooter-actions.h \
 	lib/screenshooter-capture.c lib/screenshooter-capture.h \
   lib/screenshooter-dialogs.c lib/screenshooter-dialogs.h \

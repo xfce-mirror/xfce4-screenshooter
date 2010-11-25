@@ -51,9 +51,6 @@ typedef enum
   COMMENT,
 } ZimagezInformation;
 
-static void              open_url_hook             (SexyUrlLabel      *url_label,
-                                                    gchar             *url,
-                                                    gpointer           user_data);
 static gboolean          do_xmlrpc                 (SoupSession       *session,
                                                     const gchar       *uri,
                                                     const gchar       *method,
@@ -86,23 +83,6 @@ static void              cb_update_info            (ExoJob            *job,
 
 
 /* Private */
-
-
-
-static void
-open_url_hook (SexyUrlLabel *url_label, gchar *url, gpointer user_data)
-{
-  const gchar *command = g_strconcat ("xdg-open ", url, NULL);
-  GError *error = NULL;
-
-  if (!g_spawn_command_line_async (command, &error))
-    {
-      TRACE ("An error occurred when opening the URL");
-
-      screenshooter_error ("%s", error->message);
-      g_error_free (error);
-    }
-}
 
 
 
@@ -719,10 +699,8 @@ cb_ask_for_information (ScreenshooterJob *job,
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
   /* Create the information label */
-  information_label = sexy_url_label_new ();
-  sexy_url_label_set_markup (SEXY_URL_LABEL (information_label), message);
-  g_signal_connect (G_OBJECT (information_label), "url-activated",
-                    G_CALLBACK (open_url_hook), NULL);
+  information_label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (information_label), message);
   gtk_misc_set_alignment (GTK_MISC (information_label), 0, 0);
   gtk_container_add (GTK_CONTAINER (vbox), information_label);
 
@@ -978,29 +956,23 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_container_add (GTK_CONTAINER (links_alignment), links_box);
 
   /* Create the image link */
-  image_link = sexy_url_label_new ();
-  sexy_url_label_set_markup (SEXY_URL_LABEL (image_link), image_markup);
+  image_link = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (image_link), image_markup);
   gtk_misc_set_alignment (GTK_MISC (image_link), 0, 0);
-  g_signal_connect (G_OBJECT (image_link), "url-activated",
-                    G_CALLBACK (open_url_hook), NULL);
   gtk_widget_set_tooltip_text (image_link, image_url);
   gtk_container_add (GTK_CONTAINER (links_box), image_link);
 
   /* Create the thumbnail link */
-  thumbnail_link = sexy_url_label_new ();
-  sexy_url_label_set_markup (SEXY_URL_LABEL (thumbnail_link), thumbnail_markup);
+  thumbnail_link = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (thumbnail_link), thumbnail_markup);
   gtk_misc_set_alignment (GTK_MISC (thumbnail_link), 0, 0);
-  g_signal_connect (G_OBJECT (thumbnail_link), "url-activated",
-                    G_CALLBACK (open_url_hook), NULL);
   gtk_widget_set_tooltip_text (thumbnail_link, thumbnail_url);
   gtk_container_add (GTK_CONTAINER (links_box), thumbnail_link);
 
   /* Create the small thumbnail link */
-  small_thumbnail_link = sexy_url_label_new ();
-  sexy_url_label_set_markup (SEXY_URL_LABEL (small_thumbnail_link), small_thumbnail_markup);
+  small_thumbnail_link = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (small_thumbnail_link), small_thumbnail_markup);
   gtk_misc_set_alignment (GTK_MISC (small_thumbnail_link), 0, 0);
-  g_signal_connect (G_OBJECT (small_thumbnail_link), "url-activated",
-                    G_CALLBACK (open_url_hook), NULL);
   gtk_widget_set_tooltip_text (small_thumbnail_link, small_thumbnail_url);
   gtk_container_add (GTK_CONTAINER (links_box), small_thumbnail_link);
 

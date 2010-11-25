@@ -1,8 +1,11 @@
 === Version x.x.x ===
 
+  * Gtk 2.16 is now required to compile.
+
   * Bugs fixed:
     - Fix build with Xfce's master branch.
     - Remove obsolote 'hide' CLI option from the manpage.
+    - Use new GtkLabel link instead of SexyUrlLabel.
 
 === Version 1.7.9 ===
 
