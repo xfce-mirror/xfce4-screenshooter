@@ -27,8 +27,8 @@
 #include <gio/gio.h>
 #include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>
+#include <exo/exo.h>
 
-#include "exo-simple-job.h"
 #include "screenshooter-marshal.h"
 
 G_BEGIN_DECLS

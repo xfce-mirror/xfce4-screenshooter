@@ -20,8 +20,6 @@ noinst_LTLIBRARIES = lib/libscreenshooter.la
 
 lib_libscreenshooter_la_SOURCES =	\
 	$(lib_libscreenshooter_built_sources) \
-  lib/exo-job.c lib/exo-job.h \
-	lib/exo-simple-job.c lib/exo-simple-job.h \
 	lib/katze-throbber.c lib/katze-throbber.h \
 	lib/libscreenshooter.h \
 	lib/screenshooter-actions.c lib/screenshooter-actions.h \
@@ -35,6 +33,7 @@ lib_libscreenshooter_la_SOURCES =	\
 
 lib_libscreenshooter_la_CFLAGS = \
 	-I$(top_srcdir)	\
+	@EXO_CFLAGS@ \
   @GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
@@ -43,6 +42,7 @@ lib_libscreenshooter_la_CFLAGS = \
   -DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_libscreenshooter_la_LIBADD = \
+	@EXO_LIBS@ \
   @GTK_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCEGUI4_LIBS@ \
@@ -74,6 +74,7 @@ lib/screenshooter-marshal.c: lib/screenshooter-marshal.list Makefile
 # Main application
 src_xfce4_screenshooter_CFLAGS = \
 	-I$(top_srcdir)/lib/ \
+	@EXO_CFLAGS@ \
 	@GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
@@ -83,6 +84,7 @@ src_xfce4_screenshooter_CFLAGS = \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 	
 src_xfce4_screenshooter_LDFLAGS = \
+	@EXO_LIBS@ \
 	@GTK_LIBS@ \
 	@GLIB_LIBS@ \
 	@GTHREAD_LIBS@ \
@@ -115,12 +117,14 @@ panel_plugin_xfce4_screenshooter_plugin_CFLAGS =	\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"	\
 	-I$(top_srcdir)	\
 	-I$(top_srcdir)/lib/	\
+	@EXO_CFLAGS@ \
 	@LIBXFCE4PANEL_CFLAGS@ \
 	@LIBXFCEGUI4_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
 	@SOUP_CFLAGS@
 
 panel_plugin_xfce4_screenshooter_plugin_LDFLAGS = \
+	@EXO_LIBS@ \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@ \
