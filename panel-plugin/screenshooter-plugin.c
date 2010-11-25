@@ -119,7 +119,11 @@ cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
                                     pd->button->style->ythickness);
 
   TRACE ("Get the icon from the theme");
-  pb = xfce_themed_icon_load (SCREENSHOT_ICON_NAME, width);
+  pb = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (),
+                                 SCREENSHOT_ICON_NAME,
+                                 width,
+                                 GTK_ICON_LOOKUP_FORCE_SIZE,
+                                 NULL);
 
   TRACE ("Set the new icon");
   gtk_image_set_from_pixbuf (GTK_IMAGE (pd->image), pb);
