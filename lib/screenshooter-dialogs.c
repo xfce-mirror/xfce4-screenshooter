@@ -703,6 +703,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "applets-screenshooter");
+  gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
@@ -894,6 +895,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "applets-screenshooter");
+  gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
