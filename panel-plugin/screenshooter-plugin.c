@@ -28,7 +28,7 @@ t */
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
-#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4panel/libxfce4panel.h>
 
 #include <sys/types.h>
