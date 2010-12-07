@@ -37,7 +37,7 @@ lib_libscreenshooter_la_CFLAGS = \
   @GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
-	@LIBXFCEGUI4_CFLAGS@ \
+	@LIBXFCE4UI_CFLAGS@ \
 	@SOUP_CFLAGS@ \
   -DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
@@ -45,7 +45,7 @@ lib_libscreenshooter_la_LIBADD = \
 	@EXO_LIBS@ \
   @GTK_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
-	@LIBXFCEGUI4_LIBS@ \
+	@LIBXFCE4UI_LIBS@ \
   @GLIB_LIBS@ \
 	@SOUP_LIBS@
 
@@ -78,7 +78,7 @@ src_xfce4_screenshooter_CFLAGS = \
 	@GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
-	@LIBXFCEGUI4_CFLAGS@ \
+	@LIBXFCE4UI_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
 	@SOUP_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
@@ -90,7 +90,7 @@ src_xfce4_screenshooter_LDFLAGS = \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
-	@LIBXFCEGUI4_LIBS@
+	@LIBXFCE4UI_LIBS@
 
 src_xfce4_screenshooter_LDADD = lib/libscreenshooter.la
 	
@@ -119,7 +119,7 @@ panel_plugin_xfce4_screenshooter_plugin_CFLAGS =	\
 	-I$(top_srcdir)/lib/	\
 	@EXO_CFLAGS@ \
 	@LIBXFCE4PANEL_CFLAGS@ \
-	@LIBXFCEGUI4_CFLAGS@ \
+	@LIBXFCE4UI_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
 	@SOUP_CFLAGS@
 
@@ -128,7 +128,7 @@ panel_plugin_xfce4_screenshooter_plugin_LDFLAGS = \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@ \
-	@LIBXFCEGUI4_LIBS@
+	@LIBXFCE4UI_LIBS@
 
 panel_plugin_xfce4_screenshooter_plugin_LDADD = lib/libscreenshooter.la
 

@@ -1,6 +1,7 @@
 === Version x.x.x ===
 
-  * Gtk 2.16 is now required to compile.
+  * Gtk 2.16 and libxfce4ui are now required.
+  * Xfce4 Screenshooter does not depend anymore on libxfcegui4.
 
   * Bugs fixed:
     - Fix build with Xfce's master branch.
@@ -58,7 +59,7 @@
     - Plug some leaks in the application and in the panel plugin.
     - Do not accept conflicting CLI options. Warn the user when he uses
       CLI options which are not coherent.
-    - Correctly save preferences, even if the rc file does not exist 
+    - Correctly save preferences, even if the rc file does not exist
       (Mike Massonnet).
     - One second is now the minimal delay when using the interactive
       mode. This caused the screenshooter dialog to be partially displayed
