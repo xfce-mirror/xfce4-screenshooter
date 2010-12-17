@@ -241,7 +241,12 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
-    return FALSE;
+    {
+      g_free (comment);
+      g_free (password);
+
+      return FALSE;
+    }
 
   /* Get the last user */
   last_user = g_value_get_string (g_value_array_get_nth (param_values, 1));

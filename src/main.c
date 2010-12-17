@@ -152,6 +152,7 @@ int main (int argc, char **argv)
                    PACKAGE, cli_error->message, PACKAGE_NAME);
 
           g_error_free (cli_error);
+          g_free (sd);
 
           return EXIT_FAILURE;
         }
@@ -161,16 +162,22 @@ int main (int argc, char **argv)
   if (window && fullscreen)
     {
       g_printerr (conflict_error, "window", "fullscreen");
+
+      g_free (sd);
       return EXIT_FAILURE;
     }
   else if (window && region)
     {
       g_printerr (conflict_error, "window", "region");
+
+      g_free (sd);
       return EXIT_FAILURE;
     }
   else if (fullscreen && region)
     {
       g_printerr (conflict_error, "fullscreen", "region");
+
+      g_free (sd);
       return EXIT_FAILURE;
     }
 
@@ -178,20 +185,26 @@ int main (int argc, char **argv)
   if (upload && (application != NULL))
     {
       g_printerr (conflict_error, "upload", "open");
+
+      g_free (sd);
       return EXIT_FAILURE;
     }
   else if (upload && (screenshot_dir != NULL))
     {
       g_printerr (conflict_error, "upload", "save");
+
+      g_free (sd);
       return EXIT_FAILURE;
     }
   else if ((application != NULL) && (screenshot_dir != NULL))
     {
       g_printerr (conflict_error, "open", "save");
+
+      g_free (sd);
       return EXIT_FAILURE;
     }
 
-  /* Warn that action options, mouse and delay will be ignored in 
+  /* Warn that action options, mouse and delay will be ignored in
    * non-cli mode */
   if ((application != NULL) && !(fullscreen || window || region))
     g_printerr (ignore_error, "open");
@@ -206,6 +219,16 @@ int main (int argc, char **argv)
 
   if (!g_thread_supported ())
     g_thread_init (NULL);
+
+  /* Just print the version if we are in version mode */
+  if (version)
+    {
+      g_print ("%s\n", PACKAGE_STRING);
+
+      g_free (sd);
+
+      return EXIT_SUCCESS;
+    }
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
@@ -224,14 +247,6 @@ int main (int argc, char **argv)
     }
 
   g_object_unref (default_save_dir);
-
-  /* Just print the version if we are in version mode */
-  if (version)
-    {
-      g_print ("%s\n", PACKAGE_STRING);
-
-      return EXIT_SUCCESS;
-    }
 
   /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
