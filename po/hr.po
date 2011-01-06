@@ -18,7 +18,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%.2fKb od %.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
@@ -26,7 +26,7 @@ msgstr "Prijenos"
 
 #: ../lib/screenshooter-dialogs.c:556
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Screenshot je premješten u:</span>"
 
 #: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
 #: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
@@ -97,11 +97,11 @@ msgstr "sekunde"
 
 #: ../lib/screenshooter-dialogs.c:893
 msgid "Action"
-msgstr ""
+msgstr "Akcija"
 
 #: ../lib/screenshooter-dialogs.c:922
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akcija</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:938
@@ -126,7 +126,7 @@ msgstr "Otvori pomoću"
 
 #: ../lib/screenshooter-dialogs.c:977
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Otvori screenshot izabranim programom"
 
 #: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
 msgid "Application to open the screenshot"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pregled</span>"
 
 #: ../lib/screenshooter-dialogs.c:1084
 msgid "Save screenshot as..."
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr ""
+msgstr "Provjeri informacije korisnika..."
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
@@ -199,7 +199,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Korisnik i lozinka koje ste unijeli ne podudaraju se.Pokušajte ponovo.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -240,7 +240,7 @@ msgstr ""
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:752
 msgid "Title:"
-msgstr ""
+msgstr "Nslov:"
 
 #: ../lib/screenshooter-zimagez.c:762
 msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
@@ -285,7 +285,7 @@ msgstr ""
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1024
