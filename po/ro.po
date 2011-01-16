@@ -2,80 +2,84 @@
 # Copyright (C) 2009 THE xfce4-screenshooter COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-screenshooter package.
 # Igor Știrbu <igor.stirbu@gmail.com>, 2009.
-#
+# Mișu Moldovan <dumol@xfce.org>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-29 11:58+0100\n"
-"PO-Revision-Date: 2009-03-01 19:05+0200\n"
-"Last-Translator: Igor Știrbu <igor.stirbu@gmail.com>\n"
+"POT-Creation-Date: 2011-01-16 11:03+0000\n"
+"PO-Revision-Date: 2011-01-16 18:49+0200\n"
+"Last-Translator: Mișu Moldovan <dumol@xfce.org>\n"
 "Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);;\n"
+"X-Generator: Virtaal 0.6.1\n"
 
-#: ../lib/screenshooter-dialogs.c:478
+#: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%.2fKb din %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
-msgstr ""
+msgstr "Transfer"
 
-#: ../lib/screenshooter-dialogs.c:581
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:556
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acțiune</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Captura de ecran este transferată "
+"către:</span>"
 
-#: ../lib/screenshooter-dialogs.c:697 ../lib/screenshooter-dialogs.c:714
-#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
 msgstr "Captură de ecran"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
 msgstr "Captură de ecran"
 
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
 msgstr "Preferințe"
 
-#: ../lib/screenshooter-dialogs.c:754
+#: ../lib/screenshooter-dialogs.c:730
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Regiune de capturat</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Regiune de capturat</span>"
 
-#: ../lib/screenshooter-dialogs.c:774
+#: ../lib/screenshooter-dialogs.c:750
 msgid "Entire screen"
 msgstr "Tot ecranul"
 
-#: ../lib/screenshooter-dialogs.c:781 ../src/main.c:53
-#: ../panel-plugin/screenshooter-plugin.c:308
+#: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
+#: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
-msgstr "Captura întregului ecran"
+msgstr "Capturează întregul ecran"
 
-#: ../lib/screenshooter-dialogs.c:789
+#: ../lib/screenshooter-dialogs.c:765
 msgid "Active window"
 msgstr "Fereastra activă"
 
-#: ../lib/screenshooter-dialogs.c:796 ../src/main.c:90
-#: ../panel-plugin/screenshooter-plugin.c:313
+#: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
+#: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
-msgstr "Captura ferestrei active"
+msgstr "Capturează fereastra activă"
 
-#: ../lib/screenshooter-dialogs.c:804
+#: ../lib/screenshooter-dialogs.c:780
 msgid "Select a region"
-msgstr "Regiune selectată"
+msgstr "O regiune selectată"
 
-#: ../lib/screenshooter-dialogs.c:809 ../src/main.c:68
-#: ../panel-plugin/screenshooter-plugin.c:318
+#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
+#: ../panel-plugin/screenshooter-plugin.c:321
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -85,282 +89,274 @@ msgstr ""
 "fără a elibera butonul mausului, trageți până la colțul opus al regiunii și "
 "apoi eliberați butonul mausului."
 
-#: ../lib/screenshooter-dialogs.c:819
+#: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
-msgstr ""
+msgstr "Include mausul"
 
-#: ../lib/screenshooter-dialogs.c:824
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Nu afișa dialogul de salvare"
+msgstr "Arată și cursorul de maus în captura de ecran"
 
-#: ../lib/screenshooter-dialogs.c:840
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:816
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Regiune de capturat</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Întârziere la capturare</span>"
 
-#: ../lib/screenshooter-dialogs.c:862
+#: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Întârziere în secunde înainte de a face captura"
+msgstr "Întârziere, în secunde, înainte de a face captura"
 
-#: ../lib/screenshooter-dialogs.c:865
+#: ../lib/screenshooter-dialogs.c:841
 msgid "seconds"
 msgstr "secunde"
 
-#: ../lib/screenshooter-dialogs.c:917
+#: ../lib/screenshooter-dialogs.c:893
 msgid "Action"
-msgstr ""
+msgstr "Acțiune"
 
-#: ../lib/screenshooter-dialogs.c:945
+#: ../lib/screenshooter-dialogs.c:922
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acțiune</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:961
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:938
 msgid "Save"
 msgstr "Salvează"
 
-#: ../lib/screenshooter-dialogs.c:966
+#: ../lib/screenshooter-dialogs.c:943
 msgid "Save the screenshot to a PNG file"
 msgstr "Salvează captura într-un fișier PNG"
 
-#: ../lib/screenshooter-dialogs.c:975
+#: ../lib/screenshooter-dialogs.c:952
 msgid "Copy to the clipboard"
-msgstr "Copiere în clipboard"
+msgstr "Copiază în clipboard"
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:954
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Copiază captura în clipboard pentru a lipi mai târziu"
+msgstr "Copiază captura de ecran în clipboard pentru a o putea lipi mai târziu"
 
-#: ../lib/screenshooter-dialogs.c:994
+#: ../lib/screenshooter-dialogs.c:971
 msgid "Open with:"
 msgstr "Deschide cu:"
 
-#: ../lib/screenshooter-dialogs.c:1000
+#: ../lib/screenshooter-dialogs.c:977
 msgid "Open the screenshot with the chosen application"
-msgstr "Deschide captura cu aplicația aleasă:"
+msgstr "Deschide captura cu programul preferat"
 
-#: ../lib/screenshooter-dialogs.c:1018 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
 msgid "Application to open the screenshot"
-msgstr "Aplicația pentru deschiderea capturii"
+msgstr "Program asociat capturilor de ecran"
 
-#: ../lib/screenshooter-dialogs.c:1028
+#: ../lib/screenshooter-dialogs.c:1005
 msgid "Host on ZimageZ"
-msgstr ""
+msgstr "Publică pe ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1032 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr ""
+"Publică captura de ecran pe ZimageZ, un serviciu online gratuit de găzduire "
+"de imagini"
 
-#: ../lib/screenshooter-dialogs.c:1046
-#, fuzzy
+#: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acțiune</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Previzualizare</span>"
 
-#: ../lib/screenshooter-dialogs.c:1107
+#: ../lib/screenshooter-dialogs.c:1084
 msgid "Save screenshot as..."
 msgstr "Salvează captura ca..."
 
-#: ../lib/screenshooter-zimagez.c:134
+#: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr ""
+msgstr "A intervenit o eroare la crearea cererii XMLRPC"
 
-#: ../lib/screenshooter-zimagez.c:153
+#: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr ""
+msgstr "A intervenit o eroare la transferul de date către ZimageZ."
 
-#: ../lib/screenshooter-zimagez.c:178
+#: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr ""
+msgstr "A intervenit o eroare la prelucrarea răspunsului de la ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:230
+#: ../lib/screenshooter-zimagez.c:210
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Capturat pe %s, la %s"
 
 #. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:297
+#: ../lib/screenshooter-zimagez.c:282
 msgid "Initialize the connection..."
-msgstr ""
+msgstr "Se inițializează conexiunea..."
 
-#: ../lib/screenshooter-zimagez.c:343
+#: ../lib/screenshooter-zimagez.c:328
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
+"Completați următoarele câmpuri cu numele contului <a "
+"href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"și parola sa, plus detalii despre captura de ecran."
 
-#: ../lib/screenshooter-zimagez.c:400
+#: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr ""
+msgstr "Se verifică informațiile contului..."
 
-#: ../lib/screenshooter-zimagez.c:407
-#, fuzzy
+#: ../lib/screenshooter-zimagez.c:392
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Regiune de capturat</span>"
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Trebuie să "
+"completați toate câmpurile.</span>"
 
-#: ../lib/screenshooter-zimagez.c:421
+#: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
-msgstr ""
+msgstr "Autentificare la ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:461 ../lib/screenshooter-zimagez.c:612
+#: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr ""
+"S-a primit un răspuns neașteptat de la ZimageZ. Publicarea capturii de ecran "
+"a eșuat."
 
-#: ../lib/screenshooter-zimagez.c:500
-#, fuzzy
+#: ../lib/screenshooter-zimagez.c:485
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acțiune</span>"
+msgstr ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Numele de "
+"cont și parola introduse nu se potrivesc, reîncercați...</span>"
 
-#: ../lib/screenshooter-zimagez.c:558
-#, fuzzy
+#: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
-msgstr "Fă captura de ecran"
+msgstr "Se publică această captură de ecran..."
 
-#: ../lib/screenshooter-zimagez.c:591
+#: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr ""
+msgstr "A intervenit o eroare la publicarea capturii de ecran."
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:624
+#: ../lib/screenshooter-zimagez.c:609
 msgid "Close the session on ZimageZ..."
-msgstr ""
+msgstr "Se închide sesiunea cu ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:694
-#, fuzzy
+#: ../lib/screenshooter-zimagez.c:679
 msgid "Details about the screenshot for ZimageZ"
-msgstr "Întârziere în secunde înainte de a face captura"
+msgstr "Detalii despre captură (pentru ZimageZ)"
 
 #. Create the user label
-#: ../lib/screenshooter-zimagez.c:736
+#: ../lib/screenshooter-zimagez.c:719
 msgid "User:"
-msgstr ""
+msgstr "Utilizator:"
 
-#: ../lib/screenshooter-zimagez.c:747
+#: ../lib/screenshooter-zimagez.c:730
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
+"Numele contului ZimageZ (dacă nu aveți unul, creați-l la adresa web de mai "
+"sus)"
 
 #. Create the password label
-#: ../lib/screenshooter-zimagez.c:753
+#: ../lib/screenshooter-zimagez.c:736
 msgid "Password:"
-msgstr ""
+msgstr "Parolă:"
 
-#: ../lib/screenshooter-zimagez.c:763
+#: ../lib/screenshooter-zimagez.c:746
 msgid "The password for the user above"
-msgstr ""
+msgstr "Parola contului precizat mai sus"
 
 #. Create the title label
-#: ../lib/screenshooter-zimagez.c:769
+#: ../lib/screenshooter-zimagez.c:752
 msgid "Title:"
-msgstr ""
+msgstr "Titlu:"
 
-#: ../lib/screenshooter-zimagez.c:779
+#: ../lib/screenshooter-zimagez.c:762
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr ""
+"Titlul capturii de ecran (va fi folosit la afișarea capturii de ecran la "
+"ZimageZ)"
 
 #. Create the comment label
-#: ../lib/screenshooter-zimagez.c:785
+#: ../lib/screenshooter-zimagez.c:768
 msgid "Comment:"
-msgstr ""
+msgstr "Comentariu:"
 
-#: ../lib/screenshooter-zimagez.c:796
+#: ../lib/screenshooter-zimagez.c:779
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr ""
+"Un comentariu pentru captura de ecran (va fi folosit la afișarea capturii de "
+"ecran la ZimageZ)"
 
-#: ../lib/screenshooter-zimagez.c:919
+#: ../lib/screenshooter-zimagez.c:902
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Imagine la mărime originală</a>"
 
-#: ../lib/screenshooter-zimagez.c:921
+#: ../lib/screenshooter-zimagez.c:904
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Miniatură mare</a>"
 
-#: ../lib/screenshooter-zimagez.c:923
+#: ../lib/screenshooter-zimagez.c:906
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Miniatură mică</a>"
 
-#: ../lib/screenshooter-zimagez.c:939
-#, fuzzy
+#: ../lib/screenshooter-zimagez.c:922
 msgid "My screenshot on ZimageZ"
-msgstr "Întârziere în secunde înainte de a face captura"
+msgstr "Captura mea de ecran la ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:965
-#, fuzzy
+#: ../lib/screenshooter-zimagez.c:948
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acțiune</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Linkuri</span>"
 
-#: ../lib/screenshooter-zimagez.c:1010
-#, fuzzy
+#: ../lib/screenshooter-zimagez.c:987
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Întârziere înainte de a face "
-"captura</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Cod pentru o miniatură ce indică "
+"spre imaginea la mărimea originală</span>"
 
 #. HTML title
-#: ../lib/screenshooter-zimagez.c:1026
+#: ../lib/screenshooter-zimagez.c:1003
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #. BB title
-#: ../lib/screenshooter-zimagez.c:1047
+#: ../lib/screenshooter-zimagez.c:1024
 msgid "BBCode for forums"
-msgstr ""
+msgstr "BBCode pentru forumuri"
 
-#: ../lib/screenshooter-zimagez.c:1176
+#: ../lib/screenshooter-zimagez.c:1153
 msgid "ZimageZ"
-msgstr ""
+msgstr "ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:1209
-#, fuzzy
+#: ../lib/screenshooter-zimagez.c:1186
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acțiune</span>"
-
-#. Open Link
-#: ../lib/sexy-url-label.c:176
-#, fuzzy
-msgid "_Open Link"
-msgstr "Deschide cu:"
-
-#. Copy Link Address
-#: ../lib/sexy-url-label.c:188
-msgid "Copy _Link Address"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stare</span>"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Întârziere în secunde înainte de a face captura"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "Nu afișa dialogul de salvare"
+msgstr "Arată mausul în captura de ecran"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -368,19 +364,20 @@ msgstr "Directorul în care se vor salva capturile"
 
 #: ../src/main.c:85
 msgid "Version information"
-msgstr "Detalii versiune"
+msgstr "Detalii de versiune"
 
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Opțiuni conflictuale: --%s și --%s nu pot fi utilizate în același timp.\n"
 
 #: ../src/main.c:136
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr ""
+msgstr "Opțiunea --%s se utilizează doar când --fullscreen, --window sau --region "
+"sunt folosite, acum va fi ignorată.\n"
 
 #: ../src/main.c:150
 #, c-format
@@ -392,7 +389,7 @@ msgstr ""
 "Încercați %s --help pentru a vedea întreaga listă de opțiuni în linie de "
 "comandă.\n"
 
-#: ../src/main.c:282
+#: ../src/main.c:297
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s nu este un director valid, se va folosi directorul implicit."
@@ -401,7 +398,12 @@ msgstr "%s nu este un director valid, se va folosi directorul implicit."
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Capturi ale întregului ecran, ferestrei active sau unei regiuni"
+msgstr ""
+"Faceți capturi ale întregului ecran, a ferestrei active sau a unei regiuni"
+
+#, fuzzy
+#~ msgid "_Open Link"
+#~ msgstr "Deschide cu:"
 
 #, fuzzy
 #~ msgid "Screenshot.png"
