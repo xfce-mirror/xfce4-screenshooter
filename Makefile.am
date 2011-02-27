@@ -47,7 +47,9 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@ \
   @GLIB_LIBS@ \
-	@SOUP_LIBS@
+	@SOUP_LIBS@ \
+	@LIBXEXT_LIBS@ \
+	@LIBX11_LIBS@
 
 lib_libscreenshooter_built_sources = \
 	lib/screenshooter-marshal.c lib/screenshooter-marshal.h

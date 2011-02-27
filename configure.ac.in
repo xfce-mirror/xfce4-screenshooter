@@ -54,6 +54,8 @@ XDT_CHECK_PACKAGE([GTK], [gtk+-2.0], [2.16.0])
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.16.0])
 XDT_CHECK_PACKAGE([SOUP], [libsoup-2.4], [2.26.0])
 XDT_CHECK_PACKAGE([EXO], [exo-1], [0.5.0])
+XDT_CHECK_PACKAGE([LIBXEXT], [xext], [1.0.0])
+XDT_CHECK_LIBX11()
 
 dnl **************************
 dnl *** Check for xsltproc ***
