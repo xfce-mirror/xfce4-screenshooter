@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-18 17:03+0000\n"
+"POT-Creation-Date: 2011-03-21 05:03+0000\n"
 "PO-Revision-Date: 2009-02-09 15:28+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -157,19 +157,19 @@ msgstr ""
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr ""
+msgstr "Ett fel inträffade när data överfördes till ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr ""
+msgstr "Ett fel inträffade när svaret från ZimageZ tolkades."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:210
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Togs den %s, kl %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
@@ -181,6 +181,8 @@ msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
+"Fyll i följande fält med ditt <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"användarnamn, lösenord och uppgifter om skärmbilden."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -210,7 +212,7 @@ msgstr "Skicka upp skärmbilden..."
 #: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr ""
+msgstr "Ett fel inträffade när skärmbilden skickades upp."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
@@ -266,12 +268,12 @@ msgstr ""
 #: ../lib/screenshooter-zimagez.c:904
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Stor miniatyrbild</a>"
 
 #: ../lib/screenshooter-zimagez.c:906
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Liten miniatyrbild</a>"
 
 #: ../lib/screenshooter-zimagez.c:922
 msgid "My screenshot on ZimageZ"
