@@ -1,22 +1,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Piotr Sokół <piotr.sokol@10g.pl>, 2009.
 # Ireneusz Gierlach <irek.gierlach@gmail.com>, 2011.
+# Piotr Sokół <psokol@jabster.pl>, 2009, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-13 11:03+0000\n"
-"PO-Revision-Date: 2011-01-13 08:55-0500\n"
-"Last-Translator: Ireneusz Gierlach <irek.gierlach@gmail.com>\n"
-"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2011-03-24 05:03+0000\n"
+"PO-Revision-Date: 2011-03-24 12:40+0100\n"
+"Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
+"Language-Team: Polish <>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.1\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : ((n%10>=2 && n%10<=4 && (n"
+"%100<10 || n%100>=20)) ? 1 : 2));\n"
 
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
@@ -40,11 +41,11 @@ msgstr ""
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
-msgstr "Zrzut ekranu"
+msgstr "Przechwycenie obrazu ekranu"
 
 #: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
-msgstr "Przechwytuje obraz wyświetlany na ekranie"
+msgstr "Przechwytuje obraz określonego obszaru ekranu"
 
 #: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
@@ -52,8 +53,7 @@ msgstr "Konfiguruje ustawienia apletu"
 
 #: ../lib/screenshooter-dialogs.c:730
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Rejestrowany obszar</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Obszar</span>"
 
 #: ../lib/screenshooter-dialogs.c:750
 msgid "Entire screen"
@@ -87,11 +87,11 @@ msgstr "Przechwytuje obraz zaznaczonego obszaru ekranu"
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
-msgstr "Przechwytywanie kursora myszy"
+msgstr "Uwzględnianie kursora myszy"
 
 #: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Wyświetla kursor myszy na zrzucie ekranu"
+msgstr "Wyświetla kursor myszy na przechwyconym obrazie"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid ""
@@ -100,7 +100,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opóźnienie</span>"
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Określa wartość opóźnienia przed wykonaniem zrzutu ekranu"
+msgstr ""
+"Wprowadza wartość opóźnienia przechwytywania obrazu, określoną w sekundach"
 
 #: ../lib/screenshooter-dialogs.c:841
 msgid "seconds"
@@ -108,7 +109,7 @@ msgstr "sekund"
 
 #: ../lib/screenshooter-dialogs.c:893
 msgid "Action"
-msgstr "Działanie"
+msgstr "Wybór czynności"
 
 #: ../lib/screenshooter-dialogs.c:922
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -117,11 +118,11 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Czynność</span>"
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:938
 msgid "Save"
-msgstr "Zapiszanie"
+msgstr "Zapisanie"
 
 #: ../lib/screenshooter-dialogs.c:943
 msgid "Save the screenshot to a PNG file"
-msgstr "Zapisuje zrzut ekranu do pliku .png"
+msgstr "Zapisuje przechwycony obraz do pliku w formacie PNG"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Copy to the clipboard"
@@ -130,29 +131,28 @@ msgstr "Skopiowanie do schowka"
 #: ../lib/screenshooter-dialogs.c:954
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr ""
-"Przygotowywuje wykonany zrzut ekranu do skopiowania za pomocą polecenia "
-"„Wklej”"
+"Kopiuje przechwycony obraz do schowka systemowego w celu jego późniejszego "
+"wklejenia"
 
 #: ../lib/screenshooter-dialogs.c:971
 msgid "Open with:"
-msgstr "Otwarcie za pomocą:"
+msgstr "Otworzenie za pomocą:"
 
 #: ../lib/screenshooter-dialogs.c:977
 msgid "Open the screenshot with the chosen application"
-msgstr "Otwiera zrzut ekranu za pomocą wybranego programu"
+msgstr "Otwiera przechwycony obraz za pomocą wybranego programu"
 
 #: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
 msgid "Application to open the screenshot"
-msgstr "Otwiera zrzut ekranu za pomocą wybranego programu"
+msgstr "Otwiera przechwycony obraz za pomocą wybranego programu"
 
 #: ../lib/screenshooter-dialogs.c:1005
 msgid "Host on ZimageZ"
-msgstr "Przechowanie w serwisie ZimageZ"
+msgstr "Wysyłanie do usługi hostingowej ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
-"Przechowywuje zrzut ekranu używając bezpłatnej usługi hostingowej ZimageZ"
+msgstr "Wysyła przechwycony obraz do bezpłatnej usługi hostingowej ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -170,19 +170,19 @@ msgstr "Wystąpił błąd podczas tworzenia żądania XMLRPC."
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr "Wystąpił błąd podczas wysyłania danych do ZimageZ."
+msgstr "Wystąpił błąd podczas wysyłania danych do usługi ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr "Wystąpił błąd podczas przetwarzania odpowiedzi od ZimageZ."
+msgstr "Wystąpił błąd podczas przetwarzania odpowiedzi od usługi ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:210
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr "Zrobiono dnia %s, o godzinie %s"
+msgstr "Wykonano dnia %s, o godzinie %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
@@ -196,7 +196,7 @@ msgid ""
 "user name, passsword and details about the screenshot."
 msgstr ""
 "Proszę uzupełnić poniższe pola, wprowadzając nazwę użytkownika, \n"
-"hasło używane w serwisie <a href=\"http://www.zimagez.com\">ZimageZ</a> oraz "
+"hasło używane w usłudze <a href=\"http://www.zimagez.com\">ZimageZ</a> oraz "
 "opis obrazu."
 
 #: ../lib/screenshooter-zimagez.c:385
@@ -213,15 +213,15 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
-msgstr "Logowanie w serwisie ZimageZ..."
+msgstr "Logowanie w usłudze ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr ""
-"Została odebrana Nieoczekiwana odpowiedź od ZimageZ. Wysyłanie zrzutu ekranu "
-"nie powiodło się."
+"Odebrano nieoczekiwaną odpowiedź od usługi ZimageZ. Nie udało się wysłać "
+"przechwyconego obrazu."
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
@@ -258,7 +258,7 @@ msgstr "Nazwa użytkownika:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr "Wprowadza nazwę użytkownika serwisu ZimageZ"
+msgstr "Wprowadza nazwę użytkownika usługi ZimageZ"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -289,7 +289,7 @@ msgstr "Komentarz:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "Wprowadza komentarz obrazu wyświetlany w serwisie ZimageZ"
+msgstr "Wprowadza komentarz obrazu wyświetlany na stronie usługi ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -308,7 +308,7 @@ msgstr "<a href=\"%s\">Mała miniatura</a>"
 
 #: ../lib/screenshooter-zimagez.c:922
 msgid "My screenshot on ZimageZ"
-msgstr "Zrzut obrazu w serwisie ZimageZ"
+msgstr "Przechwycony obraz"
 
 #: ../lib/screenshooter-zimagez.c:948
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
@@ -319,7 +319,7 @@ msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Kod minatury odsyłającej do "
+"<span weight=\"bold\" stretch=\"semiexpanded\">Kod miniatury odsyłającej do "
 "obrazu w pełnym rozmiarze</span>"
 
 #. HTML title
@@ -330,7 +330,7 @@ msgstr "HTML:"
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1024
 msgid "BBCode for forums"
-msgstr "BBCode przeznaczony dla for dyskusyjnych:"
+msgstr "Kod BBCode przeznaczony dla for dyskusyjnych:"
 
 #: ../lib/screenshooter-zimagez.c:1153
 msgid "ZimageZ"
@@ -343,12 +343,11 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stan</span>"
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
 msgstr ""
-"Określa wartość opóźnienia przed wykonaniem\n"
-"                          zrzutu ekranu"
+"Określa wartość opóźnienia przechwytywania obrazu, określoną w sekundach"
 
 #: ../src/main.c:58
 msgid "Display the mouse on the screenshot"
-msgstr "Wyświetl kursor myszy na zrzucie ekranu"
+msgstr "Uwzględnia kursor myszy na przechwyconym obrazie"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -361,8 +360,7 @@ msgstr "Wypisuje informacje o wersji"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
-"Konfliktujące się opcje: --%s i --%s nie mogą być użyte w tym samym czasie.\n"
+msgstr "Opcje --%s i --%s nie mogą zostać użyte w tym samym wierszu poleceń.\n"
 
 #: ../src/main.c:136
 #, c-format
@@ -380,12 +378,12 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Wpisz „%s --help” aby wypisać pełną listę opcji wiersza poleceń.\n"
+"Proszę wprowadzić „%s --help”, aby wypisać komunikat pomocy.\n"
 
 #: ../src/main.c:297
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr "„%s” nie jest poprawnym katalogiem. Zostanie użyty domyślny katalog."
+msgstr "„%s” nie jest prawidłowym katalogiem. Zostanie użyty domyślny katalog."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
