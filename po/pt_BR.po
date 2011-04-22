@@ -115,7 +115,7 @@ msgstr "Salvar"
 
 #: ../lib/screenshooter-dialogs.c:943
 msgid "Save the screenshot to a PNG file"
-msgstr "Salva a captura de tela em um arquivo PNG"
+msgstr "Salvar a captura de tela em um arquivo PNG"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Copy to the clipboard"
@@ -161,7 +161,7 @@ msgstr "Ocorreu um erro ao criar o pedido XMLRPC."
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr "Ocorreu um erro ao transferir os dados para ZimageZ."
+msgstr "Ocorreu um erro ao transferir os dados para o ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
@@ -178,7 +178,7 @@ msgstr "Capturado em %s, às %s"
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
 msgid "Initialize the connection..."
-msgstr "Inicializar a conexão..."
+msgstr "Iniciando a conexão..."
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
@@ -186,7 +186,6 @@ msgid ""
 "user name, passsword and details about the screenshot."
 msgstr ""
 "Por favor preencha os seguintes campos com o seu nome de usuário\n"
-"\r\n"
 "do <a href=\"http://www.zimagez.com\">ZimageZ</a>, a senha e detalhes sobre a captura de tela."
 
 #: ../lib/screenshooter-zimagez.c:385
@@ -234,7 +233,7 @@ msgstr "Usuário:"
 
 #: ../lib/screenshooter-zimagez.c:730
 msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
-msgstr "O seu nome de usuário do ZimageZ, caso você não tenha um, favor se cadastrar pelo link acima"
+msgstr "O seu nome de usuário do ZimageZ. Caso você não tenha um, favor se cadastrar pelo link acima"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
