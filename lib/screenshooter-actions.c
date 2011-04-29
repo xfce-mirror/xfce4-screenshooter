@@ -74,6 +74,8 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
         {
           if (!sd->plugin)
             gtk_main_quit ();
+
+          g_object_unref (sd->screenshot);
           return FALSE;
         }
     }
