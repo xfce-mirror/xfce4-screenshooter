@@ -190,12 +190,12 @@ static GdkPixbuf *get_cursor_pixbuf (GdkDisplay *display,
   GdkPixbuf *cursor_pixbuf = NULL;
 
 #ifdef HAVE_XFIXES
-  int event_basep;
-  int error_basep;
   XFixesCursorImage *cursor_image = NULL;
-  guchar *cursor_pixmap_data = NULL;
-  gint i, j;
-  guint32 tmp;
+  guint32            tmp;
+  guchar            *cursor_pixmap_data = NULL;
+  gint               i, j;
+  int                event_basep;
+  int                error_basep;
 
   if (!XFixesQueryExtension (GDK_DISPLAY_XDISPLAY (display),
                              &event_basep,
@@ -213,12 +213,13 @@ static GdkPixbuf *get_cursor_pixbuf (GdkDisplay *display,
   *xhot = cursor_image->xhot;
   *yhot = cursor_image->yhot;
 
-  /* cursor_image->pixels contains premultiplied 32-bit ARGB data stored in
-   * long (!)
-   */
-  cursor_pixmap_data = g_new (guchar,
-                              cursor_image->width * cursor_image->height * 4);
-  for (i = 0, j = 0; i < cursor_image->width * cursor_image->height;
+  /* cursor_image->pixels contains premultiplied 32-bit ARGB data stored
+   * in long (!) */
+  cursor_pixmap_data =
+    g_new (guchar, cursor_image->width * cursor_image->height * 4);
+
+  for (i = 0, j = 0;
+       i < cursor_image->width * cursor_image->height;
        i++, j += 4)
     {
       tmp = ((guint32)cursor_image->pixels[i] << 8) | \
@@ -228,6 +229,7 @@ static GdkPixbuf *get_cursor_pixbuf (GdkDisplay *display,
       cursor_pixmap_data[j + 2] = (tmp >> 8) & 0xff;
       cursor_pixmap_data[j + 3] = tmp & 0xff;
     }
+
   cursor_pixbuf = gdk_pixbuf_new_from_data (cursor_pixmap_data,
                                             GDK_COLORSPACE_RGB,
                                             TRUE,
@@ -239,6 +241,7 @@ static GdkPixbuf *get_cursor_pixbuf (GdkDisplay *display,
                                             NULL);
 
   XFree(cursor_image);
+
   if (cursor_pixbuf != NULL)
     return cursor_pixbuf;
 
@@ -248,15 +251,14 @@ fallback:
 
   cursor = gdk_cursor_new_for_display (display, GDK_LEFT_PTR);
   cursor_pixbuf = gdk_cursor_get_image (cursor);
+
   if (cursor_pixbuf == NULL)
     return NULL;
 
   TRACE ("Get the coordinates of the cursor");
-
   gdk_window_get_pointer (root, cursorx, cursory, NULL);
 
   TRACE ("Get the cursor hotspot");
-
   sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", xhot);
   sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "y_hot"), "%d", yhot);
 
@@ -350,7 +352,8 @@ static GdkPixbuf
         {
           gboolean has_alpha = gdk_pixbuf_get_has_alpha (screenshot);
 
-          tmp = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width, height);
+          tmp =
+            gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width, height);
           gdk_pixbuf_fill (tmp, 0);
 
           for (i = 0; i < rectangle_count; i++)
@@ -437,8 +440,10 @@ static GdkPixbuf
             /* rectangle_cursor stores the cursor coordinates */
             rectangle_cursor.x = cursorx;
             rectangle_cursor.y = cursory;
-            rectangle_cursor.width = gdk_pixbuf_get_width (cursor_pixbuf);
-            rectangle_cursor.height = gdk_pixbuf_get_height (cursor_pixbuf);
+            rectangle_cursor.width =
+              gdk_pixbuf_get_width (cursor_pixbuf);
+            rectangle_cursor.height =
+              gdk_pixbuf_get_height (cursor_pixbuf);
 
             /* see if the pointer is inside the window */
             if (gdk_rectangle_intersect (&rectangle_window,
@@ -448,9 +453,12 @@ static GdkPixbuf
                 TRACE ("Compose the two pixbufs");
 
                 gdk_pixbuf_composite (cursor_pixbuf, screenshot,
-                                      cursorx - x_orig -xhot, cursory - y_orig -yhot,
-                                      rectangle_cursor.width, rectangle_cursor.height,
-                                      cursorx - x_orig - xhot, cursory - y_orig -yhot,
+                                      cursorx - x_orig -xhot,
+                                      cursory - y_orig -yhot,
+                                      rectangle_cursor.width,
+                                      rectangle_cursor.height,
+                                      cursorx - x_orig - xhot,
+                                      cursory - y_orig -yhot,
                                       1.0, 1.0,
                                       GDK_INTERP_BILINEAR,
                                       255);
@@ -686,8 +694,10 @@ static GdkPixbuf
   gtk_dialog_set_has_separator (GTK_DIALOG (window), FALSE);
   gtk_widget_set_app_paintable (window, TRUE);
   gtk_widget_add_events (window,
-                         GDK_BUTTON_RELEASE_MASK | GDK_BUTTON_PRESS_MASK |
-                         GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK |
+                         GDK_BUTTON_RELEASE_MASK |
+                         GDK_BUTTON_PRESS_MASK |
+                         GDK_EXPOSURE_MASK |
+                         GDK_POINTER_MOTION_MASK |
                          GDK_KEY_PRESS_MASK);
   gtk_widget_set_colormap (window,
                            gdk_screen_get_rgba_colormap (gdk_screen_get_default ()));
@@ -717,10 +727,11 @@ static GdkPixbuf
   gtk_widget_grab_focus (window);
   gdk_flush ();
 
-  /* Grab the mouse and the keyboard to prevent any interaction with other 
+  /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
   gdk_keyboard_grab (window->window, FALSE, GDK_CURRENT_TIME);
-  gdk_pointer_grab (window->window, TRUE, 0, NULL, NULL, GDK_CURRENT_TIME);
+  gdk_pointer_grab (window->window, TRUE, 0, NULL,
+                    NULL, GDK_CURRENT_TIME);
 
   gtk_dialog_run (GTK_DIALOG (window));
   gtk_widget_destroy (window);
@@ -779,7 +790,8 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       case ButtonRelease:
         if (rbdata->pressed)
           {
-            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
+            if (rbdata->rectangle.width > 0 &&
+                rbdata->rectangle.height > 0)
               {
                 /* Remove the rectangle drawn previously */
 
@@ -813,7 +825,8 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
           {
             TRACE ("Mouse is moving");
 
-            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
+            if (rbdata->rectangle.width > 0 &&
+                rbdata->rectangle.height > 0)
               {
                 /* Remove the rectangle drawn previously */
 
@@ -837,7 +850,8 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
             /* Draw  the rectangle as the user drags the mouse */
             TRACE ("Draw the new rectangle");
-            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
+            if (rbdata->rectangle.width > 0 &&
+                rbdata->rectangle.height > 0)
               gdk_draw_rectangle (rbdata->root_window,
                                   rbdata->gc,
                                   FALSE,
@@ -856,7 +870,8 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
             if (rbdata->pressed)
               {
-                if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
+                if (rbdata->rectangle.width > 0 &&
+                    rbdata->rectangle.height > 0)
                   {
                     /* Remove the rectangle drawn previously */
 
@@ -939,7 +954,8 @@ static GdkPixbuf
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
 
-  gdk_pointer_grab (root_window, FALSE, mask, NULL, xhair_cursor, GDK_CURRENT_TIME);
+  gdk_pointer_grab (root_window, FALSE, mask, NULL,
+                    xhair_cursor, GDK_CURRENT_TIME);
   gdk_keyboard_grab (root_window, FALSE, GDK_CURRENT_TIME);
 
   /* Initialize the rubber band data */
@@ -951,13 +967,16 @@ static GdkPixbuf
 
   /* Set the filter function to handle the GDK events */
   TRACE ("Add the events filter");
-  gdk_window_add_filter (root_window, (GdkFilterFunc) region_filter_func, &rbdata);
+  gdk_window_add_filter (root_window,
+                         (GdkFilterFunc) region_filter_func, &rbdata);
 
   gdk_flush ();
 
   gtk_main ();
 
-  gdk_window_remove_filter (root_window, (GdkFilterFunc) region_filter_func, &rbdata);
+  gdk_window_remove_filter (root_window,
+                            (GdkFilterFunc) region_filter_func,
+                            &rbdata);
 
   gdk_pointer_ungrab(GDK_CURRENT_TIME);
   gdk_keyboard_ungrab (GDK_CURRENT_TIME);
@@ -992,20 +1011,23 @@ static GdkPixbuf
 
 /**
  * screenshooter_take_screenshot:
- * @region: the region to be screenshoted. It can be FULLSCREEN, ACTIVE_WINDOW or SELECT.
+ * @region: the region to be screenshoted. It can be FULLSCREEN,
+ *          ACTIVE_WINDOW or SELECT.
  * @delay: the delay before the screenshot is taken, in seconds.
  * @mouse: whether the mouse pointer should be displayed on the screenshot.
  *
- * Takes a screenshot with the given options. If @region is FULLSCREEN, the screenshot
- * is taken after @delay seconds. If @region is ACTIVE_WINDOW, a delay of @delay seconds
- * ellapses, then the active window is detected and captured. If @region is SELECT, @delay
- * will be ignored and the user will have to select a portion of the screen with the
- * mouse.
+ * Takes a screenshot with the given options. If @region is FULLSCREEN,
+ * the screenshot is taken after @delay seconds. If @region is
+ * ACTIVE_WINDOW, a delay of @delay seconds ellapses, then the active
+ * window is detected and captured. If @region is SELECT, @delay will
+ * be ignored and the user will have to select a portion of the screen
+ * with the mouse.
  *
- * @show_mouse is only taken into account when @region is FULLSCREEN or ACTIVE_WINDOW.
+ * @show_mouse is only taken into account when @region is FULLSCREEN
+ * or ACTIVE_WINDOW.
  *
- * Return value: a #GdkPixbuf containing the screenshot or %NULL (if @region is SELECT,
- * the user can cancel the operation).
+ * Return value: a #GdkPixbuf containing the screenshot or %NULL
+ * (if @region is SELECT, the user can cancel the operation).
  **/
 GdkPixbuf *screenshooter_take_screenshot (gint     region,
                                           gint     delay,
