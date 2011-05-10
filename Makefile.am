@@ -39,6 +39,7 @@ lib_libscreenshooter_la_CFLAGS = \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
 	@SOUP_CFLAGS@ \
+	@XFIXES_CFLAGS@ \
   -DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_libscreenshooter_la_LIBADD = \
@@ -49,7 +50,8 @@ lib_libscreenshooter_la_LIBADD = \
   @GLIB_LIBS@ \
 	@SOUP_LIBS@ \
 	@LIBXEXT_LIBS@ \
-	@LIBX11_LIBS@
+	@LIBX11_LIBS@ \
+	@XFIXES_LIBS@
 
 lib_libscreenshooter_built_sources = \
 	lib/screenshooter-marshal.c lib/screenshooter-marshal.h

@@ -55,6 +55,7 @@ XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.16.0])
 XDT_CHECK_PACKAGE([SOUP], [libsoup-2.4], [2.26.0])
 XDT_CHECK_PACKAGE([EXO], [exo-1], [0.5.0])
 XDT_CHECK_PACKAGE([LIBXEXT], [xext], [1.0.0])
+XDT_CHECK_OPTIONAL_PACKAGE([XFIXES], [xfixes], [4.0.0], [xfixes], [XFIXES extension support])
 XDT_CHECK_LIBX11()
 
 dnl **************************
@@ -116,6 +117,7 @@ echo ""
 echo "Build Configuration:"
 echo ""
 
+echo "  * XFIXES support:                $XFIXES_FOUND"
 echo "  * Debugging support:             $enable_debug"
 
 echo ""

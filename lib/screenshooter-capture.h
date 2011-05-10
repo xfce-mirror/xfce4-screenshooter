@@ -26,6 +26,9 @@
 
 #include "screenshooter-global.h"
 
+#ifdef HAVE_XFIXES
+#include <X11/extensions/Xfixes.h>
+#endif
 #include <X11/extensions/shape.h>
 #include <gdk/gdkkeysyms.h>
 #include <gdk/gdkx.h>

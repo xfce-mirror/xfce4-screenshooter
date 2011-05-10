@@ -53,6 +53,14 @@ typedef struct
 static GdkWindow       *get_active_window                   (GdkScreen      *screen,
                                                              gboolean       *needs_unref,
                                                              gboolean       *border);
+static void             free_pixmap_data                    (guchar *pixels,
+                                                             gpointer data);
+static GdkPixbuf       *get_cursor_pixbuf                   (GdkDisplay *display,
+                                                             GdkWindow *root,
+                                                             gint *cursorx,
+                                                             gint *cursory,
+                                                             gint *xhot,
+                                                             gint *yhot);
 static GdkPixbuf       *get_window_screenshot               (GdkWindow      *window,
                                                              gboolean        show_mouse,
                                                              gboolean        border);
@@ -164,6 +172,98 @@ find_wm_window (Window xid)
   while (TRUE);
 }
 
+
+static void free_pixmap_data (guchar *pixels,  gpointer data)
+{
+  g_free (pixels);
+}
+
+
+static GdkPixbuf *get_cursor_pixbuf (GdkDisplay *display,
+                                     GdkWindow *root,
+                                     gint *cursorx,
+                                     gint *cursory,
+                                     gint *xhot,
+                                     gint *yhot)
+{
+  GdkCursor *cursor = NULL;
+  GdkPixbuf *cursor_pixbuf = NULL;
+
+#ifdef HAVE_XFIXES
+  int event_basep;
+  int error_basep;
+  XFixesCursorImage *cursor_image = NULL;
+  guchar *cursor_pixmap_data = NULL;
+  gint i, j;
+  guint32 tmp;
+
+  if (!XFixesQueryExtension (GDK_DISPLAY_XDISPLAY (display),
+                             &event_basep,
+                             &error_basep))
+    goto fallback;
+
+  TRACE ("Get the mouse cursor, its image, position and hotspot");
+
+  cursor_image = XFixesGetCursorImage (GDK_DISPLAY_XDISPLAY (display));
+  if (cursor_image == NULL)
+    goto fallback;
+
+  *cursorx = cursor_image->x;
+  *cursory = cursor_image->y;
+  *xhot = cursor_image->xhot;
+  *yhot = cursor_image->yhot;
+
+  /* cursor_image->pixels contains premultiplied 32-bit ARGB data stored in
+   * long (!)
+   */
+  cursor_pixmap_data = g_new (guchar,
+                              cursor_image->width * cursor_image->height * 4);
+  for (i = 0, j = 0; i < cursor_image->width * cursor_image->height;
+       i++, j += 4)
+    {
+      tmp = ((guint32)cursor_image->pixels[i] << 8) | \
+            ((guint32)cursor_image->pixels[i] >> 24);
+      cursor_pixmap_data[j] = tmp >> 24;
+      cursor_pixmap_data[j + 1] = (tmp >> 16) & 0xff;
+      cursor_pixmap_data[j + 2] = (tmp >> 8) & 0xff;
+      cursor_pixmap_data[j + 3] = tmp & 0xff;
+    }
+  cursor_pixbuf = gdk_pixbuf_new_from_data (cursor_pixmap_data,
+                                            GDK_COLORSPACE_RGB,
+                                            TRUE,
+                                            8,
+                                            cursor_image->width,
+                                            cursor_image->height,
+                                            cursor_image->width * 4,
+                                            free_pixmap_data,
+                                            NULL);
+
+  XFree(cursor_image);
+  if (cursor_pixbuf != NULL)
+    return cursor_pixbuf;
+
+fallback:
+#endif
+  TRACE ("Get the mouse cursor and its image through fallback mode");
+
+  cursor = gdk_cursor_new_for_display (display, GDK_LEFT_PTR);
+  cursor_pixbuf = gdk_cursor_get_image (cursor);
+  if (cursor_pixbuf == NULL)
+    return NULL;
+
+  TRACE ("Get the coordinates of the cursor");
+
+  gdk_window_get_pointer (root, cursorx, cursory, NULL);
+
+  TRACE ("Get the cursor hotspot");
+
+  sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", xhot);
+  sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "y_hot"), "%d", yhot);
+
+  gdk_cursor_unref (cursor);
+
+  return cursor_pixbuf;
+}
 
 
 static GdkPixbuf
@@ -317,28 +417,16 @@ static GdkPixbuf
 
   if (show_mouse)
     {
-        GdkCursor *cursor;
+        gint cursorx, cursory, xhot, yhot;
         GdkPixbuf *cursor_pixbuf;
+        GdkDisplay *display = gdk_display_get_default ();
 
-        /* Add the mouse pointer to the grabbed screenshot */
-        TRACE ("Get the mouse cursor and its image");
-
-        cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_LEFT_PTR);
-        cursor_pixbuf = gdk_cursor_get_image (cursor);
+        cursor_pixbuf = get_cursor_pixbuf (display, root, &cursorx, &cursory,
+                                           &xhot, &yhot);
 
         if (G_LIKELY (cursor_pixbuf != NULL))
           {
             GdkRectangle rectangle_window, rectangle_cursor;
-            gint cursorx, cursory, xhot, yhot;
-
-            TRACE ("Get the coordinates of the cursor");
-
-            gdk_window_get_pointer (root, &cursorx, &cursory, NULL);
-
-            TRACE ("Get the cursor hotspot");
-
-            sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", &xhot);
-            sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "y_hot"), "%d", &yhot);
 
             /* rectangle_window stores the window coordinates */
             rectangle_window.x = x_orig;
@@ -370,13 +458,10 @@ static GdkPixbuf
 
             g_object_unref (cursor_pixbuf);
           }
-
-        gdk_cursor_unref (cursor);
     }
 
   return screenshot;
 }
-
 
 
 /* Callbacks for the rubber banding function */
