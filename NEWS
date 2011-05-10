@@ -1,12 +1,21 @@
 === Version x.x.x ===
 
-  * Gtk 2.16 and libxfce4ui are now required.
+  * Gtk 2.16, libxfce4ui and exo are now required.
   * Xfce4 Screenshooter does not depend anymore on libxfcegui4.
+
+  * Enhancements:
+    - Capture the cursor using XFIXES (bug #7567).
+    - Add default responses for the dialogs (bug #6880).
+
 
   * Bugs fixed:
     - Fix build with Xfce's master branch.
     - Remove obsolote 'hide' CLI option from the manpage.
     - Use new GtkLabel link instead of SexyUrlLabel.
+    - Plug massive leak when cancelling in actions dialog.
+    - Link to X11 libs, fixes linking with gold.
+    - Fix a crash when the config file does not exist yet (bug #6460).
+    - Clean the build system for the new panel library.
 
 === Version 1.7.9 ===
 
