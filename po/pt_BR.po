@@ -6,14 +6,15 @@
 # Og Maciel <ogmaciel@gnome.org>, 2008-2009.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008.
 # Henrique P Machado <zehrique@gmail.com>, 2008.
-# 
+# Sérgio Cipolla <secipolla@gmail.com>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-22 16:03+0000\n"
-"PO-Revision-Date: 2009-12-02 09:11-0500\n"
-"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
+"PO-Revision-Date: 2011-04-22 19:55-0300\n"
+"Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,8 +34,10 @@ msgstr "Transferência"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">A captura de tela está sendo transferida para:</span>"
 
-#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
-#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:672
+#: ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:881
+#: ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
@@ -57,7 +60,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Região para capturar</sp
 msgid "Entire screen"
 msgstr "Tela inteira"
 
-#: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:757
+#: ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
 msgstr "Capturar uma imagem da tela inteira"
@@ -66,7 +70,8 @@ msgstr "Capturar uma imagem da tela inteira"
 msgid "Active window"
 msgstr "Janela ativa"
 
-#: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
+#: ../lib/screenshooter-dialogs.c:772
+#: ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
 msgstr "Capturar uma imagem da janela ativa"
@@ -75,7 +80,8 @@ msgstr "Capturar uma imagem da janela ativa"
 msgid "Select a region"
 msgstr "Selecionar uma região"
 
-#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
+#: ../lib/screenshooter-dialogs.c:785
+#: ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:321
 msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
 msgstr "Selecionar uma região para ser capturada clicando num ponto da tela sem soltar o botão do mouse, arrastando o mouse para o outro canto da região e então soltando o botão do mouse"
@@ -133,7 +139,8 @@ msgstr "Abrir com:"
 msgid "Open the screenshot with the chosen application"
 msgstr "Abrir a captura de tela com o aplicativo escolhido"
 
-#: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:995
+#: ../src/main.c:63
 msgid "Application to open the screenshot"
 msgstr "Aplicativo para abrir a captura de tela"
 
@@ -141,7 +148,8 @@ msgstr "Aplicativo para abrir a captura de tela"
 msgid "Host on ZimageZ"
 msgstr "Hospedar no ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1009
+#: ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Hospedar a captura de tela no ZimageZ, um serviço grátis de hospedagem de imagens online"
 
@@ -200,7 +208,8 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Vo
 msgid "Login on ZimageZ..."
 msgstr "Autenticando-se no ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
+#: ../lib/screenshooter-zimagez.c:446
+#: ../lib/screenshooter-zimagez.c:597
 msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
 msgstr "Uma resposta inesperada do ZimageZ foi recebida. O envio da captura de tela falhou."
 
