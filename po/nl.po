@@ -1,14 +1,15 @@
 # Dutch translation of the xfce4-screenshooter-plugin package.
-# Copyright (C) 2008 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) The Xfce development team.
 # This file is distributed under the same license as the xfce4-screenshooter-plugin package.
 # Stephan Arts <stephan@xfce.org>, 2008.
 # Vincent Tunru <projects@vinnl.nl>, 2008.
+# Pjotr, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.1.0\n"
+"Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-26 10:03+0000\n"
+"POT-Creation-Date: 2011-05-27 10:03+0000\n"
 "PO-Revision-Date: 2010-02-07 16:38+0100\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch <xfce-i18n@xfce.org>\n"
@@ -85,8 +86,8 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
-"Selecteer een gebied voor een schermafdruk, door te klikken op een hoek van het "
-"gebied zonder de muisknop los te laten. Sleep vervolgens de muis naar de "
+"Selecteer een gebied voor een schermafdruk, door te klikken op een hoek van "
+"het gebied zonder de muisknop los te laten. Sleep vervolgens de muis naar de "
 "diagonaal tegenovergelegen hoek en laat de muisknop los."
 
 #: ../lib/screenshooter-dialogs.c:795
@@ -202,7 +203,8 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Vul uw ZimageZ-gebruikersnaam en wachtwoord in, alsmede details over de schermafdruk."
+"Vul uw ZimageZ-gebruikersnaam en wachtwoord in, alsmede details over de "
+"schermafdruk."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -324,8 +326,8 @@ msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code voor een "
-"miniatuur met een koppeling naar de volledige grootte</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code voor een miniatuur met "
+"een koppeling naar de volledige grootte</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
@@ -384,7 +386,8 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Probeer %s --help voor een volledige lijst van beschikbare opdrachtregelopties.\n"
+"Probeer %s --help voor een volledige lijst van beschikbare "
+"opdrachtregelopties.\n"
 
 #: ../src/main.c:297
 #, c-format
@@ -423,8 +426,8 @@ msgstr ""
 #~ msgid ""
 #~ "The save dialog allows you to change the file name and the save location"
 #~ msgstr ""
-#~ "In het dialoogvenster voor opslaan, kunt u de bestandnaam en opslaglocatie "
-#~ "wijzigen"
+#~ "In het dialoogvenster voor opslaan, kunt u de bestandnaam en "
+#~ "opslaglocatie wijzigen"
 
 #~ msgid "Close the application"
 #~ msgstr "Toepassing sluiten"
