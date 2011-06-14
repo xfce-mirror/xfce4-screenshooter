@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-06 05:03+0000\n"
+"POT-Creation-Date: 2011-06-14 22:03+0000\n"
 "PO-Revision-Date: 2008-06-17 12:27+0100\n"
 "Last-Translator: Jérôme Guelfucci <jeromeg@xfce.org>\n"
 "Language-Team: Croatian <mario.danic@gmail.com>\n"
@@ -151,12 +151,12 @@ msgstr "Spremi screenshot kao ..."
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr ""
+msgstr "Došlo je do pogreške prilikom izrade XMLRPC zahtjeva."
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr ""
+msgstr "Došlo je do pogreške pri prijenosu podataka na ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
@@ -187,11 +187,11 @@ msgstr "Provjeri informacije korisnika..."
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Morate pupuniti sve polja.</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
-msgstr ""
+msgstr "Prijava na ZimageZ ..."
 
 #: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
 msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
@@ -213,7 +213,7 @@ msgstr ""
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
 msgid "Close the session on ZimageZ..."
-msgstr ""
+msgstr "Zatvori sesiju na ZimageZ ..."
 
 #: ../lib/screenshooter-zimagez.c:679
 msgid "Details about the screenshot for ZimageZ"
@@ -235,7 +235,7 @@ msgstr "Lozinka"
 
 #: ../lib/screenshooter-zimagez.c:746
 msgid "The password for the user above"
-msgstr ""
+msgstr "Lozinka za gornjeg korisnika"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:752
@@ -290,11 +290,11 @@ msgstr "HTML"
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1024
 msgid "BBCode for forums"
-msgstr ""
+msgstr "BBCode za forume"
 
 #: ../lib/screenshooter-zimagez.c:1153
 msgid "ZimageZ"
-msgstr ""
+msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1186
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -319,7 +319,7 @@ msgstr "Informacije o inačici"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Sukobljavajuće opcije: --%s and --%s ne mogu biti korištene istodobno.\n"
 
 #: ../src/main.c:136
 #, c-format
