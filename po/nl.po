@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
+"Language: nl (Dutch)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../lib/screenshooter-dialogs.c:453
@@ -93,11 +93,11 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
-msgstr "Muisaanwijzer afbeelden"
+msgstr "Muispijl afbeelden"
 
 #: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Muisaanwijzer weergeven op de schermafdruk"
+msgstr "Muispijl weergeven op de schermafdruk"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid ""
@@ -204,12 +204,12 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Vul uw ZimageZ-gebruikersnaam en wachtwoord in, alsmede details over de "
+"Vul uw ZimageZ-gebruikernaam en wachtwoord in, alsmede details over de "
 "schermafdruk."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr "Gebruikersinformatie aan het nakijken..."
+msgstr "Gebruikerinformatie aan het nakijken..."
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid ""
@@ -235,7 +235,7 @@ msgid ""
 "user and the password you entered do not match. Please retry.</span>"
 msgstr ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">De "
-"gegeven gebruikersnaam en wachtwoord zijn niet correct.</span>"
+"opgegeven gebruikernaam en wachtwoord komen niet overeen.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -265,7 +265,7 @@ msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
-"Uw gebruikersnaam bij ZimageZ. Als u nog geen gebruikersnaam heeft kunt u "
+"Uw gebruikernaam bij ZimageZ. Als u nog geen gebruikernaam heeft kunt u "
 "die aanmaken op de hierboven genoemde website"
 
 #. Create the password label
@@ -354,7 +354,7 @@ msgstr "Vertraging in seconden voor het maken van een schermafdruk"
 
 #: ../src/main.c:58
 msgid "Display the mouse on the screenshot"
-msgstr "Muisaanwijzer op de schermafdruk weergeven"
+msgstr "Muispijl op de schermafdruk weergeven"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
