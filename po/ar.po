@@ -43,7 +43,6 @@ msgid "Preferences"
 msgstr "تفضيلات"
 
 #: ../lib/screenshooter-dialogs.c:730
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">منطقة لالتقاط</span>"
 
@@ -71,113 +70,95 @@ msgstr "تحديد منطقة"
 
 #: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:321
-#, fuzzy
 msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
 msgstr "اختر المنطقة التي سيتم التقاطها عن طريق النقر على نقطة في الشاشة من دون تحرير زر الفارة ، سحب الفأرة إلى الزاوية أخرى من المنطقة، ثم حرير زر الفاره."
 
 #: ../lib/screenshooter-dialogs.c:795
-#, fuzzy
 msgid "Capture the mouse pointer"
 msgstr "التقاط مؤشر الفارة"
 
 #: ../lib/screenshooter-dialogs.c:800
-#, fuzzy
 msgid "Display the mouse pointer on the screenshot"
 msgstr "عرض مؤشر الفارة على شاشة"
 
 #: ../lib/screenshooter-dialogs.c:816
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">تأخير قبل التقاط الشاشة</span>"
 
 #: ../lib/screenshooter-dialogs.c:838
-#, fuzzy
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "تأخير يالثوان قبل التقاط لقطة الشاشة"
 
 #: ../lib/screenshooter-dialogs.c:841
-#, fuzzy
 msgid "seconds"
 msgstr "ثانية"
 
 #: ../lib/screenshooter-dialogs.c:893
-#, fuzzy
 msgid "Action"
 msgstr "تأثير"
 
 #: ../lib/screenshooter-dialogs.c:922
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">تأثير</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:938
-#, fuzzy
 msgid "Save"
 msgstr "حفظ"
 
 #: ../lib/screenshooter-dialogs.c:943
-#, fuzzy
 msgid "Save the screenshot to a PNG file"
 msgstr "حفظ لقطة الشاشة بصيغة PNG"
 
 #: ../lib/screenshooter-dialogs.c:952
-#, fuzzy
 msgid "Copy to the clipboard"
 msgstr "نسخ إلى الحافظة"
 
 #: ../lib/screenshooter-dialogs.c:954
-#, fuzzy
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "نسخة لقطة الشاشة إلى الحافظة بحيث يمكن لصقه في وقت لاحق"
 
 #: ../lib/screenshooter-dialogs.c:971
-#, fuzzy
 msgid "Open with:"
 msgstr "فتح باستخدام :"
 
 #: ../lib/screenshooter-dialogs.c:977
-#, fuzzy
 msgid "Open the screenshot with the chosen application"
 msgstr "فتح لقطة الشاشة باستخدام التطبيق المختار"
 
 #: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
-#, fuzzy
 msgid "Application to open the screenshot"
 msgstr "تطبيق لفتح القطة شاشة"
 
 #: ../lib/screenshooter-dialogs.c:1005
-#, fuzzy
 msgid "Host on ZimageZ"
 msgstr "استضافة على ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
 #, fuzzy
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "استضافة القطة الشاشة على ZimageZ ، خدمة استضافة الصور مجاناً على الانترنت"
+msgstr "استضافة القطة الشاشة على ZimageZ ، خدمة استضافة الصور مجاناً على الأنترنت"
 
 #: ../lib/screenshooter-dialogs.c:1023
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">معاينة</span>"
 
 #: ../lib/screenshooter-dialogs.c:1084
-#, fuzzy
 msgid "Save screenshot as..."
 msgstr "حفظ لقطة الشاشة باسم..."
 
 #: ../lib/screenshooter-zimagez.c:114
-#, c-format, fuzzy
+#, c-format
 msgid "An error occurred when creating the XMLRPC request."
 msgstr "حدث خطأ عند إنشاء طلب XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:133
-#, c-format, fuzzy
+#, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "حدث خطأ عند نقل البيانات إلى ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
-#, c-format, fuzzy
+#, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "حدث خطأ عند تحليل الاستجابة من ZimageZ."
 
