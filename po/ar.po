@@ -263,93 +263,81 @@ msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr "<a href=\"%s\">كبير المصغرة</a>"
 
 #: ../lib/screenshooter-zimagez.c:906
-#, c-format, fuzzy
+#, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
 msgstr "<a href=\"%s\">صغيرة المصغرة</a>"
 
 #: ../lib/screenshooter-zimagez.c:922
-#, fuzzy
 msgid "My screenshot on ZimageZ"
 msgstr "لقطة شاشتي على ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:948
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">الروابط</span>"
 
 #: ../lib/screenshooter-zimagez.c:987
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">رمز لصورة مصغرة يشير إلى الصورة بالحجم الكامل</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
-#, fuzzy
 msgid "HTML"
 msgstr "HTML"
 
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1024
-#, fuzzy
 msgid "BBCode for forums"
 msgstr "BBCode للمنتديات"
 
 #: ../lib/screenshooter-zimagez.c:1153
-#, fuzzy
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1186
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">حالة</span>"
 
 #: ../src/main.c:48
-#, fuzzy
 msgid "Delay in seconds before taking the screenshot"
-msgstr "تأخير بالثوان قبل اتخاذ لقطة الشاشة"
+msgstr "تأخير بالثواني قبل اتخاذ لقطة الشاشة"
 
 #: ../src/main.c:58
-#, fuzzy
 msgid "Display the mouse on the screenshot"
-msgstr "عرض الماوس على شاشة"
+msgstr "عرض الفارة على شاشة"
 
 #: ../src/main.c:75
-#, fuzzy
 msgid "Directory where the screenshot will be saved"
 msgstr "الدليل الذي سيتم فيه حفظ لقطة الشاشة"
 
 #: ../src/main.c:85
-#, fuzzy
 msgid "Version information"
 msgstr "معلومات الإصدار"
 
 #: ../src/main.c:134
-#, c-format, fuzzy
+#, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "خيارات الإعداد: --%s و --%s لا يمكن استخدامهما في نفس الوقت.\n"
 
 #: ../src/main.c:136
-#, c-format, fuzzy
+#, c-format
 msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
 msgstr "ال --%s إعداد يستخدم فقط مع --شاشة كاملة, --نافذة أو --منطقة محددة. سيتم تجاهله.\n"
 
 #: ../src/main.c:150
-#, c-format, fuzzy
+#, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"جرب %s --يساعد على إظهار الخيارات المتاحة لسطر الاوامر.\n"
+"جرب %s --يساعد على إظهار الخيارات المتاحة لسطر الأوامر.\n"
 
 #: ../src/main.c:297
-#, c-format, fuzzy
+#, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s دليل غير صالح ، سيتم استخدام الدليل الافتراضي."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-#, fuzzy
 msgid "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "أخذ لقطات من الشاشة بأكملها ، من الإطار النشط أو منطقة"
