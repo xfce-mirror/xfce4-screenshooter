@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Language: Arabic\n"
 
 #: ../lib/screenshooter-dialogs.c:453
-#, c-format, fuzzy
+#, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb من %.2fKb"
 
@@ -22,7 +22,6 @@ msgid "Transfer"
 msgstr "نقل"
 
 #: ../lib/screenshooter-dialogs.c:556
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">يجري نقل لقطة الشاشة:</span>"
 
@@ -135,7 +134,6 @@ msgid "Host on ZimageZ"
 msgstr "استضافة على ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
-#, fuzzy
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "استضافة القطة الشاشة على ZimageZ ، خدمة استضافة الصور مجاناً على الأنترنت"
 
@@ -165,120 +163,102 @@ msgstr "حدث خطأ عند تحليل الاستجابة من ZimageZ."
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:210
-#, c-format, fuzzy
+#, c-format
 msgid "Taken on %s, at %s"
 msgstr "أُخذت على  %s, في %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
-#, fuzzy
 msgid "Initialize the connection..."
 msgstr "تهيئة الاتصال..."
 
 #: ../lib/screenshooter-zimagez.c:328
-#, fuzzy
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr "يرجى ملء الحقول التالية <a href=\"http://www.zimagez.com\">ZimageZ</a> اسم المستخد\\كلمة المرور وتفاصيل عن لقطة."
 
 #: ../lib/screenshooter-zimagez.c:385
-#, fuzzy
 msgid "Check the user information..."
 msgstr "التحقق من معلومات المستخدم..."
 
 #: ../lib/screenshooter-zimagez.c:392
-#, fuzzy
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">يجب ملء كافة الحقول.</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
-#, fuzzy
 msgid "Login on ZimageZ..."
 msgstr "الدخول على ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
-#, fuzzy
 msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
 msgstr "تم تلقي الرد غير متوقع من ZimageZ. فشل تحميل لقطة."
 
 #: ../lib/screenshooter-zimagez.c:485
-#, fuzzy
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">المستخدم وكلمة المرور التي أدخلتها لا تتطابق. يرجى إعادة المحاولة.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
-#, fuzzy
 msgid "Upload the screenshot..."
 msgstr "تحميل لقطة الشاشة..."
 
 #: ../lib/screenshooter-zimagez.c:576
-#, c-format, fuzzy
+#, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "حدث خطأ أثناء تحميل الصورة."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
-#, fuzzy
 msgid "Close the session on ZimageZ..."
 msgstr "إغلاق الجلسة على ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:679
-#, fuzzy
 msgid "Details about the screenshot for ZimageZ"
 msgstr "تفاصيل حول لقطة الشاشة لZimageZ"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:719
-#, fuzzy
 msgid "User:"
 msgstr "مستخدم :"
 
 #: ../lib/screenshooter-zimagez.c:730
-#, fuzzy
 msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
-msgstr "إذا كنت لا تملكاسم المستخدم Zimagez ،  من فضلك يرجى إنشاء واحد على صفحة ويب مرتبطة أعلاه"
+msgstr "إذا كنت لا تملك اسم المستخدم Zimagez ،  من فضلك يرجى إنشاء واحد على صفحة ويب مرتبطة أعلاه"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
-#, fuzzy
 msgid "Password:"
 msgstr "كلمة السر :"
 
 #: ../lib/screenshooter-zimagez.c:746
-#, fuzzy
 msgid "The password for the user above"
 msgstr "كلمة السر للمستخدم أعلاه"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:752
-#, fuzzy
 msgid "Title:"
 msgstr "العنوان :"
 
 #: ../lib/screenshooter-zimagez.c:762
-#, fuzzy
 msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr "عنوان قطة ، سيتم استخدامه عند عرض لقطة على ZimageZ"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
-#, fuzzy
 msgid "Comment:"
 msgstr "التعليق :"
 
 #: ../lib/screenshooter-zimagez.c:779
-#, fuzzy
 msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr "تعليقك على لقطة الشاشة ، سيتم استخدامه عند عرض لقطة على ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:902
-#, c-format, fuzzy
+#, c-format
 msgid "<a href=\"%s\">Full size image</a>"
 msgstr "<a href=\"%s\">الصورة بالحجم الكامل</a>"
 
 #: ../lib/screenshooter-zimagez.c:904
-#, c-format, fuzzy
+#, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr "<a href=\"%s\">كبير المصغرة</a>"
 
