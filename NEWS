@@ -16,6 +16,7 @@
     - Link to X11 libs, fixes linking with gold.
     - Fix a crash when the config file does not exist yet (bug #6460).
     - Clean the build system for the new panel library.
+    - Fix BBCode, it cannot contain new lines and spaces.
 
 === Version 1.7.9 ===
 
