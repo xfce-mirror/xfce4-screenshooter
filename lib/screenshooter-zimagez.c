@@ -908,7 +908,7 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
     g_strdup_printf ("<a href=\"%s\">\n  <img src=\"%s\" />\n</a>",
                      image_url, thumbnail_url);
   bb_code =
-    g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", image_url, thumbnail_url);
+    g_strdup_printf ("[url=%s][img]%s[/img][/url]", image_url, thumbnail_url);
 
   last_user_temp = g_object_get_data (G_OBJECT (job), "user");
 
@@ -1039,6 +1039,8 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
                                  10);
   gtk_text_view_set_editable (GTK_TEXT_VIEW (bb_code_view),
                               FALSE);
+  gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (bb_code_view),
+                               GTK_WRAP_CHAR);
   gtk_container_add (GTK_CONTAINER (bb_frame), bb_code_view);
 
   /* Show the dialog and run it */
