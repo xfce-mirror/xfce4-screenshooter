@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Arabic\n"
 "X-Poedit-Country: Morocco\n"
+"X-Poedit-Language: Arabic\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -90,7 +90,6 @@ msgid "renmush@gmail.com"
 msgstr "renmush@gmail.com"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in55(releaseinfo)
-#, fuzzy
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
 msgstr "يصف هذا الدليل إصدار @ @ من PACKAGE_VERSION Screenshooter Xfce4."
 
@@ -155,9 +154,8 @@ msgid "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you 
 msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in145(title)
-#, fuzzy
 msgid "Delay before capturing"
-msgstr "تأخير قبل التقاط"
+msgstr "تأخير قبل الالتقاط"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in147(para)
 msgid "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to set the delay that will elapse between pressing the <emphasis>\"OK\"</emphasis> button and screenshot being taken. This delay will allow you to open menus or to perform whatever action you require to see displayed in the screenshot."
@@ -176,7 +174,6 @@ msgid "The window of Xfce4 Screenshooter after taking a screenshot"
 msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in180(title)
-#, fuzzy
 msgid "Preview"
 msgstr "معاينة"
 
