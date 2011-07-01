@@ -62,7 +62,6 @@ msgid "Sam Swift"
 msgstr "Sam Swift"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in28(para)
-#, fuzzy
 msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
 msgstr "يتم منح الإذن بنسخ وتوزيع ، و / أو تعديل هذه الوثيقة تحت شروط رخصة جنو للوثائق الحرة، الإصدار 1.1 أو أي إصدار لاحق نشر من قبل مؤسسة البرمجيات الحرة ؛ دون أقسام ثابتة، بدون نصوص الغلاف الأمامي ، مع و بدون نصوص الغلاف الخلفي. النص الكامل ترخيص يتوفر في <ulinktype=\"http\" url=\"http://www.gnu.org/\"> مؤسسة البرمجيات الحرة </ ulink>."
 
@@ -99,7 +98,6 @@ msgid "Introduction to Xfce4 Screenshooter"
 msgstr " مقدمة لاقط شاشة اكسفيس4"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in63(para)
-#, fuzzy
 msgid "This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action to be performed afterwards: save the screenshot to a PNG file, copy it to the clipboard, open it using another application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online image hosting service."
 msgstr "هذا التطبيق يسمح لك بالتقاط صورة للشاشة بأكملها ، الإطار النشط أو منطقة محددة. يمكنك التأخير التقاط اللقطة وتحفظ بصيغة ملف PNG ، يمكن نسخ الملف إلى الحافظة ، فتحه باستخدام تطبيق آخر ، أو رفعه على المضيف<ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink> ،استضافة مجانية للصورة على الإنترنت."
 
@@ -116,7 +114,6 @@ msgid "Via the user interface"
 msgstr "عبر واجهة المستخدم"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in85(para)
-#, fuzzy
 msgid "To launch the application, use the \"Screenshot\" item in the \"Accessories\" category of Xfce's main menu."
 msgstr "لبدء التطبيق ، استخدم \\ \"لقطة الشاشة \" في البند \\ فئة \"أكسسوارات \" من القائمة إكسفيس الرئيسية."
 
@@ -133,22 +130,18 @@ msgid "Region to capture"
 msgstr "منطقة لالتقاط"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in109(para)
-#, fuzzy
 msgid "The <emphasis>\"Region to capture\"</emphasis> section allows you to set what the screenshot will be taken of:"
-msgstr "و<التركيز>\\ \"لالتقاط منطقة \" </ التركيز>  يسمح لك بتحديد ما سيتم أخذ لقطة منه:"
+msgstr "و<emphasis>\\ \"لالتقاط منطقة \" </ emphasis>  يسمح لك بتحديد ما سيتم أخذ لقطة منه:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in115(listitem)
-#, fuzzy
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
 msgstr "\\ \"كامل الشاشة \" يأخذ لقطة من الشاشة بأكملها كما تراها."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in119(listitem)
-#, fuzzy
 msgid "\"Active window\" takes a screenshot of the active window. This will be the one that was active before this dialog appeared, or if you set a delay, the one that is active after the delay."
 msgstr "\\ \"نافذة نشطة \" يأخذ لقطة من نافذة نشطة. وهي آخر نافذة نشطة قبل ظهور هذا الحوار، أو قم بتعيين تأخير ،لتنشيط نافذة اخرى."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in125(listitem)
-#, fuzzy
 msgid "\"Select a region\" allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
 msgstr "\\ \"اختر منطقة \" يسمح لك بتحديد المنطقة التي سيتم التقاطها عن طريق النقر وسحب مستطيل فوق منطقة الشاشة التي ترغب في التقاط الصور ، قبل تحرير زر الفارة."
 
@@ -157,30 +150,26 @@ msgid "Capturing the pointer"
 msgstr "التقاط المؤشر"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in137(para)
-#, fuzzy
 msgid "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to select whether or not the screenshot will include the mouse pointer."
-msgstr "و<تركيز>\\ \"التقاط مؤشر الفارة\" الخيار </ التركيز> يسمح لك بتحديداذا كانت اللقطة ستشمل مؤشر الفارة."
+msgstr "و<emphasis>\\ \"التقاط مؤشر الفارة\" الخيار </ emphasis> يسمح لك بتحديداذا كانت اللقطة ستشمل مؤشر الفارة."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in145(title)
 msgid "Delay before capturing"
 msgstr "تأخير قبل الالتقاط"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in147(para)
-#, fuzzy
 msgid "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to set the delay that will elapse between pressing the <emphasis>\"OK\"</emphasis> button and screenshot being taken. This delay will allow you to open menus or to perform whatever action you require to see displayed in the screenshot."
-msgstr "و<تركيز>\\ \"التأخير قبل التقاط \" </ التركيز> بهذا القسم تعيين التأخير الذي ينقضي بين الضغط على <تركيز>\\ \"موافق \" </ التركيز> والتقاط الشاشة. ستسمح لك هذا التأخير في فتح القوائم أو أداء أي عمل ليظهر في الصورة."
+msgstr "و<emphasis>\\ \"التأخير قبل التقاط \" </ emphasis> بهذا القسم تعيين التأخير الذي ينقضي بين الضغط على <emphasis>\\ \"موافق \" </ emphasis> والتقاط الشاشة. ستسمح لك هذا التأخير في فتح القوائم أو أداء أي عمل ليظهر في الصورة."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in159(title)
 msgid "After capturing"
 msgstr "بعد الالتقاط"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in161(para)
-#, fuzzy
 msgid "After pressing the <emphasis>\"OK\"</emphasis> button a second window will be displayed:"
-msgstr "بعد الضغط على <تركيز>\\ \"موافق \" </ التركيز> الزر سيتم عرض النافذة الثانية:"
+msgstr "بعد الضغط على <emphasis>\\ \"موافق \" </ emphasis> الزر سيتم عرض النافذة الثانية:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in173(phrase)
-#, fuzzy
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
 msgstr "نافذة لقطة شاشة إكسفيس4 بعد أخذ اللقطة"
 
@@ -189,41 +178,36 @@ msgid "Preview"
 msgstr "معاينة"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in182(para)
-#, fuzzy
 msgid "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the screenshot."
-msgstr "و<تركيز>\\ \"معاينة \" المقطع </ التركيز> يعرض صورة مصغرة من لقطة."
+msgstr "و<emphasis>\\ \"معاينة \" المقطع </ emphasis> يعرض صورة مصغرة من لقطة."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in189(title)
 msgid "Action"
 msgstr "أحداث"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in191(para)
-#, fuzzy
 msgid "The <emphasis>\"Action\"</emphasis> section allows you to choose what should be performed on the screenshot."
-msgstr "و<تركيز>\\ \"العمل \" المقطع </ التركيز> يسمح لك لاختيار ما تشمله لقطة الشاشة."
+msgstr "و<emphasis>\\ \"العمل \" المقطع </ emphasis> يسمح لك لاختيار ما تشمله لقطة الشاشة."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in197(title)
 msgid "Save"
 msgstr "حفظ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in199(para)
-#, fuzzy
 msgid "The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG file. A save dialog will be displayed. You will be able to set the save location, and the name of the file."
-msgstr " <تركيز>\\ \"حفظ \" </ التركيز> خيار حفظ لقطة لملف PNG. سيتم عرض الحوار حفظ. ستكون قادر على تعيين موقع الحفظ واسم الملف."
+msgstr " <emphasis>\\ \"حفظ \" </ emphasis> خيار حفظ لقطة لملف PNG. سيتم عرض الحوار حفظ. ستكون قادر على تعيين موقع الحفظ واسم الملف."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in206(para)
-#, fuzzy
 msgid "Xfce4 Screenshooter is also able to save the screenshot to any remote file system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers accessible via SSH... You just need to connect this remote file system using <emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left column of the save dialog."
-msgstr "لقطة شاشة إكسفيس4 قادرة أيضاً على خفظ اللقطة إلى نظام ملفات بعيد يدعم GVfs، مثلFTP, SAMBA, SFTP، يمكن الوصول إليها عبر أجهزة الكمبيوتر عن بعد بواسطة SSH... تحتاج فقط للوصول لهذا النظام عن بعد باستخدام ملف <تركيز>gvfs - اتصال </ التركيز> أو <ulinkurl=\"http://www.uvena.de/gigolo/\"> type=\"http\" </ ulink> ستكون متاحة في العمود الأيسر من مربع الحوار حفظ."
+msgstr "لقطة شاشة إكسفيس4 قادرة أيضاً على خفظ اللقطة إلى نظام ملفات بعيد يدعم GVfs، مثلFTP, SAMBA, SFTP، يمكن الوصول إليها عبر أجهزة الكمبيوتر عن بعد بواسطة SSH... تحتاج فقط للوصول لهذا النظام عن بعد باستخدام ملف <emphasis>gvfs - اتصال </ emphasis> أو <ulinkurl=\"http://www.uvena.de/gigolo/\"> type=\"http\" </ ulink> ستكون متاحة في العمود الأيسر من مربع الحوار حفظ."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in218(title)
 msgid "Copy to the clipboard"
 msgstr "نسخ إلى الحافظة"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in220(para)
-#, fuzzy
 msgid "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to paste the screenshot in another application, such as a word processor. This option is only available when a clipboard manager is running."
-msgstr "و<تركيز>\\ \"نسخ إلى الحافظة \" </ التركيز> خيار يسمح لك للصق لقطة في تطبيق آخر، مثل معالج النصوص. هذا الخيار متاح فقط عندما يكون مدير الحافظة قيد التشغيل."
+msgstr "و<emphasis>\\ \"نسخ إلى الحافظة \" </ emphasis> خيار يسمح لك للصق لقطة في تطبيق آخر، مثل معالج النصوص. هذا الخيار متاح فقط عندما يكون مدير الحافظة قيد التشغيل."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in229(title)
 msgid "Open with"
@@ -238,17 +222,14 @@ msgid "Host on ZimageZ"
 msgstr "إستضافة على ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in243(para)
-#, fuzzy
 msgid "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your screenshot on this free online hosting service, so that you can share it easily with other people. ZimageZ automatically generates a large and a small thumbnail of your screenshot, which can be used to create thumbnails pointing to the full size screenshot."
-msgstr "<تركيز>\\ \"المضيف ZimageZ \" </ التركيز> خيار يسمح لك باستضافة لقطة الشاشة الخاصة هذه الخدمة استضافة مجانية على الانترنت ، بحيث يمكنك بسهولة مشاركتها مع الآخرين. ZimageZ يولد تلقائيا نسخة كبيرة وصغيرة من صورة مصغرة لقطة الشاشة، والتي يمكن أن تستخدم لإنشاء صور المصغرة تشمل حجم شاشة كاملة."
+msgstr "<emphasis>\\ \"المضيف ZimageZ \" </ emphasis> خيار يسمح لك باستضافة لقطة الشاشة الخاصة هذه الخدمة استضافة مجانية على الانترنت ، بحيث يمكنك بسهولة مشاركتها مع الآخرين. ZimageZ يولد تلقائيا نسخة كبيرة وصغيرة من صورة مصغرة لقطة الشاشة، والتي يمكن أن تستخدم لإنشاء صور المصغرة تشمل حجم شاشة كاملة."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in252(para)
-#, fuzzy
 msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown this dialog:"
-msgstr "بعد الضغط على <تركيز>\\ \"موافق \" </ التركيز> الزر ، سيظهر لك هذا الحوار :"
+msgstr "بعد الضغط على <emphasis>\\ \"موافق \" </ emphasis> الزر ، سيظهر لك هذا الحوار :"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in264(phrase)
-#, fuzzy
 msgid "The dialog to host a screenshot on ZimageZ"
 msgstr "مربع حوار استضافة لقطة على ZimageZ"
 
