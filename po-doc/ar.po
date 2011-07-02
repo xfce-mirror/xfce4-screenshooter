@@ -234,114 +234,142 @@ msgid "The dialog to host a screenshot on ZimageZ"
 msgstr "مربع حوار استضافة لقطة على ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in269(para)
+#, fuzzy
 msgid "If you do not have a ZimageZ user name, you will need to create one on the <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. Several languages are available on this website, you can switch between using the menu up right. You must fill all fields of this dialog. Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
-msgstr ""
+msgstr "إذا لم يكن لديك اسم مستخدم ZimageZ ، ستحتاج إلى إنشاء واحدة على موقع <ulink type=\"http\" url=\"http://www.zimagez.com\"> موقع ZimageZ </ulink>.الموقع يدعم عدة لغات، يمكنك التبديل باستخدام القائمة للأعلى اليمين. يجب تعبئة جميع حقول هذا الحوار. بمجرد النقر فوق <emphasis>\\ \"موافق \" </ emphasis > زر ، سيبدأ تحميل."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in279(para)
+#, fuzzy
 msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
-msgstr ""
+msgstr "سيعطيك الحوار أدناه روابط للقطة بالحجم الكامل ، الصورة المصغرة، تعرض رابط للصورة بالترميز  HTML  و BBCode لإنشاء صورة مصغرة  تمثل حجم شاشة الكاملة :"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in293(phrase)
+#, fuzzy
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr ""
+msgstr "الحوار يعطي روابط اللقطة الخاص بك على ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in303(title)
+#, fuzzy
 msgid "Via command line"
-msgstr ""
+msgstr "عن طريق سطر الأوامر"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in305(para)
+#, fuzzy
 msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
-msgstr ""
+msgstr "خيارات سطر الأوامر تسمح لك أن تأخذ لقطات بسرعة. فهي تسمح لك أيضا باستخدام مفتاح طباعة الشاشة أعلى يمين لوحة المفاتيح بحيث يأخذ لقطات. للقيام بذلك، عدل إعدادات الارتباطات مفاتيح بيئة سطح المكتب بحيث تطلق لاقط شاشة إكسفس4 مع واحد أو أكثر من خيارات الضغط على مفتاحPrint Scrn "
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in315(title)
+#, fuzzy
 msgid "The command line options"
-msgstr ""
+msgstr "خيارات سطر الأوامر"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in318(title)
+#, fuzzy
 msgid "The -w option"
-msgstr ""
+msgstr "الخيار -ن"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in320(para)
+#, fuzzy
 msgid "The <emphasis>-w</emphasis> option allows you to take a screenshot of the active window."
-msgstr ""
+msgstr "الخيار <emphasis>- ن </ emphasis > يسمح لك بأن تأخذ لقطة من نافذة نشطة."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in327(title)
+#, fuzzy
 msgid "The -f option"
-msgstr ""
+msgstr "الخيار -ك"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in329(para)
+#, fuzzy
 msgid "The <emphasis>-f</emphasis> option allows you to take a screenshot of the entire screen."
-msgstr ""
+msgstr "الخيار<emphasis>- ك </ emphasis > الخيار يسمح لك أن تأخذ لقطة من الشاشة بأكملها."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in336(title)
+#, fuzzy
 msgid "The -r option"
-msgstr ""
+msgstr "الخيار -م"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in338(para)
+#, fuzzy
 msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
-msgstr ""
+msgstr "الخيار <emphasis>- م </ emphasis >   يسمح لك بتحديد المنطقة التي سيتم التقاطها عن طريق النقر بالفارة سحب مستطيل فوق منطقة الشاشة التي ترغب في التقاط الصور ، قبل تحرير زر الفارة."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in347(title)
+#, fuzzy
 msgid "The -d option"
-msgstr ""
+msgstr "الخيار -ز"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in349(para)
+#, fuzzy
 msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "الخيار <emphasis>- ز </ emphasis > يليها  رقم صحيح موجب يسمح لك تعيين التأخير قبل أخذ لقطة عند إختيار <emphasis>-ن </ emphasis >، و<emphasis>- ك </ emphasis > أو <emphasis>- م </ emphasis > يعطى الاختيار."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in359(title)
+#, fuzzy
 msgid "The -s option"
-msgstr ""
+msgstr "الخيار -ح"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in361(para)
+#, fuzzy
 msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "الخيار <emphasis>- ح </ emphasis > يليه مسار المجلد يسمح لك بتعيين موقع حفظ لقطات. هذا الخيار يعمل فقط مع المؤثرات <emphasis>-ن </ emphasis >، و<emphasis>- ك </ emphasis > أو <emphasis>- م </ emphasis > يعطى الخيار."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in371(title)
+#, fuzzy
 msgid "The -o option"
-msgstr ""
+msgstr "الخيار -مع"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in373(para)
+#, fuzzy
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "إذا حدد هذا الخيار<emphasis>- مع </ emphasis >   يليه اسم التطبيق، سيتم حفظ لقطة إلى دليل النظام المؤقتة وفتحها مع التطبيق المحدد بعد / <<emphasis>-مع</emphasis>هذا الخيار له تأثير مع <emphasis>- ن </ emphasis >، و<emphasis>- ك </ emphasis > أو <emphasis>- م </ emphasis > يعطى الخيار."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in385(title)
+#, fuzzy
 msgid "The -u option"
-msgstr ""
+msgstr "الخيار -u"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in387(para)
+#, fuzzy
 msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "إذا تم إعطاء <emphasis>- U </ emphasis > الخيار ، سيتم استضافة اللقطة على ZimageZ. انظر أعلاه للحصول على مزيد من التفاصيل. هذا الخيار فقط إذا كان لها تأثير <emphasis>- ن </ emphasis >، و<emphasis>- ك </ emphasis > أو <emphasis>- م </ emphasis > يعطى الخيار"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in400(title)
+#, fuzzy
 msgid "Using the Xfce panel plugin"
-msgstr ""
+msgstr "استخدام إضافة لوحة إكسفس"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in403(title)
+#, fuzzy
 msgid "Adding the plugin"
-msgstr ""
+msgstr "إضافة إضافات"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in405(para)
+#, fuzzy
 msgid "To add the plugin to the panel, right click on the panel and select <emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>\"Screenshot\"</emphasis>, and add it."
-msgstr ""
+msgstr "لإضافة إضافة إلى اللوحة، انقر بزر الفارة على لوحة وحدد <emphasis>\\ \"إضافة عنصر جديد \" </ emphasis >. اختر اسم الإضافة <emphasis>\\ \"لقطة \" </ emphasis > ، وأضفه."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in413(title)
+#, fuzzy
 msgid "Configuring the plugin"
-msgstr ""
+msgstr "إعداد الإضافات"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in415(para)
+#, fuzzy
 msgid "You can configure how screenshots are taken by right clicking on the plugin and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog similar to the dialog of the main application will appear. Please have a look above for the different preferences."
-msgstr ""
+msgstr "يمكنك إعداد كيفية أخذ لقطات بالنقر بالزر الأيمن للفارة على الإضافة ثم اختيار <emphasis>\\ \"خصائص \" </ emphasis >. وهناك يظهر حوار تفضيلات مماثلة لحوار التطبيق الرئيسي. يرجى إلقاء نظرة للتفضيلات المختلفة."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in425(title)
+#, fuzzy
 msgid "Using the plugin"
-msgstr ""
+msgstr "استخدام الإضافة"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in427(para)
+#, fuzzy
 msgid "To take a screenshot, just click on the plugin. You can use the scroll wheel on the plugin button to switch between the different regions to be captured."
-msgstr ""
+msgstr "لتأخذ لقطة، فقط اضغط على الإضافة. يمكنك استخدام عجلة التمرير التبديل بين مختلف المناطق ليتم التقاطها."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in0(None)
+#, fuzzy
 msgid "translator-credits"
-msgstr ""
+msgstr "المترجم - الاعتمادات"
