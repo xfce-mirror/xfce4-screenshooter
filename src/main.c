@@ -35,6 +35,7 @@ gboolean fullscreen = FALSE;
 gboolean mouse = FALSE;
 gboolean upload = FALSE;
 gboolean clipboard = FALSE;
+gboolean upload_imgur = FALSE;
 gchar *screenshot_dir;
 gchar *application;
 gint delay = 0;
@@ -84,6 +85,11 @@ static GOptionEntry entries[] =
   {
     "upload", 'u', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &upload,
     N_("Host the screenshot on ZimageZ, a free online image hosting service"),
+    NULL
+  },
+  {
+    "imgur", 'i', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &upload_imgur,
+    N_("Host the screenshot on Imgur, a free online image hosting service"),
     NULL
   },
   {
@@ -230,6 +236,21 @@ int main (int argc, char **argv)
       g_free (sd);
       return EXIT_FAILURE;
     }
+  else if (upload_imgur && upload)
+    {
+      g_printerr (conflict_error, "upload", "imgur");
+      return EXIT_FAILURE;
+    }
+  else if (upload_imgur && (screenshot_dir != NULL))
+    {
+      g_printerr (conflict_error, "imgur", "save");
+      return EXIT_FAILURE;
+    }
+  else if (upload_imgur && (application != NULL))
+    {
+      g_printerr (conflict_error, "imgur", "open");
+      return EXIT_FAILURE;
+    }
 
   /* Warn that action options, mouse and delay will be ignored in
    * non-cli mode */
@@ -237,6 +258,8 @@ int main (int argc, char **argv)
     g_printerr (ignore_error, "open");
   if ((screenshot_dir != NULL)  && !(fullscreen || window || region ))
     g_printerr (ignore_error, "save");
+  if (upload_imgur && !(fullscreen || window || region))
+    g_printerr (ignore_error, "imgur");
   if (upload && !(fullscreen || window || region))
     g_printerr (ignore_error, "upload");
   if (clipboard && !(fullscreen || window || region))
@@ -309,6 +332,11 @@ int main (int argc, char **argv)
         {
           sd->app = g_strdup ("none");
           sd->action = CLIPBOARD;
+          sd->action_specified = TRUE;
+      else if (upload_imgur)
+        {
+          sd->app = g_strdup ("none");
+          sd->action = UPLOAD_IMGUR;
           sd->action_specified = TRUE;
         }
       else
