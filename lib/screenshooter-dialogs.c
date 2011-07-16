@@ -56,6 +56,9 @@ static void
 cb_zimagez_toggled                 (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
+cb_imgur_toggled                   (GtkToggleButton    *tb,
+                                    ScreenshotData     *sd);
+static void
 cb_delay_spinner_changed           (GtkWidget          *spinner,
                                     ScreenshotData     *sd);
 static gchar
@@ -189,6 +192,13 @@ static void cb_zimagez_toggled (GtkToggleButton *tb, ScreenshotData *sd)
   if (gtk_toggle_button_get_active (tb))
     sd->action = UPLOAD;
 }
+
+static void cb_imgur_toggled (GtkToggleButton *tb, ScreenshotData *sd)
+{
+  if (gtk_toggle_button_get_active (tb))
+    sd->action = UPLOAD_IMGUR;
+}
+
 
 
 
@@ -880,6 +890,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *save_radio_button;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
   GtkWidget *zimagez_radio_button;
+  GtkWidget *imgur_radio_button;
 
   GtkListStore *liststore;
   GtkWidget *combobox, *open_box;
@@ -1021,6 +1032,19 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (zimagez_radio_button), "toggled",
                     G_CALLBACK (cb_zimagez_toggled), sd);
   gtk_box_pack_start (GTK_BOX (actions_box), zimagez_radio_button, FALSE, FALSE, 0);
+
+  /* Upload to imgur radio button */
+  imgur_radio_button =
+    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
+                                                 _("Host on Imgur"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (imgur_radio_button),
+                                (sd->action == UPLOAD_IMGUR));
+  gtk_widget_set_tooltip_text (imgur_radio_button,
+                               _("Host the screenshot on Imgur, a free online "
+                                 "image hosting service"));
+  g_signal_connect (G_OBJECT (imgur_radio_button), "toggled",
+                    G_CALLBACK (cb_imgur_toggled), sd);
+  gtk_box_pack_start (GTK_BOX (actions_box), imgur_radio_button, FALSE, FALSE, 0);
 
   /* Preview box */
   preview_box = gtk_vbox_new (FALSE, 6);

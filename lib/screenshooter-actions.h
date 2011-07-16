@@ -25,6 +25,7 @@
 #include "screenshooter-global.h"
 #include "screenshooter-dialogs.h"
 #include "screenshooter-zimagez.h"
+#include "screenshooter-imgur.h"
 
 gboolean screenshooter_take_screenshot_idle (ScreenshotData *sd);
 gboolean screenshooter_action_idle          (ScreenshotData *sd);
