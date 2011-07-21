@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-16 10:03+0000\n"
-"PO-Revision-Date: 2011-06-16 12:21+0200\n"
+"POT-Creation-Date: 2011-07-21 10:03+0000\n"
+"PO-Revision-Date: 2011-07-20 12:21+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "Maak een schermafdruk van het actieve venster"
 
 #: ../lib/screenshooter-dialogs.c:780
 msgid "Select a region"
-msgstr "Selecteer een gebied"
+msgstr "Kies een gebied"
 
 #: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:321
@@ -87,9 +87,9 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
-"Selecteer een gebied voor een schermafdruk, door te klikken op een hoek van "
-"het gebied zonder de muisknop los te laten. Sleep vervolgens de muis naar de "
-"diagonaal tegenovergelegen hoek en laat de muisknop los."
+"Kies een gebied voor een schermafdruk, door te klikken op een hoek van "
+"het gebied zonder de muisknop los te laten. Sleep vervolgens de muis naar "
+"de diagonaal tegenovergelegen hoek en laat de muisknop los."
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
@@ -159,7 +159,7 @@ msgstr "Plaatsen op ZimageZ"
 #: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr ""
-"De schermadruk plaatsen op ZimageZ, een gratis internetdienst om "
+"De schermafdruk plaatsen op ZimageZ, een gratis internetdienst om "
 "afbeeldingen te bewaren"
 
 #: ../lib/screenshooter-dialogs.c:1023
@@ -209,7 +209,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr "Gebruikerinformatie aan het nakijken..."
+msgstr "Kijk de gebruikerinformatie na..."
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid ""
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
-msgstr "Aan het aanmelden bij ZimageZ..."
+msgstr "Aanmelden bij ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
 msgid ""
@@ -265,8 +265,8 @@ msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
-"Uw gebruikernaam bij ZimageZ. Als u nog geen gebruikernaam heeft kunt u "
-"die aanmaken op de hierboven genoemde website"
+"Uw gebruikersnaam bij ZimageZ. Als u nog geen gebruikersnaam heeft kunt u die "
+"aanmaken op de hierboven genoemde website"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -340,11 +340,11 @@ msgstr "HTML"
 msgid "BBCode for forums"
 msgstr "BBCode voor fora"
 
-#: ../lib/screenshooter-zimagez.c:1153
+#: ../lib/screenshooter-zimagez.c:1155
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:1186
+#: ../lib/screenshooter-zimagez.c:1188
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
@@ -407,7 +407,7 @@ msgstr ""
 #~ msgstr "Koppeling _openen"
 
 #~ msgid "Copy _Link Address"
-#~ msgstr "_Koppelingsadres kopiëren"
+#~ msgstr "_Koppelingadres kopiëren"
 
 #~ msgid "Screenshot.png"
 #~ msgstr "Schermafdruk.png"
@@ -475,4 +475,4 @@ msgstr ""
 #~ "on the right without displaying a save dialog"
 #~ msgstr ""
 #~ "Als deze optie is aangevinkt, zal de schermafdruk standaard vanzelf "
-#~ "opgeslagen worden in de locatie die hiernaast rechts is aangegeven."
+#~ "opgeslagen worden op de locatie die hiernaast rechts is aangegeven."
