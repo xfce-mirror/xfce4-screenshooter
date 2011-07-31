@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-24 05:03+0000\n"
+"POT-Creation-Date: 2011-07-31 23:29+0200\n"
 "PO-Revision-Date: 2011-03-24 12:40+0100\n"
 "Last-Translator: Piotr Sokół <psokol@jabster.pl>\n"
 "Language-Team: Polish <>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -332,11 +333,11 @@ msgstr "HTML:"
 msgid "BBCode for forums"
 msgstr "Kod BBCode przeznaczony dla for dyskusyjnych:"
 
-#: ../lib/screenshooter-zimagez.c:1153
+#: ../lib/screenshooter-zimagez.c:1155
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:1186
+#: ../lib/screenshooter-zimagez.c:1188
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stan</span>"
 

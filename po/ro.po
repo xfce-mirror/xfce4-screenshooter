@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 11:03+0000\n"
+"POT-Creation-Date: 2011-07-31 23:29+0200\n"
 "PO-Revision-Date: 2011-01-16 18:49+0200\n"
 "Last-Translator: Mișu Moldovan <dumol@xfce.org>\n"
 "Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
@@ -33,8 +33,8 @@ msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Captura de ecran este transferată "
-"către:</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Captura de ecran este "
+"transferată către:</span>"
 
 #: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
 #: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
@@ -54,7 +54,8 @@ msgstr "Preferințe"
 
 #: ../lib/screenshooter-dialogs.c:730
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Regiune de capturat</span>"
+msgstr ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Regiune de capturat</span>"
 
 #: ../lib/screenshooter-dialogs.c:750
 msgid "Entire screen"
@@ -199,8 +200,8 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"Completați următoarele câmpuri cu numele contului <a "
-"href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"Completați următoarele câmpuri cu numele contului <a href=\"http://www."
+"zimagez.com\">ZimageZ</a> \n"
 "și parola sa, plus detalii despre captura de ecran."
 
 #: ../lib/screenshooter-zimagez.c:385
@@ -212,8 +213,8 @@ msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Trebuie să "
-"completați toate câmpurile.</span>"
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded"
+"\">Trebuie să completați toate câmpurile.</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
@@ -232,8 +233,8 @@ msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Numele de "
-"cont și parola introduse nu se potrivesc, reîncercați...</span>"
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Numele "
+"de cont și parola introduse nu se potrivesc, reîncercați...</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -329,8 +330,8 @@ msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
 msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Cod pentru o miniatură ce indică "
-"spre imaginea la mărimea originală</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Cod pentru o miniatură ce "
+"indică spre imaginea la mărimea originală</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
@@ -342,11 +343,11 @@ msgstr "HTML"
 msgid "BBCode for forums"
 msgstr "BBCode pentru forumuri"
 
-#: ../lib/screenshooter-zimagez.c:1153
+#: ../lib/screenshooter-zimagez.c:1155
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:1186
+#: ../lib/screenshooter-zimagez.c:1188
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stare</span>"
 
@@ -369,14 +370,16 @@ msgstr "Detalii de versiune"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Opțiuni conflictuale: --%s și --%s nu pot fi utilizate în același timp.\n"
+msgstr ""
+"Opțiuni conflictuale: --%s și --%s nu pot fi utilizate în același timp.\n"
 
 #: ../src/main.c:136
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr "Opțiunea --%s se utilizează doar când --fullscreen, --window sau --region "
+msgstr ""
+"Opțiunea --%s se utilizează doar când --fullscreen, --window sau --region "
 "sunt folosite, acum va fi ignorată.\n"
 
 #: ../src/main.c:150

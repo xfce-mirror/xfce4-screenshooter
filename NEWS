@@ -1,4 +1,4 @@
-=== Version x.x.x ===
+=== Version 1.8.0 ===
 
   * Gtk 2.16, libxfce4ui and exo are now required.
   * Xfce4 Screenshooter does not depend anymore on libxfcegui4.
@@ -17,6 +17,11 @@
     - Fix a crash when the config file does not exist yet (bug #6460).
     - Clean the build system for the new panel library.
     - Fix BBCode, it cannot contain new lines and spaces.
+
+  * Translation updates: Arabic, Brazilian, Catalan, Croatian, Dutch,
+    French, Galician, Greek, Indonesian, Italian, Japanese, Kazakh,
+    Norwegian Bokmal, Polish, Portuguese, Punjabi, Romanian, Russian,
+    Slovak, Sinhala, Swedish, Turkish, Ukrainian and Uyghur.
 
 === Version 1.7.9 ===
 
