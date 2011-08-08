@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter docs\n"
 "POT-Creation-Date: 2009-11-15 00:21+0100\n"
-"PO-Revision-Date: 2011-06-28 23:00-0000\n"
-"Last-Translator: كريم اولاد الشلحة <herr.linux88@gmail.com>\n"
+"PO-Revision-Date: 2011-08-08 17:02-0000\n"
+"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
 "Language-Team: Arabic Xfce Translation Team <herr.linux88@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -259,7 +259,7 @@ msgstr "خيارات سطر الأوامر"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in318(title)
 msgid "The -w option"
-msgstr "الخيار -ن"
+msgstr "الخيار -w"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in320(para)
 msgid "The <emphasis>-w</emphasis> option allows you to take a screenshot of the active window."
@@ -267,7 +267,7 @@ msgstr "الخيار <emphasis>- ن </ emphasis > يسمح لك بأن تأخذ 
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in327(title)
 msgid "The -f option"
-msgstr "الخيار -ك"
+msgstr "الخيار -f"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in329(para)
 msgid "The <emphasis>-f</emphasis> option allows you to take a screenshot of the entire screen."
@@ -275,7 +275,7 @@ msgstr "الخيار<emphasis>- ك </ emphasis > الخيار يسمح لك أن
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in336(title)
 msgid "The -r option"
-msgstr "الخيار -م"
+msgstr "الخيار -r"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in338(para)
 msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
@@ -283,7 +283,7 @@ msgstr "الخيار <emphasis>- م </ emphasis >   يسمح لك بتحديد �
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in347(title)
 msgid "The -d option"
-msgstr "الخيار -ز"
+msgstr "الخيار -d"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in349(para)
 msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
@@ -291,7 +291,7 @@ msgstr "الخيار <emphasis>- ز </ emphasis > يليها  رقم صحيح م
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in359(title)
 msgid "The -s option"
-msgstr "الخيار -ح"
+msgstr "الخيار -s"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in361(para)
 msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
@@ -299,7 +299,7 @@ msgstr "الخيار <emphasis>- ح </ emphasis > يليه مسار المجلد
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in371(title)
 msgid "The -o option"
-msgstr "الخيار -مع"
+msgstr "الخيار -o"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in373(para)
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
@@ -315,7 +315,7 @@ msgstr "إذا تم إعطاء <emphasis>- U </ emphasis > الخيار ، سي�
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in400(title)
 msgid "Using the Xfce panel plugin"
-msgstr "استخدام إضافة لوحة إكسفس"
+msgstr "إستخدام إضافة لوحة إكسفس"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in403(title)
 msgid "Adding the plugin"
@@ -344,4 +344,8 @@ msgstr "لتأخذ لقطة، فقط اضغط على الإضافة. يمكنك 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in0(None)
 msgid "translator-credits"
-msgstr "المترجم - الاعتمادات"
+msgstr ""
+"Arabic Xfce Translation Team (فريق تعريب إكسفس)\n"
+"   Karim Oulad Chalha (كريم اولاد الشلحة)   <herr.linux88@gmail.com>\n"
+"   Mohamed Al Hargan(محمد الحرقان)  <malham1@gmail.com>"
+
