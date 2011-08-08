@@ -1,17 +1,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce\n"
+"Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-31 23:29+0200\n"
-"PO-Revision-Date: 2008-07-15 23:10+0200\n"
-"Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
-"Language-Team: Arabeyes <doc@arabeyes.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2011-08-08 16:33-0000\n"
+"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
+"Language-Team: Arabic Xfce Translation Team <herr.linux88@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Arabic\n"
+"X-Poedit-Country: Morocco\n"
 
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
@@ -23,14 +24,13 @@ msgid "Transfer"
 msgstr "نقل"
 
 #: ../lib/screenshooter-dialogs.c:556
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
-"transferred to:</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">يجري نقل لقطة الشاشة:</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">يجري نقل لقطة الشاشة:</span>"
 
-#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
-#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:672
+#: ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:881
+#: ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
@@ -53,7 +53,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">منطقة لالتقاط
 msgid "Entire screen"
 msgstr "كامل الشاشة"
 
-#: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
+#: ../lib/screenshooter-dialogs.c:757
+#: ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
 msgstr "تأخذ لقطة للشاشة بأكملها"
@@ -62,7 +63,8 @@ msgstr "تأخذ لقطة للشاشة بأكملها"
 msgid "Active window"
 msgstr "نافذة نشيطة"
 
-#: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
+#: ../lib/screenshooter-dialogs.c:772
+#: ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
 msgstr "تأخذ لقطة للنافذة النشطة"
@@ -71,15 +73,11 @@ msgstr "تأخذ لقطة للنافذة النشطة"
 msgid "Select a region"
 msgstr "تحديد منطقة"
 
-#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
+#: ../lib/screenshooter-dialogs.c:785
+#: ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:321
-msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
-msgstr ""
-"اختر المنطقة التي سيتم التقاطها عن طريق النقر على نقطة في الشاشة من دون "
-"تحرير زر الفارة ، سحب الفأرة إلى الزاوية أخرى من المنطقة، ثم حرير زر الفاره."
+msgid "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button."
+msgstr "اختر المنطقة التي سيتم التقاطها عن طريق النقر على نقطة في الشاشة من دون تحرير زر الفارة ، سحب الفأرة إلى الزاوية أخرى من المنطقة، ثم حرير زر الفاره."
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
@@ -90,10 +88,8 @@ msgid "Display the mouse pointer on the screenshot"
 msgstr "عرض مؤشر الفارة على شاشة"
 
 #: ../lib/screenshooter-dialogs.c:816
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">تأخير قبل التقاط الشاشة</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">تأخير قبل التقاط الشاشة</span>"
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
@@ -136,7 +132,8 @@ msgstr "فتح باستخدام :"
 msgid "Open the screenshot with the chosen application"
 msgstr "فتح لقطة الشاشة باستخدام التطبيق المختار"
 
-#: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:995
+#: ../src/main.c:63
 msgid "Application to open the screenshot"
 msgstr "تطبيق لفتح القطة شاشة"
 
@@ -144,10 +141,10 @@ msgstr "تطبيق لفتح القطة شاشة"
 msgid "Host on ZimageZ"
 msgstr "استضافة على ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1009
+#: ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
-"استضافة القطة الشاشة على ZimageZ ، خدمة استضافة الصور مجاناً على الأنترنت"
+msgstr "استضافة القطة الشاشة على ZimageZ ، خدمة استضافة الصور مجاناً على الأنترنت"
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -186,42 +183,30 @@ msgstr "تهيئة الاتصال..."
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
-msgstr ""
-"يرجى ملء الحقول التالية <a href=\"http://www.zimagez.com\">ZimageZ</a> اسم "
-"المستخد\\كلمة المرور وتفاصيل عن لقطة."
+msgstr "يرجى ملء الحقول التالية <a href=\"http://www.zimagez.com\">ZimageZ</a> اسم المستخد\\كلمة المرور وتفاصيل عن لقطة."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
 msgstr "التحقق من معلومات المستخدم..."
 
 #: ../lib/screenshooter-zimagez.c:392
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
-"must fill all the fields.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">يجب "
-"ملء كافة الحقول.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">يجب ملء كافة الحقول.</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
 msgstr "الدخول على ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
-msgid ""
-"An unexpected reply from ZimageZ was received. The upload of the screenshot "
-"failed."
+#: ../lib/screenshooter-zimagez.c:446
+#: ../lib/screenshooter-zimagez.c:597
+msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
 msgstr "تم تلقي الرد غير متوقع من ZimageZ. فشل تحميل لقطة."
 
 #: ../lib/screenshooter-zimagez.c:485
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
-"user and the password you entered do not match. Please retry.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded"
-"\">المستخدم وكلمة المرور التي أدخلتها لا تتطابق. يرجى إعادة المحاولة.</span>"
+msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">المستخدم وكلمة المرور التي أدخلتها لا تتطابق. يرجى إعادة المحاولة.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -247,12 +232,8 @@ msgid "User:"
 msgstr "مستخدم :"
 
 #: ../lib/screenshooter-zimagez.c:730
-msgid ""
-"Your Zimagez user name, if you do not have one yet please create one on the "
-"Web page linked above"
-msgstr ""
-"إذا كنت لا تملك اسم المستخدم Zimagez ،  من فضلك يرجى إنشاء واحد على صفحة ويب "
-"مرتبطة أعلاه"
+msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
+msgstr "إذا كنت لا تملك اسم المستخدم Zimagez ،  من فضلك يرجى إنشاء واحد على صفحة ويب مرتبطة أعلاه"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -269,9 +250,7 @@ msgid "Title:"
 msgstr "العنوان :"
 
 #: ../lib/screenshooter-zimagez.c:762
-msgid ""
-"The title of the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr "عنوان قطة ، سيتم استخدامه عند عرض لقطة على ZimageZ"
 
 #. Create the comment label
@@ -280,9 +259,7 @@ msgid "Comment:"
 msgstr "التعليق :"
 
 #: ../lib/screenshooter-zimagez.c:779
-msgid ""
-"A comment on the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
+msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
 msgstr "تعليقك على لقطة الشاشة ، سيتم استخدامه عند عرض لقطة على ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:902
@@ -309,12 +286,8 @@ msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">الروابط</span>"
 
 #: ../lib/screenshooter-zimagez.c:987
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
-"to the full size image</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">رمز لصورة مصغرة يشير إلى "
-"الصورة بالحجم الكامل</span>"
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">رمز لصورة مصغرة يشير إلى الصورة بالحجم الكامل</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
@@ -357,12 +330,8 @@ msgstr "خيارات الإعداد: --%s و --%s لا يمكن استخدامه
 
 #: ../src/main.c:136
 #, c-format
-msgid ""
-"The --%s option is only used when --fullscreen, --window or --region is "
-"given. It will be ignored.\n"
-msgstr ""
-"ال --%s إعداد يستخدم فقط مع --شاشة كاملة, --نافذة أو --منطقة محددة. سيتم "
-"تجاهله.\n"
+msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
+msgstr "ال --%s إعداد يستخدم فقط مع --شاشة كاملة, --نافذة أو --منطقة محددة. سيتم تجاهله.\n"
 
 #: ../src/main.c:150
 #, c-format
@@ -380,6 +349,6 @@ msgstr "%s دليل غير صالح ، سيتم استخدام الدليل ال
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
-msgid ""
-"Take screenshots of the entire screen, of the active window or of a region"
+msgid "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "أخذ لقطات من الشاشة بأكملها ، من الإطار النشط أو منطقة"
+
