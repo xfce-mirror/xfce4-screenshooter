@@ -168,7 +168,7 @@ msgstr "ZimageZ'den gelen yanıtı ayrıştırırken bir hata oluştu."
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:210
-#, c-format, fuzzy
+#, c-format
 msgid "Taken on %s, at %s"
 msgstr "%s'da ,%s'da alındı"
 
