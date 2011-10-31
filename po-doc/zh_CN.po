@@ -1,11 +1,13 @@
 # Hunt Xu <huntxu@live.cn>, 2009.
+# Chipong Luo <chipong_l@yahoo.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "POT-Creation-Date: 2009-11-15 00:21+0100\n"
 "PO-Revision-Date: 2009-12-19 01:59+0800\n"
-"Last-Translator: Hunt Xu <huntxu@live.cn>\n"
+"Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
 "Language-Team: Chinese (simplified) <xfce-i18n@xfce.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -80,10 +82,10 @@ msgid ""
 "complete license text is available from the <ulink type=\"http\" url="
 "\"http://www.gnu.org/\">Free Software Foundation</ulink>."
 msgstr ""
-"在自由软件基金会发布的 GNU 自由文档许可协议版本 1.1 或以后版本的条款约束下允"
-"许复制，分发和/或修改本文档，不要求保留特定内容、封面文本或者封底文本。许可协"
-"议全文可以通过以下链接找到: <ulink type=\"http\" url=\"http://www.gnu.org/\">"
-"自由软件基金会</ulink>。"
+"在自由软件基金会发布的 GNU 自由文档许可协议版本 1.1 或以后版本的"
+"条款约束下允许复制、分发和/或修改本文档；不要求保留特定内容、封面"
+"文本或封底文本。许可协议全文可以通过以下链接找到：<ulink type=\"http\" url=\"
+""http://www.gnu.org/\">Free Software Foundation</ulink>。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:40(firstname)
 msgid "Jérôme"
@@ -111,7 +113,7 @@ msgstr "renmush@gmail.com"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:55(releaseinfo)
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
-msgstr "本手册介绍了版本为 @PACKAGE_VERSION@ 的 Xfce4 屏幕截图工具。"
+msgstr "本手册介绍了 @PACKAGE_VERSION@ 版本的 Xfce4 屏幕截图工具。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:61(title)
 msgid "Introduction to Xfce4 Screenshooter"
@@ -126,18 +128,18 @@ msgid ""
 "application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com"
 "\">ZimageZ</ulink>, a free online image hosting service."
 msgstr ""
-"本程序允许您截取整个屏幕、当前活动窗口或者一个自选区域的图像。您可以设置截图"
-"前的延时和截图之后所要执行的的动作，包括保存截图至一幅 PNG 图像文件，复制截图"
-"到剪贴板，使用另一程序打开截图，或者上传至免费的在线图像保存服务 <ulink type="
+"此应用程序让您截取整个屏幕、活动窗口或选中的区域。您可以设置截图"
+"前的延时和截图之后所要执行的的动作：保存截图为 PNG 文件、将截图"
+"复制至剪贴板、使用另一应用程序打开或上传至免费的在线图片提供服务 <ulink type="
 "\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:73(para)
 msgid "A plugin for the Xfce panel is also available."
-msgstr "本程序同时提供一个 Xfce 面板插件。"
+msgstr "还有一个 Xfce 面板插件。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:80(title)
 msgid "Using the application"
-msgstr "使用本程序"
+msgstr "使用此应用程序"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:83(title)
 msgid "Via the user interface"
@@ -147,29 +149,31 @@ msgstr "通过用户界面"
 msgid ""
 "To launch the application, use the \"Screenshot\" item in the \"Accessories"
 "\" category of Xfce's main menu."
-msgstr "要启动此程序，选择 Xfce 主菜单下的“附件”分类中的“屏幕截图”。"
+msgstr ""
+"要启动此应用程序，选择 Xfce 主菜单下的 “附件” 类别中的 “屏幕截图” "
+"项目。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:90(para)
 msgid "This window will be displayed:"
-msgstr "将显示如下窗口:"
+msgstr "窗口会如下显示："
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:101(phrase)
 msgid "The window of Xfce4 Screenshooter"
-msgstr "Xfce4 屏幕截图工具的窗口"
+msgstr "Xfce4 屏幕截图工具窗口"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:107(title)
 msgid "Region to capture"
-msgstr "截取范围"
+msgstr "截取区域"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:109(para)
 msgid ""
 "The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
 "what the screenshot will be taken of:"
-msgstr "<emphasis>“截取范围”</emphasis> 区域允许您设置要截图的屏幕范围:"
+msgstr "<emphasis>“截取区域”</emphasis> 区域让您设置要截取的范围："
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:115(listitem)
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr "选择“全屏幕”选项，每次将截取整个屏幕的图像。"
+msgstr "“全屏幕” 截取您看到的整个屏幕的截图。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:119(listitem)
 msgid ""
@@ -177,8 +181,8 @@ msgid ""
 "one that was active before this dialog appeared, or if you set a delay, the "
 "one that is active after the delay."
 msgstr ""
-"选择“活动窗口”选项，每次将截取当前活动窗口的图像。默认是本窗口出现之前的最后"
-"一个活动窗口，或者，如果您设置了延时，将会是延时时间到达时的活动窗口。"
+"“活动窗口” 截取活动窗口的截图。它是此对话框出现之前的活动窗口，或者，"
+"如果您设置了延时，则是延时时间之后的窗口。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:125(listitem)
 msgid ""
@@ -186,21 +190,22 @@ msgid ""
 "and dragging a rectangle over the area of screen that you wish to capture, "
 "before releasing the mouse button."
 msgstr ""
-"“选择一个区域”选项允许您通过点击并拖拽鼠标后松开选择截取屏幕上一个矩形区域。"
+"“选择一个区域” 让您通过在松开鼠标按钮之前在您希望截取的屏幕区域点击"
+"并拉出一个矩形框选择截取的区域。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:135(title)
 msgid "Capturing the pointer"
-msgstr "截取鼠标指针"
+msgstr "截取指针"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:137(para)
 msgid ""
 "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to "
 "select whether or not the screenshot will include the mouse pointer."
-msgstr "<emphasis>“截取鼠标指针”</emphasis> 选项允许您选择是否截取鼠标指针。"
+msgstr "<emphasis>“截取鼠标指针”</emphasis> 选项让您选择截图是否包括鼠标指针。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:145(title)
 msgid "Delay before capturing"
-msgstr "截图前延时"
+msgstr "截取前延时"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
 msgid ""
@@ -210,23 +215,23 @@ msgid ""
 "open menus or to perform whatever action you require to see displayed in the "
 "screenshot."
 msgstr ""
-"<emphasis>“截图前延迟”</emphasis> 区域允许您设置按下 <emphasis>\"OK\"</"
-"emphasis> 按钮与截图操作进行之间的时间间隔。设置延时允许您在截图之前打开菜"
-"单、或者进行其他必要的操作以实现你想要截取的效果。"
+"<emphasis>“截取前延时”</emphasis> 区域让您设置按下 <emphasis>“确定”</emphasis> "
+"按钮与截图截取开始之间经过的延时。此延时让您打开"
+"菜单或执行任何显示在截图上的您需要看到的动作。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:159(title)
 msgid "After capturing"
-msgstr "截图后操作"
+msgstr "截取后"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:161(para)
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button a second window will "
 "be displayed:"
-msgstr "按下 <emphasis>\"OK\"</emphasis> 按钮后第二个窗口将会出现:"
+msgstr "按下 <emphasis>“确定”</emphasis> 按钮后会显示第二个窗口："
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:173(phrase)
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
-msgstr "截图后的 Xfce4 屏幕截图工具窗口"
+msgstr "截取截图后的 Xfce4 屏幕截图工具窗口"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:180(title)
 msgid "Preview"
@@ -236,7 +241,7 @@ msgstr "预览"
 msgid ""
 "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
 "screenshot."
-msgstr "<emphasis>“预览”</emphasis> 区域显示刚截取的图像的缩略图。"
+msgstr "<emphasis>“预览”</emphasis> 区域显示截图的缩略图。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:189(title)
 msgid "Action"
@@ -246,7 +251,7 @@ msgstr "动作"
 msgid ""
 "The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
 "be performed on the screenshot."
-msgstr "<emphasis>“动作”</emphasis> 区域允许您选择要对该截图进行怎样的操作。"
+msgstr "<emphasis>“动作”</emphasis> 区域让您选择要在截图上执行的操作。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:197(title)
 msgid "Save"
@@ -258,8 +263,8 @@ msgid ""
 "file. A save dialog will be displayed. You will be able to set the save "
 "location, and the name of the file."
 msgstr ""
-"<emphasis>“保存”</emphasis> 选项将会将截图保存为一个 PNG 图像文件。将会显示一"
-"个保存对话框，以便您选择保存的位置和文件名。"
+"<emphasis>“保存”</emphasis> 选项将截图保存为 PNG 文件。会显示一"
+"保存对话框。您能够设置保存的位置和文件名。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:206(para)
 msgid ""
@@ -270,11 +275,11 @@ msgid ""
 "uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left "
 "column of the save dialog."
 msgstr ""
-"Xfce4 屏幕截图工具同样能够将截图保存到任何 GVfs 支持的远程文件系统上，例如 "
-"FTP、SAMBA、SFTP 或者通过 SSH 连接的远程计算机。您只需要通过 <emphasis>gvfs-"
-"connect</emphasis> 或者 <ulink type=\"http\" url=\"http://www.uvena.de/"
-"gigolo/\">Gigolo</ulink> 连接至远程计算机，该计算机就会出现在保存对话框的左侧"
-"栏上。"
+"Xfce4 屏幕截图工具同样能够在任何 GVfs 支持的远程文件系统上保存截图，"
+"例如 FTP、SAMBA、SFTP 或通过 SSH 连接的远程计算机...。您只需要使用 "
+"<emphasis>gvfs-connect</emphasis> 或 <ulink type=\"http\" url=\"http://www."
+"uvena.de/gigolo/\">Gigolo</ulink> 与远程计算机连接，"
+"它会出现在保存对话框的左侧栏上。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:218(title)
 msgid "Copy to the clipboard"
@@ -286,12 +291,12 @@ msgid ""
 "paste the screenshot in another application, such as a word processor. This "
 "option is only available when a clipboard manager is running."
 msgstr ""
-"<emphasis>“复制至剪贴板”</emphasis> 选项允许您粘贴截图至另外的应用程序，例如"
-"文本处理软件。该选项仅当剪贴板管理器运行时有效。"
+"<emphasis>“复制至剪贴板”</emphasis> 选项让您在其它应用程序中粘贴截图，"
+"比如文字处理器。此选项仅在剪贴板管理器运行时有效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:229(title)
 msgid "Open with"
-msgstr "以...打开"
+msgstr "打开方式"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:231(para)
 msgid ""
@@ -300,9 +305,8 @@ msgid ""
 "the drop-down list. Applications which support images are automatically "
 "detected and added to the drop-down list."
 msgstr ""
-"<emphasis>“以...打开”</emphasis> 选项保存屏幕截图至系统的缓存目录，并使用您从"
-"下拉列表中选择的应用程序将其打开。本程序将会自动检测支持图像的应用程序并将其"
-"添加至下拉列表之中。"
+"<emphasis>“打开方式”</emphasis> 选项在系统的缓存目录中保存截图并用您从下拉列表中选择"
+"的应用程序打开它。在下拉列表之中会自动检测并添加支持图片的应用程序。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:241(title)
 msgid "Host on ZimageZ"
@@ -316,19 +320,19 @@ msgid ""
 "small thumbnail of your screenshot, which can be used to create thumbnails "
 "pointing to the full size screenshot."
 msgstr ""
-"<emphasis>“上传至 ZimageZ”</emphasis> 选项将会将截图上传至 ZimageZ 这个免费的"
-"在线图像存储服务从而方便地与他人共享。ZimageZ 自动生成您上传的图像的大小两幅"
-"缩略图，可以用做指向完整大小图像的缩略图链接。"
+"<emphasis>“上传至 ZimageZ”</emphasis> 选项让您在免费的在线提供服务中上传您的截图，"
+"这样您就可以轻松地与其他人共享了。ZimageZ 自动给您上传的图片生成"
+"一个大幅和一个小幅缩略图，可以用来创建指向完整大小截图的缩略图。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:252(para)
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
 "this dialog:"
-msgstr "按下 <emphasis>\"OK\"</emphasis> 按钮后，下面对话框将会出现:"
+msgstr "按下 <emphasis>“确定”</emphasis> 按钮后，您会看到此对话框："
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
-msgstr "上传屏幕截图至 ZimageZ 的对话框"
+msgstr "在 ZimageZ 上上传截图的对话框"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:269(para)
 msgid ""
@@ -339,9 +343,9 @@ msgid ""
 "Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
 msgstr ""
 "如果您未拥有一个 ZimageZ 用户名，您需要在 <ulink type=\"http\" url=\"http://"
-"www.zimagez.com\">ZimageZ 网站</ulink>上创建一个用户。该网站支持多种语言，您"
-"可以使用右上角的菜单进行切换。您必须填写本对话框中的所有项目。当您点击 "
-"<emphasis>\"OK\"</emphasis> 按钮后，上传就会开始。"
+"www.zimagez.com\">ZimageZ website</ulink> 上创建一个用户。"
+"该网站支持多种语言，您可以使用右上角的菜单切换。您必须填写"
+"对话框中的所有项目。当您点击 <emphasis>“确定”</emphasis> 按钮后，上传就会开始。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:279(para)
 msgid ""
@@ -349,13 +353,12 @@ msgid ""
 "large thumbnail, the small thumbnails, as well examples of HTML and BBcode "
 "to create a thumbnail pointing to the full size screenshot:"
 msgstr ""
-"下面的对话框将会提供您在 ZimageZ 上该幅截图的完整大小，大缩略图和小缩略图的链"
-"接，此外还提供 HTML 和 BBcode 的代码例子以便您创建指向完整大小图像的缩略图链"
-"接。"
+"下面的对话框会带给您完整大小截图的链接，大缩略图、小缩略图，还有创建指向"
+"完整大小截图的缩略图的 HTML 和 BBcode 模板："
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr "提供您在 ZimageZ 上的屏幕截图链接的对话框"
+msgstr "提供您在 ZimageZ 上的截图链接的对话框"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:303(title)
 msgid "Via command line"
@@ -369,9 +372,9 @@ msgid ""
 "desktop environment so that it launches xfce4-screenshooter with one or "
 "several of the following options when the Prt Scrn key is pressed."
 msgstr ""
-"命令行选项允许您快速的进行屏幕截图。使用命令行操作同样允许您配置使用通常在键"
-"盘左上角的 Print Screen 按键进行屏幕截图。要这样做，请配置您桌面环境中的键盘"
-"快捷键绑定以在按下 Prt Scrn 键时以下一个或多个选项运行 xfce4-screenshooter。"
+"命令行选项让您快速截取截图。它们同样让您配置大多数键盘右上角的 Print "
+"Screen 键以便截取截图。要这样做，配置您的桌面环境中的键盘绑定以便在按"
+"下 Prt Scrn 键时 xfce4-screenshooter 带以下一个或多个选项启动。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:315(title)
 msgid "The command line options"
@@ -385,7 +388,7 @@ msgstr "-w 选项"
 msgid ""
 "The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
 "active window."
-msgstr "<emphasis>-w</emphasis> 选项允许您截取当前活动窗口的图像。"
+msgstr "<emphasis>-w</emphasis> 选项让您截取活动窗口的截图。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:327(title)
 msgid "The -f option"
@@ -395,7 +398,7 @@ msgstr "-f 选项"
 msgid ""
 "The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
 "entire screen."
-msgstr "<emphasis>-f</emphasis> 选项允许您截取整个屏幕的图像。"
+msgstr "<emphasis>-f</emphasis> 选项让您截取整个屏幕的截图。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:336(title)
 msgid "The -r option"
@@ -407,8 +410,8 @@ msgid ""
 "captured by clicking and dragging a rectangle over the area of screen that "
 "you wish to capture, before releasing the mouse button."
 msgstr ""
-"<emphasis>-r</emphasis> 选项允许您通过点击并拖拽鼠标后松开选择截取屏幕上一个"
-"矩形区域。"
+"<emphasis>-r</emphasis> 让您通过在松开鼠标按钮之前在您希望截取的屏幕区域点击"
+"并拉出一个矩形框选择要截取的区域。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:347(title)
 msgid "The -d option"
@@ -421,9 +424,8 @@ msgid ""
 "emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
 "is given."
 msgstr ""
-"给定 <emphasis>-d</emphasis> 选项，后接一个正整数以设置截图前延时。此选项仅在"
-"给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者<emphasis>-r</"
-"emphasis> 选项时生效。"
+"在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者<emphasis>-r</"
+"emphasis> 选项时 <emphasis>-d</emphasis> 选项后接一个正整数让您设置截取截图前的延时。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:359(title)
 msgid "The -s option"
@@ -436,8 +438,8 @@ msgid ""
 "has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or "
 "the <emphasis>-r</emphasis> option is given."
 msgstr ""
-"给定 <emphasis>-s</emphasis> 选项，后接一个已存在目录的路径，截图将会保存至该"
-"目录。此选项仅在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者"
+"<emphasis>-s</emphasis> 选项后接一个已存在文件夹的路径让您设置保存截图的位置。"
+"此选项仅在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者"
 "<emphasis>-r</emphasis> 选项时生效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:371(title)
@@ -452,8 +454,8 @@ msgid ""
 "emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, "
 "the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
-"给定 <emphasis>-o</emphasis> 选项，后接一个程序名，截图将会保存在系统的缓存目"
-"录，然后使用该程序打开截图。此选项仅在给定 <emphasis>-w</emphasis>、"
+"如果 <emphasis>-o</emphasis> 选项后接一个应用程序名称给定，会在系统的临时目录"
+"保存截图，并使用此应用程序打开截图。此选项仅在给定 <emphasis>-w</emphasis>、"
 "<emphasis>-f</emphasis> 或者 <emphasis>-r</emphasis> 选项时生效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:385(title)
@@ -467,9 +469,9 @@ msgid ""
 "effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
 "<emphasis>-r</emphasis> option is given."
 msgstr ""
-"给定 <emphasis>-u</emphasis> 选项，截图将会上传至 ZimageZ。查看上面章节以获得"
-"详细信息。此选项仅在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或"
-"者<emphasis>-r</emphasis> 选项时生效。"
+"如果给定 <emphasis>-u</emphasis> 选项，截图会上传至 ZimageZ。查看上述获取"
+"详情。此选项仅在给定 <emphasis>-w</emphasis>、<emphasis>-f</emphasis> 或者 "
+"<emphasis>-r</emphasis> 选项时生效。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:400(title)
 msgid "Using the Xfce panel plugin"
@@ -477,7 +479,7 @@ msgstr "使用 Xfce 面板插件"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:403(title)
 msgid "Adding the plugin"
-msgstr "添加该插件"
+msgstr "添加插件"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:405(para)
 msgid ""
@@ -485,12 +487,12 @@ msgid ""
 "<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
 "\"Screenshot\"</emphasis>, and add it."
 msgstr ""
-"要添加该插件至面板，请在面板上单击右键，选择 <emphasis>“添加新项目”</"
-"emphasis>。选择名为 <emphasis>“屏幕截图”</emphasis> 的插件然后添加。"
+"要在面板中添加插件，在面板上右击并选择 <emphasis>“添加新项目”</emphasis>。"
+"选择名称为 <emphasis>“截图”</emphasis> 的插件然后添加。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:413(title)
 msgid "Configuring the plugin"
-msgstr "配置该插件"
+msgstr "配置插件"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:415(para)
 msgid ""
@@ -499,24 +501,25 @@ msgid ""
 "similar to the dialog of the main application will appear. Please have a "
 "look above for the different preferences."
 msgstr ""
-"通过右键点击该插件按钮并选择 <emphasis>“属性”</emphasis> 选项，您可以配置该截"
-"图插件。一个与主程序的对话框相似的首选项对话框将会出现。请查看上面章节对不同"
-"选项的介绍。"
+"您可以通过在插件上右击并选择 <emphasis>“属性”</emphasis> 配置截图如何截取。"
+"会出现一个与主应用程序的对话框相似的首选项对话框。请看看上述获取不同的"
+"首选项。"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:425(title)
 msgid "Using the plugin"
-msgstr "使用该插件"
+msgstr "使用插件"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:427(para)
 msgid ""
 "To take a screenshot, just click on the plugin. You can use the scroll wheel "
 "on the plugin button to switch between the different regions to be captured."
 msgstr ""
-"点击该面板插件按钮以截图。您可以在鼠标悬浮在插件按钮上方时使用鼠标滚轮选择不"
-"同的截取范围。"
+"要截取截图，仅在插件上点击。您可以在插件按钮上使用鼠标滚轮在要截取的"
+"不同区域间切换。"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:0(None)
 msgid "translator-credits"
 msgstr ""
-"HuntXu <huntxu@live.cn>, 2009."
+"HuntXu <huntxu@live.cn>, 2009.\n"
+"Chipong Luo <chipong_l@yahoo.com>, 2011."
