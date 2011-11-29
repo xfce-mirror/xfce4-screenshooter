@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\\n\\n\\n\\n\\n\\n\\n\\n\\n\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -127,11 +127,11 @@ msgid ""
 "screenshot to a PNG file, copy it to the clipboard, open it using another "
 "application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com"
 "\">ZimageZ</ulink>, a free online image hosting service."
-msgstr ""
+msgstr "Програма дозволяє отримувати знімки екрану, активного вікна чи окремого регіону. Ви можете встановлювати затримку отримання знімку і вказати дію опісля: зберегти знімок до PNG файлу, скопіювати його до буферу обміну, відкрити іншим додатком, або розмістити на вільному онлайн сервісі <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in73(para)
 msgid "A plugin for the Xfce panel is also available."
-msgstr "Також доступний додаток для панелі XFCE."
+msgstr "Також доступний додаток для панелі Xfce."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in80(title)
 msgid "Using the application"
@@ -139,13 +139,13 @@ msgstr "Використання програми"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in83(title)
 msgid "Via the user interface"
-msgstr "За допомогою інтрфейсу користувача"
+msgstr "За допомогою інтерфейсу користувача"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in85(para)
 msgid ""
 "To launch the application, use the \"Screenshot\" item in the \"Accessories"
 "\" category of Xfce's main menu."
-msgstr ""
+msgstr "Для запуску використовуйте пункт \"Знімок екрану\", із категорії \"Інструменти\" головного меню Xfce."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in90(para)
 msgid "This window will be displayed:"
@@ -163,35 +163,35 @@ msgstr "Область для захоплення"
 msgid ""
 "The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
 "what the screenshot will be taken of:"
-msgstr ""
+msgstr "Секція <emphasis>\"Область захоплення\"</emphasis> дозволяє вказати область, з якої буде отримано знімок:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in115(listitem)
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr ""
+msgstr "\"Весь екран\" захоплюється весь екран, який ви бачите."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in119(listitem)
 msgid ""
 "\"Active window\" takes a screenshot of the active window. This will be the "
 "one that was active before this dialog appeared, or if you set a delay, the "
 "one that is active after the delay."
-msgstr ""
+msgstr "\"Активне вікно\" захоплюється активне вікно. Активним вважається вікно, яке було активним перед появою даного діалогового вікна, або, якщо ви встановили затримку, вікно, яке одразу стало активним після затримки."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in125(listitem)
 msgid ""
 "\"Select a region\" allows you to select a region to be captured by clicking "
 "and dragging a rectangle over the area of screen that you wish to capture, "
 "before releasing the mouse button."
-msgstr ""
+msgstr "\"Виділена область\" дозволяє отримати знімок певної області. Виберіть область для захоплення шляхом клацання мишкою на екрані і без відпускання кнопки пересуньте вказівник в інший кут області і тоді відпустіть кнопку миші."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in135(title)
 msgid "Capturing the pointer"
-msgstr "Захоплювати покажчик"
+msgstr "Захоплення курсору миші"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in137(para)
 msgid ""
 "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to "
 "select whether or not the screenshot will include the mouse pointer."
-msgstr ""
+msgstr "Параметр <emphasis>\"Захопити курсор миші\"</emphasis> дозволяє вказати, чи показувати на знімку вказівник миші."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in145(title)
 msgid "Delay before capturing"
@@ -214,7 +214,7 @@ msgstr "Після захоплення"
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button a second window will "
 "be displayed:"
-msgstr ""
+msgstr "Після натискання кнопки <emphasis>\"Гаразд\"</emphasis> відкриється наступне вікно:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in173(phrase)
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
@@ -228,7 +228,7 @@ msgstr "Перегляд"
 msgid ""
 "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
 "screenshot."
-msgstr ""
+msgstr "В секції <emphasis>\"Перегляд\"</emphasis> розташована мініатюра знімка."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in189(title)
 msgid "Action"
@@ -238,7 +238,7 @@ msgstr "Дія"
 msgid ""
 "The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
 "be performed on the screenshot."
-msgstr ""
+msgstr "Секція <emphasis>\"Дія\"</emphasis> містить доступні операції над отриманим знімком."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in197(title)
 msgid "Save"
@@ -249,7 +249,7 @@ msgid ""
 "The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG "
 "file. A save dialog will be displayed. You will be able to set the save "
 "location, and the name of the file."
-msgstr ""
+msgstr "Пункт <emphasis>\"Зберегти\"</emphasis> збереже знімок до PNG файлу. Відкриється діалог збереження, в якому можна вказати шлях і ім'я файлу."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in206(para)
 msgid ""
@@ -270,7 +270,7 @@ msgid ""
 "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to "
 "paste the screenshot in another application, such as a word processor. This "
 "option is only available when a clipboard manager is running."
-msgstr ""
+msgstr "Пункт <emphasis>\"Копіювати до буферу обміну\"</emphasis> дозволяє вставити знімок в інші програми, такі як текстовий процесор. Параметр доступний лише при наявності запущеного менеджера буферу обміну."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in229(title)
 msgid "Open with"
@@ -282,7 +282,7 @@ msgid ""
 "system's temporary directory and opens it with the application chosen from "
 "the drop-down list. Applications which support images are automatically "
 "detected and added to the drop-down list."
-msgstr ""
+msgstr "При встановленні параметру <emphasis>\"Відкрити з\"</emphasis> знімок зберігається до тимчасового файлу, який відкриває вибраною зі списку програмою. Програми з підтримкою зображень визначаються та додаються до списку автоматично."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in241(title)
 msgid "Host on ZimageZ"
@@ -301,7 +301,7 @@ msgstr ""
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
 "this dialog:"
-msgstr "Після натискання кнопки <emphasis>\"OK\"</emphasis>, Ви побачите цей діалог:"
+msgstr "Після натискання кнопки <emphasis>\"Гаразд\"</emphasis> відкриється наступне діалогове вікно:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
@@ -325,11 +325,11 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr ""
+msgstr "Діалог отримання посилання на знімок з ZimageZ"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in303(title)
 msgid "Via command line"
-msgstr "За допомогою командної стрічки"
+msgstr "За допомогою командного рядка"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in305(para)
 msgid ""
@@ -342,42 +342,42 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in315(title)
 msgid "The command line options"
-msgstr "Опції командної стрічки"
+msgstr "Параметри командного рядка"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in318(title)
 msgid "The -w option"
-msgstr "Опція -w"
+msgstr "Параметр -w"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in320(para)
 msgid ""
 "The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
 "active window."
-msgstr ""
+msgstr "Параметр <emphasis>-w</emphasis> дозволяє отримати знімок активного вікна."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in327(title)
 msgid "The -f option"
-msgstr "Опція -f"
+msgstr "Параметр -f"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in329(para)
 msgid ""
 "The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
 "entire screen."
-msgstr ""
+msgstr "Параметр <emphasis>-f</emphasis> дозволяє отримати знімок всього екрану."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in336(title)
 msgid "The -r option"
-msgstr "Опція -r"
+msgstr "Параметр -r"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in338(para)
 msgid ""
 "The <emphasis>-r</emphasis> option allows you to select a region to be "
 "captured by clicking and dragging a rectangle over the area of screen that "
 "you wish to capture, before releasing the mouse button."
-msgstr ""
+msgstr "Параметр <emphasis>-r</emphasis> дозволяє отримати знімок певної області. Виберіть область для захоплення шляхом клацання мишкою на екрані і без відпускання кнопки миші пересуньте вказівник в інший кут області і тоді відпустіть кнопку миші."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in347(title)
 msgid "The -d option"
-msgstr "Опція -d"
+msgstr "Параметр -d"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in349(para)
 msgid ""
@@ -385,11 +385,11 @@ msgid ""
 "to set the delay before taking the screenshot when the <emphasis>-w</"
 "emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
 "is given."
-msgstr ""
+msgstr "Параметр <emphasis>-d</emphasis> вказується додатним цілим числом, дозволяє встановити затримку перед захопленням знімку, коли вказаний параметр <emphasis>-w</emphasis>, <emphasis>-f</emphasis> чи <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in359(title)
 msgid "The -s option"
-msgstr "Опція -d"
+msgstr "Параметр -s"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in361(para)
 msgid ""
@@ -397,11 +397,11 @@ msgid ""
 "folder allows you to set where the screenshots are saved. This option only "
 "has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or "
 "the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Параметр <emphasis>-s</emphasis> вказує шлях на наявну теку для збереження знімків. Має сенс, якщо додатково вказаний параметр <emphasis>-w</emphasis>, <emphasis>-f</emphasis> чи <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in371(title)
 msgid "The -o option"
-msgstr "Опція -d"
+msgstr "Параметр -o"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in373(para)
 msgid ""
@@ -414,7 +414,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in385(title)
 msgid "The -u option"
-msgstr "Опція -u"
+msgstr "Параметр -u"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in387(para)
 msgid ""
@@ -437,7 +437,7 @@ msgid ""
 "To add the plugin to the panel, right click on the panel and select "
 "<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
 "\"Screenshot\"</emphasis>, and add it."
-msgstr ""
+msgstr "Щоб розмістити додаток на панелі, натисніть правою кнопкою на панелі і виберіть <emphasis>\"Додати нові елементи...\"</emphasis>. Виберіть додаток з назвою <emphasis>\"Знімок екрану\"</emphasis>, і додайте його."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in413(title)
 msgid "Configuring the plugin"
