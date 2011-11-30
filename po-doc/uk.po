@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -58,7 +58,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in12(title)
 msgid "Xfce4 Screenshooter"
-msgstr ""
+msgstr "Знімок екрану Xfce"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in17(year)
 msgid "2008"
@@ -204,7 +204,7 @@ msgid ""
 "emphasis> button and screenshot being taken. This delay will allow you to "
 "open menus or to perform whatever action you require to see displayed in the "
 "screenshot."
-msgstr ""
+msgstr "Секція <emphasis>\"Затримка перед захопленням\"</emphasis> дозволяє встановити затримку між натисканням кнопки <emphasis>\"Гаразд\"</emphasis> і отриманням знімку. Ця затримка дозволить вам відкрити меню або виконати будь-які дії, необхідні для фіксації результату на знімку."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in159(title)
 msgid "After capturing"
@@ -259,7 +259,7 @@ msgid ""
 "<emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www."
 "uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left "
 "column of the save dialog."
-msgstr ""
+msgstr "Xfce Screenshooter також може зберігати знімки на різні віддалені файлові системи, які підтримуються GVfs, такі як FTP, SAMBA, SFTP, віддалені комп'ютери з доступом через SSH... Для того, щоб файлова система була доступною в діалозі збереження, необхідно підключити її використовуючи <emphasis>gvfs-connect</emphasis> або <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in218(title)
 msgid "Copy to the clipboard"
@@ -295,7 +295,7 @@ msgid ""
 "easily with other people. ZimageZ automatically generates a large and a "
 "small thumbnail of your screenshot, which can be used to create thumbnails "
 "pointing to the full size screenshot."
-msgstr ""
+msgstr "Параметр <emphasis>\"Передати до ZimageZ\"</emphasis> дозволяє розмістити знімок на даному вільному сервісі, що дозволить вам поділитися ним з іншими людьми. ZimageZ автоматично генерує велику і зменшену мініатюру, щоб в подальшому використовувати їх як посилання на знімок натуральної величини."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in252(para)
 msgid ""
@@ -314,14 +314,14 @@ msgid ""
 "ulink>. Several languages are available on this website, you can switch "
 "between using the menu up right. You must fill all fields of this dialog. "
 "Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
-msgstr ""
+msgstr "Якщо не маєте облікового запису на ZimageZ, необхідно створити його на <ulink type=\"http\" url=\"http://www.zimagez.com\">веб-сайті ZimageZ</ulink>. На сайті доступно декілька мов, які переключаються у верхньому правому кутку. Необхідно заповнити всі поля даного діалогу. Щоб розпочати вивантаження, натисніть <emphasis>\"Гаразд\"</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in279(para)
 msgid ""
 "The dialog below will give you the links to the full size screenshot, the "
 "large thumbnail, the small thumbnails, as well examples of HTML and BBcode "
 "to create a thumbnail pointing to the full size screenshot:"
-msgstr ""
+msgstr "Наступний діалогове вікно надасть посилання на знімок в натуральну величину, велику і зменшену мініатюру, а також приклад для HTML та BBcode для створення вказівників на знімок:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
@@ -338,7 +338,7 @@ msgid ""
 "so that it takes screenshots. To do so, configure the key-bindings of your "
 "desktop environment so that it launches xfce4-screenshooter with one or "
 "several of the following options when the Prt Scrn key is pressed."
-msgstr ""
+msgstr "Параметри командного рядка дозволяють швидко отримати знімок. Це також дає можливість робити знімки кнопкою Print Screen, яка в більшості клавіатур розташована у верхній правій частині. Для цього треба налаштувати клавіатурні скорочення, вашого стільничного оточення, для запуску xfce4-screenshooter із одним чи декілька нижче вказаними параметрами кнопкою Prt Scrn."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in315(title)
 msgid "The command line options"
@@ -410,7 +410,7 @@ msgid ""
 "opened with the application whose name is to be given after <emphasis>-o</"
 "emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, "
 "the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Якщо вказаний параметр <emphasis>-o</emphasis> із подальшою назвою програми, то знімок буде збережений в тимчасовій теці системи, і відкритий вказаною програмою. Має сенс, якщо додатково вказаний параметр <emphasis>-w</emphasis>, <emphasis>-f</emphasis> чи <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in385(title)
 msgid "The -u option"
@@ -422,7 +422,7 @@ msgid ""
 "hosted on ZimageZ. See above for more details. This option only has an "
 "effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
 "<emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Якщо вказаний параметр <emphasis>-u</emphasis>, знімок буде розташований на ZimageZ. Деталі вказані вище. Має сенс, якщо додатково вказаний параметр <emphasis>-w</emphasis>, <emphasis>-f</emphasis> чи <emphasis>-r</emphasis>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in400(title)
 msgid "Using the Xfce panel plugin"
@@ -449,7 +449,7 @@ msgid ""
 "and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog "
 "similar to the dialog of the main application will appear. Please have a "
 "look above for the different preferences."
-msgstr ""
+msgstr "Для конфігурації додатку натисніть правою кнопкою миші на додатку і виберіть <emphasis>\"Властивості\"</emphasis>. З'явиться діалог налаштувань схожий із основною програмою. Для різних уподобань дивіться вище."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in425(title)
 msgid "Using the plugin"
@@ -459,7 +459,7 @@ msgstr "Використання додатку"
 msgid ""
 "To take a screenshot, just click on the plugin. You can use the scroll wheel "
 "on the plugin button to switch between the different regions to be captured."
-msgstr ""
+msgstr "Для отримання зображення натисніть на додатку. Можливо використовувати коліщатко прокрутки над додатком,  для переключення між різними регіонами захоплення."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in0(None)
