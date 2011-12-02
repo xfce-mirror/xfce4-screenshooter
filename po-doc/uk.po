@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for
 #. you.
@@ -113,11 +113,11 @@ msgstr "renmush@gmail.com"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in55(releaseinfo)
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
-msgstr "Цей посібник описує версію @PACKAGE_VERSION@ для знімків екрану Xfce4."
+msgstr "Даний посібник описує програму знімок екрану Xfce версії @PACKAGE_VERSION@."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in61(title)
 msgid "Introduction to Xfce4 Screenshooter"
-msgstr "Введення до знімків екрану Xfce4"
+msgstr "Введення до знімків екрану Xfce"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in63(para)
 msgid ""
@@ -127,7 +127,7 @@ msgid ""
 "screenshot to a PNG file, copy it to the clipboard, open it using another "
 "application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com"
 "\">ZimageZ</ulink>, a free online image hosting service."
-msgstr "Програма дозволяє отримувати знімки екрану, активного вікна чи окремого регіону. Ви можете встановлювати затримку отримання знімку і вказати дію опісля: зберегти знімок до PNG файлу, скопіювати його до буферу обміну, відкрити іншим додатком, або розмістити на вільному онлайн сервісі <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>."
+msgstr "Програма дозволяє отримувати знімки всієї області екрану, активного вікна чи окремого регіону. Ви можете встановлювати затримку отримання знімку і вказати дію опісля: зберегти знімок до PNG файлу, скопіювати його до буферу обміну, відкрити іншим додатком, або розмістити на вільному онлайн сервісі <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in73(para)
 msgid "A plugin for the Xfce panel is also available."
@@ -149,11 +149,11 @@ msgstr "Для запуску використовуйте пункт \"Знім
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in90(para)
 msgid "This window will be displayed:"
-msgstr "Це вікно буде показуватися:"
+msgstr "Відкриється вікно:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in101(phrase)
 msgid "The window of Xfce4 Screenshooter"
-msgstr "Вікно знімків екрану Xfce4"
+msgstr "Вікно знімків екрану Xfce"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in107(title)
 msgid "Region to capture"
