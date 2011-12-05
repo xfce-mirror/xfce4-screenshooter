@@ -60,7 +60,7 @@ msgstr "Allur skjárinn"
 #: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
-msgstr ""
+msgstr "Taka skjáskot af öllum skjánum"
 
 #: ../lib/screenshooter-dialogs.c:765
 msgid "Active window"
@@ -69,7 +69,7 @@ msgstr "Virkur gluggi"
 #: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
-msgstr ""
+msgstr "Taka skjáskot af virkum glugga"
 
 #: ../lib/screenshooter-dialogs.c:780
 msgid "Select a region"
@@ -89,15 +89,15 @@ msgstr "Hafa músarbendil með"
 
 #: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr ""
+msgstr "Sýna músina í skjáskoti"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Bið fyrir skjáskot</span>"
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
-msgstr ""
+msgstr "Bið í sekúndum áður enn skjáskot er tekið"
 
 #: ../lib/screenshooter-dialogs.c:841
 msgid "seconds"
@@ -134,19 +134,19 @@ msgstr "Opna með:"
 
 #: ../lib/screenshooter-dialogs.c:977
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Opna skjáskot með völdu forriti"
 
 #: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
 msgid "Application to open the screenshot"
-msgstr ""
+msgstr "Forrit til að opna skjáskotið"
 
 #: ../lib/screenshooter-dialogs.c:1005
 msgid "Host on ZimageZ"
-msgstr ""
+msgstr "Hýsa á ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
+msgstr "Hýsa skjáskotið á ZimageZ, frí mynda hýsing á netinu"
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -164,7 +164,7 @@ msgstr ""
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr ""
+msgstr "Villa kom upp þegar verið var að færa gögn til ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
@@ -202,7 +202,7 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
-msgstr ""
+msgstr "Skrá inn á ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
 msgid ""
@@ -218,12 +218,12 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
-msgstr ""
+msgstr "Hlaða upp skjáskoti..."
 
 #: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr ""
+msgstr "Villa kom upp þegar verið var að hlaða upp skjáskoti."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
@@ -232,11 +232,10 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:679
 msgid "Details about the screenshot for ZimageZ"
-msgstr ""
+msgstr "Upplýsingar um skjáskotið á ZimageZ"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:719
-#, fuzzy
 msgid "User:"
 msgstr "Notandi:"
 
@@ -244,21 +243,19 @@ msgstr "Notandi:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
+msgstr "ZimageZ notendanafn þitt, ef þú átt ekki slíkt þá geturu búið það til með vefsíðu tenglinum hérna að ofan"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
-#, fuzzy
 msgid "Password:"
 msgstr "Lykilorð:"
 
 #: ../lib/screenshooter-zimagez.c:746
 msgid "The password for the user above"
-msgstr ""
+msgstr "Lykilorð fyrir notandan hér fyrir ofan"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:752
-#, fuzzy
 msgid "Title:"
 msgstr "Titill:"
 
@@ -266,11 +263,10 @@ msgstr "Titill:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "Titillinn fyrir skjáskotið, það verður notað þegar verið er að skoða skjáskotið á ZimageZ"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
-#, fuzzy
 msgid "Comment:"
 msgstr "Athugasemd:"
 
@@ -278,30 +274,30 @@ msgstr "Athugasemd:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "Athugasemd á skjáskotinu, verður notað þegar verið er að skoða skjáskotið á ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Full mynd</a>"
 
 #: ../lib/screenshooter-zimagez.c:904
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Stór smámynd</a>"
 
 #: ../lib/screenshooter-zimagez.c:906
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Lítil smámynd</a>"
 
 #: ../lib/screenshooter-zimagez.c:922
 msgid "My screenshot on ZimageZ"
-msgstr ""
+msgstr "Skjáskotið mitt á ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:948
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tenglar</span>"
 
 #: ../lib/screenshooter-zimagez.c:987
 msgid ""
@@ -318,15 +314,15 @@ msgstr "HTML"
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1024
 msgid "BBCode for forums"
-msgstr ""
+msgstr "BBKóði fyrir spjallborð"
 
 #: ../lib/screenshooter-zimagez.c:1155
 msgid "ZimageZ"
-msgstr ""
+msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1188
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Staða</span>"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
@@ -372,4 +368,4 @@ msgstr ""
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid "Take screenshots of the entire screen, of the active window or of a region"
-msgstr ""
+msgstr "Taka skjáskot af öllum skjánum, af virkum glugga eða af einhverju svæði"
