@@ -1,33 +1,36 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-screenshooter\n"
+"Project-Id-Version: xfce4-screenshooter.master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-31 23:29+0200\n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2012-01-01 14:21+0200\n"
 "Last-Translator: Milen Milev <fanfolet@gmail.com>\n"
 "Language-Team: BULGARIAN\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Language: BULGARIAN\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%.2fKb от %.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:535
-#, fuzzy
 msgid "Transfer"
 msgstr "Прехвърляне"
 
 #: ../lib/screenshooter-dialogs.c:556
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Снимката е изпратена до:</span>"
 
 #: ../lib/screenshooter-dialogs.c:672
 #: ../lib/screenshooter-dialogs.c:689
@@ -82,19 +85,16 @@ msgid "Select a region to be captured by clicking a point of the screen without 
 msgstr "Избери района който искаш да бъде сниман, като кликнеш с мишката и задържиш докато стигнеш до другия диагонал на района, и тогава освободиш бутона на мишката."
 
 #: ../lib/screenshooter-dialogs.c:795
-#, fuzzy
 msgid "Capture the mouse pointer"
 msgstr "Изображение за курсор на мишката"
 
 #: ../lib/screenshooter-dialogs.c:800
-#, fuzzy
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Не показвай диалога за запис"
+msgstr "Покажи показалеца на мишката в снимката"
 
 #: ../lib/screenshooter-dialogs.c:816
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Район на прихващане</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Закъснение преди снимане</span>"
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
@@ -105,7 +105,6 @@ msgid "seconds"
 msgstr "секунди"
 
 #: ../lib/screenshooter-dialogs.c:893
-#, fuzzy
 msgid "Action"
 msgstr "Действие"
 
@@ -115,7 +114,6 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:938
-#, fuzzy
 msgid "Save"
 msgstr "Запис"
 
@@ -145,19 +143,17 @@ msgid "Application to open the screenshot"
 msgstr "Приложение за отваряне на снимките"
 
 #: ../lib/screenshooter-dialogs.c:1005
-#, fuzzy
 msgid "Host on ZimageZ"
-msgstr " Не може да се оперира върху \"..\"! "
+msgstr "Публикувай  на ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1009
 #: ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
+msgstr "Публикувай снимката на ZimageZ, безплатно онлайн място за снимки"
 
 #: ../lib/screenshooter-dialogs.c:1023
-#, fuzzy
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Преглед</span>"
 
 #: ../lib/screenshooter-dialogs.c:1084
 msgid "Save screenshot as..."
@@ -166,81 +162,76 @@ msgstr "Запиши снимката като..."
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr ""
+msgstr "Грешка при създаване на XMLRPC запитване."
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr ""
+msgstr "Грешка при изпращането на данните към ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr ""
+msgstr "Грешка при обработката на отговора от ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:210
-#, fuzzy, c-format
+#, c-format
 msgid "Taken on %s, at %s"
-msgstr "Debconf, %s"
+msgstr "Снимано на %s, в %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
-#, fuzzy
 msgid "Initialize the connection..."
-msgstr "Автоматично свързване"
+msgstr "Изграждане на връзката..."
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
+"Моля, попълнете следните полета с Вашите  <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"потребителско име, парола и подробности за снимката."
 
 #: ../lib/screenshooter-zimagez.c:385
-#, fuzzy
 msgid "Check the user information..."
-msgstr "Информация за версията"
+msgstr "Проверка на информацията за потребителя..."
 
 #: ../lib/screenshooter-zimagez.c:392
-#, fuzzy
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You must fill all the fields.</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Район на прихващане</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Попълнете всички полета.</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
-#, fuzzy
 msgid "Login on ZimageZ..."
-msgstr "Искане на парола при влизане"
+msgstr "Изпращане към ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:446
 #: ../lib/screenshooter-zimagez.c:597
 msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
-msgstr ""
+msgstr "Неочакван отговор от ZimageZ. Изпращането на снимката е неуспешно.."
 
 #: ../lib/screenshooter-zimagez.c:485
-#, fuzzy
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Потребителското име и паролата не съвпадат. Моля, опитайте пак. .</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
-#, fuzzy
 msgid "Upload the screenshot..."
-msgstr "Направи снимка на екрана"
+msgstr "Изпращане на снимката..."
 
 #: ../lib/screenshooter-zimagez.c:576
-#, fuzzy, c-format
+#, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "При изпращането на файла %s възникна грешка"
+msgstr "При изпращането на снимката възникна грешка."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
 msgid "Close the session on ZimageZ..."
-msgstr ""
+msgstr "Избери сесия на ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:679
-#, fuzzy
 msgid "Details about the screenshot for ZimageZ"
-msgstr "Забавяне в секунди, преди снимането да бъде извършено"
+msgstr "Подробности за снимката за ZimageZ"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:719
@@ -249,7 +240,7 @@ msgstr "Потребител:"
 
 #: ../lib/screenshooter-zimagez.c:730
 msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
-msgstr ""
+msgstr "Вашето потребителско име в ZimageZ, ако все още нямате, моля създайте си от връзката по-горе."
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -267,7 +258,7 @@ msgstr "Заглавие:"
 
 #: ../lib/screenshooter-zimagez.c:762
 msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
-msgstr ""
+msgstr "Заглавие на снимката, ще се използва при показването от ZimageZ."
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
@@ -276,7 +267,7 @@ msgstr "Коментар:"
 
 #: ../lib/screenshooter-zimagez.c:779
 msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
-msgstr ""
+msgstr "Коментар към снимката, ще бъде използван при показването от ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -313,11 +304,11 @@ msgstr "HTML"
 #. BB title
 #: ../lib/screenshooter-zimagez.c:1024
 msgid "BBCode for forums"
-msgstr "BBCodez за форуми"
+msgstr "BBCode за форуми"
 
 #: ../lib/screenshooter-zimagez.c:1155
 msgid "ZimageZ"
-msgstr ""
+msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1188
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -333,7 +324,7 @@ msgstr "Покажи мишката на снимката"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
-msgstr "Папка, в която снимките да бъдат записвани"
+msgstr "Директория където снимките да бъдат записвани"
 
 #: ../src/main.c:85
 msgid "Version information"
@@ -342,12 +333,12 @@ msgstr "Информация за версията"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Конфликт на опции: --%s и --%s не могат да се използват едновременно.\n"
 
 #: ../src/main.c:136
 #, c-format
 msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
-msgstr ""
+msgstr "Опцията --%s се употребява само когато са зададени --fullscreen, --window или  --region. Ще бъде пропусната.\n"
 
 #: ../src/main.c:150
 #, c-format
@@ -356,7 +347,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s: %s\n"
-"Въведи %s --help за пълен списък от налични команди.\n"
+"Въведи %s --help за да видиш пълния списък от налични команди.\n"
 
 #: ../src/main.c:297
 #, c-format
@@ -366,59 +357,5 @@ msgstr "%s е невалидна директория, ще бъде изпол�
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Направи снимка на целия екран, от активния прозорец или от район"
+msgstr "Направи снимка на целия екран, от активния прозорец или от района"
 
-#, fuzzy
-#~ msgid "_Open Link"
-#~ msgstr "Отвори с:"
-
-#, fuzzy
-#~ msgid "Screenshot.png"
-#~ msgstr "Screenshot.png"
-
-#~ msgid "Screenshot-%d.png"
-#~ msgstr "Screenshot-%d.png"
-
-#, fuzzy
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-#~ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
-
-#, fuzzy
-#~ msgid "Show the save dialog"
-#~ msgstr "Не показвай диалога за запис"
-
-#, fuzzy
-#~ msgid "Close the application"
-#~ msgstr "Приложение:"
-
-#~ msgid "Default save location"
-#~ msgstr "Място за запис  по подразбиране"
-
-#~ msgid "Set the default save location"
-#~ msgstr "Настрой място за запис по подразбиране"
-
-#~ msgid "Do not display the save dialog"
-#~ msgstr "Не показвай диалога за запис"
-
-#, fuzzy
-#~ msgid "Tak a screenshot of the entire screen"
-#~ msgstr "Направи снимка на целия екран"
-
-#, fuzzy
-#~ msgid "Applicatio to open the screenshot"
-#~ msgstr "Приложение за отваряне на снимките"
-
-#, fuzzy
-#~ msgid "Display the save dialog"
-#~ msgstr "Не показвай диалога за запис"
-
-#~ msgid "Save by default to:"
-#~ msgstr "По подразбиране записва в:"
-
-#~ msgid ""
-#~ "If checked, the screenshot will be saved by default to the location set "
-#~ "on the right without displaying a save dialog"
-#~ msgstr ""
-#~ "Ако бъде маркирано, снимката ще бъде записвана в мястото  по "
-#~ "подразбиране, без показване на диалога за запис"
