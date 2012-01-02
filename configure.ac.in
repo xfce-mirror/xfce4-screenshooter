@@ -35,8 +35,8 @@ AM_PROG_CC_C_O()
 dnl **************************
 dnl *** Initialize libtool ***
 dnl **************************
-AC_DISABLE_STATIC()
-AC_PROG_LIBTOOL()
+LT_PREREQ([2.2.6])
+LT_INIT([disable-static])
 
 dnl **********************************
 dnl *** Check for standard headers ***
