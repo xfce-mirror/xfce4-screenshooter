@@ -1,3 +1,8 @@
+=== Version x.x.x ===
+
+  * Bugs fixed:
+    - Fix crash with some window managers (bug #8080). Bruno Ramos.
+
 === Version 1.8.0 ===
 
   * Gtk 2.16, libxfce4ui and exo are now required.
