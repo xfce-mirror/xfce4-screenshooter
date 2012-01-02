@@ -43,6 +43,7 @@ lib_libscreenshooter_la_CFLAGS = \
   -DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_libscreenshooter_la_LIBADD = \
+  -lm \
 	@EXO_LIBS@ \
   @GTK_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
@@ -86,7 +87,7 @@ src_xfce4_screenshooter_CFLAGS = \
 	@GTHREAD_CFLAGS@ \
 	@SOUP_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
-	
+
 src_xfce4_screenshooter_LDFLAGS = \
 	@EXO_LIBS@ \
 	@GTK_LIBS@ \
@@ -97,7 +98,7 @@ src_xfce4_screenshooter_LDFLAGS = \
 	@LIBXFCE4UI_LIBS@
 
 src_xfce4_screenshooter_LDADD = lib/libscreenshooter.la
-	
+
 src_xfce4_screenshooter_SOURCES = src/main.c
 
 # Desktop file for the application
