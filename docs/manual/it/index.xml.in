@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY date "February 2009">
+<!ENTITY version "@PACKAGE_VERSION@">
+<!ENTITY application "@PACKAGE_NAME@">
+]>
+<article id="index" lang="it">
+
+  <!-- Header -->
+  <articleinfo>
+    <title>Xfce4 Screenshooter</title>
+
+    <pubdate>&date;</pubdate>
+
+    <copyright>
+      <year>2008</year>
+      <year>2009</year>
+      <holder>Jérôme Guelfucci</holder>
+    </copyright>
+
+    <copyright>
+      <year>2009</year>
+      <holder>Sam Swift</holder>
+    </copyright><copyright><year>2009, 2010.</year><holder>Cristian Marchi (cri.penta@gmail.com)</holder></copyright>
+
+    <legalnotice id="legalnotice">
+      <para>È garantito il diritto di copiare, distribuire e/o modificare questo documento nel rispetto dei termini della licenza GNU Free Documentation License, versione 1.1 o qualsiasi versione successiva pubblicata dalla Free Software Foundation; senza Invariant Section senza testi di Front-Cover e senza testi di Back-Cover. Il testo completo della licenza è reso disponibile dalla <ulink type="http" url="http://www.gnu.org/">Free Software Foundation</ulink>. </para>
+    </legalnotice>
+
+    <authorgroup>
+      <author>
+        <firstname>Jérôme</firstname>
+        <surname>Guelfucci</surname>
+        <affiliation>
+          <address><email>jeromeg@xfce.org</email></address>
+        </affiliation>
+      </author>
+      <author>
+        <firstname>Sam</firstname>
+        <surname>Swift</surname>
+        <affiliation>
+          <address><email>renmush@gmail.com</email></address>
+        </affiliation>
+      </author>
+    </authorgroup>
+
+    <releaseinfo>Questo manuale descrive la versione @PACKAGE_VERSION@ di Xfce4 Screenshooter.</releaseinfo>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Introduzione a Xfce4 screenshooter</title>
+
+    <para>Questa applicazione consente di catturare l'intero schermo, la finestra attiva o una regione selezionata. È possibile anche impostare il ritardo prima che l'istantanea venga catturata e l'azione da eseguire con essa: salvarla in un file PNG, copiarla negli appunti, aprirla utilizzando un'altra applicazione o caricarla su <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, un servizio gratuito di hosting online delle immagini.</para>
+
+    <para>È inoltre disponibile un plugin per il pannello di Xfce</para>
+
+  </sect1>
+
+  <sect1 id="using-the-application">
+    <title>Utilizzare l'applicazione</title>
+
+    <sect2 id="user-interface">
+      <title>Attraverso l'interfaccia utente</title>
+
+      <para>Per lanciare l'applicazione, utilizzare l'elemento «Istantanea» nella categoria «Accessori» del menu principale di Xfce.</para>
+
+      <para>Verrà visualizzata questa finestra:</para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog1.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>La finestra di Xfce4 screenshooter</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect4 id="region-to-capture">
+        <title>Regione da catturare</title>
+
+        <para>La sezione <emphasis>«Regione da catturare»</emphasis> permette di impostare la regione di cui deve essere catturata l'istantanea:</para>
+
+        <itemizedlist>
+          <listitem>«Schermo intero» cattura un'istantanea di tutto lo schermo così com'è visualizzato.</listitem>
+          <listitem>«Finestra attiva» cattura un'istantanea della finestra attiva (o meglio di quella attiva prima della comparsa di questa finestra) o, se è stato impostato un ritardo, quella attiva allo scadere di quest'ultimo.</listitem>
+          <listitem>«Porzione di schermo» permette di selezionare una regione da catturare facendo clic su un punto dello schermo con il mouse, trascinandolo e rilasciandolo all'angolo opposto della regione.</listitem>
+        </itemizedlist>
+      </sect4>
+
+      <sect4 id="include-pointer">
+        <title>Cattura del puntatore</title>
+
+        <para>L'opzione <emphasis>«Includi il puntatore del mouse»</emphasis> permette di indicare al programma se catturare o meno nell'istantanea il puntatore del mouse.</para>
+      </sect4>
+
+      <sect4 id="delay">
+        <title>Attesa prima della cattura</title>
+
+        <para>La sezione <emphasis>«Attesa prima della cattura»</emphasis> permette di impostare il ritardo tra la pressione del pulsante <emphasis>«OK»</emphasis> e l'effettiva cattura dell'istantanea. Questo ritardo consente di aprire i menu o preparare qualsiasi altra operazione che si desidera venga catturata dall'istantanea.</para>
+      </sect4>
+    </sect2>
+    
+    <sect3 id="after-capturing">
+      <title>Dopo la cattura</title>
+      
+      <para>Dopo aver premuto il pulsante <emphasis>«OK»</emphasis>, verrà visualizzata una seconda finestra:</para>
+
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/xfce4-screenshooter-dialog2.png" format="PNG"/>
+          </imageobject>
+
+          <textobject>
+            <phrase>La finestra di Xfce4 Screenshooter dopo aver catturato un'istantanea</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+
+      <sect4 id="preview">
+        <title>Anteprima</title> 
+
+        <para>La sezione <emphasis>«Anteprima»</emphasis> visualizza una miniatura dell'istantanea.</para>
+      </sect4>
+
+      <sect4 id="action">
+        <title>Azione</title>
+
+        <para>La sezione <emphasis>«Azione»</emphasis> permette di scegliere l'operazione da eseguire con l'istantanea.</para>
+
+        <sect5 id="save">
+          <title>Salva</title>
+
+          <para>L'opzione <emphasis>"Salva"</emphasis> permette di salvare l'istantanea in formato PNG. Verrà visualizzata una finestra di salvataggio in cui sarà possibile selezionare la posizione e il nome del file.</para>
+
+          <para>Xfce4 Screenshooter è inoltre in grado di salvare l'istantanea in qualsiasi file system remoto supportato da GVfs, quali FTP, SAMBA, SFTP, computer remoti accessibili via SSH... È semplicemente necessario connettere questi file system remoti utilizzando <emphasis>gvfs-connect</emphasis> o <ulink type="http" url="http://www.uvena.de/gigolo/">Gigolo</ulink> e verranno resi disponibili nella colonna di sinistra della finestra di salvataggio.</para>
+        </sect5>
+
+        <sect5 id="copy-to-clipboard">
+          <title>Copia negli appunti</title>
+
+          <para>L'opzione <emphasis>«Copia negli appunti»</emphasis> permette di incollare l'istantanea in un'altra applicazione, quale un elaboratore di testi. Questa opzione è disponibile solo se è in esecuzione un gestore di appunti.</para>
+        </sect5>
+
+        <sect5 id="open-with">
+          <title>Apri con</title>
+
+          <para>L'opzione <emphasis>«Apri con»</emphasis> salva l'istantanea nella cartella temporanea di sistema e la apre con l'applicazione impostata utilizzando la lista a comparsa sulla destra. Le applicazioni che supportano le immagini vengono rilevate automaticamente e aggiunte all'elenco.</para>
+        </sect5>
+
+        <sect5 id="zimagez">
+          <title>Ospita su ZimageZ</title>
+          
+          <para>L'opzione <emphasis>«Ospita su ZimageZ»</emphasis> permette all'utente di far ospitare la propria istantanea su questo servizio gratuito online, in modo da poterla condividere più facilmente con altre persone. ZimageZ genera automaticamente una miniatura grande e una piccola dell'istantanea, che possono essere usate per creare dei collegamenti che puntano all'immagine a dimensione intera.</para>
+
+          <para>Dopo aver premuto il pulsante <emphasis>«OK»</emphasis>, verrà visualizzata la seguente finestra:</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-login-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>La finestra per poter far ospitare un'istantanea su ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+          <para>Se non si è in possesso di un nome utente per ZimageZ, sarà necessario crearne uno dal <ulink type="http" url="http://www.zimagez.com">sito di ZimageZ</ulink>. Questo sito è disponibile in diverse lingue che possono essere selezionate utilizzando il menu in alto a destra. È necessario compilare tutti i campi in questa finestra. Una volta premuto il tasto <emphasis>«OK»</emphasis>, il caricamento avrà inizio.</para>
+          
+          <para>La finestra più sotto fornirà il collegamento all'istantanea a dimensione intera, alla miniatura grande, a quella piccola, ma anche a esempi di codice HTML e BBcode utili per creare una miniatura che punta all'istantanea a dimensione intera:</para>
+
+          <screenshot>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/xfce4-screenshooter-zimagez-result-dialog.png" format="PNG"/>
+              </imageobject>
+
+              <textobject>
+                <phrase>La finestra che fornisce il collegomento alla propria istantanea su ZimageZ</phrase>
+              </textobject>
+            </mediaobject>
+          </screenshot>
+
+        </sect5>
+      </sect4>
+    </sect3>
+
+    <sect2 id="command-line">
+      <title>Attraverso la linea di comando</title>
+
+      <para>Le opzioni da linea di comando forniscono un metodo più veloce per catturare delle istantanee. Esse consentono anche di configurare il tasto «Print Screen» presente in alto a sinistra nella maggior parte delle tastiere in modo da utilizzarlo per catturare delle istantanee. Per farlo, occorre configurare il keybinding del proprio ambiente grafico in modo che xfce4-screenshooter venga lanciato con una o più delle seguenti opzioni nel momento in cui viene premuto il tasto «Print Screen».</para>
+
+      <sect3 id="options">
+        <title>Le opzioni per la linea di comando</title>
+
+        <sect4 id="w-option">
+          <title>L'opzione -w</title>
+
+          <para>L'opzione <emphasis>-w</emphasis> consente di catturare un'istantanea della finestra attiva.</para>
+        </sect4>
+
+        <sect4 id="f-option">
+          <title>L'opzione -f</title>
+
+          <para>L'opzione <emphasis>-f</emphasis> consente di catturare un'istantanea di tutto lo schermo.</para>
+        </sect4>
+
+        <sect4 id="r-option">
+          <title>L'opzione -r</title>
+
+          <para>L'opzione <emphasis>-r</emphasis> consente di selezionare una regione da catturare facendo clic su un punto dello schermo con il mouse, trascinandolo e rilasciandolo all'angolo opposto della regione.</para>
+        </sect4>
+
+        <sect4 id="d-option">
+          <title>L'opzione -d</title>
+
+          <para>L'opzione <emphasis>-d</emphasis> seguita da un numero intero positivo, consente di impostare il ritardo con cui deve essere catturata l'istantanea quando è fornita l'opzione <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o <emphasis>-r</emphasis>.</para>
+        </sect4>
+
+        <sect4 id="s-option">
+          <title>L'opzione -s</title>
+
+          <para>L'opzione <emphasis>-s</emphasis> seguita da un percorso relativo a una cartella esistente, consente di impostare la posizione in cui l'istantanea verrà salvata. Questa opzione ha effetto solo se utilizzata congiuntamente con l'opzione <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o <emphasis>-r</emphasis>.</para>
+        </sect4>
+
+        <sect4 id="o-option">
+          <title>L'opzione -o</title>
+
+          <para>Se è fornita l'opzione <emphasis>-o</emphasis>, seguita dal nome di un'applicazione, l'istantanea verrà salvata nella cartella temporanea di sistema e aperta con il programma il cui comando di avvio è fornito dopo l'opzione <emphasis>-o</emphasis>. Questa opzione è applicabile solamente se è fornito l'argomento <emphasis>-w</emphasis>,<emphasis>-f</emphasis> o <emphasis>-r</emphasis>.</para>
+        </sect4>
+
+        <sect4 id="u-option">
+          <title>L'opzione -u</title>
+
+          <para>Se è fornita l'opzione <emphasis>-u</emphasis>, l'immagine verrà caricata su ZimageZ (consultare i paragrafi successivi per maggiori detagli). Questa opzione ha effetto solamente se associata all'opzione <emphasis>-w</emphasis>, <emphasis>-f</emphasis> o <emphasis>-r</emphasis>.</para>
+        </sect4>
+      </sect3>
+    </sect2>
+  </sect1>
+
+  <sect1 id="panel-plugin">
+    <title>Utilizzare il plugin per il pannello di Xfce</title>
+
+    <sect2 id="add">
+      <title>Aggiungere il plugin</title>
+
+      <para>Per aggiungere il plugin al pannello, fare clic con il tasto destro del mouse sul pannello e selezionare la voce <emphasis>«Aggiungi nuovi elementi...»</emphasis>. Selezionare il plugin denominato <emphasis>«Istantanea»</emphasis> e aggiungerlo.</para>
+    </sect2>
+
+    <sect2 id="set">
+      <title>Configurare il plugin</title>
+
+      <para>È possibile configurare la modalità con cui l'istantanea viene catturata facendo clic con il tasto destro del mouse sull'icona del plugin e selezionando <emphasis>«Proprietà»</emphasis>. Apparirà una finestra delle preferenze simile a quella dell'applicazione principale. Consultare i paragrafi precedenti per una descrizione delle diverse preferenze.</para>
+    </sect2>
+
+    <sect2 id="use">
+      <title>Utilizzare il plugin</title>
+
+      <para>Per catturare un'istantanea è sufficiente fare clic sull'icona del plugin. Utilizzando la rotella del mouse è possibile scorrere tra le diverse regioni da catturare.</para>
+    </sect2>
+
+  </sect1>
+
+</article>

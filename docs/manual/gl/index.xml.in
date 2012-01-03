@@ -4,7 +4,7 @@
 <!ENTITY version "@PACKAGE_VERSION@">
 <!ENTITY application "@PACKAGE_NAME@">
 ]>
-<article id="xfce4-screenshooter" lang="gl">
+<article id="index" lang="gl">
 
   <!-- Header -->
   <articleinfo>
@@ -56,7 +56,7 @@
   <sect1 id="intro">
     <title>Introdución a Xfce4 Screenshooter</title>
 
-    <para>Este aplicativo permítelle capturar toda a pantalla, a fiestra activa ou unha zona seleccionada. Pode definir o tempo de espera que transcorre antes de que se tome a captura de pantalla e a acción que se realizará ca captura de pantalla: gardala nun ficheiro PNG, copiala ao portarretallos, abrila usando outro aplicativo, ou aloxala en <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, un servizo de aloxamento de imaxes en liña gratuito.</para>
+    <para>Este aplicativo permítelle capturar toda a pantalla, a xanela activa ou unha zona seleccionada. Pode definir o tempo de espera que transcorre antes de que se tome a captura de pantalla e a acción que se realizará ca captura de pantalla: gardala nun ficheiro PNG, copiala ao portarretallos, abrila usando outro aplicativo, ou aloxala en <ulink type="http" url="http://www.zimagez.com">ZimageZ</ulink>, un servizo de aloxamento de imaxes en liña gratuito.</para>
 
     <para>Tamén hai un engadido para o panel de Xfce.</para>
 
@@ -70,7 +70,7 @@
 
       <para>Para iniciar a aplicación use o elemento "Captura de pantalla" na categoría "Accesorios" do menú principal de Xfce.</para>
 
-      <para>Mostrarase esta fiestra:</para>
+      <para>Mostrarase esta xanela:</para>
 
       <screenshot>
         <mediaobject>
@@ -79,7 +79,7 @@
           </imageobject>
 
           <textobject>
-            <phrase>A fiestra de Xfce4 Screenshooter</phrase>
+            <phrase>A xanela de Xfce4 Screenshooter</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -91,7 +91,7 @@
 
         <itemizedlist>
           <listitem>"Toda a pantalla" toma unha captura de pantalla da pantalla completa tal como a ve vostede.</listitem>
-          <listitem>"Fiestra activa" realiza unha captura de pantalla da fiestra activa, sendo esta a que estaba activa antes de que aparecera este diálogo, ou se se define un tempo de espera, a que estea activa cando remate dito tempo de espera.</listitem>
+          <listitem>"Xanela activa" realiza unha captura de pantalla da xanela activa, sendo esta a que estaba activa antes de que aparecera este diálogo, ou se se define un tempo de espera, a que estea activa cando remate dito tempo de espera.</listitem>
           <listitem>"Seleccionar unha zona" permítelle seleccionar a zona a capturar premendo nun punto da pantalla e sen soltar o botón do rato, arrastrando o punteiro do rato á esquina oposta da zona, e soltando o botón do rato.</listitem>
         </itemizedlist>
       </sect4>
@@ -112,7 +112,7 @@
     <sect3 id="after-capturing">
       <title>Despois de capturar</title>
       
-      <para>Despois de premer no botón <emphasis>"Aceptar"</emphasis> háselle mostrar unha segunda fiestra:</para>
+      <para>Despois de premer no botón <emphasis>"Aceptar"</emphasis> háselle mostrar unha segunda xanela:</para>
 
       <screenshot>
         <mediaobject>
@@ -121,7 +121,7 @@
           </imageobject>
 
           <textobject>
-            <phrase>A fiestra de Xfce4 Screenshooter despois de realizar unha captura de pantalla</phrase>
+            <phrase>A xanela de Xfce4 Screenshooter despois de realizar unha captura de pantalla</phrase>
           </textobject>
         </mediaobject>
       </screenshot>
@@ -197,17 +197,17 @@
     </sect3>
 
     <sect2 id="command-line">
-      <title>A través da liña de comandos</title>
+      <title>A través da liña de ordes</title>
 
-      <para>As opcións de liña de comandos permítenlle realizar capturas de pantalla rapidamente. Tamén lle permiten configurar a tecla Imprimir pantalla que está na parte superior dereita da maior parte dos teclados de xeito que realice capturas de pantalla. Para facer isto, configure as asociacións de teclas do seu ambiente de escritorio de forma que inicie xfce4-screenshooter con unha ou varias das seguintes opcións cando se prema a tecla Impr pant.</para>
+      <para>As opcións de liña de ordes permítenlle realizar capturas de pantalla rapidamente. Tamén lle permiten configurar a tecla Imprimir pantalla que está na parte superior dereita da maior parte dos teclados de xeito que realice capturas de pantalla. Para facer isto, configure as asociacións de teclas do seu ambiente de escritorio de forma que inicie xfce4-screenshooter con unha ou varias das seguintes opcións cando se prema a tecla Impr pant.</para>
 
       <sect3 id="options">
-        <title>As opcións de liña de comandos</title>
+        <title>As opcións de liña de ordes</title>
 
         <sect4 id="w-option">
           <title>A opción -w</title>
 
-          <para>A opción <emphasis>-w</emphasis> permítelle realizar unha captura de pantalla da fiestra activa.</para>
+          <para>A opción <emphasis>-w</emphasis> permítelle realizar unha captura de pantalla da xanela activa.</para>
         </sect4>
 
         <sect4 id="f-option">

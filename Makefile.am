@@ -179,27 +179,27 @@ install-data-hook:
 
 # Documentation
 noinst_DATA = \
-	docs/manual/C/xfce4-screenshooter.xml	\
-	docs/manual/ast/xfce4-screenshooter.xml \
-	docs/manual/ca/xfce4-screenshooter.xml \
-	docs/manual/da/xfce4-screenshooter.xml \
-	docs/manual/es/xfce4-screenshooter.xml \
-	docs/manual/fr/xfce4-screenshooter.xml \
-	docs/manual/gl/xfce4-screenshooter.xml \
-	docs/manual/id/xfce4-screenshooter.xml \
-	docs/manual/it/xfce4-screenshooter.xml \
-	docs/manual/ja/xfce4-screenshooter.xml \
-	docs/manual/pt/xfce4-screenshooter.xml \
-	docs/manual/tr/xfce4-screenshooter.xml \
-	docs/manual/zh_CN/xfce4-screenshooter.xml
+	docs/manual/C/index.xml	\
+	docs/manual/ast/index.xml \
+	docs/manual/ca/index.xml \
+	docs/manual/da/index.xml \
+	docs/manual/es/index.xml \
+	docs/manual/fr/index.xml \
+	docs/manual/gl/index.xml \
+	docs/manual/id/index.xml \
+	docs/manual/it/index.xml \
+	docs/manual/ja/index.xml \
+	docs/manual/pt/index.xml \
+	docs/manual/tr/index.xml \
+	docs/manual/zh_CN/index.xml
 
 # Asturian documentation
 astdocdir = $(datadir)/xfce4/doc/ast
-astdoc_DATA = docs/manual/ast/xfce4-screenshooter.html
+astdoc_DATA = docs/manual/ast/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/ast/xfce4-screenshooter.html: docs/manual/ast/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/ast/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ast/xfce4-screenshooter.xml
+docs/manual/ast/index.html: docs/manual/ast/index.xml
+	$(XSLTPROC) -o docs/manual/ast/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ast/index.xml
 endif
 endif
 
@@ -212,16 +212,16 @@ astimages_DATA = \
 
 
 # C documentation
-cdocdir = $(datadir)/xfce4/doc/C
-cdoc_DATA = docs/manual/C/xfce4-screenshooter.html
+cdocdir = $(datadir)/doc/xfce4-screenshooter/html/C/
+cdoc_DATA = docs/manual/C/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/C/xfce4-screenshooter.html: docs/manual/C/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/C/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/C/xfce4-screenshooter.xml
+docs/manual/C/index.html: docs/manual/C/index.xml
+	$(XSLTPROC) -o docs/manual/C/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/C/index.xml
 endif
 endif
 
-cimagesdir = $(datadir)/xfce4/doc/C/images
+cimagesdir = $(datadir)/doc/xfce4-screenshooter/html/C/images
 cimages_DATA = \
 	docs/manual/C/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/C/images/xfce4-screenshooter-dialog2.png \
@@ -230,16 +230,16 @@ cimages_DATA = \
 
 
 # Catalan documentation
-cadocdir = $(datadir)/xfce4/doc/ca
-cadoc_DATA = docs/manual/ca/xfce4-screenshooter.html
+cadocdir = $(datadir)/doc/xfce4-screenshooter/html/ca
+cadoc_DATA = docs/manual/ca/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/ca/xfce4-screenshooter.html: docs/manual/ca/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/ca/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ca/xfce4-screenshooter.xml
+docs/manual/ca/index.html: docs/manual/ca/index.xml
+	$(XSLTPROC) -o docs/manual/ca/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ca/index.xml
 endif
 endif
 
-caimagesdir = $(datadir)/xfce4/doc/ca/images
+caimagesdir = $(datadir)/doc/xfce4-screenshooter/html/ca/images
 caimages_DATA = \
 	docs/manual/ca/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/ca/images/xfce4-screenshooter-dialog2.png \
@@ -248,16 +248,16 @@ caimages_DATA = \
 
 
 # Danish documentation
-dadocdir = $(datadir)/xfce4/doc/da
-dadoc_DATA = docs/manual/da/xfce4-screenshooter.html
+dadocdir = $(datadir)/doc/xfce4-screenshooter/html/da
+dadoc_DATA = docs/manual/da/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/da/xfce4-screenshooter.html: docs/manual/da/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/da/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/da/xfce4-screenshooter.xml
+docs/manual/da/index.html: docs/manual/da/index.xml
+	$(XSLTPROC) -o docs/manual/da/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/da/index.xml
 endif
 endif
 
-daimagesdir = $(datadir)/xfce4/doc/da/images
+daimagesdir = $(datadir)/doc/xfce4-screenshooter/html/da/images
 daimages_DATA = \
 	docs/manual/da/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/da/images/xfce4-screenshooter-dialog2.png \
@@ -265,16 +265,16 @@ daimages_DATA = \
 	docs/manual/da/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # Portuguese documentation
-ptdocdir = $(datadir)/xfce4/doc/pt
-ptdoc_DATA = docs/manual/pt/xfce4-screenshooter.html
+ptdocdir = $(datadir)/doc/xfce4-screenshooter/html/pt
+ptdoc_DATA = docs/manual/pt/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/pt/xfce4-screenshooter.html: docs/manual/pt/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/pt/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/pt/xfce4-screenshooter.xml
+docs/manual/pt/index.html: docs/manual/pt/index.xml
+	$(XSLTPROC) -o docs/manual/pt/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/pt/index.xml
 endif
 endif
 
-ptimagesdir = $(datadir)/xfce4/doc/pt/images
+ptimagesdir = $(datadir)/doc/xfce4-screenshooter/html/pt/images
 ptimages_DATA = \
 	docs/manual/pt/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/pt/images/xfce4-screenshooter-dialog2.png \
@@ -282,16 +282,16 @@ ptimages_DATA = \
 	docs/manual/pt/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # Spanish documentation
-esdocdir = $(datadir)/xfce4/doc/es
-esdoc_DATA = docs/manual/es/xfce4-screenshooter.html
+esdocdir = $(datadir)/doc/xfce4-screenshooter/html/es
+esdoc_DATA = docs/manual/es/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/es/xfce4-screenshooter.html: docs/manual/es/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/es/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/es/xfce4-screenshooter.xml
+docs/manual/es/index.html: docs/manual/es/index.xml
+	$(XSLTPROC) -o docs/manual/es/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/es/index.xml
 endif
 endif
 
-esimagesdir = $(datadir)/xfce4/doc/es/images
+esimagesdir = $(datadir)/doc/xfce4-screenshooter/html/es/images
 esimages_DATA = \
 	docs/manual/es/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/es/images/xfce4-screenshooter-dialog2.png \
@@ -299,16 +299,16 @@ esimages_DATA = \
 	docs/manual/es/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # French documentation
-frdocdir = $(datadir)/xfce4/doc/fr
-frdoc_DATA = docs/manual/fr/xfce4-screenshooter.html
+frdocdir = $(datadir)/doc/xfce4-screenshooter/html/fr
+frdoc_DATA = docs/manual/fr/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/fr/xfce4-screenshooter.html: docs/manual/fr/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/fr/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/fr/xfce4-screenshooter.xml
+docs/manual/fr/index.html: docs/manual/fr/index.xml
+	$(XSLTPROC) -o docs/manual/fr/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/fr/index.xml
 endif
 endif
 
-frimagesdir = $(datadir)/xfce4/doc/fr/images
+frimagesdir = $(datadir)/doc/xfce4-screenshooter/html/fr/images
 frimages_DATA = \
 	docs/manual/fr/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/fr/images/xfce4-screenshooter-dialog2.png \
@@ -316,16 +316,16 @@ frimages_DATA = \
 	docs/manual/fr/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # Galician documentation
-gldocdir = $(datadir)/xfce4/doc/gl
-gldoc_DATA = docs/manual/gl/xfce4-screenshooter.html
+gldocdir = $(datadir)/doc/xfce4-screenshooter/html/gl
+gldoc_DATA = docs/manual/gl/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/gl/xfce4-screenshooter.html: docs/manual/gl/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/gl/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/gl/xfce4-screenshooter.xml
+docs/manual/gl/index.html: docs/manual/gl/index.xml
+	$(XSLTPROC) -o docs/manual/gl/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/gl/index.xml
 endif
 endif
 
-glimagesdir = $(datadir)/xfce4/doc/gl/images
+glimagesdir = $(datadir)/doc/xfce4-screenshooter/html/gl/images
 glimages_DATA = \
 	docs/manual/gl/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/gl/images/xfce4-screenshooter-dialog2.png \
@@ -333,16 +333,16 @@ glimages_DATA = \
 	docs/manual/gl/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # Indonesian documentation
-iddocdir = $(datadir)/xfce4/doc/id
-iddoc_DATA = docs/manual/id/xfce4-screenshooter.html
+iddocdir = $(datadir)/doc/xfce4-screenshooter/html/id
+iddoc_DATA = docs/manual/id/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/id/xfce4-screenshooter.html: docs/manual/id/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/id/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/id/xfce4-screenshooter.xml
+docs/manual/id/index.html: docs/manual/id/index.xml
+	$(XSLTPROC) -o docs/manual/id/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/id/index.xml
 endif
 endif
 
-idimagesdir = $(datadir)/xfce4/doc/id/images
+idimagesdir = $(datadir)/doc/xfce4-screenshooter/html/id/images
 idimages_DATA = \
 	docs/manual/id/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/id/images/xfce4-screenshooter-dialog2.png \
@@ -350,16 +350,16 @@ idimages_DATA = \
 	docs/manual/id/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # Italian documentation
-itdocdir = $(datadir)/xfce4/doc/it
-itdoc_DATA = docs/manual/it/xfce4-screenshooter.html
+itdocdir = $(datadir)/doc/xfce4-screenshooter/html/it
+itdoc_DATA = docs/manual/it/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/it/xfce4-screenshooter.html: docs/manual/it/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/it/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/it/xfce4-screenshooter.xml
+docs/manual/it/index.html: docs/manual/it/index.xml
+	$(XSLTPROC) -o docs/manual/it/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/it/index.xml
 endif
 endif
 
-itimagesdir = $(datadir)/xfce4/doc/it/images
+itimagesdir = $(datadir)/doc/xfce4-screenshooter/html/it/images
 itimages_DATA = \
 	docs/manual/it/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/it/images/xfce4-screenshooter-dialog2.png \
@@ -367,16 +367,16 @@ itimages_DATA = \
 	docs/manual/it/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # Japanese documentation
-jadocdir = $(datadir)/xfce4/doc/ja
-jadoc_DATA = docs/manual/ja/xfce4-screenshooter.html
+jadocdir = $(datadir)/doc/xfce4-screenshooter/html/ja
+jadoc_DATA = docs/manual/ja/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/ja/xfce4-screenshooter.html: docs/manual/ja/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/ja/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ja/xfce4-screenshooter.xml
+docs/manual/ja/index.html: docs/manual/ja/index.xml
+	$(XSLTPROC) -o docs/manual/ja/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/ja/index.xml
 endif
 endif
 
-jaimagesdir = $(datadir)/xfce4/doc/ja/images
+jaimagesdir = $(datadir)/doc/xfce4-screenshooter/html/ja/images
 jaimages_DATA = \
 	docs/manual/ja/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/ja/images/xfce4-screenshooter-dialog2.png \
@@ -384,16 +384,16 @@ jaimages_DATA = \
 	docs/manual/ja/images/xfce4-screenshooter-zimagez-result-dialog.png
 
 # Turkish documentation
-trdocdir = $(datadir)/xfce4/doc/tr
-trdoc_DATA = docs/manual/tr/xfce4-screenshooter.html
+trdocdir = $(datadir)/doc/xfce4-screenshooter/html/tr
+trdoc_DATA = docs/manual/tr/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/tr/xfce4-screenshooter.html: docs/manual/tr/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/tr/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/tr/xfce4-screenshooter.xml
+docs/manual/tr/index.html: docs/manual/tr/index.xml
+	$(XSLTPROC) -o docs/manual/tr/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/tr/index.xml
 endif
 endif
 
-trimagesdir = $(datadir)/xfce4/doc/tr/images
+trimagesdir = $(datadir)/doc/xfce4-screenshooter/html/tr/images
 trimages_DATA = \
 	docs/manual/tr/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/tr/images/xfce4-screenshooter-dialog2.png \
@@ -402,16 +402,16 @@ trimages_DATA = \
 
 
 # Siplified Chinese documentation
-zhcndocdir = $(datadir)/xfce4/doc/zh_CN
-zhcndoc_DATA = docs/manual/zh_CN/xfce4-screenshooter.html
+zhcndocdir = $(datadir)/doc/xfce4-screenshooter/html/zh_CN
+zhcndoc_DATA = docs/manual/zh_CN/index.html
 if MAINTAINER_MODE
 if ENABLE_XSLTPROC
-docs/manual/zh_CN/xfce4-screenshooter.html: docs/manual/zh_CN/xfce4-screenshooter.xml
-	$(XSLTPROC) -o docs/manual/zh_CN/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/zh_CN/xfce4-screenshooter.xml
+docs/manual/zh_CN/index.html: docs/manual/zh_CN/index.xml
+	$(XSLTPROC) -o docs/manual/zh_CN/ $(top_srcdir)/docs/manual/xfce-nochunk.xsl docs/manual/zh_CN/index.xml
 endif
 endif
 
-zhcnimagesdir = $(datadir)/xfce4/doc/zh_CN/images
+zhcnimagesdir = $(datadir)/doc/xfce4-screenshooter/html/zh_CN/images
 zhcnimages_DATA = \
 	docs/manual/zh_CN/images/xfce4-screenshooter-dialog1.png \
 	docs/manual/zh_CN/images/xfce4-screenshooter-dialog2.png \
