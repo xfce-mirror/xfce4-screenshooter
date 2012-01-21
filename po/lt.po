@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-01-21 09:54+0200\n"
-"PO-Revision-Date: 2012-01-21 10:22+0200\n"
+"PO-Revision-Date: 2012-01-21 11:17+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: \n"
@@ -64,7 +64,7 @@ msgstr "Visas ekranas"
 #: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
-msgstr "Padaryti viso ekranvaizdį"
+msgstr "Padaryti viso ekrano ekranvaizdį"
 
 #: ../lib/screenshooter-dialogs.c:765
 msgid "Active window"
@@ -111,7 +111,7 @@ msgstr "Prieš darant nuotrauką laukti sekundes"
 
 #: ../lib/screenshooter-dialogs.c:841
 msgid "seconds"
-msgstr "sekundės"
+msgstr "sekundes(-žių)"
 
 #: ../lib/screenshooter-dialogs.c:893
 msgid "Action"
