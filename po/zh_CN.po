@@ -151,7 +151,9 @@ msgstr "上传至 ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "上传截图至 ZimageZ，一个免费的在线存储图片服务"
+msgstr 
+"上传截图至 ZimageZ，一个免费的在线图片"
+"存储服务"
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -194,8 +196,8 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"请用您的 <a href=\"http://www.zimagez.com\">ZimageZ</a>"
-"用户名、密码和截图的详细信息填写以下栏目。\n"
+"请用您的 <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"用户名、密码和截图的详细信息填写以下栏目。"
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -378,7 +380,8 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
 "%s：%s\n"
-"尝试 %s --help 查看可用命令行选项的完整列表。\n"
+"尝试 %s --help 查看可用命令行选项的完整"
+"列表。\n"
 
 #: ../src/main.c:297
 #, c-format
