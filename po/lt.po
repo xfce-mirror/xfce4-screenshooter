@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-screenshooter\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-01-21 09:54+0200\n"
-"PO-Revision-Date: 2012-01-21 11:17+0200\n"
+"PO-Revision-Date: 2012-01-29 09:09+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: \n"
@@ -128,7 +128,7 @@ msgstr "Išsaugoti"
 
 #: ../lib/screenshooter-dialogs.c:943
 msgid "Save the screenshot to a PNG file"
-msgstr "Išsaugoti ekranvaizdį į PNG failą"
+msgstr "Išsaugoti ekranvaizdį kaip PNG failą"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Copy to the clipboard"
@@ -157,7 +157,7 @@ msgstr "Talpinti ZimageZ"
 #: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr ""
-"Talpinti ekranvaizdį ZimageZ puslapyje, tai yra nemokamas paveikslėlių "
+"Talpinti ekranvaizdį ZimageZ puslapyje, tai yra nemokama paveikslėlių "
 "talpinimo tarnyba"
 
 #: ../lib/screenshooter-dialogs.c:1023
@@ -348,7 +348,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Būsena</span>"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Sekundžių skaičius prieš ekrano nuotrauką"
+msgstr "Sekundžių skaičius prieš darant ekrano nuotrauką"
 
 #: ../src/main.c:58
 msgid "Display the mouse on the screenshot"
