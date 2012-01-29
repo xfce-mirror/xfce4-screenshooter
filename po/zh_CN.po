@@ -3,7 +3,7 @@
 # This file is distributed under the same license as
 # the xfce4-screenshooter package.
 # Hunt Xu <huntxu@live.cn>, 2008, 2009.
-# Chipong Luo <chipong_l@yahoo.com>, 2011.
+# Chipong Luo <chipong_l@yahoo.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
@@ -21,7 +21,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%2$.2f Kb 中的 %1$.2f Kb"
+msgstr "%2$.2f K 中的 %1$.2f K"
 
 #: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
@@ -83,8 +83,9 @@ msgid ""
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr ""
-"点击屏幕上一点不松开鼠标按钮，拖动鼠标至某一区域的另一角并松开鼠标按钮来"
-"选择要截取的区域。"
+"点击屏幕上一点不松开鼠标按钮，拖动鼠标"
+"至某一区域的另一角并松开鼠标按钮来选择"
+"要截取的区域。"
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
@@ -185,7 +186,7 @@ msgstr "在 %s 日 %s 时截取"
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
 msgid "Initialize the connection..."
-msgstr "初始化连接..."
+msgstr "正在初始化连接..."
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
@@ -193,8 +194,8 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"请用您的 <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
-"用户名、密码和截图的详细信息填写以下栏目。"
+"请用您的 <a href=\"http://www.zimagez.com\">ZimageZ</a>"
+"用户名、密码和截图的详细信息填写以下栏目。\n"
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -216,7 +217,9 @@ msgstr "登录 ZimageZ..."
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr "收到一个来自 ZimageZ 的意外回复。无法上传截图。"
+msgstr ""
+"收到一个来自 ZimageZ 的意外回复。无法上传"
+"截图。"
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
@@ -254,7 +257,8 @@ msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
-"您的 ZimageZ 用户名，如果您还没有一个，请在上方的网页链接上创建"
+"您的 ZimageZ 用户名，如果您还没有一个，"
+"请在上方的网页链接上创建"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -285,7 +289,8 @@ msgstr "注释："
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "截图的注释，将在 ZimageZ 上显示该截图时出现"
+msgstr ""
+"截图的注释，将在 ZimageZ 上显示该截图时出现"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -362,8 +367,9 @@ msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr ""
-"--%s 选项只有在给定 --fullscreen、 --window 或 --region "
-"之一时生效。会忽略此项。\n"
+"--%s 选项只有在给定 --fullscreen、"
+"--window 或 --region 时才生效。"
+"会忽略此项。\n"
 
 #: ../src/main.c:150
 #, c-format
@@ -371,16 +377,17 @@ msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr ""
-"%s: %s\n"
-"试试 %s --help 查看完整的可用命令行选项列表。\n"
+"%s：%s\n"
+"尝试 %s --help 查看可用命令行选项的"
+"完整列表。\n"
 
 #: ../src/main.c:297
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s 不是一个有效目录，将使用默认目录。"
+msgstr "%s 不是有效目录，将使用默认目录。"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "获取全屏幕、活动窗口或某一区域截图"
+msgstr "获取全屏幕、活动窗口或某一区域的截图"
