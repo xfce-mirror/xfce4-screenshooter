@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: screenshoter doc\n"
 "POT-Creation-Date: 2012-01-02 23:51+0100\n"
-"PO-Revision-Date: 2012-02-10 13:46+0200\n"
+"PO-Revision-Date: 2012-02-10 18:29+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "MIME-Version: 1.0\n"
@@ -84,6 +84,11 @@ msgid ""
 "complete license text is available from the <ulink type=\"http\" url="
 "\"http://www.gnu.org/\">Free Software Foundation</ulink>."
 msgstr ""
+"Leidžiama kopijuoti, platinti ir/ar keisti remiantis GNU Free Documentation "
+"License, Version 1.1 ar vėlesne versija kaip išleido Free Software "
+"Foundation; be nekintamų dalių, be pirmo plano tekstų ir be antro plano "
+"viršelio tekstų. Pilnas licencijos tekstas prieinamas <ulink type=\"http\" "
+"url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
 
 #: ../docs/manual/C/index.xml.in:40(firstname)
 msgid "Jérôme"
@@ -111,11 +116,11 @@ msgstr "renmush@gmail.com"
 
 #: ../docs/manual/C/index.xml.in:55(releaseinfo)
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
-msgstr ""
+msgstr "Šis žinynas aprašo Xfce 4 Screensooter @PACKAGE_VERSION@ versiją."
 
 #: ../docs/manual/C/index.xml.in:61(title)
 msgid "Introduction to Xfce4 Screenshooter"
-msgstr ""
+msgstr "Įžanga į Xfce4 Screenshooter"
 
 #: ../docs/manual/C/index.xml.in:63(para)
 msgid ""
@@ -126,46 +131,54 @@ msgid ""
 "application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com"
 "\">ZimageZ</ulink>, a free online image hosting service."
 msgstr ""
+"Ši programa leidžia padaryti viso ekrano, aktyvaus lango ar pasirinktos "
+"srities ekranvaizdį. Galite nurodyti vėlavimą, išsaugoti kaip png failą, "
+"kopijuoti į iškarpinę, atverti su kita programa ar patalpinti <ulink type="
+"\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>."
 
 #: ../docs/manual/C/index.xml.in:73(para)
 msgid "A plugin for the Xfce panel is also available."
-msgstr ""
+msgstr "Taipogi yra įskiepis skirtas Xfce skydeliui."
 
 #: ../docs/manual/C/index.xml.in:80(title)
 msgid "Using the application"
-msgstr ""
+msgstr "Naudojimasis programa"
 
 #: ../docs/manual/C/index.xml.in:83(title)
 msgid "Via the user interface"
-msgstr ""
+msgstr "Su naudotojo sąsaja"
 
 #: ../docs/manual/C/index.xml.in:85(para)
 msgid ""
 "To launch the application, use the \"Screenshot\" item in the \"Accessories"
 "\" category of Xfce's main menu."
 msgstr ""
+"Naudodami paleisti programą, pagrindiniame Xfce meniu pasirinkite elementą "
+"„Ekranvaizdis“ reikmenų kategorijoje."
 
 #: ../docs/manual/C/index.xml.in:90(para)
 msgid "This window will be displayed:"
-msgstr ""
+msgstr "Šis langas bus rodomas:"
 
 #: ../docs/manual/C/index.xml.in:101(phrase)
 msgid "The window of Xfce4 Screenshooter"
-msgstr ""
+msgstr "Xfce4 Screenshooter langas"
 
 #: ../docs/manual/C/index.xml.in:107(title)
 msgid "Region to capture"
-msgstr ""
+msgstr "Reikalinga sritis"
 
 #: ../docs/manual/C/index.xml.in:109(para)
 msgid ""
 "The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
 "what the screenshot will be taken of:"
 msgstr ""
+"<emphasis>\"Reikalinga sritis\"</emphasis> leidžia pasirinkti sritį kurios "
+"ekranvaizdį daryti:"
 
 #: ../docs/manual/C/index.xml.in:115(listitem)
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr ""
+msgstr "„Visas ekranas“ padaro viso matomo ekrano ekranvaizdį."
 
 #: ../docs/manual/C/index.xml.in:119(listitem)
 msgid ""
@@ -173,6 +186,9 @@ msgid ""
 "one that was active before this dialog appeared, or if you set a delay, the "
 "one that is active after the delay."
 msgstr ""
+"\"Aktyvus langas\" padaro aktyvaus lango ekranvaizdį. Tai yra to lango kuris "
+"buvo aktyvus iki pasirodant šitam langui, arba galite nustatyti vėlavimą "
+"tada bus padarytas aktyvaus lango ekranvaizdis."
 
 #: ../docs/manual/C/index.xml.in:125(listitem)
 msgid ""
@@ -180,16 +196,21 @@ msgid ""
 "and dragging a rectangle over the area of screen that you wish to capture, "
 "before releasing the mouse button."
 msgstr ""
+"„Pasirinkite srity“ leidžia pasirinkti sritį kurios ekranvaizdis bus "
+"daromas, paspaudus pelės klavišą ir neatleidus jo tempti pelę iki tol kol "
+"bus sukurtas norimos srities kvadratas."
 
 #: ../docs/manual/C/index.xml.in:135(title)
 msgid "Capturing the pointer"
-msgstr ""
+msgstr "Įtraukti pelės žymeklį"
 
 #: ../docs/manual/C/index.xml.in:137(para)
 msgid ""
 "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to "
 "select whether or not the screenshot will include the mouse pointer."
 msgstr ""
+"<emphasis>\"Įtraukti pelės žymeklį\"</emphasis> parinktis leidžia pasirinkti "
+"ar į ekranvaizdį bus įtrauktas pelės žymeklis."
 
 #: ../docs/manual/C/index.xml.in:145(title)
 msgid "Delay before capturing"
@@ -203,20 +224,24 @@ msgid ""
 "open menus or to perform whatever action you require to see displayed in the "
 "screenshot."
 msgstr ""
+"<emphasis>„Vėlavimas“</emphasis> leidžia nustatyti vėlavimą tarp <emphasis>"
+"„OK“</emphasis> mygtuko paspaudimo ir pačio ekranvaizdžio darymo. Šis "
+"užlaikymas leis jums atverti norimus meniu ar atlikti veiksmus, kad "
+"matytumėte norimą vaizdą."
 
 #: ../docs/manual/C/index.xml.in:159(title)
 msgid "After capturing"
-msgstr ""
+msgstr "Po sukūrimo"
 
 #: ../docs/manual/C/index.xml.in:161(para)
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button a second window will "
 "be displayed:"
-msgstr ""
+msgstr "Paspaudus <emphasis>„OK“</emphasis> bus parodytas antras langas:"
 
 #: ../docs/manual/C/index.xml.in:173(phrase)
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
-msgstr ""
+msgstr "Xfce4 Screenshooter langas po ekranvaizdžio padarymo"
 
 #: ../docs/manual/C/index.xml.in:180(title)
 msgid "Preview"
@@ -226,7 +251,7 @@ msgstr "Peržiūra"
 msgid ""
 "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
 "screenshot."
-msgstr ""
+msgstr "<emphasis>„Peržiūra“</emphasis> parodo ekranvaizdžio miniatiūrą."
 
 #: ../docs/manual/C/index.xml.in:189(title)
 msgid "Action"
@@ -237,6 +262,8 @@ msgid ""
 "The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
 "be performed on the screenshot."
 msgstr ""
+"<emphasis>„Veiksmas“</emphasis> leidžia pasirinkti veiksmą kuris bus "
+"atliekamas darant ekranvaizdį."
 
 #: ../docs/manual/C/index.xml.in:197(title)
 msgid "Save"
@@ -248,6 +275,9 @@ msgid ""
 "file. A save dialog will be displayed. You will be able to set the save "
 "location, and the name of the file."
 msgstr ""
+"<emphasis>„Saugoti“</emphasis> parinktis leidžia išsaugoti ekranvaizdį kaip "
+"PNG failą. Bus parodytas saugojimo langas. Galėsite nurodyti saugojimo vietą "
+"ir pavadinti failą."
 
 #: ../docs/manual/C/index.xml.in:206(para)
 msgid ""
@@ -258,6 +288,12 @@ msgid ""
 "uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left "
 "column of the save dialog."
 msgstr ""
+"Xfce4 Screenshooter taipogi sugeba išsaugoti ekranvaizdį bet kokioj "
+"nutolusioje failų sistemoj(kurią palaiko GVfs), tokioj kaip FTP, SAMBA, "
+"SFTP, nutolę kompiuteriai pasiekiami per SSH... Jums tiesiog reiks "
+"prisijungti prie nutolusios failų sistemos naudojant <emphasis>gvfs-connect</"
+"emphasis> ar <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/"
+"\">Gigolo</ulink> ir bus prieinama kairiame išsaugojimo dialogo stulpelyje."
 
 #: ../docs/manual/C/index.xml.in:218(title)
 msgid "Copy to the clipboard"
@@ -269,6 +305,9 @@ msgid ""
 "paste the screenshot in another application, such as a word processor. This "
 "option is only available when a clipboard manager is running."
 msgstr ""
+"<emphasis>„Kopijuoti į iškarpinę“</emphasis> parinktis leidžia jums "
+"įklijuoti ekranvaizdį į kitą programą, pvz. word apdorojimo programa. Ši "
+"parinktis paprastai prieinama tik jei veikia iškarpinės tvarkyklė."
 
 #: ../docs/manual/C/index.xml.in:229(title)
 msgid "Open with"
