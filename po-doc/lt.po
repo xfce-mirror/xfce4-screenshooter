@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: screenshoter doc\n"
 "POT-Creation-Date: 2012-01-02 23:51+0100\n"
-"PO-Revision-Date: 2012-02-10 18:29+0200\n"
+"PO-Revision-Date: 2012-02-11 10:33+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "MIME-Version: 1.0\n"
@@ -320,10 +320,13 @@ msgid ""
 "the drop-down list. Applications which support images are automatically "
 "detected and added to the drop-down list."
 msgstr ""
+"Parinktis <emphasis>„Open with“</emphasis> ekranvaizdį išsaugo į sistemos "
+"laikinąjį aplanką ir atveria su programa pasirinkta iš iškrentančio sąrašo. "
+"Programos palaikančios paveikslėlius automatiškai pridedamos į tą sąrašą."
 
 #: ../docs/manual/C/index.xml.in:241(title)
 msgid "Host on ZimageZ"
-msgstr ""
+msgstr "Talpinti ZimageZ"
 
 #: ../docs/manual/C/index.xml.in:243(para)
 msgid ""
@@ -333,16 +336,21 @@ msgid ""
 "small thumbnail of your screenshot, which can be used to create thumbnails "
 "pointing to the full size screenshot."
 msgstr ""
+"Parinktis <emphasis>„Talpinti į ZimageZ“</emphasis> leidžia patalpinti "
+"ekranvaizdį nemokamoje talpinimo tarnyboje, kad galėtumėte dalintis su "
+"draugais. ZimageZ automatiškai sukuria didelę ir mažą ekranvaizdžio "
+"miniatiūras, kurias galima naudoti kaip nukreipimą į viso dydžio paveikslėlį."
 
 #: ../docs/manual/C/index.xml.in:252(para)
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
 "this dialog:"
 msgstr ""
+"Paspaudus <emphasis>„OK“</emphasis> mygtuką, jums bus parodytas šis dialogas:"
 
 #: ../docs/manual/C/index.xml.in:264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
-msgstr ""
+msgstr "Ekranvaizdžio talpinimo į ZimageZ dialogas"
 
 #: ../docs/manual/C/index.xml.in:269(para)
 msgid ""
@@ -352,6 +360,11 @@ msgid ""
 "between using the menu up right. You must fill all fields of this dialog. "
 "Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
 msgstr ""
+"Jei neturite ZimageZ naudotojo vardo, turėsite susikurti <ulink type=\"http"
+"\" url=\"http://www.zimagez.com\"> ZimageZ svetainėje</ulink>. Ši svetainė "
+"prieinama keliomis kalbomis, galite pasikeisti kalbą viršutiniame dešiniame "
+"kampe. Turite užpildyti visus laukus. Kai paspausite <emphasis>„OK“</"
+"emphasis> įkėlimas prasidės."
 
 #: ../docs/manual/C/index.xml.in:279(para)
 msgid ""
@@ -359,10 +372,12 @@ msgid ""
 "large thumbnail, the small thumbnails, as well examples of HTML and BBcode "
 "to create a thumbnail pointing to the full size screenshot:"
 msgstr ""
+"Žemiau esantis dialogas duos jums nuorodas į pilno dydžio paveikslėlį, "
+"didelę miniatiūrą, mažą miniatiūrą, taipogi HTML ir BBcode pavyzdžius:"
 
 #: ../docs/manual/C/index.xml.in:293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr ""
+msgstr "Dialogas suteikiantis nuorodas į jūsų ekranvaizdį patalpintą ZimageZ"
 
 #: ../docs/manual/C/index.xml.in:303(title)
 msgid "Via command line"
@@ -376,6 +391,8 @@ msgid ""
 "desktop environment so that it launches xfce4-screenshooter with one or "
 "several of the following options when the Prt Scrn key is pressed."
 msgstr ""
+"Komandinės eilutės parinktis leidžia greitai padaryti ekranvaizdį. Taipogi "
+"galima konfigūruoti „Print screen“ klavišą."
 
 #: ../docs/manual/C/index.xml.in:315(title)
 msgid "The command line options"
@@ -390,6 +407,8 @@ msgid ""
 "The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
 "active window."
 msgstr ""
+"<emphasis>-w</emphasis> parinktis leidžia padaryti aktyvaus lango "
+"ekranvaizdį."
 
 #: ../docs/manual/C/index.xml.in:327(title)
 msgid "The -f option"
@@ -400,6 +419,7 @@ msgid ""
 "The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
 "entire screen."
 msgstr ""
+"<emphasis>-f</emphasis> parinktis leidžia padaryti viso ekrano ekranvaizdį."
 
 #: ../docs/manual/C/index.xml.in:336(title)
 msgid "The -r option"
@@ -411,6 +431,8 @@ msgid ""
 "captured by clicking and dragging a rectangle over the area of screen that "
 "you wish to capture, before releasing the mouse button."
 msgstr ""
+"<emphasis>-r</emphasis> parinktis leidžia pasirinkti sritį kurios "
+"ekranvaizdį darysite."
 
 #: ../docs/manual/C/index.xml.in:347(title)
 msgid "The -d option"
@@ -423,6 +445,9 @@ msgid ""
 "emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
 "is given."
 msgstr ""
+"<emphasis>-d</emphasis> ir teigiamas skaičius po jos leidžia nustatyti "
+"vėlavimą prieš darant ekranvaizdį (jei duotas <emphasis>-w</emphasis>, "
+"<emphasis>-f</emphasis> ar <emphasis>-r</emphasis>)."
 
 #: ../docs/manual/C/index.xml.in:359(title)
 msgid "The -s option"
@@ -435,6 +460,9 @@ msgid ""
 "has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or "
 "the <emphasis>-r</emphasis> option is given."
 msgstr ""
+"<emphasis>-s</emphasis> ir kelias po jos nurodo kur bus saugomas "
+"ekranvaizdis. Ši parinktis veiks tik tada jei <emphasis>-w</emphasis>, "
+"<emphasis>-f</emphasis> ar <emphasis>-r</emphasis> parinktis duota."
 
 #: ../docs/manual/C/index.xml.in:371(title)
 msgid "The -o option"
@@ -448,6 +476,10 @@ msgid ""
 "emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, "
 "the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
+"<emphasis>-o</emphasis> parinktis su programos vardu po jos, ekranvaizdis "
+"bus išsaugotas sistemos laikiname aplanke ir atvertas su programa pasirinkta "
+"su <emphasis>-o</emphasis>. Ši parinktis galioja tik jei yra <emphasis>-w</"
+"emphasis>, <emphasis>-f</emphasis> ar <emphasis>-r</emphasis> parinktys."
 
 #: ../docs/manual/C/index.xml.in:385(title)
 msgid "The -u option"
@@ -460,14 +492,18 @@ msgid ""
 "effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the "
 "<emphasis>-r</emphasis> option is given."
 msgstr ""
+"Jei yra <emphasis>-u</emphasis> parinktis, paveikslėlis bus patalpintas į "
+"ZimageZ. Norėdami sužinoti daugiau peržiūrėkite aukščiau. Ši parinktis "
+"galios tik tada jei duota <emphasis>-w</emphasis>, <emphasis>-f</emphasis> "
+"ar <emphasis>-r</emphasis> parinktis."
 
 #: ../docs/manual/C/index.xml.in:400(title)
 msgid "Using the Xfce panel plugin"
-msgstr ""
+msgstr "Naudojimasis Xfce skydelio įskiepiu"
 
 #: ../docs/manual/C/index.xml.in:403(title)
 msgid "Adding the plugin"
-msgstr ""
+msgstr "Įskiepio pridėjimas"
 
 #: ../docs/manual/C/index.xml.in:405(para)
 msgid ""
@@ -475,10 +511,13 @@ msgid ""
 "<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
 "\"Screenshot\"</emphasis>, and add it."
 msgstr ""
+"Norėdami pridėti įskiepį į skydelį, paspauskite dešinį pelės klavišą ir "
+"pasirinkite <emphasis>„Pridėti naują elementą“</emphasis>. Pasirinkite "
+"įskiepį pavadintą <emphasis>„Ekranvaizdis“</emphasis> ir pridėkite jį."
 
 #: ../docs/manual/C/index.xml.in:413(title)
 msgid "Configuring the plugin"
-msgstr ""
+msgstr "Įskiepio konfigūracija"
 
 #: ../docs/manual/C/index.xml.in:415(para)
 msgid ""
@@ -487,6 +526,9 @@ msgid ""
 "similar to the dialog of the main application will appear. Please have a "
 "look above for the different preferences."
 msgstr ""
+"Galite pasirinkti kaip daromas paspausdami kairį pelės mygtuką ant įskiepio "
+"ir pasirinkdami <emphasis>„Savybės“</emphasis>. Pasirodys nustatymų "
+"dialogas. Galėsite peržiūrėti įvairius nustatymus."
 
 #: ../docs/manual/C/index.xml.in:425(title)
 msgid "Using the plugin"
@@ -497,6 +539,8 @@ msgid ""
 "To take a screenshot, just click on the plugin. You can use the scroll wheel "
 "on the plugin button to switch between the different regions to be captured."
 msgstr ""
+"Norėdami padaryti ekranvaizdį, paspauskite ant įskiepio. Persijungti tarp "
+"skirtingų sričių galite naudodami pelės ratuką."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/index.xml.in:0(None)
