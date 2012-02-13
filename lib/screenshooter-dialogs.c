@@ -203,9 +203,9 @@ static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 /* If @timestamp is true, generates a file name @title - date - hour - n.png,
  * where n is the lowest integer such as this file does not exist in the @uri
  * folder.
- * Else, generates a file name @title-n.png, where n is the lowest integer 
+ * Else, generates a file name @title-n.png, where n is the lowest integer
  * such as this file does not exist in the @uri folder.
- * 
+ *
  * @uri: uri of the folder for which the filename should be generated.
  * @title: the main title of the file name.
  * @timestamp: whether the date and the hour should be appended to the file name.
@@ -510,9 +510,13 @@ static gchar
 
   if (G_UNLIKELY (!gdk_pixbuf_save (screenshot, save_path, "png", &error, NULL)))
     {
-      screenshooter_error ("%s", error->message);
+      if (error)
+        {
+          /* See bug #8443, looks like error is not set when path is NULL */
+          screenshooter_error ("%s", error->message);
+          g_error_free (error);
+        }
 
-      g_error_free (error);
       g_free (save_path);
 
       return NULL;
@@ -605,6 +609,12 @@ static gchar
 {
   GFile *save_file = g_file_new_for_uri (save_uri);
   gchar *result = NULL;
+
+  if (save_uri == NULL)
+    {
+      g_object_unref (save_file);
+      return NULL;
+    }
 
   /* If the URI is a local one, we save directly */
 
