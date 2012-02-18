@@ -115,6 +115,12 @@ static gboolean
 cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 {
   GdkPixbuf *pb;
+
+#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+  /* reduce the size of the plugin to a single row */
+  size /= xfce_panel_plugin_get_nrows (plugin);
+#endif
+
   int width = size - 2 - 2 * MAX (pd->button->style->xthickness,
                                     pd->button->style->ythickness);
 
@@ -340,6 +346,11 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
 
   pd->sd = sd;
   pd->plugin = plugin;
+
+#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+  /* make the plugin fit a single row */
+  xfce_panel_plugin_set_small (plugin, TRUE);
+#endif
 
   TRACE ("Initialize the text domain");
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
