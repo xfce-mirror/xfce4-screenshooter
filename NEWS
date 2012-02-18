@@ -1,7 +1,14 @@
 === Version x.x.x ===
 
+  * Enhancements:
+    - Adapting the panel plugin to xfce4-panel 4.9+. Andrzej.
+
   * Bugs fixed:
     - Fix crash with some window managers (bug #8080). Bruno Ramos.
+    - Fix crash with NULL save path (bug #8443).
+    - Install documentation to new location (bug #8116).
+    - Drop AC_PROG_LIBTOOL in favor of LT_PREREQ and LT_INIT.
+    - Add explicit -lm link to LIBADD (bug #8230).
 
 === Version 1.8.0 ===
 
