@@ -2,6 +2,7 @@
 
   * Enhancements:
     - Adapting the panel plugin to xfce4-panel 4.9+. Andrzej.
+    - Add a clipboard CLI option (bug #8483). Tom Hope.
 
   * Bugs fixed:
     - Fix crash with some window managers (bug #8080). Bruno Ramos.
