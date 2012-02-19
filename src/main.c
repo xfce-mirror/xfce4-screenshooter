@@ -34,6 +34,7 @@ gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean mouse = FALSE;
 gboolean upload = FALSE;
+gboolean clipboard = FALSE;
 gchar *screenshot_dir;
 gchar *application;
 gint delay = 0;
@@ -43,6 +44,11 @@ gint delay = 0;
 /* Set cli options. */
 static GOptionEntry entries[] =
 {
+  {
+    "clipboard", 'c', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &clipboard,
+    N_("Copy the screenshot to the clipboard"),
+    NULL
+  },
   {
     "delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,
     N_("Delay in seconds before taking the screenshot"),
@@ -196,9 +202,30 @@ int main (int argc, char **argv)
       g_free (sd);
       return EXIT_FAILURE;
     }
+  else if (upload && clipboard)
+    {
+      g_printerr (conflict_error, "upload", "clipboard");
+
+      g_free (sd);
+      return EXIT_FAILURE;
+    }
   else if ((application != NULL) && (screenshot_dir != NULL))
     {
       g_printerr (conflict_error, "open", "save");
+
+      g_free (sd);
+      return EXIT_FAILURE;
+    }
+  else if ((application != NULL) && clipboard)
+    {
+      g_printerr (conflict_error, "open", "clipboard");
+
+      g_free (sd);
+      return EXIT_FAILURE;
+    }
+  else if ((screenshot_dir != NULL) && clipboard)
+    {
+      g_printerr (conflict_error, "save", "clipboard");
 
       g_free (sd);
       return EXIT_FAILURE;
@@ -212,6 +239,8 @@ int main (int argc, char **argv)
     g_printerr (ignore_error, "save");
   if (upload && !(fullscreen || window || region))
     g_printerr (ignore_error, "upload");
+  if (clipboard && !(fullscreen || window || region))
+    g_printerr (ignore_error, "clipboard");
   if (delay && !(fullscreen || window || region))
     g_printerr (ignore_error, "delay");
   if (mouse && !(fullscreen || window || region))
@@ -274,6 +303,12 @@ int main (int argc, char **argv)
         {
           sd->app = g_strdup ("none");
           sd->action = UPLOAD;
+          sd->action_specified = TRUE;
+        }
+      else if (clipboard)
+        {
+          sd->app = g_strdup ("none");
+          sd->action = CLIPBOARD;
           sd->action_specified = TRUE;
         }
       else
