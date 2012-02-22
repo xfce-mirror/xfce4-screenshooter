@@ -150,32 +150,32 @@ msgstr "Aufnahmebereich"
 #: ../docs/manual/C/index.xml.in109(para)
 #, fuzzy
 msgid "The <emphasis>\"Region to capture\"</emphasis> section allows you to set what the screenshot will be taken of:"
-msgstr "Der Abschnitt <emphasis>»Bildschirmfoto aufnehmen«</emphasis> ermöglicht Ihnen einzustellen, wovon ein Bildschirmfoto gemacht wird:"
+msgstr "Der Abschnitt <emphasis>»Aufnahmebereich«</emphasis> ermöglicht Ihnen einzustellen, wovon ein Bildschirmfoto gemacht wird:"
 
 #: ../docs/manual/C/index.xml.in115(listitem)
 #, fuzzy
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr "»Den gesamten Bildschirm aufnehmen« schießt ein Foto des gesamten Bildschirms, wie Sie ihn sehen."
+msgstr "»Ganzer Bildschirm« schießt ein Foto des gesamten Bildschirms, wie Sie ihn sehen."
 
 #: ../docs/manual/C/index.xml.in119(listitem)
 #, fuzzy
 msgid "\"Active window\" takes a screenshot of the active window. This will be the one that was active before this dialog appeared, or if you set a delay, the one that is active after the delay."
-msgstr "»Das aktuelle Fenster aufnehmen« schießt ein Foto des aktiven Fensters. Dies wird dasjenige sein, das aktiv war, bevor dieser Dialog erschien oder, falls Sie eine Verzögerung eingestellt haben, das, das nach der Verzögerung aktiv ist."
+msgstr "»Aktives Fenster« schießt ein Foto des aktiven Fensters. Dies wird dasjenige sein, das aktiv war, bevor dieser Dialog erschien oder, falls Sie eine Verzögerung eingestellt haben, das, das nach der Verzögerung aktiv ist."
 
 #: ../docs/manual/C/index.xml.in125(listitem)
 #, fuzzy
 msgid "\"Select a region\" allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
-msgstr "»Aufnahmebereich auswählen« ermöglicht Ihnen, einen Bereich zur Aufzeichnung auszuwählen, indem Sie klicken und ein Rechteck über den Bereich des Bildschirms ziehen, den Sie aufnehmen möchten, ehe Sie die rechte Maustaste loslassen."
+msgstr "»Bereich auswählen« ermöglicht Ihnen, einen Bereich zur Aufzeichnung auszuwählen, indem Sie klicken und ein Rechteck über den Bereich des Bildschirms ziehen, den Sie aufnehmen möchten, ehe Sie die rechte Maustaste loslassen."
 
 #: ../docs/manual/C/index.xml.in135(title)
 #, fuzzy
 msgid "Capturing the pointer"
-msgstr "Zeiger einbeziehen"
+msgstr "Mauszeiger aufnehmen"
 
 #: ../docs/manual/C/index.xml.in137(para)
 #, fuzzy
 msgid "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to select whether or not the screenshot will include the mouse pointer."
-msgstr "Die Option »Zeiger einbeziehen« ermöglicht Ihnen die Auswahl, ob Sie den Mauszeiger in das Bildschirmfoto einbeziehen möchten oder nicht."
+msgstr "Die Option »Mauszeiger aufnehmen« ermöglicht Ihnen die Auswahl, ob Sie den Mauszeiger in das Bildschirmfoto einbeziehen möchten oder nicht."
 
 #: ../docs/manual/C/index.xml.in145(title)
 #, fuzzy
@@ -185,7 +185,7 @@ msgstr "Verzögerung vor der Aufnahme"
 #: ../docs/manual/C/index.xml.in147(para)
 #, fuzzy
 msgid "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to set the delay that will elapse between pressing the <emphasis>\"OK\"</emphasis> button and screenshot being taken. This delay will allow you to open menus or to perform whatever action you require to see displayed in the screenshot."
-msgstr "Der Abschnitt <emphasis>»Bildschirmfoto aufnehmen nach … Sekunden</emphasis> ermöglicht Ihnen die Verzögerung einzurichten, die zwischen Drücken der Taste <emphasis>»OK«</emphasis> und der Aufnahme des Bildschirmfotos vergeht. Diese Verzögerung wird Ihnen ermöglichen, Menüs zu öffnen oder die Aktion durchzuführen, die Sie auch immer benötigen, um Sie im Bildschirmfoto anzuzeigen."
+msgstr "Der Abschnitt <emphasis>»Verzögerung vor der Aufnahme</emphasis> ermöglicht Ihnen die Verzögerung einzurichten, die zwischen Drücken der Taste <emphasis>»OK«</emphasis> und der Aufnahme des Bildschirmfotos vergeht. Diese Verzögerung wird Ihnen ermöglichen, Menüs zu öffnen oder die Aktion durchzuführen, die Sie auch immer benötigen, um Sie im Bildschirmfoto anzuzeigen."
 
 #: ../docs/manual/C/index.xml.in159(title)
 #, fuzzy
@@ -245,7 +245,7 @@ msgstr "In die Zwischenablage kopieren"
 #: ../docs/manual/C/index.xml.in220(para)
 #, fuzzy
 msgid "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to paste the screenshot in another application, such as a word processor. This option is only available when a clipboard manager is running."
-msgstr "Die Option <emphasis>»In Zwischenablage kopieren«</emphasis> ermöglich Ihnen, das Bildschirmfoto in eine andere Anwendung wie eine Textverarbeitung einzufügen. Diese Option ist nur verfügbar, wenn eine Zwischenablageverwaltung läuft."
+msgstr "Die Option <emphasis>»In die Zwischenablage kopieren«</emphasis> ermöglich Ihnen, das Bildschirmfoto in eine andere Anwendung wie eine Textverarbeitung einzufügen. Diese Option ist nur verfügbar, wenn eine Zwischenablageverwaltung läuft."
 
 #: ../docs/manual/C/index.xml.in229(title)
 #, fuzzy
@@ -255,7 +255,7 @@ msgstr "Öffnen mit"
 #: ../docs/manual/C/index.xml.in231(para)
 #, fuzzy
 msgid "The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the system's temporary directory and opens it with the application chosen from the drop-down list. Applications which support images are automatically detected and added to the drop-down list."
-msgstr "Die Option <emphasis>»Öffnen mit«</emphasis> speichert das Bildschirmfoto im temporären Verzeichnis des Systems und öffnet es mit der aus der Auswahlliste gewählten Anwendung. Anwendungen, die Bilder unterstützen, werden automatisch festgestellt und der Auswahlliste hinzugefügt."
+msgstr "Die Option <emphasis>»Öffnen mit:«</emphasis> speichert das Bildschirmfoto im temporären Verzeichnis des Systems und öffnet es mit der aus der Auswahlliste gewählten Anwendung. Anwendungen, die Bilder unterstützen, werden automatisch festgestellt und der Auswahlliste hinzugefügt."
 
 #: ../docs/manual/C/index.xml.in241(title)
 #, fuzzy
@@ -265,7 +265,7 @@ msgstr "Auf ZimageZ bereitstellen"
 #: ../docs/manual/C/index.xml.in243(para)
 #, fuzzy
 msgid "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your screenshot on this free online hosting service, so that you can share it easily with other people. ZimageZ automatically generates a large and a small thumbnail of your screenshot, which can be used to create thumbnails pointing to the full size screenshot."
-msgstr "Die Option <emphasis>»Auf ZimageZ bereitstellen«</emphasis> ermöglicht Ihnen, Ihr Bildschirmfoto auf diesem freien Online-Hosting-Dienst bereitzustellen, so dass Sie es einfach mit anderen Leuten gemeinsam benutzen können.  ZimageZ generiert eine große und eine kleine Miniaturansicht Ihres Bildschirmfotos, die benutzt werden können um Miniaturansichten zu erstellen, die auf das Bildschirmfoto in voller Größe zu verweisen."
+msgstr "Die Option <emphasis>»Auf ZimageZ hochladen«</emphasis> ermöglicht Ihnen, Ihr Bildschirmfoto auf diesem freien Online-Hosting-Dienst bereitzustellen, so dass Sie es einfach mit anderen Leuten gemeinsam benutzen können.  ZimageZ generiert eine große und eine kleine Miniaturansicht Ihres Bildschirmfotos, die benutzt werden können um Miniaturansichten zu erstellen, die auf das Bildschirmfoto in voller Größe zu verweisen."
 
 #: ../docs/manual/C/index.xml.in252(para)
 #, fuzzy
@@ -273,118 +273,147 @@ msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown 
 msgstr "Nach dem Drücken der Taste <emphasis>»OK«</emphasis> wird folgender Dialog angezeigt:"
 
 #: ../docs/manual/C/index.xml.in264(phrase)
+#, fuzzy
 msgid "The dialog to host a screenshot on ZimageZ"
-msgstr ""
+msgstr "Der Dialog, um ein Bildschirmfoto auf ZimageZ hochzuladen"
 
 #: ../docs/manual/C/index.xml.in269(para)
+#, fuzzy
 msgid "If you do not have a ZimageZ user name, you will need to create one on the <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. Several languages are available on this website, you can switch between using the menu up right. You must fill all fields of this dialog. Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
-msgstr ""
+msgstr "Falls Sie keinen ZimageZ-Benutzernamen haben, müssen Sie einen auf der <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ-Website</ulink> erstellen. Auf dieser Website sind mehrere Sprachen verfügbar, zwischen denen Sie mittels des Menüs oben rechts umschalten können. Sie müssen alle Felder dieses Dialogs ausfüllen. Sobald Sie auf die Schaltfläche <emphasis>»OK«</emphasis> drücken, wird das Hochladen beginnen."
 
 #: ../docs/manual/C/index.xml.in279(para)
+#, fuzzy
 msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
-msgstr ""
+msgstr "Der nachfolgende Dialog wird Ihnen Verweise auf das Bildschirmfoto in voller Größe und als große und kleine Miniaturansichten geben, sowie auf Beispiele zur Erstellung von HTML und BBcode zur Erzeugung einer Miniaturansicht, die auf das Bildschirmfoto in voller Größe verweist."
 
 #: ../docs/manual/C/index.xml.in293(phrase)
+#, fuzzy
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr ""
+msgstr "Der Dialog, der die Verweise auf Ihr Bildschirmfoto auf ZimageZ gibt"
 
 #: ../docs/manual/C/index.xml.in303(title)
+#, fuzzy
 msgid "Via command line"
-msgstr ""
+msgstr "Mittels Befehlszeile"
 
 #: ../docs/manual/C/index.xml.in305(para)
+#, fuzzy
 msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
-msgstr ""
+msgstr "Befehlszeilenoptionen ermöglichen Ihnen, schnell Bildschirmfotos zu schießen. Sie ermöglichen Ihnen außerdem die Taste »Druck« zu konfigurieren, die sich auf den meisten Tastaturen oben rechts befindet. Dies erledigen Sie, indem Sie die Tastenzuweisung Ihrer Arbeitsflächenumgebung so konfigurieren, dass sie xfce-screenshooter mit einer oder mehreren der folgenden Optionen startet, wenn die Taste »Druck« gedrückt wird."
 
 #: ../docs/manual/C/index.xml.in315(title)
+#, fuzzy
 msgid "The command line options"
-msgstr ""
+msgstr "Die Befehlszeilenoptionen"
 
 #: ../docs/manual/C/index.xml.in318(title)
+#, fuzzy
 msgid "The -w option"
-msgstr ""
+msgstr "Die Option -w"
 
 #: ../docs/manual/C/index.xml.in320(para)
+#, fuzzy
 msgid "The <emphasis>-w</emphasis> option allows you to take a screenshot of the active window."
-msgstr ""
+msgstr "Die Option <emphasis>-w</emphasis> ermöglicht Ihnen, ein Bildschirmfoto des aktiven Bildschirms zu schießen."
 
 #: ../docs/manual/C/index.xml.in327(title)
+#, fuzzy
 msgid "The -f option"
-msgstr ""
+msgstr "Die Option -f"
 
 #: ../docs/manual/C/index.xml.in329(para)
+#, fuzzy
 msgid "The <emphasis>-f</emphasis> option allows you to take a screenshot of the entire screen."
-msgstr ""
+msgstr "Die Option <emphasis>-f</emphasis> ermöglicht Ihnen, ein Bildschirmfoto des ganzen Bildschirms zu schießen."
 
 #: ../docs/manual/C/index.xml.in336(title)
+#, fuzzy
 msgid "The -r option"
-msgstr ""
+msgstr "Die Option -r"
 
 #: ../docs/manual/C/index.xml.in338(para)
+#, fuzzy
 msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
-msgstr ""
+msgstr "Die Option <emphasis>-r</emphasis> ermöglicht Ihnen,  einen Bereich, den Sie aufnehmen möchten, durch Klicken und dem Ziehen eines Rechtecks darüber, auszuwählen, bevor Sie die Maustaste loslassen."
 
 #: ../docs/manual/C/index.xml.in347(title)
+#, fuzzy
 msgid "The -d option"
-msgstr ""
+msgstr "Die Option -d"
 
 #: ../docs/manual/C/index.xml.in349(para)
+#, fuzzy
 msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Die Option <emphasis>-d</emphasis> gefolgt von einer positiven Ganzzahl ermöglicht Ihnen, die Verzögerung einzustellen, bevor das Bildschirmfoto geschossen wird, wenn die Optionen <emphasis>-w</emphasis>, <emphasis>-f</emphasis> oder <emphasis>-r</emphasis> angegeben wurden."
 
 #: ../docs/manual/C/index.xml.in359(title)
+#, fuzzy
 msgid "The -s option"
-msgstr ""
+msgstr "Die Option -s"
 
 #: ../docs/manual/C/index.xml.in361(para)
+#, fuzzy
 msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Die Option <emphasis>-s</emphasis> gefolgt vom Pfad zu einem existierenden Verzeichnis ermöglicht Ihnen einzustellen, wohin die Bildschirmfotos gespeichert werden. Diese Option hat nur Auswirkungen, falls die Optionen <emphasis>-w</emphasis>, <emphasis>-f</emphasis> oder <emphasis>-r</emphasis> angegeben wurden."
 
 #: ../docs/manual/C/index.xml.in371(title)
+#, fuzzy
 msgid "The -o option"
-msgstr ""
+msgstr "Die Option -o"
 
 #: ../docs/manual/C/index.xml.in373(para)
+#, fuzzy
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Die Option <emphasis>-o</emphasis> gefolgt vom Namen einer Anwendung angegeben wird, wird das Bildschirmfoto im temporären Verzeichnis des Systems gespeichert und mit der Anwendung, deren Name hinter <emphasis>-o</emphasis> angegeben ist, geöffnet. Diese Option hat nur Auswirkungen, falls die Optionen <emphasis>-w</emphasis>, <emphasis>-f</emphasis> oder <emphasis>-r</emphasis> angegeben wurden. "
 
 #: ../docs/manual/C/index.xml.in385(title)
+#, fuzzy
 msgid "The -u option"
-msgstr ""
+msgstr "Die Option -u"
 
 #: ../docs/manual/C/index.xml.in387(para)
+#, fuzzy
 msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr ""
+msgstr "Falls die Option <emphasis>-u</emphasis> angegeben wird, wird das Bildschirmfoto auf ZimageZ hochgeladen. Weitere Einzelheiten finden Sie oben. Diese Option hat nur Auswirkungen, falls die Optionen <emphasis>-w</emphasis>, <emphasis>-f</emphasis> oder <emphasis>-r</emphasis> angegeben wurden."
 
 #: ../docs/manual/C/index.xml.in400(title)
+#, fuzzy
 msgid "Using the Xfce panel plugin"
-msgstr ""
+msgstr "Benutzung der Xfce-Schaltflächenerweiterung"
 
 #: ../docs/manual/C/index.xml.in403(title)
+#, fuzzy
 msgid "Adding the plugin"
-msgstr ""
+msgstr "Hinzufügen der Erweiterung"
 
 #: ../docs/manual/C/index.xml.in405(para)
+#, fuzzy
 msgid "To add the plugin to the panel, right click on the panel and select <emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>\"Screenshot\"</emphasis>, and add it."
-msgstr ""
+msgstr "Um die Erweiterung der Schaltfläche hinzuzufügen rechtsklicken Sie auf die Schaltfläche und Wählen Sie <emphasis>»Neue Elemente hinzufügen«</emphasis>. Wählen Sie die Erweiterung namens <emphasis>»Bildschirmfoto«</emphasis> und fügen Sie sie hinzu."
 
 #: ../docs/manual/C/index.xml.in413(title)
+#, fuzzy
 msgid "Configuring the plugin"
-msgstr ""
+msgstr "Die Erweiterung konfigurieren"
 
 #: ../docs/manual/C/index.xml.in415(para)
+#, fuzzy
 msgid "You can configure how screenshots are taken by right clicking on the plugin and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog similar to the dialog of the main application will appear. Please have a look above for the different preferences."
-msgstr ""
+msgstr "Sie können konfigurieren, wie Bildschirmfotos geschossen werden, indem Sie auf die Erweiterung rechtsklicken und <emphasis>»Eigenschaften«</emphasis> auswählen. Es wird ein Eigenschaftendialog, ähnlich dem Dialog in der Hauptanwendung, erscheinen. Bitte schauen Sie die verschiedenen Einstellungen oben."
 
 #: ../docs/manual/C/index.xml.in425(title)
+#, fuzzy
 msgid "Using the plugin"
-msgstr ""
+msgstr "Benutzung der Erweiterung"
 
 #: ../docs/manual/C/index.xml.in427(para)
+#, fuzzy
 msgid "To take a screenshot, just click on the plugin. You can use the scroll wheel on the plugin button to switch between the different regions to be captured."
-msgstr ""
+msgstr "Um ein Bildschirmfoto zu schießen, klicken Sie einfach auf die Erweiterung. Sie können das Mausrad auf der Erweiterungsschaltfläche benutzen, um zwischen den verschiedenen aufzuzeichnenden Bereichen umzuschalten."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/index.xml.in0(None)
+#, fuzzy
 msgid "translator-credits"
-msgstr ""
+msgstr "Deutsche Übersetzung: Chris Leick <c.leick@vollbio.de> 2012"
