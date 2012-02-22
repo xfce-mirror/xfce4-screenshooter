@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the
 # xfce4-screenshooter package.
 # Translation by Chris Leick <c.leick@vollbio.de>, 2012.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.8.0\n"
@@ -12,345 +12,379 @@ msgstr ""
 "PO-Revision-Date: 2012-02-22 18:28+0100\n"
 "Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
 "Language-Team: German <xfce-i18n-de@xfce.org>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/index.xml.in:97(None)
+#: ../docs/manual/C/index.xml.in97(None)
 msgid "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e5a09b9b9962ed18"
 msgstr ""
 "@@image: 'images/xfce4-screenshooter-dialog1.png'; "
 "md5=ceb772964fa6ca07e5a09b9b9962ed18"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/index.xml.in:169(None)
+#: ../docs/manual/C/index.xml.in169(None)
 msgid "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5dfc980fb216025e0"
 msgstr ""
 "@@image: 'images/xfce4-screenshooter-dialog2.png'; "
 "md5=fa48885f54ca6ab5dfc980fb216025e0"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/index.xml.in:260(None)
+#: ../docs/manual/C/index.xml.in260(None)
 msgid "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c8102c88e978eb7ef63994f2648f5ae6"
 msgstr ""
 "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; "
 "md5=c8102c88e978eb7ef63994f2648f5ae6"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. When image changes, this message will be marked fuzzy or untranslated for
+#. you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: ../docs/manual/C/index.xml.in:289(None)
+#: ../docs/manual/C/index.xml.in289(None)
 msgid "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468def960a376d5a856f2fcb3b35daf1"
 msgstr ""
 "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; "
 "md5=468def960a376d5a856f2fcb3b35daf1"
 
-#: ../docs/manual/C/index.xml.in:12(title)
+#: ../docs/manual/C/index.xml.in12(title)
 msgid "Xfce4 Screenshooter"
-msgstr "Xfce4-Screenshooter"
+msgstr "Xfce4 Screenshooter"
 
-#: ../docs/manual/C/index.xml.in:17(year)
+#: ../docs/manual/C/index.xml.in17(year)
 msgid "2008"
 msgstr "2008"
 
-#: ../docs/manual/C/index.xml.in:18(year) ../docs/manual/C/index.xml.in:23(year)
+#: ../docs/manual/C/index.xml.in18(year) ../docs/manual/C/index.xml.in23(year)
 msgid "2009"
 msgstr "2009"
 
-#: ../docs/manual/C/index.xml.in:19(holder)
+#: ../docs/manual/C/index.xml.in19(holder)
 msgid "Jérôme Guelfucci"
 msgstr "Jérôme Guelfucci"
 
-#: ../docs/manual/C/index.xml.in:24(holder)
+#: ../docs/manual/C/index.xml.in24(holder)
 msgid "Sam Swift"
 msgstr "Sam Swift"
 
-#: ../docs/manual/C/index.xml.in:28(para)
+#: ../docs/manual/C/index.xml.in28(para)
+#, fuzzy
 msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
-msgstr ""
+msgstr "Die Rechte zum Kopieren, Verteilen und/oder Ändern dieses Dokuments wird unter den Bedingungen der GNU Free Documentation License, Version 1.1 oder einer neueren Version gewährt, wie sie von der Free Software Foundation veröffentlicht wurde; ohne unveränderliche Abschnitte, ohne Deck- und ohne Rückblatttexte. Der vollständige Lizenztext ist bei der <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink> erhältlich."
 
-#: ../docs/manual/C/index.xml.in:40(firstname)
+#: ../docs/manual/C/index.xml.in40(firstname)
 msgid "Jérôme"
-msgstr ""
+msgstr "Jérôme"
 
-#: ../docs/manual/C/index.xml.in:41(surname)
+#: ../docs/manual/C/index.xml.in41(surname)
 msgid "Guelfucci"
-msgstr ""
+msgstr "Guelfucci"
 
-#: ../docs/manual/C/index.xml.in:43(email)
+#: ../docs/manual/C/index.xml.in43(email)
 msgid "jeromeg@xfce.org"
-msgstr ""
+msgstr "jeromeg@xfce.org"
 
-#: ../docs/manual/C/index.xml.in:47(firstname)
+#: ../docs/manual/C/index.xml.in47(firstname)
 msgid "Sam"
-msgstr ""
+msgstr "Sam"
 
-#: ../docs/manual/C/index.xml.in:48(surname)
+#: ../docs/manual/C/index.xml.in48(surname)
 msgid "Swift"
-msgstr ""
+msgstr "Swift"
 
-#: ../docs/manual/C/index.xml.in:50(email)
+#: ../docs/manual/C/index.xml.in50(email)
 msgid "renmush@gmail.com"
-msgstr ""
+msgstr "renmush@gmail.com"
 
-#: ../docs/manual/C/index.xml.in:55(releaseinfo)
+#: ../docs/manual/C/index.xml.in55(releaseinfo)
 msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
-msgstr ""
+msgstr "Dieses Handbuch beschreibt Version @PACKAGE_VERSION@ von Xfce4 Screenshooter."
 
-#: ../docs/manual/C/index.xml.in:61(title)
+#: ../docs/manual/C/index.xml.in61(title)
 msgid "Introduction to Xfce4 Screenshooter"
-msgstr ""
+msgstr "Einführung in Xfce4 Screenshooter"
 
-#: ../docs/manual/C/index.xml.in:63(para)
+#: ../docs/manual/C/index.xml.in63(para)
+#, fuzzy
 msgid "This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action to be performed afterwards: save the screenshot to a PNG file, copy it to the clipboard, open it using another application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online image hosting service."
-msgstr ""
+msgstr "Diese Anwendung ermöglicht Ihnen, den gesamten Bildschirm, das aktive Fenster oder einen ausgewählten Bereich aufzuzeichnen. Sie können die Verzögerung einstellen, bevor das Bildschirmfoto geschossen wird sowie die Aktion hinterher: das Bildschirmfoto als PNG-Datei abspeichern, es in die Zwischenablage kopieren, es mit einer anderen Anwendung öffnen oder es auf <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, einem freien Online-Hosting-Dienst, bereitstellen."
 
-#: ../docs/manual/C/index.xml.in:73(para)
+#: ../docs/manual/C/index.xml.in73(para)
 msgid "A plugin for the Xfce panel is also available."
-msgstr ""
+msgstr "Außerdem ist eine Erweiterung für die Xfce-Schaltfläche verfügbar."
 
-#: ../docs/manual/C/index.xml.in:80(title)
+#: ../docs/manual/C/index.xml.in80(title)
+#, fuzzy
 msgid "Using the application"
-msgstr ""
+msgstr "Die Anwendung benutzen"
 
-#: ../docs/manual/C/index.xml.in:83(title)
+#: ../docs/manual/C/index.xml.in83(title)
+#, fuzzy
 msgid "Via the user interface"
-msgstr ""
+msgstr "Mittels Benutzeroberfläche"
 
-#: ../docs/manual/C/index.xml.in:85(para)
+#: ../docs/manual/C/index.xml.in85(para)
 msgid "To launch the application, use the \"Screenshot\" item in the \"Accessories\" category of Xfce's main menu."
-msgstr ""
+msgstr "Um die Anwendung zu starten benutzen Sie das Element »Bildschirmfoto« in der Kategorie »Zubehör« des Xfce-Hauptmenüs."
 
-#: ../docs/manual/C/index.xml.in:90(para)
+#: ../docs/manual/C/index.xml.in90(para)
+#, fuzzy
 msgid "This window will be displayed:"
-msgstr ""
+msgstr "Dieses Fenster wird angezeigt:"
 
-#: ../docs/manual/C/index.xml.in:101(phrase)
+#: ../docs/manual/C/index.xml.in101(phrase)
 msgid "The window of Xfce4 Screenshooter"
-msgstr ""
+msgstr "Das Fenster von Xfce Screenshooter"
 
-#: ../docs/manual/C/index.xml.in:107(title)
+#: ../docs/manual/C/index.xml.in107(title)
+#, fuzzy
 msgid "Region to capture"
-msgstr ""
+msgstr "Aufnahmebereich"
 
-#: ../docs/manual/C/index.xml.in:109(para)
+#: ../docs/manual/C/index.xml.in109(para)
+#, fuzzy
 msgid "The <emphasis>\"Region to capture\"</emphasis> section allows you to set what the screenshot will be taken of:"
-msgstr ""
+msgstr "Der Abschnitt <emphasis>»Bildschirmfoto aufnehmen«</emphasis> ermöglicht Ihnen einzustellen, wovon ein Bildschirmfoto gemacht wird:"
 
-#: ../docs/manual/C/index.xml.in:115(listitem)
+#: ../docs/manual/C/index.xml.in115(listitem)
+#, fuzzy
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr ""
+msgstr "»Den gesamten Bildschirm aufnehmen« schießt ein Foto des gesamten Bildschirms, wie Sie ihn sehen."
 
-#: ../docs/manual/C/index.xml.in:119(listitem)
+#: ../docs/manual/C/index.xml.in119(listitem)
+#, fuzzy
 msgid "\"Active window\" takes a screenshot of the active window. This will be the one that was active before this dialog appeared, or if you set a delay, the one that is active after the delay."
-msgstr ""
+msgstr "»Das aktuelle Fenster aufnehmen« schießt ein Foto des aktiven Fensters. Dies wird dasjenige sein, das aktiv war, bevor dieser Dialog erschien oder, falls Sie eine Verzögerung eingestellt haben, das, das nach der Verzögerung aktiv ist."
 
-#: ../docs/manual/C/index.xml.in:125(listitem)
+#: ../docs/manual/C/index.xml.in125(listitem)
+#, fuzzy
 msgid "\"Select a region\" allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
-msgstr ""
+msgstr "»Aufnahmebereich auswählen« ermöglicht Ihnen, einen Bereich zur Aufzeichnung auszuwählen, indem Sie klicken und ein Rechteck über den Bereich des Bildschirms ziehen, den Sie aufnehmen möchten, ehe Sie die rechte Maustaste loslassen."
 
-#: ../docs/manual/C/index.xml.in:135(title)
+#: ../docs/manual/C/index.xml.in135(title)
+#, fuzzy
 msgid "Capturing the pointer"
-msgstr ""
+msgstr "Zeiger einbeziehen"
 
-#: ../docs/manual/C/index.xml.in:137(para)
+#: ../docs/manual/C/index.xml.in137(para)
+#, fuzzy
 msgid "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to select whether or not the screenshot will include the mouse pointer."
-msgstr ""
+msgstr "Die Option »Zeiger einbeziehen« ermöglicht Ihnen die Auswahl, ob Sie den Mauszeiger in das Bildschirmfoto einbeziehen möchten oder nicht."
 
-#: ../docs/manual/C/index.xml.in:145(title)
+#: ../docs/manual/C/index.xml.in145(title)
+#, fuzzy
 msgid "Delay before capturing"
-msgstr ""
+msgstr "Verzögerung vor der Aufnahme"
 
-#: ../docs/manual/C/index.xml.in:147(para)
+#: ../docs/manual/C/index.xml.in147(para)
+#, fuzzy
 msgid "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to set the delay that will elapse between pressing the <emphasis>\"OK\"</emphasis> button and screenshot being taken. This delay will allow you to open menus or to perform whatever action you require to see displayed in the screenshot."
-msgstr ""
+msgstr "Der Abschnitt <emphasis>»Bildschirmfoto aufnehmen nach … Sekunden</emphasis> ermöglicht Ihnen die Verzögerung einzurichten, die zwischen Drücken der Taste <emphasis>»OK«</emphasis> und der Aufnahme des Bildschirmfotos vergeht. Diese Verzögerung wird Ihnen ermöglichen, Menüs zu öffnen oder die Aktion durchzuführen, die Sie auch immer benötigen, um Sie im Bildschirmfoto anzuzeigen."
 
-#: ../docs/manual/C/index.xml.in:159(title)
+#: ../docs/manual/C/index.xml.in159(title)
+#, fuzzy
 msgid "After capturing"
-msgstr ""
+msgstr "Nach der Aufnahme"
 
-#: ../docs/manual/C/index.xml.in:161(para)
+#: ../docs/manual/C/index.xml.in161(para)
+#, fuzzy
 msgid "After pressing the <emphasis>\"OK\"</emphasis> button a second window will be displayed:"
-msgstr ""
+msgstr "Nachdem Sie die Taste <emphasis>»OK«</emphasis> gedrückt haben, wird ein zweites Fenster angezeigt:"
 
-#: ../docs/manual/C/index.xml.in:173(phrase)
+#: ../docs/manual/C/index.xml.in173(phrase)
+#, fuzzy
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
-msgstr ""
+msgstr "Das Fenster von Xfce4 Screenshooter nach der Aufnahme eines Bildschirmfotos"
 
-#: ../docs/manual/C/index.xml.in:180(title)
+#: ../docs/manual/C/index.xml.in180(title)
+#, fuzzy
 msgid "Preview"
-msgstr ""
+msgstr "Vorschau"
 
-#: ../docs/manual/C/index.xml.in:182(para)
+#: ../docs/manual/C/index.xml.in182(para)
+#, fuzzy
 msgid "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the screenshot."
-msgstr ""
+msgstr "Der Bereich <emphasis>»Vorschau«</emphasis> zeigt eine Miniaturansicht des Bildschirmfotos."
 
-#: ../docs/manual/C/index.xml.in:189(title)
+#: ../docs/manual/C/index.xml.in189(title)
+#, fuzzy
 msgid "Action"
-msgstr ""
+msgstr "Aktion"
 
-#: ../docs/manual/C/index.xml.in:191(para)
+#: ../docs/manual/C/index.xml.in191(para)
+#, fuzzy
 msgid "The <emphasis>\"Action\"</emphasis> section allows you to choose what should be performed on the screenshot."
-msgstr ""
+msgstr "Der Bereich <emphasis>»Aktion«</emphasis> ermöglich Ihnen auszuwählen, was mit dem Bildschirmfoto getan werden soll."
 
-#: ../docs/manual/C/index.xml.in:197(title)
+#: ../docs/manual/C/index.xml.in197(title)
+#, fuzzy
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
-#: ../docs/manual/C/index.xml.in:199(para)
+#: ../docs/manual/C/index.xml.in199(para)
+#, fuzzy
 msgid "The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG file. A save dialog will be displayed. You will be able to set the save location, and the name of the file."
-msgstr ""
+msgstr "Die Option <emphasis>»Speichern«</emphasis> wird das Bildschirmfoto in einer PNG-Datei speichern. Es wird ein Speicherdialog angezeigt. Sie werden den Speicherort und den Namen der Datei festlegen können."
 
-#: ../docs/manual/C/index.xml.in:206(para)
+#: ../docs/manual/C/index.xml.in206(para)
+#, fuzzy
 msgid "Xfce4 Screenshooter is also able to save the screenshot to any remote file system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers accessible via SSH... You just need to connect this remote file system using <emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left column of the save dialog."
-msgstr ""
+msgstr " Xfce4 Screenshooter ist auch in der Lage, das Bildschirmfoto in einem fernen Dateisystem, das GVFS unterstützt,  zu speichern, wie FTP, SAMBA, SFTP, ferne Rechner, auf die per SSH zugegriffen werden kann … Sie müssen sich nur unter Benutzung von <emphasis>gvfs-connect</emphasis> oder <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> mit diesem fernen System verbinden und es wird auf der linken Seite dieses Speicherdialogs verfügbar sein."
 
-#: ../docs/manual/C/index.xml.in:218(title)
+#: ../docs/manual/C/index.xml.in218(title)
+#, fuzzy
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "In die Zwischenablage kopieren"
 
-#: ../docs/manual/C/index.xml.in:220(para)
+#: ../docs/manual/C/index.xml.in220(para)
+#, fuzzy
 msgid "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to paste the screenshot in another application, such as a word processor. This option is only available when a clipboard manager is running."
-msgstr ""
+msgstr "Die Option <emphasis>»In Zwischenablage kopieren«</emphasis> ermöglich Ihnen, das Bildschirmfoto in eine andere Anwendung wie eine Textverarbeitung einzufügen. Diese Option ist nur verfügbar, wenn eine Zwischenablageverwaltung läuft."
 
-#: ../docs/manual/C/index.xml.in:229(title)
+#: ../docs/manual/C/index.xml.in229(title)
+#, fuzzy
 msgid "Open with"
-msgstr ""
+msgstr "Öffnen mit"
 
-#: ../docs/manual/C/index.xml.in:231(para)
+#: ../docs/manual/C/index.xml.in231(para)
+#, fuzzy
 msgid "The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the system's temporary directory and opens it with the application chosen from the drop-down list. Applications which support images are automatically detected and added to the drop-down list."
-msgstr ""
+msgstr "Die Option <emphasis>»Öffnen mit«</emphasis> speichert das Bildschirmfoto im temporären Verzeichnis des Systems und öffnet es mit der aus der Auswahlliste gewählten Anwendung. Anwendungen, die Bilder unterstützen, werden automatisch festgestellt und der Auswahlliste hinzugefügt."
 
-#: ../docs/manual/C/index.xml.in:241(title)
+#: ../docs/manual/C/index.xml.in241(title)
+#, fuzzy
 msgid "Host on ZimageZ"
-msgstr ""
+msgstr "Auf ZimageZ bereitstellen"
 
-#: ../docs/manual/C/index.xml.in:243(para)
+#: ../docs/manual/C/index.xml.in243(para)
+#, fuzzy
 msgid "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your screenshot on this free online hosting service, so that you can share it easily with other people. ZimageZ automatically generates a large and a small thumbnail of your screenshot, which can be used to create thumbnails pointing to the full size screenshot."
-msgstr ""
+msgstr "Die Option <emphasis>»Auf ZimageZ bereitstellen«</emphasis> ermöglicht Ihnen, Ihr Bildschirmfoto auf diesem freien Online-Hosting-Dienst bereitzustellen, so dass Sie es einfach mit anderen Leuten gemeinsam benutzen können.  ZimageZ generiert eine große und eine kleine Miniaturansicht Ihres Bildschirmfotos, die benutzt werden können um Miniaturansichten zu erstellen, die auf das Bildschirmfoto in voller Größe zu verweisen."
 
-#: ../docs/manual/C/index.xml.in:252(para)
+#: ../docs/manual/C/index.xml.in252(para)
+#, fuzzy
 msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown this dialog:"
-msgstr ""
+msgstr "Nach dem Drücken der Taste <emphasis>»OK«</emphasis> wird folgender Dialog angezeigt:"
 
-#: ../docs/manual/C/index.xml.in:264(phrase)
+#: ../docs/manual/C/index.xml.in264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:269(para)
+#: ../docs/manual/C/index.xml.in269(para)
 msgid "If you do not have a ZimageZ user name, you will need to create one on the <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. Several languages are available on this website, you can switch between using the menu up right. You must fill all fields of this dialog. Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:279(para)
+#: ../docs/manual/C/index.xml.in279(para)
 msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:293(phrase)
+#: ../docs/manual/C/index.xml.in293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:303(title)
+#: ../docs/manual/C/index.xml.in303(title)
 msgid "Via command line"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:305(para)
+#: ../docs/manual/C/index.xml.in305(para)
 msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:315(title)
+#: ../docs/manual/C/index.xml.in315(title)
 msgid "The command line options"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:318(title)
+#: ../docs/manual/C/index.xml.in318(title)
 msgid "The -w option"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:320(para)
+#: ../docs/manual/C/index.xml.in320(para)
 msgid "The <emphasis>-w</emphasis> option allows you to take a screenshot of the active window."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:327(title)
+#: ../docs/manual/C/index.xml.in327(title)
 msgid "The -f option"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:329(para)
+#: ../docs/manual/C/index.xml.in329(para)
 msgid "The <emphasis>-f</emphasis> option allows you to take a screenshot of the entire screen."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:336(title)
+#: ../docs/manual/C/index.xml.in336(title)
 msgid "The -r option"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:338(para)
+#: ../docs/manual/C/index.xml.in338(para)
 msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:347(title)
+#: ../docs/manual/C/index.xml.in347(title)
 msgid "The -d option"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:349(para)
+#: ../docs/manual/C/index.xml.in349(para)
 msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:359(title)
+#: ../docs/manual/C/index.xml.in359(title)
 msgid "The -s option"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:361(para)
+#: ../docs/manual/C/index.xml.in361(para)
 msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:371(title)
+#: ../docs/manual/C/index.xml.in371(title)
 msgid "The -o option"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:373(para)
+#: ../docs/manual/C/index.xml.in373(para)
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:385(title)
+#: ../docs/manual/C/index.xml.in385(title)
 msgid "The -u option"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:387(para)
+#: ../docs/manual/C/index.xml.in387(para)
 msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:400(title)
+#: ../docs/manual/C/index.xml.in400(title)
 msgid "Using the Xfce panel plugin"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:403(title)
+#: ../docs/manual/C/index.xml.in403(title)
 msgid "Adding the plugin"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:405(para)
+#: ../docs/manual/C/index.xml.in405(para)
 msgid "To add the plugin to the panel, right click on the panel and select <emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>\"Screenshot\"</emphasis>, and add it."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:413(title)
+#: ../docs/manual/C/index.xml.in413(title)
 msgid "Configuring the plugin"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:415(para)
+#: ../docs/manual/C/index.xml.in415(para)
 msgid "You can configure how screenshots are taken by right clicking on the plugin and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog similar to the dialog of the main application will appear. Please have a look above for the different preferences."
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:425(title)
+#: ../docs/manual/C/index.xml.in425(title)
 msgid "Using the plugin"
 msgstr ""
 
-#: ../docs/manual/C/index.xml.in:427(para)
+#: ../docs/manual/C/index.xml.in427(para)
 msgid "To take a screenshot, just click on the plugin. You can use the scroll wheel on the plugin button to switch between the different regions to be captured."
 msgstr ""
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: ../docs/manual/C/index.xml.in:0(None)
+#: ../docs/manual/C/index.xml.in0(None)
 msgid "translator-credits"
 msgstr ""
-
