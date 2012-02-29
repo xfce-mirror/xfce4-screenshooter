@@ -53,7 +53,7 @@ msgstr "기본 설정"
 
 #: ../lib/screenshooter-dialogs.c:730
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍을 영역 지정</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍을 선택영역 지정</span>"
 
 #: ../lib/screenshooter-dialogs.c:750
 msgid "Entire screen"
@@ -95,7 +95,7 @@ msgstr "스크린 샷에 마우스 포인터를 보입니다"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍기전 시간 지연하기</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍기 전 시간 지연하기</span>"
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
