@@ -1,0 +1,348 @@
+# Korean translation for xfce4-screenshooter.master-docs.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-screenshooter.master-docs\n"
+"POT-Creation-Date: 2012-01-02 23:51+0100\n"
+"PO-Revision-Date: 2012-02-29 17:28+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Korean\n"
+"X-Poedit-Country: KOREA, REPUBLIC OF\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../docs/manual/C/index.xml.in:97(None)
+msgid "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e5a09b9b9962ed18"
+msgstr "@@image: 'images/xfce4-screenshooter-dialog1.png'; md5=ceb772964fa6ca07e5a09b9b9962ed18"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../docs/manual/C/index.xml.in:169(None)
+msgid "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5dfc980fb216025e0"
+msgstr "@@image: 'images/xfce4-screenshooter-dialog2.png'; md5=fa48885f54ca6ab5dfc980fb216025e0"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../docs/manual/C/index.xml.in:260(None)
+msgid "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c8102c88e978eb7ef63994f2648f5ae6"
+msgstr "@@image: 'images/xfce4-screenshooter-zimagez-login-dialog.png'; md5=c8102c88e978eb7ef63994f2648f5ae6"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: ../docs/manual/C/index.xml.in:289(None)
+msgid "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468def960a376d5a856f2fcb3b35daf1"
+msgstr "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468def960a376d5a856f2fcb3b35daf1"
+
+#: ../docs/manual/C/index.xml.in:12(title)
+msgid "Xfce4 Screenshooter"
+msgstr "Xfce4 Screenshooter"
+
+#: ../docs/manual/C/index.xml.in:17(year)
+msgid "2008"
+msgstr "2008"
+
+#: ../docs/manual/C/index.xml.in:18(year)
+#: ../docs/manual/C/index.xml.in:23(year)
+msgid "2009"
+msgstr "2009"
+
+#: ../docs/manual/C/index.xml.in:19(holder)
+msgid "Jérôme Guelfucci"
+msgstr "Jérôme Guelfucci"
+
+#: ../docs/manual/C/index.xml.in:24(holder)
+msgid "Sam Swift"
+msgstr "Sam Swift"
+
+#: ../docs/manual/C/index.xml.in:28(para)
+msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
+msgstr "자유 소프트웨어가 공표한 GNU 자유 문서 라이선스 버전 1.1 또는 그 이상의 조항 하에 섹션, 전면 표지, 후면 표지의 변경을 제외한 이 문서의 복제, 배포, 수정이 가능합니다. 라이센스 전문은 <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>에서 보실 수 있습니다."
+
+#: ../docs/manual/C/index.xml.in:40(firstname)
+msgid "Jérôme"
+msgstr "Jérôme"
+
+#: ../docs/manual/C/index.xml.in:41(surname)
+msgid "Guelfucci"
+msgstr "Guelfucci"
+
+#: ../docs/manual/C/index.xml.in:43(email)
+msgid "jeromeg@xfce.org"
+msgstr "jeromeg@xfce.org"
+
+#: ../docs/manual/C/index.xml.in:47(firstname)
+msgid "Sam"
+msgstr "Sam"
+
+#: ../docs/manual/C/index.xml.in:48(surname)
+msgid "Swift"
+msgstr "Swift"
+
+#: ../docs/manual/C/index.xml.in:50(email)
+msgid "renmush@gmail.com"
+msgstr "renmush@gmail.com"
+
+#: ../docs/manual/C/index.xml.in:55(releaseinfo)
+msgid "This manual describes version @PACKAGE_VERSION@ of Xfce4 Screenshooter."
+msgstr "이 설명서는 Xfce4 Screenshooter 버전 @PACKAGE_VERSION@에 대해 설명합니다."
+
+#: ../docs/manual/C/index.xml.in:61(title)
+msgid "Introduction to Xfce4 Screenshooter"
+msgstr "Xfce4 Screenshooter 소개"
+
+#: ../docs/manual/C/index.xml.in:63(para)
+msgid "This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action to be performed afterwards: save the screenshot to a PNG file, copy it to the clipboard, open it using another application, or host it on <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ</ulink>, a free online image hosting service."
+msgstr "이 프로그램은 전체 화면, 활성 창 또는 선택영역을 찍을 수 있게 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:73(para)
+msgid "A plugin for the Xfce panel is also available."
+msgstr "Xfce 패널을 위한 플러그인도 있습니다."
+
+#: ../docs/manual/C/index.xml.in:80(title)
+msgid "Using the application"
+msgstr "프로그램 사용하기"
+
+#: ../docs/manual/C/index.xml.in:83(title)
+msgid "Via the user interface"
+msgstr "사용자 인터페이스를 통한 방법"
+
+#: ../docs/manual/C/index.xml.in:85(para)
+msgid "To launch the application, use the \"Screenshot\" item in the \"Accessories\" category of Xfce's main menu."
+msgstr "프로그램을 실행하려면, Xfce의 메인 메뉴의 \"보조프로그램\"에서 \"스크린샷\" 항목을 사용합니다."
+
+#: ../docs/manual/C/index.xml.in:90(para)
+msgid "This window will be displayed:"
+msgstr "이 창은 사라질 것입니다:"
+
+#: ../docs/manual/C/index.xml.in:101(phrase)
+msgid "The window of Xfce4 Screenshooter"
+msgstr "Xfce4 Screenshooter 창"
+
+#: ../docs/manual/C/index.xml.in:107(title)
+msgid "Region to capture"
+msgstr "찍을 선택영역 지정"
+
+#: ../docs/manual/C/index.xml.in:109(para)
+msgid "The <emphasis>\"Region to capture\"</emphasis> section allows you to set what the screenshot will be taken of:"
+msgstr "<emphasis>\"찍을 선택영역 지정\"</emphasis> 섹션은 스크린샷을 찍을 부분을 설정할 수 있도록 해줍니다:"
+
+#: ../docs/manual/C/index.xml.in:115(listitem)
+msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
+msgstr "\"전체 화면\"은 바라보고 있는 그대로의 전체 화면의 스크린샷을 찍습니다."
+
+#: ../docs/manual/C/index.xml.in:119(listitem)
+msgid "\"Active window\" takes a screenshot of the active window. This will be the one that was active before this dialog appeared, or if you set a delay, the one that is active after the delay."
+msgstr "\"활성 창\"은 활성 창의 스크린 샷을 찍습니다. 이 대화상자가 나타나기 전에 수행되며 혹은 지연 시간을 설정했다면, 지연 시간이 지나고 나서 활성화 됩니다."
+
+#: ../docs/manual/C/index.xml.in:125(listitem)
+msgid "\"Select a region\" allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
+msgstr "\"영역 선택\"은 찍고 싶은 화면 영역에 대해 마우스 단추를 누르고 사각형 모양으로 끌어서 마우스 단추를 떼기 전까지 찍은 영역을 선택할 수 있게 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:135(title)
+msgid "Capturing the pointer"
+msgstr "포인터 찍기"
+
+#: ../docs/manual/C/index.xml.in:137(para)
+msgid "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to select whether or not the screenshot will include the mouse pointer."
+msgstr "<emphasis>\"마우스 포인터 찍기\"</emphasis> 옵션은 스크린 샷에 마우스 포인터를 포함할 것인지에 대한 여부를 선택할 수 있도록 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:145(title)
+msgid "Delay before capturing"
+msgstr "찍기 전 시간 지연하기"
+
+#: ../docs/manual/C/index.xml.in:147(para)
+msgid "The <emphasis>\"Delay before capturing\"</emphasis> section allows you to set the delay that will elapse between pressing the <emphasis>\"OK\"</emphasis> button and screenshot being taken. This delay will allow you to open menus or to perform whatever action you require to see displayed in the screenshot."
+msgstr "<emphasis>\"찍기 전 시간 지연하기\"</emphasis> 섹션에서는 <emphasis>\"확인\"</emphasis> 단추를 누르고 스크린샷을 찍는 사이에 걸릴 지연시간을 설정할 수 있도록 해줍니다. 이 지연 시간은 메뉴를 열거나 스크린샷에 나타낼 필요가 있는 동작을 수행할 수 있도록 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:159(title)
+msgid "After capturing"
+msgstr "찍은 다음"
+
+#: ../docs/manual/C/index.xml.in:161(para)
+msgid "After pressing the <emphasis>\"OK\"</emphasis> button a second window will be displayed:"
+msgstr "<emphasis>\"확인\"</emphasis> 단추를 누른 다음 잠시 후 창이 나타날 것입니다:"
+
+#: ../docs/manual/C/index.xml.in:173(phrase)
+msgid "The window of Xfce4 Screenshooter after taking a screenshot"
+msgstr "스크린 샷을 찍은 후의 Xfce4 Screenshooter 창"
+
+#: ../docs/manual/C/index.xml.in:180(title)
+msgid "Preview"
+msgstr "미리 보기"
+
+#: ../docs/manual/C/index.xml.in:182(para)
+msgid "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the screenshot."
+msgstr "<emphasis>\"미리 보기\"</emphasis> 섹션은 스크린샷의 섬네일을 보여줍니다."
+
+#: ../docs/manual/C/index.xml.in:189(title)
+msgid "Action"
+msgstr "동작"
+
+#: ../docs/manual/C/index.xml.in:191(para)
+msgid "The <emphasis>\"Action\"</emphasis> section allows you to choose what should be performed on the screenshot."
+msgstr "<emphasis>\"동작\"</emphasis> 섹션은 스크린 샷에 어떤 일을 할 것인지를 선택할 수 있도록 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:197(title)
+msgid "Save"
+msgstr "저장"
+
+#: ../docs/manual/C/index.xml.in:199(para)
+msgid "The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG file. A save dialog will be displayed. You will be able to set the save location, and the name of the file."
+msgstr "<emphasis>\"저장\"</emphasis> 옵션은 스크린샷을 PNG 파일로 저장할 것입니다. 저장 대화상자를 표시할 것입니다. 저장 위치와 파일의 이름을 지정할 수 있습니다."
+
+#: ../docs/manual/C/index.xml.in:206(para)
+msgid "Xfce4 Screenshooter is also able to save the screenshot to any remote file system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers accessible via SSH... You just need to connect this remote file system using <emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left column of the save dialog."
+msgstr "Xfce4 Screenshooter는 SSH를 통해 원격 컴퓨터에 접근할 수 있게 하는 FTP나, SAMBA, SFTP와 같은 GVFs를 지원하는 원격 파일 시스템에 스크린샷을 저장할 수 있습니다... 단지 <emphasis>gvfs-connect</emphasis>나 <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink>를 사용하고 있는 원격 파일 시스템에 연결하기만 하면 됨, 저장 대화상자의 왼쪽 칸을 통해 사용할 수 있습니다."
+
+#: ../docs/manual/C/index.xml.in:218(title)
+msgid "Copy to the clipboard"
+msgstr "클립보드로 복사"
+
+#: ../docs/manual/C/index.xml.in:220(para)
+msgid "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to paste the screenshot in another application, such as a word processor. This option is only available when a clipboard manager is running."
+msgstr "<emphasis>\"클립보드로 복사\"</emphasis> 옵션은 워드 프로세서와 같은 다른 프로그램에 스크린샷을 붙여넣을 수 있도록 해줍니다. 이 옵션은 클립보드 관리자가 실행중일때만 사용할 수 있습니다."
+
+#: ../docs/manual/C/index.xml.in:229(title)
+msgid "Open with"
+msgstr "다음으로 열기"
+
+#: ../docs/manual/C/index.xml.in:231(para)
+msgid "The <emphasis>\"Open with\"</emphasis> option saves the screenshot to the system's temporary directory and opens it with the application chosen from the drop-down list. Applications which support images are automatically detected and added to the drop-down list."
+msgstr "<emphasis>\"다음으로 열기\"</emphasis> 옵션은 스크린샷을 시스템의 임시 디렉터리에 저장하고 드롭다운 목록에서 선택한 프로그램으로 열어줍니다. 이미지를 지원하는 프로그램들은 자동으로 감지되고 드롭다운 목록에 추가됩니다."
+
+#: ../docs/manual/C/index.xml.in:241(title)
+msgid "Host on ZimageZ"
+msgstr "ZimageZ에 올리기"
+
+#: ../docs/manual/C/index.xml.in:243(para)
+msgid "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your screenshot on this free online hosting service, so that you can share it easily with other people. ZimageZ automatically generates a large and a small thumbnail of your screenshot, which can be used to create thumbnails pointing to the full size screenshot."
+msgstr "<emphasis>\"ZimageZ에 올리기\"</emphasis> 옵션은 지유 온라인 호스팅 서비스에 여러분의 스크린샷을 올려서 다른 사람과 쉽게 공유할 수 있게 해줍니다. ZimageZ는 전체 크기의 스크린 샷을 가리키는 섬네일을 만드는데 사용할 수 있는, 여러분의 스크린샷에 대한 크고 작은 섬네일을 자동으로 만듭니다."
+
+#: ../docs/manual/C/index.xml.in:252(para)
+msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown this dialog:"
+msgstr "<emphasis>\"확인\"</emphasis> 단추를 누르고 난 후, 다음 대화상자를 보게 될 것입니다:"
+
+#: ../docs/manual/C/index.xml.in:264(phrase)
+msgid "The dialog to host a screenshot on ZimageZ"
+msgstr "ZimageZ로 스크린샷을 올리기 위한 대화상자"
+
+#: ../docs/manual/C/index.xml.in:269(para)
+msgid "If you do not have a ZimageZ user name, you will need to create one on the <ulink type=\"http\" url=\"http://www.zimagez.com\"> ZimageZ website</ulink>. Several languages are available on this website, you can switch between using the menu up right. You must fill all fields of this dialog. Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
+msgstr "ZimageZ 사용자 이름이 없다면 <ulink type=\"http\" url=\"http://www.zimagez.com\">ZimageZ 웹 사이트</ulink>에서 만들 필요가 있을 것입니다. 이 웹 사이트에서 다양한 언어를 지원하며 오른쪽 상단의 메뉴에서 전환할 수 있습니다. 이 대화상자의 모든 필드를 채워야 합니다. <emphasis>\"확인\"</emphasis> 단추를 누르면 업로드가 시작될 것입니다."
+
+#: ../docs/manual/C/index.xml.in:279(para)
+msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
+msgstr "아래 대화상자에서는 전체 크기 스크린 샷을 가리키는 섬네일을 만들기 위해 전체 크기 스크린샷, 큰 섬네일, 작은 섬네일에 대한 연결을 HTML과 BBcode 예제로 제공할 것입니다:"
+
+#: ../docs/manual/C/index.xml.in:293(phrase)
+msgid "The dialog giving the links to your screenshot on ZimageZ"
+msgstr "ZimageZ에서 스크린샷에 대한 연결을 제공하는 대화상자"
+
+#: ../docs/manual/C/index.xml.in:303(title)
+msgid "Via command line"
+msgstr "명령줄을 통한 방법"
+
+#: ../docs/manual/C/index.xml.in:305(para)
+msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
+msgstr "명령줄 옵션들은 스크린샷을 빨리 찍을 수 있게 해줍니다. 또한 대부분의 키보드 오른쪽 위에 있는 Pring Screen 키를 설정하여 스크린샷을 찍을 수 있게 해줍니다. 이렇게 하려면 데스크톱 환경의 키 바인딩을 설정하여 Print Screen 키를 눌렀을때 다음 옵션들과 함께 xfce4-screenshooter를 실행할 수 있게 해야 합니다."
+
+#: ../docs/manual/C/index.xml.in:315(title)
+msgid "The command line options"
+msgstr "명령 줄 옵션"
+
+#: ../docs/manual/C/index.xml.in:318(title)
+msgid "The -w option"
+msgstr "-w 옵션"
+
+#: ../docs/manual/C/index.xml.in:320(para)
+msgid "The <emphasis>-w</emphasis> option allows you to take a screenshot of the active window."
+msgstr "<emphasis>-w</emphasis> 옵션은 활성 창의 스크린샷을 찍을 수 있게 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:327(title)
+msgid "The -f option"
+msgstr "-f 옵션"
+
+#: ../docs/manual/C/index.xml.in:329(para)
+msgid "The <emphasis>-f</emphasis> option allows you to take a screenshot of the entire screen."
+msgstr "<emphasis>-f</emphasis> 옵션은 전체 스크린의 스크린샷을 찍을 수 있게 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:336(title)
+msgid "The -r option"
+msgstr "-r 옵션"
+
+#: ../docs/manual/C/index.xml.in:338(para)
+msgid "The <emphasis>-r</emphasis> option allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
+msgstr "<emphasis>-r</emphasis> 옵션은 찍고 싶은 화면 영역에 대해 마우스 단추를 누르고 사각형 모양으로 끌어서 마우스 단추를 떼기 전까지 찍은 영역을 선택할 수 있게 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:347(title)
+msgid "The -d option"
+msgstr "-d 옵션"
+
+#: ../docs/manual/C/index.xml.in:349(para)
+msgid "The <emphasis>-d</emphasis> option followed by a positive integer allows you to set the delay before taking the screenshot when the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr "양의 정수값이 따라오는 <emphasis>-d</emphasis> 옵션은 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을 때, 스크린샷을 찍기전의 시간 지연을 설정할 수 있도록 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:359(title)
+msgid "The -s option"
+msgstr "-s 옵션"
+
+#: ../docs/manual/C/index.xml.in:361(para)
+msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr "경로가 따라오는 <emphasis>-s</emphasis> 옵션은 존재하는 폴더로 스크린 샷을 저장할 위치를 설정할 수 있게 해줍니다."
+
+#: ../docs/manual/C/index.xml.in:371(title)
+msgid "The -o option"
+msgstr "-o 옵션"
+
+#: ../docs/manual/C/index.xml.in:373(para)
+msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr "프로그램 이름이 따르는 <emphasis>-o</emphasis> 옵션이 주어졌다면, 스크린 샷은 시스템의 임시 디렉터리에 스크린 샷을 저장하고 <emphasis>-o</emphasis> 다음에 지정한 프로그램으로 열 것입니다. 이 옵션은 단지 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을때만 동작합니다."
+
+#: ../docs/manual/C/index.xml.in:385(title)
+msgid "The -u option"
+msgstr "-u 옵션"
+
+#: ../docs/manual/C/index.xml.in:387(para)
+msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
+msgstr "<emphasis>-u</emphasis> 옵션이 주어졌다면, 스크린샷을 ZimageZ에 올릴 것입니다. 자세한 사항은 위를 참조하시기 바랍니다. 이 옵션은 단지 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을때만 동작합니다."
+
+#: ../docs/manual/C/index.xml.in:400(title)
+msgid "Using the Xfce panel plugin"
+msgstr "Xfce 패널 플러그인 사용하기"
+
+#: ../docs/manual/C/index.xml.in:403(title)
+msgid "Adding the plugin"
+msgstr "플러그인 추가하기"
+
+#: ../docs/manual/C/index.xml.in:405(para)
+msgid "To add the plugin to the panel, right click on the panel and select <emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>\"Screenshot\"</emphasis>, and add it."
+msgstr "패널에 플러그인을 추가하려면, 패널 위에서 오른쪽 단추를 누르고 <emphasis>\"새 항목 추가\"</emphasis>를 선택합니다. <emphasis>\"Screenshot\"</emphasis> 이름을 가진 플러그인을 선택하고 추가합니다."
+
+#: ../docs/manual/C/index.xml.in:413(title)
+msgid "Configuring the plugin"
+msgstr "플러그인 설정하기"
+
+#: ../docs/manual/C/index.xml.in:415(para)
+msgid "You can configure how screenshots are taken by right clicking on the plugin and selecting <emphasis>\"Properties\"</emphasis>. A preferences dialog similar to the dialog of the main application will appear. Please have a look above for the different preferences."
+msgstr "어떻게 스크린샷을 찍을지는 플러그인에서 오른쪽 단추를 누르고 <emphasis>\"속성\"</emphasis>을 선택하여 설정할 수 있습니다. 기본 설정 대화상자는 메인 프로그램이 나타날때와 유사합니다. 다른 기본 설정에 대해 보시기 바랍니다."
+
+#: ../docs/manual/C/index.xml.in:425(title)
+msgid "Using the plugin"
+msgstr "플러그인 사용하기"
+
+#: ../docs/manual/C/index.xml.in:427(para)
+msgid "To take a screenshot, just click on the plugin. You can use the scroll wheel on the plugin button to switch between the different regions to be captured."
+msgstr "스크린샷을 찍으려면 플러그인에서 마우스 왼쪽 단추을 누르면 됩니다. 다른 선택영역을 찍기 위해 플러그인 버튼에서 스크롤 휠을 사용할 수 있습니다."
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: ../docs/manual/C/index.xml.in:0(None)
+msgid "translator-credits"
+msgstr "Seong-ho Cho <darkcircle.0426@gmail.com>, 2012"
+
