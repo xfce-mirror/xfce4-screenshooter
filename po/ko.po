@@ -150,7 +150,7 @@ msgstr "ZimageZ에 올리기"
 #: ../lib/screenshooter-dialogs.c:1009
 #: ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "무료 온라인 이미지 호스팅 서비스 ZimageZ에 스크린 샷을 올립니다"
+msgstr "무료 온라인 그림 호스팅 서비스 ZimageZ에 스크린 샷을 올립니다"
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -273,7 +273,7 @@ msgstr "스크린 샷의 설명입니다. ZimageZ에 스크린 샷을 표시할 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr "<a href=\"%s\">완전한 크기의 이미지</a>"
+msgstr "<a href=\"%s\">완전한 크기의 그림</a>"
 
 #: ../lib/screenshooter-zimagez.c:904
 #, c-format
@@ -295,7 +295,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">연결</span>"
 
 #: ../lib/screenshooter-zimagez.c:987
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing to the full size image</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">완전한 크기의 이미지를 가리킬 섬네일을 가리키는 코드</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">완전한 크기의 그림을 가리킬 섬네일을 가리키는 코드</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
