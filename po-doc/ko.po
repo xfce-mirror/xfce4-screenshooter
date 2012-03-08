@@ -1,6 +1,8 @@
 # Korean translation for xfce4-screenshooter.master-docs.
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2012.
 #
+# Please write your name and e-mail into "translator-credits" if you update this translation script.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter.master-docs\n"
@@ -344,5 +346,6 @@ msgstr "스크린샷을 찍으려면 플러그인에서 마우스 왼쪽 단추�
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/index.xml.in:0(None)
 msgid "translator-credits"
-msgstr "Seong-ho Cho <darkcircle.0426@gmail.com>"
-
+msgstr ""
+"Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+""
