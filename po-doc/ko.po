@@ -257,7 +257,7 @@ msgstr "명령줄을 통한 방법"
 
 #: ../docs/manual/C/index.xml.in:305(para)
 msgid "Command line options allow you to take screenshots quickly. They also allow you to configure the Print Screen key on the upper right of most keyboards so that it takes screenshots. To do so, configure the key-bindings of your desktop environment so that it launches xfce4-screenshooter with one or several of the following options when the Prt Scrn key is pressed."
-msgstr "명령줄 옵션들은 스크린샷을 빨리 찍을 수 있게 해줍니다. 또한 대부분의 키보드 오른쪽 위에 있는 Pring Screen 키를 설정하여 스크린샷을 찍을 수 있게 해줍니다. 이렇게 하려면 데스크톱 환경의 키 바인딩을 설정하여 Print Screen 키를 눌렀을때 다음 옵션들과 함께 xfce4-screenshooter를 실행할 수 있게 해야 합니다."
+msgstr "명령줄 옵션들은 스크린샷을 빨리 찍을 수 있게 해줍니다. 또한 대부분의 키보드 오른쪽 위에 있는 Pring Screen 키를 설정하여 스크린샷을 찍을 수 있게 해줍니다. 이렇게 하려면 데스크톱 환경의 키 바인딩을 설정하여 Print Screen 키를 눌렀을 때 다음 옵션들과 함께 xfce4-screenshooter를 실행할 수 있게 해야 합니다."
 
 #: ../docs/manual/C/index.xml.in:315(title)
 msgid "The command line options"
@@ -309,7 +309,7 @@ msgstr "-o 옵션"
 
 #: ../docs/manual/C/index.xml.in:373(para)
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "프로그램 이름이 따르는 <emphasis>-o</emphasis> 옵션이 주어졌다면, 스크린 샷은 시스템의 임시 디렉터리에 스크린 샷을 저장하고 <emphasis>-o</emphasis> 다음에 지정한 프로그램으로 열 것입니다. 이 옵션은 단지 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을때만 동작합니다."
+msgstr "프로그램 이름이 따르는 <emphasis>-o</emphasis> 옵션이 주어졌다면, 스크린 샷은 시스템의 임시 디렉터리에 스크린 샷을 저장하고 <emphasis>-o</emphasis> 다음에 지정한 프로그램으로 열 것입니다. 이 옵션은 단지 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을 때만 동작합니다."
 
 #: ../docs/manual/C/index.xml.in:385(title)
 msgid "The -u option"
@@ -317,7 +317,7 @@ msgstr "-u 옵션"
 
 #: ../docs/manual/C/index.xml.in:387(para)
 msgid "If the <emphasis>-u</emphasis> option is given, the screenshot will be hosted on ZimageZ. See above for more details. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "<emphasis>-u</emphasis> 옵션이 주어졌다면, 스크린샷을 ZimageZ에 올릴 것입니다. 자세한 사항은 위를 참조하시기 바랍니다. 이 옵션은 단지 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을때만 동작합니다."
+msgstr "<emphasis>-u</emphasis> 옵션이 주어졌다면, 스크린샷을 ZimageZ에 올릴 것입니다. 자세한 사항은 위를 참조하시기 바랍니다. 이 옵션은 단지 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을 때만 동작합니다."
 
 #: ../docs/manual/C/index.xml.in:400(title)
 msgid "Using the Xfce panel plugin"
