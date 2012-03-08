@@ -145,7 +145,7 @@ msgstr "\"전체 화면\"은 바라보고 있는 그대로의 전체 화면의 �
 
 #: ../docs/manual/C/index.xml.in:119(listitem)
 msgid "\"Active window\" takes a screenshot of the active window. This will be the one that was active before this dialog appeared, or if you set a delay, the one that is active after the delay."
-msgstr "\"활성 창\"은 활성 창의 스크린 샷을 찍습니다. 이 대화상자가 나타나기 전에 수행되며 혹은 지연 시간을 설정했다면, 지연 시간이 지나고 나서 활성화 됩니다."
+msgstr "\"활성 창\"은 활성 창의 스크린샷을 찍습니다. 이 대화상자가 나타나기 전에 수행되며 혹은 지연 시간을 설정했다면, 지연 시간이 지나고 나서 활성화 됩니다."
 
 #: ../docs/manual/C/index.xml.in:125(listitem)
 msgid "\"Select a region\" allows you to select a region to be captured by clicking and dragging a rectangle over the area of screen that you wish to capture, before releasing the mouse button."
@@ -157,7 +157,7 @@ msgstr "포인터 찍기"
 
 #: ../docs/manual/C/index.xml.in:137(para)
 msgid "The <emphasis>\"Capture the mouse pointer\"</emphasis> option allows you to select whether or not the screenshot will include the mouse pointer."
-msgstr "<emphasis>\"마우스 포인터 찍기\"</emphasis> 옵션은 스크린 샷에 마우스 포인터를 포함할 것인지에 대한 여부를 선택할 수 있도록 해줍니다."
+msgstr "<emphasis>\"마우스 포인터 찍기\"</emphasis> 옵션은 스크린샷에 마우스 포인터를 포함할 것인지에 대한 여부를 선택할 수 있도록 해줍니다."
 
 #: ../docs/manual/C/index.xml.in:145(title)
 msgid "Delay before capturing"
@@ -177,7 +177,7 @@ msgstr "<emphasis>\"확인\"</emphasis> 단추를 누른 다음 잠시 후 창�
 
 #: ../docs/manual/C/index.xml.in:173(phrase)
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
-msgstr "스크린 샷을 찍은 후의 Xfce4 Screenshooter 창"
+msgstr "스크린샷을 찍은 후의 Xfce4 Screenshooter 창"
 
 #: ../docs/manual/C/index.xml.in:180(title)
 msgid "Preview"
@@ -193,7 +193,7 @@ msgstr "동작"
 
 #: ../docs/manual/C/index.xml.in:191(para)
 msgid "The <emphasis>\"Action\"</emphasis> section allows you to choose what should be performed on the screenshot."
-msgstr "<emphasis>\"동작\"</emphasis> 섹션은 스크린 샷에 어떤 일을 할 것인지를 선택할 수 있도록 해줍니다."
+msgstr "<emphasis>\"동작\"</emphasis> 섹션은 스크린샷에 어떤 일을 할 것인지를 선택할 수 있도록 해줍니다."
 
 #: ../docs/manual/C/index.xml.in:197(title)
 msgid "Save"
@@ -229,7 +229,7 @@ msgstr "ZimageZ에 올리기"
 
 #: ../docs/manual/C/index.xml.in:243(para)
 msgid "The <emphasis>\"Host on ZimageZ\"</emphasis> option allow you to host your screenshot on this free online hosting service, so that you can share it easily with other people. ZimageZ automatically generates a large and a small thumbnail of your screenshot, which can be used to create thumbnails pointing to the full size screenshot."
-msgstr "<emphasis>\"ZimageZ에 올리기\"</emphasis> 옵션은 지유 온라인 호스팅 서비스에 여러분의 스크린샷을 올려서 다른 사람과 쉽게 공유할 수 있게 해줍니다. ZimageZ는 전체 크기의 스크린 샷을 가리키는 섬네일을 만드는데 사용할 수 있는, 여러분의 스크린샷에 대한 크고 작은 섬네일을 자동으로 만듭니다."
+msgstr "<emphasis>\"ZimageZ에 올리기\"</emphasis> 옵션은 지유 온라인 호스팅 서비스에 여러분의 스크린샷을 올려서 다른 사람과 쉽게 공유할 수 있게 해줍니다. ZimageZ는 전체 크기의 스크린샷을 가리키는 섬네일을 만드는데 사용할 수 있는, 여러분의 스크린샷에 대한 크고 작은 섬네일을 자동으로 만듭니다."
 
 #: ../docs/manual/C/index.xml.in:252(para)
 msgid "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown this dialog:"
@@ -245,7 +245,7 @@ msgstr "ZimageZ 사용자 이름이 없다면 <ulink type=\"http\" url=\"http://
 
 #: ../docs/manual/C/index.xml.in:279(para)
 msgid "The dialog below will give you the links to the full size screenshot, the large thumbnail, the small thumbnails, as well examples of HTML and BBcode to create a thumbnail pointing to the full size screenshot:"
-msgstr "아래 대화상자에서는 전체 크기 스크린 샷을 가리키는 섬네일을 만들기 위해 전체 크기 스크린샷, 큰 섬네일, 작은 섬네일에 대한 연결을 HTML과 BBcode 예제로 제공할 것입니다:"
+msgstr "아래 대화상자에서는 전체 크기 스크린샷을 가리키는 섬네일을 만들기 위해 전체 크기 스크린샷, 큰 섬네일, 작은 섬네일에 대한 연결을 HTML과 BBcode 예제로 제공할 것입니다:"
 
 #: ../docs/manual/C/index.xml.in:293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
@@ -301,7 +301,7 @@ msgstr "-s 옵션"
 
 #: ../docs/manual/C/index.xml.in:361(para)
 msgid "The <emphasis>-s</emphasis> option followed by the path to an existing folder allows you to set where the screenshots are saved. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "경로가 따라오는 <emphasis>-s</emphasis> 옵션은 존재하는 폴더로 스크린 샷을 저장할 위치를 설정할 수 있게 해줍니다."
+msgstr "경로가 따라오는 <emphasis>-s</emphasis> 옵션은 존재하는 폴더로 스크린샷을 저장할 위치를 설정할 수 있게 해줍니다."
 
 #: ../docs/manual/C/index.xml.in:371(title)
 msgid "The -o option"
@@ -309,7 +309,7 @@ msgstr "-o 옵션"
 
 #: ../docs/manual/C/index.xml.in:373(para)
 msgid "If the <emphasis>-o</emphasis> option is given, followed by an application name, the screenshot will be saved to the system's temporary directory and opened with the application whose name is to be given after <emphasis>-o</emphasis>. This option only has an effect if the <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
-msgstr "프로그램 이름이 따르는 <emphasis>-o</emphasis> 옵션이 주어졌다면, 스크린 샷은 시스템의 임시 디렉터리에 스크린 샷을 저장하고 <emphasis>-o</emphasis> 다음에 지정한 프로그램으로 열 것입니다. 이 옵션은 단지 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을 때만 동작합니다."
+msgstr "프로그램 이름이 따르는 <emphasis>-o</emphasis> 옵션이 주어졌다면, 스크린샷은 시스템의 임시 디렉터리에 스크린샷을 저장하고 <emphasis>-o</emphasis> 다음에 지정한 프로그램으로 열 것입니다. 이 옵션은 단지 <emphasis>-w</emphasis>, <emphasis>-f</emphasis> 또는 <emphasis>-r</emphasis> 옵션이 주어졌을 때만 동작합니다."
 
 #: ../docs/manual/C/index.xml.in:385(title)
 msgid "The -u option"
