@@ -31,7 +31,7 @@ msgstr "전송"
 
 #: ../lib/screenshooter-dialogs.c:556
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">스크린 샷을 다음으로 전송했습니다:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">스크린샷을 다음으로 전송했습니다:</span>"
 
 #: ../lib/screenshooter-dialogs.c:672
 #: ../lib/screenshooter-dialogs.c:689
@@ -45,7 +45,7 @@ msgstr "스크린샷"
 
 #: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
-msgstr "스크린 샷 찍기"
+msgstr "스크린샷 찍기"
 
 #: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
@@ -91,7 +91,7 @@ msgstr "마우스 포인터 찍기"
 
 #: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr "스크린 샷에 마우스 포인터를 보입니다"
+msgstr "스크린샷에 마우스 포인터를 보입니다"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -99,7 +99,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍기 전 시간 지연�
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "스크린 샷을 찍기 위해 몇 초간 시간을 지연합니다"
+msgstr "스크린샷을 찍기 위해 몇 초간 시간을 지연합니다"
 
 #: ../lib/screenshooter-dialogs.c:841
 msgid "seconds"
@@ -128,7 +128,7 @@ msgstr "클립보드로 복사"
 
 #: ../lib/screenshooter-dialogs.c:954
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "나중에 붙일 수 있게 클립보드에 스크린 샷을 복사합니다"
+msgstr "나중에 붙일 수 있게 클립보드에 스크린샷을 복사합니다"
 
 #: ../lib/screenshooter-dialogs.c:971
 msgid "Open with:"
@@ -136,12 +136,12 @@ msgstr "다음으로 열기:"
 
 #: ../lib/screenshooter-dialogs.c:977
 msgid "Open the screenshot with the chosen application"
-msgstr "선택한 프로그램으로 스크린 샷을 엽니다"
+msgstr "선택한 프로그램으로 스크린샷을 엽니다"
 
 #: ../lib/screenshooter-dialogs.c:995
 #: ../src/main.c:63
 msgid "Application to open the screenshot"
-msgstr "스크린 샷을 열 프로그램"
+msgstr "스크린샷을 열 프로그램"
 
 #: ../lib/screenshooter-dialogs.c:1005
 msgid "Host on ZimageZ"
@@ -150,7 +150,7 @@ msgstr "ZimageZ에 올리기"
 #: ../lib/screenshooter-dialogs.c:1009
 #: ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "무료 온라인 그림 호스팅 서비스 ZimageZ에 스크린 샷을 올립니다"
+msgstr "무료 온라인 그림 호스팅 서비스 ZimageZ에 스크린샷을 올립니다"
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -158,7 +158,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">미리 보기</span>"
 
 #: ../lib/screenshooter-dialogs.c:1084
 msgid "Save screenshot as..."
-msgstr "스크린 샷을 다른 이름으로 저장..."
+msgstr "스크린샷을 다른 이름으로 저장..."
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
@@ -193,7 +193,7 @@ msgid ""
 "user name, passsword and details about the screenshot."
 msgstr ""
 "다음 필드를 <a href=\"http://www.zimagez.com\">ZimageZ</a> 사용자 이름, 암호\n"
-"그리고 스크린 샷에 대한 설명으로 채워주시기 바랍니다."
+"그리고 스크린샷에 대한 설명으로 채워주시기 바랍니다."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -210,7 +210,7 @@ msgstr "ZimageZ로 로그인 하기..."
 #: ../lib/screenshooter-zimagez.c:446
 #: ../lib/screenshooter-zimagez.c:597
 msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
-msgstr "ZimageZ로부터 예상치 못한 응답이 왔습니다. 스크린 샷 업로드에 실패했습니다."
+msgstr "ZimageZ로부터 예상치 못한 응답이 왔습니다. 스크린샷 업로드에 실패했습니다."
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
@@ -218,12 +218,12 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">�
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
-msgstr "스크린 샷 업로드..."
+msgstr "스크린샷 업로드..."
 
 #: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "스크린 샷을 업로드 하는 동안 오류가 발생했습니다."
+msgstr "스크린샷을 업로드 하는 동안 오류가 발생했습니다."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
@@ -232,7 +232,7 @@ msgstr "ZimageZ 세션 닫기..."
 
 #: ../lib/screenshooter-zimagez.c:679
 msgid "Details about the screenshot for ZimageZ"
-msgstr "ZimageZ 스크린 샷에 대한 상세정보"
+msgstr "ZimageZ 스크린샷에 대한 상세정보"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:719
@@ -259,7 +259,7 @@ msgstr "제목:"
 
 #: ../lib/screenshooter-zimagez.c:762
 msgid "The title of the screenshot, it will be used when displaying the screenshot on ZimageZ"
-msgstr "스크린 샷의 제목입니다. ZimageZ에 스크린 샷을 표시할 때 사용합니다"
+msgstr "스크린샷의 제목입니다. ZimageZ에 스크린샷을 표시할 때 사용합니다"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
@@ -268,7 +268,7 @@ msgstr "설명:"
 
 #: ../lib/screenshooter-zimagez.c:779
 msgid "A comment on the screenshot, it will be used when displaying the screenshot on ZimageZ"
-msgstr "스크린 샷의 설명입니다. ZimageZ에 스크린 샷을 표시할 때 사용합니다"
+msgstr "스크린샷의 설명입니다. ZimageZ에 스크린샷을 표시할 때 사용합니다"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -317,7 +317,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">상태</span>"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
-msgstr "스크린 샷을 찍기전에 지연할 초 단위 시간"
+msgstr "스크린샷을 찍기전에 지연할 초 단위 시간"
 
 #: ../src/main.c:58
 msgid "Display the mouse on the screenshot"
@@ -325,7 +325,7 @@ msgstr "스크린샷에 마우스를 보여주기"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
-msgstr "스크린 샷을 저장할 디렉터리"
+msgstr "스크린샷을 저장할 디렉터리"
 
 #: ../src/main.c:85
 msgid "Version information"
@@ -358,5 +358,5 @@ msgstr "%s은(는) 유효한 디렉터리가 아니기 때문에 기본 디렉�
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "전체 스크린 혹은 활성 창, 영역에 대해 스크린 샷을 찍습니다"
+msgstr "전체 스크린 혹은 활성 창, 영역에 대해 스크린샷을 찍습니다"
 
