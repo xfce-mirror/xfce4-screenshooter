@@ -74,7 +74,6 @@ msgid "Sam Swift"
 msgstr "Sam Swift"
 
 #: ../docs/manual/C/index.xml.in28(para)
-#, fuzzy
 msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
 msgstr "Die Rechte zum Kopieren, Verteilen und/oder Ändern dieses Dokuments wird unter den Bedingungen der GNU Free Documentation License, Version 1.1 oder einer neueren Version gewährt, wie sie von der Free Software Foundation veröffentlicht wurde; ohne unveränderliche Abschnitte, ohne Deck- und ohne Rückblatttexte. Der vollständige Lizenztext ist bei der <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink> erhältlich."
 
@@ -238,14 +237,13 @@ msgid "Xfce4 Screenshooter is also able to save the screenshot to any remote fil
 msgstr " Xfce4 Screenshooter ist auch in der Lage, das Bildschirmfoto in einem fernen Dateisystem, das GVFS unterstützt,  zu speichern, wie FTP, SAMBA, SFTP, ferne Rechner, auf die per SSH zugegriffen werden kann … Sie müssen sich nur unter Benutzung von <emphasis>gvfs-connect</emphasis> oder <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> mit diesem fernen System verbinden und es wird auf der linken Seite dieses Speicherdialogs verfügbar sein."
 
 #: ../docs/manual/C/index.xml.in218(title)
-#, fuzzy
 msgid "Copy to the clipboard"
 msgstr "In die Zwischenablage kopieren"
 
 #: ../docs/manual/C/index.xml.in220(para)
 #, fuzzy
 msgid "The <emphasis>\"Copy to the clipboard\"</emphasis> option allows you to paste the screenshot in another application, such as a word processor. This option is only available when a clipboard manager is running."
-msgstr "Die Option <emphasis>»In die Zwischenablage kopieren«</emphasis> ermöglich Ihnen, das Bildschirmfoto in eine andere Anwendung wie eine Textverarbeitung einzufügen. Diese Option ist nur verfügbar, wenn eine Zwischenablageverwaltung läuft."
+msgstr "Die Option <emphasis>»In die Zwischenablage kopieren«</emphasis> ermöglicht Ihnen, das Bildschirmfoto in eine andere Anwendung wie eine Textverarbeitung einzufügen. Diese Option ist nur verfügbar, wenn eine Zwischenablageverwaltung läuft."
 
 #: ../docs/manual/C/index.xml.in229(title)
 #, fuzzy
