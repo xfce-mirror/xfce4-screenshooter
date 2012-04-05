@@ -205,7 +205,7 @@ msgstr "<emphasis>\"저장\"</emphasis> 옵션은 스크린샷을 PNG 파일로 
 
 #: ../docs/manual/C/index.xml.in:206(para)
 msgid "Xfce4 Screenshooter is also able to save the screenshot to any remote file system supported by GVfs, such as FTP, SAMBA, SFTP, remote computers accessible via SSH... You just need to connect this remote file system using <emphasis>gvfs-connect</emphasis> or <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left column of the save dialog."
-msgstr "Xfce4 Screenshooter는 SSH를 통해 원격 컴퓨터에 접근할 수 있게 하는 FTP나, SAMBA, SFTP와 같은 GVFs를 지원하는 원격 파일 시스템에 스크린샷을 저장할 수 있습니다... 단지 <emphasis>gvfs-connect</emphasis>나 <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink>를 사용하고 있는 원격 파일 시스템에 연결하기만 하면 됨, 저장 대화상자의 왼쪽 칸을 통해 사용할 수 있습니다."
+msgstr "Xfce4 Screenshooter는 SSH를 통해 원격 컴퓨터에 접근할 수 있게 하는 FTP나, SAMBA, SFTP와 같은 GVFs를 지원하는 원격 파일 시스템에 스크린샷을 저장할 수 있습니다... 단지 <emphasis>gvfs-connect</emphasis>나 <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/\">Gigolo</ulink>를 사용하고 있는 원격 파일 시스템에 연결하기만 하면 되며, 저장 대화상자의 왼쪽 칸을 통해 사용할 수 있습니다."
 
 #: ../docs/manual/C/index.xml.in:218(title)
 msgid "Copy to the clipboard"
