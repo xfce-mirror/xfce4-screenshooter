@@ -4,7 +4,7 @@
 # xfce4-screenshooter package.
 # Chris Leick <c.leick@vollbio.de>, 2012.
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2012.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter 1.8.0\n"
@@ -69,7 +69,7 @@ msgstr "Sam Swift"
 #: ../docs/manual/C/index.xml.in28(para)
 #, fuzzy
 msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation; with no Invariant Sections, with no Front-Cover Texts, and with no Back-Cover Texts. The complete license text is available from the <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink>."
-msgstr "Die Rechte zum Kopieren, Verteilen und/oder Ändern dieses Dokuments wird unter den Bedingungen der GNU Free Documentation License, Version 1.1 oder einer neueren Version gewährt, wie sie von der Free Software Foundation veröffentlicht wurde; ohne unveränderliche Abschnitte, ohne Deck- und ohne Rückblatttexte. Der vollständige Lizenztext ist bei der <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink> erhältlich."
+msgstr "Die Rechte zum Kopieren, Verteilen und/oder Ändern dieses Dokuments werden unter den Bedingungen der GNU Free Documentation License, Version 1.1 oder einer neueren Version, gewährt, wie sie von der Free Software Foundation veröffentlicht wurde; ohne unveränderliche Abschnitte, ohne Deck- und ohne Rückblatttexte. Der vollständige Lizenztext ist bei der <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</ulink> erhältlich."
 
 #: ../docs/manual/C/index.xml.in40(firstname)
 msgid "Jérôme"
@@ -135,7 +135,8 @@ msgstr "Das Fenster von Xfce Bildschirmfoto"
 msgid "Region to capture"
 msgstr "Aufnahmebereich"
 
-# Zusätzliche Anführungszeichen innerhalb einer XML-Formatierung sind überflüssig und einen Bugreport wert.
+# Zusätzliche Anführungszeichen innerhalb einer XML-Formatierung sind
+# überflüssig und einen Bugreport wert.
 #: ../docs/manual/C/index.xml.in109(para)
 msgid "The <emphasis>\"Region to capture\"</emphasis> section allows you to set what the screenshot will be taken of:"
 msgstr "Der Abschnitt <emphasis>Aufnahmebereich</emphasis> ermöglicht Ihnen einzustellen, wovon ein Bildschirmfoto gemacht wird:"
