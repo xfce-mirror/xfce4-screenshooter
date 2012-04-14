@@ -1,8 +1,8 @@
 # Japanese translations for xfce4-screenshooter-plugin package
 # xfce4-screenshooter-plugin パッケージに対する英訳.
-# Copyright (C) 2008 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
+# Copyright (C) 2008-2012 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
-# HASHIMOTO Masato <cabezon.hashimoto@gmail.com>, 2008.
+# HASHIMOTO Masato <cabezon.hashimoto@gmail.com>, 2008-2012.
 # Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
 #
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce 4-screenshooter-plugin 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-07-31 23:29+0200\n"
-"PO-Revision-Date: 2009-11-29 20:19+0900\n"
+"PO-Revision-Date: 2012-04-14 15:49+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
 "Language: ja\n"
@@ -90,11 +90,11 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
-msgstr "マウスポインタも撮影する"
+msgstr "マウスポインターも撮影する"
 
 #: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr "スクリーンショットにマウスポインタを表示します"
+msgstr "スクリーンショットにマウスポインターを表示します"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid ""
@@ -199,13 +199,13 @@ msgid ""
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr ""
-"<a href=\"http://www.zimagez.com\">ZimageZ</a> のユーザ名、パスワード、および"
+"<a href=\"http://www.zimagez.com\">ZimageZ</a> のユーザー名、パスワード、および"
 "スクリーンショットについての\n"
 "詳細を入力してください。"
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr "ユーザ情報をチェックしています..."
+msgstr "ユーザー情報をチェックしています..."
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid ""
@@ -233,7 +233,7 @@ msgid ""
 "user and the password you entered do not match. Please retry.</span>"
 msgstr ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">入力さ"
-"れたユーザとパスワードがマッチしません。\n"
+"れたユーザーとパスワードがマッチしません。\n"
 "再入力してください。</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
@@ -257,14 +257,14 @@ msgstr "ZimageZ 用スクリーンショットについての詳細"
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:719
 msgid "User:"
-msgstr "ユーザ:"
+msgstr "ユーザー:"
 
 #: ../lib/screenshooter-zimagez.c:730
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
 msgstr ""
-"ZimageZ のユーザ名を入力してください。まだアカウントを持っていない場合には上"
+"ZimageZ のユーザー名を入力してください。まだアカウントを持っていない場合には上"
 "にリンクされているウェブページから作成して下さい。"
 
 #. Create the password label
@@ -274,7 +274,7 @@ msgstr "パスワード:"
 
 #: ../lib/screenshooter-zimagez.c:746
 msgid "The password for the user above"
-msgstr "ユーザのパスワードを入力してください"
+msgstr "ユーザーのパスワードを入力してください"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:752
@@ -357,7 +357,7 @@ msgstr "スクリーンショットを撮るまでの遅延時間"
 
 #: ../src/main.c:58
 msgid "Display the mouse on the screenshot"
-msgstr "マウスポインタも撮影する"
+msgstr "マウスポインターも撮影する"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
@@ -404,60 +404,3 @@ msgstr ""
 "画面全体、アクティブウィンドウまたは指定した領域のスクリーンショットを撮りま"
 "す。"
 
-#~ msgid "_Open Link"
-#~ msgstr "リンクを開く(_O)"
-
-#~ msgid "Copy _Link Address"
-#~ msgstr "リンクアドレスのコピー(_L)"
-
-#~ msgid "Default save location"
-#~ msgstr "デフォルトの保存場所"
-
-#~ msgid "Set the default save location"
-#~ msgstr "デフォルトの保存場所を設定します"
-
-#~ msgid "Screenshot.png"
-#~ msgstr "Screenshot.png"
-
-#~ msgid "Screenshot-%d.png"
-#~ msgstr "Screenshot-%d.png"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-#~ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影したら</span>"
-
-#~ msgid "Show the save dialog"
-#~ msgstr "保存ダイアログを表示する"
-
-#~ msgid ""
-#~ "The save dialog allows you to change the file name and the save location"
-#~ msgstr "保存ダイアログでファイル名と保存場所を変更できます"
-
-#~ msgid "Close the application"
-#~ msgstr "このアプリケーションを閉じる"
-
-#~ msgid ""
-#~ "If unchecked, the current window will be displayed again after the "
-#~ "screenshot has been taken to allow you to take several screenshots in a "
-#~ "row"
-#~ msgstr ""
-#~ "チェックマークをつけなければ、このウィンドウがスクリーンショットの撮影後に"
-#~ "再び表示され、連続してスクリーンショットを撮影することができます。"
-
-#~ msgid "Do not display the save dialog"
-#~ msgstr "保存ダイアログを表示しない"
-
-#~ msgid ""
-#~ "An error occurred during the XML exchange: %s (%d).\n"
-#~ " The screenshot could not be uploaded."
-#~ msgstr ""
-#~ "XML 交換中にエラーが発生しました: %s (%d)\n"
-#~ "スクリーンショットをアップロードできませんでした。"
-
-#~ msgid "Uploading to ZimageZ..."
-#~ msgstr "ZimageZ へアップロードしています..."
-
-#~ msgid "Upload the screenshot to ZimageZ©, a free Web hosting solution"
-#~ msgstr ""
-#~ "スクリーンショットをフリーウェブホスティングサービス ZimageZ© にアップロー"
-#~ "ドします"
