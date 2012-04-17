@@ -173,7 +173,7 @@ msgstr "ZimageZ로 데이터를 전송하는데 오류가 발생했습니다."
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr "ZimageZ로부터의 응답을 해석하는데 오류가 발생했습니다."
+msgstr "ZimageZ의 응답을 해석하는데 오류가 발생했습니다."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
@@ -210,7 +210,7 @@ msgstr "ZimageZ로 로그인 하기..."
 #: ../lib/screenshooter-zimagez.c:446
 #: ../lib/screenshooter-zimagez.c:597
 msgid "An unexpected reply from ZimageZ was received. The upload of the screenshot failed."
-msgstr "ZimageZ로부터 예상치 못한 응답이 왔습니다. 스크린샷 업로드에 실패했습니다."
+msgstr "ZimageZ에서 예상치 못한 응답이 왔습니다. 스크린샷 업로드에 실패했습니다."
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
