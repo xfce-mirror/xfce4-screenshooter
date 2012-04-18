@@ -1,5 +1,4 @@
 # Uyghur translations for xfce4-screenshooter-plugin package
-# xfce4-screenshooter-plugin パッケージに対する英訳.
 # Copyright (C) 2008 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
 # Gheyret T.Kenji <gheyret@gmail.com>, 2010.
@@ -21,7 +20,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%.2fKb of %.2fKb "
+msgstr "%.2fKb / %.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
@@ -31,9 +30,7 @@ msgstr "يوللاش"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">ئېكران كەسمىسىنى يوللايدىغان "
-"ئورۇن</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ئېكران كۆرۈنۈشىنى يوللايدىغان ئورۇن</span>"
 
 #: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
 #: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
@@ -41,11 +38,11 @@ msgstr ""
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
-msgstr "ئېكران كەسمىسى"
+msgstr "ئېكران كۆرۈنۈشى"
 
 #: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
-msgstr "ئېكران كەسمىسى تۇتۇش"
+msgstr "ئېكران كۆرۈنۈشى تۇتۇش"
 
 #: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
@@ -62,7 +59,7 @@ msgstr "پۈتۈن ئېكران"
 #: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
-msgstr "پۈتۈن ئېكراننىڭ ئېكران كەسمىسىنى تۇتۇش"
+msgstr "پۈتۈن ئېكراننىڭ ئېكران كۆرۈنۈشىنى تۇتۇش"
 
 #: ../lib/screenshooter-dialogs.c:765
 msgid "Active window"
@@ -71,7 +68,7 @@ msgstr "ئاكتىپ كۆزنەك"
 #: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
-msgstr "ئاكتىپ كۆزنەكنىڭ ئېكران كەسمىسىنى تۇتۇش"
+msgstr "ئاكتىپ كۆزنەكنىڭ ئېكران كۆرۈنۈشىنى تۇتۇش"
 
 #: ../lib/screenshooter-dialogs.c:780
 msgid "Select a region"
@@ -83,24 +80,20 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr ""
-"چاشقىنەكنى بېسىپ قويۇۋەتمەي، رەسىمگە ئالىدىغان دائىرىنى كۆرسىتىپ بېرىڭ. توت "
-"بۇلۇڭلۇق دائىرە رەسىمگە ئېلىنىدۇ."
+msgstr "چاشقىنەكنى بېسىپ قويۇۋەتمەي، رەسىمگە ئالىدىغان دائىرىنى كۆرسىتىپ بېرىڭ. تۆت بۇلۇڭلۇق دائىرە رەسىمگە ئېلىنىدۇ."
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
-msgstr "چاشقىنەك نۇر بەلگىسىنى رەسىمگە تارت"
+msgstr "چاشقىنەك نۇر بەلگىسىنى رەسىمگە تارتىش"
 
 #: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr "ئېكران كەسمىسىدە چاشقىنەك نۇربەلگىسىنى كۆرسەت"
+msgstr "ئېكران كۆرۈنۈشىنى چاشقىنەك نۇربەلگىسىنى كۆرسىتىش"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">رەسىمگە ئېلىشتىن بۇرۇنقى "
-"توختاش ۋاقتى</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">رەسىمگە ئېلىشتىن بۇرۇنقى توختاش ۋاقتى</span>"
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
@@ -125,17 +118,15 @@ msgstr "ساقلا"
 
 #: ../lib/screenshooter-dialogs.c:943
 msgid "Save the screenshot to a PNG file"
-msgstr "ئېكران كەسمىسىنى PNG ھۆججەت قىلىپ ساقلايدۇ"
+msgstr "ئېكران كۆرۈنۈشىنى PNG ھۆججەت قىلىپ ساقلايدۇ"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Copy to the clipboard"
-msgstr "clipboard غا كۆچۈر"
+msgstr "چاپلاش تاختىسىغا كۆچۈرۈش"
 
 #: ../lib/screenshooter-dialogs.c:954
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
-"ئېكران كەسمىسىنى clipboard قا كوچۇرۇپ قويىدۇ، بۇنداق بولغاندا كېيىن ئۇنى "
-"چاپلاپ ئىشلەتكىلى بولىدۇ"
+msgstr "ئېكران كۆرۈنۈشىنى چاپلاش تاختىسىغا قا كۆچۈرۈپ قويىدۇ، بۇنداق بولغاندا كېيىن ئۇنى چاپلاپ ئىشلەتكىلى بولىدۇ"
 
 #: ../lib/screenshooter-dialogs.c:971
 msgid "Open with:"
@@ -143,11 +134,11 @@ msgstr "بۇنىڭدا ئاچ:"
 
 #: ../lib/screenshooter-dialogs.c:977
 msgid "Open the screenshot with the chosen application"
-msgstr "ئېكران كەسمىسىنى تاللانغان پروگراممىدا ئاچىدۇ"
+msgstr "ئېكران كۆرۈنۈشىنى تاللانغان پروگراممىدا ئاچىدۇ"
 
 #: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
 msgid "Application to open the screenshot"
-msgstr "ئېكران كەسمىسىنى ئاچىدىغان پروگرامما"
+msgstr "ئېكران كۆرۈنۈشىنى ئاچىدىغان پروگرامما"
 
 #: ../lib/screenshooter-dialogs.c:1005
 msgid "Host on ZimageZ"
@@ -155,7 +146,7 @@ msgstr "ZimageZ دا تارقات"
 
 #: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "ئېكران كەسمىسىنى ھەقسىز تور مۇلازىمىتى بولغان ZimageZ دا ئېلان قىلىدۇ."
+msgstr "ئېكران كۆرۈنۈشىنى ھەقسىز تور مۇلازىمىتى بولغان ZimageZ دا ئېلان قىلىدۇ."
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -163,12 +154,12 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ئالدىن كۆر</span
 
 #: ../lib/screenshooter-dialogs.c:1084
 msgid "Save screenshot as..."
-msgstr "ئېكران كەسمىسىنى باشقا ئاتتا ساقلا..."
+msgstr "ئېكران كۆرۈنۈشىنى باشقا ئاتتا ساقلا..."
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr " XMLRPCئىلتىماسى ياساۋاتقاندا خاتالىق كۆرۈلدى"
+msgstr "XMLRPC ئىلتىماسى ياساۋاتقاندا خاتالىق كۆرۈلدى"
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
@@ -190,21 +181,19 @@ msgstr "تارتىلغان ۋاقىت: %s %s"
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
 msgid "Initialize the connection..."
-msgstr "باغلىنىشنى دەسلەپلەشتۈررىۋاتىدۇ..."
+msgstr "باغلىنىشنى دەسلەپلەشتۈرۈۋاتىدۇ..."
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com"
 "\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
-msgstr ""
-"<a href=\"http://www.zimagez.com\">ZimageZ</a> نىڭ ئىشلەتكۈچى ئاتى، ئىم ۋە "
-"ئېكران كەسىمىسى ھەققىدىكى\n"
+msgstr "<a href=\"http://www.zimagez.com\">ZimageZ</a> نىڭ ئىشلەتكۈچى ئاتى، ئىم ۋە ئېكران كۆرۈنۈشى ھەققىدىكى\n"
 "تەپسىلاتلارنى كىرگۈزۈڭ"
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr "ئىشلەتكۈچى ئۇچۇرلىرىنى تەكشۈرىۋاتىدۇ"
+msgstr "ئىشلەتكۈچى ئۇچۇرلىرىنى تەكشۈرۈۋاتىدۇ"
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid ""
@@ -220,34 +209,31 @@ msgstr "ZimageZ غا كىرىش..."
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr ""
-"ZimageZ دىن ئويلىمىغان جاۋاب كەلدى. ئېكران كەسمىسىنى يۈكلەش مەغلۇپ بولدى"
+msgstr "ZimageZ دىن ئويلىمىغان جاۋاب كەلدى. ئېكران كۆرۈنۈشىنى يۈكلەش مەغلۇپ بولدى"
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded"
-"\">ئىشلەتكۈچى ئاتى ۋە ئىم ماس كەلمىدى. قايتا سىناڭ</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">ئىشلەتكۈچى ئاتى ۋە ئىم ماس كەلمىدى. قايتا سىناڭ</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
-msgstr "ئېكران كەسمىسىنى يۈكلەۋاتىدۇ..."
+msgstr "ئېكران كۆرۈنۈشىنى يۈكلەۋاتىدۇ..."
 
 #: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "ئېكران كەسمىسىنى يۈكلەشتە خاتالىق كۆرۈلدى."
+msgstr "ئېكران كۆرۈنۈشىنى يۈكلەشتە خاتالىق كۆرۈلدى."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
 msgid "Close the session on ZimageZ..."
-msgstr "ZimageZ نىڭ session نى تاقاۋاتىدۇ."
+msgstr "ZimageZ نىڭ ئەڭگىمەسىنى تاقاۋاتىدۇ."
 
 #: ../lib/screenshooter-zimagez.c:679
 msgid "Details about the screenshot for ZimageZ"
-msgstr "ZimageZ دا ئىشلىتىلىدىغان ئېكران كەسمىسى ھەققىدىكى تەپسىلاتلار"
+msgstr "ZimageZ دا ئىشلىتىلىدىغان ئېكران كۆرۈنۈشى ھەققىدىكى تەپسىلاتلار"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:719
@@ -258,9 +244,7 @@ msgstr "ئىشلەتكۈچى:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
-"ZimageZ ئىشلەتكۈچى ئاتى، ئەگەر تېخى خەتلەتمىگەن بولسىڭىز، ئۈستىدىكى ۇلانمىنى "
-"ئىشلىتىپ خەتلىتىڭ."
+msgstr "ZimageZ ئىشلەتكۈچى ئاتى، ئەگەر تېخى خەتلەتمىگەن بولسىڭىز، ئۈستىدىكى ئۇلانمىنى ئىشلىتىپ خەتلىتىڭ."
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -280,9 +264,7 @@ msgstr "ماۋزۇ:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
-"ئېكران كەسمىسىنىڭ ماۋزۇسىنى يېزىڭ. بۇ ZimageZ دا ئېكران كەسمىسىنى "
-"كۆرسەتكەندە ئىشلىتىلىدۇ"
+msgstr "ئېكران كۆرۈنۈشىنىڭ ماۋزۇسىنى يېزىڭ. بۇ ZimageZ دا ئېكران كۆرۈنۈشىنى كۆرسەتكەندە ئىشلىتىلىدۇ"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
@@ -293,9 +275,7 @@ msgstr "ئىزاھات:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
-"ئېكران كەسمىسى ھەققىدىكى ئىزاھاتنى يېزىڭ. بۇ ZimageZ دا ئېكران كەسمىسىنى "
-"كۆرسەتكەندە ئىشلىتىلىدۇ "
+msgstr "ئېكران كۆرۈنۈشى ھەققىدىكى ئىزاھاتنى يېزىڭ. بۇ ZimageZ دا ئېكران كۆرۈنۈشىنى كۆرسەتكەندە ئىشلىتىلىدۇ"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -305,16 +285,16 @@ msgstr "<a href=\"%s\">تولۇق سۈرەت</a>"
 #: ../lib/screenshooter-zimagez.c:904
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr "<a href=\"%s\">چوڭ thumbnail</a>"
+msgstr "<a href=\"%s\">چوڭ كىچىك سۈرەت(thumbnail)</a>"
 
 #: ../lib/screenshooter-zimagez.c:906
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr "<a href=\"%s\">كىچىك thumbnail</a>"
+msgstr "<a href=\"%s\">كىچىك كىچىك سۈرەت(thumbnail)</a>"
 
 #: ../lib/screenshooter-zimagez.c:922
 msgid "My screenshot on ZimageZ"
-msgstr "ZimageZ دىكى ئېكران كەسمىسى"
+msgstr "ZimageZ دىكى ئېكران كۆرۈنۈشى"
 
 #: ../lib/screenshooter-zimagez.c:948
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
@@ -324,7 +304,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ئۇلانمىلار</spa
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
 "to the full size image</span>"
-msgstr "تولۇق سۈرەتكە بولغان ئۇلانمىنىڭ thumbnail كودى"
+msgstr "تولۇق سۈرەتكە بولغان ئۇلانمىنىڭ كىچىك سۈرەت(thumbnail) كودى"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
@@ -338,7 +318,7 @@ msgstr "مۇنبەرنىڭ BBCode كودى"
 
 #: ../lib/screenshooter-zimagez.c:1155
 msgid "ZimageZ"
-msgstr "ZimageZ "
+msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1188
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -346,15 +326,15 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ھالەت</span>"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
-msgstr "ئېكران كەسمىسىنى رەسەمگە ئېلىش باشلانغىچە بولغان ۋاقىت"
+msgstr "ئېكران كۆرۈنۈشىنى رەسىمگە ئېلىش باشلانغۇچە بولغان ۋاقىت"
 
 #: ../src/main.c:58
 msgid "Display the mouse on the screenshot"
-msgstr "ئېكران كەسمىسىدە چاشقىنەك نۇر بەلگىسىنى كۆرسەت"
+msgstr "ئېكران كۆرۈنۈشىدە چاشقىنەك نۇر بەلگىسىنى كۆرسەت"
 
 #: ../src/main.c:75
 msgid "Directory where the screenshot will be saved"
-msgstr "ئېكران كەسمىسىنى ساقلايدىغان مۇندەرىجە"
+msgstr "ئېكران كۆرۈنۈشىنى ساقلايدىغان مۇندەرىجە"
 
 #: ../src/main.c:85
 msgid "Version information"
@@ -363,28 +343,22 @@ msgstr "نەشر ئۇچۇرى"
 #: ../src/main.c:134
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
-"توقۇنۇشۇپ قالىدىغان تاللانمىلار : --%s ۋە --%s نى بىرگە ئىشلىتىشكە "
-"بولمايدۇ.\n"
+msgstr "توقۇنۇشۇپ قالىدىغان تاللانمىلار : --%s ۋە --%s نى بىرگە ئىشلىتىشكە بولمايدۇ.\n"
 
 #: ../src/main.c:136
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr ""
-"تالانما --%s  نى پەقەت  --fullscreen ، --window ياكى -- region بىلەنلا "
-"ئىشلىتىشكە بولىدۇ. شۇڭا بۇنىڭغا پەرۋا قىلمايدۇ. \n"
+msgstr "تالانما --%s  نى پەقەت  --fullscreen ، --window ياكى -- region بىلەنلا ئىشلىتىشكە بولىدۇ. شۇڭا بۇنىڭغا پەرۋا قىلمايدۇ.\n"
 
 #: ../src/main.c:150
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr ""
-"%s: %s\n"
-"%s --help نى كىرگۈزسە، بۇيرۇق قۇرىدا ئىشلەتكىلى بولىدىغان بارلىق تاللانمىلار "
-"كۆرسىتىلىدۇ.\n"
+msgstr "%s: %s\n"
+"%s --help نى كىرگۈزسە، بۇيرۇق قۇرىدا ئىشلەتكىلى بولىدىغان بارلىق تاللانمىلار كۆرسىتىلىدۇ.\n"
 
 #: ../src/main.c:297
 #, c-format
@@ -395,9 +369,7 @@ msgstr "%s ئىناۋەتلىك مۇندەرىجە ئەمەس. كۆرۈلدىك�
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr ""
-"تولۇق ئېكران، ئاكتىپ كۆزنەك ياكى كۆرسىتىلگەن دائىرىنىڭ ئېكران كەسمىسىنى "
-"رەسىمگە ئالىدۇ."
+msgstr "تولۇق ئېكران، ئاكتىپ كۆزنەك ياكى كۆرسىتىلگەن دائىرىنىڭ ئېكران كۆرۈنۈشىنى رەسىمگە ئالىدۇ."
 
 #~ msgid "_Open Link"
 #~ msgstr "ئۇلانما ئاچ(_O)"
@@ -405,54 +377,3 @@ msgstr ""
 #~ msgid "Copy _Link Address"
 #~ msgstr "ئۇلانما ئادرېسىنى كۆچۈر(_L)"
 
-#~ msgid "Default save location"
-#~ msgstr "デフォルトの保存場所"
-
-#~ msgid "Set the default save location"
-#~ msgstr "デフォルトの保存場所を設定します"
-
-#~ msgid "Screenshot.png"
-#~ msgstr "Screenshot.png"
-
-#~ msgid "Screenshot-%d.png"
-#~ msgstr "Screenshot-%d.png"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-#~ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影したら</span>"
-
-#~ msgid "Show the save dialog"
-#~ msgstr "保存ダイアログを表示する"
-
-#~ msgid ""
-#~ "The save dialog allows you to change the file name and the save location"
-#~ msgstr "保存ダイアログでファイル名と保存場所を変更できます"
-
-#~ msgid "Close the application"
-#~ msgstr "このアプリケーションを閉じる"
-
-#~ msgid ""
-#~ "If unchecked, the current window will be displayed again after the "
-#~ "screenshot has been taken to allow you to take several screenshots in a "
-#~ "row"
-#~ msgstr ""
-#~ "チェックマークをつけなければ、このウィンドウがスクリーンショットの撮影後に"
-#~ "再び表示され、連続してスクリーンショットを撮影することができます。"
-
-#~ msgid "Do not display the save dialog"
-#~ msgstr "保存ダイアログを表示しない"
-
-#~ msgid ""
-#~ "An error occurred during the XML exchange: %s (%d).\n"
-#~ " The screenshot could not be uploaded."
-#~ msgstr ""
-#~ "XML 交換中にエラーが発生しました: %s (%d)\n"
-#~ "スクリーンショットをアップロードできませんでした。"
-
-#~ msgid "Uploading to ZimageZ..."
-#~ msgstr "ZimageZ へアップロードしています..."
-
-#~ msgid "Upload the screenshot to ZimageZc, a free Web hosting solution"
-#~ msgstr ""
-#~ "スクリーンショットをフリーウェブホスティングサービス ZimageZc にアップロー"
-#~ "ドします"
