@@ -412,4 +412,4 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   g_signal_connect (plugin, "configure-plugin",
                     G_CALLBACK (cb_properties_dialog), pd);
 }
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (screenshooter_plugin_construct);
+XFCE_PANEL_PLUGIN_REGISTER (screenshooter_plugin_construct);

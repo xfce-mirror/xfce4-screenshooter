@@ -115,10 +115,10 @@ src/xfce4-screenshooter.desktop.in: src/xfce4-screenshooter.desktop.in.in
 	)
 
 # Panel plugin
-plugindir = $(libexecdir)/xfce4/panel-plugins
-plugin_PROGRAMS = panel-plugin/xfce4-screenshooter-plugin
+plugindir = $(libdir)/xfce4/panel/plugins
+plugin_LTLIBRARIES = panel-plugin/libscreenshooterplugin.la
 
-panel_plugin_xfce4_screenshooter_plugin_CFLAGS =	\
+panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"	\
 	-I$(top_srcdir)	\
 	-I$(top_srcdir)/lib/	\
@@ -128,30 +128,23 @@ panel_plugin_xfce4_screenshooter_plugin_CFLAGS =	\
 	@GTHREAD_CFLAGS@ \
 	@SOUP_CFLAGS@
 
-panel_plugin_xfce4_screenshooter_plugin_LDFLAGS = \
+panel_plugin_libscreenshooterplugin_la_LDFLAGS = \
 	@EXO_LIBS@ \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@ \
 	@LIBXFCE4UI_LIBS@
 
-panel_plugin_xfce4_screenshooter_plugin_LDADD = lib/libscreenshooter.la
+panel_plugin_libscreenshooterplugin_la_LIBADD = lib/libscreenshooter.la
 
-panel_plugin_xfce4_screenshooter_plugin_SOURCES = \
+panel_plugin_libscreenshooterplugin_la_SOURCES = \
 	panel-plugin/screenshooter-plugin.c
 
 # Panel plugin desktop file
-panel_desktopdir = $(datadir)/xfce4/panel-plugins
-panel_desktop_in_in_files = panel-plugin/screenshooter.desktop.in.in
-panel_desktop_in_files = $(panel_desktop_in_in_files:.desktop.in.in=.desktop.in)
+panel_desktopdir = $(datadir)/xfce4/panel/plugins
+panel_desktop_in_files = panel-plugin/screenshooter.desktop.in
 panel_desktop_DATA = $(panel_desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
-
-panel-plugin/screenshooter.desktop.in: panel-plugin/screenshooter.desktop.in.in
-	$(AM_V_GEN) ( \
-		sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" \
-			$< > $@ \
-	)
 
 # Fallback icons
 
@@ -436,7 +429,7 @@ EXTRA_DIST = \
 	intltool-update.in \
 	lib/screenshooter-marshal.list \
 	$(app_desktop_in_in_files) \
-	$(panel_desktop_in_in_files) \
+	$(panel_desktop_in_files) \
 	$(48icons_DATA) \
 	$(scalicons_DATA) \
 	docs/manual/xfce-nochunk.xsl \
@@ -463,7 +456,7 @@ DISTCLEANFILES = \
 	$(lib_libscreenshooter_built_sources) \
 	lib/stamp-screenshooter-marshal.h \
 	$(app_desktop_DATA) $(app_desktop_in_files) \
-	$(panel_desktop_DATA) $(panel_desktop_in_files)
+	$(panel_desktop_DATA)
 
 # Man pages
 dist_man_MANS = xfce4-screenshooter.1

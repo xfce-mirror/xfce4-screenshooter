@@ -3,5 +3,6 @@ Type=X-XFCE-PanelPlugin
 _Name=Screenshot
 _Comment=Take screenshots of the entire screen, of the active window or of a region
 Icon=applets-screenshooter
-X-XFCE-Exec=@PLUGIN_PATH@/xfce4-screenshooter-plugin
+X-XFCE-Internal=FALSE
+X-XFCE-Module=screenshooterplugin
 

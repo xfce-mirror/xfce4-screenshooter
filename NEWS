@@ -3,6 +3,7 @@
   * Enhancements:
     - Adapting the panel plugin to xfce4-panel 4.9+. Andrzej.
     - Add a clipboard CLI option (bug #8483). Tom Hope.
+    - Panel plugin is now built as a library.
 
   * Bugs fixed:
     - Fix crash with some window managers (bug #8080). Bruno Ramos.
@@ -10,6 +11,7 @@
     - Install documentation to new location (bug #8116).
     - Drop AC_PROG_LIBTOOL in favor of LT_PREREQ and LT_INIT.
     - Add explicit -lm link to LIBADD (bug #8230).
+    - Plugin installation location compatible with xfce4-panel 4.9+.
 
 === Version 1.8.0 ===
 
