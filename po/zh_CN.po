@@ -22,7 +22,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%2$.2f K 中的 %1$.2f K"
+msgstr "%.2f K/%.2f K"
 
 #: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
@@ -57,7 +57,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截取范围</span>"
 
 #: ../lib/screenshooter-dialogs.c:750
 msgid "Entire screen"
-msgstr "全屏幕"
+msgstr "整个屏幕"
 
 #: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:311
@@ -66,12 +66,12 @@ msgstr "全屏幕截图"
 
 #: ../lib/screenshooter-dialogs.c:765
 msgid "Active window"
-msgstr "活动窗口"
+msgstr "当前窗口"
 
 #: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
-msgstr "当前活动窗口截屏"
+msgstr "当前窗口截屏"
 
 #: ../lib/screenshooter-dialogs.c:780
 msgid "Select a region"
