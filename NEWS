@@ -1,4 +1,4 @@
-=== Version x.x.x ===
+=== Version 1.8.1 ===
 
   * Enhancements:
     - Adapting the panel plugin to xfce4-panel 4.9+. Andrzej.
@@ -12,6 +12,12 @@
     - Drop AC_PROG_LIBTOOL in favor of LT_PREREQ and LT_INIT.
     - Add explicit -lm link to LIBADD (bug #8230).
     - Plugin installation location compatible with xfce4-panel 4.9+.
+    - Update outdated man page.
+
+  * Updated translations: Arabic, Brazilian, Bulgarian, Chinese, Czech,
+    Dutch, German, Icelandic, Japanese, Korean, Lithuanian, Portuguese,
+    Turkish, Ukrainian, Uyghur,
+
 
 === Version 1.8.0 ===
 
