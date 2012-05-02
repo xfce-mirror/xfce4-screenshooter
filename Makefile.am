@@ -9,6 +9,9 @@ bin_PROGRAMS = src/xfce4-screenshooter
 distclean-local:
 	rm -rf *.cache *~
 
+distuninstallcheck_listfiles = \
+	find . -type f -print | grep -v ./share/icons/hicolor/icon-theme.cache
+
 dist-bz2: dist
 	zcat $(PACKAGE)-$(VERSION).tar.gz | bzip2 --best -c > $(PACKAGE)-$(VERSION).tar.bz2
 
