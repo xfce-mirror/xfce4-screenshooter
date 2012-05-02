@@ -213,12 +213,7 @@
         <sect4 id="r-option">
           <title>-r seçeneği</title>
 
-          <para>
-            The <emphasis>-r</emphasis> option allows you to select a
-            region to be captured by clicking and dragging a rectangle
-            over the area of screen that you wish to capture, before
-            releasing the mouse button.
-          </para>
+          <para><emphasis>-r</emphasis> seçeneği ekran üzerinde yakalamak istediğiniz dikdörtgen bir alanı tıklayarak ve fare düğmesini bırakmadan sürükleyerek seçmenize izin verir.</para>
         </sect4>
 
         <sect4 id="d-option">
@@ -230,13 +225,7 @@
         <sect4 id="s-option">
           <title>-s seçeneği</title>
 
-          <para>
-            The <emphasis>-s</emphasis> option followed by the path to
-            an existing folder allows you to set where the screenshots
-            are saved. This option only has an effect if the
-            <emphasis>-w</emphasis>, the <emphasis>-f</emphasis> or
-            the <emphasis>-r</emphasis> option is given.
-          </para>
+          <para><emphasis>-s</emphasis> seçeneğini bölüm ekran görüntülerini nereye kaydedileceğini ayarlamanıza izin veren geçerli bir dizin izler. Bu seçenek yalnızca <emphasis>-w</emphasis>, <emphasis>-f</emphasis> yada <emphasis>-r</emphasis> seçenekleri verilirse etkilidir.</para>
         </sect4>
 
         <sect4 id="o-option">
