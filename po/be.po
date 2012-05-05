@@ -1,8 +1,8 @@
 # xfce-screenshooter belarussian localization.
-# Copyright (C) 2012 Xfce-screenshooter team	
+# Copyright (C) 2012 Xfce-screenshooter team
 # This file is distributed under the same license as the xfce-screenshooter package.
 # Andrej Zakharevich <andrej@zahar.ws>, 2012.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
@@ -38,15 +38,15 @@ msgstr ""
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
-msgstr ""
+msgstr "Здымак экрана"
 
 #: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
-msgstr ""
+msgstr "Зрабіць здымак"
 
 #: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
-msgstr ""
+msgstr "Наладкі"
 
 #: ../lib/screenshooter-dialogs.c:730
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:750
 msgid "Entire screen"
-msgstr ""
+msgstr "Экран цалкам"
 
 #: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:311
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:765
 msgid "Active window"
-msgstr ""
+msgstr "Актыўнае акно"
 
 #: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:316
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:780
 msgid "Select a region"
-msgstr ""
+msgstr "Выбраць вобласць"
 
 #: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
 #: ../panel-plugin/screenshooter-plugin.c:321
@@ -84,11 +84,11 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
-msgstr ""
+msgstr "Уключаць курсор ў здымак"
 
 #: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr ""
+msgstr "Паказваць курсор на здымку"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid ""
@@ -97,11 +97,11 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
-msgstr ""
+msgstr "Затрымка ў секундтах перад тым, як будзе зроблены здымак"
 
 #: ../lib/screenshooter-dialogs.c:841
 msgid "seconds"
-msgstr ""
+msgstr "секунд"
 
 #: ../lib/screenshooter-dialogs.c:893
 msgid "Action"
@@ -114,7 +114,7 @@ msgstr ""
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:938
 msgid "Save"
-msgstr ""
+msgstr "Захаваць"
 
 #: ../lib/screenshooter-dialogs.c:943
 msgid "Save the screenshot to a PNG file"
@@ -122,7 +122,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "Зкапіяваць у буфер абмену"
 
 #: ../lib/screenshooter-dialogs.c:954
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
@@ -130,7 +130,7 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:971
 msgid "Open with:"
-msgstr ""
+msgstr "Адчыніць з дапамогай:"
 
 #: ../lib/screenshooter-dialogs.c:977
 msgid "Open the screenshot with the chosen application"
