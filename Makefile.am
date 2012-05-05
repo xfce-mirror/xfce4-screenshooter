@@ -132,13 +132,19 @@ panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	@SOUP_CFLAGS@
 
 panel_plugin_libscreenshooterplugin_la_LDFLAGS = \
+	-avoid-version \
+	-module \
+	-no-undefined \
+	-export-symbols-regex '^xfce_panel_module_(preinit|init|construct)' \
+	$(PLATFORM_LDFLAGS)
+
+panel_plugin_libscreenshooterplugin_la_LIBADD = \
 	@EXO_LIBS@ \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@ \
-	@LIBXFCE4UI_LIBS@
-
-panel_plugin_libscreenshooterplugin_la_LIBADD = lib/libscreenshooter.la
+	@LIBXFCE4UI_LIBS@ \
+	lib/libscreenshooter.la
 
 panel_plugin_libscreenshooterplugin_la_SOURCES = \
 	panel-plugin/screenshooter-plugin.c
