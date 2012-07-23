@@ -20,17 +20,17 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%.2fKb з %.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:535
 msgid "Transfer"
-msgstr ""
+msgstr "Перадача"
 
 #: ../lib/screenshooter-dialogs.c:556
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Экранны здымак перадаецца ў:</span>"
 
 #: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
 #: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
@@ -38,7 +38,7 @@ msgstr ""
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.in.h:1
 msgid "Screenshot"
-msgstr "Здымак экрана"
+msgstr "Экранны здымак"
 
 #: ../lib/screenshooter-dialogs.c:684
 msgid "Take a screenshot"
@@ -46,11 +46,11 @@ msgstr "Зрабіць здымак"
 
 #: ../lib/screenshooter-dialogs.c:699
 msgid "Preferences"
-msgstr "Наладкі"
+msgstr "Настройкі"
 
 #: ../lib/screenshooter-dialogs.c:730
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Вобласць для здымка</span>"
 
 #: ../lib/screenshooter-dialogs.c:750
 msgid "Entire screen"
@@ -59,16 +59,16 @@ msgstr "Экран цалкам"
 #: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
-msgstr ""
+msgstr "Зрабіць здымак экрана цалкам"
 
 #: ../lib/screenshooter-dialogs.c:765
 msgid "Active window"
-msgstr "Актыўнае акно"
+msgstr "Дзейнае акно"
 
 #: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
-msgstr ""
+msgstr "Зрабіць здымак дзейнага акна"
 
 #: ../lib/screenshooter-dialogs.c:780
 msgid "Select a region"
@@ -84,16 +84,16 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:795
 msgid "Capture the mouse pointer"
-msgstr "Уключаць курсор ў здымак"
+msgstr "Курсор будзе на здымку"
 
 #: ../lib/screenshooter-dialogs.c:800
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Паказваць курсор на здымку"
+msgstr "Паказваць курсор на экранным здымку"
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Затрымка перад здымкам</span>"
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
@@ -105,11 +105,11 @@ msgstr "секунд"
 
 #: ../lib/screenshooter-dialogs.c:893
 msgid "Action"
-msgstr ""
+msgstr "Дзеянне"
 
 #: ../lib/screenshooter-dialogs.c:922
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Дзеянне</span>"
 
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:938
@@ -118,15 +118,15 @@ msgstr "Захаваць"
 
 #: ../lib/screenshooter-dialogs.c:943
 msgid "Save the screenshot to a PNG file"
-msgstr ""
+msgstr "Захаваць экранны здымак у файл PNG"
 
 #: ../lib/screenshooter-dialogs.c:952
 msgid "Copy to the clipboard"
-msgstr "Зкапіяваць у буфер абмену"
+msgstr "Скапіраваць у буфер абмену"
 
 #: ../lib/screenshooter-dialogs.c:954
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
+msgstr "Скапіраваць экранны здымак у буфер абмеру, каб яго можна было ўставіць пазней"
 
 #: ../lib/screenshooter-dialogs.c:971
 msgid "Open with:"
