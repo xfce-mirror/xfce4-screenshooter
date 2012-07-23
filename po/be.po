@@ -134,11 +134,11 @@ msgstr "Адкрыць з дапамогай:"
 
 #: ../lib/screenshooter-dialogs.c:977
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "Адкрыць экранны здымак у абранай праграме"
 
 #: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
 msgid "Application to open the screenshot"
-msgstr ""
+msgstr "Праграма, у якой будзе адкрыты здымак"
 
 #: ../lib/screenshooter-dialogs.c:1005
 msgid "Host on ZimageZ"
@@ -154,22 +154,22 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Перадпрагляд<
 
 #: ../lib/screenshooter-dialogs.c:1084
 msgid "Save screenshot as..."
-msgstr ""
+msgstr "Захаваць здымак у..."
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr ""
+msgstr "Памылка адбылася пад час стварэння XMLRPC запыту."
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr ""
+msgstr "Адбылася памылка пад час перадачы дадзеных у ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr ""
+msgstr "Адбылася памылка пад час разбору адказу ад ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
@@ -316,7 +316,6 @@ msgid "BBCode for forums"
 msgstr "BBCode для форумаў"
 
 #: ../lib/screenshooter-zimagez.c:1155
-#, fuzzy
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
