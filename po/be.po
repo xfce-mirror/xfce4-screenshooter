@@ -263,7 +263,7 @@ msgstr "Назва:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "Назва здымка, будзе выкарыстоўвацца пры адлюстраванні здымка на ZimageZ"
+msgstr "Назва здымка, будзе выкарыстоўвацца пры яго адлюстраванні здымка на ZimageZ"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
@@ -274,7 +274,7 @@ msgstr "Каментар:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "Каментар да здымка, будзе выкарыстоўвацца пры адлюстраванні здымка на ZimageZ"
+msgstr "Каментар да здымка, які будзе выкарыстоўвацца, каб паказаць яго на ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -284,20 +284,20 @@ msgstr "<a href=\"%s\">Малюнак поўнага памеру</a>"
 #: ../lib/screenshooter-zimagez.c:904
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Мініяцюра большага памеру</a>"
 
 #: ../lib/screenshooter-zimagez.c:906
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Мініяцюра маленькага памеру</a>"
 
 #: ../lib/screenshooter-zimagez.c:922
 msgid "My screenshot on ZimageZ"
-msgstr ""
+msgstr "Мой здымак на ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:948
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Спасылкі</span>"
 
 #: ../lib/screenshooter-zimagez.c:987
 msgid ""
@@ -321,7 +321,7 @@ msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1188
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Стан</span>"
 
 #: ../src/main.c:48
 msgid "Delay in seconds before taking the screenshot"
@@ -337,7 +337,7 @@ msgstr "Тэчка, у якую будзе захаваны здымак"
 
 #: ../src/main.c:85
 msgid "Version information"
-msgstr "Звесткі пра версію"
+msgstr "Інфармацыя пра версію"
 
 #: ../src/main.c:134
 #, c-format
@@ -361,10 +361,10 @@ msgstr ""
 #: ../src/main.c:297
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "%s — не правільнае імя каталога, будзе выкарыстоўвацца перадвызначаны каталог."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr ""
+msgstr "Зрабіць здымак усяго экрану, дзейнага акна ці вобласці"
