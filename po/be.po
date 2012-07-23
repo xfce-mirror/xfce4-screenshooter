@@ -176,12 +176,12 @@ msgstr "Адбылася памылка пад час разбору адказ�
 #: ../lib/screenshooter-zimagez.c:210
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Зняты %s, у %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
 msgid "Initialize the connection..."
-msgstr "Пачаць злучэнне"
+msgstr "Ініцыяваць злучэнне..."
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
@@ -192,43 +192,43 @@ msgstr ""
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr ""
+msgstr "Праверка інфармацыі карыстальніка..."
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Вы павінны запоўніць кожную графу.</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
-msgstr ""
+msgstr "Пачаць сеанс з ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr ""
+msgstr "Ад ZimageZ быў атрыманы нечаканы адказ. Загрузка здымка была неўдалая."
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Імя карысталькіа і пароль, якія вы увялі не адпавядаць адзі аднаму. Калі ласка, паўтарыце спробу.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
-msgstr ""
+msgstr "Загрузка здымка..."
 
 #: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr ""
+msgstr "Падчас загрузкі здымка адбылася памылка."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
 msgid "Close the session on ZimageZ..."
-msgstr ""
+msgstr "Закрыць сеанс з ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:679
 msgid "Details about the screenshot for ZimageZ"
