@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-screenshooter 1.5.0.1svn-r06642\n"
+"Project-Id-Version: xfce4-screenshooter\n"
 "POT-Creation-Date: 2009-11-29 10:31+0100\n"
 "PO-Revision-Date: 2009-11-29 14:59+0900\n"
 "Last-Translator: Gheyret T.Kenji <gheyret@gmail.com>\n"
@@ -49,7 +49,7 @@ msgstr "@@image: 'images/xfce4-screenshooter-zimagez-result-dialog.png'; md5=468
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:12(title)
 msgid "Xfce4 Screenshooter"
-msgstr "Xfce4 Screenshooter"
+msgstr "Xfce4 ئېكران كۆرۈنۈشىنى سۈرەتكە ئالغۇ(Screenshooter)"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:17(year)
 msgid "2008"
@@ -108,7 +108,7 @@ msgstr "بۇ بولاق @PACKAGE_NAME@ نىڭ @PACKAGE_VERSION@ نەشرى ھە�
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:61(title)
 msgid "Introduction to Xfce4 Screenshooter"
-msgstr "Xfce4 Screenshooter نى تونۇشتۇرۇش"
+msgstr "Xfce4 ئېكران كۆرۈنۈشىنى سۈرەتكە ئالغۇ(Screenshooter) نى تونۇشتۇرۇش"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:63(para)
 msgid ""
@@ -144,7 +144,7 @@ msgstr "مەزكۇر كۆزنەك كۆرسىتىلىدۇ:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:101(phrase)
 msgid "The window of Xfce4 Screenshooter"
-msgstr "Xfce4 Screenshooter نىڭ كۆزنىكى"
+msgstr "Xfce4 ئېكران كۆرۈنۈشىنى سۈرەتكە ئالغۇ(Screenshooter) نىڭ كۆزنىكى"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:107(title)
 msgid "Region to capture"
@@ -154,25 +154,25 @@ msgstr "رەسىمگە ئالىدىغان دائىرە"
 msgid ""
 "The <emphasis>\"Region to capture\"</emphasis> section allows you to set "
 "what the screenshot will be taken of:"
-msgstr ""
+msgstr "<emphasis>«سۈرەتكە ئالدىغان دائىرە»</emphasis> بۆلىكىدە سۈرەتكە ئالماقچى بولغان دائىرىنى كۆرسىتىپ بەرگىلى بولىدۇ:"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:115(listitem)
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr ""
+msgstr "«تولۇق ئېكران» بولسا سىز كۆرۈۋاتقان بارلىق نەرسىنىڭ سۈرىتىنى ئالىدۇ."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:119(listitem)
 msgid ""
 "\"Active window\" takes a screenshot of the active window. This will be the "
 "one that was active before this dialog appeared, or if you set a delay, the "
 "one that is active after the delay."
-msgstr ""
+msgstr "«ئاكتىپ كۆزنەك» ئېكراندىكى ئاكتىپ كۆزنەكنىڭلا سۈرىتىنى ئالىدۇ. بۇنىڭدا نۆۋەتتىكى سۆزلەشكۈ ئاكتىپ بولۇشنىڭ ئالدىدىكى كۆزنەك ئاكتىپ كۆزنەك بولىدۇ. ياكى كېچىكتۈرۈش ۋاقتى بېكىتىلگەن بولسا، شۇ ۋاقىتتىن  كېيىن ئاكتىپ بولغان كۆزنەك ئاكتىپ كۆزنەك بولىدۇ."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:125(listitem)
 msgid ""
 "\"Select a region\" allows you to select a region to be captured by clicking "
 "and dragging a rectangle over the area of screen that you wish to capture, "
 "before releasing the mouse button."
-msgstr ""
+msgstr "«دائىرە تاللا» چاشقىنەك ئارقىلىق كۆرسىتىلگەن تىك تۆت تەرەپلىكنى سۈرەتكە ئالىدۇ."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:135(title)
 msgid "Capturing the pointer"
@@ -186,7 +186,7 @@ msgstr "<emphasis>«نۇربەلگىسىنى سۈرەتكە ئېلىش»</emphas
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:145(title)
 msgid "Delay before capturing"
-msgstr ""
+msgstr "سۈرەتكە ئېلىشنىڭ ئالدىدا كېچىكتۈرۈش"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:147(para)
 msgid ""
@@ -219,7 +219,7 @@ msgstr "ئالدىن كۆرۈش"
 msgid ""
 "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
 "screenshot."
-msgstr ""
+msgstr "<emphasis>«ئالدىن كۆرۈش»</emphasis> تە سۈرەتكە ئېلىنغان ئېكراننىڭ كىچىك سۈرىتى كۆرسىتىلىدۇ."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:189(title)
 msgid "Action"
@@ -240,7 +240,7 @@ msgid ""
 "The <emphasis>\"Save\"</emphasis> option will save the screenshot to a PNG "
 "file. A save dialog will be displayed. You will be able to set the save "
 "location, and the name of the file."
-msgstr ""
+msgstr "<emphasis>«ساقلا»</emphasis> ئارقىلىق ئېكران كۆرۈنۈشىنى بىر دانە PNG سۈرىتىگە ساقلىغىلى بولىدۇ. ساقلاش سۆزلەشكۈسى چىقىپ، ساقلايدىغان ئورۇن ۋە ھۆججەت ئاتىنى بەلگىلىگىلى بولىدۇ."
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:206(para)
 msgid ""
@@ -254,7 +254,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:218(title)
 msgid "Copy to the clipboard"
-msgstr "چاپلاش تاختىسىغا كۆچۈر"
+msgstr "چاپلاش تاختىسىغا كۆچۈرۈش"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:220(para)
 msgid ""
@@ -265,7 +265,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:229(title)
 msgid "Open with"
-msgstr "پروگراممىدا ئاچ"
+msgstr "پروگراممىدا ئېچىش"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:231(para)
 msgid ""
@@ -277,7 +277,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:241(title)
 msgid "Host on ZimageZ"
-msgstr "ZimageZ دا تارقات"
+msgstr "ZimageZ دا تارقىتىش"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:243(para)
 msgid ""
@@ -320,7 +320,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:303(title)
 msgid "Via command line"
-msgstr ""
+msgstr "بۇيرۇق قۇرى ئارقىلىق"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:305(para)
 msgid ""
@@ -333,7 +333,7 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:315(title)
 msgid "The command line options"
-msgstr ""
+msgstr "بۇيرۇق قۇرى تاللانمىسى"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:318(title)
 msgid "The -w option"
@@ -417,11 +417,11 @@ msgstr ""
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:400(title)
 msgid "Using the Xfce panel plugin"
-msgstr "Xfce Panel نى قىستۇرمىسىنى ئىشلىتىش"
+msgstr "Xfce كۆزنەك قىستۇرمىسىنى ئىشلىتىش"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:403(title)
 msgid "Adding the plugin"
-msgstr "قىستۇرما قوشۇۋاتىدۇ"
+msgstr "قىستۇرما قوشۇش"
 
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:405(para)
 msgid ""
@@ -455,4 +455,4 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: ../docs/manual/C/xfce4-screenshooter.xml.in:0(None)
 msgid "translator-credits"
-msgstr "Gheyret T.Kenji <gheyret@gmail.com> 2010"
+msgstr "غەيرەت ت.كەنجى <gheyret@gmail.com> 2010"
