@@ -1,10 +1,11 @@
 # mohammad <malham1@gmail.com>, 2012.
+# محمد الحرقان <malham1@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-screenshooter docs\n"
 "POT-Creation-Date: 2012-01-02 23:51+0100\n"
-"PO-Revision-Date: 2012-05-21 01:06+0300\n"
-"Last-Translator: mohammad <malham1@gmail.com>\n"
+"PO-Revision-Date: 2012-11-10 06:34+0300\n"
+"Last-Translator: محمد الحرقان <malham1@gmail.com>\n"
 "Language-Team: http://www.vertaal.com.ar/files/factory/ar/list/\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -180,7 +181,7 @@ msgstr ""
 
 #: ../docs/manual/C/index.xml.in:115(listitem)
 msgid "\"Entire screen\" takes a screenshot of the whole screen as you see it."
-msgstr "\"كامل الشاشة \" يأخذ لقطة من الشاشة بأكملها كما تراها."
+msgstr "\"كامل الشاشة \" يأخذ لقطة للشاشة بأكملها كما تراها."
 
 #: ../docs/manual/C/index.xml.in:119(listitem)
 msgid ""
@@ -188,7 +189,7 @@ msgid ""
 "one that was active before this dialog appeared, or if you set a delay, the "
 "one that is active after the delay."
 msgstr ""
-"\"نافذة نشطة\" يأخذ لقطة من نافذة نشطة. وهي آخر نافذة نشطة قبل ظهور هذا "
+"\"نافذة نشطة\" يأخذ لقطة من النافذة النشطة. وهي آخر نافذة نشطة قبل ظهور هذا "
 "الحوار، أو قم بتعيين تأخير لتنشيط نافذة اخرى."
 
 #: ../docs/manual/C/index.xml.in:125(listitem)
@@ -198,7 +199,7 @@ msgid ""
 "before releasing the mouse button."
 msgstr ""
 "\"اختر منطقة \" يسمح لك بتحديد المنطقة التي سيتم التقاطها عن طريق النقر وسحب "
-"مستطيل فوق منطقة الشاشة التي ترغب في التقاط الصور ، قبل تحرير زر الفارة."
+"مستطيل فوق منطقة الشاشة التي ترغب في التقاطها ، قبل إطلاق زر الفارة."
 
 #: ../docs/manual/C/index.xml.in:135(title)
 msgid "Capturing the pointer"
@@ -224,9 +225,9 @@ msgid ""
 "open menus or to perform whatever action you require to see displayed in the "
 "screenshot."
 msgstr ""
-"و<emphasis>\"التأخير قبل التقاط \"</emphasis> بهذا القسم تعيين التأخير الذي "
-"ينقضي بين الضغط على <emphasis>\"موافق \"</emphasis> والتقاط الشاشة. ستسمح لك "
-"هذا التأخير في فتح القوائم أو أداء أي عمل ليظهر في الصورة."
+"و<emphasis>\"التأخير قبل التقاط \"</emphasis> بهذا القسم عين التأخير بين الضغط "
+"على <emphasis>\"موافق \"</emphasis> والتقاط الشاشة. سيسمح لك هذا التأخير في "
+"فتح القوائم أو أداء أي عمل ليظهر في الصورة."
 
 #: ../docs/manual/C/index.xml.in:159(title)
 msgid "After capturing"
@@ -236,8 +237,7 @@ msgstr "بعد الالتقاط"
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button a second window will "
 "be displayed:"
-msgstr ""
-"بعد الضغط على <emphasis>\"موافق \"</emphasis> الزر سيتم عرض النافذة الثانية:"
+msgstr "بعد الضغط على <emphasis>\"موافق \"</emphasis> سيتم عرض النافذة الثانية:"
 
 #: ../docs/manual/C/index.xml.in:173(phrase)
 msgid "The window of Xfce4 Screenshooter after taking a screenshot"
@@ -251,18 +251,18 @@ msgstr "معاينة"
 msgid ""
 "The <emphasis>\"Preview\"</emphasis> section displays a thumbnail of the "
 "screenshot."
-msgstr "و<emphasis>\"معاينة \"المقطع </emphasis> يعرض صورة مصغرة من لقطة."
+msgstr "مقطع <emphasis>\"معاينة \"</emphasis> يعرض صورة مصغرة من اللقطة."
 
 #: ../docs/manual/C/index.xml.in:189(title)
 msgid "Action"
-msgstr "أحداث"
+msgstr "إجراء"
 
 #: ../docs/manual/C/index.xml.in:191(para)
 msgid ""
 "The <emphasis>\"Action\"</emphasis> section allows you to choose what should "
 "be performed on the screenshot."
 msgstr ""
-"و<emphasis>\"العمل \"المقطع </emphasis> يسمح لك لاختيار ما تشمله لقطة الشاشة."
+"مقطع<emphasis>\"الإجراء \"</emphasis> يسمح لك بتحديد ما تشمله لقطة الشاشة."
 
 #: ../docs/manual/C/index.xml.in:197(title)
 msgid "Save"
@@ -274,7 +274,7 @@ msgid ""
 "file. A save dialog will be displayed. You will be able to set the save "
 "location, and the name of the file."
 msgstr ""
-"ال<emphasis>\"حفظ \"</emphasis> خيار حفظ لقطة لملف PNG. سيتم عرض الحوار حفظ. "
+"خيار<emphasis>\"حفظ \"</emphasis> يحفظ لقطة لملف PNG. سيتم عرض حوار الحفظ. "
 "ستكون قادر على تعيين موقع الحفظ واسم الملف."
 
 #: ../docs/manual/C/index.xml.in:206(para)
@@ -303,7 +303,7 @@ msgid ""
 "paste the screenshot in another application, such as a word processor. This "
 "option is only available when a clipboard manager is running."
 msgstr ""
-"و<emphasis>\"نسخ إلى الحافظة\"</emphasis> خيار يسمح لك للصق لقطة في تطبيق آخر، "
+"خيار<emphasis>\"نسخ إلى الحافظة\"</emphasis> يسمح بلصق اللقطة في تطبيق آخر، "
 "مثل معالج النصوص. هذا الخيار متاح فقط عندما يكون مدير الحافظة قيد التشغيل."
 
 #: ../docs/manual/C/index.xml.in:229(title)
@@ -317,9 +317,9 @@ msgid ""
 "the drop-down list. Applications which support images are automatically "
 "detected and added to the drop-down list."
 msgstr ""
-"و<emphasis>\"فتح مع \"الخيار </emphasis> يحفظ لقطة إلى الدليل المؤقت للنظام "
-"ويفتحه مع التطبيق يتم اختيارها من القائمة المنسدلة. يتم الكشف تلقائيا "
-"التطبيقات التي تدعم الصور وإضافتها إلى قائمة منسدلة."
+"خيار<emphasis>\"فتح باستخدام \"</emphasis> يحفظ اللقطة إلى المجلد المؤقت "
+"للنظام ويفتحه باستخدام تطبيق يتم اختياره من القائمة المنسدلة. يتم الكشف "
+"تلقائيا علن التطبيقات التي تدعم الصور وإضافتها إلى القائمة المنسدلة."
 
 #: ../docs/manual/C/index.xml.in:241(title)
 msgid "Host on ZimageZ"
@@ -333,16 +333,16 @@ msgid ""
 "small thumbnail of your screenshot, which can be used to create thumbnails "
 "pointing to the full size screenshot."
 msgstr ""
-"ال<emphasis>\"المضيف ZimageZ\"</emphasis> خيار يسمح لك باستضافة لقطة الشاشة "
-"الخاصة هذه الخدمة استضافة مجانية على الانترنت ، بحيث يمكنك بسهولة مشاركتها "
-"مع الآخرين. ZimageZ يولد تلقائيا نسخة كبيرة وصغيرة من صورة مصغرة لقطة "
-"الشاشة، والتي يمكن أن تستخدم لإنشاء صور المصغرة تشمل حجم شاشة كاملة."
+"خيار<emphasis>\"استضافة على ZimageZ\"</emphasis> يسمح باستضافة لقطة الشاشة، "
+"هذه خدمة استضافة مجانية على الانترنت ، بحيث يمكنك بسهولة مشاركتها مع "
+"الآخرين. ZimageZ يولد تلقائيا نسخة كبيرة وصغيرة من صورة مصغرة لقطة الشاشة، "
+"والتي يمكن أن تستخدم لإنشاء صور المصغرة تشمل حجم شاشة كاملة."
 
 #: ../docs/manual/C/index.xml.in:252(para)
 msgid ""
 "After pressing the <emphasis>\"OK\"</emphasis> button, you will be shown "
 "this dialog:"
-msgstr "بعد الضغط على <emphasis>\"موافق \"</emphasis> الزر ، سيظهر لك هذا الحوار:"
+msgstr "بعد الضغط على <emphasis>\"موافق \"</emphasis> سيظهر لك هذا الحوار:"
 
 #: ../docs/manual/C/index.xml.in:264(phrase)
 msgid "The dialog to host a screenshot on ZimageZ"
@@ -356,10 +356,10 @@ msgid ""
 "between using the menu up right. You must fill all fields of this dialog. "
 "Once you click the <emphasis>\"OK\"</emphasis> button, the upload will start."
 msgstr ""
-"إذا لم يكن لديك اسم مستخدم ZimageZ. ستحتاج إلى إنشاء واحدة في <ulink "
+"إذا لم يكن لديك اسم مستخدم في ZimageZ. ستحتاج إلى إنشاء واحدة في <ulink "
 "type=\"http\" url=\"http://www.zimagez.com\"> موقع ZimageZ </ulink>يدعم عدة "
 "لغات، يمكنك التبديل باستخدام القائمة للأعلى اليمين. يجب تعبئة جميع حقول هذا "
-"الحوار. بمجرد النقر فوق <emphasis>\"موافق \"</emphasis > زر ، سيبدأ تحميل."
+"الحوار. بمجرد النقر فوق <emphasis>\"موافق \"</emphasis > سيبدأ تحميل."
 
 #: ../docs/manual/C/index.xml.in:279(para)
 msgid ""
@@ -372,7 +372,7 @@ msgstr ""
 
 #: ../docs/manual/C/index.xml.in:293(phrase)
 msgid "The dialog giving the links to your screenshot on ZimageZ"
-msgstr "الحوار يعطي روابط اللقطة الخاص بك على ZimageZ"
+msgstr "الحوار يعطي روابط اللقطة على ZimageZ"
 
 #: ../docs/manual/C/index.xml.in:303(title)
 msgid "Via command line"
@@ -403,7 +403,7 @@ msgstr "الخيار -w"
 msgid ""
 "The <emphasis>-w</emphasis> option allows you to take a screenshot of the "
 "active window."
-msgstr "الخيار <emphasis>-w</emphasis> يسمح لك بأن تأخذ لقطة من نافذة نشطة."
+msgstr "الخيار <emphasis>-w</emphasis> يسمح لك بأن تأخذ لقطة للنافذة النشطة."
 
 #: ../docs/manual/C/index.xml.in:327(title)
 msgid "The -f option"
@@ -414,7 +414,7 @@ msgid ""
 "The <emphasis>-f</emphasis> option allows you to take a screenshot of the "
 "entire screen."
 msgstr ""
-"الخيار<emphasis>-f</emphasis> الخيار يسمح لك أن تأخذ لقطة من الشاشة بأكملها."
+"الخيار<emphasis>-f</emphasis> الخيار يسمح لك بأن تأخذ لقطة للشاشة بأكملها."
 
 #: ../docs/manual/C/index.xml.in:336(title)
 msgid "The -r option"
@@ -426,9 +426,8 @@ msgid ""
 "captured by clicking and dragging a rectangle over the area of screen that "
 "you wish to capture, before releasing the mouse button."
 msgstr ""
-"الخيار <emphasis>-r</emphasis> يسمح لك بتحديد المنطقة التي سيتم التقاطها عن "
-"طريق النقر بالفارة سحب مستطيل فوق منطقة الشاشة التي ترغب في التقاط الصور ، "
-"قبل تحرير زر الفارة."
+"الخيار <emphasis>-r</emphasis> يسمح بالتقاط منطقة من الشاشة بالنقر بالفارة "
+"وتحديد المنطقة اللتي ترغب في التقاطها ، قبل تحرير زر الفارة."
 
 #: ../docs/manual/C/index.xml.in:347(title)
 msgid "The -d option"
@@ -441,7 +440,7 @@ msgid ""
 "emphasis>, the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option "
 "is given."
 msgstr ""
-"الخيار <emphasis>-d</emphasis> يليها رقم صحيح موجب يسمح لك تعيين التأخير قبل "
+"الخيار <emphasis>-d</emphasis> يليها رقم صحيح موجب يسمح بتعيين التأخير قبل "
 "أخذ لقطة عند إختيار <emphasis>-w</emphasis>، و<emphasis>-f</emphasis> أو "
 "<emphasis>-r</emphasis> يعطى الاختيار."
 
@@ -457,7 +456,7 @@ msgid ""
 "the <emphasis>-r</emphasis> option is given."
 msgstr ""
 "الخيار <emphasis>-s</emphasis> يليه مسار المجلد يسمح لك بتعيين موقع حفظ "
-"لقطات. هذا الخيار يعمل فقط مع المؤثرات <emphasis>-w</emphasis>, "
+"اللقطات. هذا الخيار يعمل فقط مع المؤثرات <emphasis>-w</emphasis>, "
 "و<emphasis>-f</emphasis> أو <emphasis>-r</emphasis> يعطى الخيار."
 
 #: ../docs/manual/C/index.xml.in:371(title)
@@ -473,7 +472,7 @@ msgid ""
 "the <emphasis>-f</emphasis> or the <emphasis>-r</emphasis> option is given."
 msgstr ""
 "إذا حدد هذا الخيار <emphasis>-o</emphasis> يليه اسم التطبيق، سيتم حفظ لقطة "
-"إلى دليل النظام المؤقتة وفتحها مع التطبيق المحدد بعد "
+"في مجلد النظام المؤقتة وفتحها باستخدام التطبيق المحدد بعد "
 "<emphasis>-o</emphasis>. هذا الخيار له تأثير مع <emphasis>-w</emphasis>، "
 "و<emphasis>-f</emphasis> أو <emphasis>-r</emphasis> يعطى الخيار."
 
@@ -521,7 +520,7 @@ msgid ""
 "similar to the dialog of the main application will appear. Please have a "
 "look above for the different preferences."
 msgstr ""
-"يمكنك إعداد كيفية أخذ لقطات بالنقر بالزر الأيمن للفارة على الإضافة ثم اختيار "
+"يمكنك إعداد كيفية أخذ لقطات بالنقر بزر الفارة الأيمن على الإضافة ثم اختيار "
 "<emphasis>\"خصائص \"</emphasis>. وهناك يظهر حوار تفضيلات مماثلة لحوار التطبيق "
 "الرئيسي. يرجى إلقاء نظرة للتفضيلات المختلفة."
 
