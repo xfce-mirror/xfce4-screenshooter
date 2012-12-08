@@ -19,7 +19,7 @@
 
 #include "screenshooter-capture.h"
 
-
+#define BACKGROUND_TRANSPARENCY 0.4
 
 /* Rubberband data for composited environment */
 typedef struct
@@ -523,7 +523,7 @@ static gboolean cb_expose (GtkWidget *widget,
       for (i = 0; i < n_rects; ++i)
         {
           /* Restore the transparent background */
-          cairo_set_source_rgba (cr, 0, 0, 0, 0.4);
+          cairo_set_source_rgba (cr, 0, 0, 0, BACKGROUND_TRANSPARENCY);
           gdk_cairo_rectangle (cr, &rects[i]);
           cairo_fill (cr);
 
@@ -548,7 +548,7 @@ static gboolean cb_expose (GtkWidget *widget,
 
       /* Draw the transparent background */
       cr = gdk_cairo_create (GDK_DRAWABLE (widget->window));
-      cairo_set_source_rgba (cr, 0, 0, 0, 0.4);
+      cairo_set_source_rgba (cr, 0, 0, 0, BACKGROUND_TRANSPARENCY);
       cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
 
       for (i = 0; i < n_rects; ++i)
