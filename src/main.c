@@ -344,7 +344,7 @@ int main (int argc, char **argv)
     {
       GtkWidget *dialog;
 
-      /* Use 0 as the minimal delay */
+      /* Use 1 as the minimal delay, 0 may show corrupted windows */
       if (sd->delay == 0)
         sd->delay = 1;
 
