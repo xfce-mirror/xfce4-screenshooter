@@ -1,7 +1,7 @@
 # Korean translation for the xfce4-screenshooter package.
 # Copyright (C) 2006-2012 Jasper Huijsmans et al.
 # This file is distributed under the same license as the xfce4-screenshooter package.
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012, 2013.
 #
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge.net>\n"
 "POT-Creation-Date: 2011-07-31 23:29+0200\n"
 "PO-Revision-Date: 2012-02-28 04:17+0900\n"
-"Last-Translator: Seong-ho, Cho <darkcircle.0426@gmail.com>\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge.net>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -99,7 +99,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍기 전 지연시간</
 
 #: ../lib/screenshooter-dialogs.c:838
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "스크린샷을 찍기 위해 몇 초간 시간을 지연합니다"
+msgstr "스크린샷을 찍기 전에 몇 초간 시간을 지연합니다"
 
 #: ../lib/screenshooter-dialogs.c:841
 msgid "seconds"
@@ -193,7 +193,7 @@ msgid ""
 "user name, passsword and details about the screenshot."
 msgstr ""
 "다음 필드를 <a href=\"http://www.zimagez.com\">ZimageZ</a> 사용자 이름, 암호\n"
-"그리고 스크린샷에 대한 설명으로 채워주시기 바랍니다."
+"그리고 스크린샷에 대한 설명으로 채워주십시오."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -214,7 +214,7 @@ msgstr "ZimageZ에서 예상치 못한 응답이 왔습니다. 스크린샷 업�
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The user and the password you entered do not match. Please retry.</span>"
-msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">입력한 사용자 및 암호가 잘못되었습니다. 다시 시도하여 주시기 바랍니다.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">입력한 사용자 및 암호가 잘못되었습니다. 다시 시도하여 주십시오.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -241,7 +241,7 @@ msgstr "사용자:"
 
 #: ../lib/screenshooter-zimagez.c:730
 msgid "Your Zimagez user name, if you do not have one yet please create one on the Web page linked above"
-msgstr "여러분의 ZimageZ 사용자 이름입니다. 아직 없다면 아래 링크 웹페이지에서 만들어주시기 바랍니다"
+msgstr "여러분의 ZimageZ 사용자 이름입니다. 아직 없다면 아래 링크 웹페이지에서 만들어주십시오"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -339,7 +339,7 @@ msgstr "옵션 충돌: --%s와(과) --%s은(는) 동시에 사용할 수 없습�
 #: ../src/main.c:136
 #, c-format
 msgid "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
-msgstr "--%s 옵션은 --fullscreen, --window 또는 --region 옵션이 주어졌을 경우에만 사용함니다. 따라서 이를 무시할 것입니다.\n"
+msgstr "--%s 옵션은 --fullscreen, --window 또는 --region 옵션이 주어졌을 경우에만 사용함니다. 따라서 이를 무시합니다.\n"
 
 #: ../src/main.c:150
 #, c-format
@@ -353,7 +353,7 @@ msgstr ""
 #: ../src/main.c:297
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s은(는) 유효한 디렉터리가 아니기 때문에 기본 디렉터리를 사용할 것입니다."
+msgstr "%s은(는) 유효한 디렉터리가 아니기 때문에 기본 디렉터리를 사용합니다."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.in.h:2
