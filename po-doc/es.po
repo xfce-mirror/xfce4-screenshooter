@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Screenshoter\n"
 "POT-Creation-Date: 2012-01-02 23:51+0100\n"
-"PO-Revision-Date: 2013-04-20 15:06-0600\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitoschido@gmail.com>\n"
+"PO-Revision-Date: 2013-05-17 05:53-0600\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
 "Language-Team: es <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../docs/manual/C/index.xml.in:12(title)
 msgid "Xfce4 Screenshooter"
-msgstr " Xfce4 Screenshooter"
+msgstr "Capturador de pantalla de Xfce4"
 
 #: ../docs/manual/C/index.xml.in:17(year)
 msgid "2008"
@@ -86,9 +86,9 @@ msgstr ""
 "los términos de la GNU Free Documentation License, versión 1.1 o cualquier "
 "versión posterior, como la publica la Free Software Foundation, sin "
 "Secciones Invariantes, sin textos de cubierta delantera, y sin textos de "
-"cubierta trasera. El texto completo de la licencia está disponible desde la "
-"<ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software Foundation</"
-"ulink>."
+"cubierta trasera. El texto completo de la licencia está disponible en el "
+"sitio de la <ulink type=\"http\" url=\"http://www.gnu.org/\">Free Software "
+"Foundation</ulink>."
 
 #: ../docs/manual/C/index.xml.in:40(firstname)
 msgid "Jérôme"
@@ -142,11 +142,11 @@ msgstr ""
 
 #: ../docs/manual/C/index.xml.in:73(para)
 msgid "A plugin for the Xfce panel is also available."
-msgstr "También está disponible un complemento para el panel de XFCE."
+msgstr "También está disponible un complemento para el panel de Xfce."
 
 #: ../docs/manual/C/index.xml.in:80(title)
 msgid "Using the application"
-msgstr "Utilizando la aplicación"
+msgstr "Uso de la aplicación"
 
 #: ../docs/manual/C/index.xml.in:83(title)
 msgid "Via the user interface"
@@ -166,7 +166,7 @@ msgstr "Se mostrará esta ventana:"
 
 #: ../docs/manual/C/index.xml.in:101(phrase)
 msgid "The window of Xfce4 Screenshooter"
-msgstr "La ventana de Xfce4 Screenshooter"
+msgstr "La ventana del capturador de pantalla de Xfce4"
 
 #: ../docs/manual/C/index.xml.in:107(title)
 msgid "Region to capture"
@@ -299,8 +299,8 @@ msgid ""
 "uvena.de/gigolo/\">Gigolo</ulink> and it will be available in the left "
 "column of the save dialog."
 msgstr ""
-"Xfce4 Screenshooter también es capaz de guardar la captura de pantalla a "
-"cualquier sistema de archivos remoto apoyado por GVfs, tales como FTP, "
+"El capturador de pantalla de Xfce4 también es capaz de guardar la captura en "
+"cualquier sistema de archivos remoto admitido por GVfs, tales como FTP, "
 "SAMBA, SFTP, ordenadores remotos accesibles a través de SSH ... Sólo tiene "
 "que conectar el sistema de archivos remoto usando <emphasis>gvfs-connect</"
 "emphasis> o <ulink type=\"http\" url=\"http://www.uvena.de/gigolo/"
@@ -381,7 +381,7 @@ msgstr ""
 "<ulink type=\"http\" url=\"http://www.zimagez.com\"> sitio web de ZimageZ</"
 "ulink>. Este sitio web está disponible en varios idiomas, que puede cambiar "
 "en el menú de la parte superior derecha. Debe llenar todos los campos de "
-"este cuadro de diálogo. Una vez que pulse en el botón<emphasis>«Aceptar»</ "
+"este cuadro de diálogo. Una vez que pulse en el botón <emphasis>«Aceptar»</ "
 "emphasis> se iniciará la carga."
 
 #: ../docs/manual/C/index.xml.in:279(para)
@@ -402,7 +402,7 @@ msgstr ""
 
 #: ../docs/manual/C/index.xml.in:303(title)
 msgid "Via command line"
-msgstr "A través de la línea de comandos"
+msgstr "A través de la línea de órdenes"
 
 #: ../docs/manual/C/index.xml.in:305(para)
 msgid ""
@@ -412,16 +412,16 @@ msgid ""
 "desktop environment so that it launches xfce4-screenshooter with one or "
 "several of the following options when the Prt Scrn key is pressed."
 msgstr ""
-"Las opciones de línea de comandos le permiten tomar capturas de pantalla "
+"Las opciones de línea de órdenes le permiten tomar capturas de pantalla "
 "rápidamente. También le permiten configurar la tecla Impr Pant en la parte "
 "superior derecha de la mayoría de los teclados para que realice capturas de "
 "pantalla. Para ello, configure el teclado de su entorno de escritorio para "
 "iniciar xfce4-screenshooter con una o varias de las siguientes opciones "
-"cuando la tecla Impr Pant es presionada."
+"cuando oprima la tecla Impr Pant."
 
 #: ../docs/manual/C/index.xml.in:315(title)
 msgid "The command line options"
-msgstr "Opciones de línea de comandos"
+msgstr "Opciones de línea de órdenes"
 
 #: ../docs/manual/C/index.xml.in:318(title)
 msgid "The -w option"
@@ -458,8 +458,8 @@ msgid ""
 "you wish to capture, before releasing the mouse button."
 msgstr ""
 "La opción <emphasis>-r</ emphasis> le permite seleccionar la región que se "
-"va a capturar haciendo clic y arrastrando un rectángulo sobre el área de la "
-"pantalla que desea capturar, antes de soltar el botón del ratón."
+"va a capturar pulsando con el ratón y arrastrando un rectángulo sobre el "
+"área de la pantalla que quiere capturar, antes de soltar el botón del ratón."
 
 #: ../docs/manual/C/index.xml.in:347(title)
 msgid "The -d option"
@@ -542,9 +542,10 @@ msgid ""
 "<emphasis>\"Add New Item\"</emphasis>. Select the plugin named <emphasis>"
 "\"Screenshot\"</emphasis>, and add it."
 msgstr ""
-"Para añadir el complemento para el panel, haga clic derecho en el panel y "
-"seleccione <emphasis>\"Agregar nuevo elemento\"</emphasis>. Seleccione el "
-"complemento llamado <emphasis>\"Captura de pantalla\"</emphasis>, y añadir."
+"Para añadir el complemento para el panel, pulse con el botón derecho del "
+"ratón en el panel y seleccione <emphasis>«Añadir elemento nuevo»</emphasis>. "
+"Seleccione el complemento <emphasis>«Captura de pantalla»</emphasis>, y "
+"añádalo."
 
 #: ../docs/manual/C/index.xml.in:413(title)
 msgid "Configuring the plugin"
