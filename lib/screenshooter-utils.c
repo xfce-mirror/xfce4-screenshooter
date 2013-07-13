@@ -18,7 +18,7 @@
  */
 
 #include "screenshooter-utils.h"
-
+#include <libxfce4ui/libxfce4ui.h>
 
 
 /* Public */
@@ -342,17 +342,9 @@ gchar *screenshooter_get_date (gboolean strip_slashes)
 
 
 
-void screenshooter_open_help (void)
+void screenshooter_open_help (GtkWindow *parent)
 {
-  GError *error_help = NULL;
-
-  /* Launch the help page and show an error dialog if there was an error. */
-  if (!g_spawn_command_line_async ("xfhelp4 xfce4-screenshooter.html",
-                                   &error_help))
-    {
-      screenshooter_error ("%s", error_help->message);
-      g_error_free (error_help);
-    }
+  xfce_dialog_show_help (parent, "screenshooter", NULL, NULL);
 }
 
 
@@ -360,9 +352,12 @@ void screenshooter_open_help (void)
 gboolean
 screenshooter_f1_key (GtkWidget *widget, GdkEventKey *event, gpointer user_data)
 {
+  GtkWidget *window;
+
   if (event->keyval == GDK_F1)
     {
-      screenshooter_open_help ();
+      window = gtk_widget_get_toplevel (widget);
+      screenshooter_open_help (GTK_WINDOW (window));
       return TRUE;
     }
 

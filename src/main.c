@@ -111,7 +111,7 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
   if (response == GTK_RESPONSE_HELP)
     {
       g_signal_stop_emission_by_name (dialog, "response");
-      screenshooter_open_help ();
+      screenshooter_open_help (GTK_WINDOW (dialog));
     }
   else if (response == GTK_RESPONSE_OK)
     {

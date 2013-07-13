@@ -278,7 +278,7 @@ cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
       screenshooter_plugin_write_rc_file (pd->plugin, pd);
     }
   else if (response == GTK_RESPONSE_HELP)
-    screenshooter_open_help ();
+    screenshooter_open_help (NULL);
 }
 
 

@@ -51,7 +51,7 @@ void      screenshooter_error                 (const gchar    *format,
                                                ...);
 gchar    *screenshooter_get_date              (gboolean        strip_slashes);
 gchar    *screenshooter_get_time              (void);
-void      screenshooter_open_help             (void);
+void      screenshooter_open_help             (GtkWindow      *parent);
 gboolean  screenshooter_f1_key                (GtkWidget      *widget,
                                                GdkEventKey    *event,
                                                gpointer        user_data);
