@@ -1,22 +1,21 @@
-# Japanese translations for xfce4-screenshooter-plugin package
-# xfce4-screenshooter-plugin パッケージに対する英訳.
-# Copyright (C) 2008-2012 THE xfce4-screenshooter-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce package.
-# HASHIMOTO Masato <cabezon.hashimoto@gmail.com>, 2008-2012.
-# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce 4-screenshooter-plugin 1.3.2\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-31 23:29+0200\n"
-"PO-Revision-Date: 2012-04-14 15:49+0900\n"
-"Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
-"Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
-"Language: ja\n"
+"POT-Creation-Date: 2013-07-13 22:14+0200\n"
+"PO-Revision-Date: 2013-07-26 12:54+0000\n"
+"Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
+"Language-Team: Japanese <xfce-users-jp@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../lib/screenshooter-dialogs.c:453
@@ -24,145 +23,136 @@ msgstr ""
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb / %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:535
+#: ../lib/screenshooter-dialogs.c:539
 msgid "Transfer"
 msgstr "転送"
 
-#: ../lib/screenshooter-dialogs.c:556
+#: ../lib/screenshooter-dialogs.c:560
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">スクリーンショットの転送先:</"
-"span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">スクリーンショットの転送先:</span>"
 
-#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
-#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "スクリーンショット"
 
-#: ../lib/screenshooter-dialogs.c:684
+#: ../lib/screenshooter-dialogs.c:694
 msgid "Take a screenshot"
 msgstr "スクリーンショットを撮影します"
 
-#: ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:709
 msgid "Preferences"
 msgstr "設定"
 
-#: ../lib/screenshooter-dialogs.c:730
+#: ../lib/screenshooter-dialogs.c:740
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影する領域</span>"
 
-#: ../lib/screenshooter-dialogs.c:750
+#: ../lib/screenshooter-dialogs.c:760
 msgid "Entire screen"
 msgstr "画面全体"
 
-#: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
-#: ../panel-plugin/screenshooter-plugin.c:311
+#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
+#: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
 msgstr "画面全体のスクリーンショットを撮ります"
 
-#: ../lib/screenshooter-dialogs.c:765
+#: ../lib/screenshooter-dialogs.c:775
 msgid "Active window"
 msgstr "アクティブウィンドウ"
 
-#: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
-#: ../panel-plugin/screenshooter-plugin.c:316
+#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
 msgstr "アクティブウィンドウのスクリーンショットを撮ります"
 
-#: ../lib/screenshooter-dialogs.c:780
+#: ../lib/screenshooter-dialogs.c:790
 msgid "Select a region"
 msgstr "選択した領域"
 
-#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
-#: ../panel-plugin/screenshooter-plugin.c:321
+#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr ""
-"画面の一点をクリックおよびそこからドラッグし、マウスボタンを離したところまで"
-"の矩形領域を撮ります。"
+msgstr "画面の一点をクリックおよびそこからドラッグし、マウスボタンを離したところまでの矩形領域を撮ります。"
 
-#: ../lib/screenshooter-dialogs.c:795
+#: ../lib/screenshooter-dialogs.c:805
 msgid "Capture the mouse pointer"
 msgstr "マウスポインターも撮影する"
 
-#: ../lib/screenshooter-dialogs.c:800
+#: ../lib/screenshooter-dialogs.c:810
 msgid "Display the mouse pointer on the screenshot"
 msgstr "スクリーンショットにマウスポインターを表示します"
 
-#: ../lib/screenshooter-dialogs.c:816
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">撮影するまでの遅延時間</span>"
+#: ../lib/screenshooter-dialogs.c:826
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">撮影するまでの遅延時間</span>"
 
-#: ../lib/screenshooter-dialogs.c:838
+#: ../lib/screenshooter-dialogs.c:848
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "スクリーンショットを撮るまでの遅延秒数を指定できます"
 
-#: ../lib/screenshooter-dialogs.c:841
+#: ../lib/screenshooter-dialogs.c:851
 msgid "seconds"
 msgstr "秒"
 
-#: ../lib/screenshooter-dialogs.c:893
+#: ../lib/screenshooter-dialogs.c:903
 msgid "Action"
 msgstr "アクション"
 
-#: ../lib/screenshooter-dialogs.c:922
+#: ../lib/screenshooter-dialogs.c:932
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">アクション</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:938
+#: ../lib/screenshooter-dialogs.c:948
 msgid "Save"
 msgstr "保存する"
 
-#: ../lib/screenshooter-dialogs.c:943
+#: ../lib/screenshooter-dialogs.c:953
 msgid "Save the screenshot to a PNG file"
 msgstr "スクリーンショットを PNG ファイルに保存します"
 
-#: ../lib/screenshooter-dialogs.c:952
+#: ../lib/screenshooter-dialogs.c:962
 msgid "Copy to the clipboard"
 msgstr "クリップボードにコピーする"
 
-#: ../lib/screenshooter-dialogs.c:954
+#: ../lib/screenshooter-dialogs.c:964
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
-"後で貼り付けることができるよう、クリップボードにスクリーンショットをコピーし"
-"ます。"
+msgstr "後で貼り付けることができるよう、クリップボードにスクリーンショットをコピーします。"
 
-#: ../lib/screenshooter-dialogs.c:971
+#: ../lib/screenshooter-dialogs.c:981
 msgid "Open with:"
 msgstr "アプリケーションで開く:"
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:987
 msgid "Open the screenshot with the chosen application"
 msgstr "選択したアプリケーションでスクリーンショットを開きます"
 
-#: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "スクリーンショットを開くアプリケーションを設定します"
 
-#: ../lib/screenshooter-dialogs.c:1005
+#: ../lib/screenshooter-dialogs.c:1015
 msgid "Host on ZimageZ"
 msgstr "ZimageZ で公開する"
 
-#: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
-"スクリーンショットをフリーのウェブホスティングサービス ZimageZ で公開します"
+msgstr "スクリーンショットをフリーのウェブホスティングサービス ZimageZ で公開します"
 
-#: ../lib/screenshooter-dialogs.c:1023
+#: ../lib/screenshooter-dialogs.c:1033
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">プレビュー</span>"
 
-#: ../lib/screenshooter-dialogs.c:1084
+#: ../lib/screenshooter-dialogs.c:1094
 msgid "Save screenshot as..."
 msgstr "名前をつけてスクリーンショットを保存..."
 
@@ -195,13 +185,9 @@ msgstr "接続を初期化しています..."
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
-msgstr ""
-"<a href=\"http://www.zimagez.com\">ZimageZ</a> のユーザー名、パスワード、および"
-"スクリーンショットについての\n"
-"詳細を入力してください。"
+msgstr "<a href=\"http://www.zimagez.com\">ZimageZ</a> のユーザー名、パスワード、およびスクリーンショットについての\n詳細を入力してください。"
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -211,9 +197,7 @@ msgstr "ユーザー情報をチェックしています..."
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">すべて"
-"のフィールドに入力してください。</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">すべてのフィールドに入力してください。</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
@@ -223,18 +207,13 @@ msgstr "ZimageZ にログインしています..."
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr ""
-"ZimageZ から想定外の応答を受信しました。スクリーンショットのアップロードは失"
-"敗しました。"
+msgstr "ZimageZ から想定外の応答を受信しました。スクリーンショットのアップロードは失敗しました。"
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">入力さ"
-"れたユーザーとパスワードがマッチしません。\n"
-"再入力してください。</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">入力されたユーザーとパスワードがマッチしません。\n再入力してください。</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -263,9 +242,7 @@ msgstr "ユーザー:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
-"ZimageZ のユーザー名を入力してください。まだアカウントを持っていない場合には上"
-"にリンクされているウェブページから作成して下さい。"
+msgstr "ZimageZ のユーザー名を入力してください。まだアカウントを持っていない場合には上にリンクされているウェブページから作成して下さい。"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -285,9 +262,7 @@ msgstr "タイトル:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
-"スクリーンショットのタイトルを設定してください。これは ZimageZ で表示する際に"
-"使用されます。"
+msgstr "スクリーンショットのタイトルを設定してください。これは ZimageZ で表示する際に使用されます。"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
@@ -298,9 +273,7 @@ msgstr "コメント:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
-"スクリーンショットのコメントを設定できます。これは ZimageZ で表示する際に使用"
-"されます"
+msgstr "スクリーンショットのコメントを設定できます。これは ZimageZ で表示する際に使用されます"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -327,11 +300,9 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">リンク</span>"
 
 #: ../lib/screenshooter-zimagez.c:987
 msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
-"to the full size image</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">フルサイズ画像へリンクするサム"
-"ネイルのコード</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
+" to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">フルサイズ画像へリンクするサムネイルのコード</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
@@ -351,56 +322,52 @@ msgstr "ZimageZ"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ステータス</span>"
 
-#: ../src/main.c:48
+#: ../src/main.c:49
+msgid "Copy the screenshot to the clipboard"
+msgstr "スクリーンショットをクリップボードにコピーする"
+
+#: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
 msgstr "スクリーンショットを撮るまでの遅延時間"
 
-#: ../src/main.c:58
+#: ../src/main.c:64
 msgid "Display the mouse on the screenshot"
 msgstr "マウスポインターも撮影する"
 
-#: ../src/main.c:75
+#: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
 msgstr "スクリーンショットを保存するディレクトリ"
 
-#: ../src/main.c:85
+#: ../src/main.c:91
 msgid "Version information"
 msgstr "バージョン情報"
 
-#: ../src/main.c:134
+#: ../src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "オプションの衝突: --%s と --%s は同時に使用できません。\n"
 
-#: ../src/main.c:136
+#: ../src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr ""
-"--%s オプションは --fullscreen、--window、または --region が指定された時のみ"
-"使用できます。これは無視されます。\n"
+msgstr "--%s オプションは --fullscreen、--window、または --region が指定された時のみ使用できます。これは無視されます。\n"
 
-#: ../src/main.c:150
+#: ../src/main.c:156
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr ""
-"%s: %s\n"
-"%s --help で使用可能なすべてのコマンドラインオプションが表示されます。\n"
+msgstr "%s: %s\n%s --help で使用可能なすべてのコマンドラインオプションが表示されます。\n"
 
-#: ../src/main.c:297
+#: ../src/main.c:332
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
-"%s は有効なディレクトリではありません。デフォルトディレクトリを使用します。"
+msgstr "%s は有効なディレクトリではありません。デフォルトディレクトリを使用します。"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr ""
-"画面全体、アクティブウィンドウまたは指定した領域のスクリーンショットを撮りま"
-"す。"
-
+msgstr "画面全体、アクティブウィンドウまたは指定した領域のスクリーンショットを撮ります。"
