@@ -1,166 +1,159 @@
-# Hungarian translation of xfce4-screenshooter
-# Copyright (C) 2009, Free Software Foundation, Inc.
-# This file is distributed under the same license as the xfce4-screenshooter package.
-#
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Nucleo <nucleo@indamail.hu>, 2013
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-screenshooter\n"
+"Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-31 23:29+0200\n"
-"PO-Revision-Date: 2009-07-25 12:34+0200\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
-"Language-Team: Hungarian <gnome at gnome dot hu>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-13 22:14+0200\n"
+"PO-Revision-Date: 2013-08-30 22:57+0000\n"
+"Last-Translator: Nucleo <nucleo@indamail.hu>\n"
+"Language-Team: Hungarian (http://www.transifex.com/projects/p/xfce/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb, összesen %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:535
+#: ../lib/screenshooter-dialogs.c:539
 msgid "Transfer"
 msgstr "Átvitel"
 
-#: ../lib/screenshooter-dialogs.c:556
+#: ../lib/screenshooter-dialogs.c:560
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">A képernyőkép átvitele:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">A képernyőkép átvitele:</span>"
 
-#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:689
-#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#: ../panel-plugin/screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Képernyőkép"
 
-#: ../lib/screenshooter-dialogs.c:684
+#: ../lib/screenshooter-dialogs.c:694
 msgid "Take a screenshot"
 msgstr "Képernyőkép készítése"
 
-#: ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:709
 msgid "Preferences"
 msgstr "Beállítások"
 
-#: ../lib/screenshooter-dialogs.c:730
+#: ../lib/screenshooter-dialogs.c:740
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Mentendő terület</span>"
 
-#: ../lib/screenshooter-dialogs.c:750
+#: ../lib/screenshooter-dialogs.c:760
 msgid "Entire screen"
 msgstr "Teljes képernyő"
 
-#: ../lib/screenshooter-dialogs.c:757 ../src/main.c:53
-#: ../panel-plugin/screenshooter-plugin.c:311
+#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
+#: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
 msgstr "Képernyőkép készítése a teljes képernyőről"
 
-#: ../lib/screenshooter-dialogs.c:765
+#: ../lib/screenshooter-dialogs.c:775
 msgid "Active window"
 msgstr "Aktív ablak"
 
-#: ../lib/screenshooter-dialogs.c:772 ../src/main.c:90
-#: ../panel-plugin/screenshooter-plugin.c:316
+#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
 msgstr "Képernyőkép készítése az aktív ablakról"
 
-#: ../lib/screenshooter-dialogs.c:780
+#: ../lib/screenshooter-dialogs.c:790
 msgid "Select a region"
 msgstr "Válaszon területet"
 
-#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:68
-#: ../panel-plugin/screenshooter-plugin.c:321
+#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr ""
-"Válassza ki a lementeni kívánt területet a képernyő egy pontjára kattintva, "
-"majd az egérgomb felengedése nélkül húzza az egeret a terület másik sarkára "
-"és engedje fel a gombot."
+msgstr "Válassza ki a lementeni kívánt területet a képernyő egy pontjára kattintva, majd az egérgomb felengedése nélkül húzza az egeret a terület másik sarkára és engedje fel a gombot."
 
-#: ../lib/screenshooter-dialogs.c:795
+#: ../lib/screenshooter-dialogs.c:805
 msgid "Capture the mouse pointer"
 msgstr "Egérmutató bevétele"
 
-#: ../lib/screenshooter-dialogs.c:800
+#: ../lib/screenshooter-dialogs.c:810
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Egérmutató megjelenítése a képernyőképen"
 
-#: ../lib/screenshooter-dialogs.c:816
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Késleltetés a felvétel előtt</"
-"span>"
+#: ../lib/screenshooter-dialogs.c:826
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Késleltetés a felvétel előtt</span>"
 
-#: ../lib/screenshooter-dialogs.c:838
+#: ../lib/screenshooter-dialogs.c:848
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "A képernyőkép készítése előtti késleltetés másodpercben"
 
-#: ../lib/screenshooter-dialogs.c:841
+#: ../lib/screenshooter-dialogs.c:851
 msgid "seconds"
 msgstr "másodperc"
 
-#: ../lib/screenshooter-dialogs.c:893
+#: ../lib/screenshooter-dialogs.c:903
 msgid "Action"
 msgstr "Művelet"
 
-#: ../lib/screenshooter-dialogs.c:922
+#: ../lib/screenshooter-dialogs.c:932
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Művelet</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:938
+#: ../lib/screenshooter-dialogs.c:948
 msgid "Save"
 msgstr "Mentés"
 
-#: ../lib/screenshooter-dialogs.c:943
+#: ../lib/screenshooter-dialogs.c:953
 msgid "Save the screenshot to a PNG file"
 msgstr "Képernyőkép mentése PNG fájlba"
 
-#: ../lib/screenshooter-dialogs.c:952
+#: ../lib/screenshooter-dialogs.c:962
 msgid "Copy to the clipboard"
 msgstr "Másolás a vágólapra"
 
-#: ../lib/screenshooter-dialogs.c:954
+#: ../lib/screenshooter-dialogs.c:964
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "A képernyőkép másolása a vágólapra, így az beilleszthető lesz"
 
-#: ../lib/screenshooter-dialogs.c:971
+#: ../lib/screenshooter-dialogs.c:981
 msgid "Open with:"
 msgstr "Megnyitás ezzel:"
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:987
 msgid "Open the screenshot with the chosen application"
 msgstr "Képernyőkép megnyitása a kiválasztott alkalmazással"
 
-#: ../lib/screenshooter-dialogs.c:995 ../src/main.c:63
+#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Alkalmazás a képernyő megnyitásához"
 
-#: ../lib/screenshooter-dialogs.c:1005
+#: ../lib/screenshooter-dialogs.c:1015
 msgid "Host on ZimageZ"
 msgstr "Megosztás a ZimageZ-on"
 
-#: ../lib/screenshooter-dialogs.c:1009 ../src/main.c:80
+#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
-"Képernyőkép megosztása a ZimageZ nevű ingyenes online képmegosztó oldalon"
+msgstr "Képernyőkép megosztása a ZimageZ nevű ingyenes online képmegosztó oldalon"
 
-#: ../lib/screenshooter-dialogs.c:1023
+#: ../lib/screenshooter-dialogs.c:1033
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Előnézet</span>"
 
-#: ../lib/screenshooter-dialogs.c:1084
+#: ../lib/screenshooter-dialogs.c:1094
 msgid "Save screenshot as..."
 msgstr "Képernyőkép mentése másként…"
 
@@ -193,13 +186,9 @@ msgstr "Kapcsolat előkészítése…"
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com"
-"\">ZimageZ</a> \n"
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
-msgstr ""
-"Az alábbi mezőkben adja meg <a href=\"http://www.zimagez.com\">ZimageZ</"
-"a>felhasználói nevét,\n"
-"jelszavát és a képernyőkép leírását."
+msgstr "Az alábbi mezőkben adja meg <a href=\"http://www.zimagez.com\">ZimageZ</a>felhasználói nevét,\njelszavát és a képernyőkép leírását."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -209,9 +198,7 @@ msgstr "Felhasználói információk ellenőrzése…"
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Ki "
-"kell töltenie az összes mezőt.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Ki kell töltenie az összes mezőt.</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
@@ -221,17 +208,13 @@ msgstr "Bejelentkezés a ZimageZ oldalra…"
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr ""
-"Váratlan válasz érkezett a ZimageZ oldalról. A képernyőkép feltöltése "
-"meghiúsult."
+msgstr "Váratlan válasz érkezett a ZimageZ oldalról. A képernyőkép feltöltése meghiúsult."
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
-msgstr ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">A "
-"felhasználónév és jelszó nem megfelelő. Próbálja újra.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">A felhasználónév és jelszó nem megfelelő. Próbálja újra.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -260,9 +243,7 @@ msgstr "Felhasználó:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
-"Az Ön ZimageZ felhasználóneve, ha nincs akkor hozzon létre egyet a fent "
-"hivatkozott weboldalon."
+msgstr "Az Ön ZimageZ felhasználóneve, ha nincs akkor hozzon létre egyet a fent hivatkozott weboldalon."
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -293,8 +274,7 @@ msgstr "Megjegyzés:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
-"Megjegyzés a képernyőképhez, a képernyőkép megjelenítésekor lesz felhasználva"
+msgstr "Megjegyzés a képernyőképhez, a képernyőkép megjelenítésekor lesz felhasználva"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -321,11 +301,9 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Hivatkozások</span>"
 
 #: ../lib/screenshooter-zimagez.c:987
 msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing "
-"to the full size image</span>"
-msgstr ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">A teljes méretű képre mutató "
-"bélyegkép kódja</span>"
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
+" to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">A teljes méretű képre mutató bélyegkép kódja</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
@@ -345,97 +323,52 @@ msgstr "ZimageZ"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Állapot</span>"
 
-#: ../src/main.c:48
+#: ../src/main.c:49
+msgid "Copy the screenshot to the clipboard"
+msgstr "Képernyőkép másolása a vágólapra"
+
+#: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Késleltetés a képernyőkép készítése előtt másodpercben"
 
-#: ../src/main.c:58
+#: ../src/main.c:64
 msgid "Display the mouse on the screenshot"
 msgstr "Az egér jelenjen meg a képernyőképen"
 
-#: ../src/main.c:75
+#: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
 msgstr "Könyvtár a képernyőképek mentéséhez"
 
-#: ../src/main.c:85
+#: ../src/main.c:91
 msgid "Version information"
 msgstr "Verzióinformációk"
 
-#: ../src/main.c:134
+#: ../src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Ütköző kapcsolók: --%s és --%s nem használható egyszerre.\n"
 
-#: ../src/main.c:136
+#: ../src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr ""
-"A --%s kapcsoló csak a --fullscreen, --window vagy --region megadásakor "
-"használható. Figyelmen kívül marad.\n"
+msgstr "A --%s kapcsoló csak a --fullscreen, --window vagy --region megadásakor használható. Figyelmen kívül marad.\n"
 
-#: ../src/main.c:150
+#: ../src/main.c:156
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr ""
-"%s: %s\n"
-"Az elérhető kapcsolók listájáért adja ki az %s --help parancsot.\n"
+msgstr "%s: %s\nAz elérhető kapcsolók listájáért adja ki az %s --help parancsot.\n"
 
-#: ../src/main.c:297
+#: ../src/main.c:332
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s nem érvényes könyvtár, az alapértelmezett kerül felhasználásra."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#: ../panel-plugin/screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr ""
-"Képernyőkép készítése a teljes képernyőről, egy ablakról vagy területről"
-
-#~ msgid "_Open Link"
-#~ msgstr "_Hivatkozás megnyitása"
-
-#~ msgid "Copy _Link Address"
-#~ msgstr "_Hivatkozás címének másolása"
-
-#~ msgid "Screenshot.png"
-#~ msgstr "Képernyőkép.png"
-
-#~ msgid "Screenshot-%d.png"
-#~ msgstr "Képernyőkép-%d.png"
-
-#~ msgid ""
-#~ "<span weight=\"bold\" stretch=\"semiexpanded\">After capturing</span>"
-#~ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Felvétel után</span>"
-
-#~ msgid "Show the save dialog"
-#~ msgstr "Mentés ablak megjelenítése"
-
-#~ msgid ""
-#~ "The save dialog allows you to change the file name and the save location"
-#~ msgstr ""
-#~ "A mentés ablak lehetővé teszi a fájlnév és a mentés helyének megadását"
-
-#~ msgid "Close the application"
-#~ msgstr "Alkalmazás bezárása"
-
-#~ msgid ""
-#~ "If unchecked, the current window will be displayed again after the "
-#~ "screenshot has been taken to allow you to take several screenshots in a "
-#~ "row"
-#~ msgstr ""
-#~ "Ha nincs bejelölve, a jelenlegi ablak újra megjelenik a képernyőkép "
-#~ "elkészülte után, így egymás után több képet is készíthet."
-
-#~ msgid "Default save location"
-#~ msgstr "Alapértelmezett mentési hely"
-
-#~ msgid "Set the default save location"
-#~ msgstr "Az alapértelmezett mentési hely beállítása"
-
-#~ msgid "Do not display the save dialog"
-#~ msgstr "Ne jelenjen meg a mentés ablak"
+msgstr "Képernyőkép készítése a teljes képernyőről, egy ablakról vagy területről"
