@@ -1,0 +1,373 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Apps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-13 22:14+0200\n"
+"PO-Revision-Date: 2013-11-10 08:24+0000\n"
+"Last-Translator: theppitak <theppitak@gmail.com>\n"
+"Language-Team: Thai (http://www.transifex.com/projects/p/xfce/language/th/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../lib/screenshooter-dialogs.c:453
+#, c-format
+msgid "%.2fKb of %.2fKb"
+msgstr "%.2fKB จาก %.2fKB"
+
+#: ../lib/screenshooter-dialogs.c:539
+msgid "Transfer"
+msgstr "ถ่ายโอน"
+
+#: ../lib/screenshooter-dialogs.c:560
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
+"transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">กำลังถ่ายโอนภาพหน้าจอไปยัง:</span>"
+
+#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-utils.c:96
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.h:1
+msgid "Screenshot"
+msgstr "ภาพหน้าจอ"
+
+#: ../lib/screenshooter-dialogs.c:694
+msgid "Take a screenshot"
+msgstr "จับภาพหน้าจอ"
+
+#: ../lib/screenshooter-dialogs.c:709
+msgid "Preferences"
+msgstr "ปรับแต่ง"
+
+#: ../lib/screenshooter-dialogs.c:740
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">พื้นที่ที่จะจับภาพ</span>"
+
+#: ../lib/screenshooter-dialogs.c:760
+msgid "Entire screen"
+msgstr "ทั้งหน้าจอ"
+
+#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
+#: ../panel-plugin/screenshooter-plugin.c:317
+msgid "Take a screenshot of the entire screen"
+msgstr "จับภาพหน้าจอทั้งหน้าจอ"
+
+#: ../lib/screenshooter-dialogs.c:775
+msgid "Active window"
+msgstr "หน้าต่างที่แอคทีฟ"
+
+#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:322
+msgid "Take a screenshot of the active window"
+msgstr "จับภาพหน้าจอของหน้าต่างที่แอคทีฟ"
+
+#: ../lib/screenshooter-dialogs.c:790
+msgid "Select a region"
+msgstr "เลือกพื้นที่"
+
+#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:327
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr "เลือกพื้นที่ที่จะจับภาพ โดยคลิกที่จุดจุดหนึ่งบนหน้าจอโดยไม่ต้องปล่อยปุ่มเมาส์ แล้วลากเมาส์ไปยังอีกมุมหนึ่งของพื้นที่ที่ต้องการ แล้วจึงปล่อยปุ่มเมาส์"
+
+#: ../lib/screenshooter-dialogs.c:805
+msgid "Capture the mouse pointer"
+msgstr "จับภาพตัวชี้เมาส์"
+
+#: ../lib/screenshooter-dialogs.c:810
+msgid "Display the mouse pointer on the screenshot"
+msgstr "แสดงตัวชี้เมาส์ในภาพหน้าจอที่จับด้วย"
+
+#: ../lib/screenshooter-dialogs.c:826
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">หน่วงเวลาก่อนจับภาพ</span>"
+
+#: ../lib/screenshooter-dialogs.c:848
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "ระยะเวลาเป็นวินาทีที่จะหยุดคอยก่อนจับภาพหน้าจอ"
+
+#: ../lib/screenshooter-dialogs.c:851
+msgid "seconds"
+msgstr "วินาที"
+
+#: ../lib/screenshooter-dialogs.c:903
+msgid "Action"
+msgstr "การกระทำ"
+
+#: ../lib/screenshooter-dialogs.c:932
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">การกระทำ</span>"
+
+#. Save option radio button
+#: ../lib/screenshooter-dialogs.c:948
+msgid "Save"
+msgstr "บันทึก"
+
+#: ../lib/screenshooter-dialogs.c:953
+msgid "Save the screenshot to a PNG file"
+msgstr "บันทึกภาพหน้าจอลงในแฟ้ม PNG"
+
+#: ../lib/screenshooter-dialogs.c:962
+msgid "Copy to the clipboard"
+msgstr "คัดลอกลงในคลิปบอร์ด"
+
+#: ../lib/screenshooter-dialogs.c:964
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "คัดลอกภาพหน้าจอลงในคลิปบอร์ด เพื่อที่จะสามารถแปะลงในโปรแกรมอื่นได้ในภายหลัง"
+
+#: ../lib/screenshooter-dialogs.c:981
+msgid "Open with:"
+msgstr "เปิดด้วย:"
+
+#: ../lib/screenshooter-dialogs.c:987
+msgid "Open the screenshot with the chosen application"
+msgstr "เปิดภาพหน้าจอด้วยโปรแกรมที่เลือก"
+
+#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
+msgid "Application to open the screenshot"
+msgstr "โปรแกรมที่จะใช้เปิดภาพหน้าจอ"
+
+#: ../lib/screenshooter-dialogs.c:1015
+msgid "Host on ZimageZ"
+msgstr "โฮสต์ที่ ZimageZ"
+
+#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
+msgid "Host the screenshot on ZimageZ, a free online image hosting service"
+msgstr "เก็บภาพหน้าจอไว้ที่ ZimageZ ซึ่งเป็นบริการโฮสต์ภาพออนไลน์ฟรี"
+
+#: ../lib/screenshooter-dialogs.c:1033
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ภาพตัวอย่าง</span>"
+
+#: ../lib/screenshooter-dialogs.c:1094
+msgid "Save screenshot as..."
+msgstr "บันทึกภาพหน้าจอเป็น..."
+
+#: ../lib/screenshooter-zimagez.c:114
+#, c-format
+msgid "An error occurred when creating the XMLRPC request."
+msgstr "เกิดข้อผิดพลาดขณะสร้างคำร้อง XMLRPC"
+
+#: ../lib/screenshooter-zimagez.c:133
+#, c-format
+msgid "An error occurred when transferring the data to ZimageZ."
+msgstr "เกิดข้อผิดพลาดขณะถ่ายโอนข้อมูลไปยัง ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:158
+#, c-format
+msgid "An error occurred when parsing the response from ZimageZ."
+msgstr "เกิดข้อผิดพลาดขณะแจงคำตอบจาก ZimageZ"
+
+#. For translators: the first wildcard is the date, the second one the time,
+#. * e.g. "Taken on 12/31/99, at 23:13:48".
+#: ../lib/screenshooter-zimagez.c:210
+#, c-format
+msgid "Taken on %s, at %s"
+msgstr "จับภาพเมื่อ %s เวลา %s"
+
+#. Start the user soup session
+#: ../lib/screenshooter-zimagez.c:282
+msgid "Initialize the connection..."
+msgstr "ตั้งต้นการเชื่อมต่อ..."
+
+#: ../lib/screenshooter-zimagez.c:328
+msgid ""
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"user name, passsword and details about the screenshot."
+msgstr "กรุณากรอกข้อมูลต่อไปนี้ด้วยชื่อผู้ใช้ <a href=\"http://www.zimagez.com\">ZimageZ</a>\nของคุณ พร้อมรหัสผ่าน และรายละเอียดเกี่ยวกับภาพหน้าจอ"
+
+#: ../lib/screenshooter-zimagez.c:385
+msgid "Check the user information..."
+msgstr "ตรวจสอบข้อมูลผู้ใช้..."
+
+#: ../lib/screenshooter-zimagez.c:392
+msgid ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
+"must fill all the fields.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">คุณต้องเติมข้อมูลให้ครบ</span>"
+
+#: ../lib/screenshooter-zimagez.c:406
+msgid "Login on ZimageZ..."
+msgstr "เข้าระบบที่ ZimageZ..."
+
+#: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
+msgid ""
+"An unexpected reply from ZimageZ was received. The upload of the screenshot "
+"failed."
+msgstr "ได้รับคำตอบที่ไม่คาดหมายจาก ZimageZ อัปโหลดภาพหน้าจอไม่สำเร็จ"
+
+#: ../lib/screenshooter-zimagez.c:485
+msgid ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
+"user and the password you entered do not match. Please retry.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">ชื่อผู้ใช้หรือรหัสผ่านที่คุณป้อนไม่ถูกต้อง กรุณาลองใหม่</span>"
+
+#: ../lib/screenshooter-zimagez.c:543
+msgid "Upload the screenshot..."
+msgstr "อัปโหลดภาพหน้าจอ..."
+
+#: ../lib/screenshooter-zimagez.c:576
+#, c-format
+msgid "An error occurred while uploading the screenshot."
+msgstr "เกิดข้อผิดพลาดขณะอัปโหลดภาพหน้าจอ"
+
+#. End the user session
+#: ../lib/screenshooter-zimagez.c:609
+msgid "Close the session on ZimageZ..."
+msgstr "ปิดวาระที่ ZimageZ..."
+
+#: ../lib/screenshooter-zimagez.c:679
+msgid "Details about the screenshot for ZimageZ"
+msgstr "รายละเอียดเกี่ยวกับภาพหน้าจอสำหรับ ZimageZ"
+
+#. Create the user label
+#: ../lib/screenshooter-zimagez.c:719
+msgid "User:"
+msgstr "ผู้ใช้:"
+
+#: ../lib/screenshooter-zimagez.c:730
+msgid ""
+"Your Zimagez user name, if you do not have one yet please create one on the "
+"Web page linked above"
+msgstr "ชื่อผู้ใช้ ZimageZ ของคุณ ถ้าคุณยังไม่มีบัญชี กรุณาเปิดบัญชีก่อนที่หน้าเว็บตามลิงก์ข้างต้น"
+
+#. Create the password label
+#: ../lib/screenshooter-zimagez.c:736
+msgid "Password:"
+msgstr "รหัสผ่าน:"
+
+#: ../lib/screenshooter-zimagez.c:746
+msgid "The password for the user above"
+msgstr "รหัสผ่านของผู้ใช้ข้างต้น"
+
+#. Create the title label
+#: ../lib/screenshooter-zimagez.c:752
+msgid "Title:"
+msgstr "ชื่อภาพ:"
+
+#: ../lib/screenshooter-zimagez.c:762
+msgid ""
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr "ชื่อของภาพหน้าจอ ซึ่งจะใช้ในการแสดงภาพหน้าจอที่ ZimageZ"
+
+#. Create the comment label
+#: ../lib/screenshooter-zimagez.c:768
+msgid "Comment:"
+msgstr "หมายเหตุ:"
+
+#: ../lib/screenshooter-zimagez.c:779
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr "หมายเหตุของภาพหน้าจอ ซึ่งจะใช้ในการแสดงภาพหน้าจอที่ ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:902
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr "<a href=\"%s\">ภาพขนาดเต็ม</a>"
+
+#: ../lib/screenshooter-zimagez.c:904
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr "<a href=\"%s\">ภาพย่อขนาดใหญ่</a>"
+
+#: ../lib/screenshooter-zimagez.c:906
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr "<a href=\"%s\">ภาพย่อขนาดเล็ก</a>"
+
+#: ../lib/screenshooter-zimagez.c:922
+msgid "My screenshot on ZimageZ"
+msgstr "ภาพหน้าจอของฉันที่ ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:948
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ลิงก์ต่างๆ</span>"
+
+#: ../lib/screenshooter-zimagez.c:987
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
+" to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">โค้ดสำหรับภาพย่อซึ่งชี้ไปยังภาพขนาดเต็ม</span>"
+
+#. HTML title
+#: ../lib/screenshooter-zimagez.c:1003
+msgid "HTML"
+msgstr "HTML"
+
+#. BB title
+#: ../lib/screenshooter-zimagez.c:1024
+msgid "BBCode for forums"
+msgstr "BBCode สำหรับใช้ในกระดานสนทนา"
+
+#: ../lib/screenshooter-zimagez.c:1155
+msgid "ZimageZ"
+msgstr "ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:1188
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">สถานะ</span>"
+
+#: ../src/main.c:49
+msgid "Copy the screenshot to the clipboard"
+msgstr "คัดลอกภาพหน้าจอลงในคลิปบอร์ด"
+
+#: ../src/main.c:54
+msgid "Delay in seconds before taking the screenshot"
+msgstr "ระยะเวลาเป็นวินาทีที่จะหยุดคอยก่อนจับภาพหน้าจอ"
+
+#: ../src/main.c:64
+msgid "Display the mouse on the screenshot"
+msgstr "แสดงตัวชี้เมาส์ในภาพหน้าจอที่จับด้วย"
+
+#: ../src/main.c:81
+msgid "Directory where the screenshot will be saved"
+msgstr "ไดเรกทอรีที่จะใช้เก็บภาพหน้าจอ"
+
+#: ../src/main.c:91
+msgid "Version information"
+msgstr "ข้อมูลรุ่น"
+
+#: ../src/main.c:140
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr "ตัวเลือกขัดแย้งกัน: --%s และ --%s ไม่สามารถใช้ร่วมกันได้\n"
+
+#: ../src/main.c:142
+#, c-format
+msgid ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
+msgstr "ตัวเลือก --%s จะใช้เมื่อมีการกำหนด --fullscreen, --window หรือ --region เท่านั้น ขอข้ามไป\n"
+
+#: ../src/main.c:156
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr "%s: %s\nลองสั่ง %s --help เพื่อดูตัวเลือกทั้งหมดที่มีของบรรทัดคำสั่ง\n"
+
+#: ../src/main.c:332
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr "%s ไม่ใช่ไดเรกทอรีที่ใช้การได้ จะใช้ไดเรกทอรีปริยาย"
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.h:2
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr "จับภาพหน้าจอของทั้งหน้าจอ, ของหน้าต่างที่แอคทีฟ หรือของพื้นที่ที่กำหนด"
