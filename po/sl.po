@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-11-28 21:55+0000\n"
+"PO-Revision-Date: 2013-11-29 07:50+0000\n"
 "Last-Translator: anthonmanix <anthon.manix@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/xfce/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr ""
+msgstr "Izberite območje za zajem tako, da kliknete točko na zaslonu in držite miškin gumb, nato miško povlečete na drug rob območja in gumb izpustite."
 
 #: ../lib/screenshooter-dialogs.c:805
 msgid "Capture the mouse pointer"
@@ -159,17 +159,17 @@ msgstr "Shrani zaslonsko sliko kot..."
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr ""
+msgstr "Med ustvarjanjem zahteve XMLRPC je prišlo do napake."
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr ""
+msgstr "Med prenosom podatkov na ZimageZ je prišlo do napake."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr ""
+msgstr "Med razčlenjevanjem odgovora ZimageZ je prišlo do napake."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
