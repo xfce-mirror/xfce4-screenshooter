@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-11-29 07:50+0000\n"
+"PO-Revision-Date: 2013-12-02 14:58+0000\n"
 "Last-Translator: anthonmanix <anthon.manix@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/xfce/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -187,7 +187,7 @@ msgstr ""
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
-msgstr ""
+msgstr "Napolnite naslednja polja z vašim <a href=\"http://www.zimagez.com\">ZimageZ</a>\nuporabniškim imenom, geslom in podrobnostmi o zaslonski sliki."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -197,7 +197,7 @@ msgstr "Preveri podatke uporabnika..."
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Izpolniti morate vsa polja.</span>"
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
@@ -207,13 +207,13 @@ msgstr "Prijavi na ZimageZ..."
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr ""
+msgstr "Od ZimageZ je bil sprejet nepričakovan odgovor. Pošiljanje zaslonske slike ni uspelo."
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Uporabnik in geslo, ki ste ju vnesli se ne ujemata. Poskusite znova.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -222,16 +222,16 @@ msgstr "Pošlji zaslonsko sliko..."
 #: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr ""
+msgstr "Med pošiljanjem zaslonske slike je prišlo do napake."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
 msgid "Close the session on ZimageZ..."
-msgstr ""
+msgstr "Zapri sejo na ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:679
 msgid "Details about the screenshot for ZimageZ"
-msgstr ""
+msgstr "Podrobnosti o zaslonski sliki za ZimageZ"
 
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:719
@@ -242,7 +242,7 @@ msgstr "Uporabnik:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
+msgstr "Vaše ZimageZ uporabniško ime, če ga še nimate, ga ustvarite na spletni strani do katere je povezava zgoraj"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -251,7 +251,7 @@ msgstr "Geslo:"
 
 #: ../lib/screenshooter-zimagez.c:746
 msgid "The password for the user above"
-msgstr ""
+msgstr "Geslo za zgornjega uporabnika"
 
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:752
@@ -262,7 +262,7 @@ msgstr "Naslov:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "Naslov zaslonke slike, ki bo uporabljen pri prikazu zaslonske slike na ZimageZ"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
@@ -273,7 +273,7 @@ msgstr "Komentar:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "Opomba pri zaslonski sliki, ki bo uporabljena pri prikazu zaslonske slike na ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -320,7 +320,7 @@ msgstr "ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:1188
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stanje</span>"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
@@ -336,7 +336,7 @@ msgstr "Prikaži miško na zaslonski sliki"
 
 #: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
-msgstr ""
+msgstr "Imenik kamor bo shranjena zaslonska slika"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -345,7 +345,7 @@ msgstr "Podatki o različici"
 #: ../src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Sporne možnosti: --%s in --%s ne morata biti uporabljeni istočasno.\n"
 
 #: ../src/main.c:142
 #, c-format
@@ -364,7 +364,7 @@ msgstr ""
 #: ../src/main.c:332
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr ""
+msgstr "%s ni veljaven imenik, uporabljen bo privzet imenik."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
