@@ -1,0 +1,373 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Cedric31 <cvalmary@yahoo.fr>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Apps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-13 22:14+0200\n"
+"PO-Revision-Date: 2013-12-05 17:01+0000\n"
+"Last-Translator: Cedric31 <cvalmary@yahoo.fr>\n"
+"Language-Team: Occitan (post 1500) (http://www.transifex.com/projects/p/xfce/language/oc/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: oc\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../lib/screenshooter-dialogs.c:453
+#, c-format
+msgid "%.2fKb of %.2fKb"
+msgstr "%.2fKb de %.2fKb"
+
+#: ../lib/screenshooter-dialogs.c:539
+msgid "Transfer"
+msgstr "Transferiment"
+
+#: ../lib/screenshooter-dialogs.c:560
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
+"transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">La captura d'ecran es transferida cap a :</span>"
+
+#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-utils.c:96
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.h:1
+msgid "Screenshot"
+msgstr "Captura d'ecran"
+
+#: ../lib/screenshooter-dialogs.c:694
+msgid "Take a screenshot"
+msgstr "Prene una captura d'ecran"
+
+#: ../lib/screenshooter-dialogs.c:709
+msgid "Preferences"
+msgstr "Preferéncias"
+
+#: ../lib/screenshooter-dialogs.c:740
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zòna de capturar</span>"
+
+#: ../lib/screenshooter-dialogs.c:760
+msgid "Entire screen"
+msgstr "L'ecran tot entièr"
+
+#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
+#: ../panel-plugin/screenshooter-plugin.c:317
+msgid "Take a screenshot of the entire screen"
+msgstr "Prene una captura d'ecran de l'ecran tot entièr"
+
+#: ../lib/screenshooter-dialogs.c:775
+msgid "Active window"
+msgstr "La fenèstra activa"
+
+#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:322
+msgid "Take a screenshot of the active window"
+msgstr "Prene una captura d'ecran de la fenèstra activa"
+
+#: ../lib/screenshooter-dialogs.c:790
+msgid "Select a region"
+msgstr "Seleccionar una zòna"
+
+#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:327
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr "Seleccionar una zòna de capturar en clicant sus un punt de l'ecran sens daissar lo boton de la mirga, puèi en desplaçant vòstra mirga fins a l'autre canton de la zòna, e en daissant lo boton de la mirga."
+
+#: ../lib/screenshooter-dialogs.c:805
+msgid "Capture the mouse pointer"
+msgstr "Capturar lo puntador de la mirga"
+
+#: ../lib/screenshooter-dialogs.c:810
+msgid "Display the mouse pointer on the screenshot"
+msgstr "Afichar la mirga sus la captura d'ecran"
+
+#: ../lib/screenshooter-dialogs.c:826
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Relambi abans la captura</span>"
+
+#: ../lib/screenshooter-dialogs.c:848
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "Relambi en segondas abans que la captura d'ecran siá presa"
+
+#: ../lib/screenshooter-dialogs.c:851
+msgid "seconds"
+msgstr "segondas"
+
+#: ../lib/screenshooter-dialogs.c:903
+msgid "Action"
+msgstr "Accion"
+
+#: ../lib/screenshooter-dialogs.c:932
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Accion</span>"
+
+#. Save option radio button
+#: ../lib/screenshooter-dialogs.c:948
+msgid "Save"
+msgstr "Enregistrar"
+
+#: ../lib/screenshooter-dialogs.c:953
+msgid "Save the screenshot to a PNG file"
+msgstr "Enregistrar la captura d'ecran dins un fichièr PNG"
+
+#: ../lib/screenshooter-dialogs.c:962
+msgid "Copy to the clipboard"
+msgstr "Copiar dins lo quichapapièrs"
+
+#: ../lib/screenshooter-dialogs.c:964
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "Copiar la captura d'ecran dins lo quichapapièrs per la pegar pus tard"
+
+#: ../lib/screenshooter-dialogs.c:981
+msgid "Open with:"
+msgstr "Dobrir amb :"
+
+#: ../lib/screenshooter-dialogs.c:987
+msgid "Open the screenshot with the chosen application"
+msgstr "Dobrir la captura d'ecran amb l'aplicacion causida"
+
+#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
+msgid "Application to open the screenshot"
+msgstr "Aplicacion per dobrir la captura d'ecran"
+
+#: ../lib/screenshooter-dialogs.c:1015
+msgid "Host on ZimageZ"
+msgstr "Albergar sus ZimageZ"
+
+#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
+msgid "Host the screenshot on ZimageZ, a free online image hosting service"
+msgstr "Albergar la captura d'ecran sus ZimageZ, un servici en linha gratuit d'albergament d'imatges"
+
+#: ../lib/screenshooter-dialogs.c:1033
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Apercebut</span>"
+
+#: ../lib/screenshooter-dialogs.c:1094
+msgid "Save screenshot as..."
+msgstr "Enregistrar la captura d'ecran jos..."
+
+#: ../lib/screenshooter-zimagez.c:114
+#, c-format
+msgid "An error occurred when creating the XMLRPC request."
+msgstr "Una error s'es produsida al moment de la creacion de la requèsta XMLRPC."
+
+#: ../lib/screenshooter-zimagez.c:133
+#, c-format
+msgid "An error occurred when transferring the data to ZimageZ."
+msgstr "Una error s'es produsida al moment del transferiment de donadas a ZimageZ."
+
+#: ../lib/screenshooter-zimagez.c:158
+#, c-format
+msgid "An error occurred when parsing the response from ZimageZ."
+msgstr "Una error s'es produsida al moment de l'analisi de la responsa de ZimageZ."
+
+#. For translators: the first wildcard is the date, the second one the time,
+#. * e.g. "Taken on 12/31/99, at 23:13:48".
+#: ../lib/screenshooter-zimagez.c:210
+#, c-format
+msgid "Taken on %s, at %s"
+msgstr "Pres lo %s, a %s"
+
+#. Start the user soup session
+#: ../lib/screenshooter-zimagez.c:282
+msgid "Initialize the connection..."
+msgstr "Inicializacion de la connexion..."
+
+#: ../lib/screenshooter-zimagez.c:328
+msgid ""
+"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
+"user name, passsword and details about the screenshot."
+msgstr "Mercé d'emplenar los camps seguent amb vòstre nom d'utilizaire sus \n<a href=\"http://www.zimagez.com\">ZimageZ</a>, vòstre senhal e las informacions sus la captura d'ecran."
+
+#: ../lib/screenshooter-zimagez.c:385
+msgid "Check the user information..."
+msgstr "Verificacion de las informacions de l'utilizaire..."
+
+#: ../lib/screenshooter-zimagez.c:392
+msgid ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
+"must fill all the fields.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Vos cal emplenar totes los camps.</span>"
+
+#: ../lib/screenshooter-zimagez.c:406
+msgid "Login on ZimageZ..."
+msgstr "Identificacion sus ZimageZ..."
+
+#: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
+msgid ""
+"An unexpected reply from ZimageZ was received. The upload of the screenshot "
+"failed."
+msgstr "Una responsa inesperada de ZimageZ es estada recebuda. Lo telecargament de la captura d'ecran a fracassat."
+
+#: ../lib/screenshooter-zimagez.c:485
+msgid ""
+"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
+"user and the password you entered do not match. Please retry.</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">L' utilizaire e lo senhal entrats correspondon pas. Mercé de tornar ensajar.</span>"
+
+#: ../lib/screenshooter-zimagez.c:543
+msgid "Upload the screenshot..."
+msgstr "Mesa en linha de la captura d'ecran..."
+
+#: ../lib/screenshooter-zimagez.c:576
+#, c-format
+msgid "An error occurred while uploading the screenshot."
+msgstr "Una error s'es produsida al moment de la mesa en linha de la captura d'ecran."
+
+#. End the user session
+#: ../lib/screenshooter-zimagez.c:609
+msgid "Close the session on ZimageZ..."
+msgstr "Tampadura de la sesilha sus ZimageZ..."
+
+#: ../lib/screenshooter-zimagez.c:679
+msgid "Details about the screenshot for ZimageZ"
+msgstr "Informacion sus la captura d'ecran per ZimageZ"
+
+#. Create the user label
+#: ../lib/screenshooter-zimagez.c:719
+msgid "User:"
+msgstr "Utilizaire :"
+
+#: ../lib/screenshooter-zimagez.c:730
+msgid ""
+"Your Zimagez user name, if you do not have one yet please create one on the "
+"Web page linked above"
+msgstr "Vòstre identificant ZimageZ, se n'avètz pas encara un, creatz-lo en clicant sul ligam çaisús"
+
+#. Create the password label
+#: ../lib/screenshooter-zimagez.c:736
+msgid "Password:"
+msgstr "Senhal :"
+
+#: ../lib/screenshooter-zimagez.c:746
+msgid "The password for the user above"
+msgstr "Lo senhal per l'utilizaire çaisús"
+
+#. Create the title label
+#: ../lib/screenshooter-zimagez.c:752
+msgid "Title:"
+msgstr "Títol :"
+
+#: ../lib/screenshooter-zimagez.c:762
+msgid ""
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr "Lo títol de la captura d'ecran, serà utilizat al moment de l'afichatge de la captura d'ecran sus ZimageZ"
+
+#. Create the comment label
+#: ../lib/screenshooter-zimagez.c:768
+msgid "Comment:"
+msgstr "Comentari :"
+
+#: ../lib/screenshooter-zimagez.c:779
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr "Un comentari sus la captura d'ecran, serà utilizat al moment de l'afichatge de la captura d'ecran sus ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:902
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr "<a href=\"%s\">Imatge talha reala</a>"
+
+#: ../lib/screenshooter-zimagez.c:904
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr "<a href=\"%s\">Granda miniatura</a>"
+
+#: ../lib/screenshooter-zimagez.c:906
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr "<a href=\"%s\">Pichona miniatura</a>"
+
+#: ../lib/screenshooter-zimagez.c:922
+msgid "My screenshot on ZimageZ"
+msgstr "Ma captura d'ecran sus ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:948
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ligams</span>"
+
+#: ../lib/screenshooter-zimagez.c:987
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
+" to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Còde per una miniatura que punta cap a l'imatge en talha reala</span>"
+
+#. HTML title
+#: ../lib/screenshooter-zimagez.c:1003
+msgid "HTML"
+msgstr "HTML"
+
+#. BB title
+#: ../lib/screenshooter-zimagez.c:1024
+msgid "BBCode for forums"
+msgstr "BBCode pels forums"
+
+#: ../lib/screenshooter-zimagez.c:1155
+msgid "ZimageZ"
+msgstr "ZimageZ"
+
+#: ../lib/screenshooter-zimagez.c:1188
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Estatut</span>"
+
+#: ../src/main.c:49
+msgid "Copy the screenshot to the clipboard"
+msgstr "Copiar la captura d'ecran dins lo quichapapièrs"
+
+#: ../src/main.c:54
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Relambi en segondas abans la presa de la captura d'ecran"
+
+#: ../src/main.c:64
+msgid "Display the mouse on the screenshot"
+msgstr "Afichar la mirga sus la captura d'ecran"
+
+#: ../src/main.c:81
+msgid "Directory where the screenshot will be saved"
+msgstr "Dorsièr ont la captura d'ecran serà enregistrada"
+
+#: ../src/main.c:91
+msgid "Version information"
+msgstr "Informacions sus la version"
+
+#: ../src/main.c:140
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr "Opcions contradictòrias : --%s e --%s pòdon pas èsser utilizadas al meteis temps.\n"
+
+#: ../src/main.c:142
+#, c-format
+msgid ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
+msgstr "L'opcion --%s es pas utilizada que quand  --fullscreen, --window o --region es donat. Serà ignorat.\n"
+
+#: ../src/main.c:156
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr "%s : %s\nEnsajatz %s --help per afichar la lista de las opcions de linha de comanda disponiblas.\n"
+
+#: ../src/main.c:332
+#, c-format
+msgid "%s is not a valid directory, the default directory will be used."
+msgstr "%s es pas un dorsièr valid, l'emplaçament de salvament per defaut serà utilizat."
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.h:2
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Prene una captura d'ecran de l'ecran tot entièr, de la fenèstra activa o d'una zòna"
