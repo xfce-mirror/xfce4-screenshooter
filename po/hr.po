@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# schizo <eveskovic@gmail.com>, 2014
 # Ivica  Kolić <ikoli@yahoo.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-10-23 23:40+0000\n"
-"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
+"PO-Revision-Date: 2014-02-23 21:42+0000\n"
+"Last-Translator: schizo <eveskovic@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/xfce/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,7 +52,7 @@ msgstr "Osobitosti"
 
 #: ../lib/screenshooter-dialogs.c:740
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Površina za uhvatiti</span>"
 
 #: ../lib/screenshooter-dialogs.c:760
 msgid "Entire screen"
@@ -81,11 +82,11 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr ""
+msgstr "Površinu za hvatanje odaberite tako da pritisnete i držite lijevu tipku miša na početnoj točci potom povucite pokazivač do krajnje točke i pustite tipku."
 
 #: ../lib/screenshooter-dialogs.c:805
 msgid "Capture the mouse pointer"
-msgstr ""
+msgstr "Uhvati pokazivač miša"
 
 #: ../lib/screenshooter-dialogs.c:810
 msgid "Display the mouse pointer on the screenshot"
@@ -93,7 +94,7 @@ msgstr "Prikaži pokazivač miša na screenshot-u"
 
 #: ../lib/screenshooter-dialogs.c:826
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Odgoda prije hvatanja</span>"
 
 #: ../lib/screenshooter-dialogs.c:848
 msgid "Delay in seconds before the screenshot is taken"
@@ -122,11 +123,11 @@ msgstr "Spremi screenshot u PNG datoteku"
 
 #: ../lib/screenshooter-dialogs.c:962
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "Kopiraj u međuspremnik"
 
 #: ../lib/screenshooter-dialogs.c:964
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
+msgstr "Kopiraj sliku u međuspremnik tako da može biti zalijepljena poslije"
 
 #: ../lib/screenshooter-dialogs.c:981
 msgid "Open with:"
@@ -142,11 +143,11 @@ msgstr "Program za otvaranje screenshot-a"
 
 #: ../lib/screenshooter-dialogs.c:1015
 msgid "Host on ZimageZ"
-msgstr ""
+msgstr "Pohrani na ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr ""
+msgstr "Pohrani uhvaćenu sliku na ZimageZ, besplatnom servisu za pohranu slika"
 
 #: ../lib/screenshooter-dialogs.c:1033
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -169,19 +170,19 @@ msgstr "Došlo je do pogreške pri prijenosu podataka na ZimageZ."
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr ""
+msgstr "Došlo je do pogreške pri analizi odgovora sa ZimageZa."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
 #: ../lib/screenshooter-zimagez.c:210
 #, c-format
 msgid "Taken on %s, at %s"
-msgstr ""
+msgstr "Snimljeno na dan %s, u %s"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:282
 msgid "Initialize the connection..."
-msgstr ""
+msgstr "Inicijaliziraj vezu..."
 
 #: ../lib/screenshooter-zimagez.c:328
 msgid ""
@@ -207,7 +208,7 @@ msgstr "Prijava na ZimageZ ..."
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr ""
+msgstr "Neočekivan odgovor primljen od ZimageZa. Prijenos slike nije uspio."
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
@@ -217,12 +218,12 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Ko
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
-msgstr ""
+msgstr "Pošalji sliku..."
 
 #: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr ""
+msgstr "Došlo je do greške prilikom slanja slike."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
@@ -242,7 +243,7 @@ msgstr "Korisnik"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
+msgstr "Vaše ZimageZ korisničko ime. Ako nemate račun možete ga stvoriti na mrežnoj stranici s gornje poveznice"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -262,7 +263,7 @@ msgstr "Nslov:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "Naslov slike koji će se koristiti pri prikazu slike na ZimageZu"
 
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
@@ -273,7 +274,7 @@ msgstr "Komentar:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "Komentar slike koji će se koristiti pri prikazu slike na ZimageZu"
 
 #: ../lib/screenshooter-zimagez.c:902
 #, c-format
@@ -283,16 +284,16 @@ msgstr "<a href=\"%s\">Puna veličina slike</a>"
 #: ../lib/screenshooter-zimagez.c:904
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Velika sličica</a>"
 
 #: ../lib/screenshooter-zimagez.c:906
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Mala sličica</a>"
 
 #: ../lib/screenshooter-zimagez.c:922
 msgid "My screenshot on ZimageZ"
-msgstr ""
+msgstr "Moja slika zaslona na ZimageZu"
 
 #: ../lib/screenshooter-zimagez.c:948
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
@@ -302,7 +303,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Poveznice</span>"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kod za sličicu koja pokazuje na sliku pune veličine</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
@@ -324,7 +325,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
-msgstr ""
+msgstr "Kopiraj sliku zaslona u međuspremnik"
 
 #: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
@@ -352,7 +353,7 @@ msgstr "Sukobljavajuće opcije: --%s and --%s ne mogu biti korištene istodobno.
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr ""
+msgstr "Opcija --%s koriste se samo kada su zadane --fullscreen, --window ili --region. Sada će biti ignorirana.\n\n"
 
 #: ../src/main.c:156
 #, c-format
