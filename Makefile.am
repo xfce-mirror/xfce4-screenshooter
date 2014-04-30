@@ -35,7 +35,8 @@ lib_libscreenshooter_la_SOURCES =	\
 	lib/screenshooter-zimagez.c lib/screenshooter-zimagez.h
 
 lib_libscreenshooter_la_CFLAGS = \
-	-I$(top_srcdir)	\
+	-I$(top_srcdir) \
+	-I$(top_builddir)/lib \
 	@EXO_CFLAGS@ \
   @GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
@@ -82,6 +83,7 @@ lib/screenshooter-marshal.c: lib/screenshooter-marshal.list Makefile
 # Main application
 src_xfce4_screenshooter_CFLAGS = \
 	-I$(top_srcdir)/lib/ \
+	-I$(top_builddir)/lib \
 	@EXO_CFLAGS@ \
 	@GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
@@ -125,6 +127,7 @@ panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"	\
 	-I$(top_srcdir)	\
 	-I$(top_srcdir)/lib/	\
+	-I$(top_builddir)/lib/	\
 	@EXO_CFLAGS@ \
 	@LIBXFCE4PANEL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
