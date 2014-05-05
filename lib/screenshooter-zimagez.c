@@ -819,7 +819,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   response = gtk_dialog_run (GTK_DIALOG (dialog));
   gtk_widget_hide (dialog);
 
-  if (response == GTK_RESPONSE_CANCEL)
+  if (response == GTK_RESPONSE_CANCEL || response == GTK_RESPONSE_DELETE_EVENT)
     {
       exo_job_cancel (EXO_JOB (job));
     }
