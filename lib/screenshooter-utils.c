@@ -180,7 +180,7 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
     {
       TRACE ("An error occured");
 
-      screenshooter_error ("%s", error->message);
+      screenshooter_error (_("<b>The application could not be launched.</b>\n%s"), error->message);
       g_error_free (error);
     }
 
@@ -271,7 +271,8 @@ void screenshooter_error (const gchar *format, ...)
 
   dialog =
     gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR,
-                            GTK_BUTTONS_OK, "%s", message);
+                                        GTK_BUTTONS_OK, "");
+  gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog), message);
 
   gtk_dialog_run (GTK_DIALOG (dialog));
   gtk_widget_destroy  (dialog);
