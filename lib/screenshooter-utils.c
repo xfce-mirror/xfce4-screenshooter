@@ -344,7 +344,7 @@ gchar *screenshooter_get_date (gboolean strip_slashes)
 
 void screenshooter_open_help (GtkWindow *parent)
 {
-  xfce_dialog_show_help (parent, "screenshooter", NULL, NULL);
+  xfce_dialog_show_help (parent, "screenshooter", "start", "");
 }
 
 
