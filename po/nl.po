@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Pjotr123 <pjotrvertaalt@gmail.com>, 2013
+# Pjotr123 <pjotrvertaalt@gmail.com>, 2013-2014
 # Stephan Arts <stephan@xfce.org>, 2008
 # Vincent Tunru <projects@vinnl.nl>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-07-14 11:03+0000\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-05-06 17:21+0000\n"
 "Last-Translator: Pjotr123 <pjotrvertaalt@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/xfce/language/nl/)\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/xfce-apps/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -158,6 +158,13 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Voorbeeld</span>"
 msgid "Save screenshot as..."
 msgstr "Sla schermafdruk op als..."
 
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>De toepassing kon niet worden gestart.</b>\n%s"
+
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
@@ -189,7 +196,7 @@ msgstr "Verbinding aan het initialiseren..."
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
-msgstr "Vul uw ZimageZ-gebruikersnaam en wachtwoord in, alsmede details over de schermafdruk."
+msgstr "Vul a.u.b. uw ZimageZ-gebruikersnaam en wachtwoord in, alsmede details over de schermafdruk."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -244,7 +251,7 @@ msgstr "Gebruiker:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr "Uw gebruikersnaam bij ZimageZ. Als u nog geen gebruikersnaam heeft kunt u die aanmaken op de hierboven genoemde website"
+msgstr "Uw gebruikersnaam bij ZimageZ. Als u nog geen gebruikersnaam heeft kunt u die aanmaken op de hierboven genoemde webpagina"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -304,7 +311,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Code voor een miniatuur met een koppeling naar de volledige grootte</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Code voor een miniatuur met een koppeling naar de afbeelding op volledige grootte</span>"
 
 #. HTML title
 #: ../lib/screenshooter-zimagez.c:1003
