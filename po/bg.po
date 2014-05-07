@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# cybercop <cybercop_montana@abv.bg>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-07-14 07:21+0000\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-05-07 07:06+0000\n"
 "Last-Translator: cybercop <cybercop_montana@abv.bg>\n"
-"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce/language/bg/)\n"
+"Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce-apps/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -154,6 +155,13 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Преглед</span>"
 #: ../lib/screenshooter-dialogs.c:1094
 msgid "Save screenshot as..."
 msgstr "Запиши снимката като..."
+
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>Приложението не може да бъде стартирано.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
