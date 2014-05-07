@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# cri <cri.penta@gmail.com>, 2014
 # edmael <edoardo.elidoro@gmail.com>, 2013
 # Gianluca Foddis <gianluca.foddis@gmail.com>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-07-14 07:21+0000\n"
-"Last-Translator: edmael <edoardo.elidoro@gmail.com>\n"
-"Language-Team: Italian (http://www.transifex.com/projects/p/xfce/language/it/)\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-05-07 08:25+0000\n"
+"Last-Translator: cri <cri.penta@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +23,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%.2fKb·di·%.2fKb"
+msgstr "%.2fKb di %.2fKb"
 
 #: ../lib/screenshooter-dialogs.c:539
 msgid "Transfer"
@@ -157,6 +158,13 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Anteprima</span>"
 msgid "Save screenshot as..."
 msgstr "Salva l'istantanea come..."
 
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>L'applicazione non può essere avviata.</b>\n%s"
+
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
@@ -192,7 +200,7 @@ msgstr "Compilare i seguenti campi con il proprio nome utente e password di\n<a 
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr "Controllo dei dati utenti in corso..."
+msgstr "Controllo dei dati dell'utente in corso..."
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid ""
@@ -214,7 +222,7 @@ msgstr "È stata ricevuta una risposta inaspettata da ZimageZ. Il caricamento de
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Utente e password inseriti non corrispondono. Per favore, riprovare.</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Utente e password inseriti non corrispondono. Riprovare.</span>"
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
@@ -325,7 +333,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stato</span>"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
-msgstr "Copia lo screenshot negli appunti"
+msgstr "Copia l'istantanea negli appunti"
 
 #: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
@@ -371,4 +379,4 @@ msgstr "%s non è una cartella valida. Verrà utilizzata la cartella predefinita
 #: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Esegue un'istantanea dell'intero schermo, di una sua porzione o della finestra attiva"
+msgstr "Cattura un'istantanea dell'intero schermo, di una sua porzione o della finestra attiva"
