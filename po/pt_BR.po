@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# AndreLDM <andreldm1989@gmail.com>, 2014
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007
 # Automatically generated, 2007
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2008
@@ -13,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-07-15 23:02+0000\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <xfce-i18n-br@xfce.org>\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-05-14 05:35+0000\n"
+"Last-Translator: AndreLDM <andreldm1989@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/xfce-apps/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -160,6 +161,13 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Visão</span>"
 #: ../lib/screenshooter-dialogs.c:1094
 msgid "Save screenshot as..."
 msgstr "Salvar a captura de tela como..."
+
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>O aplicativo não pôde ser lançado.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
