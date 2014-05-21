@@ -5,14 +5,15 @@
 # Translators:
 # Aleksandr P <davian818@gmail.com>, 2013
 # Denis Koryavov <dkoryavov@yandex.ru>, 2009
+# asvl <alyoshin.s@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-07-16 10:53+0000\n"
-"Last-Translator: Aleksandr P <davian818@gmail.com>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/xfce/language/ru/)\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-05-21 19:46+0000\n"
+"Last-Translator: asvl <alyoshin.s@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/projects/p/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,11 +23,11 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:453
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%.2fКб из %.2fКб"
+msgstr "%.2fкБ из %.2fкБ"
 
 #: ../lib/screenshooter-dialogs.c:539
 msgid "Transfer"
-msgstr "Перенести"
+msgstr "Передача"
 
 #: ../lib/screenshooter-dialogs.c:560
 msgid ""
@@ -52,7 +53,7 @@ msgstr "Параметры"
 
 #: ../lib/screenshooter-dialogs.c:740
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Область для захвата</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Область захвата</span>"
 
 #: ../lib/screenshooter-dialogs.c:760
 msgid "Entire screen"
@@ -82,7 +83,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Укажите область экрана, которая будет захвачена. С помощью левой кнопки мыши укажите верхний угол захватываемой области, и, не отпуская кнопки мыши, укажите нижний угол. Отпустите кнопку мыши."
+msgstr "Укажите область экрана, которая будет захвачена. С помощью левой кнопки мыши укажите верхний угол захватываемой области и, не отпуская кнопки мыши, укажите нижний угол. Отпустите кнопку мыши."
 
 #: ../lib/screenshooter-dialogs.c:805
 msgid "Capture the mouse pointer"
@@ -94,7 +95,7 @@ msgstr "Отображать курсор мыши на снимке экран�
 
 #: ../lib/screenshooter-dialogs.c:826
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Задержка перед выполнением снимка</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Задержка перед снимком</span>"
 
 #: ../lib/screenshooter-dialogs.c:848
 msgid "Delay in seconds before the screenshot is taken"
@@ -102,7 +103,7 @@ msgstr "Задержка в секундах перед выполнением �
 
 #: ../lib/screenshooter-dialogs.c:851
 msgid "seconds"
-msgstr "сек."
+msgstr "с"
 
 #: ../lib/screenshooter-dialogs.c:903
 msgid "Action"
@@ -131,7 +132,7 @@ msgstr "Копировать снимок экрана в буфер обмен�
 
 #: ../lib/screenshooter-dialogs.c:981
 msgid "Open with:"
-msgstr "Открыть с помощью:"
+msgstr "Открыть в:"
 
 #: ../lib/screenshooter-dialogs.c:987
 msgid "Open the screenshot with the chosen application"
@@ -139,7 +140,7 @@ msgstr "Открыть снимок экрана с помощью выбран�
 
 #: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
 msgid "Application to open the screenshot"
-msgstr "Приложение для просмотра снимков экрана"
+msgstr "Приложение для просмотра снимка экрана"
 
 #: ../lib/screenshooter-dialogs.c:1015
 msgid "Host on ZimageZ"
@@ -156,6 +157,13 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Предваритель�
 #: ../lib/screenshooter-dialogs.c:1094
 msgid "Save screenshot as..."
 msgstr "Сохранить снимок как..."
+
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>Приложение не может быть запущено.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
@@ -202,13 +210,13 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Н
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
-msgstr "Аунтефикация на сервере ZimageZ..."
+msgstr "Аутентификация на сервере ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr "Получен неожиданный ответ от сервера ZimageZ. Не удалось загрузить снимок экрана."
+msgstr "Получен неожиданный ответ от сервера ZimageZ. Не удалось разместить снимок экрана."
 
 #: ../lib/screenshooter-zimagez.c:485
 msgid ""
@@ -218,12 +226,12 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">У
 
 #: ../lib/screenshooter-zimagez.c:543
 msgid "Upload the screenshot..."
-msgstr "Загрузка снимка экрана..."
+msgstr "Отправка снимка экрана..."
 
 #: ../lib/screenshooter-zimagez.c:576
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "Произошла ошибка при загрузке снимка экрана."
+msgstr "Произошла ошибка при отправке снимка экрана."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:609
@@ -243,7 +251,7 @@ msgstr "Пользователь:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr "Ваше имя пользователя (логин) на сервере ZimageZ. Если вы еще не зарегистрированы на сервере, вы можете это сделать на странице указанной выше"
+msgstr "Ваше имя пользователя (логин) на сервере ZimageZ. Если вы еще не зарегистрированы на сервере, то можете это сделать на странице указанной выше"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -337,7 +345,7 @@ msgstr "Отображать курсор мыши на снимке экран�
 
 #: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
-msgstr "Директория, где будут сохраняться снимки экрана"
+msgstr "Каталог для сохранения снимков экрана"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -346,7 +354,7 @@ msgstr "Информация о версии"
 #: ../src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Конфликт параметров: --%s и --%s не могут быть использованы в одно и то же время\n"
+msgstr "Конфликт параметров: --%s и --%s не могут быть использованы одновременно.\n"
 
 #: ../src/main.c:142
 #, c-format
@@ -360,12 +368,12 @@ msgstr "Параметр --%s используется только с пара�
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nЗапустите программу с опцией %s --help для того, чтобы увидеть весь список опций.\n"
+msgstr "%s: %s\nЗапустите программу с параметром %s --help для того, чтобы увидеть весь список параметров.\n"
 
 #: ../src/main.c:332
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s не является директорией. Будет использована директория по умолчанию."
+msgstr "%s не является каталогом. Будет использован каталог по умолчанию."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
