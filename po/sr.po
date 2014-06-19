@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# salepetronije <salepetronije@gmail.com>, 2012
-# salepetronije <salepetronije@gmail.com>, 2012-2013
+# Саша Петровић <salepetronije@gmail.com>, 2012
+# Саша Петровић <salepetronije@gmail.com>, 2012-2013
+# Саша Петровић <salepetronije@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-07-15 23:11+0000\n"
-"Last-Translator: salepetronije <salepetronije@gmail.com>\n"
-"Language-Team: Serbian (http://www.transifex.com/projects/p/xfce/language/sr/)\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-06-19 13:51+0000\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
+"Language-Team: Serbian (http://www.transifex.com/projects/p/xfce-apps/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,11 +41,11 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Снимак екрана
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
-msgstr "Снимак екрана"
+msgstr "Слика екрана"
 
 #: ../lib/screenshooter-dialogs.c:694
 msgid "Take a screenshot"
-msgstr "Направи снимак екрана"
+msgstr "Сликај екран"
 
 #: ../lib/screenshooter-dialogs.c:709
 msgid "Preferences"
@@ -52,25 +53,25 @@ msgstr "Поставке"
 
 #: ../lib/screenshooter-dialogs.c:740
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Област за снимање</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Област за сликање</span>"
 
 #: ../lib/screenshooter-dialogs.c:760
 msgid "Entire screen"
-msgstr "цео екран"
+msgstr "Цео екран"
 
 #: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
-msgstr "Сними цео екран"
+msgstr "Сликај цео екран"
 
 #: ../lib/screenshooter-dialogs.c:775
 msgid "Active window"
-msgstr "истакнутог прозор"
+msgstr "Истакнути прозор"
 
 #: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
-msgstr "Направи снимак текућег истакнутог прозора"
+msgstr "сликај текући истакнути прозора"
 
 #: ../lib/screenshooter-dialogs.c:790
 msgid "Select a region"
@@ -90,15 +91,15 @@ msgstr "Ухвати показивача миша"
 
 #: ../lib/screenshooter-dialogs.c:810
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Укључује показивач у снимак екрана"
+msgstr "Укључује показивач у слику екрана"
 
 #: ../lib/screenshooter-dialogs.c:826
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\"> Одлагање пре снимања</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\"> Одлагање пре сликања</span>"
 
 #: ../lib/screenshooter-dialogs.c:848
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Одлагање у секундама пре снимања екрана"
+msgstr "Одлагање у секундама пре сликања екрана"
 
 #: ../lib/screenshooter-dialogs.c:851
 msgid "seconds"
@@ -119,7 +120,7 @@ msgstr "Сачувај"
 
 #: ../lib/screenshooter-dialogs.c:953
 msgid "Save the screenshot to a PNG file"
-msgstr "Сачувај снимак екрана као ПНГ датотеку"
+msgstr "Сачувај слику екрана као ПНГ датотеку"
 
 #: ../lib/screenshooter-dialogs.c:962
 msgid "Copy to the clipboard"
@@ -127,7 +128,7 @@ msgstr "Умножи у оставу"
 
 #: ../lib/screenshooter-dialogs.c:964
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Умножи снимак екрана у оставу исечака да би касније могао бити налепљен"
+msgstr "Умножи слику екрана у оставу исечака да би касније могао бити налепљен"
 
 #: ../lib/screenshooter-dialogs.c:981
 msgid "Open with:"
@@ -135,19 +136,19 @@ msgstr "Отвори са:"
 
 #: ../lib/screenshooter-dialogs.c:987
 msgid "Open the screenshot with the chosen application"
-msgstr "Отвара снимак екрана подразумеваним програмима"
+msgstr "Отвара слику екрана подразумеваним програмима"
 
 #: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
 msgid "Application to open the screenshot"
-msgstr "Програм за отварање снимка екрана"
+msgstr "Програм за отварање слике екрана"
 
 #: ../lib/screenshooter-dialogs.c:1015
 msgid "Host on ZimageZ"
-msgstr "Окачи на ZimageZ"
+msgstr "Отпреми на ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Окачи снимак екрана на ZimageZ, слободну мрежну услугу чувања слика"
+msgstr "Отпреми слику екрана на ZimageZ, слободну мрежну услугу чувања слика"
 
 #: ../lib/screenshooter-dialogs.c:1033
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -155,7 +156,14 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Преглед</span>"
 
 #: ../lib/screenshooter-dialogs.c:1094
 msgid "Save screenshot as..."
-msgstr "Сачувај снимак екрана као..."
+msgstr "Сачувај слику екрана као..."
+
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>Нисам успео да покренем програм.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
@@ -170,7 +178,7 @@ msgstr "Десила се грешка приликом преноса пода�
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr "Десила се грешка приликом расчлањивања одговора од ZimageZ-а."
+msgstr "Десила се грешка приликом рашчлањивања одговора од ZimageZ-а."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
@@ -188,7 +196,7 @@ msgstr "Покрени везу..."
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
-msgstr "Молим, попуните наредна поља са вашим<a href=\"http://www.zimagez.com\">ZimageZ</a>\nкорисничким именом, лозинком и појединостима о снимку екрана."
+msgstr "Молим, попуните наредна поља својим<a href=\"http://www.zimagez.com\">ZimageZ</a>\nкорисничким именом, лозинком и појединостима о слици екрана."
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
@@ -237,18 +245,18 @@ msgstr "Појединости о слици екрана за ZimageZ"
 #. Create the user label
 #: ../lib/screenshooter-zimagez.c:719
 msgid "User:"
-msgstr "корисник:"
+msgstr "Корисник:"
 
 #: ../lib/screenshooter-zimagez.c:730
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr "Ваше корисничко име за Zimagez, уколико га немате, молим, направите га на веб страни везе изнад"
+msgstr "Корисничко име за Zimagez, уколико га немате, молим, направите га на веб страни везе изнад"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
 msgid "Password:"
-msgstr "лозинка:"
+msgstr "Лозинка:"
 
 #: ../lib/screenshooter-zimagez.c:746
 msgid "The password for the user above"
@@ -257,7 +265,7 @@ msgstr "Лозинка за корисника изнад"
 #. Create the title label
 #: ../lib/screenshooter-zimagez.c:752
 msgid "Title:"
-msgstr "назив:"
+msgstr "Назив:"
 
 #: ../lib/screenshooter-zimagez.c:762
 msgid ""
@@ -268,7 +276,7 @@ msgstr "Назив слике екрана. Биће коришћен прили
 #. Create the comment label
 #: ../lib/screenshooter-zimagez.c:768
 msgid "Comment:"
-msgstr "белешка:"
+msgstr "Белешка:"
 
 #: ../lib/screenshooter-zimagez.c:779
 msgid ""
@@ -329,15 +337,15 @@ msgstr "Умножи снимак екрана у оставу исечака"
 
 #: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Одлагање у секундама након кога ће бити направљен снимак екрана."
+msgstr "Одлагање у секундама након кога ће бити направљена слика екрана"
 
 #: ../src/main.c:64
 msgid "Display the mouse on the screenshot"
-msgstr "Укључује показивач у снимак екрана"
+msgstr "Укључује показивач на слици екрана"
 
 #: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
-msgstr "Фасцикла у којој ће бити сачуван снимак екрана"
+msgstr "Фасцикла у којој ће бити сачувана слика екрана"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -365,7 +373,7 @@ msgstr "%s: %s\nПокушајте „%s --help“ да видите потпу�
 #: ../src/main.c:332
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s није одговарајућа фасцикла, уместо ње биће коришћена предодређна фасцикла."
+msgstr "%s није одговарајућа фасцикла, уместо ње биће коришћена подразумевана фасцикла."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
