@@ -5,14 +5,15 @@
 # Translators:
 # Elias Julkunen <elias.julkunen@gmail.com>, 2008
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2013
+# Pasi Lallinaho <pasi@shimmerproject.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-11-11 19:38+0000\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/xfce/language/fi/)\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-08-22 16:12+0000\n"
+"Last-Translator: Pasi Lallinaho <pasi@shimmerproject.org>\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/xfce-apps/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -156,6 +157,13 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Esikatselu</span>"
 #: ../lib/screenshooter-dialogs.c:1094
 msgid "Save screenshot as..."
 msgstr "Tallenna kaappaus nimellä..."
+
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>Sovellusta ei voitu käynnistää.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
