@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Nucleo <nucleo@indamail.hu>, 2013
+# Benedek Imre <nucleo@indamail.hu>, 2013-2014
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-08-30 22:57+0000\n"
-"Last-Translator: Nucleo <nucleo@indamail.hu>\n"
-"Language-Team: Hungarian (http://www.transifex.com/projects/p/xfce/language/hu/)\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-08-28 23:58+0000\n"
+"Last-Translator: Benedek Imre <nucleo@indamail.hu>\n"
+"Language-Team: Hungarian (http://www.transifex.com/projects/p/xfce-apps/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -156,6 +156,13 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Előnézet</span>"
 #: ../lib/screenshooter-dialogs.c:1094
 msgid "Save screenshot as..."
 msgstr "Képernyőkép mentése másként…"
+
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>Az alkalmazás nem indítható.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
