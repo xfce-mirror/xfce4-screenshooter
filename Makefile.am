@@ -165,6 +165,13 @@ panel_desktop_in_files = panel-plugin/screenshooter.desktop.in
 panel_desktop_DATA = $(panel_desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
+# appdata file for the application
+@INTLTOOL_XML_RULE@
+appdatadir = $(datadir)/appdata
+appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+appdata_in_files = src/xfce4-screenshooter.appdata.xml.in
+
+
 # Fallback icons
 
 # 48x48 icons
@@ -209,7 +216,8 @@ EXTRA_DIST = \
 	$(app_desktop_in_in_files) \
 	$(panel_desktop_in_files) \
 	$(48icons_DATA) \
-	$(scalicons_DATA)
+	$(scalicons_DATA) \
+	$(appdata_in_files)
 
 DISTCLEANFILES = \
 	intltool-extract \
@@ -219,7 +227,8 @@ DISTCLEANFILES = \
 	$(lib_libscreenshooter_built_sources) \
 	lib/stamp-screenshooter-marshal.h \
 	$(app_desktop_DATA) $(app_desktop_in_files) \
-	$(panel_desktop_DATA)
+	$(panel_desktop_DATA) \
+	$(appdata_DATA)
 
 # Man pages
 dist_man_MANS = xfce4-screenshooter.1
