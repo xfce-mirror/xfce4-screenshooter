@@ -5,15 +5,16 @@
 # Translators:
 # Fabian Nowak <timystery@arcor.de>, 2008
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2012
-# M4he, 2013
+# Markus, 2013
+# Tobias Bannert, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-13 22:14+0200\n"
-"PO-Revision-Date: 2013-12-29 23:33+0000\n"
-"Last-Translator: M4he\n"
-"Language-Team: German (http://www.transifex.com/projects/p/xfce/language/de/)\n"
+"POT-Creation-Date: 2014-05-05 18:31+0200\n"
+"PO-Revision-Date: 2014-10-10 12:06+0000\n"
+"Last-Translator: Tobias Bannert\n"
+"Language-Team: German (http://www.transifex.com/projects/p/xfce-apps/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,7 +84,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Wählen Sie den aufzunehmenden Bereich aus, indem Sie auf einen Punkt auf dem Bildschirm klicken, ohne die Maustaste loszulassen, den Mauszeiger dann an das entgegengesetzte Ende des Bereichs ziehen und die Taste loslassen."
+msgstr "Den aufzunehmenden Bereich auswählen, indem Sie auf einen Punkt auf dem Bildschirm klicken, ohne die Maustaste loszulassen, den Mauszeiger dann an das entgegengesetzte Ende des Bereichs ziehen und dann die Taste loslassen."
 
 #: ../lib/screenshooter-dialogs.c:805
 msgid "Capture the mouse pointer"
@@ -158,6 +159,13 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vorschau</span>"
 msgid "Save screenshot as..."
 msgstr "Bildschirmfoto speichern als …"
 
+#: ../lib/screenshooter-utils.c:183
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>Die Anwendung kann nicht gestartet werden.</b>\n%s"
+
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
@@ -193,7 +201,7 @@ msgstr "Bitte füllen Sie die folgenden Felder mit Ihrem Benutzernamen und Passw
 
 #: ../lib/screenshooter-zimagez.c:385
 msgid "Check the user information..."
-msgstr "Benutzer-Informationen überprüfen …"
+msgstr "Benutzerinformationen überprüfen …"
 
 #: ../lib/screenshooter-zimagez.c:392
 msgid ""
@@ -203,7 +211,7 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Si
 
 #: ../lib/screenshooter-zimagez.c:406
 msgid "Login on ZimageZ..."
-msgstr "Anmelden bei ZimageZ"
+msgstr "Bei ZimageZ anmelden …"
 
 #: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
 msgid ""
@@ -244,7 +252,7 @@ msgstr "Benutzer:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr "Ihr ZimageZ-Benutzername, falls Sie noch keinen haben, bitte registrieren Sie sich zuerst auf der ZimageZ-Webseite (Link siehe oben)"
+msgstr "Ihr ZimageZ-Benutzername, falls Sie noch keinen haben, bitte registrieren Sie sich zuerst auf der ZimageZ-Internetseite (Verweis siehe oben)"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -298,7 +306,7 @@ msgstr "Mein Bildschirmfoto bei ZimageZ"
 
 #: ../lib/screenshooter-zimagez.c:948
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Verweise</span>"
 
 #: ../lib/screenshooter-zimagez.c:987
 msgid ""
@@ -347,7 +355,7 @@ msgstr "Versionsinformation"
 #: ../src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Kollidierende Optionen: --%s und --%s können nicht zusammen benutzt werden.\n"
+msgstr "Widersprüchliche Optionen: --%s und --%s können nicht zusammen benutzt werden.\n"
 
 #: ../src/main.c:142
 #, c-format
@@ -361,7 +369,7 @@ msgstr "Die Option --%s wird nur in Verbindung mit --fullscreen, --window oder -
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nGeben Sie »%s --help« ein, um Informationen über die Verwendung zu erhalten.\n"
+msgstr "%s: %s\n»%s --help« eingeben, um Informationen über die Verwendung zu erhalten.\n"
 
 #: ../src/main.c:332
 #, c-format
