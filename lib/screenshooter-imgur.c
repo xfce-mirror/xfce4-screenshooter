@@ -88,14 +88,12 @@ static char *get_image_hash(char *json)
 	JsonParser *parser;
 	JsonNode *root;
 	GError *error;
-
-	g_type_init ();
+	gchar *ret = NULL;
 
 	parser = json_parser_new ();
 
 	error = NULL;
 	json_parser_load_from_data(parser, json, strlen(json), &error);
-	gchar *ret = NULL;
 
 	if (error)
 	{
@@ -138,121 +136,18 @@ open_url_hook (GtkLabel *url_label, gchar *url, gpointer user_data)
     }
 }
 
-
-
-static gboolean
-do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
-           GError **error, GValue *retval, ...)
-{
-  SoupMessage *msg;
-  va_list args;
-  GValueArray *params;
-  GError *err = NULL;
-  char *body;
-
-  g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
-
-  va_start (args, retval);
-  params = soup_value_array_from_args (args);
-  va_end (args);
-
-  body =
-    soup_xmlrpc_build_method_call (method, params->values,
-                                   params->n_values);
-  g_value_array_free (params);
-
-  if (!body)
-    {
-      err = g_error_new (SOUP_XMLRPC_FAULT,
-                         SOUP_XMLRPC_FAULT_APPLICATION_ERROR,
-                         _("An error occurred when creating the XMLRPC"
-                           " request."));
-      g_propagate_error (error, err);
-
-      return FALSE;
-    }
-
-  msg = soup_message_new ("POST", uri);
-  soup_message_set_request (msg, "text/xml", SOUP_MEMORY_TAKE,
-                            body, strlen (body));
-  soup_session_send_message (session, msg);
-
-  if (!SOUP_STATUS_IS_SUCCESSFUL (msg->status_code))
-    {
-      TRACE ("Error during the XMLRPC exchange: %d %s\n",
-             msg->status_code, msg->reason_phrase);
-
-      err = g_error_new (SOUP_XMLRPC_FAULT,
-                         SOUP_XMLRPC_FAULT_TRANSPORT_ERROR,
-                         _("An error occurred when transferring the data"
-                           " to Imgur."));
-      g_propagate_error (error, err);
-      g_object_unref (msg);
-
-      return FALSE;
-    }
-
-  if (!soup_xmlrpc_parse_method_response (msg->response_body->data,
-                                          msg->response_body->length,
-                                          retval, &err))
-    {
-      if (err)
-        {
-          TRACE ("Fault when parsing the response: %d %s\n",
-                 err->code, err->message);
-
-          g_propagate_error (error, err);
-        }
-      else
-        {
-          TRACE ("Unable to parse the response, and no error...");
-
-          err = g_error_new (SOUP_XMLRPC_FAULT,
-                             SOUP_XMLRPC_FAULT_APPLICATION_ERROR,
-                             _("An error occurred when parsing the response"
-                               " from Imgur."));
-          g_propagate_error (error, err);
-        }
-
-      g_object_unref (msg);
-      return FALSE;
-    }
-
-  g_object_unref (msg);
-
-  return TRUE;
-}
-
 static gboolean
 imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **error)
 {
-  const gchar *encoded_data;
   const gchar *image_path;
-  const gchar *last_user;
-  const gchar *date = screenshooter_get_date (FALSE);
-  const gchar *current_time = screenshooter_get_time ();
-  const gchar *proxy_uri;
-  /* For translators: the first wildcard is the date, the second one the time,
-   * e.g. "Taken on 12/31/99, at 23:13:48". */
-  gchar *comment = g_strdup_printf (_("Taken on %s, at %s"), date, current_time);
-  gchar *data = NULL;
-  gchar *encoded_password = NULL;
-  gchar *file_name = NULL;
-  gchar *login_response = NULL;
   gchar *online_file_name = NULL;
-  gchar *password = g_strdup ("");
-  gchar *title;
-  gchar *user;
+  CURL *curl;
+  CURLcode res;
 
-  gsize data_length;
-  gboolean response = FALSE;
 
   const gchar *upload_url = "http://api.imgur.com/2/upload.json";
 
   GError *tmp_error = NULL;
-  GtkTreeIter iter;
-  GtkListStore *liststore;
-  GValue response_value;
 
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
@@ -268,17 +163,14 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
 
   image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
 
-	CURL *curl;
-	CURLcode res;
-
 	curl = curl_easy_init();
 	if(curl) {
 		struct MemoryStruct chunk;
-		chunk.memory = malloc(1);  /* will be grown as needed by the realloc above */ 
-		chunk.size = 0;    /* no data at this point */ 
-
 		struct curl_httppost *formpost=NULL;
 		struct curl_httppost *lastptr=NULL;
+
+		chunk.memory = malloc(1);  /* will be grown as needed by the realloc above */ 
+		chunk.size = 0;    /* no data at this point */ 
 
 		curl_formadd(&formpost,
 			&lastptr,
@@ -387,13 +279,13 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
   small_thumbnail_url =
     g_strdup_printf ("http://imgur.com/%s1.png", upload_name);
   image_markup =
-    g_strdup_printf (_("<a href=\"%s\">Full size image</a>"), image_url);
+    g_markup_printf_escaped (_("<a href=\"%s\">Full size image</a>"), image_url);
   thumbnail_markup =
-    g_strdup_printf (_("<a href=\"%s\">Large thumbnail</a>"), thumbnail_url);
+    g_markup_printf_escaped (_("<a href=\"%s\">Large thumbnail</a>"), thumbnail_url);
   small_thumbnail_markup =
-    g_strdup_printf (_("<a href=\"%s\">Small thumbnail</a>"), small_thumbnail_url);
+    g_markup_printf_escaped (_("<a href=\"%s\">Small thumbnail</a>"), small_thumbnail_url);
   html_code =
-    g_strdup_printf ("<a href=\"%s\">\n  <img src=\"%s\" />\n</a>",
+    g_markup_printf_escaped ("<a href=\"%s\">\n  <img src=\"%s\" />\n</a>",
                      image_url, thumbnail_url);
   bb_code =
     g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", image_url, thumbnail_url);
