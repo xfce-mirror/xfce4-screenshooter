@@ -27,10 +27,10 @@
 #include <glib.h>
 #include <glib/gstdio.h>
 #include <libsoup/soup.h>
+#include <libsexy/sexy-url-label.h>
 
 #include "screenshooter-utils.h"
 #include "screenshooter-simple-job.h"
-#include "sexy-url-label.h"
 #include "katze-throbber.h"
 
 void screenshooter_upload_to_imgur (const gchar  *image_path,
