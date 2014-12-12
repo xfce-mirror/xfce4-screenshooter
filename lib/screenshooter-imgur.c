@@ -33,7 +33,7 @@ typedef enum
   COMMENT,
 } ZimagezInformation;
 
-static void              open_url_hook             (SexyUrlLabel      *url_label,
+static void              open_url_hook             (GtkLabel      *url_label,
                                                     gchar             *url,
                                                     gpointer           user_data);
 static ScreenshooterJob *imgur_upload_to_imgur     (const gchar       *file_name,
@@ -124,7 +124,7 @@ static char *get_image_hash(char *json)
 }
 
 static void
-open_url_hook (SexyUrlLabel *url_label, gchar *url, gpointer user_data)
+open_url_hook (GtkLabel *url_label, gchar *url, gpointer user_data)
 {
   const gchar *command = g_strconcat ("xdg-open ", url, NULL);
   GError *error = NULL;
@@ -449,8 +449,8 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_container_add (GTK_CONTAINER (links_alignment), links_box);
 
   /* Create the image link */
-  image_link = sexy_url_label_new ();
-  sexy_url_label_set_markup (SEXY_URL_LABEL (image_link), image_markup);
+  image_link = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (image_link), image_markup);
   gtk_misc_set_alignment (GTK_MISC (image_link), 0, 0);
   g_signal_connect (G_OBJECT (image_link), "url-activated",
                     G_CALLBACK (open_url_hook), NULL);
@@ -458,8 +458,8 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_container_add (GTK_CONTAINER (links_box), image_link);
 
   /* Create the thumbnail link */
-  thumbnail_link = sexy_url_label_new ();
-  sexy_url_label_set_markup (SEXY_URL_LABEL (thumbnail_link), thumbnail_markup);
+  thumbnail_link = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (thumbnail_link), thumbnail_markup);
   gtk_misc_set_alignment (GTK_MISC (thumbnail_link), 0, 0);
   g_signal_connect (G_OBJECT (thumbnail_link), "url-activated",
                     G_CALLBACK (open_url_hook), NULL);
@@ -467,8 +467,8 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_container_add (GTK_CONTAINER (links_box), thumbnail_link);
 
   /* Create the small thumbnail link */
-  small_thumbnail_link = sexy_url_label_new ();
-  sexy_url_label_set_markup (SEXY_URL_LABEL (small_thumbnail_link), small_thumbnail_markup);
+  small_thumbnail_link = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (small_thumbnail_link), small_thumbnail_markup);
   gtk_misc_set_alignment (GTK_MISC (small_thumbnail_link), 0, 0);
   g_signal_connect (G_OBJECT (small_thumbnail_link), "url-activated",
                     G_CALLBACK (open_url_hook), NULL);

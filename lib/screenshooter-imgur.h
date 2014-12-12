@@ -26,8 +26,6 @@
 
 #include <glib.h>
 #include <glib/gstdio.h>
-#include <libsoup/soup.h>
-#include <libsexy/sexy-url-label.h>
 
 #include "screenshooter-utils.h"
 #include "screenshooter-simple-job.h"

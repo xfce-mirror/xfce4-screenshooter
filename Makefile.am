@@ -46,7 +46,6 @@ lib_libscreenshooter_la_CFLAGS = \
 	@SOUP_CFLAGS@ \
 	@CURL_CFLAGS@ \
 	@JSON_GLIB_CFLAGS@ \
-	@SEXY_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
   -DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
@@ -62,7 +61,6 @@ lib_libscreenshooter_la_LIBADD = \
 	@JSON_GLIB_LIBS@ \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
-	@SEXY_LIBS@ \
 	@XFIXES_LIBS@
 
 lib_libscreenshooter_built_sources = \
@@ -100,7 +98,6 @@ src_xfce4_screenshooter_CFLAGS = \
 	@SOUP_CFLAGS@ \
 	@CURL_CFLAGS@ \
 	@JSON_GLIB_CFLAGS@ \
-	@SEXY_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 src_xfce4_screenshooter_LDFLAGS = \
@@ -111,7 +108,6 @@ src_xfce4_screenshooter_LDFLAGS = \
 	@SOUP_LIBS@ \
 	@CURL_LIBS@ \
 	@JSON_GLIB_LIBS@ \
-	@SEXY_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@
 
@@ -147,7 +143,6 @@ panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	@GTHREAD_CFLAGS@ \
 	@CURL_CFLAGS@ \
 	@JSON_GLIB_CFLAGS@ \
-	@SEXY_CFLAGS@ \
 	@SOUP_CFLAGS@
 
 panel_plugin_libscreenshooterplugin_la_LDFLAGS = \
@@ -164,7 +159,6 @@ panel_plugin_libscreenshooterplugin_la_LIBADD = \
 	@SOUP_LIBS@ \
 	@CURL_LIBS@ \
 	@JSON_GLIB_LIBS@ \
-	@SEXY_LIBS@ \
 	@LIBXFCE4UI_LIBS@ \
 	lib/libscreenshooter.la
 
