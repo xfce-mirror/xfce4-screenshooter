@@ -33,9 +33,6 @@ typedef enum
   COMMENT,
 } ZimagezInformation;
 
-static void              open_url_hook             (GtkLabel      *url_label,
-                                                    gchar             *url,
-                                                    gpointer           user_data);
 static ScreenshooterJob *imgur_upload_to_imgur     (const gchar       *file_name,
                                                     const gchar       *last_user,
                                                     const gchar       *title);
@@ -119,21 +116,6 @@ static char *get_image_hash(char *json)
 	g_object_unref (parser);
 
 	return ret;
-}
-
-static void
-open_url_hook (GtkLabel *url_label, gchar *url, gpointer user_data)
-{
-  const gchar *command = g_strconcat ("xdg-open ", url, NULL);
-  GError *error = NULL;
-
-  if (!g_spawn_command_line_async (command, &error))
-    {
-      TRACE ("An error occurred when opening the URL");
-
-      screenshooter_error ("%s", error->message);
-      g_error_free (error);
-    }
 }
 
 static gboolean
@@ -344,8 +326,6 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
   image_link = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (image_link), image_markup);
   gtk_misc_set_alignment (GTK_MISC (image_link), 0, 0);
-  g_signal_connect (G_OBJECT (image_link), "url-activated",
-                    G_CALLBACK (open_url_hook), NULL);
   gtk_widget_set_tooltip_text (image_link, image_url);
   gtk_container_add (GTK_CONTAINER (links_box), image_link);
 
@@ -353,8 +333,6 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
   thumbnail_link = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (thumbnail_link), thumbnail_markup);
   gtk_misc_set_alignment (GTK_MISC (thumbnail_link), 0, 0);
-  g_signal_connect (G_OBJECT (thumbnail_link), "url-activated",
-                    G_CALLBACK (open_url_hook), NULL);
   gtk_widget_set_tooltip_text (thumbnail_link, thumbnail_url);
   gtk_container_add (GTK_CONTAINER (links_box), thumbnail_link);
 
@@ -362,8 +340,6 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
   small_thumbnail_link = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (small_thumbnail_link), small_thumbnail_markup);
   gtk_misc_set_alignment (GTK_MISC (small_thumbnail_link), 0, 0);
-  g_signal_connect (G_OBJECT (small_thumbnail_link), "url-activated",
-                    G_CALLBACK (open_url_hook), NULL);
   gtk_widget_set_tooltip_text (small_thumbnail_link, small_thumbnail_url);
   gtk_container_add (GTK_CONTAINER (links_box), small_thumbnail_link);
 
