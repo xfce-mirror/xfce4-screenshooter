@@ -333,6 +333,7 @@ int main (int argc, char **argv)
           sd->app = g_strdup ("none");
           sd->action = CLIPBOARD;
           sd->action_specified = TRUE;
+        }
       else if (upload_imgur)
         {
           sd->app = g_strdup ("none");
