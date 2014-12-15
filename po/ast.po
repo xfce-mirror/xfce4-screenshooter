@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
-# Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
+# enolp <enolp@softastur.org>, 2014
+# Ḷḷumex03 <tornes@opmbx.org>, 2014
+# Ḷḷumex03 <tornes@opmbx.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-05 18:31+0200\n"
-"PO-Revision-Date: 2014-05-27 06:36+0000\n"
-"Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
+"PO-Revision-Date: 2014-12-13 21:20+0000\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce-apps/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,7 +71,7 @@ msgstr "Ventana activa"
 #: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
-msgstr "Facer una captura de pantalla de la ventana activa"
+msgstr "Fai una captura de pantalla de la ventana activa"
 
 #: ../lib/screenshooter-dialogs.c:790
 msgid "Select a region"
@@ -86,7 +87,7 @@ msgstr "Escueyi una zona pa capturar calcando nun puntu de la pantalla ensin sol
 
 #: ../lib/screenshooter-dialogs.c:805
 msgid "Capture the mouse pointer"
-msgstr "Capturar el punteru del mur"
+msgstr "Capturar el mur"
 
 #: ../lib/screenshooter-dialogs.c:810
 msgid "Display the mouse pointer on the screenshot"
@@ -115,7 +116,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aición</span>"
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:948
 msgid "Save"
-msgstr "Atroxar"
+msgstr "Guardar"
 
 #: ../lib/screenshooter-dialogs.c:953
 msgid "Save the screenshot to a PNG file"
@@ -250,7 +251,7 @@ msgstr "Usuariu:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr "El to nome d'usuariu Zimagez, si nun tienes entá ún, por favor crialu na páxina web enllazada embaxo"
+msgstr "El to nome d'usuariu Zimagez, si nun tienes entá ún, por favor crealu na páxina web enllazada embaxo"
 
 #. Create the password label
 #: ../lib/screenshooter-zimagez.c:736
@@ -360,7 +361,7 @@ msgstr "Opciones en conflictu: --%s y --%s nun puen usase al mesmu tiempu.\n"
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr "La opción --%s namái úsase cuando se da --fullscreen, --window o --region. Inoraráse.\n"
+msgstr "La opción --%s namái s'usa cuando se da --fullscreen, --window o --region. Inoraráse.\n"
 
 #: ../src/main.c:156
 #, c-format
