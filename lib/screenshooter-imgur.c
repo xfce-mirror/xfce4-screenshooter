@@ -106,7 +106,6 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
   mapping = g_mapped_file_new(image_path, FALSE, NULL);
   if (!mapping) {
     g_object_unref (session);
-    g_object_unref (msg);
 
     return FALSE;
   }
