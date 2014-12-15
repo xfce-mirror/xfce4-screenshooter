@@ -21,9 +21,7 @@
 #include "screenshooter-imgur.h"
 #include <string.h>
 #include <stdlib.h>
-#include <curl/curl.h>
-#include <json-glib/json-glib.h>
-#include <json-glib/json-gobject.h>
+#include <libsoup/soup.h>
 
 typedef enum
 {
@@ -51,83 +49,22 @@ static void              cb_update_info            (ExoJob            *job,
                                                     gchar             *message,
                                                     GtkWidget         *label);
 
-
-
-/* Private */
-
-
-struct MemoryStruct {
-  char *memory;
-  size_t size;
-};
- 
- 
-static size_t WriteMemoryCallback(void *ptr, size_t size, size_t nmemb, void *data)
-{
-	size_t realsize = size * nmemb;
-	struct MemoryStruct *mem = (struct MemoryStruct *)data;
-
-	mem->memory = realloc(mem->memory, mem->size + realsize + 1);
-	if (mem->memory == NULL) {
-		printf("not enough memory (realloc returned NULL)\n");
-		exit(0);
-	}
-
-	memcpy(&(mem->memory[mem->size]), ptr, realsize);
-	mem->size += realsize;
-	mem->memory[mem->size] = 0;
-
-	return realsize;
-}
-
-static char *get_image_hash(char *json)
-{
-	JsonParser *parser;
-	JsonNode *root;
-	GError *error;
-	gchar *ret = NULL;
-
-	parser = json_parser_new ();
-
-	error = NULL;
-	json_parser_load_from_data(parser, json, strlen(json), &error);
-
-	if (error)
-	{
-		g_error_free (error);
-		g_object_unref (parser);
-		return NULL;
-	}
-
-	root = json_parser_get_root (parser);
-	if (JSON_NODE_TYPE(root) == JSON_NODE_OBJECT) {
-		JsonNode *upload = json_object_get_member(json_node_get_object(root), "upload");
-		if (JSON_NODE_TYPE(upload) == JSON_NODE_OBJECT) {
-			JsonNode *image = json_object_get_member(json_node_get_object(upload), "image");
-			if (JSON_NODE_TYPE(image) == JSON_NODE_OBJECT) {
-				JsonNode *hash = json_object_get_member(json_node_get_object(image), "hash");
-				if (JSON_NODE_TYPE(hash) == JSON_NODE_VALUE) {
-					ret = json_node_dup_string(hash);
-				}
-			}
-		}
-	}
-
-	g_object_unref (parser);
-
-	return ret;
-}
-
 static gboolean
 imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **error)
 {
   const gchar *image_path;
   gchar *online_file_name = NULL;
-  CURL *curl;
-  CURLcode res;
+  gchar* proxy_uri;
+  SoupURI *soup_proxy_uri;
+  SoupLogger *log;
+  guint status;
+  SoupSession *session;
+  SoupMessage *msg;
+  SoupBuffer *buf;
+  GMappedFile *mapping;
+  SoupMultipart *mp;
 
-
-  const gchar *upload_url = "http://api.imgur.com/2/upload.json";
+  const gchar *upload_url = "http://api.imgur.com/2/upload.xml";
 
   GError *tmp_error = NULL;
 
@@ -145,70 +82,66 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
 
   image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
 
-	curl = curl_easy_init();
-	if(curl) {
-		struct MemoryStruct chunk;
-		struct curl_httppost *formpost=NULL;
-		struct curl_httppost *lastptr=NULL;
+  session = soup_session_sync_new ();
+  log = soup_logger_new (SOUP_LOGGER_LOG_HEADERS, -1);
+  soup_session_add_feature (session, (SoupSessionFeature *)log);
 
-		chunk.memory = malloc(1);  /* will be grown as needed by the realloc above */ 
-		chunk.size = 0;    /* no data at this point */ 
+  /* Set the proxy URI if any */
+  proxy_uri = g_getenv ("http_proxy");
 
-		curl_formadd(&formpost,
-			&lastptr,
-			CURLFORM_COPYNAME, "image",
-			CURLFORM_FILE, image_path,
-			CURLFORM_END);
-
-		curl_formadd(&formpost,
-			&lastptr,
-			CURLFORM_COPYNAME, "title",
-			CURLFORM_COPYCONTENTS, "Screenshot",
-			CURLFORM_END);
-
-		curl_formadd(&formpost,
-			&lastptr,
-			CURLFORM_COPYNAME, "name",
-			CURLFORM_COPYCONTENTS, "Screenshot",
-			CURLFORM_END);
-
-		curl_formadd(&formpost,
-			&lastptr,
-			CURLFORM_COPYNAME, "key",
-			CURLFORM_COPYCONTENTS, "a094536e9503bf5e289b65a8116a8d1c",
-			CURLFORM_END);
-
-
-		curl_easy_setopt(curl, CURLOPT_URL, upload_url);
-
-		curl_easy_setopt(curl, CURLOPT_HTTPPOST, formpost);
-		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
-		curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&chunk);
-
-
-		res = curl_easy_perform(curl);
-
-		curl_formfree(formpost);
-		curl_easy_cleanup(curl);
-
-		online_file_name = get_image_hash(chunk.memory);
-
-		if(chunk.memory)
-			free(chunk.memory);
-
-		curl_global_cleanup();
-	} else {
-		fprintf(stderr, "Unable to init curl\n");
-	}
-
-  screenshooter_job_image_uploaded (job, online_file_name);
-
-  if (tmp_error)
+  if (proxy_uri != NULL)
     {
+      soup_proxy_uri = soup_uri_new (proxy_uri);
+      g_object_set (session, "proxy-uri", soup_proxy_uri, NULL);
+      soup_uri_free (soup_proxy_uri);
+    }
+
+  mapping = g_mapped_file_new(image_path, FALSE, NULL);
+  if (!mapping) {
+    g_object_unref (session);
+    g_object_unref (msg);
+
+    return FALSE;
+  }
+
+  mp = soup_multipart_new(SOUP_FORM_MIME_TYPE_MULTIPART);
+  buf = soup_buffer_new_with_owner (g_mapped_file_get_contents (mapping),
+                                    g_mapped_file_get_length (mapping),
+                                    mapping, (GDestroyNotify)g_mapped_file_unref);
+
+  soup_multipart_append_form_file (mp, "image", NULL, NULL, buf);
+  soup_multipart_append_form_string (mp, "name", "Screenshot");
+  soup_multipart_append_form_string (mp, "title", "Screenshot");
+  soup_multipart_append_form_string (mp, "key", "a094536e9503bf5e289b65a8116a8d1c");
+  msg = soup_form_request_new_from_multipart (upload_url, mp);
+
+  // for v3 soup_message_headers_append (msg->request_headers, "Referer", referring_url);
+  status = soup_session_send_message (session, msg);
+
+  if (!SOUP_STATUS_IS_SUCCESSFUL (msg->status_code))
+    {
+      TRACE ("Error during the POST exchange: %d %s\n",
+             msg->status_code, msg->reason_phrase);
+
+      tmp_error = g_error_new (SOUP_HTTP_ERROR,
+                         msg->status_code,
+                         _("An error occurred when transferring the data"
+                           " to imgur."));
       g_propagate_error (error, tmp_error);
+      g_object_unref (session);
+      g_object_unref (msg);
 
       return FALSE;
     }
+
+  TRACE("response was %s\n", msg->response_body->data);
+  sscanf (msg->response_body->data, "<hash>%s</hash>", online_file_name);
+
+  soup_buffer_free (buf);
+  g_object_unref (session);
+  g_object_unref (msg);
+
+  screenshooter_job_image_uploaded (job, online_file_name);
 
   return TRUE;
 }

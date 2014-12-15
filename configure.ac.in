@@ -56,8 +56,6 @@ XDT_CHECK_PACKAGE([SOUP], [libsoup-2.4], [2.26.0])
 XDT_CHECK_PACKAGE([EXO], [exo-1], [0.5.0])
 XDT_CHECK_PACKAGE([LIBXEXT], [xext], [1.0.0])
 XDT_CHECK_OPTIONAL_PACKAGE([XFIXES], [xfixes], [4.0.0], [xfixes], [XFIXES extension support])
-XDT_CHECK_OPTIONAL_PACKAGE([CURL], [libcurl], [7.19], [curl], [curl for imgur.com support])
-XDT_CHECK_OPTIONAL_PACKAGE([JSON_GLIB], [json-glib-1.0], [0.7.6], [json-glib], [json-glib for imgur.com support])
 XDT_CHECK_LIBX11()
 
 dnl ******************************
