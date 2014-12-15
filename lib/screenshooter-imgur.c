@@ -57,7 +57,9 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
   gchar *online_file_name = NULL;
   gchar* proxy_uri;
   SoupURI *soup_proxy_uri;
+#if DEBUG > 0
   SoupLogger *log;
+#endif
   guint status;
   SoupSession *session;
   SoupMessage *msg;
@@ -86,8 +88,10 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
   image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
 
   session = soup_session_sync_new ();
+#if DEBUG > 0
   log = soup_logger_new (SOUP_LOGGER_LOG_HEADERS, -1);
   soup_session_add_feature (session, (SoupSessionFeature *)log);
+#endif
 
   /* Set the proxy URI if any */
   proxy_uri = g_getenv ("http_proxy");
