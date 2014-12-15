@@ -22,6 +22,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <libsoup/soup.h>
+#include <libxml/parser.h>
 
 typedef enum
 {
@@ -63,8 +64,10 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
   SoupBuffer *buf;
   GMappedFile *mapping;
   SoupMultipart *mp;
+  xmlDoc *doc;
+  xmlNode *root_node, *child_node;
 
-  const gchar *upload_url = "http://api.imgur.com/2/upload.xml";
+  const gchar *upload_url = "https://api.imgur.com/3/upload.xml";
 
   GError *tmp_error = NULL;
 
@@ -112,10 +115,10 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
   soup_multipart_append_form_file (mp, "image", NULL, NULL, buf);
   soup_multipart_append_form_string (mp, "name", "Screenshot");
   soup_multipart_append_form_string (mp, "title", "Screenshot");
-  soup_multipart_append_form_string (mp, "key", "a094536e9503bf5e289b65a8116a8d1c");
   msg = soup_form_request_new_from_multipart (upload_url, mp);
 
-  // for v3 soup_message_headers_append (msg->request_headers, "Referer", referring_url);
+  // for v3 API - key registered *only* for xfce4-screenshooter!
+  soup_message_headers_append (msg->request_headers, "Authorization", "Client-ID 66ab680b597e293");
   status = soup_session_send_message (session, msg);
 
   if (!SOUP_STATUS_IS_SUCCESSFUL (msg->status_code))
@@ -135,8 +138,16 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
     }
 
   TRACE("response was %s\n", msg->response_body->data);
-  sscanf (msg->response_body->data, "<hash>%s</hash>", online_file_name);
+  /* returned XML is like <data type="array" success="1" status="200"><id>xxxxxx</id> */
+  doc = xmlParseMemory(msg->response_body->data,
+                                  strlen(msg->response_body->data));
 
+  root_node = xmlDocGetRootElement(doc);
+  for (child_node = root_node->children; child_node; child_node = child_node->next)
+    if (xmlStrEqual(child_node->name, (const xmlChar *) "id"))
+       online_file_name = xmlNodeGetContent(child_node);
+  TRACE("found picture id %s\n", online_file_name);
+  xmlFreeDoc(doc);
   soup_buffer_free (buf);
   g_object_unref (session);
   g_object_unref (msg);
