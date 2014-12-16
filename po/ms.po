@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-05 18:31+0200\n"
-"PO-Revision-Date: 2014-05-21 23:50+0000\n"
-"Last-Translator: ceghap <hello@ceghap.com>\n"
+"POT-Creation-Date: 2014-12-16 00:31+0100\n"
+"PO-Revision-Date: 2014-12-16 17:01+0000\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/xfce-apps/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,64 +19,64 @@ msgstr ""
 "Language: ms\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../lib/screenshooter-dialogs.c:453
+#: ../lib/screenshooter-dialogs.c:463
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb dari %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:539
+#: ../lib/screenshooter-dialogs.c:549
 msgid "Transfer"
 msgstr "Pindah"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:570
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Cekupan skrin dipindahkan ke:</span>"
 
-#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Cekupan Skrin"
 
-#: ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:704
 msgid "Take a screenshot"
 msgstr "Ambil cekupan skrin"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:719
 msgid "Preferences"
 msgstr "Keutamaan"
 
-#: ../lib/screenshooter-dialogs.c:740
+#: ../lib/screenshooter-dialogs.c:750
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kawasan tangkapan</span>"
 
-#: ../lib/screenshooter-dialogs.c:760
+#: ../lib/screenshooter-dialogs.c:770
 msgid "Entire screen"
 msgstr "Keseluruhan skrin"
 
-#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:60
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
 msgstr "Ambil cekupan skrin bagi keseluruhan skrin"
 
-#: ../lib/screenshooter-dialogs.c:775
+#: ../lib/screenshooter-dialogs.c:785
 msgid "Active window"
 msgstr "Tetingkap aktif"
 
-#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:792 ../src/main.c:102
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
 msgstr "Ambil cekupan skrin bagi tetingkap aktif"
 
-#: ../lib/screenshooter-dialogs.c:790
+#: ../lib/screenshooter-dialogs.c:800
 msgid "Select a region"
 msgstr "Pilih kawasan"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:805 ../src/main.c:75
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -84,76 +84,84 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Pilih kawasan untuk ditangkap dengan mengklik poin skrin tanpa melepaskan butang tetikus, menyeret tetikus ke bucu lain kawasan, dan melepaskan butang tetingkap."
 
-#: ../lib/screenshooter-dialogs.c:805
+#: ../lib/screenshooter-dialogs.c:815
 msgid "Capture the mouse pointer"
 msgstr "Tangkap penuding tetikus"
 
-#: ../lib/screenshooter-dialogs.c:810
+#: ../lib/screenshooter-dialogs.c:820
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Papar penuding tetikus pada cekupan skrin"
 
-#: ../lib/screenshooter-dialogs.c:826
+#: ../lib/screenshooter-dialogs.c:836
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Lengah sebelum menangkap</span>"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:858
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Lengah dalam saat sebelum cekupan diambil"
 
-#: ../lib/screenshooter-dialogs.c:851
+#: ../lib/screenshooter-dialogs.c:861
 msgid "seconds"
 msgstr "saat"
 
-#: ../lib/screenshooter-dialogs.c:903
+#: ../lib/screenshooter-dialogs.c:914
 msgid "Action"
 msgstr "Tindakan"
 
-#: ../lib/screenshooter-dialogs.c:932
+#: ../lib/screenshooter-dialogs.c:943
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tindakan</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:948
+#: ../lib/screenshooter-dialogs.c:959
 msgid "Save"
 msgstr "Simpan"
 
-#: ../lib/screenshooter-dialogs.c:953
+#: ../lib/screenshooter-dialogs.c:964
 msgid "Save the screenshot to a PNG file"
 msgstr "Simpan cekupan skrin ke fail PNG"
 
-#: ../lib/screenshooter-dialogs.c:962
+#: ../lib/screenshooter-dialogs.c:973
 msgid "Copy to the clipboard"
 msgstr "Salin ke papan keratan"
 
-#: ../lib/screenshooter-dialogs.c:964
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Salin cekupan skrin ke papan keratan supaya ia boleh ditampal kemudian"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:992
 msgid "Open with:"
 msgstr "Buka dengan:"
 
-#: ../lib/screenshooter-dialogs.c:987
+#: ../lib/screenshooter-dialogs.c:998
 msgid "Open the screenshot with the chosen application"
 msgstr "Buka cekupan skrin dengan aplikasi pilihan"
 
-#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1016 ../src/main.c:70
 msgid "Application to open the screenshot"
 msgstr "Aplikasi untuk buka cekupan skrin"
 
-#: ../lib/screenshooter-dialogs.c:1015
+#: ../lib/screenshooter-dialogs.c:1026
 msgid "Host on ZimageZ"
 msgstr "Hos pada ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1030 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Hoskan cekupan ke ZimageZ, merupakan perkhidmatan pengehosan imej atas-talian percuma"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: ../lib/screenshooter-dialogs.c:1039
+msgid "Host on Imgur"
+msgstr "Hos di Imgur"
+
+#: ../lib/screenshooter-dialogs.c:1043 ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Hos cekupan skrin di Imgur, perkhidmatan pengehosan imej atas-talian percuma"
+
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pratonton</span>"
 
-#: ../lib/screenshooter-dialogs.c:1094
+#: ../lib/screenshooter-dialogs.c:1118
 msgid "Save screenshot as..."
 msgstr "Simpan cekupan skrin sebagai..."
 
@@ -330,46 +338,46 @@ msgstr "ZimageZ"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
-#: ../src/main.c:49
+#: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
 msgstr "Salin cekupan skrin ke papan keratan"
 
-#: ../src/main.c:54
+#: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Lengah dalam saat sebelum mengambil cekupan"
 
-#: ../src/main.c:64
+#: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
 msgstr "Papar tetingkap dalam cekupan skrin"
 
-#: ../src/main.c:81
+#: ../src/main.c:82
 msgid "Directory where the screenshot will be saved"
 msgstr "Direktori yang mana cekupan skrin disimpan"
 
-#: ../src/main.c:91
+#: ../src/main.c:97
 msgid "Version information"
 msgstr "Maklumat versi"
 
-#: ../src/main.c:140
+#: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Pilihan berkonflik: --%s dan --%s tidak dapat digunakan pada masa yang sama.\n"
 
-#: ../src/main.c:142
+#: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "Pilihan --%s hanya digunakan hanya digunakan bila --fullscreen, --window atau --region diberikan. Ia akan diabaikan.\n"
 
-#: ../src/main.c:156
+#: ../src/main.c:162
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\nCuba %s --help untuk lihat senarai pilihan baris perintah yang tersedia.\n"
 
-#: ../src/main.c:332
+#: ../src/main.c:361
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s bukanlah direktori yang sah, direktori lalai akan digunakan."
@@ -379,3 +387,13 @@ msgstr "%s bukanlah direktori yang sah, direktori lalai akan digunakan."
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Ambil cekupan skrin bagi keseluruhan skrin, dari tetingkap atau kawasan aktif"
+
+#: ../src/xfce4-screenshooter.appdata.xml.in.h:1
+msgid ""
+"This application allows you to capture the entire screen, the active window "
+"or a selected region. You can set the delay that elapses before the "
+"screenshot is taken and the action that will be done with the screenshot: "
+"save it to a PNG file, copy it to the clipboard, open it using another "
+"application, or host it on ZimageZ or imgur, free online image hosting "
+"services."
+msgstr "Aplikasi ini membolehkan anda tangakp keseluruhan skrin, tetingkap aktif atau kawalan terpilih. Anda boleh tetapkan lengahan sebelum cekupan skrin diambil dan tindakan yang akan dibuat dengan cekupan skrin tersebut iaitu: simpan ia dalam format fail PNG, salin ia ke papan keratan, buka ia menggunakan aplikasi lain, atau hos ia ke perkhidmatan pengehosan imej atas-talian percuma ZimageZ atau imgur."

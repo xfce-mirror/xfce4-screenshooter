@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Pjotr123 <pjotrvertaalt@gmail.com>, 2013-2014
+# Pjotr <pjotrvertaalt@gmail.com>, 2013-2014
 # Stephan Arts <stephan@xfce.org>, 2008
 # Vincent Tunru <projects@vinnl.nl>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-05 18:31+0200\n"
-"PO-Revision-Date: 2014-05-06 17:21+0000\n"
-"Last-Translator: Pjotr123 <pjotrvertaalt@gmail.com>\n"
+"POT-Creation-Date: 2014-12-16 00:31+0100\n"
+"PO-Revision-Date: 2014-12-16 10:07+0000\n"
+"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/xfce-apps/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,64 +20,64 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:453
+#: ../lib/screenshooter-dialogs.c:463
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb van %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:539
+#: ../lib/screenshooter-dialogs.c:549
 msgid "Transfer"
 msgstr "Overdracht"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:570
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">De schermafdruk wordt overgedragen naar:</span>"
 
-#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:704
 msgid "Take a screenshot"
 msgstr "Schermafdruk maken"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:719
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: ../lib/screenshooter-dialogs.c:740
+#: ../lib/screenshooter-dialogs.c:750
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Gebied om een schermafdruk van te maken</span>"
 
-#: ../lib/screenshooter-dialogs.c:760
+#: ../lib/screenshooter-dialogs.c:770
 msgid "Entire screen"
 msgstr "Volledig scherm"
 
-#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:60
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
 msgstr "Maak een schermafdruk van het hele scherm"
 
-#: ../lib/screenshooter-dialogs.c:775
+#: ../lib/screenshooter-dialogs.c:785
 msgid "Active window"
 msgstr "Actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:792 ../src/main.c:102
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
 msgstr "Maak een schermafdruk van het actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:790
+#: ../lib/screenshooter-dialogs.c:800
 msgid "Select a region"
 msgstr "Kies een gebied"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:805 ../src/main.c:75
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -85,76 +85,84 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Kies een gebied voor een schermafdruk, door te klikken op een hoek van het gebied zonder de muisknop los te laten. Sleep vervolgens de muis naar de diagonaal tegenovergelegen hoek en laat de muisknop los."
 
-#: ../lib/screenshooter-dialogs.c:805
+#: ../lib/screenshooter-dialogs.c:815
 msgid "Capture the mouse pointer"
 msgstr "Muispijl afbeelden"
 
-#: ../lib/screenshooter-dialogs.c:810
+#: ../lib/screenshooter-dialogs.c:820
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Toon muispijl op de schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:826
+#: ../lib/screenshooter-dialogs.c:836
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vertraging voor het maken van de schermafdruk</span>"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:858
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Vertraging in seconden voor het maken van een schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:851
+#: ../lib/screenshooter-dialogs.c:861
 msgid "seconds"
 msgstr "seconden"
 
-#: ../lib/screenshooter-dialogs.c:903
+#: ../lib/screenshooter-dialogs.c:914
 msgid "Action"
 msgstr "Actie"
 
-#: ../lib/screenshooter-dialogs.c:932
+#: ../lib/screenshooter-dialogs.c:943
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Actie</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:948
+#: ../lib/screenshooter-dialogs.c:959
 msgid "Save"
 msgstr "Opslaan"
 
-#: ../lib/screenshooter-dialogs.c:953
+#: ../lib/screenshooter-dialogs.c:964
 msgid "Save the screenshot to a PNG file"
 msgstr "Sla schermafdruk op als een PNG-bestand"
 
-#: ../lib/screenshooter-dialogs.c:962
+#: ../lib/screenshooter-dialogs.c:973
 msgid "Copy to the clipboard"
 msgstr "Kopieer naar het klembord"
 
-#: ../lib/screenshooter-dialogs.c:964
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopieer de schermafdruk naar het klembord zodat deze later geplakt kan worden"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:992
 msgid "Open with:"
 msgstr "Open met:"
 
-#: ../lib/screenshooter-dialogs.c:987
+#: ../lib/screenshooter-dialogs.c:998
 msgid "Open the screenshot with the chosen application"
 msgstr "Open de schermafdruk met de gekozen toepassing"
 
-#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1016 ../src/main.c:70
 msgid "Application to open the screenshot"
 msgstr "Toepassing om de schermafdruk mee te openen"
 
-#: ../lib/screenshooter-dialogs.c:1015
+#: ../lib/screenshooter-dialogs.c:1026
 msgid "Host on ZimageZ"
 msgstr "Plaats op ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1030 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Plaats de schermafdruk op ZimageZ, een gratis internetdienst om afbeeldingen te bewaren"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: ../lib/screenshooter-dialogs.c:1039
+msgid "Host on Imgur"
+msgstr "Plaatsen op Imgur"
+
+#: ../lib/screenshooter-dialogs.c:1043 ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Plaats de schermafdruk op Imgur, een gratis webopslagdienst voor afbeeldingen"
+
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Voorbeeld</span>"
 
-#: ../lib/screenshooter-dialogs.c:1094
+#: ../lib/screenshooter-dialogs.c:1118
 msgid "Save screenshot as..."
 msgstr "Sla schermafdruk op als..."
 
@@ -331,46 +339,46 @@ msgstr "ZimageZ"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
-#: ../src/main.c:49
+#: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
 msgstr "Kopieer de schermafdruk naar het klembord"
 
-#: ../src/main.c:54
+#: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Vertraging in seconden voor het maken van een schermafdruk"
 
-#: ../src/main.c:64
+#: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
 msgstr "Toon muispijl op de schermafdruk"
 
-#: ../src/main.c:81
+#: ../src/main.c:82
 msgid "Directory where the screenshot will be saved"
 msgstr "Map waarin de schermafdruk zal worden opgeslagen"
 
-#: ../src/main.c:91
+#: ../src/main.c:97
 msgid "Version information"
 msgstr "Versie-informatie"
 
-#: ../src/main.c:140
+#: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Conflicterende opties: --%s en --%s kunnen niet tegelijkertijd gebruikt worden.\n"
 
-#: ../src/main.c:142
+#: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "De optie --%s wordt alleen gebruikt in combinatie met --fullscreen, --window of --region, en zal dus worden genegeerd.\n"
 
-#: ../src/main.c:156
+#: ../src/main.c:162
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\nProbeer %s --help voor een volledige lijst van beschikbare opdrachtregelopties.\n"
 
-#: ../src/main.c:332
+#: ../src/main.c:361
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s is geen geldige map, de standaardmap zal worden gebruikt."
@@ -380,3 +388,13 @@ msgstr "%s is geen geldige map, de standaardmap zal worden gebruikt."
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Maak schermafdrukken van het gehele scherm, van het actieve venster of van een deelgebied"
+
+#: ../src/xfce4-screenshooter.appdata.xml.in.h:1
+msgid ""
+"This application allows you to capture the entire screen, the active window "
+"or a selected region. You can set the delay that elapses before the "
+"screenshot is taken and the action that will be done with the screenshot: "
+"save it to a PNG file, copy it to the clipboard, open it using another "
+"application, or host it on ZimageZ or imgur, free online image hosting "
+"services."
+msgstr "Met deze toepassing kunt u het gehele scherm vastleggen, het actieve venster of een door u gekozen deel van het scherm. U kunt de vertraging instellen voordat de schermafdruk wordt gemaakt en de actie die zal worden uitgevoerd met de schermafdruk: opslaan als PNG-bestand, kopiëren naar het klembord, openen met een andere toepassing, of plaatsen op ZimageZ of Imgur, gratis webopslagdiensten voor afbeeldingen."
