@@ -115,13 +115,14 @@ static gboolean
 cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 {
   GdkPixbuf *pb;
+  int width;
 
 #if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
   /* reduce the size of the plugin to a single row */
   size /= xfce_panel_plugin_get_nrows (plugin);
 #endif
 
-  int width = size - 2 - 2 * MAX (pd->button->style->xthickness,
+  width = size - 2 - 2 * MAX (pd->button->style->xthickness,
                                     pd->button->style->ythickness);
 
   TRACE ("Get the icon from the theme");
