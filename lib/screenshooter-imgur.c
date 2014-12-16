@@ -24,14 +24,6 @@
 #include <libsoup/soup.h>
 #include <libxml/parser.h>
 
-typedef enum
-{
-  USER,
-  PASSWORD,
-  TITLE,
-  COMMENT,
-} ZimagezInformation;
-
 static ScreenshooterJob *imgur_upload_to_imgur     (const gchar       *file_name,
                                                     const gchar       *last_user,
                                                     const gchar       *title);
@@ -75,10 +67,8 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
 
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
-  g_return_val_if_fail (param_values->n_values == 3, FALSE);
+  g_return_val_if_fail (param_values->n_values == 1, FALSE);
   g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[0]), FALSE);
-  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[1]), FALSE);
-  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[2]), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
@@ -169,10 +159,8 @@ static ScreenshooterJob
 {
   g_return_val_if_fail (file_path != NULL, NULL);
 
-  return screenshooter_simple_job_launch (imgur_upload_job, 3,
-                                          G_TYPE_STRING, file_path,
-                                          G_TYPE_STRING, last_user,
-                                          G_TYPE_STRING, title);
+  return screenshooter_simple_job_launch (imgur_upload_job, 1,
+                                          G_TYPE_STRING, file_path);
 }
 
 
@@ -422,7 +410,7 @@ static void cb_update_info (ExoJob *job, gchar *message, GtkWidget *label)
 /**
  * screenshooter_upload_to_imgur:
  * @image_path: the local path of the image that should be uploaded to
- * ZimageZ.com.
+ * imgur.com.
  * @last_user: the last user name used, to pre-fill the user field.
  * @title: a default title, to pre-fill the title field.
  * @new_last_user: address of the string used to store the new user
