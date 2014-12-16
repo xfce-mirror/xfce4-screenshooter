@@ -269,9 +269,6 @@ int main (int argc, char **argv)
   if (mouse && !(fullscreen || window || region))
     g_printerr (ignore_error, "mouse");
 
-  if (!g_thread_supported ())
-    g_thread_init (NULL);
-
   /* Just print the version if we are in version mode */
   if (version)
     {

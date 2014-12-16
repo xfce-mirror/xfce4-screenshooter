@@ -343,8 +343,6 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   GFile *default_save_dir;
 
-  g_thread_init (NULL);
-
   pd->sd = sd;
   pd->plugin = plugin;
 
