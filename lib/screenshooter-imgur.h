@@ -32,9 +32,6 @@
 #include "katze-throbber.h"
 
 void screenshooter_upload_to_imgur (const gchar  *image_path,
-                                    const gchar  *last_user,
-                                    const gchar  *title,
-                                    gchar       **new_last_user);
-
+                                    const gchar  *title);
 
 #endif

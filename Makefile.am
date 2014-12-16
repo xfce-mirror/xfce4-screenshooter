@@ -31,6 +31,7 @@ lib_libscreenshooter_la_SOURCES =	\
   lib/screenshooter-dialogs.c lib/screenshooter-dialogs.h \
 	lib/screenshooter-global.h \
 	lib/screenshooter-job.c lib/screenshooter-job.h \
+	lib/screenshooter-job-callbacks.c lib/screenshooter-job-callbacks.h \
 	lib/screenshooter-simple-job.c lib/screenshooter-simple-job.h \
 	lib/screenshooter-utils.c lib/screenshooter-utils.h \
 	lib/screenshooter-imgur.c lib/screenshooter-imgur.h \
