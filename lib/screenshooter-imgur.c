@@ -102,6 +102,7 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
 
   // for v3 API - key registered *only* for xfce4-screenshooter!
   soup_message_headers_append (msg->request_headers, "Authorization", "Client-ID 66ab680b597e293");
+  exo_job_info_message (EXO_JOB (job), _("Upload the screenshot..."));
   status = soup_session_send_message (session, msg);
 
   if (!SOUP_STATUS_IS_SUCCESSFUL (msg->status_code))
