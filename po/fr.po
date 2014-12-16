@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-05 18:31+0200\n"
-"PO-Revision-Date: 2014-11-02 14:27+0000\n"
+"POT-Creation-Date: 2014-12-16 00:31+0100\n"
+"PO-Revision-Date: 2014-12-16 08:12+0000\n"
 "Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce-apps/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -22,64 +22,64 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:453
+#: ../lib/screenshooter-dialogs.c:463
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2f ko sur %.2f ko"
 
-#: ../lib/screenshooter-dialogs.c:539
+#: ../lib/screenshooter-dialogs.c:549
 msgid "Transfer"
 msgstr "Transfert"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:570
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">La capture d’écran est transférée vers :</span>"
 
-#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Capture d’écran"
 
-#: ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:704
 msgid "Take a screenshot"
 msgstr "Prendre une capture d’écran"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:719
 msgid "Preferences"
 msgstr "Préférences"
 
-#: ../lib/screenshooter-dialogs.c:740
+#: ../lib/screenshooter-dialogs.c:750
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zone à capturer</span>"
 
-#: ../lib/screenshooter-dialogs.c:760
+#: ../lib/screenshooter-dialogs.c:770
 msgid "Entire screen"
 msgstr "Tout l’écran"
 
-#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:60
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
 msgstr "Capturer l’écran dans sa totalité"
 
-#: ../lib/screenshooter-dialogs.c:775
+#: ../lib/screenshooter-dialogs.c:785
 msgid "Active window"
 msgstr "La fenêtre active"
 
-#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:792 ../src/main.c:102
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
 msgstr "Prendre une capture d’écran de la fenêtre active"
 
-#: ../lib/screenshooter-dialogs.c:790
+#: ../lib/screenshooter-dialogs.c:800
 msgid "Select a region"
 msgstr "Sélectionner une zone"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:805 ../src/main.c:75
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -87,76 +87,84 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Pour sélectionner une zone à capturer, cliquer sur un point de l’écran en maintenant le bouton de la souris enfoncé, déplacer le pointeur de l’autre côté de la zone à sélectionner et relâcher le bouton."
 
-#: ../lib/screenshooter-dialogs.c:805
+#: ../lib/screenshooter-dialogs.c:815
 msgid "Capture the mouse pointer"
 msgstr "Capturer le pointeur de la souris"
 
-#: ../lib/screenshooter-dialogs.c:810
+#: ../lib/screenshooter-dialogs.c:820
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Afficher le pointeur de la souris sur la capture d’écran"
 
-#: ../lib/screenshooter-dialogs.c:826
+#: ../lib/screenshooter-dialogs.c:836
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Délai avant la capture</span>"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:858
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Délai, en secondes, avant que la capture d’écran soit prise"
 
-#: ../lib/screenshooter-dialogs.c:851
+#: ../lib/screenshooter-dialogs.c:861
 msgid "seconds"
 msgstr "seconde(s)"
 
-#: ../lib/screenshooter-dialogs.c:903
+#: ../lib/screenshooter-dialogs.c:914
 msgid "Action"
 msgstr "Action"
 
-#: ../lib/screenshooter-dialogs.c:932
+#: ../lib/screenshooter-dialogs.c:943
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:948
+#: ../lib/screenshooter-dialogs.c:959
 msgid "Save"
 msgstr "Enregistrer"
 
-#: ../lib/screenshooter-dialogs.c:953
+#: ../lib/screenshooter-dialogs.c:964
 msgid "Save the screenshot to a PNG file"
 msgstr "Enregistrer la capture d’écran comme fichier PNG"
 
-#: ../lib/screenshooter-dialogs.c:962
+#: ../lib/screenshooter-dialogs.c:973
 msgid "Copy to the clipboard"
 msgstr "Copier dans le presse-papiers"
 
-#: ../lib/screenshooter-dialogs.c:964
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Copier la capture d’écran dans le presse-papiers afin d’être collée ultérieurement."
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:992
 msgid "Open with:"
 msgstr "Ouvrir avec :"
 
-#: ../lib/screenshooter-dialogs.c:987
+#: ../lib/screenshooter-dialogs.c:998
 msgid "Open the screenshot with the chosen application"
 msgstr "Ouvrir la capture d’écran avec l’application choisie"
 
-#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1016 ../src/main.c:70
 msgid "Application to open the screenshot"
 msgstr "Application pour ouvrir la capture d’écran"
 
-#: ../lib/screenshooter-dialogs.c:1015
+#: ../lib/screenshooter-dialogs.c:1026
 msgid "Host on ZimageZ"
 msgstr "Héberger sur ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1030 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Héberger la capture d’écran sur ZimageZ, un service d’hébergement d’images en ligne gratuit"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: ../lib/screenshooter-dialogs.c:1039
+msgid "Host on Imgur"
+msgstr "Héberger sur Imgur"
+
+#: ../lib/screenshooter-dialogs.c:1043 ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Héberger la capture d'écran sur Imgur, un service d'hébergement d'images en ligne gratuit"
+
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aperçu</span>"
 
-#: ../lib/screenshooter-dialogs.c:1094
+#: ../lib/screenshooter-dialogs.c:1118
 msgid "Save screenshot as..."
 msgstr "Enregistrer la capture d’écran sous..."
 
@@ -333,46 +341,46 @@ msgstr "ZimageZ"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Statut</span>"
 
-#: ../src/main.c:49
+#: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
 msgstr "Copier la capture d’écran dans le presse-papiers"
 
-#: ../src/main.c:54
+#: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Délai, en secondes, avant la prise de la capture d’écran"
 
-#: ../src/main.c:64
+#: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
 msgstr "Afficher la souris sur la capture d’écran"
 
-#: ../src/main.c:81
+#: ../src/main.c:82
 msgid "Directory where the screenshot will be saved"
 msgstr "Répertoire où la capture d’écran sera enregistrée"
 
-#: ../src/main.c:91
+#: ../src/main.c:97
 msgid "Version information"
 msgstr "Informations sur la version"
 
-#: ../src/main.c:140
+#: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Options incompatibles : --%s et --%s ne peuvent pas être utilisées en même temps.\n"
 
-#: ../src/main.c:142
+#: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "L’option --%s n’est utilisée que lorsque --fullscreen, --window ou --region est donné. Elle sera ignorée.\n"
 
-#: ../src/main.c:156
+#: ../src/main.c:162
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s : %s\nEssayez %s --help pour voir une liste complète des options de ligne de commande disponibles.\n"
 
-#: ../src/main.c:332
+#: ../src/main.c:361
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s n’est pas un répertoire valide ; l’emplacement de sauvegarde par défaut sera utilisé."
@@ -382,3 +390,13 @@ msgstr "%s n’est pas un répertoire valide ; l’emplacement de sauvegarde par
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Prenez des captures d’écran d’une zone, de la fenêtre active ou de l’écran tout entier"
+
+#: ../src/xfce4-screenshooter.appdata.xml.in.h:1
+msgid ""
+"This application allows you to capture the entire screen, the active window "
+"or a selected region. You can set the delay that elapses before the "
+"screenshot is taken and the action that will be done with the screenshot: "
+"save it to a PNG file, copy it to the clipboard, open it using another "
+"application, or host it on ZimageZ or imgur, free online image hosting "
+"services."
+msgstr "Cette application vous permet de capturer l'intégralité de l'écran, la fenêtre active ou une région de l'écran au choix. Vous pouvez régler le délai qui doit s'écouler avant de capturer l'écran ainsi que l'action à réaliser avec la capture : l'enregistrer sous un fichier PNG, la copier dans le presse-papiers ou l'héberger sur ZimageZ ou imgur, des services d'hébergement d'images en ligne gratuits."
