@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# schizo <eveskovic@gmail.com>, 2014
+# Edin Veskovic <edin.veskovic@openmailbox.org>, 2014
+# Edin Veskovic <edin.veskovic@openmailbox.org>, 2014
 # Ivica  Kolić <ikoli@yahoo.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-05 18:31+0200\n"
-"PO-Revision-Date: 2014-05-17 11:57+0000\n"
-"Last-Translator: schizo <eveskovic@gmail.com>\n"
+"POT-Creation-Date: 2014-12-16 00:31+0100\n"
+"PO-Revision-Date: 2014-12-16 20:02+0000\n"
+"Last-Translator: Edin Veskovic <edin.veskovic@openmailbox.org>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/xfce-apps/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,64 +20,64 @@ msgstr ""
 "Language: hr\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: ../lib/screenshooter-dialogs.c:453
+#: ../lib/screenshooter-dialogs.c:463
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb od %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:539
+#: ../lib/screenshooter-dialogs.c:549
 msgid "Transfer"
 msgstr "Prijenos"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:570
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Screenshot je premješten u:</span>"
 
-#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr " Screenshot"
 
-#: ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:704
 msgid "Take a screenshot"
 msgstr " Uhvati screenshot"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:719
 msgid "Preferences"
 msgstr "Osobitosti"
 
-#: ../lib/screenshooter-dialogs.c:740
+#: ../lib/screenshooter-dialogs.c:750
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Površina za uhvatiti</span>"
 
-#: ../lib/screenshooter-dialogs.c:760
+#: ../lib/screenshooter-dialogs.c:770
 msgid "Entire screen"
 msgstr "Cijeli zaslon"
 
-#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:60
 #: ../panel-plugin/screenshooter-plugin.c:317
 msgid "Take a screenshot of the entire screen"
 msgstr "Uhvati screenshot cijelog zaslona"
 
-#: ../lib/screenshooter-dialogs.c:775
+#: ../lib/screenshooter-dialogs.c:785
 msgid "Active window"
 msgstr "Aktivni prozor"
 
-#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:792 ../src/main.c:102
 #: ../panel-plugin/screenshooter-plugin.c:322
 msgid "Take a screenshot of the active window"
 msgstr "Uhvati screenshot trenutnog prozora"
 
-#: ../lib/screenshooter-dialogs.c:790
+#: ../lib/screenshooter-dialogs.c:800
 msgid "Select a region"
 msgstr "Odaberi regiju"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:805 ../src/main.c:75
 #: ../panel-plugin/screenshooter-plugin.c:327
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -84,76 +85,84 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Površinu za hvatanje odaberite tako da pritisnete i držite lijevu tipku miša na početnoj točci potom povucite pokazivač do krajnje točke i pustite tipku."
 
-#: ../lib/screenshooter-dialogs.c:805
+#: ../lib/screenshooter-dialogs.c:815
 msgid "Capture the mouse pointer"
 msgstr "Uhvati pokazivač miša"
 
-#: ../lib/screenshooter-dialogs.c:810
+#: ../lib/screenshooter-dialogs.c:820
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Prikaži pokazivač miša na screenshot-u"
 
-#: ../lib/screenshooter-dialogs.c:826
+#: ../lib/screenshooter-dialogs.c:836
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Odgoda prije hvatanja</span>"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:858
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Odgoda u sekundama prije hvatanja screenshota"
 
-#: ../lib/screenshooter-dialogs.c:851
+#: ../lib/screenshooter-dialogs.c:861
 msgid "seconds"
 msgstr "sekunde"
 
-#: ../lib/screenshooter-dialogs.c:903
+#: ../lib/screenshooter-dialogs.c:914
 msgid "Action"
 msgstr "Akcija"
 
-#: ../lib/screenshooter-dialogs.c:932
+#: ../lib/screenshooter-dialogs.c:943
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akcija</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:948
+#: ../lib/screenshooter-dialogs.c:959
 msgid "Save"
 msgstr "Spremi"
 
-#: ../lib/screenshooter-dialogs.c:953
+#: ../lib/screenshooter-dialogs.c:964
 msgid "Save the screenshot to a PNG file"
 msgstr "Spremi screenshot u PNG datoteku"
 
-#: ../lib/screenshooter-dialogs.c:962
+#: ../lib/screenshooter-dialogs.c:973
 msgid "Copy to the clipboard"
 msgstr "Kopiraj u međuspremnik"
 
-#: ../lib/screenshooter-dialogs.c:964
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopiraj sliku u međuspremnik tako da može biti zalijepljena poslije"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:992
 msgid "Open with:"
 msgstr "Otvori pomoću"
 
-#: ../lib/screenshooter-dialogs.c:987
+#: ../lib/screenshooter-dialogs.c:998
 msgid "Open the screenshot with the chosen application"
 msgstr "Otvori screenshot izabranim programom"
 
-#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1016 ../src/main.c:70
 msgid "Application to open the screenshot"
 msgstr "Program za otvaranje screenshot-a"
 
-#: ../lib/screenshooter-dialogs.c:1015
+#: ../lib/screenshooter-dialogs.c:1026
 msgid "Host on ZimageZ"
 msgstr "Pohrani na ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1030 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Pohrani uhvaćenu sliku na ZimageZ, besplatnom servisu za pohranu slika"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: ../lib/screenshooter-dialogs.c:1039
+msgid "Host on Imgur"
+msgstr "Pohrani na Imgur"
+
+#: ../lib/screenshooter-dialogs.c:1043 ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Pohrani uhvaćenu sliku na Imgur, besplatan servis za pohranu slika"
+
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pregled</span>"
 
-#: ../lib/screenshooter-dialogs.c:1094
+#: ../lib/screenshooter-dialogs.c:1118
 msgid "Save screenshot as..."
 msgstr "Spremi screenshot kao ..."
 
@@ -330,46 +339,46 @@ msgstr "ZimageZ"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
-#: ../src/main.c:49
+#: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
 msgstr "Kopiraj sliku zaslona u međuspremnik"
 
-#: ../src/main.c:54
+#: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Odgoda u sekundama prije hvatanja screenshota"
 
-#: ../src/main.c:64
+#: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
 msgstr "Prikaži miša na screenshot-u"
 
-#: ../src/main.c:81
+#: ../src/main.c:82
 msgid "Directory where the screenshot will be saved"
 msgstr "Direktorij u koji će  screenshot biti spremljen"
 
-#: ../src/main.c:91
+#: ../src/main.c:97
 msgid "Version information"
 msgstr "Informacije o inačici"
 
-#: ../src/main.c:140
+#: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Sukobljavajuće opcije: --%s and --%s ne mogu biti korištene istodobno.\n"
 
-#: ../src/main.c:142
+#: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "Opcija --%s koriste se samo kada su zadane --fullscreen, --window ili --region. Sada će biti ignorirana.\n\n"
 
-#: ../src/main.c:156
+#: ../src/main.c:162
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\nPokušajte %s --help kako biste vidjeli potpunu listu dostupni command-line parametara.\n"
 
-#: ../src/main.c:332
+#: ../src/main.c:361
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s nije valjani direktorij,biti će korišten zadani direktorij."
@@ -379,3 +388,13 @@ msgstr "%s nije valjani direktorij,biti će korišten zadani direktorij."
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "Uhvati screenshotcijelog zaslona,aktivnog prozora ili regije"
+
+#: ../src/xfce4-screenshooter.appdata.xml.in.h:1
+msgid ""
+"This application allows you to capture the entire screen, the active window "
+"or a selected region. You can set the delay that elapses before the "
+"screenshot is taken and the action that will be done with the screenshot: "
+"save it to a PNG file, copy it to the clipboard, open it using another "
+"application, or host it on ZimageZ or imgur, free online image hosting "
+"services."
+msgstr "Ova aplikacija Vam omogućava da uhvatite sliku cijelog ekrana, aktivnog prozora ili odabranog područja. Možete postaviti odgodu hvatanja slike i odabrati radnju: spremiti kao PNG datoteku, kopirati u međuspremnik, otvoriti s drugom aplikacijom ili pohraniti na ZimageZ ili Imgur besplatnim servisima za pohranu slika."
