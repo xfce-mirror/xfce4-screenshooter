@@ -204,9 +204,9 @@ static void cb_image_uploaded (ScreenshooterJob  *job,
 
   image_url = g_strdup_printf ("http://i.imgur.com/%s.png", upload_name);
   thumbnail_url =
-    g_strdup_printf ("http://imgur.com/%ss.png", upload_name);
+    g_strdup_printf ("http://imgur.com/%sl.png", upload_name);
   small_thumbnail_url =
-    g_strdup_printf ("http://imgur.com/%s1.png", upload_name);
+    g_strdup_printf ("http://imgur.com/%ss.png", upload_name);
   image_markup =
     g_markup_printf_escaped (_("<a href=\"%s\">Full size image</a>"), image_url);
   thumbnail_markup =
