@@ -886,14 +886,14 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *layout_table;
 
   GtkWidget *left_box;
-  GtkWidget *actions_label, *actions_alignment, *actions_box;
+  GtkWidget *actions_label, *actions_alignment, *actions_table;
   GtkWidget *save_radio_button;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
   GtkWidget *zimagez_radio_button;
   GtkWidget *imgur_radio_button;
 
   GtkListStore *liststore;
-  GtkWidget *combobox, *open_box;
+  GtkWidget *combobox;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
   GtkWidget *preview, *preview_ebox, *preview_box, *preview_label;
@@ -951,9 +951,11 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (left_box), actions_alignment, TRUE, TRUE, 0);
 
   /* Create the actions box */
-  actions_box = gtk_vbox_new (FALSE, 6);
-  gtk_container_add (GTK_CONTAINER (actions_alignment), actions_box);
-  gtk_container_set_border_width (GTK_CONTAINER (actions_box), 0);
+  actions_table = gtk_table_new (5, 2, FALSE);
+  gtk_container_add (GTK_CONTAINER (actions_alignment), actions_table);
+  gtk_table_set_row_spacings (GTK_TABLE (actions_table), 6);
+  gtk_table_set_col_spacings (GTK_TABLE (actions_table), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (actions_table), 0);
 
   /* Save option radio button */
   save_radio_button = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
@@ -962,7 +964,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                     G_CALLBACK (cb_save_toggled), sd);
   gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
-  gtk_box_pack_start (GTK_BOX (actions_box), save_radio_button, FALSE, FALSE, 0);
+  gtk_table_attach (GTK_TABLE (actions_table), save_radio_button, 0, 1, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
 
   if (sd->plugin ||
       gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
@@ -978,13 +980,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                     (sd->action == CLIPBOARD));
       g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled",
                         G_CALLBACK (cb_clipboard_toggled), sd);
-      gtk_box_pack_start (GTK_BOX (actions_box), clipboard_radio_button, FALSE, FALSE, 0);
+      gtk_table_attach (GTK_TABLE (actions_table), clipboard_radio_button, 0, 1, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
     }
-
-  /* Horizontal box for the open with stuff */
-  open_box = gtk_hbox_new (FALSE, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (open_box), 0);
-  gtk_box_pack_start (GTK_BOX (actions_box), open_box, FALSE, FALSE, 0);
 
   /* Open with radio button */
   open_with_radio_button =
@@ -996,7 +993,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                     G_CALLBACK (cb_open_toggled), sd);
   gtk_widget_set_tooltip_text (open_with_radio_button,
                                _("Open the screenshot with the chosen application"));
-  gtk_box_pack_start (GTK_BOX (open_box), open_with_radio_button, FALSE, FALSE, 0);
+  gtk_table_attach (GTK_TABLE (actions_table), open_with_radio_button, 0, 1, 2, 3, GTK_FILL, GTK_FILL, 0, 0);
 
   /* Open with combobox */
   liststore = gtk_list_store_new (3, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
@@ -1010,7 +1007,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                   "pixbuf", 0, NULL);
   populate_liststore (liststore);
   set_default_item (combobox, sd);
-  gtk_box_pack_start (GTK_BOX (open_box), combobox, TRUE, TRUE, 0);
+  gtk_table_attach (GTK_TABLE (actions_table), combobox, 1, 2, 2, 3, GTK_SHRINK, GTK_FILL, 0, 0);
+
   g_signal_connect (G_OBJECT (combobox), "changed",
                     G_CALLBACK (cb_combo_active_item_changed), sd);
   gtk_widget_set_tooltip_text (combobox, _("Application to open the screenshot"));
@@ -1031,7 +1029,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                  "image hosting service"));
   g_signal_connect (G_OBJECT (zimagez_radio_button), "toggled",
                     G_CALLBACK (cb_zimagez_toggled), sd);
-  gtk_box_pack_start (GTK_BOX (actions_box), zimagez_radio_button, FALSE, FALSE, 0);
+  gtk_table_attach (GTK_TABLE (actions_table), zimagez_radio_button, 0, 1, 3, 4, GTK_FILL, GTK_FILL, 0, 0);
 
   /* Upload to imgur radio button */
   imgur_radio_button =
@@ -1044,7 +1042,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                  "image hosting service"));
   g_signal_connect (G_OBJECT (imgur_radio_button), "toggled",
                     G_CALLBACK (cb_imgur_toggled), sd);
-  gtk_box_pack_start (GTK_BOX (actions_box), imgur_radio_button, FALSE, FALSE, 0);
+  gtk_table_attach (GTK_TABLE (actions_table), imgur_radio_button, 0, 1, 4, 5, GTK_FILL, GTK_FILL, 0, 0);
 
   /* Preview box */
   preview_box = gtk_vbox_new (FALSE, 6);
