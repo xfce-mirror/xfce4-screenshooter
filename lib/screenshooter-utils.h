@@ -49,8 +49,7 @@ gboolean  screenshooter_is_remote_uri         (const gchar    *uri);
 gchar    *rot13                               (gchar          *string);
 void      screenshooter_error                 (const gchar    *format,
                                                ...);
-gchar    *screenshooter_get_date              (gboolean        strip_slashes);
-gchar    *screenshooter_get_time              (void);
+gchar    *screenshooter_get_datetime          (const gchar    *format);
 void      screenshooter_open_help             (GtkWindow      *parent);
 gboolean  screenshooter_f1_key                (GtkWidget      *widget,
                                                GdkEventKey    *event,

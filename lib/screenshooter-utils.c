@@ -280,65 +280,23 @@ void screenshooter_error (const gchar *format, ...)
   g_free (message);
 }
 
-gchar *screenshooter_get_time (void)
+/**
+ * screenshooter_get_datetime
+ * @format - a date format string
+ *
+ * Builds a timestamp using local time.
+ * Returned string should be released with g_free()
+ **/
+gchar *screenshooter_get_datetime (const gchar *format)
 {
-  time_t now = time (0);
-  const struct tm *tm;
-  gchar *result, *converted;
-  gsize length;
-  gchar buffer[512];
+  gchar *timestamp;
+  GDateTime *now = g_date_time_new_now_local();
+  timestamp = g_date_time_format (now, format);
 
-  tm = localtime (&now);
-
-  converted = g_locale_from_utf8 ("%X", -1, NULL, NULL, NULL);
-  if (G_UNLIKELY (converted == NULL))
-    converted = g_strdup ("");
-
-  length = strftime (buffer, sizeof (buffer), converted, tm);
-
-  if (G_UNLIKELY (length == 0))
-    {
-      TRACE ("Buffer is NULL");
-      buffer[0] = '\0';
-    }
-
-  result = g_locale_to_utf8 (buffer, -1, NULL, NULL, NULL);
-
-  g_free (converted);
-
-  return result;
-}
-
-gchar *screenshooter_get_date (gboolean strip_slashes)
-{
-  GDate *date = g_date_new ();
-  gchar *result;
-  gchar **split = NULL;
-  gchar buffer[512];
-  gsize length;
-
-  g_date_set_time_t (date, time (NULL));
-
-  length = g_date_strftime (buffer, sizeof (buffer), "%x", date);
-
-  if (G_UNLIKELY (length == 0))
-    {
-      TRACE ("Buffer is NULL");
-      buffer[0] = '\0';
-    }
-
-  if (strip_slashes)
-    {
-      split = g_strsplit (buffer, "/", 0);
-      result = g_strjoinv (NULL, split);
-    }
-  else
-    result = g_strdup (buffer);
-
-  g_strfreev (split);
-  g_free (date);
-
-  return result;
+  g_date_time_unref (now);
+  /* TODO: strip potential : and / if the format is configurable */
+  DBG("datetime is %s", timestamp);
+  return timestamp;
 }
 
 

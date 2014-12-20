@@ -230,8 +230,9 @@ static gchar *generate_filename_for_uri (const gchar *uri,
   GFile *directory;
   GFile *file;
   gchar *base_name;
-  const gchar *date = screenshooter_get_date (TRUE);
-  const gchar *current_time = screenshooter_get_time ();
+  gchar *datetime;
+  const gchar *strftime_format = "%Y-%m-%d_%H-%M-%S";
+
   gint i;
 
   if (G_UNLIKELY (uri == NULL))
@@ -242,11 +243,12 @@ static gchar *generate_filename_for_uri (const gchar *uri,
     }
 
   TRACE ("Get the folder corresponding to the URI");
+  datetime = screenshooter_get_datetime (strftime_format);
   directory = g_file_new_for_uri (uri);
   if (!timestamp)
     base_name = g_strconcat (title, ".png", NULL);
   else
-    base_name = g_strconcat (title, " - ", date, " - ", current_time, ".png", NULL);
+    base_name = g_strconcat (title, "_", datetime, ".png", NULL);
 
   file = g_file_get_child (directory, base_name);
 
@@ -269,7 +271,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
       if (!timestamp)
          base_name = g_strconcat (title, extension, NULL);
        else
-         base_name = g_strconcat (title, " - ", date, " - ", current_time, extension, NULL);
+         base_name = g_strconcat (title, "_", datetime, extension, NULL);
 
       file = g_file_get_child (directory, base_name);
 
@@ -282,6 +284,7 @@ static gchar *generate_filename_for_uri (const gchar *uri,
       g_object_unref (file);
     }
 
+  g_free(datetime);
   g_object_unref (directory);
 
   return base_name;

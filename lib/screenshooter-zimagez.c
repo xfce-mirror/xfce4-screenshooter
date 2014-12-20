@@ -176,12 +176,10 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
   const gchar *encoded_data;
   const gchar *image_path;
   const gchar *last_user;
-  const gchar *date = screenshooter_get_date (FALSE);
-  const gchar *current_time = screenshooter_get_time ();
   const gchar *proxy_uri;
   /* For translators: the first wildcard is the date, the second one the time,
    * e.g. "Taken on 12/31/99, at 23:13:48". */
-  gchar *comment = g_strdup_printf (_("Taken on %s, at %s"), date, current_time);
+  gchar *comment = screenshooter_get_datetime (_("Taken on %x, at %X"));
   gchar *data = NULL;
   gchar *encoded_password = NULL;
   gchar *file_name = NULL;
