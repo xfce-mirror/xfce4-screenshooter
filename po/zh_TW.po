@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-20 12:31+0100\n"
-"PO-Revision-Date: 2014-12-20 22:49+0000\n"
+"POT-Creation-Date: 2014-12-26 00:31+0100\n"
+"PO-Revision-Date: 2014-12-26 10:14+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce-apps/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -232,7 +232,7 @@ msgid ""
 "user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">您輸入的使用者與密碼不相符。請重試。</span>"
 
-#: ../lib/screenshooter-zimagez.c:516
+#: ../lib/screenshooter-zimagez.c:516 ../lib/screenshooter-imgur.c:105
 msgid "Upload the screenshot..."
 msgstr "上傳螢幕快照..."
 
@@ -249,6 +249,108 @@ msgstr "關閉 ZimageZ 的作業階段..."
 #: ../lib/screenshooter-zimagez.c:643
 msgid "ZimageZ"
 msgstr "ZimageZ"
+
+#: ../lib/screenshooter-imgur.c:115
+#, c-format
+msgid "An error occurred when transferring the data to imgur."
+msgstr "傳輸資料至 imgur 時遭遇錯誤。"
+
+#: ../lib/screenshooter-imgur.c:166
+msgid "Imgur"
+msgstr "Imgur"
+
+#: ../lib/screenshooter-job-callbacks.c:68
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">狀態</span>"
+
+#: ../lib/screenshooter-job-callbacks.c:163
+msgid "Details about the screenshot for ZimageZ"
+msgstr "有關 ZimageZ 的螢幕截圖細節"
+
+#. Create the user label
+#: ../lib/screenshooter-job-callbacks.c:203
+msgid "User:"
+msgstr "使用者："
+
+#: ../lib/screenshooter-job-callbacks.c:214
+msgid ""
+"Your Zimagez user name, if you do not have one yet please create one on the "
+"Web page linked above"
+msgstr "您的 Zimagez 使用者名稱，如果您尚未有帳號，您需要先透過上述網頁連結先建立帳號"
+
+#. Create the password label
+#: ../lib/screenshooter-job-callbacks.c:220
+msgid "Password:"
+msgstr "密碼："
+
+#: ../lib/screenshooter-job-callbacks.c:230
+msgid "The password for the user above"
+msgstr "上述使用者的密碼"
+
+#. Create the title label
+#: ../lib/screenshooter-job-callbacks.c:236
+msgid "Title:"
+msgstr "標題："
+
+#: ../lib/screenshooter-job-callbacks.c:246
+msgid ""
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr "螢幕快照的標題，用於 ZimageZ 顯示螢幕快照之時"
+
+#. Create the comment label
+#: ../lib/screenshooter-job-callbacks.c:252
+msgid "Comment:"
+msgstr "註解："
+
+#: ../lib/screenshooter-job-callbacks.c:263
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr "螢幕截圖的註解，用於 ZimageZ 顯示螢幕截圖之時"
+
+#: ../lib/screenshooter-job-callbacks.c:378
+msgid "My screenshot on Imgur"
+msgstr "Imgur 上的我的螢幕截圖"
+
+#: ../lib/screenshooter-job-callbacks.c:386
+msgid "My screenshot on ZimageZ"
+msgstr "ZimageZ 上的我的螢幕截圖"
+
+#: ../lib/screenshooter-job-callbacks.c:400
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr "<a href=\"%s\">完整大小的影像</a>"
+
+#: ../lib/screenshooter-job-callbacks.c:402
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr "<a href=\"%s\">大縮圖</a>"
+
+#: ../lib/screenshooter-job-callbacks.c:404
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr "<a href=\"%s\">小縮圖</a>"
+
+#: ../lib/screenshooter-job-callbacks.c:439
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">連結</span>"
+
+#: ../lib/screenshooter-job-callbacks.c:478
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
+" to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">指向完整大小影像的縮圖代碼</span>"
+
+#. HTML title
+#: ../lib/screenshooter-job-callbacks.c:494
+msgid "HTML"
+msgstr "HTML"
+
+#. BB title
+#: ../lib/screenshooter-job-callbacks.c:515
+msgid "BBCode for forums"
+msgstr "論壇使用的 BBCode"
 
 #: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
