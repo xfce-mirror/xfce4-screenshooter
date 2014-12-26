@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2014-12-26 11:31+0000\n"
+"PO-Revision-Date: 2014-12-26 15:52+0000\n"
 "Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce-apps/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -278,7 +278,7 @@ msgstr "Utilisateur :"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr "Votre nom d’utilisateur ZimageZ, si vous n’en avez pas encore veuillez en créer un depuis le lien vers la page Web ci-dessus."
+msgstr "Votre nom d’utilisateur ZimageZ. Si vous n’en possédez pas, veuillez le créer sur la page Web accessible par le lien ci-dessus."
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:220
@@ -298,7 +298,7 @@ msgstr "Titre :"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "Le titre de la capture d’écran, il sera utilisé lors de l’affichage de la capture sur ZimageZ."
+msgstr "Le titre de la capture d’écran. Il sera utilisé lors de l’affichage de celle-ci sur ZimageZ."
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:252
@@ -309,7 +309,7 @@ msgstr "Commentaire :"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "Un commentaire sur la capture d’écran, il sera utilisé lors de l’affichage de la capture sur ZimageZ."
+msgstr "Commentaire sur la capture d’écran. Il sera utilisé lors de l’affichage de celle-ci sur ZimageZ."
 
 #: ../lib/screenshooter-job-callbacks.c:378
 msgid "My screenshot on Imgur"
@@ -342,7 +342,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Liens</span>"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Code pour une miniature qui pointe vers l’image en taille réelle</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Code pour une miniature pointant vers l’image en taille réelle</span>"
 
 #. HTML title
 #: ../lib/screenshooter-job-callbacks.c:494
