@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2014-12-26 15:52+0000\n"
+"PO-Revision-Date: 2014-12-27 12:15+0000\n"
 "Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce-apps/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:466
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%.2f ko sur %.2f ko"
+msgstr "%.2fkbit sur %.2fkbit"
 
 #: ../lib/screenshooter-dialogs.c:552
 msgid "Transfer"
