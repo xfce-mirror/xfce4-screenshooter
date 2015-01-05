@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2015-01-05 11:30+0000\n"
+"PO-Revision-Date: 2015-01-05 11:35+0000\n"
 "Last-Translator: BAK Chan-Jin <YeoulonGG@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/xfce-apps/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -285,12 +285,12 @@ msgstr "암호:"
 
 #: ../lib/screenshooter-job-callbacks.c:230
 msgid "The password for the user above"
-msgstr ""
+msgstr "위 사용자에 대한 암호입니다"
 
 #. Create the title label
 #: ../lib/screenshooter-job-callbacks.c:236
 msgid "Title:"
-msgstr ""
+msgstr "제목:"
 
 #: ../lib/screenshooter-job-callbacks.c:246
 msgid ""
