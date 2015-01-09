@@ -7,13 +7,13 @@
 # Harald Judt <h.judt@gmx.at>, 2014
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2012
 # Markus, 2013
-# Tobias Bannert <tobannert@gmail.com>, 2014
+# Tobias Bannert <tobannert@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2014-12-26 14:54+0000\n"
+"PO-Revision-Date: 2015-01-09 11:31+0000\n"
 "Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce-apps/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -259,11 +259,11 @@ msgstr "Ein Fehler trat beim Übertragen der Daten zu imgur auf."
 
 #: ../lib/screenshooter-imgur.c:166
 msgid "Imgur"
-msgstr ""
+msgstr "Imgur"
 
 #: ../lib/screenshooter-job-callbacks.c:68
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:163
 msgid "Details about the screenshot for ZimageZ"
@@ -283,16 +283,16 @@ msgstr ""
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:220
 msgid "Password:"
-msgstr ""
+msgstr "Passwort:"
 
 #: ../lib/screenshooter-job-callbacks.c:230
 msgid "The password for the user above"
-msgstr ""
+msgstr "Das Passwort für den oberen Benutzer"
 
 #. Create the title label
 #: ../lib/screenshooter-job-callbacks.c:236
 msgid "Title:"
-msgstr ""
+msgstr "Titel:"
 
 #: ../lib/screenshooter-job-callbacks.c:246
 msgid ""
@@ -303,7 +303,7 @@ msgstr ""
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:252
 msgid "Comment:"
-msgstr ""
+msgstr "Kommentar:"
 
 #: ../lib/screenshooter-job-callbacks.c:263
 msgid ""
