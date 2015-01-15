@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Adam Stachowicz <saibamenppl@gmail.com>, 2015
 # Iro <irek.gierlach@gmail.com>, 2011
 # Piotr Sokół <psokol@jabster.pl>, 2009,2011
 # Piotr Strębski <strebski@o2.pl>, 2013-2015
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2015-01-02 18:41+0000\n"
-"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
+"PO-Revision-Date: 2015-01-15 12:12+0000\n"
+"Last-Translator: Adam Stachowicz <saibamenppl@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/xfce-apps/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -152,11 +153,11 @@ msgstr "Wysyła przechwycony obraz do bezpłatnej usługi hostingowej ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1040
 msgid "Host on Imgur"
-msgstr ""
+msgstr "Hostuj na Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr ""
+msgstr "Wysyła przechwycony obraz do bezpłatnej usługi hostingowej Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1058
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -253,7 +254,7 @@ msgstr "ZimageZ"
 #: ../lib/screenshooter-imgur.c:115
 #, c-format
 msgid "An error occurred when transferring the data to imgur."
-msgstr ""
+msgstr "Wystąpił błąd podczas przenoszenia danych do imgur."
 
 #: ../lib/screenshooter-imgur.c:166
 msgid "Imgur"
@@ -265,7 +266,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stan</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:163
 msgid "Details about the screenshot for ZimageZ"
-msgstr ""
+msgstr "Detale o tym obrazie dla ZimageZ"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:203
@@ -276,7 +277,7 @@ msgstr "Użytkownik:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
+msgstr "Wprowadź nazwę użytkownika usługi ZimageZ. Jeśli jej nie masz - utwórz ją poprzez powyższy link"
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:220
@@ -285,7 +286,7 @@ msgstr "Hasło:"
 
 #: ../lib/screenshooter-job-callbacks.c:230
 msgid "The password for the user above"
-msgstr ""
+msgstr "Hasło dla powyższego użytkownika"
 
 #. Create the title label
 #: ../lib/screenshooter-job-callbacks.c:236
@@ -296,7 +297,7 @@ msgstr "Tytuł:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "Wprowadź tytuł obrazu wyświetlany w serwisie ZimageZ"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:252
@@ -307,15 +308,15 @@ msgstr "Komentarz:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "Wprowadź komentarz do obrazu wyświetlany w serwisie ZimageZ"
 
 #: ../lib/screenshooter-job-callbacks.c:378
 msgid "My screenshot on Imgur"
-msgstr ""
+msgstr "Moje obrazy na Imgur"
 
 #: ../lib/screenshooter-job-callbacks.c:386
 msgid "My screenshot on ZimageZ"
-msgstr ""
+msgstr "Moje obrazy na ZimageZ"
 
 #: ../lib/screenshooter-job-callbacks.c:400
 #, c-format
