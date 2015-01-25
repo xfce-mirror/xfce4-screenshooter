@@ -1,8 +1,16 @@
-=== Version x.x.x ===
+=== Version 1.8.2 ===
 
   * Enhancements:
+    - Add imgur.com as possible upload option (bug #6899)
+    - Add appdate file (bug #11202)
     - Make region selection with compositing on more usable on darker
       backgrounds (bug #9592).
+    - Updated translations (thanks to translators!)
+
+  * Bugs fixed:
+    - Fix keyboard navigation between choices (bug #11325)
+    - Fix build with automake 1.13 (bug #10030)
+    - Use filename-friendly date format for saved files (bug #8445)
 
 === Version 1.8.1 ===
 
