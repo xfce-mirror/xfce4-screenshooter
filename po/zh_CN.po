@@ -7,13 +7,14 @@
 # Hunt Xu <huntxu@live.cn>, 2008-2009
 # 玉堂白鹤 <yjwork@qq.com>, 2014
 # 周潇波 <zhouxiaobo.500@gmail.com>, 2013,2015
+# 玉堂白鹤 <yjwork@qq.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2015-02-09 13:58+0000\n"
-"Last-Translator: 周潇波 <zhouxiaobo.500@gmail.com>\n"
+"PO-Revision-Date: 2015-02-10 07:40+0000\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,7 +154,7 @@ msgstr "将截图发送到 ZimageZ，一个免费的图床服务。"
 
 #: ../lib/screenshooter-dialogs.c:1040
 msgid "Host on Imgur"
-msgstr ""
+msgstr "上传至 Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
@@ -194,7 +195,7 @@ msgstr "解析 ZimageZ 的响应时出现了一个错误。"
 #: ../lib/screenshooter-zimagez.c:182
 #, c-format
 msgid "Taken on %x, at %X"
-msgstr ""
+msgstr "在 %x 日 %X 时截取"
 
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:255
@@ -266,7 +267,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">状态</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:163
 msgid "Details about the screenshot for ZimageZ"
-msgstr ""
+msgstr "放置于 ZimageZ 的截图的详细信息"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:203
@@ -277,7 +278,7 @@ msgstr "用户："
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
+msgstr "您的 ZimageZ 用户名，如果您还没有，请在上方的网页链接上创建"
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:220
@@ -297,7 +298,7 @@ msgstr "标题："
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "截图的标题，将在 ZimageZ 上显示该截图时出现"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:252
@@ -308,7 +309,7 @@ msgstr "注释："
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "截图的注释，将在 ZimageZ 上显示该截图时出现"
 
 #: ../lib/screenshooter-job-callbacks.c:378
 msgid "My screenshot on Imgur"
@@ -335,13 +336,13 @@ msgstr "<a href=\"%s\">小缩略图</a>"
 
 #: ../lib/screenshooter-job-callbacks.c:439
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">链接</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:478
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">指向全尺寸图片的缩略图代码</span>"
 
 #. HTML title
 #: ../lib/screenshooter-job-callbacks.c:494
@@ -351,7 +352,7 @@ msgstr "HTML"
 #. BB title
 #: ../lib/screenshooter-job-callbacks.c:515
 msgid "BBCode for forums"
-msgstr ""
+msgstr "论坛 BBCode"
 
 #: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
@@ -411,4 +412,4 @@ msgid ""
 "save it to a PNG file, copy it to the clipboard, open it using another "
 "application, or host it on ZimageZ or imgur, free online image hosting "
 "services."
-msgstr ""
+msgstr "此应用程序让您可以抓取整个屏幕、使用中的窗口、或是选取的区域的画面。您可以设定在屏幕截图拍摄前所要等待的时间，然后下列这些动作可以与屏幕截图一同完成：将其储存为 PNG 档案、复制其到剪贴板、使用其他程式开启该图片、或是将其放置于 ZimageZ 或 imgur，免费的图床服务。"
