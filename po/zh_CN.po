@@ -6,13 +6,14 @@
 # Chipong Luo <chipong.luo@yahoo.com>, 2011-2012
 # Hunt Xu <huntxu@live.cn>, 2008-2009
 # 玉堂白鹤 <yjwork@qq.com>, 2014
-# xiaobo zhou <zhouxiaobo.500@gmail.com>, 2013
+# 周潇波 <zhouxiaobo.500@gmail.com>, 2013,2015
+# 玉堂白鹤 <yjwork@qq.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-05 18:31+0200\n"
-"PO-Revision-Date: 2014-05-14 03:12+0000\n"
+"POT-Creation-Date: 2014-12-26 00:31+0100\n"
+"PO-Revision-Date: 2015-02-10 07:40+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -21,141 +22,149 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../lib/screenshooter-dialogs.c:453
+#: ../lib/screenshooter-dialogs.c:466
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2f K/%.2f K"
 
-#: ../lib/screenshooter-dialogs.c:539
+#: ../lib/screenshooter-dialogs.c:552
 msgid "Transfer"
 msgstr "传送器"
 
-#: ../lib/screenshooter-dialogs.c:560
+#: ../lib/screenshooter-dialogs.c:573
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">此截图会传送至：</span>"
 
-#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:712
+#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "截图"
 
-#: ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:707
 msgid "Take a screenshot"
 msgstr "截取截图"
 
-#: ../lib/screenshooter-dialogs.c:709
+#: ../lib/screenshooter-dialogs.c:722
 msgid "Preferences"
 msgstr "首选项"
 
-#: ../lib/screenshooter-dialogs.c:740
+#: ../lib/screenshooter-dialogs.c:753
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截取范围</span>"
 
-#: ../lib/screenshooter-dialogs.c:760
+#: ../lib/screenshooter-dialogs.c:773
 msgid "Entire screen"
 msgstr "整个屏幕"
 
-#: ../lib/screenshooter-dialogs.c:767 ../src/main.c:59
-#: ../panel-plugin/screenshooter-plugin.c:317
+#: ../lib/screenshooter-dialogs.c:780 ../src/main.c:60
+#: ../panel-plugin/screenshooter-plugin.c:318
 msgid "Take a screenshot of the entire screen"
 msgstr "全屏幕截图"
 
-#: ../lib/screenshooter-dialogs.c:775
+#: ../lib/screenshooter-dialogs.c:788
 msgid "Active window"
 msgstr "当前窗口"
 
-#: ../lib/screenshooter-dialogs.c:782 ../src/main.c:96
-#: ../panel-plugin/screenshooter-plugin.c:322
+#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:102
+#: ../panel-plugin/screenshooter-plugin.c:323
 msgid "Take a screenshot of the active window"
 msgstr "当前窗口截屏"
 
-#: ../lib/screenshooter-dialogs.c:790
+#: ../lib/screenshooter-dialogs.c:803
 msgid "Select a region"
 msgstr "选择区域"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:74
-#: ../panel-plugin/screenshooter-plugin.c:327
+#: ../lib/screenshooter-dialogs.c:808 ../src/main.c:75
+#: ../panel-plugin/screenshooter-plugin.c:328
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "点击屏幕上一点不松开鼠标按钮，拖动鼠标至某一区域的另一角并松开鼠标按钮来选择要截取的区域。"
 
-#: ../lib/screenshooter-dialogs.c:805
+#: ../lib/screenshooter-dialogs.c:818
 msgid "Capture the mouse pointer"
 msgstr "截取鼠标指针"
 
-#: ../lib/screenshooter-dialogs.c:810
+#: ../lib/screenshooter-dialogs.c:823
 msgid "Display the mouse pointer on the screenshot"
 msgstr "在截图上显示鼠标指针"
 
-#: ../lib/screenshooter-dialogs.c:826
+#: ../lib/screenshooter-dialogs.c:839
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截取前延迟</span>"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:861
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "以秒计的截图获取前的延迟"
 
-#: ../lib/screenshooter-dialogs.c:851
+#: ../lib/screenshooter-dialogs.c:864
 msgid "seconds"
 msgstr "秒"
 
-#: ../lib/screenshooter-dialogs.c:903
+#: ../lib/screenshooter-dialogs.c:917
 msgid "Action"
 msgstr "动作"
 
-#: ../lib/screenshooter-dialogs.c:932
+#: ../lib/screenshooter-dialogs.c:946
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">动作</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:948
+#: ../lib/screenshooter-dialogs.c:964
 msgid "Save"
 msgstr "保存"
 
-#: ../lib/screenshooter-dialogs.c:953
+#: ../lib/screenshooter-dialogs.c:969
 msgid "Save the screenshot to a PNG file"
 msgstr "保存此截图为 PNG 文件"
 
-#: ../lib/screenshooter-dialogs.c:962
+#: ../lib/screenshooter-dialogs.c:978
 msgid "Copy to the clipboard"
 msgstr "复制至剪贴板"
 
-#: ../lib/screenshooter-dialogs.c:964
+#: ../lib/screenshooter-dialogs.c:980
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "复制截图至剪贴板以便以后粘贴"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:992
 msgid "Open with:"
 msgstr "打开方式："
 
-#: ../lib/screenshooter-dialogs.c:987
+#: ../lib/screenshooter-dialogs.c:998
 msgid "Open the screenshot with the chosen application"
 msgstr "使用所选的应用程序打开截图"
 
-#: ../lib/screenshooter-dialogs.c:1005 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1017 ../src/main.c:70
 msgid "Application to open the screenshot"
 msgstr "打开截图的应用程序"
 
-#: ../lib/screenshooter-dialogs.c:1015
+#: ../lib/screenshooter-dialogs.c:1027
 msgid "Host on ZimageZ"
 msgstr "上传至 ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1019 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "将截图发送到 ZimageZ，一个免费的图床服务。"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: ../lib/screenshooter-dialogs.c:1040
+msgid "Host on Imgur"
+msgstr "上传至 Imgur"
+
+#: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "将图片上传至Imgur，一个免费的在线图床服务。"
+
+#: ../lib/screenshooter-dialogs.c:1058
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">预览</span>"
 
-#: ../lib/screenshooter-dialogs.c:1094
+#: ../lib/screenshooter-dialogs.c:1119
 msgid "Save screenshot as..."
 msgstr "截图另存为..."
 
@@ -166,212 +175,225 @@ msgid ""
 "%s"
 msgstr "<b>应用程序无法启动。</b>\n%s"
 
-#: ../lib/screenshooter-zimagez.c:114
+#: ../lib/screenshooter-zimagez.c:88
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
 msgstr "创建 XMLRPC 请求时出现了一个错误。"
 
-#: ../lib/screenshooter-zimagez.c:133
+#: ../lib/screenshooter-zimagez.c:107
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
 msgstr "传送数据至 ZimageZ 时出现了一个错误。"
 
-#: ../lib/screenshooter-zimagez.c:158
+#: ../lib/screenshooter-zimagez.c:132
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
 msgstr "解析 ZimageZ 的响应时出现了一个错误。"
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:210
+#: ../lib/screenshooter-zimagez.c:182
 #, c-format
-msgid "Taken on %s, at %s"
-msgstr "在 %s 日 %s 时截取"
+msgid "Taken on %x, at %X"
+msgstr "在 %x 日 %X 时截取"
 
 #. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:282
+#: ../lib/screenshooter-zimagez.c:255
 msgid "Initialize the connection..."
 msgstr "正在初始化连接..."
 
-#: ../lib/screenshooter-zimagez.c:328
+#: ../lib/screenshooter-zimagez.c:301
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr "请用您的 <a href=\"http://www.zimagez.com\">ZimageZ</a> \n用户名、密码和截图的详细信息填写以下栏目。"
 
-#: ../lib/screenshooter-zimagez.c:385
+#: ../lib/screenshooter-zimagez.c:358
 msgid "Check the user information..."
 msgstr "检查用户信息..."
 
-#: ../lib/screenshooter-zimagez.c:392
+#: ../lib/screenshooter-zimagez.c:365
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">您必须填写所有栏目。</span>"
 
-#: ../lib/screenshooter-zimagez.c:406
+#: ../lib/screenshooter-zimagez.c:379
 msgid "Login on ZimageZ..."
 msgstr "登录 ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:446 ../lib/screenshooter-zimagez.c:597
+#: ../lib/screenshooter-zimagez.c:419 ../lib/screenshooter-zimagez.c:570
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr "收到一个来自 ZimageZ 的意外回复。无法上传截图。"
 
-#: ../lib/screenshooter-zimagez.c:485
+#: ../lib/screenshooter-zimagez.c:458
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">您输入的用户名和密码不匹配，请重试。</span>"
 
-#: ../lib/screenshooter-zimagez.c:543
+#: ../lib/screenshooter-zimagez.c:516 ../lib/screenshooter-imgur.c:105
 msgid "Upload the screenshot..."
 msgstr "上传截图..."
 
-#: ../lib/screenshooter-zimagez.c:576
+#: ../lib/screenshooter-zimagez.c:549
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "上传截图时出现了一个错误。"
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:609
+#: ../lib/screenshooter-zimagez.c:582
 msgid "Close the session on ZimageZ..."
 msgstr "结束与 ZimageZ 的会话..."
 
-#: ../lib/screenshooter-zimagez.c:679
+#: ../lib/screenshooter-zimagez.c:643
+msgid "ZimageZ"
+msgstr "ZimageZ"
+
+#: ../lib/screenshooter-imgur.c:115
+#, c-format
+msgid "An error occurred when transferring the data to imgur."
+msgstr "传输数据至Imgur时出现错误。"
+
+#: ../lib/screenshooter-imgur.c:166
+msgid "Imgur"
+msgstr "Imgur"
+
+#: ../lib/screenshooter-job-callbacks.c:68
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">状态</span>"
+
+#: ../lib/screenshooter-job-callbacks.c:163
 msgid "Details about the screenshot for ZimageZ"
-msgstr "放上 ZimageZ 的关于截图的详细信息"
+msgstr "放置于 ZimageZ 的截图的详细信息"
 
 #. Create the user label
-#: ../lib/screenshooter-zimagez.c:719
+#: ../lib/screenshooter-job-callbacks.c:203
 msgid "User:"
 msgstr "用户："
 
-#: ../lib/screenshooter-zimagez.c:730
+#: ../lib/screenshooter-job-callbacks.c:214
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr "您的 ZimageZ 用户名，如果您还没有一个，请在上方的网页链接上创建"
+msgstr "您的 ZimageZ 用户名，如果您还没有，请在上方的网页链接上创建"
 
 #. Create the password label
-#: ../lib/screenshooter-zimagez.c:736
+#: ../lib/screenshooter-job-callbacks.c:220
 msgid "Password:"
 msgstr "密码："
 
-#: ../lib/screenshooter-zimagez.c:746
+#: ../lib/screenshooter-job-callbacks.c:230
 msgid "The password for the user above"
-msgstr "以上用户的密码"
+msgstr "上述用户的密码"
 
 #. Create the title label
-#: ../lib/screenshooter-zimagez.c:752
+#: ../lib/screenshooter-job-callbacks.c:236
 msgid "Title:"
 msgstr "标题："
 
-#: ../lib/screenshooter-zimagez.c:762
+#: ../lib/screenshooter-job-callbacks.c:246
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr "截图的标题，将在 ZimageZ 上显示该截图时出现"
 
 #. Create the comment label
-#: ../lib/screenshooter-zimagez.c:768
+#: ../lib/screenshooter-job-callbacks.c:252
 msgid "Comment:"
 msgstr "注释："
 
-#: ../lib/screenshooter-zimagez.c:779
+#: ../lib/screenshooter-job-callbacks.c:263
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
 msgstr "截图的注释，将在 ZimageZ 上显示该截图时出现"
 
-#: ../lib/screenshooter-zimagez.c:902
+#: ../lib/screenshooter-job-callbacks.c:378
+msgid "My screenshot on Imgur"
+msgstr "在Imgur上的屏幕截图"
+
+#: ../lib/screenshooter-job-callbacks.c:386
+msgid "My screenshot on ZimageZ"
+msgstr "在ZimageZ上的屏幕截图"
+
+#: ../lib/screenshooter-job-callbacks.c:400
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr "<a href=\"%s\">全尺寸图片</a>"
+msgstr "<a href=\"%s\">全尺寸图像</a>"
 
-#: ../lib/screenshooter-zimagez.c:904
+#: ../lib/screenshooter-job-callbacks.c:402
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr "<a href=\"%s\">大缩略图</a>"
 
-#: ../lib/screenshooter-zimagez.c:906
+#: ../lib/screenshooter-job-callbacks.c:404
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
 msgstr "<a href=\"%s\">小缩略图</a>"
 
-#: ../lib/screenshooter-zimagez.c:922
-msgid "My screenshot on ZimageZ"
-msgstr "我在 ZimageZ 上的截图"
-
-#: ../lib/screenshooter-zimagez.c:948
+#: ../lib/screenshooter-job-callbacks.c:439
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">链接</span>"
 
-#: ../lib/screenshooter-zimagez.c:987
+#: ../lib/screenshooter-job-callbacks.c:478
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">指向全尺寸图片的缩略图代码</span>"
 
 #. HTML title
-#: ../lib/screenshooter-zimagez.c:1003
+#: ../lib/screenshooter-job-callbacks.c:494
 msgid "HTML"
 msgstr "HTML"
 
 #. BB title
-#: ../lib/screenshooter-zimagez.c:1024
+#: ../lib/screenshooter-job-callbacks.c:515
 msgid "BBCode for forums"
 msgstr "论坛 BBCode"
 
-#: ../lib/screenshooter-zimagez.c:1155
-msgid "ZimageZ"
-msgstr "ZimageZ"
-
-#: ../lib/screenshooter-zimagez.c:1188
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">状态</span>"
-
-#: ../src/main.c:49
+#: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
 msgstr "复制截图至剪贴板"
 
-#: ../src/main.c:54
+#: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
 msgstr "以秒计的截图获取前的延迟"
 
-#: ../src/main.c:64
+#: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
 msgstr "在截图中显示鼠标"
 
-#: ../src/main.c:81
+#: ../src/main.c:82
 msgid "Directory where the screenshot will be saved"
 msgstr "要保存截图的目录"
 
-#: ../src/main.c:91
+#: ../src/main.c:97
 msgid "Version information"
 msgstr "版本信息"
 
-#: ../src/main.c:140
+#: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "冲突选项：--%s 和 --%s 不能同时使用。\n"
 
-#: ../src/main.c:142
+#: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "--%s 选项只有在给定 --fullscreen、--window 或 --region 时才生效。会忽略此项。\n"
 
-#: ../src/main.c:156
+#: ../src/main.c:162
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s：%s\n尝试 %s --help 查看可用命令行选项的完整列表。\n"
 
-#: ../src/main.c:332
+#: ../src/main.c:358
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s 不是有效目录，将使用默认目录。"
@@ -381,3 +403,13 @@ msgstr "%s 不是有效目录，将使用默认目录。"
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
 msgstr "获取全屏幕、活动窗口或某一区域的截图"
+
+#: ../src/xfce4-screenshooter.appdata.xml.in.h:1
+msgid ""
+"This application allows you to capture the entire screen, the active window "
+"or a selected region. You can set the delay that elapses before the "
+"screenshot is taken and the action that will be done with the screenshot: "
+"save it to a PNG file, copy it to the clipboard, open it using another "
+"application, or host it on ZimageZ or imgur, free online image hosting "
+"services."
+msgstr "此应用程序让您可以抓取整个屏幕、使用中的窗口、或是选取的区域的画面。您可以设定在屏幕截图拍摄前所要等待的时间，然后下列这些动作可以与屏幕截图一同完成：将其储存为 PNG 档案、复制其到剪贴板、使用其他程式开启该图片、或是将其放置于 ZimageZ 或 imgur，免费的图床服务。"

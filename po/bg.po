@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Kiril Kirilov <cybercop_montana@abv.bg>, 2014
+# Kiril Kirilov <cybercop_montana@abv.bg>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2014-12-26 07:31+0000\n"
+"PO-Revision-Date: 2015-01-26 15:39+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce-apps/language/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgstr "Избери района който искаш да бъде снима
 
 #: ../lib/screenshooter-dialogs.c:818
 msgid "Capture the mouse pointer"
-msgstr "Изображение за курсор на мишката"
+msgstr "Заснемане на курсора на мишката"
 
 #: ../lib/screenshooter-dialogs.c:823
 msgid "Display the mouse pointer on the screenshot"
@@ -142,19 +142,19 @@ msgstr "Приложение за отваряне на снимките"
 
 #: ../lib/screenshooter-dialogs.c:1027
 msgid "Host on ZimageZ"
-msgstr "Публикувай  на ZimageZ"
+msgstr "Качване в ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Публикувай снимката на ZimageZ, безплатно онлайн място за снимки"
+msgstr "Качване на снимката в ZimageZ, безплатна услуга за онлайн хостинг на изображения"
 
 #: ../lib/screenshooter-dialogs.c:1040
 msgid "Host on Imgur"
-msgstr "Хостване в Imgur"
+msgstr "Качване в Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Хостване на снимката в Imgur, безплатна услуга за онлайн хостинг на изображения"
+msgstr "Качване на снимката в Imgur, безплатна услуга за онлайн хостинг на изображения"
 
 #: ../lib/screenshooter-dialogs.c:1058
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -216,7 +216,7 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">П
 
 #: ../lib/screenshooter-zimagez.c:379
 msgid "Login on ZimageZ..."
-msgstr "Изпращане към ZimageZ..."
+msgstr "Влизане в ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:419 ../lib/screenshooter-zimagez.c:570
 msgid ""
@@ -232,17 +232,17 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">П
 
 #: ../lib/screenshooter-zimagez.c:516 ../lib/screenshooter-imgur.c:105
 msgid "Upload the screenshot..."
-msgstr "Изпращане на снимката..."
+msgstr "Качване на снимката..."
 
 #: ../lib/screenshooter-zimagez.c:549
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "При изпращането на снимката възникна грешка."
+msgstr "Възникна грешка при качването на снимката."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:582
 msgid "Close the session on ZimageZ..."
-msgstr "Избери сесия на ZimageZ..."
+msgstr "Затвори сесията в ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:643
 msgid "ZimageZ"
