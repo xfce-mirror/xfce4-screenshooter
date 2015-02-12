@@ -6,14 +6,14 @@
 # Douart Patrick <patrick.2@laposte.net>, 2009
 # jc1 <jc1.quebecos@gmail.com>, 2013
 # jc1 <jc1.quebecos@gmail.com>, 2013
-# Urien Desterres <urien.desterres@gmail.com>, 2014
-# Yannick Le Guen <leguen.yannick@gmail.com>, 2014
+# Urien Desterres <urien.desterres@gmail.com>, 2014-2015
+# Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2014-12-27 12:15+0000\n"
+"POT-Creation-Date: 2015-02-12 00:31+0100\n"
+"PO-Revision-Date: 2015-02-12 09:16+0000\n"
 "Last-Translator: Urien Desterres <urien.desterres@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/xfce-apps/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -406,10 +406,9 @@ msgstr "Prenez des captures d’écran d’une zone, de la fenêtre active ou de
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
-"This application allows you to capture the entire screen, the active window "
-"or a selected region. You can set the delay that elapses before the "
-"screenshot is taken and the action that will be done with the screenshot: "
-"save it to a PNG file, copy it to the clipboard, open it using another "
-"application, or host it on ZimageZ or imgur, free online image hosting "
-"services."
-msgstr "Cette application vous permet de capturer tout l’écran, la fenêtre active ou une zone sélectionnée. Vous pouvez régler le retardateur avant la prise de la capture et l’action qui en découle : l’enregistrer sous un fichier PNG, la copier dans le presse-papier ou la téléverser sur ZimageZ ou Imgur, des services d’hébergement d’images en ligne gratuits."
+"Allows you to capture the entire screen, the active window or a selected "
+"region. You can set the delay that elapses before the screenshot is taken "
+"and the action that will be done with the screenshot: save it to a PNG file,"
+" copy it to the clipboard, open it using another application, or host it on "
+"ZimageZ or imgur, free online image hosting services."
+msgstr "Vous permet de capturer tout l’écran, la fenêtre active ou une zone sélectionnée. Vous pouvez régler le retardateur avant la prise de la capture et l’action qui en découle : l’enregistrer sous un fichier PNG, la copier dans le presse-papier, l’ouvrir dans une autre application ou la téléverser sur ZimageZ ou Imgur, des services d’hébergement d’images en ligne gratuits."
