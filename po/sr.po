@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Саша Петровић <salepetronije@gmail.com>, 2012
-# Саша Петровић <salepetronije@gmail.com>, 2012-2013
+# Саша Петровић <salepetronije@gmail.com>, 2012-2013,2015
 # Саша Петровић <salepetronije@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2015-01-29 16:41+0000\n"
+"POT-Creation-Date: 2015-02-12 00:31+0100\n"
+"PO-Revision-Date: 2015-02-13 21:10+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/xfce-apps/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -404,10 +404,9 @@ msgstr "Ухвати снимак целог екрана, радног проз
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
-"This application allows you to capture the entire screen, the active window "
-"or a selected region. You can set the delay that elapses before the "
-"screenshot is taken and the action that will be done with the screenshot: "
-"save it to a PNG file, copy it to the clipboard, open it using another "
-"application, or host it on ZimageZ or imgur, free online image hosting "
-"services."
+"Allows you to capture the entire screen, the active window or a selected "
+"region. You can set the delay that elapses before the screenshot is taken "
+"and the action that will be done with the screenshot: save it to a PNG file,"
+" copy it to the clipboard, open it using another application, or host it on "
+"ZimageZ or imgur, free online image hosting services."
 msgstr "Овај програм омогућава сликање целог екрана, истакнутог прозора или изабране области. Можете да поставите временску одгоду до сликања екрана и радњу која ће се извршити при сликању: сачувати као PNG датотеку, сачувати у остави исечака, отворити неким програмом, или отпремити на Зимагез или Имгур, слободне мрежне услуге чувања слика."
