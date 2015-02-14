@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-12 00:31+0100\n"
-"PO-Revision-Date: 2015-02-12 19:01+0000\n"
+"PO-Revision-Date: 2015-02-14 15:54+0000\n"
 "Last-Translator: kernc\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/xfce-apps/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -339,17 +339,17 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Povezave</span>"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Koda za sličico s povezavo na sliko polne velikosti</span>"
 
 #. HTML title
 #: ../lib/screenshooter-job-callbacks.c:494
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #. BB title
 #: ../lib/screenshooter-job-callbacks.c:515
 msgid "BBCode for forums"
-msgstr ""
+msgstr "BBCode za forume"
 
 #: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
@@ -381,14 +381,14 @@ msgstr "Sporne možnosti: --%s in --%s ne morata biti uporabljeni istočasno.\n"
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr ""
+msgstr "Možnost --%s ima smisel samo v navezi z --fullscreen, --window oz. --region. Sedaj ne bo upoštevana.\n"
 
 #: ../src/main.c:162
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr ""
+msgstr "%s: %s\nPoskusite %s --help za pregled vseh razpoložljivih možnosti ukaza.\n"
 
 #: ../src/main.c:358
 #, c-format
@@ -408,4 +408,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "ZimageZ or imgur, free online image hosting services."
-msgstr ""
+msgstr "Omogoča zajem celega zaslona, samo aktivnega okna ali izbranega dela zaslona. Nastavite lahko časovni zamik zajema in določite, ali želite zaslonsko sliko shraniti kot datoteko PNG, jo prenesti v odložišče, jo odpreti z urejevalnikom slik ali pa jo naložiti na spletno storitev za gostovanje slik, ZimageZ ali Imgur."
