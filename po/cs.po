@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Alois Nešpor <info@aloisnespor.info>, 2013-2014
-# Michal Várady <miko.vaji@gmail.com>, 2014
+# Michal Várady <miko.vaji@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2014-12-26 18:40+0000\n"
+"POT-Creation-Date: 2015-02-12 00:31+0100\n"
+"PO-Revision-Date: 2015-02-21 01:31+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/projects/p/xfce-apps/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -403,10 +403,9 @@ msgstr "Pořizuje snímky celé obrazovky, aktivního okna nebo zvolené oblasti
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
-"This application allows you to capture the entire screen, the active window "
-"or a selected region. You can set the delay that elapses before the "
-"screenshot is taken and the action that will be done with the screenshot: "
-"save it to a PNG file, copy it to the clipboard, open it using another "
-"application, or host it on ZimageZ or imgur, free online image hosting "
-"services."
-msgstr "Tato aplikace vám umožňuje pořídit snímek celé obrazovky, aktivního okna nebo vybrané oblasti. Lze také nastavit prodlevu před pořízením snímku a akci, která se po pořízení snímku provede: uložení do souboru PNG, zkopírování do schránky, otevření pomocí jiné aplikace nebo nahrání snímku do galerií ZimageZ nebo imgur, bezplatných online služeb pro hostování obrázků."
+"Allows you to capture the entire screen, the active window or a selected "
+"region. You can set the delay that elapses before the screenshot is taken "
+"and the action that will be done with the screenshot: save it to a PNG file,"
+" copy it to the clipboard, open it using another application, or host it on "
+"ZimageZ or imgur, free online image hosting services."
+msgstr "Umožňuje zachytit celou obrazovku, aktivní okno nebo vybranou oblast. Můžete nastavit prodlevu před pořízením snímku a akci, která se provede na snímku obrazovky: uložení snímku do souboru typu PNG, zkopírování do schránky, otevření v jiné aplikaci nebo hostování v online galeriích ZimageZ nebo imgur, bezplatných online služeb pro hostování obrázků."
