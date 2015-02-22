@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-12 00:31+0100\n"
-"PO-Revision-Date: 2015-02-22 17:29+0000\n"
+"PO-Revision-Date: 2015-02-22 17:35+0000\n"
 "Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/xfce-apps/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -215,7 +215,7 @@ msgstr "Verificar informações do utilizador..."
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
-msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Tem de preencher todos os campos</span>"
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Tem de preencher todos os campos.</span>"
 
 #: ../lib/screenshooter-zimagez.c:379
 msgid "Login on ZimageZ..."
@@ -316,42 +316,42 @@ msgstr "A minha captura de ecrã no ZimageZ"
 
 #: ../lib/screenshooter-job-callbacks.c:386
 msgid "My screenshot on ZimageZ"
-msgstr ""
+msgstr "A minha captura de ecrã no ZimageZ"
 
 #: ../lib/screenshooter-job-callbacks.c:400
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr "<a href=\"%s\">Imagem em tamanho inteiro</a>"
+msgstr "<a href=\"%s\">Imagem em tamanho real</a>"
 
 #: ../lib/screenshooter-job-callbacks.c:402
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Miniatura grande</a>"
 
 #: ../lib/screenshooter-job-callbacks.c:404
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Miniatura pequena</a>"
 
 #: ../lib/screenshooter-job-callbacks.c:439
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ligações</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:478
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Código para uma miniatura que aponta para a imagem em tamanho real</span>"
 
 #. HTML title
 #: ../lib/screenshooter-job-callbacks.c:494
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #. BB title
 #: ../lib/screenshooter-job-callbacks.c:515
 msgid "BBCode for forums"
-msgstr ""
+msgstr "BBCode para fóruns"
 
 #: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
@@ -410,4 +410,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "ZimageZ or imgur, free online image hosting services."
-msgstr ""
+msgstr "Permite capturar todo o ecrã, a janela ativa ou uma região selecionada. Pode definir o atraso antes da captura ser feita e a ação a ser executada com a captura: gravar para ficheiro PNG, copiar para a área de transferência, abrir com outra aplicação, ou alojar no ZimageZ ou imgur, serviços online de alojamentos gratuitos."
