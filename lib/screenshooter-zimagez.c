@@ -52,7 +52,7 @@ static gboolean          do_xmlrpc                 (SoupSession       *session,
                                                     ...);
 static gboolean          has_empty_field           (GtkListStore      *liststore);
 static gboolean          zimagez_upload_job        (ScreenshooterJob  *job,
-                                                    GValueArray       *param_values,
+                                                    GArray            *param_values,
                                                     GError           **error);
 
 
@@ -66,20 +66,28 @@ do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
 {
   SoupMessage *msg;
   va_list args;
-  GValueArray *params;
+  GArray *params = g_array_sized_new(FALSE, FALSE, sizeof(GValue), 1);
   GError *err = NULL;
   char *body;
+  GType type;
+  GValue val;
 
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   va_start (args, retval);
-  params = soup_value_array_from_args (args);
+
+  //copy soup_value_array_from_args() in here and change datatypes respectivly
+  while ((type = va_arg (args, GType)) != G_TYPE_INVALID)
+  {
+    SOUP_VALUE_SETV (&val, type, args);
+    g_array_append_val (params, val);
+  }
+
   va_end (args);
 
-  body =
-    soup_xmlrpc_build_method_call (method, params->values,
-                                   params->n_values);
-  g_value_array_free (params);
+  body = soup_xmlrpc_build_method_call (method, (GValue*)params->data,
+                                   params->len);
+  g_array_unref (params);
 
   if (!body)
     {
@@ -171,7 +179,7 @@ has_empty_field (GtkListStore *liststore)
 
 
 static gboolean
-zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **error)
+zimagez_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
 {
   const gchar *encoded_data;
   const gchar *image_path;
@@ -206,10 +214,10 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
 
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
-  g_return_val_if_fail (param_values->n_values == 3, FALSE);
-  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[0]), FALSE);
-  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[1]), FALSE);
-  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[2]), FALSE);
+  g_return_val_if_fail (param_values->len == 3, FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&g_array_index (param_values, GValue, 0)), FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&g_array_index (param_values, GValue, 1)), FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&g_array_index (param_values, GValue, 2)), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   g_object_set_data (G_OBJECT (job), "jobtype", "zimagez");
@@ -222,7 +230,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
     }
 
   /* Get the last user */
-  last_user = g_value_get_string (g_value_array_get_nth (param_values, 1));
+  last_user = g_value_get_string (&g_array_index (param_values, GValue, 1));
   user = g_strdup (last_user);
 
   if (user == NULL)
@@ -238,7 +246,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
                           g_strdup (user), (GDestroyNotify) g_free);
 
   /* Get the default title */
-  title = g_strdup (g_value_get_string (g_value_array_get_nth (param_values, 2)));
+  title = g_strdup (g_value_get_string (&g_array_index (param_values, GValue, 2)));
   if (title == NULL)
     title = g_strdup ("");
 
@@ -249,7 +257,7 @@ zimagez_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **e
     }
 
   /* Get the path of the image that is to be uploaded */
-  image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
+  image_path = g_value_get_string (&g_array_index (param_values, GValue, 0));
 
   /* Start the user soup session */
   exo_job_info_message (EXO_JOB (job), _("Initialize the connection..."));

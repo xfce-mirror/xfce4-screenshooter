@@ -34,7 +34,7 @@ G_BEGIN_DECLS
 /**
  * ScreenshooterSimpleJobFunc:
  * @job            : a #ScreenshooterJob.
- * @param_values   : a #GValueArray of the #GValue<!---->s passed to
+ * @param_values   : a #GArray of the #GValue<!---->s passed to
  *                   screenshooter_simple_job_launch().
  * @error          : return location for errors.
  *
@@ -44,7 +44,7 @@ G_BEGIN_DECLS
  * Return value: %TRUE on success, %FALSE in case of an error.
  **/
 typedef gboolean (*ScreenshooterSimpleJobFunc) (ScreenshooterJob *job,
-                                                GValueArray      *param_values,
+                                                GArray      *param_values,
                                                 GError           **error);
 
 
@@ -63,7 +63,7 @@ GType             screenshooter_simple_job_get_type         (void) G_GNUC_CONST;
 ScreenshooterJob *screenshooter_simple_job_launch           (ScreenshooterSimpleJobFunc  func,
                                                              guint                       n_param_values,
                                                              ...) G_GNUC_MALLOC G_GNUC_WARN_UNUSED_RESULT;
-GValueArray      *screenshooter_simple_job_get_param_values (ScreenshooterSimpleJob     *job);
+GArray           *screenshooter_simple_job_get_param_values (ScreenshooterSimpleJob     *job);
 
 G_END_DECLS
 

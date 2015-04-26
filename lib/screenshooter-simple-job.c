@@ -35,7 +35,7 @@ struct _ScreenshooterSimpleJob
 {
   ScreenshooterJob            __parent__;
   ScreenshooterSimpleJobFunc  func;
-  GValueArray                *param_values;
+  GArray                     *param_values;
 };
 
 
@@ -89,7 +89,7 @@ screenshooter_simple_job_finalize (GObject *object)
   ScreenshooterSimpleJob *simple_job = SCREENSHOOTER_SIMPLE_JOB (object);
 
   /* release the param values */
-  g_value_array_free (simple_job->param_values);
+  g_array_unref (simple_job->param_values);
 
   (*G_OBJECT_CLASS (screenshooter_simple_job_parent_class)->finalize) (object);
 }
@@ -163,7 +163,7 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
   /* allocate and initialize the simple job */
   simple_job = g_object_new (SCREENSHOOTER_TYPE_SIMPLE_JOB, NULL);
   simple_job->func = func;
-  simple_job->param_values = g_value_array_new (n_param_values);
+  simple_job->param_values = g_array_sized_new (FALSE, FALSE, sizeof(GValue), n_param_values);
 
   /* collect the parameters */
   va_start (var_args, n_param_values);
@@ -182,7 +182,7 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
           g_free (error_message);
         }
 
-      g_value_array_insert (simple_job->param_values, n, &value);
+      g_array_append_val(simple_job->param_values, value);
       g_value_unset (&value);
     }
   va_end (var_args);
@@ -193,7 +193,7 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
 
 
 
-GValueArray *
+GArray *
 screenshooter_simple_job_get_param_values (ScreenshooterSimpleJob *job)
 {
   g_return_val_if_fail (SCREENSHOOTER_IS_SIMPLE_JOB (job), NULL);

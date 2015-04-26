@@ -26,15 +26,15 @@
 #include <libxml/parser.h>
 
 static gboolean          imgur_upload_job          (ScreenshooterJob  *job,
-                                                    GValueArray       *param_values,
+                                                    GArray            *param_values,
                                                     GError           **error);
 
 static gboolean
-imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **error)
+imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
 {
   const gchar *image_path, *title;
   gchar *online_file_name = NULL;
-  gchar* proxy_uri;
+  const gchar* proxy_uri;
   SoupURI *soup_proxy_uri;
 #if DEBUG > 0
   SoupLogger *log;
@@ -54,9 +54,9 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
 
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
-  g_return_val_if_fail (param_values->n_values == 2, FALSE);
-  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[0]), FALSE);
-  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&param_values->values[1]), FALSE);
+  g_return_val_if_fail (param_values->len == 2, FALSE);
+  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (&g_array_index(param_values, GValue, 0))), FALSE);
+  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (&g_array_index(param_values, GValue, 1))), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   g_object_set_data (G_OBJECT (job), "jobtype", "imgur");
@@ -64,8 +64,8 @@ imgur_upload_job (ScreenshooterJob *job, GValueArray *param_values, GError **err
     return FALSE;
 
 
-  image_path = g_value_get_string (g_value_array_get_nth (param_values, 0));
-  title = g_value_get_string (g_value_array_get_nth (param_values, 1));
+  image_path = g_value_get_string (&g_array_index (param_values, GValue, 0));
+  title = g_value_get_string (&g_array_index (param_values, GValue, 1));
 
   session = soup_session_sync_new ();
 #if DEBUG > 0
