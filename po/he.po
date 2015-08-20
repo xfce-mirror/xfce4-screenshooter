@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-12 00:31+0100\n"
-"PO-Revision-Date: 2015-07-31 07:32+0000\n"
+"PO-Revision-Date: 2015-08-20 16:29+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
-"Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce-apps/language/he/)\n"
+"Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-apps/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -80,7 +80,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr ""
+msgstr "בחר אזור ללכידה על ידי לחיצה על הסמן של המסך מבלי לשחרר את לחצן העכבר, גרירת העכבר שלך לפינה האחרת של האזור, ושחרור לחצן העכבר."
 
 #: ../lib/screenshooter-dialogs.c:818
 msgid "Capture the mouse pointer"
@@ -88,15 +88,15 @@ msgstr "לכוד את סמן העכבר"
 
 #: ../lib/screenshooter-dialogs.c:823
 msgid "Display the mouse pointer on the screenshot"
-msgstr ""
+msgstr "הצג סמן עכבר על הצילום מסך"
 
 #: ../lib/screenshooter-dialogs.c:839
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">שיהוי בטרם לכידה</span>"
 
 #: ../lib/screenshooter-dialogs.c:861
 msgid "Delay in seconds before the screenshot is taken"
-msgstr ""
+msgstr "שיהוי בשניות בטרם צילום מסך נתפס"
 
 #: ../lib/screenshooter-dialogs.c:864
 msgid "seconds"
@@ -125,7 +125,7 @@ msgstr "העתק אל לוח גזירה"
 
 #: ../lib/screenshooter-dialogs.c:980
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
+msgstr "העתק את הצילום מסך אל הלוח גזירה כך שיהיה אפשר להדביק אותו לאחר מכן"
 
 #: ../lib/screenshooter-dialogs.c:992
 msgid "Open with:"
@@ -133,11 +133,11 @@ msgstr "פתח בעזרת:"
 
 #: ../lib/screenshooter-dialogs.c:998
 msgid "Open the screenshot with the chosen application"
-msgstr ""
+msgstr "פתח את הצילום מסך בעזרת היישום הנבחר"
 
 #: ../lib/screenshooter-dialogs.c:1017 ../src/main.c:70
 msgid "Application to open the screenshot"
-msgstr ""
+msgstr "יישום כדי לפתוח את הצילום מסך"
 
 #: ../lib/screenshooter-dialogs.c:1027
 msgid "Host on ZimageZ"
@@ -168,22 +168,22 @@ msgstr "שמור צילום מסך בשם..."
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
-msgstr ""
+msgstr "<b>היישום לא היה ניתן לשיגור.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:88
 #, c-format
 msgid "An error occurred when creating the XMLRPC request."
-msgstr ""
+msgstr "אירעה שגיאה במהלך יצירת בקשת XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:107
 #, c-format
 msgid "An error occurred when transferring the data to ZimageZ."
-msgstr ""
+msgstr "אירעה שגיאה במהלך העברת הנתונים אל ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:132
 #, c-format
 msgid "An error occurred when parsing the response from ZimageZ."
-msgstr ""
+msgstr "אירעה שגיאה במהלך פענוח המענה מתוך ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
@@ -195,23 +195,23 @@ msgstr "נלקח ביום %x, בשעה %X"
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:255
 msgid "Initialize the connection..."
-msgstr ""
+msgstr "התחל את החיבור..."
 
 #: ../lib/screenshooter-zimagez.c:301
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
-msgstr ""
+msgstr "אנא מלא את השדות הבאים עם שם משתמש <a href=\"http://www.zimagez.com\">ZimageZ</a> \nסיסמה ופרטים אודות הצילום מסך."
 
 #: ../lib/screenshooter-zimagez.c:358
 msgid "Check the user information..."
-msgstr ""
+msgstr "בדוק מידע משתמש..."
 
 #: ../lib/screenshooter-zimagez.c:365
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">עליך למלא את כל השדות.</span>"
 
 #: ../lib/screenshooter-zimagez.c:379
 msgid "Login on ZimageZ..."
@@ -221,27 +221,27 @@ msgstr "התחבר אל ZimageZ..."
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr ""
+msgstr "מענה לא צפוי התקבל מתוך ZimageZ. ההעלאה של הצילום מסך נכשלה."
 
 #: ../lib/screenshooter-zimagez.c:458
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">השם משתמש והסיסמה שהזנת לא תואמים. אנא נסה שוב.</span>"
 
 #: ../lib/screenshooter-zimagez.c:516 ../lib/screenshooter-imgur.c:105
 msgid "Upload the screenshot..."
-msgstr ""
+msgstr "העלה את הצילום מסך..."
 
 #: ../lib/screenshooter-zimagez.c:549
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr ""
+msgstr "אירעה שגיאה במהלך העלאת התצלום מסך."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:582
 msgid "Close the session on ZimageZ..."
-msgstr ""
+msgstr "סגור את ההפעלה אצל ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:643
 msgid "ZimageZ"
@@ -250,7 +250,7 @@ msgstr "ZimageZ"
 #: ../lib/screenshooter-imgur.c:115
 #, c-format
 msgid "An error occurred when transferring the data to imgur."
-msgstr ""
+msgstr "אירעה שגיאה במהלך העברת הנתונים אל imgur."
 
 #: ../lib/screenshooter-imgur.c:166
 msgid "Imgur"
@@ -262,7 +262,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">מצב</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:163
 msgid "Details about the screenshot for ZimageZ"
-msgstr ""
+msgstr "פרטים אודות הצילום מסך עבור ZimageZ"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:203
@@ -273,7 +273,7 @@ msgstr "משתמש:"
 msgid ""
 "Your Zimagez user name, if you do not have one yet please create one on the "
 "Web page linked above"
-msgstr ""
+msgstr "שם משתמש Zimagez שלך, במידה ואין לך חשבון עדיין אנא צור אחד בעמוד הרשת המקושר לעיל"
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:220
@@ -293,7 +293,7 @@ msgstr "כותרת:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "הכותרת של הצילום מסך, זו תהא בשימוש בעת הצגת הצילום מסך אצל ZimageZ"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:252
@@ -304,11 +304,11 @@ msgstr "הערה:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr ""
+msgstr "הערה על הצילום מסך, זו תהא בשימוש בעת הצגת הצילום מסך אצל ZimageZ"
 
 #: ../lib/screenshooter-job-callbacks.c:378
 msgid "My screenshot on Imgur"
-msgstr ""
+msgstr "הצילום מסך שלי באתר Imgur"
 
 #: ../lib/screenshooter-job-callbacks.c:386
 msgid "My screenshot on ZimageZ"
@@ -317,17 +317,17 @@ msgstr "הצילום מסך שלי אצל ZimageZ"
 #: ../lib/screenshooter-job-callbacks.c:400
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
-msgstr ""
+msgstr "<a href=\"%s\">תמונה בגודל מלא</a>"
 
 #: ../lib/screenshooter-job-callbacks.c:402
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">תצוגה מקדימה גדולה</a>"
 
 #: ../lib/screenshooter-job-callbacks.c:404
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr ""
+msgstr "<a href=\"%s\">תצוגה מקדימה קטנה</a>"
 
 #: ../lib/screenshooter-job-callbacks.c:439
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
@@ -337,7 +337,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">קישורים</span>"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">קוד לתצוגה מקדימה אשר מכוונת לתמונה בגודל מלא</span>"
 
 #. HTML title
 #: ../lib/screenshooter-job-callbacks.c:494
@@ -406,4 +406,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "ZimageZ or imgur, free online image hosting services."
-msgstr ""
+msgstr "מתירה לך ללכוד את המסך בשלמותו, החלון הפעיל או אזור נבחר. באפשרותך להגדיר את השיהוי החולף בטרם הצילום מסך נלקח והפעולה אשר תיעשה עם הצילום מסך: שמור אותה לקובץ PNG, העתק אותה ללוח גזירה, פתח אותה באמצעות יישום אחר, או ארח אותה אצל ZimageZ או imgur, שירותי אירוח תמונה חינמיים."
