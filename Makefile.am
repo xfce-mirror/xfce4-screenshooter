@@ -122,6 +122,7 @@ app_desktop_DATA = $(app_desktop_in_files:.desktop.in=.desktop)
 
 src/xfce4-screenshooter.desktop.in: src/xfce4-screenshooter.desktop.in.in
 	$(AM_V_GEN) ( \
+		$(MKDIR_P) $(dir $@); \
 		sed -e "s^@PLUGIN_PATH@^$(libexecdir)/applications^" \
 			$< > $@ \
 	)
