@@ -157,20 +157,24 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
   ScreenshooterSimpleJob *simple_job;
   va_list var_args;
   GValue value = { 0, };
+  GValue *copy;
   gchar *error_message;
   guint n;
+  GType type;
 
   /* allocate and initialize the simple job */
   simple_job = g_object_new (SCREENSHOOTER_TYPE_SIMPLE_JOB, NULL);
   simple_job->func = func;
-  simple_job->param_values = g_array_sized_new (FALSE, FALSE, sizeof(GValue), n_param_values);
+  simple_job->param_values = g_array_sized_new (FALSE, FALSE, sizeof(GValue*), n_param_values);
+  g_array_set_clear_func (simple_job->param_values, (GDestroyNotify) g_free);
 
   /* collect the parameters */
   va_start (var_args, n_param_values);
   for (n = 0; n < n_param_values; ++n)
     {
       /* initialize the value to hold the next parameter */
-      g_value_init (&value, va_arg (var_args, GType));
+      type = va_arg (var_args, GType);
+      g_value_init (&value, type);
 
       /* collect the value from the stack */
       G_VALUE_COLLECT (&value, var_args, 0, &error_message);
@@ -182,7 +186,11 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
           g_free (error_message);
         }
 
-      g_array_append_val(simple_job->param_values, value);
+      // GArray only takes references, so we allocate extra memory. this will be freed wenn the array is freed
+      copy = g_new0(GValue,1);
+      g_value_init(copy, type);
+      g_value_copy(&value,copy);
+      g_array_insert_val(simple_job->param_values,n,copy);
       g_value_unset (&value);
     }
   va_end (var_args);
