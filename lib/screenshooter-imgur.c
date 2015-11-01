@@ -111,7 +111,7 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
 
       tmp_error = g_error_new (SOUP_HTTP_ERROR,
                          msg->status_code,
-                         _("An error occurred when transferring the data"
+                         _("An error occurred while transferring the data"
                            " to imgur."));
       g_propagate_error (error, tmp_error);
       g_object_unref (session);

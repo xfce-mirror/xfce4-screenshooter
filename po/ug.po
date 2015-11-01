@@ -158,17 +158,17 @@ msgstr "ئېكران كۆرۈنۈشىنى باشقا ئاتتا ساقلا..."
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "XMLRPC ئىلتىماسى ياساۋاتقاندا خاتالىق كۆرۈلدى"
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "ZimageZ غا سانلىق ئاساسلارنى ئەۋەتىشتە خاتالىق كۆرۈلدى"
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "ZimageZ دىن كەلگەن جاۋابنى تەھلىل قىلىشتا خاتالىق كۆرۈلدى."
 
 #. For translators: the first wildcard is the date, the second one the time,

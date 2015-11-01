@@ -175,17 +175,17 @@ msgstr "<b>No se pudo lanzar la aplicación.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:88
 #, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "Ocurrió un error al crear la solicitud del protocolo XML-RPC."
 
 #: ../lib/screenshooter-zimagez.c:107
 #, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "Ocurrió un error durante la trasferencia de datos a ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:132
 #, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "Ocurrió un error al analizar la respuesta de ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
@@ -252,7 +252,7 @@ msgstr "ZimageZ"
 
 #: ../lib/screenshooter-imgur.c:115
 #, c-format
-msgid "An error occurred when transferring the data to imgur."
+msgid "An error occurred while transferring the data to imgur."
 msgstr "Ocurrió un error durante la trasferencia de datos a Imgur."
 
 #: ../lib/screenshooter-imgur.c:166

@@ -173,17 +173,17 @@ msgstr "Desa la captura com…"
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "Hi ha hagut un error mentre es creava la petició XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "Hi ha hagut un error mentre es transferia les dades cap a ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "Hi ha hagut un error mentre s'analitzava la resposta de ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,

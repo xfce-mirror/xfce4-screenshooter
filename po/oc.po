@@ -158,17 +158,17 @@ msgstr "Enregistrar la captura d'ecran jos..."
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "Una error s'es produsida al moment de la creacion de la requèsta XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "Una error s'es produsida al moment del transferiment de donadas a ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "Una error s'es produsida al moment de l'analisi de la responsa de ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,

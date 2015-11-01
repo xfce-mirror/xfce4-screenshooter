@@ -165,17 +165,17 @@ msgstr "Lưu ảnh chụp thành..."
 
 #: ../lib/screenshooter-zimagez.c:114
 #, fuzzy, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "Một lỗi đã xảy ra trong khi đang tải ảnh lên"
 
 #: ../lib/screenshooter-zimagez.c:133
 #, fuzzy, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "Một lỗi đã xảy ra trong khi đang tải ảnh lên"
 
 #: ../lib/screenshooter-zimagez.c:158
 #, fuzzy, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "Một lỗi đã xảy ra trong khi đang tải ảnh lên"
 
 #. For translators: the first wildcard is the date, the second one the time,

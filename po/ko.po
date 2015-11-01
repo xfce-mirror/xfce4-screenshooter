@@ -175,17 +175,17 @@ msgstr "<b>프로그램을 실행할 수 없습니다.</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:88
 #, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "XMLRPC 요청 만들기에 오류가 발생했습니다."
 
 #: ../lib/screenshooter-zimagez.c:107
 #, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "ZimageZ로의 데이터 전송에 오류가 발생했습니다."
 
 #: ../lib/screenshooter-zimagez.c:132
 #, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "ZimageZ의 응답 해석에 오류가 발생했습니다."
 
 #. For translators: the first wildcard is the date, the second one the time,
@@ -252,7 +252,7 @@ msgstr "ZimageZ"
 
 #: ../lib/screenshooter-imgur.c:115
 #, c-format
-msgid "An error occurred when transferring the data to imgur."
+msgid "An error occurred while transferring the data to imgur."
 msgstr "imgur으로 데이터를 전송하는 도중 오류가 발생했습니다."
 
 #: ../lib/screenshooter-imgur.c:166

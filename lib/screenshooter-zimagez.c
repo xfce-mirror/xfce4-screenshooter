@@ -93,7 +93,7 @@ do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
     {
       err = g_error_new (SOUP_XMLRPC_FAULT,
                          SOUP_XMLRPC_FAULT_APPLICATION_ERROR,
-                         _("An error occurred when creating the XMLRPC"
+                         _("An error occurred while creating the XMLRPC"
                            " request."));
       g_propagate_error (error, err);
 
@@ -112,7 +112,7 @@ do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
 
       err = g_error_new (SOUP_XMLRPC_FAULT,
                          SOUP_XMLRPC_FAULT_TRANSPORT_ERROR,
-                         _("An error occurred when transferring the data"
+                         _("An error occurred while transferring the data"
                            " to ZimageZ."));
       g_propagate_error (error, err);
       g_object_unref (msg);
@@ -137,7 +137,7 @@ do_xmlrpc (SoupSession *session, const gchar *uri, const gchar *method,
 
           err = g_error_new (SOUP_XMLRPC_FAULT,
                              SOUP_XMLRPC_FAULT_APPLICATION_ERROR,
-                             _("An error occurred when parsing the response"
+                             _("An error occurred while parsing the response"
                                " from ZimageZ."));
           g_propagate_error (error, err);
         }

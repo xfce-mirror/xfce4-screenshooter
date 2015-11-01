@@ -169,17 +169,17 @@ msgstr "Salvează captura ca..."
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "A intervenit o eroare la crearea cererii XMLRPC"
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "A intervenit o eroare la transferul de date către ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "A intervenit o eroare la prelucrarea răspunsului de la ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,

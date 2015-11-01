@@ -156,17 +156,17 @@ msgstr "Lagra skjermbiletet som ..."
 
 #: ../lib/screenshooter-zimagez.c:114
 #, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "Ein feil oppstod ved oppretting av XMLRPC-førespurnaden."
 
 #: ../lib/screenshooter-zimagez.c:133
 #, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "Ein feil oppstod ved overføring av data til ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:158
 #, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "Ein feil oppstod ved tolking av respons frå ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,

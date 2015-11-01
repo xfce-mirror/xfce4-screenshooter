@@ -177,17 +177,17 @@ msgstr "<b>应用程序无法启动。</b>\n%s"
 
 #: ../lib/screenshooter-zimagez.c:88
 #, c-format
-msgid "An error occurred when creating the XMLRPC request."
+msgid "An error occurred while creating the XMLRPC request."
 msgstr "创建 XMLRPC 请求时出现了一个错误。"
 
 #: ../lib/screenshooter-zimagez.c:107
 #, c-format
-msgid "An error occurred when transferring the data to ZimageZ."
+msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "传送数据至 ZimageZ 时出现了一个错误。"
 
 #: ../lib/screenshooter-zimagez.c:132
 #, c-format
-msgid "An error occurred when parsing the response from ZimageZ."
+msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "解析 ZimageZ 的响应时出现了一个错误。"
 
 #. For translators: the first wildcard is the date, the second one the time,
@@ -254,7 +254,7 @@ msgstr "ZimageZ"
 
 #: ../lib/screenshooter-imgur.c:115
 #, c-format
-msgid "An error occurred when transferring the data to imgur."
+msgid "An error occurred while transferring the data to imgur."
 msgstr "传输数据至Imgur时出现错误。"
 
 #: ../lib/screenshooter-imgur.c:166
