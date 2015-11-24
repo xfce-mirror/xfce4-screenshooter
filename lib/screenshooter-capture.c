@@ -67,7 +67,7 @@ static GdkPixbuf       *get_window_screenshot               (GdkWindow      *win
 static GdkFilterReturn  region_filter_func                  (GdkXEvent      *xevent,
                                                              GdkEvent       *event,
                                                              RbData         *rbdata);
-static GdkPixbuf       *get_rectangle_screenshot            (void);
+static GdkPixbuf       *get_rectangle_screenshot            (gint delay);
 static gboolean         cb_key_pressed                      (GtkWidget      *widget,
                                                              GdkEventKey    *event,
                                                              gboolean       *cancelled);
@@ -83,7 +83,7 @@ static gboolean         cb_button_released                  (GtkWidget      *wid
 static gboolean         cb_motion_notify                    (GtkWidget      *widget,
                                                              GdkEventMotion *event,
                                                              RubberBandData *rbdata);
-static GdkPixbuf       *get_rectangle_screenshot_composited (void);
+static GdkPixbuf       *get_rectangle_screenshot_composited (gint delay);
 
 
 
@@ -683,7 +683,7 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 
 
 static GdkPixbuf
-*get_rectangle_screenshot_composited (void)
+*get_rectangle_screenshot_composited (gint delay)
 {
   GtkWidget *window;
   RubberBandData rbdata;
@@ -761,6 +761,9 @@ static GdkPixbuf
 
   /* Grab the screenshot on the main window */
   root = gdk_get_default_root_window ();
+
+  sleep(delay);
+
   gdk_pixbuf_get_from_drawable (screenshot, root, NULL,
                                 rbdata.rectangle_root.x,
                                 rbdata.rectangle_root.y,
@@ -916,7 +919,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
 
 static GdkPixbuf
-*get_rectangle_screenshot (void)
+*get_rectangle_screenshot (gint delay)
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *root_window;
@@ -999,6 +1002,8 @@ static GdkPixbuf
     {
       TRACE ("Get the pixbuf for the screenshot");
 
+      sleep(delay);
+
       screenshot =
         gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
                                       rbdata.rectangle.x,
@@ -1031,10 +1036,10 @@ static GdkPixbuf
  *
  * Takes a screenshot with the given options. If @region is FULLSCREEN,
  * the screenshot is taken after @delay seconds. If @region is
- * ACTIVE_WINDOW, a delay of @delay seconds ellapses, then the active
- * window is detected and captured. If @region is SELECT, @delay will
- * be ignored and the user will have to select a portion of the screen
- * with the mouse.
+ * ACTIVE_WINDOW, a delay of @delay seconds elapses, then the active
+ * window is detected and captured. If @region is SELECT, the user will 
+ * have to select a portion of the screen with the mouse. Then a delay of
+ * @delay seconds elapses, and a screenshot is taken.
  *
  * @show_mouse is only taken into account when @region is FULLSCREEN
  * or ACTIVE_WINDOW.
@@ -1100,9 +1105,9 @@ GdkPixbuf *screenshooter_take_screenshot (gint     region,
     {
       TRACE ("Let the user select the region to screenshot");
       if (!gdk_screen_is_composited (screen))
-        screenshot = get_rectangle_screenshot ();
+        screenshot = get_rectangle_screenshot (delay);
       else
-        screenshot = get_rectangle_screenshot_composited ();
+        screenshot = get_rectangle_screenshot_composited (delay);
     }
 
   return screenshot;
