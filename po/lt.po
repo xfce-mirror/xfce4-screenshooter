@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2015-11-01 23:03+0000\n"
+"PO-Revision-Date: 2015-11-26 23:12+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Perkėlimas"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Šis ekranvaizdis perkeliamas į:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ši ekrano kopija perkeliama į:</span>"
 
 #: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:712
 #: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
@@ -40,11 +40,11 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Šis ekranvaizdis perkeli
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
-msgstr "Ekranvaizdis"
+msgstr "Ekrano kopija"
 
 #: ../lib/screenshooter-dialogs.c:707
 msgid "Take a screenshot"
-msgstr "Padaryti ekranvaizdį"
+msgstr "Padaryti ekrano kopiją"
 
 #: ../lib/screenshooter-dialogs.c:722
 msgid "Preferences"
@@ -52,7 +52,7 @@ msgstr "Nuostatos"
 
 #: ../lib/screenshooter-dialogs.c:753
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekranvaizdžio sritis</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekrano kopijos sritis</span>"
 
 #: ../lib/screenshooter-dialogs.c:773
 msgid "Entire screen"
@@ -61,7 +61,7 @@ msgstr "Visas ekranas"
 #: ../lib/screenshooter-dialogs.c:780 ../src/main.c:60
 #: ../panel-plugin/screenshooter-plugin.c:318
 msgid "Take a screenshot of the entire screen"
-msgstr "Padaryti viso ekrano ekranvaizdį"
+msgstr "Padaryti viso ekrano ekrano kopiją"
 
 #: ../lib/screenshooter-dialogs.c:788
 msgid "Active window"
@@ -70,7 +70,7 @@ msgstr "Aktyvus langas"
 #: ../lib/screenshooter-dialogs.c:795 ../src/main.c:102
 #: ../panel-plugin/screenshooter-plugin.c:323
 msgid "Take a screenshot of the active window"
-msgstr "Padaryti aktyvaus lango ekranvaizdį"
+msgstr "Padaryti aktyvaus lango ekrano kopiją"
 
 #: ../lib/screenshooter-dialogs.c:803
 msgid "Select a region"
@@ -82,7 +82,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Pasirinkite sritį, kurios ekranvaizdį darysite, paspausdami ant pradžios taško ir vilkdami pelę neatleisdami pelės mygtuko iki kol pasieksite kitą norimos srities kraštą ir atleisdami pelės mygtuką."
+msgstr "Pasirinkite sritį, kurios ekrano kopiją darysite, paspausdami ant pradžios taško ir vilkdami pelę neatleisdami pelės mygtuko iki kol pasieksite kitą norimos srities kraštą ir atleisdami pelės mygtuką."
 
 #: ../lib/screenshooter-dialogs.c:818
 msgid "Capture the mouse pointer"
@@ -90,7 +90,7 @@ msgstr "Įtraukti pelės žymeklį"
 
 #: ../lib/screenshooter-dialogs.c:823
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Ekranvaizdyje rodyti pelės žymeklį"
+msgstr "Ekrano kopijoje rodyti pelės žymeklį"
 
 #: ../lib/screenshooter-dialogs.c:839
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -119,7 +119,7 @@ msgstr "Išsaugoti"
 
 #: ../lib/screenshooter-dialogs.c:969
 msgid "Save the screenshot to a PNG file"
-msgstr "Išsaugoti ekranvaizdį kaip PNG failą"
+msgstr "Įrašyti ekrano kopiją kaip PNG failą"
 
 #: ../lib/screenshooter-dialogs.c:978
 msgid "Copy to the clipboard"
@@ -127,7 +127,7 @@ msgstr "Kopijuoti į iškarpinę"
 
 #: ../lib/screenshooter-dialogs.c:980
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Kopijuoti ekranvaizdį į iškarpinę, vėlesniam įklijavimui"
+msgstr "Kopijuoti ekrano kopiją į iškarpinę, vėlesniam įklijavimui"
 
 #: ../lib/screenshooter-dialogs.c:992
 msgid "Open with:"
@@ -135,11 +135,11 @@ msgstr "Atverti su:"
 
 #: ../lib/screenshooter-dialogs.c:998
 msgid "Open the screenshot with the chosen application"
-msgstr "Atverti ekranvaizdį su pasirinkta programa"
+msgstr "Atverti ekrano kopija su pasirinkta programa"
 
 #: ../lib/screenshooter-dialogs.c:1017 ../src/main.c:70
 msgid "Application to open the screenshot"
-msgstr "Programa ekranvaizdžio atvėrimui"
+msgstr "Programa ekrano kopijos atvėrimui"
 
 #: ../lib/screenshooter-dialogs.c:1027
 msgid "Host on ZimageZ"
@@ -147,7 +147,7 @@ msgstr "Talpinti ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Talpinti ekranvaizdį ZimageZ puslapyje, tai yra nemokama paveikslėlių talpinimo tarnyba"
+msgstr "Talpinti ekrano kopiją ZimageZ puslapyje, tai yra nemokama paveikslėlių talpinimo tarnyba"
 
 #: ../lib/screenshooter-dialogs.c:1040
 msgid "Host on Imgur"
@@ -155,7 +155,7 @@ msgstr "Talpinti Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Talpinti ekranvaizdį Imgur puslapyje, tai yra nemokama paveikslėlių talpinimo tarnyba"
+msgstr "Talpinti ekrano kopiją Imgur puslapyje, tai yra nemokama paveikslėlių talpinimo tarnyba"
 
 #: ../lib/screenshooter-dialogs.c:1058
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -163,7 +163,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Peržiūra</span>"
 
 #: ../lib/screenshooter-dialogs.c:1119
 msgid "Save screenshot as..."
-msgstr "Išsaugoti ekranvaizdį kaip..."
+msgstr "Įrašyti ekrano kopiją kaip..."
 
 #: ../lib/screenshooter-utils.c:183
 #, c-format
@@ -223,7 +223,7 @@ msgstr "Prisijungiama prie ZimageZ..."
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
-msgstr "Iš ZimageZ gautas netikėtas atsakymas. Įkelti ekranvaizdžio nepavyko."
+msgstr "Iš ZimageZ gautas netikėtas atsakymas. Įkelti ekrano kopijos nepavyko."
 
 #: ../lib/screenshooter-zimagez.c:466
 msgid ""
@@ -233,12 +233,12 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Na
 
 #: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
 msgid "Upload the screenshot..."
-msgstr "Įkeliamas ekranvaizdis..."
+msgstr "Įkeliama ekrano kopija..."
 
 #: ../lib/screenshooter-zimagez.c:557
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "Įkeliant ekranvaizdį įvyko klaida."
+msgstr "Įkeliant ekrano kopiją, įvyko klaida."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:590
@@ -264,7 +264,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Būsena</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:163
 msgid "Details about the screenshot for ZimageZ"
-msgstr "Informacija apie ekranvaizdį skirta ZimageZ"
+msgstr "Informacija apie ekrano kopiją, skirta ZimageZ"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:203
@@ -295,7 +295,7 @@ msgstr "Pavadinimas:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "Ekranvaizdžio pavadinimas, bus rodoma įkėlus į ZimageZ"
+msgstr "Ekrano kopijos pavadinimas, bus rodomas įkėlus į ZimageZ"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:252
@@ -306,15 +306,15 @@ msgstr "Komentaras:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "Ekranvaizdžio komentaras, bus rodoma įkėlus į ZimageZ"
+msgstr "Ekrano kopijos komentaras, bus rodoma įkėlus į ZimageZ"
 
 #: ../lib/screenshooter-job-callbacks.c:378
 msgid "My screenshot on Imgur"
-msgstr "Mano ekranvaizdis puslapyje Imgur"
+msgstr "Mano ekrano kopija puslapyje Imgur"
 
 #: ../lib/screenshooter-job-callbacks.c:386
 msgid "My screenshot on ZimageZ"
-msgstr "Mano ekranvaizdis puslapyje ZimageZ"
+msgstr "Mano ekrano kopija puslapyje ZimageZ"
 
 #: ../lib/screenshooter-job-callbacks.c:400
 #, c-format
@@ -353,19 +353,19 @@ msgstr "Forumų BBCode"
 
 #: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
-msgstr "Kopijuoti ekranvaizdį į iškarpinę"
+msgstr "Kopijuoti ekrano kopiją į iškarpinę"
 
 #: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Sekundžių skaičius prieš darant ekrano nuotrauką"
+msgstr "Sekundžių skaičius prieš darant ekrano kopiją"
 
 #: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
-msgstr "Rodyti pelės žymeklį ekranvaizdyje"
+msgstr "Rodyti ekrano kopijoje pelės žymeklį"
 
 #: ../src/main.c:82
 msgid "Directory where the screenshot will be saved"
-msgstr "Aplankas kuriame bus saugojami ekranvaizdžiai"
+msgstr "Aplankas, į kurį bus įrašomos ekrano kopijos"
 
 #: ../src/main.c:97
 msgid "Version information"
@@ -399,7 +399,7 @@ msgstr "%s netinkamas aplankas, bus naudojamas numatytasis."
 #: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Darykite viso ekrano, aktyvaus lango ar pasirinktos srities ekranvaizdį"
+msgstr "Darykite viso ekrano, aktyvaus lango ar pasirinktos srities ekrano kopiją"
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
@@ -408,4 +408,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "ZimageZ or imgur, free online image hosting services."
-msgstr "Leidžia jums daryti viso ekrano, aktyvaus lango ar pasirinktos srities ekranvaizdžius. Galite nustatyti delsą, po kurios bus padarytas ekranvaizdis ir su ekranvaizdžiu atliekamas veiksmas: išsaugoti į PNG failą, kopijuoti į iškarpinę, atverti, naudojant kitą programą, ar talpinti ekranvaizdį ZimageZ ar Imgur, nemokamose paveikslėlių talpinimo tarnybose."
+msgstr "Leidžia jums daryti viso ekrano, aktyvaus lango ar pasirinktos srities ekrano kopijas. Galite nustatyti delsą, po kurios bus padaryta ekrano kopija ir su ekrano kopija atliekamas veiksmas: įrašyti į PNG failą, kopijuoti į iškarpinę, atverti, naudojant kitą programą, ar talpinti ekrano kopiją ZimageZ ar Imgur, nemokamose paveikslėlių talpinimo tarnybose."
