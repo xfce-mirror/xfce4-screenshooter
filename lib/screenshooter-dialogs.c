@@ -855,7 +855,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   delay_spinner_box = gtk_hbox_new (FALSE, 4);
   gtk_box_pack_start (GTK_BOX (delay_box), delay_spinner_box, FALSE, FALSE, 0);
 
-  delay_spinner = gtk_spin_button_new_with_range(1.0, 60.0, 1.0);
+  delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (delay_spinner), sd->delay);
   gtk_widget_set_tooltip_text (delay_spinner,
                                _("Delay in seconds before the screenshot is taken"));
