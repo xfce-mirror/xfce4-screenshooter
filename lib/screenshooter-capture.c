@@ -748,6 +748,7 @@ static GdkPixbuf
   gtk_dialog_run (GTK_DIALOG (window));
   gtk_widget_destroy (window);
   gdk_cursor_unref (xhair_cursor);
+  gdk_flush();
 
   if (cancelled)
     return NULL;
