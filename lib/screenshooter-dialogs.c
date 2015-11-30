@@ -866,13 +866,6 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   g_signal_connect (G_OBJECT (delay_spinner), "value-changed",
                     G_CALLBACK (cb_delay_spinner_changed), sd);
 
-  /* Set the delay box as inactive when we capture rectangles */
-  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_insensi), delay_box);
-
-  /* Set the default state */
-  cb_toggle_set_insensi (GTK_TOGGLE_BUTTON (rectangle_button), delay_box);
-
   gtk_widget_show_all (GTK_DIALOG (dlg)->vbox);
 
   return dlg;
