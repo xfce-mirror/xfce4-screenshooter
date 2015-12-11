@@ -4,79 +4,79 @@
 # 
 # Translators:
 # Sveinn í Felli <sv1@fellsnet.is>, 2014
-# Sveinn í Felli <sveinki@nett.is>, 2011,2013
+# Sveinn í Felli <sveinki@nett.is>, 2011,2013,2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-17 00:31+0100\n"
-"PO-Revision-Date: 2014-12-17 11:30+0000\n"
+"POT-Creation-Date: 2015-11-01 12:31+0100\n"
+"PO-Revision-Date: 2015-12-11 14:48+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic (http://www.transifex.com/projects/p/xfce-apps/language/is/)\n"
+"Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-apps/language/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: is\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
 
-#: ../lib/screenshooter-dialogs.c:463
+#: ../lib/screenshooter-dialogs.c:466
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb af %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:549
+#: ../lib/screenshooter-dialogs.c:552
 msgid "Transfer"
 msgstr "Flytja"
 
-#: ../lib/screenshooter-dialogs.c:570
+#: ../lib/screenshooter-dialogs.c:573
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Skjámyndin verður flutt í:</span>"
 
-#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:709
-#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:712
+#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Skjámynd"
 
-#: ../lib/screenshooter-dialogs.c:704
+#: ../lib/screenshooter-dialogs.c:707
 msgid "Take a screenshot"
 msgstr "Taka skjámynd"
 
-#: ../lib/screenshooter-dialogs.c:719
+#: ../lib/screenshooter-dialogs.c:722
 msgid "Preferences"
 msgstr "Kjörstillingar"
 
-#: ../lib/screenshooter-dialogs.c:750
+#: ../lib/screenshooter-dialogs.c:753
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Svæðið sem á að mynda</span>"
 
-#: ../lib/screenshooter-dialogs.c:770
+#: ../lib/screenshooter-dialogs.c:773
 msgid "Entire screen"
 msgstr "Allur skjárinn"
 
-#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:60
+#: ../lib/screenshooter-dialogs.c:780 ../src/main.c:60
 #: ../panel-plugin/screenshooter-plugin.c:318
 msgid "Take a screenshot of the entire screen"
 msgstr "Taka skjámynd af öllum skjánum"
 
-#: ../lib/screenshooter-dialogs.c:785
+#: ../lib/screenshooter-dialogs.c:788
 msgid "Active window"
 msgstr "Virkur gluggi"
 
-#: ../lib/screenshooter-dialogs.c:792 ../src/main.c:102
+#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:102
 #: ../panel-plugin/screenshooter-plugin.c:323
 msgid "Take a screenshot of the active window"
 msgstr "Taka skjámynd af virkum glugga"
 
-#: ../lib/screenshooter-dialogs.c:800
+#: ../lib/screenshooter-dialogs.c:803
 msgid "Select a region"
 msgstr "Velja svæði"
 
-#: ../lib/screenshooter-dialogs.c:805 ../src/main.c:75
+#: ../lib/screenshooter-dialogs.c:808 ../src/main.c:75
 #: ../panel-plugin/screenshooter-plugin.c:328
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -84,84 +84,84 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Veldu svæði sem á að taka sem skjámynd, með því að smella á skjáinn án þess að sleppa músarhnappnum, draga síðan bendilinn að gagnstæðu horni svæðisins og sleppa þar músarhnappnum."
 
-#: ../lib/screenshooter-dialogs.c:815
+#: ../lib/screenshooter-dialogs.c:818
 msgid "Capture the mouse pointer"
 msgstr "Hafa músarbendil með"
 
-#: ../lib/screenshooter-dialogs.c:820
+#: ../lib/screenshooter-dialogs.c:823
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Sýna músina í skjámynd"
 
-#: ../lib/screenshooter-dialogs.c:836
+#: ../lib/screenshooter-dialogs.c:839
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Bið fyrir skjásmyndun</span>"
 
-#: ../lib/screenshooter-dialogs.c:858
+#: ../lib/screenshooter-dialogs.c:861
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Bið í sekúndum áður enn skjámyndin er tekin"
 
-#: ../lib/screenshooter-dialogs.c:861
+#: ../lib/screenshooter-dialogs.c:864
 msgid "seconds"
 msgstr "sekúndur"
 
-#: ../lib/screenshooter-dialogs.c:914
+#: ../lib/screenshooter-dialogs.c:917
 msgid "Action"
 msgstr "Aðgerð"
 
-#: ../lib/screenshooter-dialogs.c:943
+#: ../lib/screenshooter-dialogs.c:946
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aðgerð</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:961
+#: ../lib/screenshooter-dialogs.c:964
 msgid "Save"
 msgstr "Vista"
 
-#: ../lib/screenshooter-dialogs.c:966
+#: ../lib/screenshooter-dialogs.c:969
 msgid "Save the screenshot to a PNG file"
 msgstr "Vista skjámyndina sem PNG-skrá"
 
-#: ../lib/screenshooter-dialogs.c:975
+#: ../lib/screenshooter-dialogs.c:978
 msgid "Copy to the clipboard"
 msgstr "Afrita á klippispjaldið"
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:980
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Afriða skjámyndina á klippispjaldið svo hægt sé að líma hana inn síðar"
 
-#: ../lib/screenshooter-dialogs.c:989
+#: ../lib/screenshooter-dialogs.c:992
 msgid "Open with:"
 msgstr "Opna með:"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:998
 msgid "Open the screenshot with the chosen application"
 msgstr "Opna skjámynd með völdu forriti"
 
-#: ../lib/screenshooter-dialogs.c:1014 ../src/main.c:70
+#: ../lib/screenshooter-dialogs.c:1017 ../src/main.c:70
 msgid "Application to open the screenshot"
 msgstr "Forrit til að opna skjámyndina"
 
-#: ../lib/screenshooter-dialogs.c:1024
+#: ../lib/screenshooter-dialogs.c:1027
 msgid "Host on ZimageZ"
 msgstr "Hýsa á ZimageZ"
 
-#: ../lib/screenshooter-dialogs.c:1028 ../src/main.c:87
+#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
 msgstr "Hýsa skjámyndina á ZimageZ, ókeypis myndahýsingu á netinu"
 
-#: ../lib/screenshooter-dialogs.c:1037
+#: ../lib/screenshooter-dialogs.c:1040
 msgid "Host on Imgur"
 msgstr "Hýsa á Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1041 ../src/main.c:92
+#: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Hýsa skjámyndina á Imgur, ókeypis myndahýsingu á netinu"
 
-#: ../lib/screenshooter-dialogs.c:1055
+#: ../lib/screenshooter-dialogs.c:1058
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Forskoðun</span>"
 
-#: ../lib/screenshooter-dialogs.c:1116
+#: ../lib/screenshooter-dialogs.c:1119
 msgid "Save screenshot as..."
 msgstr "Vista skjámyndina sem..."
 
@@ -172,82 +172,184 @@ msgid ""
 "%s"
 msgstr "<b>Ekki var hægt að ræsa forritið.</b>\n%s"
 
-#: ../lib/screenshooter-zimagez.c:88
+#: ../lib/screenshooter-zimagez.c:96
 #, c-format
 msgid "An error occurred while creating the XMLRPC request."
 msgstr "Villa kom upp þegar verið var að útbúa XMLRPC fyrirspurnina."
 
-#: ../lib/screenshooter-zimagez.c:107
+#: ../lib/screenshooter-zimagez.c:115
 #, c-format
 msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "Villa kom upp þegar verið var að færa gögn til ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:132
+#: ../lib/screenshooter-zimagez.c:140
 #, c-format
 msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "Villa kom upp þegar verið var að þátta svar frá ZimageZ"
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:184
+#: ../lib/screenshooter-zimagez.c:190
 #, c-format
-msgid "Taken on %s, at %s"
-msgstr "Tekin þann %s, klukkan %s"
+msgid "Taken on %x, at %X"
+msgstr "Tekin þann %x, klukkan %X"
 
 #. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:257
+#: ../lib/screenshooter-zimagez.c:263
 msgid "Initialize the connection..."
 msgstr "Frumstilla tenginguna..."
 
-#: ../lib/screenshooter-zimagez.c:303
+#: ../lib/screenshooter-zimagez.c:309
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr "Fylltu inn í eftirfarandi reiti með notandanafni þínu hjá <a href=\"http://www.zimagez.com\">ZimageZ</a> \nlykilorði ásamt lýsingu á skjámyndinni."
 
-#: ../lib/screenshooter-zimagez.c:360
+#: ../lib/screenshooter-zimagez.c:366
 msgid "Check the user information..."
 msgstr "Athuga upplýsingar um notanda..."
 
-#: ../lib/screenshooter-zimagez.c:367
+#: ../lib/screenshooter-zimagez.c:373
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Þú verður að fylla inn í alla reitina.</span>"
 
-#: ../lib/screenshooter-zimagez.c:381
+#: ../lib/screenshooter-zimagez.c:387
 msgid "Login on ZimageZ..."
 msgstr "Skrá inn á ZimageZ"
 
-#: ../lib/screenshooter-zimagez.c:421 ../lib/screenshooter-zimagez.c:572
+#: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr "Fékk óvænt svar frá ZimageZ. Ekki var hægt að senda skjámyndina."
 
-#: ../lib/screenshooter-zimagez.c:460
+#: ../lib/screenshooter-zimagez.c:466
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Notandanafnið og lykilorðið sem þú gafst upp samsvara ekki. Prófaðu aftur.</span>"
 
-#: ../lib/screenshooter-zimagez.c:518
+#: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
 msgid "Upload the screenshot..."
 msgstr "Senda skjámynd..."
 
-#: ../lib/screenshooter-zimagez.c:551
+#: ../lib/screenshooter-zimagez.c:557
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "Villa kom upp þegar verið var að senda skjámyndina."
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:584
+#: ../lib/screenshooter-zimagez.c:590
 msgid "Close the session on ZimageZ..."
 msgstr "Loka setunni á ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:645
+#: ../lib/screenshooter-zimagez.c:651
 msgid "ZimageZ"
 msgstr "ZimageZ"
+
+#: ../lib/screenshooter-imgur.c:114
+#, c-format
+msgid "An error occurred while transferring the data to imgur."
+msgstr "Villa kom upp þegar verið var að færa gögn til Imgur."
+
+#: ../lib/screenshooter-imgur.c:165
+msgid "Imgur"
+msgstr "Imgur"
+
+#: ../lib/screenshooter-job-callbacks.c:68
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Staða</span>"
+
+#: ../lib/screenshooter-job-callbacks.c:163
+msgid "Details about the screenshot for ZimageZ"
+msgstr "Nánari upplýsingar um skjámyndina fyrir ZimageZ"
+
+#. Create the user label
+#: ../lib/screenshooter-job-callbacks.c:203
+msgid "User:"
+msgstr "Notandi:"
+
+#: ../lib/screenshooter-job-callbacks.c:214
+msgid ""
+"Your Zimagez user name, if you do not have one yet please create one on the "
+"Web page linked above"
+msgstr "Notandanafn þitt á ZimageZ, ef þú ert ekki með slíkt þá geturðu búið það til með vefsíðutenglinum hér fyrir ofan"
+
+#. Create the password label
+#: ../lib/screenshooter-job-callbacks.c:220
+msgid "Password:"
+msgstr "Lykilorð:"
+
+#: ../lib/screenshooter-job-callbacks.c:230
+msgid "The password for the user above"
+msgstr "Lykilorð fyrir notandann hér fyrir ofan"
+
+#. Create the title label
+#: ../lib/screenshooter-job-callbacks.c:236
+msgid "Title:"
+msgstr "Titill:"
+
+#: ../lib/screenshooter-job-callbacks.c:246
+msgid ""
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr "Titill fyrir skjámyndina, þetta verður notað þegar verið er að skoða skjámyndina á ZimageZ"
+
+#. Create the comment label
+#: ../lib/screenshooter-job-callbacks.c:252
+msgid "Comment:"
+msgstr "Athugasemd:"
+
+#: ../lib/screenshooter-job-callbacks.c:263
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on ZimageZ"
+msgstr "Athugasemd um skjámyndina, verður notað þegar verið er að skoða skjámyndina á ZimageZ"
+
+#: ../lib/screenshooter-job-callbacks.c:378
+msgid "My screenshot on Imgur"
+msgstr "Skjámyndin mín á Imgur"
+
+#: ../lib/screenshooter-job-callbacks.c:386
+msgid "My screenshot on ZimageZ"
+msgstr "Skjámyndin mín á ZimageZ"
+
+#: ../lib/screenshooter-job-callbacks.c:400
+#, c-format
+msgid "<a href=\"%s\">Full size image</a>"
+msgstr "<a href=\"%s\">Öll myndin</a>"
+
+#: ../lib/screenshooter-job-callbacks.c:402
+#, c-format
+msgid "<a href=\"%s\">Large thumbnail</a>"
+msgstr "<a href=\"%s\">Stór smámynd</a>"
+
+#: ../lib/screenshooter-job-callbacks.c:404
+#, c-format
+msgid "<a href=\"%s\">Small thumbnail</a>"
+msgstr "<a href=\"%s\">Lítil smámynd</a>"
+
+#: ../lib/screenshooter-job-callbacks.c:439
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tenglar</span>"
+
+#: ../lib/screenshooter-job-callbacks.c:478
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
+" to the full size image</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kóði fyrir smámynd sem vísar á mynd í fullri stærð</span>"
+
+#. HTML title
+#: ../lib/screenshooter-job-callbacks.c:494
+msgid "HTML"
+msgstr "HTML"
+
+#. BB title
+#: ../lib/screenshooter-job-callbacks.c:515
+msgid "BBCode for forums"
+msgstr "BBKóði fyrir spjallborð"
 
 #: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
@@ -301,10 +403,9 @@ msgstr "Taka skjámynd af öllum skjánum, af virkum glugga eða af einhverju sv
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
-"This application allows you to capture the entire screen, the active window "
-"or a selected region. You can set the delay that elapses before the "
-"screenshot is taken and the action that will be done with the screenshot: "
-"save it to a PNG file, copy it to the clipboard, open it using another "
-"application, or host it on ZimageZ or imgur, free online image hosting "
-"services."
+"Allows you to capture the entire screen, the active window or a selected "
+"region. You can set the delay that elapses before the screenshot is taken "
+"and the action that will be done with the screenshot: save it to a PNG file,"
+" copy it to the clipboard, open it using another application, or host it on "
+"ZimageZ or imgur, free online image hosting services."
 msgstr "Þetta forrit gerir þér kleift að taka skjámynd af öllum skjánum, virkum glugga eða af völdu svæði. Þú getur stillt töfina áður en skjámyndin er tekin og þá aðgerð sem síðan á að gera með skjámyndinar: vista þær sem PNG skrá, afrita þær á klippiborðið, opna þær með öðru forriti, eða hýsa þær á vefþjónustum eins og ZimageZ eða Imgur, sem eru ókeypis myndasafnsþjónustur á netinu."
