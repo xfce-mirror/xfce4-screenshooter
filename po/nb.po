@@ -3,7 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Allan Nordhøy <comradekingu@gmail.com>, 2014-2015
+# Allan Nordhøy <epost@anotheragency.no>, 2014-2015
+# Allan Nordhøy <epost@anotheragency.no>, 2015
 # Harald <haarektrans@gmail.com>, 2014
 # Ronny K. M. Olufsen <ronny@olufsen.org>, 2013
 # Terje Uriansrud <terje@uriansrud.net>, 2010
@@ -11,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-12 00:31+0100\n"
-"PO-Revision-Date: 2015-02-21 17:08+0000\n"
-"Last-Translator: Allan Nordhøy <comradekingu@gmail.com>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce-apps/language/nb/)\n"
+"POT-Creation-Date: 2015-11-01 12:31+0100\n"
+"PO-Revision-Date: 2015-12-28 20:24+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -174,89 +175,89 @@ msgid ""
 "%s"
 msgstr "<b>Programmet kunne ikke startes.</b>\n%s"
 
-#: ../lib/screenshooter-zimagez.c:88
+#: ../lib/screenshooter-zimagez.c:96
 #, c-format
 msgid "An error occurred while creating the XMLRPC request."
-msgstr "En feil oppsto ved opprettelse av XMLRPC forespørsel."
+msgstr "En feil oppsto ved opprettelse av XMLRPC-forespørsel."
 
-#: ../lib/screenshooter-zimagez.c:107
+#: ../lib/screenshooter-zimagez.c:115
 #, c-format
 msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "En feil oppsto ved overføring av data til ZimageZ."
 
-#: ../lib/screenshooter-zimagez.c:132
+#: ../lib/screenshooter-zimagez.c:140
 #, c-format
 msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "En fail oppsto ved tolkning av respons fra ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:182
+#: ../lib/screenshooter-zimagez.c:190
 #, c-format
 msgid "Taken on %x, at %X"
 msgstr "Tatt på %x, kl %X"
 
 #. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:255
+#: ../lib/screenshooter-zimagez.c:263
 msgid "Initialize the connection..."
 msgstr "Setter opp forbindelse..."
 
-#: ../lib/screenshooter-zimagez.c:301
+#: ../lib/screenshooter-zimagez.c:309
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr "Fyll inn følgende felt med ditt <a href=\"http://www.zimagez.com\">ZimageZ</a> \nbrukernavn, passord og detaljer om skjermkopien."
 
-#: ../lib/screenshooter-zimagez.c:358
+#: ../lib/screenshooter-zimagez.c:366
 msgid "Check the user information..."
 msgstr "Kontroller brukerinformasjonen..."
 
-#: ../lib/screenshooter-zimagez.c:365
+#: ../lib/screenshooter-zimagez.c:373
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Du må fylle i alle felter.</span>"
 
-#: ../lib/screenshooter-zimagez.c:379
+#: ../lib/screenshooter-zimagez.c:387
 msgid "Login on ZimageZ..."
 msgstr "Logg inn på ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:419 ../lib/screenshooter-zimagez.c:570
+#: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr "Et uventet svar fra ZimageZ ble mottatt. Opplasting av skjermbilde feilet."
 
-#: ../lib/screenshooter-zimagez.c:458
+#: ../lib/screenshooter-zimagez.c:466
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\"> Brukernavnet og passordet du brukte fungerer ikke. Prøv på nytt.</span>"
 
-#: ../lib/screenshooter-zimagez.c:516 ../lib/screenshooter-imgur.c:105
+#: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
 msgid "Upload the screenshot..."
 msgstr "Last opp skjermbildet..."
 
-#: ../lib/screenshooter-zimagez.c:549
+#: ../lib/screenshooter-zimagez.c:557
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "En feil oppsto under opplasting av skjermbildet."
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:582
+#: ../lib/screenshooter-zimagez.c:590
 msgid "Close the session on ZimageZ..."
 msgstr "Lukke økten på ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:643
+#: ../lib/screenshooter-zimagez.c:651
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-imgur.c:115
+#: ../lib/screenshooter-imgur.c:114
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
-msgstr "En feil inntraff under overføring av data til Imgur."
+msgstr "En feil inntraff under overføring av dataen til Imgur."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:165
 msgid "Imgur"
 msgstr "Imgur"
 
