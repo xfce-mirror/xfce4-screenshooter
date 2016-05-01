@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2016-04-30 22:04+0000\n"
+"PO-Revision-Date: 2016-05-01 08:13+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -164,7 +164,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Previsualització</span>"
 
 #: ../lib/screenshooter-dialogs.c:1119
 msgid "Save screenshot as..."
-msgstr "Desa la captura de pantalla com…"
+msgstr "Desa la captura de pantalla com..."
 
 #: ../lib/screenshooter-utils.c:183
 #, c-format
@@ -198,7 +198,7 @@ msgstr "Presa el %x, a %X"
 #. Start the user soup session
 #: ../lib/screenshooter-zimagez.c:263
 msgid "Initialize the connection..."
-msgstr "Inicialitza la connexió…"
+msgstr "Inicialitza la connexió..."
 
 #: ../lib/screenshooter-zimagez.c:309
 msgid ""
@@ -208,7 +208,7 @@ msgstr "Ompliu els següents camps amb el vostre nom d'usuari i contrasenya de <
 
 #: ../lib/screenshooter-zimagez.c:366
 msgid "Check the user information..."
-msgstr "Comprovar la informació de l'usuari…"
+msgstr "Comprova la informació de l'usuari..."
 
 #: ../lib/screenshooter-zimagez.c:373
 msgid ""
@@ -218,7 +218,7 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">He
 
 #: ../lib/screenshooter-zimagez.c:387
 msgid "Login on ZimageZ..."
-msgstr "Entrada a ZimageZ…"
+msgstr "Inici de sessió a ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
 msgid ""
@@ -234,7 +234,7 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">L'
 
 #: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
 msgid "Upload the screenshot..."
-msgstr "Transfereix la captura de pantalla…"
+msgstr "Puja la captura de pantalla..."
 
 #: ../lib/screenshooter-zimagez.c:557
 #, c-format
@@ -244,7 +244,7 @@ msgstr "Hi ha hagut un error mentre s'estava pujant la captura de pantalla."
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:590
 msgid "Close the session on ZimageZ..."
-msgstr "Tanca la sessió amb ZimageZ…"
+msgstr "Tanca la sessió en ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:651
 msgid "ZimageZ"
