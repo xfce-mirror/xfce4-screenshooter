@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2016-05-01 12:58+0000\n"
+"PO-Revision-Date: 2016-05-01 22:15+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -144,19 +144,19 @@ msgstr "Aplicació per obrir la captura de pantalla"
 
 #: ../lib/screenshooter-dialogs.c:1027
 msgid "Host on ZimageZ"
-msgstr "Emmagatzemar a ZimageZ"
+msgstr "Allotjament a ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Emmagatzemar la captura de pantalla a ZimageZ, un servei d'emmagatzematge en línia gratuït"
+msgstr "Allotja la captura de pantalla a ZimageZ, un servei d'emmagatzematge en línia gratuït"
 
 #: ../lib/screenshooter-dialogs.c:1040
 msgid "Host on Imgur"
-msgstr "Desa a Imgur"
+msgstr "Allotjament a Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Desa la captura de pantalla a Imgur, un servei d'emmagatzematge d'imatges en línia gratuït"
+msgstr "Desa la captura de pantalla a Imgur, un servei d'allotjament d'imatges en línia gratuït"
 
 #: ../lib/screenshooter-dialogs.c:1058
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -176,17 +176,17 @@ msgstr "<b>No s'ha pogut obrir l'aplicació.</b>\n%s"
 #: ../lib/screenshooter-zimagez.c:96
 #, c-format
 msgid "An error occurred while creating the XMLRPC request."
-msgstr "Hi ha hagut un error mentre es creava la petició XMLRPC."
+msgstr "S'ha produït un error mentre s'estava creant la petició XMLRPC."
 
 #: ../lib/screenshooter-zimagez.c:115
 #, c-format
 msgid "An error occurred while transferring the data to ZimageZ."
-msgstr "Hi ha hagut un error mentre es transferien les dades a ZimageZ."
+msgstr "S'ha produït un error mentre s'estaven transferint les dades a ZimageZ."
 
 #: ../lib/screenshooter-zimagez.c:140
 #, c-format
 msgid "An error occurred while parsing the response from ZimageZ."
-msgstr "Hi ha hagut un error mentre s'analitzava la resposta de ZimageZ."
+msgstr "S'ha produït un error mentre s'estava analitzant la resposta de ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
@@ -239,7 +239,7 @@ msgstr "Puja la captura de pantalla..."
 #: ../lib/screenshooter-zimagez.c:557
 #, c-format
 msgid "An error occurred while uploading the screenshot."
-msgstr "Hi ha hagut un error mentre s'estava pujant la captura de pantalla."
+msgstr "S'ha produït un error mentre s'estava pujant la captura de pantalla."
 
 #. End the user session
 #: ../lib/screenshooter-zimagez.c:590
@@ -253,7 +253,7 @@ msgstr "ZimageZ"
 #: ../lib/screenshooter-imgur.c:114
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
-msgstr "Hi ha hagut un error mentre es transferien les dades a Imgur."
+msgstr "S'ha produït un error mentre s'estaven transferint les dades a Imgur."
 
 #: ../lib/screenshooter-imgur.c:165
 msgid "Imgur"
@@ -409,4 +409,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "ZimageZ or imgur, free online image hosting services."
-msgstr "Us permet capturar tota la pantalla, la finestra activa o una regió seleccionada. Podeu configurar el retard que transcorre abans que es prengui la captura de pantalla i l'acció que es farà amb la captura: desar en un arxiu PNG, copiar-la al porta-retalls, obrir-la amb una altra aplicació o allotjar-la a ZimageZ o Imgur, serveis gratuïts d'allotjament d'imatges en línia."
+msgstr "Us permet capturar tota la pantalla, la finestra activa o una regió seleccionada. Podeu configurar el retard que transcorre abans que es prengui la captura de pantalla i l'acció que es farà amb la captura: desar en un fitxer PNG, copiar-la al porta-retalls, obrir-la amb una altra aplicació o allotjar-la a ZimageZ o Imgur, serveis gratuïts d'allotjament d'imatges en línia."
