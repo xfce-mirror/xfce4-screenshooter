@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2016-05-01 22:15+0000\n"
+"PO-Revision-Date: 2016-05-02 21:36+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:466
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%.2fKb de %.2fKb"
+msgstr "%.2f Kb de %.2f Kb"
 
 #: ../lib/screenshooter-dialogs.c:552
 msgid "Transfer"
@@ -62,7 +62,7 @@ msgstr "Total la pantalla"
 #: ../lib/screenshooter-dialogs.c:780 ../src/main.c:60
 #: ../panel-plugin/screenshooter-plugin.c:318
 msgid "Take a screenshot of the entire screen"
-msgstr "Fa una captura  de pantalla de tota la pantalla"
+msgstr "Fes una captura de pantalla de tota la pantalla"
 
 #: ../lib/screenshooter-dialogs.c:788
 msgid "Active window"
@@ -71,7 +71,7 @@ msgstr "Finestra activa"
 #: ../lib/screenshooter-dialogs.c:795 ../src/main.c:102
 #: ../panel-plugin/screenshooter-plugin.c:323
 msgid "Take a screenshot of the active window"
-msgstr "Fa una captura  de pantalla de la finestra activa"
+msgstr "Fes una captura de pantalla de la finestra activa"
 
 #: ../lib/screenshooter-dialogs.c:803
 msgid "Select a region"
@@ -83,7 +83,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Seleccioneu una regió per capturar-la al fer clic amb el ratolí en un punt de la pantalla i sense deixar anar el botó del ratolí, arrossegant el ratolí fins a l'altre cantonada de la regió i deixant anar el botó del ratolí."
+msgstr "Seleccioneu una regió per capturar-la en fer clic amb el ratolí en un punt de la pantalla i sense deixar anar el botó del ratolí, arrossegueu el ratolí fins a l'altra cantonada de la regió, i deixeu anar el botó del ratolí."
 
 #: ../lib/screenshooter-dialogs.c:818
 msgid "Capture the mouse pointer"
@@ -340,7 +340,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Enllaços</span>"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Codi per a una miniatura que apunta a la imatge de mida commpleta</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Codi per a una miniatura que apunta a la imatge de mida completa</span>"
 
 #. HTML title
 #: ../lib/screenshooter-job-callbacks.c:494
