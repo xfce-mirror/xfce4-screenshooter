@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008
+# Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-12 00:31+0100\n"
-"PO-Revision-Date: 2015-02-18 12:23+0000\n"
-"Last-Translator: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/xfce-apps/language/ja/)\n"
+"POT-Creation-Date: 2015-11-01 12:31+0100\n"
+"PO-Revision-Date: 2016-05-19 03:30+0000\n"
+"Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
+"Language-Team: Japanese (http://www.transifex.com/xfce/xfce-apps/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -171,89 +171,89 @@ msgid ""
 "%s"
 msgstr "<b>アプリケーションを起動できませんでした。</b>\n%s"
 
-#: ../lib/screenshooter-zimagez.c:88
+#: ../lib/screenshooter-zimagez.c:96
 #, c-format
 msgid "An error occurred while creating the XMLRPC request."
 msgstr "XMLRPC リクエストの生成中にエラーが発生しました。"
 
-#: ../lib/screenshooter-zimagez.c:107
+#: ../lib/screenshooter-zimagez.c:115
 #, c-format
 msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "ZimageZ へのデータ転送中にエラーが発生しました。"
 
-#: ../lib/screenshooter-zimagez.c:132
+#: ../lib/screenshooter-zimagez.c:140
 #, c-format
 msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "ZimageZ からの応答の解析中にエラーが発生しました。"
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:182
+#: ../lib/screenshooter-zimagez.c:190
 #, c-format
 msgid "Taken on %x, at %X"
 msgstr "撮影日: %x %X"
 
 #. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:255
+#: ../lib/screenshooter-zimagez.c:263
 msgid "Initialize the connection..."
 msgstr "接続を初期化しています..."
 
-#: ../lib/screenshooter-zimagez.c:301
+#: ../lib/screenshooter-zimagez.c:309
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr "<a href=\"http://www.zimagez.com\">ZimageZ</a> のユーザー名、パスワード、およびスクリーンショットについての\n詳細を入力してください。"
 
-#: ../lib/screenshooter-zimagez.c:358
+#: ../lib/screenshooter-zimagez.c:366
 msgid "Check the user information..."
 msgstr "ユーザー情報をチェックしています..."
 
-#: ../lib/screenshooter-zimagez.c:365
+#: ../lib/screenshooter-zimagez.c:373
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">すべてのフィールドに入力してください。</span>"
 
-#: ../lib/screenshooter-zimagez.c:379
+#: ../lib/screenshooter-zimagez.c:387
 msgid "Login on ZimageZ..."
 msgstr "ZimageZ にログインしています..."
 
-#: ../lib/screenshooter-zimagez.c:419 ../lib/screenshooter-zimagez.c:570
+#: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr "ZimageZ から想定外の応答を受信しました。スクリーンショットのアップロードは失敗しました。"
 
-#: ../lib/screenshooter-zimagez.c:458
+#: ../lib/screenshooter-zimagez.c:466
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">入力されたユーザーとパスワードがマッチしません。\n再入力してください。</span>"
 
-#: ../lib/screenshooter-zimagez.c:516 ../lib/screenshooter-imgur.c:105
+#: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
 msgid "Upload the screenshot..."
 msgstr "スクリーンショットをアップロードしています..."
 
-#: ../lib/screenshooter-zimagez.c:549
+#: ../lib/screenshooter-zimagez.c:557
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "スクリーンショットのアップロード中にエラーが発生しました。"
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:582
+#: ../lib/screenshooter-zimagez.c:590
 msgid "Close the session on ZimageZ..."
 msgstr "ZimageZ のセッションを終了しています..."
 
-#: ../lib/screenshooter-zimagez.c:643
+#: ../lib/screenshooter-zimagez.c:651
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-imgur.c:115
+#: ../lib/screenshooter-imgur.c:114
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "imgur へのデータ転送中にエラーが発生しました。"
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:165
 msgid "Imgur"
 msgstr "Imgur"
 
