@@ -5,16 +5,16 @@
 # Translators:
 # Automatically generated, 2009
 # Nuno Miguel <nunis@netcabo.pt>, 2007-2009
-# Nuno Miguel <nunomgue@gmail.com>, 2014-2015
+# Nuno Miguel <nunomgue@gmail.com>, 2014-2016
 # Sérgio Marques <smarquespt@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-12 00:31+0100\n"
-"PO-Revision-Date: 2015-02-22 17:35+0000\n"
+"POT-Creation-Date: 2015-11-01 12:31+0100\n"
+"PO-Revision-Date: 2016-05-31 15:06+0000\n"
 "Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
-"Language-Team: Portuguese (http://www.transifex.com/projects/p/xfce-apps/language/pt/)\n"
+"Language-Team: Portuguese (http://www.transifex.com/xfce/xfce-apps/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -149,7 +149,7 @@ msgstr "Alojar no ZimageZ "
 
 #: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Alojar a captura em ZimageZ, um serviço de alojamento de imagens"
+msgstr "Alojar a captura em ZimageZ, um serviço gratuito de alojamento de imagens"
 
 #: ../lib/screenshooter-dialogs.c:1040
 msgid "Host on Imgur"
@@ -174,89 +174,89 @@ msgid ""
 "%s"
 msgstr "<b>Não foi possível iniciar a aplicação.</b>\n%s"
 
-#: ../lib/screenshooter-zimagez.c:88
+#: ../lib/screenshooter-zimagez.c:96
 #, c-format
 msgid "An error occurred while creating the XMLRPC request."
-msgstr "Ocorreu um erro ao criar o pedido XMLRPC"
+msgstr "Um erro ocorreu ao criar o pedido XMLRPC."
 
-#: ../lib/screenshooter-zimagez.c:107
+#: ../lib/screenshooter-zimagez.c:115
 #, c-format
 msgid "An error occurred while transferring the data to ZimageZ."
-msgstr "Ocorreu um erro ao enviar os dados para ZimageZ"
+msgstr "Um erro ocorreu ao transferir dados para ZimageZ."
 
-#: ../lib/screenshooter-zimagez.c:132
+#: ../lib/screenshooter-zimagez.c:140
 #, c-format
 msgid "An error occurred while parsing the response from ZimageZ."
-msgstr "Ocorreu um erro ao analisar a resposta de ZimageZ"
+msgstr "Um erro ocorreu ao processar resposta do ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:182
+#: ../lib/screenshooter-zimagez.c:190
 #, c-format
 msgid "Taken on %x, at %X"
 msgstr "Tirada em %x, às %X"
 
 #. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:255
+#: ../lib/screenshooter-zimagez.c:263
 msgid "Initialize the connection..."
 msgstr "A iniciar ligação..."
 
-#: ../lib/screenshooter-zimagez.c:301
+#: ../lib/screenshooter-zimagez.c:309
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr "Por favor, preencha os seguintes campos com o seu nome de utilizador e senha do\n<a href=\"http://www.zimagez.com\">ZimageZ</a>, bem como os detalhes da captura de ecrã"
 
-#: ../lib/screenshooter-zimagez.c:358
+#: ../lib/screenshooter-zimagez.c:366
 msgid "Check the user information..."
 msgstr "Verificar informações do utilizador..."
 
-#: ../lib/screenshooter-zimagez.c:365
+#: ../lib/screenshooter-zimagez.c:373
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Tem de preencher todos os campos.</span>"
 
-#: ../lib/screenshooter-zimagez.c:379
+#: ../lib/screenshooter-zimagez.c:387
 msgid "Login on ZimageZ..."
 msgstr "Iniciar sessão em ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:419 ../lib/screenshooter-zimagez.c:570
+#: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr "Foi recebida uma resposta inesperada de ZimageZ. A captura de ecrã não foi enviada"
 
-#: ../lib/screenshooter-zimagez.c:458
+#: ../lib/screenshooter-zimagez.c:466
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">O utilizador e a senha não combinam. Por favor, tente novamente</span>"
 
-#: ../lib/screenshooter-zimagez.c:516 ../lib/screenshooter-imgur.c:105
+#: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
 msgid "Upload the screenshot..."
 msgstr "Enviar captura de ecrã..."
 
-#: ../lib/screenshooter-zimagez.c:549
+#: ../lib/screenshooter-zimagez.c:557
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "Ocorreu um erro ao enviar a captura de ecrã"
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:582
+#: ../lib/screenshooter-zimagez.c:590
 msgid "Close the session on ZimageZ..."
 msgstr "Terminar sessão em ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:643
+#: ../lib/screenshooter-zimagez.c:651
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-imgur.c:115
+#: ../lib/screenshooter-imgur.c:114
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
-msgstr "Um erro ocorreu ao transferir os dados para imgur."
+msgstr "Um erro ocorreu ao transferir dados para imgur."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:165
 msgid "Imgur"
 msgstr "Imgur"
 
@@ -395,7 +395,7 @@ msgstr "%s: %s\nTente %s --help para ver a lista das opções da linha de comand
 #: ../src/main.c:358
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s não é um diretório válido, o directório por omissão será usado"
+msgstr "%s não é um diretório válido, o diretório por omissão será usado."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
