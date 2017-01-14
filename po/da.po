@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Aputsiaĸ Niels Janussen <aj@isit.gl>, 2013-2014
+# Aputsiak Niels Janussen <aj@isit.gl>, 2013-2014
 # Jannich Brendle <jannich@bredsaal.dk>, 2008
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2015
+# scootergrisen, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2015-11-09 21:10+0000\n"
-"Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>\n"
+"PO-Revision-Date: 2017-01-14 11:25+0000\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -382,7 +383,7 @@ msgstr "Modstridende tilvalg: --%s og --%s kan ikke bruges samtidigt.\n"
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr "Tilvalget --%s kan kun bruges med -fullscreen, -window eller --region angivet. Det vil blive ignoreret.\n"
+msgstr "Tilvalget --%s kan kun bruges med --fullscreen, --window eller --region angivet. Det vil blive ignoreret.\n"
 
 #: ../src/main.c:162
 #, c-format
