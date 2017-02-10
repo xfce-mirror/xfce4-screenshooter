@@ -551,7 +551,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
 
   GtkWidget *dialog = gtk_dialog_new_with_buttons (_("Transfer"),
                                                    NULL,
-                                                   GTK_DIALOG_NO_SEPARATOR,
+                                                   GTK_DIALOG_DESTROY_WITH_PARENT,
                                                    GTK_STOCK_CANCEL,
                                                    GTK_RESPONSE_CANCEL,
                                                    NULL);
@@ -694,8 +694,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
       dlg =
         xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
-                                             GTK_DIALOG_DESTROY_WITH_PARENT|
-                                             GTK_DIALOG_NO_SEPARATOR,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT,
                                              GTK_STOCK_HELP,
                                              GTK_RESPONSE_HELP,
                                              GTK_STOCK_CANCEL,
@@ -711,7 +710,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
       dlg =
         xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
-                                             GTK_DIALOG_DESTROY_WITH_PARENT|GTK_DIALOG_NO_SEPARATOR,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT,
                                              GTK_STOCK_HELP,
                                              GTK_RESPONSE_HELP,
                                              GTK_STOCK_CLOSE,
@@ -897,8 +896,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
-                                             GTK_DIALOG_DESTROY_WITH_PARENT|
-                                             GTK_DIALOG_NO_SEPARATOR,
+                                             GTK_DIALOG_DESTROY_WITH_PARENT,
                                              GTK_STOCK_HELP,
                                              GTK_RESPONSE_HELP,
                                              GTK_STOCK_CANCEL,

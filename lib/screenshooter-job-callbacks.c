@@ -34,7 +34,7 @@ create_throbber_dialog             (const gchar        *title,
 
   dialog = gtk_dialog_new_with_buttons (title,
                                  NULL,
-                                 GTK_DIALOG_NO_SEPARATOR,
+                                 GTK_DIALOG_DESTROY_WITH_PARENT,
                                  NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
@@ -162,7 +162,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   dialog =
     xfce_titled_dialog_new_with_buttons (_("Details about the screenshot for ZimageZ"),
                                          NULL,
-                                         GTK_DIALOG_NO_SEPARATOR,
+                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                          GTK_STOCK_CANCEL,
                                          GTK_RESPONSE_CANCEL,
                                          GTK_STOCK_OK,
@@ -412,7 +412,7 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   dialog =
     xfce_titled_dialog_new_with_buttons (title,
                                          NULL,
-                                         GTK_DIALOG_NO_SEPARATOR,
+                                         GTK_DIALOG_DESTROY_WITH_PARENT,
                                          GTK_STOCK_CLOSE,
                                          GTK_RESPONSE_CLOSE,
                                          NULL);
