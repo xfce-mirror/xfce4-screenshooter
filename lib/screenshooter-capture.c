@@ -489,7 +489,7 @@ static gboolean cb_key_pressed (GtkWidget   *widget,
                                 GdkEventKey *event,
                                 gboolean    *cancelled)
 {
-  if (event->keyval == GDK_Escape)
+  if (event->keyval == GDK_KEY_Escape)
     {
       gtk_widget_hide (widget);
       *cancelled = TRUE;

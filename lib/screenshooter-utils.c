@@ -313,7 +313,7 @@ screenshooter_f1_key (GtkWidget *widget, GdkEventKey *event, gpointer user_data)
 {
   GtkWidget *window;
 
-  if (event->keyval == GDK_F1)
+  if (event->keyval == GDK_KEY_F1)
     {
       window = gtk_widget_get_toplevel (widget);
       screenshooter_open_help (GTK_WINDOW (window));
