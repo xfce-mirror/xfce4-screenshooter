@@ -808,20 +808,17 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       case XI_ButtonRelease:
         if (rbdata->pressed)
           {
-            if (rbdata->rectangle.width > 0 &&
-                rbdata->rectangle.height > 0)
+            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
               {
                 /* Remove the rectangle drawn previously */
 
                 TRACE ("Remove the rectangle drawn previously");
-
-                gdk_draw_rectangle (rbdata->root_window,
-                                    rbdata->gc,
-                                    FALSE,
-                                    rbdata->rectangle.x,
-                                    rbdata->rectangle.y,
-                                    rbdata->rectangle.width,
-                                    rbdata->rectangle.height);
+                cairo_rectangle (rbdata->cr,
+                                 rbdata->rectangle.x,
+                                 rbdata->rectangle.y,
+                                 rbdata->rectangle.width,
+                                 rbdata->rectangle.height);
+                cairo_stroke(rbdata->cr);
 
                 gtk_main_quit ();
               }
@@ -843,19 +840,17 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
           {
             TRACE ("Mouse is moving");
 
-            if (rbdata->rectangle.width > 0 &&
-                rbdata->rectangle.height > 0)
+            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
               {
                 /* Remove the rectangle drawn previously */
-
                 TRACE ("Remove the rectangle drawn previously");
-                gdk_draw_rectangle (rbdata->root_window,
-                                    rbdata->gc,
-                                    FALSE,
-                                    rbdata->rectangle.x,
-                                    rbdata->rectangle.y,
-                                    rbdata->rectangle.width,
-                                    rbdata->rectangle.height);
+
+                cairo_rectangle (rbdata->cr,
+                                 rbdata->rectangle.x,
+                                 rbdata->rectangle.y,
+                                 rbdata->rectangle.width,
+                                 rbdata->rectangle.height);
+                cairo_stroke(rbdata->cr);
               }
 
             device_event = (XIDeviceEvent*) x_event->xcookie.data;
@@ -869,15 +864,15 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
             /* Draw  the rectangle as the user drags the mouse */
             TRACE ("Draw the new rectangle");
-            if (rbdata->rectangle.width > 0 &&
-                rbdata->rectangle.height > 0)
-              gdk_draw_rectangle (rbdata->root_window,
-                                  rbdata->gc,
-                                  FALSE,
-                                  rbdata->rectangle.x,
-                                  rbdata->rectangle.y,
-                                  rbdata->rectangle.width,
-                                  rbdata->rectangle.height);
+            if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
+              {
+                cairo_rectangle (rbdata->cr,
+                                 rbdata->rectangle.x,
+                                 rbdata->rectangle.y,
+                                 rbdata->rectangle.width,
+                                 rbdata->rectangle.height);
+                cairo_stroke(rbdata->cr);
+              }
           }
         return GDK_FILTER_REMOVE;
         break;
@@ -891,20 +886,16 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
             if (rbdata->pressed)
               {
-                if (rbdata->rectangle.width > 0 &&
-                    rbdata->rectangle.height > 0)
+                if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
                   {
                     /* Remove the rectangle drawn previously */
-
                     TRACE ("Remove the rectangle drawn previously");
-
-                    gdk_draw_rectangle (rbdata->root_window,
-                                        rbdata->gc,
-                                        FALSE,
-                                        rbdata->rectangle.x,
-                                        rbdata->rectangle.y,
-                                        rbdata->rectangle.width,
-                                        rbdata->rectangle.height);
+                    cairo_rectangle (rbdata->cr,
+                                     rbdata->rectangle.x,
+                                     rbdata->rectangle.y,
+                                     rbdata->rectangle.width,
+                                     rbdata->rectangle.height);
+                    cairo_stroke (rbdata->cr);
                   }
               }
 
