@@ -71,8 +71,8 @@ static GdkPixbuf       *get_rectangle_screenshot            (gint delay);
 static gboolean         cb_key_pressed                      (GtkWidget      *widget,
                                                              GdkEventKey    *event,
                                                              gboolean       *cancelled);
-static gboolean         cb_expose                           (GtkWidget      *widget,
-                                                             GdkEventExpose *event,
+static gboolean         cb_draw                             (GtkWidget      *widget,
+                                                             cairo_t        *cr,
                                                              RubberBandData *rbdata);
 static gboolean         cb_button_pressed                   (GtkWidget      *widget,
                                                              GdkEventButton *event,
@@ -501,35 +501,39 @@ static gboolean cb_key_pressed (GtkWidget   *widget,
 
 
 
-static gboolean cb_expose (GtkWidget *widget,
-                           GdkEventExpose *event,
-                           RubberBandData *rbdata)
+static gboolean cb_draw (GtkWidget *widget,
+                         cairo_t *cr,
+                         RubberBandData *rbdata)
 {
-  GdkRectangle *rects = NULL;
+  cairo_rectangle_t *rects = NULL;
   gint n_rects = 0, i;
 
-  TRACE ("Expose event received.");
+  TRACE ("Draw event received.");
 
-  gdk_region_get_rectangles (event->region, &rects, &n_rects);
+  cairo_rectangle_list_t *list = cairo_copy_clip_rectangle_list (cr);
+  n_rects = list->num_rectangles;
+  rects = list->rectangles;
 
   if (rbdata->rubber_banding)
     {
-      GdkRectangle intersect;
-      cairo_t *cr;
+      cairo_rectangle_int_t intersect;
+      GdkRectangle rect;
 
-      cr = gdk_cairo_create (GDK_DRAWABLE (widget->window));
       cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
 
       for (i = 0; i < n_rects; ++i)
         {
           /* Restore the transparent background */
           cairo_set_source_rgba (cr, 0, 0, 0, BACKGROUND_TRANSPARENCY);
-          gdk_cairo_rectangle (cr, &rects[i]);
+          cairo_rectangle(cr, rects[i].x, rects[i].y, rects[i].width, rects[i].height);
           cairo_fill (cr);
 
-          if (!gdk_rectangle_intersect (&rects[i],
-                                        &rbdata->rectangle,
-                                        &intersect))
+          rect.x = (rects[i].x);
+          rect.y =  (rects[i].y);
+          rect.width = (rects[i].width);
+          rect.height = (rects[i].height);
+
+          if (!gdk_rectangle_intersect (&rect, &rbdata->rectangle, &intersect))
             {
               continue;
             }
@@ -539,28 +543,22 @@ static gboolean cb_expose (GtkWidget *widget,
           gdk_cairo_rectangle (cr, &intersect);
           cairo_fill (cr);
         }
-
-      cairo_destroy (cr);
     }
   else
     {
-      cairo_t *cr;
-
       /* Draw the transparent background */
-      cr = gdk_cairo_create (GDK_DRAWABLE (widget->window));
       cairo_set_source_rgba (cr, 0, 0, 0, BACKGROUND_TRANSPARENCY);
       cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
 
       for (i = 0; i < n_rects; ++i)
         {
-            gdk_cairo_rectangle (cr, &rects[i]);
-            cairo_fill (cr);
+          cairo_rectangle(cr, rects[i].x, rects[i].y, rects[i].width, rects[i].height);
+          cairo_fill (cr);
         }
 
-      cairo_destroy (cr);
     }
 
-  g_free (rects);
+  cairo_rectangle_list_destroy (list);
 
   return FALSE;
 }
@@ -615,9 +613,9 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 {
   if (rbdata->left_pressed)
     {
-      GdkRectangle *new_rect, *new_rect_root;
-      GdkRectangle old_rect, intersect;
-      GdkRegion *region;
+      cairo_rectangle_int_t *new_rect, *new_rect_root;
+      cairo_rectangle_int_t old_rect, intersect;
+      cairo_region_t *region;
 
       TRACE ("Mouse is moving with left button pressed");
 
@@ -652,28 +650,28 @@ static gboolean cb_motion_notify (GtkWidget *widget,
       new_rect_root->width = ABS (rbdata->x_root - event->x_root) + 1;
       new_rect_root->height = ABS (rbdata->y_root - event->y_root) +1;
 
-      region = gdk_region_rectangle (&old_rect);
-      gdk_region_union_with_rect (region, new_rect);
+      region = cairo_region_create_rectangle (&old_rect);
+      cairo_region_union_rectangle (region, new_rect);
 
       /* Try to be smart: don't send the expose event for regions which
        * have already been painted */
       if (gdk_rectangle_intersect (&old_rect, new_rect, &intersect)
           && intersect.width > 2 && intersect.height > 2)
         {
-          GdkRegion *region_intersect;
+          cairo_region_t *region_intersect;
 
           intersect.x += 1;
           intersect.width -= 2;
           intersect.y += 1;
           intersect.height -= 2;
 
-          region_intersect = gdk_region_rectangle(&intersect);
-          gdk_region_subtract(region, region_intersect);
-          gdk_region_destroy(region_intersect);
+          region_intersect = cairo_region_create_rectangle(&intersect);
+          cairo_region_subtract(region, region_intersect);
+          cairo_region_destroy(region_intersect);
         }
 
-      gdk_window_invalidate_region (widget->window, region, TRUE);
-      gdk_region_destroy (region);
+      gdk_window_invalidate_region (gtk_widget_get_window (widget), region, TRUE);
+      cairo_region_destroy (region);
 
       return TRUE;
     }
@@ -716,8 +714,8 @@ static GdkPixbuf
   /* Connect to the interesting signals */
   g_signal_connect (window, "key-press-event",
                     G_CALLBACK (cb_key_pressed), &cancelled);
-  g_signal_connect (window, "expose-event",
-                    G_CALLBACK (cb_expose), &rbdata);
+  g_signal_connect (window, "draw",
+                    G_CALLBACK (cb_draw), &rbdata);
   g_signal_connect (window, "button-press-event",
                     G_CALLBACK (cb_button_pressed), &rbdata);
   g_signal_connect (window, "button-release-event",
