@@ -28,7 +28,7 @@ lib_libscreenshooter_la_SOURCES =	\
 	lib/libscreenshooter.h \
 	lib/screenshooter-actions.c lib/screenshooter-actions.h \
 	lib/screenshooter-capture.c lib/screenshooter-capture.h \
-  lib/screenshooter-dialogs.c lib/screenshooter-dialogs.h \
+	lib/screenshooter-dialogs.c lib/screenshooter-dialogs.h \
 	lib/screenshooter-global.h \
 	lib/screenshooter-job.c lib/screenshooter-job.h \
 	lib/screenshooter-job-callbacks.c lib/screenshooter-job-callbacks.h \
@@ -41,22 +41,22 @@ lib_libscreenshooter_la_CFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_builddir)/lib \
 	@EXO_CFLAGS@ \
-  @GTK_CFLAGS@ \
+	@GTK_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
 	@LIBXML_CFLAGS@ \
 	@SOUP_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
-  -DPACKAGE_LOCALE_DIR=\"$(localedir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_libscreenshooter_la_LIBADD = \
-  -lm \
+	-lm \
 	@EXO_LIBS@ \
-  @GTK_LIBS@ \
+	@GTK_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@ \
-  @GLIB_LIBS@ \
+	@GLIB_LIBS@ \
 	@SOUP_LIBS@ \
 	@LIBXML_LIBS@ \
 	@LIBXEXT_LIBS@ \
