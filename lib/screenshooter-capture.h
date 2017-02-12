@@ -30,6 +30,7 @@
 #include <X11/extensions/Xfixes.h>
 #endif
 #include <X11/extensions/shape.h>
+#include <X11/extensions/XInput2.h>
 #include <gdk/gdkkeysyms.h>
 #include <gdk/gdkx.h>
 #include <glib.h>
