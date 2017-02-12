@@ -919,22 +919,13 @@ static GdkPixbuf
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *root_window;
+  cairo_t *cr;
 
-  GdkGCValues gc_values;
-  GdkGC *gc;
+  GdkRGBA gc_white = {1.0, 1.0, 1.0, 1.0};
+  GdkRGBA gc_black = {0.0, 0.0, 0.0, 1.0};
 
-  GdkGCValuesMask values_mask =
-    GDK_GC_FUNCTION | GDK_GC_FILL | GDK_GC_CLIP_MASK |
-    GDK_GC_SUBWINDOW | GDK_GC_CLIP_X_ORIGIN | GDK_GC_CLIP_Y_ORIGIN |
-    GDK_GC_EXPOSURES | GDK_GC_LINE_WIDTH | GDK_GC_LINE_STYLE |
-    GDK_GC_CAP_STYLE | GDK_GC_JOIN_STYLE;
-
-  GdkColor gc_white = {0, 65535, 65535, 65535};
-  GdkColor gc_black = {0, 0, 0, 0};
-
-  GdkEventMask mask =
-    GDK_POINTER_MOTION_MASK | GDK_BUTTON_PRESS_MASK |
-    GDK_BUTTON_RELEASE_MASK;
+  GdkEventMask mask = GDK_POINTER_MOTION_MASK | GDK_BUTTON_PRESS_MASK |
+                      GDK_BUTTON_RELEASE_MASK;
   GdkCursor *xhair_cursor = gdk_cursor_new (GDK_CROSSHAIR);
 
   RbData rbdata;
@@ -946,22 +937,14 @@ static GdkPixbuf
   /*Set up graphics context for a XOR rectangle that will be drawn as
    * the user drags the mouse */
   TRACE ("Initialize the graphics context");
+  cr = gdk_cairo_create (root_window);
 
-  gc_values.function           = GDK_XOR;
-  gc_values.line_width         = 2;
-  gc_values.line_style         = GDK_LINE_ON_OFF_DASH;
-  gc_values.fill               = GDK_SOLID;
-  gc_values.cap_style          = GDK_CAP_BUTT;
-  gc_values.join_style         = GDK_JOIN_MITER;
-  gc_values.graphics_exposures = FALSE;
-  gc_values.clip_x_origin      = 0;
-  gc_values.clip_y_origin      = 0;
-  gc_values.clip_mask          = None;
-  gc_values.subwindow_mode     = GDK_INCLUDE_INFERIORS;
+  cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+  cairo_set_line_width (cr, 2.0);
+  cairo_set_line_cap (cr, CAIRO_LINE_CAP_BUTT);
+  cairo_set_line_join (cr, CAIRO_LINE_JOIN_MITER);
 
-  gc = gdk_gc_new_with_values (root_window, &gc_values, values_mask);
-  gdk_gc_set_rgb_fg_color (gc, &gc_white);
-  gdk_gc_set_rgb_bg_color (gc, &gc_black);
+  gdk_cairo_set_source_rgba (cr, &gc_black);
 
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
