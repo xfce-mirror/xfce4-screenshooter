@@ -30,7 +30,6 @@
 
 #include "screenshooter-utils.h"
 #include "screenshooter-simple-job.h"
-#include "katze-throbber.h"
 
 void screenshooter_upload_to_zimagez (const gchar  *image_path,
                                       const gchar  *last_user,

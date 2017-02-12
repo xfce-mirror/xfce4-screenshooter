@@ -29,7 +29,6 @@
 
 #include "screenshooter-utils.h"
 #include "screenshooter-simple-job.h"
-#include "katze-throbber.h"
 
 void screenshooter_upload_to_imgur (const gchar  *image_path,
                                     const gchar  *title);

@@ -58,8 +58,9 @@ create_throbber_dialog             (const gchar        *title,
   gtk_container_add (GTK_CONTAINER (main_box), hbox);
 
   /* Add the throbber */
-  throbber = katze_throbber_new ();
-  katze_throbber_set_animated (KATZE_THROBBER (throbber), TRUE);
+  /*throbber = katze_throbber_new ();*/
+  /*katze_throbber_set_animated (KATZE_THROBBER (throbber), TRUE);*/
+  throbber = gtk_spinner_new ();
   gtk_box_pack_end (GTK_BOX (hbox), throbber, FALSE, FALSE, 0);
 
   /* Status label*/

@@ -24,7 +24,6 @@ noinst_LTLIBRARIES = lib/libscreenshooter.la
 
 lib_libscreenshooter_la_SOURCES =	\
 	$(lib_libscreenshooter_built_sources) \
-	lib/katze-throbber.c lib/katze-throbber.h \
 	lib/libscreenshooter.h \
 	lib/screenshooter-actions.c lib/screenshooter-actions.h \
 	lib/screenshooter-capture.c lib/screenshooter-capture.h \
