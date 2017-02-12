@@ -782,15 +782,21 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 {
   XEvent *x_event = (XEvent *) xevent;
   gint x2 = 0, y2 = 0;
+  XIDeviceEvent *device_event;
 
-  switch (x_event->type)
+  if (x_event->type != GenericEvent)
+    return GDK_FILTER_CONTINUE;
+
+  switch (x_event->xgeneric.evtype)
     {
       /* Start dragging the rectangle out */
-      case ButtonPress:
+      case XI_ButtonPress:
         TRACE ("Start dragging the rectangle");
 
-        rbdata->rectangle.x = rbdata->x1 = x_event->xkey.x_root;
-        rbdata->rectangle.y = rbdata->y1 = x_event->xkey.y_root;
+        device_event = (XIDeviceEvent*) x_event->xcookie.data;
+
+        rbdata->rectangle.x = rbdata->x1 = device_event->root_x;
+        rbdata->rectangle.y = rbdata->y1 = device_event->root_y;
         rbdata->rectangle.width = 0;
         rbdata->rectangle.height = 0;
         rbdata->pressed = TRUE;
@@ -799,7 +805,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       break;
 
       /* Finish dragging the rectangle out */
-      case ButtonRelease:
+      case XI_ButtonRelease:
         if (rbdata->pressed)
           {
             if (rbdata->rectangle.width > 0 &&
@@ -832,7 +838,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       break;
 
       /* The user is moving the mouse */
-      case MotionNotify:
+      case XI_Motion:
         if (rbdata->pressed)
           {
             TRACE ("Mouse is moving");
@@ -852,8 +858,9 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                                     rbdata->rectangle.height);
               }
 
-            x2 = x_event->xkey.x_root;
-            y2 = x_event->xkey.y_root;
+            device_event = (XIDeviceEvent*) x_event->xcookie.data;
+            x2 = device_event->root_x;
+            y2 = device_event->root_y;
 
             rbdata->rectangle.x = MIN (rbdata->x1, x2);
             rbdata->rectangle.y = MIN (rbdata->y1, y2);
@@ -875,8 +882,10 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
         return GDK_FILTER_REMOVE;
         break;
 
-      case KeyPress:
-        if (x_event->xkey.keycode == XKeysymToKeycode (gdk_display, XK_Escape))
+      case XI_KeyPress:
+        device_event = (XIDeviceEvent*) x_event->xcookie.data;
+
+        if (device_event->detail == XKeysymToKeycode (gdk_x11_get_default_xdisplay(), XK_Escape))
           {
             TRACE ("Escape key was pressed, cancel the screenshot.");
 
