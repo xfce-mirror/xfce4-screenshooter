@@ -728,20 +728,20 @@ static GdkPixbuf
   /* This window is not managed by the window manager, we have to set everything
    * ourselves */
   gtk_widget_realize (window);
-  gdk_window_set_cursor (window->window, xhair_cursor);
-  gdk_window_set_override_redirect (window->window, TRUE);
+  gdk_window_set_cursor (gtk_widget_get_window (window), xhair_cursor);
+  gdk_window_set_override_redirect (gtk_widget_get_window (window), TRUE);
   gtk_widget_set_size_request (window,
                                gdk_screen_get_width (gdk_screen_get_default ()),
                                gdk_screen_get_height (gdk_screen_get_default ()));
-  gdk_window_raise (window->window);
+  gdk_window_raise (gtk_widget_get_window (window));
   gtk_widget_show_now (window);
   gtk_widget_grab_focus (window);
   gdk_flush ();
 
   /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
-  gdk_keyboard_grab (window->window, FALSE, GDK_CURRENT_TIME);
-  gdk_pointer_grab (window->window, TRUE, 0, NULL,
+  gdk_keyboard_grab (gtk_widget_get_window (window), FALSE, GDK_CURRENT_TIME);
+  gdk_pointer_grab (gtk_widget_get_window (window), TRUE, 0, NULL,
                     NULL, GDK_CURRENT_TIME);
 
   gtk_dialog_run (GTK_DIALOG (window));

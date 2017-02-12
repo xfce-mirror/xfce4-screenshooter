@@ -567,27 +567,27 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 20);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "document-save");
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 12);
 
   gtk_label_set_markup (GTK_LABEL (label1),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot "
                           "is being transferred to:</span>"));
   gtk_misc_set_alignment (GTK_MISC (label1), 0, 0.5);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG(dialog)->vbox),
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))),
                       label1,
                       FALSE,
                       FALSE,
                       0);
   gtk_widget_show (label1);
 
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG(dialog)->vbox),
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))),
                       label2,
                       FALSE,
                       FALSE,
                       0);
   gtk_widget_show (label2);
 
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG(dialog)->vbox),
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))),
                       progress_bar,
                       FALSE,
                       FALSE,
@@ -730,7 +730,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), main_alignment, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
   vbox = gtk_vbox_new (FALSE, 10);
@@ -865,7 +865,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   g_signal_connect (G_OBJECT (delay_spinner), "value-changed",
                     G_CALLBACK (cb_delay_spinner_changed), sd);
 
-  gtk_widget_show_all (GTK_DIALOG (dlg)->vbox);
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
   return dlg;
 }
@@ -915,7 +915,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), main_alignment, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
   vbox = gtk_vbox_new (FALSE, 10);
@@ -1066,7 +1066,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (preview_ebox, "drag-data-get", G_CALLBACK (preview_drag_data_get), sd->screenshot);
   g_signal_connect (preview_ebox, "drag-end", G_CALLBACK (preview_drag_end), dlg);
 
-  gtk_widget_show_all (GTK_DIALOG (dlg)->vbox);
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
   return dlg;
 }

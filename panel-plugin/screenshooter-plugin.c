@@ -122,8 +122,8 @@ cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
   size /= xfce_panel_plugin_get_nrows (plugin);
 #endif
 
-  width = size - 2 - 2 * MAX (pd->button->style->xthickness,
-                                    pd->button->style->ythickness);
+  width = size - 2 - 2 * MAX (gtk_widget_get_style(pd->button)->xthickness,
+                              gtk_widget_get_style(pd->button)->ythickness);
 
   TRACE ("Get the icon from the theme");
   pb = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (),

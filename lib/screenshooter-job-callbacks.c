@@ -38,14 +38,14 @@ create_throbber_dialog             (const gchar        *title,
                                  NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 0);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 0);
   gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "gtk-info");
 
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 0, 0, 6, 6);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
   main_box = gtk_vbox_new (FALSE, 10);
@@ -75,7 +75,7 @@ create_throbber_dialog             (const gchar        *title,
   *label = gtk_label_new ("");
   gtk_container_add (GTK_CONTAINER (main_box), *label);
 
-  gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dialog)));
   return dialog;
 }
 
@@ -171,7 +171,7 @@ cb_ask_for_information (ScreenshooterJob *job,
                                          NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG(dialog)->vbox), 12);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 12);
 
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "gtk-info");
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
@@ -181,7 +181,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
   vbox = gtk_vbox_new (FALSE, 10);
@@ -300,7 +300,7 @@ cb_ask_for_information (ScreenshooterJob *job,
     }
   while (gtk_tree_model_iter_next (GTK_TREE_MODEL (liststore), &iter));
 
-  gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dialog)));
   response = gtk_dialog_run (GTK_DIALOG (dialog));
   gtk_widget_hide (dialog);
 
@@ -419,15 +419,15 @@ void cb_image_uploaded (ScreenshooterJob  *job,
                                          NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width (GTK_CONTAINER (GTK_DIALOG (dialog)->vbox), 0);
-  gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 12);
+  gtk_container_set_border_width (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 0);
+  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 12);
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "applications-internet");
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
   main_alignment = gtk_alignment_new (0, 0, 1, 1);
   gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 10, 10);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), main_alignment, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
   vbox = gtk_vbox_new (FALSE, 10);
@@ -536,7 +536,7 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_container_add (GTK_CONTAINER (bb_frame), bb_code_view);
 
   /* Show the dialog and run it */
-  gtk_widget_show_all (GTK_DIALOG(dialog)->vbox);
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dialog)));
   gtk_dialog_run (GTK_DIALOG (dialog));
   gtk_widget_destroy (dialog);
 
