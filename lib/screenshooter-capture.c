@@ -30,8 +30,8 @@ typedef struct
   gint y;
   gint x_root;
   gint y_root;
-  GdkRectangle rectangle;
-  GdkRectangle rectangle_root;
+  cairo_rectangle_int_t rectangle;
+  cairo_rectangle_int_t rectangle_root;
 } RubberBandData;
 
 /* For non-composited environments */
@@ -39,9 +39,9 @@ typedef struct
 {
   gboolean pressed;
   gboolean cancelled;
-  GdkRectangle rectangle;
+  cairo_rectangle_int_t rectangle;
   gint x1, y1; /* holds the position where the mouse was pressed */
-  GdkGC *gc;
+  cairo_t *cr;
   GdkWindow *root_window;
 } RbData;
 
@@ -111,7 +111,7 @@ static GdkWindow
       *needs_unref = FALSE;
       *border = FALSE;
     }
-  else if (G_UNLIKELY (GDK_WINDOW_DESTROYED (window)))
+  else if (G_UNLIKELY (gdk_window_is_destroyed (window)))
     {
       TRACE ("The active window is destroyed, fallback to the root window.");
 
@@ -157,7 +157,7 @@ find_wm_window (Window xid)
 
   do
     {
-      if (XQueryTree (GDK_DISPLAY (), xid, &root,
+      if (XQueryTree (gdk_x11_get_default_xdisplay (), xid, &root,
                       &parent, &children, &nchildren) == 0)
         {
           g_warning ("Couldn't find window manager window");
@@ -288,11 +288,13 @@ static GdkPixbuf
 
   if (border)
     {
-      Window xwindow = GDK_WINDOW_XWINDOW (window);
-      window = gdk_window_foreign_new (find_wm_window (xwindow));
+	  Window xwindow = GDK_WINDOW_XID (window);
+      window = gdk_x11_window_foreign_new_for_display (gdk_window_get_display (window),
+    		                                           find_wm_window (xwindow));
     }
 
-  gdk_drawable_get_size (window, &rectangle.width, &rectangle.height);
+  rectangle.width = gdk_window_get_width (window);
+  rectangle.height = gdk_window_get_height (window);
   gdk_window_get_origin (window, &rectangle.x, &rectangle.y);
 
   /* Don't grab thing offscreen. */
@@ -327,9 +329,7 @@ static GdkPixbuf
 
   TRACE ("Grab the screenshot");
 
-  screenshot = gdk_pixbuf_get_from_drawable (NULL, root, NULL,
-                                             x_orig, y_orig, 0, 0,
-                                             width, height);
+  screenshot = gdk_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
 
   /* Code adapted from gnome-screenshot:
    * Copyright (C) 2001-2006  Jonathan Blandford <jrb@alum.mit.edu>
@@ -342,8 +342,8 @@ static GdkPixbuf
       GdkPixbuf *tmp;
       int rectangle_count, rectangle_order, i;
 
-      rectangles = XShapeGetRectangles (GDK_DISPLAY (),
-                                        GDK_WINDOW_XWINDOW (window),
+      rectangles = XShapeGetRectangles (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+                                        GDK_WINDOW_XID (window),
                                         ShapeBounding,
                                         &rectangle_count,
                                         &rectangle_order);
@@ -690,7 +690,8 @@ static GdkPixbuf
   gboolean cancelled = FALSE;
   GdkPixbuf *screenshot;
   GdkWindow *root;
-  GdkCursor *xhair_cursor = gdk_cursor_new (GDK_CROSSHAIR);
+  GdkCursor *xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+                                                        GDK_CROSSHAIR);
 
   /* Initialize the rubber band data */
   rbdata.left_pressed = FALSE;
@@ -710,8 +711,7 @@ static GdkPixbuf
                          GDK_EXPOSURE_MASK |
                          GDK_POINTER_MOTION_MASK |
                          GDK_KEY_PRESS_MASK);
-  gtk_widget_set_colormap (window,
-                           gdk_screen_get_rgba_colormap (gdk_screen_get_default ()));
+  gtk_widget_set_visual (window, gdk_screen_get_rgba_visual (gdk_screen_get_default ()));
 
   /* Connect to the interesting signals */
   g_signal_connect (window, "key-press-event",
@@ -763,12 +763,11 @@ static GdkPixbuf
 
   sleep(delay);
 
-  gdk_pixbuf_get_from_drawable (screenshot, root, NULL,
-                                rbdata.rectangle_root.x,
-                                rbdata.rectangle_root.y,
-                                0, 0,
-                                rbdata.rectangle.width,
-                                rbdata.rectangle.height);
+  screenshot = gdk_pixbuf_get_from_window (root,
+                                           rbdata.rectangle_root.x,
+                                           rbdata.rectangle_root.y,
+                                           rbdata.rectangle.width,
+                                           rbdata.rectangle.height);
 
   /* Ungrab the mouse and the keyboard */
   gdk_pointer_ungrab (GDK_CURRENT_TIME);
@@ -976,7 +975,7 @@ static GdkPixbuf
   /* Initialize the rubber band data */
   TRACE ("Initialize the rubber band data");
   rbdata.root_window = root_window;
-  rbdata.gc = gc;
+  rbdata.cr = cr;
   rbdata.pressed = FALSE;
   rbdata.cancelled = FALSE;
 
@@ -1004,16 +1003,15 @@ static GdkPixbuf
       sleep(delay);
 
       screenshot =
-        gdk_pixbuf_get_from_drawable (NULL, root_window, NULL,
-                                      rbdata.rectangle.x,
-                                      rbdata.rectangle.y,
-                                      0, 0,
-                                      rbdata.rectangle.width,
-                                      rbdata.rectangle.height);
+        gdk_pixbuf_get_from_window (root_window,
+                                    rbdata.rectangle.x,
+                                    rbdata.rectangle.y,
+                                    rbdata.rectangle.width,
+                                    rbdata.rectangle.height);
     }
 
-  if (G_LIKELY (gc != NULL))
-    g_object_unref (gc);
+  if (G_LIKELY (cr != NULL))
+    cairo_destroy (cr);
 
   gdk_cursor_unref (xhair_cursor);
 
