@@ -5,14 +5,14 @@
 # Translators:
 # Harald Servat <redcrash@gmail.com>, 2009
 # Davidmp <medipas@gmail.com>, 2016
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016-2017
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2016-10-17 20:57+0000\n"
+"PO-Revision-Date: 2017-03-17 19:54+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "%.2f Kb de %.2f Kb"
 
 #: ../lib/screenshooter-dialogs.c:552
 msgid "Transfer"
-msgstr "Envia"
+msgstr "Transfereix"
 
 #: ../lib/screenshooter-dialogs.c:573
 msgid ""
@@ -145,23 +145,23 @@ msgstr "Aplicació per obrir la captura de pantalla"
 
 #: ../lib/screenshooter-dialogs.c:1027
 msgid "Host on ZimageZ"
-msgstr "Allotjament a ZimageZ"
+msgstr "Allotja en ZimageZ"
 
 #: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
 msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Allotja la captura de pantalla a ZimageZ, un servei d'emmagatzematge en línia gratuït"
+msgstr "Allotja la captura de pantalla en ZimageZ, un servei d'allotjament d'imatges en línia gratuït"
 
 #: ../lib/screenshooter-dialogs.c:1040
 msgid "Host on Imgur"
-msgstr "Allotjament a Imgur"
+msgstr "Allotja en Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Desa la captura de pantalla a Imgur, un servei d'allotjament d'imatges en línia gratuït"
+msgstr "Allotja la captura de pantalla en Imgur, un servei d'allotjament d'imatges en línia gratuït"
 
 #: ../lib/screenshooter-dialogs.c:1058
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Previsualització</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vista prèvia</span>"
 
 #: ../lib/screenshooter-dialogs.c:1119
 msgid "Save screenshot as..."
@@ -219,7 +219,7 @@ msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">He
 
 #: ../lib/screenshooter-zimagez.c:387
 msgid "Login on ZimageZ..."
-msgstr "Inici de sessió a ZimageZ..."
+msgstr "Inici de sessió en ZimageZ..."
 
 #: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
 msgid ""
@@ -297,7 +297,7 @@ msgstr "Títol:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "El títol de la captura de pantalla, que s'utilitzarà quan es mostri la captura de pantalla a ZimageZ."
+msgstr "El títol de la captura de pantalla, que s'utilitzarà quan es mostri la captura de pantalla en ZimageZ."
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:252
@@ -308,15 +308,15 @@ msgstr "Comentari:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on ZimageZ"
-msgstr "Un comentari per a la captura de pantalla, que s'utilitzarà quan es mostri la captura de pantalla a ZimageZ."
+msgstr "Un comentari per a la captura de pantalla, que s'utilitzarà quan es mostri la captura de pantalla en ZimageZ."
 
 #: ../lib/screenshooter-job-callbacks.c:378
 msgid "My screenshot on Imgur"
-msgstr "La meva captura de pantalla a Imgur"
+msgstr "La meva captura de pantalla en Imgur"
 
 #: ../lib/screenshooter-job-callbacks.c:386
 msgid "My screenshot on ZimageZ"
-msgstr "La meva captura de pantalla a ZimageZ"
+msgstr "La meva captura de pantalla en ZimageZ"
 
 #: ../lib/screenshooter-job-callbacks.c:400
 #, c-format
@@ -410,4 +410,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "ZimageZ or imgur, free online image hosting services."
-msgstr "Us permet capturar tota la pantalla, la finestra activa o una regió seleccionada. Podeu configurar el retard que transcorre abans que es prengui la captura de pantalla i l'acció que es farà amb la captura: desar en un fitxer PNG, copiar-la al porta-retalls, obrir-la amb una altra aplicació o allotjar-la a ZimageZ o Imgur, serveis gratuïts d'allotjament d'imatges en línia."
+msgstr "Us permet capturar tota la pantalla, la finestra activa o una regió seleccionada. Podeu configurar el retard que transcorre abans que es prengui la captura de pantalla i l'acció que es farà amb la captura: desar-la a un fitxer PNG, copiar-la al porta-retalls, obrir-la mitjançant una altra aplicació o allotjar-la en ZimageZ o Imgur, serveis gratuïts d'allotjament d'imatges en línia."
