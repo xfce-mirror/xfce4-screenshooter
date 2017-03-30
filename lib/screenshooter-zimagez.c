@@ -648,7 +648,7 @@ void screenshooter_upload_to_zimagez (const gchar  *image_path,
   g_return_if_fail (image_path != NULL);
   g_return_if_fail (new_last_user == NULL || *new_last_user == NULL);
 
-  dialog = create_throbber_dialog(_("ZimageZ"), &label);
+  dialog = create_spinner_dialog(_("ZimageZ"), &label);
 
   job = screenshooter_simple_job_launch (zimagez_upload_job, 3,
                                           G_TYPE_STRING, image_path,

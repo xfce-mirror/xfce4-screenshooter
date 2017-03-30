@@ -19,17 +19,17 @@
 
 #include "screenshooter-job-callbacks.h"
 
-/* Create and return a dialog with a throbber and a translated title
+/* Create and return a dialog with a spinner and a translated title
  * will be used during upload jobs
  */
 
 GtkWidget *
-create_throbber_dialog             (const gchar        *title,
+create_spinner_dialog             (const gchar        *title,
                                     GtkWidget         **label)
 {
   GtkWidget *dialog;
   GtkWidget *status_label;
-  GtkWidget *hbox, *throbber;
+  GtkWidget *hbox, *spinner;
   GtkWidget *main_box, *main_alignment;
 
   dialog = gtk_dialog_new_with_buttons (title,
@@ -52,16 +52,15 @@ create_throbber_dialog             (const gchar        *title,
   gtk_container_set_border_width (GTK_CONTAINER (main_box), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), main_box);
 
-  /* Top horizontal box for the throbber */
+  /* Top horizontal box for the spinner */
   hbox= gtk_hbox_new (FALSE, 0);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 0);
   gtk_container_add (GTK_CONTAINER (main_box), hbox);
 
-  /* Add the throbber */
-  /*throbber = katze_throbber_new ();*/
-  /*katze_throbber_set_animated (KATZE_THROBBER (throbber), TRUE);*/
-  throbber = gtk_spinner_new ();
-  gtk_box_pack_end (GTK_BOX (hbox), throbber, FALSE, FALSE, 0);
+  /* Add the spinner */
+  spinner = gtk_spinner_new ();
+  gtk_spinner_start (GTK_SPINNER (spinner));
+  gtk_box_pack_end (GTK_BOX (hbox), spinner, FALSE, FALSE, 0);
 
   /* Status label*/
   status_label = gtk_label_new ("");

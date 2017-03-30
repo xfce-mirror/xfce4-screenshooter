@@ -24,7 +24,6 @@
 #endif
 #include "screenshooter-utils.h"
 #include "screenshooter-simple-job.h"
-#include "katze-throbber.h"
 
 typedef enum
 {
@@ -36,7 +35,7 @@ typedef enum
 
 
 GtkWidget *
-create_throbber_dialog             (const gchar        *title,
+create_spinner_dialog              (const gchar        *title,
                                     GtkWidget          **label);
 
 void

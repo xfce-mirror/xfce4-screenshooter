@@ -162,7 +162,7 @@ void screenshooter_upload_to_imgur   (const gchar  *image_path,
 
   g_return_if_fail (image_path != NULL);
 
-  dialog = create_throbber_dialog(_("Imgur"), &label);
+  dialog = create_spinner_dialog(_("Imgur"), &label);
 
   job = screenshooter_simple_job_launch (imgur_upload_job, 2,
                                           G_TYPE_STRING, image_path,
