@@ -41,8 +41,7 @@ typedef struct
   gboolean cancelled;
   cairo_rectangle_int_t rectangle;
   gint x1, y1; /* holds the position where the mouse was pressed */
-  cairo_t *cr;
-  GdkWindow *root_window;
+  GC *context;
 } RbData;
 
 
@@ -783,6 +782,11 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
   XEvent *x_event = (XEvent *) xevent;
   gint x2 = 0, y2 = 0;
   XIDeviceEvent *device_event;
+  Display *display;
+  Window root_window;
+
+  display =  gdk_x11_get_default_xdisplay();
+  root_window = gdk_x11_get_default_root_xwindow ();
 
   if (x_event->type != GenericEvent)
     return GDK_FILTER_CONTINUE;
@@ -811,21 +815,21 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
             if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
               {
                 /* Remove the rectangle drawn previously */
-
                 TRACE ("Remove the rectangle drawn previously");
-                cairo_rectangle (rbdata->cr,
-                                 rbdata->rectangle.x,
-                                 rbdata->rectangle.y,
-                                 rbdata->rectangle.width,
-                                 rbdata->rectangle.height);
-                cairo_stroke(rbdata->cr);
+
+                XDrawRectangle(display,
+                               root_window,
+                               *rbdata->context,
+                               (int) rbdata->rectangle.x,
+                               (int) rbdata->rectangle.y,
+                               (unsigned int) rbdata->rectangle.width-1,
+                               (unsigned int) rbdata->rectangle.height-1);
 
                 gtk_main_quit ();
               }
             else
               {
                 /* The user has not dragged the mouse, start again */
-
                 TRACE ("Mouse was not dragged, start again");
 
                 rbdata->pressed = FALSE;
@@ -845,12 +849,13 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                 /* Remove the rectangle drawn previously */
                 TRACE ("Remove the rectangle drawn previously");
 
-                cairo_rectangle (rbdata->cr,
-                                 rbdata->rectangle.x,
-                                 rbdata->rectangle.y,
-                                 rbdata->rectangle.width,
-                                 rbdata->rectangle.height);
-                cairo_stroke(rbdata->cr);
+                XDrawRectangle(display,
+                               root_window,
+                               *rbdata->context,
+                               (int) rbdata->rectangle.x,
+                               (int) rbdata->rectangle.y,
+                               (unsigned int) rbdata->rectangle.width-1,
+                               (unsigned int) rbdata->rectangle.height-1);
               }
 
             device_event = (XIDeviceEvent*) x_event->xcookie.data;
@@ -866,12 +871,13 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
             TRACE ("Draw the new rectangle");
             if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
               {
-                cairo_rectangle (rbdata->cr,
-                                 rbdata->rectangle.x,
-                                 rbdata->rectangle.y,
-                                 rbdata->rectangle.width,
-                                 rbdata->rectangle.height);
-                cairo_stroke(rbdata->cr);
+                XDrawRectangle(display,
+                               root_window,
+                               *rbdata->context,
+                               (int) rbdata->rectangle.x,
+                               (int) rbdata->rectangle.y,
+                               (unsigned int) rbdata->rectangle.width-1,
+                               (unsigned int) rbdata->rectangle.height-1);
               }
           }
         return GDK_FILTER_REMOVE;
@@ -890,12 +896,14 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                   {
                     /* Remove the rectangle drawn previously */
                     TRACE ("Remove the rectangle drawn previously");
-                    cairo_rectangle (rbdata->cr,
-                                     rbdata->rectangle.x,
-                                     rbdata->rectangle.y,
-                                     rbdata->rectangle.width,
-                                     rbdata->rectangle.height);
-                    cairo_stroke (rbdata->cr);
+
+                    XDrawRectangle(display,
+                                  root_window,
+                                  *rbdata->context,
+                                  (int) rbdata->rectangle.x,
+                                  (int) rbdata->rectangle.y,
+                                  (unsigned int) rbdata->rectangle.width-1,
+                                  (unsigned int) rbdata->rectangle.height-1);
                   }
               }
 
@@ -919,35 +927,53 @@ static GdkPixbuf
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *root_window;
-  cairo_t *cr;
 
-  GdkRGBA gc_white = {1.0, 1.0, 1.0, 1.0};
-  GdkRGBA gc_black = {0.0, 0.0, 0.0, 1.0};
+  XGCValues gc_values;
+  GC gc;
 
-  GdkEventMask mask = GDK_POINTER_MOTION_MASK | GDK_BUTTON_PRESS_MASK |
-                      GDK_BUTTON_RELEASE_MASK;
-  GdkCursor *xhair_cursor = gdk_cursor_new (GDK_CROSSHAIR);
-
+  Display *display;
+  gint screen;
   RbData rbdata;
+  GdkEventMask mask;
+  GdkCursor *xhair_cursor;
+  long value_mask;
 
   /* Get root window */
   TRACE ("Get the root window");
   root_window = gdk_get_default_root_window ();
+  display = gdk_x11_get_default_xdisplay ();
+  screen = gdk_x11_get_default_screen ();
 
   /*Set up graphics context for a XOR rectangle that will be drawn as
    * the user drags the mouse */
   TRACE ("Initialize the graphics context");
-  cr = gdk_cairo_create (root_window);
 
-  cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
-  cairo_set_line_width (cr, 2.0);
-  cairo_set_line_cap (cr, CAIRO_LINE_CAP_BUTT);
-  cairo_set_line_join (cr, CAIRO_LINE_JOIN_MITER);
+  gc_values.function = GXxor;
+  gc_values.line_width = 2;
+  gc_values.line_style = LineOnOffDash;
+  gc_values.fill_style = FillSolid;
+  gc_values.graphics_exposures = FALSE;
+  gc_values.subwindow_mode = IncludeInferiors;
+  gc_values.background = XBlackPixel (display, screen);
+  gc_values.foreground = XWhitePixel (display, screen);
 
-  gdk_cairo_set_source_rgba (cr, &gc_black);
+  value_mask = GCFunction | GCLineWidth | GCLineStyle |
+               GCFillStyle | GCGraphicsExposures | GCSubwindowMode |
+               GCBackground | GCForeground;
+
+  gc = XCreateGC (display,
+                  gdk_x11_get_default_root_xwindow (),
+                  value_mask,
+                  &gc_values);
 
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
+
+  xhair_cursor = gdk_cursor_new (GDK_CROSSHAIR);
+
+  mask = GDK_POINTER_MOTION_MASK |
+         GDK_BUTTON_PRESS_MASK |
+         GDK_BUTTON_RELEASE_MASK;
 
   gdk_pointer_grab (root_window, FALSE, mask, NULL,
                     xhair_cursor, GDK_CURRENT_TIME);
@@ -955,8 +981,7 @@ static GdkPixbuf
 
   /* Initialize the rubber band data */
   TRACE ("Initialize the rubber band data");
-  rbdata.root_window = root_window;
-  rbdata.cr = cr;
+  rbdata.context = &gc;
   rbdata.pressed = FALSE;
   rbdata.cancelled = FALSE;
 
@@ -973,10 +998,10 @@ static GdkPixbuf
                             (GdkFilterFunc) region_filter_func,
                             &rbdata);
 
-  gdk_pointer_ungrab(GDK_CURRENT_TIME);
+  gdk_pointer_ungrab (GDK_CURRENT_TIME);
   gdk_keyboard_ungrab (GDK_CURRENT_TIME);
 
-  /* Get the screenshot's pixbuf */
+ /* Get the screenshot's pixbuf */
   if (G_LIKELY (!rbdata.cancelled))
     {
       TRACE ("Get the pixbuf for the screenshot");
@@ -991,10 +1016,10 @@ static GdkPixbuf
                                     rbdata.rectangle.height);
     }
 
-  if (G_LIKELY (cr != NULL))
-    cairo_destroy (cr);
+  if (G_LIKELY (gc != NULL))
+    XFreeGC (display, gc);
 
-  gdk_cursor_unref (xhair_cursor);
+  g_object_unref (xhair_cursor);
 
   return screenshot;
 }
