@@ -785,7 +785,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
   Display *display;
   Window root_window;
 
-  display =  gdk_x11_get_default_xdisplay();
+  display = gdk_x11_get_default_xdisplay ();
   root_window = gdk_x11_get_default_root_xwindow ();
 
   if (x_event->type != GenericEvent)
@@ -817,13 +817,13 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                 /* Remove the rectangle drawn previously */
                 TRACE ("Remove the rectangle drawn previously");
 
-                XDrawRectangle(display,
-                               root_window,
-                               *rbdata->context,
-                               (int) rbdata->rectangle.x,
-                               (int) rbdata->rectangle.y,
-                               (unsigned int) rbdata->rectangle.width-1,
-                               (unsigned int) rbdata->rectangle.height-1);
+                XDrawRectangle (display,
+                                root_window,
+                                *rbdata->context,
+                                rbdata->rectangle.x,
+                                rbdata->rectangle.y,
+                                (unsigned int) rbdata->rectangle.width-1,
+                                (unsigned int) rbdata->rectangle.height-1);
 
                 gtk_main_quit ();
               }
@@ -849,13 +849,13 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                 /* Remove the rectangle drawn previously */
                 TRACE ("Remove the rectangle drawn previously");
 
-                XDrawRectangle(display,
-                               root_window,
-                               *rbdata->context,
-                               (int) rbdata->rectangle.x,
-                               (int) rbdata->rectangle.y,
-                               (unsigned int) rbdata->rectangle.width-1,
-                               (unsigned int) rbdata->rectangle.height-1);
+                XDrawRectangle (display,
+                                root_window,
+                                *rbdata->context,
+                                rbdata->rectangle.x,
+                                rbdata->rectangle.y,
+                                (unsigned int) rbdata->rectangle.width-1,
+                                (unsigned int) rbdata->rectangle.height-1);
               }
 
             device_event = (XIDeviceEvent*) x_event->xcookie.data;
@@ -871,13 +871,13 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
             TRACE ("Draw the new rectangle");
             if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
               {
-                XDrawRectangle(display,
-                               root_window,
-                               *rbdata->context,
-                               (int) rbdata->rectangle.x,
-                               (int) rbdata->rectangle.y,
-                               (unsigned int) rbdata->rectangle.width-1,
-                               (unsigned int) rbdata->rectangle.height-1);
+                XDrawRectangle (display,
+                                root_window,
+                                *rbdata->context,
+                                rbdata->rectangle.x,
+                                rbdata->rectangle.y,
+                                (unsigned int) rbdata->rectangle.width-1,
+                                (unsigned int) rbdata->rectangle.height-1);
               }
           }
         return GDK_FILTER_REMOVE;
@@ -897,13 +897,13 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                     /* Remove the rectangle drawn previously */
                     TRACE ("Remove the rectangle drawn previously");
 
-                    XDrawRectangle(display,
-                                  root_window,
-                                  *rbdata->context,
-                                  (int) rbdata->rectangle.x,
-                                  (int) rbdata->rectangle.y,
-                                  (unsigned int) rbdata->rectangle.width-1,
-                                  (unsigned int) rbdata->rectangle.height-1);
+                    XDrawRectangle (display,
+                                   root_window,
+                                   *rbdata->context,
+                                   rbdata->rectangle.x,
+                                   rbdata->rectangle.y,
+                                   (unsigned int) rbdata->rectangle.width-1,
+                                   (unsigned int) rbdata->rectangle.height-1);
                   }
               }
 
@@ -1001,7 +1001,7 @@ static GdkPixbuf
   gdk_pointer_ungrab (GDK_CURRENT_TIME);
   gdk_keyboard_ungrab (GDK_CURRENT_TIME);
 
- /* Get the screenshot's pixbuf */
+  /* Get the screenshot's pixbuf */
   if (G_LIKELY (!rbdata.cancelled))
     {
       TRACE ("Get the pixbuf for the screenshot");
