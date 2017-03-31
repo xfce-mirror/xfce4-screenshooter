@@ -552,7 +552,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   GtkWidget *dialog = gtk_dialog_new_with_buttons (_("Transfer"),
                                                    NULL,
                                                    GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                   GTK_STOCK_CANCEL,
+                                                   "gtk-cancel",
                                                    GTK_RESPONSE_CANCEL,
                                                    NULL);
 
@@ -696,11 +696,11 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
         xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT,
-                                             GTK_STOCK_HELP,
+                                             "gtk-help",
                                              GTK_RESPONSE_HELP,
-                                             GTK_STOCK_CANCEL,
+                                             "gtk-cancel",
                                              GTK_RESPONSE_CANCEL,
-                                             GTK_STOCK_OK,
+                                             "gtk-ok",
                                              GTK_RESPONSE_OK,
                                              NULL);
 
@@ -712,9 +712,9 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
         xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT,
-                                             GTK_STOCK_HELP,
+                                             "gtk-help",
                                              GTK_RESPONSE_HELP,
-                                             GTK_STOCK_CLOSE,
+                                             "gtk-close",
                                              GTK_RESPONSE_OK,
                                              NULL);
 
@@ -916,11 +916,11 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                              NULL,
                                              GTK_DIALOG_DESTROY_WITH_PARENT,
-                                             GTK_STOCK_HELP,
+                                             "gtk-help",
                                              GTK_RESPONSE_HELP,
-                                             GTK_STOCK_CANCEL,
+                                             "gtk-cancel",
                                              GTK_RESPONSE_CANCEL,
-                                             GTK_STOCK_OK,
+                                             "gtk-ok",
                                              GTK_RESPONSE_OK,
                                              NULL);
 
@@ -1141,9 +1141,9 @@ gchar
       gtk_file_chooser_dialog_new (_("Save screenshot as..."),
                                    NULL,
                                    GTK_FILE_CHOOSER_ACTION_SAVE,
-                                   GTK_STOCK_CANCEL,
+                                   "gtk-cancel",
                                    GTK_RESPONSE_CANCEL,
-                                   GTK_STOCK_SAVE,
+                                   "gtk-save",
                                    GTK_RESPONSE_ACCEPT,
                                    NULL);
 

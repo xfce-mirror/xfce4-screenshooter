@@ -169,9 +169,9 @@ cb_ask_for_information (ScreenshooterJob *job,
     xfce_titled_dialog_new_with_buttons (_("Details about the screenshot for ZimageZ"),
                                          NULL,
                                          GTK_DIALOG_DESTROY_WITH_PARENT,
-                                         GTK_STOCK_CANCEL,
+                                         "gtk-cancel",
                                          GTK_RESPONSE_CANCEL,
-                                         GTK_STOCK_OK,
+                                         "gtk-ok",
                                          GTK_RESPONSE_OK,
                                          NULL);
 
@@ -429,7 +429,7 @@ void cb_image_uploaded (ScreenshooterJob  *job,
     xfce_titled_dialog_new_with_buttons (title,
                                          NULL,
                                          GTK_DIALOG_DESTROY_WITH_PARENT,
-                                         GTK_STOCK_CLOSE,
+                                         "gtk-close",
                                          GTK_RESPONSE_CLOSE,
                                          NULL);
 
