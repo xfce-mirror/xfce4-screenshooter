@@ -572,7 +572,8 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   gtk_label_set_markup (GTK_LABEL (label1),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot "
                           "is being transferred to:</span>"));
-  gtk_misc_set_alignment (GTK_MISC (label1), 0, 0.5);
+  gtk_widget_set_halign (label1, GTK_ALIGN_START);
+  gtk_widget_set_valign (label1, GTK_ALIGN_CENTER);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))),
                       label1,
                       FALSE,
@@ -728,8 +729,14 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
-  main_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
+  main_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (main_alignment, TRUE);
+  gtk_widget_set_vexpand (main_alignment, TRUE);
+  gtk_widget_set_margin_top (main_alignment, 6);
+  gtk_widget_set_margin_bottom (main_alignment, 0);
+  gtk_widget_set_margin_start (main_alignment, 12);
+  gtk_widget_set_margin_end (main_alignment, 12);
+
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
@@ -751,13 +758,19 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_label_set_markup (GTK_LABEL (area_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Region to capture</span>"));
-  gtk_misc_set_alignment (GTK_MISC (area_label), 0, 0);
+  gtk_widget_set_halign (area_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (area_label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (area_main_box), area_label);
 
   /* Create area alignment */
-  area_alignment = gtk_alignment_new (0, 0, 1, 1);
+  area_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (area_alignment, TRUE);
+  gtk_widget_set_vexpand (area_alignment, TRUE);
+  gtk_widget_set_margin_top (area_alignment, 0);
+  gtk_widget_set_margin_bottom (area_alignment, 6);
+  gtk_widget_set_margin_start (area_alignment, 12);
+  gtk_widget_set_margin_end (area_alignment, 0);
   gtk_container_add (GTK_CONTAINER (area_main_box), area_alignment);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (area_alignment), 0, 6, 12, 0);
 
   /* Create area box */
   area_box = gtk_vbox_new (FALSE, 6);
@@ -837,13 +850,19 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_label_set_markup (GTK_LABEL(delay_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Delay before capturing</span>"));
-  gtk_misc_set_alignment(GTK_MISC (delay_label), 0, 0);
+  gtk_widget_set_halign (delay_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (delay_label, GTK_ALIGN_START);
   gtk_box_pack_start (GTK_BOX (delay_main_box), delay_label, FALSE, FALSE, 0);
 
   /* Create delay alignment */
-  delay_alignment = gtk_alignment_new (0, 0, 0, 0);
+  delay_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (delay_alignment, FALSE);
+  gtk_widget_set_vexpand (delay_alignment, FALSE);
+  gtk_widget_set_margin_top (delay_alignment, 0);
+  gtk_widget_set_margin_bottom (delay_alignment, 6);
+  gtk_widget_set_margin_start (delay_alignment, 12);
+  gtk_widget_set_margin_end (delay_alignment, 0);
   gtk_box_pack_start (GTK_BOX (delay_main_box), delay_alignment, FALSE, FALSE, 0);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (delay_alignment), 0, 6, 12, 0);
 
   /* Create delay box */
   delay_box = gtk_vbox_new (FALSE, 0);
@@ -913,8 +932,13 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
-  main_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
+  main_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (main_alignment, TRUE);
+  gtk_widget_set_vexpand (main_alignment, TRUE);
+  gtk_widget_set_margin_top (main_alignment, 6);
+  gtk_widget_set_margin_bottom (main_alignment, 0);
+  gtk_widget_set_margin_start (main_alignment, 12);
+  gtk_widget_set_margin_end (main_alignment, 12);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
@@ -936,12 +960,18 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_label_set_markup (GTK_LABEL (actions_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">Action"
                           "</span>"));
-  gtk_misc_set_alignment (GTK_MISC (actions_label), 0, 0);
+  gtk_widget_set_halign (actions_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (actions_label, GTK_ALIGN_START);
   gtk_box_pack_start (GTK_BOX (left_box), actions_label, FALSE, FALSE, 0);
 
   /* Create actions alignment */
-  actions_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (actions_alignment), 0, 6, 12, 0);
+  actions_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (actions_alignment, TRUE);
+  gtk_widget_set_vexpand (actions_alignment, TRUE);
+  gtk_widget_set_margin_top (actions_alignment, 0);
+  gtk_widget_set_margin_bottom (actions_alignment, 6);
+  gtk_widget_set_margin_start (actions_alignment, 12);
+  gtk_widget_set_margin_end (actions_alignment, 0);
   gtk_box_pack_start (GTK_BOX (left_box), actions_alignment, TRUE, TRUE, 0);
 
   /* Create the actions box */
@@ -1048,7 +1078,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_label_set_markup (GTK_LABEL (preview_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Preview</span>"));
-  gtk_misc_set_alignment (GTK_MISC (preview_label), 0, 0.5);
+  gtk_widget_set_halign (preview_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (preview_label, GTK_ALIGN_CENTER);
   gtk_box_pack_start (GTK_BOX (preview_box), preview_label, FALSE, FALSE, 0);
 
   /* The preview image */

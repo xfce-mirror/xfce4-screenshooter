@@ -43,8 +43,13 @@ create_spinner_dialog             (const gchar        *title,
   gtk_window_set_icon_name (GTK_WINDOW (dialog), "gtk-info");
 
   /* Create the main alignment for the dialog */
-  main_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 0, 0, 6, 6);
+  main_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (main_alignment, TRUE);
+  gtk_widget_set_vexpand (main_alignment, TRUE);
+  gtk_widget_set_margin_top (main_alignment, 0);
+  gtk_widget_set_margin_bottom (main_alignment, 0);
+  gtk_widget_set_margin_start (main_alignment, 6);
+  gtk_widget_set_margin_end (main_alignment, 6);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
@@ -67,7 +72,8 @@ create_spinner_dialog             (const gchar        *title,
   gtk_label_set_markup (GTK_LABEL (status_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Status</span>"));
-  gtk_misc_set_alignment (GTK_MISC (status_label), 0, 0);
+  gtk_widget_set_halign (status_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (status_label, GTK_ALIGN_START);
   gtk_box_pack_start (GTK_BOX (hbox), status_label, FALSE, FALSE, 0);
 
   /* Information label */
@@ -178,8 +184,13 @@ cb_ask_for_information (ScreenshooterJob *job,
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
-  main_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 12, 12);
+  main_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (main_alignment, TRUE);
+  gtk_widget_set_vexpand (main_alignment, TRUE);
+  gtk_widget_set_margin_top (main_alignment, 6);
+  gtk_widget_set_margin_bottom (main_alignment, 0);
+  gtk_widget_set_margin_start (main_alignment, 12);
+  gtk_widget_set_margin_end (main_alignment, 12);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
@@ -190,7 +201,8 @@ cb_ask_for_information (ScreenshooterJob *job,
   /* Create the information label */
   information_label = gtk_label_new ("");
   gtk_label_set_markup (GTK_LABEL (information_label), message);
-  gtk_misc_set_alignment (GTK_MISC (information_label), 0, 0);
+  gtk_widget_set_halign (information_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (information_label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (vbox), information_label);
 
   /* Create the layout table */
@@ -201,7 +213,8 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the user label */
   user_label = gtk_label_new (_("User:"));
-  gtk_misc_set_alignment (GTK_MISC (user_label), 0, 0.5);
+  gtk_widget_set_halign (user_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (user_label, GTK_ALIGN_CENTER);
   gtk_table_attach (GTK_TABLE (table), user_label,
                     0, 1,
                     0, 1,
@@ -218,7 +231,8 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the password label */
   password_label = gtk_label_new (_("Password:"));
-  gtk_misc_set_alignment (GTK_MISC (password_label), 0, 0.5);
+  gtk_widget_set_halign (password_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (password_label, GTK_ALIGN_CENTER);
   gtk_table_attach (GTK_TABLE (table), password_label,
                     0, 1,
                     1, 2,
@@ -234,7 +248,8 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the title label */
   title_label = gtk_label_new (_("Title:"));
-  gtk_misc_set_alignment (GTK_MISC (title_label), 0, 0.5);
+  gtk_widget_set_halign (title_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (title_label, GTK_ALIGN_CENTER);
   gtk_table_attach (GTK_TABLE (table), title_label,
                     0, 1,
                     2, 3,
@@ -250,7 +265,8 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the comment label */
   comment_label = gtk_label_new (_("Comment:"));
-  gtk_misc_set_alignment (GTK_MISC (comment_label), 0, 0.5);
+  gtk_widget_set_halign (comment_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (comment_label, GTK_ALIGN_CENTER);
   gtk_table_attach (GTK_TABLE (table), comment_label,
                     0, 1,
                     3, 4,
@@ -424,8 +440,13 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
-  main_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (main_alignment), 6, 0, 10, 10);
+  main_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (main_alignment, TRUE);
+  gtk_widget_set_vexpand (main_alignment, TRUE);
+  gtk_widget_set_margin_top (main_alignment, 6);
+  gtk_widget_set_margin_bottom (main_alignment, 0);
+  gtk_widget_set_margin_start (main_alignment, 10);
+  gtk_widget_set_margin_end (main_alignment, 10);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
@@ -438,12 +459,18 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_label_set_markup (GTK_LABEL (link_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Links</span>"));
-  gtk_misc_set_alignment (GTK_MISC (link_label), 0, 0);
+  gtk_widget_set_halign (link_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (link_label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (vbox), link_label);
 
   /* Links alignment */
-  links_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (links_alignment), 0, 0, 12, 0);
+  links_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (links_alignment, TRUE);
+  gtk_widget_set_vexpand (links_alignment, TRUE);
+  gtk_widget_set_margin_top (links_alignment, 0);
+  gtk_widget_set_margin_bottom (links_alignment, 0);
+  gtk_widget_set_margin_start (links_alignment, 12);
+  gtk_widget_set_margin_end (links_alignment, 0);
   gtk_container_add (GTK_CONTAINER (vbox), links_alignment);
 
   /* Links box */
@@ -454,21 +481,24 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   /* Create the image link */
   image_link = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (image_link), image_markup);
-  gtk_misc_set_alignment (GTK_MISC (image_link), 0, 0);
+  gtk_widget_set_halign (image_link, GTK_ALIGN_START);
+  gtk_widget_set_valign (image_link, GTK_ALIGN_START);
   gtk_widget_set_tooltip_text (image_link, image_url);
   gtk_container_add (GTK_CONTAINER (links_box), image_link);
 
   /* Create the thumbnail link */
   thumbnail_link = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (thumbnail_link), thumbnail_markup);
-  gtk_misc_set_alignment (GTK_MISC (thumbnail_link), 0, 0);
+  gtk_widget_set_halign (thumbnail_link, GTK_ALIGN_START);
+  gtk_widget_set_valign (thumbnail_link, GTK_ALIGN_START);
   gtk_widget_set_tooltip_text (thumbnail_link, thumbnail_url);
   gtk_container_add (GTK_CONTAINER (links_box), thumbnail_link);
 
   /* Create the small thumbnail link */
   small_thumbnail_link = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (small_thumbnail_link), small_thumbnail_markup);
-  gtk_misc_set_alignment (GTK_MISC (small_thumbnail_link), 0, 0);
+  gtk_widget_set_halign (small_thumbnail_link, GTK_ALIGN_START);
+  gtk_widget_set_valign (small_thumbnail_link, GTK_ALIGN_START);
   gtk_widget_set_tooltip_text (small_thumbnail_link, small_thumbnail_url);
   gtk_container_add (GTK_CONTAINER (links_box), small_thumbnail_link);
 
@@ -477,12 +507,18 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_label_set_markup (GTK_LABEL (example_label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Code for a thumbnail pointing to the full size image</span>"));
-  gtk_misc_set_alignment (GTK_MISC (example_label), 0, 0);
+  gtk_widget_set_halign (example_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (example_label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (vbox), example_label);
 
   /* Code alignment */
-  code_alignment = gtk_alignment_new (0, 0, 1, 1);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (code_alignment), 0, 0, 12, 0);
+  code_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+  gtk_widget_set_hexpand (code_alignment, TRUE);
+  gtk_widget_set_vexpand (code_alignment, TRUE);
+  gtk_widget_set_margin_top (code_alignment, 0);
+  gtk_widget_set_margin_bottom (code_alignment, 0);
+  gtk_widget_set_margin_start (code_alignment, 12);
+  gtk_widget_set_margin_end (code_alignment, 0);
   gtk_container_add (GTK_CONTAINER (vbox), code_alignment);
 
   /* Links box */
@@ -492,7 +528,8 @@ void cb_image_uploaded (ScreenshooterJob  *job,
 
   /* HTML title */
   html_label = gtk_label_new (_("HTML"));
-  gtk_misc_set_alignment (GTK_MISC (html_label), 0, 0);
+  gtk_widget_set_halign (html_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (html_label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (code_box), html_label);
 
   /* HTML frame */
@@ -513,7 +550,8 @@ void cb_image_uploaded (ScreenshooterJob  *job,
 
   /* BB title */
   bb_label = gtk_label_new (_("BBCode for forums"));
-  gtk_misc_set_alignment (GTK_MISC (bb_label), 0, 0);
+  gtk_widget_set_halign (bb_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (bb_label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (code_box), bb_label);
 
   /* BB frame */
