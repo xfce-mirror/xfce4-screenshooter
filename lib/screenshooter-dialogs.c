@@ -740,7 +740,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
-  vbox = gtk_vbox_new (FALSE, 10);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
@@ -750,7 +750,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_box_pack_start (GTK_BOX (vbox), layout_table, TRUE, TRUE, 0);
 
   /* Create the main box for the regions */
-  area_main_box = gtk_vbox_new (FALSE, 6);
+  area_main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_table_attach_defaults (GTK_TABLE (layout_table), area_main_box, 0, 1, 0, 2);
 
   /* Create area label */
@@ -773,7 +773,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_container_add (GTK_CONTAINER (area_main_box), area_alignment);
 
   /* Create area box */
-  area_box = gtk_vbox_new (FALSE, 6);
+  area_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_add (GTK_CONTAINER (area_alignment), area_box);
   gtk_container_set_border_width (GTK_CONTAINER (area_box), 0);
 
@@ -842,7 +842,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                     G_CALLBACK (cb_toggle_set_insensi), show_mouse_checkbox);
 
   /* Create the main box for the delay stuff */
-  delay_main_box = gtk_vbox_new (FALSE, 6);
+  delay_main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_table_attach_defaults (GTK_TABLE (layout_table), delay_main_box, 1, 2, 0, 1);
 
   /* Create delay label */
@@ -865,12 +865,12 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_box_pack_start (GTK_BOX (delay_main_box), delay_alignment, FALSE, FALSE, 0);
 
   /* Create delay box */
-  delay_box = gtk_vbox_new (FALSE, 0);
+  delay_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
   gtk_container_add (GTK_CONTAINER (delay_alignment), delay_box);
   gtk_container_set_border_width (GTK_CONTAINER (delay_box), 0);
 
   /* Create delay spinner */
-  delay_spinner_box = gtk_hbox_new (FALSE, 4);
+  delay_spinner_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
   gtk_box_pack_start (GTK_BOX (delay_box), delay_spinner_box, FALSE, FALSE, 0);
 
   delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
@@ -942,7 +942,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
-  vbox = gtk_vbox_new (FALSE, 10);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
@@ -952,7 +952,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (vbox), layout_table, TRUE, TRUE, 0);
 
   /* Create the box which containes the left part of the UI */
-  left_box = gtk_vbox_new (FALSE, 6);
+  left_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_table_attach_defaults (GTK_TABLE (layout_table), left_box, 0, 1, 0, 1);
 
   /* Create actions label */
@@ -1069,7 +1069,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_table_attach (GTK_TABLE (actions_table), imgur_radio_button, 0, 1, 4, 5, GTK_FILL, GTK_FILL, 0, 0);
 
   /* Preview box */
-  preview_box = gtk_vbox_new (FALSE, 6);
+  preview_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_set_border_width (GTK_CONTAINER (preview_box), 0);
   gtk_table_attach_defaults (GTK_TABLE (layout_table), preview_box, 1, 2, 0, 1);
 

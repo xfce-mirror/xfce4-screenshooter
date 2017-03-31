@@ -53,12 +53,12 @@ create_spinner_dialog             (const gchar        *title,
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
-  main_box = gtk_vbox_new (FALSE, 10);
+  main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
   gtk_container_set_border_width (GTK_CONTAINER (main_box), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), main_box);
 
   /* Top horizontal box for the spinner */
-  hbox= gtk_hbox_new (FALSE, 0);
+  hbox= gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
   gtk_container_set_border_width (GTK_CONTAINER (hbox), 0);
   gtk_container_add (GTK_CONTAINER (main_box), hbox);
 
@@ -194,7 +194,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
-  vbox = gtk_vbox_new (FALSE, 10);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
@@ -450,7 +450,7 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
 
   /* Create the main box for the dialog */
-  vbox = gtk_vbox_new (FALSE, 10);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
@@ -474,7 +474,7 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_container_add (GTK_CONTAINER (vbox), links_alignment);
 
   /* Links box */
-  links_box = gtk_vbox_new (FALSE, 10);
+  links_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
   gtk_container_set_border_width (GTK_CONTAINER (links_box), 0);
   gtk_container_add (GTK_CONTAINER (links_alignment), links_box);
 
@@ -522,7 +522,7 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   gtk_container_add (GTK_CONTAINER (vbox), code_alignment);
 
   /* Links box */
-  code_box = gtk_vbox_new (FALSE, 10);
+  code_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
   gtk_container_set_border_width (GTK_CONTAINER (code_box), 0);
   gtk_container_add (GTK_CONTAINER (code_alignment), code_box);
 
