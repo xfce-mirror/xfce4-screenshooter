@@ -677,7 +677,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   GtkWidget *dlg, *main_alignment;
   GtkWidget *vbox;
 
-  GtkWidget *layout_table;
+  GtkWidget *layout_grid;
 
   GtkWidget *area_main_box, *area_box, *area_label, *area_alignment;
   GtkWidget *active_window_button,
@@ -744,14 +744,14 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
-  /* Create the table to align the differents parts of the top of the UI */
-  layout_table = gtk_table_new (2, 2, FALSE);
-  gtk_table_set_col_spacings (GTK_TABLE (layout_table), 20);
-  gtk_box_pack_start (GTK_BOX (vbox), layout_table, TRUE, TRUE, 0);
+  /* Create the grid to align the differents parts of the top of the UI */
+  layout_grid = gtk_grid_new ();
+  gtk_grid_set_column_spacing (GTK_GRID (layout_grid), 20);
+  gtk_box_pack_start (GTK_BOX (vbox), layout_grid, TRUE, TRUE, 0);
 
   /* Create the main box for the regions */
   area_main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_table_attach_defaults (GTK_TABLE (layout_table), area_main_box, 0, 1, 0, 2);
+  gtk_grid_attach (GTK_GRID (layout_grid), area_main_box, 0, 0, 1, 2);
 
   /* Create area label */
   area_label = gtk_label_new ("");
@@ -775,6 +775,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   /* Create area box */
   area_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_add (GTK_CONTAINER (area_alignment), area_box);
+  gtk_box_set_spacing (GTK_BOX (area_box), 12);
   gtk_container_set_border_width (GTK_CONTAINER (area_box), 0);
 
   /* Create radio buttons for areas to screenshot */
@@ -843,7 +844,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
   /* Create the main box for the delay stuff */
   delay_main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_table_attach_defaults (GTK_TABLE (layout_table), delay_main_box, 1, 2, 0, 1);
+  gtk_grid_attach (GTK_GRID (layout_grid), delay_main_box, 1, 0, 1, 1);
 
   /* Create delay label */
   delay_label = gtk_label_new ("");
@@ -897,10 +898,10 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *dlg, *main_alignment;
   GtkWidget *vbox;
 
-  GtkWidget *layout_table;
+  GtkWidget *layout_grid;
 
   GtkWidget *left_box;
-  GtkWidget *actions_label, *actions_alignment, *actions_table;
+  GtkWidget *actions_label, *actions_alignment, *actions_grid;
   GtkWidget *save_radio_button;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
   GtkWidget *zimagez_radio_button;
@@ -946,14 +947,14 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
 
-  /* Create the table to align the two columns of the UI */
-  layout_table = gtk_table_new (1, 2, FALSE);
-  gtk_table_set_col_spacings (GTK_TABLE (layout_table), 30);
-  gtk_box_pack_start (GTK_BOX (vbox), layout_table, TRUE, TRUE, 0);
+  /* Create the grid to align the two columns of the UI */
+  layout_grid = gtk_grid_new ();
+  gtk_grid_set_column_spacing (GTK_GRID (layout_grid), 20);
+  gtk_box_pack_start (GTK_BOX (vbox), layout_grid, TRUE, TRUE, 0);
 
   /* Create the box which containes the left part of the UI */
   left_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_table_attach_defaults (GTK_TABLE (layout_table), left_box, 0, 1, 0, 1);
+  gtk_grid_attach (GTK_GRID (layout_grid), left_box, 0, 0, 1, 1);
 
   /* Create actions label */
   actions_label = gtk_label_new ("");
@@ -975,11 +976,12 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (left_box), actions_alignment, TRUE, TRUE, 0);
 
   /* Create the actions box */
-  actions_table = gtk_table_new (5, 2, FALSE);
-  gtk_container_add (GTK_CONTAINER (actions_alignment), actions_table);
-  gtk_table_set_row_spacings (GTK_TABLE (actions_table), 6);
-  gtk_table_set_col_spacings (GTK_TABLE (actions_table), 6);
-  gtk_container_set_border_width (GTK_CONTAINER (actions_table), 0);
+  actions_grid = gtk_grid_new ();
+  gtk_container_add (GTK_CONTAINER (actions_alignment), actions_grid);
+
+  gtk_grid_set_row_spacing (GTK_GRID (actions_grid), 6);
+  gtk_grid_set_column_spacing (GTK_GRID (actions_grid), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (actions_grid), 0);
 
   /* Save option radio button */
   save_radio_button = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
@@ -988,7 +990,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                     G_CALLBACK (cb_save_toggled), sd);
   gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
-  gtk_table_attach (GTK_TABLE (actions_table), save_radio_button, 0, 1, 0, 1, GTK_FILL, GTK_FILL, 0, 0);
+  gtk_grid_attach (GTK_GRID (actions_grid), save_radio_button, 0, 0, 1, 1);
 
   if (sd->plugin ||
       gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
@@ -1004,7 +1006,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                     (sd->action == CLIPBOARD));
       g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled",
                         G_CALLBACK (cb_clipboard_toggled), sd);
-      gtk_table_attach (GTK_TABLE (actions_table), clipboard_radio_button, 0, 1, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
+      gtk_grid_attach (GTK_GRID (actions_grid), clipboard_radio_button, 0, 1, 1, 1);
     }
 
   /* Open with radio button */
@@ -1017,7 +1019,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                     G_CALLBACK (cb_open_toggled), sd);
   gtk_widget_set_tooltip_text (open_with_radio_button,
                                _("Open the screenshot with the chosen application"));
-  gtk_table_attach (GTK_TABLE (actions_table), open_with_radio_button, 0, 1, 2, 3, GTK_FILL, GTK_FILL, 0, 0);
+  gtk_grid_attach (GTK_GRID (actions_grid), open_with_radio_button, 0, 2, 1, 1);
 
   /* Open with combobox */
   liststore = gtk_list_store_new (3, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
@@ -1031,7 +1033,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                   "pixbuf", 0, NULL);
   populate_liststore (liststore);
   set_default_item (combobox, sd);
-  gtk_table_attach (GTK_TABLE (actions_table), combobox, 1, 2, 2, 3, GTK_SHRINK, GTK_FILL, 0, 0);
+  gtk_grid_attach (GTK_GRID (actions_grid), combobox, 1, 2, 1, 1);
 
   g_signal_connect (G_OBJECT (combobox), "changed",
                     G_CALLBACK (cb_combo_active_item_changed), sd);
@@ -1053,7 +1055,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                  "image hosting service"));
   g_signal_connect (G_OBJECT (zimagez_radio_button), "toggled",
                     G_CALLBACK (cb_zimagez_toggled), sd);
-  gtk_table_attach (GTK_TABLE (actions_table), zimagez_radio_button, 0, 1, 3, 4, GTK_FILL, GTK_FILL, 0, 0);
+  gtk_grid_attach (GTK_GRID (actions_grid), zimagez_radio_button, 0, 3, 1, 1);
 
   /* Upload to imgur radio button */
   imgur_radio_button =
@@ -1066,12 +1068,12 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                  "image hosting service"));
   g_signal_connect (G_OBJECT (imgur_radio_button), "toggled",
                     G_CALLBACK (cb_imgur_toggled), sd);
-  gtk_table_attach (GTK_TABLE (actions_table), imgur_radio_button, 0, 1, 4, 5, GTK_FILL, GTK_FILL, 0, 0);
+  gtk_grid_attach (GTK_GRID (actions_grid), imgur_radio_button, 0, 4, 1, 1);
 
   /* Preview box */
   preview_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_set_border_width (GTK_CONTAINER (preview_box), 0);
-  gtk_table_attach_defaults (GTK_TABLE (layout_table), preview_box, 1, 2, 0, 1);
+  gtk_grid_attach (GTK_GRID (layout_grid), preview_box, 1, 0, 1, 1);
 
   /* Preview label*/
   preview_label = gtk_label_new ("");

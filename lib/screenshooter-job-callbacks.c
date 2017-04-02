@@ -151,7 +151,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   GtkWidget *dialog;
   GtkWidget *information_label;
   GtkWidget *vbox, *main_alignment;
-  GtkWidget *table;
+  GtkWidget *grid;
   GtkWidget *user_entry, *password_entry, *title_entry, *comment_entry;
   GtkWidget *user_label, *password_label, *title_label, *comment_label;
 
@@ -205,21 +205,17 @@ cb_ask_for_information (ScreenshooterJob *job,
   gtk_widget_set_valign (information_label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (vbox), information_label);
 
-  /* Create the layout table */
-  table = gtk_table_new (4, 2, FALSE);
-  gtk_table_set_col_spacings (GTK_TABLE (table), 6);
-  gtk_table_set_row_spacings (GTK_TABLE (table), 12);
-  gtk_container_add (GTK_CONTAINER (vbox), table);
+  /* Create the layout grid */
+  grid = gtk_grid_new ();
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 12);
+  gtk_container_add (GTK_CONTAINER (vbox), grid);
 
   /* Create the user label */
   user_label = gtk_label_new (_("User:"));
   gtk_widget_set_halign (user_label, GTK_ALIGN_START);
   gtk_widget_set_valign (user_label, GTK_ALIGN_CENTER);
-  gtk_table_attach (GTK_TABLE (table), user_label,
-                    0, 1,
-                    0, 1,
-                    GTK_FILL, GTK_FILL,
-                    0, 0);
+  gtk_grid_attach (GTK_GRID (grid), user_label, 0, 0, 1, 1);
 
   /* Create the user entry */
   user_entry = gtk_entry_new ();
@@ -227,51 +223,40 @@ cb_ask_for_information (ScreenshooterJob *job,
                                _("Your Zimagez user name, if you do not have one yet"
                                  " please create one on the Web page linked above"));
   gtk_entry_set_activates_default (GTK_ENTRY (user_entry), TRUE);
-  gtk_table_attach_defaults (GTK_TABLE (table), user_entry, 1, 2, 0, 1);
+  gtk_grid_attach (GTK_GRID (grid), user_entry, 1, 0, 1, 1);
 
   /* Create the password label */
   password_label = gtk_label_new (_("Password:"));
   gtk_widget_set_halign (password_label, GTK_ALIGN_START);
   gtk_widget_set_valign (password_label, GTK_ALIGN_CENTER);
-  gtk_table_attach (GTK_TABLE (table), password_label,
-                    0, 1,
-                    1, 2,
-                    GTK_FILL, GTK_FILL,
-                    0, 0);
+  gtk_grid_attach (GTK_GRID (grid), password_label, 0, 1, 1, 1);
 
   /* Create the password entry */
   password_entry = gtk_entry_new ();
   gtk_widget_set_tooltip_text (password_entry, _("The password for the user above"));
   gtk_entry_set_visibility (GTK_ENTRY (password_entry), FALSE);
   gtk_entry_set_activates_default (GTK_ENTRY (password_entry), TRUE);
-  gtk_table_attach_defaults (GTK_TABLE (table), password_entry, 1, 2, 1, 2);
+  gtk_grid_attach (GTK_GRID (grid), password_entry, 1, 1, 1, 1);
 
   /* Create the title label */
   title_label = gtk_label_new (_("Title:"));
   gtk_widget_set_halign (title_label, GTK_ALIGN_START);
   gtk_widget_set_valign (title_label, GTK_ALIGN_CENTER);
-  gtk_table_attach (GTK_TABLE (table), title_label,
-                    0, 1,
-                    2, 3,
-                    GTK_FILL, GTK_FILL,
-                    0, 0);
+  gtk_grid_attach (GTK_GRID (grid), title_label, 0, 2, 1, 1);
+
   /* Create the title entry */
   title_entry = gtk_entry_new ();
   gtk_widget_set_tooltip_text (title_entry,
                                _("The title of the screenshot, it will be used when"
                                  " displaying the screenshot on ZimageZ"));
   gtk_entry_set_activates_default (GTK_ENTRY (title_entry), TRUE);
-  gtk_table_attach_defaults (GTK_TABLE (table), title_entry, 1, 2, 2, 3);
+  gtk_grid_attach (GTK_GRID (grid), title_entry, 1, 2, 1, 1);
 
   /* Create the comment label */
   comment_label = gtk_label_new (_("Comment:"));
   gtk_widget_set_halign (comment_label, GTK_ALIGN_START);
   gtk_widget_set_valign (comment_label, GTK_ALIGN_CENTER);
-  gtk_table_attach (GTK_TABLE (table), comment_label,
-                    0, 1,
-                    3, 4,
-                    GTK_FILL, GTK_FILL,
-                    0, 0);
+  gtk_grid_attach (GTK_GRID (grid), comment_label, 0, 3, 1, 1);
 
   /* Create the comment entry */
   comment_entry = gtk_entry_new ();
@@ -279,7 +264,7 @@ cb_ask_for_information (ScreenshooterJob *job,
                                _("A comment on the screenshot, it will be used when"
                                  " displaying the screenshot on ZimageZ"));
   gtk_entry_set_activates_default (GTK_ENTRY (comment_entry), TRUE);
-  gtk_table_attach_defaults (GTK_TABLE (table), comment_entry, 1, 2, 3, 4);
+  gtk_grid_attach (GTK_GRID (grid), comment_entry, 1, 3, 1, 1);
 
   /* Set the values */
   gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter);
