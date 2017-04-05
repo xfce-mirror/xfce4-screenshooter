@@ -955,8 +955,9 @@ static GdkPixbuf
   Display *display;
   gint screen;
   RbData rbdata;
-  GdkEventMask mask;
   GdkCursor *xhair_cursor;
+  GdkDevice *pointer, *keyboard;
+  GdkSeat   *seat;
   long value_mask;
 
   /* Get root window */
@@ -989,17 +990,25 @@ static GdkPixbuf
 
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
-
   xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
                                              GDK_CROSSHAIR);
 
-  mask = GDK_POINTER_MOTION_MASK |
-         GDK_BUTTON_PRESS_MASK |
-         GDK_BUTTON_RELEASE_MASK;
+  seat = gdk_display_get_default_seat (gdk_display_get_default ());
+  pointer = gdk_seat_get_pointer (seat);
+  keyboard = gdk_seat_get_keyboard (seat);
 
-  gdk_pointer_grab (root_window, FALSE, mask, NULL,
-                    xhair_cursor, GDK_CURRENT_TIME);
-  gdk_keyboard_grab (root_window, FALSE, GDK_CURRENT_TIME);
+  gdk_device_grab (keyboard, root_window,
+                  GDK_OWNERSHIP_NONE, FALSE,
+                  GDK_KEY_PRESS_MASK |
+                  GDK_KEY_RELEASE_MASK,
+                  NULL, GDK_CURRENT_TIME);
+
+  gdk_device_grab (pointer, root_window,
+                   GDK_OWNERSHIP_NONE, FALSE,
+                   GDK_POINTER_MOTION_MASK |
+                   GDK_BUTTON_PRESS_MASK | 
+                   GDK_BUTTON_RELEASE_MASK,
+                   xhair_cursor, GDK_CURRENT_TIME);
 
   /* Initialize the rubber band data */
   TRACE ("Initialize the rubber band data");
@@ -1020,8 +1029,8 @@ static GdkPixbuf
                             (GdkFilterFunc) region_filter_func,
                             &rbdata);
 
-  gdk_pointer_ungrab (GDK_CURRENT_TIME);
-  gdk_keyboard_ungrab (GDK_CURRENT_TIME);
+  gdk_device_ungrab (pointer, GDK_CURRENT_TIME);
+  gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
 
   /* Get the screenshot's pixbuf */
   if (G_LIKELY (!rbdata.cancelled))
