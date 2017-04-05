@@ -876,6 +876,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
   delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (delay_spinner), sd->delay);
+  gtk_widget_set_sensitive (delay_spinner, (sd->region != SELECT));
   gtk_widget_set_tooltip_text (delay_spinner,
                                _("Delay in seconds before the screenshot is taken"));
   gtk_box_pack_start (GTK_BOX (delay_spinner_box), delay_spinner, FALSE, FALSE, 0);
@@ -884,6 +885,8 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_box_pack_start (GTK_BOX (delay_spinner_box), seconds_label, FALSE, FALSE, 0);
   g_signal_connect (G_OBJECT (delay_spinner), "value-changed",
                     G_CALLBACK (cb_delay_spinner_changed), sd);
+  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_insensi), delay_spinner);
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
