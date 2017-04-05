@@ -510,11 +510,12 @@ static gboolean cb_draw (GtkWidget *widget,
                          RubberBandData *rbdata)
 {
   cairo_rectangle_t *rects = NULL;
+  cairo_rectangle_list_t *list = NULL;
   gint n_rects = 0, i;
 
   TRACE ("Draw event received.");
 
-  cairo_rectangle_list_t *list = cairo_copy_clip_rectangle_list (cr);
+  list = cairo_copy_clip_rectangle_list (cr);
   n_rects = list->num_rectangles;
   rects = list->rectangles;
 
