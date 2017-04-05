@@ -104,13 +104,13 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   exo_job_info_message (EXO_JOB (job), _("Upload the screenshot..."));
   status = soup_session_send_message (session, msg);
 
-  if (!SOUP_STATUS_IS_SUCCESSFUL (msg->status_code))
+  if (!SOUP_STATUS_IS_SUCCESSFUL (status))
     {
       TRACE ("Error during the POST exchange: %d %s\n",
-             msg->status_code, msg->reason_phrase);
+             status, msg->reason_phrase);
 
       tmp_error = g_error_new (SOUP_HTTP_ERROR,
-                         msg->status_code,
+                         status,
                          _("An error occurred while transferring the data"
                            " to imgur."));
       g_propagate_error (error, tmp_error);

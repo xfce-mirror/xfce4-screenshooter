@@ -32,10 +32,9 @@ create_spinner_dialog             (const gchar        *title,
   GtkWidget *hbox, *spinner;
   GtkWidget *main_box, *main_alignment;
 
-  dialog = gtk_dialog_new_with_buttons (title,
-                                 NULL,
-                                 GTK_DIALOG_DESTROY_WITH_PARENT,
-                                 NULL);
+  dialog = gtk_dialog_new_with_buttons (title, NULL,
+                                        GTK_DIALOG_DESTROY_WITH_PARENT,
+                                        NULL, NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 0);
