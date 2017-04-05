@@ -890,6 +890,22 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
+  /* Set focus to the selected radio button */
+  switch (sd->region)
+    {
+      case FULLSCREEN:
+        gtk_widget_grab_focus (fullscreen_button);
+        break;
+      case ACTIVE_WINDOW:
+        gtk_widget_grab_focus (active_window_button);
+        break;
+      case SELECT:
+        gtk_widget_grab_focus (rectangle_button);
+        break;
+      default:
+        break;
+    }
+
   return dlg;
 }
 
