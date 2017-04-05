@@ -266,7 +266,7 @@ fallback:
   sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", xhot);
   sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "y_hot"), "%d", yhot);
 
-  gdk_cursor_unref (cursor);
+  g_object_unref (cursor);
 
   return cursor_pixbuf;
 }
@@ -764,7 +764,7 @@ static GdkPixbuf
 
   gtk_dialog_run (GTK_DIALOG (window));
   gtk_widget_destroy (window);
-  gdk_cursor_unref (xhair_cursor);
+  g_object_unref (xhair_cursor);
   gdk_flush();
 
   if (cancelled)
