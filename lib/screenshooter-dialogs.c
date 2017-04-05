@@ -347,7 +347,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
   /* Free the stuff */
   g_object_unref (pixbuf);
   g_object_unref (icon);
-  gtk_icon_info_free (icon_info);
+  g_object_unref (icon_info);
 }
 
 
