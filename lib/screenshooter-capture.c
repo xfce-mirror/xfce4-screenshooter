@@ -990,7 +990,8 @@ static GdkPixbuf
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
 
-  xhair_cursor = gdk_cursor_new (GDK_CROSSHAIR);
+  xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+                                             GDK_CROSSHAIR);
 
   mask = GDK_POINTER_MOTION_MASK |
          GDK_BUTTON_PRESS_MASK |
