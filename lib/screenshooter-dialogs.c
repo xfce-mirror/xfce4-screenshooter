@@ -324,14 +324,14 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
   icon_info =
     gtk_icon_theme_lookup_by_gicon (icon_theme, icon,
                                     ICON_SIZE,
-                                    GTK_ICON_LOOKUP_GENERIC_FALLBACK);
+                                    GTK_ICON_LOOKUP_FORCE_SIZE);
 
   pixbuf = gtk_icon_info_load_icon (icon_info, NULL);
 
   if (G_UNLIKELY (pixbuf == NULL))
     {
       pixbuf = gtk_icon_theme_load_icon (icon_theme, "exec", ICON_SIZE,
-                                         GTK_ICON_LOOKUP_GENERIC_FALLBACK,
+                                         GTK_ICON_LOOKUP_FORCE_SIZE,
                                          NULL);
     }
 
