@@ -1107,7 +1107,9 @@ GdkPixbuf *screenshooter_take_screenshot (gint     region,
   gdk_window_process_all_updates ();
 
   /* wait for n=delay seconds */
-  if (region != SELECT)
+  if (region == SELECT)
+    delay = 1;
+  else
     sleep (delay);
 
   /* Get the window/desktop we want to screenshot*/
