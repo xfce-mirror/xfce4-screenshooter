@@ -187,6 +187,8 @@ static GdkPixbuf *get_cursor_pixbuf (GdkDisplay *display,
 {
   GdkCursor *cursor = NULL;
   GdkPixbuf *cursor_pixbuf = NULL;
+  GdkDevice *pointer = NULL;
+  GdkSeat   *seat = NULL;
 
 #ifdef HAVE_XFIXES
   XFixesCursorImage *cursor_image = NULL;
@@ -255,7 +257,10 @@ fallback:
     return NULL;
 
   TRACE ("Get the coordinates of the cursor");
-  gdk_window_get_pointer (root, cursorx, cursory, NULL);
+  
+  seat = gdk_display_get_default_seat (gdk_display_get_default ());
+  pointer = gdk_seat_get_pointer (seat);
+  gdk_window_get_device_position (root, pointer, cursorx, cursory, NULL);
 
   TRACE ("Get the cursor hotspot");
   sscanf (gdk_pixbuf_get_option (cursor_pixbuf, "x_hot"), "%d", xhot);
@@ -687,6 +692,8 @@ static GdkPixbuf
   gboolean cancelled = FALSE;
   GdkPixbuf *screenshot;
   GdkWindow *root;
+  GdkDevice *pointer, *keyboard;
+  GdkSeat   *seat;
   GdkCursor *xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
                                                         GDK_CROSSHAIR);
 
@@ -737,9 +744,22 @@ static GdkPixbuf
 
   /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
-  gdk_keyboard_grab (gtk_widget_get_window (window), FALSE, GDK_CURRENT_TIME);
-  gdk_pointer_grab (gtk_widget_get_window (window), TRUE, 0, NULL,
-                    NULL, GDK_CURRENT_TIME);
+  seat = gdk_display_get_default_seat (gdk_display_get_default ());
+  pointer = gdk_seat_get_pointer (seat);
+  keyboard = gdk_seat_get_keyboard (seat);
+
+  gdk_device_grab (keyboard, gtk_widget_get_window (window),
+                  GDK_OWNERSHIP_NONE, FALSE,
+                  GDK_KEY_PRESS_MASK |
+                  GDK_KEY_RELEASE_MASK,
+                  NULL, GDK_CURRENT_TIME);
+
+  gdk_device_grab (pointer, gtk_widget_get_window (window),
+                   GDK_OWNERSHIP_NONE, FALSE,
+                   GDK_POINTER_MOTION_MASK |
+                   GDK_BUTTON_PRESS_MASK | 
+                   GDK_BUTTON_RELEASE_MASK,
+                   NULL, GDK_CURRENT_TIME);
 
   gtk_dialog_run (GTK_DIALOG (window));
   gtk_widget_destroy (window);
@@ -767,8 +787,8 @@ static GdkPixbuf
                                            rbdata.rectangle.height);
 
   /* Ungrab the mouse and the keyboard */
-  gdk_pointer_ungrab (GDK_CURRENT_TIME);
-  gdk_keyboard_ungrab (GDK_CURRENT_TIME);
+  gdk_device_ungrab (pointer, GDK_CURRENT_TIME);
+  gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
   gdk_flush ();
 
   return screenshot;
