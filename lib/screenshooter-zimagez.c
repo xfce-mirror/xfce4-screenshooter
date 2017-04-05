@@ -261,7 +261,7 @@ zimagez_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
 
   /* Start the user soup session */
   exo_job_info_message (EXO_JOB (job), _("Initialize the connection..."));
-  session = soup_session_sync_new ();
+  session = soup_session_new ();
 
   /* Set the proxy URI if any */
   proxy_uri = g_getenv ("http_proxy");

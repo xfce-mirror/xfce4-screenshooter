@@ -66,7 +66,7 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   image_path = g_value_get_string (g_array_index (param_values, GValue*, 0));
   title = g_value_get_string (g_array_index (param_values, GValue*, 1));
 
-  session = soup_session_sync_new ();
+  session = soup_session_new ();
 #if DEBUG > 0
   log = soup_logger_new (SOUP_LOGGER_LOG_HEADERS, -1);
   soup_session_add_feature (session, (SoupSessionFeature *)log);
