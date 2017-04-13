@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012
-# Moo, 2015-2016
+# Moo, 2015-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2016-06-24 12:20+0000\n"
+"PO-Revision-Date: 2017-04-13 13:53+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -374,21 +374,21 @@ msgstr "Versijos informacija"
 #: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Besikertančios parinktys: --%s ir --%s neturėtų būti naudojamos tuo pačiu metu.\n"
+msgstr "Besikertantys parametrai: --%s ir --%s neturėtų būti naudojami tuo pačiu metu.\n"
 
 #: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr "Parinktis --%s naudojama tik su --fullscreen, --window arba --region. Jos bus nepaisoma.\n"
+msgstr "Parametras --%s naudojamas tik su --fullscreen, --window arba --region. Jo bus nepaisoma.\n"
 
 #: ../src/main.c:162
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nNorėdami pamatyti komandų eilutės parinkčių sąrašą, paleiskite „%s --help“.\n"
+msgstr "%s: %s\nNorėdami pamatyti komandų eilutės parametrų sąrašą, paleiskite „%s --help“.\n"
 
 #: ../src/main.c:358
 #, c-format
