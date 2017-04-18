@@ -114,28 +114,16 @@ Returns TRUE if succesful.
 static gboolean
 cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
 {
-  GdkPixbuf *pb;
-  int width;
+  gint icon_size;
 
   /* reduce the size of the plugin to a single row */
   size /= xfce_panel_plugin_get_nrows (plugin);
 
-  width = size - 2 - 2 * MAX (gtk_widget_get_style(pd->button)->xthickness,
-                              gtk_widget_get_style(pd->button)->ythickness);
-
-  TRACE ("Get the icon from the theme");
-  pb = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (),
-                                 SCREENSHOT_ICON_NAME,
-                                 width,
-                                 GTK_ICON_LOOKUP_FORCE_SIZE,
-                                 NULL);
-
-  TRACE ("Set the new icon");
-  gtk_image_set_from_pixbuf (GTK_IMAGE (pd->image), pb);
-  g_object_unref (pb);
-
   TRACE ("Request size for the plugin");
   gtk_widget_set_size_request (GTK_WIDGET (plugin), size, size);
+
+  icon_size = xfce_panel_plugin_get_icon_size (plugin);
+  gtk_image_set_pixel_size (GTK_IMAGE (pd->image), icon_size);
 
   return TRUE;
 }
@@ -340,6 +328,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   PluginData *pd = g_new0 (PluginData, 1);
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   GFile *default_save_dir;
+  gint icon_size;
 
   pd->sd = sd;
   pd->plugin = plugin;
@@ -376,7 +365,8 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   TRACE ("Create the panel button");
   pd->button = xfce_create_panel_button ();
 
-  pd->image = gtk_image_new ();
+  icon_size = xfce_panel_plugin_get_icon_size (plugin);
+  pd->image = gtk_image_new_from_icon_name (SCREENSHOT_ICON_NAME, icon_size);
 
   gtk_container_add (GTK_CONTAINER (pd->button), GTK_WIDGET (pd->image));
 
