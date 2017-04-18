@@ -378,6 +378,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   gtk_container_add (GTK_CONTAINER (plugin), pd->button);
   xfce_panel_plugin_add_action_widget (plugin, pd->button);
   gtk_widget_show_all (pd->button);
+  gtk_widget_add_events (pd->button, GDK_SCROLL_MASK);
 
   /* Set the callbacks */
   g_signal_connect (pd->button, "clicked",
