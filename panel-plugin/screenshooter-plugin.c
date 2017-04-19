@@ -252,11 +252,11 @@ screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 static void
 cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
 {
-    g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
-    gtk_widget_destroy (dlg);
+  g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
+  gtk_widget_destroy (dlg);
 
-    /* Unblock the menu */
-    xfce_panel_plugin_unblock_menu (pd->plugin);
+  /* Unblock the menu */
+  xfce_panel_plugin_unblock_menu (pd->plugin);
 
   if (response == GTK_RESPONSE_OK)
     {
