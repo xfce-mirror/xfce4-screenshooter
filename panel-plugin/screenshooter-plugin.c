@@ -252,16 +252,18 @@ screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 static void
 cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
 {
+    g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
+    gtk_widget_destroy (dlg);
+
+    /* Unblock the menu */
+    xfce_panel_plugin_unblock_menu (pd->plugin);
+
   if (response == GTK_RESPONSE_OK)
     {
-      g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
-      gtk_widget_destroy (dlg);
-
       /* Update tooltips according to the chosen option */
       set_panel_button_tooltip (pd);
 
-      /* Unblock the menu and save options */
-      xfce_panel_plugin_unblock_menu (pd->plugin);
+      /* Save options */
       screenshooter_plugin_write_rc_file (pd->plugin, pd);
     }
   else if (response == GTK_RESPONSE_HELP)
