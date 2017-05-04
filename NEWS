@@ -1,3 +1,16 @@
+=== Version 1.8.99 ===
+
+  * Enhancements:
+    - Port to GTK+3
+    - Updated translations (thanks to translators!)
+
+  * Bugs fixed:
+    - Fix appdata description
+    - Fix crash in GValueArray handling (bug #11879)
+    - Use while instead of when in strings (bug #12157)
+    - Fix gray overlay in region mode screenshots (bug #11922)
+    - Fix crash when uploading to zimagez (bug #11879)
+
 === Version 1.8.2 ===
 
   * Enhancements:
