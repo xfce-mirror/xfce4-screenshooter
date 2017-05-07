@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2017-02-02 02:59+0000\n"
+"PO-Revision-Date: 2017-05-07 10:01+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -377,7 +377,7 @@ msgstr "Versjonsinformasjon"
 #: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Feil i opsjoner: --%s og --%s kan ikke brukes samtidig.\n"
+msgstr "Motstridende valg: --%s og --%s kan ikke brukes samtidig.\n"
 
 #: ../src/main.c:148
 #, c-format
@@ -391,7 +391,7 @@ msgstr "--%s opsjonen brukes bare når --fullscreen, --window eller --region er 
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nPrøv %s --help for å se liste over tilgjengelige kommandolinjeopsjoner.\n"
+msgstr "%s: %s\nPrøv %s --help for å se liste over tilgjengelige kommandolinjevalg.\n"
 
 #: ../src/main.c:358
 #, c-format
