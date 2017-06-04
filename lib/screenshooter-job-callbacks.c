@@ -376,11 +376,11 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   job_type = g_object_get_data(G_OBJECT (job), "jobtype");
   if (!strcmp(job_type, "imgur")) {
     title = _("My screenshot on Imgur");
-    image_url = g_strdup_printf ("http://i.imgur.com/%s.png", upload_name);
+    image_url = g_strdup_printf ("https://i.imgur.com/%s.png", upload_name);
     thumbnail_url =
-      g_strdup_printf ("http://imgur.com/%sl.png", upload_name);
+      g_strdup_printf ("https://imgur.com/%sl.png", upload_name);
     small_thumbnail_url =
-      g_strdup_printf ("http://imgur.com/%ss.png", upload_name);
+      g_strdup_printf ("https://imgur.com/%ss.png", upload_name);
   } else {
     g_return_if_fail (last_user == NULL || *last_user == NULL);
     title = _("My screenshot on ZimageZ");
