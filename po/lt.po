@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2017-04-13 13:53+0000\n"
+"PO-Revision-Date: 2017-06-17 23:24+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -365,7 +365,7 @@ msgstr "Rodyti ekrano kopijoje pelės žymeklį"
 
 #: ../src/main.c:82
 msgid "Directory where the screenshot will be saved"
-msgstr "Aplankas, į kurį bus įrašomos ekrano kopijos"
+msgstr "Katalogas, į kurį bus įrašomos ekrano kopijos"
 
 #: ../src/main.c:97
 msgid "Version information"
@@ -393,7 +393,7 @@ msgstr "%s: %s\nNorėdami pamatyti komandų eilutės parametrų sąrašą, palei
 #: ../src/main.c:358
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s netinkamas aplankas, bus naudojamas numatytasis."
+msgstr "Katalogas %s yra netinkamas, bus naudojamas numatytasis katalogas."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
