@@ -1,3 +1,12 @@
+=== Version 1.9.0 ===
+
+  * Enhancements:
+    - Downgrade xfce4-panel dependency to 4.12
+    - Updated translations (thanks to translators!)
+
+  * Bugs fixed:
+    - Use HTTPS for imgur (bug #13415)
+
 === Version 1.8.99 ===
 
   * Enhancements:
