@@ -55,16 +55,17 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
   g_return_val_if_fail (param_values->len == 2, FALSE);
-  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (g_array_index(param_values, GValue*, 0))), FALSE);
-  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (g_array_index(param_values, GValue*, 1))), FALSE);
+  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (&g_array_index(param_values, GValue, 0))), FALSE);
+  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (&g_array_index(param_values, GValue, 1))), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   g_object_set_data (G_OBJECT (job), "jobtype", "imgur");
   if (exo_job_set_error_if_cancelled (EXO_JOB (job), error))
     return FALSE;
 
-  image_path = g_value_get_string (g_array_index (param_values, GValue*, 0));
-  title = g_value_get_string (g_array_index (param_values, GValue*, 1));
+
+  image_path = g_value_get_string (&g_array_index (param_values, GValue, 0));
+  title = g_value_get_string (&g_array_index (param_values, GValue, 1));
 
   session = soup_session_new ();
 #if DEBUG > 0
@@ -128,7 +129,7 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   root_node = xmlDocGetRootElement(doc);
   for (child_node = root_node->children; child_node; child_node = child_node->next)
     if (xmlStrEqual(child_node->name, (const xmlChar *) "id"))
-       online_file_name = (gchar*)xmlNodeGetContent(child_node);
+       online_file_name = xmlNodeGetContent(child_node);
   TRACE("found picture id %s\n", online_file_name);
   xmlFreeDoc(doc);
   soup_buffer_free (buf);
