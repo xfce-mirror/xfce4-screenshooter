@@ -215,9 +215,9 @@ zimagez_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   g_return_val_if_fail (SCREENSHOOTER_IS_JOB (job), FALSE);
   g_return_val_if_fail (param_values != NULL, FALSE);
   g_return_val_if_fail (param_values->len == 3, FALSE);
-  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (g_array_index (param_values, GValue*, 0))), FALSE);
-  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (g_array_index (param_values, GValue*, 1))), FALSE);
-  g_return_val_if_fail ((G_VALUE_HOLDS_STRING (g_array_index (param_values, GValue*, 2))), FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&g_array_index (param_values, GValue, 0)), FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&g_array_index (param_values, GValue, 1)), FALSE);
+  g_return_val_if_fail (G_VALUE_HOLDS_STRING (&g_array_index (param_values, GValue, 2)), FALSE);
   g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
 
   g_object_set_data (G_OBJECT (job), "jobtype", "zimagez");
@@ -230,7 +230,7 @@ zimagez_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
     }
 
   /* Get the last user */
-  last_user = g_value_get_string (g_array_index (param_values, GValue*, 1));
+  last_user = g_value_get_string (&g_array_index (param_values, GValue, 1));
   user = g_strdup (last_user);
 
   if (user == NULL)
@@ -246,7 +246,7 @@ zimagez_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
                           g_strdup (user), (GDestroyNotify) g_free);
 
   /* Get the default title */
-  title = g_strdup (g_value_get_string (g_array_index (param_values, GValue*, 2)));
+  title = g_strdup (g_value_get_string (&g_array_index (param_values, GValue, 2)));
   if (title == NULL)
     title = g_strdup ("");
 
@@ -257,7 +257,7 @@ zimagez_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
     }
 
   /* Get the path of the image that is to be uploaded */
-  image_path = g_value_get_string (g_array_index (param_values, GValue*, 0));
+  image_path = g_value_get_string (&g_array_index (param_values, GValue, 0));
 
   /* Start the user soup session */
   exo_job_info_message (EXO_JOB (job), _("Initialize the connection..."));
