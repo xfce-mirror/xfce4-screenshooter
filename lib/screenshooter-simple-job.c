@@ -156,7 +156,6 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
 {
   ScreenshooterSimpleJob *simple_job;
   va_list var_args;
-  GValue value = { 0, };
   gchar *error_message;
   guint n;
 
@@ -164,11 +163,14 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
   simple_job = g_object_new (SCREENSHOOTER_TYPE_SIMPLE_JOB, NULL);
   simple_job->func = func;
   simple_job->param_values = g_array_sized_new (FALSE, FALSE, sizeof(GValue), n_param_values);
+  g_array_set_clear_func (simple_job->param_values, (GDestroyNotify) g_value_unset);
 
   /* collect the parameters */
   va_start (var_args, n_param_values);
   for (n = 0; n < n_param_values; ++n)
     {
+      GValue value = { 0 };
+
       /* initialize the value to hold the next parameter */
       g_value_init (&value, va_arg (var_args, GType));
 
@@ -183,7 +185,6 @@ screenshooter_simple_job_launch (ScreenshooterSimpleJobFunc func,
         }
 
       g_array_append_val(simple_job->param_values, value);
-      g_value_unset (&value);
     }
   va_end (var_args);
 
