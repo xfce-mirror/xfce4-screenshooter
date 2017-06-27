@@ -770,12 +770,6 @@ static GdkPixbuf
   if (cancelled)
     return NULL;
 
-  screenshot = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
-                               TRUE,
-                               8,
-                               rbdata.rectangle.width,
-                               rbdata.rectangle.height);
-
   /* Grab the screenshot on the main window */
   root = gdk_get_default_root_window ();
 
