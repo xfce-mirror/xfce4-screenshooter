@@ -1,3 +1,10 @@
+=== Version 1.9.1 ===
+
+  * Enhancements:
+    - Get rid of a dead assignment
+  * Bugs fixed:
+    - Fix crash on program exit after image upload (bug #13415)
+
 === Version 1.9.0 ===
 
   * Enhancements:
