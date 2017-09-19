@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Dsewnr Lu <dsewnr@gmail.com>, 2007
-# Jeff Huang <s8321414@gmail.com>, 2014
+# Jeff Huang <s8321414@gmail.com>, 2014-2015
 # Jeff Huang <s8321414@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-26 00:31+0100\n"
-"PO-Revision-Date: 2014-12-26 10:14+0000\n"
+"POT-Creation-Date: 2015-11-01 12:31+0100\n"
+"PO-Revision-Date: 2017-09-19 18:05+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce-apps/language/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/xfce-apps/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -173,89 +173,89 @@ msgid ""
 "%s"
 msgstr "<b>應用程式無法開啟。</b>\n%s"
 
-#: ../lib/screenshooter-zimagez.c:88
+#: ../lib/screenshooter-zimagez.c:96
 #, c-format
 msgid "An error occurred while creating the XMLRPC request."
 msgstr "建立 XMLRPC 請求時遭遇錯誤。"
 
-#: ../lib/screenshooter-zimagez.c:107
+#: ../lib/screenshooter-zimagez.c:115
 #, c-format
 msgid "An error occurred while transferring the data to ZimageZ."
 msgstr "傳輸資料至 ZimageZ 時遭遇錯誤。"
 
-#: ../lib/screenshooter-zimagez.c:132
+#: ../lib/screenshooter-zimagez.c:140
 #, c-format
 msgid "An error occurred while parsing the response from ZimageZ."
 msgstr "解析來自 ZimageZ 的回應時遭遇錯誤。"
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:182
+#: ../lib/screenshooter-zimagez.c:190
 #, c-format
 msgid "Taken on %x, at %X"
 msgstr "拍攝於 %x 時間 %X"
 
 #. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:255
+#: ../lib/screenshooter-zimagez.c:263
 msgid "Initialize the connection..."
 msgstr "初始化連線..."
 
-#: ../lib/screenshooter-zimagez.c:301
+#: ../lib/screenshooter-zimagez.c:309
 msgid ""
 "Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
 "user name, passsword and details about the screenshot."
 msgstr "請於下列欄位填入您的 <a href=\"http://www.zimagez.com\">ZimageZ</a> \n使用者名稱、密碼與螢幕快照的相關細節。"
 
-#: ../lib/screenshooter-zimagez.c:358
+#: ../lib/screenshooter-zimagez.c:366
 msgid "Check the user information..."
 msgstr "檢查使用者資訊..."
 
-#: ../lib/screenshooter-zimagez.c:365
+#: ../lib/screenshooter-zimagez.c:373
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
 "must fill all the fields.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">您必須填寫所有欄位。</span>"
 
-#: ../lib/screenshooter-zimagez.c:379
+#: ../lib/screenshooter-zimagez.c:387
 msgid "Login on ZimageZ..."
 msgstr "登入 ZimageZ..."
 
-#: ../lib/screenshooter-zimagez.c:419 ../lib/screenshooter-zimagez.c:570
+#: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
 msgid ""
 "An unexpected reply from ZimageZ was received. The upload of the screenshot "
 "failed."
 msgstr "收到來自 ZimageZ 的未預期回覆。螢幕快照的上傳失敗。"
 
-#: ../lib/screenshooter-zimagez.c:458
+#: ../lib/screenshooter-zimagez.c:466
 msgid ""
 "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
 "user and the password you entered do not match. Please retry.</span>"
 msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">您輸入的使用者與密碼不相符。請重試。</span>"
 
-#: ../lib/screenshooter-zimagez.c:516 ../lib/screenshooter-imgur.c:105
+#: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
 msgid "Upload the screenshot..."
 msgstr "上傳螢幕快照..."
 
-#: ../lib/screenshooter-zimagez.c:549
+#: ../lib/screenshooter-zimagez.c:557
 #, c-format
 msgid "An error occurred while uploading the screenshot."
 msgstr "上傳螢幕快照時遭遇錯誤。"
 
 #. End the user session
-#: ../lib/screenshooter-zimagez.c:582
+#: ../lib/screenshooter-zimagez.c:590
 msgid "Close the session on ZimageZ..."
 msgstr "關閉 ZimageZ 的作業階段..."
 
-#: ../lib/screenshooter-zimagez.c:643
+#: ../lib/screenshooter-zimagez.c:651
 msgid "ZimageZ"
 msgstr "ZimageZ"
 
-#: ../lib/screenshooter-imgur.c:115
+#: ../lib/screenshooter-imgur.c:114
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "傳輸資料至 imgur 時遭遇錯誤。"
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:165
 msgid "Imgur"
 msgstr "Imgur"
 
@@ -404,10 +404,9 @@ msgstr "拍攝整個螢幕、使用中視窗、或某個區域的螢幕快照"
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
-"This application allows you to capture the entire screen, the active window "
-"or a selected region. You can set the delay that elapses before the "
-"screenshot is taken and the action that will be done with the screenshot: "
-"save it to a PNG file, copy it to the clipboard, open it using another "
-"application, or host it on ZimageZ or imgur, free online image hosting "
-"services."
-msgstr "這個應用程式讓您可以抓取整個螢幕、使用中的視窗、或是選取的區域的畫面。您可以設定在螢幕截圖拍攝前所要等待的時間，然後下列這些動作可以與螢幕截圖一同完成：將其儲存為 PNG 檔案、複製其到剪貼簿、使用其他程式開啟該圖片、或是將其放置於 ZimageZ 或 imgur，免費的線上影像寄放服務。"
+"Allows you to capture the entire screen, the active window or a selected "
+"region. You can set the delay that elapses before the screenshot is taken "
+"and the action that will be done with the screenshot: save it to a PNG file,"
+" copy it to the clipboard, open it using another application, or host it on "
+"ZimageZ or imgur, free online image hosting services."
+msgstr "讓您可以抓取整個螢幕、使用中的視窗、或是選取的區域的畫面。您可以設定在螢幕截圖拍攝前所要等待的時間，然後下列這些動作可以與螢幕截圖一同完成：將其儲存為 PNG 檔案、複製其到剪貼簿、使用其他程式開啟該圖片、或是將其放置於 ZimageZ 或 imgur，免費的線上影像寄放服務。"
