@@ -36,8 +36,8 @@ gboolean mouse = FALSE;
 gboolean upload = FALSE;
 gboolean clipboard = FALSE;
 gboolean upload_imgur = FALSE;
-gchar *screenshot_dir;
-gchar *application;
+gchar *screenshot_dir = NULL;
+gchar *application = NULL;
 gint delay = 0;
 
 
@@ -337,11 +337,12 @@ int main (int argc, char **argv)
           sd->action = UPLOAD_IMGUR;
           sd->action_specified = TRUE;
         }
-      else
-        {
-          sd->app = g_strdup ("none");
-          sd->action = SAVE;
-        }
+
+      if (!sd->app)
+        sd->app = g_strdup ("none");
+
+      if (!sd->action)
+        sd->action = SAVE;
 
       /* If the user gave a directory name, check that it is valid */
       if (screenshot_dir != NULL)
