@@ -42,7 +42,8 @@ void      screenshooter_read_rc_file          (const gchar    *file,
 void      screenshooter_write_rc_file         (const gchar    *file,
                                                ScreenshotData *sd);
 void      screenshooter_open_screenshot       (const gchar    *screenshot_path,
-                                               const gchar    *application);
+                                               const gchar    *application,
+                                                     GAppInfo *app_info);
 gchar    *screenshooter_get_home_uri          (void);
 gchar    *screenshooter_get_xdg_image_dir_uri (void);
 gboolean  screenshooter_is_remote_uri         (const gchar    *uri);

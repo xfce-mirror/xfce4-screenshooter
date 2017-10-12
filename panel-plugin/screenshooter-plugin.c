@@ -353,6 +353,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   /* Initialise the data structs */
   PluginData *pd = g_new0 (PluginData, 1);
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
+  sd->app_info = NULL;
   GFile *default_save_dir;
   gint icon_size;
 

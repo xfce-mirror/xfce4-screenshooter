@@ -298,12 +298,15 @@ static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
   GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
   GtkTreeIter iter;
   gchar *active_command = NULL;
+  GAppInfo *app_info = NULL;
 
   gtk_combo_box_get_active_iter (GTK_COMBO_BOX (box), &iter);
   gtk_tree_model_get (model, &iter, 2, &active_command, -1);
+  gtk_tree_model_get (model, &iter, 3, &app_info, -1);
 
   g_free (sd->app);
   sd->app = active_command;
+  sd->app_info = app_info;
 }
 
 
@@ -342,6 +345,7 @@ static void add_item (GAppInfo *app_info, GtkWidget *liststore)
                       0, pixbuf,
                       1, name,
                       2, command,
+                      3, g_app_info_dup (app_info),
                       -1);
 
   /* Free the stuff */
@@ -385,16 +389,19 @@ static void set_default_item (GtkWidget *combobox, ScreenshotData *sd)
     {
       gchar *command = NULL;
       gboolean found = FALSE;
+      GAppInfo *app_info;
 
       /* Loop until finding the appropirate item, if any */
       do
         {
           gtk_tree_model_get (model, &iter, 2, &command, -1);
+          gtk_tree_model_get (model, &iter, 3, &app_info, -1);
 
           if (g_str_equal (command, sd->app))
             {
               gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox),
                                              &iter);
+              sd->app_info = app_info;
 
               found = TRUE;
             }
@@ -409,12 +416,14 @@ static void set_default_item (GtkWidget *combobox, ScreenshotData *sd)
         {
           gtk_tree_model_get_iter_first (model , &iter);
           gtk_tree_model_get (model, &iter, 2, &command, -1);
+          gtk_tree_model_get (model, &iter, 3, &app_info, -1);
 
           gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
 
           g_free (sd->app);
 
           sd->app = command;
+          sd->app_info = app_info;
         }
     }
   else
@@ -422,6 +431,7 @@ static void set_default_item (GtkWidget *combobox, ScreenshotData *sd)
       g_free (sd->app);
 
       sd->app = g_strdup ("none");
+      sd->app_info = NULL;
     }
 }
 
@@ -1041,7 +1051,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_grid_attach (GTK_GRID (actions_grid), open_with_radio_button, 0, 2, 1, 1);
 
   /* Open with combobox */
-  liststore = gtk_list_store_new (3, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING);
+  liststore = gtk_list_store_new (4, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_APP_INFO);
   combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
   renderer = gtk_cell_renderer_text_new ();
   renderer_pixbuf = gtk_cell_renderer_pixbuf_new ();

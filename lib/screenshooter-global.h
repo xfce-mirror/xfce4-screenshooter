@@ -53,6 +53,7 @@ typedef struct
   gchar *screenshot_dir;
   gchar *title;
   gchar *app;
+  GAppInfo *app_info;
   gchar *last_user;
   GdkPixbuf *screenshot;
 }

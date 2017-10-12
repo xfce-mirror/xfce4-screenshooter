@@ -150,6 +150,7 @@ int main (int argc, char **argv)
 
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   sd->plugin = FALSE;
+  sd->app_info = NULL;
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 

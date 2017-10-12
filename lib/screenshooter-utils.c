@@ -112,6 +112,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->screenshot_dir = screenshot_dir;
   sd->title = title;
   sd->app = app;
+  sd->app_info = NULL;
   sd->last_user = last_user;
 }
 
@@ -153,12 +154,14 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
 /* Opens the screenshot using application.
 @screenshot_path: the path to the saved screenshot.
 @application: the command to run the application.
+@app_info: GAppInfo object associated with application.
 */
 void
-screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *application)
+screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *application, GAppInfo *const app_info)
 {
-  gchar *command;
   GError *error = NULL;
+  gpointer screenshot_file = NULL;
+  GList *files = NULL;
 
   g_return_if_fail (screenshot_path != NULL);
 
@@ -169,14 +172,15 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
 
   TRACE ("Application was not none");
 
-  command = g_strconcat (application, " ",
-                         "\"", screenshot_path, "\"", NULL);
+  g_return_if_fail (app_info != NULL);
+
+  TRACE ("app_info was != NULL");
+
+  screenshot_file = g_file_new_for_path (screenshot_path);
+  files = g_list_append (NULL, screenshot_file);
 
   TRACE ("Launch the command");
-
-  /* Execute the command and show an error dialog if there was
-  * an error. */
-  if (!g_spawn_command_line_async (command, &error))
+  if (!g_app_info_launch (app_info, files, NULL, &error))
     {
       TRACE ("An error occured");
 
@@ -184,7 +188,7 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
       g_error_free (error);
     }
 
-  g_free (command);
+  g_list_free_full (files, g_object_unref);
 }
 
 

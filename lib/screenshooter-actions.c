@@ -123,7 +123,7 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
       if (screenshot_path != NULL)
         {
           if (sd->action == OPEN)
-            screenshooter_open_screenshot (screenshot_path, sd->app);
+            screenshooter_open_screenshot (screenshot_path, sd->app, sd->app_info);
           else if (sd->action == UPLOAD_IMGUR) {
               screenshooter_upload_to_imgur   (screenshot_path,
                                                sd->title);
