@@ -440,26 +440,17 @@ static void set_default_item (GtkWidget *combobox, ScreenshotData *sd)
 static GdkPixbuf
 *screenshot_get_thumbnail (GdkPixbuf *screenshot)
 {
-  gint width, height, i;
-  GdkPixbuf *thumbnail;
+  gint w = gdk_pixbuf_get_width (screenshot);
+  gint h = gdk_pixbuf_get_height (screenshot);
+  gint width = THUMB_X_SIZE;
+  gint height = THUMB_Y_SIZE;
 
-  width = gdk_pixbuf_get_width (screenshot);
-  height = gdk_pixbuf_get_height (screenshot);
-
-  if (width > height)
-    i = width / THUMB_X_SIZE;
+  if (G_LIKELY (w >= h))
+    height = width * h / w;
   else
-    i = height / THUMB_Y_SIZE;
+    width = height * w / h;
 
-  if (i == 0)
-    return gdk_pixbuf_copy (screenshot);
-
-  thumbnail = gdk_pixbuf_scale_simple (screenshot,
-                                       width/i,
-                                       height/i,
-                                       GDK_INTERP_BILINEAR);
-
-  return thumbnail;
+  return gdk_pixbuf_scale_simple (screenshot, width, height, GDK_INTERP_BILINEAR);
 }
 
 
@@ -1194,14 +1185,11 @@ gchar
         /* Create the preview and the thumbnail */
         preview_ebox = gtk_event_box_new ();
         preview = gtk_image_new ();
+        gtk_widget_set_margin_end (preview, 12);
         gtk_container_add (GTK_CONTAINER (preview_ebox), preview);
         gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview_ebox);
 
-        thumbnail =
-          gdk_pixbuf_scale_simple (screenshot,
-                                   gdk_pixbuf_get_width(screenshot)/5,
-                                   gdk_pixbuf_get_height(screenshot)/5,
-                                   GDK_INTERP_BILINEAR);
+        thumbnail = screenshot_get_thumbnail (screenshot);
 
         gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
         g_object_unref (thumbnail);
