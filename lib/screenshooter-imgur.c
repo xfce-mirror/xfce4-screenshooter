@@ -169,6 +169,10 @@ void screenshooter_upload_to_imgur   (const gchar  *image_path,
                                           G_TYPE_STRING, image_path,
                                           G_TYPE_STRING, title);
 
+  /* dismiss the spinner dialog after success or error */
+  g_signal_connect_swapped (job, "error", G_CALLBACK (gtk_widget_hide), dialog);
+  g_signal_connect_swapped (job, "image-uploaded", G_CALLBACK (gtk_widget_hide), dialog);
+
   g_signal_connect (job, "ask", G_CALLBACK (cb_ask_for_information), NULL);
   g_signal_connect (job, "image-uploaded", G_CALLBACK (cb_image_uploaded), NULL);
   g_signal_connect (job, "error", G_CALLBACK (cb_error), NULL);
