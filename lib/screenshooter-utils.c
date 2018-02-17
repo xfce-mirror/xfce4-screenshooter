@@ -159,9 +159,11 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
 void
 screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *application, GAppInfo *const app_info)
 {
-  GError *error = NULL;
   gpointer screenshot_file = NULL;
-  GList *files = NULL;
+  gboolean success = TRUE;
+  gchar   *command;
+  GError  *error = NULL;
+  GList   *files = NULL;
 
   g_return_if_fail (screenshot_path != NULL);
 
@@ -172,23 +174,31 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
 
   TRACE ("Application was not none");
 
-  g_return_if_fail (app_info != NULL);
+  if (app_info != NULL)
+    {
+      TRACE ("Launch the app");
 
-  TRACE ("app_info was != NULL");
+      screenshot_file = g_file_new_for_path (screenshot_path);
+      files = g_list_append (NULL, screenshot_file);
+      success = g_app_info_launch (app_info, files, NULL, &error);
+      g_list_free_full (files, g_object_unref);
+    }
+  else if (application != NULL)
+    {
+      TRACE ("Launch the command");
 
-  screenshot_file = g_file_new_for_path (screenshot_path);
-  files = g_list_append (NULL, screenshot_file);
+      command = g_strconcat (application, " ", "\"", screenshot_path, "\"", NULL);
+      success = g_spawn_command_line_async (command, &error);
+      g_free (command);
+    }
 
-  TRACE ("Launch the command");
-  if (!g_app_info_launch (app_info, files, NULL, &error))
+  /* report any error */
+  if (!success && error != NULL)
     {
       TRACE ("An error occured");
-
       screenshooter_error (_("<b>The application could not be launched.</b>\n%s"), error->message);
       g_error_free (error);
     }
-
-  g_list_free_full (files, g_object_unref);
 }
 
 
