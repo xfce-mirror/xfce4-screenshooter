@@ -151,6 +151,7 @@ int main (int argc, char **argv)
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   sd->plugin = FALSE;
   sd->app_info = NULL;
+  sd->action = 0;
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -209,30 +210,9 @@ int main (int argc, char **argv)
       g_free (sd);
       return EXIT_FAILURE;
     }
-  else if (upload && clipboard)
-    {
-      g_printerr (conflict_error, "upload", "clipboard");
-
-      g_free (sd);
-      return EXIT_FAILURE;
-    }
   else if ((application != NULL) && (screenshot_dir != NULL))
     {
       g_printerr (conflict_error, "open", "save");
-
-      g_free (sd);
-      return EXIT_FAILURE;
-    }
-  else if ((application != NULL) && clipboard)
-    {
-      g_printerr (conflict_error, "open", "clipboard");
-
-      g_free (sd);
-      return EXIT_FAILURE;
-    }
-  else if ((screenshot_dir != NULL) && clipboard)
-    {
-      g_printerr (conflict_error, "save", "clipboard");
 
       g_free (sd);
       return EXIT_FAILURE;
@@ -322,28 +302,28 @@ int main (int argc, char **argv)
         }
       else if (upload)
         {
-          sd->app = g_strdup ("none");
-          sd->action = UPLOAD;
-          sd->action_specified = TRUE;
-        }
-      else if (clipboard)
-        {
-          sd->app = g_strdup ("none");
-          sd->action = CLIPBOARD;
+          sd->action = UPLOAD_ZIMAGEZ;
           sd->action_specified = TRUE;
         }
       else if (upload_imgur)
         {
-          sd->app = g_strdup ("none");
           sd->action = UPLOAD_IMGUR;
+          sd->action_specified = TRUE;
+        }
+      else if (screenshot_dir != NULL)
+        {
+          sd->action = SAVE;
+          sd->action_specified = TRUE;
+        }
+
+      if (clipboard)
+        {
+          sd->action |= CLIPBOARD;
           sd->action_specified = TRUE;
         }
 
       if (!sd->app)
         sd->app = g_strdup ("none");
-
-      if (!sd->action)
-        sd->action = SAVE;
 
       /* If the user gave a directory name, check that it is valid */
       if (screenshot_dir != NULL)

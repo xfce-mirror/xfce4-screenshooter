@@ -29,12 +29,12 @@
 
 /* Possible actions */
 enum {
-  ACTION_0,
-  SAVE,
-  CLIPBOARD,
-  OPEN,
-  UPLOAD,
-  UPLOAD_IMGUR,
+  NONE = 0,
+  SAVE = 1,
+  CLIPBOARD = 2,
+  OPEN = 4,
+  UPLOAD_ZIMAGEZ = 8,
+  UPLOAD_IMGUR = 16,
 };
 
 

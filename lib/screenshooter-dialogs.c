@@ -190,7 +190,7 @@ static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 static void cb_zimagez_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
-    sd->action = UPLOAD;
+    sd->action = UPLOAD_ZIMAGEZ;
 }
 
 static void cb_imgur_toggled (GtkToggleButton *tb, ScreenshotData *sd)
@@ -1006,7 +1006,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   /* Save option radio button */
   save_radio_button = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_radio_button),
-                                (sd->action == SAVE));
+                                (sd->action & SAVE));
   g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                     G_CALLBACK (cb_save_toggled), sd);
   gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
@@ -1023,7 +1023,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                    _("Copy the screenshot to the clipboard so that it can be "
                                      "pasted later"));
       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
-                                    (sd->action == CLIPBOARD));
+                                    (sd->action & CLIPBOARD));
       g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled",
                         G_CALLBACK (cb_clipboard_toggled), sd);
       gtk_grid_attach (GTK_GRID (actions_grid), clipboard_radio_button, 0, 1, 1, 1);
@@ -1034,7 +1034,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
                                                  _("Open with:"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (open_with_radio_button),
-                                (sd->action == OPEN));
+                                (sd->action & OPEN));
   g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
                     G_CALLBACK (cb_open_toggled), sd);
   gtk_widget_set_tooltip_text (open_with_radio_button,
@@ -1069,7 +1069,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
                                                  _("Host on ZimageZ"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (zimagez_radio_button),
-                                (sd->action == UPLOAD));
+                                (sd->action & UPLOAD_ZIMAGEZ));
   gtk_widget_set_tooltip_text (zimagez_radio_button,
                                _("Host the screenshot on ZimageZ, a free online "
                                  "image hosting service"));
@@ -1082,7 +1082,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
                                                  _("Host on Imgur"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (imgur_radio_button),
-                                (sd->action == UPLOAD_IMGUR));
+                                (sd->action & UPLOAD_IMGUR));
   gtk_widget_set_tooltip_text (imgur_radio_button,
                                _("Host the screenshot on Imgur, a free online "
                                  "image hosting service"));

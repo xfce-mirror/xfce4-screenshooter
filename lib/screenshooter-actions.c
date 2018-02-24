@@ -80,7 +80,10 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
         }
     }
 
-  if (sd->action == SAVE)
+  if (sd->action & CLIPBOARD)
+    screenshooter_copy_to_clipboard (sd->screenshot);
+
+  if (sd->action & SAVE)
     {
       const gchar *save_location;
 
@@ -92,7 +95,7 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
                                                      sd->title,
                                                      sd->timestamp,
                                                      TRUE,
-                                                     sd->action_specified);
+                                                     TRUE);
 
       if (save_location)
         {
@@ -103,10 +106,6 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
           sd->screenshot_dir = g_build_filename ("file://", temp, NULL);
           TRACE ("New save directory: %s", sd->screenshot_dir);
         }
-    }
-  else if (sd->action == CLIPBOARD)
-    {
-      screenshooter_copy_to_clipboard (sd->screenshot);
     }
   else
     {
@@ -122,13 +121,11 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
 
       if (screenshot_path != NULL)
         {
-          if (sd->action == OPEN)
+          if (sd->action & OPEN)
             screenshooter_open_screenshot (screenshot_path, sd->app, sd->app_info);
-          else if (sd->action == UPLOAD_IMGUR) {
-              screenshooter_upload_to_imgur   (screenshot_path,
-                                               sd->title);
-            }
-          else
+          else if (sd->action & UPLOAD_IMGUR)
+            screenshooter_upload_to_imgur (screenshot_path, sd->title);
+          else if (sd->action & UPLOAD_ZIMAGEZ)
             {
               gchar *new_last_user = NULL;
 
