@@ -691,12 +691,12 @@ static GdkPixbuf
   GtkWidget *window;
   RubberBandData rbdata;
   gboolean cancelled = FALSE;
-  GdkPixbuf *screenshot;
+  GdkPixbuf *screenshot = NULL;
   GdkWindow *root;
   GdkDevice *pointer, *keyboard;
+  GdkGrabStatus res;
   GdkSeat   *seat;
-  GdkCursor *xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
-                                                        GDK_CROSSHAIR);
+  GdkCursor *xhair_cursor;
 
   /* Initialize the rubber band data */
   rbdata.left_pressed = FALSE;
@@ -733,6 +733,7 @@ static GdkPixbuf
   /* This window is not managed by the window manager, we have to set everything
    * ourselves */
   gtk_widget_realize (window);
+  xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_CROSSHAIR);
   gdk_window_set_cursor (gtk_widget_get_window (window), xhair_cursor);
   gdk_window_set_override_redirect (gtk_widget_get_window (window), TRUE);
   gtk_widget_set_size_request (window,
@@ -743,24 +744,45 @@ static GdkPixbuf
   gtk_widget_grab_focus (window);
   gdk_flush ();
 
+  /* Wait 100ms before grabbing devices, useful when invoked by global hotkey
+   * because xfsettings will grab the key for a moment */ 
+  g_usleep(100000);
+
   /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
   seat = gdk_display_get_default_seat (gdk_display_get_default ());
   pointer = gdk_seat_get_pointer (seat);
   keyboard = gdk_seat_get_keyboard (seat);
 
-  gdk_device_grab (keyboard, gtk_widget_get_window (window),
-                  GDK_OWNERSHIP_NONE, FALSE,
-                  GDK_KEY_PRESS_MASK |
-                  GDK_KEY_RELEASE_MASK,
-                  NULL, GDK_CURRENT_TIME);
+  res = gdk_device_grab (keyboard, gtk_widget_get_window (window),
+                         GDK_OWNERSHIP_NONE, FALSE,
+                         GDK_KEY_PRESS_MASK |
+                         GDK_KEY_RELEASE_MASK,
+                         NULL, GDK_CURRENT_TIME);
 
-  gdk_device_grab (pointer, gtk_widget_get_window (window),
-                   GDK_OWNERSHIP_NONE, FALSE,
-                   GDK_POINTER_MOTION_MASK |
-                   GDK_BUTTON_PRESS_MASK | 
-                   GDK_BUTTON_RELEASE_MASK,
-                   NULL, GDK_CURRENT_TIME);
+  if (res != GDK_GRAB_SUCCESS)
+    {
+      gtk_widget_destroy (window);
+      g_object_unref (xhair_cursor);
+      g_warning ("Failed to grab keyboard");
+      return NULL;
+    }
+
+  res = gdk_device_grab (pointer, gtk_widget_get_window (window),
+                         GDK_OWNERSHIP_NONE, FALSE,
+                         GDK_POINTER_MOTION_MASK |
+                         GDK_BUTTON_PRESS_MASK | 
+                         GDK_BUTTON_RELEASE_MASK,
+                         NULL, GDK_CURRENT_TIME);
+
+  if (res != GDK_GRAB_SUCCESS)
+    {
+      gtk_widget_destroy (window);
+      g_object_unref (xhair_cursor);
+      gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
+      g_warning ("Failed to grab pointer");
+      return NULL;
+    }
 
   gtk_dialog_run (GTK_DIALOG (window));
   gtk_widget_destroy (window);
@@ -768,7 +790,7 @@ static GdkPixbuf
   gdk_flush();
 
   if (cancelled)
-    return NULL;
+    goto cleanup;
 
   /* Grab the screenshot on the main window */
   root = gdk_get_default_root_window ();
@@ -781,6 +803,7 @@ static GdkPixbuf
                                            rbdata.rectangle.width,
                                            rbdata.rectangle.height);
 
+  cleanup:
   /* Ungrab the mouse and the keyboard */
   gdk_device_ungrab (pointer, GDK_CURRENT_TIME);
   gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
@@ -951,6 +974,7 @@ static GdkPixbuf
   RbData rbdata;
   GdkCursor *xhair_cursor;
   GdkDevice *pointer, *keyboard;
+  GdkGrabStatus res;
   GdkSeat   *seat;
   long value_mask;
 
@@ -959,6 +983,49 @@ static GdkPixbuf
   root_window = gdk_get_default_root_window ();
   display = gdk_x11_get_default_xdisplay ();
   screen = gdk_x11_get_default_screen ();
+
+  /* Change cursor to cross-hair */
+  TRACE ("Set the cursor");
+  xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+                                             GDK_CROSSHAIR);
+
+  /* Wait 100ms before grabbing devices, useful when invoked by global hotkey
+   * because xfsettings will grab the key for a moment */ 
+  g_usleep(100000);
+
+  /* Grab the mouse and the keyboard to prevent any interaction with other
+   * applications */
+  seat = gdk_display_get_default_seat (gdk_display_get_default ());
+  pointer = gdk_seat_get_pointer (seat);
+  keyboard = gdk_seat_get_keyboard (seat);
+
+  res = gdk_device_grab (keyboard, root_window,
+                         GDK_OWNERSHIP_NONE, FALSE,
+                         GDK_KEY_PRESS_MASK |
+                         GDK_KEY_RELEASE_MASK,
+                         NULL, GDK_CURRENT_TIME);
+
+  if (res != GDK_GRAB_SUCCESS)
+    {
+      g_object_unref (xhair_cursor);
+      g_warning ("Failed to grab keyboard");
+      return NULL;
+    }
+
+  res = gdk_device_grab (pointer, root_window,
+                         GDK_OWNERSHIP_NONE, FALSE,
+                         GDK_POINTER_MOTION_MASK |
+                         GDK_BUTTON_PRESS_MASK | 
+                         GDK_BUTTON_RELEASE_MASK,
+                         xhair_cursor, GDK_CURRENT_TIME);
+
+  if (res != GDK_GRAB_SUCCESS)
+    {
+      gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
+      g_object_unref (xhair_cursor);
+      g_warning ("Failed to grab pointer");
+      return NULL;
+    }
 
   /*Set up graphics context for a XOR rectangle that will be drawn as
    * the user drags the mouse */
@@ -981,28 +1048,6 @@ static GdkPixbuf
                   gdk_x11_get_default_root_xwindow (),
                   value_mask,
                   &gc_values);
-
-  /* Change cursor to cross-hair */
-  TRACE ("Set the cursor");
-  xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
-                                             GDK_CROSSHAIR);
-
-  seat = gdk_display_get_default_seat (gdk_display_get_default ());
-  pointer = gdk_seat_get_pointer (seat);
-  keyboard = gdk_seat_get_keyboard (seat);
-
-  gdk_device_grab (keyboard, root_window,
-                  GDK_OWNERSHIP_NONE, FALSE,
-                  GDK_KEY_PRESS_MASK |
-                  GDK_KEY_RELEASE_MASK,
-                  NULL, GDK_CURRENT_TIME);
-
-  gdk_device_grab (pointer, root_window,
-                   GDK_OWNERSHIP_NONE, FALSE,
-                   GDK_POINTER_MOTION_MASK |
-                   GDK_BUTTON_PRESS_MASK | 
-                   GDK_BUTTON_RELEASE_MASK,
-                   xhair_cursor, GDK_CURRENT_TIME);
 
   /* Initialize the rubber band data */
   TRACE ("Initialize the rubber band data");
