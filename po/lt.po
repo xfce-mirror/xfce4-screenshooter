@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012
-# Moo, 2015-2017
+# Moo, 2015-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2017-10-02 10:37+0000\n"
+"PO-Revision-Date: 2018-04-15 14:52+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -185,7 +185,7 @@ msgstr "Įvyko klaida, perkeliant duomenis į ZimageZ."
 #: ../lib/screenshooter-zimagez.c:140
 #, c-format
 msgid "An error occurred while parsing the response from ZimageZ."
-msgstr "Įvyko klaida, gaunant atsakymą iš ZimageZ."
+msgstr "Įvyko klaida, nagrinėjant atsakymą iš ZimageZ."
 
 #. For translators: the first wildcard is the date, the second one the time,
 #. * e.g. "Taken on 12/31/99, at 23:13:48".
