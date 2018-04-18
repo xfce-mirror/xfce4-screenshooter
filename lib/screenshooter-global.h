@@ -33,8 +33,7 @@ enum {
   SAVE = 1,
   CLIPBOARD = 2,
   OPEN = 4,
-  UPLOAD_ZIMAGEZ = 8,
-  UPLOAD_IMGUR = 16,
+  UPLOAD_IMGUR = 8,
 };
 
 

@@ -33,7 +33,6 @@ gboolean window = FALSE;
 gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean mouse = FALSE;
-gboolean upload = FALSE;
 gboolean clipboard = FALSE;
 gboolean upload_imgur = FALSE;
 gchar *screenshot_dir = NULL;
@@ -80,11 +79,6 @@ static GOptionEntry entries[] =
   {
     "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
     N_("Directory where the screenshot will be saved"),
-    NULL
-  },
-  {
-    "upload", 'u', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &upload,
-    N_("Host the screenshot on ZimageZ, a free online image hosting service"),
     NULL
   },
   {
@@ -196,30 +190,11 @@ int main (int argc, char **argv)
     }
 
   /* Exit if two actions options were given */
-  if (upload && (application != NULL))
-    {
-      g_printerr (conflict_error, "upload", "open");
-
-      g_free (sd);
-      return EXIT_FAILURE;
-    }
-  else if (upload && (screenshot_dir != NULL))
-    {
-      g_printerr (conflict_error, "upload", "save");
-
-      g_free (sd);
-      return EXIT_FAILURE;
-    }
-  else if ((application != NULL) && (screenshot_dir != NULL))
+  if ((application != NULL) && (screenshot_dir != NULL))
     {
       g_printerr (conflict_error, "open", "save");
 
       g_free (sd);
-      return EXIT_FAILURE;
-    }
-  else if (upload_imgur && upload)
-    {
-      g_printerr (conflict_error, "upload", "imgur");
       return EXIT_FAILURE;
     }
   else if (upload_imgur && (screenshot_dir != NULL))
@@ -241,8 +216,6 @@ int main (int argc, char **argv)
     g_printerr (ignore_error, "save");
   if (upload_imgur && !(fullscreen || window || region))
     g_printerr (ignore_error, "imgur");
-  if (upload && !(fullscreen || window || region))
-    g_printerr (ignore_error, "upload");
   if (clipboard && !(fullscreen || window || region))
     g_printerr (ignore_error, "clipboard");
   if (delay && !(fullscreen || window || region))
@@ -298,11 +271,6 @@ int main (int argc, char **argv)
         {
           sd->app = application;
           sd->action = OPEN;
-          sd->action_specified = TRUE;
-        }
-      else if (upload)
-        {
-          sd->action = UPLOAD_ZIMAGEZ;
           sd->action_specified = TRUE;
         }
       else if (upload_imgur)

@@ -53,9 +53,6 @@ static void
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
-cb_zimagez_toggled                 (GtkToggleButton    *tb,
-                                    ScreenshotData     *sd);
-static void
 cb_imgur_toggled                   (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
@@ -186,12 +183,6 @@ static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 }
 
 
-
-static void cb_zimagez_toggled (GtkToggleButton *tb, ScreenshotData *sd)
-{
-  if (gtk_toggle_button_get_active (tb))
-    sd->action = UPLOAD_ZIMAGEZ;
-}
 
 static void cb_imgur_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
@@ -924,7 +915,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *actions_label, *actions_alignment, *actions_grid;
   GtkWidget *save_radio_button;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
-  GtkWidget *zimagez_radio_button;
   GtkWidget *imgur_radio_button;
 
   GtkListStore *liststore;
@@ -1063,19 +1053,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   /* Run the callback functions to grey/ungrey the correct widgets */
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button), combobox);
-
-  /* Upload to zimagez radio button */
-  zimagez_radio_button =
-    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
-                                                 _("Host on ZimageZ"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (zimagez_radio_button),
-                                (sd->action & UPLOAD_ZIMAGEZ));
-  gtk_widget_set_tooltip_text (zimagez_radio_button,
-                               _("Host the screenshot on ZimageZ, a free online "
-                                 "image hosting service"));
-  g_signal_connect (G_OBJECT (zimagez_radio_button), "toggled",
-                    G_CALLBACK (cb_zimagez_toggled), sd);
-  gtk_grid_attach (GTK_GRID (actions_grid), zimagez_radio_button, 0, 3, 1, 1);
 
   /* Upload to imgur radio button */
   imgur_radio_button =

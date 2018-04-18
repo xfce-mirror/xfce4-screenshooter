@@ -125,21 +125,6 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
             screenshooter_open_screenshot (screenshot_path, sd->app, sd->app_info);
           else if (sd->action & UPLOAD_IMGUR)
             screenshooter_upload_to_imgur (screenshot_path, sd->title);
-          else if (sd->action & UPLOAD_ZIMAGEZ)
-            {
-              gchar *new_last_user = NULL;
-
-              screenshooter_upload_to_zimagez (screenshot_path,
-                                               sd->last_user,
-                                               sd->title,
-                                               &new_last_user);
-
-              if (new_last_user)
-                {
-                  g_free (sd->last_user);
-                  sd->last_user = new_last_user;
-                }
-            }
         }
 
       g_object_unref (temp_dir);

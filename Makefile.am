@@ -33,8 +33,7 @@ lib_libscreenshooter_la_SOURCES =	\
 	lib/screenshooter-job-callbacks.c lib/screenshooter-job-callbacks.h \
 	lib/screenshooter-simple-job.c lib/screenshooter-simple-job.h \
 	lib/screenshooter-utils.c lib/screenshooter-utils.h \
-	lib/screenshooter-imgur.c lib/screenshooter-imgur.h \
-	lib/screenshooter-zimagez.c lib/screenshooter-zimagez.h
+	lib/screenshooter-imgur.c lib/screenshooter-imgur.h
 
 lib_libscreenshooter_la_CFLAGS = \
 	-I$(top_srcdir) \

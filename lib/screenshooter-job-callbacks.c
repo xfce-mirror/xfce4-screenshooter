@@ -165,7 +165,7 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   /* Create the information dialog */
   dialog =
-    xfce_titled_dialog_new_with_buttons (_("Details about the screenshot for ZimageZ"),
+    xfce_titled_dialog_new_with_buttons (_("Details about the screenshot"),
                                          NULL,
                                          GTK_DIALOG_DESTROY_WITH_PARENT,
                                          "gtk-cancel",
@@ -219,7 +219,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   /* Create the user entry */
   user_entry = gtk_entry_new ();
   gtk_widget_set_tooltip_text (user_entry,
-                               _("Your Zimagez user name, if you do not have one yet"
+                               _("Your user name, if you do not have one yet"
                                  " please create one on the Web page linked above"));
   gtk_entry_set_activates_default (GTK_ENTRY (user_entry), TRUE);
   gtk_grid_attach (GTK_GRID (grid), user_entry, 1, 0, 1, 1);
@@ -247,7 +247,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   title_entry = gtk_entry_new ();
   gtk_widget_set_tooltip_text (title_entry,
                                _("The title of the screenshot, it will be used when"
-                                 " displaying the screenshot on ZimageZ"));
+                                 " displaying the screenshot on the image hosting service"));
   gtk_entry_set_activates_default (GTK_ENTRY (title_entry), TRUE);
   gtk_grid_attach (GTK_GRID (grid), title_entry, 1, 2, 1, 1);
 
@@ -261,7 +261,7 @@ cb_ask_for_information (ScreenshooterJob *job,
   comment_entry = gtk_entry_new ();
   gtk_widget_set_tooltip_text (comment_entry,
                                _("A comment on the screenshot, it will be used when"
-                                 " displaying the screenshot on ZimageZ"));
+                                 " displaying the screenshot on the image hosting service"));
   gtk_entry_set_activates_default (GTK_ENTRY (comment_entry), TRUE);
   gtk_grid_attach (GTK_GRID (grid), comment_entry, 1, 3, 1, 1);
 
@@ -369,33 +369,18 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   const gchar *image_url, *thumbnail_url, *small_thumbnail_url;
   const gchar *image_markup, *thumbnail_markup, *small_thumbnail_markup;
   const gchar *html_code, *bb_code;
-  gchar *job_type, *title;
+  gchar *title;
   gchar *last_user_temp;
 
   g_return_if_fail (upload_name != NULL);
-  job_type = g_object_get_data(G_OBJECT (job), "jobtype");
-  if (!strcmp(job_type, "imgur")) {
-    title = _("My screenshot on Imgur");
-    image_url = g_strdup_printf ("https://i.imgur.com/%s.png", upload_name);
-    thumbnail_url =
-      g_strdup_printf ("https://imgur.com/%sl.png", upload_name);
-    small_thumbnail_url =
-      g_strdup_printf ("https://imgur.com/%ss.png", upload_name);
-  } else {
-    g_return_if_fail (last_user == NULL || *last_user == NULL);
-    title = _("My screenshot on ZimageZ");
-    image_url = g_strdup_printf ("http://www.zimagez.com/zimage/%s.php", upload_name);
-    thumbnail_url =
-      g_strdup_printf ("http://www.zimagez.com/miniature/%s.php", upload_name);
-    small_thumbnail_url =
-      g_strdup_printf ("http://www.zimagez.com/avatar/%s.php", upload_name);
-    last_user_temp = g_object_get_data (G_OBJECT (job), "user");
 
-    if (last_user_temp == NULL)
-      last_user_temp = g_strdup ("");
+  title = _("My screenshot on Imgur");
+  image_url = g_strdup_printf ("https://i.imgur.com/%s.png", upload_name);
+  thumbnail_url =
+    g_strdup_printf ("https://imgur.com/%sl.png", upload_name);
+  small_thumbnail_url =
+    g_strdup_printf ("https://imgur.com/%ss.png", upload_name);
 
-    *last_user = g_strdup (last_user_temp);
-  }
   image_markup =
     g_markup_printf_escaped (_("<a href=\"%s\">Full size image</a>"), image_url);
   thumbnail_markup =

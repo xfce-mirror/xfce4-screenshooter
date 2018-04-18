@@ -111,10 +111,11 @@ screenshooter_job_class_init (ScreenshooterJobClass *klass)
   /**
    * ScreenshooterJob::image-uploaded:
    * @job       : a #ScreenshooterJob.
-   * @file_name : the name of the uploaded image on ZimageZ.com.
+   * @file_name : the name of the uploaded image on the image hosting service.
    *
    * This signal is emitted when the upload is finished. If it was successful,
-   * @file_name contains the name of the file on ZimageZ.com, else it is NULL.
+   * @file_name contains the name of the file on the image hosting service, else
+   * it is NULL.
    **/
   job_signals[IMAGE_UPLOADED] =
     g_signal_new ("image-uploaded",
