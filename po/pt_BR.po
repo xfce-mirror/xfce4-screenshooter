@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Andre Miranda <andre42m@gmail.com>, 2018
 # Andre Miranda <andre42m@gmail.com>, 2014-2015
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007
 # Automatically generated, 2007
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2017-09-23 19:02+0000\n"
-"Last-Translator: Michael Martins <michaelfm21@gmail.com>\n"
+"POT-Creation-Date: 2018-04-19 00:32+0200\n"
+"PO-Revision-Date: 2018-04-26 23:29+0000\n"
+"Last-Translator: Andre Miranda <andre42m@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/xfce-apps/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,378 +26,293 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:466
+#: ../lib/screenshooter-dialogs.c:458
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb de %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:552
+#: ../lib/screenshooter-dialogs.c:544
 msgid "Transfer"
 msgstr "Transferência"
 
-#: ../lib/screenshooter-dialogs.c:573
+#: ../lib/screenshooter-dialogs.c:565
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">A captura de tela está sendo transferida para:</span>"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:712
-#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:688 ../lib/screenshooter-dialogs.c:704
+#: ../lib/screenshooter-dialogs.c:927 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Captura de tela"
 
-#: ../lib/screenshooter-dialogs.c:707
+#: ../lib/screenshooter-dialogs.c:699
 msgid "Take a screenshot"
 msgstr "Captura uma imagem da tela"
 
-#: ../lib/screenshooter-dialogs.c:722
+#: ../lib/screenshooter-dialogs.c:714
 msgid "Preferences"
 msgstr "Preferências"
 
-#: ../lib/screenshooter-dialogs.c:753
+#: ../lib/screenshooter-dialogs.c:751
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Região para capturar</span>"
 
-#: ../lib/screenshooter-dialogs.c:773
+#: ../lib/screenshooter-dialogs.c:778
 msgid "Entire screen"
 msgstr "Tela inteira"
 
-#: ../lib/screenshooter-dialogs.c:780 ../src/main.c:60
-#: ../panel-plugin/screenshooter-plugin.c:318
+#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:59
+#: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Capturar uma imagem da tela inteira"
 
-#: ../lib/screenshooter-dialogs.c:788
+#: ../lib/screenshooter-dialogs.c:793
 msgid "Active window"
 msgstr "Janela ativa"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:102
-#: ../panel-plugin/screenshooter-plugin.c:323
+#: ../lib/screenshooter-dialogs.c:800 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Capturar uma imagem da janela ativa"
 
-#: ../lib/screenshooter-dialogs.c:803
+#: ../lib/screenshooter-dialogs.c:808
 msgid "Select a region"
 msgstr "Selecionar uma região"
 
-#: ../lib/screenshooter-dialogs.c:808 ../src/main.c:75
-#: ../panel-plugin/screenshooter-plugin.c:328
+#: ../lib/screenshooter-dialogs.c:813 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:340
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "Selecionar uma região para ser capturada clicando num ponto da tela sem soltar o botão do mouse, arrastando o mouse para o outro canto da região e então soltando o botão do mouse"
 
-#: ../lib/screenshooter-dialogs.c:818
+#: ../lib/screenshooter-dialogs.c:823
 msgid "Capture the mouse pointer"
 msgstr "Capturar o ponteiro do mouse"
 
-#: ../lib/screenshooter-dialogs.c:823
+#: ../lib/screenshooter-dialogs.c:828
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Exibir o ponteiro do mouse na captura de tela"
 
-#: ../lib/screenshooter-dialogs.c:839
+#: ../lib/screenshooter-dialogs.c:844
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Atraso antes de capturar</span>"
 
-#: ../lib/screenshooter-dialogs.c:861
+#: ../lib/screenshooter-dialogs.c:873
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Atraso em segundos antes de capturar a imagem da tela"
 
-#: ../lib/screenshooter-dialogs.c:864
+#: ../lib/screenshooter-dialogs.c:876
 msgid "seconds"
 msgstr "segundos"
 
-#: ../lib/screenshooter-dialogs.c:917
+#: ../lib/screenshooter-dialogs.c:938
 msgid "Action"
 msgstr "Ação"
 
-#: ../lib/screenshooter-dialogs.c:946
+#: ../lib/screenshooter-dialogs.c:972
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ação</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:964
+#: ../lib/screenshooter-dialogs.c:997
 msgid "Save"
 msgstr "Salvar"
 
-#: ../lib/screenshooter-dialogs.c:969
+#: ../lib/screenshooter-dialogs.c:1002
 msgid "Save the screenshot to a PNG file"
 msgstr "Salvar a captura de tela em um arquivo PNG"
 
-#: ../lib/screenshooter-dialogs.c:978
+#: ../lib/screenshooter-dialogs.c:1011
 msgid "Copy to the clipboard"
 msgstr "Copiar para a área de transferência"
 
-#: ../lib/screenshooter-dialogs.c:980
+#: ../lib/screenshooter-dialogs.c:1013
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Copiar a captura da tela para a área de transferência para que possa ser colada posteriormente"
 
-#: ../lib/screenshooter-dialogs.c:992
+#: ../lib/screenshooter-dialogs.c:1025
 msgid "Open with:"
 msgstr "Abrir com:"
 
-#: ../lib/screenshooter-dialogs.c:998
+#: ../lib/screenshooter-dialogs.c:1031
 msgid "Open the screenshot with the chosen application"
 msgstr "Abrir a captura de tela com o aplicativo escolhido"
 
-#: ../lib/screenshooter-dialogs.c:1017 ../src/main.c:70
+#: ../lib/screenshooter-dialogs.c:1050 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Aplicativo para abrir a captura de tela"
 
-#: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on ZimageZ"
-msgstr "Hospedar no ZimageZ"
-
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
-msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "Hospedar a captura de tela no ZimageZ, um serviço grátis de hospedagem de imagens online"
-
-#: ../lib/screenshooter-dialogs.c:1040
+#: ../lib/screenshooter-dialogs.c:1060
 msgid "Host on Imgur"
 msgstr "Hospedar no Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
+#: ../lib/screenshooter-dialogs.c:1064 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Hospedar a captura de tela no Imgur, um serviço grátis de hospedagem de imagens online"
 
-#: ../lib/screenshooter-dialogs.c:1058
+#: ../lib/screenshooter-dialogs.c:1078
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Visão</span>"
 
-#: ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-dialogs.c:1140
 msgid "Save screenshot as..."
 msgstr "Salvar a captura de tela como..."
 
-#: ../lib/screenshooter-utils.c:183
+#: ../lib/screenshooter-utils.c:199
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>O aplicativo não pôde ser lançado.</b>\n%s"
 
-#: ../lib/screenshooter-zimagez.c:96
-#, c-format
-msgid "An error occurred while creating the XMLRPC request."
-msgstr "Ocorreu um erro ao criar o pedido XMLRPC."
-
-#: ../lib/screenshooter-zimagez.c:115
-#, c-format
-msgid "An error occurred while transferring the data to ZimageZ."
-msgstr "Ocorreu um erro ao transferir os dados para o ZimageZ."
-
-#: ../lib/screenshooter-zimagez.c:140
-#, c-format
-msgid "An error occurred while parsing the response from ZimageZ."
-msgstr "Ocorreu um erro ao analisar a resposta do ZimageZ."
-
-#. For translators: the first wildcard is the date, the second one the time,
-#. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:190
-#, c-format
-msgid "Taken on %x, at %X"
-msgstr "Capturada em %x, às %X"
-
-#. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:263
-msgid "Initialize the connection..."
-msgstr "Iniciando a conexão..."
-
-#: ../lib/screenshooter-zimagez.c:309
-msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
-"user name, passsword and details about the screenshot."
-msgstr "Por favor preencha os seguintes campos com o seu nome de usuário\ndo <a href=\"http://www.zimagez.com\">ZimageZ</a>, a senha e detalhes sobre a captura de tela."
-
-#: ../lib/screenshooter-zimagez.c:366
-msgid "Check the user information..."
-msgstr "Verificando a informação do usuário..."
-
-#: ../lib/screenshooter-zimagez.c:373
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
-"must fill all the fields.</span>"
-msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">Você precisa preencher todos os campos.</span>"
-
-#: ../lib/screenshooter-zimagez.c:387
-msgid "Login on ZimageZ..."
-msgstr "Autenticando-se no ZimageZ..."
-
-#: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
-msgid ""
-"An unexpected reply from ZimageZ was received. The upload of the screenshot "
-"failed."
-msgstr "Uma resposta inesperada do ZimageZ foi recebida. O envio da captura de tela falhou."
-
-#: ../lib/screenshooter-zimagez.c:466
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
-"user and the password you entered do not match. Please retry.</span>"
-msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">O nome de usuário e a senha que você forneceu não combinam. Favor tentar novamente.</span>"
-
-#: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
+#: ../lib/screenshooter-imgur.c:105
 msgid "Upload the screenshot..."
 msgstr "Enviando a captura de tela..."
 
-#: ../lib/screenshooter-zimagez.c:557
-#, c-format
-msgid "An error occurred while uploading the screenshot."
-msgstr "Ocorreu um erro ao enviar a captura de tela."
-
-#. End the user session
-#: ../lib/screenshooter-zimagez.c:590
-msgid "Close the session on ZimageZ..."
-msgstr "Fechando a sessão do ZimageZ..."
-
-#: ../lib/screenshooter-zimagez.c:651
-msgid "ZimageZ"
-msgstr "ZimageZ"
-
-#: ../lib/screenshooter-imgur.c:114
+#: ../lib/screenshooter-imgur.c:115
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "Ocorreu um erro ao transferir os dados para imgur."
 
-#: ../lib/screenshooter-imgur.c:165
+#: ../lib/screenshooter-imgur.c:166
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-job-callbacks.c:68
+#: ../lib/screenshooter-job-callbacks.c:72
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:163
-msgid "Details about the screenshot for ZimageZ"
-msgstr "Detalhes sobre a captura de tela para ZimageZ"
+#: ../lib/screenshooter-job-callbacks.c:168
+msgid "Details about the screenshot"
+msgstr "Detalhes sobre a captura de tela"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:203
+#: ../lib/screenshooter-job-callbacks.c:214
 msgid "User:"
 msgstr "Usuário:"
 
-#: ../lib/screenshooter-job-callbacks.c:214
+#: ../lib/screenshooter-job-callbacks.c:222
 msgid ""
-"Your Zimagez user name, if you do not have one yet please create one on the "
-"Web page linked above"
-msgstr "Seu nome de usuário de ZimageZ, se ainda não possui um, por favor, crie na página linkada acima."
+"Your user name, if you do not have one yet please create one on the Web page"
+" linked above"
+msgstr "O seu nome de usuário, caso você não tenha um, favor se cadastrar pelo link acima"
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:220
+#: ../lib/screenshooter-job-callbacks.c:228
 msgid "Password:"
 msgstr "Senha:"
 
-#: ../lib/screenshooter-job-callbacks.c:230
+#: ../lib/screenshooter-job-callbacks.c:235
 msgid "The password for the user above"
 msgstr "A senha para o usuário acima"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:236
+#: ../lib/screenshooter-job-callbacks.c:241
 msgid "Title:"
 msgstr "Título:"
 
-#: ../lib/screenshooter-job-callbacks.c:246
+#: ../lib/screenshooter-job-callbacks.c:249
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
-msgstr "O título para a captura de tela, ele será usado quando estiver exibindo a captura de tela em ZimageZ"
+"on the image hosting service"
+msgstr "O título para a captura de tela, ele será usado quando a captura de tela for exibida no serviço de hospedagem de imagens"
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:252
+#: ../lib/screenshooter-job-callbacks.c:255
 msgid "Comment:"
 msgstr "Comentário:"
 
 #: ../lib/screenshooter-job-callbacks.c:263
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
-msgstr "Um comentário na captura de tela, ele será usado quando estiver exibindo a captura de tela em ZimageZ"
+"on the image hosting service"
+msgstr "Um comentário na captura de tela, ele será usado quando a captura de tela for exibida no serviço de hospedagem de imagens"
 
-#: ../lib/screenshooter-job-callbacks.c:378
+#: ../lib/screenshooter-job-callbacks.c:377
 msgid "My screenshot on Imgur"
 msgstr "Minha captura de tela em Imgur"
 
-#: ../lib/screenshooter-job-callbacks.c:386
-msgid "My screenshot on ZimageZ"
-msgstr "Minha captura de tela em ZimageZ"
-
-#: ../lib/screenshooter-job-callbacks.c:400
+#: ../lib/screenshooter-job-callbacks.c:385
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
 msgstr "<a href=\"%s\">Imagem no tamanho original</a>"
 
-#: ../lib/screenshooter-job-callbacks.c:402
+#: ../lib/screenshooter-job-callbacks.c:387
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr "<a href=\"%s\">Miniatura grande</a>"
 
-#: ../lib/screenshooter-job-callbacks.c:404
+#: ../lib/screenshooter-job-callbacks.c:389
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
 msgstr "<a href=\"%s\">Miniatura pequena</a>"
 
-#: ../lib/screenshooter-job-callbacks.c:439
+#: ../lib/screenshooter-job-callbacks.c:429
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:478
+#: ../lib/screenshooter-job-callbacks.c:477
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Código para uma miniatura apontando para a imagem no tamanho original</span>"
 
 #. HTML title
-#: ../lib/screenshooter-job-callbacks.c:494
+#: ../lib/screenshooter-job-callbacks.c:499
 msgid "HTML"
 msgstr "HTML"
 
 #. BB title
-#: ../lib/screenshooter-job-callbacks.c:515
+#: ../lib/screenshooter-job-callbacks.c:521
 msgid "BBCode for forums"
 msgstr "BBCode para fóruns"
 
-#: ../src/main.c:50
+#: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
 msgstr "Copiar a captura de tela para a área de transferência"
 
-#: ../src/main.c:55
+#: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Atraso em segundos antes de capturar uma imagem da tela"
 
-#: ../src/main.c:65
+#: ../src/main.c:64
 msgid "Display the mouse on the screenshot"
 msgstr "Exibir o ponteiro do mouse na captura de tela"
 
-#: ../src/main.c:82
+#: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
 msgstr "Diretório onde será salva a captura de tela"
 
-#: ../src/main.c:97
+#: ../src/main.c:91
 msgid "Version information"
 msgstr "Informação da versão"
 
-#: ../src/main.c:146
+#: ../src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Opções em conflito: --%s e --%s não podem ser usadas ao mesmo tempo.\n\r\n"
 
-#: ../src/main.c:148
+#: ../src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "A opção --%s só é usada quando --fullscreen, --window ou --region são fornecidos, portanto será ignorada.\n"
 
-#: ../src/main.c:162
+#: ../src/main.c:158
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\nTente %s --help para ver uma lista completa das opções de linha de comando disponíveis.\n"
 
-#: ../src/main.c:358
+#: ../src/main.c:308
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s não é um diretório válido; o diretório padrão será usado."
@@ -413,5 +329,5 @@ msgid ""
 "region. You can set the delay that elapses before the screenshot is taken "
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
-"ZimageZ or imgur, free online image hosting services."
-msgstr "Este aplicativo lhe permite capturar a tela inteira, a janela ativa ou uma região selecionada. Você pode definir o atraso para a captura da imagem e a ação que será realizada: salvar em um arquivo PNG, copiar para a área de transferência, abrir usando outro aplicativo, ou hospedar no ZimageZ ou imgur, serviços de hospedagem de imagens online gratuitos."
+"imgur, a free online image hosting service."
+msgstr "Este aplicativo lhe permite capturar a tela inteira, a janela ativa ou uma região selecionada. Você pode definir o atraso para a captura da imagem e a ação que será realizada: salvar em um arquivo PNG, copiar para a área de transferência, abrir usando outro aplicativo, ou hospedar no imgur, um serviço de hospedagem de imagens online gratuito."
