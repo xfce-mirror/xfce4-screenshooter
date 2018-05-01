@@ -106,6 +106,34 @@ static GOptionEntry entries[] =
 
 
 static void
+take_screenshot (ScreenshotData *sd, gboolean from_cli)
+{
+  if (sd->region == SELECT)
+    {
+      /* The delay will be applied after the rectangle selection */
+      g_idle_add ((GSourceFunc) screenshooter_take_screenshot_idle, sd);
+      return;
+    }
+
+  if (sd->delay == 0 && from_cli)
+    {
+      /* If delay is zero and the region was passed as an argument, thus the
+       * first dialog was not shown, we will take the screenshot immediately
+       * without a minimal delay */
+      g_idle_add ((GSourceFunc) screenshooter_take_screenshot_idle, sd);
+      return;
+    }
+
+  /* Await the amount of the time specified by the user before capturing the
+   * screenshot, but not less than 200ms, otherwise the first dialog might
+   * appear on the screenshot. */
+  gint delay = sd->delay == 0 ? 200 : sd->delay * 1000;
+  g_timeout_add (delay, (GSourceFunc) screenshooter_take_screenshot_idle, sd);
+}
+
+
+
+static void
 cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
 {
   if (response == GTK_RESPONSE_HELP)
@@ -116,7 +144,7 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
   else if (response == GTK_RESPONSE_OK)
     {
       gtk_widget_destroy (dialog);
-      g_idle_add ((GSourceFunc) screenshooter_take_screenshot_idle, sd);
+      take_screenshot (sd, FALSE);
     }
   else
     {
@@ -313,16 +341,12 @@ int main (int argc, char **argv)
           g_free (screenshot_dir);
         }
 
-      g_idle_add ((GSourceFunc) screenshooter_take_screenshot_idle, sd);
+      take_screenshot (sd, TRUE);
     }
   /* Else we show a dialog which allows to set the screenshot options */
   else
     {
       GtkWidget *dialog;
-
-      /* Use 1 as the minimal delay, 0 may show corrupted windows */
-      if (sd->delay == 0)
-        sd->delay = 1;
 
       /* Set the dialog up */
       dialog = screenshooter_region_dialog_new (sd, FALSE);

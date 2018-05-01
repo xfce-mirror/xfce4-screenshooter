@@ -764,7 +764,7 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 
 
 static GdkPixbuf
-*capture_rectangle_screenshot (gint x, gint y, gint w, gint h)
+*capture_rectangle_screenshot (gint x, gint y, gint w, gint h, gint delay)
 {
   GdkWindow *root;
   int root_width, root_height;
@@ -786,6 +786,12 @@ static GdkPixbuf
     w = root_width - x;
   if (y + h > root_height)
     h = root_height - y;
+
+  /* Await the specified delay, but not less than 200ms */
+  if (delay == 0)
+    g_usleep (200000);
+  else
+    sleep (delay);
 
   return gdk_pixbuf_get_from_window (root, x, y, w, h);
 }
@@ -906,12 +912,11 @@ static GdkPixbuf
   /* Grab the screenshot on the main window */
   root = gdk_get_default_root_window ();
 
-  sleep (delay);
-
   screenshot = capture_rectangle_screenshot (rbdata.rectangle_root.x,
                                              rbdata.rectangle_root.y,
                                              rbdata.rectangle.width,
-                                             rbdata.rectangle.height);
+                                             rbdata.rectangle.height,
+                                             delay);
 
   cleanup:
   /* Ungrab the mouse and the keyboard */
@@ -1238,12 +1243,11 @@ static GdkPixbuf
     {
       TRACE ("Get the pixbuf for the screenshot");
 
-      sleep(delay);
-
       screenshot = capture_rectangle_screenshot (rbdata.rectangle.x,
                                                  rbdata.rectangle.y,
                                                  rbdata.rectangle.width,
-                                                 rbdata.rectangle.height);
+                                                 rbdata.rectangle.height,
+                                                 delay);
     }
 
   if (G_LIKELY (gc != NULL))
@@ -1304,12 +1308,6 @@ GdkPixbuf *screenshooter_take_screenshot (gint     region,
   gdk_display_sync (display);
 
   gdk_window_process_all_updates ();
-
-  /* wait for n=delay seconds */
-  if (region == SELECT)
-    delay = 1;
-  else
-    sleep (delay);
 
   /* Get the window/desktop we want to screenshot*/
   if (region == FULLSCREEN)
