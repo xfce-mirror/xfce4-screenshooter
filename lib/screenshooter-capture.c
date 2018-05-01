@@ -21,11 +21,21 @@
 
 #define BACKGROUND_TRANSPARENCY 0.4
 
+enum {
+  ANCHOR_UNSET = 0,
+  ANCHOR_NONE = 1,
+  ANCHOR_TOP = 2,
+  ANCHOR_LEFT = 4
+};
+
 /* Rubberband data for composited environment */
 typedef struct
 {
   gboolean left_pressed;
   gboolean rubber_banding;
+  gboolean cancelled;
+  gboolean move_rectangle;
+  gint anchor;
   gint x;
   gint y;
   gint x_root;
@@ -39,6 +49,8 @@ typedef struct
 {
   gboolean pressed;
   gboolean cancelled;
+  gboolean move_rectangle;
+  gint anchor;
   cairo_rectangle_int_t rectangle;
   gint x1, y1; /* holds the position where the mouse was pressed */
   GC *context;
@@ -69,7 +81,10 @@ static GdkFilterReturn  region_filter_func                  (GdkXEvent      *xev
 static GdkPixbuf       *get_rectangle_screenshot            (gint delay);
 static gboolean         cb_key_pressed                      (GtkWidget      *widget,
                                                              GdkEventKey    *event,
-                                                             gboolean       *cancelled);
+                                                             RubberBandData *rbdata);
+static gboolean         cb_key_released                     (GtkWidget      *widget,
+                                                             GdkEventKey    *event,
+                                                             RubberBandData *rbdata);
 static gboolean         cb_draw                             (GtkWidget      *widget,
                                                              cairo_t        *cr,
                                                              RubberBandData *rbdata);
@@ -489,14 +504,40 @@ static GdkPixbuf
 
 
 /* Callbacks for the rubber banding function */
-static gboolean cb_key_pressed (GtkWidget   *widget,
-                                GdkEventKey *event,
-                                gboolean    *cancelled)
+static gboolean cb_key_pressed (GtkWidget      *widget,
+                                GdkEventKey    *event,
+                                RubberBandData *rbdata)
 {
-  if (event->keyval == GDK_KEY_Escape)
+  guint key = event->keyval;
+
+  if (key == GDK_KEY_Escape)
     {
       gtk_widget_hide (widget);
-      *cancelled = TRUE;
+      rbdata->cancelled = TRUE;
+      return TRUE;
+    }
+
+  if (rbdata->left_pressed && (key == GDK_KEY_Control_L || key == GDK_KEY_Control_R))
+    {
+      rbdata->move_rectangle = TRUE;
+      return TRUE;
+    }
+
+  return FALSE;
+}
+
+
+
+static gboolean cb_key_released (GtkWidget      *widget,
+                                 GdkEventKey    *event,
+                                 RubberBandData *rbdata)
+{
+  guint key = event->keyval;
+
+  if (rbdata->left_pressed && (key == GDK_KEY_Control_L || key == GDK_KEY_Control_R))
+    {
+      rbdata->move_rectangle = FALSE;
+      rbdata->anchor = ANCHOR_UNSET;
       return TRUE;
     }
 
@@ -644,16 +685,52 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           old_rect.height = new_rect->height;
         }
 
-      /* Get the new rubber banding rectangle */
-      new_rect->x = MIN (rbdata->x , event->x);
-      new_rect->y = MIN (rbdata->y, event->y);
-      new_rect->width = ABS (rbdata->x - event->x) + 1;
-      new_rect->height = ABS (rbdata->y - event->y) +1;
+      if (rbdata->move_rectangle)
+        {
+          /* Define the anchor right after the control key is pressed */
+          if (rbdata->anchor == ANCHOR_UNSET)
+            {
+              rbdata->anchor = ANCHOR_NONE;
+              rbdata->anchor |= (event->x < rbdata->x) ? ANCHOR_LEFT : 0;
+              rbdata->anchor |= (event->y < rbdata->y) ? ANCHOR_TOP : 0;
+            }
 
-      new_rect_root->x = MIN (rbdata->x_root , event->x_root);
-      new_rect_root->y = MIN (rbdata->y_root, event->y_root);
-      new_rect_root->width = ABS (rbdata->x_root - event->x_root) + 1;
-      new_rect_root->height = ABS (rbdata->y_root - event->y_root) +1;
+          /* Do not resize, instead move the rubber banding rectangle around */
+          if (rbdata->anchor & ANCHOR_LEFT)
+            {
+              rbdata->x = (new_rect->x = event->x) + new_rect->width;
+              rbdata->x_root = (new_rect_root->x = event->x_root) + new_rect->width;
+            }
+          else
+            {
+              rbdata->x = new_rect->x = event->x - new_rect->width;
+              rbdata->x_root = new_rect_root->x = event->x_root - new_rect->width;
+            }
+
+          if (rbdata->anchor & ANCHOR_TOP)
+            {
+              rbdata->y = (new_rect->y = event->y) + new_rect->height;
+              rbdata->y_root = (new_rect_root->y = event->y_root) + new_rect->height;
+            }
+          else
+            {
+              rbdata->y = new_rect->y = event->y - new_rect->height;
+              rbdata->x_root = new_rect_root->y = event->y_root - new_rect->height;
+            }
+        }
+      else
+        {
+          /* Get the new rubber banding rectangle */
+          new_rect->x = MIN (rbdata->x, event->x);
+          new_rect->y = MIN (rbdata->y, event->y);
+          new_rect->width = ABS (rbdata->x - event->x) + 1;
+          new_rect->height = ABS (rbdata->y - event->y) + 1;
+
+          new_rect_root->x = MIN (rbdata->x_root, event->x_root);
+          new_rect_root->y = MIN (rbdata->y_root, event->y_root);
+          new_rect_root->width = ABS (rbdata->x_root - event->x_root) + 1;
+          new_rect_root->height = ABS (rbdata->y_root - event->y_root) + 1;
+        }
 
       region = cairo_region_create_rectangle (&old_rect);
       cairo_region_union_rectangle (region, new_rect);
@@ -685,12 +762,41 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 }
 
 
+
+static GdkPixbuf
+*capture_rectangle_screenshot (gint x, gint y, gint w, gint h)
+{
+  GdkWindow *root;
+  int root_width, root_height;
+
+  root = gdk_get_default_root_window ();
+  root_width = gdk_window_get_width (root);
+  root_height = gdk_window_get_height (root);
+
+  /* Avoid rectangle parts outside the screen */
+  if (x < 0)
+    w += x;
+  if (y < 0)
+    h += y;
+
+  x = MAX(0, x);
+  y = MAX(0, y);
+
+  if (x + w > root_width)
+    w = root_width - x;
+  if (y + h > root_height)
+    h = root_height - y;
+
+  return gdk_pixbuf_get_from_window (root, x, y, w, h);
+}
+
+
+
 static GdkPixbuf
 *get_rectangle_screenshot_composited (gint delay)
 {
   GtkWidget *window;
   RubberBandData rbdata;
-  gboolean cancelled = FALSE;
   GdkPixbuf *screenshot = NULL;
   GdkWindow *root;
   GdkDevice *pointer, *keyboard;
@@ -702,6 +808,9 @@ static GdkPixbuf
   rbdata.left_pressed = FALSE;
   rbdata.rubber_banding = FALSE;
   rbdata.x = rbdata.y = 0;
+  rbdata.cancelled = FALSE;
+  rbdata.move_rectangle = FALSE;
+  rbdata.anchor = ANCHOR_UNSET;
 
   /* Create the fullscreen window on which the rubber banding
    * will be drawn. */
@@ -720,7 +829,9 @@ static GdkPixbuf
 
   /* Connect to the interesting signals */
   g_signal_connect (window, "key-press-event",
-                    G_CALLBACK (cb_key_pressed), &cancelled);
+                    G_CALLBACK (cb_key_pressed), &rbdata);
+  g_signal_connect (window, "key-release-event",
+                    G_CALLBACK (cb_key_released), &rbdata);
   g_signal_connect (window, "draw",
                     G_CALLBACK (cb_draw), &rbdata);
   g_signal_connect (window, "button-press-event",
@@ -789,19 +900,18 @@ static GdkPixbuf
   g_object_unref (xhair_cursor);
   gdk_flush();
 
-  if (cancelled)
+  if (rbdata.cancelled)
     goto cleanup;
 
   /* Grab the screenshot on the main window */
   root = gdk_get_default_root_window ();
 
-  sleep(delay);
+  sleep (delay);
 
-  screenshot = gdk_pixbuf_get_from_window (root,
-                                           rbdata.rectangle_root.x,
-                                           rbdata.rectangle_root.y,
-                                           rbdata.rectangle.width,
-                                           rbdata.rectangle.height);
+  screenshot = capture_rectangle_screenshot (rbdata.rectangle_root.x,
+                                             rbdata.rectangle_root.y,
+                                             rbdata.rectangle.width,
+                                             rbdata.rectangle.height);
 
   cleanup:
   /* Ungrab the mouse and the keyboard */
@@ -822,6 +932,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
   XIDeviceEvent *device_event;
   Display *display;
   Window root_window;
+  int key;
 
   display = gdk_x11_get_default_xdisplay ();
   root_window = gdk_x11_get_default_root_xwindow ();
@@ -842,6 +953,8 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
         rbdata->rectangle.width = 0;
         rbdata->rectangle.height = 0;
         rbdata->pressed = TRUE;
+        rbdata->move_rectangle = FALSE;
+        rbdata->anchor = ANCHOR_UNSET;
 
         return GDK_FILTER_REMOVE;
       break;
@@ -900,10 +1013,34 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
             x2 = device_event->root_x;
             y2 = device_event->root_y;
 
-            rbdata->rectangle.x = MIN (rbdata->x1, x2);
-            rbdata->rectangle.y = MIN (rbdata->y1, y2);
-            rbdata->rectangle.width = ABS (x2 - rbdata->x1);
-            rbdata->rectangle.height = ABS (y2 - rbdata->y1);
+            if (rbdata->move_rectangle)
+              {
+                /* Define the anchor right after the control key is pressed */
+                if (rbdata->anchor == ANCHOR_UNSET)
+                  {
+                    rbdata->anchor = ANCHOR_NONE;
+                    rbdata->anchor |= (x2 < rbdata->x1) ? ANCHOR_LEFT : 0;
+                    rbdata->anchor |= (y2 < rbdata->y1) ? ANCHOR_TOP : 0;
+                  }
+
+                /* Do not resize, instead move the rubber banding rectangle around */
+                if (rbdata->anchor & ANCHOR_LEFT)
+                  rbdata->x1 = (rbdata->rectangle.x = x2) + rbdata->rectangle.width;
+                else
+                  rbdata->x1 = rbdata->rectangle.x = x2 - rbdata->rectangle.width;
+
+                if (rbdata->anchor & ANCHOR_TOP)
+                  rbdata->y1 = (rbdata->rectangle.y = y2) + rbdata->rectangle.height;
+                else
+                  rbdata->y1 = rbdata->rectangle.y = y2 - rbdata->rectangle.height;
+              }
+            else
+              {
+                rbdata->rectangle.x = MIN (rbdata->x1, x2);
+                rbdata->rectangle.y = MIN (rbdata->y1, y2);
+                rbdata->rectangle.width = ABS (x2 - rbdata->x1);
+                rbdata->rectangle.height = ABS (y2 - rbdata->y1);
+              }
 
             /* Draw  the rectangle as the user drags the mouse */
             TRACE ("Draw the new rectangle");
@@ -923,8 +1060,18 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
       case XI_KeyPress:
         device_event = (XIDeviceEvent*) x_event->xcookie.data;
+        key = device_event->detail;
 
-        if (device_event->detail == XKeysymToKeycode (gdk_x11_get_default_xdisplay(), XK_Escape))
+        if (rbdata->pressed && (
+            key == XKeysymToKeycode (gdk_x11_get_default_xdisplay (), XK_Control_L) ||
+            key == XKeysymToKeycode (gdk_x11_get_default_xdisplay (), XK_Control_R)))
+          {
+            TRACE ("Control key was pressed, move the selection area.");
+            rbdata->move_rectangle = TRUE;
+            return GDK_FILTER_REMOVE;
+          }
+
+        if (key == XKeysymToKeycode (gdk_x11_get_default_xdisplay (), XK_Escape))
           {
             TRACE ("Escape key was pressed, cancel the screenshot.");
 
@@ -947,6 +1094,21 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
             rbdata->cancelled = TRUE;
             gtk_main_quit ();
+            return GDK_FILTER_REMOVE;
+          }
+        break;
+
+      case XI_KeyRelease:
+        device_event = (XIDeviceEvent*) x_event->xcookie.data;
+        key = device_event->detail;
+
+        if (rbdata->pressed && (
+            key == XKeysymToKeycode (gdk_x11_get_default_xdisplay (), XK_Control_L) ||
+            key == XKeysymToKeycode (gdk_x11_get_default_xdisplay (), XK_Control_R)))
+          {
+            TRACE ("Control key was released, resize the selection area.");
+            rbdata->move_rectangle = FALSE;
+            rbdata->anchor = ANCHOR_UNSET;
             return GDK_FILTER_REMOVE;
           }
         break;
@@ -1078,12 +1240,10 @@ static GdkPixbuf
 
       sleep(delay);
 
-      screenshot =
-        gdk_pixbuf_get_from_window (root_window,
-                                    rbdata.rectangle.x,
-                                    rbdata.rectangle.y,
-                                    rbdata.rectangle.width,
-                                    rbdata.rectangle.height);
+      screenshot = capture_rectangle_screenshot (rbdata.rectangle.x,
+                                                 rbdata.rectangle.y,
+                                                 rbdata.rectangle.width,
+                                                 rbdata.rectangle.height);
     }
 
   if (G_LIKELY (gc != NULL))
