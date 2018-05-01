@@ -5,8 +5,8 @@ dnl
 
 m4_define([xfce4_screenshooter_version_major], [1])
 m4_define([xfce4_screenshooter_version_minor], [9])
-m4_define([xfce4_screenshooter_version_micro], [1])
-m4_define([xfce4_screenshooter_version_nano],  [git]) dnl leave this empty to have no nano version
+m4_define([xfce4_screenshooter_version_micro], [2])
+m4_define([xfce4_screenshooter_version_nano],  []) dnl leave this empty to have no nano version
 m4_define([xfce4_screenshooter_version_build], [@REVISION@])
 m4_define([xfce4_screenshooter_version_tag], [])
 m4_define([xfce4_screenshooter_version], [xfce4_screenshooter_version_major().xfce4_screenshooter_version_minor().xfce4_screenshooter_version_micro()ifelse(xfce4_screenshooter_version_nano(), [], [], [.xfce4_screenshooter_version_nano()])ifelse(xfce4_screenshooter_version_tag(), [git], [xfce4_screenshooter_version_tag()-xfce4_screenshooter_version_build()], [xfce4_screenshooter_version_tag()])])

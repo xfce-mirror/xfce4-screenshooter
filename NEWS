@@ -1,3 +1,15 @@
+=== Version 1.9.2 ===
+  * Remove zimagez support (bug #14283)
+
+  * Enhancements:
+    - Use g_app_info_launch() for command launching (bug #13886)
+    - Dismiss the progress dialog after upload (bug #12519)
+    - Improve thumbnail size clamping
+    - Allow --clipboard option to be used with the others (bug #14120)
+
+  * Bugs fixed:
+    - Handle device grab failure (bug #10259)
+
 === Version 1.9.1 ===
 
   * Enhancements:
