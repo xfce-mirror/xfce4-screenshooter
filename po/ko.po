@@ -4,15 +4,15 @@
 # 
 # Translators:
 # BAK Chan-Jin <YeoulonGG@gmail.com>, 2015
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2015
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2015,2018
 # Sungjin Kang <potopro@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-01 12:31+0100\n"
-"PO-Revision-Date: 2017-11-14 12:09+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
+"POT-Creation-Date: 2018-04-19 00:32+0200\n"
+"PO-Revision-Date: 2018-05-26 09:21+0000\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/xfce/xfce-apps/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,378 +20,293 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../lib/screenshooter-dialogs.c:466
+#: ../lib/screenshooter-dialogs.c:458
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb (%.2fKb 중)"
 
-#: ../lib/screenshooter-dialogs.c:552
+#: ../lib/screenshooter-dialogs.c:544
 msgid "Transfer"
 msgstr "전송"
 
-#: ../lib/screenshooter-dialogs.c:573
+#: ../lib/screenshooter-dialogs.c:565
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">스크린샷을 다음으로 전송했습니다:</span>"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:712
-#: ../lib/screenshooter-dialogs.c:905 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:688 ../lib/screenshooter-dialogs.c:704
+#: ../lib/screenshooter-dialogs.c:927 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "스크린샷"
 
-#: ../lib/screenshooter-dialogs.c:707
+#: ../lib/screenshooter-dialogs.c:699
 msgid "Take a screenshot"
 msgstr "스크린샷 찍기"
 
-#: ../lib/screenshooter-dialogs.c:722
+#: ../lib/screenshooter-dialogs.c:714
 msgid "Preferences"
 msgstr "기본 설정"
 
-#: ../lib/screenshooter-dialogs.c:753
+#: ../lib/screenshooter-dialogs.c:751
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍을 선택영역 지정</span>"
 
-#: ../lib/screenshooter-dialogs.c:773
+#: ../lib/screenshooter-dialogs.c:778
 msgid "Entire screen"
 msgstr "전체 화면"
 
-#: ../lib/screenshooter-dialogs.c:780 ../src/main.c:60
-#: ../panel-plugin/screenshooter-plugin.c:318
+#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:59
+#: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "전체 화면을 찍습니다"
 
-#: ../lib/screenshooter-dialogs.c:788
+#: ../lib/screenshooter-dialogs.c:793
 msgid "Active window"
 msgstr "활성 창"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:102
-#: ../panel-plugin/screenshooter-plugin.c:323
+#: ../lib/screenshooter-dialogs.c:800 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "활성 창을 찍습니다"
 
-#: ../lib/screenshooter-dialogs.c:803
+#: ../lib/screenshooter-dialogs.c:808
 msgid "Select a region"
 msgstr "영역 선택"
 
-#: ../lib/screenshooter-dialogs.c:808 ../src/main.c:75
-#: ../panel-plugin/screenshooter-plugin.c:328
+#: ../lib/screenshooter-dialogs.c:813 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:340
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "화면의 한 점을 누른 상태에서 마우스 단추를 떼지 않고 다른 영역의 구석으로 마우스를 끈 다음 단추를 떼어서 찍을 화면 영역을 선택합니다."
 
-#: ../lib/screenshooter-dialogs.c:818
+#: ../lib/screenshooter-dialogs.c:823
 msgid "Capture the mouse pointer"
 msgstr "마우스 포인터 찍기"
 
-#: ../lib/screenshooter-dialogs.c:823
+#: ../lib/screenshooter-dialogs.c:828
 msgid "Display the mouse pointer on the screenshot"
 msgstr "스크린샷에 마우스 포인터를 보입니다"
 
-#: ../lib/screenshooter-dialogs.c:839
+#: ../lib/screenshooter-dialogs.c:844
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍기 전 지연시간</span>"
 
-#: ../lib/screenshooter-dialogs.c:861
+#: ../lib/screenshooter-dialogs.c:873
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "스크린샷을 찍기 전에 몇 초간 시간을 지연합니다"
 
-#: ../lib/screenshooter-dialogs.c:864
+#: ../lib/screenshooter-dialogs.c:876
 msgid "seconds"
 msgstr "초"
 
-#: ../lib/screenshooter-dialogs.c:917
+#: ../lib/screenshooter-dialogs.c:938
 msgid "Action"
 msgstr "동작"
 
-#: ../lib/screenshooter-dialogs.c:946
+#: ../lib/screenshooter-dialogs.c:972
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">동작</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:964
+#: ../lib/screenshooter-dialogs.c:997
 msgid "Save"
 msgstr "저장"
 
-#: ../lib/screenshooter-dialogs.c:969
+#: ../lib/screenshooter-dialogs.c:1002
 msgid "Save the screenshot to a PNG file"
 msgstr "PNG파일로 스크린샷을 저장합니다"
 
-#: ../lib/screenshooter-dialogs.c:978
+#: ../lib/screenshooter-dialogs.c:1011
 msgid "Copy to the clipboard"
 msgstr "클립보드로 복사"
 
-#: ../lib/screenshooter-dialogs.c:980
+#: ../lib/screenshooter-dialogs.c:1013
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "나중에 붙일 수 있게 클립보드에 스크린샷을 복사합니다"
 
-#: ../lib/screenshooter-dialogs.c:992
+#: ../lib/screenshooter-dialogs.c:1025
 msgid "Open with:"
 msgstr "다음으로 열기:"
 
-#: ../lib/screenshooter-dialogs.c:998
+#: ../lib/screenshooter-dialogs.c:1031
 msgid "Open the screenshot with the chosen application"
 msgstr "선택한 프로그램으로 스크린샷을 엽니다"
 
-#: ../lib/screenshooter-dialogs.c:1017 ../src/main.c:70
+#: ../lib/screenshooter-dialogs.c:1050 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "스크린샷을 열 프로그램"
 
-#: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on ZimageZ"
-msgstr "ZimageZ에 올리기"
-
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:87
-msgid "Host the screenshot on ZimageZ, a free online image hosting service"
-msgstr "무료 온라인 그림 호스팅 서비스 ZimageZ에 스크린샷을 올립니다"
-
-#: ../lib/screenshooter-dialogs.c:1040
+#: ../lib/screenshooter-dialogs.c:1060
 msgid "Host on Imgur"
 msgstr "Imgur에 게시"
 
-#: ../lib/screenshooter-dialogs.c:1044 ../src/main.c:92
+#: ../lib/screenshooter-dialogs.c:1064 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "무료 온라인 그림 제공 서비스인 Imgur에 스크린샷을 게시합니다"
 
-#: ../lib/screenshooter-dialogs.c:1058
+#: ../lib/screenshooter-dialogs.c:1078
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">미리 보기</span>"
 
-#: ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-dialogs.c:1140
 msgid "Save screenshot as..."
 msgstr "스크린샷을 다른 이름으로 저장..."
 
-#: ../lib/screenshooter-utils.c:183
+#: ../lib/screenshooter-utils.c:199
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>프로그램을 실행할 수 없습니다.</b>\n%s"
 
-#: ../lib/screenshooter-zimagez.c:96
-#, c-format
-msgid "An error occurred while creating the XMLRPC request."
-msgstr "XMLRPC 요청을 만드는 동안 오류가 발생했습니다."
-
-#: ../lib/screenshooter-zimagez.c:115
-#, c-format
-msgid "An error occurred while transferring the data to ZimageZ."
-msgstr "ZimageZ에 데이터를 보내는 동안 오류가 발생했습니다."
-
-#: ../lib/screenshooter-zimagez.c:140
-#, c-format
-msgid "An error occurred while parsing the response from ZimageZ."
-msgstr "ZimageZ의 응답을 해석하는 동안 오류가 발생했습니다."
-
-#. For translators: the first wildcard is the date, the second one the time,
-#. * e.g. "Taken on 12/31/99, at 23:13:48".
-#: ../lib/screenshooter-zimagez.c:190
-#, c-format
-msgid "Taken on %x, at %X"
-msgstr "%x %X에 촬영함"
-
-#. Start the user soup session
-#: ../lib/screenshooter-zimagez.c:263
-msgid "Initialize the connection..."
-msgstr "연결 초기화 중..."
-
-#: ../lib/screenshooter-zimagez.c:309
-msgid ""
-"Please fill the following fields with your <a href=\"http://www.zimagez.com\">ZimageZ</a> \n"
-"user name, passsword and details about the screenshot."
-msgstr "다음 필드를 <a href=\"http://www.zimagez.com\">ZimageZ</a> 사용자 이름, 암호\n그리고 스크린샷에 대한 설명으로 채워주십시오."
-
-#: ../lib/screenshooter-zimagez.c:366
-msgid "Check the user information..."
-msgstr "사용자 정보 확인..."
-
-#: ../lib/screenshooter-zimagez.c:373
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">You "
-"must fill all the fields.</span>"
-msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">모든 필드를 채우셔야 합니다.</span>"
-
-#: ../lib/screenshooter-zimagez.c:387
-msgid "Login on ZimageZ..."
-msgstr "ZimageZ로 로그인 하기..."
-
-#: ../lib/screenshooter-zimagez.c:427 ../lib/screenshooter-zimagez.c:578
-msgid ""
-"An unexpected reply from ZimageZ was received. The upload of the screenshot "
-"failed."
-msgstr "ZimageZ에서 예상치 못한 응답이 왔습니다. 스크린샷 업로드에 실패했습니다."
-
-#: ../lib/screenshooter-zimagez.c:466
-msgid ""
-"<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">The "
-"user and the password you entered do not match. Please retry.</span>"
-msgstr "<span weight=\"bold\" foreground=\"darkred\" stretch=\"semiexpanded\">입력한 사용자 및 암호가 잘못되었습니다. 다시 시도하여 주십시오.</span>"
-
-#: ../lib/screenshooter-zimagez.c:524 ../lib/screenshooter-imgur.c:104
+#: ../lib/screenshooter-imgur.c:105
 msgid "Upload the screenshot..."
 msgstr "스크린샷 업로드..."
 
-#: ../lib/screenshooter-zimagez.c:557
-#, c-format
-msgid "An error occurred while uploading the screenshot."
-msgstr "스크린샷을 업로드 하는 동안 오류가 발생했습니다."
-
-#. End the user session
-#: ../lib/screenshooter-zimagez.c:590
-msgid "Close the session on ZimageZ..."
-msgstr "ZimageZ 세션 닫기..."
-
-#: ../lib/screenshooter-zimagez.c:651
-msgid "ZimageZ"
-msgstr "ZimageZ"
-
-#: ../lib/screenshooter-imgur.c:114
+#: ../lib/screenshooter-imgur.c:115
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "imgur로 데이터를 보내는 동안 오류가 발생했습니다."
 
-#: ../lib/screenshooter-imgur.c:165
+#: ../lib/screenshooter-imgur.c:166
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-job-callbacks.c:68
+#: ../lib/screenshooter-job-callbacks.c:72
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">상태</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:163
-msgid "Details about the screenshot for ZimageZ"
-msgstr "ZimageZ 스크린샷 상세 정보"
+#: ../lib/screenshooter-job-callbacks.c:168
+msgid "Details about the screenshot"
+msgstr "스크린샷 세부정보"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:203
+#: ../lib/screenshooter-job-callbacks.c:214
 msgid "User:"
 msgstr "사용자:"
 
-#: ../lib/screenshooter-job-callbacks.c:214
+#: ../lib/screenshooter-job-callbacks.c:222
 msgid ""
-"Your Zimagez user name, if you do not have one yet please create one on the "
-"Web page linked above"
-msgstr "당신의 ZimageZ의 사용자 이름입니다. 계정이 없다면 상단의 링크에서 계정을 생성해주시기 바랍니다."
+"Your user name, if you do not have one yet please create one on the Web page"
+" linked above"
+msgstr "위에 연결한 웹페이지에서 사용하는 사용자 이름을 적으시고, 없으면 만드십시오"
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:220
+#: ../lib/screenshooter-job-callbacks.c:228
 msgid "Password:"
 msgstr "암호:"
 
-#: ../lib/screenshooter-job-callbacks.c:230
+#: ../lib/screenshooter-job-callbacks.c:235
 msgid "The password for the user above"
 msgstr "위 사용자에 대한 암호입니다"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:236
+#: ../lib/screenshooter-job-callbacks.c:241
 msgid "Title:"
 msgstr "제목:"
 
-#: ../lib/screenshooter-job-callbacks.c:246
+#: ../lib/screenshooter-job-callbacks.c:249
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
-msgstr "ZimageZ에서 스크린샷을 표시할 때 사용할 스크린샷 제목입니다"
+"on the image hosting service"
+msgstr "이미지 제공 서비스에서 스크린샷을 나타낼 때 보여줄 제목"
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:252
+#: ../lib/screenshooter-job-callbacks.c:255
 msgid "Comment:"
 msgstr "설명:"
 
 #: ../lib/screenshooter-job-callbacks.c:263
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
-"on ZimageZ"
-msgstr "ZimageZ에서 스크린샷을 표시할 때 사용할 스크린샷 설명입니다"
+"on the image hosting service"
+msgstr "이미지 제공 서비스에서 스크린샷을 나타낼 때 보여줄 설명"
 
-#: ../lib/screenshooter-job-callbacks.c:378
+#: ../lib/screenshooter-job-callbacks.c:377
 msgid "My screenshot on Imgur"
 msgstr "Imgur의 내 스크린샷"
 
-#: ../lib/screenshooter-job-callbacks.c:386
-msgid "My screenshot on ZimageZ"
-msgstr "ZimageZ의 내 스크린샷"
-
-#: ../lib/screenshooter-job-callbacks.c:400
+#: ../lib/screenshooter-job-callbacks.c:385
 #, c-format
 msgid "<a href=\"%s\">Full size image</a>"
 msgstr "<a href=\"%s\">전체 크기 그림</a>"
 
-#: ../lib/screenshooter-job-callbacks.c:402
+#: ../lib/screenshooter-job-callbacks.c:387
 #, c-format
 msgid "<a href=\"%s\">Large thumbnail</a>"
 msgstr "<a href=\"%s\">큰 미리보기</a>"
 
-#: ../lib/screenshooter-job-callbacks.c:404
+#: ../lib/screenshooter-job-callbacks.c:389
 #, c-format
 msgid "<a href=\"%s\">Small thumbnail</a>"
 msgstr "<a href=\"%s\">작은 미리보기</a>"
 
-#: ../lib/screenshooter-job-callbacks.c:439
+#: ../lib/screenshooter-job-callbacks.c:429
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">링크</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:478
+#: ../lib/screenshooter-job-callbacks.c:477
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
 " to the full size image</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">전체 크기 그림을 가리키는 미리보기 이미지용 코드</span>"
 
 #. HTML title
-#: ../lib/screenshooter-job-callbacks.c:494
+#: ../lib/screenshooter-job-callbacks.c:499
 msgid "HTML"
 msgstr "HTML"
 
 #. BB title
-#: ../lib/screenshooter-job-callbacks.c:515
+#: ../lib/screenshooter-job-callbacks.c:521
 msgid "BBCode for forums"
 msgstr "포럼의 BBCode"
 
-#: ../src/main.c:50
+#: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
 msgstr "스크린샷을 클립보드로 복사"
 
-#: ../src/main.c:55
+#: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
 msgstr "스크린샷을 찍기전에 지연할 초 단위 시간"
 
-#: ../src/main.c:65
+#: ../src/main.c:64
 msgid "Display the mouse on the screenshot"
 msgstr "스크린샷에 마우스를 보여주기"
 
-#: ../src/main.c:82
+#: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
 msgstr "스크린샷을 저장할 디렉터리"
 
-#: ../src/main.c:97
+#: ../src/main.c:91
 msgid "Version information"
 msgstr "버전 정보"
 
-#: ../src/main.c:146
+#: ../src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "옵션 충돌: --%s와(과) --%s은(는) 동시에 사용할 수 없습니다.\n"
 
-#: ../src/main.c:148
+#: ../src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "--%s 옵션은 --fullscreen, --window 또는 --region 옵션이 주어졌을 경우에만 사용함니다. 따라서 이를 무시합니다.\n"
 
-#: ../src/main.c:162
+#: ../src/main.c:158
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\n사용할 수 있는 모든 명령 줄 목록을 보려면 %s --help를 입력해 봅니다.\n"
 
-#: ../src/main.c:358
+#: ../src/main.c:308
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s은(는) 유효한 디렉터리가 아니기 때문에 기본 디렉터리를 사용합니다."
@@ -408,5 +323,5 @@ msgid ""
 "region. You can set the delay that elapses before the screenshot is taken "
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
-"ZimageZ or imgur, free online image hosting services."
-msgstr "전체 화면, 활성 창, 선택 영역을 캡처할 수 있습니다. 스크린샷을 찍기 전에 잠시 미룰 지연 시간을 설정할 수 있으며, 해당 동작은 스크린 샷을 찍어 마무리 합니다. PNG 파일로 저장하거나, 클립보드로 복사하거나, 다른 프로그램에서 열거나, ZimageZ 또는 무료 온라인 이미지 제공 서비스 imgur에 게시할 수 있습니다."
+"imgur, a free online image hosting service."
+msgstr "전체 화면, 활성 창, 선택 영역을 찍을 수 있습니다. 스크린샷을 찍기 전 대기 시간과 스크린샷을 찍은 후 취할 동작을 설정할 수 있습니다. 이 동작에는 PNG 파일로 저장하기, 클립보드로 복사하기, 다른 프로그램에서 열기, 무료 온라인 이미지 제공 서비스 imgur에 게시하기가 있습니다."
