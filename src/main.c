@@ -314,6 +314,10 @@ int main (int argc, char **argv)
 
       if (clipboard)
         {
+          /* if no other action was specified, reset the value loaded from prefs */
+          if (!sd->action_specified)
+            sd->action = NONE;
+
           sd->action |= CLIPBOARD;
           sd->action_specified = TRUE;
         }
