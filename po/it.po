@@ -5,6 +5,7 @@
 # Translators:
 # Cristian Marchi <cri.penta@gmail.com>, 2014-2015
 # Edoardo Maria Elidoro <edoardo.elidoro@gmail.com>, 2013
+# Emanuele Petriglia <inbox@emanuelepetriglia.me>, 2018
 # Enrico B. <enricobe@hotmail.com>, 2018
 # Gianluca Foddis <gianluca.foddis@gmail.com>, 2009
 msgid ""
@@ -12,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-19 00:32+0200\n"
-"PO-Revision-Date: 2018-06-16 16:27+0000\n"
+"PO-Revision-Date: 2018-07-09 09:03+0000\n"
 "Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -305,7 +306,7 @@ msgstr "L'opzione --%s è valida solo in congiunzione con --fullscreen, --window
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nProvare %s --help per vedere l'elenco completo delle opzioni da riga di comando.\n"
+msgstr "%s: %s\nProvare %s --help per visualizzare la lista\ncompleta delle opzioni da riga di comando.\n"
 
 #: ../src/main.c:308
 #, c-format
