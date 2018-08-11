@@ -1,3 +1,11 @@
+=== Version 1.9.3 ===
+  * Enhancements:
+    - Allow user to move selection rectangle (bug #14365)
+    - Allow and remember 0sec delay for all regions (bug #13763)
+
+  * Bugs fixed:
+    - Fix clipboard action handling (Bug #14513)
+
 === Version 1.9.2 ===
   * Remove zimagez support (bug #14283)
 
