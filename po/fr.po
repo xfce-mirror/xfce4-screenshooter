@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-19 00:32+0200\n"
-"PO-Revision-Date: 2018-08-12 20:27+0000\n"
+"PO-Revision-Date: 2018-08-13 09:51+0000\n"
 "Last-Translator: Charles Monzat <c.monzat@laposte.net>\n"
 "Language-Team: French (http://www.transifex.com/xfce/xfce-apps/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -125,7 +125,7 @@ msgstr "Enregistrer"
 
 #: ../lib/screenshooter-dialogs.c:1002
 msgid "Save the screenshot to a PNG file"
-msgstr "Enregistrer la capture d’écran comme fichier PNG"
+msgstr "Enregistrer la capture d’écran dans un fichier au format PNG"
 
 #: ../lib/screenshooter-dialogs.c:1011
 msgid "Copy to the clipboard"
@@ -177,7 +177,7 @@ msgstr "Téléversement de la capture d’écran…"
 #: ../lib/screenshooter-imgur.c:115
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
-msgstr "Une erreur s’est produite lors du transfert des données vers imgur."
+msgstr "Une erreur s’est produite lors du transfert des données vers Imgur."
 
 #: ../lib/screenshooter-imgur.c:166
 msgid "Imgur"
@@ -286,7 +286,7 @@ msgstr "Afficher la souris sur la capture d’écran"
 
 #: ../src/main.c:81
 msgid "Directory where the screenshot will be saved"
-msgstr "Répertoire où la capture d’écran sera enregistrée"
+msgstr "Répertoire dans lequel la capture d’écran sera enregistrée"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -329,4 +329,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr "Vous permet de capturer tout l’écran, la fenêtre active ou une zone sélectionnée. Vous pouvez régler le retardateur avant la prise de la capture et l’action qui en découle : l’enregistrer en tant que fichier PNG, la copier dans le presse-papiers, l’ouvrir dans une autre application ou la téléverser sur Imgur, un service gratuit d’hébergement d’images en ligne. "
+msgstr "Vous permet de capturer tout l’écran, la fenêtre active ou une zone sélectionnée. Vous pouvez régler le retardateur avant la prise de la capture et l’action qui en découle : l’enregistrer dans un fichier au format PNG, la copier dans le presse-papiers, l’ouvrir dans une autre application ou la téléverser sur Imgur, un service gratuit d’hébergement d’images en ligne. "
