@@ -63,6 +63,16 @@ dnl *** Check for i18n support ***
 dnl ******************************
 XDT_I18N([@LINGUAS@])
 
+dnl **************************
+dnl *** Check for help2man ***
+dnl **************************
+AC_CHECK_PROGS([HELP2MAN], [help2man])
+if ! test -z "$HELP2MAN"; then
+AM_CONDITIONAL([HAVE_HELP2MAN], true)
+else
+AM_CONDITIONAL([HAVE_HELP2MAN], false)
+fi
+
 dnl Check for debugging support
 XDT_FEATURE_DEBUG()
 

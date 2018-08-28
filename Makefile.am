@@ -111,6 +111,12 @@ src_xfce4_screenshooter_LDADD = lib/libscreenshooter.la
 
 src_xfce4_screenshooter_SOURCES = src/main.c
 
+# Manual file for the application
+if HAVE_HELP2MAN
+xfce4-screenshooter.1: src/xfce4-screenshooter
+	$(HELP2MAN) -o $@ --no-info $<
+endif
+
 # Desktop file for the application
 app_desktopdir = $(datadir)/applications
 app_desktop_in_in_files = src/xfce4-screenshooter.desktop.in.in
@@ -233,4 +239,3 @@ DISTCLEANFILES = \
 
 # Man pages
 dist_man_MANS = xfce4-screenshooter.1
-
