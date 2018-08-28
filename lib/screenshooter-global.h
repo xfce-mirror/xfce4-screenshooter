@@ -48,6 +48,7 @@ typedef struct
   gint action;
   gboolean plugin;
   gboolean action_specified;
+  gboolean region_specified;
   gboolean timestamp;
   gchar *screenshot_dir;
   gchar *title;
