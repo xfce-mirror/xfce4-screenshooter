@@ -343,7 +343,7 @@ static GdkPixbuf
   if (y_orig + height > gdk_screen_height ())
     height = gdk_screen_height () - y_orig;
 
-  /* Take the screenshot from the root GdkWindow, to grab things such as
+  /* Capture the screenshot from the root GdkWindow, to grab things such as
    * menus. */
 
   TRACE ("Grab the screenshot");
@@ -1265,29 +1265,29 @@ static GdkPixbuf
 
 
 /**
- * screenshooter_take_screenshot:
+ * screenshooter_capture_screenshot:
  * @region: the region to be screenshoted. It can be FULLSCREEN,
  *          ACTIVE_WINDOW or SELECT.
- * @delay: the delay before the screenshot is taken, in seconds.
+ * @delay: the delay before the screenshot is captured, in seconds.
  * @mouse: whether the mouse pointer should be displayed on the screenshot.
  *
- * Takes a screenshot with the given options. If @region is FULLSCREEN,
- * the screenshot is taken after @delay seconds. If @region is
+ * Captures a screenshot with the given options. If @region is FULLSCREEN,
+ * the screenshot is capture after @delay seconds. If @region is
  * ACTIVE_WINDOW, a delay of @delay seconds elapses, then the active
  * window is detected and captured. If @region is SELECT, the user will
  * have to select a portion of the screen with the mouse. Then a delay of
- * @delay seconds elapses, and a screenshot is taken.
+ * @delay seconds elapses, and a screenshot is captured.
  *
- * @show_mouse is only taken into account when @region is FULLSCREEN
+ * @show_mouse is only captured into account when @region is FULLSCREEN
  * or ACTIVE_WINDOW.
  *
  * Return value: a #GdkPixbuf containing the screenshot or %NULL
  * (if @region is SELECT, the user can cancel the operation).
  **/
-GdkPixbuf *screenshooter_take_screenshot (gint     region,
-                                          gint     delay,
-                                          gboolean show_mouse,
-                                          gboolean plugin)
+GdkPixbuf *screenshooter_capture_screenshot (gint     region,
+                                             gint     delay,
+                                             gboolean show_mouse,
+                                             gboolean plugin)
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *window = NULL;
@@ -1300,7 +1300,7 @@ GdkPixbuf *screenshooter_take_screenshot (gint     region,
    * window has been grabbed. */
   gboolean needs_unref = TRUE;
 
-  /* Get the screen on which the screenshot should be taken */
+  /* Get the screen on which the screenshot should be captured */
   screen = gdk_screen_get_default ();
 
   /* Sync the display */

@@ -18,8 +18,11 @@
  * */
 
 #include "screenshooter-actions.h"
-
-
+#include "screenshooter-utils.h"
+#include "screenshooter-capture.h"
+#include "screenshooter-global.h"
+#include "screenshooter-dialogs.h"
+#include "screenshooter-imgur.h"
 
 static void
 cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
@@ -33,26 +36,8 @@ cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
 
 
 
-/* Public */
-
-
-
-gboolean screenshooter_take_screenshot_idle (ScreenshotData *sd)
-{
-  sd->screenshot = screenshooter_take_screenshot (sd->region,
-                                                  sd->delay,
-                                                  sd->show_mouse,
-                                                  sd->plugin);
-
-  if (sd->screenshot != NULL)
-    g_idle_add ((GSourceFunc) screenshooter_action_idle, sd);
-  else if (!sd->plugin)
-    gtk_main_quit ();
-
-  return FALSE;
-}
-
-gboolean screenshooter_action_idle (ScreenshotData *sd)
+gboolean
+action_idle (ScreenshotData *sd)
 {
   if (!sd->action_specified)
     {
@@ -138,3 +123,52 @@ gboolean screenshooter_action_idle (ScreenshotData *sd)
   return FALSE;
 }
 
+
+
+static gboolean
+take_screenshot_idle (ScreenshotData *sd)
+{
+  sd->screenshot = screenshooter_capture_screenshot (sd->region,
+                                                  sd->delay,
+                                                  sd->show_mouse,
+                                                  sd->plugin);
+
+  if (sd->screenshot != NULL)
+    g_idle_add ((GSourceFunc) action_idle, sd);
+  else if (!sd->plugin)
+    gtk_main_quit ();
+
+  return FALSE;
+}
+
+
+
+/* Public */
+
+
+
+void
+screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
+{
+  if (sd->region == SELECT)
+    {
+      /* The delay will be applied after the rectangle selection */
+      g_idle_add ((GSourceFunc) take_screenshot_idle, sd);
+      return;
+    }
+
+  if (sd->delay == 0 && immediate)
+    {
+      /* If delay is zero and the region was passed as an argument (from cli
+       * or panel plugin), thus the first dialog was not shown, we will take
+       * the screenshot immediately without a minimal delay */
+      g_idle_add ((GSourceFunc) take_screenshot_idle, sd);
+      return;
+    }
+
+  /* Await the amount of the time specified by the user before capturing the
+   * screenshot, but not less than 200ms, otherwise the first dialog might
+   * appear on the screenshot. */
+  gint delay = sd->delay == 0 ? 200 : sd->delay * 1000;
+  g_timeout_add (delay, (GSourceFunc) take_screenshot_idle, sd);
+}
