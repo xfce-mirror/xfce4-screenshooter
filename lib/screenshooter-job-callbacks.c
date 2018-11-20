@@ -358,17 +358,17 @@ void cb_image_uploaded (ScreenshooterJob  *job,
   GtkWidget *main_alignment, *vbox;
   GtkWidget *link_label;
   GtkWidget *image_link, *thumbnail_link, *small_thumbnail_link;
-  GtkWidget *example_label, *html_label, *bb_label;
-  GtkWidget *html_code_view, *bb_code_view;
-  GtkWidget *html_frame, *bb_frame;
+  GtkWidget *example_label, *html_label, *bb_label, *mkdown_label;
+  GtkWidget *html_code_view, *bb_code_view, *mkdown_code_view;
+  GtkWidget *html_frame, *bb_frame, *mkdown_frame;
   GtkWidget *links_alignment, *code_alignment;
   GtkWidget *links_box, *code_box;
 
-  GtkTextBuffer *html_buffer, *bb_buffer;
+  GtkTextBuffer *html_buffer, *bb_buffer, *mkdown_buffer;
 
   const gchar *image_url, *thumbnail_url, *small_thumbnail_url;
   const gchar *image_markup, *thumbnail_markup, *small_thumbnail_markup;
-  const gchar *html_code, *bb_code;
+  const gchar *html_code, *bb_code, *mkdown_code;
   gchar *title;
   gchar *last_user_temp;
 
@@ -392,6 +392,8 @@ void cb_image_uploaded (ScreenshooterJob  *job,
                      image_url, thumbnail_url);
   bb_code =
     g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", image_url, thumbnail_url);
+  mkdown_code =
+    g_strdup_printf ("![alt text](%s)", image_url);
 
   /* Dialog */
   dialog =
@@ -541,6 +543,30 @@ void cb_image_uploaded (ScreenshooterJob  *job,
                                GTK_WRAP_CHAR);
   gtk_container_add (GTK_CONTAINER (bb_frame), bb_code_view);
 
+  /* Markdown title */
+  mkdown_label = gtk_label_new (_("Markdown"));
+  gtk_widget_set_halign (mkdown_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (mkdown_label, GTK_ALIGN_START);
+  gtk_container_add (GTK_CONTAINER (code_box), mkdown_label);
+
+  /* Markdown frame */
+  mkdown_frame = gtk_frame_new (NULL);
+  gtk_frame_set_shadow_type (GTK_FRAME (mkdown_frame), GTK_SHADOW_IN);
+  gtk_container_add (GTK_CONTAINER (code_box), mkdown_frame);
+
+  /* Markdown text view */
+  mkdown_buffer = gtk_text_buffer_new (NULL);
+  gtk_text_buffer_set_text (mkdown_buffer, mkdown_code, -1);
+
+  mkdown_code_view = gtk_text_view_new_with_buffer (mkdown_buffer);
+  gtk_text_view_set_left_margin (GTK_TEXT_VIEW (mkdown_code_view),
+                                 10);
+  gtk_text_view_set_editable (GTK_TEXT_VIEW (mkdown_code_view),
+                              FALSE);
+  gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (mkdown_code_view),
+                               GTK_WRAP_CHAR);
+  gtk_container_add (GTK_CONTAINER (mkdown_frame), mkdown_code_view);
+
   /* Show the dialog and run it */
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dialog)));
   gtk_dialog_run (GTK_DIALOG (dialog));
@@ -548,5 +574,6 @@ void cb_image_uploaded (ScreenshooterJob  *job,
 
   g_object_unref (html_buffer);
   g_object_unref (bb_buffer);
+  g_object_unref (mkdown_buffer);
 }
 
