@@ -121,9 +121,9 @@ screenshooter_job_class_init (ScreenshooterJobClass *klass)
     g_signal_new ("image-uploaded",
                   G_TYPE_FROM_CLASS (klass), G_SIGNAL_NO_HOOKS,
                   0, NULL, NULL,
-                  _screenshooter_marshal_VOID__STRING,
+                  _screenshooter_marshal_VOID__STRING_STRING,
                   G_TYPE_NONE,
-                  1, G_TYPE_STRING);
+                  2, G_TYPE_STRING, G_TYPE_STRING);
 }
 
 
@@ -188,10 +188,10 @@ void screenshooter_job_ask_info (ScreenshooterJob *job,
 
 
 void
-screenshooter_job_image_uploaded (ScreenshooterJob *job, const gchar *file_name)
+screenshooter_job_image_uploaded (ScreenshooterJob *job, const gchar *file_name, const gchar *delete_hash)
 {
   g_return_if_fail (SCREENSHOOTER_IS_JOB (job));
 
   TRACE ("Emit image-uploaded signal.");
-  exo_job_emit (EXO_JOB (job), job_signals[IMAGE_UPLOADED], 0, file_name);
+  exo_job_emit (EXO_JOB (job), job_signals[IMAGE_UPLOADED], 0, file_name, delete_hash);
 }

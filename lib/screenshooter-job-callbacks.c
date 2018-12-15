@@ -18,6 +18,7 @@
  */
 
 #include "screenshooter-job-callbacks.h"
+#include "screenshooter-imgur-dialog.h"
 
 /* Create and return a dialog with a spinner and a translated title
  * will be used during upload jobs
@@ -352,201 +353,13 @@ cb_ask_for_information (ScreenshooterJob *job,
 
 void cb_image_uploaded (ScreenshooterJob  *job,
                         gchar             *upload_name,
+                        gchar             *delete_hash,
                         gchar            **last_user)
 {
-  GtkWidget *dialog;
-  GtkWidget *main_alignment, *vbox;
-  GtkWidget *link_label;
-  GtkWidget *image_link, *thumbnail_link, *small_thumbnail_link;
-  GtkWidget *example_label, *html_label, *bb_label;
-  GtkWidget *html_code_view, *bb_code_view;
-  GtkWidget *html_frame, *bb_frame;
-  GtkWidget *links_alignment, *code_alignment;
-  GtkWidget *links_box, *code_box;
-
-  GtkTextBuffer *html_buffer, *bb_buffer;
-
-  const gchar *image_url, *thumbnail_url, *small_thumbnail_url;
-  const gchar *image_markup, *thumbnail_markup, *small_thumbnail_markup;
-  const gchar *html_code, *bb_code;
-  gchar *title;
-  gchar *last_user_temp;
-
   g_return_if_fail (upload_name != NULL);
+  g_return_if_fail (delete_hash != NULL);
 
-  title = _("My screenshot on Imgur");
-  image_url = g_strdup_printf ("https://i.imgur.com/%s.png", upload_name);
-  thumbnail_url =
-    g_strdup_printf ("https://imgur.com/%sl.png", upload_name);
-  small_thumbnail_url =
-    g_strdup_printf ("https://imgur.com/%ss.png", upload_name);
-
-  image_markup =
-    g_markup_printf_escaped (_("<a href=\"%s\">Full size image</a>"), image_url);
-  thumbnail_markup =
-    g_markup_printf_escaped (_("<a href=\"%s\">Large thumbnail</a>"), thumbnail_url);
-  small_thumbnail_markup =
-    g_markup_printf_escaped (_("<a href=\"%s\">Small thumbnail</a>"), small_thumbnail_url);
-  html_code =
-    g_markup_printf_escaped ("<a href=\"%s\">\n  <img src=\"%s\" />\n</a>",
-                     image_url, thumbnail_url);
-  bb_code =
-    g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", image_url, thumbnail_url);
-
-  /* Dialog */
-  dialog =
-    xfce_titled_dialog_new_with_buttons (title,
-                                         NULL,
-                                         GTK_DIALOG_DESTROY_WITH_PARENT,
-                                         "gtk-close",
-                                         GTK_RESPONSE_CLOSE,
-                                         NULL);
-
-  gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
-  gtk_container_set_border_width (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 0);
-  gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 12);
-  gtk_window_set_icon_name (GTK_WINDOW (dialog), "applications-internet");
-  gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
-
-  /* Create the main alignment for the dialog */
-  main_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
-  gtk_widget_set_hexpand (main_alignment, TRUE);
-  gtk_widget_set_vexpand (main_alignment, TRUE);
-  gtk_widget_set_margin_top (main_alignment, 6);
-  gtk_widget_set_margin_bottom (main_alignment, 0);
-  gtk_widget_set_margin_start (main_alignment, 10);
-  gtk_widget_set_margin_end (main_alignment, 10);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), main_alignment, TRUE, TRUE, 0);
-
-  /* Create the main box for the dialog */
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
-  gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
-
-  /* Links bold label */
-  link_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL (link_label),
-                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
-                          "Links</span>"));
-  gtk_widget_set_halign (link_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (link_label, GTK_ALIGN_START);
-  gtk_container_add (GTK_CONTAINER (vbox), link_label);
-
-  /* Links alignment */
-  links_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
-  gtk_widget_set_hexpand (links_alignment, TRUE);
-  gtk_widget_set_vexpand (links_alignment, TRUE);
-  gtk_widget_set_margin_top (links_alignment, 0);
-  gtk_widget_set_margin_bottom (links_alignment, 0);
-  gtk_widget_set_margin_start (links_alignment, 12);
-  gtk_widget_set_margin_end (links_alignment, 0);
-  gtk_container_add (GTK_CONTAINER (vbox), links_alignment);
-
-  /* Links box */
-  links_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  gtk_container_set_border_width (GTK_CONTAINER (links_box), 0);
-  gtk_container_add (GTK_CONTAINER (links_alignment), links_box);
-
-  /* Create the image link */
-  image_link = gtk_label_new (NULL);
-  gtk_label_set_markup (GTK_LABEL (image_link), image_markup);
-  gtk_widget_set_halign (image_link, GTK_ALIGN_START);
-  gtk_widget_set_valign (image_link, GTK_ALIGN_START);
-  gtk_widget_set_tooltip_text (image_link, image_url);
-  gtk_container_add (GTK_CONTAINER (links_box), image_link);
-
-  /* Create the thumbnail link */
-  thumbnail_link = gtk_label_new (NULL);
-  gtk_label_set_markup (GTK_LABEL (thumbnail_link), thumbnail_markup);
-  gtk_widget_set_halign (thumbnail_link, GTK_ALIGN_START);
-  gtk_widget_set_valign (thumbnail_link, GTK_ALIGN_START);
-  gtk_widget_set_tooltip_text (thumbnail_link, thumbnail_url);
-  gtk_container_add (GTK_CONTAINER (links_box), thumbnail_link);
-
-  /* Create the small thumbnail link */
-  small_thumbnail_link = gtk_label_new (NULL);
-  gtk_label_set_markup (GTK_LABEL (small_thumbnail_link), small_thumbnail_markup);
-  gtk_widget_set_halign (small_thumbnail_link, GTK_ALIGN_START);
-  gtk_widget_set_valign (small_thumbnail_link, GTK_ALIGN_START);
-  gtk_widget_set_tooltip_text (small_thumbnail_link, small_thumbnail_url);
-  gtk_container_add (GTK_CONTAINER (links_box), small_thumbnail_link);
-
-  /* Examples bold label */
-  example_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL (example_label),
-                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
-                          "Code for a thumbnail pointing to the full size image</span>"));
-  gtk_widget_set_halign (example_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (example_label, GTK_ALIGN_START);
-  gtk_container_add (GTK_CONTAINER (vbox), example_label);
-
-  /* Code alignment */
-  code_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
-  gtk_widget_set_hexpand (code_alignment, TRUE);
-  gtk_widget_set_vexpand (code_alignment, TRUE);
-  gtk_widget_set_margin_top (code_alignment, 0);
-  gtk_widget_set_margin_bottom (code_alignment, 0);
-  gtk_widget_set_margin_start (code_alignment, 12);
-  gtk_widget_set_margin_end (code_alignment, 0);
-  gtk_container_add (GTK_CONTAINER (vbox), code_alignment);
-
-  /* Links box */
-  code_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  gtk_container_set_border_width (GTK_CONTAINER (code_box), 0);
-  gtk_container_add (GTK_CONTAINER (code_alignment), code_box);
-
-  /* HTML title */
-  html_label = gtk_label_new (_("HTML"));
-  gtk_widget_set_halign (html_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (html_label, GTK_ALIGN_START);
-  gtk_container_add (GTK_CONTAINER (code_box), html_label);
-
-  /* HTML frame */
-  html_frame = gtk_frame_new (NULL);
-  gtk_frame_set_shadow_type (GTK_FRAME (html_frame), GTK_SHADOW_IN);
-  gtk_container_add (GTK_CONTAINER (code_box), html_frame);
-
-  /* HTML code text view */
-  html_buffer = gtk_text_buffer_new (NULL);
-  gtk_text_buffer_set_text (html_buffer, html_code, -1);
-
-  html_code_view = gtk_text_view_new_with_buffer (html_buffer);
-  gtk_text_view_set_left_margin (GTK_TEXT_VIEW (html_code_view),
-                                 10);
-  gtk_text_view_set_editable (GTK_TEXT_VIEW (html_code_view),
-                              FALSE);
-  gtk_container_add (GTK_CONTAINER (html_frame), html_code_view);
-
-  /* BB title */
-  bb_label = gtk_label_new (_("BBCode for forums"));
-  gtk_widget_set_halign (bb_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (bb_label, GTK_ALIGN_START);
-  gtk_container_add (GTK_CONTAINER (code_box), bb_label);
-
-  /* BB frame */
-  bb_frame = gtk_frame_new (NULL);
-  gtk_frame_set_shadow_type (GTK_FRAME (bb_frame), GTK_SHADOW_IN);
-  gtk_container_add (GTK_CONTAINER (code_box), bb_frame);
-
-  /* BBcode text view */
-  bb_buffer = gtk_text_buffer_new (NULL);
-  gtk_text_buffer_set_text (bb_buffer, bb_code, -1);
-
-  bb_code_view = gtk_text_view_new_with_buffer (bb_buffer);
-  gtk_text_view_set_left_margin (GTK_TEXT_VIEW (bb_code_view),
-                                 10);
-  gtk_text_view_set_editable (GTK_TEXT_VIEW (bb_code_view),
-                              FALSE);
-  gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (bb_code_view),
-                               GTK_WRAP_CHAR);
-  gtk_container_add (GTK_CONTAINER (bb_frame), bb_code_view);
-
-  /* Show the dialog and run it */
-  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dialog)));
-  gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_destroy (dialog);
-
-  g_object_unref (html_buffer);
-  g_object_unref (bb_buffer);
+  ScreenshooterImgurDialog* dialog = screenshooter_imgur_dialog_new (upload_name, delete_hash);
+  screenshooter_imgur_dialog_run (dialog);
 }
 

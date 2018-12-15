@@ -69,7 +69,8 @@ void  screenshooter_job_ask_info       (ScreenshooterJob *job,
 
 
 void  screenshooter_job_image_uploaded (ScreenshooterJob *job,
-                                        const gchar      *file_name);
+                                        const gchar      *file_name,
+                                        const gchar      *delete_hash);
 
 G_END_DECLS
 
