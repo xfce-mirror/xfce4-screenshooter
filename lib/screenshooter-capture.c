@@ -1272,13 +1272,13 @@ static GdkPixbuf
  * @mouse: whether the mouse pointer should be displayed on the screenshot.
  *
  * Captures a screenshot with the given options. If @region is FULLSCREEN,
- * the screenshot is capture after @delay seconds. If @region is
+ * the screenshot is captured after @delay seconds. If @region is
  * ACTIVE_WINDOW, a delay of @delay seconds elapses, then the active
  * window is detected and captured. If @region is SELECT, the user will
  * have to select a portion of the screen with the mouse. Then a delay of
  * @delay seconds elapses, and a screenshot is captured.
  *
- * @show_mouse is only captured into account when @region is FULLSCREEN
+ * @show_mouse is only taken into account when @region is FULLSCREEN
  * or ACTIVE_WINDOW.
  *
  * Return value: a #GdkPixbuf containing the screenshot or %NULL
