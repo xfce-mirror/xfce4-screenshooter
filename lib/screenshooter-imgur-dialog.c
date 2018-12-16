@@ -46,18 +46,22 @@ struct _ScreenshooterImgurDialog
 
 G_DEFINE_TYPE (ScreenshooterImgurDialog, screenshooter_imgur_dialog, G_TYPE_OBJECT)
 
-void cb_link_toggle_full (GtkToggleButton *button, gpointer user_data);
-void cb_link_toggle_medium (GtkToggleButton *button, gpointer user_data);
-void cb_link_toggle_tiny (GtkToggleButton *button, gpointer user_data);
 
-void cb_link_copy (GtkWidget *widget, gpointer user_data);
-void cb_link_view_in_browser (GtkWidget *widget, gpointer user_data);
 
-void cb_generate_embed_text (GtkWidget *widget, gpointer user_data);
-void cb_embed_text_copy (GtkWidget *widget, gpointer user_data);
+static void cb_link_toggle_full (GtkToggleButton *button, gpointer user_data);
+static void cb_link_toggle_medium (GtkToggleButton *button, gpointer user_data);
+static void cb_link_toggle_tiny (GtkToggleButton *button, gpointer user_data);
 
-void cb_delete_link_copy (GtkWidget *widget, gpointer user_data);
-void cb_delete_link_view (GtkWidget *widget, gpointer user_data);
+static void cb_link_copy (GtkWidget *widget, gpointer user_data);
+static void cb_link_view_in_browser (GtkWidget *widget, gpointer user_data);
+
+static void cb_generate_embed_text (GtkWidget *widget, gpointer user_data);
+static void cb_embed_text_copy (GtkWidget *widget, gpointer user_data);
+
+static void cb_delete_link_copy (GtkWidget *widget, gpointer user_data);
+static void cb_delete_link_view (GtkWidget *widget, gpointer user_data);
+
+
 
 void screenshooter_imgur_dialog_init (ScreenshooterImgurDialog *self)
 {
@@ -180,9 +184,10 @@ screenshooter_imgur_dialog_run (ScreenshooterImgurDialog *self)
 
 // Callbacks
 
-void cb_link_toggle_full (GtkToggleButton *button, gpointer user_data)
 
 
+static void
+cb_link_toggle_full (GtkToggleButton *button, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -191,9 +196,10 @@ void cb_link_toggle_full (GtkToggleButton *button, gpointer user_data)
     gtk_entry_set_text (dialog->link_entry, dialog->image_url);
 }
 
-void cb_link_toggle_medium (GtkToggleButton *button, gpointer user_data)
 
 
+static void
+cb_link_toggle_medium (GtkToggleButton *button, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -202,9 +208,10 @@ void cb_link_toggle_medium (GtkToggleButton *button, gpointer user_data)
     gtk_entry_set_text (dialog->link_entry, dialog->thumbnail_url);
 }
 
-void cb_link_toggle_tiny (GtkToggleButton *button, gpointer user_data)
 
 
+static void
+cb_link_toggle_tiny (GtkToggleButton *button, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -213,9 +220,10 @@ void cb_link_toggle_tiny (GtkToggleButton *button, gpointer user_data)
     gtk_entry_set_text (dialog->link_entry, dialog->small_thumbnail_url);
 }
 
-void cb_link_copy (GtkWidget *widget, gpointer user_data)
 
 
+static void
+cb_link_copy (GtkWidget *widget, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -226,9 +234,10 @@ void cb_link_copy (GtkWidget *widget, gpointer user_data)
   gtk_clipboard_set_text (clipboard, text, len);
 }
 
-void cb_link_view_in_browser (GtkWidget *widget, gpointer user_data)
 
 
+static void
+cb_link_view_in_browser (GtkWidget *widget, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -237,9 +246,10 @@ void cb_link_view_in_browser (GtkWidget *widget, gpointer user_data)
   exo_execute_preferred_application ("WebBrowser", link, NULL, NULL, NULL);
 }
 
-void cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
 
 
+static void
+cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -281,9 +291,10 @@ void cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
   g_free (text);
 }
 
-void cb_embed_text_copy (GtkWidget* widget, gpointer user_data)
 
 
+static void
+cb_embed_text_copy (GtkWidget* widget, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -300,9 +311,10 @@ void cb_embed_text_copy (GtkWidget* widget, gpointer user_data)
   gtk_clipboard_set_text (clipboard, text, len);
 }
 
-void cb_delete_link_copy (GtkWidget *widget, gpointer user_data)
 
 
+static void
+cb_delete_link_copy (GtkWidget *widget, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -311,9 +323,10 @@ void cb_delete_link_copy (GtkWidget *widget, gpointer user_data)
   gtk_clipboard_set_text (clipboard, dialog->delete_link, strlen (dialog->delete_link));
 }
 
-void cb_delete_link_view (GtkWidget *widget, gpointer user_data)
 
 
+static void
+cb_delete_link_view (GtkWidget *widget, gpointer user_data)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
