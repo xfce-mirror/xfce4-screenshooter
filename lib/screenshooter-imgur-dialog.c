@@ -104,6 +104,8 @@ ScreenshooterImgurDialog *
 screenshooter_imgur_dialog_new (const gchar *upload_name,
                                 const gchar *delete_hash)
 {
+  g_return_val_if_fail (upload_name != NULL, NULL);
+
   ScreenshooterImgurDialog *self = g_object_new (SCREENSHOOTER_TYPE_IMGUR_DIALOG, NULL);
 
   self->image_url = g_strdup_printf ("https://imgur.com/%s.png", upload_name);
