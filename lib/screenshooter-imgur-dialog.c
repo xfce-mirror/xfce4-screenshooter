@@ -94,9 +94,9 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
   self->small_thumbnail_url = g_strdup_printf ("https://imgur.com/%ss.png", upload_name);
   self->delete_link = g_strdup_printf ("https://imgur.com/delete/%s", delete_hash);
 
-  GtkBuilder* builder = gtk_builder_new ();
-  gtk_builder_add_from_string (builder, screenshooter_imgur_dialog_ui, screenshooter_imgur_dialog_ui_length, NULL);
-  //self->window = GTK_DIALOG (gtk_builder_get_object (builder, "imgur_dialog"));
+  GtkBuilder* builder = gtk_builder_new_from_string (screenshooter_imgur_dialog_ui,
+                                                     screenshooter_imgur_dialog_ui_length);
+
   // Setup window
   self->window = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
                                                       NULL,
@@ -251,12 +251,13 @@ cb_link_view_in_browser (GtkWidget *widget, gpointer user_data)
 static void
 cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
 {
+  const gchar *link = NULL;
+  gchar *text = NULL;
+  gboolean link_to_full_size;
+
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
   ScreenshooterImgurDialog *dialog = SCREENSHOOTER_IMGUR_DIALOG (user_data);
-
-  const gchar *link = NULL;
-  gboolean link_to_full_size = gtk_toggle_button_get_active (dialog->embed_link_full_size_toggle);
 
   if (gtk_toggle_button_get_active (dialog->embed_full_toggle))
     link = dialog->image_url;
@@ -269,7 +270,7 @@ cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
 
   g_return_if_fail (link != NULL);
 
-  const gchar *text = NULL;
+  link_to_full_size = gtk_toggle_button_get_active (dialog->embed_link_full_size_toggle);
 
   if (gtk_toggle_button_get_active (dialog->embed_html_toggle))
     if (link_to_full_size)
