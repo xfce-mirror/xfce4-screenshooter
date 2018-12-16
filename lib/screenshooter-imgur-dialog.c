@@ -65,7 +65,6 @@ static void cb_delete_link_view (GtkWidget *widget, gpointer user_data);
 
 void screenshooter_imgur_dialog_init (ScreenshooterImgurDialog *self)
 {
-  g_object_ref_sink (self);
 }
 
 
