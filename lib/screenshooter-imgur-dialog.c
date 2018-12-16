@@ -31,14 +31,14 @@
 struct _ScreenshooterImgurDialog
 {
   GObject parent;
-  GtkDialog *window;
+  GtkWidget *window;
   GtkEntry *link_entry;
 
-  const gchar *image_url, *thumbnail_url, *small_thumbnail_url;
-  const gchar *delete_link;
-  GtkRadioButton *embed_html_toggle, *embed_bb_code_toggle;
-  GtkRadioButton *embed_tiny_toggle, *embed_medium_toggle, *embed_full_toggle;
-  GtkRadioButton *embed_link_full_size_toggle;
+  gchar *image_url, *thumbnail_url, *small_thumbnail_url;
+  gchar *delete_link;
+  GtkToggleButton *embed_html_toggle, *embed_bb_code_toggle;
+  GtkToggleButton *embed_tiny_toggle, *embed_medium_toggle, *embed_full_toggle;
+  GtkToggleButton *embed_link_full_size_toggle;
   GtkTextView *embed_text_view;
 };
 
@@ -105,7 +105,7 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
 
   // Add notebook widget to window
   GtkWidget* notebook = GTK_WIDGET (gtk_builder_get_object (builder, "dialog-notebook"));
-  gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (self->window)), notebook);
+  gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (self->window))), notebook);
 
   self->link_entry = GTK_ENTRY (gtk_builder_get_object (builder, "link_entry"));
   self->embed_text_view = GTK_TEXT_VIEW (gtk_builder_get_object (builder, "embed_text_view"));
@@ -113,9 +113,9 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
 
   // Image tab
 
-  GtkRadioButton *link_full_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "link_full_toggle"));
-  GtkRadioButton *link_medium_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "link_medium_toggle"));
-  GtkRadioButton *link_tiny_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "link_tiny_toggle"));
+  GtkToggleButton *link_full_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "link_full_toggle"));
+  GtkToggleButton *link_medium_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "link_medium_toggle"));
+  GtkToggleButton *link_tiny_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "link_tiny_toggle"));
 
   g_signal_connect (link_full_toggle, "toggled", (GCallback) cb_link_toggle_full, (gpointer) self);
   g_signal_connect (link_medium_toggle, "toggled", (GCallback) cb_link_toggle_medium, (gpointer) self);
@@ -131,12 +131,12 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
 
   // Embed tab
 
-  self->embed_html_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "embed_html_toggle"));
-  self->embed_bb_code_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "embed_bb_code_toggle"));
-  self->embed_tiny_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "embed_tiny_toggle"));
-  self->embed_medium_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "embed_medium_toggle"));
-  self->embed_full_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "embed_full_toggle"));
-  self->embed_link_full_size_toggle = GTK_RADIO_BUTTON (gtk_builder_get_object (builder, "embed_link_full_size_toggle"));
+  self->embed_html_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_html_toggle"));
+  self->embed_bb_code_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_bb_code_toggle"));
+  self->embed_tiny_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_tiny_toggle"));
+  self->embed_medium_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_medium_toggle"));
+  self->embed_full_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_full_toggle"));
+  self->embed_link_full_size_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_link_full_size_toggle"));
 
   // Regenerate the embed text when any togglebutton on the embed tab is toggled
   g_signal_connect (self->embed_html_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
@@ -170,8 +170,10 @@ screenshooter_imgur_dialog_run (ScreenshooterImgurDialog *self)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (self));
 
-  gtk_widget_show_all (gtk_dialog_get_content_area (self->window));
-  gtk_dialog_run (self->window);
+  GtkDialog *dialog = GTK_DIALOG (self->window);
+
+  gtk_widget_show_all (gtk_dialog_get_content_area (dialog));
+  gtk_dialog_run (dialog);
 }
 
 
