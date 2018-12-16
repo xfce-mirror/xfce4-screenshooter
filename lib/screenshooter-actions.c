@@ -150,6 +150,8 @@ take_screenshot_idle (ScreenshotData *sd)
 void
 screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
 {
+  gint delay;
+
   if (sd->region == SELECT)
     {
       /* The delay will be applied after the rectangle selection */
@@ -169,6 +171,6 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
   /* Await the amount of the time specified by the user before capturing the
    * screenshot, but not less than 200ms, otherwise the first dialog might
    * appear on the screenshot. */
-  gint delay = sd->delay == 0 ? 200 : sd->delay * 1000;
+  delay = sd->delay == 0 ? 200 : sd->delay * 1000;
   g_timeout_add (delay, (GSourceFunc) take_screenshot_idle, sd);
 }

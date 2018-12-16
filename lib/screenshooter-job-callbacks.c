@@ -356,10 +356,12 @@ void cb_image_uploaded (ScreenshooterJob  *job,
                         gchar             *delete_hash,
                         gchar            **last_user)
 {
+  ScreenshooterImgurDialog *dialog;
+
   g_return_if_fail (upload_name != NULL);
   g_return_if_fail (delete_hash != NULL);
 
-  ScreenshooterImgurDialog* dialog = screenshooter_imgur_dialog_new (upload_name, delete_hash);
+  dialog = screenshooter_imgur_dialog_new (upload_name, delete_hash);
   screenshooter_imgur_dialog_run (dialog);
 
   g_object_unref (dialog);
