@@ -361,5 +361,7 @@ void cb_image_uploaded (ScreenshooterJob  *job,
 
   ScreenshooterImgurDialog* dialog = screenshooter_imgur_dialog_new (upload_name, delete_hash);
   screenshooter_imgur_dialog_run (dialog);
+
+  g_object_unref (dialog);
 }
 

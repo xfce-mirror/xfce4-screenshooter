@@ -69,7 +69,19 @@ void screenshooter_imgur_dialog_init (ScreenshooterImgurDialog *self)
 
 
 
+static void
+screenshooter_imgur_dialog_finalize (GObject *object)
 {
+  ScreenshooterImgurDialog *self = SCREENSHOOTER_IMGUR_DIALOG (object);
+
+  g_free (self->image_url);
+  g_free (self->thumbnail_url);
+  g_free (self->small_thumbnail_url);
+  g_free (self->delete_link);
+
+  gtk_widget_destroy (self->window);
+
+  (*G_OBJECT_CLASS (screenshooter_imgur_dialog_parent_class)->finalize) (object);
 }
 
 
@@ -77,8 +89,14 @@ void screenshooter_imgur_dialog_init (ScreenshooterImgurDialog *self)
 static void
 screenshooter_imgur_dialog_class_init (ScreenshooterImgurDialogClass *klass)
 {
-  g_return_if_fail (upload_name != NULL);
+  GObjectClass *gobject_class;
 
+  /* determine the parent type class */
+  screenshooter_imgur_dialog_parent_class = g_type_class_peek_parent (klass);
+
+  gobject_class = G_OBJECT_CLASS (klass);
+  gobject_class->finalize = screenshooter_imgur_dialog_finalize;
+}
 
 
 
@@ -162,6 +180,8 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
 
   g_signal_connect (delete_link_copy_button, "clicked", G_CALLBACK (cb_delete_link_copy), self);
   g_signal_connect (delete_link_view_button, "clicked", G_CALLBACK (cb_delete_link_view), self);
+
+  g_object_unref (builder);
 
   return self;
 }
