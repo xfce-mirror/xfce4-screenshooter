@@ -1,6 +1,32 @@
+/*  $Id$
+ *
+ *  Copyright © 2018 Arthur Jansen <arthurj155@gmail.com>
+ *  Copyright © 2018 Andre Miranda <andreldm@xfce.org>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Library General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ */
+
+
+
 #include "screenshooter-imgur-dialog.h"
 #include "screenshooter-imgur-dialog_ui.h"
+
+#include <exo/exo.h>
 #include <libxfce4ui/libxfce4ui.h>
+
+
 
 struct _ScreenshooterImgurDialog
 {
@@ -15,6 +41,8 @@ struct _ScreenshooterImgurDialog
   GtkRadioButton *embed_link_full_size_toggle;
   GtkTextView *embed_text_view;
 };
+
+
 
 G_DEFINE_TYPE (ScreenshooterImgurDialog, screenshooter_imgur_dialog, G_TYPE_OBJECT)
 
@@ -36,15 +64,25 @@ void screenshooter_imgur_dialog_init (ScreenshooterImgurDialog *self)
   g_object_ref_sink (self);
 }
 
-static void screenshooter_imgur_dialog_class_init (ScreenshooterImgurDialogClass *klass)
+
+
 {
 }
 
-ScreenshooterImgurDialog *screenshooter_imgur_dialog_new (const gchar *upload_name,
-                                                          const gchar *delete_hash)
+
+
+static void
+screenshooter_imgur_dialog_class_init (ScreenshooterImgurDialogClass *klass)
 {
   g_return_if_fail (upload_name != NULL);
 
+
+
+
+ScreenshooterImgurDialog *
+screenshooter_imgur_dialog_new (const gchar *upload_name,
+                                const gchar *delete_hash)
+{
   ScreenshooterImgurDialog *self = g_object_new (SCREENSHOOTER_TYPE_IMGUR_DIALOG, NULL);
 
   self->image_url = g_strdup_printf ("https://imgur.com/%s.png", upload_name);
@@ -107,6 +145,7 @@ ScreenshooterImgurDialog *screenshooter_imgur_dialog_new (const gchar *upload_na
   g_signal_connect (self->embed_medium_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
   g_signal_connect (self->embed_full_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
   g_signal_connect (self->embed_link_full_size_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
+
   // Generate default embed text
   cb_generate_embed_text (NULL, (gpointer) self);
 
@@ -124,7 +163,10 @@ ScreenshooterImgurDialog *screenshooter_imgur_dialog_new (const gchar *upload_na
   return self;
 }
 
-void screenshooter_imgur_dialog_run (ScreenshooterImgurDialog *self)
+
+
+void
+screenshooter_imgur_dialog_run (ScreenshooterImgurDialog *self)
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (self));
 
@@ -132,9 +174,13 @@ void screenshooter_imgur_dialog_run (ScreenshooterImgurDialog *self)
   gtk_dialog_run (self->window);
 }
 
+
+
 // Callbacks
 
 void cb_link_toggle_full (GtkToggleButton *button, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -144,6 +190,8 @@ void cb_link_toggle_full (GtkToggleButton *button, gpointer user_data)
 }
 
 void cb_link_toggle_medium (GtkToggleButton *button, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -153,6 +201,8 @@ void cb_link_toggle_medium (GtkToggleButton *button, gpointer user_data)
 }
 
 void cb_link_toggle_tiny (GtkToggleButton *button, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -162,6 +212,8 @@ void cb_link_toggle_tiny (GtkToggleButton *button, gpointer user_data)
 }
 
 void cb_link_copy (GtkWidget *widget, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -173,14 +225,19 @@ void cb_link_copy (GtkWidget *widget, gpointer user_data)
 }
 
 void cb_link_view_in_browser (GtkWidget *widget, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
+
   ScreenshooterImgurDialog *dialog = SCREENSHOOTER_IMGUR_DIALOG (user_data);
   const gchar *link = gtk_entry_get_text (dialog->link_entry);
   exo_execute_preferred_application ("WebBrowser", link, NULL, NULL, NULL);
 }
 
 void cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -218,10 +275,13 @@ void cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
   g_return_if_fail (text != NULL);
 
   gtk_text_buffer_set_text (gtk_text_view_get_buffer (dialog->embed_text_view), text, strlen(text));
-  g_free(text);
+
+  g_free (text);
 }
 
 void cb_embed_text_copy (GtkWidget* widget, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -239,6 +299,8 @@ void cb_embed_text_copy (GtkWidget* widget, gpointer user_data)
 }
 
 void cb_delete_link_copy (GtkWidget *widget, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
@@ -248,6 +310,8 @@ void cb_delete_link_copy (GtkWidget *widget, gpointer user_data)
 }
 
 void cb_delete_link_view (GtkWidget *widget, gpointer user_data)
+
+
 {
   g_return_if_fail (SCREENSHOOTER_IS_IMGUR_DIALOG (user_data));
 
