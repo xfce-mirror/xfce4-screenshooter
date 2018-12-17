@@ -36,7 +36,7 @@ struct _ScreenshooterImgurDialog
 
   gchar *image_url, *thumbnail_url, *small_thumbnail_url;
   gchar *delete_link;
-  GtkToggleButton *embed_html_toggle, *embed_bb_code_toggle;
+  GtkToggleButton *embed_html_toggle, *embed_markdown_toggle, *embed_bb_code_toggle;
   GtkToggleButton *embed_tiny_toggle, *embed_medium_toggle, *embed_full_toggle;
   GtkToggleButton *embed_link_full_size_toggle;
   GtkTextView *embed_text_view;
@@ -163,6 +163,7 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
   // Embed tab
 
   self->embed_html_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_html_toggle"));
+  self->embed_markdown_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_markdown_toggle"));
   self->embed_bb_code_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_bb_code_toggle"));
   self->embed_tiny_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_tiny_toggle"));
   self->embed_medium_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_medium_toggle"));
@@ -171,6 +172,7 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
 
   // Regenerate the embed text when any togglebutton on the embed tab is toggled
   g_signal_connect (self->embed_html_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
+  g_signal_connect (self->embed_markdown_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
   g_signal_connect (self->embed_bb_code_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
   g_signal_connect (self->embed_tiny_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
   g_signal_connect (self->embed_medium_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
@@ -323,6 +325,11 @@ cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
       text = g_markup_printf_escaped ("<a href=\"%s\">\n  <img src=\"%s\" />\n</a>", dialog->image_url, link);
     else
       text = g_markup_printf_escaped ("<img src=\"%s\" />", link);
+  else if (gtk_toggle_button_get_active (dialog->embed_markdown_toggle))
+    if (link_to_full_size)
+      text = g_strdup_printf ("[![%s](%s)](%s)", dialog->image_url, link, link);
+    else
+      text = g_strdup_printf ("![%s](%s)", dialog->image_url, link);
   else if (gtk_toggle_button_get_active (dialog->embed_bb_code_toggle))
     if (link_to_full_size)
       text = g_strdup_printf ("[url=%s]\n  [img]%s[/img]\n[/url]", dialog->image_url, link);
