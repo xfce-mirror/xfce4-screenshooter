@@ -265,6 +265,10 @@ fallback:
 #endif
   TRACE ("Get the mouse cursor and its image through fallback mode");
 
+  /* cursors are not scaled */
+  if (gdk_window_get_scale_factor (root) != 1)
+    return NULL;
+
   cursor = gdk_cursor_new_for_display (display, GDK_LEFT_PTR);
   cursor_pixbuf = gdk_cursor_get_image (cursor);
 
@@ -298,6 +302,7 @@ static GdkPixbuf
   GdkPixbuf *screenshot;
   GdkWindow *root;
 
+  gint scale;
   GdkRectangle rectangle;
 
   /* Get the root window */
@@ -311,6 +316,8 @@ static GdkPixbuf
       window = gdk_x11_window_foreign_new_for_display (gdk_window_get_display (window),
     		                                           find_wm_window (xwindow));
     }
+
+  scale = gdk_window_get_scale_factor (window);
 
   rectangle.width = gdk_window_get_width (window);
   rectangle.height = gdk_window_get_height (window);
@@ -372,7 +379,7 @@ static GdkPixbuf
           gboolean has_alpha = gdk_pixbuf_get_has_alpha (screenshot);
 
           tmp =
-            gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width, height);
+            gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width * scale, height * scale);
           gdk_pixbuf_fill (tmp, 0);
 
           for (i = 0; i < rectangle_count; i++)
@@ -412,11 +419,11 @@ static GdkPixbuf
                   rec_y = 0;
                 }
 
-              if (x_orig + rec_x + rec_width > gdk_screen_width ())
-                rec_width = gdk_screen_width () - x_orig - rec_x;
+              if (x_orig + rec_x + rec_width > gdk_screen_width () * scale)
+                rec_width = gdk_screen_width () * scale - x_orig - rec_x;
 
-              if (y_orig + rec_y + rec_height > gdk_screen_height ())
-                rec_height = gdk_screen_height () - y_orig - rec_y;
+              if (y_orig + rec_y + rec_height > gdk_screen_height () * scale)
+                rec_height = gdk_screen_height () * scale - y_orig - rec_y;
 
               for (y = rec_y; y < rec_y + rec_height; y++)
                 {
@@ -463,10 +470,10 @@ static GdkPixbuf
             GdkRectangle rectangle_window, rectangle_cursor;
 
             /* rectangle_window stores the window coordinates */
-            rectangle_window.x = x_orig;
-            rectangle_window.y = y_orig;
-            rectangle_window.width = width;
-            rectangle_window.height = height;
+            rectangle_window.x = x_orig * scale;
+            rectangle_window.y = y_orig * scale;
+            rectangle_window.width = width * scale;
+            rectangle_window.height = height * scale;
 
             /* rectangle_cursor stores the cursor coordinates */
             rectangle_cursor.x = cursorx;
@@ -484,12 +491,12 @@ static GdkPixbuf
                 TRACE ("Compose the two pixbufs");
 
                 gdk_pixbuf_composite (cursor_pixbuf, screenshot,
-                                      cursorx - x_orig -xhot,
-                                      cursory - y_orig -yhot,
+                                      cursorx - rectangle_window.x - xhot,
+                                      cursory - rectangle_window.y - yhot,
                                       rectangle_cursor.width,
                                       rectangle_cursor.height,
-                                      cursorx - x_orig - xhot,
-                                      cursory - y_orig -yhot,
+                                      cursorx - rectangle_window.x - xhot,
+                                      cursory - rectangle_window.y - yhot,
                                       1.0, 1.0,
                                       GDK_INTERP_BILINEAR,
                                       255);
