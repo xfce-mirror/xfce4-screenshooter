@@ -1,5 +1,8 @@
 # Autotools files generated into srcdir
 /INSTALL
+*.tar.bz2
+*.tar.gz
+ChangeLog
 Makefile.in
 /aclocal.m4
 /autom4te.cache/
@@ -26,8 +29,6 @@ Makefile
 /lib/stamp-screenshooter-marshal.h
 /libtool
 /panel-plugin/.dirstamp
-*.la
-*.lo
 /panel-plugin/screenshooter.desktop
 /po/.intltool-merge-cache
 /po/POTFILES
