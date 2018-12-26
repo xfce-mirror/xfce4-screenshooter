@@ -225,6 +225,7 @@ EXTRA_DIST = \
 	intltool-merge.in	\
 	intltool-update.in \
 	lib/screenshooter-marshal.list \
+	lib/screenshooter-imgur-dialog.ui \
 	$(app_desktop_in_in_files) \
 	$(panel_desktop_in_files) \
 	$(48icons_DATA) \
@@ -240,7 +241,8 @@ DISTCLEANFILES = \
 	lib/stamp-screenshooter-marshal.h \
 	$(app_desktop_DATA) $(app_desktop_in_files) \
 	$(panel_desktop_DATA) \
-	$(appdata_DATA)
+	$(appdata_DATA) \
+	xfce4-screenshooter.1
 
 # Man pages
 dist_man_MANS = xfce4-screenshooter.1
