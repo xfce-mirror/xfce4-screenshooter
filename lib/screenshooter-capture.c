@@ -42,6 +42,8 @@ typedef struct
   gint y_root;
   cairo_rectangle_int_t rectangle;
   cairo_rectangle_int_t rectangle_root;
+  GtkWidget *size_window;
+  GtkWidget *size_label;
 } RubberBandData;
 
 /* For non-composited environments */
@@ -649,6 +651,7 @@ static gboolean cb_button_released (GtkWidget *widget,
       if (rbdata->rubber_banding)
         {
           gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
+          gtk_widget_destroy (rbdata->size_window);
           return TRUE;
         }
       else
@@ -660,10 +663,99 @@ static gboolean cb_button_released (GtkWidget *widget,
 
 
 
+
+static gboolean cb_size_window_draw (GtkWidget *widget,
+                                     cairo_t *cr,
+                                     gpointer user_data)
+{
+  cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+  cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, 0.0);
+  cairo_paint (cr);
+
+  return FALSE;
+}
+
+
+
+static void size_window_get_offset (GtkWidget *widget,
+                                    gint digits,
+                                    gint x_event,
+                                    gint y_event,
+                                    gint *x_offset,
+                                    gint *y_offset)
+{
+  GdkRectangle geometry;
+  gint relative_x, relative_y;
+
+  GdkDisplay *display = gtk_widget_get_display (widget);
+  GdkMonitor *monitor = gdk_display_get_monitor_at_point (display, x_event, y_event);
+  gdk_monitor_get_geometry (monitor, &geometry);
+
+  relative_x = x_event - geometry.x;
+  relative_y = y_event - geometry.y;
+
+  *x_offset = -2;
+  *y_offset = -4;
+
+  if (relative_x > geometry.width - (digits * 9))
+    *x_offset -= digits * 9;
+
+  if (relative_y > geometry.height - 20)
+    *y_offset -= 20;
+}
+
+
+
+static void create_size_window (RubberBandData *rbdata)
+{
+  GtkWidget *window, *label;
+  GtkCssProvider *css_provider;
+  GtkStyleContext *context;
+  GdkVisual *visual;
+
+  rbdata->size_window = window = gtk_window_new (GTK_WINDOW_POPUP);
+  gtk_container_set_border_width (GTK_CONTAINER (window), 0);
+  gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
+  gtk_window_set_default_size (GTK_WINDOW (window), 100, 50);
+  gtk_widget_set_size_request (GTK_WIDGET (window), 100, 50);
+  gtk_window_set_decorated (GTK_WINDOW (window), FALSE);
+  gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
+  gtk_window_set_skip_taskbar_hint (GTK_WINDOW (window), FALSE);
+  g_signal_connect (G_OBJECT (window), "draw",
+                    G_CALLBACK (cb_size_window_draw), NULL);
+
+  visual = gdk_screen_get_rgba_visual (gtk_widget_get_screen (window));
+  gtk_widget_set_visual (window, visual);
+
+  rbdata->size_label = label = gtk_label_new ("");
+  gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_widget_set_margin_start (label, 6);
+  gtk_widget_set_margin_top (label, 6);
+  gtk_container_add (GTK_CONTAINER (window), label);
+
+  css_provider = gtk_css_provider_new ();
+  gtk_css_provider_load_from_data (css_provider,
+    "label { font-family: monospace; color: #fff; text-shadow: 1px 1px 0px black; }", -1, NULL);
+
+  context = gtk_widget_get_style_context (GTK_WIDGET (label));
+  gtk_style_context_add_provider (context,
+                                  GTK_STYLE_PROVIDER (css_provider),
+                                  GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  g_object_unref (css_provider);
+
+  gtk_widget_show_all (GTK_WIDGET (window));
+}
+
+
+
 static gboolean cb_motion_notify (GtkWidget *widget,
                                   GdkEventMotion *event,
                                   RubberBandData *rbdata)
 {
+  gchar *coords;
+  gint rect_width, rect_height, x_offset, y_offset;
+
   if (rbdata->left_pressed)
     {
       cairo_rectangle_int_t *new_rect, *new_rect_root;
@@ -690,6 +782,26 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           old_rect.y = new_rect->y;
           old_rect.width = new_rect->width;
           old_rect.height = new_rect->height;
+
+          rect_width = old_rect.width;
+          rect_height = old_rect.height;
+
+          /* Take into account when the rectangle is moved out of screen */
+          if (old_rect.x < 0) rect_width += old_rect.x;
+          if (old_rect.y < 0) rect_height += old_rect.y;
+
+          coords = g_strdup_printf ("%d x %d", rect_width, rect_height);
+
+          size_window_get_offset (rbdata->size_window, strlen (coords),
+                                  event->x_root, event->y_root,
+                                  &x_offset, &y_offset);
+
+          gtk_window_move (GTK_WINDOW (rbdata->size_window),
+                           event->x_root + x_offset,
+                           event->y_root + y_offset);
+
+          gtk_label_set_text (GTK_LABEL (rbdata->size_label), coords);
+          g_free (coords);
         }
 
       if (rbdata->move_rectangle)
@@ -867,6 +979,9 @@ static GdkPixbuf
   gtk_widget_show_now (window);
   gtk_widget_grab_focus (window);
   gdk_flush ();
+
+  /* set up the window showing the screenshot size */
+  create_size_window (&rbdata);
 
   /* Wait 100ms before grabbing devices, useful when invoked by global hotkey
    * because xfsettings will grab the key for a moment */ 
