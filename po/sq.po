@@ -5,12 +5,13 @@
 # Translators:
 # Besnik <besnik@programeshqip.org>, 2007
 # Besnik <besnik@programeshqip.org>, 2007
+# Besnik <besnik@programeshqip.org>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-17 00:31+0100\n"
-"PO-Revision-Date: 2018-12-17 07:40+0000\n"
+"POT-Creation-Date: 2018-12-27 00:31+0100\n"
+"PO-Revision-Date: 2018-12-27 10:21+0000\n"
 "Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/xfce-apps/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -34,9 +35,10 @@ msgid ""
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Fotoja e ekranit po shpërngulet te:</span>"
 
+#. Setup window
 #: ../lib/screenshooter-dialogs.c:688 ../lib/screenshooter-dialogs.c:704
 #: ../lib/screenshooter-dialogs.c:924 ../lib/screenshooter-utils.c:64
-#: ../lib/screenshooter-utils.c:96
+#: ../lib/screenshooter-utils.c:96 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
@@ -176,6 +178,10 @@ msgstr "Ndodhi një gabim teksa shpërnguleshin të dhënat në Imgur."
 #: ../lib/screenshooter-imgur.c:171
 msgid "Imgur"
 msgstr "Imgur"
+
+#: ../lib/screenshooter-imgur-dialog.c:133
+msgid "Your uploaded image"
+msgstr "Figura juaj e ngarkuar"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
