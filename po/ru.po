@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Aleksandr P <davian818@gmail.com>, 2013
+# Aleksandr P, 2013
 # Denis Koryavov <dkoryavov@yandex.ru>, 2009
 # Igor <f2404@yandex.ru>, 2018
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2015
@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-19 00:32+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
-"Last-Translator: Sergey Alyoshin <alyoshin.s@gmail.com>\n"
+"POT-Creation-Date: 2018-12-27 00:31+0100\n"
+"PO-Revision-Date: 2018-12-29 17:35+0000\n"
+"Last-Translator: Igor <f2404@yandex.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,9 +37,10 @@ msgid ""
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Снимок экрана будет перемещен в:</span>"
 
+#. Setup window
 #: ../lib/screenshooter-dialogs.c:688 ../lib/screenshooter-dialogs.c:704
-#: ../lib/screenshooter-dialogs.c:927 ../lib/screenshooter-utils.c:64
-#: ../lib/screenshooter-utils.c:96
+#: ../lib/screenshooter-dialogs.c:924 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-utils.c:96 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
@@ -99,175 +100,140 @@ msgstr "Отображать курсор мыши на снимке экран�
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Задержка перед снимком</span>"
 
-#: ../lib/screenshooter-dialogs.c:873
+#: ../lib/screenshooter-dialogs.c:872
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Задержка в секундах перед выполнением снимка экрана"
 
-#: ../lib/screenshooter-dialogs.c:876
+#: ../lib/screenshooter-dialogs.c:875
 msgid "seconds"
 msgstr "с"
 
-#: ../lib/screenshooter-dialogs.c:938
+#: ../lib/screenshooter-dialogs.c:935
 msgid "Action"
 msgstr "Действие"
 
-#: ../lib/screenshooter-dialogs.c:972
+#: ../lib/screenshooter-dialogs.c:969
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:997
+#: ../lib/screenshooter-dialogs.c:994
 msgid "Save"
 msgstr "Сохранить"
 
-#: ../lib/screenshooter-dialogs.c:1002
+#: ../lib/screenshooter-dialogs.c:999
 msgid "Save the screenshot to a PNG file"
 msgstr "Сохранить снимок экрана в файл формата PNG"
 
-#: ../lib/screenshooter-dialogs.c:1011
+#: ../lib/screenshooter-dialogs.c:1008
 msgid "Copy to the clipboard"
 msgstr "Копировать в буфер обмена"
 
-#: ../lib/screenshooter-dialogs.c:1013
+#: ../lib/screenshooter-dialogs.c:1010
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Копировать снимок экрана в буфер обмена для использования его в дальнейшем"
 
-#: ../lib/screenshooter-dialogs.c:1025
+#: ../lib/screenshooter-dialogs.c:1022
 msgid "Open with:"
 msgstr "Открыть в:"
 
-#: ../lib/screenshooter-dialogs.c:1031
+#: ../lib/screenshooter-dialogs.c:1028
 msgid "Open the screenshot with the chosen application"
 msgstr "Открыть снимок экрана с помощью выбранного приложения"
 
-#: ../lib/screenshooter-dialogs.c:1050 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1047 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Приложение для просмотра снимка экрана"
 
-#: ../lib/screenshooter-dialogs.c:1060
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "Host on Imgur"
 msgstr "Разместить на сервере Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1064 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1061 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Разместить снимок экрана на свободном сервере для хранения изображений Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1078
+#: ../lib/screenshooter-dialogs.c:1075
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Предварительный просмотр</span>"
 
-#: ../lib/screenshooter-dialogs.c:1140
+#: ../lib/screenshooter-dialogs.c:1137
 msgid "Save screenshot as..."
 msgstr "Сохранить снимок как..."
 
-#: ../lib/screenshooter-utils.c:199
+#: ../lib/screenshooter-utils.c:209
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Приложение не может быть запущено.</b>\n%s"
 
-#: ../lib/screenshooter-imgur.c:105
+#: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
 msgstr "Отправка снимка экрана..."
 
-#: ../lib/screenshooter-imgur.c:115
+#: ../lib/screenshooter-imgur.c:116
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "Не удалось передать изображение на сервер Imgur."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:171
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-job-callbacks.c:72
+#: ../lib/screenshooter-imgur-dialog.c:133
+msgid "Your uploaded image"
+msgstr "Ваше загруженное изображение"
+
+#: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Статус</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:168
+#: ../lib/screenshooter-job-callbacks.c:169
 msgid "Details about the screenshot"
 msgstr "Информация о снимке экрана"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:214
+#: ../lib/screenshooter-job-callbacks.c:215
 msgid "User:"
 msgstr "Пользователь:"
 
-#: ../lib/screenshooter-job-callbacks.c:222
+#: ../lib/screenshooter-job-callbacks.c:223
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr "Ваше имя пользователя. Если вы ещё не зарегистрированы, то, пожалуйста, сделайте это на странице, указанной выше"
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:228
+#: ../lib/screenshooter-job-callbacks.c:229
 msgid "Password:"
 msgstr "Пароль:"
 
-#: ../lib/screenshooter-job-callbacks.c:235
+#: ../lib/screenshooter-job-callbacks.c:236
 msgid "The password for the user above"
 msgstr "Пароль для указанного пользователя"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:241
+#: ../lib/screenshooter-job-callbacks.c:242
 msgid "Title:"
 msgstr "Заголовок:"
 
-#: ../lib/screenshooter-job-callbacks.c:249
+#: ../lib/screenshooter-job-callbacks.c:250
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "Заголовок снимка экрана, будет использован при отображении снимка на сервере хранения изображений"
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:255
+#: ../lib/screenshooter-job-callbacks.c:256
 msgid "Comment:"
 msgstr "Описание:"
 
-#: ../lib/screenshooter-job-callbacks.c:263
+#: ../lib/screenshooter-job-callbacks.c:264
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "Описание снимка экрана, будет использовано при отображении снимка на сервере хранения изображений"
-
-#: ../lib/screenshooter-job-callbacks.c:377
-msgid "My screenshot on Imgur"
-msgstr "Мой снимок экрана на Imgur"
-
-#: ../lib/screenshooter-job-callbacks.c:385
-#, c-format
-msgid "<a href=\"%s\">Full size image</a>"
-msgstr "<a href=\"%s\">Полный размер изображения</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:387
-#, c-format
-msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr "<a href=\"%s\">Большая миниатюра</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:389
-#, c-format
-msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr "<a href=\"%s\">Маленькая миниатюра</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:429
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ссылки</span>"
-
-#: ../lib/screenshooter-job-callbacks.c:477
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
-" to the full size image</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Код для перехода от миниатюры к полному изображению</span>"
-
-#. HTML title
-#: ../lib/screenshooter-job-callbacks.c:499
-msgid "HTML"
-msgstr "HTML"
-
-#. BB title
-#: ../lib/screenshooter-job-callbacks.c:521
-msgid "BBCode for forums"
-msgstr "Код (BBCode) для форумов"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
@@ -308,7 +274,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\nЗапустите программу с параметром %s --help для того, чтобы увидеть весь список параметров.\n"
 
-#: ../src/main.c:308
+#: ../src/main.c:316
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s не является каталогом. Будет использован каталог по умолчанию."
