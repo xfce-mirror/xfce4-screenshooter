@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Elishai Eliyahu <e1907@mm.st>, 2018
+# Elishai Eliyahu <e1907@mm.st>, 2018-2019
 # GenghisKhan <genghiskhan@gmx.ca>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-19 00:32+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
+"POT-Creation-Date: 2018-12-27 00:31+0100\n"
+"PO-Revision-Date: 2019-01-04 08:54+0000\n"
 "Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-apps/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -34,9 +34,10 @@ msgid ""
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">הצילום מסך כעת מועבר אל:</span>"
 
+#. Setup window
 #: ../lib/screenshooter-dialogs.c:688 ../lib/screenshooter-dialogs.c:704
-#: ../lib/screenshooter-dialogs.c:927 ../lib/screenshooter-utils.c:64
-#: ../lib/screenshooter-utils.c:96
+#: ../lib/screenshooter-dialogs.c:924 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-utils.c:96 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
@@ -96,175 +97,140 @@ msgstr "הצג סמן עכבר על הצילום מסך"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">שיהוי בטרם לכידה</span>"
 
-#: ../lib/screenshooter-dialogs.c:873
+#: ../lib/screenshooter-dialogs.c:872
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "שיהוי בשניות בטרם צילום מסך נתפס"
 
-#: ../lib/screenshooter-dialogs.c:876
+#: ../lib/screenshooter-dialogs.c:875
 msgid "seconds"
 msgstr "שניות"
 
-#: ../lib/screenshooter-dialogs.c:938
+#: ../lib/screenshooter-dialogs.c:935
 msgid "Action"
 msgstr "פעולה"
 
-#: ../lib/screenshooter-dialogs.c:972
+#: ../lib/screenshooter-dialogs.c:969
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">פעולה</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:997
+#: ../lib/screenshooter-dialogs.c:994
 msgid "Save"
 msgstr "שמור"
 
-#: ../lib/screenshooter-dialogs.c:1002
+#: ../lib/screenshooter-dialogs.c:999
 msgid "Save the screenshot to a PNG file"
 msgstr "שמור את הצילום מסך לקובץ PNG"
 
-#: ../lib/screenshooter-dialogs.c:1011
+#: ../lib/screenshooter-dialogs.c:1008
 msgid "Copy to the clipboard"
 msgstr "העתק אל לוח גזירה"
 
-#: ../lib/screenshooter-dialogs.c:1013
+#: ../lib/screenshooter-dialogs.c:1010
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "העתק את הצילום מסך אל הלוח גזירה כך שיהיה אפשר להדביק אותו לאחר מכן"
 
-#: ../lib/screenshooter-dialogs.c:1025
+#: ../lib/screenshooter-dialogs.c:1022
 msgid "Open with:"
 msgstr "פתח בעזרת:"
 
-#: ../lib/screenshooter-dialogs.c:1031
+#: ../lib/screenshooter-dialogs.c:1028
 msgid "Open the screenshot with the chosen application"
 msgstr "פתח את הצילום מסך בעזרת היישום הנבחר"
 
-#: ../lib/screenshooter-dialogs.c:1050 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1047 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "יישום כדי לפתוח את הצילום מסך"
 
-#: ../lib/screenshooter-dialogs.c:1060
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "Host on Imgur"
 msgstr "ארח אצל Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1064 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1061 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "ארח את הצילום מסך אצל Imgur, שירות אירוח תמונות חינמי"
 
-#: ../lib/screenshooter-dialogs.c:1078
+#: ../lib/screenshooter-dialogs.c:1075
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">תצוגה מקדימה</span>"
 
-#: ../lib/screenshooter-dialogs.c:1140
+#: ../lib/screenshooter-dialogs.c:1137
 msgid "Save screenshot as..."
 msgstr "שמור צילום מסך בשם..."
 
-#: ../lib/screenshooter-utils.c:199
+#: ../lib/screenshooter-utils.c:209
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>היישום לא היה ניתן לשיגור.</b>\n%s"
 
-#: ../lib/screenshooter-imgur.c:105
+#: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
 msgstr "העלה את הצילום מסך..."
 
-#: ../lib/screenshooter-imgur.c:115
+#: ../lib/screenshooter-imgur.c:116
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "אירעה שגיאה במהלך העברת הנתונים אל imgur."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:171
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-job-callbacks.c:72
+#: ../lib/screenshooter-imgur-dialog.c:133
+msgid "Your uploaded image"
+msgstr "התמונה שהועלתה שלך"
+
+#: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">מצב</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:168
+#: ../lib/screenshooter-job-callbacks.c:169
 msgid "Details about the screenshot"
 msgstr "פרטים אודות צילום המסך"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:214
+#: ../lib/screenshooter-job-callbacks.c:215
 msgid "User:"
 msgstr "משתמש:"
 
-#: ../lib/screenshooter-job-callbacks.c:222
+#: ../lib/screenshooter-job-callbacks.c:223
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr "שם המשתמש שלך, אם אין לך כזה עדיין אנא צור אחד בדף הרשת בקישור מעלה"
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:228
+#: ../lib/screenshooter-job-callbacks.c:229
 msgid "Password:"
 msgstr "סיסמה:"
 
-#: ../lib/screenshooter-job-callbacks.c:235
+#: ../lib/screenshooter-job-callbacks.c:236
 msgid "The password for the user above"
 msgstr "הסיסמה עבור המשתמש לעיל"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:241
+#: ../lib/screenshooter-job-callbacks.c:242
 msgid "Title:"
 msgstr "כותרת:"
 
-#: ../lib/screenshooter-job-callbacks.c:249
+#: ../lib/screenshooter-job-callbacks.c:250
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "הכותרת של צילום המסך, היא תהיה בשימוש כאשר צילום המסך מוצג בשירות אחסון התמונות"
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:255
+#: ../lib/screenshooter-job-callbacks.c:256
 msgid "Comment:"
 msgstr "הערה:"
 
-#: ../lib/screenshooter-job-callbacks.c:263
+#: ../lib/screenshooter-job-callbacks.c:264
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "הערה על צילום המסך, היא תהיה בשימוש כאשר צילום המסך מוצג בשירות אחסון התמונות"
-
-#: ../lib/screenshooter-job-callbacks.c:377
-msgid "My screenshot on Imgur"
-msgstr "הצילום מסך שלי באתר Imgur"
-
-#: ../lib/screenshooter-job-callbacks.c:385
-#, c-format
-msgid "<a href=\"%s\">Full size image</a>"
-msgstr "<a href=\"%s\">תמונה בגודל מלא</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:387
-#, c-format
-msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr "<a href=\"%s\">תצוגה מקדימה גדולה</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:389
-#, c-format
-msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr "<a href=\"%s\">תצוגה מקדימה קטנה</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:429
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">קישורים</span>"
-
-#: ../lib/screenshooter-job-callbacks.c:477
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
-" to the full size image</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">קוד לתצוגה מקדימה אשר מכוונת לתמונה בגודל מלא</span>"
-
-#. HTML title
-#: ../lib/screenshooter-job-callbacks.c:499
-msgid "HTML"
-msgstr "HTML"
-
-#. BB title
-#: ../lib/screenshooter-job-callbacks.c:521
-msgid "BBCode for forums"
-msgstr "‏BBCode עבור פורומים"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
@@ -305,7 +271,7 @@ msgid ""
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\nTry %s --help to see a full list of available command line options.\n"
 
-#: ../src/main.c:308
+#: ../src/main.c:316
 #, c-format
 msgid "%s is not a valid directory, the default directory will be used."
 msgstr "%s is not a valid directory, the default directory will be used."
