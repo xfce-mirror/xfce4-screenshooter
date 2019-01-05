@@ -50,6 +50,7 @@ typedef struct
   gboolean action_specified;
   gboolean region_specified;
   gboolean timestamp;
+  gboolean path_is_dir;
   gchar *screenshot_dir;
   gchar *title;
   gchar *app;

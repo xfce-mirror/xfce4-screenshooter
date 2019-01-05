@@ -45,8 +45,7 @@ gchar     *screenshooter_save_screenshot    (GdkPixbuf      *screenshot,
                                              gboolean        timestamp,
                                              gboolean        save_dialog,
                                              gboolean        show_preview);
-
-
-
+gchar     *screenshooter_save_screenshot_to (GdkPixbuf      *screenshot,
+                                             const gchar    *save_uri);
 
 #endif

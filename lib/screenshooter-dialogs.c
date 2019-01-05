@@ -93,9 +93,6 @@ static gchar
 static void
 save_screenshot_to_remote_location (GdkPixbuf          *screenshot,
                                     GFile              *save_file);
-static gchar
-*save_screenshot_to                (GdkPixbuf          *screenshot,
-                                    const gchar        *save_uri);
 
 
 
@@ -608,30 +605,6 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   g_object_unref (cancellable);
   g_free (save_basename);
   g_free (save_path);
-}
-
-static gchar
-*save_screenshot_to (GdkPixbuf *screenshot, const gchar *save_uri)
-{
-  GFile *save_file = g_file_new_for_uri (save_uri);
-  gchar *result = NULL;
-
-  if (save_uri == NULL)
-    {
-      g_object_unref (save_file);
-      return NULL;
-    }
-
-  /* If the URI is a local one, we save directly */
-
-  if (!screenshooter_is_remote_uri (save_uri))
-    result = save_screenshot_to_local_path (screenshot, save_file);
-  else
-    save_screenshot_to_remote_location (screenshot, save_file);
-
-  g_object_unref (save_file);
-
-  return result;
 }
 
 static void
@@ -1184,7 +1157,7 @@ gchar
       {
         g_free (save_uri);
         save_uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (chooser));
-        result = save_screenshot_to (screenshot, save_uri);
+        result = screenshooter_save_screenshot_to (screenshot, save_uri);
       }
     else
       result = NULL;
@@ -1192,9 +1165,34 @@ gchar
     gtk_widget_destroy (chooser);
   }
   else
-    result = save_screenshot_to (screenshot, save_uri);
+    result = screenshooter_save_screenshot_to (screenshot, save_uri);
 
   g_free (save_uri);
+
+  return result;
+}
+
+gchar
+*screenshooter_save_screenshot_to (GdkPixbuf   *screenshot,
+                                   const gchar *save_uri)
+{
+  GFile *save_file = g_file_new_for_uri (save_uri);
+  gchar *result = NULL;
+
+  if (save_uri == NULL)
+    {
+      g_object_unref (save_file);
+      return NULL;
+    }
+
+  /* If the URI is a local one, we save directly */
+
+  if (!screenshooter_is_remote_uri (save_uri))
+    result = save_screenshot_to_local_path (screenshot, save_file);
+  else
+    save_screenshot_to_remote_location (screenshot, save_file);
+
+  g_object_unref (save_file);
 
   return result;
 }

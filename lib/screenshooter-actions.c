@@ -70,26 +70,31 @@ action_idle (ScreenshotData *sd)
 
   if (sd->action & SAVE)
     {
-      const gchar *save_location;
-
-      if (sd->screenshot_dir == NULL)
-        sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
-
-      save_location = screenshooter_save_screenshot (sd->screenshot,
-                                                     sd->screenshot_dir,
-                                                     sd->title,
-                                                     sd->timestamp,
-                                                     TRUE,
-                                                     TRUE);
-
-      if (save_location)
+      if (!sd->path_is_dir)
+        screenshooter_save_screenshot_to (sd->screenshot, sd->screenshot_dir);
+      else
         {
-          const gchar *temp;
+          const gchar *save_location;
 
-          g_free (sd->screenshot_dir);
-          temp = g_path_get_dirname (save_location);
-          sd->screenshot_dir = g_build_filename ("file://", temp, NULL);
-          TRACE ("New save directory: %s", sd->screenshot_dir);
+          if (sd->screenshot_dir == NULL)
+            sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
+
+          save_location = screenshooter_save_screenshot (sd->screenshot,
+                                                         sd->screenshot_dir,
+                                                         sd->title,
+                                                         sd->timestamp,
+                                                         TRUE,
+                                                         TRUE);
+
+          if (save_location)
+            {
+              const gchar *temp;
+
+              g_free (sd->screenshot_dir);
+              temp = g_path_get_dirname (save_location);
+              sd->screenshot_dir = g_build_filename ("file://", temp, NULL);
+              TRACE ("New save directory: %s", sd->screenshot_dir);
+            }
         }
     }
   else

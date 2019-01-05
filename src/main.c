@@ -306,16 +306,12 @@ int main (int argc, char **argv)
         {
           default_save_dir = g_file_new_for_commandline_arg (screenshot_dir);
 
-          if (G_LIKELY (g_file_query_exists (default_save_dir, NULL)))
-            {
-              g_free (sd->screenshot_dir);
-              sd->screenshot_dir = g_file_get_uri (default_save_dir);
-              sd->action_specified = TRUE;
-            }
-          else
-              screenshooter_error (_("%s is not a valid directory, the default"
-                                   " directory will be used."),
-                                   screenshot_dir);
+          sd->action_specified = TRUE;
+          g_free (sd->screenshot_dir);
+          sd->screenshot_dir = g_file_get_uri (default_save_dir);
+
+          // Check if given path is a directory
+          sd->path_is_dir = g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR);
 
           g_object_unref (default_save_dir);
           g_free (screenshot_dir);
