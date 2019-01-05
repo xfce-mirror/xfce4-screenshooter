@@ -19,7 +19,8 @@
 
 #include "screenshooter-simple-job.h"
 
-static void     screenshooter_simple_job_class_init (ScreenshooterSimpleJobClass  *klass);
+static void     screenshooter_simple_job_class_init (ScreenshooterSimpleJobClass  *klass,
+                                                     gpointer                      data);
 static void     screenshooter_simple_job_finalize   (GObject                      *object);
 static gboolean screenshooter_simple_job_execute    (ExoJob                       *job,
                                                      GError                      **error);
@@ -66,7 +67,8 @@ screenshooter_simple_job_get_type (void)
 
 
 static void
-screenshooter_simple_job_class_init (ScreenshooterSimpleJobClass *klass)
+screenshooter_simple_job_class_init (ScreenshooterSimpleJobClass *klass,
+                                     gpointer                     data)
 {
   GObjectClass *gobject_class;
   ExoJobClass  *exojob_class;

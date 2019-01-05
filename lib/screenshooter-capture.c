@@ -923,7 +923,6 @@ static GdkPixbuf
   GtkWidget *window;
   RubberBandData rbdata;
   GdkPixbuf *screenshot = NULL;
-  GdkWindow *root;
   GdkDevice *pointer, *keyboard;
   GdkGrabStatus res;
   GdkSeat   *seat;
@@ -1032,8 +1031,6 @@ static GdkPixbuf
     goto cleanup;
 
   /* Grab the screenshot on the main window */
-  root = gdk_get_default_root_window ();
-
   screenshot = capture_rectangle_screenshot (rbdata.rectangle_root.x,
                                              rbdata.rectangle_root.y,
                                              rbdata.rectangle.width,

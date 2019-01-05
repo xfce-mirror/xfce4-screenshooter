@@ -36,7 +36,7 @@ cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
 
 
 
-gboolean
+static gboolean
 action_idle (ScreenshotData *sd)
 {
   if (!sd->action_specified)

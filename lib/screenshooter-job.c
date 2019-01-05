@@ -35,12 +35,11 @@ enum
 
 
 
-static void  screenshooter_job_class_init (ScreenshooterJobClass *klass);
-static void  screenshooter_job_init       (ScreenshooterJob      *job);
+static void  screenshooter_job_class_init (ScreenshooterJobClass *klass,
+                                           gpointer               data);
+static void  screenshooter_job_init       (ScreenshooterJob      *job,
+                                           gpointer               klass);
 static void  screenshooter_job_finalize   (GObject               *object);
-/*static void  screenshooter_job_real_ask   (ScreenshooterJob      *job,
-                                           GtkListStore          *liststore,
-                                           const gchar           *message);*/
 
 
 
@@ -71,7 +70,8 @@ screenshooter_job_get_type (void)
 
 
 static void
-screenshooter_job_class_init (ScreenshooterJobClass *klass)
+screenshooter_job_class_init (ScreenshooterJobClass *klass,
+                              gpointer               data)
 {
   GObjectClass *gobject_class;
 
@@ -129,7 +129,8 @@ screenshooter_job_class_init (ScreenshooterJobClass *klass)
 
 
 static void
-screenshooter_job_init (ScreenshooterJob *job)
+screenshooter_job_init (ScreenshooterJob *job,
+                        gpointer          klass)
 {
 
 }
@@ -141,19 +142,6 @@ screenshooter_job_finalize (GObject *object)
 {
   (*G_OBJECT_CLASS (screenshooter_job_parent_class)->finalize) (object);
 }
-
-
-
-/*static void
-screenshooter_job_real_ask (ScreenshooterJob *job,
-                            GtkListStore     *liststore,
-                            const gchar      *message)
-{
-  g_return_if_fail (SCREENSHOOTER_IS_JOB (job));
-
-  TRACE ("Emit ask signal.");
-  g_signal_emit (job, job_signals[ASK], 0, liststore, message);
-}*/
 
 
 
