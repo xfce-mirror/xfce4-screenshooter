@@ -33,8 +33,8 @@ static gboolean
 imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
 {
   const gchar *image_path, *title;
-  gchar *online_file_name = NULL;
-  gchar *delete_hash = NULL;
+  guchar *online_file_name = NULL;
+  guchar *delete_hash = NULL;
   const gchar* proxy_uri;
   SoupURI *soup_proxy_uri;
 #if DEBUG > 0
@@ -131,7 +131,7 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   for (child_node = root_node->children; child_node; child_node = child_node->next)
   {
     if (xmlStrEqual(child_node->name, (const xmlChar *) "id"))
-       online_file_name = xmlNodeGetContent(child_node);
+      online_file_name = xmlNodeGetContent(child_node);
     else if (xmlStrEqual (child_node->name, (const xmlChar *) "deletehash"))
       delete_hash = xmlNodeGetContent (child_node);
   }
@@ -141,7 +141,9 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   g_object_unref (session);
   g_object_unref (msg);
 
-  screenshooter_job_image_uploaded (job, online_file_name, delete_hash);
+  screenshooter_job_image_uploaded (job,
+                                    (const gchar*) online_file_name,
+                                    (const gchar*) delete_hash);
 
   return TRUE;
 }
