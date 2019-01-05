@@ -927,6 +927,7 @@ static GdkPixbuf
   GdkGrabStatus res;
   GdkSeat   *seat;
   GdkCursor *xhair_cursor;
+  GdkDisplay *display;
 
   /* Initialize the rubber band data */
   rbdata.left_pressed = FALSE;
@@ -967,8 +968,9 @@ static GdkPixbuf
 
   /* This window is not managed by the window manager, we have to set everything
    * ourselves */
+  display = gdk_display_get_default ();
   gtk_widget_realize (window);
-  xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_CROSSHAIR);
+  xhair_cursor = gdk_cursor_new_for_display (display, GDK_CROSSHAIR);
   gdk_window_set_cursor (gtk_widget_get_window (window), xhair_cursor);
   gdk_window_set_override_redirect (gtk_widget_get_window (window), TRUE);
   gtk_widget_set_size_request (window,
@@ -977,7 +979,7 @@ static GdkPixbuf
   gdk_window_raise (gtk_widget_get_window (window));
   gtk_widget_show_now (window);
   gtk_widget_grab_focus (window);
-  gdk_flush ();
+  gdk_display_flush (display);
 
   /* set up the window showing the screenshot size */
   create_size_window (&rbdata);
@@ -988,7 +990,7 @@ static GdkPixbuf
 
   /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
-  seat = gdk_display_get_default_seat (gdk_display_get_default ());
+  seat = gdk_display_get_default_seat (display);
   pointer = gdk_seat_get_pointer (seat);
   keyboard = gdk_seat_get_keyboard (seat);
 
@@ -1025,7 +1027,7 @@ static GdkPixbuf
   gtk_dialog_run (GTK_DIALOG (window));
   gtk_widget_destroy (window);
   g_object_unref (xhair_cursor);
-  gdk_flush();
+  gdk_display_flush (display);
 
   if (rbdata.cancelled)
     goto cleanup;
@@ -1041,7 +1043,7 @@ static GdkPixbuf
   /* Ungrab the mouse and the keyboard */
   gdk_device_ungrab (pointer, GDK_CURRENT_TIME);
   gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
-  gdk_flush ();
+  gdk_display_flush (display);
 
   return screenshot;
 }
@@ -1346,7 +1348,7 @@ static GdkPixbuf
   gdk_window_add_filter (root_window,
                          (GdkFilterFunc) region_filter_func, &rbdata);
 
-  gdk_flush ();
+  gdk_display_flush (gdk_display_get_default ());
 
   gtk_main ();
 
