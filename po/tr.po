@@ -4,7 +4,7 @@
 # 
 # Translators:
 # atekinalp <alper.tekinalp@gmail.com>, 2014
-# Demiray Muhterem <mdemiray@msn.com>, 2018
+# Demiray Muhterem <mdemiray@msn.com>, 2018-2019
 # Murat Pınar <muratpinar@archlinux.org.tr>, 2010
 # Natavan Mirzayeva <mirzayevanatavan@gmail.com>, 2015
 # Necdet Yücel <necdetyucel@gmail.com>, 2014-2015,2018
@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-27 00:31+0100\n"
-"PO-Revision-Date: 2018-12-27 17:26+0000\n"
+"POT-Creation-Date: 2019-01-10 06:31+0100\n"
+"PO-Revision-Date: 2019-01-10 20:05+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -23,65 +23,65 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:458
+#: ../lib/screenshooter-dialogs.c:455
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb aktarıldı, toplam %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:544
+#: ../lib/screenshooter-dialogs.c:541
 msgid "Transfer"
 msgstr "Aktar"
 
-#: ../lib/screenshooter-dialogs.c:565
+#: ../lib/screenshooter-dialogs.c:562
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekran görüntüsü aktarılıyor:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:688 ../lib/screenshooter-dialogs.c:704
-#: ../lib/screenshooter-dialogs.c:924 ../lib/screenshooter-utils.c:64
+#: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:64
 #: ../lib/screenshooter-utils.c:96 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Ekran görüntüsü"
 
-#: ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:672
 msgid "Take a screenshot"
 msgstr "Ekran görüntüsü al"
 
-#: ../lib/screenshooter-dialogs.c:714
+#: ../lib/screenshooter-dialogs.c:687
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:724
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Görüntüsü alınacak alan</span>"
 
-#: ../lib/screenshooter-dialogs.c:778
+#: ../lib/screenshooter-dialogs.c:751
 msgid "Entire screen"
 msgstr "Tüm ekran"
 
-#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:758 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Tüm ekranın görüntüsünü al"
 
-#: ../lib/screenshooter-dialogs.c:793
+#: ../lib/screenshooter-dialogs.c:766
 msgid "Active window"
 msgstr "Etkin pencere"
 
-#: ../lib/screenshooter-dialogs.c:800 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:773 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Etkin pencerenin ekran görüntüsünü al"
 
-#: ../lib/screenshooter-dialogs.c:808
+#: ../lib/screenshooter-dialogs.c:781
 msgid "Select a region"
 msgstr "Alan seçimi"
 
-#: ../lib/screenshooter-dialogs.c:813 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:786 ../src/main.c:74
 #: ../panel-plugin/screenshooter-plugin.c:340
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -89,76 +89,76 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Farenin sol tuşuna basılı tutup fareyi hareket ettirerek belirli bir alanı seçip, o alanın ekran görüntüsünü alabilirsiniz."
 
-#: ../lib/screenshooter-dialogs.c:823
+#: ../lib/screenshooter-dialogs.c:796
 msgid "Capture the mouse pointer"
 msgstr "Fare imlecini yakala"
 
-#: ../lib/screenshooter-dialogs.c:828
+#: ../lib/screenshooter-dialogs.c:801
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Ekran görüntüsünde fare imlecini göster"
 
-#: ../lib/screenshooter-dialogs.c:844
+#: ../lib/screenshooter-dialogs.c:817
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Görüntü almadan önce beklenecek süre</span>"
 
-#: ../lib/screenshooter-dialogs.c:872
+#: ../lib/screenshooter-dialogs.c:845
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Ekran görüntüsü almayı saniye değerinden geciktir"
 
-#: ../lib/screenshooter-dialogs.c:875
+#: ../lib/screenshooter-dialogs.c:848
 msgid "seconds"
 msgstr "saniye"
 
-#: ../lib/screenshooter-dialogs.c:935
+#: ../lib/screenshooter-dialogs.c:908
 msgid "Action"
 msgstr "Eylem"
 
-#: ../lib/screenshooter-dialogs.c:969
+#: ../lib/screenshooter-dialogs.c:942
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Eylem</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:994
+#: ../lib/screenshooter-dialogs.c:967
 msgid "Save"
 msgstr "Kaydet"
 
-#: ../lib/screenshooter-dialogs.c:999
+#: ../lib/screenshooter-dialogs.c:972
 msgid "Save the screenshot to a PNG file"
 msgstr "Ekran görüntüsünü PNG biçiminde kaydet"
 
-#: ../lib/screenshooter-dialogs.c:1008
+#: ../lib/screenshooter-dialogs.c:981
 msgid "Copy to the clipboard"
 msgstr "Panoya kopyala"
 
-#: ../lib/screenshooter-dialogs.c:1010
+#: ../lib/screenshooter-dialogs.c:983
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Ekran görüntüsünü panoya kopyalar daha sonra ihtiyaç duyduğunuzda yapıştırmak için kullanabilirsiniz"
 
-#: ../lib/screenshooter-dialogs.c:1022
+#: ../lib/screenshooter-dialogs.c:995
 msgid "Open with:"
 msgstr "Birlikte aç:"
 
-#: ../lib/screenshooter-dialogs.c:1028
+#: ../lib/screenshooter-dialogs.c:1001
 msgid "Open the screenshot with the chosen application"
 msgstr "Ekran görüntüsünü seçilen uygulama ile açar"
 
-#: ../lib/screenshooter-dialogs.c:1047 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1020 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Ekran görüntüsünü gösterecek uygulama"
 
-#: ../lib/screenshooter-dialogs.c:1057
+#: ../lib/screenshooter-dialogs.c:1030
 msgid "Host on Imgur"
 msgstr "Imgur adresinde tut"
 
-#: ../lib/screenshooter-dialogs.c:1061 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Ekran görüntüsünü bir ücretsiz resim barındırma servisi olan Imgur'de tut"
 
-#: ../lib/screenshooter-dialogs.c:1075
+#: ../lib/screenshooter-dialogs.c:1048
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Önizleme</span>"
 
-#: ../lib/screenshooter-dialogs.c:1137
+#: ../lib/screenshooter-dialogs.c:1110
 msgid "Save screenshot as..."
 msgstr "Ekran görüntüsünü farklı kaydet..."
 
@@ -178,7 +178,7 @@ msgstr "Ekran görüntüsünü gönder..."
 msgid "An error occurred while transferring the data to imgur."
 msgstr "Veri imgur'e aktarılırken bir hata oluştu."
 
-#: ../lib/screenshooter-imgur.c:171
+#: ../lib/screenshooter-imgur.c:173
 msgid "Imgur"
 msgstr "İmgur"
 
@@ -249,8 +249,8 @@ msgid "Display the mouse on the screenshot"
 msgstr "Ekran görüntüsünde fare imlecini göster"
 
 #: ../src/main.c:81
-msgid "Directory where the screenshot will be saved"
-msgstr "Ekran görüntüsünün kaydedileceği dizin"
+msgid "File path or directory where the screenshot will be saved"
+msgstr "Ekran görüntüsünün kaydedileceği dosya yolu veya dizin"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -274,11 +274,6 @@ msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\nUygun komut satırı seçeneklerini görmek için, %s --help komutunu deneyiniz.\n"
-
-#: ../src/main.c:316
-#, c-format
-msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s geçerli bir dizin değil, öntanımlı dizin kullanılacak."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
