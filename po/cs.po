@@ -5,13 +5,14 @@
 # Translators:
 # Alois Nešpor <info@aloisnespor.info>, 2013-2014
 # Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2019
+# Pavel Borecki <pavel.borecki@gmail.com>, 2019
 # Petr Šimáček <petr.simacek@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 00:31+0100\n"
-"PO-Revision-Date: 2019-01-06 13:41+0000\n"
+"POT-Creation-Date: 2019-01-10 06:31+0100\n"
+"PO-Revision-Date: 2019-01-11 08:14+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/xfce/xfce-apps/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -246,8 +247,8 @@ msgid "Display the mouse on the screenshot"
 msgstr "Zobrazovat myš na snímku obrazovky"
 
 #: ../src/main.c:81
-msgid "Directory where the screenshot will be saved"
-msgstr "Adresář pro uložení snímků obrazovky"
+msgid "File path or directory where the screenshot will be saved"
+msgstr "Cesta k souboru nebo adresáře, do které bude snímek obrazovky uložen"
 
 #: ../src/main.c:91
 msgid "Version information"
