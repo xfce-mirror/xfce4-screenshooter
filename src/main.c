@@ -144,6 +144,7 @@ int main (int argc, char **argv)
 
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   sd->plugin = FALSE;
+  sd->path_is_dir = TRUE;
   sd->app_info = NULL;
   sd->action = 0;
 
