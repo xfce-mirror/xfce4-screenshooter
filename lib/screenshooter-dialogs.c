@@ -1176,17 +1176,14 @@ gchar
 *screenshooter_save_screenshot_to (GdkPixbuf   *screenshot,
                                    const gchar *save_uri)
 {
-  GFile *save_file = g_file_new_for_uri (save_uri);
+  GFile *save_file = NULL;
   gchar *result = NULL;
 
-  if (save_uri == NULL)
-    {
-      g_object_unref (save_file);
-      return NULL;
-    }
+  g_return_val_if_fail (save_uri != NULL, NULL);
+
+  save_file = g_file_new_for_uri (save_uri);
 
   /* If the URI is a local one, we save directly */
-
   if (!screenshooter_is_remote_uri (save_uri))
     result = save_screenshot_to_local_path (screenshot, save_file);
   else
