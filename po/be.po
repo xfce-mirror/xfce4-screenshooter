@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-06 00:31+0100\n"
-"PO-Revision-Date: 2019-01-08 08:46+0000\n"
+"POT-Creation-Date: 2019-01-10 06:31+0100\n"
+"PO-Revision-Date: 2019-01-13 16:12+0000\n"
 "Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-apps/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -124,11 +124,11 @@ msgstr "Захаваць здымак экрана як PNG"
 
 #: ../lib/screenshooter-dialogs.c:981
 msgid "Copy to the clipboard"
-msgstr "Скапіраваць у буфер абмену"
+msgstr "Скапіяваць у буфер абмену"
 
 #: ../lib/screenshooter-dialogs.c:983
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Скапіраваць здымак экрана ў буфер абмену, каб яго можна было ўставіць пазней"
+msgstr "Скапіяваць здымак экрана ў буфер абмену, каб яго можна было ўставіць пазней"
 
 #: ../lib/screenshooter-dialogs.c:995
 msgid "Open with:"
@@ -234,7 +234,7 @@ msgstr "Каментар для здымка экрана, які будзе п�
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
-msgstr "Скапіраваць здымак у буфер абмену"
+msgstr "Скапіяваць здымак у буфер абмену"
 
 #: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
@@ -245,8 +245,8 @@ msgid "Display the mouse on the screenshot"
 msgstr "Паказваць курсор на здымку"
 
 #: ../src/main.c:81
-msgid "Directory where the screenshot will be saved"
-msgstr "Каталог, у які будзе захаваны здымак"
+msgid "File path or directory where the screenshot will be saved"
+msgstr "Шлях да файла альбо каталог, у якім будзе захаваны здымак экрана"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -284,4 +284,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr "Дазваляе зрабіць здымак усяго экрана, актыўнага акна альбо абранай вобласці. Вы можаце прызначыць затрымку перад здымкам і дзеянне з ім: захаваць як PNG, скапіраваць у буфер абмену, адкрыць у іншай праграме альбо размясціць на Imgur, свабодным серверы для захоўвання выяў."
+msgstr "Дазваляе зрабіць здымак усяго экрана, актыўнага акна альбо абранай вобласці. Вы можаце прызначыць затрымку перад здымкам і дзеянне з ім: захаваць як PNG, скапіяваць у буфер абмену, адкрыць у іншай праграме альбо размясціць на Imgur, свабодным серверы для захоўвання выяў."
