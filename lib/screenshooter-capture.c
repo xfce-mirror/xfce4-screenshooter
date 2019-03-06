@@ -1036,23 +1036,38 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
   Display *display;
   Window root_window;
   int key;
+  int event_type;
+  gboolean is_xinput = FALSE;
 
   display = gdk_x11_get_default_xdisplay ();
   root_window = gdk_x11_get_default_root_xwindow ();
 
-  if (x_event->type != GenericEvent)
-    return GDK_FILTER_CONTINUE;
+  event_type = x_event->type;
 
-  switch (x_event->xgeneric.evtype)
+  if (event_type == GenericEvent)
+    {
+      event_type = x_event->xgeneric.evtype;
+      is_xinput = TRUE;
+    }
+
+  switch (event_type)
     {
       /* Start dragging the rectangle out */
-      case XI_ButtonPress:
+      case XI_ButtonPress: /* ButtonPress */
         TRACE ("Start dragging the rectangle");
 
-        device_event = (XIDeviceEvent*) x_event->xcookie.data;
-
-        rbdata->rectangle.x = rbdata->x1 = device_event->root_x;
-        rbdata->rectangle.y = rbdata->y1 = device_event->root_y;
+        if (is_xinput)
+          {
+            device_event = (XIDeviceEvent*) x_event->xcookie.data;
+            rbdata->rectangle.x = rbdata->x1 = device_event->root_x;
+            rbdata->rectangle.y = rbdata->y1 = device_event->root_y;
+          }
+        else
+          {
+            rbdata->rectangle.x = rbdata->x1 = x_event->xkey.x_root;
+            rbdata->rectangle.y = rbdata->y1 = x_event->xkey.y_root;
+          }
+        
         rbdata->rectangle.width = 0;
         rbdata->rectangle.height = 0;
         rbdata->pressed = TRUE;
@@ -1063,7 +1078,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       break;
 
       /* Finish dragging the rectangle out */
-      case XI_ButtonRelease:
+      case XI_ButtonRelease: /* ButtonRelease */
         if (rbdata->pressed)
           {
             if (rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
@@ -1093,7 +1108,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
       break;
 
       /* The user is moving the mouse */
-      case XI_Motion:
+      case XI_Motion: /* MotionNotify */
         if (rbdata->pressed)
           {
             TRACE ("Mouse is moving");
@@ -1112,9 +1127,18 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
                                 (unsigned int) rbdata->rectangle.height-1);
               }
 
-            device_event = (XIDeviceEvent*) x_event->xcookie.data;
-            x2 = device_event->root_x;
-            y2 = device_event->root_y;
+            if (is_xinput)
+              {
+                device_event = (XIDeviceEvent*) x_event->xcookie.data;
+                x2 = device_event->root_x;
+                y2 = device_event->root_y;
+              }
+            else
+              {
+                x2 = x_event->xkey.x_root;
+                y2 = x_event->xkey.y_root;
+              }
+            
 
             if (rbdata->move_rectangle)
               {
@@ -1161,9 +1185,16 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
         return GDK_FILTER_REMOVE;
         break;
 
-      case XI_KeyPress:
-        device_event = (XIDeviceEvent*) x_event->xcookie.data;
-        key = device_event->detail;
+      case XI_KeyPress: /* KeyPress */
+        if (is_xinput)
+          {
+            device_event = (XIDeviceEvent*) x_event->xcookie.data;
+            key = device_event->detail;
+          }
+        else
+          {
+            key = x_event->xkey.keycode;
+          }
 
         if (rbdata->pressed && (
             key == XKeysymToKeycode (gdk_x11_get_default_xdisplay (), XK_Control_L) ||
@@ -1201,9 +1232,16 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
           }
         break;
 
-      case XI_KeyRelease:
-        device_event = (XIDeviceEvent*) x_event->xcookie.data;
-        key = device_event->detail;
+      case XI_KeyRelease: /* KeyRelease */
+        if (is_xinput)
+          {
+            device_event = (XIDeviceEvent*) x_event->xcookie.data;
+            key = device_event->detail;
+          }
+        else
+          {
+            key = x_event->xkey.keycode;
+          }
 
         if (rbdata->pressed && (
             key == XKeysymToKeycode (gdk_x11_get_default_xdisplay (), XK_Control_L) ||
