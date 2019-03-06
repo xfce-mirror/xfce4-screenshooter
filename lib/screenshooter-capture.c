@@ -981,9 +981,6 @@ static GdkPixbuf
   gtk_widget_grab_focus (window);
   gdk_display_flush (display);
 
-  /* set up the window showing the screenshot size */
-  create_size_window (&rbdata);
-
   /* Wait 100ms before grabbing devices, useful when invoked by global hotkey
    * because xfsettings will grab the key for a moment */ 
   g_usleep(100000);
@@ -1023,6 +1020,8 @@ static GdkPixbuf
       g_warning ("Failed to grab pointer");
       return NULL;
     }
+  /* set up the window showing the screenshot size */
+  create_size_window (&rbdata);
 
   gtk_dialog_run (GTK_DIALOG (window));
   gtk_widget_destroy (window);
@@ -1043,6 +1042,7 @@ static GdkPixbuf
   /* Ungrab the mouse and the keyboard */
   gdk_device_ungrab (pointer, GDK_CURRENT_TIME);
   gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
+  gtk_widget_destroy (rbdata.size_window);
   gdk_display_flush (display);
 
   return screenshot;
