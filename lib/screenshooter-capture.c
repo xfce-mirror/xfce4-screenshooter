@@ -923,7 +923,6 @@ static GdkPixbuf
   GtkWidget *window;
   RubberBandData rbdata;
   GdkPixbuf *screenshot = NULL;
-  GdkDevice *pointer, *keyboard;
   GdkGrabStatus res;
   GdkSeat   *seat;
   GdkCursor *xhair_cursor;
@@ -971,7 +970,6 @@ static GdkPixbuf
   display = gdk_display_get_default ();
   gtk_widget_realize (window);
   xhair_cursor = gdk_cursor_new_for_display (display, GDK_CROSSHAIR);
-  gdk_window_set_cursor (gtk_widget_get_window (window), xhair_cursor);
   gdk_window_set_override_redirect (gtk_widget_get_window (window), TRUE);
   gtk_widget_set_size_request (window,
                                gdk_screen_get_width (gdk_screen_get_default ()),
@@ -988,38 +986,19 @@ static GdkPixbuf
   /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
   seat = gdk_display_get_default_seat (display);
-  pointer = gdk_seat_get_pointer (seat);
-  keyboard = gdk_seat_get_keyboard (seat);
 
-  res = gdk_device_grab (keyboard, gtk_widget_get_window (window),
-                         GDK_OWNERSHIP_NONE, FALSE,
-                         GDK_KEY_PRESS_MASK |
-                         GDK_KEY_RELEASE_MASK,
-                         NULL, GDK_CURRENT_TIME);
+  res = gdk_seat_grab (seat, gtk_widget_get_window (window),
+                       GDK_SEAT_CAPABILITY_ALL, FALSE, xhair_cursor,
+                       NULL, NULL, NULL);
 
   if (res != GDK_GRAB_SUCCESS)
     {
       gtk_widget_destroy (window);
       g_object_unref (xhair_cursor);
-      g_warning ("Failed to grab keyboard");
+      g_warning ("Failed to grab seat");
       return NULL;
     }
 
-  res = gdk_device_grab (pointer, gtk_widget_get_window (window),
-                         GDK_OWNERSHIP_NONE, FALSE,
-                         GDK_POINTER_MOTION_MASK |
-                         GDK_BUTTON_PRESS_MASK | 
-                         GDK_BUTTON_RELEASE_MASK,
-                         NULL, GDK_CURRENT_TIME);
-
-  if (res != GDK_GRAB_SUCCESS)
-    {
-      gtk_widget_destroy (window);
-      g_object_unref (xhair_cursor);
-      gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
-      g_warning ("Failed to grab pointer");
-      return NULL;
-    }
   /* set up the window showing the screenshot size */
   create_size_window (&rbdata);
 
@@ -1039,10 +1018,8 @@ static GdkPixbuf
                                              delay);
 
   cleanup:
-  /* Ungrab the mouse and the keyboard */
-  gdk_device_ungrab (pointer, GDK_CURRENT_TIME);
-  gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
   gtk_widget_destroy (rbdata.size_window);
+  gdk_seat_ungrab (seat);
   gdk_display_flush (display);
 
   return screenshot;
@@ -1261,7 +1238,6 @@ static GdkPixbuf
   gint screen;
   RbData rbdata;
   GdkCursor *xhair_cursor;
-  GdkDevice *pointer, *keyboard;
   GdkGrabStatus res;
   GdkSeat   *seat;
   long value_mask;
@@ -1281,37 +1257,19 @@ static GdkPixbuf
    * because xfsettings will grab the key for a moment */ 
   g_usleep(100000);
 
+  gdk_window_show_unraised (root_window);
+
   /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
   seat = gdk_display_get_default_seat (gdk_display_get_default ());
-  pointer = gdk_seat_get_pointer (seat);
-  keyboard = gdk_seat_get_keyboard (seat);
 
-  res = gdk_device_grab (keyboard, root_window,
-                         GDK_OWNERSHIP_NONE, FALSE,
-                         GDK_KEY_PRESS_MASK |
-                         GDK_KEY_RELEASE_MASK,
-                         NULL, GDK_CURRENT_TIME);
+  res = gdk_seat_grab (seat, root_window, GDK_SEAT_CAPABILITY_ALL, FALSE,
+                       xhair_cursor, NULL, NULL, NULL);
 
   if (res != GDK_GRAB_SUCCESS)
     {
       g_object_unref (xhair_cursor);
-      g_warning ("Failed to grab keyboard");
-      return NULL;
-    }
-
-  res = gdk_device_grab (pointer, root_window,
-                         GDK_OWNERSHIP_NONE, FALSE,
-                         GDK_POINTER_MOTION_MASK |
-                         GDK_BUTTON_PRESS_MASK | 
-                         GDK_BUTTON_RELEASE_MASK,
-                         xhair_cursor, GDK_CURRENT_TIME);
-
-  if (res != GDK_GRAB_SUCCESS)
-    {
-      gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
-      g_object_unref (xhair_cursor);
-      g_warning ("Failed to grab pointer");
+      g_warning ("Failed to grab seat");
       return NULL;
     }
 
@@ -1356,8 +1314,7 @@ static GdkPixbuf
                             (GdkFilterFunc) region_filter_func,
                             &rbdata);
 
-  gdk_device_ungrab (pointer, GDK_CURRENT_TIME);
-  gdk_device_ungrab (keyboard, GDK_CURRENT_TIME);
+  gdk_seat_ungrab (seat);
 
   /* Get the screenshot's pixbuf */
   if (G_LIKELY (!rbdata.cancelled))
