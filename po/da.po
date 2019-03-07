@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-10 06:31+0100\n"
-"PO-Revision-Date: 2019-01-12 23:33+0000\n"
+"PO-Revision-Date: 2019-03-07 12:45+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -223,7 +223,7 @@ msgstr "Titel:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "Titlen på skærmbilledet. Det bruges når skærmbilledet vises på billedhosting-tjenesten."
+msgstr "Titlen på skærmbilledet, der bruges når skærmbilledet vises på billedhosting-tjenesten"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:256
@@ -234,7 +234,7 @@ msgstr "Kommentar:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "En kommentar på skærmbilledet. Det bruges når skærmbilledet vises på billedhosting-tjenesten."
+msgstr "En kommentar på skærmbilledet, der bruges når skærmbilledet vises på billedhosting-tjenesten"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
