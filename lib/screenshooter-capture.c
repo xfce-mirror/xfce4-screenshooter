@@ -117,7 +117,9 @@ static GdkWindow
 
   TRACE ("Get the active window");
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   window = gdk_screen_get_active_window (screen);
+G_GNUC_END_IGNORE_DEPRECATIONS
 
   /* If there is no active window, we fallback to the whole screen. */
   if (G_UNLIKELY (window == NULL))
@@ -1430,7 +1432,9 @@ GdkPixbuf *screenshooter_capture_screenshot (gint     region,
   display = gdk_display_get_default ();
   gdk_display_sync (display);
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   gdk_window_process_all_updates ();
+G_GNUC_END_IGNORE_DEPRECATIONS
 
   /* Get the window/desktop we want to screenshot*/
   if (region == FULLSCREEN)
