@@ -18,6 +18,7 @@
  */
 
 #include "screenshooter-capture.h"
+#include "screenshooter-utils.h"
 
 #define BACKGROUND_TRANSPARENCY 0.4
 
@@ -306,6 +307,7 @@ static GdkPixbuf
 
   gint scale;
   GdkRectangle rectangle;
+  GdkRectangle screen_geometry;
 
   /* Get the root window */
   TRACE ("Get the root window");
@@ -314,9 +316,9 @@ static GdkPixbuf
 
   if (border)
     {
-	  Window xwindow = GDK_WINDOW_XID (window);
+      Window xwindow = GDK_WINDOW_XID (window);
       window = gdk_x11_window_foreign_new_for_display (gdk_window_get_display (window),
-    		                                           find_wm_window (xwindow));
+                                                      find_wm_window (xwindow));
     }
 
   scale = gdk_window_get_scale_factor (window);
@@ -334,6 +336,8 @@ static GdkPixbuf
   width  = rectangle.width;
   height = rectangle.height;
 
+  screenshooter_get_screen_geometry (&screen_geometry);
+
   if (x_orig < 0)
     {
       width = width + x_orig;
@@ -346,11 +350,11 @@ static GdkPixbuf
       y_orig = 0;
     }
 
-  if (x_orig + width > gdk_screen_width ())
-    width = gdk_screen_width () - x_orig;
+  if (x_orig + width > screen_geometry.width)
+    width = screen_geometry.width - x_orig;
 
-  if (y_orig + height > gdk_screen_height ())
-    height = gdk_screen_height () - y_orig;
+  if (y_orig + height > screen_geometry.height)
+    height = screen_geometry.height - y_orig;
 
   /* Capture the screenshot from the root GdkWindow, to grab things such as
    * menus. */
@@ -421,11 +425,11 @@ static GdkPixbuf
                   rec_y = 0;
                 }
 
-              if (x_orig + rec_x + rec_width > gdk_screen_width () * scale)
-                rec_width = gdk_screen_width () * scale - x_orig - rec_x;
+              if (x_orig + rec_x + rec_width > screen_geometry.width * scale)
+                rec_width = screen_geometry.width * scale - x_orig - rec_x;
 
-              if (y_orig + rec_y + rec_height > gdk_screen_height () * scale)
-                rec_height = gdk_screen_height () * scale - y_orig - rec_y;
+              if (y_orig + rec_y + rec_height > screen_geometry.height * scale)
+                rec_height = screen_geometry.height * scale - y_orig - rec_y;
 
               for (y = rec_y; y < rec_y + rec_height; y++)
                 {
@@ -927,6 +931,7 @@ static GdkPixbuf
   GdkSeat   *seat;
   GdkCursor *xhair_cursor;
   GdkDisplay *display;
+  GdkRectangle screen_geometry;
 
   /* Initialize the rubber band data */
   rbdata.left_pressed = FALSE;
@@ -970,10 +975,12 @@ static GdkPixbuf
   display = gdk_display_get_default ();
   gtk_widget_realize (window);
   xhair_cursor = gdk_cursor_new_for_display (display, GDK_CROSSHAIR);
+
+  screenshooter_get_screen_geometry (&screen_geometry);
+
   gdk_window_set_override_redirect (gtk_widget_get_window (window), TRUE);
   gtk_widget_set_size_request (window,
-                               gdk_screen_get_width (gdk_screen_get_default ()),
-                               gdk_screen_get_height (gdk_screen_get_default ()));
+                               screen_geometry.width, screen_geometry.height);
   gdk_window_raise (gtk_widget_get_window (window));
   gtk_widget_show_now (window);
   gtk_widget_grab_focus (window);

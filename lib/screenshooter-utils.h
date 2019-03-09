@@ -55,5 +55,6 @@ void      screenshooter_open_help             (GtkWindow      *parent);
 gboolean  screenshooter_f1_key                (GtkWidget      *widget,
                                                GdkEventKey    *event,
                                                gpointer        user_data);
+void      screenshooter_get_screen_geometry   (GdkRectangle   *geometry);
 
 #endif

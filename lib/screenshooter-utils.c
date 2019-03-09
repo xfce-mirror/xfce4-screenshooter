@@ -346,3 +346,33 @@ screenshooter_f1_key (GtkWidget *widget, GdkEventKey *event, gpointer user_data)
 
   return FALSE;
 }
+
+
+
+/* Replacement for gdk_screen_width/gdk_screen_height */
+void
+screenshooter_get_screen_geometry (GdkRectangle *geometry)
+{
+  GdkDisplay *display = gdk_display_get_default ();
+  int num_monitors = gdk_display_get_n_monitors (display);
+
+  gint x, y, w, h;
+
+  x = y = G_MAXINT;
+  w = h = G_MININT;
+
+  for (int i = 0; i < num_monitors; i++)
+    {
+      GdkRectangle rect;
+      GdkMonitor *monitor = gdk_display_get_monitor (display, i);
+      gdk_monitor_get_geometry (monitor, &rect);
+
+      x = MIN (x, rect.x);
+      y = MIN (y, rect.y);
+      w = MAX (w, rect.x + rect.width);
+      h = MAX (h, rect.y + rect.height);
+    }
+
+  geometry->width = w - x;
+  geometry->height = h - y;
+}
