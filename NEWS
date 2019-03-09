@@ -1,10 +1,22 @@
+=== Version 1.9.4 ===
+  * Enhancements:
+    - Extended save function to also take files (bug #14156, thanks to Arthur Jansen)
+    - Show width and height of selection area (bug #12664, thanks to Simon)
+    - Improved imgur dialog (bug #14973, thanks to Arthur Jansen)
+    - Don't save region/delay/show_mouse if region was specified from CLI
+
+  * Bugs fixed:
+    - React to core X input events when XInput is not available (bug #15166)
+    - Fix crash and properly handle cursors on HiDPI (thanks to Viktor Odintsev)
+    - Delay in panel plugin does not work (bug #14604)
+
 === Version 1.9.3 ===
   * Enhancements:
     - Allow user to move selection rectangle (bug #14365)
     - Allow and remember 0sec delay for all regions (bug #13763)
 
   * Bugs fixed:
-    - Fix clipboard action handling (Bug #14513)
+    - Fix clipboard action handling (bug #14513)
 
 === Version 1.9.2 ===
   * Remove zimagez support (bug #14283)
