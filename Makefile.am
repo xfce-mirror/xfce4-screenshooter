@@ -41,11 +41,14 @@ lib_libscreenshooter_la_CFLAGS = \
 	-I$(top_builddir)/lib \
 	@EXO_CFLAGS@ \
 	@GTK_CFLAGS@ \
+	@GDK_CFLAGS@ \
+	@GDKX11_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
 	@LIBXML_CFLAGS@ \
 	@SOUP_CFLAGS@ \
+	@LIBX11_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
@@ -53,6 +56,8 @@ lib_libscreenshooter_la_LIBADD = \
 	-lm \
 	@EXO_LIBS@ \
 	@GTK_LIBS@ \
+	@GDK_LIBS@ \
+	@GDKX11_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@ \
 	@GLIB_LIBS@ \
@@ -60,6 +65,7 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXML_LIBS@ \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
+	@LIBX11_LDFLAGS@ \
 	@XFIXES_LIBS@
 
 lib_libscreenshooter_built_sources = \
@@ -94,21 +100,28 @@ src_xfce4_screenshooter_CFLAGS = \
 	-I$(top_builddir)/lib \
 	@EXO_CFLAGS@ \
 	@GTK_CFLAGS@ \
+	@GDK_CFLAGS@ \
+	@GDKX11_CFLAGS@ \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
 	@SOUP_CFLAGS@ \
 	@LIBXML_CFLAGS@ \
+	@LIBX11_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 src_xfce4_screenshooter_LDFLAGS = \
 	@EXO_LIBS@ \
 	@GTK_LIBS@ \
+	@GDK_LIBS@ \
+	@GDKX11_LIBS@ \
 	@GLIB_LIBS@ \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@ \
 	@LIBXML_LIBS@ \
+	@LIBX11_LIBS@ \
+	@LIBX11_LDFLAGS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@
 
@@ -150,6 +163,7 @@ panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	@LIBXFCE4UI_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
 	@LIBXML_CFLAGS@ \
+	@LIBX11_CFLAGS@ \
 	@SOUP_CFLAGS@
 
 panel_plugin_libscreenshooterplugin_la_LDFLAGS = \
@@ -165,6 +179,8 @@ panel_plugin_libscreenshooterplugin_la_LIBADD = \
 	@GTHREAD_LIBS@ \
 	@SOUP_LIBS@ \
 	@LIBXML_LIBS@ \
+	@LIBX11_LIBS@ \
+	@LIBX11_LDFLAGS@ \
 	@LIBXFCE4UI_LIBS@ \
 	lib/libscreenshooter.la
 
