@@ -36,24 +36,27 @@
 
 
 
-void      screenshooter_copy_to_clipboard     (GdkPixbuf      *screenshot);
-void      screenshooter_read_rc_file          (const gchar    *file,
-                                               ScreenshotData *sd);
-void      screenshooter_write_rc_file         (const gchar    *file,
-                                               ScreenshotData *sd);
-void      screenshooter_open_screenshot       (const gchar    *screenshot_path,
-                                               const gchar    *application,
-                                                     GAppInfo *app_info);
-gchar    *screenshooter_get_home_uri          (void);
-gchar    *screenshooter_get_xdg_image_dir_uri (void);
-gboolean  screenshooter_is_remote_uri         (const gchar    *uri);
-void      screenshooter_error                 (const gchar    *format,
-                                               ...);
-gchar    *screenshooter_get_datetime          (const gchar    *format);
-void      screenshooter_open_help             (GtkWindow      *parent);
-gboolean  screenshooter_f1_key                (GtkWidget      *widget,
-                                               GdkEventKey    *event,
-                                               gpointer        user_data);
-void      screenshooter_get_screen_geometry   (GdkRectangle   *geometry);
+void       screenshooter_copy_to_clipboard     (GdkPixbuf      *screenshot);
+void       screenshooter_read_rc_file          (const gchar    *file,
+                                                ScreenshotData *sd);
+void       screenshooter_write_rc_file         (const gchar    *file,
+                                                ScreenshotData *sd);
+void       screenshooter_open_screenshot       (const gchar    *screenshot_path,
+                                                const gchar    *application,
+                                                      GAppInfo *app_info);
+gchar     *screenshooter_get_home_uri          (void);
+gchar     *screenshooter_get_xdg_image_dir_uri (void);
+gboolean   screenshooter_is_remote_uri         (const gchar    *uri);
+void       screenshooter_error                 (const gchar    *format,
+                                                ...);
+gchar     *screenshooter_get_datetime          (const gchar    *format);
+void       screenshooter_open_help             (GtkWindow      *parent);
+gboolean   screenshooter_f1_key                (GtkWidget      *widget,
+                                                GdkEventKey    *event,
+                                                gpointer        user_data);
+void       screenshooter_get_screen_geometry   (GdkRectangle   *geometry);
+GdkWindow *screenshooter_get_active_window     (GdkScreen      *screen,
+                                                gboolean       *needs_unref,
+                                                gboolean       *border);
 
 #endif

@@ -20,11 +20,6 @@
 #include "screenshooter-capture.h"
 #include "screenshooter-utils.h"
 
-#include <X11/Xlib.h>
-#include <X11/Xatom.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkx.h>
-
 #define BACKGROUND_TRANSPARENCY 0.4
 
 enum {
@@ -67,11 +62,6 @@ typedef struct
 
 /* Prototypes */
 
-
-static Window           get_active_window_from_xlib         (void);
-static GdkWindow       *get_active_window                   (GdkScreen      *screen,
-                                                             gboolean       *needs_unref,
-                                                             gboolean       *border);
 static void             free_pixmap_data                    (guchar *pixels,
                                                              gpointer data);
 static GdkPixbuf       *get_cursor_pixbuf                   (GdkDisplay *display,
@@ -110,117 +100,6 @@ static GdkPixbuf       *get_rectangle_screenshot_composited (gint delay);
 
 
 /* Internals */
-
-static Window
-get_active_window_from_xlib (void)
-{
-  GdkDisplay *display;
-  Display *dsp;
-  Atom active_win, type;
-  int status, format;
-  unsigned long n_items, bytes_after;
-  unsigned char *prop;
-  Window window;
-
-  display = gdk_display_get_default ();
-  dsp = gdk_x11_display_get_xdisplay (display);
-
-  active_win = XInternAtom (dsp, "_NET_ACTIVE_WINDOW", True);
-  if (active_win == None)
-    return None;
-
-  gdk_x11_display_error_trap_push (display);
-
-  status = XGetWindowProperty (dsp, DefaultRootWindow (dsp),
-                               active_win, 0, G_MAXLONG, False,
-                               XA_WINDOW, &type, &format, &n_items,
-                               &bytes_after, &prop);
-  if (status != Success || type != XA_WINDOW)
-    {
-      if (prop)
-        XFree (prop);
-
-      gdk_x11_display_error_trap_pop_ignored (display);
-      return None;
-    }
-
-  if (gdk_x11_display_error_trap_pop (display) != Success)
-    {
-      if (prop)
-        XFree (prop);
-
-      return None;
-    }
-
-  window = *(Window *) prop;
-  XFree (prop);
-  return window;
-}
-
-
-
-static GdkWindow
-*get_active_window (GdkScreen *screen,
-                    gboolean  *needs_unref,
-                    gboolean  *border)
-{
-  GdkWindow *window, *window2;
-  Window xwindow;
-  GdkDisplay *display;
-
-  TRACE ("Get the active window");
-
-  display = gdk_display_get_default ();
-  xwindow = get_active_window_from_xlib ();
-  if (xwindow != None)
-    window = gdk_x11_window_foreign_new_for_display (display, xwindow);
-  else
-    window = NULL;
-
-  /* If there is no active window, we fallback to the whole screen. */
-  if (G_UNLIKELY (window == NULL))
-    {
-      TRACE ("No active window, fallback to the root window");
-
-      window = gdk_get_default_root_window ();
-      *needs_unref = FALSE;
-      *border = FALSE;
-    }
-  else if (G_UNLIKELY (gdk_window_is_destroyed (window)))
-    {
-      TRACE ("The active window is destroyed, fallback to the root window.");
-
-      g_object_unref (window);
-      window = gdk_get_default_root_window ();
-      *needs_unref = FALSE;
-      *border = FALSE;
-    }
-  else if (gdk_window_get_type_hint (window) == GDK_WINDOW_TYPE_HINT_DESKTOP)
-    {
-      /* If the active window is the desktop, grab the whole screen */
-      TRACE ("The active window is the desktop, fallback to the root window");
-
-      g_object_unref (window);
-
-      window = gdk_get_default_root_window ();
-      *needs_unref = FALSE;
-      *border = FALSE;
-    }
-  else
-    {
-      /* Else we find the toplevel window to grab the decorations. */
-      TRACE ("Active window is a normal window, grab the toplevel window");
-
-      window2 = gdk_window_get_toplevel (window);
-
-      g_object_unref (window);
-
-      window = window2;
-      *border = TRUE;
-    }
-
-  return window;
-}
 
 
 
@@ -1505,7 +1384,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
     {
       TRACE ("We grab the active window");
 
-      window = get_active_window (screen, &needs_unref, &border);
+      window = screenshooter_get_active_window (screen, &needs_unref, &border);
     }
 
   if (region == FULLSCREEN || region == ACTIVE_WINDOW)
