@@ -47,7 +47,6 @@ void      screenshooter_open_screenshot       (const gchar    *screenshot_path,
 gchar    *screenshooter_get_home_uri          (void);
 gchar    *screenshooter_get_xdg_image_dir_uri (void);
 gboolean  screenshooter_is_remote_uri         (const gchar    *uri);
-gchar    *rot13                               (gchar          *string);
 void      screenshooter_error                 (const gchar    *format,
                                                ...);
 gchar    *screenshooter_get_datetime          (const gchar    *format);

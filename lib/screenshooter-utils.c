@@ -258,21 +258,6 @@ gboolean screenshooter_is_remote_uri (const gchar *uri)
 
 
 
-gchar *rot13 (gchar *string)
-{
-  gchar *result = string;
-
-  for (; *string; string++)
-    if (*string >= 'a' && *string <= 'z')
-      *string = (*string - 'a' + 13) % 26 + 'a';
-    else if (*string >= 'A' && *string <= 'Z')
-      *string = (*string - 'A' + 13) % 26 + 'A';
-
-  return result;
-}
-
-
-
 /**
  * screenshooter_error:
  * @format: printf()-style format string
