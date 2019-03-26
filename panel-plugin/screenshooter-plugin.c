@@ -356,6 +356,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   PluginData *pd = g_new0 (PluginData, 1);
   ScreenshotData *sd = g_new0 (ScreenshotData, 1);
   sd->app_info = NULL;
+  sd->path_is_dir = TRUE;
 
   pd->sd = sd;
   pd->plugin = plugin;
