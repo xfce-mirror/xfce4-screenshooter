@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 06:31+0100\n"
-"PO-Revision-Date: 2019-01-13 02:19+0000\n"
+"POT-Creation-Date: 2019-04-07 00:31+0200\n"
+"PO-Revision-Date: 2019-04-07 18:01+0000\n"
 "Last-Translator: Igor <f2404@yandex.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -39,8 +39,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Снимок экрана
 
 #. Setup window
 #: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
-#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:64
-#: ../lib/screenshooter-utils.c:96 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
+#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
@@ -161,7 +161,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Предваритель�
 msgid "Save screenshot as..."
 msgstr "Сохранить снимок как..."
 
-#: ../lib/screenshooter-utils.c:209
+#: ../lib/screenshooter-utils.c:269
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
@@ -184,6 +184,89 @@ msgstr "Imgur"
 #: ../lib/screenshooter-imgur-dialog.c:133
 msgid "Your uploaded image"
 msgstr "Ваше загруженное изображение"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:1
+msgid "Size"
+msgstr "Размер"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:2
+msgid "Link"
+msgstr "Ссылка"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:3
+msgid "Tiny"
+msgstr "Маленький"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:4
+msgid "Medium"
+msgstr "Средний"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:5
+msgid "Full"
+msgstr "Полный"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:6
+msgid "Copy"
+msgstr "Копировать"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:7
+msgid "View in browser"
+msgstr "Посмотреть в браузере"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:8
+msgid "Image"
+msgstr "Изображение"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:9
+msgid "Syntax"
+msgstr "Синтаксис"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:10
+msgid "HTML"
+msgstr "HTML"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:11
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:12
+msgid "BBCODE"
+msgstr "BBCODE"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:13
+msgid "Code"
+msgstr "Код"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:14
+msgid "Type"
+msgstr "Тип"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:15
+msgid "Direct image"
+msgstr "Прямое изображение"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:16
+msgid "Link to full size"
+msgstr "Ссылка на полный размер"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:17
+msgid "Embed into code"
+msgstr "Вставить в код"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:18
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:19
+msgid ""
+"This link only shows up once. Make sure to save it if you think you might be"
+" deleting this image. We don't currently support linking images to Imgur "
+"accounts."
+msgstr "Эта ссылка отображается только однажды. Сохраните её, если думаете, что будете удалять изображение. В настоящее время связывание изображений с учётными записями Imgur не поддерживается."
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:20
+msgid "Deletion link"
+msgstr "Ссылка на удаление"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -267,7 +350,7 @@ msgid ""
 "given. It will be ignored.\n"
 msgstr "Параметр --%s используется только с параметрами --fullscreen, --window или --region. Он будет проигнорирован.\n"
 
-#: ../src/main.c:158
+#: ../src/main.c:159
 #, c-format
 msgid ""
 "%s: %s\n"
