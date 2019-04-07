@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-04-07 10:30+0000\n"
+"PO-Revision-Date: 2019-04-07 10:34+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -194,15 +194,15 @@ msgstr "Enllaç"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
-msgstr ""
+msgstr "Petit"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:4
 msgid "Medium"
-msgstr ""
+msgstr "Mitjà"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:5
 msgid "Full"
-msgstr ""
+msgstr "Complet"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:6
 msgid "Copy"
@@ -210,7 +210,7 @@ msgstr "Copia"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "Visualitza al navegador"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -218,7 +218,7 @@ msgstr "Imatge"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "Sintaxi"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -226,7 +226,7 @@ msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
@@ -246,7 +246,7 @@ msgstr "Imatge directa"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "Enllaç a la mida completa"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
@@ -261,7 +261,7 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "Aquest enllaç només apareix una vegada. Assegureu-vos de desar-lo si creieu que potser heu d'eliminar aquesta imatge. Actualment no és compatible enllaçar imatges amb comptes d'Imgur."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
