@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 06:31+0100\n"
-"PO-Revision-Date: 2019-01-10 10:43+0000\n"
+"POT-Creation-Date: 2019-04-07 00:31+0200\n"
+"PO-Revision-Date: 2019-04-07 09:10+0000\n"
 "Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/xfce-apps/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -37,8 +37,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Fotoja e ekranit po shpë
 
 #. Setup window
 #: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
-#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:64
-#: ../lib/screenshooter-utils.c:96 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
+#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
@@ -159,7 +159,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Paraparje</span>"
 msgid "Save screenshot as..."
 msgstr "Ruajeni foton e ekranit si…"
 
-#: ../lib/screenshooter-utils.c:209
+#: ../lib/screenshooter-utils.c:269
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
@@ -182,6 +182,89 @@ msgstr "Imgur"
 #: ../lib/screenshooter-imgur-dialog.c:133
 msgid "Your uploaded image"
 msgstr "Figura juaj e ngarkuar"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:1
+msgid "Size"
+msgstr "Madhësi"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:2
+msgid "Link"
+msgstr "Lidhje"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:3
+msgid "Tiny"
+msgstr "E vogël"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:4
+msgid "Medium"
+msgstr "E mesme"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:5
+msgid "Full"
+msgstr "E plotë"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:6
+msgid "Copy"
+msgstr "Kopjoje"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:7
+msgid "View in browser"
+msgstr "Shiheni në shfletues"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:8
+msgid "Image"
+msgstr "Figurë"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:9
+msgid "Syntax"
+msgstr "Sintaksë"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:10
+msgid "HTML"
+msgstr "HTML"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:11
+msgid "Markdown"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:12
+msgid "BBCODE"
+msgstr "BBCODE"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:13
+msgid "Code"
+msgstr "Kod"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:14
+msgid "Type"
+msgstr "Lloj"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:15
+msgid "Direct image"
+msgstr "Figurë e drejtpërdrejtë"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:16
+msgid "Link to full size"
+msgstr "Lidhje për te madhësia e plotë"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:17
+msgid "Embed into code"
+msgstr "Trupëzoje në kod"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:18
+msgid "Delete"
+msgstr "Fshije"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:19
+msgid ""
+"This link only shows up once. Make sure to save it if you think you might be"
+" deleting this image. We don't currently support linking images to Imgur "
+"accounts."
+msgstr "Kjo lidhje shfaqet vetëm një herë. Sigurohuni që ta ruani, nëse mendoni se mund t’ju duhet ta fshihni këtë figurë. Hëpërhë nuk mbulojmë lidhje figurash në llogari Imgur."
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:20
+msgid "Deletion link"
+msgstr "Fshirje lidhjeje"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -265,7 +348,7 @@ msgid ""
 "given. It will be ignored.\n"
 msgstr "Mundësia --%s përdoret vetëm kur jepet --fullscreen, --window ose --region. Do të shpërfillet.\n"
 
-#: ../src/main.c:158
+#: ../src/main.c:159
 #, c-format
 msgid ""
 "%s: %s\n"
