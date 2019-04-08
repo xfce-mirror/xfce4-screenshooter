@@ -7,15 +7,15 @@
 # Hunt Xu <huntxu@live.cn>, 2008-2009
 # wwj402 <wwj402@gmail.com>, 2018
 # 玉堂白鹤 <yjwork@qq.com>, 2014
-# xiaobo zhou <zhouxiaobo.500@gmail.com>, 2013,2015
+# Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2013,2015
 # 玉堂白鹤 <yjwork@qq.com>, 2015,2018-2019
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-10 06:31+0100\n"
-"PO-Revision-Date: 2019-01-11 02:15+0000\n"
+"POT-Creation-Date: 2019-04-07 00:31+0200\n"
+"PO-Revision-Date: 2019-04-08 06:38+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -41,8 +41,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">此截图会传送至：<
 
 #. Setup window
 #: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
-#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:64
-#: ../lib/screenshooter-utils.c:96 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
+#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
@@ -163,7 +163,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">预览</span>"
 msgid "Save screenshot as..."
 msgstr "截图另存为..."
 
-#: ../lib/screenshooter-utils.c:209
+#: ../lib/screenshooter-utils.c:269
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
@@ -186,6 +186,89 @@ msgstr "Imgur"
 #: ../lib/screenshooter-imgur-dialog.c:133
 msgid "Your uploaded image"
 msgstr "您上传的图片"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:1
+msgid "Size"
+msgstr "大小"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:2
+msgid "Link"
+msgstr "链接"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:3
+msgid "Tiny"
+msgstr "小"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:4
+msgid "Medium"
+msgstr "中"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:5
+msgid "Full"
+msgstr "完整"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:6
+msgid "Copy"
+msgstr "复制"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:7
+msgid "View in browser"
+msgstr "在浏览器中查看"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:8
+msgid "Image"
+msgstr "镜像"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:9
+msgid "Syntax"
+msgstr "语法"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:10
+msgid "HTML"
+msgstr "HTML"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:11
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:12
+msgid "BBCODE"
+msgstr "BBCODE"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:13
+msgid "Code"
+msgstr "代码"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:14
+msgid "Type"
+msgstr "类型"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:15
+msgid "Direct image"
+msgstr "直接图像"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:16
+msgid "Link to full size"
+msgstr "链接到完整大小"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:17
+msgid "Embed into code"
+msgstr "嵌入代码"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:18
+msgid "Delete"
+msgstr "删除"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:19
+msgid ""
+"This link only shows up once. Make sure to save it if you think you might be"
+" deleting this image. We don't currently support linking images to Imgur "
+"accounts."
+msgstr "此链接仅显示一次。 如果您认为可能正在删除此图像，请务必保存。 我们目前不支持将图片链接到Imgur 帐户。"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:20
+msgid "Deletion link"
+msgstr "删除链接"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -269,7 +352,7 @@ msgid ""
 "given. It will be ignored.\n"
 msgstr "--%s 选项只有在给定 --fullscreen、--window 或 --region 时才生效。会忽略此项。\n"
 
-#: ../src/main.c:158
+#: ../src/main.c:159
 #, c-format
 msgid ""
 "%s: %s\n"
