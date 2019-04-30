@@ -858,6 +858,29 @@ static GdkPixbuf
 
 
 
+static GdkGrabStatus
+try_grab (GdkSeat *seat, GdkWindow *window, GdkCursor *cursor)
+{
+  GdkGrabStatus status;
+  gint attempts = 0;
+
+  while (TRUE) {
+    status = gdk_seat_grab (seat, window, GDK_SEAT_CAPABILITY_ALL, FALSE,
+                            cursor, NULL, NULL, NULL);
+
+    if (++attempts > 5 || status == GDK_GRAB_SUCCESS)
+      break;
+
+    /* Wait 100ms before trying again, useful when invoked by global hotkey
+     * because xfsettings will grab the key for a moment */
+    g_usleep(100000);
+  }
+
+  return status;
+}
+
+
+
 static GdkPixbuf
 *get_rectangle_screenshot_composited (gint delay)
 {
@@ -923,17 +946,11 @@ static GdkPixbuf
   gtk_widget_grab_focus (window);
   gdk_display_flush (display);
 
-  /* Wait 100ms before grabbing devices, useful when invoked by global hotkey
-   * because xfsettings will grab the key for a moment */ 
-  g_usleep(100000);
-
   /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
   seat = gdk_display_get_default_seat (display);
 
-  res = gdk_seat_grab (seat, gtk_widget_get_window (window),
-                       GDK_SEAT_CAPABILITY_ALL, FALSE, xhair_cursor,
-                       NULL, NULL, NULL);
+  res = try_grab (seat, gtk_widget_get_window (window), xhair_cursor);
 
   if (res != GDK_GRAB_SUCCESS)
     {
@@ -1235,18 +1252,13 @@ static GdkPixbuf
   xhair_cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
                                              GDK_CROSSHAIR);
 
-  /* Wait 100ms before grabbing devices, useful when invoked by global hotkey
-   * because xfsettings will grab the key for a moment */ 
-  g_usleep(100000);
-
   gdk_window_show_unraised (root_window);
 
   /* Grab the mouse and the keyboard to prevent any interaction with other
    * applications */
   seat = gdk_display_get_default_seat (gdk_display_get_default ());
 
-  res = gdk_seat_grab (seat, root_window, GDK_SEAT_CAPABILITY_ALL, FALSE,
-                       xhair_cursor, NULL, NULL, NULL);
+  res = try_grab (seat, root_window, xhair_cursor);
 
   if (res != GDK_GRAB_SUCCESS)
     {
