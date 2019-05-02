@@ -195,7 +195,7 @@ panel_desktop_DATA = $(panel_desktop_in_files:.desktop.in=.desktop)
 
 # appdata file for the application
 @INTLTOOL_XML_RULE@
-appdatadir = $(datadir)/appdata
+appdatadir = $(datadir)/metainfo
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 appdata_in_files = src/xfce4-screenshooter.appdata.xml.in
 
