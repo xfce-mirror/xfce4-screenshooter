@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2014 Eric Koegel <eric.koegel@gmail.com> and Simon Steinbeiss <simon@xfce.org> -->
-<component type="desktop">
-  <id>xfce4-screenshooter.desktop</id>
+<!-- Copyright 2014 Eric Koegel <eric.koegel@gmail.com> -->
+<!-- Copyright 2014 Simon Steinbeiss <simon@xfce.org> -->
+<!-- Copyright 2019 Andre Miranda <andreldm@xfce.org> -->
+
+<component type="desktop-application">
+  <id>org.xfce.screenshooter</id>
   <metadata_license>CC-BY-3.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>xfce4-screenshooter</name>
@@ -18,18 +21,20 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>http://docs.xfce.org/_media/apps/screenshooter/xfce4-screenshooter-dialog1.png</image>
+      <image>https://docs.xfce.org/_media/apps/screenshooter/xfce4-screenshooter-dialog1.png</image>
     </screenshot>
   </screenshots>
 
-  <url type="homepage">http://goodies.xfce.org/projects/applications/xfce4-screenshooter</url>
+  <url type="homepage">https://goodies.xfce.org/projects/applications/xfce4-screenshooter</url>
   <url type="bugtracker">https://bugzilla.xfce.org/describecomponents.cgi?product=Xfce4-screenshooter</url>
-  <url type="help">http://docs.xfce.org/apps/screenshooter/start</url>
-
-  <updatecontact>xfce4-dev@xfce.org</updatecontact>
+  <url type="help">https://docs.xfce.org/apps/screenshooter/start</url>
 
   <provides>
     <binary>xfce4-screenshooter</binary>
   </provides>
+
+  <project_group>Xfce</project_group>
+  <update_contact>xfce4-dev@xfce.org</update_contact>
+  <translation type="gettext">xfce4-screenshooter</translation>
 
 </component>
