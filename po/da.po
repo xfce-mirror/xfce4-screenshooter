@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-04-16 13:58+0000\n"
+"PO-Revision-Date: 2019-05-04 15:56+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Præferencer"
 
 #: ../lib/screenshooter-dialogs.c:724
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Område til kopiering</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Område som skal kopieres</span>"
 
 #: ../lib/screenshooter-dialogs.c:751
 msgid "Entire screen"
@@ -99,7 +99,7 @@ msgstr "Vis musemarkøren på skærmbilledet"
 
 #: ../lib/screenshooter-dialogs.c:817
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse inden billede tages</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse</span>"
 
 #: ../lib/screenshooter-dialogs.c:845
 msgid "Delay in seconds before the screenshot is taken"
