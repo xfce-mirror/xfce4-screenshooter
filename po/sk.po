@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-19 00:32+0200\n"
-"PO-Revision-Date: 2018-09-14 00:15+0000\n"
-"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
+"POT-Creation-Date: 2019-04-07 00:31+0200\n"
+"PO-Revision-Date: 2019-04-06 22:31+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
 "Language-Team: Slovak (http://www.transifex.com/xfce/xfce-apps/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,64 +21,65 @@ msgstr ""
 "Language: sk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../lib/screenshooter-dialogs.c:458
+#: ../lib/screenshooter-dialogs.c:455
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb z %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:544
+#: ../lib/screenshooter-dialogs.c:541
 msgid "Transfer"
 msgstr "Prenos"
 
-#: ../lib/screenshooter-dialogs.c:565
+#: ../lib/screenshooter-dialogs.c:562
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímka obrazovky sa prenáša do:</span>"
 
-#: ../lib/screenshooter-dialogs.c:688 ../lib/screenshooter-dialogs.c:704
-#: ../lib/screenshooter-dialogs.c:927 ../lib/screenshooter-utils.c:64
-#: ../lib/screenshooter-utils.c:96
+#. Setup window
+#: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
+#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Snímka obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:672
 msgid "Take a screenshot"
 msgstr "Vytvoriť snímku obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:714
+#: ../lib/screenshooter-dialogs.c:687
 msgid "Preferences"
 msgstr "Predvoľby"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:724
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímaná oblasť</span>"
 
-#: ../lib/screenshooter-dialogs.c:778
+#: ../lib/screenshooter-dialogs.c:751
 msgid "Entire screen"
 msgstr "Celá obrazovka"
 
-#: ../lib/screenshooter-dialogs.c:785 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:758 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Vytvorí snímku celej obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:793
+#: ../lib/screenshooter-dialogs.c:766
 msgid "Active window"
 msgstr "Aktívne okno"
 
-#: ../lib/screenshooter-dialogs.c:800 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:773 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Vytvorí snímku aktívneho okna"
 
-#: ../lib/screenshooter-dialogs.c:808
+#: ../lib/screenshooter-dialogs.c:781
 msgid "Select a region"
 msgstr "Vybrať oblasť"
 
-#: ../lib/screenshooter-dialogs.c:813 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:786 ../src/main.c:74
 #: ../panel-plugin/screenshooter-plugin.c:340
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -86,187 +87,235 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Vytvorí snímku vybranej oblasti tak, že kliknete myšou v počiatočnom bode, bez uvoľnenia tlačidla presuniete kurzor myši do protiľahlého bodu vybranej oblasti a potom tlačidlo myši pustíte."
 
-#: ../lib/screenshooter-dialogs.c:823
+#: ../lib/screenshooter-dialogs.c:796
 msgid "Capture the mouse pointer"
 msgstr "Zachytiť kurzor myši"
 
-#: ../lib/screenshooter-dialogs.c:828
+#: ../lib/screenshooter-dialogs.c:801
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Zobrazí kurzor myši na snímke"
 
-#: ../lib/screenshooter-dialogs.c:844
+#: ../lib/screenshooter-dialogs.c:817
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Oneskorenie pred vytvorením snímky</span>"
 
-#: ../lib/screenshooter-dialogs.c:873
+#: ../lib/screenshooter-dialogs.c:845
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Oneskorenie pred vytvorením snímky v sekundách"
 
-#: ../lib/screenshooter-dialogs.c:876
+#: ../lib/screenshooter-dialogs.c:848
 msgid "seconds"
 msgstr "sekúnd"
 
-#: ../lib/screenshooter-dialogs.c:938
+#: ../lib/screenshooter-dialogs.c:908
 msgid "Action"
 msgstr "Akcia"
 
-#: ../lib/screenshooter-dialogs.c:972
+#: ../lib/screenshooter-dialogs.c:942
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Akcia</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:997
+#: ../lib/screenshooter-dialogs.c:967
 msgid "Save"
 msgstr "Uložiť"
 
-#: ../lib/screenshooter-dialogs.c:1002
+#: ../lib/screenshooter-dialogs.c:972
 msgid "Save the screenshot to a PNG file"
 msgstr "Uloží snímku do súboru PNG"
 
-#: ../lib/screenshooter-dialogs.c:1011
+#: ../lib/screenshooter-dialogs.c:981
 msgid "Copy to the clipboard"
 msgstr "Kopírovať do schránky"
 
-#: ../lib/screenshooter-dialogs.c:1013
+#: ../lib/screenshooter-dialogs.c:983
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Skopíruje snímku do schránky, aby mohla byť neskôr skopírovaná inam"
 
-#: ../lib/screenshooter-dialogs.c:1025
+#: ../lib/screenshooter-dialogs.c:995
 msgid "Open with:"
 msgstr "Otvoriť v:"
 
-#: ../lib/screenshooter-dialogs.c:1031
+#: ../lib/screenshooter-dialogs.c:1001
 msgid "Open the screenshot with the chosen application"
 msgstr "Otvorí snímku obrazovky vo vybranom programe"
 
-#: ../lib/screenshooter-dialogs.c:1050 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1020 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Aplikácia pre otváranie snímok obrazovky"
 
-#: ../lib/screenshooter-dialogs.c:1060
+#: ../lib/screenshooter-dialogs.c:1030
 msgid "Host on Imgur"
 msgstr "Uložiť na Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1064 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Uložiť snímky obrazovky na Imgur, bezplatnej online služby na hosťovanie obrázkov"
 
-#: ../lib/screenshooter-dialogs.c:1078
+#: ../lib/screenshooter-dialogs.c:1048
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Náhľad</span>"
 
-#: ../lib/screenshooter-dialogs.c:1140
+#: ../lib/screenshooter-dialogs.c:1110
 msgid "Save screenshot as..."
 msgstr "Uložiť snímku obrazovky ako..."
 
-#: ../lib/screenshooter-utils.c:199
+#: ../lib/screenshooter-utils.c:269
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Aplikáciu nemožno spustiť.</b>\n%s"
 
-#: ../lib/screenshooter-imgur.c:105
+#: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
 msgstr "Nahrať snímku..."
 
-#: ../lib/screenshooter-imgur.c:115
+#: ../lib/screenshooter-imgur.c:116
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "Vyskytla sa chyba pri prenose údajov do služby imgur."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:173
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-job-callbacks.c:72
+#: ../lib/screenshooter-imgur-dialog.c:133
+msgid "Your uploaded image"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:1
+msgid "Size"
+msgstr "Veľkosť"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:2
+msgid "Link"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:3
+msgid "Tiny"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:4
+msgid "Medium"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:5
+msgid "Full"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:6
+msgid "Copy"
+msgstr "Kopírovať"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:7
+msgid "View in browser"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:8
+msgid "Image"
+msgstr "Obraz"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:9
+msgid "Syntax"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:10
+msgid "HTML"
+msgstr "HTML"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:11
+msgid "Markdown"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:12
+msgid "BBCODE"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:13
+msgid "Code"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:14
+msgid "Type"
+msgstr "Typ"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:15
+msgid "Direct image"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:16
+msgid "Link to full size"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:17
+msgid "Embed into code"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:18
+msgid "Delete"
+msgstr "Odstrániť"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:19
+msgid ""
+"This link only shows up once. Make sure to save it if you think you might be"
+" deleting this image. We don't currently support linking images to Imgur "
+"accounts."
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:20
+msgid "Deletion link"
+msgstr ""
+
+#: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Stav</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:168
+#: ../lib/screenshooter-job-callbacks.c:169
 msgid "Details about the screenshot"
 msgstr ""
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:214
+#: ../lib/screenshooter-job-callbacks.c:215
 msgid "User:"
 msgstr "Používateľ:"
 
-#: ../lib/screenshooter-job-callbacks.c:222
+#: ../lib/screenshooter-job-callbacks.c:223
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr ""
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:228
+#: ../lib/screenshooter-job-callbacks.c:229
 msgid "Password:"
 msgstr "Heslo:"
 
-#: ../lib/screenshooter-job-callbacks.c:235
+#: ../lib/screenshooter-job-callbacks.c:236
 msgid "The password for the user above"
 msgstr "Heslo vyššie uvedeného používateľa"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:241
+#: ../lib/screenshooter-job-callbacks.c:242
 msgid "Title:"
 msgstr "Názov:"
 
-#: ../lib/screenshooter-job-callbacks.c:249
+#: ../lib/screenshooter-job-callbacks.c:250
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr ""
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:255
+#: ../lib/screenshooter-job-callbacks.c:256
 msgid "Comment:"
 msgstr "Komentár:"
 
-#: ../lib/screenshooter-job-callbacks.c:263
+#: ../lib/screenshooter-job-callbacks.c:264
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr ""
-
-#: ../lib/screenshooter-job-callbacks.c:377
-msgid "My screenshot on Imgur"
-msgstr "Moje snímky na Imgur"
-
-#: ../lib/screenshooter-job-callbacks.c:385
-#, c-format
-msgid "<a href=\"%s\">Full size image</a>"
-msgstr "<a href=\"%s\">Obrázok s plnou veľkosťou</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:387
-#, c-format
-msgid "<a href=\"%s\">Large thumbnail</a>"
-msgstr "<a href=\"%s\">Veľká miniatúra</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:389
-#, c-format
-msgid "<a href=\"%s\">Small thumbnail</a>"
-msgstr "<a href=\"%s\">Malá miniatúra</a>"
-
-#: ../lib/screenshooter-job-callbacks.c:429
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Links</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Odkazy</span>"
-
-#: ../lib/screenshooter-job-callbacks.c:477
-msgid ""
-"<span weight=\"bold\" stretch=\"semiexpanded\">Code for a thumbnail pointing"
-" to the full size image</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kód na odkazovanie miniatúry na obrázok plnej veľkosti</span>"
-
-#. HTML title
-#: ../lib/screenshooter-job-callbacks.c:499
-msgid "HTML"
-msgstr "HTML"
-
-#. BB title
-#: ../lib/screenshooter-job-callbacks.c:521
-msgid "BBCode for forums"
-msgstr "BBCode do fóra"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
@@ -281,8 +330,8 @@ msgid "Display the mouse on the screenshot"
 msgstr "Zobrazí myš na snímke obrazovky"
 
 #: ../src/main.c:81
-msgid "Directory where the screenshot will be saved"
-msgstr "Adresár pre ukladanie snímok obrazovky"
+msgid "File path or directory where the screenshot will be saved"
+msgstr ""
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -300,17 +349,12 @@ msgid ""
 "given. It will be ignored.\n"
 msgstr "Voľba --%s sa používa iba pri súčasnom použití jednej z volieb --fullscreen, --window alebo --region. Voľba bude ignorovaná.\n"
 
-#: ../src/main.c:158
+#: ../src/main.c:159
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
 msgstr "%s: %s\nÚplný zoznam dostupných volieb získate príkazom %s --help\n"
-
-#: ../src/main.c:308
-#, c-format
-msgid "%s is not a valid directory, the default directory will be used."
-msgstr "%s nie je platným adresárom, bude použitý východzí adresár."
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
