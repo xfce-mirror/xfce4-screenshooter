@@ -42,7 +42,6 @@ typedef struct
   gint x_root;
   gint y_root;
   cairo_rectangle_int_t rectangle;
-  cairo_rectangle_int_t rectangle_root;
   GtkWidget *size_window;
   GtkWidget *size_label;
 } RubberBandData;
@@ -699,14 +698,13 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 
   if (rbdata->left_pressed)
     {
-      cairo_rectangle_int_t *new_rect, *new_rect_root;
+      cairo_rectangle_int_t *new_rect;
       cairo_rectangle_int_t old_rect, intersect;
       cairo_region_t *region;
 
       TRACE ("Mouse is moving with left button pressed");
 
       new_rect = &rbdata->rectangle;
-      new_rect_root = &rbdata->rectangle_root;
 
       if (!rbdata->rubber_banding)
         {
@@ -734,12 +732,12 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           coords = g_strdup_printf ("%d x %d", rect_width, rect_height);
 
           size_window_get_offset (rbdata->size_window, strlen (coords),
-                                  event->x_root, event->y_root,
+                                  event->x, event->y,
                                   &x_offset, &y_offset);
 
           gtk_window_move (GTK_WINDOW (rbdata->size_window),
-                           event->x_root + x_offset,
-                           event->y_root + y_offset);
+                           event->x + x_offset,
+                           event->y + y_offset);
 
           gtk_label_set_text (GTK_LABEL (rbdata->size_label), coords);
           g_free (coords);
@@ -757,26 +755,14 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 
           /* Do not resize, instead move the rubber banding rectangle around */
           if (rbdata->anchor & ANCHOR_LEFT)
-            {
-              rbdata->x = (new_rect->x = event->x) + new_rect->width;
-              rbdata->x_root = (new_rect_root->x = event->x_root) + new_rect->width;
-            }
+            rbdata->x = (new_rect->x = event->x) + new_rect->width;
           else
-            {
-              rbdata->x = new_rect->x = event->x - new_rect->width;
-              rbdata->x_root = new_rect_root->x = event->x_root - new_rect->width;
-            }
+            rbdata->x = new_rect->x = event->x - new_rect->width;
 
           if (rbdata->anchor & ANCHOR_TOP)
-            {
-              rbdata->y = (new_rect->y = event->y) + new_rect->height;
-              rbdata->y_root = (new_rect_root->y = event->y_root) + new_rect->height;
-            }
+            rbdata->y = (new_rect->y = event->y) + new_rect->height;
           else
-            {
-              rbdata->y = new_rect->y = event->y - new_rect->height;
-              rbdata->x_root = new_rect_root->y = event->y_root - new_rect->height;
-            }
+            rbdata->y = new_rect->y = event->y - new_rect->height;
         }
       else
         {
@@ -785,11 +771,6 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           new_rect->y = MIN (rbdata->y, event->y);
           new_rect->width = ABS (rbdata->x - event->x) + 1;
           new_rect->height = ABS (rbdata->y - event->y) + 1;
-
-          new_rect_root->x = MIN (rbdata->x_root, event->x_root);
-          new_rect_root->y = MIN (rbdata->y_root, event->y_root);
-          new_rect_root->width = ABS (rbdata->x_root - event->x_root) + 1;
-          new_rect_root->height = ABS (rbdata->y_root - event->y_root) + 1;
         }
 
       region = cairo_region_create_rectangle (&old_rect);
@@ -972,8 +953,8 @@ static GdkPixbuf
     goto cleanup;
 
   /* Grab the screenshot on the main window */
-  screenshot = capture_rectangle_screenshot (rbdata.rectangle_root.x,
-                                             rbdata.rectangle_root.y,
+  screenshot = capture_rectangle_screenshot (rbdata.rectangle.x,
+                                             rbdata.rectangle.y,
                                              rbdata.rectangle.width,
                                              rbdata.rectangle.height,
                                              delay);
