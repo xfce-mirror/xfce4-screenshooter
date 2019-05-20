@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-17 11:44+0000\n"
+"PO-Revision-Date: 2019-05-20 13:01+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Præferencer"
 
 #: ../lib/screenshooter-dialogs.c:724
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Område som skal kopieres</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Område som skal indfanges</span>"
 
 #: ../lib/screenshooter-dialogs.c:751
 msgid "Entire screen"
@@ -79,7 +79,7 @@ msgstr "Tag et skærmbillede af det aktive vindue"
 
 #: ../lib/screenshooter-dialogs.c:781
 msgid "Select a region"
-msgstr "Markér et område"
+msgstr "Vælg et område"
 
 #: ../lib/screenshooter-dialogs.c:786 ../src/main.c:74
 #: ../panel-plugin/screenshooter-plugin.c:340
@@ -87,11 +87,11 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Markér et område til kopiering ved at klikke et startpunkt på skærmen uden at slippe museknappen, og trække musen til slutpunkt af området, og derefter slippe museknappen."
+msgstr "Vælg et område som skal indfanges ved at klikke et startpunkt på skærmen uden at slippe museknappen, og trække musen til slutpunkt af området, og derefter slippe museknappen."
 
 #: ../lib/screenshooter-dialogs.c:796
 msgid "Capture the mouse pointer"
-msgstr "Fang musemarkøren"
+msgstr "Indfang musemarkøren"
 
 #: ../lib/screenshooter-dialogs.c:801
 msgid "Display the mouse pointer on the screenshot"
@@ -371,4 +371,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr "Lader dig tage et billede af hele skærmen, det aktive vindue eller et udvalgt område. Du kan indstille forsinkelsen før billedet tages samt hvad der gøres med billedet når det er taget: gem som PNG-fil, kopier det til udklipsholderen, åbn det med et andet program eller del det på f.eks. imgur, en gratis billeddelingstjeneste."
+msgstr "Lader dig indfange hele skærmen, det aktive vindue eller et udvalgt område. Du kan indstille forsinkelsen før billedet tages samt hvad der gøres med billedet når det er taget: gem som PNG-fil, kopier det til udklipsholderen, åbn det med et andet program eller del det på f.eks. imgur, en gratis billeddelingstjeneste."
