@@ -129,7 +129,8 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
                                                       NULL,
                                                       GTK_DIALOG_DESTROY_WITH_PARENT,
                                                       "gtk-close",
-                                                      GTK_RESPONSE_CLOSE);
+                                                      GTK_RESPONSE_CLOSE,
+                                                      NULL);
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (self->window), _("Your uploaded image"));
   gtk_window_set_icon_name (GTK_WINDOW (self->window), "applets-screenshooter");
   gtk_window_set_default_size (GTK_WINDOW (self->window), 500, 330);
