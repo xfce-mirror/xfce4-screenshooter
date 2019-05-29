@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# John Humphrys <john.humphrys@pm.me>, 2019
 # John Humphrys <john.humphrys@pm.me>, 2018
 # Michael Findlay <translate@cobber-linux.org>, 2013-2015
 # Michael Findlay <translate@cobber-linux.org>, 2015
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-04-06 22:31+0000\n"
-"Last-Translator: Michael Findlay <translate@cobber-linux.org>\n"
+"PO-Revision-Date: 2019-05-29 10:41+0000\n"
+"Last-Translator: John Humphrys <john.humphrys@pm.me>\n"
 "Language-Team: English (Australia) (http://www.transifex.com/xfce/xfce-apps/language/en_AU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -181,7 +182,7 @@ msgstr "Imgur"
 
 #: ../lib/screenshooter-imgur-dialog.c:133
 msgid "Your uploaded image"
-msgstr ""
+msgstr "Your uploaded image"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -189,19 +190,19 @@ msgstr "Size"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:2
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
-msgstr ""
+msgstr "Tiny"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:4
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:5
 msgid "Full"
-msgstr ""
+msgstr "Full"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:6
 msgid "Copy"
@@ -209,7 +210,7 @@ msgstr "Copy"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "View in browser"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -217,7 +218,7 @@ msgstr "Image"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "Syntax"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -225,15 +226,15 @@ msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
-msgstr ""
+msgstr "BBCODE"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:13
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:14
 msgid "Type"
@@ -241,15 +242,15 @@ msgstr "Type"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr ""
+msgstr "Direct image"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "Link to full size"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
-msgstr ""
+msgstr "Embed into code"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
@@ -260,11 +261,11 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "This link only shows up once. Make sure to save it if you think you might be deleting this image. We don't currently support linking images to Imgur accounts."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
-msgstr ""
+msgstr "Deletion link"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -330,7 +331,7 @@ msgstr "Display the mouse on the screenshot"
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
-msgstr ""
+msgstr "File path or directory where the screenshot will be saved"
 
 #: ../src/main.c:91
 msgid "Version information"
