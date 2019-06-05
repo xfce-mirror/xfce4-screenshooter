@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-20 13:01+0000\n"
+"PO-Revision-Date: 2019-06-05 14:29+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -152,7 +152,7 @@ msgstr "Upload til Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Placer skærmbilledet hos Imgur, en gratis onlinetjeneste til billeder"
+msgstr "Placer skærmbilledet hos Imgur, en gratis billeddelingstjeneste"
 
 #: ../lib/screenshooter-dialogs.c:1048
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -306,7 +306,7 @@ msgstr "Titel:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "Titlen på skærmbilledet, der bruges når skærmbilledet vises på billedhosting-tjenesten"
+msgstr "Titlen på skærmbilledet, der bruges når skærmbilledet vises på billeddelingstjenesten"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:256
@@ -317,7 +317,7 @@ msgstr "Kommentar:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "En kommentar på skærmbilledet, der bruges når skærmbilledet vises på billedhosting-tjenesten"
+msgstr "En kommentar på skærmbilledet, der bruges når skærmbilledet vises på billeddelingstjenesten"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
