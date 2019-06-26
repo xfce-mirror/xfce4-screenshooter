@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Apps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-07 00:31+0200\n"
+"PO-Revision-Date: 2019-06-26 09:39+0000\n"
+"Last-Translator: Ольга Смирнова\n"
+"Language-Team: Interlingue (http://www.transifex.com/xfce/xfce-apps/language/ie/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ie\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../lib/screenshooter-dialogs.c:455
+#, c-format
+msgid "%.2fKb of %.2fKb"
+msgstr "%.2fKb ex %.2fKb"
+
+#: ../lib/screenshooter-dialogs.c:541
+msgid "Transfer"
+msgstr "Transferter"
+
+#: ../lib/screenshooter-dialogs.c:562
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
+"transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Li captura esset transfertet a:</span>"
+
+#. Setup window
+#: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
+#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.h:1
+msgid "Screenshot"
+msgstr "Capter li ecran"
+
+#: ../lib/screenshooter-dialogs.c:672
+msgid "Take a screenshot"
+msgstr "Capter li ecran"
+
+#: ../lib/screenshooter-dialogs.c:687
+msgid "Preferences"
+msgstr "Preferenties"
+
+#: ../lib/screenshooter-dialogs.c:724
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Region por capter</span>"
+
+#: ../lib/screenshooter-dialogs.c:751
+msgid "Entire screen"
+msgstr "Li tot ecran"
+
+#: ../lib/screenshooter-dialogs.c:758 ../src/main.c:59
+#: ../panel-plugin/screenshooter-plugin.c:330
+msgid "Take a screenshot of the entire screen"
+msgstr "Capter li tot ecran"
+
+#: ../lib/screenshooter-dialogs.c:766
+msgid "Active window"
+msgstr "Activ fenestre"
+
+#: ../lib/screenshooter-dialogs.c:773 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:335
+msgid "Take a screenshot of the active window"
+msgstr "Capturar li actual fenestre"
+
+#: ../lib/screenshooter-dialogs.c:781
+msgid "Select a region"
+msgstr "Selecte un region"
+
+#: ../lib/screenshooter-dialogs.c:786 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:340
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:796
+msgid "Capture the mouse pointer"
+msgstr "Capter li apuntator de mus"
+
+#: ../lib/screenshooter-dialogs.c:801
+msgid "Display the mouse pointer on the screenshot"
+msgstr "Monstrar li apuntator in li captura"
+
+#: ../lib/screenshooter-dialogs.c:817
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Retarde ante captura</span>"
+
+#: ../lib/screenshooter-dialogs.c:845
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "Retarde in secondes ante que li ecran es capturat"
+
+#: ../lib/screenshooter-dialogs.c:848
+msgid "seconds"
+msgstr "secondes"
+
+#: ../lib/screenshooter-dialogs.c:908
+msgid "Action"
+msgstr "Action"
+
+#: ../lib/screenshooter-dialogs.c:942
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+
+#. Save option radio button
+#: ../lib/screenshooter-dialogs.c:967
+msgid "Save"
+msgstr "Gardar"
+
+#: ../lib/screenshooter-dialogs.c:972
+msgid "Save the screenshot to a PNG file"
+msgstr "Gardar li captura in un file PNG"
+
+#: ../lib/screenshooter-dialogs.c:981
+msgid "Copy to the clipboard"
+msgstr "Copiar al Paperiere"
+
+#: ../lib/screenshooter-dialogs.c:983
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:995
+msgid "Open with:"
+msgstr "Aperter per:"
+
+#: ../lib/screenshooter-dialogs.c:1001
+msgid "Open the screenshot with the chosen application"
+msgstr "Aperter li captura per li selectet application"
+
+#: ../lib/screenshooter-dialogs.c:1020 ../src/main.c:69
+msgid "Application to open the screenshot"
+msgstr "Application per aperter li captura"
+
+#: ../lib/screenshooter-dialogs.c:1030
+msgid "Host on Imgur"
+msgstr "Metter in Imgur"
+
+#: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1048
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Previder</span>"
+
+#: ../lib/screenshooter-dialogs.c:1110
+msgid "Save screenshot as..."
+msgstr "Gardar li captura quam..."
+
+#: ../lib/screenshooter-utils.c:269
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>Ne successat lansat li application.</b>\n%s"
+
+#: ../lib/screenshooter-imgur.c:106
+msgid "Upload the screenshot..."
+msgstr "Cargar li captura..."
+
+#: ../lib/screenshooter-imgur.c:116
+#, c-format
+msgid "An error occurred while transferring the data to imgur."
+msgstr "Un errore evenit transfertente li data a imgur."
+
+#: ../lib/screenshooter-imgur.c:173
+msgid "Imgur"
+msgstr "Imgur"
+
+#: ../lib/screenshooter-imgur-dialog.c:133
+msgid "Your uploaded image"
+msgstr "Vor image cargat"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:1
+msgid "Size"
+msgstr "Dimension"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:2
+msgid "Link"
+msgstr "Ligament"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:3
+msgid "Tiny"
+msgstr "Micrissim"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:4
+msgid "Medium"
+msgstr "Medial"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:5
+msgid "Full"
+msgstr "Complet"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:6
+msgid "Copy"
+msgstr "Copiar"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:7
+msgid "View in browser"
+msgstr "Vider in un navigator"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:8
+msgid "Image"
+msgstr "Image"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:9
+msgid "Syntax"
+msgstr "Sintaxe"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:10
+msgid "HTML"
+msgstr "HTML"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:11
+msgid "Markdown"
+msgstr "Markdown"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:12
+msgid "BBCODE"
+msgstr "BBCODE"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:13
+msgid "Code"
+msgstr "Code"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:14
+msgid "Type"
+msgstr "Tip"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:15
+msgid "Direct image"
+msgstr "Direct image"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:16
+msgid "Link to full size"
+msgstr "Ligament al plen dimension"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:17
+msgid "Embed into code"
+msgstr ""
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:18
+msgid "Delete"
+msgstr "Deleter"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:19
+msgid ""
+"This link only shows up once. Make sure to save it if you think you might be"
+" deleting this image. We don't currently support linking images to Imgur "
+"accounts."
+msgstr "Li ligament va aparir solmen un vez. Assecura que vu garda por remover ti-ci image in li futur. Li acuplation de images con contos Imgur ne es actualmen supportat."
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:20
+msgid "Deletion link"
+msgstr "Ligament por deletion"
+
+#: ../lib/screenshooter-job-callbacks.c:73
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Statu</span>"
+
+#: ../lib/screenshooter-job-callbacks.c:169
+msgid "Details about the screenshot"
+msgstr "Detallies pri li captura"
+
+#. Create the user label
+#: ../lib/screenshooter-job-callbacks.c:215
+msgid "User:"
+msgstr "Usator:"
+
+#: ../lib/screenshooter-job-callbacks.c:223
+msgid ""
+"Your user name, if you do not have one yet please create one on the Web page"
+" linked above"
+msgstr ""
+
+#. Create the password label
+#: ../lib/screenshooter-job-callbacks.c:229
+msgid "Password:"
+msgstr "Contrasigne:"
+
+#: ../lib/screenshooter-job-callbacks.c:236
+msgid "The password for the user above"
+msgstr "Li contrasigne del usator"
+
+#. Create the title label
+#: ../lib/screenshooter-job-callbacks.c:242
+msgid "Title:"
+msgstr "Titul:"
+
+#: ../lib/screenshooter-job-callbacks.c:250
+msgid ""
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on the image hosting service"
+msgstr "Li titul de captura que va esser usat per li servicie de publication de images"
+
+#. Create the comment label
+#: ../lib/screenshooter-job-callbacks.c:256
+msgid "Comment:"
+msgstr "Comenta:"
+
+#: ../lib/screenshooter-job-callbacks.c:264
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on the image hosting service"
+msgstr "Un commente de captura que va esser usat per li servicie de publication de images"
+
+#: ../src/main.c:49
+msgid "Copy the screenshot to the clipboard"
+msgstr "Copiar li captura al Paperiere"
+
+#: ../src/main.c:54
+msgid "Delay in seconds before taking the screenshot"
+msgstr ""
+
+#: ../src/main.c:64
+msgid "Display the mouse on the screenshot"
+msgstr "Monstrar li apuntator in li captura"
+
+#: ../src/main.c:81
+msgid "File path or directory where the screenshot will be saved"
+msgstr ""
+
+#: ../src/main.c:91
+msgid "Version information"
+msgstr "Information del version"
+
+#: ../src/main.c:140
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr ""
+
+#: ../src/main.c:142
+#, c-format
+msgid ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
+msgstr ""
+
+#: ../src/main.c:159
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr "%s: %s\nUsa %s --help por vider li complet liste de disponibil optiones.\n"
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.h:2
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr ""
+
+#: ../src/xfce4-screenshooter.appdata.xml.in.h:1
+msgid ""
+"Allows you to capture the entire screen, the active window or a selected "
+"region. You can set the delay that elapses before the screenshot is taken "
+"and the action that will be done with the screenshot: save it to a PNG file,"
+" copy it to the clipboard, open it using another application, or host it on "
+"imgur, a free online image hosting service."
+msgstr ""
