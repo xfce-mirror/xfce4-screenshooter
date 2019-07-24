@@ -7,6 +7,7 @@
 # Allan Nordhøy <epost@anotheragency.no>, 2015,2017
 # Åsmund Berg Holm <berg.holm@outlook.com>, 2018
 # Harald H. <haarektrans@gmail.com>, 2014
+# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2019
 # Ronny K. M. Olufsen <ronny@olufsen.org>, 2013
 # Terje Uriansrud <terje@uriansrud.net>, 2010
 msgid ""
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-04-06 22:31+0000\n"
-"Last-Translator: Eirik Dekko <edekko@gmail.com>\n"
+"PO-Revision-Date: 2019-07-24 09:13+0000\n"
+"Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-apps/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -124,7 +125,7 @@ msgstr "Lagre"
 
 #: ../lib/screenshooter-dialogs.c:972
 msgid "Save the screenshot to a PNG file"
-msgstr "Lagre skjermbildekopien som en PNG fil"
+msgstr "Lagre skjermbildekopien som en PNG-fil"
 
 #: ../lib/screenshooter-dialogs.c:981
 msgid "Copy to the clipboard"
@@ -152,7 +153,7 @@ msgstr "Lagre på Imgur"
 
 #: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Lagre skjermbilde på Imgur, en gratisk billedlagringstjeneste"
+msgstr "Lagre skjermbilde på Imgur, en gratis billedlagringstjeneste"
 
 #: ../lib/screenshooter-dialogs.c:1048
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -160,7 +161,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Forhåndsvisning</span>"
 
 #: ../lib/screenshooter-dialogs.c:1110
 msgid "Save screenshot as..."
-msgstr "Lagre skjermbilde som…"
+msgstr "Lagre skjermbilde som …"
 
 #: ../lib/screenshooter-utils.c:269
 #, c-format
@@ -171,7 +172,7 @@ msgstr "<b>Programmet kunne ikke startes.</b>\n%s"
 
 #: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
-msgstr "Last opp skjermbildet…"
+msgstr "Last opp skjermbildet …"
 
 #: ../lib/screenshooter-imgur.c:116
 #, c-format
@@ -184,7 +185,7 @@ msgstr "Imgur"
 
 #: ../lib/screenshooter-imgur-dialog.c:133
 msgid "Your uploaded image"
-msgstr ""
+msgstr "Ditt opplastede bilde"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -192,19 +193,19 @@ msgstr "Størrelse"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:2
 msgid "Link"
-msgstr ""
+msgstr "Lenke"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
-msgstr ""
+msgstr "Liten"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:4
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:5
 msgid "Full"
-msgstr ""
+msgstr "Full"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:6
 msgid "Copy"
@@ -212,7 +213,7 @@ msgstr "Kopier"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "Vis i nettleser"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -220,7 +221,7 @@ msgstr "Bilde"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "Syntaks"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -228,15 +229,15 @@ msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
-msgstr ""
+msgstr "BBCODE"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:13
 msgid "Code"
-msgstr ""
+msgstr "Kode"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:14
 msgid "Type"
@@ -244,15 +245,15 @@ msgstr "Type"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr ""
+msgstr "Direktebilde"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "Lenke til full størrelse"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
-msgstr ""
+msgstr "Bygg inn i kode"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
@@ -263,11 +264,11 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "Denne lenken vises kun én gang. Sørg for å lagre den hvis du tror du kommer til å slette dette bildet. Vi støtter ikke lenking av bilder til Imgur-kontoer."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
-msgstr ""
+msgstr "Slettelenke"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -275,7 +276,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:169
 msgid "Details about the screenshot"
-msgstr "Detaljer om skjermdumpen"
+msgstr "Detaljer om skjermbildet"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:215
@@ -306,7 +307,7 @@ msgstr "Tittel:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr ""
+msgstr "Skjermbildets tittel brukes når bildet vises i bildelagringstjenesten"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:256
@@ -317,7 +318,7 @@ msgstr "Kommentar:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr ""
+msgstr "Skjermbildets kommentar brukes når bildet vises i bildelagringstjenesten"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
@@ -333,7 +334,7 @@ msgstr "Vis musepekeren på skjermbildet"
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
-msgstr ""
+msgstr "Sti til fil eller mappe der skjermbildet skal lagres"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -371,4 +372,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr ""
+msgstr "Gjør det mulig å fange hele skjermen, det aktive vinduet eller et utvalgt område. Du kan velge tidsforsinkelse før skjermbildet tas og handlingen som skal utføres etterpå: Lagre til en PNG-fil, kopiere til utklippstavlen, åpne med et annet program, eller laste opp til Imgur, en gratis bildelagringstjeneste på Internett."
