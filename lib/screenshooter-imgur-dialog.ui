@@ -5,7 +5,7 @@
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-copy</property>
+    <property name="icon_name">edit-copy</property>
   </object>
   <object class="GtkImage" id="image2">
     <property name="visible">True</property>
@@ -15,12 +15,12 @@
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-copy</property>
+    <property name="icon_name">edit-copy</property>
   </object>
   <object class="GtkImage" id="image4">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-copy</property>
+    <property name="icon_name">edit-copy</property>
   </object>
   <object class="GtkImage" id="image6">
     <property name="visible">True</property>
