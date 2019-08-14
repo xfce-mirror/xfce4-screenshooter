@@ -592,6 +592,7 @@ static gboolean cb_button_released (GtkWidget *widget,
         {
           gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
           gtk_widget_destroy (rbdata->size_window);
+          rbdata->size_window = NULL;
           return TRUE;
         }
       else
@@ -960,7 +961,8 @@ static GdkPixbuf
                                              delay);
 
   cleanup:
-  gtk_widget_destroy (rbdata.size_window);
+  if (rbdata.size_window)
+    gtk_widget_destroy (rbdata.size_window);
   gdk_seat_ungrab (seat);
   gdk_display_flush (display);
 
