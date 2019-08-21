@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-02 06:32+0200\n"
-"PO-Revision-Date: 2019-08-03 05:48+0000\n"
+"PO-Revision-Date: 2019-08-21 13:16+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-apps/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -153,11 +153,11 @@ msgstr "Abrir con:"
 
 #: ../lib/screenshooter-dialogs.c:987
 msgid "Open the screenshot with the chosen application"
-msgstr "Abrir a captura de pantalla co aplicativo escollido"
+msgstr "Abrir a captura de pantalla coa aplicación escollida"
 
 #: ../lib/screenshooter-dialogs.c:1006 ../src/main.c:69
 msgid "Application to open the screenshot"
-msgstr "Aplicativo co que abrir a captura de pantalla"
+msgstr "Aplicación para abrir a captura de pantalla"
 
 #: ../lib/screenshooter-dialogs.c:1016
 msgid "Host on Imgur"
@@ -180,7 +180,7 @@ msgstr "Gardar a captura de pantalla como..."
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
-msgstr "<b>Non se puido iniciar o aplicativo.</b>\n%s"
+msgstr "<b>Non se puido iniciar a aplicación.</b>\n%s"
 
 #: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
@@ -384,4 +384,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr "Permite capturar a pantalla completa, a xanela activa ou a área seleccionada. Pode configurar o atraso que transcorre antes de que se tome a captura de pantalla e a acción que se realizará coa captura de pantalla: gardalo nun ficheiro PNG, copialo no portapapeis, abrilo con outro aplicativo ou aloxalo en imgur, un servizo de aloxamento de imaxes en liña de balde."
+msgstr "Permite capturar a pantalla completa, a xanela activa ou a área seleccionada. Pode configurar o atraso que transcorre antes de que se tome a captura de pantalla e a acción que se realizará coa captura de pantalla: gardalo nun ficheiro PNG, copialo no portapapeis, abrilo con outra aplicación ou aloxalo en imgur, un servizo de aloxamento de imaxes en liña de balde."
