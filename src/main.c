@@ -152,7 +152,7 @@ int main (int argc, char **argv)
 
   /* Print a message to advise to use help when a non existing cli option is
   passed to the executable. */
-  if (!gtk_init_with_args(&argc, &argv, "", entries, PACKAGE, &cli_error))
+  if (!gtk_init_with_args(&argc, &argv, NULL, entries, PACKAGE, &cli_error))
     {
       if (cli_error != NULL)
         {
