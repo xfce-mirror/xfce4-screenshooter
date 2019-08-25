@@ -1,3 +1,25 @@
+1.9.6
+======
+- Do not show translation info on --help output (Bug #15883)
+- Avoid destroying size window twice (Bug #15792)
+- Replace GtkStock buttons
+- Add missing NULL as last parameter of
+  xfce_titled_dialog_new_with_buttons() (Bug #14973)
+- Do not use root coordinates for region capture (Bug #15406)
+- Install AppData into metainfo
+- Update AppData file
+- Try to grab seat more than once (Bug #15320)
+- Use new xfce_gdk_screen_get_geometry if available
+- Make screenshooter-imgur-dialog.ui translatable (Bug #15254)
+- Translation Updates: Albanian, Arabic, Asturian, Basque, Belarusian,
+  Bulgarian, Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech,
+  Danish, Dutch, English (Australia), English (United Kingdom), Finnish, French,
+  Galician, German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Italian,
+  Japanese, Kazakh, Korean, Latvian, Lithuanian, Malay, Norwegian Bokmål,
+  Norwegian Nynorsk, Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian, Spanish,
+  Swedish, Thai, Turkish, Uighur, Ukrainian, Urdu, Urdu (Pakistan), Vietnamese
+
 === Version 1.9.5 ===
   * Bugs fixed:
     - Panel plugin: allow it to save files (bug #15187)
