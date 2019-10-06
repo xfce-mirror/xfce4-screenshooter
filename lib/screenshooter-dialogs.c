@@ -917,7 +917,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
     NULL);
 #endif
 
-  xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Action"));
+  xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg),
+                                   _("Choose what to do with the screenshot"));
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
   gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
