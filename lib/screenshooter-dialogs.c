@@ -189,6 +189,19 @@ static void cb_imgur_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 
 
+static void cb_imgur_warning_change_cursor (GtkWidget *widget, GdkCursor *cursor)
+{
+  gdk_window_set_cursor (gtk_widget_get_window (widget), cursor);
+}
+
+
+
+static void cb_imgur_warning_clicked (GtkWidget *popover)
+{
+  gtk_widget_set_visible (popover, TRUE);
+}
+
+
 
 /* Set the delay according to the spinner */
 static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
@@ -884,7 +897,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 {
   GtkWidget *dlg, *main_alignment;
-  GtkWidget *vbox;
+  GtkWidget *vbox, *hbox, *evbox;
 
   GtkWidget *layout_grid;
 
@@ -892,7 +905,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *actions_label, *actions_alignment, *actions_grid;
   GtkWidget *save_radio_button;
   GtkWidget *clipboard_radio_button, *open_with_radio_button;
-  GtkWidget *imgur_radio_button;
+  GtkWidget *imgur_radio_button, *imgur_warning_image, *imgur_warning_label;
+  GtkWidget *popover;
 
   GtkListStore *liststore;
   GtkWidget *combobox;
@@ -900,6 +914,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   GtkWidget *preview, *preview_ebox, *preview_box, *preview_label;
   GdkPixbuf *thumbnail;
+  GdkCursor *cursor;
 
 #if LIBXFCE4UI_CHECK_VERSION (4,14,0)
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
@@ -1038,6 +1053,9 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button), combobox);
 
   /* Upload to imgur radio button */
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
+  gtk_grid_attach (GTK_GRID (actions_grid), hbox, 0, 4, 1, 1);
+
   imgur_radio_button =
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
                                                  _("Host on Imgur"));
@@ -1048,7 +1066,30 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                  "image hosting service"));
   g_signal_connect (G_OBJECT (imgur_radio_button), "toggled",
                     G_CALLBACK (cb_imgur_toggled), sd);
-  gtk_grid_attach (GTK_GRID (actions_grid), imgur_radio_button, 0, 4, 1, 1);
+  gtk_container_add (GTK_CONTAINER (hbox), imgur_radio_button);
+
+  /* Upload to imgur warning info */
+  imgur_warning_image = gtk_image_new_from_icon_name ("dialog-warning",
+                                                      GTK_ICON_SIZE_BUTTON);
+  imgur_warning_label = gtk_label_new (
+    _("Watch for sensitive content, the uploaded image will be publicly\n"
+      "available and there is no guarantee it can be certainly deleted."));
+
+  popover = gtk_popover_new (imgur_warning_image);
+  gtk_container_add (GTK_CONTAINER (popover), imgur_warning_label);
+  gtk_container_set_border_width (GTK_CONTAINER (popover), 6);
+  gtk_widget_show (imgur_warning_label);
+
+  evbox = gtk_event_box_new ();
+  g_signal_connect_swapped (G_OBJECT (evbox), "button-press-event",
+                            G_CALLBACK (cb_imgur_warning_clicked), popover);
+  gtk_container_add (GTK_CONTAINER (hbox), evbox);
+  gtk_container_add (GTK_CONTAINER (evbox), imgur_warning_image);
+
+  cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_HAND2);
+  g_signal_connect (evbox, "realize",
+                    G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
+  g_object_unref (cursor);
 
   /* Preview box */
   preview_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
