@@ -430,15 +430,20 @@ static GdkPixbuf
                                          &rectangle_cursor,
                                          &rectangle_cursor))
               {
+                int dest_x, dest_y;
+
                 TRACE ("Compose the two pixbufs");
 
+                dest_x = cursorx - rectangle_window.x - xhot;
+                dest_y = cursory - rectangle_window.y - yhot;
+
                 gdk_pixbuf_composite (cursor_pixbuf, screenshot,
-                                      cursorx - rectangle_window.x - xhot,
-                                      cursory - rectangle_window.y - yhot,
+                                      CLAMP (dest_x, 0, dest_x),
+                                      CLAMP (dest_y, 0, dest_y),
                                       rectangle_cursor.width,
                                       rectangle_cursor.height,
-                                      cursorx - rectangle_window.x - xhot,
-                                      cursory - rectangle_window.y - yhot,
+                                      dest_x,
+                                      dest_y,
                                       1.0, 1.0,
                                       GDK_INTERP_BILINEAR,
                                       255);
