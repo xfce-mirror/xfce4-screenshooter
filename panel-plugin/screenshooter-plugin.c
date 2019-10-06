@@ -391,7 +391,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
 
   /* Create the panel button */
   TRACE ("Create the panel button");
-  pd->button = xfce_create_panel_button ();
+  pd->button = xfce_panel_create_button ();
 
   icon_size = get_preferred_icon_size (plugin);
   pd->image = gtk_image_new_from_icon_name (SCREENSHOT_ICON_NAME, icon_size);
