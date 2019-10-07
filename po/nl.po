@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-04-08 09:51+0000\n"
+"POT-Creation-Date: 2019-10-07 06:31+0200\n"
+"PO-Revision-Date: 2019-10-07 10:58+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/xfce/xfce-apps/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -20,65 +20,84 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:455
+#: ../lib/screenshooter-dialogs.c:468
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb van %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:541
+#: ../lib/screenshooter-dialogs.c:554
 msgid "Transfer"
 msgstr "Overdracht"
 
-#: ../lib/screenshooter-dialogs.c:562
+#: ../lib/screenshooter-dialogs.c:575
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">De schermafdruk wordt overgedragen naar:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
-#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
-#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
+#: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:672
-msgid "Take a screenshot"
-msgstr "Schermafdruk maken"
+#: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:922
+msgid "_Help"
+msgstr "_Hulp"
+
+#: ../lib/screenshooter-dialogs.c:677
+msgid "_Close"
+msgstr "_Sluiten"
 
 #: ../lib/screenshooter-dialogs.c:687
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
+msgid "_Cancel"
+msgstr "_Afbreken"
+
+#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
+msgid "_OK"
+msgstr "_Oké"
+
+#: ../lib/screenshooter-dialogs.c:707
+msgid "Take a screenshot"
+msgstr "Schermafdruk maken"
+
+#: ../lib/screenshooter-dialogs.c:744
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Gebied om een schermafdruk van te maken</span>"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:771
 msgid "Entire screen"
 msgstr "Volledig scherm"
 
-#: ../lib/screenshooter-dialogs.c:758 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:778 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Maak een schermafdruk van het hele scherm"
 
-#: ../lib/screenshooter-dialogs.c:766
+#: ../lib/screenshooter-dialogs.c:786
 msgid "Active window"
 msgstr "Actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:773 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:793 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Maak een schermafdruk van het actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:781
+#: ../lib/screenshooter-dialogs.c:801
 msgid "Select a region"
 msgstr "Kies een gebied"
 
-#: ../lib/screenshooter-dialogs.c:786 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:806 ../src/main.c:74
 #: ../panel-plugin/screenshooter-plugin.c:340
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -86,76 +105,82 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Kies een gebied voor een schermafdruk, door te klikken op een hoek van het gebied zonder de muisknop los te laten. Sleep vervolgens de muis naar de diagonaal tegenovergelegen hoek en laat de muisknop los."
 
-#: ../lib/screenshooter-dialogs.c:796
+#: ../lib/screenshooter-dialogs.c:816
 msgid "Capture the mouse pointer"
 msgstr "Muispijl afbeelden"
 
-#: ../lib/screenshooter-dialogs.c:801
+#: ../lib/screenshooter-dialogs.c:821
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Toon muispijl op de schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:837
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vertraging voor het maken van de schermafdruk</span>"
 
-#: ../lib/screenshooter-dialogs.c:845
+#: ../lib/screenshooter-dialogs.c:865
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Vertraging in seconden voor het maken van een schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:868
 msgid "seconds"
 msgstr "seconden"
 
-#: ../lib/screenshooter-dialogs.c:908
-msgid "Action"
-msgstr "Actie"
+#: ../lib/screenshooter-dialogs.c:936
+msgid "Choose what to do with the screenshot"
+msgstr "Kies wat te doen met de schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:942
+#: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Actie</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:967
+#: ../lib/screenshooter-dialogs.c:995
 msgid "Save"
 msgstr "Opslaan"
 
-#: ../lib/screenshooter-dialogs.c:972
+#: ../lib/screenshooter-dialogs.c:1000
 msgid "Save the screenshot to a PNG file"
 msgstr "Sla schermafdruk op als een PNG-bestand"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:1009
 msgid "Copy to the clipboard"
 msgstr "Kopieer naar het klembord"
 
-#: ../lib/screenshooter-dialogs.c:983
+#: ../lib/screenshooter-dialogs.c:1011
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopieer de schermafdruk naar het klembord zodat deze later geplakt kan worden"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:1023
 msgid "Open with:"
 msgstr "Open met:"
 
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:1029
 msgid "Open the screenshot with the chosen application"
 msgstr "Open de schermafdruk met de gekozen toepassing"
 
-#: ../lib/screenshooter-dialogs.c:1020 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1048 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Toepassing om de schermafdruk mee te openen"
 
-#: ../lib/screenshooter-dialogs.c:1030
+#: ../lib/screenshooter-dialogs.c:1061
 msgid "Host on Imgur"
 msgstr "Plaatsen op Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1065 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Plaats de schermafdruk op Imgur, een gratis webopslagdienst voor afbeeldingen"
 
-#: ../lib/screenshooter-dialogs.c:1048
+#: ../lib/screenshooter-dialogs.c:1075
+msgid ""
+"Watch for sensitive content, the uploaded image will be publicly\n"
+"available and there is no guarantee it can be certainly deleted."
+msgstr "Pas op met gevoelig materiaal; een opgestuurde foto zal\ngeheel openbaar zijn en gegarandeerde verwijdering kan niet."
+
+#: ../lib/screenshooter-dialogs.c:1102
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Voorbeeld</span>"
 
-#: ../lib/screenshooter-dialogs.c:1110
+#: ../lib/screenshooter-dialogs.c:1164
 msgid "Save screenshot as..."
 msgstr "Sla schermafdruk op als..."
 
@@ -179,7 +204,7 @@ msgstr "Er is een fout opgetreden bij het overbrengen van de gegevens naar imgur
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-imgur-dialog.c:133
+#: ../lib/screenshooter-imgur-dialog.c:134
 msgid "Your uploaded image"
 msgstr "Uw opgestuurde afbeelding"
 
