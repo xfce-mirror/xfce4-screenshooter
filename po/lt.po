@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-05-01 22:41+0000\n"
+"POT-Creation-Date: 2019-10-07 06:31+0200\n"
+"PO-Revision-Date: 2019-10-07 10:36+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -19,65 +19,84 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../lib/screenshooter-dialogs.c:455
+#: ../lib/screenshooter-dialogs.c:468
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb iš %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:541
+#: ../lib/screenshooter-dialogs.c:554
 msgid "Transfer"
 msgstr "Persiuntimas"
 
-#: ../lib/screenshooter-dialogs.c:562
+#: ../lib/screenshooter-dialogs.c:575
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ši ekrano kopija persiunčiama į:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
-#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
-#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
+#: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Ekrano kopija"
 
-#: ../lib/screenshooter-dialogs.c:672
-msgid "Take a screenshot"
-msgstr "Padaryti ekrano kopiją"
+#: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:922
+msgid "_Help"
+msgstr "Ž_inynas"
+
+#: ../lib/screenshooter-dialogs.c:677
+msgid "_Close"
+msgstr "_Užverti"
 
 #: ../lib/screenshooter-dialogs.c:687
 msgid "Preferences"
 msgstr "Nuostatos"
 
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
+msgid "_Cancel"
+msgstr "_Atsisakyti"
+
+#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
+msgid "_OK"
+msgstr "_Gerai"
+
+#: ../lib/screenshooter-dialogs.c:707
+msgid "Take a screenshot"
+msgstr "Padaryti ekrano kopiją"
+
+#: ../lib/screenshooter-dialogs.c:744
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekrano kopijos sritis</span>"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:771
 msgid "Entire screen"
 msgstr "Visas ekranas"
 
-#: ../lib/screenshooter-dialogs.c:758 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:778 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Padaryti viso ekrano ekrano kopiją"
 
-#: ../lib/screenshooter-dialogs.c:766
+#: ../lib/screenshooter-dialogs.c:786
 msgid "Active window"
 msgstr "Aktyvus langas"
 
-#: ../lib/screenshooter-dialogs.c:773 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:793 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Padaryti aktyvaus lango ekrano kopiją"
 
-#: ../lib/screenshooter-dialogs.c:781
+#: ../lib/screenshooter-dialogs.c:801
 msgid "Select a region"
 msgstr "Pasirinkti sritį"
 
-#: ../lib/screenshooter-dialogs.c:786 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:806 ../src/main.c:74
 #: ../panel-plugin/screenshooter-plugin.c:340
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -85,76 +104,82 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Pasirinkite sritį, kurios ekrano kopiją darysite, paspausdami ant pradžios taško ir vilkdami pelę neatleisdami pelės mygtuko iki tol, kol pasieksite kitą norimos srities kraštą ir atleisdami pelės mygtuką."
 
-#: ../lib/screenshooter-dialogs.c:796
+#: ../lib/screenshooter-dialogs.c:816
 msgid "Capture the mouse pointer"
 msgstr "Įtraukti pelės žymeklį"
 
-#: ../lib/screenshooter-dialogs.c:801
+#: ../lib/screenshooter-dialogs.c:821
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Ekrano kopijoje rodyti pelės žymeklį"
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:837
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Delsa prieš fotografavimą</span>"
 
-#: ../lib/screenshooter-dialogs.c:845
+#: ../lib/screenshooter-dialogs.c:865
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Delsa, sekundėmis, prieš darant ekrano kopiją"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:868
 msgid "seconds"
 msgstr "sek."
 
-#: ../lib/screenshooter-dialogs.c:908
-msgid "Action"
-msgstr "Veiksmas"
+#: ../lib/screenshooter-dialogs.c:936
+msgid "Choose what to do with the screenshot"
+msgstr "Pasirinkite ką daryti su ekrano kopija"
 
-#: ../lib/screenshooter-dialogs.c:942
+#: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Veiksmas</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:967
+#: ../lib/screenshooter-dialogs.c:995
 msgid "Save"
 msgstr "Įrašyti"
 
-#: ../lib/screenshooter-dialogs.c:972
+#: ../lib/screenshooter-dialogs.c:1000
 msgid "Save the screenshot to a PNG file"
 msgstr "Įrašyti ekrano kopiją kaip PNG failą"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:1009
 msgid "Copy to the clipboard"
 msgstr "Kopijuoti į iškarpinę"
 
-#: ../lib/screenshooter-dialogs.c:983
+#: ../lib/screenshooter-dialogs.c:1011
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopijuoti ekrano kopiją į iškarpinę, kad tokiu būdu ji vėliau galės būti įdėta"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:1023
 msgid "Open with:"
 msgstr "Atverti naudojant:"
 
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:1029
 msgid "Open the screenshot with the chosen application"
 msgstr "Atverti ekrano kopija naudojant pasirinktą programą"
 
-#: ../lib/screenshooter-dialogs.c:1020 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1048 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Programa ekrano kopijos atvėrimui"
 
-#: ../lib/screenshooter-dialogs.c:1030
+#: ../lib/screenshooter-dialogs.c:1061
 msgid "Host on Imgur"
 msgstr "Talpinti į Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1065 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Talpinti ekrano kopiją Imgur puslapyje, tai yra nemokama paveikslų talpinimo paslauga"
 
-#: ../lib/screenshooter-dialogs.c:1048
+#: ../lib/screenshooter-dialogs.c:1075
+msgid ""
+"Watch for sensitive content, the uploaded image will be publicly\n"
+"available and there is no guarantee it can be certainly deleted."
+msgstr "Peržiūrėkite ar paveiksle nėra slapto turinio. Įkeltas paveikslas\nbus viešai prieinamas ir nėra jokios garantijos, kad jį tikrai galima\nbus ištrinti."
+
+#: ../lib/screenshooter-dialogs.c:1102
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Peržiūra</span>"
 
-#: ../lib/screenshooter-dialogs.c:1110
+#: ../lib/screenshooter-dialogs.c:1164
 msgid "Save screenshot as..."
 msgstr "Įrašyti ekrano kopiją kaip..."
 
@@ -178,7 +203,7 @@ msgstr "Įvyko klaida, perkeliant duomenis į imgur."
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-imgur-dialog.c:133
+#: ../lib/screenshooter-imgur-dialog.c:134
 msgid "Your uploaded image"
 msgstr "Jūsų įkeltas paveikslas"
 
