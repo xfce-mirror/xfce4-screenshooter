@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-04-07 08:21+0000\n"
+"POT-Creation-Date: 2019-10-07 06:31+0200\n"
+"PO-Revision-Date: 2019-10-08 12:21+0000\n"
 "Last-Translator: Andreas Eitel <github-aneitel@online.de>\n"
 "Language-Team: German (http://www.transifex.com/xfce/xfce-apps/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -26,65 +26,84 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:455
+#: ../lib/screenshooter-dialogs.c:468
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb von %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:541
+#: ../lib/screenshooter-dialogs.c:554
 msgid "Transfer"
 msgstr "Übertragen"
 
-#: ../lib/screenshooter-dialogs.c:562
+#: ../lib/screenshooter-dialogs.c:575
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Das Bildschirmfoto wird übertragen nach:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
-#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
-#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
+#: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
 
-#: ../lib/screenshooter-dialogs.c:672
-msgid "Take a screenshot"
-msgstr "Bildschirmfoto erstellen"
+#: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:922
+msgid "_Help"
+msgstr "_Hilfe"
+
+#: ../lib/screenshooter-dialogs.c:677
+msgid "_Close"
+msgstr "S_chließen"
 
 #: ../lib/screenshooter-dialogs.c:687
 msgid "Preferences"
 msgstr "Einstellungen"
 
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
+msgid "_Cancel"
+msgstr "_Abbruch"
+
+#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
+msgid "_OK"
+msgstr "_Bestätigen"
+
+#: ../lib/screenshooter-dialogs.c:707
+msgid "Take a screenshot"
+msgstr "Bildschirmfoto erstellen"
+
+#: ../lib/screenshooter-dialogs.c:744
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aufnahmebereich</span>"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:771
 msgid "Entire screen"
 msgstr "Ganzer Bildschirm"
 
-#: ../lib/screenshooter-dialogs.c:758 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:778 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Bildschirmfoto des ganzen Bildschirms erstellen"
 
-#: ../lib/screenshooter-dialogs.c:766
+#: ../lib/screenshooter-dialogs.c:786
 msgid "Active window"
 msgstr "Aktives Fenster"
 
-#: ../lib/screenshooter-dialogs.c:773 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:793 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Bildschirmfoto des aktuellen Fensters erstellen"
 
-#: ../lib/screenshooter-dialogs.c:781
+#: ../lib/screenshooter-dialogs.c:801
 msgid "Select a region"
 msgstr "Bereich auswählen"
 
-#: ../lib/screenshooter-dialogs.c:786 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:806 ../src/main.c:74
 #: ../panel-plugin/screenshooter-plugin.c:340
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -92,76 +111,82 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Den aufzunehmenden Bereich auswählen, indem Sie auf einen Punkt auf dem Bildschirm klicken, ohne die Maustaste loszulassen, den Mauszeiger dann an das entgegengesetzte Ende des Bereichs ziehen und dann die Taste loslassen."
 
-#: ../lib/screenshooter-dialogs.c:796
+#: ../lib/screenshooter-dialogs.c:816
 msgid "Capture the mouse pointer"
 msgstr "Mauszeiger aufnehmen"
 
-#: ../lib/screenshooter-dialogs.c:801
+#: ../lib/screenshooter-dialogs.c:821
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Den Mauszeiger im Bildschirmfoto mit anzeigen"
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:837
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Verzögerung vor der Aufnahme</span>"
 
-#: ../lib/screenshooter-dialogs.c:845
+#: ../lib/screenshooter-dialogs.c:865
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Verzögerung in Sekunden vor Erstellung des Bildschirmfotos"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:868
 msgid "seconds"
 msgstr "Sekunden"
 
-#: ../lib/screenshooter-dialogs.c:908
-msgid "Action"
-msgstr "Aktion"
+#: ../lib/screenshooter-dialogs.c:936
+msgid "Choose what to do with the screenshot"
+msgstr "Wählen Sie aus, was mit dem Bildschirmfoto geschehen soll."
 
-#: ../lib/screenshooter-dialogs.c:942
+#: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aktion</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:967
+#: ../lib/screenshooter-dialogs.c:995
 msgid "Save"
 msgstr "Speichern"
 
-#: ../lib/screenshooter-dialogs.c:972
+#: ../lib/screenshooter-dialogs.c:1000
 msgid "Save the screenshot to a PNG file"
 msgstr "Bildschirmfoto als PNG-Datei speichern"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:1009
 msgid "Copy to the clipboard"
 msgstr "In die Zwischenablage kopieren"
 
-#: ../lib/screenshooter-dialogs.c:983
+#: ../lib/screenshooter-dialogs.c:1011
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Das Bildschirmfoto in die Zwischenablage kopieren, so dass es später eingefügt werden kann"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:1023
 msgid "Open with:"
 msgstr "Öffnen mit:"
 
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:1029
 msgid "Open the screenshot with the chosen application"
 msgstr "Bildschirmfoto mit der angegebenen Anwendung öffnen"
 
-#: ../lib/screenshooter-dialogs.c:1020 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1048 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Anwendung zum Öffnen des Bildschirmfotos"
 
-#: ../lib/screenshooter-dialogs.c:1030
+#: ../lib/screenshooter-dialogs.c:1061
 msgid "Host on Imgur"
 msgstr "Auf Imgur hochladen"
 
-#: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1065 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Auf Imgur hochladen, einem kostenlosen Bilderdienst"
 
-#: ../lib/screenshooter-dialogs.c:1048
+#: ../lib/screenshooter-dialogs.c:1075
+msgid ""
+"Watch for sensitive content, the uploaded image will be publicly\n"
+"available and there is no guarantee it can be certainly deleted."
+msgstr "Achten Sie auf sensible Inhalte, das hochgeladene Bild ist öffentlich\nverfügbar und es gibt keine Garantie, dass es sicher gelöscht werden kann."
+
+#: ../lib/screenshooter-dialogs.c:1102
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vorschau</span>"
 
-#: ../lib/screenshooter-dialogs.c:1110
+#: ../lib/screenshooter-dialogs.c:1164
 msgid "Save screenshot as..."
 msgstr "Bildschirmfoto speichern als …"
 
@@ -185,7 +210,7 @@ msgstr "Beim Übertragen der Daten zu Imgur ist ein Fehler aufgetreten."
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-imgur-dialog.c:133
+#: ../lib/screenshooter-imgur-dialog.c:134
 msgid "Your uploaded image"
 msgstr "Dein hochgeladenes Bild"
 
