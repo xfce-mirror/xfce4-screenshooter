@@ -7,13 +7,14 @@
 # ebal <ebalaskas@ebalaskas.gr>, 2008-2009
 # Panagiotis Mantzios <pmantzios@hotmail.com>, 2018
 # Stavros Giannouris <stavrosg@hellug.gr>, 2008
+# Πέτρος Σαμαράς <psamaras1@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-07 00:31+0200\n"
-"PO-Revision-Date: 2019-04-06 22:31+0000\n"
-"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"POT-Creation-Date: 2019-10-07 06:31+0200\n"
+"PO-Revision-Date: 2019-10-24 23:42+0000\n"
+"Last-Translator: Πέτρος Σαμαράς <psamaras1@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/xfce/xfce-apps/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,65 +22,84 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:455
+#: ../lib/screenshooter-dialogs.c:468
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb από %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:541
+#: ../lib/screenshooter-dialogs.c:554
 msgid "Transfer"
 msgstr "Μεταφορά"
 
-#: ../lib/screenshooter-dialogs.c:562
+#: ../lib/screenshooter-dialogs.c:575
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Το στιγμιότυπο έχει μεταφερθεί στο:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:661 ../lib/screenshooter-dialogs.c:677
-#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-utils.c:124
-#: ../lib/screenshooter-utils.c:156 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
+#: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Στιγμιότυπο οθόνης"
 
-#: ../lib/screenshooter-dialogs.c:672
-msgid "Take a screenshot"
-msgstr "Λήψη στιγμιότυπου οθόνης"
+#: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:922
+msgid "_Help"
+msgstr "_Βοήθεια"
+
+#: ../lib/screenshooter-dialogs.c:677
+msgid "_Close"
+msgstr "_Κλείσιμο"
 
 #: ../lib/screenshooter-dialogs.c:687
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: ../lib/screenshooter-dialogs.c:724
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
+msgid "_Cancel"
+msgstr "Α_κύρωση"
+
+#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
+msgid "_OK"
+msgstr "_ΟΚ"
+
+#: ../lib/screenshooter-dialogs.c:707
+msgid "Take a screenshot"
+msgstr "Λήψη στιγμιότυπου οθόνης"
+
+#: ../lib/screenshooter-dialogs.c:744
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Προεπιλεγμένη περιοχή αρπαγής</span>"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:771
 msgid "Entire screen"
 msgstr "Ολόκληρη οθόνη"
 
-#: ../lib/screenshooter-dialogs.c:758 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:778 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Λήψη ενός στιγμιότυπου ολόκληρης οθόνης"
 
-#: ../lib/screenshooter-dialogs.c:766
+#: ../lib/screenshooter-dialogs.c:786
 msgid "Active window"
 msgstr "Ενεργό παράθυρο"
 
-#: ../lib/screenshooter-dialogs.c:773 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:793 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Λήψη στιγμιοτύπου οθόνης του ενεργού παραθύρου"
 
-#: ../lib/screenshooter-dialogs.c:781
+#: ../lib/screenshooter-dialogs.c:801
 msgid "Select a region"
 msgstr "Επιλογή περιοχής"
 
-#: ../lib/screenshooter-dialogs.c:786 ../src/main.c:74
+#: ../lib/screenshooter-dialogs.c:806 ../src/main.c:74
 #: ../panel-plugin/screenshooter-plugin.c:340
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
@@ -87,76 +107,82 @@ msgid ""
 "region, and releasing the mouse button."
 msgstr "Επιλογή μία περιοχής για αρπαγή με το πάτημα ενός σημείου στην οθόνη χωρίς την απελευθέρωση του κουμπιού του ποντικιού, σύροντας το ποντίκι στην άλλη γωνία της περιοχής, και απελευθέρωση του κουμπιού του ποντικιού."
 
-#: ../lib/screenshooter-dialogs.c:796
+#: ../lib/screenshooter-dialogs.c:816
 msgid "Capture the mouse pointer"
 msgstr "Αρπαγή του κέρσορα του ποντικιού"
 
-#: ../lib/screenshooter-dialogs.c:801
+#: ../lib/screenshooter-dialogs.c:821
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Εμφάνιση του κέρσορα του ποντικιού στο στιγμιότυπο"
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:837
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Καθυστέρηση πριν την αρπαγή</span>"
 
-#: ../lib/screenshooter-dialogs.c:845
+#: ../lib/screenshooter-dialogs.c:865
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Καθυστέρηση σε δευτερόλεπτα πριν την ληψη του στιγμιοτύπου οθόνης"
 
-#: ../lib/screenshooter-dialogs.c:848
+#: ../lib/screenshooter-dialogs.c:868
 msgid "seconds"
 msgstr "δευτερόλεπτα"
 
-#: ../lib/screenshooter-dialogs.c:908
-msgid "Action"
-msgstr "Ενέργεια"
+#: ../lib/screenshooter-dialogs.c:936
+msgid "Choose what to do with the screenshot"
+msgstr "Επιλέξτε τι θα κάνετε με το στιγμιότυπο"
 
-#: ../lib/screenshooter-dialogs.c:942
+#: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ενέργεια</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:967
+#: ../lib/screenshooter-dialogs.c:995
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: ../lib/screenshooter-dialogs.c:972
+#: ../lib/screenshooter-dialogs.c:1000
 msgid "Save the screenshot to a PNG file"
 msgstr "Αποθήκευση στιγμιοτύπου σε αρχείο PNG"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:1009
 msgid "Copy to the clipboard"
 msgstr "Αντιγραφή στο πρόχειρο"
 
-#: ../lib/screenshooter-dialogs.c:983
+#: ../lib/screenshooter-dialogs.c:1011
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Αντιγραφή του στιγμιοτύπου οθόνης στο πρόχειρο ώστε να μπορεί να επικολληθεί αργότερα"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:1023
 msgid "Open with:"
 msgstr "Άνοιγμα με:"
 
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:1029
 msgid "Open the screenshot with the chosen application"
 msgstr "Άνοιγμα του στιγμιοτύπου οθόνης με την επιλεγμένη εφαρμογή"
 
-#: ../lib/screenshooter-dialogs.c:1020 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1048 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Εφαρμογή να ανοίξει το στιγμιοτύπο οθόνης"
 
-#: ../lib/screenshooter-dialogs.c:1030
+#: ../lib/screenshooter-dialogs.c:1061
 msgid "Host on Imgur"
 msgstr "Ανέβασμα στο Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1034 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1065 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Ανέβασμα στο Imgur, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων"
 
-#: ../lib/screenshooter-dialogs.c:1048
+#: ../lib/screenshooter-dialogs.c:1075
+msgid ""
+"Watch for sensitive content, the uploaded image will be publicly\n"
+"available and there is no guarantee it can be certainly deleted."
+msgstr "Προσέξτε για ευαίσθητο περιεχόμενο, η εικόνα που ανεβάζετε θα είναι δημόσια\nπροσβάσιμη και δεν υπάρχει καμία εγγύηση ότι θα μπορεί να διαγραφεί."
+
+#: ../lib/screenshooter-dialogs.c:1102
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Προεσκόπιση</span>"
 
-#: ../lib/screenshooter-dialogs.c:1110
+#: ../lib/screenshooter-dialogs.c:1164
 msgid "Save screenshot as..."
 msgstr "Αποθήκευση στιγμιοτύπου ως ... "
 
@@ -180,9 +206,9 @@ msgstr "Ένα σφάλμα συνέβη κατά τη μεταφορά δεδο
 msgid "Imgur"
 msgstr "Imgur"
 
-#: ../lib/screenshooter-imgur-dialog.c:133
+#: ../lib/screenshooter-imgur-dialog.c:134
 msgid "Your uploaded image"
-msgstr ""
+msgstr "Η εικόνα που ανεβάσατε"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -190,19 +216,19 @@ msgstr "Μέγεθος"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:2
 msgid "Link"
-msgstr ""
+msgstr "Σύνδεσμος"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
-msgstr ""
+msgstr "Μικρό"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:4
 msgid "Medium"
-msgstr ""
+msgstr "Μεσαίο"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:5
 msgid "Full"
-msgstr ""
+msgstr "Πλήρες"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:6
 msgid "Copy"
@@ -210,7 +236,7 @@ msgstr "Αντιγραφή"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "Εμφάνιση στον περιηγητή"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -218,7 +244,7 @@ msgstr "Εικόνα"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "Συντακτικό"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -226,15 +252,15 @@ msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
-msgstr ""
+msgstr "BBCODE"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:13
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:14
 msgid "Type"
@@ -242,15 +268,15 @@ msgstr "Τύπος"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr ""
+msgstr "Άμεση εικόνα"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "Σύνδεσμος σε πλήρες μέγεθος"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
-msgstr ""
+msgstr "Ενσωμάτωση σε κώδικα"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
@@ -261,11 +287,11 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "Ο σύνδεσμος εμφανίζεται μόνο μια φορά. Εξασφαλίστε την αποθήκευσή του αν νομίζετε ότι ενδέχεται να διαγράψετε αυτήν την εικόνα. Δεν υποστηρίζουμε προς το παρόν σύνδεση εικόνων σε λογαριασμούς Imgur."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
-msgstr ""
+msgstr "Σύνδεσμος διαγραφής"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -331,7 +357,7 @@ msgstr "Εμφάνιση του κέρσορα στο στιγμιότυπο"
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
-msgstr ""
+msgstr "Διαδρομή αρχείου ή φακέλου όπου θα αποθηκευτεί το στιγμιότυπο"
 
 #: ../src/main.c:91
 msgid "Version information"
