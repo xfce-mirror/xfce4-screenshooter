@@ -1,3 +1,15 @@
+1.9.7
+======
+- Add warning notice to imgur upload option (Bug #15347)
+- Fix cursor capture when near screen edge (Bug #9262)
+- Improve wording (Bug #15429)
+- Allow compilation with panel 4.15
+- Restore libxfce4ui 4.12 compatibility
+- Translation Updates: Basque, Bulgarian, Catalan, Chinese (China),
+  Chinese (Taiwan), Danish, Dutch, English (United Kingdom), French, German,
+  Greek, Hungarian, Korean, Lithuanian, Malay, Norwegian Bokmål, Polish,
+  Portuguese, Portuguese (Brazil), Russian, Serbian, Spanish, Turkish
+
 1.9.6
 ======
 - Do not show translation info on --help output (Bug #15883)
