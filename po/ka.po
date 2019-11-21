@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2019-11-20 21:12+0000\n"
+"PO-Revision-Date: 2019-11-21 07:41+0000\n"
 "Last-Translator: zura davitashvili <zdavitashvili0@gmail.com>\n"
 "Language-Team: Georgian (http://www.transifex.com/xfce/xfce-apps/language/ka/)\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "დახურვა"
 
 #: ../lib/screenshooter-dialogs.c:687
 msgid "Preferences"
-msgstr ""
+msgstr "პარამეტრები"
 
 #: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
 msgid "_Cancel"
@@ -71,7 +71,7 @@ msgstr "სკრინშოტის გადაღება"
 
 #: ../lib/screenshooter-dialogs.c:744
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">გადასაღები რეგიონი</span>"
 
 #: ../lib/screenshooter-dialogs.c:771
 msgid "Entire screen"
@@ -101,23 +101,23 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr ""
+msgstr "გადასაღები რეგიონის ასარჩევად დააჭირეთ ეკრანზე შერჩეულ წერტილს თაგვის ღილაკით, თითი არ აუშვათ, გადაადგილეთ თაგვი რეგიონის სხვა კუთხეში და აუშვით თაგვის ღილაკს თითი."
 
 #: ../lib/screenshooter-dialogs.c:816
 msgid "Capture the mouse pointer"
-msgstr ""
+msgstr "გადაიღე თაგვის მაჩვენებელი"
 
 #: ../lib/screenshooter-dialogs.c:821
 msgid "Display the mouse pointer on the screenshot"
-msgstr ""
+msgstr "გამოაჩინე თაგვის მაჩვენებელი სკრინშოტზე"
 
 #: ../lib/screenshooter-dialogs.c:837
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">დაყოვნება გადაღებამდე</span>"
 
 #: ../lib/screenshooter-dialogs.c:865
 msgid "Delay in seconds before the screenshot is taken"
-msgstr ""
+msgstr "დაყოვნება წამებში, სკრინშოტის გადაღებამდე"
 
 #: ../lib/screenshooter-dialogs.c:868
 msgid "seconds"
@@ -125,7 +125,7 @@ msgstr "წამები"
 
 #: ../lib/screenshooter-dialogs.c:936
 msgid "Choose what to do with the screenshot"
-msgstr ""
+msgstr "აირჩიეთ რა უნდა გაუკეთოთ სკრინშოტს"
 
 #: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -142,11 +142,11 @@ msgstr "შეინახეთ სკრინშოტი PNG ფაილშ
 
 #: ../lib/screenshooter-dialogs.c:1009
 msgid "Copy to the clipboard"
-msgstr ""
+msgstr "ბუფერში კოპირება"
 
 #: ../lib/screenshooter-dialogs.c:1011
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr ""
+msgstr "დააკოპირეთ სკრინშოტი ბუფერში, რათა მისი ჩასმა მოგვიანებით შესაძლებელი იყოს"
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "Open with:"
@@ -162,17 +162,17 @@ msgstr "პროგრამა სკრინშოტის გასახ�
 
 #: ../lib/screenshooter-dialogs.c:1061
 msgid "Host on Imgur"
-msgstr ""
+msgstr "Imgur-ზე ატვირთვა"
 
 #: ../lib/screenshooter-dialogs.c:1065 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr ""
+msgstr "ატვირთეთ სკრინშოტი Imgur-ზე, უფასო ონლაინ ჰოსტინგის სერვისზე"
 
 #: ../lib/screenshooter-dialogs.c:1075
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
-msgstr ""
+msgstr "ყურადღება მიაქციეთ სკრინშოტის შინაარს, ატვირთული სურათი იქნება საჯაროდ\nხელმისაწვდომი და არ არსებობს გარანტია, რომ მისი წაშლა ნამდვილად შესაძლებელი იქნება."
 
 #: ../lib/screenshooter-dialogs.c:1102
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -187,7 +187,7 @@ msgstr "შეინახეთ სკრინშოტი როგორც.
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
-msgstr ""
+msgstr "<b>პროგრამის გაშვება ვერ მოხერხდა.</b>\n%s"
 
 #: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
@@ -196,7 +196,7 @@ msgstr "ატვირთეთ სკრინშოტი..."
 #: ../lib/screenshooter-imgur.c:116
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
-msgstr ""
+msgstr "დაფიქსირდა შეცდომა imgur-ზე მონაცემების გადაცემის დროს."
 
 #: ../lib/screenshooter-imgur.c:173
 msgid "Imgur"
@@ -232,7 +232,7 @@ msgstr "ასლი"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "ბრაუზერში ნახვა"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -240,39 +240,39 @@ msgstr "სურათი"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "სინტაქსი"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
-msgstr ""
+msgstr "BBCODE"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:13
 msgid "Code"
-msgstr ""
+msgstr "კოდი"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:14
 msgid "Type"
-msgstr ""
+msgstr "ტიპი"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr ""
+msgstr "პირდაპირი გამოსახულება"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "ბმული სრული ზომისთვის"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
-msgstr ""
+msgstr "კოდში ჩასმული"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
@@ -283,7 +283,7 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "ეს ბმული მხოლოდ ერთხელ გამოჩნდება. დარწმუნდით, რომ შეინახეთ, თუ ფიქრობთ, რომ მომავალში შეიძლება წაშალოთ ეს სურათი. ჩვენ ამჟამად არ გვაქვს სურათების მიბმის მხარდაჭერა Imgur ანგარიშებზე."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
@@ -306,7 +306,7 @@ msgstr "მომხმარებელი:"
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
-msgstr ""
+msgstr "თქვენი მომხმარებლის სახელი, თუ ჯერ კიდევ არ გაქვთ გთხოვთ შექმენით ის ზემოთ მითითებულ ბმულზე."
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:229
@@ -315,7 +315,7 @@ msgstr "პაროლი:"
 
 #: ../lib/screenshooter-job-callbacks.c:236
 msgid "The password for the user above"
-msgstr ""
+msgstr "ზემოთ მდებარე მომხმარებლის პაროლი"
 
 #. Create the title label
 #: ../lib/screenshooter-job-callbacks.c:242
@@ -326,7 +326,7 @@ msgstr "სათაური"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr ""
+msgstr "სკრინშოტის სათაური, ის გამოყენებული იქნება სურათის ჰოსტინგის სერვისზე სკრინშოტის ჩვენებისას"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:256
@@ -337,11 +337,11 @@ msgstr "კომენტარი:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr ""
+msgstr "კომენტარი სკრინშოტზე, ის გამოყენებული იქნება სურათის ჰოსტინგის სერვისზე სკრინშოტის ჩვენებისას"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
-msgstr ""
+msgstr "სკრინშოტის ბუფერში კოპირება"
 
 #: ../src/main.c:54
 msgid "Delay in seconds before taking the screenshot"
@@ -349,11 +349,11 @@ msgstr "დაყოვნება წამებში, სკრინშო
 
 #: ../src/main.c:64
 msgid "Display the mouse on the screenshot"
-msgstr ""
+msgstr "თაგვის გამოჩენა სკრინშოტზე"
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
-msgstr ""
+msgstr "ფაილის მისამართი ან ცნობარი, სადაც სკრინშოტი შეინახება"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -362,27 +362,27 @@ msgstr "ინფორმაცია ვერსიის შესახე�
 #: ../src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "კონფლიქტური პარამეტრები: --%s და --%s მათი ერთდროულად გამოყენება არ შეიძლება.\n"
 
 #: ../src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr ""
+msgstr "--%s პარამეტრი გამოიყენება მხოლოდ მაშინ, როდესაც მოცემულია --fullscreen, --window ან --region. იგი უგულებელყოფილი იქნება.\n"
 
 #: ../src/main.c:159
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr ""
+msgstr "%s: %s\nსცადეთ %s --help ბრძანების ხაზის შესაძლო პარამეტრების სრული სიის სანახავად.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr ""
+msgstr "გადაიღეთ მთელი ეკრანის, აქტიური ფანჯრის ან რეგიონის სკრინშოტები"
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
@@ -391,4 +391,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr ""
+msgstr "საშუალებას გაძლევთ გადაიღოთ მთელი ეკრანი, აქტიური ფანჯარა ან არჩეული რეგიონი. თქვენ შეგიძლიათ გაასწოროთ დაყოვნება, რომელიც ამოიწურება სკრინშოტის გადაღებამდე და მოქმედება რომელიც შესრულდება სკრინშოტზე: შენახვა PNG ფაილში, ბუფერში კოპირება, სხვა პროგრამით გახსნა ან imgur-ზე ატვირთვა, ესაა უფასო ონლაინ სურათების ჰოსტინგის სერვისი."
