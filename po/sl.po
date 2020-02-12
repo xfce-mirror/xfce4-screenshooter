@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Aljoša Žagar <anthon.manix@gmail.com>, 2013
+# Arnold Marko <arnold.marko@gmail.com>, 2020
 # Kernc, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2020-01-30 10:15+0000\n"
+"PO-Revision-Date: 2020-02-12 15:21+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-apps/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +65,7 @@ msgstr "_Prekliči"
 
 #: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
 msgid "_OK"
-msgstr ""
+msgstr "_V redu"
 
 #: ../lib/screenshooter-dialogs.c:707
 msgid "Take a screenshot"
@@ -126,7 +127,7 @@ msgstr "sekund"
 
 #: ../lib/screenshooter-dialogs.c:936
 msgid "Choose what to do with the screenshot"
-msgstr ""
+msgstr "Izberite, kaj naj se zgodi s posnetkom zaslona"
 
 #: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -173,7 +174,7 @@ msgstr "Naloži sliko na Imgur, brezplačno spletno storitev gostovanja slik"
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
-msgstr ""
+msgstr "Bodite pozorni na občutljive vsebine. Naložena slika bo javno\ndostopna, zato njen izbris ne more biti zagotovljen."
 
 #: ../lib/screenshooter-dialogs.c:1102
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -197,7 +198,7 @@ msgstr "Pošlji zaslonsko sliko..."
 #: ../lib/screenshooter-imgur.c:116
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
-msgstr ""
+msgstr "Ob prenosu podatkov na imgur je prišlo do napake."
 
 #: ../lib/screenshooter-imgur.c:173
 msgid "Imgur"
@@ -205,7 +206,7 @@ msgstr "Imgur"
 
 #: ../lib/screenshooter-imgur-dialog.c:134
 msgid "Your uploaded image"
-msgstr ""
+msgstr "Vaša naložena slika"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -213,19 +214,19 @@ msgstr "Velikost"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:2
 msgid "Link"
-msgstr ""
+msgstr "Povezava"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
-msgstr ""
+msgstr "Majhno"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:4
 msgid "Medium"
-msgstr ""
+msgstr "Srednje"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:5
 msgid "Full"
-msgstr ""
+msgstr "Polno"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:6
 msgid "Copy"
@@ -233,7 +234,7 @@ msgstr "Kopiraj"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "Prikaži v brskalniku"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -241,7 +242,7 @@ msgstr "Posnetek"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "Sintaksa"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -249,15 +250,15 @@ msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Označevanje"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
-msgstr ""
+msgstr "BBCODE"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:13
 msgid "Code"
-msgstr ""
+msgstr "Koda"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:14
 msgid "Type"
@@ -265,15 +266,15 @@ msgstr "Vrsta"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr ""
+msgstr "Nepsredna slika"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "Povezava na polno veliksot"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
-msgstr ""
+msgstr "Vstavi v kodo"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
@@ -284,11 +285,11 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "Ta povezava se prikaže zgolj enkrat. Shranite jo, če menite, da boste to sliko izbrisali. Trenutno ne podpiramo povezovanja slik z Imgur računi."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
-msgstr ""
+msgstr "Povezava za brisanje"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -296,7 +297,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:169
 msgid "Details about the screenshot"
-msgstr ""
+msgstr "Podrobnosti o posnetu zaslona"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:215
@@ -307,7 +308,7 @@ msgstr "Uporabnik:"
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
-msgstr ""
+msgstr "Vaše uporabniško ime. Če ga še nimate, ga ustvarite na zgornji spletni strani."
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:229
@@ -327,7 +328,7 @@ msgstr "Naslov:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr ""
+msgstr "Naslov posnetka zaslona. Uporabljen bo za prikaz posnetka na storitvi za gostovanje slik."
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:256
@@ -338,7 +339,7 @@ msgstr "Komentar:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr ""
+msgstr "Komentar ob posnetku. Uporabljen bo za prikaz posnetka na storitvi za gostovanje slik."
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
@@ -354,7 +355,7 @@ msgstr "Prikaži miško na zaslonski sliki"
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
-msgstr ""
+msgstr "Pot do datoteke, kamor se bo posnetek shranil"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -392,4 +393,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr ""
+msgstr "Omogoča zajem celotnega zaslona, aktivnega okna ali izbranega področja. Lahko določite zamik pred zajemanjem in dejanje, ki se bo izvedlo: shranjevanje v PNG datoteko, kopiranje na odložišče, odprianje z izbrano aplikacijo ali nalaganje na storitev - brezplačno storitev za slikovno gostovanje."
