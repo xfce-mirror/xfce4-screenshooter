@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2020-02-12 11:27+0000\n"
+"PO-Revision-Date: 2020-04-14 13:46+0000\n"
 "Last-Translator: Ammuu5\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-apps/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -175,7 +175,7 @@ msgstr "Lähetä kuvakaappaus Imgur:iin, ilmaiseen kuvien tallennuspalveluun"
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
-msgstr ""
+msgstr "Ole varovainen arkaluonteisen sisällön kanssa. Ladattu kuva on julkisesti\nsaatavilla, eikä ole mitään takeita siitä, että se voidaan varmasti poistaa."
 
 #: ../lib/screenshooter-dialogs.c:1102
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -275,7 +275,7 @@ msgstr "Linkki täyteen kokoon"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
-msgstr ""
+msgstr "Upota koodiin"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
@@ -286,7 +286,7 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "Tämä linkki näkyy vain kerran. Muista tallentaa se, jos saatat poistaa tämän kuvan. Emme tällä hetkellä tue kuvien linkittämistä Imgur-tileille."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
