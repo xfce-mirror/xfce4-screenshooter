@@ -92,7 +92,7 @@ lib/screenshooter-marshal.c: lib/screenshooter-marshal.list Makefile
 	)
 
 lib/screenshooter-imgur-dialog_ui.h: lib/screenshooter-imgur-dialog.ui
-	$(AM_V_GEN) exo-csource --static --strip-comments --strip-content --name=screenshooter_imgur_dialog_ui $< >$@
+	$(AM_V_GEN) xdt-csource --static --strip-comments --strip-content --name=screenshooter_imgur_dialog_ui $< >$@
 
 # Main application
 src_xfce4_screenshooter_CFLAGS = \

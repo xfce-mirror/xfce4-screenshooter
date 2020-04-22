@@ -41,5 +41,5 @@ Makefile
 /stamp-h1
 src/xfce4-screenshooter.appdata.xml
 
-# UI header files generated using exo-csource
+# UI header files generated using xdt-csource
 lib/*_ui.h
