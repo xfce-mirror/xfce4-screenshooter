@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Automatically generated, 2009
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2019-2020
 # José Vieira <jvieira33@sapo.pt>, 2018-2019
 # Nuno Miguel <nunis@netcabo.pt>, 2007-2009
 # Nuno Miguel <nunomgue@gmail.com>, 2014-2016,2019
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2019-10-07 17:43+0000\n"
+"PO-Revision-Date: 2020-05-04 18:07+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/xfce/xfce-apps/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -139,11 +139,11 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ação</span>"
 #. Save option radio button
 #: ../lib/screenshooter-dialogs.c:995
 msgid "Save"
-msgstr "Gravar"
+msgstr "Guardar"
 
 #: ../lib/screenshooter-dialogs.c:1000
 msgid "Save the screenshot to a PNG file"
-msgstr "Gravar captura de ecrã para ficheiro PNG"
+msgstr "Guardar captura de ecrã para ficheiro PNG"
 
 #: ../lib/screenshooter-dialogs.c:1009
 msgid "Copy to the clipboard"
@@ -185,7 +185,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Visualizar</span>"
 
 #: ../lib/screenshooter-dialogs.c:1164
 msgid "Save screenshot as..."
-msgstr "Gravar captura de ecrã como..."
+msgstr "Guardar captura de ecrã como..."
 
 #: ../lib/screenshooter-utils.c:269
 #, c-format
@@ -237,7 +237,7 @@ msgstr "Copiar"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr "Ver em navegador"
+msgstr "Ver no navegador"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -269,7 +269,7 @@ msgstr "Tipo"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr "Imagem directa"
+msgstr "Imagem direta"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
@@ -281,7 +281,7 @@ msgstr "Integrado no código"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Eliminar"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:19
 msgid ""
