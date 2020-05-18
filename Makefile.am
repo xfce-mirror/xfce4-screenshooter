@@ -236,9 +236,9 @@ dist-hook: ChangeLog
 
 # Extra dist and distclean rules
 EXTRA_DIST = \
-	README	\
-	intltool-extract.in	\
-	intltool-merge.in	\
+	README.md \
+	intltool-extract.in \
+	intltool-merge.in \
 	intltool-update.in \
 	lib/screenshooter-marshal.list \
 	lib/screenshooter-imgur-dialog.ui \
