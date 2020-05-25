@@ -1,0 +1,395 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# E-Hayq LLC <www.ehayq.am>, 2018
+# Hayk Andreasyan <hayk.andreasyan@realschool.am>, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Apps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-07 06:31+0200\n"
+"PO-Revision-Date: 2020-05-25 07:00+0000\n"
+"Last-Translator: Real School <localization@ehayq.am>\n"
+"Language-Team: Eastern Armenian (http://www.transifex.com/xfce/xfce-apps/language/hye/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hye\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../lib/screenshooter-dialogs.c:468
+#, c-format
+msgid "%.2fKb of %.2fKb"
+msgstr "%.2fԿբ %.2fԿբ֊ից"
+
+#: ../lib/screenshooter-dialogs.c:554
+msgid "Transfer"
+msgstr "Փոխանցում"
+
+#: ../lib/screenshooter-dialogs.c:575
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
+"transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Էկրանահանը փոխանցուում է․</span>"
+
+#. Setup window
+#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
+#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
+#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
+#: ../lib/screenshooter-imgur-dialog.c:128
+#: ../src/xfce4-screenshooter.desktop.in.in.h:1
+#: ../panel-plugin/screenshooter.desktop.in.h:1
+msgid "Screenshot"
+msgstr "Էկրանահան"
+
+#: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:922
+msgid "_Help"
+msgstr "_Աջակցութիւն"
+
+#: ../lib/screenshooter-dialogs.c:677
+msgid "_Close"
+msgstr "_Փակել"
+
+#: ../lib/screenshooter-dialogs.c:687
+msgid "Preferences"
+msgstr "Նախընտրութիւններ"
+
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
+msgid "_Cancel"
+msgstr "_Չեղարկել"
+
+#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
+msgid "_OK"
+msgstr "_Լաւ"
+
+#: ../lib/screenshooter-dialogs.c:707
+msgid "Take a screenshot"
+msgstr "Էկրանահանել"
+
+#: ../lib/screenshooter-dialogs.c:744
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Էկրանահանման տարածք</span>"
+
+#: ../lib/screenshooter-dialogs.c:771
+msgid "Entire screen"
+msgstr "Ամբողջ ցուցադրիչ"
+
+#: ../lib/screenshooter-dialogs.c:778 ../src/main.c:59
+#: ../panel-plugin/screenshooter-plugin.c:330
+msgid "Take a screenshot of the entire screen"
+msgstr "Էկրանահանել ամբողջ ցուցադրիչը"
+
+#: ../lib/screenshooter-dialogs.c:786
+msgid "Active window"
+msgstr "Գործուն պատուհան"
+
+#: ../lib/screenshooter-dialogs.c:793 ../src/main.c:96
+#: ../panel-plugin/screenshooter-plugin.c:335
+msgid "Take a screenshot of the active window"
+msgstr "Էկրանահանել գործուն պատուհանը"
+
+#: ../lib/screenshooter-dialogs.c:801
+msgid "Select a region"
+msgstr "Ընտրել տարածք"
+
+#: ../lib/screenshooter-dialogs.c:806 ../src/main.c:74
+#: ../panel-plugin/screenshooter-plugin.c:340
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr "Նշեք տարածքը, որը պէտք է էկրանահանուի։ Ձախ սեղմում կատարելով, նշէք տարածքի վերին ակիւնը, ձախ սեղմակը բաց չթողելով նշէք ներքեւի անկիւնը եւ բաց թոէեք սեղմակը։"
+
+#: ../lib/screenshooter-dialogs.c:816
+msgid "Capture the mouse pointer"
+msgstr "Էկրանահանել մկնիկի նշիչը"
+
+#: ../lib/screenshooter-dialogs.c:821
+msgid "Display the mouse pointer on the screenshot"
+msgstr "Ցուցադրել մկնիկի նշիչը էկրանահանի վրայ"
+
+#: ../lib/screenshooter-dialogs.c:837
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Դադար էկրանահանումից առաջ</span>"
+
+#: ../lib/screenshooter-dialogs.c:865
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "Մինչ էկրանահանումը՝ դադարեցնել մի քանի վայրկեան"
+
+#: ../lib/screenshooter-dialogs.c:868
+msgid "seconds"
+msgstr "վայրկեաններ"
+
+#: ../lib/screenshooter-dialogs.c:936
+msgid "Choose what to do with the screenshot"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:970
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Գործողութիւն</span>"
+
+#. Save option radio button
+#: ../lib/screenshooter-dialogs.c:995
+msgid "Save"
+msgstr "Պահել"
+
+#: ../lib/screenshooter-dialogs.c:1000
+msgid "Save the screenshot to a PNG file"
+msgstr "Պահել PNG ձեւաչափոով"
+
+#: ../lib/screenshooter-dialogs.c:1009
+msgid "Copy to the clipboard"
+msgstr "Պատճէնել սեղմատախտակում"
+
+#: ../lib/screenshooter-dialogs.c:1011
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "Պատճէնել էկրանահանը սեղմատախտակում, յետագայում այն զետեղելու համար"
+
+#: ../lib/screenshooter-dialogs.c:1023
+msgid "Open with:"
+msgstr "Բացել ՝"
+
+#: ../lib/screenshooter-dialogs.c:1029
+msgid "Open the screenshot with the chosen application"
+msgstr "Բացել էկրանահանը ընտրուած ծրագրով"
+
+#: ../lib/screenshooter-dialogs.c:1048 ../src/main.c:69
+msgid "Application to open the screenshot"
+msgstr "Էհրանահանը բացելու ծրագիր"
+
+#: ../lib/screenshooter-dialogs.c:1061
+msgid "Host on Imgur"
+msgstr "Պահել Imgur֊ում"
+
+#: ../lib/screenshooter-dialogs.c:1065 ../src/main.c:86
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Պահել էկրանահանը Imgur֊ում՝ անվճար, առցանց պատկերի պահման սպասարկիչ"
+
+#: ../lib/screenshooter-dialogs.c:1075
+msgid ""
+"Watch for sensitive content, the uploaded image will be publicly\n"
+"available and there is no guarantee it can be certainly deleted."
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1102
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Նախապատկեր</span>"
+
+#: ../lib/screenshooter-dialogs.c:1164
+msgid "Save screenshot as..."
+msgstr "Պահել էկրանահանը որպէս..."
+
+#: ../lib/screenshooter-utils.c:269
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>Ծրագիրը չի մեկնարկել</b>\n%s"
+
+#: ../lib/screenshooter-imgur.c:106
+msgid "Upload the screenshot..."
+msgstr "Ներբեռնել էկրանահանը..."
+
+#: ../lib/screenshooter-imgur.c:116
+#, c-format
+msgid "An error occurred while transferring the data to imgur."
+msgstr "Տուեալները Imgur տեղափոխելու սխալ։"
+
+#: ../lib/screenshooter-imgur.c:173
+msgid "Imgur"
+msgstr "Imgur"
+
+#: ../lib/screenshooter-imgur-dialog.c:134
+msgid "Your uploaded image"
+msgstr "Բեռնուած պատկերը"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:1
+msgid "Size"
+msgstr "Չափս"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:2
+msgid "Link"
+msgstr "Յղու"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:3
+msgid "Tiny"
+msgstr "Փոքր"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:4
+msgid "Medium"
+msgstr "Միջին"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:5
+msgid "Full"
+msgstr "Մեծ"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:6
+msgid "Copy"
+msgstr "Պատճէնել"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:7
+msgid "View in browser"
+msgstr "Տեսնել զննարկիչում"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:8
+msgid "Image"
+msgstr "Պատկեր"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:9
+msgid "Syntax"
+msgstr "Շարահիւսութիւն"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:10
+msgid "HTML"
+msgstr "HTML"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:11
+msgid "Markdown"
+msgstr "Նշաձեւ"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:12
+msgid "BBCODE"
+msgstr "BBCODE"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:13
+msgid "Code"
+msgstr "Այլագիր"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:14
+msgid "Type"
+msgstr "Տիպ"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:15
+msgid "Direct image"
+msgstr "Ուղիղ պատկեր"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:16
+msgid "Link to full size"
+msgstr "Յղել ամբողջական չափին"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:17
+msgid "Embed into code"
+msgstr "Ներդրուած այլագրում"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:18
+msgid "Delete"
+msgstr "Ջնջել"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:19
+msgid ""
+"This link only shows up once. Make sure to save it if you think you might be"
+" deleting this image. We don't currently support linking images to Imgur "
+"accounts."
+msgstr "Յղումը ցուցադրում է միայն մեկ անգամ։ Համոզուէք, որ պահել էք այն, եթե ջնջելու էք պատկերը։ Ներկայիումս Imgur֊ի հաշիւ պատկերների յղումը չի սատարուում։"
+
+#: ../lib/screenshooter-imgur-dialog.ui.h:20
+msgid "Deletion link"
+msgstr "Ջնջման յղում"
+
+#: ../lib/screenshooter-job-callbacks.c:73
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Վիճակ</span>"
+
+#: ../lib/screenshooter-job-callbacks.c:169
+msgid "Details about the screenshot"
+msgstr "Էկրանահանման մանրամասներ"
+
+#. Create the user label
+#: ../lib/screenshooter-job-callbacks.c:215
+msgid "User:"
+msgstr "Աւգտատէր․"
+
+#: ../lib/screenshooter-job-callbacks.c:223
+msgid ""
+"Your user name, if you do not have one yet please create one on the Web page"
+" linked above"
+msgstr "Ձեր աւգտատիրոջ անունը, եթե չունէք՝ ստեղծէք վերեւում նշուած կայք֊էջում։"
+
+#. Create the password label
+#: ../lib/screenshooter-job-callbacks.c:229
+msgid "Password:"
+msgstr "Գաղտնաբառ․"
+
+#: ../lib/screenshooter-job-callbacks.c:236
+msgid "The password for the user above"
+msgstr "Վերին աւգտատիրոջ գաղտնաբառը"
+
+#. Create the title label
+#: ../lib/screenshooter-job-callbacks.c:242
+msgid "Title:"
+msgstr "Վերնագիր․"
+
+#: ../lib/screenshooter-job-callbacks.c:250
+msgid ""
+"The title of the screenshot, it will be used when displaying the screenshot "
+"on the image hosting service"
+msgstr "Էկրանահանի անունը կաւգտագործուի պատկերի պահման սպասարկիչում այն ցուցադրելիս"
+
+#. Create the comment label
+#: ../lib/screenshooter-job-callbacks.c:256
+msgid "Comment:"
+msgstr "Մեկնաբանութիւն․"
+
+#: ../lib/screenshooter-job-callbacks.c:264
+msgid ""
+"A comment on the screenshot, it will be used when displaying the screenshot "
+"on the image hosting service"
+msgstr "Էկրանահանի մեկնաբանութիւնը կաւգտագործուի, երբ պատկերի պահման սպասարկիչում այն ցուցադրուի։"
+
+#: ../src/main.c:49
+msgid "Copy the screenshot to the clipboard"
+msgstr "Պատճէնել էկրանահանը սեղմատախտակում"
+
+#: ../src/main.c:54
+msgid "Delay in seconds before taking the screenshot"
+msgstr "Վայրկեանների հապաղում էկրանահանումից առաջ"
+
+#: ../src/main.c:64
+msgid "Display the mouse on the screenshot"
+msgstr "Ցուցադրել մկնիկը էկրանահանում"
+
+#: ../src/main.c:81
+msgid "File path or directory where the screenshot will be saved"
+msgstr "Ուղին կամ նշարանը,  որտեղ կը պահուի էկրանահանը"
+
+#: ../src/main.c:91
+msgid "Version information"
+msgstr "Տարբերակի վերաբերեալ տեղեկոյթ"
+
+#: ../src/main.c:140
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr "Ընտրանքների բախում․ --%s֊ը եւ --%s֊ը չեն կարող աւգտագործուել միաժամանակ։\n"
+
+#: ../src/main.c:142
+#, c-format
+msgid ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
+msgstr " --%s հարաչափը աւգտագործուում է, երբ նրան տրուած է --ամբողջական ցուցադրիչ, --պատուհան կամ --տարածք։ Հարաչափը կանտեսուի։\n"
+
+#: ../src/main.c:159
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr "%s: %s\nՏե՛ս %s --help֊ը, հասանելի հրամանատողերի համար։\n"
+
+#: ../src/xfce4-screenshooter.desktop.in.in.h:2
+#: ../panel-plugin/screenshooter.desktop.in.h:2
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr "Գործող պատուհանի, ամբողջ ցուցադրիչի կամ տարածքի էկրանահանները"
+
+#: ../src/xfce4-screenshooter.appdata.xml.in.h:1
+msgid ""
+"Allows you to capture the entire screen, the active window or a selected "
+"region. You can set the delay that elapses before the screenshot is taken "
+"and the action that will be done with the screenshot: save it to a PNG file,"
+" copy it to the clipboard, open it using another application, or host it on "
+"imgur, a free online image hosting service."
+msgstr "Թոյլ է տալիս էկրանահանել ամբողջ ցուցադրիչը, գործուն պատուհանը կամ էլ ընտրուած տարածքը։ Կարելի է սահմանել դադար, մինչ էկրանահանումը եւ գործողութիւնը, որը կը կարտարուի էկրանահանման հետ համատեղ․ պահէք այն, PNG ձեւաչափով, պատճէնէք սեղմատախտակում, բացեք այն այլ ծրագրով, կամ պահէք այն Imgur֊ում՝ անվճար, առցանց ծառայութիւն պատկերների պահման համար։"
