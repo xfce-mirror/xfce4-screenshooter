@@ -7,13 +7,14 @@
 # Ardjuna <Asyura.x@gmail.com>, 2013
 # se7entime <se7entime@disroot.org>, 2014
 # se7entime <se7entime@disroot.org>, 2014
+# Triyan W. Nugroho <triyan.wn@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2019-10-07 04:31+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2020-05-28 15:29+0000\n"
+"Last-Translator: Triyan W. Nugroho <triyan.wn@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/xfce/xfce-apps/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -128,7 +129,7 @@ msgstr "detik"
 
 #: ../lib/screenshooter-dialogs.c:936
 msgid "Choose what to do with the screenshot"
-msgstr ""
+msgstr "Pilih apa yang akan dilakukan dengan cuplikan layar"
 
 #: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -175,7 +176,7 @@ msgstr "Host cuplikan layar di Imgur, layanan hosting gambar daring gratis"
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
-msgstr ""
+msgstr "Perhatikan konten yang sensitif, gambar yang diunggah akan tersedia\nsecara umum dan tidak ada jaminan gambar tersebut bisa benar-benar dihapus."
 
 #: ../lib/screenshooter-dialogs.c:1102
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -207,7 +208,7 @@ msgstr "Imgur"
 
 #: ../lib/screenshooter-imgur-dialog.c:134
 msgid "Your uploaded image"
-msgstr ""
+msgstr "Gambar yang diunggah"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -215,19 +216,19 @@ msgstr "Ukuran"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:2
 msgid "Link"
-msgstr ""
+msgstr "Tautan"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
-msgstr ""
+msgstr "Kecil"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:4
 msgid "Medium"
-msgstr ""
+msgstr "Sedang"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:5
 msgid "Full"
-msgstr ""
+msgstr "Penuh"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:6
 msgid "Copy"
@@ -235,7 +236,7 @@ msgstr "Salin"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "Lihat di peramban"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -243,7 +244,7 @@ msgstr "Citra"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "Sintaksis"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -251,15 +252,15 @@ msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
-msgstr ""
+msgstr "BBCODE"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:13
 msgid "Code"
-msgstr ""
+msgstr "Kode"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:14
 msgid "Type"
@@ -267,15 +268,15 @@ msgstr "Tipe"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr ""
+msgstr "Gambar langsung"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "Tautan ke ukuran penuh"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
-msgstr ""
+msgstr "Sisipkan pada kode"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
@@ -286,11 +287,11 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "Tautan ini hanya ditampilkan sekali. Pastikan untuk menyimpannya jika anda mungkin akan menghapus gambar ini. Saat ini tautan gambar ke akun Imgur tidak didukung."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
-msgstr ""
+msgstr "Tautan penghapusan"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -298,7 +299,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:169
 msgid "Details about the screenshot"
-msgstr ""
+msgstr "Rincian tentang cuplikan layar"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:215
@@ -309,7 +310,7 @@ msgstr "Pengguna:"
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
-msgstr ""
+msgstr "Nama pengguna anda, jika anda belum memilikinya, silakan buat pada tautan halaman Web di atas"
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:229
@@ -329,7 +330,7 @@ msgstr "Judul:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr ""
+msgstr "Judul cuplikan layar, akan digunakan saat menampilkan cuplikan layar di layanan hosting gambar"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:256
@@ -340,7 +341,7 @@ msgstr "Komentar:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr ""
+msgstr "Sebuah komentar di cuplikan layar, akan digunakan saat menampilkan cuplikan layar di layanan hosting gambar"
 
 #: ../src/main.c:49
 msgid "Copy the screenshot to the clipboard"
@@ -356,7 +357,7 @@ msgstr "Tampilkan tetikus di cuplikan layar"
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
-msgstr ""
+msgstr "Alamat berkas atau direktori penyimpanan cuplikan layar"
 
 #: ../src/main.c:91
 msgid "Version information"
@@ -394,4 +395,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr ""
+msgstr "Memungkinkan Anda untuk menangkap keseluruhan layar, jendela aktif atau wilayah yang dipilih. Anda dapat mengatur penundaan yang berlalu sebelum cuplikan layar diambil dan tindakan yang akan dilakukan dengan cuplikan layar: simpan ke berkas PNG, salin ke papan klip, buka dengan aplikasi lain, atau simpan di imgur, layanan hosting gambar daring gratis."
