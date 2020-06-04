@@ -200,15 +200,23 @@ appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 appdata_in_files = src/xfce4-screenshooter.appdata.xml.in
 
 
-# Fallback icons
+# App icons
+
+# 16x16 icons
+16iconsdir = $(datadir)/icons/hicolor/16x16/apps
+16icons_DATA = icons/16x16/org.xfce.screenshooter.png
 
 # 48x48 icons
 48iconsdir = $(datadir)/icons/hicolor/48x48/apps
-48icons_DATA = icons/48x48/applets-screenshooter.png
+48icons_DATA = icons/48x48/org.xfce.screenshooter.png
+
+# 128x128 icons
+128iconsdir = $(datadir)/icons/hicolor/128x128/apps
+128icons_DATA = icons/128x128/org.xfce.screenshooter.png
 
 # Scalable icons
 scaliconsdir = $(datadir)/icons/hicolor/scalable/apps
-scalicons_DATA = icons/scalable/applets-screenshooter.svg
+scalicons_DATA = icons/scalable/org.xfce.screenshooter.svg
 
 # Update the icon cache
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
@@ -244,7 +252,9 @@ EXTRA_DIST = \
 	lib/screenshooter-imgur-dialog.ui \
 	$(app_desktop_in_in_files) \
 	$(panel_desktop_in_files) \
+	$(16icons_DATA) \
 	$(48icons_DATA) \
+	$(128icons_DATA) \
 	$(scalicons_DATA) \
 	$(appdata_in_files)
 
