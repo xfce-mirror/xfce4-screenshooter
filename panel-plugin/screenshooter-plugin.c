@@ -37,7 +37,7 @@ t */
 
 #include "libscreenshooter.h"
 
-#define SCREENSHOT_ICON_NAME  "applets-screenshooter"
+#define SCREENSHOT_ICON_NAME  "org.xfce.screenshooter"
 
 /* Struct containing all panel plugin data */
 typedef struct

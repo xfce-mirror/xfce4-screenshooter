@@ -2,7 +2,7 @@
 Version=1.0
 _Name=Screenshot
 _Comment=Take screenshots of the entire screen, of the active window or of a region
-Icon=applets-screenshooter
+Icon=org.xfce.screenshooter
 Exec=xfce4-screenshooter
 Type=Application
 StartupNotify=true

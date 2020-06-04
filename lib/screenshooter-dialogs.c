@@ -710,7 +710,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
   gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
-  gtk_window_set_icon_name (GTK_WINDOW (dlg), "applets-screenshooter");
+  gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
@@ -937,7 +937,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
   gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
-  gtk_window_set_icon_name (GTK_WINDOW (dlg), "applets-screenshooter");
+  gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
   /* Create the main alignment for the dialog */
@@ -1170,7 +1170,7 @@ gchar
                                    GTK_RESPONSE_ACCEPT,
                                    NULL);
 
-    gtk_window_set_icon_name (GTK_WINDOW (chooser), "applets-screenshooter");
+    gtk_window_set_icon_name (GTK_WINDOW (chooser), "org.xfce.screenshooter");
     gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (chooser),
                                                     TRUE);
     gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser), FALSE);
