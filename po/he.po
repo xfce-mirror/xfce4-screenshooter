@@ -5,13 +5,14 @@
 # Translators:
 # Elishai Eliyahu <e1907@mm.st>, 2018-2020
 # GenghisKhan <genghiskhan@gmx.ca>, 2015
+# Omer, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2020-02-02 20:03+0000\n"
-"Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
+"PO-Revision-Date: 2020-06-23 21:36+0000\n"
+"Last-Translator: Omer\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-apps/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 #: ../lib/screenshooter-dialogs.c:468
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "‏%.2fKb מתוך %.2fKb"
+msgstr "‏%.2fק\"ב מתוך %.2fק\"ב"
 
 #: ../lib/screenshooter-dialogs.c:554
 msgid "Transfer"
