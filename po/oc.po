@@ -5,13 +5,14 @@
 # Translators:
 # Cédric Valmary <cvalmary@yahoo.fr>, 2016
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013
+# Quentin PAGÈS, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2019-10-07 04:31+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2020-07-09 17:58+0000\n"
+"Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/xfce/xfce-apps/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,11 +61,11 @@ msgstr "Preferéncias"
 
 #: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
 msgid "_Cancel"
-msgstr ""
+msgstr "_Anullar"
 
 #: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: ../lib/screenshooter-dialogs.c:707
 msgid "Take a screenshot"
@@ -126,7 +127,7 @@ msgstr "segondas"
 
 #: ../lib/screenshooter-dialogs.c:936
 msgid "Choose what to do with the screenshot"
-msgstr ""
+msgstr "Causissètz de qué far amb la captura d’ecran"
 
 #: ../lib/screenshooter-dialogs.c:970
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -205,7 +206,7 @@ msgstr "Imgur"
 
 #: ../lib/screenshooter-imgur-dialog.c:134
 msgid "Your uploaded image"
-msgstr ""
+msgstr "Vòstres imatges enviats"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -213,19 +214,19 @@ msgstr "Talha"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:2
 msgid "Link"
-msgstr ""
+msgstr "Ligam"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
-msgstr ""
+msgstr "Pichona"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:4
 msgid "Medium"
-msgstr ""
+msgstr "Mejana"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:5
 msgid "Full"
-msgstr ""
+msgstr "Complèta"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:6
 msgid "Copy"
@@ -233,7 +234,7 @@ msgstr "Copiar"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "Veire dins lo navigador"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -241,7 +242,7 @@ msgstr "Imatge"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "Sintaxi"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -249,15 +250,15 @@ msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
-msgstr ""
+msgstr "BBCODE"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:13
 msgid "Code"
-msgstr ""
+msgstr "Còdi"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:14
 msgid "Type"
@@ -265,11 +266,11 @@ msgstr "Tipe"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr ""
+msgstr "Imatge dirèct"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "Ligam de l’imatge complèt"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
@@ -288,7 +289,7 @@ msgstr ""
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
-msgstr ""
+msgstr "Ligam de supression"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -296,7 +297,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Estatut</span>"
 
 #: ../lib/screenshooter-job-callbacks.c:169
 msgid "Details about the screenshot"
-msgstr ""
+msgstr "Detalhs tocant la captura d’ecran"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:215
@@ -354,7 +355,7 @@ msgstr "Afichar la mirga sus la captura d'ecran"
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
-msgstr ""
+msgstr "Camin o repertòri ont serà gardada la captura d’ecran"
 
 #: ../src/main.c:91
 msgid "Version information"
