@@ -83,8 +83,8 @@ action_idle (ScreenshotData *sd)
                                                          sd->screenshot_dir,
                                                          sd->title,
                                                          sd->timestamp,
-                                                         TRUE,
-                                                         TRUE);
+                                                         sd->show_save_dialog,
+                                                         sd->show_save_dialog);
 
           if (save_location)
             {

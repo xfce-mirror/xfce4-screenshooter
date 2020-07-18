@@ -36,6 +36,7 @@ gboolean mouse = FALSE;
 gboolean clipboard = FALSE;
 gboolean upload_imgur = FALSE;
 gchar *screenshot_dir = NULL;
+gint hide_save_dialog = FALSE;
 gchar *application = NULL;
 gint delay = 0;
 
@@ -79,6 +80,11 @@ static GOptionEntry entries[] =
   {
     "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
     N_("File path or directory where the screenshot will be saved"),
+    NULL
+  },
+  {
+    "hide-save-dialog", 'a', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &hide_save_dialog,
+    N_("Do not show a save dialog"),
     NULL
   },
   {
@@ -208,6 +214,11 @@ int main (int argc, char **argv)
       g_printerr (conflict_error, "imgur", "open");
       return EXIT_FAILURE;
     }
+  else if (hide_save_dialog && (screenshot_dir == NULL))
+    {
+      g_printerr (conflict_error, "imgur", "hide-save-dialog");
+      return EXIT_FAILURE;
+    }
 
   /* Warn that action options, mouse and delay will be ignored in
    * non-cli mode */
@@ -306,6 +317,8 @@ int main (int argc, char **argv)
       if (screenshot_dir != NULL)
         {
           default_save_dir = g_file_new_for_commandline_arg (screenshot_dir);
+
+          sd->show_save_dialog = !hide_save_dialog;
 
           sd->action_specified = TRUE;
           g_free (sd->screenshot_dir);
