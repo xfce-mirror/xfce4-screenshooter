@@ -320,8 +320,9 @@ static GdkPixbuf
         {
           gboolean has_alpha = gdk_pixbuf_get_has_alpha (screenshot);
 
-          tmp =
-            gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, width * scale, height * scale);
+          tmp = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
+                                gdk_pixbuf_get_width (screenshot),
+                                gdk_pixbuf_get_height (screenshot));
           gdk_pixbuf_fill (tmp, 0);
 
           for (i = 0; i < rectangle_count; i++)
@@ -330,10 +331,10 @@ static GdkPixbuf
               gint rec_width, rec_height;
               gint y;
 
-              rec_x = rectangles[i].x;
-              rec_y = rectangles[i].y;
-              rec_width = rectangles[i].width;
-              rec_height = rectangles[i].height;
+              rec_x = rectangles[i].x / scale;
+              rec_y = rectangles[i].y / scale;
+              rec_width = rectangles[i].width / scale;
+              rec_height = rectangles[i].height / scale;
 
               if (rectangle.x < 0)
                 {
@@ -361,25 +362,25 @@ static GdkPixbuf
                   rec_y = 0;
                 }
 
-              if (x_orig + rec_x + rec_width > screen_geometry.width * scale)
-                rec_width = screen_geometry.width * scale - x_orig - rec_x;
+              if (x_orig + rec_x + rec_width > screen_geometry.width)
+                rec_width = screen_geometry.width - x_orig - rec_x;
 
-              if (y_orig + rec_y + rec_height > screen_geometry.height * scale)
-                rec_height = screen_geometry.height * scale - y_orig - rec_y;
+              if (y_orig + rec_y + rec_height > screen_geometry.height)
+                rec_height = screen_geometry.height - y_orig - rec_y;
 
-              for (y = rec_y; y < rec_y + rec_height; y++)
+              for (y = rec_y * scale; y < (rec_y + rec_height) * scale; y++)
                 {
                   guchar *src_pixels, *dest_pixels;
                   gint x;
 
                   src_pixels = gdk_pixbuf_get_pixels (screenshot)
                              + y * gdk_pixbuf_get_rowstride(screenshot)
-                             + rec_x * (has_alpha ? 4 : 3);
+                             + rec_x * scale * (has_alpha ? 4 : 3);
                   dest_pixels = gdk_pixbuf_get_pixels (tmp)
                               + y * gdk_pixbuf_get_rowstride (tmp)
-                              + rec_x * 4;
+                              + rec_x * scale * 4;
 
-                  for (x = 0; x < rec_width; x++)
+                  for (x = 0; x < rec_width * scale; x++)
                     {
                       *dest_pixels++ = *src_pixels++;
                       *dest_pixels++ = *src_pixels++;
