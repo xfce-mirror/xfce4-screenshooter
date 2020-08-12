@@ -12,7 +12,7 @@ m4_define([xfce4_screenshooter_version_tag], [])
 m4_define([xfce4_screenshooter_version], [xfce4_screenshooter_version_major().xfce4_screenshooter_version_minor().xfce4_screenshooter_version_micro()ifelse(xfce4_screenshooter_version_nano(), [], [], [.xfce4_screenshooter_version_nano()])ifelse(xfce4_screenshooter_version_tag(), [git], [xfce4_screenshooter_version_tag()-xfce4_screenshooter_version_build()], [xfce4_screenshooter_version_tag()])])
 
 AC_INIT([xfce4-screenshooter], [xfce4_screenshooter_version], [https://bugzilla.xfce.org/], [xfce4-screenshooter])
-AC_CONFIG_MACRO_DIR([m4])
+AC_CONFIG_MACRO_DIRS([m4])
 dnl ***************************
 dnl *** Initialize automake ***
 dnl ***************************
