@@ -206,6 +206,14 @@ appdata_in_files = src/xfce4-screenshooter.appdata.xml.in
 16iconsdir = $(datadir)/icons/hicolor/16x16/apps
 16icons_DATA = icons/16x16/org.xfce.screenshooter.png
 
+# 24x24 icons
+24iconsdir = $(datadir)/icons/hicolor/24x24/apps
+24icons_DATA = icons/24x24/org.xfce.screenshooter.png
+
+# 32x32 icons
+32iconsdir = $(datadir)/icons/hicolor/32x32/apps
+32icons_DATA = icons/32x32/org.xfce.screenshooter.png
+
 # 48x48 icons
 48iconsdir = $(datadir)/icons/hicolor/48x48/apps
 48icons_DATA = icons/48x48/org.xfce.screenshooter.png
@@ -253,6 +261,8 @@ EXTRA_DIST = \
 	$(app_desktop_in_in_files) \
 	$(panel_desktop_in_files) \
 	$(16icons_DATA) \
+	$(24icons_DATA) \
+	$(32icons_DATA) \
 	$(48icons_DATA) \
 	$(128icons_DATA) \
 	$(scalicons_DATA) \
