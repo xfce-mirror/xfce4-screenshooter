@@ -1,11 +1,11 @@
-[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.xfce.org/xfce/xfce4-screenshooter/COPYING)
+[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.xfce.org/apps/xfce4-screenshooter/-/blob/master/COPYING)
 
 # xfce4-screenshooter
 
-xfce4-screenshooter allows you to capture the entire screen, the active
+Xfce4-screenshooter allows you to capture the entire screen, the active
 window or a selected region. You can set the delay that elapses
 before the screenshot is taken and the action that will be done with
-the screenshot: save it to a PNG file, copy it to the clipboard, open
+the screenshot: save it to a /PNG file, copy it to the clipboard, open
 it using another application, or host it on imgur.com,
 a free online image hosting service.
 
@@ -13,7 +13,7 @@ a free online image hosting service.
 
 ### Homepage
 
-[xfce4-screenshooter documentation](https://docs.xfce.org/apps/xfce4-screenshooter/start)
+[Xfce4-screenshooter documentation](https://docs.xfce.org/apps/xfce4-screenshooter/start)
 
 ### Changelog
 
@@ -21,13 +21,13 @@ See [NEWS](https://gitlab.xfce.org/apps/xfce4-screenshooter/-/blob/master/NEWS) 
 
 ### Source Code Repository
 
-[xfce4-screenshooter source code](https://gitlab.xfce.org/apps/xfce4-screenshooter)
+[Xfce4-screenshooter source code](https://gitlab.xfce.org/apps/xfce4-screenshooter)
 
-### Download A Release Tarball
+### Download a Release Tarball
 
-[xfce4-screenshooter archive](https://archive.xfce.org/src/apps/xfce4-screenshooter)
+[Xfce4-screenshooter archive](https://archive.xfce.org/src/apps/xfce4-screenshooter)
     or
-[xfce4-screenshooter tags](https://gitlab.xfce.org/apps/xfce4-screenshooter/-/tags)
+[Xfce4-screenshooter tags](https://gitlab.xfce.org/apps/xfce4-screenshooter/-/tags)
 
 ### Installation
 
