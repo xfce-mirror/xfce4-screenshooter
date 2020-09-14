@@ -806,7 +806,8 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                                _("Select a region to be captured by clicking a point of "
                                  "the screen without releasing the mouse button, "
                                  "dragging your mouse to the other corner of the region, "
-                                 "and releasing the mouse button."));
+                                 "and releasing the mouse button.\n\n"
+                                 "Press Ctrl while dragging to move the region."));
 
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
                     G_CALLBACK (cb_rectangle_toggled), sd);
