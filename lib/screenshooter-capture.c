@@ -728,26 +728,6 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           old_rect.y = new_rect->y;
           old_rect.width = new_rect->width;
           old_rect.height = new_rect->height;
-
-          rect_width = old_rect.width;
-          rect_height = old_rect.height;
-
-          /* Take into account when the rectangle is moved out of screen */
-          if (old_rect.x < 0) rect_width += old_rect.x;
-          if (old_rect.y < 0) rect_height += old_rect.y;
-
-          coords = g_strdup_printf ("%d x %d", rect_width, rect_height);
-
-          size_window_get_offset (rbdata->size_window, strlen (coords),
-                                  event->x, event->y,
-                                  &x_offset, &y_offset);
-
-          gtk_window_move (GTK_WINDOW (rbdata->size_window),
-                           event->x + x_offset,
-                           event->y + y_offset);
-
-          gtk_label_set_text (GTK_LABEL (rbdata->size_label), coords);
-          g_free (coords);
         }
 
       if (rbdata->move_rectangle)
@@ -778,6 +758,26 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           new_rect->y = MIN (rbdata->y, event->y);
           new_rect->width = ABS (rbdata->x - event->x) + 1;
           new_rect->height = ABS (rbdata->y - event->y) + 1;
+
+          rect_width = new_rect->width;
+          rect_height = new_rect->height;
+
+          /* Take into account when the rectangle is moved out of screen */
+          if (new_rect->x < 0) rect_width += new_rect->x;
+          if (new_rect->y < 0) rect_height += new_rect->y;
+
+          coords = g_strdup_printf ("%d x %d", rect_width, rect_height);
+
+          size_window_get_offset (rbdata->size_window, strlen (coords),
+                                  event->x, event->y,
+                                  &x_offset, &y_offset);
+
+          gtk_window_move (GTK_WINDOW (rbdata->size_window),
+                           event->x + x_offset,
+                           event->y + y_offset);
+
+          gtk_label_set_text (GTK_LABEL (rbdata->size_label), coords);
+          g_free (coords);
         }
 
       region = cairo_region_create_rectangle (&old_rect);
