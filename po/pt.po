@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2020-05-04 18:07+0000\n"
+"PO-Revision-Date: 2020-09-16 23:56+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/xfce/xfce-apps/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -316,11 +316,11 @@ msgstr "O seu nome de utilizador, se ainda não se registou, faça o registo na 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:229
 msgid "Password:"
-msgstr "Senha:"
+msgstr "Palavra-passe:"
 
 #: ../lib/screenshooter-job-callbacks.c:236
 msgid "The password for the user above"
-msgstr "A senha para o utilizador acima"
+msgstr "A palavra-passe para o utilizador acima"
 
 #. Create the title label
 #: ../lib/screenshooter-job-callbacks.c:242
