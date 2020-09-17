@@ -44,9 +44,6 @@ static void
 cb_toggle_set_sensi                (GtkToggleButton    *tb,
                                     GtkWidget          *widget);
 static void
-cb_toggle_set_insensi              (GtkToggleButton    *tb,
-                                    GtkWidget          *widget);
-static void
 cb_open_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
@@ -152,15 +149,6 @@ static void
 cb_toggle_set_sensi (GtkToggleButton *tb, GtkWidget *widget)
 {
   gtk_widget_set_sensitive (widget, gtk_toggle_button_get_active (tb));
-}
-
-
-
-/* Set the widget active if the toggle button is inactive */
-static void
-cb_toggle_set_insensi (GtkToggleButton *tb, GtkWidget *widget)
-{
-  gtk_widget_set_sensitive (widget, !gtk_toggle_button_get_active (tb));
 }
 
 
@@ -816,7 +804,6 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
     gtk_check_button_new_with_label (_("Capture the mouse pointer"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (show_mouse_checkbox),
                                 (sd->show_mouse == 1));
-  gtk_widget_set_sensitive (show_mouse_checkbox, (sd->region != SELECT));
   gtk_widget_set_tooltip_text (show_mouse_checkbox,
                                _("Display the mouse pointer on the screenshot"));
   gtk_box_pack_start (GTK_BOX (area_box),
@@ -824,8 +811,6 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                       FALSE, 5);
   g_signal_connect (G_OBJECT (show_mouse_checkbox), "toggled",
                     G_CALLBACK (cb_show_mouse_toggled), sd);
-  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_insensi), show_mouse_checkbox);
 
   /* Create the main box for the delay stuff */
   delay_main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
