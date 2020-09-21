@@ -1354,56 +1354,38 @@ GdkPixbuf *screenshooter_capture_screenshot (gint     region,
   GdkWindow *window = NULL;
   GdkScreen *screen;
   GdkDisplay *display;
-  gboolean border;
 
-  /* gdk_get_default_root_window () does not need to be unrefed,
-   * needs_unref enables us to unref *window only if a non default
-   * window has been grabbed. */
-  gboolean needs_unref = TRUE;
-
-  /* Get the screen on which the screenshot should be captured */
   screen = gdk_screen_get_default ();
+  display = gdk_display_get_default ();
 
   /* Sync the display */
-  display = gdk_display_get_default ();
   gdk_display_sync (display);
 
 G_GNUC_BEGIN_IGNORE_DEPRECATIONS
   gdk_window_process_all_updates ();
 G_GNUC_END_IGNORE_DEPRECATIONS
 
-  /* Get the window/desktop we want to screenshot*/
   if (region == FULLSCREEN)
     {
-      TRACE ("We grab the entire screen");
-
+      TRACE ("Get the screenshot of the entire window");
       window = gdk_get_default_root_window ();
-      needs_unref = FALSE;
-      border = FALSE;
+      screenshot = get_window_screenshot (window, show_mouse, FALSE);
     }
   else if (region == ACTIVE_WINDOW)
     {
-      TRACE ("We grab the active window");
+      gboolean border;
 
+      TRACE ("Get the screenshot of the active window");
       window = screenshooter_get_active_window (screen, &needs_unref, &border);
-    }
-
-  if (region == FULLSCREEN || region == ACTIVE_WINDOW)
-    {
-      TRACE ("Get the screenshot of the given window");
-
       screenshot = get_window_screenshot (window, show_mouse, border);
-
-      if (needs_unref)
-        g_object_unref (window);
+      g_object_unref (window);
     }
   else if (region == SELECT)
     {
       TRACE ("Let the user select the region to screenshot");
-      if (!gdk_screen_is_composited (screen))
-        screenshot = get_rectangle_screenshot (delay);
-      else
-        screenshot = get_rectangle_screenshot_composited (delay);
+      screenshot = gdk_screen_is_composited (screen) ?
+                    get_rectangle_screenshot_composited (delay) :
+                    get_rectangle_screenshot (delay);
     }
 
   return screenshot;
