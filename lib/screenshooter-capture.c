@@ -311,11 +311,16 @@ static GdkPixbuf
   gint scale;
   GdkRectangle rectangle;
   GdkRectangle screen_geometry;
+  GtkBorder extents;
+  gboolean has_extents;
 
   /* Get the root window */
   TRACE ("Get the root window");
 
   root = gdk_get_default_root_window ();
+
+  if (has_extents = screenshooter_get_gtk_frame_extents (window, &extents))
+    border = FALSE;
 
   if (border)
     {
@@ -364,7 +369,20 @@ static GdkPixbuf
 
   TRACE ("Grab the screenshot");
 
-  screenshot = gdk_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
+  if (!has_extents)
+    screenshot = gdk_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
+  else
+    {
+      GdkRectangle rect;
+      gdk_window_get_frame_extents (window, &rect);
+
+      /* Add one pixel to sides so the border is visible */
+      rect.x = extents.left - 1;
+      rect.y = extents.top - 1;
+      rect.width -= extents.left + extents.right - 2;
+      rect.height -= extents.top + extents.bottom - 2;
+      screenshot = gdk_pixbuf_get_from_window (window, rect.x, rect.y, rect.width, rect.height);
+    }
 
   /* Code adapted from gnome-screenshot:
    * Copyright (C) 2001-2006  Jonathan Blandford <jrb@alum.mit.edu>

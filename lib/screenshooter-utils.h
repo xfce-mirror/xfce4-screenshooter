@@ -58,5 +58,7 @@ void       screenshooter_get_screen_geometry   (GdkRectangle   *geometry);
 GdkWindow *screenshooter_get_active_window     (GdkScreen      *screen,
                                                 gboolean       *needs_unref,
                                                 gboolean       *border);
+gboolean   screenshooter_get_gtk_frame_extents (GdkWindow      *window,
+                                                GtkBorder      *extents);
 
 #endif
