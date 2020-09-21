@@ -1374,11 +1374,13 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   else if (region == ACTIVE_WINDOW)
     {
       gboolean border;
+      gboolean needs_unref = TRUE;
 
       TRACE ("Get the screenshot of the active window");
       window = screenshooter_get_active_window (screen, &needs_unref, &border);
       screenshot = get_window_screenshot (window, show_mouse, border);
-      g_object_unref (window);
+      if (needs_unref)
+        g_object_unref (window);
     }
   else if (region == SELECT)
     {
