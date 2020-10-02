@@ -6,7 +6,7 @@
 # Cristian Marchi <cri.penta@gmail.com>, 2014-2015
 # Edoardo Maria Elidoro <edoardo.elidoro@gmail.com>, 2013
 # Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2018-2019
-# Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2019
+# Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2019-2020
 # Enrico B. <enricobe@hotmail.com>, 2018
 # Gianluca Foddis <gianluca.foddis@gmail.com>, 2009
 # Vincenzo Reale <vinx.reale@gmail.com>, 2020
@@ -14,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2020-05-21 18:39+0000\n"
-"Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>\n"
+"POT-Creation-Date: 2020-10-02 00:46+0200\n"
+"PO-Revision-Date: 2020-10-02 13:19+0000\n"
+"Last-Translator: Emanuele Petriglia <transifex@emanuelepetriglia.com>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">L'istantanea è in  corso
 #. Setup window
 #: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
 #: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-dialogs.c:921 ../lib/screenshooter-dialogs.c:928
 #: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
 #: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -51,7 +51,7 @@ msgid "Screenshot"
 msgstr "Istantanea"
 
 #: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
-#: ../lib/screenshooter-dialogs.c:922
+#: ../lib/screenshooter-dialogs.c:923
 msgid "_Help"
 msgstr "A_iuto"
 
@@ -63,11 +63,11 @@ msgstr "_Chiudi"
 msgid "Preferences"
 msgstr "Preferenze"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:924
 msgid "_Cancel"
 msgstr "A_nnulla"
 
-#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
+#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:925
 msgid "_OK"
 msgstr "_Ok"
 
@@ -101,90 +101,89 @@ msgstr "Scatta un'istantanea della finestra attiva"
 msgid "Select a region"
 msgstr "Porzione di schermo"
 
-#: ../lib/screenshooter-dialogs.c:806 ../src/main.c:74
-#: ../panel-plugin/screenshooter-plugin.c:340
+#: ../lib/screenshooter-dialogs.c:806
 msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
-msgstr "Per selezionare la regione da catturare fare clic in un punto dello schermo senza rilasciare il tasto del mouse, poi spostare il mouse nell'altro angolo della regione, quindi rilasciare il tasto del mouse."
+"Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
+"\n"
+"Press Ctrl while dragging to move the region."
+msgstr "Per selezionare la regione da catturare fare clic in un punto dello schermo senza rilasciare il tasto del mouse, poi spostare il mouse nell'altro angolo della regione, quindi rilasciare il tasto del mouse.\n\nTenere premuto Ctrl mentre di sposta il mouse per muovere la regione."
 
-#: ../lib/screenshooter-dialogs.c:816
+#: ../lib/screenshooter-dialogs.c:817
 msgid "Capture the mouse pointer"
 msgstr "Includi il puntatore del mouse"
 
-#: ../lib/screenshooter-dialogs.c:821
+#: ../lib/screenshooter-dialogs.c:822
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Mostra il puntatore del mouse nell'istantanea"
 
-#: ../lib/screenshooter-dialogs.c:837
+#: ../lib/screenshooter-dialogs.c:838
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ritardo prima della cattura</span>"
 
-#: ../lib/screenshooter-dialogs.c:865
+#: ../lib/screenshooter-dialogs.c:866
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Ritardo, in secondi, prima di scattare l'istantanea"
 
-#: ../lib/screenshooter-dialogs.c:868
+#: ../lib/screenshooter-dialogs.c:869
 msgid "seconds"
 msgstr "secondi"
 
-#: ../lib/screenshooter-dialogs.c:936
+#: ../lib/screenshooter-dialogs.c:937
 msgid "Choose what to do with the screenshot"
 msgstr "Scegliere cosa fare con l'istantanea"
 
-#: ../lib/screenshooter-dialogs.c:970
+#: ../lib/screenshooter-dialogs.c:971
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Azione</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:996
 msgid "Save"
 msgstr "Salva"
 
-#: ../lib/screenshooter-dialogs.c:1000
+#: ../lib/screenshooter-dialogs.c:1001
 msgid "Save the screenshot to a PNG file"
 msgstr "Salva l'istantanea come file PNG"
 
-#: ../lib/screenshooter-dialogs.c:1009
+#: ../lib/screenshooter-dialogs.c:1010
 msgid "Copy to the clipboard"
 msgstr "Copia negli appunti"
 
-#: ../lib/screenshooter-dialogs.c:1011
+#: ../lib/screenshooter-dialogs.c:1012
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Copia l'istantanea negli appunti in modo che possa essere incollata in seguito"
 
-#: ../lib/screenshooter-dialogs.c:1023
+#: ../lib/screenshooter-dialogs.c:1024
 msgid "Open with:"
 msgstr "Apri con:"
 
-#: ../lib/screenshooter-dialogs.c:1029
+#: ../lib/screenshooter-dialogs.c:1030
 msgid "Open the screenshot with the chosen application"
 msgstr "Apri l'istantanea con l'applicazione scelta"
 
-#: ../lib/screenshooter-dialogs.c:1048 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1049 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Applicazione per aprire l'istantanea"
 
-#: ../lib/screenshooter-dialogs.c:1061
+#: ../lib/screenshooter-dialogs.c:1062
 msgid "Host on Imgur"
 msgstr "Carica su Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1065 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1066 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Conserva l'istantanea su Imgur, un servizio online gratuito per condividere le immagini"
 
-#: ../lib/screenshooter-dialogs.c:1075
+#: ../lib/screenshooter-dialogs.c:1076
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
 msgstr "Attenzione a contenuti sensibili, l'immagine caricata sarà\npubblicamente disponibile e non c'è garanzia che possa venire rimossa."
 
-#: ../lib/screenshooter-dialogs.c:1102
+#: ../lib/screenshooter-dialogs.c:1103
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Anteprima</span>"
 
-#: ../lib/screenshooter-dialogs.c:1164
+#: ../lib/screenshooter-dialogs.c:1165
 msgid "Save screenshot as..."
 msgstr "Salva l'istantanea come…"
 
@@ -356,6 +355,13 @@ msgstr "Ritardo, in secondi, prima di scattare l'istantanea"
 #: ../src/main.c:64
 msgid "Display the mouse on the screenshot"
 msgstr "Mostra il mouse nell'istantanea"
+
+#: ../src/main.c:74 ../panel-plugin/screenshooter-plugin.c:340
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr "Per selezionare la regione da catturare fare clic in un punto dello schermo senza rilasciare il tasto del mouse, poi spostare il mouse nell'altro angolo della regione, quindi rilasciare il tasto del mouse."
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
