@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-07 06:31+0200\n"
-"PO-Revision-Date: 2020-07-09 17:58+0000\n"
-"Last-Translator: Quentin PAGÈS\n"
+"POT-Creation-Date: 2020-10-02 00:46+0200\n"
+"PO-Revision-Date: 2020-10-01 22:46+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/xfce/xfce-apps/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">La captura d'ecran es tra
 #. Setup window
 #: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
 #: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:927
+#: ../lib/screenshooter-dialogs.c:921 ../lib/screenshooter-dialogs.c:928
 #: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
 #: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -47,7 +47,7 @@ msgid "Screenshot"
 msgstr "Captura d'ecran"
 
 #: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
-#: ../lib/screenshooter-dialogs.c:922
+#: ../lib/screenshooter-dialogs.c:923
 msgid "_Help"
 msgstr "_Ajuda"
 
@@ -59,11 +59,11 @@ msgstr "_Tampar"
 msgid "Preferences"
 msgstr "Preferéncias"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:923
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:924
 msgid "_Cancel"
 msgstr "_Anullar"
 
-#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:924
+#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:925
 msgid "_OK"
 msgstr "_OK"
 
@@ -97,90 +97,89 @@ msgstr "Prene una captura d'ecran de la fenèstra activa"
 msgid "Select a region"
 msgstr "Seleccionar una zòna"
 
-#: ../lib/screenshooter-dialogs.c:806 ../src/main.c:74
-#: ../panel-plugin/screenshooter-plugin.c:340
+#: ../lib/screenshooter-dialogs.c:806
 msgid ""
-"Select a region to be captured by clicking a point of the screen without "
-"releasing the mouse button, dragging your mouse to the other corner of the "
-"region, and releasing the mouse button."
-msgstr "Seleccionar una zòna de capturar en clicant sus un punt de l'ecran sens daissar lo boton de la mirga, puèi en desplaçant vòstra mirga fins a l'autre canton de la zòna, e en daissant lo boton de la mirga."
+"Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
+"\n"
+"Press Ctrl while dragging to move the region."
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:816
+#: ../lib/screenshooter-dialogs.c:817
 msgid "Capture the mouse pointer"
 msgstr "Capturar lo puntador de la mirga"
 
-#: ../lib/screenshooter-dialogs.c:821
+#: ../lib/screenshooter-dialogs.c:822
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Afichar la mirga sus la captura d'ecran"
 
-#: ../lib/screenshooter-dialogs.c:837
+#: ../lib/screenshooter-dialogs.c:838
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Relambi abans la captura</span>"
 
-#: ../lib/screenshooter-dialogs.c:865
+#: ../lib/screenshooter-dialogs.c:866
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Relambi en segondas abans que la captura d'ecran siá presa"
 
-#: ../lib/screenshooter-dialogs.c:868
+#: ../lib/screenshooter-dialogs.c:869
 msgid "seconds"
 msgstr "segondas"
 
-#: ../lib/screenshooter-dialogs.c:936
+#: ../lib/screenshooter-dialogs.c:937
 msgid "Choose what to do with the screenshot"
 msgstr "Causissètz de qué far amb la captura d’ecran"
 
-#: ../lib/screenshooter-dialogs.c:970
+#: ../lib/screenshooter-dialogs.c:971
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Accion</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:996
 msgid "Save"
 msgstr "Enregistrar"
 
-#: ../lib/screenshooter-dialogs.c:1000
+#: ../lib/screenshooter-dialogs.c:1001
 msgid "Save the screenshot to a PNG file"
 msgstr "Enregistrar la captura d'ecran dins un fichièr PNG"
 
-#: ../lib/screenshooter-dialogs.c:1009
+#: ../lib/screenshooter-dialogs.c:1010
 msgid "Copy to the clipboard"
 msgstr "Copiar dins lo quichapapièrs"
 
-#: ../lib/screenshooter-dialogs.c:1011
+#: ../lib/screenshooter-dialogs.c:1012
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Copiar la captura d'ecran dins lo quichapapièrs per la pegar pus tard"
 
-#: ../lib/screenshooter-dialogs.c:1023
+#: ../lib/screenshooter-dialogs.c:1024
 msgid "Open with:"
 msgstr "Dobrir amb :"
 
-#: ../lib/screenshooter-dialogs.c:1029
+#: ../lib/screenshooter-dialogs.c:1030
 msgid "Open the screenshot with the chosen application"
 msgstr "Dobrir la captura d'ecran amb l'aplicacion causida"
 
-#: ../lib/screenshooter-dialogs.c:1048 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1049 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Aplicacion per dobrir la captura d'ecran"
 
-#: ../lib/screenshooter-dialogs.c:1061
+#: ../lib/screenshooter-dialogs.c:1062
 msgid "Host on Imgur"
 msgstr "Albergar sus lmgur"
 
-#: ../lib/screenshooter-dialogs.c:1065 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1066 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Albergar la captura d'ecran sus lmgur, un servici en linha gratuit d'albergament d'imatges"
 
-#: ../lib/screenshooter-dialogs.c:1075
+#: ../lib/screenshooter-dialogs.c:1076
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1102
+#: ../lib/screenshooter-dialogs.c:1103
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Apercebut</span>"
 
-#: ../lib/screenshooter-dialogs.c:1164
+#: ../lib/screenshooter-dialogs.c:1165
 msgid "Save screenshot as..."
 msgstr "Enregistrar la captura d'ecran jos..."
 
@@ -352,6 +351,13 @@ msgstr "Relambi en segondas abans la presa de la captura d'ecran"
 #: ../src/main.c:64
 msgid "Display the mouse on the screenshot"
 msgstr "Afichar la mirga sus la captura d'ecran"
+
+#: ../src/main.c:74 ../panel-plugin/screenshooter-plugin.c:340
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr "Seleccionar una zòna de capturar en clicant sus un punt de l'ecran sens daissar lo boton de la mirga, puèi en desplaçant vòstra mirga fins a l'autre canton de la zòna, e en daissant lo boton de la mirga."
 
 #: ../src/main.c:81
 msgid "File path or directory where the screenshot will be saved"
