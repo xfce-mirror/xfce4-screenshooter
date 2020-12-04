@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2008
+# Olexandr Nesterenko <nolexndr@gmail.com>, 2020
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2013-2015,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-02 00:46+0200\n"
-"PO-Revision-Date: 2020-10-01 22:46+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2020-12-04 15:26+0000\n"
+"Last-Translator: Olexandr Nesterenko <nolexndr@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/xfce/xfce-apps/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,7 +102,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr ""
+msgstr "Виберіть область для захоплення шляхом клацання мишкою на екрані та без відпускання кнопки миші пересуньте вказівник в інший кут області й тоді відпустіть кнопку миші.\n\nНатисніть Ctrl під час перетягування для зсуву області."
 
 #: ../lib/screenshooter-dialogs.c:817
 msgid "Capture the mouse pointer"
@@ -125,7 +126,7 @@ msgstr "секунд"
 
 #: ../lib/screenshooter-dialogs.c:937
 msgid "Choose what to do with the screenshot"
-msgstr ""
+msgstr "Оберіть дію зі знімком екрану"
 
 #: ../lib/screenshooter-dialogs.c:971
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -212,7 +213,7 @@ msgstr "Розмір"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:2
 msgid "Link"
-msgstr ""
+msgstr "Посилання"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
@@ -240,7 +241,7 @@ msgstr "Образ"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr ""
+msgstr "Синтаксис"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -248,15 +249,15 @@ msgstr "HTML"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:11
 msgid "Markdown"
-msgstr ""
+msgstr "Markdown"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:12
 msgid "BBCODE"
-msgstr ""
+msgstr "BBCODE"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:13
 msgid "Code"
-msgstr ""
+msgstr "Код"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:14
 msgid "Type"
@@ -272,7 +273,7 @@ msgstr ""
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
-msgstr ""
+msgstr "Вбудувати у код"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:18
 msgid "Delete"
