@@ -500,6 +500,9 @@ gboolean
 screenshooter_get_gtk_frame_extents (GdkWindow *window,
                                      GtkBorder *extents)
 {
+#if LIBXFCE4UI_CHECK_VERSION (4,16,0)
+  return xfce_has_gtk_frame_extents (window, extents);
+#else
   /* Code adapted from gnome-flashback:
    * Copyright (C) 2015-2017 Alberts Muktupāvels
    * https://gitlab.gnome.org/GNOME/gnome-flashback/-/commit/f884127
@@ -546,4 +549,5 @@ screenshooter_get_gtk_frame_extents (GdkWindow *window,
 
   XFree (data);
   return TRUE;
+#endif
 }
