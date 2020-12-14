@@ -245,7 +245,7 @@ static GdkPixbuf
   GdkRectangle rectangle;
   GdkRectangle screen_geometry;
   GtkBorder extents;
-  gboolean has_extends;
+  gboolean has_extents;
 
   /* Get the root window */
   TRACE ("Get the root window");
