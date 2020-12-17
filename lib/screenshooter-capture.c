@@ -70,6 +70,7 @@ static GdkPixbuf       *get_cursor_pixbuf                   (GdkDisplay *display
                                                              gint *xhot,
                                                              gint *yhot);
 static void             capture_cursor                      (GdkPixbuf      *screenshot,
+                                                             GtkBorder      *window_extents,
                                                              gint            scale,
                                                              gint            x,
                                                              gint            y,
@@ -239,6 +240,7 @@ fallback:
 
 
 static void capture_cursor (GdkPixbuf *screenshot,
+                            GtkBorder *window_extents,
                             gint scale,
                             gint x,
                             gint y,
@@ -261,6 +263,14 @@ static void capture_cursor (GdkPixbuf *screenshot,
   rectangle_window.y = y * scale;
   rectangle_window.width = w * scale;
   rectangle_window.height = h * scale;
+
+  if (window_extents != NULL)
+    {
+      rectangle_window.x += window_extents->left - 1;
+      rectangle_window.y += window_extents->top - 1;
+      rectangle_window.width -= window_extents->left + window_extents->right + 2;
+      rectangle_window.height -= window_extents->top + window_extents->bottom + 2;
+    }
 
   /* rectangle_cursor stores the cursor coordinates */
   rectangle_cursor.x = cursorx;
@@ -485,7 +495,8 @@ static GdkPixbuf
     }
 
   if (show_mouse)
-    capture_cursor (screenshot, scale, x_orig, y_orig, width, height);
+    capture_cursor (screenshot, has_extents ? &extents : NULL,
+                    scale, x_orig, y_orig, width, height);
 
   return screenshot;
 }
@@ -878,7 +889,7 @@ static GdkPixbuf
   screenshot = gdk_pixbuf_get_from_window (root, x, y, w, h);
 
   if (show_mouse)
-    capture_cursor (screenshot, gdk_window_get_scale_factor (root), x, y, w, h);
+    capture_cursor (screenshot, NULL, gdk_window_get_scale_factor (root), x, y, w, h);
 
   return screenshot;
 }
