@@ -37,8 +37,10 @@ cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
 
 
 static gboolean
-action_idle (ScreenshotData *sd)
+action_idle (gpointer user_data)
 {
+  ScreenshotData *sd = user_data;
+
   if (!sd->action_specified)
     {
       GtkWidget *dialog = screenshooter_actions_dialog_new (sd);
@@ -131,15 +133,17 @@ action_idle (ScreenshotData *sd)
 
 
 static gboolean
-take_screenshot_idle (ScreenshotData *sd)
+take_screenshot_idle (gpointer user_data)
 {
+  ScreenshotData *sd = user_data;
+
   sd->screenshot = screenshooter_capture_screenshot (sd->region,
                                                   sd->delay,
                                                   sd->show_mouse,
                                                   sd->plugin);
 
   if (sd->screenshot != NULL)
-    g_idle_add ((GSourceFunc) action_idle, sd);
+    g_idle_add (action_idle, sd);
   else if (!sd->plugin)
     gtk_main_quit ();
 
@@ -160,7 +164,7 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
   if (sd->region == SELECT)
     {
       /* The delay will be applied after the rectangle selection */
-      g_idle_add ((GSourceFunc) take_screenshot_idle, sd);
+      g_idle_add (take_screenshot_idle, sd);
       return;
     }
 
@@ -169,7 +173,7 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
       /* If delay is zero and the region was passed as an argument (from cli
        * or panel plugin), thus the first dialog was not shown, we will take
        * the screenshot immediately without a minimal delay */
-      g_idle_add ((GSourceFunc) take_screenshot_idle, sd);
+      g_idle_add (take_screenshot_idle, sd);
       return;
     }
 
@@ -177,5 +181,5 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
    * screenshot, but not less than 200ms, otherwise the first dialog might
    * appear on the screenshot. */
   delay = sd->delay == 0 ? 200 : sd->delay * 1000;
-  g_timeout_add (delay, (GSourceFunc) take_screenshot_idle, sd);
+  g_timeout_add (delay, take_screenshot_idle, sd);
 }
