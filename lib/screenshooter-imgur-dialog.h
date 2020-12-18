@@ -15,7 +15,7 @@ G_DECLARE_FINAL_TYPE (ScreenshooterImgurDialog, screenshooter_imgur_dialog, SCRE
 
 ScreenshooterImgurDialog *screenshooter_imgur_dialog_new (const gchar *upload_name,
                                                           const gchar *delete_hash);
-void screenshooter_imgur_dialog_run ();
+void screenshooter_imgur_dialog_run (ScreenshooterImgurDialog *self);
 
 G_END_DECLS
 
