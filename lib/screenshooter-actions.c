@@ -100,24 +100,32 @@ action_idle (gpointer user_data)
   else
     {
       GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
-      const gchar *temp_dir_uri = g_file_get_uri (temp_dir);
-      const gchar *screenshot_path =
+      gchar *temp_dir_uri = g_file_get_uri (temp_dir);
+      gchar *screenshot_path =
         screenshooter_save_screenshot (sd->screenshot,
                                        temp_dir_uri,
                                        sd->title,
                                        sd->timestamp,
                                        FALSE,
                                        FALSE);
+      g_object_unref (temp_dir);
+      g_free (temp_dir_uri);
 
       if (screenshot_path != NULL)
         {
           if (sd->action & OPEN)
             screenshooter_open_screenshot (screenshot_path, sd->app, sd->app_info);
           else if (sd->action & UPLOAD_IMGUR)
-            screenshooter_upload_to_imgur (screenshot_path, sd->title);
-        }
+            {
+              if (!screenshooter_upload_to_imgur (screenshot_path, sd->title))
+                {
+                  g_free (screenshot_path);
+                  return TRUE; /* Show actions dialog again */
+                }
+            }
 
-      g_object_unref (temp_dir);
+          g_free (screenshot_path);
+        }
     }
 
   if (!sd->plugin)

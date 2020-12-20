@@ -84,11 +84,13 @@ create_spinner_dialog             (const gchar        *title,
   return dialog;
 }
 
-void cb_error (ExoJob *job, GError *error, gpointer unused)
+void cb_error (ExoJob *job, GError *error, GtkWidget *dialog)
 {
   g_return_if_fail (error != NULL);
 
   screenshooter_error ("%s", error->message);
+
+  gtk_dialog_response (GTK_DIALOG (dialog), DIALOG_RESPONSE_ERROR);
 }
 
 

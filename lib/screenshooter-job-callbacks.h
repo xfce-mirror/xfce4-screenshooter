@@ -33,6 +33,7 @@ typedef enum
   COMMENT,
 } AskInformation;
 
+#define DIALOG_RESPONSE_ERROR 1
 
 GtkWidget *
 create_spinner_dialog              (const gchar        *title,
@@ -41,7 +42,7 @@ create_spinner_dialog              (const gchar        *title,
 void
 cb_error                           (ExoJob            *job,
                                     GError            *error,
-                                    gpointer           unused);
+                                    GtkWidget         *dialog);
 void
 cb_finished                        (ExoJob            *job,
                                     GtkWidget         *dialog);
