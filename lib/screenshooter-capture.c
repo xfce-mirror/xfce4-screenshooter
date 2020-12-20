@@ -70,6 +70,7 @@ static GdkPixbuf       *get_cursor_pixbuf                   (GdkDisplay *display
                                                              gint *xhot,
                                                              gint *yhot);
 static void             capture_cursor                      (GdkPixbuf      *screenshot,
+                                                             GtkBorder      *window_extents,
                                                              gint            scale,
                                                              gint            x,
                                                              gint            y,
@@ -239,6 +240,7 @@ fallback:
 
 
 static void capture_cursor (GdkPixbuf *screenshot,
+                            GtkBorder *window_extents,
                             gint scale,
                             gint x,
                             gint y,
@@ -261,6 +263,14 @@ static void capture_cursor (GdkPixbuf *screenshot,
   rectangle_window.y = y * scale;
   rectangle_window.width = w * scale;
   rectangle_window.height = h * scale;
+
+  if (window_extents != NULL)
+    {
+      rectangle_window.x += window_extents->left - 1;
+      rectangle_window.y += window_extents->top - 1;
+      rectangle_window.width -= window_extents->left + window_extents->right + 2;
+      rectangle_window.height -= window_extents->top + window_extents->bottom + 2;
+    }
 
   /* rectangle_cursor stores the cursor coordinates */
   rectangle_cursor.x = cursorx;
@@ -311,11 +321,16 @@ static GdkPixbuf
   gint scale;
   GdkRectangle rectangle;
   GdkRectangle screen_geometry;
+  GtkBorder extents;
+  gboolean has_extents;
 
   /* Get the root window */
   TRACE ("Get the root window");
 
   root = gdk_get_default_root_window ();
+
+  if (has_extents = screenshooter_get_gtk_frame_extents (window, &extents))
+    border = FALSE;
 
   if (border)
     {
@@ -364,7 +379,20 @@ static GdkPixbuf
 
   TRACE ("Grab the screenshot");
 
-  screenshot = gdk_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
+  if (!has_extents)
+    screenshot = gdk_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
+  else
+    {
+      GdkRectangle rect;
+      gdk_window_get_frame_extents (window, &rect);
+
+      /* Add one pixel to sides so the border is visible */
+      rect.x = extents.left - 1;
+      rect.y = extents.top - 1;
+      rect.width -= extents.left + extents.right - 2;
+      rect.height -= extents.top + extents.bottom - 2;
+      screenshot = gdk_pixbuf_get_from_window (window, rect.x, rect.y, rect.width, rect.height);
+    }
 
   /* Code adapted from gnome-screenshot:
    * Copyright (C) 2001-2006  Jonathan Blandford <jrb@alum.mit.edu>
@@ -467,7 +495,8 @@ static GdkPixbuf
     }
 
   if (show_mouse)
-    capture_cursor (screenshot, scale, x_orig, y_orig, width, height);
+    capture_cursor (screenshot, has_extents ? &extents : NULL,
+                    scale, x_orig, y_orig, width, height);
 
   return screenshot;
 }
@@ -860,7 +889,7 @@ static GdkPixbuf
   screenshot = gdk_pixbuf_get_from_window (root, x, y, w, h);
 
   if (show_mouse)
-    capture_cursor (screenshot, gdk_window_get_scale_factor (root), x, y, w, h);
+    capture_cursor (screenshot, NULL, gdk_window_get_scale_factor (root), x, y, w, h);
 
   return screenshot;
 }

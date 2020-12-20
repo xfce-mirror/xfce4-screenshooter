@@ -493,3 +493,61 @@ screenshooter_get_active_window (GdkScreen *screen,
 
   return window;
 }
+
+
+
+gboolean
+screenshooter_get_gtk_frame_extents (GdkWindow *window,
+                                     GtkBorder *extents)
+{
+#if LIBXFCE4UI_CHECK_VERSION (4,16,0)
+  return xfce_has_gtk_frame_extents (window, extents);
+#else
+  /* Code adapted from gnome-flashback:
+   * Copyright (C) 2015-2017 Alberts Muktupāvels
+   * https://gitlab.gnome.org/GNOME/gnome-flashback/-/commit/f884127
+   */
+
+  GdkDisplay *display;
+  Display *xdisplay;
+  Window xwindow;
+  Atom gtk_frame_extents;
+  Atom type;
+  gint format;
+  gulong n_items;
+  gulong bytes_after;
+  guchar *data;
+  gint result;
+  gulong *borders;
+
+  display = gdk_display_get_default ();
+  xdisplay = gdk_x11_display_get_xdisplay (display);
+  xwindow = gdk_x11_window_get_xid (window);
+  gtk_frame_extents = XInternAtom (xdisplay, "_GTK_FRAME_EXTENTS", False);
+
+  gdk_x11_display_error_trap_push (display);
+  result = XGetWindowProperty (xdisplay, xwindow, gtk_frame_extents,
+                               0, G_MAXLONG, False, XA_CARDINAL,
+                               &type, &format, &n_items, &bytes_after, &data);
+  gdk_x11_display_error_trap_pop_ignored (display);
+
+  if (data == NULL)
+    return FALSE;
+
+  if (result != Success || type != XA_CARDINAL || format != 32 || n_items != 4)
+    {
+      XFree (data);
+      return FALSE;
+    }
+
+  borders = (gulong *) data;
+
+  extents->left = borders[0];
+  extents->right = borders[1];
+  extents->top = borders[2];
+  extents->bottom = borders[3];
+
+  XFree (data);
+  return TRUE;
+#endif
+}
