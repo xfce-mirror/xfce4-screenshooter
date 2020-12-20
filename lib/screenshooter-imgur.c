@@ -162,13 +162,13 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
  *
  **/
 
-void screenshooter_upload_to_imgur   (const gchar  *image_path,
-                                      const gchar  *title)
+gboolean screenshooter_upload_to_imgur   (const gchar  *image_path,
+                                          const gchar  *title)
 {
   ScreenshooterJob *job;
   GtkWidget *dialog, *label;
 
-  g_return_if_fail (image_path != NULL);
+  g_return_val_if_fail (image_path != NULL, TRUE);
 
   dialog = create_spinner_dialog(_("Imgur"), &label);
 
@@ -182,9 +182,9 @@ void screenshooter_upload_to_imgur   (const gchar  *image_path,
 
   g_signal_connect (job, "ask", G_CALLBACK (cb_ask_for_information), NULL);
   g_signal_connect (job, "image-uploaded", G_CALLBACK (cb_image_uploaded), NULL);
-  g_signal_connect (job, "error", G_CALLBACK (cb_error), NULL);
+  g_signal_connect (job, "error", G_CALLBACK (cb_error), dialog);
   g_signal_connect (job, "finished", G_CALLBACK (cb_finished), dialog);
   g_signal_connect (job, "info-message", G_CALLBACK (cb_update_info), label);
 
-  gtk_dialog_run (GTK_DIALOG (dialog));
+  return gtk_dialog_run (GTK_DIALOG (dialog)) != DIALOG_RESPONSE_ERROR;
 }
