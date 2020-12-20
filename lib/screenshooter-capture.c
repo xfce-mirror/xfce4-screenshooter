@@ -640,9 +640,9 @@ static gboolean cb_button_released (GtkWidget *widget,
     {
       if (rbdata->rubber_banding)
         {
-          gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
           gtk_widget_destroy (rbdata->size_window);
           rbdata->size_window = NULL;
+          gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
           return TRUE;
         }
       else
