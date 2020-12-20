@@ -35,6 +35,9 @@ static void
 cb_rectangle_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
+cb_radiobutton_activate            (GtkToggleButton    *tb,
+                                    GtkWidget          *widget);
+static void
 cb_show_mouse_toggled              (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
@@ -120,6 +123,14 @@ static void cb_rectangle_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
     sd->region = SELECT;
+}
+
+
+
+/* Confirm the selected screenshot options and proceed to capture */
+static void cb_radiobutton_activate (GtkToggleButton *tb, GtkWidget *widget)
+{
+  gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_OK);
 }
 
 
@@ -767,6 +778,9 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled",
                     G_CALLBACK (cb_fullscreen_screen_toggled),
                     sd);
+  g_signal_connect (G_OBJECT (fullscreen_button), "activate",
+                    G_CALLBACK (cb_radiobutton_activate),
+                    dlg);
 
   /* Active window */
   active_window_button =
@@ -782,6 +796,9 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   g_signal_connect (G_OBJECT (active_window_button), "toggled",
                     G_CALLBACK (cb_active_window_toggled),
                     sd);
+  g_signal_connect (G_OBJECT (active_window_button), "activate",
+                    G_CALLBACK (cb_radiobutton_activate),
+                    dlg);
 
   /* Rectangle */
   rectangle_button =
@@ -799,6 +816,9 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
                     G_CALLBACK (cb_rectangle_toggled), sd);
+  g_signal_connect (G_OBJECT (rectangle_button), "activate",
+                    G_CALLBACK (cb_radiobutton_activate),
+                    dlg);
 
   /* Create show mouse checkbox */
   show_mouse_checkbox =
@@ -983,6 +1003,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                 (sd->action & SAVE));
   g_signal_connect (G_OBJECT (save_radio_button), "toggled",
                     G_CALLBACK (cb_save_toggled), sd);
+  g_signal_connect (G_OBJECT (save_radio_button), "activate",
+                    G_CALLBACK (cb_radiobutton_activate), dlg);
   gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
   gtk_grid_attach (GTK_GRID (actions_grid), save_radio_button, 0, 0, 1, 1);
 
@@ -1000,6 +1022,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                     (sd->action & CLIPBOARD));
       g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled",
                         G_CALLBACK (cb_clipboard_toggled), sd);
+      g_signal_connect (G_OBJECT (clipboard_radio_button), "activate",
+                        G_CALLBACK (cb_radiobutton_activate), dlg);
       gtk_grid_attach (GTK_GRID (actions_grid), clipboard_radio_button, 0, 1, 1, 1);
     }
 
@@ -1011,6 +1035,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                 (sd->action & OPEN));
   g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
                     G_CALLBACK (cb_open_toggled), sd);
+  g_signal_connect (G_OBJECT (open_with_radio_button), "activate",
+                    G_CALLBACK (cb_radiobutton_activate), dlg);
   gtk_widget_set_tooltip_text (open_with_radio_button,
                                _("Open the screenshot with the chosen application"));
   gtk_grid_attach (GTK_GRID (actions_grid), open_with_radio_button, 0, 2, 1, 1);
@@ -1052,6 +1078,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                  "image hosting service"));
   g_signal_connect (G_OBJECT (imgur_radio_button), "toggled",
                     G_CALLBACK (cb_imgur_toggled), sd);
+  g_signal_connect (G_OBJECT (imgur_radio_button), "activate",
+                    G_CALLBACK (cb_radiobutton_activate), dlg);
   gtk_container_add (GTK_CONTAINER (hbox), imgur_radio_button);
 
   /* Upload to imgur warning info */
