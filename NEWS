@@ -1,3 +1,32 @@
+1.9.8
+======
+- Fix dialog icons and add title to error dialog
+- Go back to actions dialog if image upload fails (#12)
+- Go back to actions dialog if GtkFileChooser is dismissed (#33)
+- Make radio buttons execute actions on enter/space press
+- Exclude shadow borders from CSD windows (!10)
+- Capture mouse cursor in rectangle selection (#30)
+- Region size should show updated size (!9)
+- Add info about Ctrl to "Select region" tooltip
+- Replace AC_CONFIG_MACRO_DIR with AC_CONFIG_MACRO_DIRS (!4)
+- Added 24px and 32px icons
+- Fix screenshot capture when scale > 1
+- Add new App icon and switch to rDNS icon name
+- Switch to README.md and foreign automake mode
+- Bug #16717: Move from exo-csource to xdt-csource
+- Update homepage link at appdata.xml
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Latvian, Lithuanian, Malay,
+  Norwegian Bokmål, Norwegian Nynorsk, Occitan (post 1500), Polish,
+  Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak,
+  Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, Urdu, Urdu
+  (Pakistan), Uyghur, Vietnamese
+
 1.9.7
 ======
 - Add warning notice to imgur upload option (Bug #15347)
