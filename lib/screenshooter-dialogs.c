@@ -1065,45 +1065,48 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button), combobox);
 
   /* Upload to imgur radio button */
-  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
-  gtk_grid_attach (GTK_GRID (actions_grid), hbox, 0, 4, 1, 1);
+  if (sd->enable_imgur_upload)
+    {
+    hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
+    gtk_grid_attach (GTK_GRID (actions_grid), hbox, 0, 4, 1, 1);
 
-  imgur_radio_button =
-    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
-                                                 _("Host on Imgur"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (imgur_radio_button),
+    imgur_radio_button =
+      gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
+                                                   _("Host on Imgur"));
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (imgur_radio_button),
                                 (sd->action & UPLOAD_IMGUR));
-  gtk_widget_set_tooltip_text (imgur_radio_button,
-                               _("Host the screenshot on Imgur, a free online "
-                                 "image hosting service"));
-  g_signal_connect (G_OBJECT (imgur_radio_button), "toggled",
-                    G_CALLBACK (cb_imgur_toggled), sd);
-  g_signal_connect (G_OBJECT (imgur_radio_button), "activate",
-                    G_CALLBACK (cb_radiobutton_activate), dlg);
-  gtk_container_add (GTK_CONTAINER (hbox), imgur_radio_button);
+    gtk_widget_set_tooltip_text (imgur_radio_button,
+                                 _("Host the screenshot on Imgur, a free online "
+                                   "image hosting service"));
+    g_signal_connect (G_OBJECT (imgur_radio_button), "toggled",
+                      G_CALLBACK (cb_imgur_toggled), sd);
+    g_signal_connect (G_OBJECT (imgur_radio_button), "activate",
+                      G_CALLBACK (cb_radiobutton_activate), dlg);
+    gtk_container_add (GTK_CONTAINER (hbox), imgur_radio_button);
 
-  /* Upload to imgur warning info */
-  imgur_warning_image = gtk_image_new_from_icon_name ("dialog-warning",
-                                                      GTK_ICON_SIZE_BUTTON);
-  imgur_warning_label = gtk_label_new (
-    _("Watch for sensitive content, the uploaded image will be publicly\n"
-      "available and there is no guarantee it can be certainly deleted."));
+    /* Upload to imgur warning info */
+    imgur_warning_image = gtk_image_new_from_icon_name ("dialog-warning",
+                                                        GTK_ICON_SIZE_BUTTON);
+    imgur_warning_label = gtk_label_new (
+      _("Watch for sensitive content, the uploaded image will be publicly\n"
+        "available and there is no guarantee it can be certainly deleted."));
 
-  popover = gtk_popover_new (imgur_warning_image);
-  gtk_container_add (GTK_CONTAINER (popover), imgur_warning_label);
-  gtk_container_set_border_width (GTK_CONTAINER (popover), 6);
-  gtk_widget_show (imgur_warning_label);
+    popover = gtk_popover_new (imgur_warning_image);
+    gtk_container_add (GTK_CONTAINER (popover), imgur_warning_label);
+    gtk_container_set_border_width (GTK_CONTAINER (popover), 6);
+    gtk_widget_show (imgur_warning_label);
 
-  evbox = gtk_event_box_new ();
-  g_signal_connect_swapped (G_OBJECT (evbox), "button-press-event",
-                            G_CALLBACK (cb_imgur_warning_clicked), popover);
-  gtk_container_add (GTK_CONTAINER (hbox), evbox);
-  gtk_container_add (GTK_CONTAINER (evbox), imgur_warning_image);
+    evbox = gtk_event_box_new ();
+    g_signal_connect_swapped (G_OBJECT (evbox), "button-press-event",
+                              G_CALLBACK (cb_imgur_warning_clicked), popover);
+    gtk_container_add (GTK_CONTAINER (hbox), evbox);
+    gtk_container_add (GTK_CONTAINER (evbox), imgur_warning_image);
 
-  cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_HAND2);
-  g_signal_connect (evbox, "realize",
-                    G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
-  g_object_unref (cursor);
+    cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_HAND2);
+    g_signal_connect (evbox, "realize",
+                      G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
+    g_object_unref (cursor);
+    }
 
   /* Preview box */
   preview_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
