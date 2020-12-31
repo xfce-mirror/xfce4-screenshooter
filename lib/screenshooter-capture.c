@@ -670,13 +670,15 @@ static gboolean cb_size_window_draw (GtkWidget *widget,
 
 static void size_window_get_offset (GtkWidget *widget,
                                     gint digits,
+                                    gint digit_width,
+                                    gint line_height,
                                     gint x_event,
                                     gint y_event,
                                     gint *x_offset,
                                     gint *y_offset)
 {
   GdkRectangle geometry;
-  gint relative_x, relative_y;
+  gint relative_x, relative_y, text_width;
 
   GdkDisplay *display = gtk_widget_get_display (widget);
   GdkMonitor *monitor = gdk_display_get_monitor_at_point (display, x_event, y_event);
@@ -688,11 +690,16 @@ static void size_window_get_offset (GtkWidget *widget,
   *x_offset = -2;
   *y_offset = -4;
 
-  if (relative_x > geometry.width - (digits * 9))
-    *x_offset -= digits * 9;
+  /* Add 3/4 of a digit width as right padding */
+  text_width = (digits + 0.75) * digit_width;
+  /* Add 10% of line height as bottom padding */
+  line_height = line_height * 1.1;
 
-  if (relative_y > geometry.height - 20)
-    *y_offset -= 20;
+  if (relative_x > geometry.width - text_width)
+    *x_offset -= text_width;
+
+  if (relative_y > geometry.height - line_height)
+    *y_offset -= line_height;
 }
 
 
@@ -746,6 +753,7 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 {
   gchar *coords;
   gint rect_width, rect_height, x_offset, y_offset;
+  static gint digit_width = -1, line_height = -1;
 
   if (rbdata->left_pressed)
     {
@@ -813,7 +821,26 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 
       coords = g_strdup_printf ("%d x %d", rect_width, rect_height);
 
+      if (digit_width == -1)
+        {
+          PangoLayout *layout;
+          PangoContext *context;
+          PangoFontMetrics *metrics;
+
+          layout = gtk_label_get_layout (GTK_LABEL (rbdata->size_label));
+          context = pango_layout_get_context (layout);
+          metrics = pango_context_get_metrics (context,
+                                               pango_context_get_font_description (context),
+                                               pango_context_get_language (context));
+
+          digit_width = PANGO_PIXELS_CEIL (pango_font_metrics_get_approximate_digit_width (metrics));
+          line_height = PANGO_PIXELS_CEIL (pango_font_metrics_get_height (metrics));
+
+          pango_font_metrics_unref (metrics);
+        }
+
       size_window_get_offset (rbdata->size_window, strlen (coords),
+                              digit_width, line_height,
                               event->x, event->y,
                               &x_offset, &y_offset);
 
