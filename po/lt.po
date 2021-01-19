@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-02 00:46+0200\n"
-"PO-Revision-Date: 2020-10-02 18:47+0000\n"
-"Last-Translator: Moo\n"
+"POT-Creation-Date: 2020-12-20 12:47+0100\n"
+"PO-Revision-Date: 2020-12-20 11:47+0000\n"
+"Last-Translator: Nick Schermer <nick@xfce.org>\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,25 +19,25 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../lib/screenshooter-dialogs.c:468
+#: ../lib/screenshooter-dialogs.c:467
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb iš %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:554
+#: ../lib/screenshooter-dialogs.c:553
 msgid "Transfer"
 msgstr "Persiuntimas"
 
-#: ../lib/screenshooter-dialogs.c:575
+#: ../lib/screenshooter-dialogs.c:574
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ši ekrano kopija persiunčiama į:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
-#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:921 ../lib/screenshooter-dialogs.c:928
+#: ../lib/screenshooter-dialogs.c:673 ../lib/screenshooter-dialogs.c:679
+#: ../lib/screenshooter-dialogs.c:691 ../lib/screenshooter-dialogs.c:698
+#: ../lib/screenshooter-dialogs.c:926 ../lib/screenshooter-dialogs.c:933
 #: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
 #: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -45,140 +45,140 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ši ekrano kopija persiun
 msgid "Screenshot"
 msgstr "Ekrano kopija"
 
-#: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
-#: ../lib/screenshooter-dialogs.c:923
+#: ../lib/screenshooter-dialogs.c:675 ../lib/screenshooter-dialogs.c:693
+#: ../lib/screenshooter-dialogs.c:928
 msgid "_Help"
 msgstr "Ž_inynas"
 
-#: ../lib/screenshooter-dialogs.c:677
+#: ../lib/screenshooter-dialogs.c:676
 msgid "_Close"
 msgstr "_Užverti"
 
-#: ../lib/screenshooter-dialogs.c:687
+#: ../lib/screenshooter-dialogs.c:686
 msgid "Preferences"
 msgstr "Nuostatos"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:924
+#: ../lib/screenshooter-dialogs.c:694 ../lib/screenshooter-dialogs.c:929
 msgid "_Cancel"
 msgstr "_Atsisakyti"
 
-#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:925
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:930
 msgid "_OK"
 msgstr "_Gerai"
 
-#: ../lib/screenshooter-dialogs.c:707
+#: ../lib/screenshooter-dialogs.c:706
 msgid "Take a screenshot"
 msgstr "Padaryti ekrano kopiją"
 
-#: ../lib/screenshooter-dialogs.c:744
+#: ../lib/screenshooter-dialogs.c:743
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekrano kopijos sritis</span>"
 
-#: ../lib/screenshooter-dialogs.c:771
+#: ../lib/screenshooter-dialogs.c:770
 msgid "Entire screen"
 msgstr "Visas ekranas"
 
-#: ../lib/screenshooter-dialogs.c:778 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Padaryti viso ekrano ekrano kopiją"
 
-#: ../lib/screenshooter-dialogs.c:786
+#: ../lib/screenshooter-dialogs.c:788
 msgid "Active window"
 msgstr "Aktyvus langas"
 
-#: ../lib/screenshooter-dialogs.c:793 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Padaryti aktyvaus lango ekrano kopiją"
 
-#: ../lib/screenshooter-dialogs.c:801
+#: ../lib/screenshooter-dialogs.c:806
 msgid "Select a region"
 msgstr "Pasirinkti sritį"
 
-#: ../lib/screenshooter-dialogs.c:806
+#: ../lib/screenshooter-dialogs.c:811
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Pasirinkite sritį, kurios ekrano kopiją darysite, paspausdami ant pradžios taško ir vilkdami pelę neatleisdami pelės mygtuko iki tol, kol pasieksite kitą norimos srities kraštą ir atleisdami pelės mygtuką.\n\nNorėdami perkelti sritį, vilkdami paspauskite Vald klavišą"
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:825
 msgid "Capture the mouse pointer"
 msgstr "Įtraukti pelės žymeklį"
 
-#: ../lib/screenshooter-dialogs.c:822
+#: ../lib/screenshooter-dialogs.c:829
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Ekrano kopijoje rodyti pelės žymeklį"
 
-#: ../lib/screenshooter-dialogs.c:838
+#: ../lib/screenshooter-dialogs.c:843
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Delsa prieš fotografavimą</span>"
 
-#: ../lib/screenshooter-dialogs.c:866
+#: ../lib/screenshooter-dialogs.c:871
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Delsa, sekundėmis, prieš darant ekrano kopiją"
 
-#: ../lib/screenshooter-dialogs.c:869
+#: ../lib/screenshooter-dialogs.c:874
 msgid "seconds"
 msgstr "sek."
 
-#: ../lib/screenshooter-dialogs.c:937
+#: ../lib/screenshooter-dialogs.c:942
 msgid "Choose what to do with the screenshot"
 msgstr "Pasirinkite ką daryti su ekrano kopija"
 
-#: ../lib/screenshooter-dialogs.c:971
+#: ../lib/screenshooter-dialogs.c:976
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Veiksmas</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:996
+#: ../lib/screenshooter-dialogs.c:1001
 msgid "Save"
 msgstr "Įrašyti"
 
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:1008
 msgid "Save the screenshot to a PNG file"
 msgstr "Įrašyti ekrano kopiją kaip PNG failą"
 
-#: ../lib/screenshooter-dialogs.c:1010
+#: ../lib/screenshooter-dialogs.c:1017
 msgid "Copy to the clipboard"
 msgstr "Kopijuoti į iškarpinę"
 
-#: ../lib/screenshooter-dialogs.c:1012
+#: ../lib/screenshooter-dialogs.c:1019
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopijuoti ekrano kopiją į iškarpinę, kad tokiu būdu ji vėliau galės būti įdėta"
 
-#: ../lib/screenshooter-dialogs.c:1024
+#: ../lib/screenshooter-dialogs.c:1033
 msgid "Open with:"
 msgstr "Atverti naudojant:"
 
-#: ../lib/screenshooter-dialogs.c:1030
+#: ../lib/screenshooter-dialogs.c:1041
 msgid "Open the screenshot with the chosen application"
 msgstr "Atverti ekrano kopija naudojant pasirinktą programą"
 
-#: ../lib/screenshooter-dialogs.c:1049 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1060 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Programa ekrano kopijos atvėrimui"
 
-#: ../lib/screenshooter-dialogs.c:1062
+#: ../lib/screenshooter-dialogs.c:1073
 msgid "Host on Imgur"
 msgstr "Talpinti į Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1066 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1077 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Talpinti ekrano kopiją Imgur puslapyje, tai yra nemokama paveikslų talpinimo paslauga"
 
-#: ../lib/screenshooter-dialogs.c:1076
+#: ../lib/screenshooter-dialogs.c:1089
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
 msgstr "Peržiūrėkite ar paveiksle nėra slapto turinio. Įkeltas paveikslas\nbus viešai prieinamas ir nėra jokios garantijos, kad jį tikrai galima\nbus ištrinti."
 
-#: ../lib/screenshooter-dialogs.c:1103
+#: ../lib/screenshooter-dialogs.c:1116
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Peržiūra</span>"
 
-#: ../lib/screenshooter-dialogs.c:1165
+#: ../lib/screenshooter-dialogs.c:1178
 msgid "Save screenshot as..."
 msgstr "Įrašyti ekrano kopiją kaip..."
 
@@ -188,6 +188,10 @@ msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Nepavyko paleisti programos.</b>\n%s"
+
+#: ../lib/screenshooter-utils.c:344
+msgid "Error"
+msgstr "Klaida"
 
 #: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
@@ -293,47 +297,47 @@ msgstr "Ištrynimo nuoroda"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Būsena</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:169
+#: ../lib/screenshooter-job-callbacks.c:171
 msgid "Details about the screenshot"
 msgstr "Išsamesnė informacija apie ekrano kopiją"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:215
+#: ../lib/screenshooter-job-callbacks.c:217
 msgid "User:"
 msgstr "Naudotojo vardas:"
 
-#: ../lib/screenshooter-job-callbacks.c:223
+#: ../lib/screenshooter-job-callbacks.c:225
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr "Jūsų naudotojo vardas, jei tokio neturite, susikurkite naudodamiesi nuoroda žemiau"
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:229
+#: ../lib/screenshooter-job-callbacks.c:231
 msgid "Password:"
 msgstr "Slaptažodis:"
 
-#: ../lib/screenshooter-job-callbacks.c:236
+#: ../lib/screenshooter-job-callbacks.c:238
 msgid "The password for the user above"
 msgstr "Aukščiau nurodyto naudotojo slaptažodis"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:242
+#: ../lib/screenshooter-job-callbacks.c:244
 msgid "Title:"
 msgstr "Pavadinimas:"
 
-#: ../lib/screenshooter-job-callbacks.c:250
+#: ../lib/screenshooter-job-callbacks.c:252
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "Ekrano kopijos pavadinimas, bus rodomas įkėlus į paveikslų prieglobos paslaugą"
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:256
+#: ../lib/screenshooter-job-callbacks.c:258
 msgid "Comment:"
 msgstr "Komentaras:"
 
-#: ../lib/screenshooter-job-callbacks.c:264
+#: ../lib/screenshooter-job-callbacks.c:266
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
