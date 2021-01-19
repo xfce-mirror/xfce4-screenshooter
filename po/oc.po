@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-02 00:46+0200\n"
-"PO-Revision-Date: 2020-10-01 22:46+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2020-12-20 12:47+0100\n"
+"PO-Revision-Date: 2020-12-20 11:47+0000\n"
+"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/xfce/xfce-apps/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,25 +20,25 @@ msgstr ""
 "Language: oc\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:468
+#: ../lib/screenshooter-dialogs.c:467
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb de %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:554
+#: ../lib/screenshooter-dialogs.c:553
 msgid "Transfer"
 msgstr "Transferiment"
 
-#: ../lib/screenshooter-dialogs.c:575
+#: ../lib/screenshooter-dialogs.c:574
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">La captura d'ecran es transferida cap a :</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:680
-#: ../lib/screenshooter-dialogs.c:692 ../lib/screenshooter-dialogs.c:699
-#: ../lib/screenshooter-dialogs.c:921 ../lib/screenshooter-dialogs.c:928
+#: ../lib/screenshooter-dialogs.c:673 ../lib/screenshooter-dialogs.c:679
+#: ../lib/screenshooter-dialogs.c:691 ../lib/screenshooter-dialogs.c:698
+#: ../lib/screenshooter-dialogs.c:926 ../lib/screenshooter-dialogs.c:933
 #: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
 #: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -46,140 +46,140 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">La captura d'ecran es tra
 msgid "Screenshot"
 msgstr "Captura d'ecran"
 
-#: ../lib/screenshooter-dialogs.c:676 ../lib/screenshooter-dialogs.c:694
-#: ../lib/screenshooter-dialogs.c:923
+#: ../lib/screenshooter-dialogs.c:675 ../lib/screenshooter-dialogs.c:693
+#: ../lib/screenshooter-dialogs.c:928
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: ../lib/screenshooter-dialogs.c:677
+#: ../lib/screenshooter-dialogs.c:676
 msgid "_Close"
 msgstr "_Tampar"
 
-#: ../lib/screenshooter-dialogs.c:687
+#: ../lib/screenshooter-dialogs.c:686
 msgid "Preferences"
 msgstr "Preferéncias"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:924
+#: ../lib/screenshooter-dialogs.c:694 ../lib/screenshooter-dialogs.c:929
 msgid "_Cancel"
 msgstr "_Anullar"
 
-#: ../lib/screenshooter-dialogs.c:696 ../lib/screenshooter-dialogs.c:925
+#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:930
 msgid "_OK"
 msgstr "_OK"
 
-#: ../lib/screenshooter-dialogs.c:707
+#: ../lib/screenshooter-dialogs.c:706
 msgid "Take a screenshot"
 msgstr "Prene una captura d'ecran"
 
-#: ../lib/screenshooter-dialogs.c:744
+#: ../lib/screenshooter-dialogs.c:743
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zòna de capturar</span>"
 
-#: ../lib/screenshooter-dialogs.c:771
+#: ../lib/screenshooter-dialogs.c:770
 msgid "Entire screen"
 msgstr "L'ecran tot entièr"
 
-#: ../lib/screenshooter-dialogs.c:778 ../src/main.c:59
+#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:59
 #: ../panel-plugin/screenshooter-plugin.c:330
 msgid "Take a screenshot of the entire screen"
 msgstr "Prene una captura d'ecran de l'ecran tot entièr"
 
-#: ../lib/screenshooter-dialogs.c:786
+#: ../lib/screenshooter-dialogs.c:788
 msgid "Active window"
 msgstr "La fenèstra activa"
 
-#: ../lib/screenshooter-dialogs.c:793 ../src/main.c:96
+#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:96
 #: ../panel-plugin/screenshooter-plugin.c:335
 msgid "Take a screenshot of the active window"
 msgstr "Prene una captura d'ecran de la fenèstra activa"
 
-#: ../lib/screenshooter-dialogs.c:801
+#: ../lib/screenshooter-dialogs.c:806
 msgid "Select a region"
 msgstr "Seleccionar una zòna"
 
-#: ../lib/screenshooter-dialogs.c:806
+#: ../lib/screenshooter-dialogs.c:811
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:825
 msgid "Capture the mouse pointer"
 msgstr "Capturar lo puntador de la mirga"
 
-#: ../lib/screenshooter-dialogs.c:822
+#: ../lib/screenshooter-dialogs.c:829
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Afichar la mirga sus la captura d'ecran"
 
-#: ../lib/screenshooter-dialogs.c:838
+#: ../lib/screenshooter-dialogs.c:843
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Relambi abans la captura</span>"
 
-#: ../lib/screenshooter-dialogs.c:866
+#: ../lib/screenshooter-dialogs.c:871
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Relambi en segondas abans que la captura d'ecran siá presa"
 
-#: ../lib/screenshooter-dialogs.c:869
+#: ../lib/screenshooter-dialogs.c:874
 msgid "seconds"
 msgstr "segondas"
 
-#: ../lib/screenshooter-dialogs.c:937
+#: ../lib/screenshooter-dialogs.c:942
 msgid "Choose what to do with the screenshot"
 msgstr "Causissètz de qué far amb la captura d’ecran"
 
-#: ../lib/screenshooter-dialogs.c:971
+#: ../lib/screenshooter-dialogs.c:976
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Accion</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:996
+#: ../lib/screenshooter-dialogs.c:1001
 msgid "Save"
 msgstr "Enregistrar"
 
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:1008
 msgid "Save the screenshot to a PNG file"
 msgstr "Enregistrar la captura d'ecran dins un fichièr PNG"
 
-#: ../lib/screenshooter-dialogs.c:1010
+#: ../lib/screenshooter-dialogs.c:1017
 msgid "Copy to the clipboard"
 msgstr "Copiar dins lo quichapapièrs"
 
-#: ../lib/screenshooter-dialogs.c:1012
+#: ../lib/screenshooter-dialogs.c:1019
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Copiar la captura d'ecran dins lo quichapapièrs per la pegar pus tard"
 
-#: ../lib/screenshooter-dialogs.c:1024
+#: ../lib/screenshooter-dialogs.c:1033
 msgid "Open with:"
 msgstr "Dobrir amb :"
 
-#: ../lib/screenshooter-dialogs.c:1030
+#: ../lib/screenshooter-dialogs.c:1041
 msgid "Open the screenshot with the chosen application"
 msgstr "Dobrir la captura d'ecran amb l'aplicacion causida"
 
-#: ../lib/screenshooter-dialogs.c:1049 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:1060 ../src/main.c:69
 msgid "Application to open the screenshot"
 msgstr "Aplicacion per dobrir la captura d'ecran"
 
-#: ../lib/screenshooter-dialogs.c:1062
+#: ../lib/screenshooter-dialogs.c:1073
 msgid "Host on Imgur"
 msgstr "Albergar sus lmgur"
 
-#: ../lib/screenshooter-dialogs.c:1066 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1077 ../src/main.c:86
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Albergar la captura d'ecran sus lmgur, un servici en linha gratuit d'albergament d'imatges"
 
-#: ../lib/screenshooter-dialogs.c:1076
+#: ../lib/screenshooter-dialogs.c:1089
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1103
+#: ../lib/screenshooter-dialogs.c:1116
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Apercebut</span>"
 
-#: ../lib/screenshooter-dialogs.c:1165
+#: ../lib/screenshooter-dialogs.c:1178
 msgid "Save screenshot as..."
 msgstr "Enregistrar la captura d'ecran jos..."
 
@@ -189,6 +189,10 @@ msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr ""
+
+#: ../lib/screenshooter-utils.c:344
+msgid "Error"
+msgstr "Error"
 
 #: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
@@ -294,47 +298,47 @@ msgstr "Ligam de supression"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Estatut</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:169
+#: ../lib/screenshooter-job-callbacks.c:171
 msgid "Details about the screenshot"
 msgstr "Detalhs tocant la captura d’ecran"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:215
+#: ../lib/screenshooter-job-callbacks.c:217
 msgid "User:"
 msgstr "Utilizaire :"
 
-#: ../lib/screenshooter-job-callbacks.c:223
+#: ../lib/screenshooter-job-callbacks.c:225
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr ""
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:229
+#: ../lib/screenshooter-job-callbacks.c:231
 msgid "Password:"
 msgstr "Senhal :"
 
-#: ../lib/screenshooter-job-callbacks.c:236
+#: ../lib/screenshooter-job-callbacks.c:238
 msgid "The password for the user above"
 msgstr "Lo senhal per l'utilizaire çaisús"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:242
+#: ../lib/screenshooter-job-callbacks.c:244
 msgid "Title:"
 msgstr "Títol :"
 
-#: ../lib/screenshooter-job-callbacks.c:250
+#: ../lib/screenshooter-job-callbacks.c:252
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr ""
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:256
+#: ../lib/screenshooter-job-callbacks.c:258
 msgid "Comment:"
 msgstr "Comentari :"
 
-#: ../lib/screenshooter-job-callbacks.c:264
+#: ../lib/screenshooter-job-callbacks.c:266
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
