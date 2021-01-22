@@ -1299,6 +1299,7 @@ static GdkPixbuf
   XGCValues gc_values;
   GC gc;
 
+  gint scale;
   Display *display;
   gint screen;
   RbData rbdata;
@@ -1312,6 +1313,7 @@ static GdkPixbuf
   root_window = gdk_get_default_root_window ();
   display = gdk_x11_get_default_xdisplay ();
   screen = gdk_x11_get_default_screen ();
+  scale = gdk_window_get_scale_factor(root_window);
 
   /* Change cursor to cross-hair */
   TRACE ("Set the cursor");
@@ -1380,11 +1382,10 @@ static GdkPixbuf
   if (G_LIKELY (!rbdata.cancelled))
     {
       TRACE ("Get the pixbuf for the screenshot");
-
-      screenshot = capture_rectangle_screenshot (rbdata.rectangle.x,
-                                                 rbdata.rectangle.y,
-                                                 rbdata.rectangle.width,
-                                                 rbdata.rectangle.height,
+      screenshot = capture_rectangle_screenshot (rbdata.rectangle.x / scale,
+                                                 rbdata.rectangle.y / scale,
+                                                 rbdata.rectangle.width / scale,
+                                                 rbdata.rectangle.height / scale,
                                                  delay, show_mouse);
     }
 
