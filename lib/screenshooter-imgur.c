@@ -37,7 +37,7 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   guchar *delete_hash = NULL;
   const gchar* proxy_uri;
   SoupURI *soup_proxy_uri;
-#if DEBUG > 0
+#ifdef DEBUG
   SoupLogger *log;
 #endif
   guint status;
@@ -69,7 +69,7 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   title = g_value_get_string (&g_array_index (param_values, GValue, 1));
 
   session = soup_session_new ();
-#if DEBUG > 0
+#ifdef DEBUG
   log = soup_logger_new (SOUP_LOGGER_LOG_HEADERS, -1);
   soup_session_add_feature (session, (SoupSessionFeature *)log);
 #endif
