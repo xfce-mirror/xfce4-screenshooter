@@ -329,7 +329,7 @@ static GdkPixbuf
 
   root = gdk_get_default_root_window ();
 
-  if (has_extents = screenshooter_get_gtk_frame_extents (window, &extents))
+  if ((has_extents = screenshooter_get_gtk_frame_extents (window, &extents)))
     border = FALSE;
 
   if (border)
