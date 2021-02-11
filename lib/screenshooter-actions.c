@@ -88,13 +88,17 @@ action_idle (gpointer user_data)
                                                          TRUE,
                                                          TRUE);
 
-          if (save_location == NULL)
-              return TRUE; /* Show actions dialog again */
-
-          g_free (sd->screenshot_dir);
-          temp = g_path_get_dirname (save_location);
-          sd->screenshot_dir = g_build_filename ("file://", temp, NULL);
-          TRACE ("New save directory: %s", sd->screenshot_dir);
+          if (save_location != NULL)
+            {
+              g_free (sd->screenshot_dir);
+              temp = g_path_get_dirname (save_location);
+              sd->screenshot_dir = g_build_filename ("file://", temp, NULL);
+              TRACE ("New save directory: %s", sd->screenshot_dir);
+            }
+          else if (!sd->action_specified) {
+              /* Show actions dialog again if no action was specified from CLI */
+              return TRUE;
+          }
         }
     }
   else
@@ -117,10 +121,11 @@ action_idle (gpointer user_data)
             screenshooter_open_screenshot (screenshot_path, sd->app, sd->app_info);
           else if (sd->action & UPLOAD_IMGUR)
             {
-              if (!screenshooter_upload_to_imgur (screenshot_path, sd->title))
+              if (!sd->action_specified && !screenshooter_upload_to_imgur (screenshot_path, sd->title))
                 {
                   g_free (screenshot_path);
-                  return TRUE; /* Show actions dialog again */
+                  /* Show actions dialog again if no action was specified from CLI*/
+                  return TRUE;
                 }
             }
 
