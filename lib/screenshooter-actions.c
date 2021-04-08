@@ -39,6 +39,7 @@ cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
 static gboolean
 action_idle (gpointer user_data)
 {
+  gchar *save_location = NULL;
   ScreenshotData *sd = user_data;
 
   if (!sd->action_specified)
@@ -73,64 +74,93 @@ action_idle (gpointer user_data)
   if (sd->action & SAVE)
     {
       if (!sd->path_is_dir)
-        screenshooter_save_screenshot_to (sd->screenshot, sd->screenshot_dir);
+        save_location = screenshooter_save_screenshot_to (sd->screenshot, sd->screenshot_dir);
       else
         {
-          const gchar *save_location, *temp;
+          gchar *filename;
+          const gchar *temp;
 
           if (sd->screenshot_dir == NULL)
             sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
 
+          filename = screenshooter_get_filename_for_uri (sd->screenshot_dir,
+                                                         sd->title,
+                                                         sd->last_extension,
+                                                         sd->timestamp);
+
           save_location = screenshooter_save_screenshot (sd->screenshot,
                                                          sd->screenshot_dir,
-                                                         sd->title,
-                                                         sd->timestamp,
+                                                         filename,
                                                          TRUE,
                                                          TRUE);
 
-          if (save_location != NULL)
+          g_free (filename);
+
+          if (save_location)
             {
               g_free (sd->screenshot_dir);
               temp = g_path_get_dirname (save_location);
               sd->screenshot_dir = g_build_filename ("file://", temp, NULL);
               TRACE ("New save directory: %s", sd->screenshot_dir);
             }
-          else if (!sd->action_specified) {
+          else if (!sd->action_specified)
+            {
               /* Show actions dialog again if no action was specified from CLI */
               return TRUE;
-          }
+            }
         }
     }
   else
     {
       GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
       gchar *temp_dir_uri = g_file_get_uri (temp_dir);
-      gchar *screenshot_path =
-        screenshooter_save_screenshot (sd->screenshot,
-                                       temp_dir_uri,
-                                       sd->title,
-                                       sd->timestamp,
-                                       FALSE,
-                                       FALSE);
+      gchar *filename = screenshooter_get_filename_for_uri (temp_dir_uri,
+                                                            sd->title, 
+                                                            sd->last_extension,
+                                                            sd->timestamp);
+      save_location = screenshooter_save_screenshot (sd->screenshot,
+                                                     temp_dir_uri,
+                                                     filename,
+                                                     FALSE,
+                                                     FALSE);
       g_object_unref (temp_dir);
       g_free (temp_dir_uri);
+      g_free (filename);
 
-      if (screenshot_path != NULL)
+      if (save_location)
         {
           if (sd->action & OPEN)
-            screenshooter_open_screenshot (screenshot_path, sd->app, sd->app_info);
+            screenshooter_open_screenshot (save_location, sd->app, sd->app_info);
           else if (sd->action & UPLOAD_IMGUR)
             {
-              if (!sd->action_specified && !screenshooter_upload_to_imgur (screenshot_path, sd->title))
+              if (!sd->action_specified && !screenshooter_upload_to_imgur (save_location, sd->title))
                 {
-                  g_free (screenshot_path);
+                  g_free (save_location);
                   /* Show actions dialog again if no action was specified from CLI*/
                   return TRUE;
                 }
             }
-
-          g_free (screenshot_path);
         }
+    }
+
+  if (save_location)
+    {
+      gchar *extension = NULL;
+
+      if (G_LIKELY (g_str_has_suffix (save_location, ".png")))
+        extension = g_strdup ("png");
+      else if (G_UNLIKELY (g_str_has_suffix (save_location, ".jpg") || g_str_has_suffix (save_location, ".jpeg")))
+        extension = g_strdup ("jpg");
+      else if (G_UNLIKELY (g_str_has_suffix (save_location, ".bmp")))
+        extension = g_strdup ("bmp");
+
+      if (extension)
+        {
+          g_free (sd->last_extension);
+          sd->last_extension = extension;
+        }
+
+      g_free (save_location);
     }
 
   if (!sd->plugin)

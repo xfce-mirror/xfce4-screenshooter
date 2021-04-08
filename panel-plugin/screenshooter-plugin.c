@@ -169,6 +169,7 @@ cb_free_data (XfcePanelPlugin *plugin, PluginData *pd)
   g_free (pd->sd->title);
   g_free (pd->sd->app);
   g_free (pd->sd->last_user);
+  g_free (pd->sd->last_extension);
   g_free (pd->sd);
   g_free (pd);
 }

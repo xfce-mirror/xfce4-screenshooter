@@ -343,6 +343,7 @@ int main (int argc, char **argv)
   g_free (sd->title);
   g_free (sd->app);
   g_free (sd->last_user);
+  g_free (sd->last_extension);
   g_free (sd);
 
   TRACE ("Ciao");

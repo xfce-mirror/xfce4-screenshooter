@@ -58,10 +58,6 @@ cb_imgur_toggled                   (GtkToggleButton    *tb,
 static void
 cb_delay_spinner_changed           (GtkWidget          *spinner,
                                     ScreenshotData     *sd);
-static gchar
-*generate_filename_for_uri         (const gchar        *uri,
-                                    const gchar        *title,
-                                    gboolean            timestamp);
 static void
 cb_combo_active_item_changed       (GtkWidget          *box,
                                     ScreenshotData     *sd);
@@ -206,88 +202,6 @@ static void cb_imgur_warning_clicked (GtkWidget *popover)
 static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 {
   sd->delay = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
-}
-
-
-
-/* If @timestamp is true, generates a file name @title - date - hour - n.png,
- * where n is the lowest integer such as this file does not exist in the @uri
- * folder.
- * Else, generates a file name @title-n.png, where n is the lowest integer
- * such as this file does not exist in the @uri folder.
- *
- * @uri: uri of the folder for which the filename should be generated.
- * @title: the main title of the file name.
- * @timestamp: whether the date and the hour should be appended to the file name.
- *
- * returns: the filename or NULL if *uri == NULL.
-*/
-static gchar *generate_filename_for_uri (const gchar *uri,
-                                         const gchar *title,
-                                         gboolean timestamp)
-{
-  gboolean exists = TRUE;
-  GFile *directory;
-  GFile *file;
-  gchar *base_name;
-  gchar *datetime;
-  const gchar *strftime_format = "%Y-%m-%d_%H-%M-%S";
-
-  gint i;
-
-  if (G_UNLIKELY (uri == NULL))
-    {
-      TRACE ("URI was NULL");
-
-      return NULL;
-    }
-
-  TRACE ("Get the folder corresponding to the URI");
-  datetime = screenshooter_get_datetime (strftime_format);
-  directory = g_file_new_for_uri (uri);
-  if (!timestamp)
-    base_name = g_strconcat (title, ".png", NULL);
-  else
-    base_name = g_strconcat (title, "_", datetime, ".png", NULL);
-
-  file = g_file_get_child (directory, base_name);
-
-  if (!g_file_query_exists (file, NULL))
-    {
-      g_object_unref (file);
-      g_object_unref (directory);
-
-      return base_name;
-    }
-
-  g_object_unref (file);
-  g_free (base_name);
-
-  for (i = 1; exists; ++i)
-    {
-      const gchar *extension =
-        g_strdup_printf ("-%d.png", i);
-
-      if (!timestamp)
-         base_name = g_strconcat (title, extension, NULL);
-       else
-         base_name = g_strconcat (title, "_", datetime, extension, NULL);
-
-      file = g_file_get_child (directory, base_name);
-
-      if (!g_file_query_exists (file, NULL))
-        exists = FALSE;
-
-      if (exists)
-        g_free (base_name);
-
-      g_object_unref (file);
-    }
-
-  g_free(datetime);
-  g_object_unref (directory);
-
-  return base_name;
 }
 
 
@@ -521,8 +435,14 @@ static gchar
 {
   GError *error = NULL;
   gchar *save_path = g_file_get_path (save_file);
+  const char *type = "png";
 
-  if (G_UNLIKELY (!gdk_pixbuf_save (screenshot, save_path, "png", &error, NULL)))
+  if (G_UNLIKELY (g_str_has_suffix (save_path, ".jpg") || g_str_has_suffix (save_path, ".jpeg")))
+    type = "jpeg";
+  else if (G_UNLIKELY (g_str_has_suffix (save_path, ".bmp")))
+    type = "bmp";
+
+  if (G_UNLIKELY (!gdk_pixbuf_save (screenshot, save_path, type, &error, NULL)))
     {
       if (error)
         {
@@ -1163,14 +1083,12 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 gchar
 *screenshooter_save_screenshot (GdkPixbuf *screenshot,
                                 const gchar *directory,
-                                const gchar *title,
-                                gboolean timestamp,
+                                const gchar *filename,
                                 gboolean save_dialog,
                                 gboolean show_preview)
 {
-  const gchar *filename = generate_filename_for_uri (directory, title, timestamp);
-  gchar *save_uri = g_build_filename (directory, filename, NULL);
   gchar *result;
+  gchar *save_uri = g_build_filename (directory, filename, NULL);
 
   if (save_dialog)
   {
