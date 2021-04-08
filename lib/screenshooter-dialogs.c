@@ -521,8 +521,14 @@ static gchar
 {
   GError *error = NULL;
   gchar *save_path = g_file_get_path (save_file);
+  const char *type = "png";
 
-  if (G_UNLIKELY (!gdk_pixbuf_save (screenshot, save_path, "png", &error, NULL)))
+  if (G_UNLIKELY (g_str_has_suffix (save_path, ".jpg") || g_str_has_suffix (save_path, ".jpeg")))
+    type = "jpeg";
+  else if (G_UNLIKELY (g_str_has_suffix (save_path, ".bmp")))
+    type = "bmp";
+
+  if (G_UNLIKELY (!gdk_pixbuf_save (screenshot, save_path, type, &error, NULL)))
     {
       if (error)
         {
