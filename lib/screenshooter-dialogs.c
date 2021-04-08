@@ -47,6 +47,9 @@ static void
 cb_toggle_set_sensi                (GtkToggleButton    *tb,
                                     GtkWidget          *widget);
 static void
+cb_toggle_set_insensi              (GtkToggleButton    *tb,
+                                    GtkWidget          *widget);
+static void
 cb_open_toggled                    (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
@@ -118,7 +121,7 @@ static void cb_active_window_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 
 
-/* Set the captured when the button is toggled */
+/* Set the captured area when the button is toggled */
 static void cb_rectangle_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
@@ -131,6 +134,17 @@ static void cb_rectangle_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 static void cb_radiobutton_activate (GtkToggleButton *tb, GtkWidget *widget)
 {
   gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_OK);
+}
+
+
+
+/* Set whether the window border should be captured when the button is toggled */
+static void cb_show_border_toggled (GtkToggleButton *tb, ScreenshotData   *sd)
+{
+  if (gtk_toggle_button_get_active (tb))
+    sd->show_border = 1;
+  else
+    sd->show_border = 0;
 }
 
 
@@ -160,6 +174,15 @@ static void
 cb_toggle_set_sensi (GtkToggleButton *tb, GtkWidget *widget)
 {
   gtk_widget_set_sensitive (widget, gtk_toggle_button_get_active (tb));
+}
+
+
+
+/* Set the widget active if the toggle button is inactive */
+static void
+cb_toggle_set_insensi (GtkToggleButton *tb, GtkWidget *widget)
+{
+  gtk_widget_set_sensitive (widget, !gtk_toggle_button_get_active (tb));
 }
 
 
@@ -661,7 +684,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
             *fullscreen_button,
             *rectangle_button;
 
-  GtkWidget *show_mouse_checkbox;
+  GtkWidget *show_mouse_checkbox, *show_border_checkbox;
 
   GtkWidget *delay_main_box, *delay_box, *delay_label, *delay_alignment;
   GtkWidget *delay_spinner_box, *delay_spinner, *seconds_label;
@@ -746,20 +769,16 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_widget_set_valign (area_label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (area_main_box), area_label);
 
-  /* Create area alignment */
-  area_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
-  gtk_widget_set_hexpand (area_alignment, TRUE);
-  gtk_widget_set_vexpand (area_alignment, TRUE);
-  gtk_widget_set_margin_top (area_alignment, 0);
-  gtk_widget_set_margin_bottom (area_alignment, 6);
-  gtk_widget_set_margin_start (area_alignment, 12);
-  gtk_widget_set_margin_end (area_alignment, 0);
-  gtk_container_add (GTK_CONTAINER (area_main_box), area_alignment);
-
   /* Create area box */
   area_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_container_add (GTK_CONTAINER (area_alignment), area_box);
-  gtk_box_set_spacing (GTK_BOX (area_box), 12);
+  gtk_box_set_spacing (GTK_BOX (area_box), 6);
+  gtk_widget_set_hexpand (area_box, TRUE);
+  gtk_widget_set_vexpand (area_box, TRUE);
+  gtk_widget_set_margin_top (area_box, 0);
+  gtk_widget_set_margin_bottom (area_box, 6);
+  gtk_widget_set_margin_start (area_box, 12);
+  gtk_widget_set_margin_end (area_box, 0);
+  gtk_container_add (GTK_CONTAINER (area_main_box), area_box);
   gtk_container_set_border_width (GTK_CONTAINER (area_box), 0);
 
   /* Create radio buttons for areas to screenshot */
@@ -813,12 +832,32 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                                  "dragging your mouse to the other corner of the region, "
                                  "and releasing the mouse button.\n\n"
                                  "Press Ctrl while dragging to move the region."));
-
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
                     G_CALLBACK (cb_rectangle_toggled), sd);
   g_signal_connect (G_OBJECT (rectangle_button), "activate",
                     G_CALLBACK (cb_radiobutton_activate),
                     dlg);
+
+  /* Create options label */
+  area_label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (area_label),
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+                          "Options</span>"));
+  gtk_widget_set_halign (area_label, GTK_ALIGN_START);
+  gtk_widget_set_valign (area_label, GTK_ALIGN_START);
+  gtk_container_add (GTK_CONTAINER (area_main_box), area_label);
+
+  /* Create options box */
+  area_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_box_set_spacing (GTK_BOX (area_box), 6);
+  gtk_widget_set_hexpand (area_box, TRUE);
+  gtk_widget_set_vexpand (area_box, TRUE);
+  gtk_widget_set_margin_top (area_box, 0);
+  gtk_widget_set_margin_bottom (area_box, 6);
+  gtk_widget_set_margin_start (area_box, 12);
+  gtk_widget_set_margin_end (area_box, 0);
+  gtk_container_add (GTK_CONTAINER (area_main_box), area_box);
+  gtk_container_set_border_width (GTK_CONTAINER (area_box), 0);
 
   /* Create show mouse checkbox */
   show_mouse_checkbox =
@@ -829,9 +868,28 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                                _("Display the mouse pointer on the screenshot"));
   gtk_box_pack_start (GTK_BOX (area_box),
                       show_mouse_checkbox, FALSE,
-                      FALSE, 5);
+                      FALSE, 0);
   g_signal_connect (G_OBJECT (show_mouse_checkbox), "toggled",
                     G_CALLBACK (cb_show_mouse_toggled), sd);
+
+  /* Create show border checkbox */
+  show_border_checkbox =
+    gtk_check_button_new_with_label (_("Capture the window border"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (show_border_checkbox),
+                                (sd->show_border == 1));
+  gtk_widget_set_sensitive (show_border_checkbox, (sd->region == ACTIVE_WINDOW));
+  gtk_widget_set_tooltip_text (show_border_checkbox,
+                               _("Display the window border on the screenshot.\n"
+                                 "Disabling this option has no effect for CSD windows."));
+  gtk_box_pack_start (GTK_BOX (area_box),
+                      show_border_checkbox, FALSE,
+                      FALSE, 0);
+  g_signal_connect (G_OBJECT (show_border_checkbox), "toggled",
+                    G_CALLBACK (cb_show_border_toggled), sd);
+  g_signal_connect (G_OBJECT (fullscreen_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_insensi), show_border_checkbox);
+  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_insensi), show_border_checkbox);
 
   /* Create the main box for the delay stuff */
   delay_main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);

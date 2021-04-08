@@ -1405,10 +1405,13 @@ static GdkPixbuf
 
 /**
  * screenshooter_capture_screenshot:
- * @region: the region to be screenshoted. It can be FULLSCREEN,
+ * @region: the region to be captured. It can be FULLSCREEN,
  *          ACTIVE_WINDOW or SELECT.
  * @delay: the delay before the screenshot is captured, in seconds.
- * @mouse: whether the mouse pointer should be displayed on the screenshot.
+ * @show_mouse: whether the mouse pointer should be displayed on the
+ *              screenshot.
+ * @show_border: whether the window border should be displayed on the
+ *               screenshot.
  *
  * Captures a screenshot with the given options. If @region is FULLSCREEN,
  * the screenshot is captured after @delay seconds. If @region is
@@ -1419,6 +1422,9 @@ static GdkPixbuf
  *
  * @show_mouse is only taken into account when @region is FULLSCREEN
  * or ACTIVE_WINDOW.
+ * 
+ * @show_border is only taken into account when @region is ACTIVE_WINDOW
+ * and if the window uses server side decorations.
  *
  * Return value: a #GdkPixbuf containing the screenshot or %NULL
  * (if @region is SELECT, the user can cancel the operation).
@@ -1426,6 +1432,7 @@ static GdkPixbuf
 GdkPixbuf *screenshooter_capture_screenshot (gint     region,
                                              gint     delay,
                                              gboolean show_mouse,
+                                             gboolean show_border,
                                              gboolean plugin)
 {
   GdkPixbuf *screenshot = NULL;
@@ -1456,7 +1463,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
       TRACE ("Get the screenshot of the active window");
       window = screenshooter_get_active_window (screen, &needs_unref, &border);
-      screenshot = get_window_screenshot (window, show_mouse, border);
+      screenshot = get_window_screenshot (window, show_mouse, show_border && border);
       if (needs_unref)
         g_object_unref (window);
     }

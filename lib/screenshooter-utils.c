@@ -119,6 +119,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gint region = FULLSCREEN;
   gint action = SAVE;
   gint show_mouse = 1;
+  gint show_border = 1;
   gboolean timestamp = TRUE;
   gchar *screenshot_dir = g_strdup (default_uri);
   gchar *title = g_strdup (_("Screenshot"));
@@ -140,6 +141,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
           action = xfce_rc_read_int_entry (rc, "action", SAVE);
           show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
+          show_border = xfce_rc_read_int_entry (rc, "show_border", 1);
           timestamp = xfce_rc_read_bool_entry (rc, "timestamp", TRUE);
           enable_imgur_upload = xfce_rc_read_bool_entry (rc, "enable_imgur_upload", TRUE);
 
@@ -170,6 +172,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->region = region;
   sd->action = action;
   sd->show_mouse = show_mouse;
+  sd->show_border = show_border;
   sd->timestamp = timestamp;
   sd->screenshot_dir = screenshot_dir;
   sd->title = title;
@@ -217,6 +220,7 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
     xfce_rc_write_int_entry (rc, "delay", sd->delay);
     xfce_rc_write_int_entry (rc, "region", sd->region);
     xfce_rc_write_int_entry (rc, "show_mouse", sd->show_mouse);
+    xfce_rc_write_int_entry (rc, "show_border", sd->show_border);
   }
 
   TRACE ("Flush and close the rc file");

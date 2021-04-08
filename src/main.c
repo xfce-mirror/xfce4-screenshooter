@@ -33,6 +33,7 @@ gboolean window = FALSE;
 gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean mouse = FALSE;
+gboolean no_border = FALSE;
 gboolean clipboard = FALSE;
 gboolean upload_imgur = FALSE;
 gchar *screenshot_dir = NULL;
@@ -62,6 +63,11 @@ static GOptionEntry entries[] =
   {
     "mouse", 'm', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &mouse,
     N_("Display the mouse on the screenshot"),
+    NULL
+  },
+  {
+    "no-border", 0, G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &no_border,
+    N_("Removes the window border from the screenshot"),
     NULL
   },
   {
@@ -269,6 +275,9 @@ int main (int argc, char **argv)
 
       /* Whether to display the mouse pointer on the screenshot */
       mouse ? (sd->show_mouse = 1) : (sd->show_mouse = 0);
+
+      /* Whether to display the window border on the screenshot */
+      no_border ? (sd->show_border = 0) : (sd->show_border = 1);
 
       sd->delay = delay;
 
