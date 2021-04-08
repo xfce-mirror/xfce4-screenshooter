@@ -1073,46 +1073,46 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   /* Upload to imgur radio button */
   if (sd->enable_imgur_upload)
     {
-    GtkWidget *image;
+      GtkWidget *image;
 
-    box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
-    gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 4, 1, 1);
+      box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
+      gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 4, 1, 1);
 
-    radio =
-      gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
-                                                   _("Host on Imgur"));
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
-                                (sd->action & UPLOAD_IMGUR));
-    gtk_widget_set_tooltip_text (radio,
-                                 _("Host the screenshot on Imgur, a free online "
-                                   "image hosting service"));
-    g_signal_connect (G_OBJECT (radio), "toggled",
-                      G_CALLBACK (cb_imgur_toggled), sd);
-    g_signal_connect (G_OBJECT (radio), "activate",
-                      G_CALLBACK (cb_radiobutton_activate), dlg);
-    gtk_container_add (GTK_CONTAINER (box), radio);
+      radio =
+        gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
+                                                    _("Host on Imgur"));
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
+                                  (sd->action & UPLOAD_IMGUR));
+      gtk_widget_set_tooltip_text (radio,
+                                  _("Host the screenshot on Imgur, a free online "
+                                    "image hosting service"));
+      g_signal_connect (G_OBJECT (radio), "toggled",
+                        G_CALLBACK (cb_imgur_toggled), sd);
+      g_signal_connect (G_OBJECT (radio), "activate",
+                        G_CALLBACK (cb_radiobutton_activate), dlg);
+      gtk_container_add (GTK_CONTAINER (box), radio);
 
-    /* Upload to imgur warning info */
-    image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_BUTTON);
-    label = gtk_label_new (
-      _("Watch for sensitive content, the uploaded image will be publicly\n"
-        "available and there is no guarantee it can be certainly deleted."));
+      /* Upload to imgur warning info */
+      image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_BUTTON);
+      label = gtk_label_new (
+        _("Watch for sensitive content, the uploaded image will be publicly\n"
+          "available and there is no guarantee it can be certainly deleted."));
 
-    popover = gtk_popover_new (image);
-    gtk_container_add (GTK_CONTAINER (popover), label);
-    gtk_container_set_border_width (GTK_CONTAINER (popover), 6);
-    gtk_widget_show (label);
+      popover = gtk_popover_new (image);
+      gtk_container_add (GTK_CONTAINER (popover), label);
+      gtk_container_set_border_width (GTK_CONTAINER (popover), 6);
+      gtk_widget_show (label);
 
-    evbox = gtk_event_box_new ();
-    g_signal_connect_swapped (G_OBJECT (evbox), "button-press-event",
-                              G_CALLBACK (cb_imgur_warning_clicked), popover);
-    gtk_container_add (GTK_CONTAINER (box), evbox);
-    gtk_container_add (GTK_CONTAINER (evbox), image);
+      evbox = gtk_event_box_new ();
+      g_signal_connect_swapped (G_OBJECT (evbox), "button-press-event",
+                                G_CALLBACK (cb_imgur_warning_clicked), popover);
+      gtk_container_add (GTK_CONTAINER (box), evbox);
+      gtk_container_add (GTK_CONTAINER (evbox), image);
 
-    cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_HAND2);
-    g_signal_connect (evbox, "realize",
-                      G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
-    g_object_unref (cursor);
+      cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_HAND2);
+      g_signal_connect (evbox, "realize",
+                        G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
+      g_object_unref (cursor);
     }
 
   /* Preview box */
