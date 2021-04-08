@@ -44,6 +44,7 @@ GdkPixbuf
 *screenshooter_capture_screenshot (gint     region,
                                    gint     delay,
                                    gboolean show_mouse,
+                                   gboolean show_border,
                                    gboolean plugin);
 
 #endif

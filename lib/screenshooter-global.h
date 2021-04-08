@@ -44,6 +44,7 @@ typedef struct
   gint region;
   gint show_save_dialog;
   gint show_mouse;
+  gint show_border;
   gint delay;
   gint action;
   gboolean plugin;
