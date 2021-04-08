@@ -43,13 +43,15 @@ void       screenshooter_write_rc_file         (const gchar    *file,
                                                 ScreenshotData *sd);
 void       screenshooter_open_screenshot       (const gchar    *screenshot_path,
                                                 const gchar    *application,
-                                                      GAppInfo *app_info);
+                                                GAppInfo       *app_info);
 gchar     *screenshooter_get_home_uri          (void);
 gchar     *screenshooter_get_xdg_image_dir_uri (void);
 gboolean   screenshooter_is_remote_uri         (const gchar    *uri);
 void       screenshooter_error                 (const gchar    *format,
                                                 ...);
-gchar     *screenshooter_get_datetime          (const gchar    *format);
+gchar     *screenshooter_get_filename_for_uri  (const gchar    *uri,
+                                                const gchar    *title,
+                                                gboolean        timestamp);
 void       screenshooter_open_help             (GtkWindow      *parent);
 gboolean   screenshooter_f1_key                (GtkWidget      *widget,
                                                 GdkEventKey    *event,

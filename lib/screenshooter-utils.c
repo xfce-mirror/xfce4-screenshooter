@@ -81,6 +81,27 @@ get_active_window_from_xlib (void)
 
 
 
+/**
+ * @format - a date format string
+ *
+ * Builds a timestamp using local time.
+ * Returned string should be released with g_free()
+ **/
+static gchar *
+get_datetime (const gchar *format)
+{
+  gchar *timestamp;
+  GDateTime *now = g_date_time_new_now_local ();
+  timestamp = g_date_time_format (now, format);
+
+  g_date_time_unref (now);
+  /* TODO: strip potential : and / if the format is configurable */
+  DBG ("datetime is %s", timestamp);
+  return timestamp;
+}
+
+
+
 /* Public */
 
 
@@ -355,23 +376,83 @@ void screenshooter_error (const gchar *format, ...)
   g_free (message);
 }
 
-/**
- * screenshooter_get_datetime
- * @format - a date format string
- *
- * Builds a timestamp using local time.
- * Returned string should be released with g_free()
- **/
-gchar *screenshooter_get_datetime (const gchar *format)
-{
-  gchar *timestamp;
-  GDateTime *now = g_date_time_new_now_local();
-  timestamp = g_date_time_format (now, format);
 
-  g_date_time_unref (now);
-  /* TODO: strip potential : and / if the format is configurable */
-  DBG("datetime is %s", timestamp);
-  return timestamp;
+
+/* If @timestamp is true, generates a file name @title - date - hour - n.png,
+ * where n is the lowest integer such as this file does not exist in the @uri
+ * folder.
+ * Else, generates a file name @title-n.png, where n is the lowest integer
+ * such as this file does not exist in the @uri folder.
+ *
+ * @uri: uri of the folder for which the filename should be generated.
+ * @title: the main title of the file name.
+ * @timestamp: whether the date and the hour should be appended to the file name.
+ *
+ * returns: the filename or NULL if *uri == NULL.
+*/
+gchar *
+screenshooter_get_filename_for_uri (const gchar *uri,
+                                    const gchar *title,
+                                    gboolean     timestamp)
+{
+  gboolean exists = TRUE;
+  GFile *directory;
+  GFile *file;
+  gchar *base_name;
+  gchar *datetime;
+  const gchar *strftime_format = "%Y-%m-%d_%H-%M-%S";
+
+  gint i;
+
+  if (G_UNLIKELY (uri == NULL))
+    {
+      TRACE ("URI was NULL");
+      return NULL;
+    }
+
+  TRACE ("Get the folder corresponding to the URI");
+  datetime = get_datetime (strftime_format);
+  directory = g_file_new_for_uri (uri);
+  if (!timestamp)
+    base_name = g_strconcat (title, ".png", NULL);
+  else
+    base_name = g_strconcat (title, "_", datetime, ".png", NULL);
+
+  file = g_file_get_child (directory, base_name);
+
+  if (!g_file_query_exists (file, NULL))
+    {
+      g_object_unref (file);
+      g_object_unref (directory);
+
+      return base_name;
+    }
+
+  g_object_unref (file);
+  g_free (base_name);
+
+  for (i = 1; exists; ++i)
+    {
+      const gchar *extension = g_strdup_printf ("-%d.png", i);
+
+      if (!timestamp)
+         base_name = g_strconcat (title, extension, NULL);
+       else
+         base_name = g_strconcat (title, "_", datetime, extension, NULL);
+
+      file = g_file_get_child (directory, base_name);
+      exists = g_file_query_exists (file, NULL);
+
+      if (exists)
+        g_free (base_name);
+
+      g_object_unref (file);
+    }
+
+  g_free (datetime);
+  g_object_unref (directory);
+
+  return base_name;
 }
 
 

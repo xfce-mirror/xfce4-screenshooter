@@ -76,17 +76,21 @@ action_idle (gpointer user_data)
         screenshooter_save_screenshot_to (sd->screenshot, sd->screenshot_dir);
       else
         {
+          gchar *filename;
           const gchar *save_location, *temp;
 
           if (sd->screenshot_dir == NULL)
             sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
 
+          filename = screenshooter_get_filename_for_uri (sd->screenshot_dir, sd->title, sd->timestamp);
+
           save_location = screenshooter_save_screenshot (sd->screenshot,
                                                          sd->screenshot_dir,
-                                                         sd->title,
-                                                         sd->timestamp,
+                                                         filename,
                                                          TRUE,
                                                          TRUE);
+
+          g_free (filename);
 
           if (save_location != NULL)
             {
@@ -105,15 +109,16 @@ action_idle (gpointer user_data)
     {
       GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
       gchar *temp_dir_uri = g_file_get_uri (temp_dir);
+      gchar *filename = screenshooter_get_filename_for_uri (temp_dir_uri, sd->title, sd->timestamp);
       gchar *screenshot_path =
         screenshooter_save_screenshot (sd->screenshot,
                                        temp_dir_uri,
-                                       sd->title,
-                                       sd->timestamp,
+                                       filename,
                                        FALSE,
                                        FALSE);
       g_object_unref (temp_dir);
       g_free (temp_dir_uri);
+      g_free (filename);
 
       if (screenshot_path != NULL)
         {
