@@ -594,20 +594,9 @@ preview_drag_end (GtkWidget *widget, GdkDragContext *context, gpointer data)
 
 GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 {
-  GtkWidget *dlg, *main_alignment;
-  GtkWidget *vbox;
-
-  GtkWidget *layout_grid;
-
-  GtkWidget *area_main_box, *area_box, *area_label, *area_alignment;
-  GtkWidget *active_window_button,
-            *fullscreen_button,
-            *rectangle_button;
-
-  GtkWidget *show_mouse_checkbox, *show_border_checkbox;
-
-  GtkWidget *delay_main_box, *delay_box, *delay_label, *delay_alignment;
-  GtkWidget *delay_spinner_box, *delay_spinner, *seconds_label;
+  GtkWidget *dlg, *grid, *main_box, *box, *label, *checkbox;
+  GtkWidget *fullscreen_button, *active_window_button, *rectangle_button;
+  GtkWidget *spinner_box, *spinner;
 
   /* Create the dialog */
   if (plugin)
@@ -655,95 +644,81 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
-  /* Create the main alignment for the dialog */
-  main_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
-  gtk_widget_set_hexpand (main_alignment, TRUE);
-  gtk_widget_set_vexpand (main_alignment, TRUE);
-  gtk_widget_set_margin_top (main_alignment, 6);
-  gtk_widget_set_margin_bottom (main_alignment, 0);
-  gtk_widget_set_margin_start (main_alignment, 12);
-  gtk_widget_set_margin_end (main_alignment, 12);
-
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_alignment, TRUE, TRUE, 0);
-
   /* Create the main box for the dialog */
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
-  gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
+  main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
+  gtk_widget_set_hexpand (main_box, TRUE);
+  gtk_widget_set_vexpand (main_box, TRUE);
+  gtk_widget_set_margin_top (main_box, 6);
+  gtk_widget_set_margin_bottom (main_box, 0);
+  gtk_widget_set_margin_start (main_box, 12);
+  gtk_widget_set_margin_end (main_box, 12);
+  gtk_container_set_border_width (GTK_CONTAINER (main_box), 12);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_box, TRUE, TRUE, 0);
 
   /* Create the grid to align the differents parts of the top of the UI */
-  layout_grid = gtk_grid_new ();
-  gtk_grid_set_column_spacing (GTK_GRID (layout_grid), 20);
-  gtk_box_pack_start (GTK_BOX (vbox), layout_grid, TRUE, TRUE, 0);
+  grid = gtk_grid_new ();
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 20);
+  gtk_box_pack_start (GTK_BOX (main_box), grid, TRUE, TRUE, 0);
 
   /* Create the main box for the regions */
-  area_main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_grid_attach (GTK_GRID (layout_grid), area_main_box, 0, 0, 1, 2);
+  main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_grid_attach (GTK_GRID (grid), main_box, 0, 0, 1, 2);
 
   /* Create area label */
-  area_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL (area_label),
+  label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Region to capture</span>"));
-  gtk_widget_set_halign (area_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (area_label, GTK_ALIGN_START);
-  gtk_container_add (GTK_CONTAINER (area_main_box), area_label);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_container_add (GTK_CONTAINER (main_box), label);
 
   /* Create area box */
-  area_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_set_spacing (GTK_BOX (area_box), 6);
-  gtk_widget_set_hexpand (area_box, TRUE);
-  gtk_widget_set_vexpand (area_box, TRUE);
-  gtk_widget_set_margin_top (area_box, 0);
-  gtk_widget_set_margin_bottom (area_box, 6);
-  gtk_widget_set_margin_start (area_box, 12);
-  gtk_widget_set_margin_end (area_box, 0);
-  gtk_container_add (GTK_CONTAINER (area_main_box), area_box);
-  gtk_container_set_border_width (GTK_CONTAINER (area_box), 0);
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_box_set_spacing (GTK_BOX (box), 6);
+  gtk_widget_set_hexpand (box, TRUE);
+  gtk_widget_set_vexpand (box, TRUE);
+  gtk_widget_set_margin_top (box, 0);
+  gtk_widget_set_margin_bottom (box, 6);
+  gtk_widget_set_margin_start (box, 12);
+  gtk_widget_set_margin_end (box, 0);
+  gtk_container_add (GTK_CONTAINER (main_box), box);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 0);
 
   /* Create radio buttons for areas to screenshot */
 
   /* Fullscreen */
   fullscreen_button =
-    gtk_radio_button_new_with_mnemonic (NULL,
-                                        _("Entire screen"));
-  gtk_box_pack_start (GTK_BOX (area_box),
-                      fullscreen_button, FALSE,
-                      FALSE, 0);
+    gtk_radio_button_new_with_mnemonic (NULL, _("Entire screen"));
+  gtk_box_pack_start (GTK_BOX (box), fullscreen_button, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fullscreen_button),
                                 (sd->region == FULLSCREEN));
   gtk_widget_set_tooltip_text (fullscreen_button,
                                _("Take a screenshot of the entire screen"));
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled",
-                    G_CALLBACK (cb_fullscreen_screen_toggled),
-                    sd);
+                    G_CALLBACK (cb_fullscreen_screen_toggled), sd);
   g_signal_connect (G_OBJECT (fullscreen_button), "activate",
-                    G_CALLBACK (cb_radiobutton_activate),
-                    dlg);
+                    G_CALLBACK (cb_radiobutton_activate), dlg);
 
   /* Active window */
   active_window_button =
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
                                                  _("Active window"));
-  gtk_box_pack_start (GTK_BOX (area_box),
-                      active_window_button, FALSE,
-                      FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (box), active_window_button, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button),
                                 (sd->region == ACTIVE_WINDOW));
   gtk_widget_set_tooltip_text (active_window_button,
                                _("Take a screenshot of the active window"));
   g_signal_connect (G_OBJECT (active_window_button), "toggled",
-                    G_CALLBACK (cb_active_window_toggled),
-                    sd);
+                    G_CALLBACK (cb_active_window_toggled), sd);
   g_signal_connect (G_OBJECT (active_window_button), "activate",
-                    G_CALLBACK (cb_radiobutton_activate),
-                    dlg);
+                    G_CALLBACK (cb_radiobutton_activate), dlg);
 
   /* Rectangle */
   rectangle_button =
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
                                                  _("Select a region"));
-  gtk_box_pack_start (GTK_BOX (area_box), rectangle_button, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (box), rectangle_button, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button),
                                 (sd->region == SELECT));
   gtk_widget_set_tooltip_text (rectangle_button,
@@ -755,103 +730,94 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
                     G_CALLBACK (cb_rectangle_toggled), sd);
   g_signal_connect (G_OBJECT (rectangle_button), "activate",
-                    G_CALLBACK (cb_radiobutton_activate),
-                    dlg);
+                    G_CALLBACK (cb_radiobutton_activate), dlg);
 
   /* Create options label */
-  area_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL (area_label),
+  label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Options</span>"));
-  gtk_widget_set_halign (area_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (area_label, GTK_ALIGN_START);
-  gtk_container_add (GTK_CONTAINER (area_main_box), area_label);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_container_add (GTK_CONTAINER (main_box), label);
 
   /* Create options box */
-  area_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_set_spacing (GTK_BOX (area_box), 6);
-  gtk_widget_set_hexpand (area_box, TRUE);
-  gtk_widget_set_vexpand (area_box, TRUE);
-  gtk_widget_set_margin_top (area_box, 0);
-  gtk_widget_set_margin_bottom (area_box, 6);
-  gtk_widget_set_margin_start (area_box, 12);
-  gtk_widget_set_margin_end (area_box, 0);
-  gtk_container_add (GTK_CONTAINER (area_main_box), area_box);
-  gtk_container_set_border_width (GTK_CONTAINER (area_box), 0);
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_box_set_spacing (GTK_BOX (box), 6);
+  gtk_widget_set_hexpand (box, TRUE);
+  gtk_widget_set_vexpand (box, TRUE);
+  gtk_widget_set_margin_top (box, 0);
+  gtk_widget_set_margin_bottom (box, 6);
+  gtk_widget_set_margin_start (box, 12);
+  gtk_widget_set_margin_end (box, 0);
+  gtk_container_add (GTK_CONTAINER (main_box), box);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 0);
 
   /* Create show mouse checkbox */
-  show_mouse_checkbox =
+  checkbox =
     gtk_check_button_new_with_label (_("Capture the mouse pointer"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (show_mouse_checkbox),
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox),
                                 (sd->show_mouse == 1));
-  gtk_widget_set_tooltip_text (show_mouse_checkbox,
+  gtk_widget_set_tooltip_text (checkbox,
                                _("Display the mouse pointer on the screenshot"));
-  gtk_box_pack_start (GTK_BOX (area_box),
-                      show_mouse_checkbox, FALSE,
-                      FALSE, 0);
-  g_signal_connect (G_OBJECT (show_mouse_checkbox), "toggled",
+  gtk_box_pack_start (GTK_BOX (box), checkbox, FALSE, FALSE, 0);
+  g_signal_connect (G_OBJECT (checkbox), "toggled",
                     G_CALLBACK (cb_show_mouse_toggled), sd);
 
   /* Create show border checkbox */
-  show_border_checkbox =
+  checkbox =
     gtk_check_button_new_with_label (_("Capture the window border"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (show_border_checkbox),
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox),
                                 (sd->show_border == 1));
-  gtk_widget_set_sensitive (show_border_checkbox, (sd->region == ACTIVE_WINDOW));
-  gtk_widget_set_tooltip_text (show_border_checkbox,
+  gtk_widget_set_sensitive (checkbox, (sd->region == ACTIVE_WINDOW));
+  gtk_widget_set_tooltip_text (checkbox,
                                _("Display the window border on the screenshot.\n"
                                  "Disabling this option has no effect for CSD windows."));
-  gtk_box_pack_start (GTK_BOX (area_box),
-                      show_border_checkbox, FALSE,
-                      FALSE, 0);
-  g_signal_connect (G_OBJECT (show_border_checkbox), "toggled",
+  gtk_box_pack_start (GTK_BOX (box), checkbox, FALSE, FALSE, 0);
+  g_signal_connect (G_OBJECT (checkbox), "toggled",
                     G_CALLBACK (cb_show_border_toggled), sd);
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_insensi), show_border_checkbox);
+                    G_CALLBACK (cb_toggle_set_insensi), checkbox);
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_insensi), show_border_checkbox);
+                    G_CALLBACK (cb_toggle_set_insensi), checkbox);
 
   /* Create the main box for the delay stuff */
-  delay_main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_grid_attach (GTK_GRID (layout_grid), delay_main_box, 1, 0, 1, 1);
+  main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_grid_attach (GTK_GRID (grid), main_box, 1, 0, 1, 1);
 
   /* Create delay label */
-  delay_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL(delay_label),
+  label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL(label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Delay before capturing</span>"));
-  gtk_widget_set_halign (delay_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (delay_label, GTK_ALIGN_START);
-  gtk_box_pack_start (GTK_BOX (delay_main_box), delay_label, FALSE, FALSE, 0);
-
-  /* Create delay alignment */
-  delay_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
-  gtk_widget_set_hexpand (delay_alignment, FALSE);
-  gtk_widget_set_vexpand (delay_alignment, FALSE);
-  gtk_widget_set_margin_top (delay_alignment, 0);
-  gtk_widget_set_margin_bottom (delay_alignment, 6);
-  gtk_widget_set_margin_start (delay_alignment, 12);
-  gtk_widget_set_margin_end (delay_alignment, 0);
-  gtk_box_pack_start (GTK_BOX (delay_main_box), delay_alignment, FALSE, FALSE, 0);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_box_pack_start (GTK_BOX (main_box), label, FALSE, FALSE, 0);
 
   /* Create delay box */
-  delay_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_container_add (GTK_CONTAINER (delay_alignment), delay_box);
-  gtk_container_set_border_width (GTK_CONTAINER (delay_box), 0);
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+  gtk_widget_set_hexpand (box, FALSE);
+  gtk_widget_set_vexpand (box, FALSE);
+  gtk_widget_set_margin_top (box, 0);
+  gtk_widget_set_margin_bottom (box, 6);
+  gtk_widget_set_margin_start (box, 12);
+  gtk_widget_set_margin_end (box, 0);
+  gtk_box_pack_start (GTK_BOX (main_box), box, FALSE, FALSE, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 0);
 
   /* Create delay spinner */
-  delay_spinner_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
-  gtk_box_pack_start (GTK_BOX (delay_box), delay_spinner_box, FALSE, FALSE, 0);
+  spinner_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
+  gtk_box_pack_start (GTK_BOX (box), spinner_box, FALSE, FALSE, 0);
 
-  delay_spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
-  gtk_spin_button_set_value (GTK_SPIN_BUTTON (delay_spinner), sd->delay);
-  gtk_widget_set_tooltip_text (delay_spinner,
+  spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
+  gtk_spin_button_set_value (GTK_SPIN_BUTTON (spinner), sd->delay);
+  gtk_widget_set_tooltip_text (spinner,
                                _("Delay in seconds before the screenshot is taken"));
-  gtk_box_pack_start (GTK_BOX (delay_spinner_box), delay_spinner, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (spinner_box), spinner, FALSE, FALSE, 0);
 
-  seconds_label = gtk_label_new (_("seconds"));
-  gtk_box_pack_start (GTK_BOX (delay_spinner_box), seconds_label, FALSE, FALSE, 0);
-  g_signal_connect (G_OBJECT (delay_spinner), "value-changed",
+  label = gtk_label_new (_("seconds"));
+  gtk_box_pack_start (GTK_BOX (spinner_box), label, FALSE, FALSE, 0);
+  g_signal_connect (G_OBJECT (spinner), "value-changed",
                     G_CALLBACK (cb_delay_spinner_changed), sd);
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
@@ -880,23 +846,14 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
 GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 {
-  GtkWidget *dlg, *main_alignment;
-  GtkWidget *vbox, *hbox, *evbox;
-
-  GtkWidget *layout_grid;
-
-  GtkWidget *left_box;
-  GtkWidget *actions_label, *actions_alignment, *actions_grid;
-  GtkWidget *save_radio_button;
-  GtkWidget *clipboard_radio_button, *open_with_radio_button;
-  GtkWidget *imgur_radio_button, *imgur_warning_image, *imgur_warning_label;
-  GtkWidget *popover;
+  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *popover;
+  GtkWidget *actions_grid;
 
   GtkListStore *liststore;
   GtkWidget *combobox;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
-  GtkWidget *preview, *preview_ebox, *preview_box, *preview_label;
+  GtkWidget *preview;
   GdkPixbuf *thumbnail;
   GdkCursor *cursor;
 
@@ -924,100 +881,91 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
-  /* Create the main alignment for the dialog */
-  main_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
-  gtk_widget_set_hexpand (main_alignment, TRUE);
-  gtk_widget_set_vexpand (main_alignment, TRUE);
-  gtk_widget_set_margin_top (main_alignment, 6);
-  gtk_widget_set_margin_bottom (main_alignment, 0);
-  gtk_widget_set_margin_start (main_alignment, 12);
-  gtk_widget_set_margin_end (main_alignment, 12);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_alignment, TRUE, TRUE, 0);
-
   /* Create the main box for the dialog */
-  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
-  gtk_container_add (GTK_CONTAINER (main_alignment), vbox);
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
+  gtk_widget_set_hexpand (box, TRUE);
+  gtk_widget_set_vexpand (box, TRUE);
+  gtk_widget_set_margin_top (box, 6);
+  gtk_widget_set_margin_bottom (box, 0);
+  gtk_widget_set_margin_start (box, 12);
+  gtk_widget_set_margin_end (box, 12);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 12);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), box, TRUE, TRUE, 0);
 
   /* Create the grid to align the two columns of the UI */
-  layout_grid = gtk_grid_new ();
-  gtk_grid_set_column_spacing (GTK_GRID (layout_grid), 20);
-  gtk_box_pack_start (GTK_BOX (vbox), layout_grid, TRUE, TRUE, 0);
+  grid = gtk_grid_new ();
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 20);
+  gtk_box_pack_start (GTK_BOX (box), grid, TRUE, TRUE, 0);
 
   /* Create the box which containes the left part of the UI */
-  left_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_grid_attach (GTK_GRID (layout_grid), left_box, 0, 0, 1, 1);
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_widget_set_hexpand (box, TRUE);
+  gtk_widget_set_vexpand (box, TRUE);
+  gtk_widget_set_margin_top (box, 0);
+  gtk_widget_set_margin_bottom (box, 6);
+  gtk_widget_set_margin_start (box, 12);
+  gtk_widget_set_margin_end (box, 0);
+  gtk_grid_attach (GTK_GRID (grid), box, 0, 0, 1, 1);
 
   /* Create actions label */
-  actions_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL (actions_label),
+  label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">Action"
                           "</span>"));
-  gtk_widget_set_halign (actions_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (actions_label, GTK_ALIGN_START);
-  gtk_box_pack_start (GTK_BOX (left_box), actions_label, FALSE, FALSE, 0);
-
-  /* Create actions alignment */
-  actions_alignment = gtk_box_new (GTK_ORIENTATION_VERTICAL, 1);
-  gtk_widget_set_hexpand (actions_alignment, TRUE);
-  gtk_widget_set_vexpand (actions_alignment, TRUE);
-  gtk_widget_set_margin_top (actions_alignment, 0);
-  gtk_widget_set_margin_bottom (actions_alignment, 6);
-  gtk_widget_set_margin_start (actions_alignment, 12);
-  gtk_widget_set_margin_end (actions_alignment, 0);
-  gtk_box_pack_start (GTK_BOX (left_box), actions_alignment, TRUE, TRUE, 0);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
 
   /* Create the actions box */
   actions_grid = gtk_grid_new ();
-  gtk_container_add (GTK_CONTAINER (actions_alignment), actions_grid);
+  gtk_box_pack_start (GTK_BOX (box), actions_grid, TRUE, TRUE, 0);
 
   gtk_grid_set_row_spacing (GTK_GRID (actions_grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (actions_grid), 6);
   gtk_container_set_border_width (GTK_CONTAINER (actions_grid), 0);
 
   /* Save option radio button */
-  save_radio_button = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (save_radio_button),
-                                (sd->action & SAVE));
-  g_signal_connect (G_OBJECT (save_radio_button), "toggled",
+  radio = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio), (sd->action & SAVE));
+  g_signal_connect (G_OBJECT (radio), "toggled",
                     G_CALLBACK (cb_save_toggled), sd);
-  g_signal_connect (G_OBJECT (save_radio_button), "activate",
+  g_signal_connect (G_OBJECT (radio), "activate",
                     G_CALLBACK (cb_radiobutton_activate), dlg);
-  gtk_widget_set_tooltip_text (save_radio_button, _("Save the screenshot to a PNG file"));
-  gtk_grid_attach (GTK_GRID (actions_grid), save_radio_button, 0, 0, 1, 1);
+  gtk_widget_set_tooltip_text (radio, _("Save the screenshot to a PNG file"));
+  gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 0, 1, 1);
 
   if (sd->plugin ||
       gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
     {
       /* Copy to clipboard radio button */
-      clipboard_radio_button =
-        gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
+      radio =
+        gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
                                                      _("Copy to the clipboard"));
-      gtk_widget_set_tooltip_text (clipboard_radio_button,
+      gtk_widget_set_tooltip_text (radio,
                                    _("Copy the screenshot to the clipboard so that it can be "
                                      "pasted later"));
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (clipboard_radio_button),
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
                                     (sd->action & CLIPBOARD));
-      g_signal_connect (G_OBJECT (clipboard_radio_button), "toggled",
+      g_signal_connect (G_OBJECT (radio), "toggled",
                         G_CALLBACK (cb_clipboard_toggled), sd);
-      g_signal_connect (G_OBJECT (clipboard_radio_button), "activate",
+      g_signal_connect (G_OBJECT (radio), "activate",
                         G_CALLBACK (cb_radiobutton_activate), dlg);
-      gtk_grid_attach (GTK_GRID (actions_grid), clipboard_radio_button, 0, 1, 1, 1);
+      gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 1, 1, 1);
     }
 
   /* Open with radio button */
-  open_with_radio_button =
-    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
+  radio =
+    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
                                                  _("Open with:"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (open_with_radio_button),
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
                                 (sd->action & OPEN));
-  g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
+  g_signal_connect (G_OBJECT (radio), "toggled",
                     G_CALLBACK (cb_open_toggled), sd);
-  g_signal_connect (G_OBJECT (open_with_radio_button), "activate",
+  g_signal_connect (G_OBJECT (radio), "activate",
                     G_CALLBACK (cb_radiobutton_activate), dlg);
-  gtk_widget_set_tooltip_text (open_with_radio_button,
+  gtk_widget_set_tooltip_text (radio,
                                _("Open the screenshot with the chosen application"));
-  gtk_grid_attach (GTK_GRID (actions_grid), open_with_radio_button, 0, 2, 1, 1);
+  gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 2, 1, 1);
 
   /* Open with combobox */
   liststore = gtk_list_store_new (4, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_APP_INFO);
@@ -1036,49 +984,50 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (combobox), "changed",
                     G_CALLBACK (cb_combo_active_item_changed), sd);
   gtk_widget_set_tooltip_text (combobox, _("Application to open the screenshot"));
-  g_signal_connect (G_OBJECT (open_with_radio_button), "toggled",
+  g_signal_connect (G_OBJECT (radio), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), combobox);
 
   /* Run the callback functions to grey/ungrey the correct widgets */
-  cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (open_with_radio_button), combobox);
+  cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (radio), combobox);
 
   /* Upload to imgur radio button */
   if (sd->enable_imgur_upload)
     {
-    hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
-    gtk_grid_attach (GTK_GRID (actions_grid), hbox, 0, 4, 1, 1);
+    GtkWidget *image;
 
-    imgur_radio_button =
-      gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (save_radio_button),
+    box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
+    gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 4, 1, 1);
+
+    radio =
+      gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
                                                    _("Host on Imgur"));
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (imgur_radio_button),
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
                                 (sd->action & UPLOAD_IMGUR));
-    gtk_widget_set_tooltip_text (imgur_radio_button,
+    gtk_widget_set_tooltip_text (radio,
                                  _("Host the screenshot on Imgur, a free online "
                                    "image hosting service"));
-    g_signal_connect (G_OBJECT (imgur_radio_button), "toggled",
+    g_signal_connect (G_OBJECT (radio), "toggled",
                       G_CALLBACK (cb_imgur_toggled), sd);
-    g_signal_connect (G_OBJECT (imgur_radio_button), "activate",
+    g_signal_connect (G_OBJECT (radio), "activate",
                       G_CALLBACK (cb_radiobutton_activate), dlg);
-    gtk_container_add (GTK_CONTAINER (hbox), imgur_radio_button);
+    gtk_container_add (GTK_CONTAINER (box), radio);
 
     /* Upload to imgur warning info */
-    imgur_warning_image = gtk_image_new_from_icon_name ("dialog-warning",
-                                                        GTK_ICON_SIZE_BUTTON);
-    imgur_warning_label = gtk_label_new (
+    image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_BUTTON);
+    label = gtk_label_new (
       _("Watch for sensitive content, the uploaded image will be publicly\n"
         "available and there is no guarantee it can be certainly deleted."));
 
-    popover = gtk_popover_new (imgur_warning_image);
-    gtk_container_add (GTK_CONTAINER (popover), imgur_warning_label);
+    popover = gtk_popover_new (image);
+    gtk_container_add (GTK_CONTAINER (popover), label);
     gtk_container_set_border_width (GTK_CONTAINER (popover), 6);
-    gtk_widget_show (imgur_warning_label);
+    gtk_widget_show (label);
 
     evbox = gtk_event_box_new ();
     g_signal_connect_swapped (G_OBJECT (evbox), "button-press-event",
                               G_CALLBACK (cb_imgur_warning_clicked), popover);
-    gtk_container_add (GTK_CONTAINER (hbox), evbox);
-    gtk_container_add (GTK_CONTAINER (evbox), imgur_warning_image);
+    gtk_container_add (GTK_CONTAINER (box), evbox);
+    gtk_container_add (GTK_CONTAINER (evbox), image);
 
     cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_HAND2);
     g_signal_connect (evbox, "realize",
@@ -1087,33 +1036,33 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
     }
 
   /* Preview box */
-  preview_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_container_set_border_width (GTK_CONTAINER (preview_box), 0);
-  gtk_grid_attach (GTK_GRID (layout_grid), preview_box, 1, 0, 1, 1);
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 0);
+  gtk_grid_attach (GTK_GRID (grid), box, 1, 0, 1, 1);
 
   /* Preview label*/
-  preview_label = gtk_label_new ("");
-  gtk_label_set_markup (GTK_LABEL (preview_label),
+  label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
                           "Preview</span>"));
-  gtk_widget_set_halign (preview_label, GTK_ALIGN_START);
-  gtk_widget_set_valign (preview_label, GTK_ALIGN_CENTER);
-  gtk_box_pack_start (GTK_BOX (preview_box), preview_label, FALSE, FALSE, 0);
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
+  gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
 
   /* The preview image */
   thumbnail = screenshot_get_thumbnail (sd->screenshot);
-  preview_ebox = gtk_event_box_new ();
+  evbox = gtk_event_box_new ();
   preview = gtk_image_new_from_pixbuf (thumbnail);
   g_object_unref (thumbnail);
-  gtk_container_add (GTK_CONTAINER (preview_ebox), preview);
-  gtk_box_pack_start (GTK_BOX (preview_box), preview_ebox, FALSE, FALSE, 0);
+  gtk_container_add (GTK_CONTAINER (evbox), preview);
+  gtk_box_pack_start (GTK_BOX (box), evbox, FALSE, FALSE, 0);
 
   /* DND for the preview image */
-  gtk_drag_source_set (preview_ebox, GDK_BUTTON1_MASK, NULL, 0, GDK_ACTION_COPY);
-  gtk_drag_source_add_image_targets (preview_ebox);
-  g_signal_connect (preview_ebox, "drag-begin", G_CALLBACK (preview_drag_begin), thumbnail);
-  g_signal_connect (preview_ebox, "drag-data-get", G_CALLBACK (preview_drag_data_get), sd->screenshot);
-  g_signal_connect (preview_ebox, "drag-end", G_CALLBACK (preview_drag_end), dlg);
+  gtk_drag_source_set (evbox, GDK_BUTTON1_MASK, NULL, 0, GDK_ACTION_COPY);
+  gtk_drag_source_add_image_targets (evbox);
+  g_signal_connect (evbox, "drag-begin", G_CALLBACK (preview_drag_begin), thumbnail);
+  g_signal_connect (evbox, "drag-data-get", G_CALLBACK (preview_drag_data_get), sd->screenshot);
+  g_signal_connect (evbox, "drag-end", G_CALLBACK (preview_drag_end), dlg);
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
