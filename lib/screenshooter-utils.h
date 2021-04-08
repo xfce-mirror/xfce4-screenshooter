@@ -51,6 +51,7 @@ void       screenshooter_error                 (const gchar    *format,
                                                 ...);
 gchar     *screenshooter_get_filename_for_uri  (const gchar    *uri,
                                                 const gchar    *title,
+                                                const gchar    *extension,
                                                 gboolean        timestamp);
 void       screenshooter_open_help             (GtkWindow      *parent);
 gboolean   screenshooter_f1_key                (GtkWidget      *widget,

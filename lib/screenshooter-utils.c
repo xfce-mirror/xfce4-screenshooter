@@ -145,6 +145,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gchar *title = g_strdup (_("Screenshot"));
   gchar *app = g_strdup ("none");
   gchar *last_user = g_strdup ("");
+  gchar *last_extension = g_strdup ("png");
   gboolean enable_imgur_upload = TRUE;
 
   if (G_LIKELY (file != NULL))
@@ -169,6 +170,9 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 
           g_free (last_user);
           last_user = g_strdup (xfce_rc_read_entry (rc, "last_user", ""));
+
+          g_free (last_extension);
+          last_extension = g_strdup (xfce_rc_read_entry (rc, "last_extension", "png"));
 
           g_free (screenshot_dir);
           screenshot_dir =
@@ -197,6 +201,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->app = app;
   sd->app_info = NULL;
   sd->last_user = last_user;
+  sd->last_extension = last_extension;
   sd->enable_imgur_upload = enable_imgur_upload;
 }
 
@@ -223,6 +228,7 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
 
   xfce_rc_write_entry (rc, "app", sd->app);
   xfce_rc_write_entry (rc, "last_user", sd->last_user);
+  xfce_rc_write_entry (rc, "last_extension", sd->last_extension);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
   xfce_rc_write_bool_entry (rc, "enable_imgur_upload", sd->enable_imgur_upload);
 
@@ -393,6 +399,7 @@ void screenshooter_error (const gchar *format, ...)
 gchar *
 screenshooter_get_filename_for_uri (const gchar *uri,
                                     const gchar *title,
+                                    const gchar *extension,
                                     gboolean     timestamp)
 {
   gboolean exists = TRUE;
@@ -414,9 +421,9 @@ screenshooter_get_filename_for_uri (const gchar *uri,
   datetime = get_datetime (strftime_format);
   directory = g_file_new_for_uri (uri);
   if (!timestamp)
-    base_name = g_strconcat (title, ".png", NULL);
+    base_name = g_strconcat (title, ".", extension, NULL);
   else
-    base_name = g_strconcat (title, "_", datetime, ".png", NULL);
+    base_name = g_strconcat (title, "_", datetime, ".", extension, NULL);
 
   file = g_file_get_child (directory, base_name);
 
@@ -433,12 +440,12 @@ screenshooter_get_filename_for_uri (const gchar *uri,
 
   for (i = 1; exists; ++i)
     {
-      const gchar *extension = g_strdup_printf ("-%d.png", i);
+      const gchar *suffix = g_strdup_printf ("-%d.%s", i, extension);
 
       if (!timestamp)
-         base_name = g_strconcat (title, extension, NULL);
+         base_name = g_strconcat (title, suffix, NULL);
        else
-         base_name = g_strconcat (title, "_", datetime, extension, NULL);
+         base_name = g_strconcat (title, "_", datetime, suffix, NULL);
 
       file = g_file_get_child (directory, base_name);
       exists = g_file_query_exists (file, NULL);

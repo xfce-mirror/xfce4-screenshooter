@@ -57,6 +57,7 @@ typedef struct
   gchar *app;
   GAppInfo *app_info;
   gchar *last_user;
+  gchar *last_extension;
   GdkPixbuf *screenshot;
 }
 ScreenshotData;
