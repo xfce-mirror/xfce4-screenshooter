@@ -179,9 +179,10 @@ take_screenshot_idle (gpointer user_data)
   ScreenshotData *sd = user_data;
 
   sd->screenshot = screenshooter_capture_screenshot (sd->region,
-                                                  sd->delay,
-                                                  sd->show_mouse,
-                                                  sd->plugin);
+                                                     sd->delay,
+                                                     sd->show_mouse,
+                                                     sd->show_border,
+                                                     sd->plugin);
 
   if (sd->screenshot != NULL)
     g_idle_add (action_idle, sd);
