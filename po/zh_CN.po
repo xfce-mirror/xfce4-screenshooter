@@ -8,15 +8,15 @@
 # wwj402 <wwj402@gmail.com>, 2018
 # 玉堂白鹤 <yjwork@qq.com>, 2014
 # Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2013,2015
-# 玉堂白鹤 <yjwork@qq.com>, 2015,2018-2020
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2018-2021
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 12:47+0100\n"
-"PO-Revision-Date: 2020-12-20 11:47+0000\n"
-"Last-Translator: Nick Schermer <nick@xfce.org>\n"
+"POT-Creation-Date: 2021-04-13 12:48+0200\n"
+"PO-Revision-Date: 2021-04-14 14:23+0000\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,177 +24,191 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../lib/screenshooter-dialogs.c:467
+#: ../lib/screenshooter-dialogs.c:404
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2f K/%.2f K"
 
-#: ../lib/screenshooter-dialogs.c:553
+#: ../lib/screenshooter-dialogs.c:496
 msgid "Transfer"
 msgstr "传送器"
 
-#: ../lib/screenshooter-dialogs.c:574
+#: ../lib/screenshooter-dialogs.c:517
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">此截图会传送至：</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:673 ../lib/screenshooter-dialogs.c:679
-#: ../lib/screenshooter-dialogs.c:691 ../lib/screenshooter-dialogs.c:698
-#: ../lib/screenshooter-dialogs.c:926 ../lib/screenshooter-dialogs.c:933
-#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
+#: ../lib/screenshooter-dialogs.c:605 ../lib/screenshooter-dialogs.c:611
+#: ../lib/screenshooter-dialogs.c:623 ../lib/screenshooter-dialogs.c:630
+#: ../lib/screenshooter-dialogs.c:861 ../lib/screenshooter-dialogs.c:868
+#: ../lib/screenshooter-utils.c:146 ../lib/screenshooter-utils.c:185
 #: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "截图"
 
-#: ../lib/screenshooter-dialogs.c:675 ../lib/screenshooter-dialogs.c:693
-#: ../lib/screenshooter-dialogs.c:928
+#: ../lib/screenshooter-dialogs.c:607 ../lib/screenshooter-dialogs.c:625
+#: ../lib/screenshooter-dialogs.c:863
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../lib/screenshooter-dialogs.c:676
+#: ../lib/screenshooter-dialogs.c:608
 msgid "_Close"
 msgstr "关闭(_C)"
 
-#: ../lib/screenshooter-dialogs.c:686
+#: ../lib/screenshooter-dialogs.c:618
 msgid "Preferences"
 msgstr "首选项"
 
-#: ../lib/screenshooter-dialogs.c:694 ../lib/screenshooter-dialogs.c:929
+#: ../lib/screenshooter-dialogs.c:626 ../lib/screenshooter-dialogs.c:864
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:930
+#: ../lib/screenshooter-dialogs.c:627 ../lib/screenshooter-dialogs.c:865
 msgid "_OK"
 msgstr "确定(_O)"
 
-#: ../lib/screenshooter-dialogs.c:706
+#: ../lib/screenshooter-dialogs.c:638
 msgid "Take a screenshot"
 msgstr "截取截图"
 
-#: ../lib/screenshooter-dialogs.c:743
+#: ../lib/screenshooter-dialogs.c:670
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截取范围</span>"
 
-#: ../lib/screenshooter-dialogs.c:770
+#: ../lib/screenshooter-dialogs.c:692
 msgid "Entire screen"
 msgstr "整个屏幕"
 
-#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:59
-#: ../panel-plugin/screenshooter-plugin.c:330
+#: ../lib/screenshooter-dialogs.c:697 ../src/main.c:60
+#: ../panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the entire screen"
 msgstr "全屏幕截图"
 
-#: ../lib/screenshooter-dialogs.c:788
+#: ../lib/screenshooter-dialogs.c:706
 msgid "Active window"
 msgstr "当前窗口"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:96
-#: ../panel-plugin/screenshooter-plugin.c:335
+#: ../lib/screenshooter-dialogs.c:711 ../src/main.c:102
+#: ../panel-plugin/screenshooter-plugin.c:336
 msgid "Take a screenshot of the active window"
 msgstr "当前窗口截屏"
 
-#: ../lib/screenshooter-dialogs.c:806
+#: ../lib/screenshooter-dialogs.c:720
 msgid "Select a region"
 msgstr "选择区域"
 
-#: ../lib/screenshooter-dialogs.c:811
+#: ../lib/screenshooter-dialogs.c:725
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "点击屏幕上一点不松开鼠标按钮，拖动鼠标至某一区域的另一角并松开鼠标按钮来选择要截取的区域。\n\n拖动时按 Ctrl 键可移动区域。"
 
-#: ../lib/screenshooter-dialogs.c:825
+#: ../lib/screenshooter-dialogs.c:738
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">选项</span>"
+
+#: ../lib/screenshooter-dialogs.c:758
 msgid "Capture the mouse pointer"
 msgstr "截取鼠标指针"
 
-#: ../lib/screenshooter-dialogs.c:829
+#: ../lib/screenshooter-dialogs.c:762
 msgid "Display the mouse pointer on the screenshot"
 msgstr "在截图上显示鼠标指针"
 
-#: ../lib/screenshooter-dialogs.c:843
+#: ../lib/screenshooter-dialogs.c:769
+msgid "Capture the window border"
+msgstr "捕捉窗口边框"
+
+#: ../lib/screenshooter-dialogs.c:774
+msgid ""
+"Display the window border on the screenshot.\n"
+"Disabling this option has no effect for CSD windows."
+msgstr "在屏幕截图上显示窗口边框。\n禁用此选项对CSD窗口无效。"
+
+#: ../lib/screenshooter-dialogs.c:791
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截取前延迟</span>"
 
-#: ../lib/screenshooter-dialogs.c:871
+#: ../lib/screenshooter-dialogs.c:815
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "以秒计的截图获取前的延迟"
 
-#: ../lib/screenshooter-dialogs.c:874
+#: ../lib/screenshooter-dialogs.c:818
 msgid "seconds"
 msgstr "秒"
 
-#: ../lib/screenshooter-dialogs.c:942
+#: ../lib/screenshooter-dialogs.c:877
 msgid "Choose what to do with the screenshot"
 msgstr "选择如何处理屏幕截图"
 
-#: ../lib/screenshooter-dialogs.c:976
+#: ../lib/screenshooter-dialogs.c:913
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">动作</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:928
 msgid "Save"
 msgstr "保存"
 
-#: ../lib/screenshooter-dialogs.c:1008
+#: ../lib/screenshooter-dialogs.c:934
 msgid "Save the screenshot to a PNG file"
 msgstr "保存此截图为 PNG 文件"
 
-#: ../lib/screenshooter-dialogs.c:1017
+#: ../lib/screenshooter-dialogs.c:943
 msgid "Copy to the clipboard"
 msgstr "复制至剪贴板"
 
-#: ../lib/screenshooter-dialogs.c:1019
+#: ../lib/screenshooter-dialogs.c:945
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "复制截图至剪贴板以便以后粘贴"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: ../lib/screenshooter-dialogs.c:959
 msgid "Open with:"
 msgstr "打开方式："
 
-#: ../lib/screenshooter-dialogs.c:1041
+#: ../lib/screenshooter-dialogs.c:967
 msgid "Open the screenshot with the chosen application"
 msgstr "使用所选的应用程序打开截图"
 
-#: ../lib/screenshooter-dialogs.c:1060 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:986 ../src/main.c:75
 msgid "Application to open the screenshot"
 msgstr "打开截图的应用程序"
 
-#: ../lib/screenshooter-dialogs.c:1073
+#: ../lib/screenshooter-dialogs.c:1003
 msgid "Host on Imgur"
 msgstr "上传至 Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1077 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "将图片上传至Imgur，一个免费的在线图床服务。"
 
-#: ../lib/screenshooter-dialogs.c:1089
+#: ../lib/screenshooter-dialogs.c:1018
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
 msgstr "注意敏感内容，上传的图片将公开\n可用，并且不能保证可以将其删除。"
 
-#: ../lib/screenshooter-dialogs.c:1116
+#: ../lib/screenshooter-dialogs.c:1046
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">预览</span>"
 
-#: ../lib/screenshooter-dialogs.c:1178
+#: ../lib/screenshooter-dialogs.c:1106
 msgid "Save screenshot as..."
 msgstr "截图另存为..."
 
-#: ../lib/screenshooter-utils.c:269
+#: ../lib/screenshooter-utils.c:304
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>应用程序无法启动。</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:344
+#: ../lib/screenshooter-utils.c:379
 msgid "Error"
 msgstr "错误"
 
@@ -348,46 +362,50 @@ msgid ""
 "on the image hosting service"
 msgstr "截图的注释，它在图像托管服务上显示截图时使用"
 
-#: ../src/main.c:49
+#: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
 msgstr "复制截图至剪贴板"
 
-#: ../src/main.c:54
+#: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
 msgstr "以秒计的截图获取前的延迟"
 
-#: ../src/main.c:64
+#: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
 msgstr "在截图中显示鼠标"
 
-#: ../src/main.c:74 ../panel-plugin/screenshooter-plugin.c:340
+#: ../src/main.c:70
+msgid "Removes the window border from the screenshot"
+msgstr "从屏幕截图中删除窗口边框"
+
+#: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "点击屏幕上一点不松开鼠标按钮，拖动鼠标至某一区域的另一角并松开鼠标按钮来选择要截取的区域。"
 
-#: ../src/main.c:81
+#: ../src/main.c:87
 msgid "File path or directory where the screenshot will be saved"
 msgstr "要保存截图的文件路径或目录"
 
-#: ../src/main.c:91
+#: ../src/main.c:97
 msgid "Version information"
 msgstr "版本信息"
 
-#: ../src/main.c:140
+#: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "冲突选项：--%s 和 --%s 不能同时使用。\n"
 
-#: ../src/main.c:142
+#: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "--%s 选项只有在给定 --fullscreen、--window 或 --region 时才生效。会忽略此项。\n"
 
-#: ../src/main.c:159
+#: ../src/main.c:165
 #, c-format
 msgid ""
 "%s: %s\n"
