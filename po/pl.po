@@ -3,10 +3,10 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Saibamen <saibamenppl@gmail.com>, 2015
+# Adam Stachowicz <saibamenppl@gmail.com>, 2015
 # Dawid Job <hoek@tuta.io>, 2015
 # Iro <irek.gierlach@gmail.com>, 2011
-# No Ne, 2018-2020
+# No Ne, 2018-2021
 # Piotr Sokół <psokol.l10n@gmail.com>, 2009,2011,2015
 # Piotr Sokół <psokol.l10n@gmail.com>, 2017
 # Piotr Strębski <strebski@gmail.com>, 2013-2015
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 12:47+0100\n"
-"PO-Revision-Date: 2020-12-26 14:22+0000\n"
+"POT-Creation-Date: 2021-04-13 12:48+0200\n"
+"PO-Revision-Date: 2021-04-13 13:02+0000\n"
 "Last-Translator: No Ne\n"
 "Language-Team: Polish (http://www.transifex.com/xfce/xfce-apps/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -24,177 +24,191 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: ../lib/screenshooter-dialogs.c:467
+#: ../lib/screenshooter-dialogs.c:404
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb z %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:553
+#: ../lib/screenshooter-dialogs.c:496
 msgid "Transfer"
 msgstr "Wysyłanie"
 
-#: ../lib/screenshooter-dialogs.c:574
+#: ../lib/screenshooter-dialogs.c:517
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Wysyłanie obrazu do:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:673 ../lib/screenshooter-dialogs.c:679
-#: ../lib/screenshooter-dialogs.c:691 ../lib/screenshooter-dialogs.c:698
-#: ../lib/screenshooter-dialogs.c:926 ../lib/screenshooter-dialogs.c:933
-#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
+#: ../lib/screenshooter-dialogs.c:605 ../lib/screenshooter-dialogs.c:611
+#: ../lib/screenshooter-dialogs.c:623 ../lib/screenshooter-dialogs.c:630
+#: ../lib/screenshooter-dialogs.c:861 ../lib/screenshooter-dialogs.c:868
+#: ../lib/screenshooter-utils.c:146 ../lib/screenshooter-utils.c:185
 #: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Przechwycenie obrazu ekranu"
 
-#: ../lib/screenshooter-dialogs.c:675 ../lib/screenshooter-dialogs.c:693
-#: ../lib/screenshooter-dialogs.c:928
+#: ../lib/screenshooter-dialogs.c:607 ../lib/screenshooter-dialogs.c:625
+#: ../lib/screenshooter-dialogs.c:863
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../lib/screenshooter-dialogs.c:676
+#: ../lib/screenshooter-dialogs.c:608
 msgid "_Close"
 msgstr "_Zamknij"
 
-#: ../lib/screenshooter-dialogs.c:686
+#: ../lib/screenshooter-dialogs.c:618
 msgid "Preferences"
 msgstr "Konfiguruje ustawienia apletu"
 
-#: ../lib/screenshooter-dialogs.c:694 ../lib/screenshooter-dialogs.c:929
+#: ../lib/screenshooter-dialogs.c:626 ../lib/screenshooter-dialogs.c:864
 msgid "_Cancel"
 msgstr "Anu_luj"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:930
+#: ../lib/screenshooter-dialogs.c:627 ../lib/screenshooter-dialogs.c:865
 msgid "_OK"
 msgstr "_OK"
 
-#: ../lib/screenshooter-dialogs.c:706
+#: ../lib/screenshooter-dialogs.c:638
 msgid "Take a screenshot"
 msgstr "Przechwytuje obraz określonego obszaru ekranu"
 
-#: ../lib/screenshooter-dialogs.c:743
+#: ../lib/screenshooter-dialogs.c:670
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Obszar</span>"
 
-#: ../lib/screenshooter-dialogs.c:770
+#: ../lib/screenshooter-dialogs.c:692
 msgid "Entire screen"
 msgstr "Cały ekran"
 
-#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:59
-#: ../panel-plugin/screenshooter-plugin.c:330
+#: ../lib/screenshooter-dialogs.c:697 ../src/main.c:60
+#: ../panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the entire screen"
 msgstr "Przechwytuje obraz całego ekranu"
 
-#: ../lib/screenshooter-dialogs.c:788
+#: ../lib/screenshooter-dialogs.c:706
 msgid "Active window"
 msgstr "Bieżące okno"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:96
-#: ../panel-plugin/screenshooter-plugin.c:335
+#: ../lib/screenshooter-dialogs.c:711 ../src/main.c:102
+#: ../panel-plugin/screenshooter-plugin.c:336
 msgid "Take a screenshot of the active window"
 msgstr "Przechwytuje obraz uaktywnionego okna"
 
-#: ../lib/screenshooter-dialogs.c:806
+#: ../lib/screenshooter-dialogs.c:720
 msgid "Select a region"
 msgstr "Wybrany"
 
-#: ../lib/screenshooter-dialogs.c:811
+#: ../lib/screenshooter-dialogs.c:725
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Wybierz obszar do przechwycenia, klikając punkt na ekranie bez zwalniania przycisku myszy, przeciągając kursor myszy do innego narożnika obszaru i zwalniając przycisk myszy.\n\nNaciśnij klawisz Ctrl podczas przeciągania, aby przesunąć obszar."
 
-#: ../lib/screenshooter-dialogs.c:825
+#: ../lib/screenshooter-dialogs.c:738
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opcje</span>"
+
+#: ../lib/screenshooter-dialogs.c:758
 msgid "Capture the mouse pointer"
 msgstr "Uwzględnianie kursora myszy"
 
-#: ../lib/screenshooter-dialogs.c:829
+#: ../lib/screenshooter-dialogs.c:762
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Wyświetla kursor myszy na przechwyconym obrazie"
 
-#: ../lib/screenshooter-dialogs.c:843
+#: ../lib/screenshooter-dialogs.c:769
+msgid "Capture the window border"
+msgstr "Uwzględnianie obramowania okna"
+
+#: ../lib/screenshooter-dialogs.c:774
+msgid ""
+"Display the window border on the screenshot.\n"
+"Disabling this option has no effect for CSD windows."
+msgstr "Wyświetla obramowanie okna na przechwyconym obrazie.\nWyłączenie tej opcji nie ma wpływu na okna CSD."
+
+#: ../lib/screenshooter-dialogs.c:791
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opóźnienie</span>"
 
-#: ../lib/screenshooter-dialogs.c:871
+#: ../lib/screenshooter-dialogs.c:815
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Wprowadza wartość opóźnienia przechwytywania obrazu, określoną w sekundach"
 
-#: ../lib/screenshooter-dialogs.c:874
+#: ../lib/screenshooter-dialogs.c:818
 msgid "seconds"
 msgstr "sekund"
 
-#: ../lib/screenshooter-dialogs.c:942
+#: ../lib/screenshooter-dialogs.c:877
 msgid "Choose what to do with the screenshot"
 msgstr "Wybierz, co zrobić ze zrzutem ekranu"
 
-#: ../lib/screenshooter-dialogs.c:976
+#: ../lib/screenshooter-dialogs.c:913
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Czynność</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:928
 msgid "Save"
 msgstr "Zapisanie"
 
-#: ../lib/screenshooter-dialogs.c:1008
+#: ../lib/screenshooter-dialogs.c:934
 msgid "Save the screenshot to a PNG file"
 msgstr "Zapisuje przechwycony obraz do pliku w formacie PNG"
 
-#: ../lib/screenshooter-dialogs.c:1017
+#: ../lib/screenshooter-dialogs.c:943
 msgid "Copy to the clipboard"
 msgstr "Skopiowanie do schowka"
 
-#: ../lib/screenshooter-dialogs.c:1019
+#: ../lib/screenshooter-dialogs.c:945
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopiuje przechwycony obraz do schowka systemowego w celu jego późniejszego wklejenia"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: ../lib/screenshooter-dialogs.c:959
 msgid "Open with:"
 msgstr "Otworzenie za pomocą:"
 
-#: ../lib/screenshooter-dialogs.c:1041
+#: ../lib/screenshooter-dialogs.c:967
 msgid "Open the screenshot with the chosen application"
 msgstr "Otwiera przechwycony obraz za pomocą wybranego programu"
 
-#: ../lib/screenshooter-dialogs.c:1060 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:986 ../src/main.c:75
 msgid "Application to open the screenshot"
 msgstr "Otwiera przechwycony obraz za pomocą wybranego programu"
 
-#: ../lib/screenshooter-dialogs.c:1073
+#: ../lib/screenshooter-dialogs.c:1003
 msgid "Host on Imgur"
 msgstr "Hostowanie na Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1077 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Wysyła przechwycony obraz do bezpłatnej usługi hostingowej Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1089
+#: ../lib/screenshooter-dialogs.c:1018
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
 msgstr "Uważaj na wrażliwe treści, przesłany obraz będzie publicznie\ndostępny i nie ma gwarancji, że można go z pewnością usunąć."
 
-#: ../lib/screenshooter-dialogs.c:1116
+#: ../lib/screenshooter-dialogs.c:1046
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Podgląd</span>"
 
-#: ../lib/screenshooter-dialogs.c:1178
+#: ../lib/screenshooter-dialogs.c:1106
 msgid "Save screenshot as..."
 msgstr "Wybór pliku"
 
-#: ../lib/screenshooter-utils.c:269
+#: ../lib/screenshooter-utils.c:304
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Program nie może zostać uruchomiony.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:344
+#: ../lib/screenshooter-utils.c:379
 msgid "Error"
 msgstr "Błąd"
 
@@ -348,46 +362,50 @@ msgid ""
 "on the image hosting service"
 msgstr "Komentarz do przechwyconego obrazu, będzie używany podczas wyświetlania przechwyconego obrazu w usłudze przechowywania obrazów"
 
-#: ../src/main.c:49
+#: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
 msgstr "Kopiuj zrzut ekranu do schowka"
 
-#: ../src/main.c:54
+#: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Określa wartość opóźnienia przechwytywania obrazu, określoną w sekundach"
 
-#: ../src/main.c:64
+#: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
 msgstr "Uwzględnia kursor myszy na przechwyconym obrazie"
 
-#: ../src/main.c:74 ../panel-plugin/screenshooter-plugin.c:340
+#: ../src/main.c:70
+msgid "Removes the window border from the screenshot"
+msgstr "Usuwa obramowanie okna z przechwyconego obrazu"
+
+#: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "Przechwytuje obraz zaznaczonego obszaru ekranu"
 
-#: ../src/main.c:81
+#: ../src/main.c:87
 msgid "File path or directory where the screenshot will be saved"
 msgstr "Ścieżka pliku lub katalog, w którym zostanie zapisany przechwycony obraz"
 
-#: ../src/main.c:91
+#: ../src/main.c:97
 msgid "Version information"
 msgstr "Wypisuje informacje o wersji"
 
-#: ../src/main.c:140
+#: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Opcje --%s i --%s nie mogą zostać użyte w tym samym wierszu poleceń.\n"
 
-#: ../src/main.c:142
+#: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "Opcja --%s jest używana tylko gdy --fullscreen, --window lub --region są podane. Zostanie ona zignorowana.\n"
 
-#: ../src/main.c:159
+#: ../src/main.c:165
 #, c-format
 msgid ""
 "%s: %s\n"
