@@ -6,14 +6,15 @@
 # Elishai Eliyahu <elishai@mailfence.com>, 2018-2020
 # Elishai Eliyahu <elishai@mailfence.com>, 2020
 # GenghisKhan <genghiskhan@gmx.ca>, 2015
+# Omer I.S. <omeritzicschwartz@gmail.com>, 2021
 # Omer I.S. <omeritzicschwartz@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 12:47+0100\n"
-"PO-Revision-Date: 2020-12-20 11:47+0000\n"
-"Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
+"POT-Creation-Date: 2021-04-13 12:48+0200\n"
+"PO-Revision-Date: 2021-04-13 12:58+0000\n"
+"Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-apps/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,177 +22,191 @@ msgstr ""
 "Language: he\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: ../lib/screenshooter-dialogs.c:467
+#: ../lib/screenshooter-dialogs.c:404
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "‏%.2fק\"ב מתוך %.2fק\"ב"
 
-#: ../lib/screenshooter-dialogs.c:553
+#: ../lib/screenshooter-dialogs.c:496
 msgid "Transfer"
 msgstr "העבר"
 
-#: ../lib/screenshooter-dialogs.c:574
+#: ../lib/screenshooter-dialogs.c:517
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">הצילום מסך כעת מועבר אל:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:673 ../lib/screenshooter-dialogs.c:679
-#: ../lib/screenshooter-dialogs.c:691 ../lib/screenshooter-dialogs.c:698
-#: ../lib/screenshooter-dialogs.c:926 ../lib/screenshooter-dialogs.c:933
-#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
+#: ../lib/screenshooter-dialogs.c:605 ../lib/screenshooter-dialogs.c:611
+#: ../lib/screenshooter-dialogs.c:623 ../lib/screenshooter-dialogs.c:630
+#: ../lib/screenshooter-dialogs.c:861 ../lib/screenshooter-dialogs.c:868
+#: ../lib/screenshooter-utils.c:146 ../lib/screenshooter-utils.c:185
 #: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "צילום מסך"
 
-#: ../lib/screenshooter-dialogs.c:675 ../lib/screenshooter-dialogs.c:693
-#: ../lib/screenshooter-dialogs.c:928
+#: ../lib/screenshooter-dialogs.c:607 ../lib/screenshooter-dialogs.c:625
+#: ../lib/screenshooter-dialogs.c:863
 msgid "_Help"
 msgstr "_עזרה"
 
-#: ../lib/screenshooter-dialogs.c:676
+#: ../lib/screenshooter-dialogs.c:608
 msgid "_Close"
 msgstr "_סגור"
 
-#: ../lib/screenshooter-dialogs.c:686
+#: ../lib/screenshooter-dialogs.c:618
 msgid "Preferences"
 msgstr "העדפות"
 
-#: ../lib/screenshooter-dialogs.c:694 ../lib/screenshooter-dialogs.c:929
+#: ../lib/screenshooter-dialogs.c:626 ../lib/screenshooter-dialogs.c:864
 msgid "_Cancel"
 msgstr "_בטל"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:930
+#: ../lib/screenshooter-dialogs.c:627 ../lib/screenshooter-dialogs.c:865
 msgid "_OK"
 msgstr "_אישור"
 
-#: ../lib/screenshooter-dialogs.c:706
+#: ../lib/screenshooter-dialogs.c:638
 msgid "Take a screenshot"
 msgstr "צלם צילום מסך"
 
-#: ../lib/screenshooter-dialogs.c:743
+#: ../lib/screenshooter-dialogs.c:670
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">אזור ללכידה</span>"
 
-#: ../lib/screenshooter-dialogs.c:770
+#: ../lib/screenshooter-dialogs.c:692
 msgid "Entire screen"
 msgstr "מרקע בשלמותו"
 
-#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:59
-#: ../panel-plugin/screenshooter-plugin.c:330
+#: ../lib/screenshooter-dialogs.c:697 ../src/main.c:60
+#: ../panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the entire screen"
 msgstr "צלם צילום מסך של המסך בשלמותו"
 
-#: ../lib/screenshooter-dialogs.c:788
+#: ../lib/screenshooter-dialogs.c:706
 msgid "Active window"
 msgstr "חלון פעיל"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:96
-#: ../panel-plugin/screenshooter-plugin.c:335
+#: ../lib/screenshooter-dialogs.c:711 ../src/main.c:102
+#: ../panel-plugin/screenshooter-plugin.c:336
 msgid "Take a screenshot of the active window"
 msgstr "צלם צילום מסך של חלון פעיל"
 
-#: ../lib/screenshooter-dialogs.c:806
+#: ../lib/screenshooter-dialogs.c:720
 msgid "Select a region"
 msgstr "בחר אזור"
 
-#: ../lib/screenshooter-dialogs.c:811
+#: ../lib/screenshooter-dialogs.c:725
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "בחר איזור לצילום ע\"י קליק בנקודה במסך מבלי לשחרר את כפתור העכבר, גרירת העכבר לפינה הנגדית של האיזור, ושחרור כפתור העכבר.\n\nלחץ Ctrl בזמן הגרירה כדי להזיז את האיזור."
 
-#: ../lib/screenshooter-dialogs.c:825
+#: ../lib/screenshooter-dialogs.c:738
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">אפשרויות</span>"
+
+#: ../lib/screenshooter-dialogs.c:758
 msgid "Capture the mouse pointer"
 msgstr "לכוד את סמן העכבר"
 
-#: ../lib/screenshooter-dialogs.c:829
+#: ../lib/screenshooter-dialogs.c:762
 msgid "Display the mouse pointer on the screenshot"
 msgstr "הצג סמן עכבר על הצילום מסך"
 
-#: ../lib/screenshooter-dialogs.c:843
+#: ../lib/screenshooter-dialogs.c:769
+msgid "Capture the window border"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:774
+msgid ""
+"Display the window border on the screenshot.\n"
+"Disabling this option has no effect for CSD windows."
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:791
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">שיהוי בטרם לכידה</span>"
 
-#: ../lib/screenshooter-dialogs.c:871
+#: ../lib/screenshooter-dialogs.c:815
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "שיהוי בשניות בטרם צילום מסך נתפס"
 
-#: ../lib/screenshooter-dialogs.c:874
+#: ../lib/screenshooter-dialogs.c:818
 msgid "seconds"
 msgstr "שניות"
 
-#: ../lib/screenshooter-dialogs.c:942
+#: ../lib/screenshooter-dialogs.c:877
 msgid "Choose what to do with the screenshot"
 msgstr "בחר מה לעשות עם צילום המסך"
 
-#: ../lib/screenshooter-dialogs.c:976
+#: ../lib/screenshooter-dialogs.c:913
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">פעולה</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1001
+#: ../lib/screenshooter-dialogs.c:928
 msgid "Save"
 msgstr "שמור"
 
-#: ../lib/screenshooter-dialogs.c:1008
+#: ../lib/screenshooter-dialogs.c:934
 msgid "Save the screenshot to a PNG file"
 msgstr "שמור את הצילום מסך לקובץ PNG"
 
-#: ../lib/screenshooter-dialogs.c:1017
+#: ../lib/screenshooter-dialogs.c:943
 msgid "Copy to the clipboard"
 msgstr "העתק אל לוח גזירה"
 
-#: ../lib/screenshooter-dialogs.c:1019
+#: ../lib/screenshooter-dialogs.c:945
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "העתק את הצילום מסך אל הלוח גזירה כך שיהיה אפשר להדביק אותו לאחר מכן"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: ../lib/screenshooter-dialogs.c:959
 msgid "Open with:"
 msgstr "פתח בעזרת:"
 
-#: ../lib/screenshooter-dialogs.c:1041
+#: ../lib/screenshooter-dialogs.c:967
 msgid "Open the screenshot with the chosen application"
 msgstr "פתח את הצילום מסך בעזרת היישום הנבחר"
 
-#: ../lib/screenshooter-dialogs.c:1060 ../src/main.c:69
+#: ../lib/screenshooter-dialogs.c:986 ../src/main.c:75
 msgid "Application to open the screenshot"
 msgstr "יישום כדי לפתוח את הצילום מסך"
 
-#: ../lib/screenshooter-dialogs.c:1073
+#: ../lib/screenshooter-dialogs.c:1003
 msgid "Host on Imgur"
 msgstr "ארח אצל Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1077 ../src/main.c:86
+#: ../lib/screenshooter-dialogs.c:1007 ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "ארח את הצילום מסך אצל Imgur, שירות אירוח תמונות חינמי"
 
-#: ../lib/screenshooter-dialogs.c:1089
+#: ../lib/screenshooter-dialogs.c:1018
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted."
 msgstr "שים לב לתוכן רגיש, התמונה שתעלה תהיה זמינה\nלציבור ואין אחריות שהיא תוכל להימחק בוודאות."
 
-#: ../lib/screenshooter-dialogs.c:1116
+#: ../lib/screenshooter-dialogs.c:1046
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">תצוגה מקדימה</span>"
 
-#: ../lib/screenshooter-dialogs.c:1178
+#: ../lib/screenshooter-dialogs.c:1106
 msgid "Save screenshot as..."
 msgstr "שמור צילום מסך בשם..."
 
-#: ../lib/screenshooter-utils.c:269
+#: ../lib/screenshooter-utils.c:304
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>היישום לא היה ניתן לשיגור.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:344
+#: ../lib/screenshooter-utils.c:379
 msgid "Error"
 msgstr "שגיאה"
 
@@ -345,46 +360,50 @@ msgid ""
 "on the image hosting service"
 msgstr "הערה על צילום המסך, היא תהיה בשימוש כאשר צילום המסך מוצג בשירות אחסון התמונות"
 
-#: ../src/main.c:49
+#: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
 msgstr "העתק את צילום המסך אל לוח הגזירים"
 
-#: ../src/main.c:54
+#: ../src/main.c:55
 msgid "Delay in seconds before taking the screenshot"
 msgstr "שיהוי בשניות לפני ביצוע צילום מסך"
 
-#: ../src/main.c:64
+#: ../src/main.c:65
 msgid "Display the mouse on the screenshot"
 msgstr "הצג את העכבר בצילום המסך"
 
-#: ../src/main.c:74 ../panel-plugin/screenshooter-plugin.c:340
+#: ../src/main.c:70
+msgid "Removes the window border from the screenshot"
+msgstr "מסיר את גבולות החלון מצילום המסך"
+
+#: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "בחר אזור ללכידה על ידי לחיצה על הסמן של המסך מבלי לשחרר את לחצן העכבר, גרירת העכבר שלך לפינה האחרת של האזור, ושחרור לחצן העכבר."
 
-#: ../src/main.c:81
+#: ../src/main.c:87
 msgid "File path or directory where the screenshot will be saved"
 msgstr "נתיב קובץ או תיקייה בהם צילום המסך יישמר"
 
-#: ../src/main.c:91
+#: ../src/main.c:97
 msgid "Version information"
 msgstr "מידע גרסה"
 
-#: ../src/main.c:140
+#: ../src/main.c:146
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 
-#: ../src/main.c:142
+#: ../src/main.c:148
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n"
 
-#: ../src/main.c:159
+#: ../src/main.c:165
 #, c-format
 msgid ""
 "%s: %s\n"
