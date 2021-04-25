@@ -92,6 +92,9 @@ static gchar
 static void
 save_screenshot_to_remote_location (GdkPixbuf          *screenshot,
                                     GFile              *save_file);
+static void
+cb_combo_file_extension_changed    (GtkWidget          *box,
+                                    GtkWidget          *chooser);
 
 
 
@@ -585,6 +588,27 @@ preview_drag_end (GtkWidget *widget, GdkDragContext *context, gpointer data)
   gtk_window_present (GTK_WINDOW (dlg));
 }
 
+static void
+cb_combo_file_extension_changed (GtkWidget *box, GtkWidget *chooser)
+{
+  gchar *new_filename;
+  gchar *filename = gtk_file_chooser_get_current_name (GTK_FILE_CHOOSER (chooser));
+  gchar *found = g_strrstr (filename, ".");
+
+  if (found)
+  {
+    new_filename = g_strndup (filename, strlen (filename) - strlen (found));
+    g_free (filename);
+    filename = new_filename;
+  }
+
+  new_filename = g_strconcat (filename, ".", gtk_combo_box_get_active_id (GTK_COMBO_BOX (box)), NULL);
+  g_free (filename);
+
+  gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), new_filename);
+
+  g_free (new_filename);
+}
 
 
 
@@ -1091,6 +1115,7 @@ gchar
 *screenshooter_save_screenshot (GdkPixbuf *screenshot,
                                 const gchar *directory,
                                 const gchar *filename,
+                                const gchar *extension,
                                 gboolean save_dialog,
                                 gboolean show_preview)
 {
@@ -1099,7 +1124,7 @@ gchar
 
   if (save_dialog)
   {
-    GtkWidget *chooser;
+    GtkWidget *chooser, *combobox;
     gint dialog_response;
 
     chooser =
@@ -1119,6 +1144,14 @@ gchar
     gtk_dialog_set_default_response (GTK_DIALOG (chooser), GTK_RESPONSE_ACCEPT);
     gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (chooser), directory);
     gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);
+
+    combobox = gtk_combo_box_text_new ();
+    gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "png", _("PNG File"));
+    gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "jpg", _("JPG File"));
+    gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "bmp", _("BMP File"));
+    gtk_combo_box_set_active_id (GTK_COMBO_BOX (combobox), extension);
+    g_signal_connect (combobox, "changed", G_CALLBACK (cb_combo_file_extension_changed), chooser);
+    gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (chooser), combobox);
 
     if(show_preview)
       {

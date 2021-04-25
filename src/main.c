@@ -84,7 +84,7 @@ static GOptionEntry entries[] =
   },
   {
     "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
-    N_("File path or directory where the screenshot will be saved"),
+    N_("File path or directory where the screenshot will be saved, accepts png, jpg and bmp extensions"),
     NULL
   },
   {

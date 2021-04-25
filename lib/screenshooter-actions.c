@@ -91,6 +91,7 @@ action_idle (gpointer user_data)
           save_location = screenshooter_save_screenshot (sd->screenshot,
                                                          sd->screenshot_dir,
                                                          filename,
+                                                         sd->last_extension,
                                                          TRUE,
                                                          TRUE);
 
@@ -121,6 +122,7 @@ action_idle (gpointer user_data)
       save_location = screenshooter_save_screenshot (sd->screenshot,
                                                      temp_dir_uri,
                                                      filename,
+                                                     sd->last_extension,
                                                      FALSE,
                                                      FALSE);
       g_object_unref (temp_dir);
