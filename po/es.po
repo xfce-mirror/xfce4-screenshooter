@@ -5,6 +5,7 @@
 # Translators:
 # Casper casper, 2019-2021
 # Ignacio Poggi <ignaciop.3@gmail.com>, 2020
+# Markel @wakutiteo, 2018
 # mc <correomc2000-ing@yahoo.es>, 2013
 # prflr88 <prflr88@gmail.com>, 2014-2015
 # Roberto <roberdmd@gmail.com>, Abel Martín <abel.martin.ruiz@gmail.com>, 2008
@@ -15,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 16:16+0000\n"
+"PO-Revision-Date: 2021-05-01 06:25+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-apps/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -199,7 +200,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vista previa</span>"
 
 #: ../lib/screenshooter-dialogs.c:1131
 msgid "Save screenshot as..."
-msgstr "Guardar la captura como…"
+msgstr "Guardar la captura como..."
 
 #: ../lib/screenshooter-dialogs.c:1149
 msgid "PNG File"
@@ -226,7 +227,7 @@ msgstr "Error"
 
 #: ../lib/screenshooter-imgur.c:106
 msgid "Upload the screenshot..."
-msgstr "Transferir la captura de pantalla…"
+msgstr "Transferir la captura de pantalla..."
 
 #: ../lib/screenshooter-imgur.c:116
 #, c-format
@@ -341,7 +342,7 @@ msgstr "Usuario:"
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
-msgstr "Su nombre de usuario. Si no tiene uno, créelo en la página web enlazada."
+msgstr "Su nombre de usuario. Si no tiene uno, créelo en la página web enlazada"
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:231
@@ -350,7 +351,7 @@ msgstr "Contraseña:"
 
 #: ../lib/screenshooter-job-callbacks.c:238
 msgid "The password for the user above"
-msgstr "La contraseña para la cuenta de usuario."
+msgstr "La contraseña para la cuenta de usuario"
 
 #. Create the title label
 #: ../lib/screenshooter-job-callbacks.c:244
@@ -388,7 +389,7 @@ msgstr "Mostrar el ratón en la captura de pantalla"
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr "Elimina el borde de la ventana de la captura de pantalla."
+msgstr "Elimina el borde de la ventana de la captura de pantalla"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -439,4 +440,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG file,"
 " copy it to the clipboard, open it using another application, or host it on "
 "imgur, a free online image hosting service."
-msgstr "Permite capturar toda la pantalla, la ventana activa o una área seleccionada. Puede configurar el tiempo de espera antes de realizar la captura de pantalla y la acción que se llevará a cabo después: guardarla en un archivo PNG, copiarla en el portapapeles, abrirla con otra aplicación o alojarla en Imgur, un servicio gratuito de alojamiento de imágenes en línea. "
+msgstr "Permite capturar toda la pantalla, la ventana activa o una área seleccionada. Puede configurar el tiempo de espera antes de realizar la captura de pantalla y la acción que se llevará a cabo después: guardarla en un archivo PNG, copiarla en el portapapeles, abrirla con otra aplicación o alojarla en Imgur, un servicio gratuito de alojamiento de imágenes en línea."
