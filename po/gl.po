@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Daniel Muñiz Fontoira <dani@damufo.com>, 2018-2020
+# Daniel Muñiz Fontoira <dani@damufo.eu>, 2018-2020
+# Daniel Muñiz Fontoira <dani@damufo.eu>, 2021
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2008-2009
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2021-05-08 07:39+0000\n"
+"Last-Translator: Daniel Muñiz Fontoira <dani@damufo.eu>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-apps/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -105,7 +106,7 @@ msgstr "Seleccione unha zona para capturar premendo nun punto da pantalla sen so
 
 #: ../lib/screenshooter-dialogs.c:762
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opcións</span>"
 
 #: ../lib/screenshooter-dialogs.c:782
 msgid "Capture the mouse pointer"
@@ -117,13 +118,13 @@ msgstr "Amosar o punteiro do rato na captura de pantalla"
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "Capture the window border"
-msgstr ""
+msgstr "Capturar o bordo da xanela"
 
 #: ../lib/screenshooter-dialogs.c:798
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "Amosar o bordo da xanela na captura de pantalla.\nDesactivar esta opción non ten efecto para as xanelas CSD."
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -198,15 +199,15 @@ msgstr "Gardar a captura de pantalla como..."
 
 #: ../lib/screenshooter-dialogs.c:1149
 msgid "PNG File"
-msgstr ""
+msgstr "Ficheiro PNG"
 
 #: ../lib/screenshooter-dialogs.c:1150
 msgid "JPG File"
-msgstr ""
+msgstr "Ficheiro JPG"
 
 #: ../lib/screenshooter-dialogs.c:1151
 msgid "BMP File"
-msgstr ""
+msgstr "Ficheiro BMP"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -383,7 +384,7 @@ msgstr "Amosar o rato na captura de pantalla"
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "Retira o bordo da xanela da captura de pantalla"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -396,7 +397,7 @@ msgstr "Seleccione unha zona para capturar premendo nun punto da pantalla sen so
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "Ruta do ficheiro ou cartafol onde se gardará a captura de pantalla, acepta extensións png, jpg, e bmp"
 
 #: ../src/main.c:97
 msgid "Version information"
