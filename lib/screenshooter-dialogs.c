@@ -1038,10 +1038,13 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
       /* Upload to imgur warning info */
       image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_BUTTON);
-      label = gtk_label_new (
+      label = gtk_label_new (NULL);
+      gtk_label_set_markup (GTK_LABEL (label),
         _("Watch for sensitive content, the uploaded image will be publicly\n"
           "available and there is no guarantee it can be certainly deleted.\n"
-          "Xfce is NOT affiliated with nor this integration is approved by imgur™."));
+          "Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+          "If you use this feature you must agree with Imgur™ "
+          "<a href=\"https://imgur.com/tos\">Terms of Service</a>."));
 
       popover = gtk_popover_new (image);
       gtk_container_add (GTK_CONTAINER (popover), label);
