@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 16:16+0000\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-11 16:42+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/xfce/xfce-apps/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -177,36 +177,38 @@ msgid "Application to open the screenshot"
 msgstr "Aplikace pro otevírání snímků obrazovky"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Hostovat v galerii Imgur"
+msgid "Host on Imgur™"
+msgstr "Hostovat v galerii Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Snímek obrazovky bude hostován v galerii Imgur, bezplatné službě pro hostování obrázků"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Snímek obrazovky bude hostován v galerii Imgur,™ bezplatné službě pro hostování obrázků"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Pozor na citlivý obsah, obrázek uložený na web bude veřejně\ndostupný a není zaručeno, že nebude smazán."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Pozor na citlivý obsah, nahraný obrázek bude veřejně dostupný a není\nzaručeno, že nebude smazán. Projekt Xfce NENÍ nijak přidružen ke galerii\nImgur™ a tato integrace NENÍ schválená galerií Imgur™. Pokud chcete tuto\nfunkci používat, musíte souhlasit s <a href=\"https://imgur.com/tos\">podmínkami služby</a> galerie Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Náhled</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Uložit snímek obrazovky jako..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "Soubor PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "Soubor JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "Soubor BMP"
 
@@ -399,6 +401,10 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr "Cesta k souboru nebo adresáře, do které bude snímek obrazovky uložen, lze použít přípony png, jpg a bmp"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Snímek obrazovky bude hostován v galerii Imgur, bezplatné službě pro hostování obrázků"
 
 #: ../src/main.c:97
 msgid "Version information"
