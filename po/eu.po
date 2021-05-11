@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 14:05+0000\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-11 14:53+0000\n"
 "Last-Translator: beriain\n"
 "Language-Team: Basque (http://www.transifex.com/xfce/xfce-apps/language/eu/)\n"
 "MIME-Version: 1.0\n"
@@ -178,36 +178,38 @@ msgid "Application to open the screenshot"
 msgstr "Pantaila-argazkia irekitzeko aplikazioa"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Imguren ostatatu"
+msgid "Host on Imgur™"
+msgstr "Imgur™-en ostatatu"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Pantaila-argazkia Imguren ostatatu, irudiak doan ostatatzeko sareko zerbitzu bat"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Pantaila-argazkia Imgur™-en ostatatu, irudiak doan ostatatzeko sareko zerbitzu bat"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Bilatu ea kontuz izateko edukirik dagoen, kargatutako irudia publikoki\neskuragarri egongo da eta ez da bermatzen ezabatua izango ez denik."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Egiaztatu ea kontuz izateko edukirik dagoen, kargatutako irudia publikoki\neskuragarri egongo baita eta ez da bermatzen ezabatua izango ez denik.\nXfce EZ dago inolaz Imgur™-ekin afiliatuta ezta integrazio hau onartuta.\nEzaugarri hau erabiltzen baduzu Imgur™-en <a href=\"https://imgur.com/tos\">zerbitzu-baldintzak</a> onartu behar dituzu. "
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aurreikusi</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Gorde pantaila-argazkia honela ..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "PNG fitxategia"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "JPG fitxategia"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "BMP fitxategia"
 
@@ -400,6 +402,10 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr "Pantaila-argazkia gordeko den fitxategi bidea edo direktorioa, png, jpg eta bmp luzapenak onartzen dira"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Pantaila-argazkia Imguren ostatatu, irudiak doan ostatatzeko sareko zerbitzu bat"
 
 #: ../src/main.c:97
 msgid "Version information"
