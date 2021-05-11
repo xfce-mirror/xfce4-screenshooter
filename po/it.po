@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 13:20+0000\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-11 13:19+0000\n"
 "Last-Translator: Emanuele Petriglia <transifex@emanuelepetriglia.com>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -180,36 +180,38 @@ msgid "Application to open the screenshot"
 msgstr "Applicazione per aprire l'istantanea"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Carica su Imgur"
+msgid "Host on Imgur™"
+msgstr "Carica su Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Conserva l'istantanea su Imgur, un servizio online gratuito per condividere le immagini"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Carica l'istantanea su Imgur™, un servizio online gratuito di condivisione di immagini"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Attenzione a contenuti sensibili, l'immagine caricata sarà\npubblicamente disponibile e non c'è garanzia che possa venire rimossa."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Attenzione a caricare contenuti sensibili, l'immagina caricata sarà pubblicamente disponibile e non c'è garanzia che possa essere rimossa del tutto. Xfce non è affiliato con Imgur™ e l'integrazione non è approvata ufficialmente da Imgur™. Utilizzando questa funzionalità si è d'accordo con i <a href=\"https://imgur.com/tos\">Termini di Servizio</a> di Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Anteprima</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Salva l'istantanea come…"
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "file PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "file JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "file BMP"
 
@@ -402,6 +404,10 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr "Percorso del file o cartella dove verrà salvata l'istantanea, con l'estensione png, jpg o bmp"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Conserva l'istantanea su Imgur, un servizio online gratuito per condividere le immagini"
 
 #: ../src/main.c:97
 msgid "Version information"
