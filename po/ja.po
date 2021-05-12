@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 21:05+0000\n"
-"Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-12 19:02+0000\n"
+"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>\n"
 "Language-Team: Japanese (http://www.transifex.com/xfce/xfce-apps/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -175,36 +175,38 @@ msgid "Application to open the screenshot"
 msgstr "スクリーンショットを開くアプリケーションを設定します"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Imgur で公開する"
+msgid "Host on Imgur™"
+msgstr "Imgur™ でホストする"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "スクリーンショットをフリーの画像ホスティングサービス Imgur で公開します"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "無料のオンライン画像ホスティングサービス Imgur™ でスクリーンショットをホストする"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "デリケートなコンテンツに注意してください。アップロードされた画像は\n一般に公開され、確実に削除できる保証はありません。"
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "機密性の高いコンテンツに注意してください。\nアップロードされた画像は公開され、確実に削除できる保証は\nありません。\nXfce は Imgur™ と提携しておらず、この統合は Imgur™ によって\n承認されていません。この機能を使用する場合は、Imgur™ の\n<a href=\"https://imgur.com/tos\">利用規約</a>に同意する必要があります。"
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">プレビュー</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "名前をつけてスクリーンショットを保存..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "PNG ファイル"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "JPG ファイル"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "BMP ファイル"
 
@@ -397,6 +399,10 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr "スクリーンショットが保存されるファイルパスまたはディレクトリであり、png、jpg、および bmp 拡張子を許可します。 "
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "スクリーンショットをフリーの画像ホスティングサービス Imgur で公開します"
 
 #: ../src/main.c:97
 msgid "Version information"
