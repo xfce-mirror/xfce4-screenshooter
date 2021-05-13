@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 13:58+0000\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-13 14:55+0000\n"
 "Last-Translator: Mos B <mos.b_as@yahoo.com>\n"
 "Language-Team: Persian (Iran) (http://www.transifex.com/xfce/xfce-apps/language/fa_IR/)\n"
 "MIME-Version: 1.0\n"
@@ -174,36 +174,38 @@ msgid "Application to open the screenshot"
 msgstr "برنامه برای گشودن اسکرین‌شات"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "میزبانی در Imgur"
+msgid "Host on Imgur™"
+msgstr "میزبانی در ™Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "میزبانی اسکرین‌شات در Imgur، یک سرویس رایگان برای میزبانی آنلاین تصویر"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "میزبانی اسکرین‌شات در ™Imgur، یک سرویس رایگان برای میزبانی آنلاین تصویر"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "مراقب محتوای حساس باشید، تصویر بارگذاری شده بصورت عمومی در دسترس خواهد بود\nو هیچ ضمانتی وجود ندارد که بتواند به صورت قطعی حذف شود"
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "مراقب محتوای حساس باشید، تصویر بارگذاری شده به صورت عمومی در\nدسترس خواهد بود و هیچ تضمینی وجود ندارد که بطور کامل قابل حذف باشد.\nنه Xfce وابستگی دارد و نه اینکه این ادغام به تایید ™Imgur رسیده است.\nدر صورت استفاده از این ویژگی، باید با <a href=\"https://imgur.com/tos\">شرایط استفاده از خدمات</a> ™Imgur موافقت کنید."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">پیش نمایش</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "ذخیره اسکرین‌شات به عنوان..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "فایل PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "فایل JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "فایل BMP"
 
@@ -396,6 +398,10 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr "مسیر فایل یا دایرکتوری‌ای که اسکرین‌شات در آنجا ذخیره خواهد شد، پسوندهای png, jpg, bmp قابل قبول است"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "میزبانی اسکرین‌شات در Imgur، یک سرویس رایگان برای میزبانی آنلاین تصویر"
 
 #: ../src/main.c:97
 msgid "Version information"
