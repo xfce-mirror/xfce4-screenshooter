@@ -5,7 +5,7 @@
 # Translators:
 # Alper Tekinalp <alper.tekinalp@gmail.com>, 2014
 # Demiray Muhterem <mdemiray@msn.com>, 2018-2019
-# Emin Tufan Çetin <etcetin@gmail.com>, 2020
+# Emin Tufan Çetin <etcetin@gmail.com>, 2020-2021
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Murat Pınar <muratpinar@archlinux.org.tr>, 2010
 # Natavan Mirzayeva <mirzayevanatavan@gmail.com>, 2015
@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-19 09:12+0000\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -112,7 +112,7 @@ msgstr "Yakalanacak bölgeyi seçmek için ekranın bir noktasına tıklayın, d
 
 #: ../lib/screenshooter-dialogs.c:762
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Seçenekler</span>"
 
 #: ../lib/screenshooter-dialogs.c:782
 msgid "Capture the mouse pointer"
@@ -124,13 +124,13 @@ msgstr "Ekran görüntüsünde fare imlecini göster"
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "Capture the window border"
-msgstr ""
+msgstr "Pencere kenarını yakala"
 
 #: ../lib/screenshooter-dialogs.c:798
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "Ekran görüntüsünde pencere kenarını göster.\nBunu devre dışı bırakmak CSD pencerelerini etkilemez."
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -146,7 +146,7 @@ msgstr "saniye"
 
 #: ../lib/screenshooter-dialogs.c:901
 msgid "Choose what to do with the screenshot"
-msgstr "Ekran görüntüsü ile ne yapılacağını seçin"
+msgstr "Ekran görüntüsü ile ne yapılacağını seç"
 
 #: ../lib/screenshooter-dialogs.c:937
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -182,38 +182,40 @@ msgid "Application to open the screenshot"
 msgstr "Ekran görüntüsünü gösterecek uygulama"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Imgur adresinde barındır"
+msgid "Host on Imgur™"
+msgstr "Imgur™'da Yayımla"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Ekran görüntüsünü, ücretsiz resim barındırma servisi olan Imgur'de barındır"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Ekran görüntüsünü ücretsiz çevrim içi resim barındırma hizmeti Imgur™'da yayımla"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Hassas içeriği izleyin, yüklenen resim herkese açık olacak\nve kesinlikle silinebileceğinin garantisi yoktur."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Hassas içeriğe dikkat edin, yüklenen resim halka açılacaktır ve\ntümüyle silinebileceğinin garantisi yoktur.\nXfce, Imgur™'ye bağlı değildir ve bu tümleşim onaylı değildir.\nBu özelliği kullanırsanız Imgur™ <a href=\"https://imgur.com/tos\">Hizmet Koşulları</a>nı onaylarsınız."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ön izleme</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Ekran görüntüsünü farklı kaydet..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
-msgstr ""
+msgstr "PNG Dosyası"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
-msgstr ""
+msgstr "JPG Dosyası"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
-msgstr ""
+msgstr "BMP Dosyası"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -390,7 +392,7 @@ msgstr "Ekran görüntüsünde fare imlecini göster"
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "Ekran görüntüsünden pencere kenarını kaldırır"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -403,7 +405,11 @@ msgstr "Yakalanacak bölgeyi seçmek için ekranın bir noktasına tıklayın, d
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "Ekran görüntüsünün kaydedileceği dosya yolu veya dizin; png, jpg ve bmp uzantıları kabul edilir"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Ekran görüntüsünü, ücretsiz resim barındırma servisi olan Imgur'de barındır"
 
 #: ../src/main.c:97
 msgid "Version information"
