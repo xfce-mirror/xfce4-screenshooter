@@ -1,3 +1,31 @@
+1.9.9
+======
+- Add link to Imgur ToS (#54)
+- Add notice about imgur (#53)
+- Add launchable tag to appdata.xml
+- Update help message for --save option
+- Add combobox with file extensions (#6)
+- Add option to capture window border or not (#4)
+- Preserve last used extension
+- Save screenshots according to the extension (#6)
+- Avoid save dialog loop if action was specified from CLI (#41)
+- Respect windows scaling (!18)
+- Fix compilation warnings
+- Add version check for pango
+- Correctly calculate dimensions of size window (#37)
+- Add option to disable Imgur upload (#20)
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Latvian, Lithuanian, Malay,
+  Norwegian Bokmål, Norwegian Nynorsk, Occitan (post 1500), Persian
+  (Iran), Polish, Portuguese, Portuguese (Brazil), Romanian, Russian,
+  Serbian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish,
+  Ukrainian, Urdu, Urdu (Pakistan), Uyghur, Vietnamese
+
 1.9.8
 ======
 - Fix dialog icons and add title to error dialog
