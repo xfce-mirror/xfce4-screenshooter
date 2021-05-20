@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-28 21:40+0000\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-20 16:55+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-apps/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -179,36 +179,38 @@ msgid "Application to open the screenshot"
 msgstr "Program til åbning af skærmbilledet"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Upload til Imgur"
+msgid "Host on Imgur™"
+msgstr "Upload til Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Placer skærmbilledet hos Imgur, en gratis billeddelingstjeneste"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Placer skærmbilledet hos Imgur™, en gratis billeddelingstjeneste"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Vær opmærksom på følsomt indhold da det uploadet billedet vil være\noffentligt tilgængeligt og der ikke er nogen garanti for at det kan slettes."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Vær opmærksom på følsomt indhold. Det uploadede billede vil være offentligt\ntilgængeligt og der er ikke nogen garanti for at det kan fjernes helt.\nXfce er IKKE affilieret med og integreringen er ej heller godkendt af Imgur™.\nHvis du bruger funktionaliteten, så skal du acceptere Imgur™'s <a href=\"https://imgur.com/tos\">Vilkår for tjeneste</a>."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Forhåndsvisning</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Gem skærmbillede som ..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "PNG-fil"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "JPG-fil"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "BMP-fil"
 
@@ -401,6 +403,10 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr "Filsti eller mappe hvor skærmbilledet vil blive gemt. Accepterer png-, jpg- og bmp-endelser."
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Placer skærmbilledet hos Imgur, en gratis billeddelingstjeneste"
 
 #: ../src/main.c:97
 msgid "Version information"
