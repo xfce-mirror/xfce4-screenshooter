@@ -4,15 +4,15 @@
 # 
 # Translators:
 # 8b03701f910565d01acaec9ce3f558ab_e9f0fee <b5b06e8f85fb8288fe43ad0bc2422d94_32848>, 2013
-# Arnold Marko <arnold.marko@gmail.com>, 2020
+# Arnold Marko <arnold.marko@gmail.com>, 2020-2021
 # Kernc, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-24 11:00+0000\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-apps/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,7 +106,7 @@ msgstr "Izberite območje, ki naj se zajame, tako da kliknete na neko pozicijo n
 
 #: ../lib/screenshooter-dialogs.c:762
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Možnosti</span>"
 
 #: ../lib/screenshooter-dialogs.c:782
 msgid "Capture the mouse pointer"
@@ -118,13 +118,13 @@ msgstr "Prikaži miškin kazalec na zaslonski sliki"
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "Capture the window border"
-msgstr ""
+msgstr "Zajemi rob okna"
 
 #: ../lib/screenshooter-dialogs.c:798
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "Prikaži rob okna na zajeti sliki.\nIzklop te možnosti ne vpliva na CSD okna."
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -176,38 +176,40 @@ msgid "Application to open the screenshot"
 msgstr "Program, ki bo odprl zaslonsko sliko"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Naloži na Imgur"
+msgid "Host on Imgur™"
+msgstr "Gostuj na Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Naloži sliko na Imgur, brezplačno spletno storitev gostovanja slik"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Naloži sliko na Imgur, brezplačno spletno storitev za gostovanje slik"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Bodite pozorni na občutljive vsebine. Naložena slika bo javno\ndostopna, zato njen izbris ne more biti zagotovljen."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Bodite pozorni na občutljive vsebine, saj bodo naložene slike javno vidne, \nzato ni zagotovila, da jih je mogoče trajno izbrisati.\nXfce NI povezan z Imgur™, niti ni ta inegracija potrjena z njihove strani.\nČe uporabljate to funkcijo, se morate strinjati s <a href=\"https://imgur.com/tos\">Pogoji uporabe</a> za Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Predogled</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Shrani zaslonsko sliko kot..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
-msgstr ""
+msgstr "PNG datoteka"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
-msgstr ""
+msgstr "JPG datoteka"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
-msgstr ""
+msgstr "BMP datoteka"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -384,7 +386,7 @@ msgstr "Prikaži miško na zaslonski sliki"
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "Odstrani rob okna iz posnetka zaslona"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -397,7 +399,11 @@ msgstr "Izberite območje za zajem tako, da kliknete točko na zaslonu in držit
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "Pot datoteke ali mape, kjer bo posnetek zaslona shranjen. Lahko ima končnice png, jpg ali bmp."
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Naloži sliko na Imgur, brezplačno spletno storitev gostovanja slik"
 
 #: ../src/main.c:97
 msgid "Version information"
