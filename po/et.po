@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-26 07:35+0000\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-27 21:14+0000\n"
 "Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/xfce/xfce-apps/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -174,36 +174,38 @@ msgid "Application to open the screenshot"
 msgstr "Ekraanipildi avamise rakendus"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Tõsta Imgur saiti"
+msgid "Host on Imgur™"
+msgstr "Tõsta Imgur™ saiti"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Tõsta pilt Imgur veebisaiti, mis on tasuta veebiteenus piltide kuvamiseks ja jagamiseks."
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Tõsta pilt Imgur™ veebisaiti, mis on tasuta veebiteenus piltide kuvamiseks ja jagamiseks."
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Jälgi, et salvestatud pildile ei jääks privaatset sisu. Üleslaetud pilt saab olema\navalikult nähtav ning ei ole mingit garantiid, et seda saab hiljem kindlasti kustutada."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Palun kaalutle, kas antud sisu on sobilik üleslaadimiseks. \nÜleslaaditud failid on avalikult saadaval ning pole mitte mingit tagatist,\net neid õnnestub lõplikult kustutada. Xfce ei ole seotud Imgur™\nveebirakendusega ning samuti ei ole nad seda teenust heaks kiitnud.\nTeenuse kasutamisel pead nõustuma Imgur™ saidi <a href=\"https://imgur.com/tos\">Kasutustingimustega</a>."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Eelvaade</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Salvesta ekraanipilt kui..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "PNG fail"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "JPG fail"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "BMP fail"
 
@@ -396,6 +398,10 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr "Otsitee või kataloog kuhu ekraanipildid salvestame; peab sobima png, jpg ja bmp failide jaoks"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Tõsta pilt Imgur veebisaiti, mis on tasuta veebiteenus piltide kuvamiseks ja jagamiseks."
 
 #: ../src/main.c:97
 msgid "Version information"
