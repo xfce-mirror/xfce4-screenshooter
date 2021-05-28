@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Elishai Eliyahu <elishai@mailfence.com>, 2018-2020
-# Elishai Eliyahu <elishai@mailfence.com>, 2020
+# Elishai Eliyahu <elishai@mailfence.com>, 2020-2021
 # GenghisKhan <genghiskhan@gmx.ca>, 2015
 # Omer I.S. <omeritzicschwartz@gmail.com>, 2021
 # Omer I.S. <omeritzicschwartz@gmail.com>, 2020
@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-05-28 13:50+0000\n"
+"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-apps/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -120,13 +120,13 @@ msgstr "הצג סמן עכבר על הצילום מסך"
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "Capture the window border"
-msgstr ""
+msgstr "צלם את גבול החלון"
 
 #: ../lib/screenshooter-dialogs.c:798
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "הצג את גבול החלון בצילום.\nכיבוי אפשרות זו לא משפיע על חלונות CSD."
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -178,38 +178,40 @@ msgid "Application to open the screenshot"
 msgstr "יישום כדי לפתוח את הצילום מסך"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "ארח אצל Imgur"
+msgid "Host on Imgur™"
+msgstr "שמור ב- Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "ארח את הצילום מסך אצל Imgur, שירות אירוח תמונות חינמי"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "שמור את צילום המסך ב-Imgur™, שירות אירוח תמונות מקוון חינמי"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "שים לב לתוכן רגיש, התמונה שתעלה תהיה זמינה\nלציבור ואין אחריות שהיא תוכל להימחק בוודאות."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "שים לב לתוכן רגיש, התמונה המועלית תהיה זמינה ציבורית\nואין ערובה שהיא תימחק בוודאות.\nאין קשר בין Xfce ואין אישור לשילוב הזה מצד Imgur™.\nאם אתה משתמש במאפיין הזה אתה חייב להסכים ל<a href=\"https://imgur.com/tos\">תנאי השימוש</a> של Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">תצוגה מקדימה</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "שמור צילום מסך בשם..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
-msgstr ""
+msgstr "PNG קובץ"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
-msgstr ""
+msgstr "JPG קובץ"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
-msgstr ""
+msgstr "BMP קובץ"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -399,7 +401,11 @@ msgstr "בחר אזור ללכידה על ידי לחיצה על הסמן של �
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "נתיב קובץ או ספרייה בה ישמר צילום המסך, מקבל סיומות png, jpg, bmp "
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "ארח את הצילום מסך אצל Imgur, שירות אירוח תמונות חינמי"
 
 #: ../src/main.c:97
 msgid "Version information"
