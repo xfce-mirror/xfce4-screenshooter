@@ -9,13 +9,14 @@
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2015
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2014-2015
 # AlexanderFilev <avfill@outlook.com>, 2020
+# Евгений Кольцов <scheugen86@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-06-10 12:23+0000\n"
+"Last-Translator: Евгений Кольцов <scheugen86@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,7 +110,7 @@ msgstr "Выберите область для захвата: щелкните 
 
 #: ../lib/screenshooter-dialogs.c:762
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Настройки</span>"
 
 #: ../lib/screenshooter-dialogs.c:782
 msgid "Capture the mouse pointer"
@@ -179,38 +180,40 @@ msgid "Application to open the screenshot"
 msgstr "Приложение для просмотра снимка экрана"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Разместить на сервере Imgur"
+msgid "Host on Imgur™"
+msgstr "Загрузить на Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Разместить снимок экрана на свободном сервере для хранения изображений Imgur"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Загрузить снимок экрана на Imgur™, бесплатный хостинг изображений"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Следите за конфиденциальной информацией - загруженное\nизображение будет доступно всем, и нет гарантии, что его можно\nбудет наверняка удалить впоследствии."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Предварительный просмотр</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Сохранить снимок как..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
-msgstr ""
+msgstr "Файл PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
-msgstr ""
+msgstr "Файл JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
-msgstr ""
+msgstr "Файл BMP"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -401,6 +404,10 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr ""
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Разместить снимок экрана на свободном сервере для хранения изображений Imgur"
 
 #: ../src/main.c:97
 msgid "Version information"
