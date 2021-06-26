@@ -6,13 +6,14 @@
 # Andrej Zakharevich <andrej@zahar.ws>, 2012
 # Źmicier Turok <nashtlumach@gmail.com>, 2019-2020
 # Źmicier Turok <nashtlumach@gmail.com>, 2019
+# Źmicier Turok <nashtlumach@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-05-11 00:57+0200\n"
+"PO-Revision-Date: 2021-06-26 16:56+0000\n"
+"Last-Translator: Źmicier Turok <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-apps/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,11 +103,11 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr "Абярыце вобласць экрана, якую неабходна захапіць. Левай кнопкай мышы націсніце на верхнюю кропку мэтавай вобласці і не адпускаючы перамясціце курсор у супрацьлеглы кут, вылучаючы ўсю вобласць.\n\nНацісніце Ctrl падчас перацягвання, каб перамясціць вобласць."
+msgstr "Абярыце вобласць экрана, якую неабходна захапіць. Левай кнопкай мышы націсніце на верхнюю кропку мэтавай вобласці і не адпускаючы перамясціце курсор у супрацьлеглы кут, вылучаючы ўсю вобласць.\n\nНацісніце \"Ctrl\" падчас перацягвання, каб перамясціць вобласць."
 
 #: ../lib/screenshooter-dialogs.c:762
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Параметры</span>"
 
 #: ../lib/screenshooter-dialogs.c:782
 msgid "Capture the mouse pointer"
@@ -118,13 +119,13 @@ msgstr "Паказваць курсор на здымку экрана"
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "Capture the window border"
-msgstr ""
+msgstr "Захопліваць межы акна"
 
 #: ../lib/screenshooter-dialogs.c:798
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "На здымку экрана будуць паказвацца межы акон. Адключэнне гэтага параметра не ўплывае на вокны CSD."
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -176,38 +177,40 @@ msgid "Application to open the screenshot"
 msgstr "Праграма, у якой будзе адкрыты здымак"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Размясціць на серверы Imgur"
+msgid "Host on Imgur™"
+msgstr "Размясціць на серверы Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Размясціць здымак на свабодным серверы для захоўвання выяў Imgur"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Размясціць здымак на свабодным серверы для захоўвання выяў Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Будзьце ўважлівымі з прыватнымі здымкамі. Запампаваныя выявы стануць агульнадаступнымі."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Будзьце ўважлівымі з прыватнымі здымкамі. Запампаваныя выявы стануць агульнадаступнымі. Інтэграцыя не ўзгодненая з Imgur™. Калі вы хочаце выкарыстоўваць гэтую функцыю, то вам патрэбна пагадзіцца з <a href=\"https://imgur.com/tos\">Умовамі выкарыстання</a>. Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Папярэдні прагляд</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Захаваць здымак у..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
-msgstr ""
+msgstr "Файл PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
-msgstr ""
+msgstr "Файл JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
-msgstr ""
+msgstr "Файл BMP"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -384,7 +387,7 @@ msgstr "Паказваць курсор на здымку"
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "Выдаляе межы акон са здымкаў экрана"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -397,7 +400,11 @@ msgstr "Абярыце вобласць экрана, якую неабходн�
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "Шлях да файла альбо каталог, у якім будзе захаваны здымак экрана, падтрымліваюцца png, jpg і bmp"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Размясціць здымак на свабодным серверы для захоўвання выяў Imgur"
 
 #: ../src/main.c:97
 msgid "Version information"
