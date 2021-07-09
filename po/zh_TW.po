@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-26 02:05+0000\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-09 01:27+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/xfce-apps/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -178,36 +178,38 @@ msgid "Application to open the screenshot"
 msgstr "用來開啟螢幕快照的應用程式"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "放置於 Imgur"
+msgid "Host on Imgur™"
+msgstr "放置於 Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "在 Imgur 上放置螢幕快照，Imgur 是個免費的線上影像寄放服務"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "在 Imgur™ 上放置螢幕快照，Imgur™ 是個免費的線上影像寄放服務"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "注意敏感內容，上傳的圖片將會是公開的\n，並且無法保證可以將其刪除。"
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "觀看敏感內容，上傳內容將會公開顯示\n，且無法保證可以刪除。\nXfce 與該整合無關，且也未經過  Imgur™ 批准。\n如果您使用此功能，您必須同意 Imgur™ 的<a href=\"https://imgur.com/tos\">服務條款</a>"
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">預覽</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "儲存螢幕快照為 ..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "PNG 檔案"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "JPG 檔案"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "BMP 檔案"
 
@@ -401,6 +403,10 @@ msgid ""
 "and bmp extensions"
 msgstr "螢幕截圖要儲存的檔案路徑或目錄，可接受 png、jpg 與 bmp 副檔名"
 
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "在 Imgur 上放置螢幕快照，Imgur 是個免費的線上影像寄放服務"
+
 #: ../src/main.c:97
 msgid "Version information"
 msgstr "版本資訊"
@@ -434,7 +440,7 @@ msgstr "拍攝整個螢幕、使用中視窗、或某個區域的螢幕快照"
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "讓您可以截取整個螢幕、作用中的視窗或是選定的範圍。您可以設定在螢幕截圖前所要經過的延遲時間與螢幕截圖後所要進行的動作：將其儲存為 PNG 檔案、將其複製到剪貼簿、使用其他應用程式打開它、或將其放到 imgur 上，一個免費的線上圖片托管服務。"
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr "讓您可以截取整個螢幕、作用中的視窗或是選定的範圍。您可以設定在螢幕截圖前所要經過的延遲時間與螢幕截圖後所要進行的動作：將其儲存為 PNG 或 JPG 檔、將其複製到剪貼簿、使用其他應用程式打開它、或將其放到 imgur 上，一個免費的線上圖片托管服務。"
