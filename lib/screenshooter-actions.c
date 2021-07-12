@@ -135,7 +135,7 @@ action_idle (gpointer user_data)
             screenshooter_open_screenshot (save_location, sd->app, sd->app_info);
           else if (sd->action & UPLOAD_IMGUR)
             {
-              if (!sd->action_specified && !screenshooter_upload_to_imgur (save_location, sd->title))
+              if (!sd->action_specified || !screenshooter_upload_to_imgur (save_location, sd->title))
                 {
                   g_free (save_location);
                   /* Show actions dialog again if no action was specified from CLI*/
