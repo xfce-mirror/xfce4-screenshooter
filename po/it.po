@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Cristian Marchi <cri.penta@gmail.com>, 2014-2015
+# Dmytro Tokayev, 2021
 # Edoardo Maria Elidoro <edoardo.elidoro@gmail.com>, 2013
 # Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2018-2019
 # Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2019-2021
@@ -14,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 00:57+0200\n"
-"PO-Revision-Date: 2021-05-11 13:19+0000\n"
-"Last-Translator: Emanuele Petriglia <transifex@emanuelepetriglia.com>\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-12 10:21+0000\n"
+"Last-Translator: Dmytro Tokayev\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -442,7 +443,7 @@ msgstr "Scatta un'istantanea dell'intero schermo, di una sua porzione o della fi
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "Permette di catturare l'intero schermo, la finestra attiva o una parte selezionata. Si può impostare il ritardo di acquisizione e l'azione da compiere con l'istantanea: salvarla in formato PNG, copiarla negli appunti, aprirla con un'altra applicazione o caricarla su imgur, un servizio gratuito di hosting di immagini online."
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr "Permette di catturare l'intero schermo, la finestra attiva o una parte selezionata. Si può impostare il ritardo di acquisizione e l'azione da compiere con l'istantanea: salvarla in formato PNG o JPG, copiarla negli appunti, aprirla con un'altra applicazione o caricarla su imgur, un servizio gratuito di hosting di immagini online."
