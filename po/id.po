@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-13 11:40+0000\n"
+"Last-Translator: Triyan W. Nugroho <triyan.wn@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/xfce/xfce-apps/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,7 +109,7 @@ msgstr "Pilih area yang akan diambil dengan klik pada suatu titik di layar tanpa
 
 #: ../lib/screenshooter-dialogs.c:762
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opsi</span>"
 
 #: ../lib/screenshooter-dialogs.c:782
 msgid "Capture the mouse pointer"
@@ -121,13 +121,13 @@ msgstr "Penunjuk tetikus akan muncul pada gambar layar yang dicuplik"
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "Capture the window border"
-msgstr ""
+msgstr "Tangkap garistepi jendela"
 
 #: ../lib/screenshooter-dialogs.c:798
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "Tampilkan garistepi jendela pada cuplikan layar.\nMenonaktifkan opsi ini tidak akan berpengaruh pada jendela CSD."
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -179,38 +179,40 @@ msgid "Application to open the screenshot"
 msgstr "Aplikasi untuk membuka cuplikan layar"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Host di Imgur"
+msgid "Host on Imgur™"
+msgstr "Simpan di Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Host cuplikan layar di Imgur, layanan hosting gambar daring gratis"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Simpan cuplikan layar di Imgur™, sebuah layanan penyimpanan gambar secara daring yang gratis"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Perhatikan konten yang sensitif, gambar yang diunggah akan tersedia\nsecara umum dan tidak ada jaminan gambar tersebut bisa benar-benar dihapus."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Perhatikan konten sensitif, gambar yang diunggah akan tersedia\nsecara publik dan tidak ada jaminan gambar tersebut pasti bisa dihapus.\nXfce TIDAK berafiliasi dengan Imgur™, dan integrasi ini juga tidak disetujui secara resmi oleh Imgur™.\nJika Anda menggunakan fitur ini, Anda harus menyetujui <a href=\"https://imgur.com/tos\">Persyaratan Layanan</a> Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pratilik</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Simpan cuplikan layar sebagai..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
-msgstr ""
+msgstr "Berkas PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
-msgstr ""
+msgstr "Berkas JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
-msgstr ""
+msgstr "Berkas BMP"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -387,7 +389,7 @@ msgstr "Tampilkan tetikus di cuplikan layar"
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "Buang garistepi jendela dari cuplikan layar"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -400,7 +402,11 @@ msgstr "Pilih area yang ingin ditangkap dimulai dengan mengklik pada suatu titik
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "Path berkas atau direktori di mana cuplikan layar akan disimpan, dengan ekstensi png, jpg, atau bmp"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Host cuplikan layar di Imgur, layanan hosting gambar daring gratis"
 
 #: ../src/main.c:97
 msgid "Version information"
@@ -435,7 +441,7 @@ msgstr "Ambil cuplikan layar dari seluruh layar, dari jendela yang aktif atau da
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "Memungkinkan Anda untuk menangkap keseluruhan layar, jendela aktif atau wilayah yang dipilih. Anda dapat mengatur penundaan yang berlalu sebelum cuplikan layar diambil dan tindakan yang akan dilakukan dengan cuplikan layar: simpan ke berkas PNG, salin ke papan klip, buka dengan aplikasi lain, atau simpan di imgur, layanan hosting gambar daring gratis."
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr "Memungkinkan Anda untuk mencuplik keseluruhan layar, jendela yang aktif atau area yang dipilih. Anda bisa mengatur jeda waktu sebelum cuplikan layar diambil dan tindakan yang akan dilakukan dengan cuplikan layar: menyimpan sebagai berkas PNG atau JPG, menyalin ke papan klip, membuka dengan menggunakan aplikasi lain, atau menyimpan di imgur, sebuah layanan penyimpanan gambar secara daring yang gratis."
