@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Theppitak Karoonboonyanan <thep@linux.thai.net>, 2013
-# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2013,2015,2018
+# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2013,2015,2018,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-22 04:12+0000\n"
+"Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/xfce/xfce-apps/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,11 +101,11 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr ""
+msgstr "เลือกพื้นที่ที่จะจับภาพ โดยคลิกที่จุดจุดหนึ่งบนหน้าจอโดยไม่ต้องปล่อยปุ่มเมาส์ แล้วลากเมาส์ไปยังอีกมุมหนึ่งของพื้นที่ที่ต้องการ แล้วจึงปล่อยปุ่มเมาส์\n\nกด Ctrl ขณะลากหากต้องการย้ายพื้นที่"
 
 #: ../lib/screenshooter-dialogs.c:762
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ตัวเลือก</span>"
 
 #: ../lib/screenshooter-dialogs.c:782
 msgid "Capture the mouse pointer"
@@ -117,13 +117,13 @@ msgstr "แสดงตัวชี้เมาส์ในภาพหน้า
 
 #: ../lib/screenshooter-dialogs.c:793
 msgid "Capture the window border"
-msgstr ""
+msgstr "จับภาพกรอบหน้าต่าง"
 
 #: ../lib/screenshooter-dialogs.c:798
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "รวมขอบหน้าต่างในภาพที่จับด้วย\nการปิดตัวเลือกนี้ไม่มีผลกับหน้าต่าง CSD"
 
 #: ../lib/screenshooter-dialogs.c:815
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -139,7 +139,7 @@ msgstr "วินาที"
 
 #: ../lib/screenshooter-dialogs.c:901
 msgid "Choose what to do with the screenshot"
-msgstr ""
+msgstr "เลือกว่าจะทำสิ่งใดกับภาพหน้าจอ"
 
 #: ../lib/screenshooter-dialogs.c:937
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
@@ -175,38 +175,40 @@ msgid "Application to open the screenshot"
 msgstr "โปรแกรมที่จะใช้เปิดภาพหน้าจอ"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "โฮสต์ที่ Imgur"
+msgid "Host on Imgur™"
+msgstr "โฮสต์ที่ Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "เก็บภาพหน้าจอไว้ที่ Imgur ซึ่งเป็นบริการโฮสต์ภาพออนไลน์ฟรี"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "โฮสต์ภาพหน้าจอไว้ที่ Imgur™ ซึ่งเป็นบริการโฮสต์ภาพออนไลน์ฟรี"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr ""
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "โปรดระวังเนื้อหาที่อ่อนไหว ภาพที่อัปโหลดจะปรากฏต่อสาธารณะ\nและไม่มีการรับประกันว่าจะสามารถลบได้หรือไม่\nXfce ไม่ได้มีส่วนเกี่ยวข้องกับ Imgur™ และการเชื่อมรวมนี้ก็ไม่ได้ผ่านการรับรองโดย Imgur™\nถ้าคุณใช้ความสามารถนี้ คุณต้องยอมรับ <a href=\"https://imgur.com/tos\">เงื่อนไขการให้บริการ</a> ของ Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ภาพตัวอย่าง</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "บันทึกภาพหน้าจอเป็น..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
-msgstr ""
+msgstr "แฟ้ม PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
-msgstr ""
+msgstr "แฟ้ม JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
-msgstr ""
+msgstr "แฟ้ม BMP"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -383,7 +385,7 @@ msgstr "แสดงตัวชี้เมาส์ในภาพหน้า
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "ตัดกรอบหน้าต่างออกจากภาพหน้าจอที่จับ"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -396,7 +398,11 @@ msgstr "เลือกพื้นที่ที่จะจับภาพ �
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "พาธของแฟ้มหรือไดเรกทอรีที่จะใช้บันทึกภาพหน้าจอ นามสกุลที่ใช้ได้คือ png, jpg และ bmp"
+
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "เก็บภาพหน้าจอไว้ที่ Imgur ซึ่งเป็นบริการโฮสต์ภาพออนไลน์ฟรี"
 
 #: ../src/main.c:97
 msgid "Version information"
@@ -431,7 +437,7 @@ msgstr "จับภาพหน้าจอของทั้งหน้าจ
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "ให้คุณจับภาพหน้าจอทั้งหน้า, หน้าต่างที่แอคทีฟ หรือพื้นที่ที่เลือกได้ คุณสามารถหน่วงเวลาก่อนจับภาพ และสามารถกำหนดการกระทำที่จะทำกับภาพหน้าจอที่จับได้ คือจะบันทึกเป็นแฟ้ม PNG, คัดลอกลงในคลิปบอร์ด, เปิดภาพในโปรแกรมอื่น หรือโฮสต์ภาพที่ imgur ซึ่งเป็นบริการโฮสต์ภาพออนไลน์ฟรีก็ได้"
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr "ช่วยคุณจับภาพหน้าจอทั้งหมด, หน้าต่างที่แอคทีฟ หรือพื้นที่หน้าจอที่เลือก คุณสามารถกำหนดให้หน่วงเวลาก่อนจับภาพได้ รวมถึงกำหนดการกระทำที่จะทำต่อภาพหน้าจอ: บันทึกเป็นแฟ้ม PNG หรือ JPG, คัดลอกไปยังคลิปบอร์ด, เปิดภาพโดยใช้แอปพลิเคชันอื่น, หรือโฮสต์ภาพไว้ที่ imgur ซึ่งเป็นบริการโฮสต์ภาพออนไลน์ฟรี"
