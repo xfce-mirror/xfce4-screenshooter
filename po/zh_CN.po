@@ -6,6 +6,7 @@
 # Chipong Luo <chipong.luo@yahoo.com>, 2011-2012
 # Hunt Xu <huntxu@live.cn>, 2008-2009
 # wwj402 <wwj402@gmail.com>, 2018
+# Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2021
 # 玉堂白鹤 <yjwork@qq.com>, 2014
 # Xiaobo Zhou <zhouxiaobo.500@gmail.com>, 2013,2015
 # 玉堂白鹤 <yjwork@qq.com>, 2015,2018-2021
@@ -14,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-26 00:13+0000\n"
-"Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-08 14:43+0000\n"
+"Last-Translator: Xiaobo Zhou <zhouxiaobo.500@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -136,7 +137,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">截取前延迟</span>"
 
 #: ../lib/screenshooter-dialogs.c:839
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "以秒计的截图获取前的延迟"
+msgstr "延迟几秒再截图"
 
 #: ../lib/screenshooter-dialogs.c:842
 msgid "seconds"
@@ -180,36 +181,38 @@ msgid "Application to open the screenshot"
 msgstr "打开截图的应用程序"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "上传至 Imgur"
+msgid "Host on Imgur™"
+msgstr "上传至 Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "将图片上传至Imgur，一个免费的在线图床服务。"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "将图片上传至 Imgur™，一个免费的在线图床服务。"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "注意敏感内容，上传的图片将公开\n可用，并且不能保证可以将其删除。"
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "请注意敏感内容，上载的图像将被公开显示，并且不能保\n证可以将其删除。\nXfce 不隶属于 Imgur™，也未经 Imgur™ 批准。\n如果使用此功能，则必须同意 Imgur™ <a href=\"https://imgur.com/tos\">服务条款</a>。"
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">预览</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "截图另存为..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "PNG 文件"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "JPG 文件"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "BMP 文件"
 
@@ -403,6 +406,10 @@ msgid ""
 "and bmp extensions"
 msgstr "要保存截图的文件路径或目录，接受 png, jpg 和 bmp 扩展名 "
 
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "将图片上传至Imgur，一个免费的在线图床服务。"
+
 #: ../src/main.c:97
 msgid "Version information"
 msgstr "版本信息"
@@ -436,7 +443,7 @@ msgstr "获取全屏幕、活动窗口或某一区域的截图"
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "允许您捕捉整个屏幕，活动窗口或选定区域。您可以设置屏幕截图之前经过的延迟时间和屏幕截图后所执行的操作：将其保存到 PNG 文件，将其复制到剪贴板，使用其他应用程序打开它，或将它放在 imgur 上 ，一个免费在线图像托管服务。"
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr "允许您截取整个屏幕、活动窗口或选定区域。您可以设置屏幕截图的延迟时间，以及截图之后所执行的操作：将其保存为 PNG 或者 JPG 文件、将其复制到剪贴板、使用其他应用程序打开它，或将它放在 imgur 上 （一个免费的在线图像托管服务）。"
