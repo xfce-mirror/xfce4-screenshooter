@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 13:15+0000\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-08 15:50+0000\n"
 "Last-Translator: No Ne\n"
 "Language-Team: Polish (http://www.transifex.com/xfce/xfce-apps/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -180,36 +180,38 @@ msgid "Application to open the screenshot"
 msgstr "Otwiera przechwycony obraz za pomocą wybranego programu"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Hostowanie na Imgur"
+msgid "Host on Imgur™"
+msgstr "Wysyłanie do usługi hostingowej Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Wysyła przechwycony obraz do bezpłatnej usługi hostingowej Imgur"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Wysyła przechwycony obraz do bezpłatnej usługi hostingowej Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Uważaj na wrażliwe treści, przesłany obraz będzie publicznie\ndostępny i nie ma gwarancji, że można go z pewnością usunąć."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Uważaj na poufne treści, przesłany obraz będzie dostępny publicznie\ni nie ma gwarancji, że można je bezwzględnie usunąć.\nXfce NIE jest powiązane z Imgur™, a ta integracja nie jest zatwierdzona przez ten podmiot.\nJeśli używasz tej funkcji, musisz zaakceptować <a href=\"https://imgur.com/tos\">Warunki usługi</a> Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Podgląd</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
-msgstr "Wybór pliku"
+msgstr "Zapisz obraz jako..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "Plik PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "Plik JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "Plik BMP"
 
@@ -403,6 +405,10 @@ msgid ""
 "and bmp extensions"
 msgstr "Ścieżka pliku lub katalog, w którym zostanie zapisany przechwycony obraz, akceptuje rozszerzenia png, jpg oraz bmp"
 
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Wysyła przechwycony obraz do bezpłatnej usługi hostingowej Imgur"
+
 #: ../src/main.c:97
 msgid "Version information"
 msgstr "Wypisuje informacje o wersji"
@@ -436,7 +442,7 @@ msgstr "Przechwytuje obraz całego ekranu, bieżącego okna lub wybranego obszar
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "Pozwala Ci na przechwycenie całego ekranu, aktywnego okna lub zaznaczonego obszaru. Możesz ustawić opóźnienie, które musi upłynąć przed wykonaniem zrzutu ekranu, oraz działania, które będzie podjęte z wykonanym zrzutem ekranu: zapisanie go do pliku PNG, skopiowanie go do schowka, otwarcie go przy użyciu innego programu, lub umieszczenie go w internetowym serwisie imgur - darmowej usłudze przechowywania obrazów."
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr "Pozwala Ci na przechwycenie całego ekranu, aktywnego okna lub zaznaczonego obszaru. Możesz ustawić opóźnienie, które musi upłynąć przed wykonaniem zrzutu ekranu, oraz działania, które będzie podjęte z wykonanym zrzutem ekranu: zapisanie go do pliku PNG lub JPG, skopiowanie go do schowka, otwarcie go przy użyciu innego programu, lub umieszczenie go w internetowym serwisie imgur – darmowej usłudze przechowywania obrazów."
