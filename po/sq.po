@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 15:24+0000\n"
-"Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-08 10:48+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/xfce-apps/language/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -176,36 +176,38 @@ msgid "Application to open the screenshot"
 msgstr "Aplikacion për të hapur foton e ekranit"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Strehojeni në Imgur"
+msgid "Host on Imgur™"
+msgstr "Strehojeni në Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Strehojeni foton e ekranit në Imgur, një shërbim strehimi falas figurash në internet."
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Strehojeni foton e ekrani në Imgur™, një shërbim strehimi figurash falas në internet"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Shihni për lëndë me spec, figura e ngarkuar do të jetë\ne përdorshme publikisht dhe s’ka garanci se do të fshihet patjetër."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Hapni sytë për lëndë me spec, figura e ngarkuar do të jetë\n e passhme publikisht dhe s’ka garanci se s’do të fshihet.\nXfce-ja NUK ka lidhje, as është miratuar ky integrim nga Imgur™.\nNëse përdorni këtë veçori, duhet të pajtoheni me <a href=\"https://imgur.com/tos\">Kushte Shërbimi</a> të Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Paraparje</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Ruajeni foton e ekranit si…"
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "Kartelë PNG"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "Kartelë JPG"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "Kartelë BMP"
 
@@ -399,6 +401,10 @@ msgid ""
 "and bmp extensions"
 msgstr "Shteg ose drejtori kartele ku do të ruhet fotoja e ekranit, pranon zgjatimet png, jpg dhe bmp"
 
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Strehojeni foton e ekranit në Imgur, një shërbim strehimi falas figurash në internet."
+
 #: ../src/main.c:97
 msgid "Version information"
 msgstr "Të dhëna versioni"
@@ -432,7 +438,7 @@ msgstr "Bëni foto të krejt ekranit, të dritares aktive ose të një fushe në
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "Ju lejon të fotografoni krejt ekranin, dritaren aktive ose një zonë të përzgjedhur në të. Mund të caktoni afatin e kohës që rrjedh para se të shkrepet fotoja e ekranit dhe veprimin që do të kryhet me foton e ekranit: ruajtje në një kartelë PNG, kopjim të saj në të papastër, hapje me një tjetër aplikacion, ose strehim në Imgur, një shërbim falas strehimi figurash në internet."
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr ""
