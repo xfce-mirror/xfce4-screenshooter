@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-26 06:21+0000\n"
-"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-08 10:48+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Swedish (http://www.transifex.com/xfce/xfce-apps/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -178,36 +178,38 @@ msgid "Application to open the screenshot"
 msgstr "Program att öppna skärmbilden med"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
+msgid "Host on Imgur™"
 msgstr "Lägg upp på Imgur"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Lägg upp skärmbilden på Imgur, en gratis bildlagringstjänst online"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Lägg upp skärmbilden på Imgur™, en gratis bildlagringstjänst online"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Leta efter känsligt innehåll, den uppladdade bilden kommer att vara\ntillgänglig för allmänheten och det finns ingen garanti att den säkert kan raderas."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Förhandsvisning</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Spara skärmbild som..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "PNG fil"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "JPG fil"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "BMP fil"
 
@@ -401,6 +403,10 @@ msgid ""
 "and bmp extensions"
 msgstr "Filens sökväg eller katalogen där skärmbilden kommer att sparas, accepterar png, jpg och bmp tillägg"
 
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Lägg upp skärmbilden på Imgur, en gratis bildlagringstjänst online"
+
 #: ../src/main.c:97
 msgid "Version information"
 msgstr "Versionsinformation"
@@ -434,7 +440,7 @@ msgstr "Ta skärmbilder av hela skärmen, aktivt fönster eller ett område"
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "Tillåter dig att fånga hela skärmen, det aktiva fönstret eller ett markerat område. Du kan ställa in fördröjningen innan skärmbilden tas och åtgärden som ska utföras med skärmbilden: spara den till en PNG-fil, kopiera den till Urklipp, öppna den med ett annat program, eller lagra den på imgur, en gratis bildlagringstjänst online."
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr ""
