@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 20:57+0000\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-08 15:22+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/xfce/xfce-apps/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -176,36 +176,38 @@ msgid "Application to open the screenshot"
 msgstr "Toepassing om de schermafdruk mee te openen"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Plaatsen op Imgur"
+msgid "Host on Imgur™"
+msgstr "Onderbrengen op Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Plaats de schermafdruk op Imgur, een gratis webopslagdienst voor afbeeldingen"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr "Breng de schermafdruk onder op Imgur™, een gratis internetdienst om afbeeldingen te plaatsen"
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Pas op met gevoelig materiaal; een opgestuurde foto zal\ngeheel openbaar zijn en gegarandeerde verwijdering kan niet."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr "Pas op met gevoelige inhoud, de opgestuurde afbeelding zal\npubliekelijk beschikbaar zijn en er is geen garantie dat zij veilig\nkan worden verwijderd. Xfce is niet geaffilieerd met Imgur™.\nAls u deze functie benut moet u instemmen met de<a href=\"https://imgur.com/tos\">voorwaarden</a>van Imgur™. "
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Voorbeeld</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Sla schermafdruk op als..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr "PNG-bestand"
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr "JPG-bestand"
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr "BMP-bestand"
 
@@ -399,6 +401,10 @@ msgid ""
 "and bmp extensions"
 msgstr "Bestandpad of map waar de schermafdruk zal worden opgeslagen; aanvaardt de extensies .png, .jpg en .bmp"
 
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Plaats de schermafdruk op Imgur, een gratis webopslagdienst voor afbeeldingen"
+
 #: ../src/main.c:97
 msgid "Version information"
 msgstr "Versie-informatie"
@@ -432,7 +438,7 @@ msgstr "Maak schermafdrukken van het gehele scherm, van het actieve venster of v
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "Stelt u in staat om een schermafdruk te maken van het gehele scherm, het actieve venster of een gekozen gedeelte van het scherm. U kunt de vertraging instellen voordat de schermafdruk wordt gemaakt, alsook de actie die met de schermafdruk zal worden ondernomen: sla hem op als een .png-bestand, kopieer hem naar het klembord, open hem met een andere toepassing of breng hem onder bij imgur, een gratis afbeeldingenwebdienst."
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr "Hiermee kunt u of het gehele scherm fotograferen, of het actieve venster of een gekozen gedeelte. U kunt de vertraging instellen voordat de schermafdruk wordt gemaakt en de actie die met de schermafdruk zal worden ondernomen: opslaan als .PNG- of .JPG-bestand, kopiëren naar het klembord, openen met een andere toepassing, of onderbrengen bij imgur, een gratis afbeeldingenopslagdienst op het internet."
