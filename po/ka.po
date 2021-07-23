@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-08 10:48+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Georgian (http://www.transifex.com/xfce/xfce-apps/language/ka/)\n"
 "MIME-Version: 1.0\n"
@@ -175,36 +175,38 @@ msgid "Application to open the screenshot"
 msgstr "პროგრამა სკრინშოტის გასახსნელად"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Imgur-ზე ატვირთვა"
+msgid "Host on Imgur™"
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "ატვირთეთ სკრინშოტი Imgur-ზე, უფასო ონლაინ ჰოსტინგის სერვისზე"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "ყურადღება მიაქციეთ სკრინშოტის შინაარს, ატვირთული სურათი იქნება საჯაროდ\nხელმისაწვდომი და არ არსებობს გარანტია, რომ მისი წაშლა ნამდვილად შესაძლებელი იქნება."
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ესკიზი</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "შეინახეთ სკრინშოტი როგორც..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr ""
 
@@ -398,6 +400,10 @@ msgid ""
 "and bmp extensions"
 msgstr ""
 
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "ატვირთეთ სკრინშოტი Imgur-ზე, უფასო ონლაინ ჰოსტინგის სერვისზე"
+
 #: ../src/main.c:97
 msgid "Version information"
 msgstr "ინფორმაცია ვერსიის შესახებ"
@@ -431,7 +437,7 @@ msgstr "გადაიღეთ მთლიანი ეკრანის, �
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "საშუალებას გაძლევთ გადაიღოთ მთლიანი ეკრანი, აქტიური ფანჯარა ან არჩეული რეგიონი. თქვენ შეგიძლიათ გაასწოროთ დაყოვნება, რომელიც ამოიწურება სკრინშოტის გადაღებამდე და მოქმედება რომელიც შესრულდება სკრინშოტზე: შენახვა PNG ფაილში, ბუფერში კოპირება, სხვა პროგრამით გახსნა ან imgur-ზე ატვირთვა, ესაა უფასო ონლაინ სურათების ჰოსტინგის სერვისი."
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr ""
