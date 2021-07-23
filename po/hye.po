@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-25 13:07+0200\n"
-"PO-Revision-Date: 2021-04-25 11:08+0000\n"
+"POT-Creation-Date: 2021-07-08 12:48+0200\n"
+"PO-Revision-Date: 2021-07-08 10:48+0000\n"
 "Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Eastern Armenian (http://www.transifex.com/xfce/xfce-apps/language/hye/)\n"
 "MIME-Version: 1.0\n"
@@ -176,36 +176,38 @@ msgid "Application to open the screenshot"
 msgstr "Էհրանահանը բացելու ծրագիր"
 
 #: ../lib/screenshooter-dialogs.c:1027
-msgid "Host on Imgur"
-msgstr "Պահել Imgur֊ում"
+msgid "Host on Imgur™"
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1031 ../src/main.c:92
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Պահել էկրանահանը Imgur֊ում՝ անվճար, առցանց պատկերի պահման սպասարկիչ"
+#: ../lib/screenshooter-dialogs.c:1031
+msgid "Host the screenshot on Imgur™, a free online image hosting service"
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1042
+#: ../lib/screenshooter-dialogs.c:1043
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr "Դիտէք զգայուն բովանդակութեան համար, վերբեռնուած պատկերը կլինի հրապարակային\nմատչելի է, եւ երաշխիք չկա, որ այն անպայման կարող է ջնջուել:"
+"available and there is no guarantee it can be certainly deleted.\n"
+"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
+"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
+msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1074
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Նախապատկեր</span>"
 
-#: ../lib/screenshooter-dialogs.c:1131
+#: ../lib/screenshooter-dialogs.c:1135
 msgid "Save screenshot as..."
 msgstr "Պահել էկրանահանը որպէս..."
 
-#: ../lib/screenshooter-dialogs.c:1149
+#: ../lib/screenshooter-dialogs.c:1153
 msgid "PNG File"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1150
+#: ../lib/screenshooter-dialogs.c:1154
 msgid "JPG File"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1151
+#: ../lib/screenshooter-dialogs.c:1155
 msgid "BMP File"
 msgstr ""
 
@@ -399,6 +401,10 @@ msgid ""
 "and bmp extensions"
 msgstr ""
 
+#: ../src/main.c:92
+msgid "Host the screenshot on Imgur, a free online image hosting service"
+msgstr "Պահել էկրանահանը Imgur֊ում՝ անվճար, առցանց պատկերի պահման սպասարկիչ"
+
 #: ../src/main.c:97
 msgid "Version information"
 msgstr "Տարբերակի վերաբերեալ տեղեկոյթ"
@@ -432,7 +438,7 @@ msgstr "Գործող պատուհանի, ամբողջ ցուցադրիչի կա�
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr "Թոյլ է տալիս էկրանահանել ամբողջ ցուցադրիչը, գործուն պատուհանը կամ էլ ընտրուած տարածքը։ Կարելի է սահմանել դադար, մինչ էկրանահանումը եւ գործողութիւնը, որը կը կատարուի էկրանահանման հետ համատեղ․ պահէք այն, PNG ձեւաչափով, պատճէնէք սեղմատախտակում, բացէք այն այլ ծրագրով, կամ պահէք այն Imgur֊ում՝ անվճար, առցանց ծառայութիւն պատկերների պահման համար։"
+"and the action that will be done with the screenshot: save it to a PNG or "
+"JPG file, copy it to the clipboard, open it using another application, or "
+"host it on imgur, a free online image hosting service."
+msgstr ""
