@@ -207,11 +207,15 @@ int main (int argc, char **argv)
   else if (upload_imgur && (screenshot_dir != NULL))
     {
       g_printerr (conflict_error, "imgur", "save");
+
+      g_free (sd);
       return EXIT_FAILURE;
     }
   else if (upload_imgur && (application != NULL))
     {
       g_printerr (conflict_error, "imgur", "open");
+
+      g_free (sd);
       return EXIT_FAILURE;
     }
 
