@@ -264,10 +264,8 @@ int main (int argc, char **argv)
         sd->region = ACTIVE_WINDOW;
       else if (fullscreen)
         sd->region = FULLSCREEN;
-      else if (region)
-        sd->region = SELECT;
       else
-        sd->region_specified = FALSE;
+        sd->region = SELECT;
 
       /* Whether to display the mouse pointer on the screenshot */
       mouse ? (sd->show_mouse = 1) : (sd->show_mouse = 0);
