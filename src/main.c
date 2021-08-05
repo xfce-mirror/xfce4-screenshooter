@@ -139,6 +139,7 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
 
 int main (int argc, char **argv)
 {
+  ScreenshotData *sd;
   GError *cli_error = NULL;
   GFile *default_save_dir;
   const gchar *rc_file;
@@ -147,12 +148,6 @@ int main (int argc, char **argv)
   const gchar *ignore_error =
     _("The --%s option is only used when --fullscreen, --window or"
       " --region is given. It will be ignored.\n");
-
-  ScreenshotData *sd = g_new0 (ScreenshotData, 1);
-  sd->plugin = FALSE;
-  sd->path_is_dir = TRUE;
-  sd->app_info = NULL;
-  sd->action = 0;
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -167,7 +162,6 @@ int main (int argc, char **argv)
                    PACKAGE, cli_error->message, PACKAGE_NAME);
 
           g_error_free (cli_error);
-          g_free (sd);
 
           return EXIT_FAILURE;
         }
@@ -178,21 +172,18 @@ int main (int argc, char **argv)
     {
       g_printerr (conflict_error, "window", "fullscreen");
 
-      g_free (sd);
       return EXIT_FAILURE;
     }
   else if (window && region)
     {
       g_printerr (conflict_error, "window", "region");
 
-      g_free (sd);
       return EXIT_FAILURE;
     }
   else if (fullscreen && region)
     {
       g_printerr (conflict_error, "fullscreen", "region");
 
-      g_free (sd);
       return EXIT_FAILURE;
     }
 
@@ -201,17 +192,18 @@ int main (int argc, char **argv)
     {
       g_printerr (conflict_error, "open", "save");
 
-      g_free (sd);
       return EXIT_FAILURE;
     }
   else if (upload_imgur && (screenshot_dir != NULL))
     {
       g_printerr (conflict_error, "imgur", "save");
+
       return EXIT_FAILURE;
     }
   else if (upload_imgur && (application != NULL))
     {
       g_printerr (conflict_error, "imgur", "open");
+
       return EXIT_FAILURE;
     }
 
@@ -235,10 +227,14 @@ int main (int argc, char **argv)
     {
       g_print ("%s\n", PACKAGE_STRING);
 
-      g_free (sd);
-
       return EXIT_SUCCESS;
     }
+
+  sd = g_new0 (ScreenshotData, 1);
+  sd->plugin = FALSE;
+  sd->path_is_dir = TRUE;
+  sd->app_info = NULL;
+  sd->action = 0;
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
