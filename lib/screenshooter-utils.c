@@ -74,7 +74,7 @@ get_active_window_from_xlib (void)
       return None;
     }
 
-  window = *(Window *) prop;
+  window = *(Window *)(void*) prop;
   XFree (prop);
   return window;
 }
