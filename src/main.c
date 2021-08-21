@@ -126,6 +126,7 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
     }
   else
     {
+      sd->try_again = FALSE;
       gtk_widget_destroy (dialog);
       gtk_main_quit ();
     }
@@ -235,6 +236,7 @@ int main (int argc, char **argv)
   sd->path_is_dir = TRUE;
   sd->app_info = NULL;
   sd->action = 0;
+  sd->try_again = FALSE;
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
@@ -327,17 +329,17 @@ int main (int argc, char **argv)
   else
     {
       GtkWidget *dialog;
-
-      /* Set the dialog up */
-      dialog = screenshooter_region_dialog_new (sd, FALSE);
-      g_signal_connect (dialog, "response",
+      do{ /* Set the dialog up */
+        dialog = screenshooter_region_dialog_new (sd, FALSE);
+        g_signal_connect (dialog, "response",
                         G_CALLBACK (cb_dialog_response), sd);
-      g_signal_connect (dialog, "key-press-event",
+        g_signal_connect (dialog, "key-press-event",
                         G_CALLBACK (screenshooter_f1_key), NULL);
-      gtk_widget_show (dialog);
+        gtk_widget_show (dialog);
+        gtk_main ();
+      }while(sd->try_again); /* Show the dialog again if the user clicked 'Back' button */
     }
 
-  gtk_main ();
 
   /* Save preferences */
   screenshooter_write_rc_file (rc_file, sd);

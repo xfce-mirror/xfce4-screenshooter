@@ -41,6 +41,7 @@ action_idle (gpointer user_data)
 {
   gchar *save_location = NULL;
   ScreenshotData *sd = user_data;
+  sd->try_again = FALSE;
 
   if (!sd->action_specified)
     {
@@ -60,6 +61,15 @@ action_idle (gpointer user_data)
           response == GTK_RESPONSE_DELETE_EVENT ||
           response == GTK_RESPONSE_CLOSE)
         {
+          if (!sd->plugin)
+            gtk_main_quit ();
+
+          g_object_unref (sd->screenshot);
+          return FALSE;
+        }
+        else if (response == GTK_RESPONSE_REJECT)
+        { /* If the user clicked 'Back' button */
+          sd->try_again = TRUE;
           if (!sd->plugin)
             gtk_main_quit ();
 
