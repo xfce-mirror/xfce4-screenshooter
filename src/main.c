@@ -324,6 +324,7 @@ int main (int argc, char **argv)
         }
 
       screenshooter_take_screenshot (sd, TRUE);
+      gtk_main ();
     }
   /* Else we show a dialog which allows to set the screenshot options */
   else
