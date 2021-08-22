@@ -53,6 +53,7 @@ typedef struct
   gboolean timestamp;
   gboolean enable_imgur_upload;
   gboolean path_is_dir;
+  gboolean try_again;
   gchar *screenshot_dir;
   gchar *title;
   gchar *app;
