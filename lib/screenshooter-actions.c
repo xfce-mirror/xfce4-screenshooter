@@ -66,6 +66,13 @@ action_idle (gpointer user_data)
           g_object_unref (sd->screenshot);
           return FALSE;
         }
+
+      if (response == GTK_RESPONSE_REJECT)
+        {
+          /* If the user clicked 'Back' button */
+          screenshooter_region_dialog_show (sd, FALSE);
+          return FALSE;
+        }
     }
 
   if (sd->action & CLIPBOARD)
