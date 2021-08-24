@@ -111,28 +111,6 @@ static GOptionEntry entries[] =
 
 
 
-static void
-cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
-{
-  if (response == GTK_RESPONSE_HELP)
-    {
-      g_signal_stop_emission_by_name (dialog, "response");
-      screenshooter_open_help (GTK_WINDOW (dialog));
-    }
-  else if (response == GTK_RESPONSE_OK)
-    {
-      gtk_widget_destroy (dialog);
-      screenshooter_take_screenshot (sd, FALSE);
-    }
-  else
-    {
-      gtk_widget_destroy (dialog);
-      gtk_main_quit ();
-    }
-}
-
-
-
 /* Main */
 
 
@@ -322,22 +300,13 @@ int main (int argc, char **argv)
         }
 
       screenshooter_take_screenshot (sd, TRUE);
+      gtk_main ();
     }
   /* Else we show a dialog which allows to set the screenshot options */
   else
     {
-      GtkWidget *dialog;
-
-      /* Set the dialog up */
-      dialog = screenshooter_region_dialog_new (sd, FALSE);
-      g_signal_connect (dialog, "response",
-                        G_CALLBACK (cb_dialog_response), sd);
-      g_signal_connect (dialog, "key-press-event",
-                        G_CALLBACK (screenshooter_f1_key), NULL);
-      gtk_widget_show (dialog);
+      screenshooter_region_dialog_show (sd, FALSE);
     }
-
-  gtk_main ();
 
   /* Save preferences */
   screenshooter_write_rc_file (rc_file, sd);
