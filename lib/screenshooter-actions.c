@@ -69,6 +69,8 @@ action_idle (gpointer user_data)
 
       if (response == GTK_RESPONSE_REJECT)
         {
+          g_object_unref (sd->screenshot);
+
           /* If the user clicked 'Back' button */
           screenshooter_region_dialog_show (sd, FALSE);
           return FALSE;
