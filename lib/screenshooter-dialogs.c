@@ -18,6 +18,7 @@
  */
 
 #include "screenshooter-dialogs.h"
+#include "screenshooter-actions.h"
 
 #define ICON_SIZE 16
 #define THUMB_X_SIZE 200
@@ -311,7 +312,8 @@ static void populate_liststore (GtkListStore *liststore)
   if (G_LIKELY (list_app != NULL))
     {
       g_list_foreach (list_app, (GFunc) add_item, liststore);
-      g_list_free (list_app);
+      // g_list_free (list_app);
+      g_list_free_full (list_app, g_object_unref);
     }
 }
 
@@ -612,8 +614,41 @@ cb_combo_file_extension_changed (GtkWidget *box, GtkWidget *chooser)
 
 
 
+static void
+cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
+{
+  if (response == GTK_RESPONSE_HELP)
+    {
+      g_signal_stop_emission_by_name (dialog, "response");
+      screenshooter_open_help (GTK_WINDOW (dialog));
+    }
+  else if (response == GTK_RESPONSE_OK)
+    {
+      gtk_widget_destroy (dialog);
+      screenshooter_take_screenshot (sd, FALSE);
+    }
+  else
+    {
+      gtk_widget_destroy (dialog);
+      gtk_main_quit ();
+    }
+}
+
+
+
 /* Public */
 
+void screenshooter_region_dialog_show (ScreenshotData *sd, gboolean plugin)
+{
+  GtkWidget *dialog = screenshooter_region_dialog_new (sd, plugin);
+  g_signal_connect (dialog, "response",
+                  G_CALLBACK (cb_dialog_response), sd);
+  g_signal_connect (dialog, "key-press-event",
+                  G_CALLBACK (screenshooter_f1_key), NULL);
+  gtk_widget_show (dialog);
+  if (gtk_main_level() == 0)
+    gtk_main ();
+}
 
 
 GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
@@ -885,6 +920,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
     "help-browser", _("_Help"), GTK_RESPONSE_HELP,
+    "", _("_Back"), GTK_RESPONSE_REJECT,
     "", _("_Cancel"), GTK_RESPONSE_CANCEL,
     "", _("_OK"), GTK_RESPONSE_OK,
     NULL);
@@ -892,6 +928,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
     "gtk-help", GTK_RESPONSE_HELP,
+    "gtk-go-back", GTK_RESPONSE_REJECT,
     "gtk-cancel", GTK_RESPONSE_CANCEL,
     "gtk-ok", GTK_RESPONSE_OK,
     NULL);

@@ -37,6 +37,8 @@
 
 
 GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd);
+void       screenshooter_region_dialog_show (ScreenshotData *sd,
+                                             gboolean        plugin);
 GtkWidget *screenshooter_region_dialog_new  (ScreenshotData *sd,
                                              gboolean        plugin);
 gchar     *screenshooter_save_screenshot    (GdkPixbuf      *screenshot,
