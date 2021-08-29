@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-08 12:48+0200\n"
-"PO-Revision-Date: 2021-08-19 08:08+0000\n"
-"Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
+"POT-Creation-Date: 2021-08-29 00:49+0200\n"
+"PO-Revision-Date: 2021-08-28 22:49+0000\n"
+"Last-Translator: 8b03701f910565d01acaec9ce3f558ab_e9f0fee <b5b06e8f85fb8288fe43ad0bc2422d94_32848>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-apps/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,25 +20,25 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: ../lib/screenshooter-dialogs.c:407
+#: ../lib/screenshooter-dialogs.c:409
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb od %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:499
+#: ../lib/screenshooter-dialogs.c:501
 msgid "Transfer"
 msgstr "Prenos"
 
-#: ../lib/screenshooter-dialogs.c:520
+#: ../lib/screenshooter-dialogs.c:522
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ta zaslonska slika se prenaša na:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:629 ../lib/screenshooter-dialogs.c:635
-#: ../lib/screenshooter-dialogs.c:647 ../lib/screenshooter-dialogs.c:654
-#: ../lib/screenshooter-dialogs.c:885 ../lib/screenshooter-dialogs.c:892
+#: ../lib/screenshooter-dialogs.c:664 ../lib/screenshooter-dialogs.c:670
+#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:689
+#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:928
 #: ../lib/screenshooter-utils.c:146 ../lib/screenshooter-utils.c:185
 #: ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
@@ -46,144 +46,148 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ta zaslonska slika se pre
 msgid "Screenshot"
 msgstr "Zaslonska slika"
 
-#: ../lib/screenshooter-dialogs.c:631 ../lib/screenshooter-dialogs.c:649
-#: ../lib/screenshooter-dialogs.c:887
+#: ../lib/screenshooter-dialogs.c:666 ../lib/screenshooter-dialogs.c:684
+#: ../lib/screenshooter-dialogs.c:922
 msgid "_Help"
 msgstr "_Pomoč"
 
-#: ../lib/screenshooter-dialogs.c:632
+#: ../lib/screenshooter-dialogs.c:667
 msgid "_Close"
 msgstr "_Zapri"
 
-#: ../lib/screenshooter-dialogs.c:642
+#: ../lib/screenshooter-dialogs.c:677
 msgid "Preferences"
 msgstr "Možnosti"
 
-#: ../lib/screenshooter-dialogs.c:650 ../lib/screenshooter-dialogs.c:888
+#: ../lib/screenshooter-dialogs.c:685 ../lib/screenshooter-dialogs.c:924
 msgid "_Cancel"
 msgstr "_Prekliči"
 
-#: ../lib/screenshooter-dialogs.c:651 ../lib/screenshooter-dialogs.c:889
+#: ../lib/screenshooter-dialogs.c:686 ../lib/screenshooter-dialogs.c:925
 msgid "_OK"
 msgstr "_V redu"
 
-#: ../lib/screenshooter-dialogs.c:662
+#: ../lib/screenshooter-dialogs.c:697
 msgid "Take a screenshot"
 msgstr "Naredi zaslonsko sliko"
 
-#: ../lib/screenshooter-dialogs.c:694
+#: ../lib/screenshooter-dialogs.c:729
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Območje za zajem</span>"
 
-#: ../lib/screenshooter-dialogs.c:716
+#: ../lib/screenshooter-dialogs.c:751
 msgid "Entire screen"
 msgstr "Celoten zaslon"
 
-#: ../lib/screenshooter-dialogs.c:721 ../src/main.c:60
+#: ../lib/screenshooter-dialogs.c:756 ../src/main.c:60
 #: ../panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the entire screen"
 msgstr "Naredi zaslonsko sliko celotnega zaslona"
 
-#: ../lib/screenshooter-dialogs.c:730
+#: ../lib/screenshooter-dialogs.c:765
 msgid "Active window"
 msgstr "Dejavno okno"
 
-#: ../lib/screenshooter-dialogs.c:735 ../src/main.c:102
+#: ../lib/screenshooter-dialogs.c:770 ../src/main.c:102
 #: ../panel-plugin/screenshooter-plugin.c:336
 msgid "Take a screenshot of the active window"
 msgstr "Naredi zaslonsko sliko dejavnega okna"
 
-#: ../lib/screenshooter-dialogs.c:744
+#: ../lib/screenshooter-dialogs.c:779
 msgid "Select a region"
 msgstr "Izberi območje"
 
-#: ../lib/screenshooter-dialogs.c:749
+#: ../lib/screenshooter-dialogs.c:784
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Izberite območje, ki naj se zajame, tako da kliknete na neko pozicijo na zaslonu in potem, ne da bi spustili gumb miške, vlečete miško na drug kot območja, nato pa spustite gumb miške.\n\nMed vlecenjem pritisnite ctrl, če želite prestavljati območje."
 
-#: ../lib/screenshooter-dialogs.c:762
+#: ../lib/screenshooter-dialogs.c:797
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Možnosti</span>"
 
-#: ../lib/screenshooter-dialogs.c:782
+#: ../lib/screenshooter-dialogs.c:817
 msgid "Capture the mouse pointer"
 msgstr "Zajemi miškin kazalec"
 
-#: ../lib/screenshooter-dialogs.c:786
+#: ../lib/screenshooter-dialogs.c:821
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Prikaži miškin kazalec na zaslonski sliki"
 
-#: ../lib/screenshooter-dialogs.c:793
+#: ../lib/screenshooter-dialogs.c:828
 msgid "Capture the window border"
 msgstr "Zajemi rob okna"
 
-#: ../lib/screenshooter-dialogs.c:798
+#: ../lib/screenshooter-dialogs.c:833
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Prikaži rob okna na zajeti sliki.\nIzklop te možnosti ne vpliva na CSD okna."
 
-#: ../lib/screenshooter-dialogs.c:815
+#: ../lib/screenshooter-dialogs.c:850
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zakasnitev pred zajemom</span>"
 
-#: ../lib/screenshooter-dialogs.c:839
+#: ../lib/screenshooter-dialogs.c:874
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Zakasnitev v sekundah preden se naredi zaslonska slika"
 
-#: ../lib/screenshooter-dialogs.c:842
+#: ../lib/screenshooter-dialogs.c:877
 msgid "seconds"
 msgstr "sekund"
 
-#: ../lib/screenshooter-dialogs.c:901
+#: ../lib/screenshooter-dialogs.c:923
+msgid "_Back"
+msgstr "_Nazaj"
+
+#: ../lib/screenshooter-dialogs.c:938
 msgid "Choose what to do with the screenshot"
 msgstr "Izberite, kaj naj se zgodi s posnetkom zaslona"
 
-#: ../lib/screenshooter-dialogs.c:937
+#: ../lib/screenshooter-dialogs.c:974
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Dejanje</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:952
+#: ../lib/screenshooter-dialogs.c:989
 msgid "Save"
 msgstr "Shrani"
 
-#: ../lib/screenshooter-dialogs.c:958
+#: ../lib/screenshooter-dialogs.c:995
 msgid "Save the screenshot to a PNG file"
 msgstr "Shrani zaslonsko sliko v PNG datoteko"
 
-#: ../lib/screenshooter-dialogs.c:967
+#: ../lib/screenshooter-dialogs.c:1004
 msgid "Copy to the clipboard"
 msgstr "Kopiraj v odložišče"
 
-#: ../lib/screenshooter-dialogs.c:969
+#: ../lib/screenshooter-dialogs.c:1006
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopiraj zaslonsko sliko v odložišče, da se jo lahko kasneje prilepi"
 
-#: ../lib/screenshooter-dialogs.c:983
+#: ../lib/screenshooter-dialogs.c:1020
 msgid "Open with:"
 msgstr "Odpri z:"
 
-#: ../lib/screenshooter-dialogs.c:991
+#: ../lib/screenshooter-dialogs.c:1028
 msgid "Open the screenshot with the chosen application"
 msgstr "Odpri zaslonsko sliko z izbranim programom"
 
-#: ../lib/screenshooter-dialogs.c:1010 ../src/main.c:75
+#: ../lib/screenshooter-dialogs.c:1047 ../src/main.c:75
 msgid "Application to open the screenshot"
 msgstr "Program, ki bo odprl zaslonsko sliko"
 
-#: ../lib/screenshooter-dialogs.c:1027
+#: ../lib/screenshooter-dialogs.c:1064
 msgid "Host on Imgur™"
 msgstr "Gostuj na Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1031
+#: ../lib/screenshooter-dialogs.c:1068
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr "Naloži sliko na Imgur, brezplačno spletno storitev za gostovanje slik"
 
-#: ../lib/screenshooter-dialogs.c:1043
+#: ../lib/screenshooter-dialogs.c:1080
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -191,23 +195,23 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Bodite pozorni na občutljive vsebine, saj bodo naložene slike javno vidne, \nzato ni zagotovila, da jih je mogoče trajno izbrisati.\nXfce NI povezan z Imgur™, niti ni ta inegracija potrjena z njihove strani.\nČe uporabljate to funkcijo, se morate strinjati s <a href=\"https://imgur.com/tos\">Pogoji uporabe</a> za Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1074
+#: ../lib/screenshooter-dialogs.c:1111
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Predogled</span>"
 
-#: ../lib/screenshooter-dialogs.c:1135
+#: ../lib/screenshooter-dialogs.c:1172
 msgid "Save screenshot as..."
 msgstr "Shrani zaslonsko sliko kot..."
 
-#: ../lib/screenshooter-dialogs.c:1153
+#: ../lib/screenshooter-dialogs.c:1190
 msgid "PNG File"
 msgstr "PNG datoteka"
 
-#: ../lib/screenshooter-dialogs.c:1154
+#: ../lib/screenshooter-dialogs.c:1191
 msgid "JPG File"
 msgstr "JPG datoteka"
 
-#: ../lib/screenshooter-dialogs.c:1155
+#: ../lib/screenshooter-dialogs.c:1192
 msgid "BMP File"
 msgstr "BMP datoteka"
 
@@ -409,19 +413,19 @@ msgstr "Naloži sliko na Imgur, brezplačno spletno storitev gostovanja slik"
 msgid "Version information"
 msgstr "Podatki o različici"
 
-#: ../src/main.c:146
+#: ../src/main.c:125
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Sporne možnosti: --%s in --%s ne morata biti uporabljeni istočasno.\n"
 
-#: ../src/main.c:148
+#: ../src/main.c:127
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "Možnost --%s ima smisel samo v navezi z --fullscreen, --window oz. --region. Sedaj ne bo upoštevana.\n"
 
-#: ../src/main.c:165
+#: ../src/main.c:138
 #, c-format
 msgid ""
 "%s: %s\n"
