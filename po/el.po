@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-29 00:49+0200\n"
-"PO-Revision-Date: 2021-08-30 10:43+0000\n"
+"PO-Revision-Date: 2021-08-30 12:17+0000\n"
 "Last-Translator: Στέργιος Γέμελας <sgemelas@protonmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/xfce/xfce-apps/language/el/)\n"
 "MIME-Version: 1.0\n"
@@ -196,7 +196,7 @@ msgid ""
 "available and there is no guarantee it can be certainly deleted.\n"
 "Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
-msgstr ""
+msgstr "Προσοχή για ευαίσθητο περιεχόμενο, η ανεβασμένη εικόνα θα είναι\nδημόσια προσβάσιμη και δεν υπάρχει εγγύηση ότι μπορεί να διαγραφεί\nμε σιγουριά. Το Xfce ΔΕΝ σχετίζεται με το Imgur™ και αυτή η λειτουργία\nδεν είναι εγκεκριμένη από το Imgur™<a href=\"https://imgur.com/tos\">Terms of Service</a>."
 
 #: ../lib/screenshooter-dialogs.c:1111
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -393,7 +393,7 @@ msgstr "Εμφάνιση του κέρσορα στο στιγμιότυπο"
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "Αφαιρεί το περιθώριο του παραθύρου από το στιγμιότυπο οθόνης"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -448,4 +448,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG or "
 "JPG file, copy it to the clipboard, open it using another application, or "
 "host it on imgur, a free online image hosting service."
-msgstr ""
+msgstr "Σας επιτρέπει να καταγράψετε ολόκληρη την οθόνη, το ενεργό παράθυρο ή μια επιλεγμένη περιοχή. Μπορείτε να ρυθμίσετε την χρονική καθυστέρηση πριν από την λήψη του στιγμιότυπου και την ενέργεια που θα γίνει με το στιγμιότυπο οθόνης: αποθήκευση σε αρχείο PNG ή JPG, αντιγραφή στο πρόχειρο, άνοιγμα χρησιμοποιώντας μια άλλη εφαρμογή ή ανέβασμα στο imgur, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων."
