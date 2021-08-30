@@ -8,13 +8,14 @@
 # Panagiotis Mantzios <pmantzios@hotmail.com>, 2018
 # Stavros Giannouris <stavrosg@hellug.gr>, 2008
 # Πέτρος Σαμαράς <psamaras1@gmail.com>, 2019
+# Στέργιος Γέμελας <sgemelas@protonmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-29 00:49+0200\n"
-"PO-Revision-Date: 2021-08-28 22:49+0000\n"
-"Last-Translator: Ápo. <apostolos.papadimitriu@gmail.com>\n"
+"PO-Revision-Date: 2021-08-30 10:43+0000\n"
+"Last-Translator: Στέργιος Γέμελας <sgemelas@protonmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/xfce/xfce-apps/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -104,11 +105,11 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr ""
+msgstr "Επιλέξτε την περιοχή του στιγμιότυπου κάνοντας κλικ σε ένα σημείο στην οθόνη και χωρίς να αφήσετε το κουμπί του ποντικιού, σύρετε το ποντίκι στην άλλη γωνία της περιοχής και αφήστε το κουμπί.\n \nΠατήστε Ctrl ενώ σύρετε το ποντίκι για να μετακινήσετε την περιοχή."
 
 #: ../lib/screenshooter-dialogs.c:797
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Επιλογές</span>"
 
 #: ../lib/screenshooter-dialogs.c:817
 msgid "Capture the mouse pointer"
@@ -120,13 +121,13 @@ msgstr "Εμφάνιση του κέρσορα του ποντικιού στο 
 
 #: ../lib/screenshooter-dialogs.c:828
 msgid "Capture the window border"
-msgstr ""
+msgstr "Καταγραφή του περιθωρίου του παραθύρου"
 
 #: ../lib/screenshooter-dialogs.c:833
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "Εμφάνιση του περιθωρίου του παραθύρου στο στιγμιότυπο.\nΗ απενεργοποίηση αυτής της επιλογής δεν επηρεάζει τα παράθυρα CSD."
 
 #: ../lib/screenshooter-dialogs.c:850
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -183,11 +184,11 @@ msgstr "Εφαρμογή να ανοίξει το στιγμιοτύπο οθό�
 
 #: ../lib/screenshooter-dialogs.c:1064
 msgid "Host on Imgur™"
-msgstr ""
+msgstr "Ανέβασμα στο Imgur™"
 
 #: ../lib/screenshooter-dialogs.c:1068
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
-msgstr ""
+msgstr "Ανέβασμα στο Imgur™, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων"
 
 #: ../lib/screenshooter-dialogs.c:1080
 msgid ""
@@ -207,15 +208,15 @@ msgstr "Αποθήκευση στιγμιοτύπου ως ... "
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "PNG File"
-msgstr ""
+msgstr "Αρχείο PNG"
 
 #: ../lib/screenshooter-dialogs.c:1191
 msgid "JPG File"
-msgstr ""
+msgstr "Αρχείο JPG"
 
 #: ../lib/screenshooter-dialogs.c:1192
 msgid "BMP File"
-msgstr ""
+msgstr "Αρχείο BMP"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -405,7 +406,7 @@ msgstr "Επιλογή μία περιοχής για αρπαγή με το π�
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "Μονοπάτι αρχείου ή καταλόγου όπου θα αποθηκευτεί το στιγμιότυπο, δέχεται επεκτάσεις png, jpg και bmp"
 
 #: ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
