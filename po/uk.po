@@ -5,14 +5,15 @@
 # Translators:
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2008
 # Olexandr Nesterenko <nolexndr@gmail.com>, 2020
+# Taras Panchenko <top39@ukr.net>, 2021
 # Yarema aka Knedlyk <yupadmin@gmail.com>, 2013-2015,2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-29 00:49+0200\n"
-"PO-Revision-Date: 2021-08-28 22:49+0000\n"
-"Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
+"PO-Revision-Date: 2021-09-03 20:53+0000\n"
+"Last-Translator: Taras Panchenko <top39@ukr.net>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/xfce/xfce-apps/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,7 +96,7 @@ msgstr "Зробити знімок активного вікна"
 
 #: ../lib/screenshooter-dialogs.c:779
 msgid "Select a region"
-msgstr "Виділеної області"
+msgstr "Виділена область"
 
 #: ../lib/screenshooter-dialogs.c:784
 msgid ""
@@ -106,7 +107,7 @@ msgstr "Виберіть область для захоплення шляхом
 
 #: ../lib/screenshooter-dialogs.c:797
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Додатково</span>"
 
 #: ../lib/screenshooter-dialogs.c:817
 msgid "Capture the mouse pointer"
@@ -118,13 +119,13 @@ msgstr "Показувати курсор миші на знімку"
 
 #: ../lib/screenshooter-dialogs.c:828
 msgid "Capture the window border"
-msgstr ""
+msgstr "Захват грані вікна"
 
 #: ../lib/screenshooter-dialogs.c:833
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "Відобразити грань вікна на знімку.\nВимкнення цієї опції не впливає на вікна\nз користувацьким оформленням."
 
 #: ../lib/screenshooter-dialogs.c:850
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -157,7 +158,7 @@ msgstr "Зберегти"
 
 #: ../lib/screenshooter-dialogs.c:995
 msgid "Save the screenshot to a PNG file"
-msgstr "Зберегти знімок у файл PNG"
+msgstr "Зберегти знімок у файл"
 
 #: ../lib/screenshooter-dialogs.c:1004
 msgid "Copy to the clipboard"
@@ -181,11 +182,11 @@ msgstr "Програма для відкриття знімку екрану"
 
 #: ../lib/screenshooter-dialogs.c:1064
 msgid "Host on Imgur™"
-msgstr ""
+msgstr "Розмістити на Imgur™"
 
 #: ../lib/screenshooter-dialogs.c:1068
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
-msgstr ""
+msgstr "Розмістити знімок на Imgur™, безкоштовному online-сервісі розміщення зображень"
 
 #: ../lib/screenshooter-dialogs.c:1080
 msgid ""
@@ -193,7 +194,7 @@ msgid ""
 "available and there is no guarantee it can be certainly deleted.\n"
 "Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
-msgstr ""
+msgstr "Слідкуйте за чутливим вмістом, завантажене зображення буде загальнодоступним і не гарантовано, що його згодом можна буде видалити. \nXfce НЕ пов'язане з хостингом і ця інтеграція не схвалена Imgur ™.\nЯкщо ви використовуєте цю функцію, ви повинні погодитися із\n<a href=\"https://imgur.com/tos\">Умовами надання послуг</a>Imgur™."
 
 #: ../lib/screenshooter-dialogs.c:1111
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -205,15 +206,15 @@ msgstr "Зберегти знімок як..."
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "PNG File"
-msgstr ""
+msgstr "Файл PNG"
 
 #: ../lib/screenshooter-dialogs.c:1191
 msgid "JPG File"
-msgstr ""
+msgstr "Файл JPG"
 
 #: ../lib/screenshooter-dialogs.c:1192
 msgid "BMP File"
-msgstr ""
+msgstr "Файл BMP"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
@@ -241,7 +242,7 @@ msgstr "Imgur"
 
 #: ../lib/screenshooter-imgur-dialog.c:134
 msgid "Your uploaded image"
-msgstr ""
+msgstr "Ви завантажили зображення"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -253,15 +254,15 @@ msgstr "Посилання"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:3
 msgid "Tiny"
-msgstr ""
+msgstr "Малий"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:4
 msgid "Medium"
-msgstr ""
+msgstr "Середній"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:5
 msgid "Full"
-msgstr ""
+msgstr "Повний"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:6
 msgid "Copy"
@@ -269,7 +270,7 @@ msgstr "Копіювати"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:7
 msgid "View in browser"
-msgstr ""
+msgstr "Переглянути у web браузері"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:8
 msgid "Image"
@@ -301,11 +302,11 @@ msgstr "Тип"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:15
 msgid "Direct image"
-msgstr ""
+msgstr "Пряме посилання"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:16
 msgid "Link to full size"
-msgstr ""
+msgstr "Посилання на повнорозмірне зображення"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:17
 msgid "Embed into code"
@@ -320,11 +321,11 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr ""
+msgstr "Це посилання відображається лише один раз. Обов’язково збережіть його, якщо бажаєте мати змогу видалити це зображення. Наразі ми не підтримуємо зв’язування зображень з обліковими записами Imgur."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
-msgstr ""
+msgstr "Посилання для видалення"
 
 #: ../lib/screenshooter-job-callbacks.c:73
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
@@ -363,7 +364,7 @@ msgstr "Заголовок:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "Заголовок знімку. Його буде використано при відображенні на сервісі розміщення знімків."
+msgstr "Заголовок знімку, який буде використано при відображенні на сервісі розміщення зображень"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:258
@@ -374,7 +375,7 @@ msgstr "Коментар:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "Коментар до знімку. Буде використано при відображенні на сервісі розміщення знімків."
+msgstr "Коментар до знімку. Буде використано при відображенні знімку на сервісі розміщення зображень"
 
 #: ../src/main.c:50
 msgid "Copy the screenshot to the clipboard"
@@ -390,7 +391,7 @@ msgstr "Відображати курсор миші на знімку"
 
 #: ../src/main.c:70
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "Видаляє грань вікна зі знімку"
 
 #: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
 msgid ""
@@ -403,11 +404,11 @@ msgstr "Виберіть область для захоплення шляхом
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "Шлях до файлу або каталогу, де буде збережено знімок, прийнятні розширення png, jpg та bmp"
 
 #: ../src/main.c:92
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Завантаження знімку екрану на Imgur, вільний онлайн сервіс обміну малюнками"
+msgstr "Розмістити знімок на Imgur, безкоштовному online-сервісі розміщення зображень"
 
 #: ../src/main.c:97
 msgid "Version information"
@@ -436,7 +437,7 @@ msgstr "%s: %s\nСпробуйте, %s --help щоб побачити повни
 #: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Отримати знімки всього екрану, активного вікна або окремої області"
+msgstr "Отримати знімки всього екрану, активного вікна або виділеної області"
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
@@ -445,4 +446,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG or "
 "JPG file, copy it to the clipboard, open it using another application, or "
 "host it on imgur, a free online image hosting service."
-msgstr ""
+msgstr "Дозволяє отримати знімок всього екрану, активного вікна або виділеної області. Ви можете обрати затримку до виконання знімку та дії, які будуть зроблені зі знімком екрана: збереження у файл PNG, BMP або JPG, копіювання у буфер обміну, відкривання за допомогою іншої програми або розміщення на на Imgur, безкоштовному сервісі розміщення знімків."
