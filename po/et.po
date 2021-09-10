@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-29 00:49+0200\n"
-"PO-Revision-Date: 2021-08-28 22:49+0000\n"
+"PO-Revision-Date: 2021-09-10 20:53+0000\n"
 "Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/xfce/xfce-apps/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -341,7 +341,7 @@ msgstr "Kasutaja:"
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
-msgstr "Sinu kasutajaanimi; kui sul kasutajanime pole, siis palun loo see ülalpool näidatud veebilehel"
+msgstr "Sinu kasutajanimi; kui sul kasutajanime pole, siis palun loo see ülalpool näidatud veebilehel"
 
 #. Create the password label
 #: ../lib/screenshooter-job-callbacks.c:231
@@ -434,7 +434,7 @@ msgstr "%s: %s\n%s --help Näitab täielikku loendit käsurea valikutest.\n"
 #: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Tehke ekraanipildid tervest ekraanist, käsilolevast aknast või valitud alast"
+msgstr "Tee ekraanipildid tervest ekraanist, käsilolevast aknast või valitud alast"
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
