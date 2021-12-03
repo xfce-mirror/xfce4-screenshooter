@@ -6,14 +6,14 @@
 # Edin Veskovic <edin.lockedin@gmail.com>, 2018-2020
 # Edin Veskovic <edin.lockedin@gmail.com>, 2014-2015
 # Edin Veskovic <edin.lockedin@gmail.com>, 2014
-# Ivica  Kolić <ikoli@yahoo.com>, 2013,2018-2019
+# Ivica  Kolić <ikoli@yahoo.com>, 2013,2018-2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-29 00:49+0200\n"
-"PO-Revision-Date: 2021-08-28 22:49+0000\n"
-"Last-Translator: Edin Veskovic <edin.lockedin@gmail.com>\n"
+"PO-Revision-Date: 2021-12-03 17:38+0000\n"
+"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/xfce/xfce-apps/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -206,15 +206,15 @@ msgstr "Spremi screenshot kao ..."
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "PNG File"
-msgstr ""
+msgstr "PNG datoteka"
 
 #: ../lib/screenshooter-dialogs.c:1191
 msgid "JPG File"
-msgstr ""
+msgstr "JPG datoteka"
 
 #: ../lib/screenshooter-dialogs.c:1192
 msgid "BMP File"
-msgstr ""
+msgstr "BMP datoteka"
 
 #: ../lib/screenshooter-utils.c:304
 #, c-format
