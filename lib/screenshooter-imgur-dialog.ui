@@ -5,27 +5,27 @@
   <object class="GtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">edit-copy</property>
+    <property name="icon_name">edit-copy-symbolic</property>
   </object>
   <object class="GtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">web-browser</property>
+    <property name="icon_name">web-browser-symbolic</property>
   </object>
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">edit-copy</property>
+    <property name="icon_name">edit-copy-symbolic</property>
   </object>
   <object class="GtkImage" id="image4">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">edit-copy</property>
+    <property name="icon_name">edit-copy-symbolic</property>
   </object>
   <object class="GtkImage" id="image6">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">web-browser</property>
+    <property name="icon_name">web-browser-symbolic</property>
   </object>
   <object class="GtkNotebook" id="dialog-notebook">
     <property name="visible">True</property>

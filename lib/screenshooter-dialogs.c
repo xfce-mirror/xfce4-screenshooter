@@ -515,7 +515,7 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
   gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
   gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (dialog), 20);
-  gtk_window_set_icon_name (GTK_WINDOW (dialog), "document-save");
+  gtk_window_set_icon_name (GTK_WINDOW (dialog), "document-save-symbolic");
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 12);
 
   gtk_label_set_markup (GTK_LABEL (label1),
@@ -662,8 +662,8 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
     {
       dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-        "help-browser", _("_Help"), GTK_RESPONSE_HELP,
-        "window-close", _("_Close"), GTK_RESPONSE_OK,
+        "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
+        "window-close-symbolic", _("_Close"), GTK_RESPONSE_OK,
         NULL);
 
       xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Preferences"));
@@ -672,7 +672,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
     {
       dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-        "help-browser", _("_Help"), GTK_RESPONSE_HELP,
+        "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
         "", _("_Cancel"), GTK_RESPONSE_CANCEL,
         "", _("_OK"), GTK_RESPONSE_OK,
         NULL);
@@ -901,7 +901,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-    "help-browser", _("_Help"), GTK_RESPONSE_HELP,
+    "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
     "", _("_Back"), GTK_RESPONSE_REJECT,
     "", _("_Cancel"), GTK_RESPONSE_CANCEL,
     "", _("_OK"), GTK_RESPONSE_OK,
@@ -1047,7 +1047,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
       gtk_container_add (GTK_CONTAINER (box), radio);
 
       /* Upload to imgur warning info */
-      image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_BUTTON);
+      image = gtk_image_new_from_icon_name ("dialog-warning-symbolic", GTK_ICON_SIZE_BUTTON);
       label = gtk_label_new (NULL);
       gtk_label_set_markup (GTK_LABEL (label),
         _("Watch for sensitive content, the uploaded image will be publicly\n"

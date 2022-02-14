@@ -377,7 +377,7 @@ void screenshooter_error (const gchar *format, ...)
                                    GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
                                    NULL);
   gtk_window_set_title (GTK_WINDOW (dialog), _("Error"));
-  gtk_window_set_icon_name (GTK_WINDOW (dialog), "dialog-error");
+  gtk_window_set_icon_name (GTK_WINDOW (dialog), "dialog-error-symbolic");
   gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog), message);
 
   gtk_dialog_run (GTK_DIALOG (dialog));
