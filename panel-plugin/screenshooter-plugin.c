@@ -106,32 +106,6 @@ set_panel_button_tooltip             (PluginData           *pd);
 
 /* Internal functions */
 
-/* Returns a preferred icon size */
-static gint
-get_preferred_icon_size (XfcePanelPlugin *plugin)
-{
-#if LIBXFCE4PANEL_CHECK_VERSION (4,13,0)
-  g_printf ("using 4.13\n");
-  return xfce_panel_plugin_get_icon_size (plugin);
-#else
-  /* fall-back for older panel versions */
-  g_printf ("using 4.12\n");
-  gint width;
-  width = xfce_panel_plugin_get_size (plugin) / xfce_panel_plugin_get_nrows (plugin);
-
-  if (width <= 27)
-    return 16;
-  if (width < 34)
-    return 24;
-  if (width < 40)
-    return 32;
-
-  return width;
-#endif
-}
-
-
-
 /* Modify the size of the panel button
 Returns TRUE if succesful.
 */
@@ -146,7 +120,7 @@ cb_set_size (XfcePanelPlugin *plugin, int size, PluginData *pd)
   TRACE ("Request size for the plugin");
   gtk_widget_set_size_request (GTK_WIDGET (plugin), size, size);
 
-  icon_size = get_preferred_icon_size (plugin);
+  icon_size = xfce_panel_plugin_get_icon_size (plugin);
   gtk_image_set_pixel_size (GTK_IMAGE (pd->image), icon_size);
 
   return TRUE;
@@ -394,7 +368,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   TRACE ("Create the panel button");
   pd->button = xfce_panel_create_button ();
 
-  icon_size = get_preferred_icon_size (plugin);
+  icon_size = xfce_panel_plugin_get_icon_size (plugin);
   pd->image = gtk_image_new_from_icon_name (SCREENSHOT_ICON_NAME, icon_size);
 
   gtk_container_add (GTK_CONTAINER (pd->button), GTK_WIDGET (pd->image));

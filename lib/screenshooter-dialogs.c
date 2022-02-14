@@ -660,39 +660,22 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   /* Create the dialog */
   if (plugin)
     {
-#if LIBXFCE4UI_CHECK_VERSION (4,14,0)
       dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
         "help-browser", _("_Help"), GTK_RESPONSE_HELP,
         "window-close", _("_Close"), GTK_RESPONSE_OK,
         NULL);
-#else
-      dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
-        NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-        "gtk-help", GTK_RESPONSE_HELP,
-        "gtk-close", GTK_RESPONSE_OK,
-        NULL);
-#endif
 
       xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Preferences"));
     }
   else
     {
-#if LIBXFCE4UI_CHECK_VERSION (4,14,0)
       dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
         "help-browser", _("_Help"), GTK_RESPONSE_HELP,
         "", _("_Cancel"), GTK_RESPONSE_CANCEL,
         "", _("_OK"), GTK_RESPONSE_OK,
         NULL);
-#else
-      dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
-        NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-        "gtk-help", GTK_RESPONSE_HELP,
-        "gtk-cancel", GTK_RESPONSE_CANCEL,
-        "gtk-ok", GTK_RESPONSE_OK,
-        NULL);
-#endif
 
       xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Take a screenshot"));
     }
@@ -916,7 +899,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GdkPixbuf *thumbnail;
   GdkCursor *cursor;
 
-#if LIBXFCE4UI_CHECK_VERSION (4,14,0)
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
     "help-browser", _("_Help"), GTK_RESPONSE_HELP,
@@ -924,15 +906,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
     "", _("_Cancel"), GTK_RESPONSE_CANCEL,
     "", _("_OK"), GTK_RESPONSE_OK,
     NULL);
-#else
-  dlg = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
-    NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-    "gtk-help", GTK_RESPONSE_HELP,
-    "gtk-go-back", GTK_RESPONSE_REJECT,
-    "gtk-cancel", GTK_RESPONSE_CANCEL,
-    "gtk-ok", GTK_RESPONSE_OK,
-    NULL);
-#endif
 
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg),
                                    _("Choose what to do with the screenshot"));

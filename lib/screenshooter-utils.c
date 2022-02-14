@@ -496,35 +496,10 @@ screenshooter_f1_key (GtkWidget *widget, GdkEventKey *event, gpointer user_data)
 void
 screenshooter_get_screen_geometry (GdkRectangle *geometry)
 {
-#if LIBXFCE4UI_CHECK_VERSION (4,14,0)
-  GdkRectangle *geometry2 = xfce_gdk_screen_get_geometry ();
-  geometry->width = geometry2->width;
-  geometry->height = geometry2->height;
-  g_free (geometry2);
-#else
-  GdkDisplay *display = gdk_display_get_default ();
-  int num_monitors = gdk_display_get_n_monitors (display);
-
-  gint x, y, w, h;
-
-  x = y = G_MAXINT;
-  w = h = G_MININT;
-
-  for (int i = 0; i < num_monitors; i++)
-    {
-      GdkRectangle rect;
-      GdkMonitor *monitor = gdk_display_get_monitor (display, i);
-      gdk_monitor_get_geometry (monitor, &rect);
-
-      x = MIN (x, rect.x);
-      y = MIN (y, rect.y);
-      w = MAX (w, rect.x + rect.width);
-      h = MAX (h, rect.y + rect.height);
-    }
-
-  geometry->width = w - x;
-  geometry->height = h - y;
-#endif
+  GdkRectangle *tmp = xfce_gdk_screen_get_geometry ();
+  geometry->width = tmp->width;
+  geometry->height = tmp->height;
+  g_free (tmp);
 }
 
 
