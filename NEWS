@@ -1,3 +1,25 @@
+1.9.10 (2022-03-06)
+======
+- Use symbolic icons
+- Bump Xfce dependencies to 4.14
+- _NET_FRAME_EXTENTS support
+- Add back button to take new screenshot (!29)
+- Fix Imgur upload via CLI (!26)
+- Set up ScreenshotData after commandline parsing
+- Fix compile warning (#62)
+- Update to description and addition of donate and translate links
+- Replace link to bugzilla with gitlab (!25)
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Korean, Latvian, Lithuanian, Malay, Norwegian
+  Bokmål, Norwegian Nynorsk, Occitan (post 1500), Persian (Iran),
+  Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, Uyghur
+
 1.9.9
 ======
 - Add link to Imgur ToS (#54)
