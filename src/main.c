@@ -36,6 +36,7 @@ gboolean mouse = FALSE;
 gboolean no_border = FALSE;
 gboolean clipboard = FALSE;
 gboolean upload_imgur = FALSE;
+gboolean show_in_folder = FALSE;
 gchar *screenshot_dir = NULL;
 gchar *application = NULL;
 gint delay = 0;
@@ -85,6 +86,11 @@ static GOptionEntry entries[] =
   {
     "save", 's', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_FILENAME, &screenshot_dir,
     N_("File path or directory where the screenshot will be saved, accepts png, jpg and bmp extensions"),
+    NULL
+  },
+  {
+    "show in folder", 'S', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &show_in_folder,
+    N_("Show the saved file in the folder."),
     NULL
   },
   {
@@ -190,7 +196,10 @@ int main (int argc, char **argv)
   if ((application != NULL) && !(fullscreen || window || region))
     g_printerr (ignore_error, "open");
   if ((screenshot_dir != NULL)  && !(fullscreen || window || region ))
-    g_printerr (ignore_error, "save");
+    {
+      g_printerr (ignore_error, "save");
+      screenshot_dir = NULL;
+    }
   if (upload_imgur && !(fullscreen || window || region))
     g_printerr (ignore_error, "imgur");
   if (clipboard && !(fullscreen || window || region))
@@ -199,6 +208,14 @@ int main (int argc, char **argv)
     g_printerr (ignore_error, "delay");
   if (mouse && !(fullscreen || window || region))
     g_printerr (ignore_error, "mouse");
+
+  /* Warn when dependent option is not present */
+  if (screenshot_dir == NULL && show_in_folder)
+    {
+      g_printerr ("The -S option is only used when --save is given."
+        "It will be ignored.\n");
+      show_in_folder = FALSE;
+    }
 
   /* Just print the version if we are in version mode */
   if (version)
@@ -268,6 +285,7 @@ int main (int argc, char **argv)
         {
           sd->action = SAVE;
           sd->action_specified = TRUE;
+          sd->show_in_folder = show_in_folder;
         }
 
       if (clipboard)
