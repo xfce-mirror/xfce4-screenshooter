@@ -19,8 +19,6 @@
 
 #include "screenshooter-dialogs.h"
 #include "screenshooter-actions.h"
-#include <unistd.h>
-#include <limits.h>
 
 #define ICON_SIZE 16
 #define THUMB_X_SIZE 200
@@ -1287,9 +1285,7 @@ saved_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
       GDBusProxy *proxy;
       GVariantBuilder *builder;
       gchar *id;
-      char hostname[HOST_NAME_MAX + 1];
-      gethostname(hostname, HOST_NAME_MAX + 1);
-      id = g_strdup_printf("%s-%i", hostname, getpid());
+      id = g_strdup_printf("%s-%i", g_get_host_name(), getpid());
       proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
                                          G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
                                          NULL,
