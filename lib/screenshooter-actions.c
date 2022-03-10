@@ -23,7 +23,6 @@
 #include "screenshooter-global.h"
 #include "screenshooter-dialogs.h"
 #include "screenshooter-imgur.h"
-#include <stdio.h>
 
 static void
 cb_help_response (GtkWidget *dialog, gint response, gpointer unused)

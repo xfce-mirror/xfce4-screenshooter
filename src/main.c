@@ -103,11 +103,6 @@ static GOptionEntry entries[] =
     NULL
   },
   {
-    "yogesh", 'y', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &window,
-    N_("Perform custom actions"),
-    NULL
-  },
-  {
     NULL, ' ', 0, 0, NULL,
     NULL,
     NULL
