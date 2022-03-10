@@ -19,6 +19,8 @@
 
 #include "screenshooter-dialogs.h"
 #include "screenshooter-actions.h"
+/* For getpid() */
+#include <unistd.h>
 
 #define ICON_SIZE 16
 #define THUMB_X_SIZE 200
