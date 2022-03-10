@@ -420,7 +420,6 @@ static GdkPixbuf
   gint scale;
   GdkRectangle real_coords;
   GdkRectangle screen_coords;
-  GdkRectangle screen_geometry;
   GtkBorder extents;
   gboolean has_extents;
 
