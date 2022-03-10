@@ -40,6 +40,7 @@ static gboolean
 action_idle (gpointer user_data)
 {
   gchar *save_location = NULL;
+  gboolean show_saved_dialog = FALSE;
   ScreenshotData *sd = user_data;
 
   if (!sd->action_specified)
@@ -75,6 +76,10 @@ action_idle (gpointer user_data)
           screenshooter_region_dialog_show (sd, FALSE);
           return FALSE;
         }
+      if ( (response == GTK_RESPONSE_OK) && (sd->action & SAVE))
+        {
+          show_saved_dialog = TRUE;
+        }
     }
 
   if (sd->action & CLIPBOARD)
@@ -103,6 +108,7 @@ action_idle (gpointer user_data)
                                                          sd->last_extension,
                                                          TRUE,
                                                          TRUE);
+          sd->save_location = g_build_filename ("file://", save_location, NULL);
 
           g_free (filename);
 
@@ -118,6 +124,10 @@ action_idle (gpointer user_data)
               /* Show actions dialog again if no action was specified from CLI */
               return TRUE;
             }
+        }
+      if (show_saved_dialog)
+        {
+          screenshooter_saved_notification_dialog_show(sd);
         }
     }
   else
@@ -180,7 +190,7 @@ action_idle (gpointer user_data)
       g_free (save_location);
     }
 
-  if (!sd->plugin)
+  if (!sd->plugin && !show_saved_dialog)
     gtk_main_quit ();
 
   g_object_unref (sd->screenshot);
