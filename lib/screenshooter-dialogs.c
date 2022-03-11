@@ -19,6 +19,8 @@
 
 #include "screenshooter-dialogs.h"
 #include "screenshooter-actions.h"
+/* For getpid() */
+#include <unistd.h>
 
 #define ICON_SIZE 16
 #define THUMB_X_SIZE 200
@@ -1236,4 +1238,85 @@ gchar
   g_object_unref (save_file);
 
   return result;
+}
+
+
+GtkWidget *screenshooter_saved_notification_dialog_new (ScreenshotData *sd)
+{
+  GtkWidget *dlg, *box, *label;
+  gchar *notice;
+
+  dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot Saved"),
+    NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+    "", _("_Show in folder"), GTK_RESPONSE_ACCEPT,
+    "", _("_OK"), GTK_RESPONSE_OK,
+    NULL);
+  
+  gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
+  gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
+  gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
+  gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
+  gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
+
+  /* Create the main box for the dialog */
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
+  gtk_widget_set_hexpand (box, TRUE);
+  gtk_widget_set_vexpand (box, TRUE);
+  gtk_widget_set_margin_top (box, 6);
+  gtk_widget_set_margin_bottom (box, 0);
+  gtk_widget_set_margin_start (box, 12);
+  gtk_widget_set_margin_end (box, 12);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 12);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), box, TRUE, TRUE, 0);
+
+  notice = g_strconcat("Screenshot saved at ", sd->screenshot_dir, NULL);
+  label = gtk_label_new (notice);
+  gtk_widget_set_halign (label, GTK_ALIGN_CENTER);
+  gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
+  gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
+  g_free(notice);
+  return dlg;
+}
+
+static void
+saved_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
+{
+  if (response == GTK_RESPONSE_ACCEPT)
+    {
+      GDBusProxy *proxy;
+      GVariantBuilder *builder;
+      gchar *id;
+      id = g_strdup_printf("%s-%i", g_get_host_name(), getpid());
+      proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                         G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
+                                         NULL,
+                                         "org.freedesktop.FileManager1",
+                                         "/org/freedesktop/FileManager1",
+                                         "org.freedesktop.FileManager1",
+                                         NULL,
+                                         NULL);
+      builder = g_variant_builder_new (G_VARIANT_TYPE ("as"));
+      g_variant_builder_add (builder, "s", sd->save_location);
+      g_dbus_proxy_call_sync (proxy, "ShowItems",
+                                   g_variant_new ("(ass)", builder, g_variant_new("s", id)),
+                                   G_DBUS_CALL_FLAGS_NONE,
+                                   -1,
+                                   NULL,
+                                   NULL);
+      g_free(id);
+    }
+  gtk_widget_destroy (dialog);
+  gtk_main_quit ();
+    
+}
+
+void screenshooter_saved_notification_dialog_show(ScreenshotData *sd) {
+  GtkWidget *dialog = screenshooter_saved_notification_dialog_new(sd);
+  g_signal_connect (dialog, "response",
+                  G_CALLBACK (saved_dialog_response), sd);
+  gtk_widget_show (dialog);
+  if (gtk_main_level() == 0)
+    gtk_main ();
+
 }
