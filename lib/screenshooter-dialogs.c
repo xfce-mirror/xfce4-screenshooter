@@ -630,7 +630,8 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
   else
     {
       gtk_widget_destroy (dialog);
-      gtk_main_quit ();
+      if (!sd->plugin)
+        gtk_main_quit ();
     }
 }
 
