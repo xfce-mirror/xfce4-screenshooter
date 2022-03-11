@@ -4,19 +4,20 @@
 # 
 # Translators:
 # Aleksandr P, 2013
+# Andrei Stepanov, 2022
 # Denis Koryavov <dkoryavov@yandex.ru>, 2009
 # Igor <f2404@yandex.ru>, 2018-2019
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2015
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2014-2015
-# AlexanderFilev <avfill@outlook.com>, 2020
+# Alexander Filёv, 2020
 # Евгений Кольцов <scheugen86@gmail.com>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-29 00:49+0200\n"
-"PO-Revision-Date: 2021-08-28 22:49+0000\n"
-"Last-Translator: Igor <f2404@yandex.ru>\n"
+"PO-Revision-Date: 2022-03-11 16:06+0000\n"
+"Last-Translator: Andrei Stepanov\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -122,7 +123,7 @@ msgstr "Отображать курсор мыши на снимке экран�
 
 #: ../lib/screenshooter-dialogs.c:828
 msgid "Capture the window border"
-msgstr ""
+msgstr "Захватывать границы окна"
 
 #: ../lib/screenshooter-dialogs.c:833
 msgid ""
