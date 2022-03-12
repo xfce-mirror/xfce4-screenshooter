@@ -50,6 +50,7 @@ gchar     *screenshooter_save_screenshot    (GdkPixbuf      *screenshot,
 gchar     *screenshooter_save_screenshot_to (GdkPixbuf      *screenshot,
                                              const gchar    *save_uri);
 GtkWidget *screenshooter_saved_notification_dialog_new  (ScreenshotData *sd);
-void screenshooter_saved_notification_dialog_show(ScreenshotData *sd);
+void screenshooter_saved_notification_dialog_show (ScreenshotData *sd);
+void screenshooter_show_in_folder (ScreenshotData *sd);
 
 #endif

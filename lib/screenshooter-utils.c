@@ -142,6 +142,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gint show_mouse = 1;
   gint show_border = 1;
   gboolean timestamp = TRUE;
+  gboolean show_saved_notice = TRUE;
   gchar *screenshot_dir = g_strdup (default_uri);
   gchar *title = g_strdup (_("Screenshot"));
   gchar *app = g_strdup ("none");
@@ -166,6 +167,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           show_border = xfce_rc_read_int_entry (rc, "show_border", 1);
           timestamp = xfce_rc_read_bool_entry (rc, "timestamp", TRUE);
           enable_imgur_upload = xfce_rc_read_bool_entry (rc, "enable_imgur_upload", TRUE);
+          show_saved_notice = xfce_rc_read_bool_entry(rc, "show_saved_notice", TRUE);
 
           g_free (app);
           app = g_strdup (xfce_rc_read_entry (rc, "app", "none"));
@@ -206,6 +208,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->last_user = last_user;
   sd->last_extension = last_extension;
   sd->enable_imgur_upload = enable_imgur_upload;
+  sd->show_saved_notice = show_saved_notice;
 }
 
 
@@ -234,6 +237,7 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   xfce_rc_write_entry (rc, "last_extension", sd->last_extension);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
   xfce_rc_write_bool_entry (rc, "enable_imgur_upload", sd->enable_imgur_upload);
+  xfce_rc_write_bool_entry (rc, "show_saved_notice", sd->show_saved_notice);
 
   /* do not save if action was specified from cli */
   if (!sd->action_specified)
