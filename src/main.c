@@ -36,6 +36,7 @@ gboolean mouse = FALSE;
 gboolean no_border = FALSE;
 gboolean clipboard = FALSE;
 gboolean upload_imgur = FALSE;
+gboolean show_in_folder = FALSE;
 gchar *screenshot_dir = NULL;
 gchar *application = NULL;
 gint delay = 0;
@@ -88,6 +89,11 @@ static GOptionEntry entries[] =
     NULL
   },
   {
+    "show in folder", 'S', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &show_in_folder,
+    N_("Show the saved file in the folder."),
+    NULL
+  },
+  {
     "imgur", 'i', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &upload_imgur,
     N_("Host the screenshot on Imgur, a free online image hosting service"),
     NULL
@@ -124,8 +130,7 @@ int main (int argc, char **argv)
   const gchar *conflict_error =
     _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
   const gchar *ignore_error =
-    _("The --%s option is only used when --fullscreen, --window or"
-      " --region is given. It will be ignored.\n");
+    _("The --%s option is only used when --%s is given. It will be ignored.\n");
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -188,17 +193,27 @@ int main (int argc, char **argv)
   /* Warn that action options, mouse and delay will be ignored in
    * non-cli mode */
   if ((application != NULL) && !(fullscreen || window || region))
-    g_printerr (ignore_error, "open");
+    g_printerr (ignore_error, "open", "fullscreen, --window or --region");
   if ((screenshot_dir != NULL)  && !(fullscreen || window || region ))
-    g_printerr (ignore_error, "save");
+    {
+      g_printerr (ignore_error, "save", "fullscreen, --window or --region");
+      screenshot_dir = NULL;
+    }
   if (upload_imgur && !(fullscreen || window || region))
-    g_printerr (ignore_error, "imgur");
+    g_printerr (ignore_error, "imgur", "fullscreen, --window or --region");
   if (clipboard && !(fullscreen || window || region))
-    g_printerr (ignore_error, "clipboard");
+    g_printerr (ignore_error, "clipboard", "fullscreen, --window or --region");
   if (delay && !(fullscreen || window || region))
-    g_printerr (ignore_error, "delay");
+    g_printerr (ignore_error, "delay", "fullscreen, --window or --region");
   if (mouse && !(fullscreen || window || region))
-    g_printerr (ignore_error, "mouse");
+    g_printerr (ignore_error, "mouse", "fullscreen, --window or --region");
+
+  /* Ignore if dependency options are not present */
+  if ((screenshot_dir == NULL) && show_in_folder)
+    {
+      g_printerr (ignore_error, "show-in-folder", "save");
+      show_in_folder = FALSE;
+    }
 
   /* Just print the version if we are in version mode */
   if (version)
@@ -268,6 +283,7 @@ int main (int argc, char **argv)
         {
           sd->action = SAVE;
           sd->action_specified = TRUE;
+          sd->show_in_folder = show_in_folder;
         }
 
       if (clipboard)

@@ -19,6 +19,8 @@
 
 #include "screenshooter-dialogs.h"
 #include "screenshooter-actions.h"
+/* For getpid() */
+#include <unistd.h>
 
 #define ICON_SIZE 16
 #define THUMB_X_SIZE 200
@@ -165,6 +167,15 @@ static void cb_save_toggled (GtkToggleButton *tb, ScreenshotData  *sd)
 {
   if (gtk_toggle_button_get_active (tb))
     sd->action = SAVE;
+}
+
+/* Set the show_saved_notice when the button is toggled */
+static void cb_save_notice_toggled (GtkToggleButton *tb, ScreenshotData *sd)
+{
+  if (gtk_toggle_button_get_active (tb))
+    sd->show_saved_notice = TRUE;
+  else
+    sd->show_saved_notice = FALSE;
 }
 
 
@@ -889,7 +900,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
 GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 {
-  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *popover;
+  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover;
   GtkWidget *actions_grid;
 
   GtkListStore *liststore;
@@ -958,7 +969,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_grid_set_row_spacing (GTK_GRID (actions_grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (actions_grid), 6);
   gtk_container_set_border_width (GTK_CONTAINER (actions_grid), 0);
-
+  
   /* Save option radio button */
   radio = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio), (sd->action & SAVE));
@@ -968,6 +979,21 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                     G_CALLBACK (cb_radiobutton_activate), dlg);
   gtk_widget_set_tooltip_text (radio, _("Save the screenshot to a PNG file"));
   gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 0, 1, 1);
+
+  /* Notify when saved checkbox */
+  checkbox = gtk_check_button_new_with_label (_("Notify when saved"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox),
+                                sd->show_saved_notice);
+  gtk_widget_set_margin_start(checkbox, 25);
+  g_signal_connect (G_OBJECT (checkbox), "toggled",
+                    G_CALLBACK (cb_save_notice_toggled), sd);
+  gtk_widget_set_tooltip_text (checkbox,
+                               _("Shows a notification when the screenshot is saved, along with a option to open in folder"));
+  g_signal_connect (G_OBJECT (radio), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), checkbox);
+  gtk_grid_attach (GTK_GRID (actions_grid), checkbox, 0, 1, 1, 1);
+  
+  
 
   if (sd->plugin ||
       gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
@@ -985,7 +1011,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                         G_CALLBACK (cb_clipboard_toggled), sd);
       g_signal_connect (G_OBJECT (radio), "activate",
                         G_CALLBACK (cb_radiobutton_activate), dlg);
-      gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 1, 1, 1);
+      gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 2, 1, 1);
     }
 
   /* Open with radio button */
@@ -1000,7 +1026,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                     G_CALLBACK (cb_radiobutton_activate), dlg);
   gtk_widget_set_tooltip_text (radio,
                                _("Open the screenshot with the chosen application"));
-  gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 2, 1, 1);
+  gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 3, 1, 1);
 
   /* Open with combobox */
   liststore = gtk_list_store_new (4, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_APP_INFO);
@@ -1014,7 +1040,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                                   "pixbuf", 0, NULL);
   populate_liststore (liststore);
   set_default_item (combobox, sd);
-  gtk_grid_attach (GTK_GRID (actions_grid), combobox, 1, 2, 1, 1);
+  gtk_grid_attach (GTK_GRID (actions_grid), combobox, 1, 3, 1, 1);
 
   g_signal_connect (G_OBJECT (combobox), "changed",
                     G_CALLBACK (cb_combo_active_item_changed), sd);
@@ -1031,7 +1057,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
       GtkWidget *image;
 
       box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
-      gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 4, 1, 1);
+      gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 5, 1, 1);
 
       radio =
         gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
@@ -1236,4 +1262,92 @@ gchar
   g_object_unref (save_file);
 
   return result;
+}
+
+
+GtkWidget *screenshooter_saved_notification_dialog_new (ScreenshotData *sd)
+{
+  GtkWidget *dlg, *box, *label;
+  gchar *notice;
+
+  dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot Saved"),
+    NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+    "", _("_Show in folder"), GTK_RESPONSE_ACCEPT,
+    "", _("_OK"), GTK_RESPONSE_OK,
+    NULL);
+  
+  gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
+  gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
+  gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
+  gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
+  gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
+
+  /* Create the main box for the dialog */
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
+  gtk_widget_set_hexpand (box, TRUE);
+  gtk_widget_set_vexpand (box, TRUE);
+  gtk_widget_set_margin_top (box, 6);
+  gtk_widget_set_margin_bottom (box, 0);
+  gtk_widget_set_margin_start (box, 12);
+  gtk_widget_set_margin_end (box, 12);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 12);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), box, TRUE, TRUE, 0);
+
+  notice = g_strconcat("Screenshot saved at ", sd->screenshot_dir, NULL);
+  label = gtk_label_new (notice);
+  gtk_widget_set_halign (label, GTK_ALIGN_CENTER);
+  gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
+  gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
+  g_free(notice);
+  return dlg;
+}
+
+static void
+saved_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
+{
+  if (response == GTK_RESPONSE_ACCEPT)
+    {
+      sd->show_in_folder = TRUE;
+      screenshooter_show_in_folder(sd);
+    }
+  gtk_widget_destroy (dialog);
+  gtk_main_quit ();
+    
+}
+
+void screenshooter_saved_notification_dialog_show(ScreenshotData *sd) 
+{
+  GtkWidget *dialog = screenshooter_saved_notification_dialog_new(sd);
+  g_signal_connect (dialog, "response",
+                  G_CALLBACK (saved_dialog_response), sd);
+  gtk_widget_show (dialog);
+  if (gtk_main_level() == 0)
+    gtk_main ();
+}
+
+void screenshooter_show_in_folder (ScreenshotData *sd)
+{
+  GDBusProxy *proxy;
+  GVariantBuilder *builder;
+  gchar *id;
+  id = g_strdup_printf("%s-%i", g_get_host_name(), getpid());
+  proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                      G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
+                                      NULL,
+                                      "org.freedesktop.FileManager1",
+                                      "/org/freedesktop/FileManager1",
+                                      "org.freedesktop.FileManager1",
+                                      NULL,
+                                      NULL);
+  builder = g_variant_builder_new (G_VARIANT_TYPE ("as"));
+  g_variant_builder_add (builder, "s", sd->save_location);
+  g_dbus_proxy_call_sync (proxy, "ShowItems",
+                                g_variant_new ("(ass)", builder, g_variant_new("s", id)),
+                                G_DBUS_CALL_FLAGS_NONE,
+                                -1,
+                                NULL,
+                                NULL);
+  g_free(id);
+  gtk_main_quit ();
 }
