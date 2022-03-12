@@ -53,12 +53,15 @@ typedef struct
   gboolean timestamp;
   gboolean enable_imgur_upload;
   gboolean path_is_dir;
+  gboolean show_in_folder;
+  gboolean show_saved_notice;
   gchar *screenshot_dir;
   gchar *title;
   gchar *app;
   GAppInfo *app_info;
   gchar *last_user;
   gchar *last_extension;
+  gchar *save_location;
   GdkPixbuf *screenshot;
 }
 ScreenshotData;
