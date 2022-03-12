@@ -176,7 +176,6 @@ static void cb_save_notice_toggled (GtkToggleButton *tb, ScreenshotData *sd)
     sd->show_saved_notice = TRUE;
   else
     sd->show_saved_notice = FALSE;
-  g_print("%d", sd->show_saved_notice);
 }
 
 
