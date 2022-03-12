@@ -1349,4 +1349,5 @@ void screenshooter_show_in_folder (ScreenshotData *sd)
                                 NULL,
                                 NULL);
   g_free(id);
+  gtk_main_quit ();
 }

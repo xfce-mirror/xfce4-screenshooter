@@ -41,6 +41,7 @@ action_idle (gpointer user_data)
 {
   gchar *save_location = NULL;
   ScreenshotData *sd = user_data;
+  gboolean quit = TRUE;
 
   if (!sd->action_specified)
     {
@@ -122,10 +123,11 @@ action_idle (gpointer user_data)
               /* Show actions dialog again if no action was specified from CLI */
               return TRUE;
             }
-        }
-      if (sd->show_saved_notice)
-        {
-          screenshooter_saved_notification_dialog_show(sd);
+          if (sd->show_saved_notice)
+          {
+            quit = FALSE;
+            screenshooter_saved_notification_dialog_show(sd);
+          }
         }
       if (sd->show_in_folder)
         {
@@ -192,7 +194,7 @@ action_idle (gpointer user_data)
       g_free (save_location);
     }
 
-  if (!sd->plugin && !sd->show_saved_notice)
+  if (!sd->plugin && quit)
     gtk_main_quit ();
 
   g_object_unref (sd->screenshot);
