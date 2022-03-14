@@ -167,13 +167,12 @@ static void cb_save_toggled (GtkToggleButton *tb, ScreenshotData  *sd)
     sd->action = SAVE;
 }
 
+
+
 /* Set the show_in_folder when the button is toggled */
 static void cb_show_in_folder_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
-  if (gtk_toggle_button_get_active (tb))
-    sd->show_in_folder = TRUE;
-  else
-    sd->show_in_folder = FALSE;
+  sd->show_in_folder = gtk_toggle_button_get_active (tb);
 }
 
 

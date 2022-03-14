@@ -83,10 +83,7 @@ action_idle (gpointer user_data)
   if (sd->action & SAVE)
     {
       if (!sd->path_is_dir)
-        {
-          save_location = screenshooter_save_screenshot_to (sd->screenshot, sd->screenshot_dir);
-          sd->save_location = g_build_filename ("file://", save_location, NULL);
-        }
+        save_location = screenshooter_save_screenshot_to (sd->screenshot, sd->screenshot_dir);
       else
         {
           gchar *filename;
@@ -106,7 +103,6 @@ action_idle (gpointer user_data)
                                                          sd->last_extension,
                                                          TRUE,
                                                          TRUE);
-          sd->save_location = g_build_filename ("file://", save_location, NULL);
 
           g_free (filename);
 
@@ -123,10 +119,9 @@ action_idle (gpointer user_data)
               return TRUE;
             }
         }
+
       if (sd->show_in_folder)
-        {
-          screenshooter_show_file_in_folder(sd);
-        }
+        screenshooter_show_file_in_folder (save_location);
     }
   else
     {

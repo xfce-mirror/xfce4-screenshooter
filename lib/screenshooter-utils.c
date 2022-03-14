@@ -635,11 +635,16 @@ screenshooter_get_gtk_frame_extents (GdkWindow *window,
 
 
 void
-screenshooter_show_file_in_folder (ScreenshotData *sd)
+screenshooter_show_file_in_folder (const gchar *save_location)
 {
   GDBusProxy *proxy;
   GVariantBuilder *builder;
-  gchar *id;
+  gchar *id, *url;
+
+  if (save_location == NULL)
+    return;
+
+  url = g_build_filename ("file://", save_location, NULL);
   id = g_strdup_printf("%s-%i", g_get_host_name(), getpid());
   proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
                                       G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
@@ -650,13 +655,14 @@ screenshooter_show_file_in_folder (ScreenshotData *sd)
                                       NULL,
                                       NULL);
   builder = g_variant_builder_new (G_VARIANT_TYPE ("as"));
-  g_variant_builder_add (builder, "s", sd->save_location);
+  g_variant_builder_add (builder, "s", url);
   g_dbus_proxy_call_sync (proxy, "ShowItems",
                                 g_variant_new ("(ass)", builder, g_variant_new("s", id)),
                                 G_DBUS_CALL_FLAGS_NONE,
                                 -1,
                                 NULL,
                                 NULL);
-  g_free(id);
+  g_free (id);
+  g_free (url);
   gtk_main_quit ();
 }
