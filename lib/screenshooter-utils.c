@@ -17,9 +17,6 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-/* For getpid() */
-#include <unistd.h>
-
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <gdk/gdk.h>
@@ -639,13 +636,14 @@ screenshooter_show_file_in_folder (const gchar *save_location)
 {
   GDBusProxy *proxy;
   GVariantBuilder *builder;
-  gchar *id, *url;
+  gchar *url, *startup_id;
 
   if (save_location == NULL)
     return;
 
   url = g_build_filename ("file://", save_location, NULL);
-  id = g_strdup_printf ("%s-%i", g_get_host_name (), getpid ());
+  startup_id = g_strdup_printf ("%s-%ld", "xfce4-screenshooter",
+                                g_get_monotonic_time () / G_TIME_SPAN_SECOND);
   proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
                                          G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
                                          NULL,
@@ -656,8 +654,9 @@ screenshooter_show_file_in_folder (const gchar *save_location)
   builder = g_variant_builder_new (G_VARIANT_TYPE ("as"));
   g_variant_builder_add (builder, "s", url);
   g_dbus_proxy_call_sync (proxy, "ShowItems",
-                          g_variant_new ("(ass)", builder, g_variant_new("s", id)),
+                          g_variant_new ("(ass)", builder, g_variant_new ("s", startup_id)),
                           G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL);
-  g_free (id);
+  g_variant_builder_unref (builder);
+  g_free (startup_id);
   g_free (url);
 }
