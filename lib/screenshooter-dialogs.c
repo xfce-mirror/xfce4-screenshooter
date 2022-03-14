@@ -966,7 +966,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_grid_set_row_spacing (GTK_GRID (actions_grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (actions_grid), 6);
   gtk_container_set_border_width (GTK_CONTAINER (actions_grid), 0);
-  
+
   /* Save option radio button */
   radio = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio), (sd->action & SAVE));
@@ -977,20 +977,16 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_widget_set_tooltip_text (radio, _("Save the screenshot to a PNG file"));
   gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 0, 1, 1);
 
-  /* Notify when saved checkbox */
+  /* Show in folder checkbox */
   checkbox = gtk_check_button_new_with_label (_("Show in Folder"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox),
-                                sd->show_in_folder);
-  gtk_widget_set_margin_start(checkbox, 25);
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox), sd->show_in_folder);
+  gtk_widget_set_margin_start (checkbox, 25);
   g_signal_connect (G_OBJECT (checkbox), "toggled",
                     G_CALLBACK (cb_show_in_folder_toggled), sd);
-  gtk_widget_set_tooltip_text (checkbox,
-                               _("Shows the saved file in the folder"));
   g_signal_connect (G_OBJECT (radio), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), checkbox);
+  gtk_widget_set_tooltip_text (checkbox, _("Shows the saved file in the folder"));
   gtk_grid_attach (GTK_GRID (actions_grid), checkbox, 0, 1, 1, 1);
-  
-  
 
   if (sd->plugin ||
       gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
