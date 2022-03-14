@@ -49,6 +49,5 @@ gchar     *screenshooter_save_screenshot    (GdkPixbuf      *screenshot,
                                              gboolean        show_preview);
 gchar     *screenshooter_save_screenshot_to (GdkPixbuf      *screenshot,
                                              const gchar    *save_uri);
-void screenshooter_show_in_folder (ScreenshotData *sd);
 
 #endif

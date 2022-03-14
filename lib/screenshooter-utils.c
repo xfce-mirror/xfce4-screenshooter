@@ -17,6 +17,9 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+/* For getpid() */
+#include <unistd.h>
+
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <gdk/gdk.h>
@@ -627,4 +630,33 @@ screenshooter_get_gtk_frame_extents (GdkWindow *window,
   XFree (data);
   return TRUE;
 #endif
+}
+
+
+
+void
+screenshooter_show_in_folder (ScreenshotData *sd)
+{
+  GDBusProxy *proxy;
+  GVariantBuilder *builder;
+  gchar *id;
+  id = g_strdup_printf("%s-%i", g_get_host_name(), getpid());
+  proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+                                      G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
+                                      NULL,
+                                      "org.freedesktop.FileManager1",
+                                      "/org/freedesktop/FileManager1",
+                                      "org.freedesktop.FileManager1",
+                                      NULL,
+                                      NULL);
+  builder = g_variant_builder_new (G_VARIANT_TYPE ("as"));
+  g_variant_builder_add (builder, "s", sd->save_location);
+  g_dbus_proxy_call_sync (proxy, "ShowItems",
+                                g_variant_new ("(ass)", builder, g_variant_new("s", id)),
+                                G_DBUS_CALL_FLAGS_NONE,
+                                -1,
+                                NULL,
+                                NULL);
+  g_free(id);
+  gtk_main_quit ();
 }
