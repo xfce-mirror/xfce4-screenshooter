@@ -635,7 +635,7 @@ screenshooter_get_gtk_frame_extents (GdkWindow *window,
 
 
 void
-screenshooter_show_in_folder (ScreenshotData *sd)
+screenshooter_show_file_in_folder (ScreenshotData *sd)
 {
   GDBusProxy *proxy;
   GVariantBuilder *builder;

@@ -125,7 +125,7 @@ action_idle (gpointer user_data)
         }
       if (sd->show_in_folder)
         {
-          screenshooter_show_in_folder(sd);
+          screenshooter_show_file_in_folder(sd);
         }
     }
   else
