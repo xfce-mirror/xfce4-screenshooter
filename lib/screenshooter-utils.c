@@ -664,5 +664,4 @@ screenshooter_show_file_in_folder (const gchar *save_location)
                                 NULL);
   g_free (id);
   g_free (url);
-  gtk_main_quit ();
 }
