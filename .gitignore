@@ -9,6 +9,7 @@ Makefile.in
 /compile
 /config.*
 /configure
+/configure~
 /depcomp
 /install-sh
 /intltool-*.in
@@ -17,6 +18,7 @@ Makefile.in
 /po/Makefile.in.in
 /configure.ac
 /m4/
+/mkinstalldirs
 
 # Autotools files generated into builddir (for in-tree builds)
 Makefile

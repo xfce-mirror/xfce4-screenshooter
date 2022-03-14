@@ -119,6 +119,9 @@ action_idle (gpointer user_data)
               return TRUE;
             }
         }
+
+      if (sd->show_in_folder)
+        screenshooter_show_file_in_folder (save_location);
     }
   else
     {
