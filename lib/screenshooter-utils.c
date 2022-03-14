@@ -636,12 +636,12 @@ screenshooter_show_file_in_folder (const gchar *save_location)
 {
   GDBusProxy *proxy;
   GVariantBuilder *builder;
-  gchar *url, *startup_id;
+  gchar *uri, *startup_id;
 
   if (save_location == NULL)
     return;
 
-  url = g_build_filename ("file://", save_location, NULL);
+  uri = g_filename_to_uri (save_location, NULL, NULL);
   startup_id = g_strdup_printf ("%s-%ld", "xfce4-screenshooter",
                                 g_get_monotonic_time () / G_TIME_SPAN_SECOND);
   proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
@@ -652,11 +652,13 @@ screenshooter_show_file_in_folder (const gchar *save_location)
                                          "org.freedesktop.FileManager1",
                                          NULL, NULL);
   builder = g_variant_builder_new (G_VARIANT_TYPE ("as"));
-  g_variant_builder_add (builder, "s", url);
+  g_variant_builder_add (builder, "s", uri);
+
   g_dbus_proxy_call_sync (proxy, "ShowItems",
-                          g_variant_new ("(ass)", builder, g_variant_new ("s", startup_id)),
+                          g_variant_new ("(ass)", builder, startup_id),
                           G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL);
+
   g_variant_builder_unref (builder);
   g_free (startup_id);
-  g_free (url);
+  g_free (uri);
 }
