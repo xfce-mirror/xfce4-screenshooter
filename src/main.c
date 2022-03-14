@@ -130,7 +130,8 @@ int main (int argc, char **argv)
   const gchar *conflict_error =
     _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
   const gchar *ignore_error =
-    _("The --%s option is only used when --%s is given. It will be ignored.\n");
+    _("The --%s option is only used when --fullscreen, --window or"
+      " --region is given. It will be ignored.\n");
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -193,25 +194,26 @@ int main (int argc, char **argv)
   /* Warn that action options, mouse and delay will be ignored in
    * non-cli mode */
   if ((application != NULL) && !(fullscreen || window || region))
-    g_printerr (ignore_error, "open", "fullscreen, --window or --region");
+    g_printerr (ignore_error, "open");
   if ((screenshot_dir != NULL)  && !(fullscreen || window || region ))
     {
-      g_printerr (ignore_error, "save", "fullscreen, --window or --region");
+      g_printerr (ignore_error, "save");
       screenshot_dir = NULL;
     }
   if (upload_imgur && !(fullscreen || window || region))
-    g_printerr (ignore_error, "imgur", "fullscreen, --window or --region");
+    g_printerr (ignore_error, "imgur");
   if (clipboard && !(fullscreen || window || region))
-    g_printerr (ignore_error, "clipboard", "fullscreen, --window or --region");
+    g_printerr (ignore_error, "clipboard");
   if (delay && !(fullscreen || window || region))
-    g_printerr (ignore_error, "delay", "fullscreen, --window or --region");
+    g_printerr (ignore_error, "delay");
   if (mouse && !(fullscreen || window || region))
-    g_printerr (ignore_error, "mouse", "fullscreen, --window or --region");
+    g_printerr (ignore_error, "mouse");
 
-  /* Ignore if dependency options are not present */
-  if ((screenshot_dir == NULL) && show_in_folder)
+  /* Warn when dependent option is not present */
+  if (screenshot_dir == NULL && show_in_folder)
     {
-      g_printerr (ignore_error, "show-in-folder", "save");
+      g_printerr ("The -S option is only used when --save is given."
+        "It will be ignored.\n");
       show_in_folder = FALSE;
     }
 
