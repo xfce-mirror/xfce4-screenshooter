@@ -111,20 +111,15 @@ static GdkPixbuf       *get_rectangle_screenshot_composited (gint            del
 
 
 static Window
-find_wm_xid (GdkWindow *window)
+find_wm_window (Window xid)
 {
-  Window xid, root, parent, *children;
+  Window root, parent, *children;
   unsigned int nchildren;
-
-  if (window == gdk_get_default_root_window ())
-    return None;
-
-  xid = GDK_WINDOW_XID (window);
 
   do
     {
-      if (XQueryTree (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                      xid, &root, &parent, &children, &nchildren) == 0)
+      if (XQueryTree (gdk_x11_get_default_xdisplay (), xid, &root,
+                      &parent, &children, &nchildren) == 0)
         {
           g_warning ("Couldn't find window manager window");
           return None;
@@ -311,115 +306,19 @@ static void capture_cursor (GdkPixbuf *screenshot,
 }
 
 
-static gint
-get_window_scaling_factor (void)
-{
-  GValue gvalue = G_VALUE_INIT;
-  GdkScreen *screen;
-
-  g_value_init (&gvalue, G_TYPE_INT);
-
-  screen = gdk_screen_get_default ();
-  if (gdk_screen_get_setting (screen, "gdk-window-scaling-factor", &gvalue))
-    return g_value_get_int (&gvalue);
-
-  return 1;
-}
-
-
-static void
-get_screen_size (gint *width,
-                 gint *height,
-                 gint  scale)
-{
-  GdkScreen *screen;
-  GdkWindow *window;
-
-  screen = gdk_screen_get_default ();
-  window = gdk_screen_get_root_window (screen);
-
-  *width = gdk_window_get_width (window) / scale;
-  *height = gdk_window_get_height (window) / scale;
-}
-
-
-static void
-get_window_rect_coords (GdkWindow    *window,
-                        gboolean      include_frame,
-                        GdkRectangle *real_out,
-                        GdkRectangle *screenshot_out)
-{
-  GdkRectangle real;
-  gint x;
-  gint y;
-  gint width;
-  gint height;
-  gint scale;
-  gint screen_width;
-  gint screen_height;
-
-  if (include_frame)
-    {
-      gdk_window_get_frame_extents (window, &real);
-    }
-  else
-    {
-      real.width = gdk_window_get_width (window);
-      real.height = gdk_window_get_height (window);
-
-      gdk_window_get_origin (window, &real.x, &real.y);
-    }
-
-  if (real_out != NULL)
-    *real_out = real;
-
-  x = real.x;
-  y = real.y;
-  width = real.width;
-  height = real.height;
-
-  if (x < 0)
-    {
-      width = width + x;
-      x = 0;
-    }
-
-  if (y < 0)
-    {
-      height = height + y;
-      y = 0;
-    }
-
-  scale = get_window_scaling_factor();
-  get_screen_size (&screen_width, &screen_height, scale);
-
-  if (x + width > screen_width)
-    width = screen_width - x;
-
-  if (y + height > screen_height)
-    height = screen_height - y;
-
-  if (screenshot_out != NULL)
-    {
-      screenshot_out->x = x;
-      screenshot_out->y = y;
-      screenshot_out->width = width;
-      screenshot_out->height = height;
-    }
-}
-
-
 static GdkPixbuf
 *get_window_screenshot (GdkWindow *window,
                         gboolean show_mouse,
                         gboolean border)
 {
+  gint x_orig, y_orig;
+  gint width, height;
+
   GdkPixbuf *screenshot;
-  GdkWindow *root, *wm_window = NULL;
+  GdkWindow *root;
 
   gint scale;
   GdkRectangle real_coords;
-  GdkRectangle screen_coords;
   GdkRectangle screen_geometry;
   GtkBorder extents;
   gboolean has_extents;
@@ -435,18 +334,18 @@ static GdkPixbuf
   if ((has_extents = screenshooter_get_gtk_frame_extents (window, &extents)))
     border = FALSE;
 
-  wm_xid = find_wm_xid (window);
-  get_window_rect_coords (window, border, &real_coords, &screen_coords);
+  gdk_window_get_frame_extents (window, &real_coords);
 
   // Calculate frame_offset
-  if (wm_xid != None)
+  if (border)
     {
       GdkRectangle wm_coords;
+      
+      Window xwindow = GDK_WINDOW_XID (window);
+      window = gdk_x11_window_foreign_new_for_display (gdk_window_get_display (window),
+                                                      find_wm_window (xwindow));
 
-      wm_window = gdk_x11_window_foreign_new_for_display
-        (gdk_window_get_display (window), wm_xid);
-
-      get_window_rect_coords (wm_window, FALSE, &wm_coords, NULL);
+      gdk_window_get_frame_extents (window, &wm_coords);
 
       frame_offset.left = (gdouble) (real_coords.x - wm_coords.x);
       frame_offset.top = (gdouble) (real_coords.y - wm_coords.y);
@@ -454,12 +353,41 @@ static GdkPixbuf
       frame_offset.bottom = (gdouble) (wm_coords.height - real_coords.height - frame_offset.top);
     }
 
-  scale = get_window_scaling_factor();
+  /* Don't grab thing offscreen. */
+
+  TRACE ("Make sure we don't grab things offscreen");
+
+  x_orig = real_coords.x;
+  y_orig = real_coords.y;
+  width  = real_coords.width;
+  height = real_coords.height;
+
+  screenshooter_get_screen_geometry (&screen_geometry);
+
+  if (x_orig < 0)
+    {
+      width = width + x_orig;
+      x_orig = 0;
+    }
+
+  if (y_orig < 0)
+    {
+      height = height + y_orig;
+      y_orig = 0;
+    }
+
+  if (x_orig + width > screen_geometry.width)
+    width = screen_geometry.width - x_orig;
+
+  if (y_orig + height > screen_geometry.height)
+    height = screen_geometry.height - y_orig;
+
+  scale = gdk_window_get_scale_factor (window);
 
   TRACE ("Grab the screenshot");
 
   if (!has_extents)
-    screenshot = gdk_pixbuf_get_from_window (root, screen_coords.x, screen_coords.y, screen_coords.width, screen_coords.height);
+    screenshot = gdk_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
   else
     {
       GdkRectangle rect;
@@ -480,86 +408,79 @@ static GdkPixbuf
   if (border && wm_xid != None)
     {
       XRectangle *rectangles;
-      GdkPixbuf *tmp;
-      gint rectangle_count;
-      gint rectangle_order;
-      gint i;
+      int rectangle_count, rectangle_order, i;
 
-      rectangles = XShapeGetRectangles (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-                                        wm_xid, ShapeBounding,
-                                        &rectangle_count, &rectangle_order);
-
+      /* we must use XShape to avoid showing what's under the rounder corners
+       * of the WM decoration.
+       */
+      rectangles = XShapeGetRectangles (GDK_DISPLAY_XDISPLAY (gdk_display_get_default()),
+                                        wm_xid,
+                                        ShapeBounding,
+                                        &rectangle_count,
+                                        &rectangle_order);
       if (rectangles && rectangle_count > 0)
         {
-          gboolean has_alpha;
-
-          has_alpha = gdk_pixbuf_get_has_alpha (screenshot);
-
-          tmp = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
-                                screen_coords.width * scale, screen_coords.height * scale);
-
+          gboolean has_alpha = gdk_pixbuf_get_has_alpha (screenshot);
+          GdkPixbuf *tmp = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8,
+                                           gdk_pixbuf_get_width (screenshot),
+                                           gdk_pixbuf_get_height (screenshot));
           gdk_pixbuf_fill (tmp, 0);
 
           for (i = 0; i < rectangle_count; i++)
             {
-              gint rec_x;
-              gint rec_y;
-              gint rec_width;
-              gint rec_height;
-              gint screen_width;
-              gint screen_height;
-              gint y2;
+              gint rec_x, rec_y;
+              gint rec_width, rec_height;
+              gint y;
 
               /* If we're using invisible borders, the ShapeBounding might not
-               * have the same size as the frame extents, as it would include
-               * the areas for the invisible borders themselves.
-               * In that case, trim every rectangle we get by the offset between
-               * the WM window size and the frame extents.
+               * have the same size as the frame extents, as it would include the
+               * areas for the invisible borders themselves.
+               * In that case, trim every rectangle we get by the offset between the
+               * WM window size and the frame extents.
+               *
+               * Note that the XShape values are in actual pixels, whereas the GDK
+               * ones are in display pixels (i.e. scaled), so we need to apply the
+               * scale factor to the former to use display pixels for all our math.
                */
-              rec_x = rectangles[i].x;
-              rec_y = rectangles[i].y;
-              rec_width = rectangles[i].width;
-              rec_height = rectangles[i].height;
-
-              rec_width -= frame_offset.left * scale + frame_offset.right * scale;
-              rec_height -= frame_offset.top * scale + frame_offset.bottom * scale;
+              rec_x = rectangles[i].x / scale;
+              rec_y = rectangles[i].y / scale;
+              rec_width = rectangles[i].width / scale - (frame_offset.left + frame_offset.right);
+              rec_height = rectangles[i].height / scale - (frame_offset.top + frame_offset.bottom);
 
               if (real_coords.x < 0)
                 {
-                  rec_x += real_coords.x * scale;
+                  rec_x += real_coords.x;
                   rec_x = MAX(rec_x, 0);
-                  rec_width += real_coords.x * scale;
+                  rec_width += real_coords.x;
                 }
 
               if (real_coords.y < 0)
                 {
-                  rec_y += real_coords.y * scale;
+                  rec_y += real_coords.y;
                   rec_y = MAX(rec_y, 0);
-                  rec_height += real_coords.y * scale;
+                  rec_height += real_coords.y;
                 }
 
-              get_screen_size (&screen_width, &screen_height, 1);
+              if (x_orig + rec_x + rec_width > screen_geometry.width)
+                rec_width = screen_geometry.width - x_orig - rec_x;
 
-              if (screen_coords.x * scale + rec_x + rec_width > screen_width)
-                rec_width = screen_width - screen_coords.x * scale - rec_x;
+              if (y_orig + rec_y + rec_height > screen_geometry.height)
+                rec_height = screen_geometry.height - y_orig - rec_y;
 
-              if (screen_coords.y * scale + rec_y + rec_height > screen_height)
-                rec_height = screen_height - screen_coords.y * scale - rec_y;
-
-              for (y2 = rec_y; y2 < rec_y + rec_height; y2++)
+              /* Undo the scale factor in order to copy the pixbuf data pixel-wise */
+              for (y = rec_y * scale; y < (rec_y + rec_height) * scale; y++)
                 {
-                  guchar *src_pixels;
-                  guchar *dest_pixels;
-                  gint x2;
+                  guchar *src_pixels, *dest_pixels;
+                  gint x;
 
                   src_pixels = gdk_pixbuf_get_pixels (screenshot)
-                             + y2 * gdk_pixbuf_get_rowstride(screenshot)
-                             + rec_x * (has_alpha ? 4 : 3);
+                             + y * gdk_pixbuf_get_rowstride(screenshot)
+                             + rec_x * scale * (has_alpha ? 4 : 3);
                   dest_pixels = gdk_pixbuf_get_pixels (tmp)
-                              + y2 * gdk_pixbuf_get_rowstride (tmp)
-                              + rec_x * 4;
+                              + y * gdk_pixbuf_get_rowstride (tmp)
+                              + rec_x * scale * 4;
 
-                  for (x2 = 0; x2 < rec_width; x2++)
+                  for (x = 0; x < rec_width * scale; x++)
                     {
                       *dest_pixels++ = *src_pixels++;
                       *dest_pixels++ = *src_pixels++;
@@ -573,8 +494,7 @@ static GdkPixbuf
                 }
             }
 
-          g_object_unref (screenshot);
-          screenshot = tmp;
+          g_set_object (&screenshot, tmp);
 
           XFree (rectangles);
         }
@@ -582,7 +502,7 @@ static GdkPixbuf
 
   if (show_mouse)
     capture_cursor (screenshot, has_extents ? &extents : NULL,
-                    scale, screen_coords.x, screen_coords.y, screen_coords.width, screen_coords.height);
+                    scale, x_orig, y_orig, width, height);
 
   return screenshot;
 }
