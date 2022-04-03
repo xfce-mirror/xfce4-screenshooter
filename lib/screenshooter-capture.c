@@ -310,23 +310,6 @@ static void capture_cursor (GdkPixbuf *screenshot,
   g_object_unref (cursor_pixbuf);
 }
 
-
-static gint
-get_window_scaling_factor (void)
-{
-  GValue gvalue = G_VALUE_INIT;
-  GdkScreen *screen;
-
-  g_value_init (&gvalue, G_TYPE_INT);
-
-  screen = gdk_screen_get_default ();
-  if (gdk_screen_get_setting (screen, "gdk-window-scaling-factor", &gvalue))
-    return g_value_get_int (&gvalue);
-
-  return 1;
-}
-
-
 static void
 get_screen_size (gint *width,
                  gint *height,
@@ -338,8 +321,8 @@ get_screen_size (gint *width,
   screen = gdk_screen_get_default ();
   window = gdk_screen_get_root_window (screen);
 
-  *width = gdk_window_get_width (window) / scale;
-  *height = gdk_window_get_height (window) / scale;
+  *width = gdk_window_get_width (window) * scale;
+  *height = gdk_window_get_height (window) * scale;
 }
 
 
@@ -390,7 +373,7 @@ get_window_rect_coords (GdkWindow    *window,
       y = 0;
     }
 
-  scale = get_window_scaling_factor();
+  scale = gdk_window_get_scale_factor (window);
   get_screen_size (&screen_width, &screen_height, scale);
 
   if (x + width > screen_width)
@@ -454,7 +437,7 @@ static GdkPixbuf
       frame_offset.bottom = (gdouble) (wm_coords.height - real_coords.height - frame_offset.top);
     }
 
-  scale = get_window_scaling_factor();
+  scale = gdk_window_get_scale_factor (window);
 
   TRACE ("Grab the screenshot");
 
@@ -538,7 +521,7 @@ static GdkPixbuf
                   rec_height += real_coords.y * scale;
                 }
 
-              get_screen_size (&screen_width, &screen_height, 1);
+              get_screen_size (&screen_width, &screen_height, scale);
 
               if (screen_coords.x * scale + rec_x + rec_width > screen_width)
                 rec_width = screen_width - screen_coords.x * scale - rec_x;
