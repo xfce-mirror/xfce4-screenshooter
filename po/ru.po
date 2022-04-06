@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-29 00:49+0200\n"
-"PO-Revision-Date: 2022-03-11 16:06+0000\n"
-"Last-Translator: Andrei Stepanov\n"
+"POT-Creation-Date: 2022-03-17 00:53+0100\n"
+"PO-Revision-Date: 2013-07-03 18:40+0000\n"
+"Last-Translator: Andrei Stepanov, 2022\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,174 +25,181 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../lib/screenshooter-dialogs.c:409
+#: ../lib/screenshooter-dialogs.c:417
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fкБ из %.2fкБ"
 
-#: ../lib/screenshooter-dialogs.c:501
+#: ../lib/screenshooter-dialogs.c:509
 msgid "Transfer"
 msgstr "Передача"
 
-#: ../lib/screenshooter-dialogs.c:522
+#: ../lib/screenshooter-dialogs.c:530
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Снимок экрана будет перемещен в:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:664 ../lib/screenshooter-dialogs.c:670
-#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:689
-#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:928
-#: ../lib/screenshooter-utils.c:146 ../lib/screenshooter-utils.c:185
-#: ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:682
+#: ../lib/screenshooter-dialogs.c:911 ../lib/screenshooter-utils.c:147
+#: ../lib/screenshooter-utils.c:187 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Снимок экрана"
 
-#: ../lib/screenshooter-dialogs.c:666 ../lib/screenshooter-dialogs.c:684
-#: ../lib/screenshooter-dialogs.c:922
+#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:684
+#: ../lib/screenshooter-dialogs.c:913
 msgid "_Help"
 msgstr "_Справка"
 
-#: ../lib/screenshooter-dialogs.c:667
+#: ../lib/screenshooter-dialogs.c:675
 msgid "_Close"
 msgstr "_Закрыть"
 
-#: ../lib/screenshooter-dialogs.c:677
+#: ../lib/screenshooter-dialogs.c:678
 msgid "Preferences"
 msgstr "Параметры"
 
-#: ../lib/screenshooter-dialogs.c:685 ../lib/screenshooter-dialogs.c:924
+#: ../lib/screenshooter-dialogs.c:685 ../lib/screenshooter-dialogs.c:915
 msgid "_Cancel"
 msgstr "О_тмена"
 
-#: ../lib/screenshooter-dialogs.c:686 ../lib/screenshooter-dialogs.c:925
+#: ../lib/screenshooter-dialogs.c:686 ../lib/screenshooter-dialogs.c:916
 msgid "_OK"
 msgstr "_Ок"
 
-#: ../lib/screenshooter-dialogs.c:697
+#: ../lib/screenshooter-dialogs.c:689
 msgid "Take a screenshot"
 msgstr "Сделать снимок экрана"
 
-#: ../lib/screenshooter-dialogs.c:729
+#: ../lib/screenshooter-dialogs.c:721
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Область захвата</span>"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:743
 msgid "Entire screen"
 msgstr "Весь экран"
 
-#: ../lib/screenshooter-dialogs.c:756 ../src/main.c:60
-#: ../panel-plugin/screenshooter-plugin.c:331
+#: ../lib/screenshooter-dialogs.c:748 ../src/main.c:61
+#: ../panel-plugin/screenshooter-plugin.c:305
 msgid "Take a screenshot of the entire screen"
 msgstr "Сделать снимок всего экрана"
 
-#: ../lib/screenshooter-dialogs.c:765
+#: ../lib/screenshooter-dialogs.c:757
 msgid "Active window"
 msgstr "Активное окно"
 
-#: ../lib/screenshooter-dialogs.c:770 ../src/main.c:102
-#: ../panel-plugin/screenshooter-plugin.c:336
+#: ../lib/screenshooter-dialogs.c:762 ../src/main.c:108
+#: ../panel-plugin/screenshooter-plugin.c:310
 msgid "Take a screenshot of the active window"
 msgstr "Сделать снимок активного окна"
 
-#: ../lib/screenshooter-dialogs.c:779
+#: ../lib/screenshooter-dialogs.c:771
 msgid "Select a region"
 msgstr "Выделить область"
 
-#: ../lib/screenshooter-dialogs.c:784
+#: ../lib/screenshooter-dialogs.c:776
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Выберите область для захвата: щелкните по точке экрана и не отпуская кнопку мыши, перетащите мышь в другой угол, отпустив кнопку мыши.\n\nДля перемещения области нажмите Ctrl во время перетаскивания."
 
-#: ../lib/screenshooter-dialogs.c:797
+#: ../lib/screenshooter-dialogs.c:789
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Настройки</span>"
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:809
 msgid "Capture the mouse pointer"
 msgstr "Захватывать курсор мыши"
 
-#: ../lib/screenshooter-dialogs.c:821
+#: ../lib/screenshooter-dialogs.c:813
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Отображать курсор мыши на снимке экрана"
 
-#: ../lib/screenshooter-dialogs.c:828
+#: ../lib/screenshooter-dialogs.c:820
 msgid "Capture the window border"
 msgstr "Захватывать границы окна"
 
-#: ../lib/screenshooter-dialogs.c:833
+#: ../lib/screenshooter-dialogs.c:825
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:850
+#: ../lib/screenshooter-dialogs.c:842
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Задержка перед снимком</span>"
 
-#: ../lib/screenshooter-dialogs.c:874
+#: ../lib/screenshooter-dialogs.c:866
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Задержка в секундах перед выполнением снимка экрана"
 
-#: ../lib/screenshooter-dialogs.c:877
+#: ../lib/screenshooter-dialogs.c:869
 msgid "seconds"
 msgstr "с"
 
-#: ../lib/screenshooter-dialogs.c:923
+#: ../lib/screenshooter-dialogs.c:914
 msgid "_Back"
 msgstr "_Назад"
 
-#: ../lib/screenshooter-dialogs.c:938
+#: ../lib/screenshooter-dialogs.c:920
 msgid "Choose what to do with the screenshot"
 msgstr "Выберите, что делать со снимком экрана"
 
-#: ../lib/screenshooter-dialogs.c:974
+#: ../lib/screenshooter-dialogs.c:956
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Действие</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:989
+#: ../lib/screenshooter-dialogs.c:971
 msgid "Save"
 msgstr "Сохранить"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:977
 msgid "Save the screenshot to a PNG file"
 msgstr "Сохранить снимок экрана в файл формата PNG"
 
-#: ../lib/screenshooter-dialogs.c:1004
+#. Show in folder checkbox
+#: ../lib/screenshooter-dialogs.c:981
+msgid "Show in Folder"
+msgstr "Показать в папке"
+
+#: ../lib/screenshooter-dialogs.c:988
+msgid "Shows the saved file in the folder"
+msgstr " Показывает сохранённый файл в папке"
+
+#: ../lib/screenshooter-dialogs.c:997
 msgid "Copy to the clipboard"
 msgstr "Копировать в буфер обмена"
 
-#: ../lib/screenshooter-dialogs.c:1006
+#: ../lib/screenshooter-dialogs.c:999
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Копировать снимок экрана в буфер обмена для использования его в дальнейшем"
 
-#: ../lib/screenshooter-dialogs.c:1020
+#: ../lib/screenshooter-dialogs.c:1013
 msgid "Open with:"
 msgstr "Открыть в:"
 
-#: ../lib/screenshooter-dialogs.c:1028
+#: ../lib/screenshooter-dialogs.c:1021
 msgid "Open the screenshot with the chosen application"
 msgstr "Открыть снимок экрана с помощью выбранного приложения"
 
-#: ../lib/screenshooter-dialogs.c:1047 ../src/main.c:75
+#: ../lib/screenshooter-dialogs.c:1040 ../src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "Приложение для просмотра снимка экрана"
 
-#: ../lib/screenshooter-dialogs.c:1064
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "Host on Imgur™"
 msgstr "Загрузить на Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1068
+#: ../lib/screenshooter-dialogs.c:1061
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr "Загрузить снимок экрана на Imgur™, бесплатный хостинг изображений"
 
-#: ../lib/screenshooter-dialogs.c:1080
+#: ../lib/screenshooter-dialogs.c:1073
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -200,34 +207,34 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1111
+#: ../lib/screenshooter-dialogs.c:1104
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Предварительный просмотр</span>"
 
-#: ../lib/screenshooter-dialogs.c:1172
+#: ../lib/screenshooter-dialogs.c:1165
 msgid "Save screenshot as..."
 msgstr "Сохранить снимок как..."
 
-#: ../lib/screenshooter-dialogs.c:1190
+#: ../lib/screenshooter-dialogs.c:1183
 msgid "PNG File"
 msgstr "Файл PNG"
 
-#: ../lib/screenshooter-dialogs.c:1191
+#: ../lib/screenshooter-dialogs.c:1184
 msgid "JPG File"
 msgstr "Файл JPG"
 
-#: ../lib/screenshooter-dialogs.c:1192
+#: ../lib/screenshooter-dialogs.c:1185
 msgid "BMP File"
 msgstr "Файл BMP"
 
-#: ../lib/screenshooter-utils.c:304
+#: ../lib/screenshooter-utils.c:308
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Приложение не может быть запущено.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:379
+#: ../lib/screenshooter-utils.c:383
 msgid "Error"
 msgstr "Ошибка"
 
@@ -381,56 +388,60 @@ msgid ""
 "on the image hosting service"
 msgstr "Описание снимка экрана, будет использовано при отображении снимка на сервере хранения изображений"
 
-#: ../src/main.c:50
+#: ../src/main.c:51
 msgid "Copy the screenshot to the clipboard"
 msgstr "Скопировать снимок в буфер обмена"
 
-#: ../src/main.c:55
+#: ../src/main.c:56
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Задержка в секундах перед выполнением снимка"
 
-#: ../src/main.c:65
+#: ../src/main.c:66
 msgid "Display the mouse on the screenshot"
 msgstr "Отображать курсор мыши на снимке экрана"
 
-#: ../src/main.c:70
+#: ../src/main.c:71
 msgid "Removes the window border from the screenshot"
 msgstr ""
 
-#: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
+#: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:315
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "Укажите область экрана, которая будет захвачена. С помощью левой кнопки мыши укажите верхний угол захватываемой области и, не отпуская кнопки мыши, укажите нижний угол. Отпустите кнопку мыши."
 
-#: ../src/main.c:87
+#: ../src/main.c:88
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
 msgstr ""
 
-#: ../src/main.c:92
+#: ../src/main.c:93
+msgid "Show the saved file in the folder."
+msgstr ""
+
+#: ../src/main.c:98
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "Разместить снимок экрана на свободном сервере для хранения изображений Imgur"
 
-#: ../src/main.c:97
+#: ../src/main.c:103
 msgid "Version information"
 msgstr "Информация о версии"
 
-#: ../src/main.c:125
+#: ../src/main.c:131
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Конфликт параметров: --%s и --%s не могут быть использованы одновременно.\n"
 
-#: ../src/main.c:127
+#: ../src/main.c:133
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "Параметр --%s используется только с параметрами --fullscreen, --window или --region. Он будет проигнорирован.\n"
 
-#: ../src/main.c:138
+#: ../src/main.c:144
 #, c-format
 msgid ""
 "%s: %s\n"
