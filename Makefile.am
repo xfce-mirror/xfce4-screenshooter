@@ -278,7 +278,8 @@ DISTCLEANFILES = \
 	$(app_desktop_DATA) $(app_desktop_in_files) \
 	$(panel_desktop_DATA) \
 	$(appdata_DATA) \
-	xfce4-screenshooter.1
+	xfce4-screenshooter.1 \
+	po/.intltool-merge-cache.lock
 
 # Man pages
 dist_man_MANS = xfce4-screenshooter.1
