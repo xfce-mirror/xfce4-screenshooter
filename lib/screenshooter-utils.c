@@ -662,3 +662,31 @@ screenshooter_show_file_in_folder (const gchar *save_location)
   g_free (startup_id);
   g_free (uri);
 }
+
+
+
+gboolean
+screenshooter_is_format_supported (const gchar *format)
+{
+  gboolean result = FALSE;
+  GSList* supported_formats;
+  gchar *name;
+
+  supported_formats = gdk_pixbuf_get_formats ();
+
+  for (GSList* lp = supported_formats; lp != NULL; lp = lp->next)
+    {
+      name = gdk_pixbuf_format_get_name (lp->data);
+      if (G_UNLIKELY (g_strcmp0 (name, format) == 0))
+        {
+          result = TRUE;
+          g_free (name);
+          break;
+        }
+      g_free (name);
+    }
+
+  g_slist_free_1 (supported_formats);
+
+  return result;
+}

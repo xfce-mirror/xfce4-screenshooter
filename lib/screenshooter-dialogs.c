@@ -1185,7 +1185,10 @@ gchar
     gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "png", _("PNG File"));
     gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "jpg", _("JPG File"));
     gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "bmp", _("BMP File"));
-    gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "webp", _("WebP File"));
+
+    if (screenshooter_is_format_supported ("webp"))
+      gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "webp", _("WebP File"));
+
     gtk_combo_box_set_active_id (GTK_COMBO_BOX (combobox), extension);
     g_signal_connect (combobox, "changed", G_CALLBACK (cb_combo_file_extension_changed), chooser);
     gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (chooser), combobox);
