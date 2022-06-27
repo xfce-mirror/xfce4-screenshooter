@@ -64,5 +64,6 @@ GdkWindow *screenshooter_get_active_window     (GdkScreen      *screen,
 gboolean   screenshooter_get_gtk_frame_extents (GdkWindow      *window,
                                                 GtkBorder      *extents);
 void       screenshooter_show_file_in_folder   (const gchar    *save_location);
+gboolean   screenshooter_is_format_supported   (const gchar    *format);
 
 #endif
