@@ -6,15 +6,15 @@
 # BAK Chan-Jin <YeoulonGG@gmail.com>, 2015
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2019
 # Seok Chae <seok.chae@gmail.com>, 2020
-# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2015,2018-2019,2021
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2015,2018-2019,2021-2022
 # Thomas Sungjin Kang <potopro@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-29 00:49+0200\n"
-"PO-Revision-Date: 2021-08-28 22:49+0000\n"
-"Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
+"POT-Creation-Date: 2022-03-17 00:53+0100\n"
+"PO-Revision-Date: 2013-07-03 18:40+0000\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2015,2018-2019,2021-2022\n"
 "Language-Team: Korean (http://www.transifex.com/xfce/xfce-apps/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,209 +22,216 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../lib/screenshooter-dialogs.c:409
+#: ../lib/screenshooter-dialogs.c:417
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb (%.2fKb 중)"
 
-#: ../lib/screenshooter-dialogs.c:501
+#: ../lib/screenshooter-dialogs.c:509
 msgid "Transfer"
 msgstr "전송"
 
-#: ../lib/screenshooter-dialogs.c:522
+#: ../lib/screenshooter-dialogs.c:530
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">스크린샷을 다음으로 전송했습니다:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:664 ../lib/screenshooter-dialogs.c:670
-#: ../lib/screenshooter-dialogs.c:682 ../lib/screenshooter-dialogs.c:689
-#: ../lib/screenshooter-dialogs.c:920 ../lib/screenshooter-dialogs.c:928
-#: ../lib/screenshooter-utils.c:146 ../lib/screenshooter-utils.c:185
-#: ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:682
+#: ../lib/screenshooter-dialogs.c:911 ../lib/screenshooter-utils.c:147
+#: ../lib/screenshooter-utils.c:187 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "스크린샷"
 
-#: ../lib/screenshooter-dialogs.c:666 ../lib/screenshooter-dialogs.c:684
-#: ../lib/screenshooter-dialogs.c:922
+#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:684
+#: ../lib/screenshooter-dialogs.c:913
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: ../lib/screenshooter-dialogs.c:667
+#: ../lib/screenshooter-dialogs.c:675
 msgid "_Close"
 msgstr "닫기(_C)"
 
-#: ../lib/screenshooter-dialogs.c:677
+#: ../lib/screenshooter-dialogs.c:678
 msgid "Preferences"
 msgstr "기본 설정"
 
-#: ../lib/screenshooter-dialogs.c:685 ../lib/screenshooter-dialogs.c:924
+#: ../lib/screenshooter-dialogs.c:685 ../lib/screenshooter-dialogs.c:915
 msgid "_Cancel"
 msgstr "취소(_C)"
 
-#: ../lib/screenshooter-dialogs.c:686 ../lib/screenshooter-dialogs.c:925
+#: ../lib/screenshooter-dialogs.c:686 ../lib/screenshooter-dialogs.c:916
 msgid "_OK"
 msgstr "확인(_O)"
 
-#: ../lib/screenshooter-dialogs.c:697
+#: ../lib/screenshooter-dialogs.c:689
 msgid "Take a screenshot"
 msgstr "스크린샷 찍기"
 
-#: ../lib/screenshooter-dialogs.c:729
+#: ../lib/screenshooter-dialogs.c:721
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍을 선택 영역 지정</span>"
 
-#: ../lib/screenshooter-dialogs.c:751
+#: ../lib/screenshooter-dialogs.c:743
 msgid "Entire screen"
 msgstr "전체 화면"
 
-#: ../lib/screenshooter-dialogs.c:756 ../src/main.c:60
-#: ../panel-plugin/screenshooter-plugin.c:331
+#: ../lib/screenshooter-dialogs.c:748 ../src/main.c:61
+#: ../panel-plugin/screenshooter-plugin.c:305
 msgid "Take a screenshot of the entire screen"
 msgstr "전체 화면을 찍습니다"
 
-#: ../lib/screenshooter-dialogs.c:765
+#: ../lib/screenshooter-dialogs.c:757
 msgid "Active window"
 msgstr "활성 창"
 
-#: ../lib/screenshooter-dialogs.c:770 ../src/main.c:102
-#: ../panel-plugin/screenshooter-plugin.c:336
+#: ../lib/screenshooter-dialogs.c:762 ../src/main.c:108
+#: ../panel-plugin/screenshooter-plugin.c:310
 msgid "Take a screenshot of the active window"
 msgstr "활성 창을 찍습니다"
 
-#: ../lib/screenshooter-dialogs.c:779
+#: ../lib/screenshooter-dialogs.c:771
 msgid "Select a region"
 msgstr "영역 선택"
 
-#: ../lib/screenshooter-dialogs.c:784
+#: ../lib/screenshooter-dialogs.c:776
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "마우스를 클릭하고 버튼을 놓지 않은 상태로 드래그하여 선택하고자 하는 영역 반대쪽 구석에서 마우스 버튼을 풀면 캡처할 영역이 선택됩니다.\n\nCtrl 키를 누른 상태로 선택 영역을 드래그하면 선택 영역을 이동할 수 있습니다."
 
-#: ../lib/screenshooter-dialogs.c:797
+#: ../lib/screenshooter-dialogs.c:789
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">옵션</span>"
 
-#: ../lib/screenshooter-dialogs.c:817
+#: ../lib/screenshooter-dialogs.c:809
 msgid "Capture the mouse pointer"
 msgstr "마우스 포인터 찍기"
 
-#: ../lib/screenshooter-dialogs.c:821
+#: ../lib/screenshooter-dialogs.c:813
 msgid "Display the mouse pointer on the screenshot"
 msgstr "스크린샷에 마우스 포인터를 보입니다"
 
-#: ../lib/screenshooter-dialogs.c:828
+#: ../lib/screenshooter-dialogs.c:820
 msgid "Capture the window border"
 msgstr "창 테두리 찍기"
 
-#: ../lib/screenshooter-dialogs.c:833
+#: ../lib/screenshooter-dialogs.c:825
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "스크린샷에 창 테두리를 나타냅니다.\n이 옵션을 끄면 CSD 창에 영향을 주지 않습니다."
 
-#: ../lib/screenshooter-dialogs.c:850
+#: ../lib/screenshooter-dialogs.c:842
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">찍기 전 지연시간</span>"
 
-#: ../lib/screenshooter-dialogs.c:874
+#: ../lib/screenshooter-dialogs.c:866
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "스크린샷을 찍기 전에 몇 초간 시간을 지연합니다"
 
-#: ../lib/screenshooter-dialogs.c:877
+#: ../lib/screenshooter-dialogs.c:869
 msgid "seconds"
 msgstr "초"
 
-#: ../lib/screenshooter-dialogs.c:923
+#: ../lib/screenshooter-dialogs.c:914
 msgid "_Back"
 msgstr "뒤로(_B)"
 
-#: ../lib/screenshooter-dialogs.c:938
+#: ../lib/screenshooter-dialogs.c:920
 msgid "Choose what to do with the screenshot"
 msgstr "스크린 샷 동작을 선택하십시오 "
 
-#: ../lib/screenshooter-dialogs.c:974
+#: ../lib/screenshooter-dialogs.c:956
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">동작</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:989
+#: ../lib/screenshooter-dialogs.c:971
 msgid "Save"
 msgstr "저장"
 
-#: ../lib/screenshooter-dialogs.c:995
+#: ../lib/screenshooter-dialogs.c:977
 msgid "Save the screenshot to a PNG file"
 msgstr "PNG파일로 스크린샷을 저장합니다"
 
-#: ../lib/screenshooter-dialogs.c:1004
+#. Show in folder checkbox
+#: ../lib/screenshooter-dialogs.c:981
+msgid "Show in Folder"
+msgstr "폴더에 나타내기"
+
+#: ../lib/screenshooter-dialogs.c:988
+msgid "Shows the saved file in the folder"
+msgstr "폴더에 저장한 파일을 나타냅니다"
+
+#: ../lib/screenshooter-dialogs.c:997
 msgid "Copy to the clipboard"
 msgstr "클립보드로 복사"
 
-#: ../lib/screenshooter-dialogs.c:1006
+#: ../lib/screenshooter-dialogs.c:999
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "나중에 붙일 수 있게 클립보드에 스크린샷을 복사합니다"
 
-#: ../lib/screenshooter-dialogs.c:1020
+#: ../lib/screenshooter-dialogs.c:1013
 msgid "Open with:"
 msgstr "다음으로 열기:"
 
-#: ../lib/screenshooter-dialogs.c:1028
+#: ../lib/screenshooter-dialogs.c:1021
 msgid "Open the screenshot with the chosen application"
 msgstr "선택한 프로그램으로 스크린샷을 엽니다"
 
-#: ../lib/screenshooter-dialogs.c:1047 ../src/main.c:75
+#: ../lib/screenshooter-dialogs.c:1040 ../src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "스크린샷을 열 프로그램"
 
-#: ../lib/screenshooter-dialogs.c:1064
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "Host on Imgur™"
-msgstr ""
+msgstr "Imgur™ 에 게시"
 
-#: ../lib/screenshooter-dialogs.c:1068
+#: ../lib/screenshooter-dialogs.c:1061
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
-msgstr ""
+msgstr "무료 온라인 사진 게시 서비스 Imgur™에 스크린샷을 게시합니다"
 
-#: ../lib/screenshooter-dialogs.c:1080
+#: ../lib/screenshooter-dialogs.c:1073
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
 "Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
-msgstr ""
+msgstr "민감한 내용이 있는지 확인하십시오. 업로드한 그림은 공개되며,\n언제 삭제할 지 보장할 수 없습니다. XFCE는 이 기능의 통합시\nImgur™의 승인을 받지 않았습니다. 이 기능을 활용하려면,\nImgur™의 <a href=\"https://imgur.com/tos\">서비스 이용 약관</a>에 동의해야합니다."
 
-#: ../lib/screenshooter-dialogs.c:1111
+#: ../lib/screenshooter-dialogs.c:1104
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">미리 보기</span>"
 
-#: ../lib/screenshooter-dialogs.c:1172
+#: ../lib/screenshooter-dialogs.c:1165
 msgid "Save screenshot as..."
 msgstr "스크린샷을 다른 이름으로 저장..."
 
-#: ../lib/screenshooter-dialogs.c:1190
+#: ../lib/screenshooter-dialogs.c:1183
 msgid "PNG File"
-msgstr ""
+msgstr "PNG 파일"
 
-#: ../lib/screenshooter-dialogs.c:1191
+#: ../lib/screenshooter-dialogs.c:1184
 msgid "JPG File"
-msgstr ""
+msgstr "JPG 파일"
 
-#: ../lib/screenshooter-dialogs.c:1192
+#: ../lib/screenshooter-dialogs.c:1185
 msgid "BMP File"
-msgstr ""
+msgstr "BMP 파일"
 
-#: ../lib/screenshooter-utils.c:304
+#: ../lib/screenshooter-utils.c:308
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>프로그램을 실행할 수 없습니다.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:379
+#: ../lib/screenshooter-utils.c:383
 msgid "Error"
 msgstr "오류"
 
@@ -378,56 +385,60 @@ msgid ""
 "on the image hosting service"
 msgstr "이미지 제공 서비스에서 스크린샷을 나타낼 때 보여줄 설명"
 
-#: ../src/main.c:50
+#: ../src/main.c:51
 msgid "Copy the screenshot to the clipboard"
 msgstr "스크린샷을 클립보드로 복사"
 
-#: ../src/main.c:55
+#: ../src/main.c:56
 msgid "Delay in seconds before taking the screenshot"
 msgstr "스크린샷을 찍기전에 지연할 초 단위 시간"
 
-#: ../src/main.c:65
+#: ../src/main.c:66
 msgid "Display the mouse on the screenshot"
 msgstr "스크린샷에 마우스 커서 나타내기"
 
-#: ../src/main.c:70
+#: ../src/main.c:71
 msgid "Removes the window border from the screenshot"
 msgstr "스크린샷에서 창 테두리를 제거합니다"
 
-#: ../src/main.c:80 ../panel-plugin/screenshooter-plugin.c:341
+#: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:315
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "화면의 한 점을 누른 상태에서 마우스 단추를 떼지 않고 다른 영역의 구석으로 마우스를 끈 다음 단추를 떼어서 찍을 화면 영역을 선택합니다."
 
-#: ../src/main.c:87
+#: ../src/main.c:88
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions"
-msgstr ""
+msgstr "스크린샷을 저장할 파일 경로 또는 디렉터리이며, png, jpg, gmp 확장자를 허용합니다"
 
-#: ../src/main.c:92
+#: ../src/main.c:93
+msgid "Show the saved file in the folder."
+msgstr "폴더에 저장한 파일을 나타냅니다."
+
+#: ../src/main.c:98
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "무료 온라인 그림 제공 서비스인 Imgur에 스크린샷을 게시합니다"
 
-#: ../src/main.c:97
+#: ../src/main.c:103
 msgid "Version information"
 msgstr "버전 정보"
 
-#: ../src/main.c:125
+#: ../src/main.c:131
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "옵션 충돌: --%s와(과) --%s은(는) 동시에 사용할 수 없습니다.\n"
 
-#: ../src/main.c:127
+#: ../src/main.c:133
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "--%s 옵션은 --fullscreen, --window 또는 --region 옵션이 주어졌을 경우에만 사용함니다. 따라서 이를 무시합니다.\n"
 
-#: ../src/main.c:138
+#: ../src/main.c:144
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -447,4 +458,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG or "
 "JPG file, copy it to the clipboard, open it using another application, or "
 "host it on imgur, a free online image hosting service."
-msgstr ""
+msgstr "전체 화면, 활성 창 또는 선택 영역을 찍을 수 있습니다. 스크린샷을 찍기 전 스크린 샷 촬영시 조치를 취할 수 있는 대기 시간을 설정할 수 있습니다. PNG 또는 JPG 파일로 저장하고, 클립보드에 복사하며, 다른 프로그램에서 열거나 무료 온라인 그림 게시 서비스 imgur에 게시할 수 있습니다."
