@@ -229,7 +229,7 @@ msgstr "file BMP"
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "WebP File"
-msgstr ""
+msgstr "File WebP"
 
 #: ../lib/screenshooter-utils.c:308
 #, c-format
@@ -420,7 +420,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp is only supported if webp-pixbuf-loader is "
 "installed."
-msgstr ""
+msgstr "Percorso del file o della cartella dove verrà salvata l'istantanea, vengono accettate le estensioni png, jpg e bmp, mentre webp è supportato solamente se webp-pixbuf-loader è installato."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
