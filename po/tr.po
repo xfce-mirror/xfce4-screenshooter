@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Alper Tekinalp <alper.tekinalp@gmail.com>, 2014
-# Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021
+# Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2022
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020-2022
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Murat Pınar <muratpinar@archlinux.org.tr>, 2010
@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-05 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>, 2020-2022\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2022\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -230,7 +230,7 @@ msgstr "BMP Dosyası"
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "WebP File"
-msgstr ""
+msgstr "WebP Dosyası"
 
 #: ../lib/screenshooter-utils.c:308
 #, c-format
@@ -421,7 +421,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp is only supported if webp-pixbuf-loader is "
 "installed."
-msgstr ""
+msgstr "Ekran görüntüsünün kaydedileceği dosya yolu veya dizini png, jpg ve bmp uzantılarını kabul eder. webp yalnızca webp-pixbuf-loader kuruluysa desteklenir."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
