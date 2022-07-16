@@ -1139,8 +1139,9 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
 GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
 {
-  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover, *image;
-  GtkWidget *actions_grid;
+  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover, *image, *frame, *mbox, *hbox, *scrolled_window;
+  GtkWidget *actions_grid, *toolbar;
+  GtkToolButton *tool_button;
 
   GtkListStore *liststore;
   GtkWidget *combobox;
@@ -1162,15 +1163,15 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_CLOSE);
 
   /* Create the main box for the dialog */
-  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  gtk_widget_set_hexpand (box, TRUE);
-  gtk_widget_set_vexpand (box, TRUE);
-  gtk_widget_set_margin_top (box, 6);
-  gtk_widget_set_margin_bottom (box, 0);
-  gtk_widget_set_margin_start (box, 12);
-  gtk_widget_set_margin_end (box, 12);
-  gtk_container_set_border_width (GTK_CONTAINER (box), 12);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), box, TRUE, TRUE, 0);
+  mbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
+  gtk_widget_set_hexpand (mbox, TRUE);
+  gtk_widget_set_vexpand (mbox, TRUE);
+  gtk_widget_set_margin_top (mbox, 6);
+  gtk_widget_set_margin_bottom (mbox, 0);
+  gtk_widget_set_margin_start (mbox, 12);
+  gtk_widget_set_margin_end (mbox, 12);
+  gtk_container_set_border_width (GTK_CONTAINER (mbox), 12);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), mbox, TRUE, TRUE, 0);
 
   /* Create custom actions label */
   label = gtk_label_new ("");
@@ -1179,11 +1180,11 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
                           "</span>"));
   gtk_widget_set_halign (label, GTK_ALIGN_START);
   gtk_widget_set_valign (label, GTK_ALIGN_START);
-  gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (mbox), label, FALSE, FALSE, 0);
 
   /* Create the grid to show information */
   grid = gtk_grid_new ();
-  gtk_box_pack_start (GTK_BOX (box), grid, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (mbox), grid, TRUE, TRUE, 0);
 
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
@@ -1197,160 +1198,40 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_grid_attach (GTK_GRID (grid), image, 0, 0, 1, 1);
   gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
 
-  // /* Save option radio button */
-  // radio = gtk_radio_button_new_with_mnemonic (NULL, _("Save"));
-  // gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio), (sd->action & SAVE));
-  // g_signal_connect (G_OBJECT (radio), "toggled",
-  //                   G_CALLBACK (cb_save_toggled), sd);
-  // g_signal_connect (G_OBJECT (radio), "activate",
-  //                   G_CALLBACK (cb_radiobutton_activate), dlg);
-  // gtk_widget_set_tooltip_text (radio, _("Save the screenshot to a PNG file"));
-  // gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 0, 1, 1);
+  /* Create the box to show custom actions and toolbar */
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
+  gtk_widget_set_hexpand (hbox, TRUE);
+  gtk_widget_set_vexpand (hbox, TRUE);
+  gtk_widget_set_margin_top (hbox, 6);
+  gtk_widget_set_margin_bottom (hbox, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (hbox), 12);
+  gtk_box_pack_start (GTK_BOX (mbox), hbox, FALSE, FALSE, 0);
 
-  // /* Show in folder checkbox */
-  // checkbox = gtk_check_button_new_with_label (_("Show in Folder"));
-  // gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox), sd->show_in_folder);
-  // gtk_widget_set_margin_start (checkbox, 25);
-  // g_signal_connect (G_OBJECT (checkbox), "toggled",
-  //                   G_CALLBACK (cb_show_in_folder_toggled), sd);
-  // g_signal_connect (G_OBJECT (radio), "toggled",
-  //                   G_CALLBACK (cb_toggle_set_sensi), checkbox);
-  // gtk_widget_set_tooltip_text (checkbox, _("Shows the saved file in the folder"));
-  // gtk_grid_attach (GTK_GRID (actions_grid), checkbox, 0, 1, 1, 1);
+  /* Add box for custom actions */
+  scrolled_window = gtk_scrolled_window_new (NULL, NULL);
+  gtk_scrolled_window_set_max_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 400);
+  gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 400);
+  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 12);
+  gtk_container_add (GTK_CONTAINER (scrolled_window), box);
+  gtk_box_pack_start (GTK_BOX (hbox), scrolled_window, FALSE, FALSE, 0);
 
-  // if (sd->plugin ||
-  //     gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
-  //   {
-  //     /* Copy to clipboard radio button */
-  //     radio =
-  //       gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
-  //                                                    _("Copy to the clipboard"));
-  //     gtk_widget_set_tooltip_text (radio,
-  //                                  _("Copy the screenshot to the clipboard so that it can be "
-  //                                    "pasted later"));
-  //     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
-  //                                   (sd->action & CLIPBOARD));
-  //     g_signal_connect (G_OBJECT (radio), "toggled",
-  //                       G_CALLBACK (cb_clipboard_toggled), sd);
-  //     g_signal_connect (G_OBJECT (radio), "activate",
-  //                       G_CALLBACK (cb_radiobutton_activate), dlg);
-  //     gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 2, 1, 1);
-  //   }
+  /* Add toolbar and its buttons */
+  toolbar =  gtk_toolbar_new();
+  gtk_toolbar_set_style (GTK_TOOLBAR (toolbar), GTK_TOOLBAR_ICONS);
+  gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_SMALL_TOOLBAR);
+  gtk_orientable_set_orientation (GTK_ORIENTABLE (toolbar), GTK_ORIENTATION_VERTICAL);
+  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Add custom action");
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "dialog-warning-symbolic");
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
+  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Remove custom action");
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "dialog-warning-symbolic");
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
+  gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
 
-  // /* Open with radio button */
-  // radio =
-  //   gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
-  //                                                _("Open with:"));
-  // gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
-  //                               (sd->action & OPEN));
-  // g_signal_connect (G_OBJECT (radio), "toggled",
-  //                   G_CALLBACK (cb_open_toggled), sd);
-  // g_signal_connect (G_OBJECT (radio), "activate",
-  //                   G_CALLBACK (cb_radiobutton_activate), dlg);
-  // gtk_widget_set_tooltip_text (radio,
-  //                              _("Open the screenshot with the chosen application"));
-  // gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 3, 1, 1);
 
-  // /* Open with combobox */
-  // liststore = gtk_list_store_new (4, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_APP_INFO);
-  // combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
-  // renderer = gtk_cell_renderer_text_new ();
-  // renderer_pixbuf = gtk_cell_renderer_pixbuf_new ();
-  // gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), renderer_pixbuf, FALSE);
-  // gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
-  // gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer, "text", 1, NULL);
-  // gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer_pixbuf,
-  //                                 "pixbuf", 0, NULL);
-  // populate_liststore (liststore);
-  // set_default_item (combobox, sd);
-  // gtk_grid_attach (GTK_GRID (actions_grid), combobox, 1, 3, 1, 1);
-
-  // g_signal_connect (G_OBJECT (combobox), "changed",
-  //                   G_CALLBACK (cb_combo_active_item_changed), sd);
-  // gtk_widget_set_tooltip_text (combobox, _("Application to open the screenshot"));
-  // g_signal_connect (G_OBJECT (radio), "toggled",
-  //                   G_CALLBACK (cb_toggle_set_sensi), combobox);
-
-  // /* Run the callback functions to grey/ungrey the correct widgets */
-  // cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (radio), combobox);
-
-  // /* Upload to imgur radio button */
-  // if (sd->enable_imgur_upload)
-  //   {
-  //     GtkWidget *image;
-
-  //     box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
-  //     gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 5, 1, 1);
-
-  //     radio =
-  //       gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
-  //                                                   _("Host on Imgur™"));
-  //     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
-  //                                 (sd->action & UPLOAD_IMGUR));
-  //     gtk_widget_set_tooltip_text (radio,
-  //                                 _("Host the screenshot on Imgur™, a free online "
-  //                                   "image hosting service"));
-  //     g_signal_connect (G_OBJECT (radio), "toggled",
-  //                       G_CALLBACK (cb_imgur_toggled), sd);
-  //     g_signal_connect (G_OBJECT (radio), "activate",
-  //                       G_CALLBACK (cb_radiobutton_activate), dlg);
-  //     gtk_container_add (GTK_CONTAINER (box), radio);
-
-  //     /* Upload to imgur warning info */
-  //     image = gtk_image_new_from_icon_name ("dialog-warning-symbolic", GTK_ICON_SIZE_BUTTON);
-  //     label = gtk_label_new (NULL);
-  //     gtk_label_set_markup (GTK_LABEL (label),
-  //       _("Watch for sensitive content, the uploaded image will be publicly\n"
-  //         "available and there is no guarantee it can be certainly deleted.\n"
-  //         "Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
-  //         "If you use this feature you must agree with Imgur™ "
-  //         "<a href=\"https://imgur.com/tos\">Terms of Service</a>."));
-
-  //     popover = gtk_popover_new (image);
-  //     gtk_container_add (GTK_CONTAINER (popover), label);
-  //     gtk_container_set_border_width (GTK_CONTAINER (popover), 6);
-  //     gtk_widget_show (label);
-
-  //     evbox = gtk_event_box_new ();
-  //     g_signal_connect_swapped (G_OBJECT (evbox), "button-press-event",
-  //                               G_CALLBACK (cb_imgur_warning_clicked), popover);
-  //     gtk_container_add (GTK_CONTAINER (box), evbox);
-  //     gtk_container_add (GTK_CONTAINER (evbox), image);
-
-  //     cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_HAND2);
-  //     g_signal_connect (evbox, "realize",
-  //                       G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
-  //     g_object_unref (cursor);
-  //   }
-
-  // /* Preview box */
-  // box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  // gtk_container_set_border_width (GTK_CONTAINER (box), 0);
-  // gtk_grid_attach (GTK_GRID (grid), box, 1, 0, 1, 1);
-
-  // /* Preview label*/
-  // label = gtk_label_new ("");
-  // gtk_label_set_markup (GTK_LABEL (label),
-  //                       _("<span weight=\"bold\" stretch=\"semiexpanded\">"
-  //                         "Preview</span>"));
-  // gtk_widget_set_halign (label, GTK_ALIGN_START);
-  // gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
-  // gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
-
-  // /* The preview image */
-  // thumbnail = screenshot_get_thumbnail (sd->screenshot);
-  // evbox = gtk_event_box_new ();
-  // preview = gtk_image_new_from_pixbuf (thumbnail);
-  // g_object_unref (thumbnail);
-  // gtk_container_add (GTK_CONTAINER (evbox), preview);
-  // gtk_box_pack_start (GTK_BOX (box), evbox, FALSE, FALSE, 0);
-
-  // /* DND for the preview image */
-  // gtk_drag_source_set (evbox, GDK_BUTTON1_MASK, NULL, 0, GDK_ACTION_COPY);
-  // gtk_drag_source_add_image_targets (evbox);
-  // g_signal_connect (evbox, "drag-begin", G_CALLBACK (preview_drag_begin), thumbnail);
-  // g_signal_connect (evbox, "drag-data-get", G_CALLBACK (preview_drag_data_get), sd->screenshot);
-  // g_signal_connect (evbox, "drag-end", G_CALLBACK (preview_drag_end), dlg);
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
