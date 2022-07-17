@@ -637,6 +637,11 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
       gtk_widget_destroy (dialog);
       screenshooter_take_screenshot (sd, FALSE);
     }
+  else if (response == GTK_RESPONSE_APPLY)
+    {
+      GtkWidget *dialog =  screenshooter_preference_dialog_new (sd);
+      gtk_dialog_run (GTK_DIALOG (dialog));
+    }
   else
     {
       gtk_widget_destroy (dialog);
@@ -684,6 +689,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
       dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
         "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
+        "", _("Preference"), GTK_RESPONSE_APPLY,
         "", _("_Cancel"), GTK_RESPONSE_CANCEL,
         "", _("_OK"), GTK_RESPONSE_OK,
         NULL);
@@ -710,7 +716,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
   /* Create the grid to align the differents parts of the top of the UI */
   grid = gtk_grid_new ();
-  gtk_grid_set_column_spacing (GTK_GRID (grid), 20);
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 100);
   gtk_box_pack_start (GTK_BOX (main_box), grid, TRUE, TRUE, 0);
 
   /* Create the main box for the regions */
@@ -1123,6 +1129,109 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (evbox, "drag-begin", G_CALLBACK (preview_drag_begin), thumbnail);
   g_signal_connect (evbox, "drag-data-get", G_CALLBACK (preview_drag_data_get), sd->screenshot);
   g_signal_connect (evbox, "drag-end", G_CALLBACK (preview_drag_end), dlg);
+
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
+
+  return dlg;
+}
+
+
+
+GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
+{
+  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover, *image, *frame, *mbox, *hbox, *scrolled_window;
+  GtkWidget *actions_grid, *toolbar;
+  GtkToolButton *tool_button;
+
+  GtkListStore *liststore;
+  GtkWidget *combobox;
+  GtkCellRenderer *renderer, *renderer_pixbuf;
+
+  GtkWidget *preview;
+  GdkPixbuf *thumbnail;
+  GdkCursor *cursor;
+
+  dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Preferences"),
+    NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+    "", _("_Close"), GTK_RESPONSE_CLOSE,
+    NULL);
+
+  gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
+  gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
+  gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
+  gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
+  gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_CLOSE);
+
+  /* Create the main box for the dialog */
+  mbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
+  gtk_widget_set_hexpand (mbox, TRUE);
+  gtk_widget_set_vexpand (mbox, TRUE);
+  gtk_widget_set_margin_top (mbox, 6);
+  gtk_widget_set_margin_bottom (mbox, 0);
+  gtk_widget_set_margin_start (mbox, 12);
+  gtk_widget_set_margin_end (mbox, 12);
+  gtk_container_set_border_width (GTK_CONTAINER (mbox), 12);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), mbox, TRUE, TRUE, 0);
+
+  /* Create custom actions label */
+  label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (label),
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions"
+                          "</span>"));
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_box_pack_start (GTK_BOX (mbox), label, FALSE, FALSE, 0);
+
+  /* Create the grid to show information */
+  grid = gtk_grid_new ();
+  gtk_box_pack_start (GTK_BOX (mbox), grid, TRUE, TRUE, 0);
+
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
+
+  image = gtk_image_new_from_icon_name ("dialog-warning-symbolic", GTK_ICON_SIZE_BUTTON);
+  label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL (label),
+        _("You can handle custom actions that wil be available to handle\n"
+          "screenshots after they are captured."));
+  gtk_grid_attach (GTK_GRID (grid), image, 0, 0, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
+
+  /* Create the box to show custom actions and toolbar */
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
+  gtk_widget_set_hexpand (hbox, TRUE);
+  gtk_widget_set_vexpand (hbox, TRUE);
+  gtk_widget_set_margin_top (hbox, 6);
+  gtk_widget_set_margin_bottom (hbox, 0);
+  gtk_container_set_border_width (GTK_CONTAINER (hbox), 12);
+  gtk_box_pack_start (GTK_BOX (mbox), hbox, FALSE, FALSE, 0);
+
+  /* Add box for custom actions */
+  scrolled_window = gtk_scrolled_window_new (NULL, NULL);
+  gtk_scrolled_window_set_max_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 400);
+  gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 400);
+  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
+  gtk_container_set_border_width (GTK_CONTAINER (box), 12);
+  gtk_container_add (GTK_CONTAINER (scrolled_window), box);
+  gtk_box_pack_start (GTK_BOX (hbox), scrolled_window, FALSE, FALSE, 0);
+
+  /* Add toolbar and its buttons */
+  toolbar =  gtk_toolbar_new();
+  gtk_toolbar_set_style (GTK_TOOLBAR (toolbar), GTK_TOOLBAR_ICONS);
+  gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_SMALL_TOOLBAR);
+  gtk_orientable_set_orientation (GTK_ORIENTABLE (toolbar), GTK_ORIENTATION_VERTICAL);
+  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Add custom action");
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "dialog-warning-symbolic");
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
+  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Remove custom action");
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "dialog-warning-symbolic");
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
+  gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
+
+
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
