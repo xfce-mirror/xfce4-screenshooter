@@ -1140,7 +1140,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
 {
   GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover, *image, *frame, *mbox, *hbox, *scrolled_window;
-  GtkWidget *actions_grid, *toolbar;
+  GtkWidget *actions_grid, *toolbar, *name, *cmd;
   GtkToolButton *tool_button;
 
   GtkListStore *liststore;
@@ -1174,7 +1174,7 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), mbox, TRUE, TRUE, 0);
 
   /* Create custom actions label */
-  label = gtk_label_new ("");
+  label = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions"
                           "</span>"));
@@ -1184,33 +1184,37 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
 
   /* Create the grid to show information */
   grid = gtk_grid_new ();
+  gtk_widget_set_margin_top (GTK_WIDGET (grid), 6);
+  gtk_widget_set_margin_bottom (GTK_WIDGET (grid), 0);
+  gtk_widget_set_margin_start (GTK_WIDGET (grid), 12);
+  gtk_widget_set_margin_end (GTK_WIDGET (grid), 12);
   gtk_box_pack_start (GTK_BOX (mbox), grid, TRUE, TRUE, 0);
 
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
   gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
 
-  image = gtk_image_new_from_icon_name ("dialog-warning-symbolic", GTK_ICON_SIZE_BUTTON);
-  label = gtk_label_new ("");
+  image = gtk_image_new_from_icon_name ("dialog-information", GTK_ICON_SIZE_DIALOG);
+  label = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (label),
-        _("You can handle custom actions that wil be available to handle\n"
-          "screenshots after they are captured."));
+        _("You can handle custom actions that wil be available\n"
+          "to handle screenshots after they are captured."));
   gtk_grid_attach (GTK_GRID (grid), image, 0, 0, 1, 1);
   gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
 
   /* Create the box to show custom actions and toolbar */
+  frame = gtk_frame_new (NULL);
+  gtk_widget_set_margin_top (frame, 6);
+  gtk_widget_set_margin_bottom (frame, 0);
   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
   gtk_widget_set_hexpand (hbox, TRUE);
   gtk_widget_set_vexpand (hbox, TRUE);
-  gtk_widget_set_margin_top (hbox, 6);
-  gtk_widget_set_margin_bottom (hbox, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (hbox), 12);
-  gtk_box_pack_start (GTK_BOX (mbox), hbox, FALSE, FALSE, 0);
+  gtk_container_add (GTK_CONTAINER (frame), hbox);
+  gtk_box_pack_start (GTK_BOX (mbox), frame, FALSE, FALSE, 0);
 
   /* Add box for custom actions */
   scrolled_window = gtk_scrolled_window_new (NULL, NULL);
-  gtk_scrolled_window_set_max_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 400);
-  gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 400);
+  gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 300);
   box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
   gtk_container_set_border_width (GTK_CONTAINER (box), 12);
   gtk_container_add (GTK_CONTAINER (scrolled_window), box);
@@ -1222,14 +1226,48 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_SMALL_TOOLBAR);
   gtk_orientable_set_orientation (GTK_ORIENTABLE (toolbar), GTK_ORIENTATION_VERTICAL);
   tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
-  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Add custom action");
-  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "dialog-warning-symbolic");
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), _("Add custom action"));
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "list-add-symbolic");
   gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
   tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
-  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Remove custom action");
-  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "dialog-warning-symbolic");
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Remove current selected");
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), _("list-remove-symbolic"));
   gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
   gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
+
+  /* Add grid to show details of the custom action */
+  grid = gtk_grid_new ();
+  gtk_widget_set_margin_top (GTK_WIDGET (grid), 6);
+  gtk_widget_set_margin_bottom (GTK_WIDGET (grid), 0);
+  gtk_widget_set_margin_start (GTK_WIDGET (grid), 12);
+  gtk_widget_set_margin_end (GTK_WIDGET (grid), 12);
+  gtk_box_pack_start (GTK_BOX (mbox), grid, TRUE, TRUE, 0);
+
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
+
+  /* Add custom action name */
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label), _("Name"));
+  gtk_widget_set_tooltip_text (label, _("Name of the elected custom action"));
+  gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+  name = gtk_entry_new ();
+  gtk_entry_set_has_frame (GTK_ENTRY (name), TRUE);
+  gtk_widget_set_sensitive (name, FALSE);
+  gtk_grid_attach (GTK_GRID (grid), name, 1, 0, 1, 1);
+
+  /* Add custom action command */
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label), _("Command"));
+  gtk_widget_set_tooltip_text (label, _("Command for the elected custom action"));
+  gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
+  cmd = gtk_entry_new ();
+  gtk_entry_set_has_frame (GTK_ENTRY (cmd), TRUE);
+  gtk_widget_set_sensitive (cmd, FALSE);
+  gtk_grid_attach (GTK_GRID (grid), cmd, 1, 1, 1, 1);
+
+
 
 
 
