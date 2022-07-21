@@ -7,6 +7,7 @@
 # Andrei Stepanov, 2022
 # Denis Koryavov <dkoryavov@yandex.ru>, 2009
 # Igor <f2404@yandex.ru>, 2018-2019
+# Igor Vornovskii, 2022
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2015
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2014-2015
 # Alexander Filёv, 2020
@@ -18,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-05 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Andrei Stepanov, 2022\n"
+"Last-Translator: Igor Vornovskii, 2022\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -230,7 +231,7 @@ msgstr "Файл BMP"
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "WebP File"
-msgstr ""
+msgstr "Файл WebP"
 
 #: ../lib/screenshooter-utils.c:308
 #, c-format
@@ -421,7 +422,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp is only supported if webp-pixbuf-loader is "
 "installed."
-msgstr ""
+msgstr "Путь к файлу или каталог, в котором будет сохранен скриншот, принимает расширения png, jpg и bmp. Webp поддерживается, только если установлен webp-pixbuf-loader."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
