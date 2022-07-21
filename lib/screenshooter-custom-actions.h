@@ -23,10 +23,17 @@
 #include <gio/gio.h>
 #include <gtk/gtk.h>
 
+typedef struct _ScreenshooterCustomAction ScreenshooterCustomAction;
+
 
 struct _ScreenshooterCustomAction {
     gchar *name;
     gchar *command;
+};
+
+enum {
+    CUSTOM_ACTION_NAME=0,
+    CUSTOM_ACTION_COMMAND,
 };
 
 #endif
