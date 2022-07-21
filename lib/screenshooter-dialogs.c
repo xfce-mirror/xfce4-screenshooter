@@ -19,6 +19,7 @@
 
 #include "screenshooter-dialogs.h"
 #include "screenshooter-actions.h"
+#include "screenshooter-custom-actions.h"
 
 #define ICON_SIZE 16
 #define THUMB_X_SIZE 200
@@ -1140,16 +1141,13 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
 {
   GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover, *image, *frame, *mbox, *hbox, *scrolled_window;
-  GtkWidget *actions_grid, *toolbar, *name, *cmd;
+  GtkWidget *actions_grid, *toolbar, *name, *cmd, *tree_view;
   GtkToolButton *tool_button;
 
   GtkListStore *liststore;
-  GtkWidget *combobox;
-  GtkCellRenderer *renderer, *renderer_pixbuf;
-
-  GtkWidget *preview;
-  GdkPixbuf *thumbnail;
-  GdkCursor *cursor;
+  GtkTreeIter   iter;
+  GtkTreeViewColumn *tree_col;
+  GtkCellRenderer *renderer;
 
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Preferences"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -1194,11 +1192,12 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
   gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
 
-  image = gtk_image_new_from_icon_name ("dialog-information", GTK_ICON_SIZE_DIALOG);
+  image = gtk_image_new_from_icon_name ("dialog-information", GTK_ICON_SIZE_DND);
   label = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (label),
-        _("You can handle custom actions that wil be available\n"
-          "to handle screenshots after they are captured."));
+        _("You can handle custom actions that wil\n"
+          "be available to handle screenshots \n"
+          "after they are captured."));
   gtk_grid_attach (GTK_GRID (grid), image, 0, 0, 1, 1);
   gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
 
@@ -1206,19 +1205,11 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   frame = gtk_frame_new (NULL);
   gtk_widget_set_margin_top (frame, 6);
   gtk_widget_set_margin_bottom (frame, 0);
-  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
   gtk_widget_set_hexpand (hbox, TRUE);
   gtk_widget_set_vexpand (hbox, TRUE);
   gtk_container_add (GTK_CONTAINER (frame), hbox);
   gtk_box_pack_start (GTK_BOX (mbox), frame, FALSE, FALSE, 0);
-
-  /* Add box for custom actions */
-  scrolled_window = gtk_scrolled_window_new (NULL, NULL);
-  gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 300);
-  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
-  gtk_container_set_border_width (GTK_CONTAINER (box), 12);
-  gtk_container_add (GTK_CONTAINER (scrolled_window), box);
-  gtk_box_pack_start (GTK_BOX (hbox), scrolled_window, FALSE, FALSE, 0);
 
   /* Add toolbar and its buttons */
   toolbar =  gtk_toolbar_new();
@@ -1235,6 +1226,24 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
   gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
 
+  /* Add box for custom actions */
+  scrolled_window = gtk_scrolled_window_new (NULL, NULL);
+  gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 200);
+  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  gtk_container_add (GTK_CONTAINER (scrolled_window), box);
+  gtk_box_pack_start (GTK_BOX (hbox), scrolled_window, TRUE, TRUE, 0);
+
+  /* Liststore and tree view for custom actions */
+  liststore = gtk_list_store_new (2, G_TYPE_STRING, G_TYPE_STRING);
+  tree_view = gtk_tree_view_new ();
+  tree_col = gtk_tree_view_column_new ();
+  renderer = gtk_cell_renderer_text_new ();
+  gtk_tree_view_column_set_title (tree_col, "Custom Action");
+  gtk_tree_view_column_pack_start(tree_col, renderer, TRUE);
+  gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), tree_col);
+  gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (liststore));
+  gtk_box_pack_start (GTK_BOX (box), GTK_WIDGET (tree_view), TRUE, TRUE, 0);
+
   /* Add grid to show details of the custom action */
   grid = gtk_grid_new ();
   gtk_widget_set_margin_top (GTK_WIDGET (grid), 6);
@@ -1243,6 +1252,7 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_widget_set_margin_end (GTK_WIDGET (grid), 12);
   gtk_box_pack_start (GTK_BOX (mbox), grid, TRUE, TRUE, 0);
 
+  gtk_widget_set_vexpand (GTK_WIDGET (grid), TRUE);
   gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
   gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
   gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
@@ -1255,6 +1265,7 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   name = gtk_entry_new ();
   gtk_entry_set_has_frame (GTK_ENTRY (name), TRUE);
   gtk_widget_set_sensitive (name, FALSE);
+  gtk_widget_set_vexpand (name, TRUE);
   gtk_grid_attach (GTK_GRID (grid), name, 1, 0, 1, 1);
 
   /* Add custom action command */
@@ -1265,11 +1276,8 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   cmd = gtk_entry_new ();
   gtk_entry_set_has_frame (GTK_ENTRY (cmd), TRUE);
   gtk_widget_set_sensitive (cmd, FALSE);
+  gtk_widget_set_vexpand (cmd, TRUE);
   gtk_grid_attach (GTK_GRID (grid), cmd, 1, 1, 1, 1);
-
-
-
-
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
