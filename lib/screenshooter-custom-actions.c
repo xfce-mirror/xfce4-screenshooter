@@ -18,3 +18,9 @@
  * */
 
 #include "screenshooter-custom-actions.h"
+
+
+
+void ca_populate_liststore (GtkListStore *liststore) {
+    return;
+}
