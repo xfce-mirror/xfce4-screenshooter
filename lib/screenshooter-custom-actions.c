@@ -59,11 +59,21 @@ void ca_dialog_values_changed_cb (GtkEditable* self, gpointer user_data) {
 
 
 void ca_dialog_add_button_cb (GtkToolButton* self, gpointer user_data) {
+  ScreenshooterCustomActionDialog *dialog = user_data;
   GtkTreeIter iter;
-  GtkTreeSelection *selection;
-  GtkTreeView *tree_view = GTK_TREE_VIEW (user_data);
-  GtkTreeModel *liststore = gtk_tree_view_get_model (tree_view);
-  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
-  selection = gtk_tree_view_get_selection (tree_view);
-  gtk_tree_selection_select_iter (selection, &iter);
+  gtk_list_store_append (dialog->liststore, &iter);
+  gtk_tree_selection_select_iter (dialog->selection, &iter);
+  gtk_entry_set_text (GTK_ENTRY (dialog->name), "");
+  gtk_entry_set_text (GTK_ENTRY (dialog->cmd), "");
+}
+
+
+
+void ca_dialog_delete_button_cb (GtkToolButton* self, gpointer user_data) {
+  ScreenshooterCustomActionDialog *dialog = user_data;
+  GtkTreeModel *model;
+  GtkTreeIter iter;
+  if (gtk_tree_selection_get_selected (dialog->selection, &model, &iter)) {
+    gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
+  }
 }
