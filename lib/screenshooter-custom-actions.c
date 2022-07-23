@@ -59,5 +59,29 @@ void ca_dialog_tree_selection_command_cb (GtkTreeSelection *selection, gpointer 
 
 
 void ca_populate_liststore (GtkListStore *liststore) {
-    return;
+  return;
+}
+
+
+
+void ca_dialog_name_changed_cb (GtkEditable* self, gpointer user_data) {
+  GtkTreeSelection *selection = GTK_TREE_SELECTION (user_data);
+  GtkTreeIter iter;
+  GtkTreeModel *model;
+  const gchar *text = gtk_entry_get_text (GTK_ENTRY (self));
+  if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
+    gtk_list_store_set (GTK_LIST_STORE (model), &iter, CUSTOM_ACTION_NAME, text, -1);
+  }
+}
+
+
+
+void ca_dialog_command_changed_cb (GtkEditable* self, gpointer user_data) {
+  GtkTreeSelection *selection = GTK_TREE_SELECTION (user_data);
+  GtkTreeIter iter;
+  GtkTreeModel *model;
+  const gchar *text = gtk_entry_get_text (GTK_ENTRY (self));
+  if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
+    gtk_list_store_set (GTK_LIST_STORE (model), &iter, CUSTOM_ACTION_COMMAND, text, -1);
+  }
 }

@@ -1295,6 +1295,14 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
                     G_CALLBACK (ca_dialog_tree_selection_command_cb),
                     cmd);
 
+  /* Attach signals on name and command to change model accordingly */
+  g_signal_connect (G_OBJECT (name), "changed",
+                    G_CALLBACK (ca_dialog_name_changed_cb),
+                    selection);
+  g_signal_connect (G_OBJECT (cmd), "changed",
+                    G_CALLBACK (ca_dialog_command_changed_cb),
+                    selection);
+
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
   return dlg;
