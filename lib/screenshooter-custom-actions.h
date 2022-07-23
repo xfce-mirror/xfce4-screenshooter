@@ -38,5 +38,7 @@ enum {
 
 void ca_dialog_tree_selection_name_cb    (GtkTreeSelection *selection, gpointer data);
 void ca_dialog_tree_selection_command_cb (GtkTreeSelection *selection, gpointer data);
+void ca_dialog_name_changed_cb           (GtkEditable* self, gpointer user_data);
+void ca_dialog_command_changed_cb        (GtkEditable* self, gpointer user_data);
 
 #endif
