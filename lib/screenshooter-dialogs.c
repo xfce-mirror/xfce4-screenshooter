@@ -1148,6 +1148,7 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   GtkTreeIter   iter;
   GtkTreeViewColumn *tree_col;
   GtkCellRenderer *renderer;
+  GtkTreeSelection *selection;
 
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Preferences"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -1238,8 +1239,13 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   tree_view = gtk_tree_view_new ();
   tree_col = gtk_tree_view_column_new ();
   renderer = gtk_cell_renderer_text_new ();
+  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
+  gtk_list_store_set (liststore, &iter, CUSTOM_ACTION_NAME, "name1", CUSTOM_ACTION_COMMAND, "cmd1", -1);
+  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
+  gtk_list_store_set (liststore, &iter, CUSTOM_ACTION_NAME, "name2", CUSTOM_ACTION_COMMAND, "cmd2", -1);
   gtk_tree_view_column_set_title (tree_col, "Custom Action");
   gtk_tree_view_column_pack_start(tree_col, renderer, TRUE);
+  gtk_tree_view_column_add_attribute(tree_col, renderer, "text", CUSTOM_ACTION_NAME);
   gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), tree_col);
   gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (liststore));
   gtk_box_pack_start (GTK_BOX (box), GTK_WIDGET (tree_view), TRUE, TRUE, 0);
@@ -1278,6 +1284,16 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_widget_set_sensitive (cmd, FALSE);
   gtk_widget_set_vexpand (cmd, TRUE);
   gtk_grid_attach (GTK_GRID (grid), cmd, 1, 1, 1, 1);
+
+  /* Attach signals to change text for name and command when tree selection changes */
+  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+  gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+  g_signal_connect (G_OBJECT (selection), "changed",
+                    G_CALLBACK (ca_dialog_tree_selection_name_cb),
+                    name);
+  g_signal_connect (G_OBJECT (selection), "changed",
+                    G_CALLBACK (ca_dialog_tree_selection_command_cb),
+                    cmd);
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
