@@ -21,67 +21,49 @@
 
 
 
-void ca_dialog_tree_selection_name_cb (GtkTreeSelection *selection, gpointer data) {
+void ca_dialog_tree_selection_cb (GtkTreeSelection *selection, gpointer data) {
   GtkTreeIter iter;
   GtkTreeModel *model;
-  gchar *text;
-  GtkEntry *entry = GTK_ENTRY (data);
+  gchar *name, *cmd;
+  ScreenshooterCustomActionDialog *dialog = data;
 
   if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
-    gtk_tree_model_get (model, &iter, CUSTOM_ACTION_NAME, &text, -1);
-    gtk_widget_set_sensitive (GTK_WIDGET (entry), TRUE);
-    gtk_entry_set_text (entry, text);
-    g_free (text);
+    gtk_tree_model_get (model, &iter, CUSTOM_ACTION_NAME, &name, CUSTOM_ACTION_COMMAND, &cmd, -1);
+    gtk_widget_set_sensitive (dialog->name, TRUE);
+    gtk_entry_set_text (GTK_ENTRY (dialog->name), name);
+    gtk_widget_set_sensitive (dialog->cmd, TRUE);
+    gtk_entry_set_text (GTK_ENTRY (dialog->cmd), cmd);
+    g_free (cmd);
+    g_free (name);
   }
   else {
-    gtk_widget_set_sensitive (GTK_WIDGET (entry), FALSE);
+    gtk_widget_set_sensitive (GTK_WIDGET (dialog->name), FALSE);
+    gtk_widget_set_sensitive (GTK_WIDGET (dialog->cmd), FALSE);
   }
 }
 
 
 
-void ca_dialog_tree_selection_command_cb (GtkTreeSelection *selection, gpointer data) {
+void ca_dialog_values_changed_cb (GtkEditable* self, gpointer user_data) {
+  ScreenshooterCustomActionDialog *dialog = user_data;
+  GtkTreeSelection *selection = dialog->selection;
   GtkTreeIter iter;
   GtkTreeModel *model;
-  gchar *text;
-  GtkEntry *entry = GTK_ENTRY (data);
-
+  const gchar *name = gtk_entry_get_text (GTK_ENTRY (dialog->name));
+  const gchar *cmd = gtk_entry_get_text (GTK_ENTRY (dialog->cmd));
   if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
-    gtk_tree_model_get (model, &iter, CUSTOM_ACTION_COMMAND, &text, -1);
-    gtk_widget_set_sensitive (GTK_WIDGET (entry), TRUE);
-    gtk_entry_set_text (entry, text);
-    g_free (text);
-  }
-  else {
-    gtk_widget_set_sensitive (GTK_WIDGET (entry), FALSE);
+    gtk_list_store_set (GTK_LIST_STORE (model), &iter, CUSTOM_ACTION_NAME, name, CUSTOM_ACTION_COMMAND, cmd, -1);
   }
 }
 
 
-void ca_populate_liststore (GtkListStore *liststore) {
-  return;
-}
 
-
-
-void ca_dialog_name_changed_cb (GtkEditable* self, gpointer user_data) {
-  GtkTreeSelection *selection = GTK_TREE_SELECTION (user_data);
+void ca_dialog_add_button_cb (GtkToolButton* self, gpointer user_data) {
   GtkTreeIter iter;
-  GtkTreeModel *model;
-  const gchar *text = gtk_entry_get_text (GTK_ENTRY (self));
-  if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
-    gtk_list_store_set (GTK_LIST_STORE (model), &iter, CUSTOM_ACTION_NAME, text, -1);
-  }
-}
-
-
-
-void ca_dialog_command_changed_cb (GtkEditable* self, gpointer user_data) {
-  GtkTreeSelection *selection = GTK_TREE_SELECTION (user_data);
-  GtkTreeIter iter;
-  GtkTreeModel *model;
-  const gchar *text = gtk_entry_get_text (GTK_ENTRY (self));
-  if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
-    gtk_list_store_set (GTK_LIST_STORE (model), &iter, CUSTOM_ACTION_COMMAND, text, -1);
-  }
+  GtkTreeSelection *selection;
+  GtkTreeView *tree_view = GTK_TREE_VIEW (user_data);
+  GtkTreeModel *liststore = gtk_tree_view_get_model (tree_view);
+  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
+  selection = gtk_tree_view_get_selection (tree_view);
+  gtk_tree_selection_select_iter (selection, &iter);
 }
