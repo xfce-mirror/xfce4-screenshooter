@@ -1225,10 +1225,6 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   tree_view = gtk_tree_view_new ();
   tree_col = gtk_tree_view_column_new ();
   renderer = gtk_cell_renderer_text_new ();
-  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
-  gtk_list_store_set (liststore, &iter, CUSTOM_ACTION_NAME, "name1", CUSTOM_ACTION_COMMAND, "cmd1", -1);
-  gtk_list_store_append (GTK_LIST_STORE (liststore), &iter);
-  gtk_list_store_set (liststore, &iter, CUSTOM_ACTION_NAME, "name2", CUSTOM_ACTION_COMMAND, "cmd2", -1);
   gtk_tree_view_column_set_title (tree_col, "Custom Action");
   gtk_tree_view_column_pack_start(tree_col, renderer, TRUE);
   gtk_tree_view_column_add_attribute(tree_col, renderer, "text", CUSTOM_ACTION_NAME);
@@ -1249,12 +1245,15 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
   g_signal_connect (G_OBJECT (tool_button), "clicked",
                     G_CALLBACK (ca_dialog_add_button_cb),
-                    tree_view);
+                    dialog);
   tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
   gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Remove current selected");
   gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), _("list-remove-symbolic"));
   gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
   gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
+  g_signal_connect (G_OBJECT (tool_button), "clicked",
+                    G_CALLBACK (ca_dialog_delete_button_cb),
+                    dialog);
 
   /* Add grid to show details of the custom action */
   grid = gtk_grid_new ();
@@ -1296,6 +1295,7 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   /* Attach signals to change text for name and command when tree selection changes */
   selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
   gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+  g_object_ref (G_OBJECT (selection));
   dialog->selection = selection;
   g_signal_connect (G_OBJECT (selection), "changed",
                     G_CALLBACK (ca_dialog_tree_selection_cb),

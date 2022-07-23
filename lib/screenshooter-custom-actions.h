@@ -46,5 +46,6 @@ enum {
 void ca_dialog_tree_selection_cb (GtkTreeSelection *selection, gpointer data);
 void ca_dialog_values_changed_cb (GtkEditable* self, gpointer user_data);
 void ca_dialog_add_button_cb     (GtkToolButton* self, gpointer user_data);
+void ca_dialog_delete_button_cb  (GtkToolButton* self, gpointer user_data);
 
 #endif
