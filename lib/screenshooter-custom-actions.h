@@ -32,8 +32,11 @@ struct _ScreenshooterCustomAction {
 };
 
 enum {
-    CUSTOM_ACTION_NAME=0,
+    CUSTOM_ACTION_NAME,
     CUSTOM_ACTION_COMMAND,
 };
+
+void ca_dialog_tree_selection_name_cb    (GtkTreeSelection *selection, gpointer data);
+void ca_dialog_tree_selection_command_cb (GtkTreeSelection *selection, gpointer data);
 
 #endif
