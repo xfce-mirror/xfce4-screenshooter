@@ -1149,6 +1149,7 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   GtkTreeViewColumn *tree_col;
   GtkCellRenderer *renderer;
   GtkTreeSelection *selection;
+  ScreenshooterCustomActionDialog *dialog = g_malloc0 (sizeof(ScreenshooterCustomActionDialog));
 
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Preferences"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -1212,21 +1213,6 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_container_add (GTK_CONTAINER (frame), hbox);
   gtk_box_pack_start (GTK_BOX (mbox), frame, FALSE, FALSE, 0);
 
-  /* Add toolbar and its buttons */
-  toolbar =  gtk_toolbar_new();
-  gtk_toolbar_set_style (GTK_TOOLBAR (toolbar), GTK_TOOLBAR_ICONS);
-  gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_SMALL_TOOLBAR);
-  gtk_orientable_set_orientation (GTK_ORIENTABLE (toolbar), GTK_ORIENTATION_VERTICAL);
-  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
-  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), _("Add custom action"));
-  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "list-add-symbolic");
-  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
-  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
-  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Remove current selected");
-  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), _("list-remove-symbolic"));
-  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
-  gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
-
   /* Add box for custom actions */
   scrolled_window = gtk_scrolled_window_new (NULL, NULL);
   gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 200);
@@ -1249,6 +1235,26 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), tree_col);
   gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (liststore));
   gtk_box_pack_start (GTK_BOX (box), GTK_WIDGET (tree_view), TRUE, TRUE, 0);
+  dialog->liststore = liststore;
+  dialog->tree_view = tree_view;
+
+  /* Add toolbar and its buttons */
+  toolbar =  gtk_toolbar_new();
+  gtk_toolbar_set_style (GTK_TOOLBAR (toolbar), GTK_TOOLBAR_ICONS);
+  gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_SMALL_TOOLBAR);
+  gtk_orientable_set_orientation (GTK_ORIENTABLE (toolbar), GTK_ORIENTATION_VERTICAL);
+  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), _("Add custom action"));
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "list-add-symbolic");
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
+  g_signal_connect (G_OBJECT (tool_button), "clicked",
+                    G_CALLBACK (ca_dialog_add_button_cb),
+                    tree_view);
+  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Remove current selected");
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), _("list-remove-symbolic"));
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
+  gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
 
   /* Add grid to show details of the custom action */
   grid = gtk_grid_new ();
@@ -1273,6 +1279,7 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_widget_set_sensitive (name, FALSE);
   gtk_widget_set_vexpand (name, TRUE);
   gtk_grid_attach (GTK_GRID (grid), name, 1, 0, 1, 1);
+  dialog->name = name;
 
   /* Add custom action command */
   label = gtk_label_new (NULL);
@@ -1284,24 +1291,23 @@ GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
   gtk_widget_set_sensitive (cmd, FALSE);
   gtk_widget_set_vexpand (cmd, TRUE);
   gtk_grid_attach (GTK_GRID (grid), cmd, 1, 1, 1, 1);
+  dialog->cmd = cmd;
 
   /* Attach signals to change text for name and command when tree selection changes */
   selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
   gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+  dialog->selection = selection;
   g_signal_connect (G_OBJECT (selection), "changed",
-                    G_CALLBACK (ca_dialog_tree_selection_name_cb),
-                    name);
-  g_signal_connect (G_OBJECT (selection), "changed",
-                    G_CALLBACK (ca_dialog_tree_selection_command_cb),
-                    cmd);
+                    G_CALLBACK (ca_dialog_tree_selection_cb),
+                    dialog);
 
   /* Attach signals on name and command to change model accordingly */
   g_signal_connect (G_OBJECT (name), "changed",
-                    G_CALLBACK (ca_dialog_name_changed_cb),
-                    selection);
+                    G_CALLBACK (ca_dialog_values_changed_cb),
+                    dialog);
   g_signal_connect (G_OBJECT (cmd), "changed",
-                    G_CALLBACK (ca_dialog_command_changed_cb),
-                    selection);
+                    G_CALLBACK (ca_dialog_values_changed_cb),
+                    dialog);
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 

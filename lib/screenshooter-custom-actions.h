@@ -24,6 +24,7 @@
 #include <gtk/gtk.h>
 
 typedef struct _ScreenshooterCustomAction ScreenshooterCustomAction;
+typedef struct _ScreenshooterCustomActionDialog ScreenshooterCustomActionDialog;
 
 
 struct _ScreenshooterCustomAction {
@@ -31,14 +32,19 @@ struct _ScreenshooterCustomAction {
     gchar *command;
 };
 
+struct _ScreenshooterCustomActionDialog {
+    GtkWidget *name, *cmd, *tree_view;
+    GtkTreeSelection *selection;
+    GtkListStore *liststore;
+};
+
 enum {
     CUSTOM_ACTION_NAME,
     CUSTOM_ACTION_COMMAND,
 };
 
-void ca_dialog_tree_selection_name_cb    (GtkTreeSelection *selection, gpointer data);
-void ca_dialog_tree_selection_command_cb (GtkTreeSelection *selection, gpointer data);
-void ca_dialog_name_changed_cb           (GtkEditable* self, gpointer user_data);
-void ca_dialog_command_changed_cb        (GtkEditable* self, gpointer user_data);
+void ca_dialog_tree_selection_cb (GtkTreeSelection *selection, gpointer data);
+void ca_dialog_values_changed_cb (GtkEditable* self, gpointer user_data);
+void ca_dialog_add_button_cb     (GtkToolButton* self, gpointer user_data);
 
 #endif
