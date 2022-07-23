@@ -21,6 +21,43 @@
 
 
 
+void ca_dialog_tree_selection_name_cb (GtkTreeSelection *selection, gpointer data) {
+  GtkTreeIter iter;
+  GtkTreeModel *model;
+  gchar *text;
+  GtkEntry *entry = GTK_ENTRY (data);
+
+  if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
+    gtk_tree_model_get (model, &iter, CUSTOM_ACTION_NAME, &text, -1);
+    gtk_widget_set_sensitive (GTK_WIDGET (entry), TRUE);
+    gtk_entry_set_text (entry, text);
+    g_free (text);
+  }
+  else {
+    gtk_widget_set_sensitive (GTK_WIDGET (entry), FALSE);
+  }
+}
+
+
+
+void ca_dialog_tree_selection_command_cb (GtkTreeSelection *selection, gpointer data) {
+  GtkTreeIter iter;
+  GtkTreeModel *model;
+  gchar *text;
+  GtkEntry *entry = GTK_ENTRY (data);
+
+  if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
+    gtk_tree_model_get (model, &iter, CUSTOM_ACTION_COMMAND, &text, -1);
+    gtk_widget_set_sensitive (GTK_WIDGET (entry), TRUE);
+    gtk_entry_set_text (entry, text);
+    g_free (text);
+  }
+  else {
+    gtk_widget_set_sensitive (GTK_WIDGET (entry), FALSE);
+  }
+}
+
+
 void ca_populate_liststore (GtkListStore *liststore) {
     return;
 }
