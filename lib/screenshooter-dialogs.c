@@ -640,8 +640,9 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
     }
   else if (response == GTK_RESPONSE_APPLY)
     {
-      GtkWidget *dialog =  screenshooter_preference_dialog_new (sd);
-      gtk_dialog_run (GTK_DIALOG (dialog));
+      GtkWidget *dlg =  screenshooter_preference_dialog_new ();
+      gtk_dialog_run (GTK_DIALOG (dlg));
+      gtk_widget_destroy (dlg);
     }
   else
     {
@@ -1138,14 +1139,13 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
 
 
-GtkWidget *screenshooter_preference_dialog_new (ScreenshotData *sd)
+GtkWidget *screenshooter_preference_dialog_new (void)
 {
-  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover, *image, *frame, *mbox, *hbox, *scrolled_window;
-  GtkWidget *actions_grid, *toolbar, *name, *cmd, *tree_view;
+  GtkWidget *dlg, *mbox, *label, *grid, *image, *frame, *hbox, *scrolled_window, *box;
+  GtkWidget *toolbar, *name, *cmd, *tree_view;
   GtkToolButton *tool_button;
 
   GtkListStore *liststore;
-  GtkTreeIter   iter;
   GtkTreeViewColumn *tree_col;
   GtkCellRenderer *renderer;
   GtkTreeSelection *selection;
