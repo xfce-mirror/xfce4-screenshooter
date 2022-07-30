@@ -227,7 +227,7 @@ msgstr "BMP קובץ"
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "WebP File"
-msgstr ""
+msgstr "WebP קובץ"
 
 #: ../lib/screenshooter-utils.c:308
 #, c-format
@@ -418,7 +418,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp is only supported if webp-pixbuf-loader is "
 "installed."
-msgstr ""
+msgstr "נתיב קובץ או ספריה לשמירת צילום מסך, מקבל סיומות png,jpg,bmp. קיימת תמיכה ב-webp רק אם webp-pixbuf-loader מותקן."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
