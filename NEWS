@@ -1,3 +1,19 @@
+1.9.11 (2022-08-08)
+======
+- Add support to WebP (#76)
+- Fix window capture in HiDPI mode (#73)
+- Fix intltool lock file problem during make distcheck
+- Add option to Show in File Manager when saving (#47)
+- Do not quit after dismissing dialog if invoked from plugin (#71)
+- Update COPYING (Issue #70)
+- Translation Updates:
+  Albanian, Basque, Belarusian, Bulgarian, Catalan, Chinese (China),
+  Chinese (Taiwan), Czech, Danish, Dutch, Estonian, Finnish, French,
+  Galician, German, Greek, Hebrew, Indonesian, Italian, Japanese,
+  Korean, Lithuanian, Malay, Norwegian Bokmål, Persian (Iran), Polish,
+  Portuguese, Portuguese (Brazil), Russian, Serbian, Slovak, Slovenian,
+  Spanish, Swedish, Thai, Turkish, Ukrainian
+
 1.9.10 (2022-03-06)
 ======
 - Use symbolic icons
