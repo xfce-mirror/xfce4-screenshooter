@@ -26,6 +26,7 @@
 
 #include "screenshooter-utils.h"
 #include "screenshooter-global.h"
+#include "screenshooter-actions.h"
 
 #ifdef HAVE_GIO
 #include <gio/gio.h>
@@ -37,22 +38,10 @@
 
 
 
-typedef struct _ScreenshooterCustomActionDialog ScreenshooterCustomActionDialog;
-
-
-
-struct _ScreenshooterCustomActionDialog {
-    GtkWidget *name, *cmd, *tree_view;
-    GtkTreeSelection *selection;
-    GtkListStore *liststore;
-};
-
-
-
 enum {
     CUSTOM_ACTION_NAME,
     CUSTOM_ACTION_COMMAND,
-    CUSTOM_ACTION_N_COLOUMN
+    CUSTOM_ACTION_N_COLUMN
 };
 
 
@@ -63,7 +52,7 @@ void       screenshooter_region_dialog_show    (ScreenshotData                  
                                                 gboolean                         plugin);
 GtkWidget *screenshooter_region_dialog_new     (ScreenshotData                  *sd,
                                                 gboolean                         plugin);
-GtkWidget *screenshooter_preference_dialog_new (ScreenshooterCustomActionDialog *dialog);
+GtkWidget *screenshooter_preference_dialog_new (ScreenshooterCustomAction *custom_action);
 gchar     *screenshooter_save_screenshot       (GdkPixbuf                       *screenshot,
                                                 const gchar                     *directory,
                                                 const gchar                     *filename,
@@ -76,6 +65,5 @@ void ca_dialog_tree_selection_cb (GtkTreeSelection *selection, gpointer data);
 void ca_dialog_values_changed_cb (GtkEditable* self, gpointer user_data);
 void ca_dialog_add_button_cb     (GtkToolButton* self, gpointer user_data);
 void ca_dialog_delete_button_cb  (GtkToolButton* self, gpointer user_data);
-ScreenshooterCustomActionDialog *ca_dialog_data_get (void);
 
 #endif
