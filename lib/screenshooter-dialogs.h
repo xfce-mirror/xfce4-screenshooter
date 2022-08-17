@@ -36,19 +36,46 @@
 #include <libxfce4ui/libxfce4ui.h>
 
 
-GtkWidget *screenshooter_actions_dialog_new    (ScreenshotData *sd);
-void       screenshooter_region_dialog_show    (ScreenshotData *sd,
-                                                gboolean        plugin);
-GtkWidget *screenshooter_region_dialog_new     (ScreenshotData *sd,
-                                                gboolean        plugin);
-GtkWidget *screenshooter_preference_dialog_new (void);
-gchar     *screenshooter_save_screenshot       (GdkPixbuf      *screenshot,
-                                                const gchar    *directory,
-                                                const gchar    *filename,
-                                                const gchar    *extension,
-                                                gboolean        save_dialog,
-                                                gboolean        show_preview);
-gchar     *screenshooter_save_screenshot_to    (GdkPixbuf      *screenshot,
-                                                const gchar    *save_uri);
+
+typedef struct _ScreenshooterCustomActionDialog ScreenshooterCustomActionDialog;
+
+
+
+struct _ScreenshooterCustomActionDialog {
+    GtkWidget *name, *cmd, *tree_view;
+    GtkTreeSelection *selection;
+    GtkListStore *liststore;
+};
+
+
+
+enum {
+    CUSTOM_ACTION_NAME,
+    CUSTOM_ACTION_COMMAND,
+    CUSTOM_ACTION_N_COLOUMN
+};
+
+
+
+
+GtkWidget *screenshooter_actions_dialog_new    (ScreenshotData                  *sd);
+void       screenshooter_region_dialog_show    (ScreenshotData                  *sd,
+                                                gboolean                         plugin);
+GtkWidget *screenshooter_region_dialog_new     (ScreenshotData                  *sd,
+                                                gboolean                         plugin);
+GtkWidget *screenshooter_preference_dialog_new (ScreenshooterCustomActionDialog *dialog);
+gchar     *screenshooter_save_screenshot       (GdkPixbuf                       *screenshot,
+                                                const gchar                     *directory,
+                                                const gchar                     *filename,
+                                                const gchar                     *extension,
+                                                gboolean                         save_dialog,
+                                                gboolean                         show_preview);
+gchar     *screenshooter_save_screenshot_to    (GdkPixbuf                       *screenshot,
+                                                const gchar                     *save_uri);
+void ca_dialog_tree_selection_cb (GtkTreeSelection *selection, gpointer data);
+void ca_dialog_values_changed_cb (GtkEditable* self, gpointer user_data);
+void ca_dialog_add_button_cb     (GtkToolButton* self, gpointer user_data);
+void ca_dialog_delete_button_cb  (GtkToolButton* self, gpointer user_data);
+ScreenshooterCustomActionDialog *ca_dialog_data_get (void);
 
 #endif
