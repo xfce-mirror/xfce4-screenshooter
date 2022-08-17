@@ -26,6 +26,8 @@
 #include "screenshooter-dialogs.h"
 #include "screenshooter-imgur.h"
 
+ScreenshooterCustomAction *_custom_action;
+
 static void
 cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
 {
@@ -248,6 +250,22 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
    * appear on the screenshot. */
   delay = sd->delay == 0 ? 200 : sd->delay * 1000;
   g_timeout_add (delay, take_screenshot_idle, sd);
+}
+
+
+
+/* Custom Actions */
+
+
+
+ScreenshooterCustomAction *
+screenshooter_custom_actions_get (void) {
+  if (_custom_action==NULL) {
+    _custom_action = g_new0 (ScreenshooterCustomAction, 1);
+    _custom_action->liststore = gtk_list_store_new (CUSTOM_ACTION_N_COLUMN, G_TYPE_STRING, G_TYPE_STRING);
+    screenshooter_custom_action_load (_custom_action->liststore);
+  }
+  return _custom_action;
 }
 
 
