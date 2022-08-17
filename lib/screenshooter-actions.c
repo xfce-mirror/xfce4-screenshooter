@@ -17,6 +17,8 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  * */
 
+#include <xfconf/xfconf.h>
+
 #include "screenshooter-actions.h"
 #include "screenshooter-utils.h"
 #include "screenshooter-capture.h"
@@ -128,7 +130,7 @@ action_idle (gpointer user_data)
       GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
       gchar *temp_dir_uri = g_file_get_uri (temp_dir);
       gchar *filename = screenshooter_get_filename_for_uri (temp_dir_uri,
-                                                            sd->title, 
+                                                            sd->title,
                                                             sd->last_extension,
                                                             sd->timestamp);
       save_location = screenshooter_save_screenshot (sd->screenshot,
@@ -246,4 +248,87 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
    * appear on the screenshot. */
   delay = sd->delay == 0 ? 200 : sd->delay * 1000;
   g_timeout_add (delay, take_screenshot_idle, sd);
+}
+
+
+
+void
+screenshooter_custom_action_save (GtkTreeModel *list_store)
+{
+  GtkTreeIter iter;
+  gboolean valid;
+  gint32 id = 0;
+  XfconfChannel *channel;
+  GError **error=NULL;
+
+  if (!xfconf_init (error))
+    {
+      g_critical ("Failed to initialized xfconf");
+      return;
+    }
+  channel = xfconf_channel_get ("screenshooter");
+
+  valid = gtk_tree_model_get_iter_first (list_store, &iter);
+  while (valid)
+  {
+    gchar *name;
+    gchar *command;
+    gchar name_address[50];
+    gchar command_address[50];
+
+    gtk_tree_model_get (list_store, &iter,
+                        CUSTOM_ACTION_NAME, &name,
+                        CUSTOM_ACTION_COMMAND, &command,
+                        -1);
+
+    // Storing the values
+    g_sprintf (name_address, "/actions/action-%d/name", id);
+    g_sprintf (command_address, "/actions/action-%d/command", id);
+
+    xfconf_channel_set_string (channel, name_address, name);
+    xfconf_channel_set_string (channel, command_address, command);
+
+    id++;
+    valid = gtk_tree_model_iter_next (list_store, &iter);
+  }
+  xfconf_channel_set_int (channel, "/actions/actions", id);
+  xfconf_shutdown ();
+}
+
+
+
+void
+screenshooter_custom_action_load (GtkListStore *list_store)
+{
+  gint32 max_id;
+  gint32 id;
+  XfconfChannel *channel;
+  GtkTreeIter iter;
+  GError **error=NULL;
+
+  if (!xfconf_init (error))
+    {
+      g_critical ("Failed to initialized xfconf");
+      return;
+    }
+  channel = xfconf_channel_get ("screenshooter");
+
+  max_id = xfconf_channel_get_int (channel, "/actions/actions", 0);
+  for (id=0; id<max_id; id++)
+    {
+      gchar *name = "";
+      gchar *command = "";
+      gchar name_address[50];
+      gchar command_address[50];
+
+      g_sprintf (name_address, "/actions/action-%d/name", id);
+      g_sprintf (command_address, "/actions/action-%d/command", id);
+
+      name = xfconf_channel_get_string (channel, name_address, "");
+      command = xfconf_channel_get_string (channel, command_address, "");
+
+      gtk_list_store_append (list_store, &iter);
+      gtk_list_store_set (GTK_LIST_STORE (list_store), &iter, CUSTOM_ACTION_NAME, name, CUSTOM_ACTION_COMMAND, command, -1);
+    }
+  xfconf_shutdown ();
 }
