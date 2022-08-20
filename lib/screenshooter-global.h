@@ -34,6 +34,7 @@ enum {
   CLIPBOARD = 2,
   OPEN = 4,
   UPLOAD_IMGUR = 8,
+  CUSTOM_ACTION = 16,
 };
 
 
