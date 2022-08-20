@@ -84,9 +84,6 @@ action_idle (gpointer user_data)
   if (sd->action & CLIPBOARD)
     screenshooter_copy_to_clipboard (sd->screenshot);
 
-  if (sd->action & CUSTOM_ACTION)
-    screenshooter_custom_action_execute ();
-
   if (sd->action & SAVE)
     {
       if (!sd->path_is_dir)
@@ -144,9 +141,6 @@ action_idle (gpointer user_data)
                                                      sd->last_extension,
                                                      FALSE,
                                                      FALSE);
-      g_object_unref (temp_dir);
-      g_free (temp_dir_uri);
-      g_free (filename);
 
       if (save_location)
         {
@@ -166,7 +160,14 @@ action_idle (gpointer user_data)
                   return TRUE;
                 }
             }
+          else if (sd->action & CUSTOM_ACTION)
+            {
+              screenshooter_custom_action_execute (filename);
+            }
         }
+      g_object_unref (temp_dir);
+      g_free (temp_dir_uri);
+      g_free (filename);
     }
 
   /* Persist last used file extension */
@@ -356,16 +357,77 @@ screenshooter_custom_action_load (GtkListStore *list_store)
 }
 
 
+static gchar**
+screenshooter_parse_envp (gchar **cmd)
+{
+  gchar **vars;
+  gchar **envp;
+  gint offset = 0;
 
-void screenshooter_custom_action_execute (void) {
+  vars = g_strsplit (*cmd, " ", -1);
+  envp = g_get_environ ();
+
+  for (gint n = 0; vars[n] != NULL; ++n)
+    {
+      gchar *var, *val;
+      gchar *index = g_strrstr (vars[n], "=");
+
+      if (index == NULL)
+        break;
+
+      offset += strlen (vars[n]);
+
+      var = g_strndup (vars[n], index - vars[n]);
+      val = g_strdup (index + 1);
+      envp = g_environ_setenv (envp, var, val, TRUE);
+
+      g_free (var);
+      g_free (val);
+    }
+
+  if (offset > 0)
+    {
+      gchar *temp = g_strdup (*cmd + offset + 1);
+      g_free (*cmd);
+      *cmd = temp;
+    }
+
+  g_strfreev (vars);
+
+  return envp;
+}
+
+
+
+void screenshooter_custom_action_execute (gchar *filename) {
   gchar *name;
   gchar *command;
+  gchar **split;
+  gchar **argv;
+  gchar **envp;
+  GError *error=NULL;
   ScreenshooterCustomAction *custom_action = screenshooter_custom_actions_get ();
 
   gtk_tree_model_get (GTK_TREE_MODEL (custom_action->liststore), &custom_action->selected_action,
                         CUSTOM_ACTION_NAME, &name,
                         CUSTOM_ACTION_COMMAND, &command,
                         -1);
-  g_print("%s %s\n", name, command);
+  split = g_strsplit (command, "%s", -1);
+  command = g_strjoinv (filename, split);
 
+  command = xfce_expand_variables (command, NULL);
+  envp = screenshooter_parse_envp (&command);
+
+  if (G_LIKELY (g_shell_parse_argv (command, NULL, &argv, &error)))
+    if (!g_spawn_sync (NULL, argv, envp, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL, NULL, &error))
+      {
+        xfce_dialog_show_error (NULL, error, "Failed to run the custom action %s", name);
+        g_error_free (error);
+      }
+
+  g_free (name);
+  g_free (command);
+  g_strfreev (split);
+  g_strfreev (argv);
+  g_strfreev (envp);
 }

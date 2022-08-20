@@ -42,6 +42,6 @@ screenshooter_custom_action_save (GtkTreeModel *list_store);
 void
 screenshooter_custom_action_load (GtkListStore *list_store);
 ScreenshooterCustomAction *screenshooter_custom_actions_get (void);
-void screenshooter_custom_action_execute (void);
+void screenshooter_custom_action_execute (gchar *filename);
 
 #endif
