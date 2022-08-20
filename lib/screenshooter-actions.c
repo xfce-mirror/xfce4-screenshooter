@@ -84,6 +84,9 @@ action_idle (gpointer user_data)
   if (sd->action & CLIPBOARD)
     screenshooter_copy_to_clipboard (sd->screenshot);
 
+  if (sd->action & CUSTOM_ACTION)
+    screenshooter_custom_action_execute ();
+
   if (sd->action & SAVE)
     {
       if (!sd->path_is_dir)
@@ -264,6 +267,7 @@ screenshooter_custom_actions_get (void) {
     _custom_action = g_new0 (ScreenshooterCustomAction, 1);
     _custom_action->liststore = gtk_list_store_new (CUSTOM_ACTION_N_COLUMN, G_TYPE_STRING, G_TYPE_STRING);
     screenshooter_custom_action_load (_custom_action->liststore);
+    gtk_tree_model_get_iter_first (GTK_TREE_MODEL (_custom_action->liststore), &_custom_action->selected_action);
   }
   return _custom_action;
 }
@@ -349,4 +353,19 @@ screenshooter_custom_action_load (GtkListStore *list_store)
       gtk_list_store_set (GTK_LIST_STORE (list_store), &iter, CUSTOM_ACTION_NAME, name, CUSTOM_ACTION_COMMAND, command, -1);
     }
   xfconf_shutdown ();
+}
+
+
+
+void screenshooter_custom_action_execute (void) {
+  gchar *name;
+  gchar *command;
+  ScreenshooterCustomAction *custom_action = screenshooter_custom_actions_get ();
+
+  gtk_tree_model_get (GTK_TREE_MODEL (custom_action->liststore), &custom_action->selected_action,
+                        CUSTOM_ACTION_NAME, &name,
+                        CUSTOM_ACTION_COMMAND, &command,
+                        -1);
+  g_print("%s %s\n", name, command);
+
 }
