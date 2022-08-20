@@ -205,6 +205,14 @@ static void cb_open_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 
 
+static void cb_custom_action_toggled (GtkToggleButton *tb, ScreenshotData *sd)
+{
+  if (gtk_toggle_button_get_active (tb))
+    sd->action = CUSTOM_ACTION;
+}
+
+
+
 static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
@@ -258,6 +266,18 @@ static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
   g_free (sd->app);
   sd->app = active_command;
   sd->app_info = app_info;
+}
+
+
+
+static void cb_custom_action_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
+{
+  GtkTreeIter iter;
+  ScreenshooterCustomAction *custom_action = screenshooter_custom_actions_get ();
+
+  gtk_combo_box_get_active_iter (GTK_COMBO_BOX (box), &iter);
+  custom_action->selected_action = iter;
+
 }
 
 
@@ -1051,6 +1071,36 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (combobox), "changed",
                     G_CALLBACK (cb_combo_active_item_changed), sd);
   gtk_widget_set_tooltip_text (combobox, _("Application to open the screenshot"));
+  g_signal_connect (G_OBJECT (radio), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), combobox);
+
+  /* Custom Actions radio button */
+  radio =
+    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
+                                                 _("Custom Action:"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
+                                (sd->action & CUSTOM_ACTION));
+  g_signal_connect (G_OBJECT (radio), "toggled",
+                    G_CALLBACK (cb_custom_action_toggled), sd);
+  g_signal_connect (G_OBJECT (radio), "activate",
+                    G_CALLBACK (cb_radiobutton_activate), dlg);
+  gtk_widget_set_tooltip_text (radio,
+                               _("Execute the selected custom action"));
+  gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 4, 1, 1);
+
+  /* Custom Actions combobox */
+  liststore = screenshooter_custom_actions_get ()->liststore;
+  combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
+  renderer = gtk_cell_renderer_text_new ();
+  gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer, "text", CUSTOM_ACTION_NAME, NULL);
+  gtk_grid_attach (GTK_GRID (actions_grid), combobox, 1, 4, 1, 1);
+  gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox),
+                                             &screenshooter_custom_actions_get ()->selected_action);
+
+  gtk_widget_set_tooltip_text (combobox, _("Custom action to execute"));
+  g_signal_connect (G_OBJECT (combobox), "changed",
+                    G_CALLBACK (cb_custom_action_combo_active_item_changed), sd);
   g_signal_connect (G_OBJECT (radio), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), combobox);
 
