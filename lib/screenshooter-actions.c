@@ -18,7 +18,6 @@
  * */
 
 #include <xfconf/xfconf.h>
-
 #include "screenshooter-actions.h"
 #include "screenshooter-utils.h"
 #include "screenshooter-capture.h"
@@ -26,7 +25,11 @@
 #include "screenshooter-dialogs.h"
 #include "screenshooter-imgur.h"
 
+
+
 ScreenshooterCustomAction *_custom_action;
+
+
 
 static void
 cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
@@ -224,6 +227,48 @@ take_screenshot_idle (gpointer user_data)
 
 
 
+static gchar**
+screenshooter_parse_envp (gchar **cmd)
+{
+  gchar **vars;
+  gchar **envp;
+  gint offset = 0;
+
+  vars = g_strsplit (*cmd, " ", -1);
+  envp = g_get_environ ();
+
+  for (gint n = 0; vars[n] != NULL; ++n)
+    {
+      gchar *var, *val;
+      gchar *index = g_strrstr (vars[n], "=");
+
+      if (index == NULL)
+        break;
+
+      offset += strlen (vars[n]);
+
+      var = g_strndup (vars[n], index - vars[n]);
+      val = g_strdup (index + 1);
+      envp = g_environ_setenv (envp, var, val, TRUE);
+
+      g_free (var);
+      g_free (val);
+    }
+
+  if (offset > 0)
+    {
+      gchar *temp = g_strdup (*cmd + offset + 1);
+      g_free (*cmd);
+      *cmd = temp;
+    }
+
+  g_strfreev (vars);
+
+  return envp;
+}
+
+
+
 /* Public */
 
 
@@ -262,8 +307,8 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
 
 
 
-ScreenshooterCustomAction *
-screenshooter_custom_actions_get (void) {
+ScreenshooterCustomAction
+*screenshooter_custom_actions_get (void) {
   if (_custom_action==NULL) {
     _custom_action = g_new0 (ScreenshooterCustomAction, 1);
     _custom_action->liststore = gtk_list_store_new (CUSTOM_ACTION_N_COLUMN, G_TYPE_STRING, G_TYPE_STRING);
@@ -282,11 +327,12 @@ screenshooter_custom_action_save (GtkTreeModel *list_store)
   gboolean valid;
   gint32 id = 0;
   XfconfChannel *channel;
-  GError **error=NULL;
+  GError *error=NULL;
 
-  if (!xfconf_init (error))
+  if (!xfconf_init (&error))
     {
       g_critical ("Failed to initialized xfconf");
+      g_error_free (error);
       return;
     }
   channel = xfconf_channel_get ("screenshooter");
@@ -327,11 +373,12 @@ screenshooter_custom_action_load (GtkListStore *list_store)
   gint32 id;
   XfconfChannel *channel;
   GtkTreeIter iter;
-  GError **error=NULL;
+  GError *error=NULL;
 
-  if (!xfconf_init (error))
+  if (!xfconf_init (&error))
     {
       g_critical ("Failed to initialized xfconf");
+      g_error_free (error);
       return;
     }
   channel = xfconf_channel_get ("screenshooter");
@@ -354,47 +401,6 @@ screenshooter_custom_action_load (GtkListStore *list_store)
       gtk_list_store_set (GTK_LIST_STORE (list_store), &iter, CUSTOM_ACTION_NAME, name, CUSTOM_ACTION_COMMAND, command, -1);
     }
   xfconf_shutdown ();
-}
-
-
-static gchar**
-screenshooter_parse_envp (gchar **cmd)
-{
-  gchar **vars;
-  gchar **envp;
-  gint offset = 0;
-
-  vars = g_strsplit (*cmd, " ", -1);
-  envp = g_get_environ ();
-
-  for (gint n = 0; vars[n] != NULL; ++n)
-    {
-      gchar *var, *val;
-      gchar *index = g_strrstr (vars[n], "=");
-
-      if (index == NULL)
-        break;
-
-      offset += strlen (vars[n]);
-
-      var = g_strndup (vars[n], index - vars[n]);
-      val = g_strdup (index + 1);
-      envp = g_environ_setenv (envp, var, val, TRUE);
-
-      g_free (var);
-      g_free (val);
-    }
-
-  if (offset > 0)
-    {
-      gchar *temp = g_strdup (*cmd + offset + 1);
-      g_free (*cmd);
-      *cmd = temp;
-    }
-
-  g_strfreev (vars);
-
-  return envp;
 }
 
 
