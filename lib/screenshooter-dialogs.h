@@ -44,6 +44,10 @@ enum {
     CUSTOM_ACTION_N_COLUMN
 };
 
+enum {
+    GTK_RESPONSE_PREFERENCES = 1,
+};
+
 
 
 
@@ -61,9 +65,5 @@ gchar     *screenshooter_save_screenshot       (GdkPixbuf                       
                                                 gboolean                         show_preview);
 gchar     *screenshooter_save_screenshot_to    (GdkPixbuf                       *screenshot,
                                                 const gchar                     *save_uri);
-void ca_dialog_tree_selection_cb (GtkTreeSelection *selection, gpointer data);
-void ca_dialog_values_changed_cb (GtkEditable* self, gpointer user_data);
-void ca_dialog_add_button_cb     (GtkToolButton* self, gpointer user_data);
-void ca_dialog_delete_button_cb  (GtkToolButton* self, gpointer user_data);
 
 #endif
