@@ -24,30 +24,12 @@
 
 
 
-typedef struct _ScreenshooterCustomActionDialogData ScreenshooterCustomActionDialogData;
-typedef struct _ScreenshooterCustomAction ScreenshooterCustomAction;
-
-
-
-struct _ScreenshooterCustomAction {
-    GtkListStore *liststore;
-    GtkTreeIter selected_action;
-    ScreenshooterCustomActionDialogData *data;
-};
-
-struct _ScreenshooterCustomActionDialogData {
-    GtkWidget *name, *cmd, *tree_view;
-    GtkTreeSelection *selection;
-};
-
-
-
 void screenshooter_take_screenshot       (ScreenshotData *sd,
-                                          gboolean immediate);
-void screenshooter_custom_action_save    (GtkTreeModel *list_store);
-void screenshooter_custom_action_load    (GtkListStore *list_store);
-void screenshooter_custom_action_execute (gchar *filename);
-
-ScreenshooterCustomAction *screenshooter_custom_actions_get (void);
+                                          gboolean        immediate);
+void screenshooter_custom_action_save    (GtkTreeModel   *list_store);
+void screenshooter_custom_action_load    (GtkListStore   *list_store);
+void screenshooter_custom_action_execute (gchar          *filename,
+                                          gchar          *name,
+                                          gchar          *command);
 
 #endif

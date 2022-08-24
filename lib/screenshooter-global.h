@@ -58,6 +58,8 @@ typedef struct
   gchar *screenshot_dir;
   gchar *title;
   gchar *app;
+  gchar *custom_action_name;
+  gchar *custom_action_command;
   GAppInfo *app_info;
   gchar *last_user;
   gchar *last_extension;

@@ -37,6 +37,9 @@
 #include <libxfce4ui/libxfce4ui.h>
 
 
+typedef struct _CustomActionDialogData CustomActionDialogData;
+
+
 
 enum {
     CUSTOM_ACTION_NAME,
@@ -50,20 +53,29 @@ enum {
 
 
 
+struct _CustomActionDialogData {
+    GtkWidget *name, *cmd, *tree_view;
+    GtkListStore *liststore;
+    GtkTreeSelection *selection;
+};
 
-GtkWidget *screenshooter_actions_dialog_new    (ScreenshotData                  *sd);
-void       screenshooter_region_dialog_show    (ScreenshotData                  *sd,
-                                                gboolean                         plugin);
-GtkWidget *screenshooter_region_dialog_new     (ScreenshotData                  *sd,
-                                                gboolean                         plugin);
-GtkWidget *screenshooter_preference_dialog_new (ScreenshooterCustomAction *custom_action);
-gchar     *screenshooter_save_screenshot       (GdkPixbuf                       *screenshot,
-                                                const gchar                     *directory,
-                                                const gchar                     *filename,
-                                                const gchar                     *extension,
-                                                gboolean                         save_dialog,
-                                                gboolean                         show_preview);
-gchar     *screenshooter_save_screenshot_to    (GdkPixbuf                       *screenshot,
-                                                const gchar                     *save_uri);
+
+
+
+GtkWidget *screenshooter_actions_dialog_new    (ScreenshotData         *sd);
+void       screenshooter_region_dialog_show    (ScreenshotData         *sd,
+                                                gboolean                plugin);
+GtkWidget *screenshooter_region_dialog_new     (ScreenshotData         *sd,
+                                                gboolean                plugin);
+GtkWidget *screenshooter_preference_dialog_new (CustomActionDialogData *custom_action);
+gchar     *screenshooter_save_screenshot       (GdkPixbuf              *screenshot,
+                                                const gchar            *directory,
+                                                const gchar            *filename,
+                                                const gchar            *extension,
+                                                gboolean                save_dialog,
+                                                gboolean                show_preview);
+gchar     *screenshooter_save_screenshot_to    (GdkPixbuf              *screenshot,
+                                                const gchar            *save_uri);
+void       screenshooter_preference_dialog_run (void);
 
 #endif

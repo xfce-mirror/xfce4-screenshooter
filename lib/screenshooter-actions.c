@@ -27,10 +27,6 @@
 
 
 
-ScreenshooterCustomAction *_custom_action;
-
-
-
 static void
 cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
 {
@@ -165,7 +161,7 @@ action_idle (gpointer user_data)
             }
           else if (sd->action & CUSTOM_ACTION)
             {
-              screenshooter_custom_action_execute (filename);
+              screenshooter_custom_action_execute (filename, sd->custom_action_name, sd->custom_action_command);
             }
         }
       g_object_unref (temp_dir);
@@ -307,24 +303,12 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
 
 
 
-ScreenshooterCustomAction
-*screenshooter_custom_actions_get (void) {
-  if (_custom_action==NULL) {
-    _custom_action = g_new0 (ScreenshooterCustomAction, 1);
-    _custom_action->liststore = gtk_list_store_new (CUSTOM_ACTION_N_COLUMN, G_TYPE_STRING, G_TYPE_STRING);
-    screenshooter_custom_action_load (_custom_action->liststore);
-    gtk_tree_model_get_iter_first (GTK_TREE_MODEL (_custom_action->liststore), &_custom_action->selected_action);
-  }
-  return _custom_action;
-}
-
-
-
 void
 screenshooter_custom_action_save (GtkTreeModel *list_store)
 {
   GtkTreeIter iter;
   gboolean valid;
+  gint32 max_id;
   gint32 id = 0;
   XfconfChannel *channel;
   GError *error=NULL;
@@ -337,29 +321,38 @@ screenshooter_custom_action_save (GtkTreeModel *list_store)
     }
   channel = xfconf_channel_get ("screenshooter");
 
+  max_id = xfconf_channel_get_int (channel, "/actions/actions", 0);
+
   valid = gtk_tree_model_get_iter_first (list_store, &iter);
   while (valid)
-  {
-    gchar *name;
-    gchar *command;
-    gchar name_address[50];
-    gchar command_address[50];
+    {
+      gchar *name;
+      gchar *command;
+      gchar name_address[50];
+      gchar command_address[50];
 
-    gtk_tree_model_get (list_store, &iter,
-                        CUSTOM_ACTION_NAME, &name,
-                        CUSTOM_ACTION_COMMAND, &command,
-                        -1);
+      gtk_tree_model_get (list_store, &iter,
+                          CUSTOM_ACTION_NAME, &name,
+                          CUSTOM_ACTION_COMMAND, &command,
+                          -1);
 
-    // Storing the values
-    g_sprintf (name_address, "/actions/action-%d/name", id);
-    g_sprintf (command_address, "/actions/action-%d/command", id);
+      // Storing the values
+      g_sprintf (name_address, "/actions/action-%d/name", id);
+      g_sprintf (command_address, "/actions/action-%d/command", id);
 
-    xfconf_channel_set_string (channel, name_address, name);
-    xfconf_channel_set_string (channel, command_address, command);
+      xfconf_channel_set_string (channel, name_address, name);
+      xfconf_channel_set_string (channel, command_address, command);
 
-    id++;
-    valid = gtk_tree_model_iter_next (list_store, &iter);
-  }
+      id++;
+      valid = gtk_tree_model_iter_next (list_store, &iter);
+    }
+
+  for (gint32 i=id; i<max_id; i++)
+    {
+      gchar base[50];
+      g_sprintf (base, "/actions/action-%d", i);
+      xfconf_channel_reset_property (channel, base, TRUE);
+    }
   xfconf_channel_set_int (channel, "/actions/actions", id);
   xfconf_shutdown ();
 }
@@ -405,19 +398,18 @@ screenshooter_custom_action_load (GtkListStore *list_store)
 
 
 
-void screenshooter_custom_action_execute (gchar *filename) {
-  gchar *name;
-  gchar *command;
+void screenshooter_custom_action_execute (gchar *filename, gchar *name, gchar *command) {
   gchar **split;
   gchar **argv;
   gchar **envp;
   GError *error=NULL;
-  ScreenshooterCustomAction *custom_action = screenshooter_custom_actions_get ();
 
-  gtk_tree_model_get (GTK_TREE_MODEL (custom_action->liststore), &custom_action->selected_action,
-                        CUSTOM_ACTION_NAME, &name,
-                        CUSTOM_ACTION_COMMAND, &command,
-                        -1);
+  if (name==NULL || command==NULL)
+    {
+      xfce_dialog_show_warning (NULL, "Unable to execute the custom action", "Invalid custom action selected");
+      return;
+    }
+
   split = g_strsplit (command, "%s", -1);
   command = g_strjoinv (filename, split);
 
