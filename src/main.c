@@ -230,6 +230,7 @@ int main (int argc, char **argv)
   sd->path_is_dir = TRUE;
   sd->app_info = NULL;
   sd->action = 0;
+  sd->custom_action_name = g_strdup ("none");
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
