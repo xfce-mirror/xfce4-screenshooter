@@ -404,13 +404,19 @@ void screenshooter_custom_action_execute (gchar *filename, gchar *name, gchar *c
   gchar **envp;
   GError *error=NULL;
 
-  if (name==NULL || command==NULL)
+  if (g_str_equal (name, "") || g_str_equal (command, ""))
+    {
+      name = "none";
+      command = "none";
+    }
+
+  if (g_str_equal (name, "none") || g_str_equal (command, "none"))
     {
       xfce_dialog_show_warning (NULL, "Unable to execute the custom action", "Invalid custom action selected");
       return;
     }
 
-  split = g_strsplit (command, "%s", -1);
+  split = g_strsplit (command, "\%f", -1);
   command = g_strjoinv (filename, split);
 
   command = xfce_expand_variables (command, NULL);
