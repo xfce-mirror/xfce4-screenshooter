@@ -26,6 +26,7 @@
 
 #include "screenshooter-utils.h"
 #include "screenshooter-global.h"
+#include "screenshooter-actions.h"
 
 #ifdef HAVE_GIO
 #include <gio/gio.h>
@@ -36,18 +37,45 @@
 #include <libxfce4ui/libxfce4ui.h>
 
 
-GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd);
-void       screenshooter_region_dialog_show (ScreenshotData *sd,
-                                             gboolean        plugin);
-GtkWidget *screenshooter_region_dialog_new  (ScreenshotData *sd,
-                                             gboolean        plugin);
-gchar     *screenshooter_save_screenshot    (GdkPixbuf      *screenshot,
-                                             const gchar    *directory,
-                                             const gchar    *filename,
-                                             const gchar    *extension,
-                                             gboolean        save_dialog,
-                                             gboolean        show_preview);
-gchar     *screenshooter_save_screenshot_to (GdkPixbuf      *screenshot,
-                                             const gchar    *save_uri);
+typedef struct _CustomActionDialogData CustomActionDialogData;
+
+
+
+enum {
+    CUSTOM_ACTION_NAME,
+    CUSTOM_ACTION_COMMAND,
+    CUSTOM_ACTION_N_COLUMN
+};
+
+enum {
+    GTK_RESPONSE_PREFERENCES = 1,
+};
+
+
+
+struct _CustomActionDialogData {
+    GtkWidget *name, *cmd, *tree_view;
+    GtkListStore *liststore;
+    GtkTreeSelection *selection;
+};
+
+
+
+
+GtkWidget *screenshooter_actions_dialog_new    (ScreenshotData         *sd);
+void       screenshooter_region_dialog_show    (ScreenshotData         *sd,
+                                                gboolean                plugin);
+GtkWidget *screenshooter_region_dialog_new     (ScreenshotData         *sd,
+                                                gboolean                plugin);
+GtkWidget *screenshooter_preference_dialog_new (CustomActionDialogData *custom_action);
+gchar     *screenshooter_save_screenshot       (GdkPixbuf              *screenshot,
+                                                const gchar            *directory,
+                                                const gchar            *filename,
+                                                const gchar            *extension,
+                                                gboolean                save_dialog,
+                                                gboolean                show_preview);
+gchar     *screenshooter_save_screenshot_to    (GdkPixbuf              *screenshot,
+                                                const gchar            *save_uri);
+void       screenshooter_preference_dialog_run (void);
 
 #endif
