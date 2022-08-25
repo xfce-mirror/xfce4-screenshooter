@@ -296,7 +296,6 @@ static void cb_custom_action_combo_active_item_changed (GtkWidget *box, Screensh
                       -1);
   sd->custom_action_name = name;
   sd->custom_action_command = command;
-  g_print ("%s %s\n", name, command);
 }
 
 
@@ -441,7 +440,6 @@ static void custom_action_set_default_item (GtkWidget *combobox, ScreenshotData 
       gchar *name=NULL;
       gchar *command = NULL;
       gboolean found = FALSE;
-      g_print ("S\n");
 
       /* Loop until finding the appropirate item, if any */
       do
@@ -450,16 +448,13 @@ static void custom_action_set_default_item (GtkWidget *combobox, ScreenshotData 
                               CUSTOM_ACTION_NAME, &name,
                               CUSTOM_ACTION_COMMAND, &command,
                               -1);
-          g_print ("S1 %s %s %s %s\n", name, command, sd->custom_action_name, sd->custom_action_command);
           if (g_str_equal (command, sd->custom_action_command))
             {
-              g_print ("S2\n");
               gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox),
                                              &iter);
               g_free (sd->custom_action_name);
               sd->custom_action_name = name;
               found = TRUE;
-              g_print ("S3\n");
             }
           g_free (command);
         }
@@ -469,7 +464,6 @@ static void custom_action_set_default_item (GtkWidget *combobox, ScreenshotData 
        * set sd->app accordingly. */
       if (G_UNLIKELY (!found))
         {
-          g_print ("F\n");
           gtk_tree_model_get_iter_first (model , &iter);
           gtk_tree_model_get (model, &iter,
                               CUSTOM_ACTION_NAME, &name,
@@ -820,8 +814,9 @@ ca_dialog_add_button_cb (GtkToolButton* self,
   GtkTreeIter iter;
   gtk_list_store_append (dialog_data->liststore, &iter);
   gtk_tree_selection_select_iter (dialog_data->selection, &iter);
-  gtk_entry_set_text (GTK_ENTRY (dialog_data->name), "");
-  gtk_entry_set_text (GTK_ENTRY (dialog_data->cmd), "");
+  gtk_entry_set_text (GTK_ENTRY (dialog_data->name), g_strdup (""));
+  gtk_entry_set_text (GTK_ENTRY (dialog_data->cmd), g_strdup (""));
+  gtk_widget_grab_focus (dialog_data->name);
 }
 
 
@@ -1236,6 +1231,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (combobox), "changed",
                     G_CALLBACK (cb_combo_active_item_changed), sd);
   gtk_widget_set_tooltip_text (combobox, _("Application to open the screenshot"));
+  gtk_widget_set_sensitive (combobox, sd->action & OPEN);
   g_signal_connect (G_OBJECT (radio), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), combobox);
 
@@ -1264,6 +1260,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   custom_action_set_default_item (combobox, sd);
 
   gtk_widget_set_tooltip_text (combobox, _("Custom action to execute"));
+  gtk_widget_set_sensitive (combobox, sd->action & CUSTOM_ACTION);
   g_signal_connect (G_OBJECT (combobox), "changed",
                     G_CALLBACK (cb_custom_action_combo_active_item_changed), sd);
   g_signal_connect (G_OBJECT (radio), "toggled",
@@ -1642,6 +1639,11 @@ GtkWidget
   gtk_widget_set_vexpand (cmd, TRUE);
   gtk_grid_attach (GTK_GRID (grid), cmd, 1, 1, 1, 1);
   dialog_data->cmd = cmd;
+
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label), _("Use \%f as a placeholder for filename\n of the screenshot captured"));
+  gtk_widget_set_tooltip_text (label, _("Command for the elected custom action"));
+  gtk_box_pack_start (GTK_BOX (mbox), label, TRUE, TRUE, 0);
 
   /* Attach signals to change text for name and command when tree selection changes */
   selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
