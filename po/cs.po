@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Alois Nešpor <info@aloisnespor.info>, 2013-2014
-# Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2021
+# Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2022
 # Pavel Borecki <pavel.borecki@gmail.com>, 2019
 # Petr Šimáček <petr.simacek@gmail.com>, 2015
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-05 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2021\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2022\n"
 "Language-Team: Czech (http://www.transifex.com/xfce/xfce-apps/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -161,11 +161,11 @@ msgstr "Uložit snímek obrazovky do souboru PNG"
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:983
 msgid "Show in Folder"
-msgstr ""
+msgstr "Zobrazit ve složce"
 
 #: ../lib/screenshooter-dialogs.c:990
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "Zobrazit uložený soubor ve složce"
 
 #: ../lib/screenshooter-dialogs.c:999
 msgid "Copy to the clipboard"
@@ -225,7 +225,7 @@ msgstr "Soubor BMP"
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "WebP File"
-msgstr ""
+msgstr "Soubor WebP"
 
 #: ../lib/screenshooter-utils.c:308
 #, c-format
@@ -416,11 +416,11 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp is only supported if webp-pixbuf-loader is "
 "installed."
-msgstr ""
+msgstr "Cesta souboru nebo adresáře, kam bude uložen snímek obrazovky, akceptuje přípony png, jpg a bmp. Formát webp je podporován pouze v případě nainstalovaného nástroje webp-pixbuf-loader."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "Zobrazit uložený soubor ve složce."
 
 #: ../src/main.c:98
 msgid "Host the screenshot on Imgur, a free online image hosting service"
