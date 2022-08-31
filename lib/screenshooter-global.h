@@ -34,6 +34,7 @@ enum {
   CLIPBOARD = 2,
   OPEN = 4,
   UPLOAD_IMGUR = 8,
+  CUSTOM_ACTION = 16,
 };
 
 
@@ -57,6 +58,8 @@ typedef struct
   gchar *screenshot_dir;
   gchar *title;
   gchar *app;
+  gchar *custom_action_name;
+  gchar *custom_action_command;
   GAppInfo *app_info;
   gchar *last_user;
   gchar *last_extension;

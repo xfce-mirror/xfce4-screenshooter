@@ -22,7 +22,14 @@
 
 #include "screenshooter-global.h"
 
-void screenshooter_take_screenshot      (ScreenshotData *sd,
-                                         gboolean immediate);
+
+
+void screenshooter_take_screenshot       (ScreenshotData *sd,
+                                          gboolean        immediate);
+void screenshooter_custom_action_save    (GtkTreeModel   *list_store);
+void screenshooter_custom_action_load    (GtkListStore   *list_store);
+void screenshooter_custom_action_execute (gchar          *filename,
+                                          gchar          *name,
+                                          gchar          *command);
 
 #endif

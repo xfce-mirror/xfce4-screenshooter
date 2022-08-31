@@ -50,6 +50,7 @@ lib_libscreenshooter_la_CFLAGS = \
 	@SOUP_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
+	@XFCONF_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_libscreenshooter_la_LIBADD = \
@@ -66,6 +67,7 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
 	@LIBX11_LDFLAGS@ \
+	@XFCONF_LIBS@ \
 	@XFIXES_LIBS@
 
 lib_libscreenshooter_built_sources = \

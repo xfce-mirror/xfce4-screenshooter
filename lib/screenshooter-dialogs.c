@@ -17,6 +17,7 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#include <xfconf/xfconf.h>
 #include "screenshooter-dialogs.h"
 #include "screenshooter-actions.h"
 
@@ -96,6 +97,18 @@ save_screenshot_to_remote_location (GdkPixbuf          *screenshot,
 static void
 cb_combo_file_extension_changed    (GtkWidget          *box,
                                     GtkWidget          *chooser);
+static void
+ca_dialog_tree_selection_cb        (GtkTreeSelection   *selection,
+                                    gpointer            data);
+static void
+ca_dialog_values_changed_cb        (GtkEditable        *self,
+                                    gpointer            user_data);
+static void
+ca_dialog_add_button_cb            (GtkToolButton      *self,
+                                    gpointer            user_data);
+static void
+ca_dialog_delete_button_cb         (GtkToolButton      *self,
+                                    gpointer            user_data);
 
 
 
@@ -203,6 +216,14 @@ static void cb_open_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 
 
+static void cb_custom_action_toggled (GtkToggleButton *tb, ScreenshotData *sd)
+{
+  if (gtk_toggle_button_get_active (tb))
+    sd->action = CUSTOM_ACTION;
+}
+
+
+
 static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
@@ -256,6 +277,25 @@ static void cb_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
   g_free (sd->app);
   sd->app = active_command;
   sd->app_info = app_info;
+}
+
+
+
+static void cb_custom_action_combo_active_item_changed (GtkWidget *box, ScreenshotData *sd)
+{
+  GtkTreeModel *model;
+  GtkTreeIter iter;
+  gchar *name;
+  gchar *command;
+
+  gtk_combo_box_get_active_iter (GTK_COMBO_BOX (box), &iter);
+  model = gtk_combo_box_get_model (GTK_COMBO_BOX (box));
+  gtk_tree_model_get (model, &iter,
+                      CUSTOM_ACTION_NAME, &name,
+                      CUSTOM_ACTION_COMMAND, &command,
+                      -1);
+  sd->custom_action_name = name;
+  sd->custom_action_command = command;
 }
 
 
@@ -382,6 +422,70 @@ static void set_default_item (GtkWidget *combobox, ScreenshotData *sd)
 
       sd->app = g_strdup ("none");
       sd->app_info = NULL;
+    }
+}
+
+
+
+/* Select the sd->app item in the combobox */
+static void custom_action_set_default_item (GtkWidget *combobox, ScreenshotData *sd)
+{
+  GtkTreeModel *model = gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
+
+  GtkTreeIter iter;
+
+  /* Get the first iter */
+  if (G_LIKELY (gtk_tree_model_get_iter_first (model , &iter)))
+    {
+      gchar *name=NULL;
+      gchar *command = NULL;
+      gboolean found = FALSE;
+
+      /* Loop until finding the appropirate item, if any */
+      do
+        {
+          gtk_tree_model_get (model, &iter,
+                              CUSTOM_ACTION_NAME, &name,
+                              CUSTOM_ACTION_COMMAND, &command,
+                              -1);
+          if (g_str_equal (command, sd->custom_action_command))
+            {
+              gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox),
+                                             &iter);
+              g_free (sd->custom_action_name);
+              sd->custom_action_name = name;
+              found = TRUE;
+            }
+          g_free (command);
+        }
+      while (gtk_tree_model_iter_next (model, &iter));
+
+      /* If no suitable item was found, set the first item as active and
+       * set sd->app accordingly. */
+      if (G_UNLIKELY (!found))
+        {
+          gtk_tree_model_get_iter_first (model , &iter);
+          gtk_tree_model_get (model, &iter,
+                              CUSTOM_ACTION_NAME, &name,
+                              CUSTOM_ACTION_COMMAND, &command,
+                              -1);
+
+          gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+
+          g_free (sd->custom_action_name);
+          g_free (sd->custom_action_command);
+
+          sd->custom_action_name = name;
+          sd->custom_action_command = command;
+        }
+    }
+  else
+    {
+      g_free (sd->custom_action_name);
+      g_free (sd->custom_action_command);
+
+      sd->custom_action_name = g_strdup ("none");
+      sd->custom_action_command = g_strdup ("none");
     }
 }
 
@@ -637,6 +741,10 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
       gtk_widget_destroy (dialog);
       screenshooter_take_screenshot (sd, FALSE);
     }
+  else if (response == GTK_RESPONSE_PREFERENCES)
+    {
+      screenshooter_preference_dialog_run ();
+    }
   else
     {
       gtk_widget_destroy (dialog);
@@ -647,7 +755,89 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
 
 
 
+static void
+ca_dialog_tree_selection_cb (GtkTreeSelection *selection,
+                             gpointer data)
+{
+  GtkTreeIter iter;
+  GtkTreeModel *model;
+  gchar *name, *cmd;
+  CustomActionDialogData *dialog_data = data;
+
+  if (gtk_tree_selection_get_selected (selection, &model, &iter))
+    {
+      gtk_tree_model_get (model, &iter,
+                          CUSTOM_ACTION_NAME, &name,
+                          CUSTOM_ACTION_COMMAND, &cmd,
+                          -1);
+      gtk_widget_set_sensitive (dialog_data->name, TRUE);
+      gtk_entry_set_text (GTK_ENTRY (dialog_data->name), name);
+      gtk_widget_set_sensitive (dialog_data->cmd, TRUE);
+      gtk_entry_set_text (GTK_ENTRY (dialog_data->cmd), cmd);
+      g_free (cmd);
+      g_free (name);
+    }
+  else
+    {
+      gtk_widget_set_sensitive (GTK_WIDGET (dialog_data->name), FALSE);
+      gtk_widget_set_sensitive (GTK_WIDGET (dialog_data->cmd), FALSE);
+    }
+}
+
+
+
+static void
+ca_dialog_values_changed_cb (GtkEditable* self,
+                             gpointer user_data)
+{
+  CustomActionDialogData *dialog_data = user_data;
+  GtkTreeIter iter;
+  GtkTreeModel *model;
+  const gchar *name = gtk_entry_get_text (GTK_ENTRY (dialog_data->name));
+  const gchar *cmd = gtk_entry_get_text (GTK_ENTRY (dialog_data->cmd));
+  if (gtk_tree_selection_get_selected (dialog_data->selection, &model, &iter))
+    {
+      gtk_list_store_set (GTK_LIST_STORE (model), &iter,
+                          CUSTOM_ACTION_NAME, name,
+                          CUSTOM_ACTION_COMMAND, cmd,
+                          -1);
+    }
+}
+
+
+
+static void
+ca_dialog_add_button_cb (GtkToolButton* self,
+                         gpointer user_data)
+{
+  CustomActionDialogData *dialog_data = user_data;
+  GtkTreeIter iter;
+  gtk_list_store_append (dialog_data->liststore, &iter);
+  gtk_tree_selection_select_iter (dialog_data->selection, &iter);
+  gtk_entry_set_text (GTK_ENTRY (dialog_data->name), g_strdup (""));
+  gtk_entry_set_text (GTK_ENTRY (dialog_data->cmd), g_strdup (""));
+  gtk_widget_grab_focus (dialog_data->name);
+}
+
+
+
+static void
+ca_dialog_delete_button_cb (GtkToolButton* self,
+                            gpointer user_data)
+{
+  CustomActionDialogData *dialog_data = user_data;
+  GtkTreeModel *model;
+  GtkTreeIter iter;
+  if (gtk_tree_selection_get_selected (dialog_data->selection, &model, &iter)) {
+    gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
+  }
+}
+
+
+
 /* Public */
+
+
 
 void screenshooter_region_dialog_show (ScreenshotData *sd, gboolean plugin)
 {
@@ -660,6 +850,7 @@ void screenshooter_region_dialog_show (ScreenshotData *sd, gboolean plugin)
   if (gtk_main_level() == 0)
     gtk_main ();
 }
+
 
 
 GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
@@ -684,6 +875,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
       dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
         "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
+        "", _("Preference"), GTK_RESPONSE_PREFERENCES,
         "", _("_Cancel"), GTK_RESPONSE_CANCEL,
         "", _("_OK"), GTK_RESPONSE_OK,
         NULL);
@@ -710,7 +902,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
   /* Create the grid to align the differents parts of the top of the UI */
   grid = gtk_grid_new ();
-  gtk_grid_set_column_spacing (GTK_GRID (grid), 20);
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 100);
   gtk_box_pack_start (GTK_BOX (main_box), grid, TRUE, TRUE, 0);
 
   /* Create the main box for the regions */
@@ -896,7 +1088,6 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
 
 
-
 GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 {
   GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover;
@@ -1040,6 +1231,38 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (combobox), "changed",
                     G_CALLBACK (cb_combo_active_item_changed), sd);
   gtk_widget_set_tooltip_text (combobox, _("Application to open the screenshot"));
+  gtk_widget_set_sensitive (combobox, sd->action & OPEN);
+  g_signal_connect (G_OBJECT (radio), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), combobox);
+
+  /* Custom Actions radio button */
+  radio =
+    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
+                                                 _("Custom Action:"));
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
+                                (sd->action & CUSTOM_ACTION));
+  g_signal_connect (G_OBJECT (radio), "toggled",
+                    G_CALLBACK (cb_custom_action_toggled), sd);
+  g_signal_connect (G_OBJECT (radio), "activate",
+                    G_CALLBACK (cb_radiobutton_activate), dlg);
+  gtk_widget_set_tooltip_text (radio,
+                               _("Execute the selected custom action"));
+  gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 4, 1, 1);
+
+  /* Custom Actions combobox */
+  liststore = gtk_list_store_new (CUSTOM_ACTION_N_COLUMN, G_TYPE_STRING, G_TYPE_STRING);
+  combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
+  renderer = gtk_cell_renderer_text_new ();
+  gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
+  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer, "text", CUSTOM_ACTION_NAME, NULL);
+  gtk_grid_attach (GTK_GRID (actions_grid), combobox, 1, 4, 1, 1);
+  screenshooter_custom_action_load (liststore);
+  custom_action_set_default_item (combobox, sd);
+
+  gtk_widget_set_tooltip_text (combobox, _("Custom action to execute"));
+  gtk_widget_set_sensitive (combobox, sd->action & CUSTOM_ACTION);
+  g_signal_connect (G_OBJECT (combobox), "changed",
+                    G_CALLBACK (cb_custom_action_combo_active_item_changed), sd);
   g_signal_connect (G_OBJECT (radio), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), combobox);
 
@@ -1261,4 +1484,203 @@ gchar
   g_object_unref (save_file);
 
   return result;
+}
+
+
+
+GtkWidget
+*screenshooter_preference_dialog_new (CustomActionDialogData *dialog_data)
+{
+  GtkWidget *dlg, *mbox, *label, *grid, *image, *frame, *hbox, *box;
+  GtkWidget *toolbar, *name, *cmd, *tree_view, *scrolled_window;
+  GtkToolButton *tool_button;
+
+  GtkListStore *liststore;
+  GtkTreeViewColumn *tree_col;
+  GtkCellRenderer *renderer;
+  GtkTreeSelection *selection;
+
+  dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Preferences"),
+    NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+    "", _("_Close"), GTK_RESPONSE_CLOSE,
+    NULL);
+
+  gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
+  gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
+  gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
+  gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
+  gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_CLOSE);
+
+  /* Create the main box for the dialog */
+  mbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
+  gtk_widget_set_hexpand (mbox, TRUE);
+  gtk_widget_set_vexpand (mbox, TRUE);
+  gtk_widget_set_margin_top (mbox, 6);
+  gtk_widget_set_margin_bottom (mbox, 0);
+  gtk_widget_set_margin_start (mbox, 12);
+  gtk_widget_set_margin_end (mbox, 12);
+  gtk_container_set_border_width (GTK_CONTAINER (mbox), 12);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), mbox, TRUE, TRUE, 0);
+
+  /* Create custom actions label */
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label),
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions"
+                          "</span>"));
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_box_pack_start (GTK_BOX (mbox), label, FALSE, FALSE, 0);
+
+  /* Create the grid to show information */
+  grid = gtk_grid_new ();
+  gtk_widget_set_margin_top (GTK_WIDGET (grid), 6);
+  gtk_widget_set_margin_bottom (GTK_WIDGET (grid), 0);
+  gtk_widget_set_margin_start (GTK_WIDGET (grid), 12);
+  gtk_widget_set_margin_end (GTK_WIDGET (grid), 12);
+  gtk_box_pack_start (GTK_BOX (mbox), grid, TRUE, TRUE, 0);
+
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
+
+  image = gtk_image_new_from_icon_name ("dialog-information", GTK_ICON_SIZE_DND);
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label),
+        _("You can handle custom actions that wil\n"
+          "be available to handle screenshots \n"
+          "after they are captured."));
+  gtk_grid_attach (GTK_GRID (grid), image, 0, 0, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
+
+  /* Create the box to show custom actions and toolbar */
+  frame = gtk_frame_new (NULL);
+  gtk_widget_set_margin_top (frame, 6);
+  gtk_widget_set_margin_bottom (frame, 0);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  gtk_widget_set_hexpand (hbox, TRUE);
+  gtk_widget_set_vexpand (hbox, TRUE);
+  gtk_container_add (GTK_CONTAINER (frame), hbox);
+  gtk_box_pack_start (GTK_BOX (mbox), frame, FALSE, FALSE, 0);
+
+  /* Add box for custom actions */
+  scrolled_window = gtk_scrolled_window_new (NULL, NULL);
+  gtk_scrolled_window_set_min_content_height (GTK_SCROLLED_WINDOW (scrolled_window), 200);
+  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+  gtk_container_add (GTK_CONTAINER (scrolled_window), box);
+  gtk_box_pack_start (GTK_BOX (hbox), scrolled_window, TRUE, TRUE, 0);
+
+  /* Liststore and tree view for custom actions */
+  liststore = dialog_data->liststore;
+  tree_view = gtk_tree_view_new ();
+  tree_col = gtk_tree_view_column_new ();
+  renderer = gtk_cell_renderer_text_new ();
+  gtk_tree_view_column_set_title (tree_col, "Custom Action");
+  gtk_tree_view_column_pack_start(tree_col, renderer, TRUE);
+  gtk_tree_view_column_add_attribute(tree_col, renderer, "text", CUSTOM_ACTION_NAME);
+  gtk_tree_view_append_column (GTK_TREE_VIEW (tree_view), tree_col);
+  gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), GTK_TREE_MODEL (liststore));
+  gtk_box_pack_start (GTK_BOX (box), GTK_WIDGET (tree_view), TRUE, TRUE, 0);
+  dialog_data->tree_view = tree_view;
+
+  /* Add toolbar and its buttons */
+  toolbar =  gtk_toolbar_new();
+  gtk_toolbar_set_style (GTK_TOOLBAR (toolbar), GTK_TOOLBAR_ICONS);
+  gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_SMALL_TOOLBAR);
+  gtk_orientable_set_orientation (GTK_ORIENTABLE (toolbar), GTK_ORIENTATION_VERTICAL);
+  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), _("Add custom action"));
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "list-add-symbolic");
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
+  g_signal_connect (G_OBJECT (tool_button), "clicked",
+                    G_CALLBACK (ca_dialog_add_button_cb),
+                    dialog_data);
+  tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), "Remove current selected");
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), _("list-remove-symbolic"));
+  gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
+  gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
+  g_signal_connect (G_OBJECT (tool_button), "clicked",
+                    G_CALLBACK (ca_dialog_delete_button_cb),
+                    dialog_data);
+
+  /* Add grid to show details of the custom action */
+  grid = gtk_grid_new ();
+  gtk_widget_set_margin_top (GTK_WIDGET (grid), 6);
+  gtk_widget_set_margin_bottom (GTK_WIDGET (grid), 0);
+  gtk_widget_set_margin_start (GTK_WIDGET (grid), 12);
+  gtk_widget_set_margin_end (GTK_WIDGET (grid), 12);
+  gtk_box_pack_start (GTK_BOX (mbox), grid, TRUE, TRUE, 0);
+
+  gtk_widget_set_vexpand (GTK_WIDGET (grid), TRUE);
+  gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
+  gtk_grid_set_column_spacing (GTK_GRID (grid), 6);
+  gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
+
+  /* Add custom action name */
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label), _("Name"));
+  gtk_widget_set_tooltip_text (label, _("Name of the elected custom action"));
+  gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
+  name = gtk_entry_new ();
+  gtk_entry_set_has_frame (GTK_ENTRY (name), TRUE);
+  gtk_widget_set_sensitive (name, FALSE);
+  gtk_widget_set_vexpand (name, TRUE);
+  gtk_grid_attach (GTK_GRID (grid), name, 1, 0, 1, 1);
+  dialog_data->name = name;
+
+  /* Add custom action command */
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label), _("Command"));
+  gtk_widget_set_tooltip_text (label, _("Command for the elected custom action"));
+  gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
+  cmd = gtk_entry_new ();
+  gtk_entry_set_has_frame (GTK_ENTRY (cmd), TRUE);
+  gtk_widget_set_sensitive (cmd, FALSE);
+  gtk_widget_set_vexpand (cmd, TRUE);
+  gtk_grid_attach (GTK_GRID (grid), cmd, 1, 1, 1, 1);
+  dialog_data->cmd = cmd;
+
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label), _("Use \%f as a placeholder for filename\n of the screenshot captured"));
+  gtk_widget_set_tooltip_text (label, _("Command for the elected custom action"));
+  gtk_box_pack_start (GTK_BOX (mbox), label, TRUE, TRUE, 0);
+
+  /* Attach signals to change text for name and command when tree selection changes */
+  selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree_view));
+  gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+  g_object_ref (G_OBJECT (selection));
+  dialog_data->selection = selection;
+  g_signal_connect (G_OBJECT (selection), "changed",
+                    G_CALLBACK (ca_dialog_tree_selection_cb),
+                    dialog_data);
+
+  /* Attach signals on name and command to change model accordingly */
+  g_signal_connect (G_OBJECT (name), "changed",
+                    G_CALLBACK (ca_dialog_values_changed_cb),
+                    dialog_data);
+  g_signal_connect (G_OBJECT (cmd), "changed",
+                    G_CALLBACK (ca_dialog_values_changed_cb),
+                    dialog_data);
+
+  gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
+
+  return dlg;
+}
+
+
+
+void screenshooter_preference_dialog_run (void)
+{
+  /* Setting up dialog_data */
+  GtkWidget *dlg;
+  CustomActionDialogData *dialog_data = g_new0 (CustomActionDialogData, 1);
+  dialog_data->liststore = gtk_list_store_new (CUSTOM_ACTION_N_COLUMN, G_TYPE_STRING, G_TYPE_STRING);
+  screenshooter_custom_action_load (dialog_data->liststore);
+  dlg =  screenshooter_preference_dialog_new (dialog_data);
+
+  gtk_dialog_run (GTK_DIALOG (dlg));
+  screenshooter_custom_action_save (GTK_TREE_MODEL (dialog_data->liststore));
+  gtk_widget_destroy (dlg);
+
+  g_free (dialog_data);
 }
