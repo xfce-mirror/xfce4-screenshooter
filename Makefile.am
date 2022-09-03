@@ -27,6 +27,7 @@ lib_libscreenshooter_la_SOURCES =	\
 	lib/libscreenshooter.h \
 	lib/screenshooter-actions.c lib/screenshooter-actions.h \
 	lib/screenshooter-capture.c lib/screenshooter-capture.h \
+	lib/screenshooter-custom-actions.c lib/screenshooter-custom-actions.h \
 	lib/screenshooter-dialogs.c lib/screenshooter-dialogs.h \
 	lib/screenshooter-global.h \
 	lib/screenshooter-job.c lib/screenshooter-job.h \

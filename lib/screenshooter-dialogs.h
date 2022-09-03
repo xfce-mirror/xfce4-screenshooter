@@ -42,12 +42,6 @@ typedef struct _CustomActionDialogData CustomActionDialogData;
 
 
 enum {
-    CUSTOM_ACTION_NAME,
-    CUSTOM_ACTION_COMMAND,
-    CUSTOM_ACTION_N_COLUMN
-};
-
-enum {
     GTK_RESPONSE_PREFERENCES = 1,
 };
 
