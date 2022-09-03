@@ -1621,7 +1621,7 @@ GtkWidget
   /* Add custom action name */
   label = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (label), _("Name"));
-  gtk_widget_set_tooltip_text (label, _("Name of the elected custom action"));
+  gtk_widget_set_tooltip_text (label, _("Name of the selected custom action"));
   gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
   name = dialog_data->name = gtk_entry_new ();
   gtk_entry_set_has_frame (GTK_ENTRY (name), TRUE);
@@ -1632,7 +1632,7 @@ GtkWidget
   /* Add custom action command */
   label = gtk_label_new (NULL);
   gtk_label_set_markup (GTK_LABEL (label), _("Command"));
-  gtk_widget_set_tooltip_text (label, _("Command for the elected custom action"));
+  gtk_widget_set_tooltip_text (label, _("Command for the selected custom action"));
   gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
   cmd = dialog_data->cmd = gtk_entry_new ();
   gtk_entry_set_has_frame (GTK_ENTRY (cmd), TRUE);
