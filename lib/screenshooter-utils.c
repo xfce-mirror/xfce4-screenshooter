@@ -148,7 +148,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gchar *app = g_strdup ("none");
   gchar *last_user = g_strdup ("");
   gchar *last_extension = g_strdup ("png");
-  gchar *last_custom_action_command  = g_strdup ("none");
+  gchar *last_custom_action_command = g_strdup ("none");
   gboolean enable_imgur_upload = TRUE;
 
   if (G_LIKELY (file != NULL))

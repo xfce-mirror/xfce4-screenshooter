@@ -143,7 +143,6 @@ action_idle (gpointer user_data)
 
       g_object_unref (temp_dir);
       g_free (temp_dir_uri);
-      g_free (filename);
 
       if (save_location)
         {
@@ -159,6 +158,7 @@ action_idle (gpointer user_data)
                * the action was not selected via CLI, show the actions dialog again.*/
               if (!upload_successful && !sd->action_specified)
                 {
+                  g_free (filename);
                   g_free (save_location);
                   return TRUE;
                 }
@@ -168,6 +168,7 @@ action_idle (gpointer user_data)
               screenshooter_custom_action_execute (filename, sd->custom_action_name, sd->custom_action_command);
             }
         }
+      g_free (filename);
     }
 
   /* Persist last used file extension */
