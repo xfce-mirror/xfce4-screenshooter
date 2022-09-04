@@ -17,12 +17,15 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  * */
 
+#include "screenshooter-custom-actions.h"
 #include "screenshooter-actions.h"
 #include "screenshooter-utils.h"
 #include "screenshooter-capture.h"
 #include "screenshooter-global.h"
 #include "screenshooter-dialogs.h"
 #include "screenshooter-imgur.h"
+
+
 
 static void
 cb_help_response (GtkWidget *dialog, gint response, gpointer unused)
@@ -128,7 +131,7 @@ action_idle (gpointer user_data)
       GFile *temp_dir = g_file_new_for_path (g_get_tmp_dir ());
       gchar *temp_dir_uri = g_file_get_uri (temp_dir);
       gchar *filename = screenshooter_get_filename_for_uri (temp_dir_uri,
-                                                            sd->title, 
+                                                            sd->title,
                                                             sd->last_extension,
                                                             sd->timestamp);
       save_location = screenshooter_save_screenshot (sd->screenshot,
@@ -137,9 +140,9 @@ action_idle (gpointer user_data)
                                                      sd->last_extension,
                                                      FALSE,
                                                      FALSE);
+
       g_object_unref (temp_dir);
       g_free (temp_dir_uri);
-      g_free (filename);
 
       if (save_location)
         {
@@ -155,11 +158,17 @@ action_idle (gpointer user_data)
                * the action was not selected via CLI, show the actions dialog again.*/
               if (!upload_successful && !sd->action_specified)
                 {
+                  g_free (filename);
                   g_free (save_location);
                   return TRUE;
                 }
             }
+          else if (sd->action & CUSTOM_ACTION)
+            {
+              screenshooter_custom_action_execute (filename, sd->custom_action_name, sd->custom_action_command);
+            }
         }
+      g_free (filename);
     }
 
   /* Persist last used file extension */
