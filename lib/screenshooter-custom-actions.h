@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2022 Jérôme Yogesh Kaushik <masterlukeskywalker02@gmail.com>
+ *  Copyright © 2022 Yogesh Kaushik <masterlukeskywalker02@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

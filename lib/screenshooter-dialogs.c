@@ -1509,7 +1509,7 @@ GtkWidget
     NULL);
 
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
-  gtk_window_set_resizable (GTK_WINDOW (dlg), FALSE);
+  gtk_window_set_default_size (GTK_WINDOW (dlg), 380, -1);
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 0);
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_CLOSE);
@@ -1547,11 +1547,10 @@ GtkWidget
   gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
 
   image = gtk_image_new_from_icon_name ("dialog-information", GTK_ICON_SIZE_DND);
-  label = gtk_label_new (NULL);
-  gtk_label_set_markup (GTK_LABEL (label),
-        _("You can handle custom actions that wil be available to handle screenshots after they are captured."));
+  label = gtk_label_new (_("You can handle custom actions that wil be available to handle screenshots after they are captured."));
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
   gtk_label_set_max_width_chars (GTK_LABEL (label), 30);
+  gtk_widget_set_hexpand (label, TRUE);
   gtk_grid_attach (GTK_GRID (grid), image, 0, 0, 1, 1);
   gtk_grid_attach (GTK_GRID (grid), label, 1, 0, 1, 1);
 
@@ -1619,30 +1618,28 @@ GtkWidget
   gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
 
   /* Add custom action name */
-  label = gtk_label_new (NULL);
-  gtk_label_set_markup (GTK_LABEL (label), _("Name"));
+  label = gtk_label_new (_("Name"));
   gtk_widget_set_tooltip_text (label, _("Name of the selected custom action"));
   gtk_grid_attach (GTK_GRID (grid), label, 0, 0, 1, 1);
   name = dialog_data->name = gtk_entry_new ();
   gtk_entry_set_has_frame (GTK_ENTRY (name), TRUE);
   gtk_widget_set_sensitive (name, FALSE);
-  gtk_widget_set_vexpand (name, TRUE);
+  gtk_widget_set_hexpand (name, TRUE);
   gtk_grid_attach (GTK_GRID (grid), name, 1, 0, 1, 1);
 
   /* Add custom action command */
-  label = gtk_label_new (NULL);
-  gtk_label_set_markup (GTK_LABEL (label), _("Command"));
+  label = gtk_label_new (_("Command"));
   gtk_widget_set_tooltip_text (label, _("Command for the selected custom action"));
   gtk_grid_attach (GTK_GRID (grid), label, 0, 1, 1, 1);
   cmd = dialog_data->cmd = gtk_entry_new ();
   gtk_entry_set_has_frame (GTK_ENTRY (cmd), TRUE);
   gtk_widget_set_sensitive (cmd, FALSE);
-  gtk_widget_set_vexpand (cmd, TRUE);
+  gtk_widget_set_hexpand (cmd, TRUE);
   gtk_grid_attach (GTK_GRID (grid), cmd, 1, 1, 1, 1);
 
-  label = gtk_label_new (NULL);
-  gtk_label_set_markup (GTK_LABEL (label), _("Use \%f as a placeholder for filename of the screenshot captured"));
+  label = gtk_label_new (_("Use \%f as a placeholder for filename of the screenshot captured"));
   gtk_widget_set_tooltip_text (label, _("Command for the selected custom action"));
+  gtk_widget_set_hexpand (label, TRUE);
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
   gtk_label_set_max_width_chars (GTK_LABEL (label), 30);
   gtk_grid_attach (GTK_GRID (grid), label, 1, 2, 1, 1);
