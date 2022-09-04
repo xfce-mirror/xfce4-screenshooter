@@ -878,7 +878,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
       dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
         "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
-        "", _("Preferences"), GTK_RESPONSE_PREFERENCES,
+        "", _("_Preferences"), GTK_RESPONSE_PREFERENCES,
         "", _("_Cancel"), GTK_RESPONSE_CANCEL,
         "", _("_OK"), GTK_RESPONSE_OK,
         NULL);
