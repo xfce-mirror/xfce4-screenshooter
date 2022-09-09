@@ -816,9 +816,10 @@ ca_dialog_add_button_cb (GtkToolButton* self,
   CustomActionDialogData *dialog_data = user_data;
   GtkTreeIter iter;
   gtk_list_store_append (dialog_data->liststore, &iter);
+  gtk_list_store_set (dialog_data->liststore, &iter, CUSTOM_ACTION_NAME, "", CUSTOM_ACTION_COMMAND, "", -1);
   gtk_tree_selection_select_iter (dialog_data->selection, &iter);
-  gtk_entry_set_text (GTK_ENTRY (dialog_data->name), g_strdup (""));
-  gtk_entry_set_text (GTK_ENTRY (dialog_data->cmd), g_strdup (""));
+  gtk_entry_set_text (GTK_ENTRY (dialog_data->name), "");
+  gtk_entry_set_text (GTK_ENTRY (dialog_data->cmd), "");
   gtk_widget_grab_focus (dialog_data->name);
 }
 
@@ -833,6 +834,8 @@ ca_dialog_delete_button_cb (GtkToolButton* self,
   GtkTreeIter iter;
   if (gtk_tree_selection_get_selected (dialog_data->selection, &model, &iter)) {
     gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
+    gtk_entry_set_text (GTK_ENTRY (dialog_data->name), "");
+    gtk_entry_set_text (GTK_ENTRY (dialog_data->cmd), "");
   }
 }
 
@@ -1637,7 +1640,7 @@ GtkWidget
   gtk_widget_set_hexpand (cmd, TRUE);
   gtk_grid_attach (GTK_GRID (grid), cmd, 1, 1, 1, 1);
 
-  label = gtk_label_new (_("Use \%f as a placeholder for filename of the screenshot captured"));
+  label = gtk_label_new (_("Use \%f as a placeholder for location of the screenshot captured"));
   gtk_widget_set_tooltip_text (label, _("Command for the selected custom action"));
   gtk_widget_set_hexpand (label, TRUE);
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);

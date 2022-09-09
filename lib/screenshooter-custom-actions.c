@@ -165,11 +165,17 @@ screenshooter_custom_action_load (GtkListStore *list_store)
 
 
 
-void screenshooter_custom_action_execute (gchar *filename, gchar *name, gchar *command) {
+void screenshooter_custom_action_execute (gchar *save_location, gchar *name, gchar *command) {
   gchar **split;
   gchar **argv;
   gchar **envp;
   GError *error = NULL;
+
+  if (g_strcmp0 (name, "") == 0 || g_strcmp0 (command, "") == 0)
+    {
+      name = "none";
+      command = "none";
+    }
 
   if (g_strcmp0 (name, "none") == 0 || g_strcmp0 (command, "none") == 0)
     {
@@ -178,7 +184,7 @@ void screenshooter_custom_action_execute (gchar *filename, gchar *name, gchar *c
     }
 
   split = g_strsplit (command, "\%f", -1);
-  command = g_strjoinv (filename, split);
+  command = g_strjoinv (save_location, split);
 
   command = xfce_expand_variables (command, NULL);
   envp = screenshooter_parse_envp (&command);
