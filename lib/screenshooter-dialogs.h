@@ -43,6 +43,7 @@ typedef struct _CustomActionDialogData CustomActionDialogData;
 
 enum {
     GTK_RESPONSE_PREFERENCES = 1,
+    GTK_RESPONSE_PREFERENCES_PANEL,
 };
 
 
