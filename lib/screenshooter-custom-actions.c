@@ -123,6 +123,7 @@ screenshooter_custom_action_save (GtkTreeModel *list_store)
 
 
 
+
 void
 screenshooter_custom_action_load (GtkListStore *list_store)
 {
@@ -169,35 +170,32 @@ void screenshooter_custom_action_execute (gchar *save_location, gchar *name, gch
   gchar **split;
   gchar **argv;
   gchar **envp;
+  gchar  *formatted_command;
+  gchar  *expanded_command;
   GError *error = NULL;
 
-  if (g_strcmp0 (name, "") == 0 || g_strcmp0 (command, "") == 0)
+  if (g_strcmp0 (name, "none") == 0 || g_strcmp0 (command, "none") == 0
+        || g_strcmp0 (name, "") == 0 || g_strcmp0 (command, "") == 0)
     {
-      name = "none";
-      command = "none";
-    }
-
-  if (g_strcmp0 (name, "none") == 0 || g_strcmp0 (command, "none") == 0)
-    {
-      xfce_dialog_show_warning (NULL, "Unable to execute the custom action", "Invalid custom action selected");
+      xfce_dialog_show_warning (NULL, _("Unable to execute the custom action"), _("Invalid custom action selected"));
       return;
     }
 
-  split = g_strsplit (command, "\%f", -1);
-  command = g_strjoinv (save_location, split);
+  split = g_strsplit (g_strdup (command), "\%f", -1);
+  formatted_command = g_strjoinv (g_strdup (save_location), split);
 
-  command = xfce_expand_variables (command, NULL);
-  envp = screenshooter_parse_envp (&command);
+  expanded_command = xfce_expand_variables (formatted_command, NULL);
+  envp = screenshooter_parse_envp (&expanded_command);
 
-  if (G_LIKELY (g_shell_parse_argv (command, NULL, &argv, &error)))
+  if (G_LIKELY (g_shell_parse_argv (expanded_command, NULL, &argv, &error)))
     if (!g_spawn_sync (NULL, argv, envp, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL, NULL, &error))
       {
-        xfce_dialog_show_error (NULL, error, "Failed to run the custom action %s", name);
+        xfce_dialog_show_error (NULL, error, _("Failed to run the custom action %s"), name);
         g_error_free (error);
       }
 
-  g_free (name);
-  g_free (command);
+  g_free (formatted_command);
+  g_free (expanded_command);
   g_strfreev (split);
   g_strfreev (argv);
   g_strfreev (envp);

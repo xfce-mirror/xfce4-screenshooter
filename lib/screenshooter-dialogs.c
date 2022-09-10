@@ -748,6 +748,11 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
     {
       screenshooter_preference_dialog_run ();
     }
+  else if (response == GTK_RESPONSE_PREFERENCES_PANEL)
+    {
+      screenshooter_preference_dialog_run ();
+      gtk_dialog_run (GTK_DIALOG (dialog));
+    }
   else
     {
       gtk_widget_destroy (dialog);
@@ -833,9 +838,9 @@ ca_dialog_delete_button_cb (GtkToolButton* self,
   GtkTreeModel *model;
   GtkTreeIter iter;
   if (gtk_tree_selection_get_selected (dialog_data->selection, &model, &iter)) {
-    gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
     gtk_entry_set_text (GTK_ENTRY (dialog_data->name), "");
     gtk_entry_set_text (GTK_ENTRY (dialog_data->cmd), "");
+    gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
   }
 }
 
@@ -870,11 +875,12 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
     {
       dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+        "", _("_Preferences"), GTK_RESPONSE_PREFERENCES_PANEL,
         "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
-        "window-close-symbolic", _("_Close"), GTK_RESPONSE_OK,
+        "window-close-symbolic", _("_Close"), GTK_RESPONSE_CANCEL,
         NULL);
-
-      xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Preferences"));
+        g_signal_connect (dlg, "response",
+                  G_CALLBACK (cb_dialog_response), sd);
     }
   else
     {
@@ -1100,6 +1106,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkWidget *actions_grid;
 
   GtkListStore *liststore;
+  GtkTreeIter iter;
   GtkWidget *combobox;
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
@@ -1241,36 +1248,40 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   g_signal_connect (G_OBJECT (radio), "toggled",
                     G_CALLBACK (cb_toggle_set_sensi), combobox);
 
-  /* Custom Actions radio button */
-  radio =
-    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
-                                                 _("Custom Action:"));
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
-                                (sd->action & CUSTOM_ACTION));
-  g_signal_connect (G_OBJECT (radio), "toggled",
-                    G_CALLBACK (cb_custom_action_toggled), sd);
-  g_signal_connect (G_OBJECT (radio), "activate",
-                    G_CALLBACK (cb_radiobutton_activate), dlg);
-  gtk_widget_set_tooltip_text (radio,
-                               _("Execute the selected custom action"));
-  gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 4, 1, 1);
-
-  /* Custom Actions combobox */
+  /* Check if there are any custom actions */
   liststore = gtk_list_store_new (CUSTOM_ACTION_N_COLUMN, G_TYPE_STRING, G_TYPE_STRING);
-  combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
-  renderer = gtk_cell_renderer_text_new ();
-  gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
-  gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer, "text", CUSTOM_ACTION_NAME, NULL);
-  gtk_grid_attach (GTK_GRID (actions_grid), combobox, 1, 4, 1, 1);
   screenshooter_custom_action_load (liststore);
-  custom_action_set_last_used (combobox, sd);
+  if (gtk_tree_model_get_iter_first (GTK_TREE_MODEL (liststore), &iter))
+  {
+    /* Custom Actions radio button */
+    radio =
+      gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
+                                                  _("Custom Action:"));
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
+                                  (sd->action & CUSTOM_ACTION));
+    g_signal_connect (G_OBJECT (radio), "toggled",
+                      G_CALLBACK (cb_custom_action_toggled), sd);
+    g_signal_connect (G_OBJECT (radio), "activate",
+                      G_CALLBACK (cb_radiobutton_activate), dlg);
+    gtk_widget_set_tooltip_text (radio,
+                                _("Execute the selected custom action"));
+    gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 4, 1, 1);
 
-  gtk_widget_set_tooltip_text (combobox, _("Custom action to execute"));
-  gtk_widget_set_sensitive (combobox, sd->action & CUSTOM_ACTION);
-  g_signal_connect (G_OBJECT (combobox), "changed",
-                    G_CALLBACK (cb_custom_action_combo_active_item_changed), sd);
-  g_signal_connect (G_OBJECT (radio), "toggled",
-                    G_CALLBACK (cb_toggle_set_sensi), combobox);
+    /* Custom Actions combobox */
+    combobox = gtk_combo_box_new_with_model (GTK_TREE_MODEL (liststore));
+    renderer = gtk_cell_renderer_text_new ();
+    gtk_cell_layout_pack_end (GTK_CELL_LAYOUT (combobox), renderer, TRUE);
+    gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer, "text", CUSTOM_ACTION_NAME, NULL);
+    gtk_grid_attach (GTK_GRID (actions_grid), combobox, 1, 4, 1, 1);
+    custom_action_set_last_used (combobox, sd);
+
+    gtk_widget_set_tooltip_text (combobox, _("Custom action to execute"));
+    gtk_widget_set_sensitive (combobox, sd->action & CUSTOM_ACTION);
+    g_signal_connect (G_OBJECT (combobox), "changed",
+                      G_CALLBACK (cb_custom_action_combo_active_item_changed), sd);
+    g_signal_connect (G_OBJECT (radio), "toggled",
+                      G_CALLBACK (cb_toggle_set_sensi), combobox);
+  }
 
   /* Run the callback functions to grey/ungrey the correct widgets */
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (radio), combobox);
