@@ -181,14 +181,14 @@ void screenshooter_custom_action_execute (gchar *save_location, gchar *name, gch
       return;
     }
 
-  split = g_strsplit (g_strdup (command), "\%f", -1);
-  formatted_command = g_strjoinv (g_strdup (save_location), split);
+  split = g_strsplit (command, "\%f", -1);
+  formatted_command = g_strjoinv (save_location, split);
 
   expanded_command = xfce_expand_variables (formatted_command, NULL);
   envp = screenshooter_parse_envp (&expanded_command);
 
   if (G_LIKELY (g_shell_parse_argv (expanded_command, NULL, &argv, &error)))
-    if (!g_spawn_sync (NULL, argv, envp, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL, NULL, &error))
+    if (!g_spawn_async (NULL, argv, envp, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error))
       {
         xfce_dialog_show_error (NULL, error, _("Failed to run the custom action %s"), name);
         g_error_free (error);
