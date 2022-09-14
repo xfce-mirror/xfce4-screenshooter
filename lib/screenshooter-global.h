@@ -27,6 +27,8 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 
+
+
 /* Possible actions */
 enum {
   NONE = 0,
@@ -75,6 +77,22 @@ enum {
   FULLSCREEN,
   ACTIVE_WINDOW,
   SELECT,
+};
+
+
+
+/* Struct to store the preference dialog options */
+typedef struct {
+    GtkWidget *name, *cmd, *tree_view;
+    GtkListStore *liststore;
+    GtkTreeSelection *selection;
+}
+CustomActionDialogData;
+
+
+/* Application-defined ids for dialog response */
+enum {
+    GTK_RESPONSE_PREFERENCES = 0
 };
 
 #endif

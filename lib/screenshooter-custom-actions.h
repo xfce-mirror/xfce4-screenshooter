@@ -20,9 +20,7 @@
 #ifndef __HAVE_CUSTOM_ACTIONS_H__
 #define __HAVE_CUSTOM_ACTIONS_H__
 
-#include "screenshooter-global.h"
-#include <xfconf/xfconf.h>
-#include <libxfce4ui/libxfce4ui.h>
+#include <gtk/gtk.h>
 
 
 
