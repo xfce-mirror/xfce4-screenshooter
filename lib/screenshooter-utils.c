@@ -148,6 +148,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gchar *app = g_strdup ("none");
   gchar *last_user = g_strdup ("");
   gchar *last_extension = g_strdup ("png");
+  gchar *last_custom_action_command = g_strdup ("none");
   gboolean enable_imgur_upload = TRUE;
 
   if (G_LIKELY (file != NULL))
@@ -171,6 +172,9 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 
           g_free (app);
           app = g_strdup (xfce_rc_read_entry (rc, "app", "none"));
+
+          g_free (last_custom_action_command);
+          last_custom_action_command = g_strdup (xfce_rc_read_entry (rc, "custom_action_command", "none"));
 
           g_free (last_user);
           last_user = g_strdup (xfce_rc_read_entry (rc, "last_user", ""));
@@ -209,6 +213,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->last_extension = last_extension;
   sd->enable_imgur_upload = enable_imgur_upload;
   sd->show_in_folder = show_in_folder;
+  sd->custom_action_command = last_custom_action_command;
 }
 
 
@@ -233,6 +238,7 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   TRACE ("Write the entries.");
 
   xfce_rc_write_entry (rc, "app", sd->app);
+  xfce_rc_write_entry (rc, "custom_action_command", sd->custom_action_command);
   xfce_rc_write_entry (rc, "last_user", sd->last_user);
   xfce_rc_write_entry (rc, "last_extension", sd->last_extension);
   xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
