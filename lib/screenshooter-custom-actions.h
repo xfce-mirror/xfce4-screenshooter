@@ -1,6 +1,6 @@
 /*  $Id$
  *
- *  Copyright © 2008-2009 Jérôme Guelfucci <jeromeg@xfce.org>
+ *  Copyright © 2022 Yogesh Kaushik <masterlukeskywalker02@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -17,14 +17,25 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  * */
 
-#ifndef __HAVE_ACTIONS_H__
-#define __HAVE_ACTIONS_H__
+#ifndef __HAVE_CUSTOM_ACTIONS_H__
+#define __HAVE_CUSTOM_ACTIONS_H__
 
-#include "screenshooter-global.h"
+#include <gtk/gtk.h>
 
 
 
-void screenshooter_take_screenshot       (ScreenshotData *sd,
-                                          gboolean        immediate);
+enum {
+    CUSTOM_ACTION_NAME,
+    CUSTOM_ACTION_COMMAND,
+    CUSTOM_ACTION_N_COLUMN
+};
+
+
+
+void screenshooter_custom_action_save    (GtkTreeModel   *list_store);
+void screenshooter_custom_action_load    (GtkListStore   *list_store);
+void screenshooter_custom_action_execute (gchar          *save_location,
+                                          gchar          *name,
+                                          gchar          *command);
 
 #endif
