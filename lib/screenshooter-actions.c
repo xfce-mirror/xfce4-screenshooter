@@ -17,8 +17,8 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  * */
 
-#include "screenshooter-custom-actions.h"
 #include "screenshooter-actions.h"
+#include "screenshooter-custom-actions.h"
 #include "screenshooter-utils.h"
 #include "screenshooter-capture.h"
 #include "screenshooter-global.h"

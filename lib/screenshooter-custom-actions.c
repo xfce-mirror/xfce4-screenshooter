@@ -19,6 +19,8 @@
 
 #include "screenshooter-custom-actions.h"
 
+#include <xfconf/xfconf.h>
+#include <libxfce4ui/libxfce4ui.h>
 
 
 static gchar**
@@ -79,11 +81,12 @@ screenshooter_custom_action_save (GtkTreeModel *list_store)
       g_error_free (error);
       return;
     }
-  channel = xfconf_channel_get ("xfce4-screenshooter");
 
+  channel = xfconf_channel_get ("xfce4-screenshooter");
   max_id = xfconf_channel_get_int (channel, "/actions/actions", 0);
 
   valid = gtk_tree_model_get_iter_first (list_store, &iter);
+
   while (valid)
     {
       gchar *name;
@@ -96,7 +99,6 @@ screenshooter_custom_action_save (GtkTreeModel *list_store)
                           CUSTOM_ACTION_COMMAND, &command,
                           -1);
 
-      /* Storing the values */
       name_address = g_strdup_printf ("/actions/action-%d/name", id);
       command_address = g_strdup_printf ("/actions/action-%d/command", id);
 
@@ -106,21 +108,25 @@ screenshooter_custom_action_save (GtkTreeModel *list_store)
       id++;
       valid = gtk_tree_model_iter_next (list_store, &iter);
 
+      g_free (name);
+      g_free (command);
       g_free (name_address);
       g_free (command_address);
     }
 
   for (gint32 i = id; i < max_id; i++)
     {
-      gchar *base;
-      base = g_strdup_printf ("/actions/action-%d", i);
-      xfconf_channel_reset_property (channel, base, TRUE);
-      g_free (base);
+      gchar *property;
+
+      property = g_strdup_printf ("/actions/action-%d", i);
+      xfconf_channel_reset_property (channel, property, TRUE);
+
+      g_free (property);
     }
+
   xfconf_channel_set_int (channel, "/actions/actions", id);
   xfconf_shutdown ();
 }
-
 
 
 
@@ -139,13 +145,14 @@ screenshooter_custom_action_load (GtkListStore *list_store)
       g_error_free (error);
       return;
     }
-  channel = xfconf_channel_get ("xfce4-screenshooter");
 
+  channel = xfconf_channel_get ("xfce4-screenshooter");
   max_id = xfconf_channel_get_int (channel, "/actions/actions", 0);
+
   for (id = 0; id < max_id; id++)
     {
-      gchar *name = "";
-      gchar *command = "";
+      gchar *name;
+      gchar *command;
       gchar *name_address;
       gchar *command_address;
 
@@ -158,15 +165,22 @@ screenshooter_custom_action_load (GtkListStore *list_store)
       gtk_list_store_append (list_store, &iter);
       gtk_list_store_set (GTK_LIST_STORE (list_store), &iter, CUSTOM_ACTION_NAME, name, CUSTOM_ACTION_COMMAND, command, -1);
 
+      g_free (name);
+      g_free (command);
       g_free (name_address);
       g_free (command_address);
     }
+
   xfconf_shutdown ();
 }
 
 
 
-void screenshooter_custom_action_execute (gchar *save_location, gchar *name, gchar *command) {
+void
+screenshooter_custom_action_execute (gchar *save_location,
+                                     gchar *name,
+                                     gchar *command)
+{
   gchar **split;
   gchar **argv;
   gchar **envp;
@@ -174,8 +188,10 @@ void screenshooter_custom_action_execute (gchar *save_location, gchar *name, gch
   gchar  *expanded_command;
   GError *error = NULL;
 
-  if (g_strcmp0 (name, "none") == 0 || g_strcmp0 (command, "none") == 0
-        || g_strcmp0 (name, "") == 0 || g_strcmp0 (command, "") == 0)
+  if (g_strcmp0 (name, "none") == 0 ||
+      g_strcmp0 (command, "none") == 0 ||
+      g_strcmp0 (name, "") == 0 ||
+      g_strcmp0 (command, "") == 0)
     {
       xfce_dialog_show_warning (NULL, _("Unable to execute the custom action"), _("Invalid custom action selected"));
       return;
@@ -183,7 +199,6 @@ void screenshooter_custom_action_execute (gchar *save_location, gchar *name, gch
 
   split = g_strsplit (command, "\%f", -1);
   formatted_command = g_strjoinv (save_location, split);
-
   expanded_command = xfce_expand_variables (formatted_command, NULL);
   envp = screenshooter_parse_envp (&expanded_command);
 
