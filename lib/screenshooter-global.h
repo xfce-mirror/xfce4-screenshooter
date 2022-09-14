@@ -27,6 +27,8 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 
+
+
 /* Possible actions */
 enum {
   NONE = 0,
@@ -34,6 +36,7 @@ enum {
   CLIPBOARD = 2,
   OPEN = 4,
   UPLOAD_IMGUR = 8,
+  CUSTOM_ACTION = 16,
 };
 
 
@@ -57,6 +60,8 @@ typedef struct
   gchar *screenshot_dir;
   gchar *title;
   gchar *app;
+  gchar *custom_action_name;
+  gchar *custom_action_command;
   GAppInfo *app_info;
   gchar *last_user;
   gchar *last_extension;
@@ -72,6 +77,22 @@ enum {
   FULLSCREEN,
   ACTIVE_WINDOW,
   SELECT,
+};
+
+
+
+/* Struct to store the preference dialog options */
+typedef struct {
+    GtkWidget *name, *cmd, *tree_view;
+    GtkListStore *liststore;
+    GtkTreeSelection *selection;
+}
+CustomActionDialogData;
+
+
+/* Application-defined ids for dialog response */
+enum {
+    GTK_RESPONSE_PREFERENCES = 0
 };
 
 #endif

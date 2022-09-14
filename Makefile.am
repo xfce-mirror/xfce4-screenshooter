@@ -27,6 +27,7 @@ lib_libscreenshooter_la_SOURCES =	\
 	lib/libscreenshooter.h \
 	lib/screenshooter-actions.c lib/screenshooter-actions.h \
 	lib/screenshooter-capture.c lib/screenshooter-capture.h \
+	lib/screenshooter-custom-actions.c lib/screenshooter-custom-actions.h \
 	lib/screenshooter-dialogs.c lib/screenshooter-dialogs.h \
 	lib/screenshooter-global.h \
 	lib/screenshooter-job.c lib/screenshooter-job.h \
@@ -50,6 +51,7 @@ lib_libscreenshooter_la_CFLAGS = \
 	@SOUP_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
+	@XFCONF_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_libscreenshooter_la_LIBADD = \
@@ -66,6 +68,7 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
 	@LIBX11_LDFLAGS@ \
+	@XFCONF_LIBS@ \
 	@XFIXES_LIBS@
 
 lib_libscreenshooter_built_sources = \
