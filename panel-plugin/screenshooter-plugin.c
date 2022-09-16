@@ -251,6 +251,12 @@ screenshooter_plugin_write_rc_file (XfcePanelPlugin *plugin, PluginData *pd)
 static void
 cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
 {
+  if (response == GTK_RESPONSE_PREFERENCES)
+    {
+      screenshooter_preference_dialog_run (dlg);
+      return;
+    }
+
   g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
   gtk_widget_destroy (dlg);
 
