@@ -297,7 +297,7 @@ cb_link_view_in_browser (GtkWidget *widget, gpointer user_data)
 
 
 static void
-cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
+cb_generate_embed_text (GtkWidget *widget, gpointer user_data)
 {
   ScreenshooterImgurDialog *dialog;
   const gchar *link = NULL;
@@ -349,7 +349,7 @@ cb_generate_embed_text (GtkWidget* widget, gpointer user_data)
 
 
 static void
-cb_embed_text_copy (GtkWidget* widget, gpointer user_data)
+cb_embed_text_copy (GtkWidget *widget, gpointer user_data)
 {
   GtkClipboard *clipboard;
   GtkTextBuffer *buffer;

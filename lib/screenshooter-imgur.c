@@ -35,7 +35,7 @@ imgur_upload_job (ScreenshooterJob *job, GArray *param_values, GError **error)
   const gchar *image_path, *title;
   guchar *online_file_name = NULL;
   guchar *delete_hash = NULL;
-  const gchar* proxy_uri;
+  const gchar *proxy_uri;
   SoupURI *soup_proxy_uri;
 #ifdef DEBUG
   SoupLogger *log;
