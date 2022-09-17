@@ -17,12 +17,12 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#include "screenshooter-utils.h"
+
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
-
-#include "screenshooter-utils.h"
 #include <libxfce4ui/libxfce4ui.h>
 
 
