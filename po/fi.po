@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-17 00:53+0100\n"
+"POT-Creation-Date: 2022-09-17 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Ammuu5, 2018-2020,2022\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-apps/language/fi/)\n"
@@ -21,181 +21,185 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:417
+#: ../lib/screenshooter-dialogs.c:522
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2f kt / %.2f kt"
 
-#: ../lib/screenshooter-dialogs.c:509
+#: ../lib/screenshooter-dialogs.c:616
 msgid "Transfer"
 msgstr "Siirto"
 
-#: ../lib/screenshooter-dialogs.c:530
+#: ../lib/screenshooter-dialogs.c:637
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kuvakaappausta siirretään kohteeseen:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:672 ../lib/screenshooter-dialogs.c:682
-#: ../lib/screenshooter-dialogs.c:911 ../lib/screenshooter-utils.c:147
-#: ../lib/screenshooter-utils.c:187 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:878 ../lib/screenshooter-dialogs.c:887
+#: ../lib/screenshooter-dialogs.c:1115 ../lib/screenshooter-utils.c:147
+#: ../lib/screenshooter-utils.c:191 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Kuvakaappaus"
 
-#: ../lib/screenshooter-dialogs.c:674 ../lib/screenshooter-dialogs.c:684
-#: ../lib/screenshooter-dialogs.c:913
+#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-dialogs.c:890
+msgid "_Preferences"
+msgstr "_Asetukset"
+
+#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-dialogs.c:889
+#: ../lib/screenshooter-dialogs.c:1117
 msgid "_Help"
 msgstr "_Ohje"
 
-#: ../lib/screenshooter-dialogs.c:675
+#: ../lib/screenshooter-dialogs.c:882 ../lib/screenshooter-dialogs.c:1524
 msgid "_Close"
 msgstr "_Sulje"
 
-#: ../lib/screenshooter-dialogs.c:678
-msgid "Preferences"
-msgstr "Asetukset"
-
-#: ../lib/screenshooter-dialogs.c:685 ../lib/screenshooter-dialogs.c:915
+#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-dialogs.c:1119
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: ../lib/screenshooter-dialogs.c:686 ../lib/screenshooter-dialogs.c:916
+#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1120
 msgid "_OK"
 msgstr "_OK"
 
-#: ../lib/screenshooter-dialogs.c:689
-msgid "Take a screenshot"
-msgstr "Kaappaa kuva"
-
-#: ../lib/screenshooter-dialogs.c:721
+#: ../lib/screenshooter-dialogs.c:925
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kaapattava alue</span>"
 
-#: ../lib/screenshooter-dialogs.c:743
+#: ../lib/screenshooter-dialogs.c:947
 msgid "Entire screen"
 msgstr "Koko näyttö"
 
-#: ../lib/screenshooter-dialogs.c:748 ../src/main.c:61
-#: ../panel-plugin/screenshooter-plugin.c:305
+#: ../lib/screenshooter-dialogs.c:952 ../src/main.c:61
+#: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
 msgstr "Kaappaa kuva koko näytöstä"
 
-#: ../lib/screenshooter-dialogs.c:757
+#: ../lib/screenshooter-dialogs.c:961
 msgid "Active window"
 msgstr "Aktiivinen ikkuna"
 
-#: ../lib/screenshooter-dialogs.c:762 ../src/main.c:108
-#: ../panel-plugin/screenshooter-plugin.c:310
+#: ../lib/screenshooter-dialogs.c:966 ../src/main.c:108
+#: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
 msgstr "Kaappaa kuva aktiivisesta ikkunasta"
 
-#: ../lib/screenshooter-dialogs.c:771
+#: ../lib/screenshooter-dialogs.c:975
 msgid "Select a region"
 msgstr "Valitse alue"
 
-#: ../lib/screenshooter-dialogs.c:776
+#: ../lib/screenshooter-dialogs.c:980
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:789
+#: ../lib/screenshooter-dialogs.c:993
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:809
+#: ../lib/screenshooter-dialogs.c:1013
 msgid "Capture the mouse pointer"
 msgstr "Sisällytä hiiren osoitin"
 
-#: ../lib/screenshooter-dialogs.c:813
+#: ../lib/screenshooter-dialogs.c:1017
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Näytä hiiren osoitin kaapatussa kuvassa"
 
-#: ../lib/screenshooter-dialogs.c:820
+#: ../lib/screenshooter-dialogs.c:1024
 msgid "Capture the window border"
 msgstr "Sisällytä ikkunan reuna"
 
-#: ../lib/screenshooter-dialogs.c:825
+#: ../lib/screenshooter-dialogs.c:1029
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:842
+#: ../lib/screenshooter-dialogs.c:1046
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kaappausviive</span>"
 
-#: ../lib/screenshooter-dialogs.c:866
+#: ../lib/screenshooter-dialogs.c:1070
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Aika sekunteina ennen kuvakaappauksen ottamista"
 
-#: ../lib/screenshooter-dialogs.c:869
+#: ../lib/screenshooter-dialogs.c:1073
 msgid "seconds"
 msgstr "sekuntia"
 
-#: ../lib/screenshooter-dialogs.c:914
+#: ../lib/screenshooter-dialogs.c:1118
 msgid "_Back"
 msgstr "_Edellinen"
 
-#: ../lib/screenshooter-dialogs.c:920
-msgid "Choose what to do with the screenshot"
-msgstr "Valitse, mitä kuvakaappauksella tehdään"
-
-#: ../lib/screenshooter-dialogs.c:956
+#: ../lib/screenshooter-dialogs.c:1158
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tehtävä</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:971
+#: ../lib/screenshooter-dialogs.c:1173
 msgid "Save"
 msgstr "Tallenna"
 
-#: ../lib/screenshooter-dialogs.c:977
+#: ../lib/screenshooter-dialogs.c:1179
 msgid "Save the screenshot to a PNG file"
 msgstr "Tallenna kaappaus PNG-tiedostoon"
 
 #. Show in folder checkbox
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:1183
 msgid "Show in Folder"
 msgstr "Näytä kansiossa"
 
-#: ../lib/screenshooter-dialogs.c:988
+#: ../lib/screenshooter-dialogs.c:1190
 msgid "Shows the saved file in the folder"
 msgstr "Näyttää tallennetun tiedoston kansiossa"
 
-#: ../lib/screenshooter-dialogs.c:997
+#: ../lib/screenshooter-dialogs.c:1199
 msgid "Copy to the clipboard"
 msgstr "Kopioi leikepöydälle"
 
-#: ../lib/screenshooter-dialogs.c:999
+#: ../lib/screenshooter-dialogs.c:1201
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopioi kuvakaappaus leikepöydälle, josta voit liittää sen haluamaasi sovellukseen"
 
-#: ../lib/screenshooter-dialogs.c:1013
+#: ../lib/screenshooter-dialogs.c:1215
 msgid "Open with:"
 msgstr "Avaa sovelluksessa:"
 
-#: ../lib/screenshooter-dialogs.c:1021
+#: ../lib/screenshooter-dialogs.c:1223
 msgid "Open the screenshot with the chosen application"
 msgstr "Avaa kuvakaappaus valitussa sovelluksessa"
 
-#: ../lib/screenshooter-dialogs.c:1040 ../src/main.c:76
+#: ../lib/screenshooter-dialogs.c:1242 ../src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "Sovellus, jolla kaappaus avataan"
 
-#: ../lib/screenshooter-dialogs.c:1057
+#: ../lib/screenshooter-dialogs.c:1256
+msgid "Custom Action:"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1264
+msgid "Execute the selected custom action"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1276
+msgid "Custom action to execute"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1301
 msgid "Host on Imgur™"
 msgstr "Lähetä Imgur™-palveluun"
 
-#: ../lib/screenshooter-dialogs.c:1061
+#: ../lib/screenshooter-dialogs.c:1305
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1073
+#: ../lib/screenshooter-dialogs.c:1317
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -203,34 +207,104 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1104
+#: ../lib/screenshooter-dialogs.c:1348
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Esikatselu</span>"
 
-#: ../lib/screenshooter-dialogs.c:1165
+#: ../lib/screenshooter-dialogs.c:1409
 msgid "Save screenshot as..."
 msgstr "Tallenna kaappaus nimellä..."
 
-#: ../lib/screenshooter-dialogs.c:1183
+#: ../lib/screenshooter-dialogs.c:1427
 msgid "PNG File"
 msgstr "PNG-tiedosto"
 
-#: ../lib/screenshooter-dialogs.c:1184
+#: ../lib/screenshooter-dialogs.c:1428
 msgid "JPG File"
 msgstr "JPG-tiedosto"
 
-#: ../lib/screenshooter-dialogs.c:1185
+#: ../lib/screenshooter-dialogs.c:1429
 msgid "BMP File"
 msgstr "BMP-tiedosto"
 
-#: ../lib/screenshooter-utils.c:308
+#: ../lib/screenshooter-dialogs.c:1432
+msgid "WebP File"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1522
+msgid "Preferences"
+msgstr "Asetukset"
+
+#: ../lib/screenshooter-dialogs.c:1547
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1566
+msgid ""
+"You can configure custom actions that will be available to handle "
+"screenshots after they are captured."
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1596
+msgid "Custom Action"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1609
+msgid "Add custom action"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1616
+msgid "Remove selected custom action"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1617
+msgid "list-remove-symbolic"
+msgstr ""
+
+#. Add custom action name
+#: ../lib/screenshooter-dialogs.c:1638
+msgid "Name"
+msgstr "Nimi"
+
+#: ../lib/screenshooter-dialogs.c:1639
+msgid "Name of the action that will be displayed in Actions dialog"
+msgstr ""
+
+#. Add custom action command
+#: ../lib/screenshooter-dialogs.c:1648
+msgid "Command"
+msgstr "Komento"
+
+#: ../lib/screenshooter-dialogs.c:1649
+msgid "Command that will be executed for this custom action"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1656
+#, c-format
+msgid "Use %f as a placeholder for location of the screenshot captured"
+msgstr ""
+
+#: ../lib/screenshooter-custom-actions.c:196
+msgid "Unable to execute the custom action"
+msgstr ""
+
+#: ../lib/screenshooter-custom-actions.c:196
+msgid "Invalid custom action selected"
+msgstr ""
+
+#: ../lib/screenshooter-custom-actions.c:208
+#, c-format
+msgid "Failed to run the custom action %s"
+msgstr ""
+
+#: ../lib/screenshooter-utils.c:314
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Sovellusta ei voitu käynnistää.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:383
+#: ../lib/screenshooter-utils.c:389
 msgid "Error"
 msgstr "Virhe"
 
@@ -246,10 +320,6 @@ msgstr "Virhe siirrettäessä tietoja imgur:iin."
 #: ../lib/screenshooter-imgur.c:173
 msgid "Imgur"
 msgstr "Imgur"
-
-#: ../lib/screenshooter-imgur-dialog.c:134
-msgid "Your uploaded image"
-msgstr "Lähetettävä kuvasi"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -400,7 +470,7 @@ msgstr "Näytä hiiren osoitin kuvakaappauksessa"
 msgid "Removes the window border from the screenshot"
 msgstr "Poistaa ikkunan reunan kuvakaappauksesta"
 
-#: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:315
+#: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:321
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -410,7 +480,8 @@ msgstr "Aseta hiiren osoitin kaapattavan alueen kulmaan, paina hiiren vasen pain
 #: ../src/main.c:88
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
-"and bmp extensions"
+"and bmp extensions. webp is only supported if webp-pixbuf-loader is "
+"installed."
 msgstr ""
 
 #: ../src/main.c:93
