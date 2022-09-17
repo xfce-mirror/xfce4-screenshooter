@@ -180,15 +180,15 @@ msgstr "Toepassing om de schermafdruk mee te openen"
 
 #: ../lib/screenshooter-dialogs.c:1256
 msgid "Custom Action:"
-msgstr ""
+msgstr "Aangepaste actie:"
 
 #: ../lib/screenshooter-dialogs.c:1264
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Voer de gekozen aangepaste actie uit"
 
 #: ../lib/screenshooter-dialogs.c:1276
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Uit te voeren aangepaste actie"
 
 #: ../lib/screenshooter-dialogs.c:1301
 msgid "Host on Imgur™"
@@ -236,29 +236,29 @@ msgstr "Voorkeuren"
 
 #: ../lib/screenshooter-dialogs.c:1547
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aangepaste acties</span>"
 
 #: ../lib/screenshooter-dialogs.c:1566
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "U kunt aangepaste acties instellen die beschikbaar zullen zijn voor schermafdrukken nadat die zijn gemaakt."
 
 #: ../lib/screenshooter-dialogs.c:1596
 msgid "Custom Action"
-msgstr ""
+msgstr "Aangepaste actie"
 
 #: ../lib/screenshooter-dialogs.c:1609
 msgid "Add custom action"
-msgstr ""
+msgstr "Aangepaste actie toevoegen"
 
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "Gekozen aangepaste actie verwijderen"
 
 #: ../lib/screenshooter-dialogs.c:1617
 msgid "list-remove-symbolic"
-msgstr ""
+msgstr "list-remove-symbolic"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
@@ -267,7 +267,7 @@ msgstr "Naam"
 
 #: ../lib/screenshooter-dialogs.c:1639
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Naam van de actie die zal worden getoond in het Acties-dialoogvenster"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1648
@@ -276,25 +276,25 @@ msgstr "Opdracht"
 
 #: ../lib/screenshooter-dialogs.c:1649
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Opdracht die zal worden uitgevoerd voor deze aangepaste actie"
 
 #: ../lib/screenshooter-dialogs.c:1656
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "Gebruik %f als tijdelijke aanduiding voor locatie van genomen schermafdruk"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Kon de aangepaste actie niet uitvoeren"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Ongeldige aangepaste actie gekozen"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "Kon de aangepaste actie %s niet uitvoeren"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
