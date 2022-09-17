@@ -1614,7 +1614,7 @@ static GtkWidget
                     dialog_data);
   tool_button = GTK_TOOL_BUTTON (gtk_tool_button_new (NULL, NULL));
   gtk_widget_set_tooltip_text (GTK_WIDGET (tool_button), _("Remove selected custom action"));
-  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), _("list-remove-symbolic"));
+  gtk_tool_button_set_icon_name (GTK_TOOL_BUTTON (tool_button), "list-remove-symbolic");
   gtk_toolbar_insert (GTK_TOOLBAR (toolbar), GTK_TOOL_ITEM (tool_button), -1);
   gtk_box_pack_end (GTK_BOX (hbox), toolbar, FALSE, FALSE, 0);
   g_signal_connect (G_OBJECT (tool_button), "clicked",
