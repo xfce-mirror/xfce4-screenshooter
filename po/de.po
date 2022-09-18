@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 00:50+0200\n"
+"POT-Creation-Date: 2022-09-18 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Andreas Eitel <github-aneitel@online.de>, 2018-2022\n"
 "Language-Team: German (http://www.transifex.com/xfce/xfce-apps/language/de/)\n"
@@ -261,10 +261,6 @@ msgstr "Benutzerdefinierte Aktion hinzufügen"
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
 msgstr "Ausgewählte benutzerdefinierte Aktion löschen"
-
-#: ../lib/screenshooter-dialogs.c:1617
-msgid "list-remove-symbolic"
-msgstr "Liste-entfernen-symbolisch"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
