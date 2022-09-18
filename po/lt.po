@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 00:50+0200\n"
+"POT-Creation-Date: 2022-09-18 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Moo, 2015-2022\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-apps/language/lt/)\n"
@@ -254,10 +254,6 @@ msgstr "Pridėti tinkintą veiksmą"
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
 msgstr "Šalinti pasirinktą tinkintą veiksmą"
-
-#: ../lib/screenshooter-dialogs.c:1617
-msgid "list-remove-symbolic"
-msgstr "list-remove-symbolic"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
