@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 00:50+0200\n"
+"POT-Creation-Date: 2022-09-18 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019-2022\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/xfce/xfce-apps/language/zh_TW/)\n"
@@ -182,15 +182,15 @@ msgstr "用來開啟螢幕快照的應用程式"
 
 #: ../lib/screenshooter-dialogs.c:1256
 msgid "Custom Action:"
-msgstr ""
+msgstr "自訂動作："
 
 #: ../lib/screenshooter-dialogs.c:1264
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "執行選定的自訂動作"
 
 #: ../lib/screenshooter-dialogs.c:1276
 msgid "Custom action to execute"
-msgstr ""
+msgstr "要執行的自訂動作"
 
 #: ../lib/screenshooter-dialogs.c:1301
 msgid "Host on Imgur™"
@@ -238,29 +238,25 @@ msgstr "偏好設定"
 
 #: ../lib/screenshooter-dialogs.c:1547
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">自訂動作</span>"
 
 #: ../lib/screenshooter-dialogs.c:1566
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "您可以設定自訂動作，以便在擷取螢幕截圖後對其進行處理。"
 
 #: ../lib/screenshooter-dialogs.c:1596
 msgid "Custom Action"
-msgstr ""
+msgstr "自訂動作"
 
 #: ../lib/screenshooter-dialogs.c:1609
 msgid "Add custom action"
-msgstr ""
+msgstr "新增自訂動作"
 
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:1617
-msgid "list-remove-symbolic"
-msgstr ""
+msgstr "移除選定的自訂動作"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
@@ -269,7 +265,7 @@ msgstr "名稱"
 
 #: ../lib/screenshooter-dialogs.c:1639
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "將在「動作」對話方塊中顯示的動作名稱"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1648
@@ -278,25 +274,25 @@ msgstr "指令"
 
 #: ../lib/screenshooter-dialogs.c:1649
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "此自訂動作要執行的指令"
 
 #: ../lib/screenshooter-dialogs.c:1656
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "使用 %f 作為擷取到的螢幕截圖位置的佔位字串"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "無法執行自訂動作"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "選取了無效的自訂動作"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "執行自訂動作 %s 失敗"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
