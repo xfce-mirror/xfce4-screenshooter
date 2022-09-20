@@ -185,15 +185,15 @@ msgstr "打开截图的应用程序"
 
 #: ../lib/screenshooter-dialogs.c:1256
 msgid "Custom Action:"
-msgstr "自定义操作："
+msgstr "自定义动作："
 
 #: ../lib/screenshooter-dialogs.c:1264
 msgid "Execute the selected custom action"
-msgstr "执行选定的自定义操作"
+msgstr "执行选定的自定义动作"
 
 #: ../lib/screenshooter-dialogs.c:1276
 msgid "Custom action to execute"
-msgstr "要执行的自定义操作"
+msgstr "要执行的自定义动作"
 
 #: ../lib/screenshooter-dialogs.c:1301
 msgid "Host on Imgur™"
@@ -241,25 +241,25 @@ msgstr "首选项"
 
 #: ../lib/screenshooter-dialogs.c:1547
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">自定义操作</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">自定义动作</span>"
 
 #: ../lib/screenshooter-dialogs.c:1566
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr "您可以配置自定义操作，以便在捕获屏幕截图后对其进行处理。"
+msgstr "您可以配置自定义动作，以便在捕获屏幕截图后对其进行处理。"
 
 #: ../lib/screenshooter-dialogs.c:1596
 msgid "Custom Action"
-msgstr "自定义操作"
+msgstr "自定义动作"
 
 #: ../lib/screenshooter-dialogs.c:1609
 msgid "Add custom action"
-msgstr "添加自定义操作"
+msgstr "添加自定义动作"
 
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
-msgstr "移除所选自定义操作"
+msgstr "移除所选自定义动作"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
@@ -268,7 +268,7 @@ msgstr "名称"
 
 #: ../lib/screenshooter-dialogs.c:1639
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "将在“动作”对话框显示的动作名称"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1648
@@ -277,25 +277,25 @@ msgstr "命令"
 
 #: ../lib/screenshooter-dialogs.c:1649
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "此自定义动作将执行的命令"
 
 #: ../lib/screenshooter-dialogs.c:1656
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "使用 %f 作为捕获的屏幕截图位置的占位符"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "无法执行此自定义动作"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "所选自定义动作无效"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "执行自定义动作 %s 失败"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
