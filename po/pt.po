@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 00:50+0200\n"
+"POT-Creation-Date: 2022-09-18 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2019-2022\n"
 "Language-Team: Portuguese (http://www.transifex.com/xfce/xfce-apps/language/pt/)\n"
@@ -183,15 +183,15 @@ msgstr "Aplicação para abrir a captura de ecrã"
 
 #: ../lib/screenshooter-dialogs.c:1256
 msgid "Custom Action:"
-msgstr ""
+msgstr "Ação personalizada:"
 
 #: ../lib/screenshooter-dialogs.c:1264
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Executar a ação personalizada selecionada"
 
 #: ../lib/screenshooter-dialogs.c:1276
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Ação personalizada a executar"
 
 #: ../lib/screenshooter-dialogs.c:1301
 msgid "Host on Imgur™"
@@ -239,29 +239,25 @@ msgstr "Preferências"
 
 #: ../lib/screenshooter-dialogs.c:1547
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ações personalizadas</span>"
 
 #: ../lib/screenshooter-dialogs.c:1566
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "É possível configurar ações personalizadas que estarão disponíveis para lidar com capturas de ecrã após a sua captura."
 
 #: ../lib/screenshooter-dialogs.c:1596
 msgid "Custom Action"
-msgstr ""
+msgstr "Ação personalizada"
 
 #: ../lib/screenshooter-dialogs.c:1609
 msgid "Add custom action"
-msgstr ""
+msgstr "Adicionar ação personalizada"
 
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:1617
-msgid "list-remove-symbolic"
-msgstr ""
+msgstr "Remove a ação personalizada selecionada"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
@@ -270,7 +266,7 @@ msgstr "Nome"
 
 #: ../lib/screenshooter-dialogs.c:1639
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Nome da ação que será apresentada na caixa de diálogo Ações"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1648
@@ -279,25 +275,25 @@ msgstr "Comando"
 
 #: ../lib/screenshooter-dialogs.c:1649
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Comando que será executado para esta ação personalizada"
 
 #: ../lib/screenshooter-dialogs.c:1656
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "Usar %f como um espaço reservado para a localização da captura de ecrã"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Incapaz de executar a ação personalizada"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Ação personalizada inválida"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "Falha ao executar a ação personalizada %s"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
