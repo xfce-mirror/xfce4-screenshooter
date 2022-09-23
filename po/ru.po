@@ -19,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-18 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Andrei Stepanov, 2022\n"
+"Last-Translator: Виктор, 2022\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -249,7 +249,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Пользователь�
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "Вы можете настроить пользовательские действия, которые будут доступны для обработки снимков экрана после их захвата."
 
 #: ../lib/screenshooter-dialogs.c:1596
 msgid "Custom Action"
@@ -270,7 +270,7 @@ msgstr "Название"
 
 #: ../lib/screenshooter-dialogs.c:1639
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Название действия, которое будет отображаться в диалоговом окне Действия"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1648
@@ -279,20 +279,20 @@ msgstr "Команда"
 
 #: ../lib/screenshooter-dialogs.c:1649
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Команда, которая будет выполняться этим пользовательским действием"
 
 #: ../lib/screenshooter-dialogs.c:1656
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "Используйте %f в качестве заполнителя для местоположения снятого снимка экрана"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Не удалось выполнить пользовательское действие"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Выбрано недопустимое пользовательское действие"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
