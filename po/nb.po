@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 00:50+0200\n"
+"POT-Creation-Date: 2022-09-18 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021-2022\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-apps/language/nb/)\n"
@@ -260,10 +260,6 @@ msgstr "Legg til selvvalgt handling"
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
 msgstr "Fjern valgt handling"
-
-#: ../lib/screenshooter-dialogs.c:1617
-msgid "list-remove-symbolic"
-msgstr "liste-fjern-symbolske"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
