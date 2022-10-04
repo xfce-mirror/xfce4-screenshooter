@@ -8,14 +8,14 @@
 # se7entime <se7entime@disroot.org>, 2014
 # se7entime <se7entime@disroot.org>, 2014
 # se7entime <se7entime@disroot.org>, 2014
-# Triyan W. Nugroho <triyan.wn@gmail.com>, 2020
+# Triyan W. Nugroho <triyan.wn@gmail.com>, 2020,2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 00:50+0200\n"
+"POT-Creation-Date: 2022-09-18 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Triyan W. Nugroho <triyan.wn@gmail.com>, 2020\n"
+"Last-Translator: Triyan W. Nugroho <triyan.wn@gmail.com>, 2020,2022\n"
 "Language-Team: Indonesian (http://www.transifex.com/xfce/xfce-apps/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -155,11 +155,11 @@ msgstr "Simpan cuplikan layar sebagai berkas PNG"
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1183
 msgid "Show in Folder"
-msgstr ""
+msgstr "Tampilkan di Folder"
 
 #: ../lib/screenshooter-dialogs.c:1190
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "Tampilkan berkas yang tersimpan di dalam folder"
 
 #: ../lib/screenshooter-dialogs.c:1199
 msgid "Copy to the clipboard"
@@ -183,15 +183,15 @@ msgstr "Aplikasi untuk membuka cuplikan layar"
 
 #: ../lib/screenshooter-dialogs.c:1256
 msgid "Custom Action:"
-msgstr ""
+msgstr "Aksi Tersuai:"
 
 #: ../lib/screenshooter-dialogs.c:1264
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Jalankan aksi tersuai yang dipilih"
 
 #: ../lib/screenshooter-dialogs.c:1276
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Aksi tersuai untuk dijalankan"
 
 #: ../lib/screenshooter-dialogs.c:1301
 msgid "Host on Imgur™"
@@ -231,7 +231,7 @@ msgstr "Berkas BMP"
 
 #: ../lib/screenshooter-dialogs.c:1432
 msgid "WebP File"
-msgstr ""
+msgstr "Berkas WebP"
 
 #: ../lib/screenshooter-dialogs.c:1522
 msgid "Preferences"
@@ -239,7 +239,7 @@ msgstr "Pengaturan"
 
 #: ../lib/screenshooter-dialogs.c:1547
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aksi-aksi Tersuai</span>"
 
 #: ../lib/screenshooter-dialogs.c:1566
 msgid ""
@@ -249,19 +249,15 @@ msgstr ""
 
 #: ../lib/screenshooter-dialogs.c:1596
 msgid "Custom Action"
-msgstr ""
+msgstr "Aksi Tersuai"
 
 #: ../lib/screenshooter-dialogs.c:1609
 msgid "Add custom action"
-msgstr ""
+msgstr "Tambahkan aksi tersuai"
 
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:1617
-msgid "list-remove-symbolic"
-msgstr ""
+msgstr "Hapus aksi tersuai yang dipilih "
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
@@ -270,7 +266,7 @@ msgstr "Nama"
 
 #: ../lib/screenshooter-dialogs.c:1639
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Beri nama aksi yang akan ditampilkan pada dialog Aksi"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1648
@@ -279,7 +275,7 @@ msgstr "Perintah"
 
 #: ../lib/screenshooter-dialogs.c:1649
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Perintah yang akan dieksekusi untuk aksi tersuai ini"
 
 #: ../lib/screenshooter-dialogs.c:1656
 #, c-format
@@ -288,16 +284,16 @@ msgstr ""
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Tak dapat menjalankan aksi tersuai"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Aksi tersuai yang dipilih tidak valid"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "Gagal menjalankan aksi tersuai %s"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
@@ -488,7 +484,7 @@ msgstr ""
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "Tampilkan berkas yang tersimpan di dalam folder."
 
 #: ../src/main.c:98
 msgid "Host the screenshot on Imgur, a free online image hosting service"
