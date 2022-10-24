@@ -240,15 +240,11 @@ int main (int argc, char **argv)
   sd->action_specified = FALSE;
 
   /* Check if the directory read from the preferences is valid */
-  default_save_dir = g_file_new_for_uri (sd->screenshot_dir);
-
-  if (G_UNLIKELY (!g_file_query_exists (default_save_dir, NULL)))
+  if (G_UNLIKELY (!screenshooter_is_directory_writable(sd->screenshot_dir)))
     {
       g_free (sd->screenshot_dir);
       sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
     }
-
-  g_object_unref (default_save_dir);
 
   /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
