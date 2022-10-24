@@ -36,6 +36,7 @@
 
 
 
+gboolean   screenshooter_is_directory_writable (const gchar    *path);
 void       screenshooter_copy_to_clipboard     (GdkPixbuf      *screenshot);
 void       screenshooter_read_rc_file          (const gchar    *file,
                                                 ScreenshotData *sd);

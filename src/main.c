@@ -127,7 +127,6 @@ int main (int argc, char **argv)
   GError *cli_error = NULL;
   GFile *default_save_dir;
   const gchar *rc_file;
-  GFileInfo* dirinfo;
   const gchar *conflict_error =
     _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
   const gchar *ignore_error =
@@ -241,20 +240,11 @@ int main (int argc, char **argv)
   sd->action_specified = FALSE;
 
   /* Check if the directory read from the preferences is valid */
-  default_save_dir = g_file_new_for_uri (sd->screenshot_dir);
-  dirinfo = g_file_query_info(default_save_dir, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE ","
-		  G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE, G_FILE_QUERY_INFO_NONE, NULL, &cli_error);
-  g_object_unref(dirinfo);
-
-  if (G_UNLIKELY (!g_file_query_exists (default_save_dir, NULL) ||
-			  !g_file_info_get_attribute_boolean(dirinfo, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE) ||
-			  !g_file_info_get_attribute_boolean(dirinfo, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE) ))
+  if (G_UNLIKELY (!screenshooter_is_directory_writable(sd->screenshot_dir)))
     {
       g_free (sd->screenshot_dir);
       sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
     }
-
-  g_object_unref (default_save_dir);
 
   /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
