@@ -700,29 +700,29 @@ screenshooter_is_format_supported (const gchar *format)
 
 
 /* Check whether specified path is a writable directory
-* @path: path to the directory
-*/
+ * @path: URI to the directory
+ */
 gboolean
 screenshooter_is_directory_writable (const gchar *path)
 {
   GFile *dir;
-  GError* error = NULL;
-  GFileInfo* dirinfo;
+  GFileInfo *info;
+  GError *error = NULL;
   gboolean result;
 
   dir = g_file_new_for_uri (path);
-  dirinfo = g_file_query_info (dir, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE ","
+  info = g_file_query_info (dir, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE ","
                                G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE ","
                                G_FILE_ATTRIBUTE_STANDARD_TYPE,
                                G_FILE_QUERY_INFO_NONE, NULL, &error);
 
   result = (g_file_query_exists (dir, NULL) &&
-            g_file_info_get_file_type (dirinfo) == G_FILE_TYPE_DIRECTORY &&
-            g_file_info_get_attribute_boolean (dirinfo, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE) &&
-            g_file_info_get_attribute_boolean (dirinfo, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE));
+            g_file_info_get_file_type (info) == G_FILE_TYPE_DIRECTORY &&
+            g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE) &&
+            g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE));
 
   g_object_unref (dir);
-  g_object_unref (dirinfo);
+  g_object_unref (info);
 
   return result;
 }

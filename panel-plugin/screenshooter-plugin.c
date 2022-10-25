@@ -352,7 +352,7 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   screenshooter_plugin_read_rc_file (plugin, pd);
 
   /* Check if the directory read from the preferences is valid */
-  if (G_UNLIKELY (!screenshooter_is_directory_writable(sd->screenshot_dir)))
+  if (G_UNLIKELY (!screenshooter_is_directory_writable (sd->screenshot_dir)))
     {
       g_free (pd->sd->screenshot_dir);
       pd->sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();

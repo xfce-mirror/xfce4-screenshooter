@@ -240,7 +240,7 @@ int main (int argc, char **argv)
   sd->action_specified = FALSE;
 
   /* Check if the directory read from the preferences is valid */
-  if (G_UNLIKELY (!screenshooter_is_directory_writable(sd->screenshot_dir)))
+  if (G_UNLIKELY (!screenshooter_is_directory_writable (sd->screenshot_dir)))
     {
       g_free (sd->screenshot_dir);
       sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
