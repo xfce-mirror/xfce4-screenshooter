@@ -721,6 +721,13 @@ screenshooter_is_directory_writable (const gchar *path)
             g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE) &&
             g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE));
 
+  if (G_UNLIKELY (info == NULL))
+    {
+      g_warning ("Failed to query file info: %s", path);
+      g_error_free (error);
+      return FALSE;
+    }
+
   g_object_unref (dir);
   g_object_unref (info);
 
