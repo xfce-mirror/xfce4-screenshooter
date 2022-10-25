@@ -36,7 +36,6 @@
 
 
 
-gboolean   screenshooter_is_directory_writable (const gchar    *path);
 void       screenshooter_copy_to_clipboard     (GdkPixbuf      *screenshot);
 void       screenshooter_read_rc_file          (const gchar    *file,
                                                 ScreenshotData *sd);
@@ -66,5 +65,6 @@ gboolean   screenshooter_get_gtk_frame_extents (GdkWindow      *window,
                                                 GtkBorder      *extents);
 void       screenshooter_show_file_in_folder   (const gchar    *save_location);
 gboolean   screenshooter_is_format_supported   (const gchar    *format);
+gboolean   screenshooter_is_directory_writable (const gchar    *path);
 
 #endif

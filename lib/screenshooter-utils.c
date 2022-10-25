@@ -105,35 +105,6 @@ get_datetime (const gchar *format)
 /* Public */
 
 
-/* Check whether specified path is a writable directory
-* @path: path to the directory
-*/
-gboolean
-screenshooter_is_directory_writable (const gchar *path)
-{
-  GFile *dir;
-  GError* error = NULL;
-  GFileInfo* dirinfo;
-  gboolean result;
-
-  dir = g_file_new_for_uri (path);
-  dirinfo = g_file_query_info (dir, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE ","
-                               G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE ","
-                               G_FILE_ATTRIBUTE_STANDARD_TYPE,
-                               G_FILE_QUERY_INFO_NONE, NULL, &error);
-
-  result = (g_file_query_exists (dir, NULL) &&
-            g_file_info_get_file_type (dirinfo) == G_FILE_TYPE_DIRECTORY &&
-            g_file_info_get_attribute_boolean (dirinfo, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE) &&
-            g_file_info_get_attribute_boolean (dirinfo, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE));
-
-  g_object_unref (dir);
-  g_object_unref (dirinfo);
-
-  return result;
-}
-
-
 
 /* Copy the screenshot to the Clipboard.
 * Code is from gnome-screenshooter.
@@ -722,6 +693,36 @@ screenshooter_is_format_supported (const gchar *format)
     }
 
   g_slist_free_1 (supported_formats);
+
+  return result;
+}
+
+
+
+/* Check whether specified path is a writable directory
+* @path: path to the directory
+*/
+gboolean
+screenshooter_is_directory_writable (const gchar *path)
+{
+  GFile *dir;
+  GError* error = NULL;
+  GFileInfo* dirinfo;
+  gboolean result;
+
+  dir = g_file_new_for_uri (path);
+  dirinfo = g_file_query_info (dir, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE ","
+                               G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE ","
+                               G_FILE_ATTRIBUTE_STANDARD_TYPE,
+                               G_FILE_QUERY_INFO_NONE, NULL, &error);
+
+  result = (g_file_query_exists (dir, NULL) &&
+            g_file_info_get_file_type (dirinfo) == G_FILE_TYPE_DIRECTORY &&
+            g_file_info_get_attribute_boolean (dirinfo, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE) &&
+            g_file_info_get_attribute_boolean (dirinfo, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE));
+
+  g_object_unref (dir);
+  g_object_unref (dirinfo);
 
   return result;
 }
