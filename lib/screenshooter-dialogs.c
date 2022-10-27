@@ -364,7 +364,6 @@ static void populate_liststore (GtkListStore *liststore)
   if (G_LIKELY (list_app != NULL))
     {
       g_list_foreach (list_app, (GFunc) add_item, liststore);
-      // g_list_free (list_app);
       g_list_free_full (list_app, g_object_unref);
     }
 }

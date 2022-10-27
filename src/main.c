@@ -308,7 +308,7 @@ int main (int argc, char **argv)
           g_free (sd->screenshot_dir);
           sd->screenshot_dir = g_file_get_uri (default_save_dir);
 
-          // Check if given path is a directory
+          /* Check if given path is a directory */
           sd->path_is_dir = g_file_test (screenshot_dir, G_FILE_TEST_IS_DIR);
 
           g_object_unref (default_save_dir);

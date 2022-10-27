@@ -412,7 +412,7 @@ static GdkPixbuf
 
       gdk_window_get_frame_extents (wm_window, &wm_coords);
 
-       // Calculate frame_offset
+       /* Calculate frame_offset */
       frame_offset.left = (gdouble) (real_coords.x - wm_coords.x);
       frame_offset.top = (gdouble) (real_coords.y - wm_coords.y);
       frame_offset.right = (gdouble) (wm_coords.width - real_coords.width - frame_offset.left);

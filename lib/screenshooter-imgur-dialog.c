@@ -124,7 +124,7 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
   builder = gtk_builder_new_from_string (screenshooter_imgur_dialog_ui,
                                          screenshooter_imgur_dialog_ui_length);
 
-  // Setup window
+  /* Setup window */
   self->window = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
     "", _("_Close"), GTK_RESPONSE_CLOSE,
@@ -132,7 +132,7 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
   gtk_window_set_icon_name (GTK_WINDOW (self->window), "org.xfce.screenshooter");
   gtk_window_set_default_size (GTK_WINDOW (self->window), 500, 330);
 
-  // Add notebook widget to window
+  /* Add notebook widget to window */
   notebook = GTK_WIDGET (gtk_builder_get_object (builder, "dialog-notebook"));
   gtk_container_add (GTK_CONTAINER (gtk_dialog_get_content_area (GTK_DIALOG (self->window))), notebook);
 
@@ -140,7 +140,7 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
   self->embed_text_view = GTK_TEXT_VIEW (gtk_builder_get_object (builder, "embed_text_view"));
   gtk_entry_set_text (self->link_entry, self->image_url);
 
-  // Image tab
+  /* Image tab */
 
   link_full_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "link_full_toggle"));
   link_medium_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "link_medium_toggle"));
@@ -158,7 +158,7 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
   g_signal_connect (link_view_button, "clicked", (GCallback) cb_link_view_in_browser, (gpointer) self);
   g_signal_connect (embed_copy_button, "clicked", (GCallback) cb_embed_text_copy, (gpointer) self);
 
-  // Embed tab
+  /* Embed tab */
 
   self->embed_html_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_html_toggle"));
   self->embed_markdown_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_markdown_toggle"));
@@ -168,7 +168,7 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
   self->embed_full_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_full_toggle"));
   self->embed_link_full_size_toggle = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "embed_link_full_size_toggle"));
 
-  // Regenerate the embed text when any togglebutton on the embed tab is toggled
+  /* Regenerate the embed text when any togglebutton on the embed tab is toggled */
   g_signal_connect (self->embed_html_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
   g_signal_connect (self->embed_markdown_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
   g_signal_connect (self->embed_bb_code_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
@@ -177,10 +177,10 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
   g_signal_connect (self->embed_full_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
   g_signal_connect (self->embed_link_full_size_toggle, "toggled", (GCallback) cb_generate_embed_text, (gpointer) self);
 
-  // Generate default embed text
+  /* Generate default embed text */
   cb_generate_embed_text (NULL, (gpointer) self);
 
-  // Deletion link tab
+  /* Deletion link tab */
 
   delete_link_entry = GTK_ENTRY (gtk_builder_get_object (builder, "delete_link_entry"));
   gtk_entry_set_text (delete_link_entry, self->delete_link);
@@ -213,7 +213,7 @@ screenshooter_imgur_dialog_run (ScreenshooterImgurDialog *self)
 
 
 
-// Callbacks
+/* Callbacks */
 
 
 
