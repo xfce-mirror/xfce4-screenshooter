@@ -167,15 +167,11 @@ cb_ask_for_information (ScreenshooterJob *job,
   TRACE ("Create the dialog to ask for user information.");
 
   /* Create the information dialog */
-  dialog =
-    xfce_titled_dialog_new_with_buttons (_("Details about the screenshot"),
-                                         NULL,
-                                         GTK_DIALOG_DESTROY_WITH_PARENT,
-                                         "gtk-cancel",
-                                         GTK_RESPONSE_CANCEL,
-                                         "gtk-ok",
-                                         GTK_RESPONSE_OK,
-                                         NULL);
+  dialog = xfce_titled_dialog_new_with_mixed_buttons (_("Details about the screenshot"),
+    NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+    "", _("_Cancel"), GTK_RESPONSE_CANCEL,
+    "", _("_OK"), GTK_RESPONSE_OK,
+    NULL);
 
   gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
   gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 12);

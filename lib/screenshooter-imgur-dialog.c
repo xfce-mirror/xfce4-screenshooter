@@ -125,12 +125,10 @@ screenshooter_imgur_dialog_new (const gchar *upload_name,
                                          screenshooter_imgur_dialog_ui_length);
 
   // Setup window
-  self->window = xfce_titled_dialog_new_with_buttons (_("Screenshot"),
-                                                      NULL,
-                                                      GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                      "gtk-close",
-                                                      GTK_RESPONSE_CLOSE,
-                                                      NULL);
+  self->window = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
+    NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+    "", _("_Close"), GTK_RESPONSE_CLOSE,
+    NULL);
   gtk_window_set_icon_name (GTK_WINDOW (self->window), "org.xfce.screenshooter");
   gtk_window_set_default_size (GTK_WINDOW (self->window), 500, 330);
 
