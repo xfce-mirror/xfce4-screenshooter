@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 00:50+0200\n"
+"POT-Creation-Date: 2022-09-18 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>, 2022\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-apps/language/sl/)\n"
@@ -181,19 +181,19 @@ msgstr "Program, ki bo odprl zaslonsko sliko"
 
 #: ../lib/screenshooter-dialogs.c:1256
 msgid "Custom Action:"
-msgstr ""
+msgstr "Dejanje po meri:"
 
 #: ../lib/screenshooter-dialogs.c:1264
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Izvrši izbrano dejanje po meri"
 
 #: ../lib/screenshooter-dialogs.c:1276
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Dejanje po meri za izvršitev"
 
 #: ../lib/screenshooter-dialogs.c:1301
 msgid "Host on Imgur™"
-msgstr "Gostuj na Imgur™"
+msgstr "Gostuj na Imgur™-ju"
 
 #: ../lib/screenshooter-dialogs.c:1305
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
@@ -213,23 +213,23 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Predogled</span>"
 
 #: ../lib/screenshooter-dialogs.c:1409
 msgid "Save screenshot as..."
-msgstr "Shrani zaslonsko sliko kot..."
+msgstr "Shrani zaslonsko sliko kot ..."
 
 #: ../lib/screenshooter-dialogs.c:1427
 msgid "PNG File"
-msgstr "PNG datoteka"
+msgstr "Datoteka PNG"
 
 #: ../lib/screenshooter-dialogs.c:1428
 msgid "JPG File"
-msgstr "JPG datoteka"
+msgstr "Datoteka JPG"
 
 #: ../lib/screenshooter-dialogs.c:1429
 msgid "BMP File"
-msgstr "BMP datoteka"
+msgstr "Datoteka BMP"
 
 #: ../lib/screenshooter-dialogs.c:1432
 msgid "WebP File"
-msgstr ""
+msgstr "Datoteka WebP"
 
 #: ../lib/screenshooter-dialogs.c:1522
 msgid "Preferences"
@@ -237,29 +237,25 @@ msgstr "Možnosti"
 
 #: ../lib/screenshooter-dialogs.c:1547
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Dejanja po meri</span>"
 
 #: ../lib/screenshooter-dialogs.c:1566
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "Prilagodite lahko dejanja po meri, ki bodo na voljo za obravnavo zaslonskih slik po njihovem zajemu."
 
 #: ../lib/screenshooter-dialogs.c:1596
 msgid "Custom Action"
-msgstr ""
+msgstr "Dejanje po meri"
 
 #: ../lib/screenshooter-dialogs.c:1609
 msgid "Add custom action"
-msgstr ""
+msgstr "Dodaj dejanje po meri"
 
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Remove selected custom action"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:1617
-msgid "list-remove-symbolic"
-msgstr ""
+msgstr "Odstrani izbrano dejanje po meri"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1638
@@ -268,7 +264,7 @@ msgstr "Ime"
 
 #: ../lib/screenshooter-dialogs.c:1639
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Ime dejanja, ki bo prikazano v pogovornem oknu Dejanja"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1648
@@ -277,7 +273,7 @@ msgstr "Ukaz"
 
 #: ../lib/screenshooter-dialogs.c:1649
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Ukaz, ki bo izvršen za to dejanje po meri"
 
 #: ../lib/screenshooter-dialogs.c:1656
 #, c-format
@@ -286,16 +282,16 @@ msgstr ""
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Dejanja po meri ni mogoče izvršiti"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Izbrano neveljavno dejanje po meri"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "Izvajanje dejanja po meri %s je spodletelo"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
