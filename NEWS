@@ -1,3 +1,24 @@
+1.10.0 (2022-11-15)
+======
+- Introduce custom actions (!37)
+- Bump dependencies
+- Replace deprecated functions
+- Added writability check to screenshot_dir (#84)
+- Include "config.h" before GLib include files
+- Revert icon name translation
+- Drop subtitles
+ Add version check for libxi (#79)
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Lithuanian, Malay, Norwegian
+  Bokmål, Occitan (post 1500), Persian (Iran), Polish, Portuguese,
+  Portuguese (Brazil), Russian, Serbian, Slovak, Slovenian, Spanish,
+  Swedish, Thai, Turkish, Ukrainian
+
 1.9.11 (2022-08-08)
 ======
 - Add support to WebP (#76)
