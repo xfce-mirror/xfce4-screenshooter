@@ -33,7 +33,7 @@ msgstr "%.2f Kb de %.2f Kb"
 
 #: ../lib/screenshooter-dialogs.c:615
 msgid "Transfer"
-msgstr "Transferencia"
+msgstr "Transferir"
 
 #: ../lib/screenshooter-dialogs.c:636
 msgid ""
@@ -76,7 +76,7 @@ msgstr "_Aceptar"
 
 #: ../lib/screenshooter-dialogs.c:924
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Área para capturar</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Área de captura</span>"
 
 #: ../lib/screenshooter-dialogs.c:946
 msgid "Entire screen"
@@ -98,14 +98,14 @@ msgstr "Tomar una captura de la ventana activa"
 
 #: ../lib/screenshooter-dialogs.c:974
 msgid "Select a region"
-msgstr "Seleccionar una área"
+msgstr "Seleccionar un área"
 
 #: ../lib/screenshooter-dialogs.c:979
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr "Seleccionar una área para capturar al hacer clic en un punto de la pantalla y, sin soltar el botón del ratón, arrastrar el ratón hasta la otra esquina del área.\n\nPulse Ctrl mientras arrastra el ratón para mover el área."
+msgstr "Seleccione un área de captura haciendo clic en un punto de la pantalla y, sin soltar el botón del ratón, arrastrando el ratón hasta la otra esquina del área.\n\nPulse Ctrl mientras arrastra el ratón para mover el área."
 
 #: ../lib/screenshooter-dialogs.c:992
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
@@ -127,7 +127,7 @@ msgstr "Capturar el borde de la ventana"
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr "Muestra el borde de la ventana en la captura.\nDesactivar esta opción no tiene efecto en las ventanas con decoraciones del lado del cliente."
+msgstr "Mostrar el borde de la ventana en la captura.\nDesactivar esta opción no tiene efecto en las ventanas con decoraciones del lado del cliente."
 
 #: ../lib/screenshooter-dialogs.c:1045
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -251,7 +251,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acciones personalizadas</
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr "Puede configurar acciones personalizadas que estarán disponibles para manejar las capturas de pantalla después de realizarlas."
+msgstr "Puede configurar acciones personalizadas que estarán disponibles para manejar las capturas de pantalla después de tomarlas."
 
 #: ../lib/screenshooter-dialogs.c:1595
 msgid "Custom Action"
@@ -475,7 +475,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Seleccionar una área para capturar al hacer clic en un punto de la pantalla y, sin soltar el botón del ratón, arrastrar el ratón hasta la otra esquina del área."
+msgstr "Para seleccionar un área de captura, haga clic en un punto de la pantalla y, sin soltar el botón del ratón, arrastre el ratón hasta la otra esquina del área y suelte el botón del ratón."
 
 #: ../src/main.c:88
 msgid ""
@@ -499,14 +499,14 @@ msgstr "Información de la versión"
 #: ../src/main.c:131
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Opciones conflictivas: --%s y --%s no se pueden usar al mismo tiempo.\n"
+msgstr "Opciones en conflicto: --%s y --%s no se pueden usar al mismo tiempo.\n"
 
 #: ../src/main.c:133
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr "La opción --%s solo se usa con --fullscreen (pantalla completa), --window (ventana) o --region (área). Se ignorará.\n"
+msgstr "La opción --%s solo se puede usar con --fullscreen (pantalla completa), --window (ventana) o --region (área). Se ignorará.\n"
 
 #: ../src/main.c:144
 #, c-format
