@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 00:50+0200\n"
+"POT-Creation-Date: 2022-11-29 00:47+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: ზურაბი დავითაშვილი <zurabi@tuta.io>, 2021\n"
 "Language-Team: Georgian (http://www.transifex.com/xfce/xfce-apps/language/ka/)\n"
@@ -19,185 +19,188 @@ msgstr ""
 "Language: ka\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../lib/screenshooter-dialogs.c:522
+#: ../lib/screenshooter-dialogs.c:521
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fკბ %.2fკბ-დან"
 
-#: ../lib/screenshooter-dialogs.c:616
+#: ../lib/screenshooter-dialogs.c:615
 msgid "Transfer"
 msgstr "გადაცემა"
 
-#: ../lib/screenshooter-dialogs.c:637
+#: ../lib/screenshooter-dialogs.c:636
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">სკრინშოტი გადაეცემა:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:878 ../lib/screenshooter-dialogs.c:887
-#: ../lib/screenshooter-dialogs.c:1115 ../lib/screenshooter-utils.c:147
+#: ../lib/screenshooter-dialogs.c:877 ../lib/screenshooter-dialogs.c:886
+#: ../lib/screenshooter-dialogs.c:1114 ../lib/screenshooter-utils.c:147
 #: ../lib/screenshooter-utils.c:191 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "სკრინშოტი"
 
-#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-dialogs.c:890
+#: ../lib/screenshooter-dialogs.c:879 ../lib/screenshooter-dialogs.c:889
 msgid "_Preferences"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-dialogs.c:889
-#: ../lib/screenshooter-dialogs.c:1117
+#: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-dialogs.c:888
+#: ../lib/screenshooter-dialogs.c:1116
 msgid "_Help"
 msgstr "დახმარება"
 
-#: ../lib/screenshooter-dialogs.c:882 ../lib/screenshooter-dialogs.c:1524
+#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-dialogs.c:1523
+#: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "დახურვა"
 
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-dialogs.c:890 ../lib/screenshooter-dialogs.c:1118
+#: ../lib/screenshooter-job-callbacks.c:172
 msgid "_Cancel"
 msgstr "გაუქმება"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1120
+#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-job-callbacks.c:173
 msgid "_OK"
 msgstr "კარგი"
 
-#: ../lib/screenshooter-dialogs.c:925
+#: ../lib/screenshooter-dialogs.c:924
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">გადასაღები რეგიონი</span>"
 
-#: ../lib/screenshooter-dialogs.c:947
+#: ../lib/screenshooter-dialogs.c:946
 msgid "Entire screen"
 msgstr "მთლიანი ეკრანი"
 
-#: ../lib/screenshooter-dialogs.c:952 ../src/main.c:61
+#: ../lib/screenshooter-dialogs.c:951 ../src/main.c:61
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
 msgstr "გადაიღეთ მთლიანი ეკრანის სკრინშოტი"
 
-#: ../lib/screenshooter-dialogs.c:961
+#: ../lib/screenshooter-dialogs.c:960
 msgid "Active window"
 msgstr "აქტიური ფანჯარა"
 
-#: ../lib/screenshooter-dialogs.c:966 ../src/main.c:108
+#: ../lib/screenshooter-dialogs.c:965 ../src/main.c:108
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
 msgstr "გადაიღეთ აქტიური ფანჯრის სკრინშოტი"
 
-#: ../lib/screenshooter-dialogs.c:975
+#: ../lib/screenshooter-dialogs.c:974
 msgid "Select a region"
 msgstr "აირჩიეთ რეგიონი"
 
-#: ../lib/screenshooter-dialogs.c:980
+#: ../lib/screenshooter-dialogs.c:979
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:993
+#: ../lib/screenshooter-dialogs.c:992
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1013
+#: ../lib/screenshooter-dialogs.c:1012
 msgid "Capture the mouse pointer"
 msgstr "გადაიღე თაგვის მაჩვენებელი"
 
-#: ../lib/screenshooter-dialogs.c:1017
+#: ../lib/screenshooter-dialogs.c:1016
 msgid "Display the mouse pointer on the screenshot"
 msgstr "გამოაჩინე თაგვის მაჩვენებელი სკრინშოტზე"
 
-#: ../lib/screenshooter-dialogs.c:1024
+#: ../lib/screenshooter-dialogs.c:1023
 msgid "Capture the window border"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1029
+#: ../lib/screenshooter-dialogs.c:1028
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1046
+#: ../lib/screenshooter-dialogs.c:1045
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">დაყოვნება გადაღებამდე</span>"
 
-#: ../lib/screenshooter-dialogs.c:1070
+#: ../lib/screenshooter-dialogs.c:1069
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "დაყოვნება წამებში, სკრინშოტის გადაღებამდე"
 
-#: ../lib/screenshooter-dialogs.c:1073
+#: ../lib/screenshooter-dialogs.c:1072
 msgid "seconds"
 msgstr "წამი"
 
-#: ../lib/screenshooter-dialogs.c:1118
+#: ../lib/screenshooter-dialogs.c:1117
 msgid "_Back"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1158
+#: ../lib/screenshooter-dialogs.c:1157
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">მოქმედება</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1173
+#: ../lib/screenshooter-dialogs.c:1172
 msgid "Save"
 msgstr "შენახვა"
 
-#: ../lib/screenshooter-dialogs.c:1179
+#: ../lib/screenshooter-dialogs.c:1178
 msgid "Save the screenshot to a PNG file"
 msgstr "შეინახეთ სკრინშოტი PNG ფაილში"
 
 #. Show in folder checkbox
-#: ../lib/screenshooter-dialogs.c:1183
+#: ../lib/screenshooter-dialogs.c:1182
 msgid "Show in Folder"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1190
+#: ../lib/screenshooter-dialogs.c:1189
 msgid "Shows the saved file in the folder"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1199
+#: ../lib/screenshooter-dialogs.c:1198
 msgid "Copy to the clipboard"
 msgstr "ბუფერში კოპირება"
 
-#: ../lib/screenshooter-dialogs.c:1201
+#: ../lib/screenshooter-dialogs.c:1200
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "დააკოპირეთ სკრინშოტი ბუფერში, რათა მისი ჩასმა მოგვიანებით იყოს შესაძლებელი"
 
-#: ../lib/screenshooter-dialogs.c:1215
+#: ../lib/screenshooter-dialogs.c:1214
 msgid "Open with:"
 msgstr "გახსნა:"
 
-#: ../lib/screenshooter-dialogs.c:1223
+#: ../lib/screenshooter-dialogs.c:1222
 msgid "Open the screenshot with the chosen application"
 msgstr "გახსნით სკრინშოტი არჩეული პროგრამით"
 
-#: ../lib/screenshooter-dialogs.c:1242 ../src/main.c:76
+#: ../lib/screenshooter-dialogs.c:1241 ../src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "პროგრამა სკრინშოტის გასახსნელად"
 
-#: ../lib/screenshooter-dialogs.c:1256
+#: ../lib/screenshooter-dialogs.c:1255
 msgid "Custom Action:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1264
+#: ../lib/screenshooter-dialogs.c:1263
 msgid "Execute the selected custom action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1276
+#: ../lib/screenshooter-dialogs.c:1275
 msgid "Custom action to execute"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1301
+#: ../lib/screenshooter-dialogs.c:1300
 msgid "Host on Imgur™"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1305
+#: ../lib/screenshooter-dialogs.c:1304
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1317
+#: ../lib/screenshooter-dialogs.c:1316
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -205,79 +208,75 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1348
+#: ../lib/screenshooter-dialogs.c:1347
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ესკიზი</span>"
 
-#: ../lib/screenshooter-dialogs.c:1409
+#: ../lib/screenshooter-dialogs.c:1408
 msgid "Save screenshot as..."
 msgstr "შეინახეთ სკრინშოტი როგორც..."
 
-#: ../lib/screenshooter-dialogs.c:1427
+#: ../lib/screenshooter-dialogs.c:1426
 msgid "PNG File"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1428
+#: ../lib/screenshooter-dialogs.c:1427
 msgid "JPG File"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1429
+#: ../lib/screenshooter-dialogs.c:1428
 msgid "BMP File"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1432
+#: ../lib/screenshooter-dialogs.c:1431
 msgid "WebP File"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1522
+#: ../lib/screenshooter-dialogs.c:1521
 msgid "Preferences"
 msgstr "პარამეტრები"
 
-#: ../lib/screenshooter-dialogs.c:1547
+#: ../lib/screenshooter-dialogs.c:1546
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1566
+#: ../lib/screenshooter-dialogs.c:1565
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1596
+#: ../lib/screenshooter-dialogs.c:1595
 msgid "Custom Action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1609
+#: ../lib/screenshooter-dialogs.c:1608
 msgid "Add custom action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1616
+#: ../lib/screenshooter-dialogs.c:1615
 msgid "Remove selected custom action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1617
-msgid "list-remove-symbolic"
-msgstr ""
-
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1638
+#: ../lib/screenshooter-dialogs.c:1637
 msgid "Name"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1639
+#: ../lib/screenshooter-dialogs.c:1638
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr ""
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1648
+#: ../lib/screenshooter-dialogs.c:1647
 msgid "Command"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1649
+#: ../lib/screenshooter-dialogs.c:1648
 msgid "Command that will be executed for this custom action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1656
+#: ../lib/screenshooter-dialogs.c:1655
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr ""
@@ -306,16 +305,11 @@ msgstr "<b>პროგრამის გაშვება ვერ მოხ
 msgid "Error"
 msgstr "შეცდომა"
 
-#: ../lib/screenshooter-imgur.c:106
+#: ../lib/screenshooter-imgur.c:102
 msgid "Upload the screenshot..."
 msgstr "სკრინშოტის ატვირთვა..."
 
-#: ../lib/screenshooter-imgur.c:116
-#, c-format
-msgid "An error occurred while transferring the data to imgur."
-msgstr "დაფიქსირდა შეცდომა imgur-ზე მონაცემების გადაცემის დროს."
-
-#: ../lib/screenshooter-imgur.c:173
+#: ../lib/screenshooter-imgur.c:170
 msgid "Imgur"
 msgstr "Imgur"
 
@@ -406,47 +400,48 @@ msgstr "წაშლის ბმული"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">სტატუსი</span>"
 
-#: ../lib/screenshooter-job-callbacks.c:171
+#. Create the information dialog
+#: ../lib/screenshooter-job-callbacks.c:170
 msgid "Details about the screenshot"
 msgstr "დეტალები სკრინშოტის შესახებ"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:217
+#: ../lib/screenshooter-job-callbacks.c:213
 msgid "User:"
 msgstr "მომხმარებელი:"
 
-#: ../lib/screenshooter-job-callbacks.c:225
+#: ../lib/screenshooter-job-callbacks.c:221
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr "თქვენი მომხმარებლის სახელი, თუ ჯერ კიდევ არ გაქვთ გთხოვთ შექმენით ის ზემოთ მითითებულ ბმულზე."
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:231
+#: ../lib/screenshooter-job-callbacks.c:227
 msgid "Password:"
 msgstr "პაროლი:"
 
-#: ../lib/screenshooter-job-callbacks.c:238
+#: ../lib/screenshooter-job-callbacks.c:234
 msgid "The password for the user above"
 msgstr "ზემოთ მდებარე მომხმარებლის პაროლი"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:244
+#: ../lib/screenshooter-job-callbacks.c:240
 msgid "Title:"
 msgstr "სათაური"
 
-#: ../lib/screenshooter-job-callbacks.c:252
+#: ../lib/screenshooter-job-callbacks.c:248
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "სკრინშოტის სათაური, ის გამოყენებული იქნება სურათის ჰოსტინგის სერვისზე სკრინშოტის ჩვენებისას"
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:258
+#: ../lib/screenshooter-job-callbacks.c:254
 msgid "Comment:"
 msgstr "კომენტარი:"
 
-#: ../lib/screenshooter-job-callbacks.c:266
+#: ../lib/screenshooter-job-callbacks.c:262
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
