@@ -31,7 +31,7 @@ msgstr "Edasta"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekraanipilti edastatakse:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kuvatõmmis on edastamisel:</span>"
 
 #. Setup window
 #: ../lib/screenshooter-dialogs.c:877 ../lib/screenshooter-dialogs.c:886
@@ -40,7 +40,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekraanipilti edastatakse:
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
-msgstr "Ekraanipilt"
+msgstr "Kuvatõmmis"
 
 #: ../lib/screenshooter-dialogs.c:879 ../lib/screenshooter-dialogs.c:889
 msgid "_Preferences"
@@ -77,7 +77,7 @@ msgstr "Kogu ekraan"
 #: ../lib/screenshooter-dialogs.c:951 ../src/main.c:61
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
-msgstr "Tee ekraanipilt kogu ekraanist"
+msgstr "Tee kuvatõmmis kogu ekraanist"
 
 #: ../lib/screenshooter-dialogs.c:960
 msgid "Active window"
@@ -86,7 +86,7 @@ msgstr "Käsilolev aken"
 #: ../lib/screenshooter-dialogs.c:965 ../src/main.c:108
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
-msgstr "Tee ekraanipilt käsilolevast aknast"
+msgstr "Tee kuvatõmmis aktiivsest aknast"
 
 #: ../lib/screenshooter-dialogs.c:974
 msgid "Select a region"
@@ -109,7 +109,7 @@ msgstr "Jäädvusta hiirekursor"
 
 #: ../lib/screenshooter-dialogs.c:1016
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Salvesta hiirekursor ekraanipildile"
+msgstr "Salvesta hiirekursor kuvatõmmisele"
 
 #: ../lib/screenshooter-dialogs.c:1023
 msgid "Capture the window border"
@@ -119,7 +119,7 @@ msgstr "Salvesta akna piirjoon"
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr "Lisab akna piirjoone ekraanipildile.\nSelle seadistuse väljalülitamine ei toimi moodsate CSD akende puhul."
+msgstr "Lisa akna piirjoon kuvatõmmisele.\nSelle seadistuse väljalülitamine ei toimi moodsate CSD akende puhul."
 
 #: ../lib/screenshooter-dialogs.c:1045
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -127,7 +127,7 @@ msgstr "Viivitus enne pildistamist"
 
 #: ../lib/screenshooter-dialogs.c:1069
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Viivitus sekundites enne ekraanipildi tegemist"
+msgstr "Viivitus sekundites enne kuvatõmmise tegemist"
 
 #: ../lib/screenshooter-dialogs.c:1072
 msgid "seconds"
@@ -148,7 +148,7 @@ msgstr "Salvesta"
 
 #: ../lib/screenshooter-dialogs.c:1178
 msgid "Save the screenshot to a PNG file"
-msgstr "Salvesta ekraanipilt PNG-failina"
+msgstr "Salvesta kuvatõmmis PNG-failina"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1182
@@ -165,7 +165,7 @@ msgstr "Kopeeri lõikepuhvrisse"
 
 #: ../lib/screenshooter-dialogs.c:1200
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Kopeeri ekraanipilt lõikepuhvrisse, et seda hiljem asetada"
+msgstr "Kopeeri kuvatõmmis lõikepuhvrisse, et seda hiljem mujale asetada"
 
 #: ../lib/screenshooter-dialogs.c:1214
 msgid "Open with:"
@@ -173,23 +173,23 @@ msgstr "Ava kasutades:"
 
 #: ../lib/screenshooter-dialogs.c:1222
 msgid "Open the screenshot with the chosen application"
-msgstr "Ava ekraanipilt valitud rakendusega"
+msgstr "Ava kuvatõmmis valitud rakendusega"
 
 #: ../lib/screenshooter-dialogs.c:1241 ../src/main.c:76
 msgid "Application to open the screenshot"
-msgstr "Ekraanipildi avamise rakendus"
+msgstr "Rakendus kuvatõmmise avamiseks"
 
 #: ../lib/screenshooter-dialogs.c:1255
 msgid "Custom Action:"
-msgstr ""
+msgstr "Kohandatud tegevus:"
 
 #: ../lib/screenshooter-dialogs.c:1263
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Käivita valitud kohandatud tegevus"
 
 #: ../lib/screenshooter-dialogs.c:1275
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Käivitatav kohandatud tegevus"
 
 #: ../lib/screenshooter-dialogs.c:1300
 msgid "Host on Imgur™"
@@ -213,7 +213,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Eelvaade</span>"
 
 #: ../lib/screenshooter-dialogs.c:1408
 msgid "Save screenshot as..."
-msgstr "Salvesta ekraanipilt kui..."
+msgstr "Salvesta kuvatõmmis kui..."
 
 #: ../lib/screenshooter-dialogs.c:1426
 msgid "PNG File"
@@ -237,25 +237,25 @@ msgstr "Eelistused"
 
 #: ../lib/screenshooter-dialogs.c:1546
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kohandatud tegevused</span>"
 
 #: ../lib/screenshooter-dialogs.c:1565
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "Sa võid seadistada kohandatud tegevusi, mida saad kasutada peale kuvatõmmise tegemist."
 
 #: ../lib/screenshooter-dialogs.c:1595
 msgid "Custom Action"
-msgstr ""
+msgstr "Kohandatud tegevus"
 
 #: ../lib/screenshooter-dialogs.c:1608
 msgid "Add custom action"
-msgstr ""
+msgstr "Lisa kohandatud tegevus"
 
 #: ../lib/screenshooter-dialogs.c:1615
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "Eemalda valitud kohandatud tegevus"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1637
@@ -264,7 +264,7 @@ msgstr "Nimi"
 
 #: ../lib/screenshooter-dialogs.c:1638
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Tegevuse nimi, mida kuvatakse vastavas valikuvaates"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1647
@@ -273,25 +273,25 @@ msgstr "Käsud"
 
 #: ../lib/screenshooter-dialogs.c:1648
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Käsk, mida käivitatakse antud kohandatud tegevuse puhul"
 
 #: ../lib/screenshooter-dialogs.c:1655
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "%f abil märgista tehtud kuvatõmmise asukohta"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Kohandatud tegevust ei õnnestu käivitada"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Valisid vigase kohandatud tegevuse"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "Kohandatud tegevust ei õnnestu käivitada: %s"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
@@ -306,7 +306,7 @@ msgstr "Viga"
 
 #: ../lib/screenshooter-imgur.c:102
 msgid "Upload the screenshot..."
-msgstr "Lae ekraanipilt üles..."
+msgstr "Laadi kuvatõmmis üles..."
 
 #: ../lib/screenshooter-imgur.c:170
 msgid "Imgur"
@@ -402,7 +402,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Staatus</span>"
 #. Create the information dialog
 #: ../lib/screenshooter-job-callbacks.c:170
 msgid "Details about the screenshot"
-msgstr "Teave ekraanipildi kohta"
+msgstr "Teave kuvatõmmise kohta"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:213
@@ -433,7 +433,7 @@ msgstr "Pealkiri:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "Ekraanipildi pealkiri, mida kuvatakse veebis jagatud pildi juures"
+msgstr "Kuvatõmmise pealkiri, mida kuvatakse veebis jagatud pildi juures"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:254
@@ -444,23 +444,23 @@ msgstr "Kommentaar:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "Ekraanipildi kommentaar, mida kuvatakse veebis jagatud pildi juures"
+msgstr "Kuvatõmmise kommentaar, mida kuvatakse veebis jagatud pildi juures"
 
 #: ../src/main.c:51
 msgid "Copy the screenshot to the clipboard"
-msgstr "Kopeeri ekraanipilt lõikepuhvrisse"
+msgstr "Kopeeri kuvatõmmis lõikepuhvrisse"
 
 #: ../src/main.c:56
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Viivitus sekundites enne ekraanipildi tegemist"
+msgstr "Viivitus sekundites enne kuvatõmmise tegemist"
 
 #: ../src/main.c:66
 msgid "Display the mouse on the screenshot"
-msgstr "Salvesta hiirekursor ekraanipildile"
+msgstr "Salvesta hiirekursor kuvatõmmisele"
 
 #: ../src/main.c:71
 msgid "Removes the window border from the screenshot"
-msgstr "Eemaldab akna piirjoone ekraanipildilt"
+msgstr "Eemaldab akna piirjoone kuvatõmmiselt"
 
 #: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:321
 msgid ""
@@ -474,7 +474,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp is only supported if webp-pixbuf-loader is "
 "installed."
-msgstr "Otsitee või kataloog kuhu ekraanipildid salvestame; mõeldud png, jpg ja bmp failide jaoks ning kui webp-pixbuf-loader on paigaldatud, siis webp on ka kasutatav."
+msgstr "Otsitee või kataloog kuhu kuvatõmmis salvestame; mõeldud png, jpg ja bmp failide jaoks ning kui webp-pixbuf-loader on paigaldatud, siis on ka webp kasutatav."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
@@ -511,7 +511,7 @@ msgstr "%s: %s\n%s --help Näitab täielikku loendit käsurea valikutest.\n"
 #: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Tee ekraanipildid tervest ekraanist, käsilolevast aknast või valitud alast"
+msgstr "Tee kuvatõmmised tervest ekraanist, käsilolevast aknast või valitud alast"
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
@@ -520,4 +520,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG or "
 "JPG file, copy it to the clipboard, open it using another application, or "
 "host it on imgur, a free online image hosting service."
-msgstr "Võimaldab sul jäädvustada pildiks tervet ekraani, aktiivset akent või valitud ala. Sa saad määrata viivituse enne pildi jäädvustamist ning tegevuse mida teha pärast seda. Selleks võib olla salvestamine png- või jpg-failina, kopeerimine lõikelauale, avamine muu rakendusega või tõstmine imgur veebisaiti, mis on veebiteenus piltide tasuta hoidmiseks."
+msgstr "Võimaldab sul jäädvustada pildiks tervet ekraani, aktiivset akent või valitud ala. Sa saad määrata viivituse enne pildi jäädvustamist ning tegevuse, mida teha pärast seda. Selleks võib olla salvestamine png- või jpg-failina, kopeerimine lõikelauale, avamine muu rakendusega või tõstmine imgur veebisaiti, mis on veebiteenus piltide tasuta hoidmiseks."
