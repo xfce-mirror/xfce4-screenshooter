@@ -184,15 +184,15 @@ msgstr "Aplikace pro otevírání snímků obrazovky"
 
 #: ../lib/screenshooter-dialogs.c:1255
 msgid "Custom Action:"
-msgstr ""
+msgstr "Vlastní akce:"
 
 #: ../lib/screenshooter-dialogs.c:1263
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Spustí vybranou vlastní akci"
 
 #: ../lib/screenshooter-dialogs.c:1275
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Vlastní akce ke spuštění"
 
 #: ../lib/screenshooter-dialogs.c:1300
 msgid "Host on Imgur™"
@@ -240,25 +240,25 @@ msgstr "Předvolby"
 
 #: ../lib/screenshooter-dialogs.c:1546
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vlastní akce</span>"
 
 #: ../lib/screenshooter-dialogs.c:1565
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "Můžete nakonfigurovat vlastní akce, které budou dostupné pro zpracování snímků obrazovky po jejich zachycení."
 
 #: ../lib/screenshooter-dialogs.c:1595
 msgid "Custom Action"
-msgstr ""
+msgstr "Vlastní akce"
 
 #: ../lib/screenshooter-dialogs.c:1608
 msgid "Add custom action"
-msgstr ""
+msgstr "Přidat vlastní akci"
 
 #: ../lib/screenshooter-dialogs.c:1615
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "Odstranit vybranou vlastní akci"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1637
@@ -267,7 +267,7 @@ msgstr "Název"
 
 #: ../lib/screenshooter-dialogs.c:1638
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Název akce, která se zobrazí v dialogovém okně Akce"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1647
@@ -276,25 +276,25 @@ msgstr "Příkaz"
 
 #: ../lib/screenshooter-dialogs.c:1648
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Příkaz, který tato vlastní akce spustí"
 
 #: ../lib/screenshooter-dialogs.c:1655
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "Jako zástupný symbol umístění zachyceného snímku obrazovky použijte %f"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Nelze spustit vlastní akci"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Vybrána neplatná vlastní akce"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "Nepodařilo se spustit vlastní akci %s"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
