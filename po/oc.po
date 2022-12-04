@@ -6,14 +6,14 @@
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013,2016
 # Cédric Valmary <cvalmary@yahoo.fr>, 2013
 # Quentin PAGÈS, 2020
-# Quentin PAGÈS, 2020
+# Quentin PAGÈS, 2020,2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-29 00:47+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Quentin PAGÈS, 2020\n"
+"Last-Translator: Quentin PAGÈS, 2020,2022\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/xfce/xfce-apps/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -156,11 +156,11 @@ msgstr "Enregistrar la captura d'ecran dins un fichièr PNG"
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1182
 msgid "Show in Folder"
-msgstr ""
+msgstr "Afichar dins lo dorsièr"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "Aficha lo fichièr enregistrat dins lo dorsièr"
 
 #: ../lib/screenshooter-dialogs.c:1198
 msgid "Copy to the clipboard"
@@ -184,7 +184,7 @@ msgstr "Aplicacion per dobrir la captura d'ecran"
 
 #: ../lib/screenshooter-dialogs.c:1255
 msgid "Custom Action:"
-msgstr ""
+msgstr "Accion personalizada :"
 
 #: ../lib/screenshooter-dialogs.c:1263
 msgid "Execute the selected custom action"
@@ -232,7 +232,7 @@ msgstr "Fichièr BMP"
 
 #: ../lib/screenshooter-dialogs.c:1431
 msgid "WebP File"
-msgstr ""
+msgstr "Fichièr WebP"
 
 #: ../lib/screenshooter-dialogs.c:1521
 msgid "Preferences"
@@ -240,7 +240,7 @@ msgstr "Preferéncias"
 
 #: ../lib/screenshooter-dialogs.c:1546
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Accions personalizadas</span>"
 
 #: ../lib/screenshooter-dialogs.c:1565
 msgid ""
@@ -481,7 +481,7 @@ msgstr ""
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "Afichar lo fichièr enregistrat dins lo dorsièr"
 
 #: ../src/main.c:98
 msgid "Host the screenshot on Imgur, a free online image hosting service"
