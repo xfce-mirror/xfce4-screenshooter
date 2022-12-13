@@ -11,6 +11,7 @@
 # Kyrill Detinov <lazy.kent@opensuse.org>, 2015
 # Sergey Alyoshin <alyoshin.s@gmail.com>, 2014-2015
 # AlexanderFilev, 2020
+# Артём Котлубай <artemkotlubai@yandex.ru>, 2022
 # Виктор, 2022
 # Евгений Кольцов <scheugen86@gmail.com>, 2021
 msgid ""
@@ -19,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-29 00:47+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Виктор, 2022\n"
+"Last-Translator: Артём Котлубай <artemkotlubai@yandex.ru>, 2022\n"
 "Language-Team: Russian (http://www.transifex.com/xfce/xfce-apps/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +54,7 @@ msgstr "Снимок экрана"
 
 #: ../lib/screenshooter-dialogs.c:879 ../lib/screenshooter-dialogs.c:889
 msgid "_Preferences"
-msgstr "Па_раметры"
+msgstr "_Настройки"
 
 #: ../lib/screenshooter-dialogs.c:880 ../lib/screenshooter-dialogs.c:888
 #: ../lib/screenshooter-dialogs.c:1116
@@ -206,7 +207,7 @@ msgstr "Загрузить на Imgur™"
 
 #: ../lib/screenshooter-dialogs.c:1304
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
-msgstr "Загрузить снимок экрана на Imgur™, бесплатный хостинг изображений"
+msgstr "Загрузить снимок экрана на Imgur™, бесплатное хранилище изображений"
 
 #: ../lib/screenshooter-dialogs.c:1316
 msgid ""
@@ -214,7 +215,7 @@ msgid ""
 "available and there is no guarantee it can be certainly deleted.\n"
 "Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
-msgstr "Следите за конфиденциальным контентом, загруженное изображение будет общедоступным,\nи нет никакой гарантии, что его можно будет удалить.\nXfce НЕ связан с Imgur™, и эта интеграция ими не одобрена.\nЕсли вы используете эту функцию, вы должны принять <a href=\"https://imgur.com/tos\">Условия обслуживания</a> Imgur™."
+msgstr "Следите за личными данными, загруженное изображение будет общедоступным,\nи нет заверения, что его можно будет удалить.\nXfce НЕ связан с Imgur™, и это слияние ими не одобрено.\nЕсли вы используете эту возможность, вы должны принять <a href=\"https://imgur.com/tos\">Условия обслуживания</a> Imgur™."
 
 #: ../lib/screenshooter-dialogs.c:1347
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -483,7 +484,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp is only supported if webp-pixbuf-loader is "
 "installed."
-msgstr "Путь к файлу или каталог, в котором будет сохранен скриншот, принимает расширения png, jpg и bmp. Webp поддерживается, только если установлен webp-pixbuf-loader."
+msgstr "Путь к файлу или папка, в которой будет сохранён снимок экрана, принимает расширения png, jpg и bmp. Webp поддерживается, только если установлен webp-pixbuf-loader."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
@@ -529,4 +530,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG or "
 "JPG file, copy it to the clipboard, open it using another application, or "
 "host it on imgur, a free online image hosting service."
-msgstr "Позволяет сделать снимок всего экрана, активного окна или выбранной области. Вы можете установить задержку перед снимком и действие со ним: сохранить в файл формата PNG или JPG, скопировать в буфер обмена, открыть в другом приложении или разместить на Imgur, бесплатной онлайн-службе для хранения изображений."
+msgstr "Позволяет сделать снимок всего экрана, текущего окна или выбранной области. Вы можете установить задержку перед снимком и действие со ним: сохранить в файл формата PNG или JPG, скопировать в буфер обмена, открыть в другом приложении или разместить на Imgur, бесплатной сетевой службе хранения изображений."
