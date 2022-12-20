@@ -66,5 +66,10 @@ gboolean   screenshooter_get_gtk_frame_extents (GdkWindow      *window,
 void       screenshooter_show_file_in_folder   (const gchar    *save_location);
 gboolean   screenshooter_is_format_supported   (const gchar    *format);
 gboolean   screenshooter_is_directory_writable (const gchar    *path);
+GdkPixbuf *screenshooter_pixbuf_get_from_window (GdkWindow      *window,
+                                                 gint            src_x,
+                                                 gint            src_y,
+                                                 gint            width,
+                                                 gint            height);
 
 #endif
