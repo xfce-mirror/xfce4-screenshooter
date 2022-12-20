@@ -36,35 +36,40 @@
 
 
 
-void       screenshooter_copy_to_clipboard     (GdkPixbuf      *screenshot);
-void       screenshooter_read_rc_file          (const gchar    *file,
-                                                ScreenshotData *sd);
-void       screenshooter_write_rc_file         (const gchar    *file,
-                                                ScreenshotData *sd);
-void       screenshooter_open_screenshot       (const gchar    *screenshot_path,
-                                                const gchar    *application,
-                                                GAppInfo       *app_info);
-gchar     *screenshooter_get_home_uri          (void);
-gchar     *screenshooter_get_xdg_image_dir_uri (void);
-gboolean   screenshooter_is_remote_uri         (const gchar    *uri);
-void       screenshooter_error                 (const gchar    *format,
-                                                ...);
-gchar     *screenshooter_get_filename_for_uri  (const gchar    *uri,
-                                                const gchar    *title,
-                                                const gchar    *extension,
-                                                gboolean        timestamp);
-void       screenshooter_open_help             (GtkWindow      *parent);
-gboolean   screenshooter_f1_key                (GtkWidget      *widget,
-                                                GdkEventKey    *event,
-                                                gpointer        user_data);
-void       screenshooter_get_screen_geometry   (GdkRectangle   *geometry);
-GdkWindow *screenshooter_get_active_window     (GdkScreen      *screen,
-                                                gboolean       *needs_unref,
-                                                gboolean       *border);
-gboolean   screenshooter_get_gtk_frame_extents (GdkWindow      *window,
-                                                GtkBorder      *extents);
-void       screenshooter_show_file_in_folder   (const gchar    *save_location);
-gboolean   screenshooter_is_format_supported   (const gchar    *format);
-gboolean   screenshooter_is_directory_writable (const gchar    *path);
+void       screenshooter_copy_to_clipboard      (GdkPixbuf      *screenshot);
+void       screenshooter_read_rc_file           (const gchar    *file,
+                                                 ScreenshotData *sd);
+void       screenshooter_write_rc_file          (const gchar    *file,
+                                                 ScreenshotData *sd);
+void       screenshooter_open_screenshot        (const gchar    *screenshot_path,
+                                                 const gchar    *application,
+                                                 GAppInfo       *app_info);
+gchar     *screenshooter_get_home_uri           (void);
+gchar     *screenshooter_get_xdg_image_dir_uri  (void);
+gboolean   screenshooter_is_remote_uri          (const gchar    *uri);
+void       screenshooter_error                  (const gchar    *format,
+                                                 ...);
+gchar     *screenshooter_get_filename_for_uri   (const gchar    *uri,
+                                                 const gchar    *title,
+                                                 const gchar    *extension,
+                                                 gboolean        timestamp);
+void       screenshooter_open_help              (GtkWindow      *parent);
+gboolean   screenshooter_f1_key                 (GtkWidget      *widget,
+                                                 GdkEventKey    *event,
+                                                 gpointer        user_data);
+void       screenshooter_get_screen_geometry    (GdkRectangle   *geometry);
+GdkWindow *screenshooter_get_active_window      (GdkScreen      *screen,
+                                                 gboolean       *needs_unref,
+                                                 gboolean       *border);
+gboolean   screenshooter_get_gtk_frame_extents  (GdkWindow      *window,
+                                                 GtkBorder      *extents);
+void       screenshooter_show_file_in_folder    (const gchar    *save_location);
+gboolean   screenshooter_is_format_supported    (const gchar    *format);
+gboolean   screenshooter_is_directory_writable  (const gchar    *path);
+GdkPixbuf *screenshooter_pixbuf_get_from_window (GdkWindow      *window,
+                                                 gint            src_x,
+                                                 gint            src_y,
+                                                 gint            width,
+                                                 gint            height);
 
 #endif
