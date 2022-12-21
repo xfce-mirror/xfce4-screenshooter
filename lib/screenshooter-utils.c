@@ -23,6 +23,7 @@
 #include <X11/Xatom.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
+#include <cairo-xlib.h>
 #include <libxfce4ui/libxfce4ui.h>
 
 
@@ -732,4 +733,34 @@ screenshooter_is_directory_writable (const gchar *path)
   g_object_unref (info);
 
   return result;
+}
+
+
+
+/*
+ * Replacement for gdk_pixbuf_get_from_window which only takes
+ * one (first) correct screenshot per execution.
+ * For more details see:
+ * https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/89
+ */
+GdkPixbuf*
+screenshooter_pixbuf_get_from_window (GdkWindow *window,
+                                      gint       src_x,
+                                      gint       src_y,
+                                      gint       width,
+                                      gint       height)
+{
+  cairo_surface_t *surface;
+  GdkPixbuf       *pixbuf;
+
+  surface = cairo_xlib_surface_create (gdk_x11_display_get_xdisplay (gdk_window_get_display (window)),
+                                       gdk_x11_window_get_xid (window),
+                                       gdk_x11_visual_get_xvisual (gdk_window_get_visual (window)),
+                                       gdk_window_get_width (window),
+                                       gdk_window_get_height (window));
+  pixbuf = gdk_pixbuf_get_from_surface (surface, src_x, src_y, width, height);
+
+  cairo_surface_destroy (surface);
+
+  return pixbuf;
 }

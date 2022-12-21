@@ -380,7 +380,7 @@ static GdkPixbuf
   TRACE ("Grab the screenshot");
 
   if (!has_extents)
-    screenshot = gdk_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
+    screenshot = screenshooter_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
   else
     {
       GdkRectangle rect;
@@ -391,7 +391,7 @@ static GdkPixbuf
       rect.y = extents.top - 1;
       rect.width -= extents.left + extents.right - 2;
       rect.height -= extents.top + extents.bottom - 2;
-      screenshot = gdk_pixbuf_get_from_window (window, rect.x, rect.y, rect.width, rect.height);
+      screenshot = screenshooter_pixbuf_get_from_window (window, rect.x, rect.y, rect.width, rect.height);
     }
 
   /* Code adapted from gnome-screenshot:
@@ -928,7 +928,7 @@ static GdkPixbuf
   else
     sleep (delay);
 
-  screenshot = gdk_pixbuf_get_from_window (root, x, y, w, h);
+  screenshot = screenshooter_pixbuf_get_from_window (root, x, y, w, h);
 
   if (show_mouse)
     capture_cursor (screenshot, NULL, gdk_window_get_scale_factor (root), x, y, w, h);
