@@ -753,7 +753,7 @@ screenshooter_pixbuf_get_from_window (GdkWindow *window,
   cairo_surface_t *surface;
   GdkPixbuf       *pixbuf;
 
-  surface = cairo_xlib_surface_create (gdk_x11_get_default_xdisplay (),
+  surface = cairo_xlib_surface_create (gdk_x11_display_get_xdisplay (gdk_window_get_display (window)),
                                        gdk_x11_window_get_xid (window),
                                        gdk_x11_visual_get_xvisual (gdk_window_get_visual (window)),
                                        gdk_window_get_width (window),
