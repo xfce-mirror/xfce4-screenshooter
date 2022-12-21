@@ -1,3 +1,18 @@
+1.10.1 (2022-12-21)
+======
+- Fixes capture of screenshots after first time (#89)
+- libsoup: Migrate to 3.0 (#88)
+- Fix typo in NEWS file
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), Estonian, Finnish,
+  French, Galician, Georgian, German, Greek, Hebrew, Hungarian,
+  Icelandic, Indonesian, Interlingue, Italian, Japanese, Korean,
+  Lithuanian, Malay, Norwegian Bokmål, Occitan (post 1500), Persian
+  (Iran), Polish, Portuguese, Portuguese (Brazil), Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian
+
 1.10.0 (2022-11-15)
 ======
 - Introduce custom actions (!37)
