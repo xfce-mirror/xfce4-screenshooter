@@ -247,7 +247,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Anpassade åtgärder</spa
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "Du kan konfigurera anpassade åtgärder som kommer att vara tillgängliga för att hantera skärmdumpar efter att de har tagits."
 
 #: ../lib/screenshooter-dialogs.c:1595
 msgid "Custom Action"
@@ -282,7 +282,7 @@ msgstr "Kommando som kommer att köras för den här anpassade åtgärden"
 #: ../lib/screenshooter-dialogs.c:1655
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "Använd %f som platshållare för platsen för den tagna skärmdumpen"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
