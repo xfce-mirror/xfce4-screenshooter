@@ -186,15 +186,15 @@ msgstr "יישום כדי לפתוח את הצילום מסך"
 
 #: ../lib/screenshooter-dialogs.c:1255
 msgid "Custom Action:"
-msgstr ""
+msgstr "פעולה מותאמת אישית:"
 
 #: ../lib/screenshooter-dialogs.c:1263
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "בצע את הפעולה המותאמת אישית הנבחרת"
 
 #: ../lib/screenshooter-dialogs.c:1275
 msgid "Custom action to execute"
-msgstr ""
+msgstr "פעולה מותאמת אישית לביצוע"
 
 #: ../lib/screenshooter-dialogs.c:1300
 msgid "Host on Imgur™"
@@ -242,25 +242,25 @@ msgstr "העדפות"
 
 #: ../lib/screenshooter-dialogs.c:1546
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">פעולות מותאמות אישית</span>"
 
 #: ../lib/screenshooter-dialogs.c:1565
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "אתה יכול להגדיר פעולות מותאמות אישית שיהיו זמינות לטיפול בצילומי מסך לאחר שהם מתועדים."
 
 #: ../lib/screenshooter-dialogs.c:1595
 msgid "Custom Action"
-msgstr ""
+msgstr "פעולה מותאמת אישית"
 
 #: ../lib/screenshooter-dialogs.c:1608
 msgid "Add custom action"
-msgstr ""
+msgstr "הוסף פעולה מותאמת אישית"
 
 #: ../lib/screenshooter-dialogs.c:1615
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "הסר פעולה מותאמת אישית נבחרת"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1637
@@ -269,7 +269,7 @@ msgstr "שם"
 
 #: ../lib/screenshooter-dialogs.c:1638
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "שם הפעולה שתוצג בדו שיח פעולות"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1647
@@ -278,25 +278,25 @@ msgstr "פקודה"
 
 #: ../lib/screenshooter-dialogs.c:1648
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "פקודה שתבוצע לפעולה מותאמת אישית זו"
 
 #: ../lib/screenshooter-dialogs.c:1655
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "השתמש ב-%f כמחזיק מקום למיקום של צילום מסך מתועד"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "לא ניתן לבצע את הפעולה מותאמת אישית"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "נבחרה פעולה מותאמת אישית לא תקנית"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "נכשל להפעיל פעולה מותאמת אישית %s"
 
 #: ../lib/screenshooter-utils.c:314
 #, c-format
