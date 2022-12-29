@@ -760,7 +760,11 @@ screenshooter_pixbuf_get_from_window (GdkWindow *window,
                                        gdk_x11_visual_get_xvisual (gdk_window_get_visual (window)),
                                        gdk_window_get_width (window) * scale_factor,
                                        gdk_window_get_height (window) * scale_factor);
-  pixbuf = gdk_pixbuf_get_from_surface (surface, src_x, src_y, width * scale_factor, height * scale_factor);
+  pixbuf = gdk_pixbuf_get_from_surface (surface,
+                                        src_x * scale_factor,
+                                        src_y * scale_factor,
+                                        width * scale_factor,
+                                        height * scale_factor);
 
   cairo_surface_destroy (surface);
 
