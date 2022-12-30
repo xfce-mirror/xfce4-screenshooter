@@ -878,7 +878,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
         NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
         "", _("_Preferences"), GTK_RESPONSE_PREFERENCES,
         "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
-        "window-close-symbolic", _("_Close"), GTK_RESPONSE_CANCEL,
+        "window-close-symbolic", _("_Close"), GTK_RESPONSE_OK,
         NULL);
     }
   else
