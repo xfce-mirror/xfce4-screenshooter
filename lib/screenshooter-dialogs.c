@@ -21,6 +21,8 @@
 #include "screenshooter-actions.h"
 #include "screenshooter-custom-actions.h"
 
+#include <exo/exo.h>
+
 #define ICON_SIZE 16
 #define THUMB_X_SIZE 200
 #define THUMB_Y_SIZE 125
@@ -1434,32 +1436,8 @@ gchar
     g_signal_connect (combobox, "changed", G_CALLBACK (cb_combo_file_extension_changed), chooser);
     gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (chooser), combobox);
 
-    if(show_preview)
-      {
-        GtkWidget *preview, *preview_ebox;
-        GdkPixbuf *thumbnail;
-
-        /* Create the preview and the thumbnail */
-        preview_ebox = gtk_event_box_new ();
-        preview = gtk_image_new ();
-        gtk_widget_set_margin_end (preview, 12);
-        gtk_container_add (GTK_CONTAINER (preview_ebox), preview);
-        gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (chooser), preview_ebox);
-
-        thumbnail = screenshot_get_thumbnail (screenshot);
-
-        gtk_image_set_from_pixbuf (GTK_IMAGE (preview), thumbnail);
-        g_object_unref (thumbnail);
-
-        /* DND for the preview image */
-        gtk_drag_source_set (preview_ebox, GDK_BUTTON1_MASK, NULL, 0, GDK_ACTION_COPY);
-        gtk_drag_source_add_image_targets (preview_ebox);
-        g_signal_connect (preview_ebox, "drag-begin", G_CALLBACK (preview_drag_begin), thumbnail);
-        g_signal_connect (preview_ebox, "drag-data-get", G_CALLBACK (preview_drag_data_get), screenshot);
-        g_signal_connect (preview_ebox, "drag-end", G_CALLBACK (preview_drag_end), chooser);
-
-        gtk_widget_show (preview);
-      }
+    if (show_preview)
+      exo_gtk_file_chooser_add_thumbnail_preview (GTK_FILE_CHOOSER (chooser));
 
     dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
 
