@@ -750,15 +750,21 @@ screenshooter_pixbuf_get_from_window (GdkWindow *window,
                                       gint       width,
                                       gint       height)
 {
+  gint             scale_factor;
   cairo_surface_t *surface;
   GdkPixbuf       *pixbuf;
 
+  scale_factor = gdk_window_get_scale_factor (window);
   surface = cairo_xlib_surface_create (gdk_x11_display_get_xdisplay (gdk_window_get_display (window)),
                                        gdk_x11_window_get_xid (window),
                                        gdk_x11_visual_get_xvisual (gdk_window_get_visual (window)),
-                                       gdk_window_get_width (window),
-                                       gdk_window_get_height (window));
-  pixbuf = gdk_pixbuf_get_from_surface (surface, src_x, src_y, width, height);
+                                       gdk_window_get_width (window) * scale_factor,
+                                       gdk_window_get_height (window) * scale_factor);
+  pixbuf = gdk_pixbuf_get_from_surface (surface,
+                                        src_x * scale_factor,
+                                        src_y * scale_factor,
+                                        width * scale_factor,
+                                        height * scale_factor);
 
   cairo_surface_destroy (surface);
 
