@@ -48,7 +48,8 @@ lib_libscreenshooter_la_CFLAGS = \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
 	@LIBXML_CFLAGS@ \
-	@SOUP_CFLAGS@ \
+	@SOUP2_CFLAGS@ \
+	@SOUP3_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
 	@XFCONF_CFLAGS@ \
@@ -63,7 +64,8 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@ \
 	@GLIB_LIBS@ \
-	@SOUP_LIBS@ \
+	@SOUP2_LIBS@ \
+	@SOUP3_LIBS@ \
 	@LIBXML_LIBS@ \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
@@ -109,7 +111,8 @@ src_xfce4_screenshooter_CFLAGS = \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
-	@SOUP_CFLAGS@ \
+	@SOUP2_CFLAGS@ \
+	@SOUP3_CFLAGS@ \
 	@LIBXML_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
@@ -121,7 +124,8 @@ src_xfce4_screenshooter_LDFLAGS = \
 	@GDKX11_LIBS@ \
 	@GLIB_LIBS@ \
 	@GTHREAD_LIBS@ \
-	@SOUP_LIBS@ \
+	@SOUP2_LIBS@ \
+	@SOUP3_LIBS@ \
 	@LIBXML_LIBS@ \
 	@LIBX11_LIBS@ \
 	@LIBX11_LDFLAGS@ \
@@ -167,7 +171,8 @@ panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	@GTHREAD_CFLAGS@ \
 	@LIBXML_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
-	@SOUP_CFLAGS@
+	@SOUP2_CFLAGS@ \
+	@SOUP3_CFLAGS@
 
 panel_plugin_libscreenshooterplugin_la_LDFLAGS = \
 	-avoid-version \
@@ -180,7 +185,8 @@ panel_plugin_libscreenshooterplugin_la_LIBADD = \
 	@EXO_LIBS@ \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
-	@SOUP_LIBS@ \
+	@SOUP2_LIBS@ \
+	@SOUP3_LIBS@ \
 	@LIBXML_LIBS@ \
 	@LIBX11_LIBS@ \
 	@LIBX11_LDFLAGS@ \
