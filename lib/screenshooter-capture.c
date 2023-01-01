@@ -387,10 +387,10 @@ static GdkPixbuf
       gdk_window_get_frame_extents (window, &rect);
 
       /* Add one pixel to sides so the border is visible */
-      rect.x = extents.left - 1;
-      rect.y = extents.top - 1;
-      rect.width -= extents.left + extents.right - 2;
-      rect.height -= extents.top + extents.bottom - 2;
+      rect.x = extents.left / scale - 1;
+      rect.y = extents.top / scale - 1;
+      rect.width -= (extents.left + extents.right) / scale - 2;
+      rect.height -= (extents.top + extents.bottom) / scale - 2;
       screenshot = screenshooter_pixbuf_get_from_window (window, rect.x, rect.y, rect.width, rect.height);
     }
 
