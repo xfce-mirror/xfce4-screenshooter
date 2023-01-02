@@ -61,8 +61,6 @@ void       screenshooter_get_screen_geometry    (GdkRectangle   *geometry);
 GdkWindow *screenshooter_get_active_window      (GdkScreen      *screen,
                                                  gboolean       *needs_unref,
                                                  gboolean       *border);
-gboolean   screenshooter_get_gtk_frame_extents  (GdkWindow      *window,
-                                                 GtkBorder      *extents);
 void       screenshooter_show_file_in_folder    (const gchar    *save_location);
 gboolean   screenshooter_is_format_supported    (const gchar    *format);
 gboolean   screenshooter_is_directory_writable  (const gchar    *path);
