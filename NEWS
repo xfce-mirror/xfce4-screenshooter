@@ -1,3 +1,21 @@
+1.10.2 (2023-01-02)
+======
+- Fix capture of CSD windows
+- Fix active window and region capture modes
+- Consider scale factor while capturing screenshots with cairo (#95)
+- Support libsoup2 and 3 simultaneously (#97)
+- save dialog: show preview of selected file (#94)
+- Save preferences of panel plugin (#96)
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), Estonian, Finnish,
+  French, Galician, Georgian, German, Greek, Hebrew, Hungarian,
+  Icelandic, Indonesian, Interlingue, Italian, Japanese, Korean,
+  Lithuanian, Malay, Norwegian Bokmål, Occitan (post 1500), Persian
+  (Iran), Polish, Portuguese, Portuguese (Brazil), Russian, Serbian,
+  Slovak, Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian
+
 1.10.1 (2022-12-21)
 ======
 - Fixes capture of screenshots after first time (#89)
