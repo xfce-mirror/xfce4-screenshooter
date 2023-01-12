@@ -45,9 +45,9 @@ AC_HEADER_STDC
 dnl ***********************************
 dnl *** Check for required packages ***
 dnl ***********************************
-XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-2.0], [4.18.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.18.0])
-XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.18.0])
+XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-2.0], [4.16.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.16.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.16.0])
 XDT_CHECK_PACKAGE([GTHREAD], [gthread-2.0], [2.42.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-3.0], [3.24.0])
 XDT_CHECK_PACKAGE([GDK], [gdk-3.0], [3.24.0])
@@ -58,7 +58,7 @@ XDT_CHECK_PACKAGE([EXO], [exo-2], [0.12.0])
 XDT_CHECK_PACKAGE([LIBXEXT], [xext], [1.0.0])
 XDT_CHECK_PACKAGE([PANGO], [pango], [1.44.0])
 XDT_CHECK_PACKAGE([XINPUT2], [xi], [1.7.8])
-XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.18.0])
+XDT_CHECK_PACKAGE([XFCONF], [libxfconf-0], [4.16.0])
 XDT_CHECK_OPTIONAL_PACKAGE([XFIXES], [xfixes], [4.0.0], [xfixes], [XFIXES extension support])
 XDT_CHECK_LIBX11()
 
