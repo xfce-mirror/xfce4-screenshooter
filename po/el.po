@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
+# Ápo. <apostolos.papadimitriu@gmail.com>, 2016
 # ebal <ebalaskas@ebalaskas.gr>, 2008-2009
 # Panagiotis Mantzios <pmantzios@hotmail.com>, 2018
 # Stavros Giannouris <stavrosg@hellug.gr>, 2008
@@ -36,7 +37,7 @@ msgstr "Μεταφορά"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Το στιγμιότυπο έχει μεταφερθεί στο:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Το στιγμιότυπο μεταφέρθηκε στο:</span>"
 
 #. Setup window
 #: ../lib/screenshooter-dialogs.c:879 ../lib/screenshooter-dialogs.c:888
@@ -69,11 +70,11 @@ msgstr "Α_κύρωση"
 #: ../lib/screenshooter-dialogs.c:893 ../lib/screenshooter-dialogs.c:1121
 #: ../lib/screenshooter-job-callbacks.c:173
 msgid "_OK"
-msgstr "_ΟΚ"
+msgstr "_Εντάξει"
 
 #: ../lib/screenshooter-dialogs.c:926
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Προεπιλεγμένη περιοχή αρπαγής</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Περιοχή αποτύπωσης</span>"
 
 #: ../lib/screenshooter-dialogs.c:948
 msgid "Entire screen"
@@ -82,7 +83,7 @@ msgstr "Ολόκληρη οθόνη"
 #: ../lib/screenshooter-dialogs.c:953 ../src/main.c:61
 #: ../panel-plugin/screenshooter-plugin.c:311
 msgid "Take a screenshot of the entire screen"
-msgstr "Λήψη ενός στιγμιότυπου ολόκληρης οθόνης"
+msgstr "Λήψη στιγμιότυπου ολόκληρης της οθόνης"
 
 #: ../lib/screenshooter-dialogs.c:962
 msgid "Active window"
@@ -91,7 +92,7 @@ msgstr "Ενεργό παράθυρο"
 #: ../lib/screenshooter-dialogs.c:967 ../src/main.c:108
 #: ../panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the active window"
-msgstr "Λήψη στιγμιοτύπου οθόνης του ενεργού παραθύρου"
+msgstr "Λήψη στιγμιότυπου μόνο του ενεργού παραθύρου"
 
 #: ../lib/screenshooter-dialogs.c:976
 msgid "Select a region"
@@ -102,7 +103,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr "Επιλέξτε την περιοχή του στιγμιότυπου κάνοντας κλικ σε ένα σημείο στην οθόνη και χωρίς να αφήσετε το κουμπί του ποντικιού, σύρετε το ποντίκι στην άλλη γωνία της περιοχής και αφήστε το κουμπί.\n \nΠατήστε Ctrl ενώ σύρετε το ποντίκι για να μετακινήσετε την περιοχή."
+msgstr "Επιλέξτε την περιοχή αποτύπωσης κάνοντας κλικ σε ένα σημείο στην οθόνη χωρίς να αφήσετε το κουμπί του ποντικιού, σύρετε το ποντίκι στην άλλη γωνία της περιοχής και αφήστε το κουμπί.\n \nΠατήστε Ctrl ενώ σύρετε το ποντίκι για να μετακινήσετε την περιοχή."
 
 #: ../lib/screenshooter-dialogs.c:994
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
@@ -110,29 +111,29 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Επιλογές</span>"
 
 #: ../lib/screenshooter-dialogs.c:1014
 msgid "Capture the mouse pointer"
-msgstr "Αρπαγή του κέρσορα του ποντικιού"
+msgstr "Αποτύπωση του δείκτη του ποντικιού"
 
 #: ../lib/screenshooter-dialogs.c:1018
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Εμφάνιση του κέρσορα του ποντικιού στο στιγμιότυπο"
+msgstr "Εμφάνιση του δείκτη του ποντικιού στο στιγμιότυπο οθόνης"
 
 #: ../lib/screenshooter-dialogs.c:1025
 msgid "Capture the window border"
-msgstr "Καταγραφή του περιθωρίου του παραθύρου"
+msgstr "Αποτύπωση του περιθωρίου του παραθύρου"
 
 #: ../lib/screenshooter-dialogs.c:1030
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr "Εμφάνιση του περιθωρίου του παραθύρου στο στιγμιότυπο.\nΗ απενεργοποίηση αυτής της επιλογής δεν επηρεάζει τα παράθυρα CSD."
+msgstr "Εμφάνιση του περιθωρίου του παραθύρου στο στιγμιότυπο οθόνης.\nΗ απενεργοποίηση αυτής της επιλογής δεν επηρεάζει τα παράθυρα CSD."
 
 #: ../lib/screenshooter-dialogs.c:1047
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Καθυστέρηση πριν την αρπαγή</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Καθυστέρηση πριν την αποτύπωση</span>"
 
 #: ../lib/screenshooter-dialogs.c:1071
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Καθυστέρηση σε δευτερόλεπτα πριν την ληψη του στιγμιοτύπου οθόνης"
+msgstr "Καθυστέρηση σε δευτερόλεπτα πριν την λήψη του στιγμιότυπου οθόνης"
 
 #: ../lib/screenshooter-dialogs.c:1074
 msgid "seconds"
@@ -153,16 +154,16 @@ msgstr "Αποθήκευση"
 
 #: ../lib/screenshooter-dialogs.c:1180
 msgid "Save the screenshot to a PNG file"
-msgstr "Αποθήκευση στιγμιοτύπου σε αρχείο PNG"
+msgstr "Αποθήκευση στιγμιότυπου σε αρχείο PNG"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1184
 msgid "Show in Folder"
-msgstr ""
+msgstr "Εμφάνιση στο φάκελο"
 
 #: ../lib/screenshooter-dialogs.c:1191
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "Εμφανίζει το αρχείο στο φάκελο αποθήκευσης"
 
 #: ../lib/screenshooter-dialogs.c:1200
 msgid "Copy to the clipboard"
@@ -170,7 +171,7 @@ msgstr "Αντιγραφή στο πρόχειρο"
 
 #: ../lib/screenshooter-dialogs.c:1202
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Αντιγραφή του στιγμιοτύπου οθόνης στο πρόχειρο ώστε να μπορεί να επικολληθεί αργότερα"
+msgstr "Αντιγραφή του στιγμιότυπου οθόνης στο πρόχειρο ώστε να μπορεί να επικολληθεί αργότερα"
 
 #: ../lib/screenshooter-dialogs.c:1216
 msgid "Open with:"
@@ -178,23 +179,23 @@ msgstr "Άνοιγμα με:"
 
 #: ../lib/screenshooter-dialogs.c:1224
 msgid "Open the screenshot with the chosen application"
-msgstr "Άνοιγμα του στιγμιοτύπου οθόνης με την επιλεγμένη εφαρμογή"
+msgstr "Άνοιγμα του στιγμιότυπου οθόνης με την επιλεγμένη εφαρμογή"
 
 #: ../lib/screenshooter-dialogs.c:1243 ../src/main.c:76
 msgid "Application to open the screenshot"
-msgstr "Εφαρμογή να ανοίξει το στιγμιοτύπο οθόνης"
+msgstr "Εφαρμογή για το άνοιγμα του στιγμιότυπου οθόνης"
 
 #: ../lib/screenshooter-dialogs.c:1257
 msgid "Custom Action:"
-msgstr ""
+msgstr "Προσαρμοσμένη ενέργεια:"
 
 #: ../lib/screenshooter-dialogs.c:1265
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Εκτέλεση της επιλεγμένης ενέργειας"
 
 #: ../lib/screenshooter-dialogs.c:1277
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Ενέργεια για εκτέλεση"
 
 #: ../lib/screenshooter-dialogs.c:1302
 msgid "Host on Imgur™"
@@ -202,7 +203,7 @@ msgstr "Ανέβασμα στο Imgur™"
 
 #: ../lib/screenshooter-dialogs.c:1306
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
-msgstr "Ανέβασμα στο Imgur™, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων"
+msgstr "Ανέβασμα στιγμιότυπου οθόνης στο Imgur™, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων"
 
 #: ../lib/screenshooter-dialogs.c:1318
 msgid ""
@@ -218,7 +219,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Προεσκόπιση</s
 
 #: ../lib/screenshooter-dialogs.c:1410
 msgid "Save screenshot as..."
-msgstr "Αποθήκευση στιγμιοτύπου ως ... "
+msgstr "Αποθήκευση στιγμιότυπου ως ... "
 
 #: ../lib/screenshooter-dialogs.c:1428
 msgid "PNG File"
@@ -234,7 +235,7 @@ msgstr "Αρχείο BMP"
 
 #: ../lib/screenshooter-dialogs.c:1433
 msgid "WebP File"
-msgstr ""
+msgstr "Αρχείο WebP"
 
 #: ../lib/screenshooter-dialogs.c:1499
 msgid "Preferences"
@@ -242,25 +243,25 @@ msgstr "Προτιμήσεις"
 
 #: ../lib/screenshooter-dialogs.c:1524
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Προσαρμοσμένες ενέργειες</span>"
 
 #: ../lib/screenshooter-dialogs.c:1543
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "Μπορείτε να διαμορφώσετε ενέργειες οι οποίες θα είναι διαθέσιμες για τη διαχείριση των στιγμιότυπων οθόνης μετά την αποτύπωση."
 
 #: ../lib/screenshooter-dialogs.c:1573
 msgid "Custom Action"
-msgstr ""
+msgstr "Προσαρμοσμένη ενέργεια"
 
 #: ../lib/screenshooter-dialogs.c:1586
 msgid "Add custom action"
-msgstr ""
+msgstr "Προσθήκη ενέργειας"
 
 #: ../lib/screenshooter-dialogs.c:1593
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "Αφαίρεση επιλεγμένης ενέργειας"
 
 #. Add custom action name
 #: ../lib/screenshooter-dialogs.c:1615
@@ -269,7 +270,7 @@ msgstr "Όνομα"
 
 #: ../lib/screenshooter-dialogs.c:1616
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Το όνομα της ενέργειας που θα εμφανίζεται στο πίνακα ενεργειών"
 
 #. Add custom action command
 #: ../lib/screenshooter-dialogs.c:1625
@@ -278,25 +279,25 @@ msgstr "Εντολή"
 
 #: ../lib/screenshooter-dialogs.c:1626
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Η εντολή που θα εκτελεστεί για αυτή την ενέργεια"
 
 #: ../lib/screenshooter-dialogs.c:1633
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "Χρήση του χαρακτήρα %f για τη καταχώρηση της τοποθεσίας του στιγμιότυπου οθόνης"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Αδύνατη η εκτέλεση της προσαρμοσμένης ενέργειας"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Μη έγκυρη επιλεγμένη προσαρμοσμένη ενέργεια"
 
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "Αποτυχία εκτέλεσης της προσαρμοσμένης ενέργειας %s"
 
 #: ../lib/screenshooter-utils.c:315
 #, c-format
@@ -356,7 +357,7 @@ msgstr "Εικόνα"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:9
 msgid "Syntax"
-msgstr "Συντακτικό"
+msgstr "Σύνταξη"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:10
 msgid "HTML"
@@ -399,7 +400,7 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr "Ο σύνδεσμος εμφανίζεται μόνο μια φορά. Εξασφαλίστε την αποθήκευσή του αν νομίζετε ότι ενδέχεται να διαγράψετε αυτήν την εικόνα. Δεν υποστηρίζουμε προς το παρόν σύνδεση εικόνων σε λογαριασμούς Imgur."
+msgstr "Ο σύνδεσμος εμφανίζεται μόνο μια φορά. Εξασφαλίστε την αποθήκευσή του αν νομίζετε ότι ενδέχεται να διαγράψετε αυτήν την εικόνα. Προς το παρόν, δεν υποστηρίζετε η σύνδεση εικόνων σε λογαριασμούς Imgur."
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:20
 msgid "Deletion link"
@@ -412,7 +413,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Κατάσταση</span>
 #. Create the information dialog
 #: ../lib/screenshooter-job-callbacks.c:170
 msgid "Details about the screenshot"
-msgstr "Λεπτομέρειες σχετικά με το στιγμιότυπο οθόνης"
+msgstr "Λεπτομέρειες σχετικά με το στιγμιότυπο"
 
 #. Create the user label
 #: ../lib/screenshooter-job-callbacks.c:213
@@ -432,7 +433,7 @@ msgstr "Κωδικός:"
 
 #: ../lib/screenshooter-job-callbacks.c:234
 msgid "The password for the user above"
-msgstr "Ο κωδικός χρήστη από πάνω"
+msgstr "Ο κωδικός χρήστη επάνω"
 
 #. Create the title label
 #: ../lib/screenshooter-job-callbacks.c:240
@@ -443,7 +444,7 @@ msgstr "Τίτλος:"
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "Ο τίτλος του στιγμιότυπου οθόνης, θα χρησιμοποιηθεί κατά την εμφάνιση του στιγμιότυπου στην υπηρεσία φιλοξενίας εικόνων"
+msgstr "Ο τίτλος του στιγμιότυπου οθόνης, θα χρησιμοποιηθεί για την εμφάνιση του στην υπηρεσία φιλοξενίας εικόνων"
 
 #. Create the comment label
 #: ../lib/screenshooter-job-callbacks.c:254
@@ -454,45 +455,45 @@ msgstr "Σχόλιο:"
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
-msgstr "Ένα σχόλιο στο στιγμιότυπο οθόνης, θα χρησιμοποιηθεί κατά την προβολή του στιγμιότυπου οθόνης στην υπηρεσία φιλοξενίας εικόνων"
+msgstr "Ένα σχόλιο στο στιγμιότυπο οθόνης, θα χρησιμοποιηθεί για την εμφάνιση του στην υπηρεσία φιλοξενίας εικόνων"
 
 #: ../src/main.c:51
 msgid "Copy the screenshot to the clipboard"
-msgstr "Αντιγραφή στιγμιοτύπου οθόνης στο πρόχειρο"
+msgstr "Αντιγραφή στιγμιότυπου στο πρόχειρο"
 
 #: ../src/main.c:56
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Καθυστέρηση σε δευτερόλεπτα πριν την ληψη του στιγμιοτύπου οθόνης"
+msgstr "Καθυστέρηση σε δευτερόλεπτα πριν την λήψη του στιγμιότυπου οθόνης"
 
 #: ../src/main.c:66
 msgid "Display the mouse on the screenshot"
-msgstr "Εμφάνιση του κέρσορα στο στιγμιότυπο"
+msgstr "Εμφάνιση του δείκτη ποντικιού στο στιγμιότυπο οθόνης"
 
 #: ../src/main.c:71
 msgid "Removes the window border from the screenshot"
-msgstr "Αφαιρεί το περιθώριο του παραθύρου από το στιγμιότυπο οθόνης"
+msgstr "Αφαίρεση του περιθωρίου του παραθύρου από το στιγμιότυπο οθόνης"
 
 #: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:321
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Επιλογή μία περιοχής για αρπαγή με το πάτημα ενός σημείου στην οθόνη χωρίς την απελευθέρωση του κουμπιού του ποντικιού, σύροντας το ποντίκι στην άλλη γωνία της περιοχής, και απελευθέρωση του κουμπιού του ποντικιού."
+msgstr "Επιλέξτε την περιοχή αποτύπωσης κάνοντας κλικ σε ένα σημείο στην οθόνη χωρίς να αφήσετε το κουμπί του ποντικιού, σύρετε το ποντίκι στην άλλη γωνία της περιοχής και αφήστε το κουμπί."
 
 #: ../src/main.c:88
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp is only supported if webp-pixbuf-loader is "
 "installed."
-msgstr ""
+msgstr "Η διαδρομή ή ο κατάλογος όπου θα αποθηκευθεί το στιγμιότυπο της οθόνης, οι αποδεκτές επεκτάσεις είναι png, jpg και bmp. Η webp υποστηρίζεται μόνο αν είναι εγκατεστημένο το πακέτο webp-pixbuf-loader."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "Εμφάνιση του αποθηκευμένου αρχείου στο φάκελο του."
 
 #: ../src/main.c:98
 msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Ανέβασμα στο Imgur, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων"
+msgstr "Ανέβασμα στιγμιότυπου οθόνης στο Imgur, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων"
 
 #: ../src/main.c:103
 msgid "Version information"
@@ -501,27 +502,27 @@ msgstr "Πληροφορίες έκδοσης"
 #: ../src/main.c:131
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Αντικρουόμενες επιλογές: --%s και --%s δεν μπορούν να χρησιμοποιηθούν την ίδια στιγμή.\n"
+msgstr "Αντικρουόμενες επιλογές: --%s και --%s δεν μπορούν να χρησιμοποιηθούν ταυτόχρονα.\n"
 
 #: ../src/main.c:133
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr "Η επιλογή --%s χρησιμοποιείται μόνο όταν --fullscreen, --window ή --region έχει δοθεί. Θα αγνοηθεί.\n"
+msgstr "Η επιλογή --%s χρησιμοποιείται μόνο όταν έχει δοθεί --fullscreen, --window ή --region. Θα αγνοηθεί.\n"
 
 #: ../src/main.c:144
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nΔοκίμασε %s --help για να δεις μία πλήρη λίστα με τις διαθέσιμες επιλογές της γραμμής εντολών.\n"
+msgstr "%s: %s\nΔοκιμάστε %s --help για τη πλήρη λίστα με τις διαθέσιμες επιλογές της γραμμής εντολών.\n"
 
 #: ../src/xfce4-screenshooter.desktop.in.in.h:2
 #: ../panel-plugin/screenshooter.desktop.in.h:2
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Λήψη στιγμιότυπου ολόκληρης οθόνης, ενεργού παραθύρου ή μίας περιοχής"
+msgstr "Λήψη στιγμιότυπου ολόκληρης οθόνης, ενός ενεργού παραθύρου ή μιας περιοχής"
 
 #: ../src/xfce4-screenshooter.appdata.xml.in.h:1
 msgid ""
@@ -530,4 +531,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG or "
 "JPG file, copy it to the clipboard, open it using another application, or "
 "host it on imgur, a free online image hosting service."
-msgstr "Σας επιτρέπει να καταγράψετε ολόκληρη την οθόνη, το ενεργό παράθυρο ή μια επιλεγμένη περιοχή. Μπορείτε να ρυθμίσετε την χρονική καθυστέρηση πριν από την λήψη του στιγμιότυπου και την ενέργεια που θα γίνει με το στιγμιότυπο οθόνης: αποθήκευση σε αρχείο PNG ή JPG, αντιγραφή στο πρόχειρο, άνοιγμα χρησιμοποιώντας μια άλλη εφαρμογή ή ανέβασμα στο imgur, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων."
+msgstr "Σας επιτρέπει να αποτυπώσετε ολόκληρη την οθόνη, το ενεργό παράθυρο ή μια επιλεγμένη περιοχή. Μπορείτε να ρυθμίσετε την χρονική καθυστέρηση πριν από την λήψη του στιγμιότυπου και την ενέργεια που θα γίνει: αποθήκευση σε αρχείο PNG ή JPG, αντιγραφή στο πρόχειρο, άνοιγμα χρησιμοποιώντας μια άλλη εφαρμογή ή ανέβασμα στο imgur, μια δωρεάν διαδικτυακή υπηρεσία φιλοξενίας εικόνων."
