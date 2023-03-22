@@ -1190,8 +1190,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_widget_set_tooltip_text (checkbox, _("Shows the saved file in the folder"));
   gtk_grid_attach (GTK_GRID (actions_grid), checkbox, 0, 1, 1, 1);
 
-  if (sd->plugin ||
-      gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
+  if (gdk_display_supports_clipboard_persistence (gdk_display_get_default ()))
     {
       /* Copy to clipboard radio button */
       radio =

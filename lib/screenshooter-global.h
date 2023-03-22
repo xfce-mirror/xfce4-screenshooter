@@ -55,7 +55,6 @@ typedef struct
   gint show_border;
   gint delay;
   gint action;
-  gboolean plugin;
   gboolean action_specified;
   gboolean region_specified;
   gboolean timestamp;

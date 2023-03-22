@@ -1447,8 +1447,7 @@ static GdkPixbuf
 GdkPixbuf *screenshooter_capture_screenshot (gint     region,
                                              gint     delay,
                                              gboolean show_mouse,
-                                             gboolean show_border,
-                                             gboolean plugin)
+                                             gboolean show_border)
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *window = NULL;

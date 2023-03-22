@@ -376,10 +376,6 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
       pd->sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
     }
 
-  /* We want to take only one screenshot as in CLI, but not to close the main
-     loop after taking a screenshot */
-  pd->sd->plugin = TRUE;
-
   /* We want the actions dialog to be always displayed */
   pd->sd->action_specified = FALSE;
 

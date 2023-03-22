@@ -208,8 +208,7 @@ take_screenshot_idle (gpointer user_data)
   sd->screenshot = screenshooter_capture_screenshot (sd->region,
                                                      sd->delay,
                                                      sd->show_mouse,
-                                                     sd->show_border,
-                                                     sd->plugin);
+                                                     sd->show_border);
 
   if (sd->screenshot != NULL)
     {
