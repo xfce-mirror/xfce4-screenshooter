@@ -117,6 +117,19 @@ static GOptionEntry entries[] =
 
 
 
+/* Called when the screenshooter flow is finalized, successful or not
+result: whether the action was executed successful.
+data: what was defined in sd->finalize_callback_data, in this case unused.
+*/
+static void
+cb_finalize (gboolean result, gpointer data)
+{
+  TRACE ("Execute finalize callback");
+  gtk_main_quit ();
+}
+
+
+
 /* Main */
 
 
@@ -231,6 +244,8 @@ int main (int argc, char **argv)
   sd->app_info = NULL;
   sd->action = 0;
   sd->custom_action_name = g_strdup ("none");
+  sd->finalize_callback = cb_finalize;
+  sd->finalize_callback_data = NULL;
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);

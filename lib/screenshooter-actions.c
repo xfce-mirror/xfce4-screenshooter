@@ -63,10 +63,8 @@ action_idle (gpointer user_data)
           response == GTK_RESPONSE_DELETE_EVENT ||
           response == GTK_RESPONSE_CLOSE)
         {
-          if (!sd->plugin)
-            gtk_main_quit ();
-
           g_object_unref (sd->screenshot);
+          sd->finalize_callback (FALSE, sd->finalize_callback_data);
           return FALSE;
         }
 
@@ -193,8 +191,7 @@ action_idle (gpointer user_data)
       g_free (save_location);
     }
 
-  if (!sd->plugin)
-    gtk_main_quit ();
+  sd->finalize_callback (TRUE, sd->finalize_callback_data);
 
   g_object_unref (sd->screenshot);
 
@@ -215,10 +212,12 @@ take_screenshot_idle (gpointer user_data)
                                                      sd->plugin);
 
   if (sd->screenshot != NULL)
-    g_idle_add (action_idle, sd);
-  else if (!sd->plugin)
-    gtk_main_quit ();
+    {
+      g_idle_add (action_idle, sd);
+      return FALSE;
+    }
 
+  sd->finalize_callback (FALSE, sd->finalize_callback_data);
   return FALSE;
 }
 

@@ -41,6 +41,11 @@ enum {
 
 
 
+/* Callback function to be called when execution is finalized */
+typedef void (*ScreenshotFinalizeCallback)(gboolean result , gpointer data);
+
+
+
 /* Struct to store the screenshot options */
 typedef struct
 {
@@ -66,6 +71,8 @@ typedef struct
   gchar *last_user;
   gchar *last_extension;
   GdkPixbuf *screenshot;
+  ScreenshotFinalizeCallback finalize_callback;
+  gpointer finalize_callback_data;
 }
 ScreenshotData;
 

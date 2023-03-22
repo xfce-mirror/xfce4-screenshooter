@@ -164,9 +164,6 @@ cb_button_clicked (GtkWidget *button, PluginData *pd)
   TRACE ("Start taking the screenshot");
 
   screenshooter_take_screenshot (pd->sd, TRUE);
-
-  /* Make the panel button clickable */
-  gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
 }
 
 
@@ -327,6 +324,23 @@ set_panel_button_tooltip (PluginData *pd)
 
 
 
+/* Called when the screenshooter flow is finalized, successful or not
+result: whether the action was executed successful.
+data: what was defined in sd->finalize_callback_data, in this case PluginData is expected.
+*/
+static void
+cb_finalize (gboolean result, gpointer data)
+{
+  PluginData *pd = data;
+
+  TRACE ("Execute finalize callback");
+
+  /* Make the panel button clickable */
+  gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
+}
+
+
+
 /* Create the plugin button */
 static void
 screenshooter_plugin_construct (XfcePanelPlugin *plugin)
@@ -401,5 +415,9 @@ screenshooter_plugin_construct (XfcePanelPlugin *plugin)
   xfce_panel_plugin_menu_show_configure (plugin);
   g_signal_connect (plugin, "configure-plugin",
                     G_CALLBACK (cb_properties_dialog), pd);
+
+  /* Set the callback function */
+  pd->sd->finalize_callback = cb_finalize;
+  pd->sd->finalize_callback_data = pd;
 }
 XFCE_PANEL_PLUGIN_REGISTER (screenshooter_plugin_construct);
