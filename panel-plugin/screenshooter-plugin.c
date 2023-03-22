@@ -337,6 +337,10 @@ cb_finalize (gboolean result, gpointer data)
 
   /* Make the panel button clickable */
   gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
+
+  /* Update preferences if the result was successful */
+  if (result)
+    screenshooter_plugin_write_rc_file (pd->plugin, pd);
 }
 
 
