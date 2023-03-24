@@ -211,12 +211,10 @@ take_screenshot_idle (gpointer user_data)
                                                      sd->show_border);
 
   if (sd->screenshot != NULL)
-    {
-      g_idle_add (action_idle, sd);
-      return FALSE;
-    }
+    g_idle_add (action_idle, sd);
+  else
+    sd->finalize_callback (FALSE, sd->finalize_callback_data);
 
-  sd->finalize_callback (FALSE, sd->finalize_callback_data);
   return FALSE;
 }
 

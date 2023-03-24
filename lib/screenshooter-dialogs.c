@@ -750,7 +750,7 @@ cb_dialog_response (GtkWidget *dialog, gint response, ScreenshotData *sd)
   else
     {
       gtk_widget_destroy (dialog);
-      sd->finalize_callback(FALSE, sd->finalize_callback_data);
+      sd->finalize_callback (FALSE, sd->finalize_callback_data);
     }
 }
 

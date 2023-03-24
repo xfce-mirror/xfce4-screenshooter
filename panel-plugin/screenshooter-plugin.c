@@ -325,11 +325,11 @@ set_panel_button_tooltip (PluginData *pd)
 
 
 /* Called when the screenshooter flow is finalized, successful or not
-result: whether the action was executed successful.
+action_executed: whether the action was executed successfully.
 data: what was defined in sd->finalize_callback_data, in this case PluginData is expected.
 */
 static void
-cb_finalize (gboolean result, gpointer data)
+cb_finalize (gboolean action_executed, gpointer data)
 {
   PluginData *pd = data;
 
@@ -338,8 +338,8 @@ cb_finalize (gboolean result, gpointer data)
   /* Make the panel button clickable */
   gtk_widget_set_sensitive (GTK_WIDGET (pd->button), TRUE);
 
-  /* Update preferences if the result was successful */
-  if (result)
+  /* Update preferences if the action was executed successfully */
+  if (action_executed)
     screenshooter_plugin_write_rc_file (pd->plugin, pd);
 }
 

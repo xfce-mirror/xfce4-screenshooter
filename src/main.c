@@ -118,11 +118,11 @@ static GOptionEntry entries[] =
 
 
 /* Called when the screenshooter flow is finalized, successful or not
-result: whether the action was executed successful.
+action_executed: whether the action was executed successfully.
 data: what was defined in sd->finalize_callback_data, in this case unused.
 */
 static void
-cb_finalize (gboolean result, gpointer data)
+cb_finalize (gboolean action_executed, gpointer data)
 {
   TRACE ("Execute finalize callback");
   gtk_main_quit ();

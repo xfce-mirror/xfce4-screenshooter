@@ -42,7 +42,7 @@ enum {
 
 
 /* Callback function to be called when execution is finalized */
-typedef void (*ScreenshotFinalizeCallback)(gboolean result , gpointer data);
+typedef void (*ScreenshotFinalizeCallback) (gboolean action_executed , gpointer data);
 
 
 
