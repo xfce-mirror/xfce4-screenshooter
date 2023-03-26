@@ -586,6 +586,9 @@ static gchar
   else if (G_UNLIKELY (g_str_has_suffix (save_path, ".webp")))
     type = "webp";
 
+  /* Restrict file permission if not saved in a user-owned directory */
+  screenshooter_restrict_file_permission (save_file);
+
   if (G_UNLIKELY (!gdk_pixbuf_save (screenshot, save_path, type, &error, NULL)))
     {
       if (error)

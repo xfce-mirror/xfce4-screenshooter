@@ -64,6 +64,7 @@ GdkWindow *screenshooter_get_active_window      (GdkScreen      *screen,
 void       screenshooter_show_file_in_folder    (const gchar    *save_location);
 gboolean   screenshooter_is_format_supported    (const gchar    *format);
 gboolean   screenshooter_is_directory_writable  (const gchar    *path);
+void       screenshooter_restrict_file_permission (GFile          *file);
 GdkPixbuf *screenshooter_pixbuf_get_from_window (GdkWindow      *window,
                                                  gint            src_x,
                                                  gint            src_y,
