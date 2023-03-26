@@ -5,9 +5,9 @@
 Xfce4-screenshooter allows you to capture the entire screen, the active
 window or a selected region. You can set the delay that elapses
 before the screenshot is taken and the action that will be done with
-the screenshot: save it to a /PNG file, copy it to the clipboard, open
-it using another application, or host it on imgur.com,
-a free online image hosting service.
+the screenshot: save it to a file, copy it to the clipboard, open
+it using another application, host it on imgur.com (a free online image
+hosting service) or use your creativity with custom action scripts.
 
 ----
 
