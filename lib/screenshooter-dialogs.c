@@ -586,21 +586,22 @@ static gchar
   else if (G_UNLIKELY (g_str_has_suffix (save_path, ".webp")))
     type = "webp";
 
-  if (G_UNLIKELY (!gdk_pixbuf_save (screenshot, save_path, type, &error, NULL)))
-    {
-      if (error)
-        {
-          /* See bug #8443, looks like error is not set when path is NULL */
-          screenshooter_error ("%s", error->message);
-          g_error_free (error);
-        }
+  /* Restrict file permission if not saved in a user-owned directory */
+  screenshooter_restrict_file_permission (save_file);
 
-      g_free (save_path);
-
-      return NULL;
-    }
-  else
+  if (G_LIKELY (gdk_pixbuf_save (screenshot, save_path, type, &error, NULL)))
     return save_path;
+
+  if (error)
+    {
+      /* See bug #8443, looks like error is not set when path is NULL */
+      screenshooter_error ("%s", error->message);
+      g_error_free (error);
+    }
+
+  g_free (save_path);
+
+  return NULL;
 }
 
 static void

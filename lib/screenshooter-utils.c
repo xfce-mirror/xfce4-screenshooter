@@ -679,6 +679,43 @@ screenshooter_is_directory_writable (const gchar *path)
 
 
 
+/* Changes the file permission to 0600 if its parent is not owned by the current user
+ * @file: file to be checked
+ */
+void
+screenshooter_restrict_file_permission (GFile *file)
+{
+  GFileInfo *info;
+  GFile *parent;
+  gchar *path;
+  GError *error = NULL;
+
+  parent = g_file_get_parent (file);
+  path = g_file_get_path (file);
+  info = g_file_query_info (parent, G_FILE_ATTRIBUTE_OWNER_USER, G_FILE_QUERY_INFO_NONE, NULL, &error);
+  g_object_unref (parent);
+
+  if (G_UNLIKELY (info == NULL))
+    {
+      g_warning ("Failed to query file info: %s", path);
+      g_free (path);
+      g_error_free (error);
+      return;
+    }
+
+  if (g_strcmp0 (g_get_user_name (), g_file_info_get_attribute_string (info, G_FILE_ATTRIBUTE_OWNER_USER)) != 0)
+    {
+      FILE *f = g_fopen (path, "w");
+      g_chmod (path, S_IRUSR | S_IWUSR); /* 0600 */
+      fclose (f);
+    }
+
+  g_free (path);
+  g_object_unref (info);
+}
+
+
+
 /*
  * Replacement for gdk_pixbuf_get_from_window which only takes
  * one (first) correct screenshot per execution.
