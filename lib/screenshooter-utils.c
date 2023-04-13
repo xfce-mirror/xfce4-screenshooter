@@ -626,7 +626,7 @@ screenshooter_is_format_supported (const gchar *format)
   for (GSList *lp = supported_formats; lp != NULL; lp = lp->next)
     {
       name = gdk_pixbuf_format_get_name (lp->data);
-      if (G_UNLIKELY (g_strcmp0 (name, format) == 0))
+      if (G_UNLIKELY (g_strcmp0 (name, format) == 0 && gdk_pixbuf_format_is_writable (lp->data)))
         {
           result = TRUE;
           g_free (name);
