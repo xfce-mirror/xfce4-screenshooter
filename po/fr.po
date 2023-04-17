@@ -288,11 +288,11 @@ msgstr "Commande qui sera exécutée pour cette action personnalisée"
 #: ../lib/screenshooter-dialogs.c:1633
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr "Utiliser %f comme code à la place duquel sera écrit le chemin vers la capture d'écran"
+msgstr "Utiliser %f comme code à la place duquel sera écrit le chemin vers la capture d’écran"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Unable to execute the custom action"
-msgstr "Impossible d'exécuter l'action personnalisée"
+msgstr "Impossible d’exécuter l’action personnalisée"
 
 #: ../lib/screenshooter-custom-actions.c:196
 msgid "Invalid custom action selected"
@@ -301,7 +301,7 @@ msgstr "Action personnalisée sélectionnée non valide "
 #: ../lib/screenshooter-custom-actions.c:208
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr "Échec à l'exécution de l'action personnalisée %s"
+msgstr "Échec à l’exécution de l’action personnalisée %s"
 
 #: ../lib/screenshooter-utils.c:315
 #, c-format
