@@ -585,6 +585,8 @@ static gchar
     type = "bmp";
   else if (G_UNLIKELY (g_str_has_suffix (save_path, ".webp")))
     type = "webp";
+  else if (G_UNLIKELY (g_str_has_suffix (save_path, ".jxl")))
+    type = "jxl";
 
   /* Restrict file permission if not saved in a user-owned directory */
   screenshooter_restrict_file_permission (save_file);
@@ -1430,6 +1432,9 @@ gchar
 
     if (screenshooter_is_format_supported ("webp"))
       gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "webp", _("WebP File"));
+
+    if (screenshooter_is_format_supported ("jxl"))
+      gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "jxl", _("JPEG XL File"));
 
     gtk_combo_box_set_active_id (GTK_COMBO_BOX (combobox), extension);
     g_signal_connect (combobox, "changed", G_CALLBACK (cb_combo_file_extension_changed), chooser);
