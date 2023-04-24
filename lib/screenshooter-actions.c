@@ -181,6 +181,8 @@ action_idle (gpointer user_data)
         extension = g_strdup ("bmp");
       else if (G_UNLIKELY (g_str_has_suffix (save_location, ".webp")))
         extension = g_strdup ("webp");
+      else if (G_UNLIKELY (g_str_has_suffix (save_location, ".jxl")))
+        extension = g_strdup ("jxl");
 
       if (extension)
         {
