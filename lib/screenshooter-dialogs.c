@@ -593,6 +593,12 @@ static gchar
       option_keys[0] = "quality";
       option_values[0] = "100";
     }
+  else if (G_UNLIKELY (g_str_has_suffix (save_path, ".avif")))
+    {
+      type = "avif";
+      option_keys[0] = "quality";
+      option_values[0] = "100";
+    }
 
   /* Restrict file permission if not saved in a user-owned directory */
   screenshooter_restrict_file_permission (save_file);
@@ -1441,6 +1447,9 @@ gchar
 
     if (screenshooter_is_format_supported ("jxl"))
       gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "jxl", _("JPEG XL File"));
+
+    if (screenshooter_is_format_supported ("avif"))
+      gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "avif", _("AVIF File"));
 
     gtk_combo_box_set_active_id (GTK_COMBO_BOX (combobox), extension);
     g_signal_connect (combobox, "changed", G_CALLBACK (cb_combo_file_extension_changed), chooser);
