@@ -578,6 +578,8 @@ static gchar
   GError *error = NULL;
   gchar *save_path = g_file_get_path (save_file);
   const char *type = "png";
+  char* option_keys[] = { NULL, NULL };
+  char* option_values[] = { NULL, NULL };
 
   if (G_UNLIKELY (g_str_has_suffix (save_path, ".jpg") || g_str_has_suffix (save_path, ".jpeg")))
     type = "jpeg";
@@ -586,12 +588,16 @@ static gchar
   else if (G_UNLIKELY (g_str_has_suffix (save_path, ".webp")))
     type = "webp";
   else if (G_UNLIKELY (g_str_has_suffix (save_path, ".jxl")))
-    type = "jxl";
+    {
+      type = "jxl";
+      option_keys[0] = "quality";
+      option_values[0] = "100";
+    }
 
   /* Restrict file permission if not saved in a user-owned directory */
   screenshooter_restrict_file_permission (save_file);
 
-  if (G_LIKELY (gdk_pixbuf_save (screenshot, save_path, type, &error, NULL)))
+  if (G_LIKELY (gdk_pixbuf_savev (screenshot, save_path, type, option_keys, option_values, &error)))
     return save_path;
 
   if (error)
