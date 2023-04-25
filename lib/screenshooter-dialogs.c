@@ -594,11 +594,7 @@ static gchar
       option_values[0] = "100";
     }
   else if (G_UNLIKELY (g_str_has_suffix (save_path, ".avif")))
-    {
-      type = "avif";
-      option_keys[0] = "quality";
-      option_values[0] = "100";
-    }
+    type = "avif";
 
   /* Restrict file permission if not saved in a user-owned directory */
   screenshooter_restrict_file_permission (save_file);
