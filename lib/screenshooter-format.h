@@ -41,7 +41,7 @@ typedef struct
 
 
 GSList    *screenshooter_get_supported_formats          (void);
-void       screenshooter_free_supported_formats         ();
+void       screenshooter_free_supported_formats         (void);
 gboolean   screenshooter_image_format_match_extension   (ImageFormat *format,
                                                          gchar       *filename);
 
