@@ -7,7 +7,7 @@
 # Dmytro Tokayev, 2021
 # Edoardo Maria Elidoro <edoardo.elidoro@gmail.com>, 2013
 # Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2018-2019
-# Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2019-2022
+# Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2019-2023
 # Enrico B. <enricobe@hotmail.com>, 2018
 # Gianluca Foddis <gianluca.foddis@gmail.com>, 2009
 # Vincenzo Reale <vinx.reale@gmail.com>, 2020
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-25 01:13+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2019-2022\n"
+"Last-Translator: Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2019-2023\n"
 "Language-Team: Italian (http://app.transifex.com/xfce/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -240,7 +240,7 @@ msgstr "File WebP"
 
 #: ../lib/screenshooter-dialogs.c:1443
 msgid "JPEG XL File"
-msgstr ""
+msgstr "file JPEG XL"
 
 #: ../lib/screenshooter-dialogs.c:1509
 msgid "Preferences"
@@ -490,7 +490,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp and jxl are only supported if their respective "
 "pixbuf loaders are installed."
-msgstr ""
+msgstr "Percorso del file o cartella dove verrà salvata l'istantanea, accetta le estensioni png, jpx e bpm. webp e jxl sono supportati solo se i rispettivi moduli pixbuf sono installati."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
