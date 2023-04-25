@@ -20,6 +20,7 @@
 #include "screenshooter-dialogs.h"
 #include "screenshooter-actions.h"
 #include "screenshooter-custom-actions.h"
+#include "screenshooter-format.h"
 
 #include <exo/exo.h>
 
@@ -578,23 +579,19 @@ static gchar
   GError *error = NULL;
   gchar *save_path = g_file_get_path (save_file);
   const char *type = "png";
-  char* option_keys[] = { NULL, NULL };
-  char* option_values[] = { NULL, NULL };
+  char** option_keys = NULL;
+  char** option_values = NULL;
 
-  if (G_UNLIKELY (g_str_has_suffix (save_path, ".jpg") || g_str_has_suffix (save_path, ".jpeg")))
-    type = "jpeg";
-  else if (G_UNLIKELY (g_str_has_suffix (save_path, ".bmp")))
-    type = "bmp";
-  else if (G_UNLIKELY (g_str_has_suffix (save_path, ".webp")))
-    type = "webp";
-  else if (G_UNLIKELY (g_str_has_suffix (save_path, ".jxl")))
+  for (GSList *lp = screenshooter_get_supported_formats (); lp != NULL; lp = lp->next)
     {
-      type = "jxl";
-      option_keys[0] = "quality";
-      option_values[0] = "100";
+      ImageFormat *format = lp->data;
+      if (screenshooter_image_format_match_extension (format, save_path))
+        {
+          type = format->type;
+          option_keys = format->option_keys;
+          option_values = format->option_values;
+        }
     }
-  else if (G_UNLIKELY (g_str_has_suffix (save_path, ".avif")))
-    type = "avif";
 
   /* Restrict file permission if not saved in a user-owned directory */
   screenshooter_restrict_file_permission (save_file);
@@ -1187,7 +1184,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
                     G_CALLBACK (cb_save_toggled), sd);
   g_signal_connect (G_OBJECT (radio), "activate",
                     G_CALLBACK (cb_radiobutton_activate), dlg);
-  gtk_widget_set_tooltip_text (radio, _("Save the screenshot to a PNG file"));
+  gtk_widget_set_tooltip_text (radio, _("Save the screenshot to a file"));
   gtk_grid_attach (GTK_GRID (actions_grid), radio, 0, 0, 1, 1);
 
   /* Show in folder checkbox */
@@ -1414,6 +1411,7 @@ gchar
   {
     GtkWidget *chooser, *combobox;
     gint dialog_response;
+    GSList *supported_formats;
 
     chooser =
       gtk_file_chooser_dialog_new (_("Save screenshot as..."),
@@ -1434,18 +1432,13 @@ gchar
     gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (chooser), filename);
 
     combobox = gtk_combo_box_text_new ();
-    gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "png", _("PNG File"));
-    gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "jpg", _("JPG File"));
-    gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "bmp", _("BMP File"));
 
-    if (screenshooter_is_format_supported ("webp"))
-      gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "webp", _("WebP File"));
-
-    if (screenshooter_is_format_supported ("jxl"))
-      gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "jxl", _("JPEG XL File"));
-
-    if (screenshooter_is_format_supported ("avif"))
-      gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), "avif", _("AVIF File"));
+    supported_formats = screenshooter_get_supported_formats ();
+    for (GSList *lp = supported_formats; lp != NULL; lp = lp->next)
+      {
+        ImageFormat *format = lp->data;
+        gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), format->preferred_extension, format->name);
+      }
 
     gtk_combo_box_set_active_id (GTK_COMBO_BOX (combobox), extension);
     g_signal_connect (combobox, "changed", G_CALLBACK (cb_combo_file_extension_changed), chooser);
