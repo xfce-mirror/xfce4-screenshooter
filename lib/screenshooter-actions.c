@@ -24,6 +24,7 @@
 #include "screenshooter-global.h"
 #include "screenshooter-dialogs.h"
 #include "screenshooter-imgur.h"
+#include "screenshooter-format.h"
 
 
 
@@ -173,18 +174,15 @@ action_idle (gpointer user_data)
     {
       gchar *extension = NULL;
 
-      if (G_LIKELY (g_str_has_suffix (save_location, ".png")))
-        extension = g_strdup ("png");
-      else if (G_UNLIKELY (g_str_has_suffix (save_location, ".jpg") || g_str_has_suffix (save_location, ".jpeg")))
-        extension = g_strdup ("jpg");
-      else if (G_UNLIKELY (g_str_has_suffix (save_location, ".bmp")))
-        extension = g_strdup ("bmp");
-      else if (G_UNLIKELY (g_str_has_suffix (save_location, ".webp")))
-        extension = g_strdup ("webp");
-      else if (G_UNLIKELY (g_str_has_suffix (save_location, ".jxl")))
-        extension = g_strdup ("jxl");
-      else if (G_UNLIKELY (g_str_has_suffix (save_location, ".avif")))
-        extension = g_strdup ("avif");
+      for (GSList *lp = screenshooter_get_supported_formats (); lp != NULL; lp = lp->next)
+        {
+          ImageFormat *format = lp->data;
+          if (screenshooter_image_format_match_extension (format, save_location))
+            {
+              extension = g_strdup (format->preferred_extension);
+              break;
+            }
+        }
 
       if (extension)
         {

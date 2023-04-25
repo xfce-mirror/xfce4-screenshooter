@@ -24,6 +24,7 @@
 #include "screenshooter-utils.h"
 #include "screenshooter-actions.h"
 #include "screenshooter-capture.h"
+#include "screenshooter-format.h"
 #include "screenshooter-global.h"
 
 #endif
