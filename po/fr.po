@@ -243,7 +243,7 @@ msgstr "Fichier WebP"
 
 #: ../lib/screenshooter-dialogs.c:1443
 msgid "JPEG XL File"
-msgstr ""
+msgstr "Fichier JPEG XL"
 
 #: ../lib/screenshooter-dialogs.c:1509
 msgid "Preferences"
@@ -493,7 +493,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp and jxl are only supported if their respective "
 "pixbuf loaders are installed."
-msgstr ""
+msgstr "Chemin d’accès au fichier ou répertoire dans lequel la capture d’écran sera enregistrée, accepte les extensions png, jpg et bmp. webp et jxl ne sont pris en charge que si leurs « pixbuf loaders » respectifs sont installés."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
