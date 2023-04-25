@@ -137,8 +137,9 @@ cb_free_data (XfcePanelPlugin *plugin, PluginData *pd)
 {
   if (pd->style_id)
     g_signal_handler_disconnect (plugin, pd->style_id);
-
   pd->style_id = 0;
+
+  screenshooter_free_supported_formats ();
   g_free (pd->sd->screenshot_dir);
   g_free (pd->sd->title);
   g_free (pd->sd->app);
