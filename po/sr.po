@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-31 00:52+0100\n"
+"POT-Creation-Date: 2023-04-25 01:13+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>, 2012-2016,2018-2019\n"
-"Language-Team: Serbian (http://www.transifex.com/xfce/xfce-apps/language/sr/)\n"
+"Language-Team: Serbian (http://app.transifex.com/xfce/xfce-apps/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,183 +27,183 @@ msgstr ""
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb од %.2fKB"
 
-#: ../lib/screenshooter-dialogs.c:617
+#: ../lib/screenshooter-dialogs.c:626
 msgid "Transfer"
 msgstr "Пренос"
 
-#: ../lib/screenshooter-dialogs.c:638
+#: ../lib/screenshooter-dialogs.c:647
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Снимак површи се преноси на:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:879 ../lib/screenshooter-dialogs.c:888
-#: ../lib/screenshooter-dialogs.c:1116 ../lib/screenshooter-utils.c:148
+#: ../lib/screenshooter-dialogs.c:887 ../lib/screenshooter-dialogs.c:896
+#: ../lib/screenshooter-dialogs.c:1124 ../lib/screenshooter-utils.c:148
 #: ../lib/screenshooter-utils.c:192 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Слика радне површи"
 
-#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-dialogs.c:891
+#: ../lib/screenshooter-dialogs.c:889 ../lib/screenshooter-dialogs.c:899
 msgid "_Preferences"
 msgstr "_Својства"
 
-#: ../lib/screenshooter-dialogs.c:882 ../lib/screenshooter-dialogs.c:890
-#: ../lib/screenshooter-dialogs.c:1118
+#: ../lib/screenshooter-dialogs.c:890 ../lib/screenshooter-dialogs.c:898
+#: ../lib/screenshooter-dialogs.c:1126
 msgid "_Help"
 msgstr "_Помоћ"
 
-#: ../lib/screenshooter-dialogs.c:883 ../lib/screenshooter-dialogs.c:1501
+#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-dialogs.c:1511
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "_Затвори"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1120
+#: ../lib/screenshooter-dialogs.c:900 ../lib/screenshooter-dialogs.c:1128
 #: ../lib/screenshooter-job-callbacks.c:172
 msgid "_Cancel"
 msgstr "_Откажи"
 
-#: ../lib/screenshooter-dialogs.c:893 ../lib/screenshooter-dialogs.c:1121
+#: ../lib/screenshooter-dialogs.c:901 ../lib/screenshooter-dialogs.c:1129
 #: ../lib/screenshooter-job-callbacks.c:173
 msgid "_OK"
 msgstr "_У реду"
 
-#: ../lib/screenshooter-dialogs.c:926
+#: ../lib/screenshooter-dialogs.c:934
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Област за сликање</span>"
 
-#: ../lib/screenshooter-dialogs.c:948
+#: ../lib/screenshooter-dialogs.c:956
 msgid "Entire screen"
 msgstr "Цела радна површ"
 
-#: ../lib/screenshooter-dialogs.c:953 ../src/main.c:61
-#: ../panel-plugin/screenshooter-plugin.c:311
+#: ../lib/screenshooter-dialogs.c:961 ../src/main.c:61
+#: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "Сликај целу радну површ"
 
-#: ../lib/screenshooter-dialogs.c:962
+#: ../lib/screenshooter-dialogs.c:970
 msgid "Active window"
 msgstr "Истакнути прозор"
 
-#: ../lib/screenshooter-dialogs.c:967 ../src/main.c:108
-#: ../panel-plugin/screenshooter-plugin.c:316
+#: ../lib/screenshooter-dialogs.c:975 ../src/main.c:108
+#: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
 msgstr "Сликај тренутно истакнути прозор"
 
-#: ../lib/screenshooter-dialogs.c:976
+#: ../lib/screenshooter-dialogs.c:984
 msgid "Select a region"
 msgstr "Изаберите област"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:989
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Одредите област за сликање кликтањем на тачку радне површи без пуштања дугмета миша, превлачењем миша на следећи угао области и пуштањем дугмета миша\n\nПритисните Ктрл приликом превлачења области мишем."
 
-#: ../lib/screenshooter-dialogs.c:994
+#: ../lib/screenshooter-dialogs.c:1002
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Могућности</span>"
 
-#: ../lib/screenshooter-dialogs.c:1014
+#: ../lib/screenshooter-dialogs.c:1022
 msgid "Capture the mouse pointer"
 msgstr "Ухвати показивача миша"
 
-#: ../lib/screenshooter-dialogs.c:1018
+#: ../lib/screenshooter-dialogs.c:1026
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Додаје показивач у слику радне површи"
 
-#: ../lib/screenshooter-dialogs.c:1025
+#: ../lib/screenshooter-dialogs.c:1033
 msgid "Capture the window border"
 msgstr "Захват оквира прозора"
 
-#: ../lib/screenshooter-dialogs.c:1030
+#: ../lib/screenshooter-dialogs.c:1038
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Приказуј оквир прозора на слици заслона.\nОнемогућавање овог нема учинак на прозорима ЦСД-а."
 
-#: ../lib/screenshooter-dialogs.c:1047
+#: ../lib/screenshooter-dialogs.c:1055
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\"> Одлагање пре сликања</span>"
 
-#: ../lib/screenshooter-dialogs.c:1071
+#: ../lib/screenshooter-dialogs.c:1079
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Одлагање у секундама пре сликања радне површи"
 
-#: ../lib/screenshooter-dialogs.c:1074
+#: ../lib/screenshooter-dialogs.c:1082
 msgid "seconds"
 msgstr "секунди"
 
-#: ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-dialogs.c:1127
 msgid "_Back"
 msgstr "_Назад"
 
-#: ../lib/screenshooter-dialogs.c:1159
+#: ../lib/screenshooter-dialogs.c:1167
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Радња</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1174
+#: ../lib/screenshooter-dialogs.c:1182
 msgid "Save"
 msgstr "Сачувај"
 
-#: ../lib/screenshooter-dialogs.c:1180
+#: ../lib/screenshooter-dialogs.c:1188
 msgid "Save the screenshot to a PNG file"
 msgstr "Сачувај слику радне површи као датотеку ПНГ"
 
 #. Show in folder checkbox
-#: ../lib/screenshooter-dialogs.c:1184
+#: ../lib/screenshooter-dialogs.c:1192
 msgid "Show in Folder"
 msgstr "Приказуј у фасцикли"
 
-#: ../lib/screenshooter-dialogs.c:1191
+#: ../lib/screenshooter-dialogs.c:1199
 msgid "Shows the saved file in the folder"
 msgstr "Приказуј сачувану датотеку у фасцикли"
 
-#: ../lib/screenshooter-dialogs.c:1200
+#: ../lib/screenshooter-dialogs.c:1207
 msgid "Copy to the clipboard"
 msgstr "Умножи у оставу"
 
-#: ../lib/screenshooter-dialogs.c:1202
+#: ../lib/screenshooter-dialogs.c:1209
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Умножи слику радне површи у оставу исечака да би касније могла бити налепљена"
 
-#: ../lib/screenshooter-dialogs.c:1216
+#: ../lib/screenshooter-dialogs.c:1223
 msgid "Open with:"
 msgstr "Отвори са:"
 
-#: ../lib/screenshooter-dialogs.c:1224
+#: ../lib/screenshooter-dialogs.c:1231
 msgid "Open the screenshot with the chosen application"
 msgstr "Отвара слику радне површи подразумеваним програмом"
 
-#: ../lib/screenshooter-dialogs.c:1243 ../src/main.c:76
+#: ../lib/screenshooter-dialogs.c:1250 ../src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "Програм за отварање слике радне површи"
 
-#: ../lib/screenshooter-dialogs.c:1257
+#: ../lib/screenshooter-dialogs.c:1264
 msgid "Custom Action:"
 msgstr "Произвољне радње:"
 
-#: ../lib/screenshooter-dialogs.c:1265
+#: ../lib/screenshooter-dialogs.c:1272
 msgid "Execute the selected custom action"
 msgstr "Изврши изабрану произвољну радњу"
 
-#: ../lib/screenshooter-dialogs.c:1277
+#: ../lib/screenshooter-dialogs.c:1284
 msgid "Custom action to execute"
 msgstr "Произвољна радња за извршавање"
 
-#: ../lib/screenshooter-dialogs.c:1302
+#: ../lib/screenshooter-dialogs.c:1309
 msgid "Host on Imgur™"
 msgstr "Отпреми на Имгур™"
 
-#: ../lib/screenshooter-dialogs.c:1306
+#: ../lib/screenshooter-dialogs.c:1313
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr "Отпреми на Имгур™, на бесплатну мрежну услугу чувања слика"
 
-#: ../lib/screenshooter-dialogs.c:1318
+#: ../lib/screenshooter-dialogs.c:1325
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -211,75 +211,79 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Пазите на осетљив садржај, отпремљене слике ће бити видљиве јавно\nи нико не јемчи да неће бити избрисане.\nИксФЦЕ НИЈЕ повезан са, нити је усклађивање одобрено од стране Имгур™.\nАко користите услугу, морате се сложити са <a href=\"https://imgur.com/tos\">условима коришћења</a> Имгур™-а."
 
-#: ../lib/screenshooter-dialogs.c:1349
+#: ../lib/screenshooter-dialogs.c:1356
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Преглед</span>"
 
-#: ../lib/screenshooter-dialogs.c:1410
+#: ../lib/screenshooter-dialogs.c:1417
 msgid "Save screenshot as..."
 msgstr "Сачувај слику радне површи као..."
 
-#: ../lib/screenshooter-dialogs.c:1428
+#: ../lib/screenshooter-dialogs.c:1435
 msgid "PNG File"
 msgstr "Датотека ПНГ"
 
-#: ../lib/screenshooter-dialogs.c:1429
+#: ../lib/screenshooter-dialogs.c:1436
 msgid "JPG File"
 msgstr "Датотека ЈПГ"
 
-#: ../lib/screenshooter-dialogs.c:1430
+#: ../lib/screenshooter-dialogs.c:1437
 msgid "BMP File"
 msgstr "Датотека БМП"
 
-#: ../lib/screenshooter-dialogs.c:1433
+#: ../lib/screenshooter-dialogs.c:1440
 msgid "WebP File"
 msgstr "Датотека ВебП"
 
-#: ../lib/screenshooter-dialogs.c:1499
+#: ../lib/screenshooter-dialogs.c:1443
+msgid "JPEG XL File"
+msgstr ""
+
+#: ../lib/screenshooter-dialogs.c:1509
 msgid "Preferences"
 msgstr "Својства"
 
-#: ../lib/screenshooter-dialogs.c:1524
+#: ../lib/screenshooter-dialogs.c:1534
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Произвољне радње</span>"
 
-#: ../lib/screenshooter-dialogs.c:1543
+#: ../lib/screenshooter-dialogs.c:1553
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Можете подесити произвољне радње које ће бити доступне за руковање сликама заслона након њиховог сликања."
 
-#: ../lib/screenshooter-dialogs.c:1573
+#: ../lib/screenshooter-dialogs.c:1583
 msgid "Custom Action"
 msgstr "Произвољна радња"
 
-#: ../lib/screenshooter-dialogs.c:1586
+#: ../lib/screenshooter-dialogs.c:1596
 msgid "Add custom action"
 msgstr "Додај произвољну радњу"
 
-#: ../lib/screenshooter-dialogs.c:1593
+#: ../lib/screenshooter-dialogs.c:1603
 msgid "Remove selected custom action"
 msgstr "Уклони изабрану произвољну радњу"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1615
+#: ../lib/screenshooter-dialogs.c:1625
 msgid "Name"
 msgstr "Име"
 
-#: ../lib/screenshooter-dialogs.c:1616
+#: ../lib/screenshooter-dialogs.c:1626
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Име радње која ће се приказивати у прозорчићима радњи"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1625
+#: ../lib/screenshooter-dialogs.c:1635
 msgid "Command"
 msgstr "Наредба"
 
-#: ../lib/screenshooter-dialogs.c:1626
+#: ../lib/screenshooter-dialogs.c:1636
 msgid "Command that will be executed for this custom action"
 msgstr "Наредба која ће бити извршена у овој произвољној радњи"
 
-#: ../lib/screenshooter-dialogs.c:1633
+#: ../lib/screenshooter-dialogs.c:1643
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Користи %f као држача размака за место слику усликаног заслона"
@@ -471,7 +475,7 @@ msgstr "Укључује показивач на слици радне повр�
 msgid "Removes the window border from the screenshot"
 msgstr "Уклања оквир прозора са слике заслона"
 
-#: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:321
+#: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:318
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -481,9 +485,9 @@ msgstr "Одаберите област за сликање тако што ће
 #: ../src/main.c:88
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
-"and bmp extensions. webp is only supported if webp-pixbuf-loader is "
-"installed."
-msgstr "Путања датотеке или фасцикле где ће се чувати слика заслона, прихвата наставке пнг, јпг и бмп, а вебп је подржана ако је уграђен webp-pixbuf-loader."
+"and bmp extensions. webp and jxl are only supported if their respective "
+"pixbuf loaders are installed."
+msgstr ""
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
@@ -497,19 +501,19 @@ msgstr "Отпреми слику радне површи на Имгур, сл�
 msgid "Version information"
 msgstr "Подаци о издању"
 
-#: ../src/main.c:131
+#: ../src/main.c:144
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Сукоб могућности: --%s и --%s не могу бити коришћене у исто време.\n"
 
-#: ../src/main.c:133
+#: ../src/main.c:146
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "--%s могућност је коришћена само кад је задато --fullscreen, --window или --region. Биће занемарена.\n"
 
-#: ../src/main.c:144
+#: ../src/main.c:157
 #, c-format
 msgid ""
 "%s: %s\n"
