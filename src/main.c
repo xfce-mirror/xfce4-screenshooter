@@ -341,6 +341,7 @@ int main (int argc, char **argv)
   /* Save preferences */
   screenshooter_write_rc_file (rc_file, sd);
 
+  screenshooter_free_supported_formats ();
   g_free (sd->screenshot_dir);
   g_free (sd->title);
   g_free (sd->app);
