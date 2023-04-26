@@ -174,12 +174,11 @@ action_idle (gpointer user_data)
     {
       gchar *extension = NULL;
 
-      for (GSList *lp = screenshooter_get_supported_formats (); lp != NULL; lp = lp->next)
+      for (ImageFormat *format = screenshooter_get_image_formats (); format->type != NULL; format++)
         {
-          ImageFormat *format = lp->data;
-          if (screenshooter_image_format_match_extension (format, save_location))
+          if (format->supported && screenshooter_image_format_match_extension (format, save_location))
             {
-              extension = g_strdup (format->preferred_extension);
+              extension = g_strdup (format->extensions[0]);
               break;
             }
         }

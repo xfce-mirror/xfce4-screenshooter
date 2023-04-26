@@ -247,17 +247,12 @@ int main (int argc, char **argv)
   /* Just print the supported image formats if we are in supported formats mode */
   if (supported_formats)
     {
-      g_print ("%s\n", _("Currently supported image formats:"));
-
-      for (GSList *lp = screenshooter_get_supported_formats (); lp != NULL; lp = lp->next)
+      for (ImageFormat *format = screenshooter_get_image_formats (); format->type != NULL; format++)
         {
-          ImageFormat *format = lp->data;
           gchar *extensions = g_strjoinv (", ", format->extensions);
-          g_print ("  * %s (%s)\n", format->name, extensions);
+          g_print ("[%c] %s (%s)\n", format->supported ? 'x' : ' ', format->name, extensions);
           g_free (extensions);
         }
-
-      screenshooter_free_supported_formats ();
 
       return EXIT_SUCCESS;
     }
@@ -365,7 +360,6 @@ int main (int argc, char **argv)
   /* Save preferences */
   screenshooter_write_rc_file (rc_file, sd);
 
-  screenshooter_free_supported_formats ();
   g_free (sd->screenshot_dir);
   g_free (sd->title);
   g_free (sd->app);

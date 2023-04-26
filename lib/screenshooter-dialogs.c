@@ -582,9 +582,10 @@ static gchar
   char** option_keys = NULL;
   char** option_values = NULL;
 
-  for (GSList *lp = screenshooter_get_supported_formats (); lp != NULL; lp = lp->next)
+  for (ImageFormat *format = screenshooter_get_image_formats (); format->type != NULL; format++)
     {
-      ImageFormat *format = lp->data;
+      if (!format->supported) continue;
+
       if (screenshooter_image_format_match_extension (format, save_path))
         {
           type = format->type;
@@ -1411,7 +1412,6 @@ gchar
   {
     GtkWidget *chooser, *combobox;
     gint dialog_response;
-    GSList *supported_formats;
 
     chooser =
       gtk_file_chooser_dialog_new (_("Save screenshot as..."),
@@ -1433,11 +1433,10 @@ gchar
 
     combobox = gtk_combo_box_text_new ();
 
-    supported_formats = screenshooter_get_supported_formats ();
-    for (GSList *lp = supported_formats; lp != NULL; lp = lp->next)
+    for (ImageFormat *format = screenshooter_get_image_formats (); format->type != NULL; format++)
       {
-        ImageFormat *format = lp->data;
-        gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), format->preferred_extension, format->name);
+        if (!format->supported) continue;
+        gtk_combo_box_text_append (GTK_COMBO_BOX_TEXT (combobox), format->extensions[0], format->name);
       }
 
     gtk_combo_box_set_active_id (GTK_COMBO_BOX (combobox), extension);
