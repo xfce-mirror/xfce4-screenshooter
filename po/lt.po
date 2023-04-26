@@ -239,7 +239,7 @@ msgstr "JPEG XL failas"
 
 #: ../lib/screenshooter-dialogs.c:1448
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF failas"
 
 #: ../lib/screenshooter-dialogs.c:1514
 msgid "Preferences"
@@ -489,7 +489,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Failo kelias arba katalogas, į kurį bus įrašyta ekrano kopija. Priima png, jpg ir bmp prievardžius. Webp, jxl ir avif yra palaikomi tik tuo atveju, jeigu yra įdiegti atitinkami jų pixbuf įkėlikliai."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
