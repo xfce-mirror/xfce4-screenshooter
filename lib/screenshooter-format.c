@@ -26,19 +26,16 @@
 /* Internals */
 
 
-static GSList *SUPPORTED_FORMATS = NULL;
 
-
-
-static void
-screenshooter_image_format_free (gpointer data)
-{
-  ImageFormat *format = data;
-  g_free (format->extensions);
-  g_free (format->option_keys);
-  g_free (format->option_values);
-  g_free (format);
-}
+static ImageFormat IMAGE_FORMATS[] = {
+  { "png", N_("PNG File"), { "png", NULL }, { NULL }, { NULL }, TRUE },
+  { "jpeg", N_("JPEG File"), { "jpg", "jpeg", NULL }, { NULL }, { NULL }, TRUE },
+  { "bmp", N_("BMP File"), { "bmp", NULL }, { NULL }, { NULL }, TRUE },
+  { "webp", N_("WebP File"), { "webp", NULL }, { NULL }, { NULL }, FALSE },
+  { "jxl", N_("JPEG XL File"), { "jxl", NULL }, { "quality", NULL }, { "100", NULL }, FALSE },
+  { "avif", N_("AVIF File"), { "avif", NULL }, { NULL }, { NULL }, FALSE },
+  { NULL, NULL, { NULL }, { NULL }, { NULL }, FALSE }
+};
 
 
 
@@ -74,85 +71,22 @@ screenshooter_is_format_supported (const gchar *format)
 
 
 
-GSList *
-screenshooter_get_supported_formats (void)
+ImageFormat
+*screenshooter_get_image_formats (void)
 {
-  ImageFormat *format;
+  static gboolean supported_formats_checked = FALSE;
 
-  if (SUPPORTED_FORMATS != NULL)
-    return SUPPORTED_FORMATS;
-
-  format = g_new0 (ImageFormat, 1);
-  format->type = "png";
-  format->name = _("PNG File");
-  format->preferred_extension = "png";
-  format->extensions = g_new0 (gchar *, 2);
-  format->extensions[0] = ".png";
-  SUPPORTED_FORMATS = g_slist_append (SUPPORTED_FORMATS, format);
-
-  format = g_new0 (ImageFormat, 1);
-  format->type = "jpeg";
-  format->name = _("JPEG File");
-  format->preferred_extension = "jpg";
-  format->extensions = g_new0 (gchar *, 3);
-  format->extensions[0] = ".jpg";
-  format->extensions[1] = ".jpeg";
-  SUPPORTED_FORMATS = g_slist_append (SUPPORTED_FORMATS, format);
-
-  format = g_new0 (ImageFormat, 1);
-  format->type = "bmp";
-  format->name = _("BMP File");
-  format->preferred_extension = "bmp";
-  format->extensions = g_new0 (gchar *, 2);
-  format->extensions[0] = ".bmp";
-  SUPPORTED_FORMATS = g_slist_append (SUPPORTED_FORMATS, format);
-
-  if (screenshooter_is_format_supported ("webp"))
+  if (!supported_formats_checked)
     {
-      format = g_new0 (ImageFormat, 1);
-      format->type = "webp";
-      format->name = _("WebP File");
-      format->preferred_extension = "webp";
-      format->extensions = g_new0 (gchar *, 2);
-      format->extensions[0] = ".webp";
-      SUPPORTED_FORMATS = g_slist_append (SUPPORTED_FORMATS, format);
+      for (ImageFormat *format = IMAGE_FORMATS; format->type != NULL; format++)
+        {
+          if (format->supported) continue;
+          format->supported = screenshooter_is_format_supported(format->type);
+        }
+      supported_formats_checked = TRUE;
     }
 
-  if (screenshooter_is_format_supported ("jxl"))
-    {
-      format = g_new0 (ImageFormat, 1);
-      format->type = "jxl";
-      format->name = _("JPEG XL File");
-      format->preferred_extension = "jxl";
-      format->extensions = g_new0 (gchar*, 2);
-      format->extensions[0] = ".jxl";
-      format->option_keys = g_new0 (gchar*, 2);
-      format->option_keys[0] = "quality";
-      format->option_values = g_new0 (gchar*, 2);
-      format->option_values[0] = "100";
-      SUPPORTED_FORMATS = g_slist_append (SUPPORTED_FORMATS, format);
-    }
-
-  if (screenshooter_is_format_supported ("avif"))
-    {
-      format = g_new0 (ImageFormat, 1);
-      format->type = "avif";
-      format->name = _("AVIF File");
-      format->preferred_extension = "avif";
-      format->extensions = g_new0 (gchar *, 2);
-      format->extensions[0] = ".avif";
-      SUPPORTED_FORMATS = g_slist_append (SUPPORTED_FORMATS, format);
-    }
-
-  return SUPPORTED_FORMATS;
-}
-
-
-
-void
-screenshooter_free_supported_formats (void)
-{
-  g_slist_free_full (SUPPORTED_FORMATS, screenshooter_image_format_free);
+  return IMAGE_FORMATS;
 }
 
 
@@ -160,12 +94,13 @@ screenshooter_free_supported_formats (void)
 gboolean
 screenshooter_image_format_match_extension (ImageFormat *format, gchar *filepath)
 {
-  if (G_UNLIKELY (format->extensions == NULL))
-    return FALSE;
-
-  for (gchar **ext = format->extensions; *ext; ext++)
+  for (gchar **ext = format->extensions; *ext != NULL; ext++)
     {
-      if (g_str_has_suffix (filepath, *ext))
+      gchar* ext_with_dot = g_strdup_printf (".%s", *ext);
+      gboolean match = g_str_has_suffix (filepath, ext_with_dot);
+      g_free (ext_with_dot);
+
+      if (match)
         return TRUE;
     }
   
