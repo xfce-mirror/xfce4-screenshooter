@@ -591,6 +591,7 @@ static gchar
           type = format->type;
           option_keys = format->option_keys;
           option_values = format->option_values;
+          break;
         }
     }
 
