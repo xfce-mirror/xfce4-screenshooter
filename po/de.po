@@ -245,7 +245,7 @@ msgstr "JPEG XL Datei"
 
 #: ../lib/screenshooter-dialogs.c:1448
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF Datei"
 
 #: ../lib/screenshooter-dialogs.c:1514
 msgid "Preferences"
@@ -495,7 +495,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Dateipfad oder Verzeichnis, in dem das Bildschirmfoto gespeichert wird, akzeptiert die Erweiterungen png, jpg und bmp. webp, jxl und avif werden nur unterstützt, wenn deren pixbuf-loader installiert ist."
 
 #: ../src/main.c:93
 msgid "Show the saved file in the folder."
