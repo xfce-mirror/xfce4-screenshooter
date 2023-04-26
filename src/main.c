@@ -34,6 +34,7 @@ gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean mouse = FALSE;
 gboolean no_border = FALSE;
+gboolean supported_formats = FALSE;
 gboolean clipboard = FALSE;
 gboolean upload_imgur = FALSE;
 gboolean show_in_folder = FALSE;
@@ -106,6 +107,11 @@ static GOptionEntry entries[] =
   {
     "window", 'w', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &window,
     N_("Take a screenshot of the active window"),
+    NULL
+  },
+  {
+    "supported-formats", 0, G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &supported_formats,
+    N_("Lists supported image formats, results can vary depending on installed pixbuf loaders"),
     NULL
   },
   {
@@ -238,6 +244,24 @@ int main (int argc, char **argv)
       return EXIT_SUCCESS;
     }
 
+  /* Just print the supported image formats if we are in supported formats mode */
+  if (supported_formats)
+    {
+      g_print ("%s\n", _("Currently supported image formats:"));
+
+      for (GSList *lp = screenshooter_get_supported_formats (); lp != NULL; lp = lp->next)
+        {
+          ImageFormat *format = lp->data;
+          gchar *extensions = g_strjoinv (", ", format->extensions);
+          g_print ("  * %s (%s)\n", format->name, extensions);
+          g_free (extensions);
+        }
+
+      screenshooter_free_supported_formats ();
+
+      return EXIT_SUCCESS;
+    }
+
   sd = g_new0 (ScreenshotData, 1);
   sd->path_is_dir = TRUE;
   sd->app_info = NULL;
@@ -341,6 +365,7 @@ int main (int argc, char **argv)
   /* Save preferences */
   screenshooter_write_rc_file (rc_file, sd);
 
+  screenshooter_free_supported_formats ();
   g_free (sd->screenshot_dir);
   g_free (sd->title);
   g_free (sd->app);
