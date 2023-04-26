@@ -103,6 +103,43 @@ get_datetime (const gchar *format)
 
 
 
+/* Check whether specified path is a writable directory
+ * @path: URI to the directory
+ */
+static gboolean
+screenshooter_is_directory_writable (const gchar *path)
+{
+  GFile *dir;
+  GFileInfo *info;
+  GError *error = NULL;
+  gboolean result;
+
+  dir = g_file_new_for_uri (path);
+  info = g_file_query_info (dir, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE ","
+                               G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE ","
+                               G_FILE_ATTRIBUTE_STANDARD_TYPE,
+                               G_FILE_QUERY_INFO_NONE, NULL, &error);
+
+  result = (g_file_query_exists (dir, NULL) &&
+            g_file_info_get_file_type (info) == G_FILE_TYPE_DIRECTORY &&
+            g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE) &&
+            g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE));
+
+  if (G_UNLIKELY (info == NULL))
+    {
+      g_warning ("Failed to query file info: %s", path);
+      g_error_free (error);
+      return FALSE;
+    }
+
+  g_object_unref (dir);
+  g_object_unref (info);
+
+  return result;
+}
+
+
+
 /* Public */
 
 
@@ -134,7 +171,7 @@ screenshooter_copy_to_clipboard (GdkPixbuf *screenshot)
 void
 screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 {
-  const gchar *default_uri = screenshooter_get_xdg_image_dir_uri ();
+  gchar *default_uri = screenshooter_get_xdg_image_dir_uri ();
 
   XfceRc *rc;
   gint delay = 0;
@@ -215,6 +252,16 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->enable_imgur_upload = enable_imgur_upload;
   sd->show_in_folder = show_in_folder;
   sd->custom_action_command = last_custom_action_command;
+
+  /* Check if the screenshot directory read from the preferences is valid */
+  if (G_UNLIKELY (!screenshooter_is_directory_writable (sd->screenshot_dir)))
+    {
+      g_warning ("Invalid directory or permissions: %s", sd->screenshot_dir);
+      g_free (sd->screenshot_dir);
+      sd->screenshot_dir = g_strdup (default_uri);
+    }
+
+  g_free (default_uri);
 }
 
 
@@ -242,9 +289,14 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   xfce_rc_write_entry (rc, "custom_action_command", sd->custom_action_command);
   xfce_rc_write_entry (rc, "last_user", sd->last_user);
   xfce_rc_write_entry (rc, "last_extension", sd->last_extension);
-  xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
   xfce_rc_write_bool_entry (rc, "enable_imgur_upload", sd->enable_imgur_upload);
   xfce_rc_write_bool_entry (rc, "show_in_folder", sd->show_in_folder);
+
+  /* do not save if screenshot_dir is not path, i.e. specified from cli */
+  if (sd->path_is_dir)
+  {
+    xfce_rc_write_entry (rc, "screenshot_dir", sd->screenshot_dir);
+  }
 
   /* do not save if action was specified from cli */
   if (!sd->action_specified)
@@ -636,43 +688,6 @@ screenshooter_is_format_supported (const gchar *format)
     }
 
   g_slist_free_1 (supported_formats);
-
-  return result;
-}
-
-
-
-/* Check whether specified path is a writable directory
- * @path: URI to the directory
- */
-gboolean
-screenshooter_is_directory_writable (const gchar *path)
-{
-  GFile *dir;
-  GFileInfo *info;
-  GError *error = NULL;
-  gboolean result;
-
-  dir = g_file_new_for_uri (path);
-  info = g_file_query_info (dir, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE ","
-                               G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE ","
-                               G_FILE_ATTRIBUTE_STANDARD_TYPE,
-                               G_FILE_QUERY_INFO_NONE, NULL, &error);
-
-  result = (g_file_query_exists (dir, NULL) &&
-            g_file_info_get_file_type (info) == G_FILE_TYPE_DIRECTORY &&
-            g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE) &&
-            g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE));
-
-  if (G_UNLIKELY (info == NULL))
-    {
-      g_warning ("Failed to query file info: %s", path);
-      g_error_free (error);
-      return FALSE;
-    }
-
-  g_object_unref (dir);
-  g_object_unref (info);
 
   return result;
 }

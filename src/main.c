@@ -272,14 +272,6 @@ int main (int argc, char **argv)
   /* Default to no action specified */
   sd->action_specified = FALSE;
 
-  /* Check if the directory read from the preferences is valid */
-  if (G_UNLIKELY (!screenshooter_is_directory_writable (sd->screenshot_dir)))
-    {
-      g_warning ("Invalid directory or permissions: %s", sd->screenshot_dir);
-      g_free (sd->screenshot_dir);
-      sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
-    }
-
   /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
     {
