@@ -34,6 +34,7 @@ gboolean region = FALSE;
 gboolean fullscreen = FALSE;
 gboolean mouse = FALSE;
 gboolean no_border = FALSE;
+gboolean supported_formats = FALSE;
 gboolean clipboard = FALSE;
 gboolean upload_imgur = FALSE;
 gboolean show_in_folder = FALSE;
@@ -106,6 +107,11 @@ static GOptionEntry entries[] =
   {
     "window", 'w', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &window,
     N_("Take a screenshot of the active window"),
+    NULL
+  },
+  {
+    "supported-formats", 0, G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &supported_formats,
+    N_("Lists supported image formats, results can vary depending on installed pixbuf loaders"),
     NULL
   },
   {
@@ -234,6 +240,19 @@ int main (int argc, char **argv)
   if (version)
     {
       g_print ("%s\n", PACKAGE_STRING);
+
+      return EXIT_SUCCESS;
+    }
+
+  /* Just print the supported image formats if we are in supported formats mode */
+  if (supported_formats)
+    {
+      for (ImageFormat *format = screenshooter_get_image_formats (); format->type != NULL; format++)
+        {
+          gchar *extensions = g_strjoinv (", ", format->extensions);
+          g_print ("[%c] %s (%s)\n", format->supported ? 'x' : ' ', format->name, extensions);
+          g_free (extensions);
+        }
 
       return EXIT_SUCCESS;
     }
