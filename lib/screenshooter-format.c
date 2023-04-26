@@ -96,7 +96,7 @@ screenshooter_image_format_match_extension (ImageFormat *format, gchar *filepath
 {
   for (gchar **ext = format->extensions; *ext != NULL; ext++)
     {
-      gchar* ext_with_dot = g_strdup_printf (".%s", *ext);
+      gchar *ext_with_dot = g_strdup_printf (".%s", *ext);
       gboolean match = g_str_has_suffix (filepath, ext_with_dot);
       g_free (ext_with_dot);
 
