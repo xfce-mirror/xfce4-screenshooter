@@ -152,7 +152,7 @@ msgstr "Сачувај"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Сачувај слику радне у датотеку"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -287,7 +287,7 @@ msgstr "Датотека ПНГ"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "Датотека ЈПЕГ"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -299,11 +299,11 @@ msgstr "Датотека ВебП"
 
 #: ../lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "Датотека ЈПЕГ ХЛ"
 
 #: ../lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "Датотека АВИФ"
 
 #: ../lib/screenshooter-utils.c:367
 #, c-format
@@ -491,7 +491,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Путања датотеке или фасцикле где ће се сачувати слика радне површи, прихвата наставке пнг, јпг и бмп. вебп, јхл и авиф у подржане само ако су њихови одговарајући програми читачи уграђени."
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -509,7 +509,7 @@ msgstr "Подаци о издању"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Прикажи списак подржаних облика слика, налази се могу разликовати у зависности од уграђених читача облика слика"
 
 #: ../src/main.c:150
 #, c-format
