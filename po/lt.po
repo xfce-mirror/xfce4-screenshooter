@@ -150,7 +150,7 @@ msgstr "Įrašyti"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Įrašyti ekrano kopiją į failą"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -285,7 +285,7 @@ msgstr "PNG failas"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG failas"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -507,7 +507,7 @@ msgstr "Versijos informacija"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Išvardija palaikomus paveikslų formatus. Rezultatai gali skirtis, priklausomai nuo įdiegtų pixbuf įkėliklių."
 
 #: ../src/main.c:150
 #, c-format
