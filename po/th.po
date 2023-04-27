@@ -9,198 +9,198 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-31 00:52+0100\n"
+"POT-Creation-Date: 2023-04-27 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>, 2013,2015,2018,2021\n"
-"Language-Team: Thai (http://www.transifex.com/xfce/xfce-apps/language/th/)\n"
+"Language-Team: Thai (http://app.transifex.com/xfce/xfce-apps/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../lib/screenshooter-dialogs.c:523
+#: ../lib/screenshooter-dialogs.c:524
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKB จาก %.2fKB"
 
-#: ../lib/screenshooter-dialogs.c:617
+#: ../lib/screenshooter-dialogs.c:627
 msgid "Transfer"
 msgstr "ถ่ายโอน"
 
-#: ../lib/screenshooter-dialogs.c:638
+#: ../lib/screenshooter-dialogs.c:648
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">กำลังถ่ายโอนภาพหน้าจอไปยัง:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:879 ../lib/screenshooter-dialogs.c:888
-#: ../lib/screenshooter-dialogs.c:1116 ../lib/screenshooter-utils.c:148
-#: ../lib/screenshooter-utils.c:192 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:888 ../lib/screenshooter-dialogs.c:897
+#: ../lib/screenshooter-dialogs.c:1125 ../lib/screenshooter-utils.c:185
+#: ../lib/screenshooter-utils.c:229 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "ภาพหน้าจอ"
 
-#: ../lib/screenshooter-dialogs.c:881 ../lib/screenshooter-dialogs.c:891
+#: ../lib/screenshooter-dialogs.c:890 ../lib/screenshooter-dialogs.c:900
 msgid "_Preferences"
 msgstr "_ปรับแต่ง"
 
-#: ../lib/screenshooter-dialogs.c:882 ../lib/screenshooter-dialogs.c:890
-#: ../lib/screenshooter-dialogs.c:1118
+#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-dialogs.c:899
+#: ../lib/screenshooter-dialogs.c:1127
 msgid "_Help"
 msgstr "_วิธีใช้"
 
-#: ../lib/screenshooter-dialogs.c:883 ../lib/screenshooter-dialogs.c:1501
+#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1509
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "ปิ_ด"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1120
+#: ../lib/screenshooter-dialogs.c:901 ../lib/screenshooter-dialogs.c:1129
 #: ../lib/screenshooter-job-callbacks.c:172
 msgid "_Cancel"
 msgstr "_ยกเลิก"
 
-#: ../lib/screenshooter-dialogs.c:893 ../lib/screenshooter-dialogs.c:1121
+#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-dialogs.c:1130
 #: ../lib/screenshooter-job-callbacks.c:173
 msgid "_OK"
 msgstr "_ตกลง"
 
-#: ../lib/screenshooter-dialogs.c:926
+#: ../lib/screenshooter-dialogs.c:935
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">พื้นที่ที่จะจับภาพ</span>"
 
-#: ../lib/screenshooter-dialogs.c:948
+#: ../lib/screenshooter-dialogs.c:957
 msgid "Entire screen"
 msgstr "ทั้งหน้าจอ"
 
-#: ../lib/screenshooter-dialogs.c:953 ../src/main.c:61
-#: ../panel-plugin/screenshooter-plugin.c:311
+#: ../lib/screenshooter-dialogs.c:962 ../src/main.c:62
+#: ../panel-plugin/screenshooter-plugin.c:308
 msgid "Take a screenshot of the entire screen"
 msgstr "จับภาพหน้าจอทั้งหน้าจอ"
 
-#: ../lib/screenshooter-dialogs.c:962
+#: ../lib/screenshooter-dialogs.c:971
 msgid "Active window"
 msgstr "หน้าต่างที่แอคทีฟ"
 
-#: ../lib/screenshooter-dialogs.c:967 ../src/main.c:108
-#: ../panel-plugin/screenshooter-plugin.c:316
+#: ../lib/screenshooter-dialogs.c:976 ../src/main.c:109
+#: ../panel-plugin/screenshooter-plugin.c:313
 msgid "Take a screenshot of the active window"
 msgstr "จับภาพหน้าจอของหน้าต่างที่แอคทีฟ"
 
-#: ../lib/screenshooter-dialogs.c:976
+#: ../lib/screenshooter-dialogs.c:985
 msgid "Select a region"
 msgstr "เลือกพื้นที่"
 
-#: ../lib/screenshooter-dialogs.c:981
+#: ../lib/screenshooter-dialogs.c:990
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "เลือกพื้นที่ที่จะจับภาพ โดยคลิกที่จุดจุดหนึ่งบนหน้าจอโดยไม่ต้องปล่อยปุ่มเมาส์ แล้วลากเมาส์ไปยังอีกมุมหนึ่งของพื้นที่ที่ต้องการ แล้วจึงปล่อยปุ่มเมาส์\n\nกด Ctrl ขณะลากหากต้องการย้ายพื้นที่"
 
-#: ../lib/screenshooter-dialogs.c:994
+#: ../lib/screenshooter-dialogs.c:1003
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ตัวเลือก</span>"
 
-#: ../lib/screenshooter-dialogs.c:1014
+#: ../lib/screenshooter-dialogs.c:1023
 msgid "Capture the mouse pointer"
 msgstr "จับภาพตัวชี้เมาส์"
 
-#: ../lib/screenshooter-dialogs.c:1018
+#: ../lib/screenshooter-dialogs.c:1027
 msgid "Display the mouse pointer on the screenshot"
 msgstr "แสดงตัวชี้เมาส์ในภาพหน้าจอที่จับด้วย"
 
-#: ../lib/screenshooter-dialogs.c:1025
+#: ../lib/screenshooter-dialogs.c:1034
 msgid "Capture the window border"
 msgstr "จับภาพกรอบหน้าต่าง"
 
-#: ../lib/screenshooter-dialogs.c:1030
+#: ../lib/screenshooter-dialogs.c:1039
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "รวมขอบหน้าต่างในภาพที่จับด้วย\nการปิดตัวเลือกนี้ไม่มีผลกับหน้าต่าง CSD"
 
-#: ../lib/screenshooter-dialogs.c:1047
+#: ../lib/screenshooter-dialogs.c:1056
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">หน่วงเวลาก่อนจับภาพ</span>"
 
-#: ../lib/screenshooter-dialogs.c:1071
+#: ../lib/screenshooter-dialogs.c:1080
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "ระยะเวลาเป็นวินาทีที่จะหยุดคอยก่อนจับภาพหน้าจอ"
 
-#: ../lib/screenshooter-dialogs.c:1074
+#: ../lib/screenshooter-dialogs.c:1083
 msgid "seconds"
 msgstr "วินาที"
 
-#: ../lib/screenshooter-dialogs.c:1119
+#: ../lib/screenshooter-dialogs.c:1128
 msgid "_Back"
 msgstr "_ถอยกลับ"
 
-#: ../lib/screenshooter-dialogs.c:1159
+#: ../lib/screenshooter-dialogs.c:1168
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">การกระทำ</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1174
+#: ../lib/screenshooter-dialogs.c:1183
 msgid "Save"
 msgstr "บันทึก"
 
-#: ../lib/screenshooter-dialogs.c:1180
-msgid "Save the screenshot to a PNG file"
-msgstr "บันทึกภาพหน้าจอลงในแฟ้ม PNG"
+#: ../lib/screenshooter-dialogs.c:1189
+msgid "Save the screenshot to a file"
+msgstr ""
 
 #. Show in folder checkbox
-#: ../lib/screenshooter-dialogs.c:1184
+#: ../lib/screenshooter-dialogs.c:1193
 msgid "Show in Folder"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1191
+#: ../lib/screenshooter-dialogs.c:1200
 msgid "Shows the saved file in the folder"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1200
+#: ../lib/screenshooter-dialogs.c:1208
 msgid "Copy to the clipboard"
 msgstr "คัดลอกลงในคลิปบอร์ด"
 
-#: ../lib/screenshooter-dialogs.c:1202
+#: ../lib/screenshooter-dialogs.c:1210
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "คัดลอกภาพหน้าจอลงในคลิปบอร์ด เพื่อที่จะสามารถแปะลงในโปรแกรมอื่นได้ในภายหลัง"
 
-#: ../lib/screenshooter-dialogs.c:1216
+#: ../lib/screenshooter-dialogs.c:1224
 msgid "Open with:"
 msgstr "เปิดด้วย:"
 
-#: ../lib/screenshooter-dialogs.c:1224
+#: ../lib/screenshooter-dialogs.c:1232
 msgid "Open the screenshot with the chosen application"
 msgstr "เปิดภาพหน้าจอด้วยโปรแกรมที่เลือก"
 
-#: ../lib/screenshooter-dialogs.c:1243 ../src/main.c:76
+#: ../lib/screenshooter-dialogs.c:1251 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "โปรแกรมที่จะใช้เปิดภาพหน้าจอ"
 
-#: ../lib/screenshooter-dialogs.c:1257
+#: ../lib/screenshooter-dialogs.c:1265
 msgid "Custom Action:"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1265
+#: ../lib/screenshooter-dialogs.c:1273
 msgid "Execute the selected custom action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1277
+#: ../lib/screenshooter-dialogs.c:1285
 msgid "Custom action to execute"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1302
+#: ../lib/screenshooter-dialogs.c:1310
 msgid "Host on Imgur™"
 msgstr "โฮสต์ที่ Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1306
+#: ../lib/screenshooter-dialogs.c:1314
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr "โฮสต์ภาพหน้าจอไว้ที่ Imgur™ ซึ่งเป็นบริการโฮสต์ภาพออนไลน์ฟรี"
 
-#: ../lib/screenshooter-dialogs.c:1318
+#: ../lib/screenshooter-dialogs.c:1326
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -208,75 +208,59 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "โปรดระวังเนื้อหาที่อ่อนไหว ภาพที่อัปโหลดจะปรากฏต่อสาธารณะ\nและไม่มีการรับประกันว่าจะสามารถลบได้หรือไม่\nXfce ไม่ได้มีส่วนเกี่ยวข้องกับ Imgur™ และการเชื่อมรวมนี้ก็ไม่ได้ผ่านการรับรองโดย Imgur™\nถ้าคุณใช้ความสามารถนี้ คุณต้องยอมรับ <a href=\"https://imgur.com/tos\">เงื่อนไขการให้บริการ</a> ของ Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1349
+#: ../lib/screenshooter-dialogs.c:1357
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ภาพตัวอย่าง</span>"
 
-#: ../lib/screenshooter-dialogs.c:1410
+#: ../lib/screenshooter-dialogs.c:1418
 msgid "Save screenshot as..."
 msgstr "บันทึกภาพหน้าจอเป็น..."
 
-#: ../lib/screenshooter-dialogs.c:1428
-msgid "PNG File"
-msgstr "แฟ้ม PNG"
-
-#: ../lib/screenshooter-dialogs.c:1429
-msgid "JPG File"
-msgstr "แฟ้ม JPG"
-
-#: ../lib/screenshooter-dialogs.c:1430
-msgid "BMP File"
-msgstr "แฟ้ม BMP"
-
-#: ../lib/screenshooter-dialogs.c:1433
-msgid "WebP File"
-msgstr ""
-
-#: ../lib/screenshooter-dialogs.c:1499
+#: ../lib/screenshooter-dialogs.c:1507
 msgid "Preferences"
 msgstr "ปรับแต่ง"
 
-#: ../lib/screenshooter-dialogs.c:1524
+#: ../lib/screenshooter-dialogs.c:1532
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1543
+#: ../lib/screenshooter-dialogs.c:1551
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1573
+#: ../lib/screenshooter-dialogs.c:1581
 msgid "Custom Action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1586
+#: ../lib/screenshooter-dialogs.c:1594
 msgid "Add custom action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1593
+#: ../lib/screenshooter-dialogs.c:1601
 msgid "Remove selected custom action"
 msgstr ""
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1615
+#: ../lib/screenshooter-dialogs.c:1623
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../lib/screenshooter-dialogs.c:1616
+#: ../lib/screenshooter-dialogs.c:1624
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr ""
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1625
+#: ../lib/screenshooter-dialogs.c:1633
 msgid "Command"
 msgstr "คำสั่ง"
 
-#: ../lib/screenshooter-dialogs.c:1626
+#: ../lib/screenshooter-dialogs.c:1634
 msgid "Command that will be executed for this custom action"
 msgstr ""
 
-#: ../lib/screenshooter-dialogs.c:1633
+#: ../lib/screenshooter-dialogs.c:1641
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr ""
@@ -294,14 +278,38 @@ msgstr ""
 msgid "Failed to run the custom action %s"
 msgstr ""
 
-#: ../lib/screenshooter-utils.c:315
+#: ../lib/screenshooter-format.c:31
+msgid "PNG File"
+msgstr "แฟ้ม PNG"
+
+#: ../lib/screenshooter-format.c:32
+msgid "JPEG File"
+msgstr ""
+
+#: ../lib/screenshooter-format.c:33
+msgid "BMP File"
+msgstr "แฟ้ม BMP"
+
+#: ../lib/screenshooter-format.c:34
+msgid "WebP File"
+msgstr ""
+
+#: ../lib/screenshooter-format.c:35
+msgid "JPEG XL File"
+msgstr ""
+
+#: ../lib/screenshooter-format.c:36
+msgid "AVIF File"
+msgstr ""
+
+#: ../lib/screenshooter-utils.c:367
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>ไม่สามารถเรียกโปรแกรมทำงานได้</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:390
+#: ../lib/screenshooter-utils.c:442
 msgid "Error"
 msgstr "ข้อผิดพลาด"
 
@@ -452,61 +460,67 @@ msgid ""
 "on the image hosting service"
 msgstr "หมายเหตุกำกับภาพหน้าจอ ซึ่งจะใช้ในการแสดงภาพหน้าจอบนเว็บโฮสต์รูปภาพ"
 
-#: ../src/main.c:51
+#: ../src/main.c:52
 msgid "Copy the screenshot to the clipboard"
 msgstr "คัดลอกภาพหน้าจอลงในคลิปบอร์ด"
 
-#: ../src/main.c:56
+#: ../src/main.c:57
 msgid "Delay in seconds before taking the screenshot"
 msgstr "ระยะเวลาเป็นวินาทีที่จะหยุดคอยก่อนจับภาพหน้าจอ"
 
-#: ../src/main.c:66
+#: ../src/main.c:67
 msgid "Display the mouse on the screenshot"
 msgstr "แสดงตัวชี้เมาส์ในภาพหน้าจอที่จับด้วย"
 
-#: ../src/main.c:71
+#: ../src/main.c:72
 msgid "Removes the window border from the screenshot"
 msgstr "ตัดกรอบหน้าต่างออกจากภาพหน้าจอที่จับ"
 
-#: ../src/main.c:81 ../panel-plugin/screenshooter-plugin.c:321
+#: ../src/main.c:82 ../panel-plugin/screenshooter-plugin.c:318
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "เลือกพื้นที่ที่จะจับภาพ โดยคลิกที่จุดจุดหนึ่งบนหน้าจอโดยไม่ต้องปล่อยปุ่มเมาส์ แล้วลากเมาส์ไปยังอีกมุมหนึ่งของพื้นที่ที่ต้องการ แล้วจึงปล่อยปุ่มเมาส์"
 
-#: ../src/main.c:88
+#: ../src/main.c:89
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
-"and bmp extensions. webp is only supported if webp-pixbuf-loader is "
-"installed."
+"and bmp extensions. webp, jxl and avif are only supported if their "
+"respective pixbuf loaders are installed."
 msgstr ""
 
-#: ../src/main.c:93
+#: ../src/main.c:94
 msgid "Show the saved file in the folder."
 msgstr ""
 
-#: ../src/main.c:98
+#: ../src/main.c:99
 msgid "Host the screenshot on Imgur, a free online image hosting service"
 msgstr "เก็บภาพหน้าจอไว้ที่ Imgur ซึ่งเป็นบริการโฮสต์ภาพออนไลน์ฟรี"
 
-#: ../src/main.c:103
+#: ../src/main.c:104
 msgid "Version information"
 msgstr "ข้อมูลรุ่น"
 
-#: ../src/main.c:131
+#: ../src/main.c:114
+msgid ""
+"Lists supported image formats, results can vary depending on installed "
+"pixbuf loaders"
+msgstr ""
+
+#: ../src/main.c:150
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "ตัวเลือกขัดแย้งกัน: --%s และ --%s ไม่สามารถใช้ร่วมกันได้\n"
 
-#: ../src/main.c:133
+#: ../src/main.c:152
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "ตัวเลือก --%s จะใช้เมื่อมีการกำหนด --fullscreen, --window หรือ --region เท่านั้น ขอข้ามไป\n"
 
-#: ../src/main.c:144
+#: ../src/main.c:163
 #, c-format
 msgid ""
 "%s: %s\n"
