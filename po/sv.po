@@ -152,7 +152,7 @@ msgstr "Spara"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Spara skärmbild till en fil"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -287,7 +287,7 @@ msgstr "PNG fil"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG fil"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -303,7 +303,7 @@ msgstr "JPEG XL fil"
 
 #: ../lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF fil"
 
 #: ../lib/screenshooter-utils.c:367
 #, c-format
@@ -491,7 +491,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Filsökväg eller katalog där skärmbild kommer att sparas, accepterar png, jpg och bmp tillägg. webp, jxl och avif stöds endast om dess respektive pixbuf laddare är installerade."
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -509,7 +509,7 @@ msgstr "Versionsinformation"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Lista bildformat som stöds, resultaten kan variera beroende på installerade pixbuf laddare"
 
 #: ../src/main.c:150
 #, c-format
