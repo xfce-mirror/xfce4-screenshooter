@@ -156,7 +156,7 @@ msgstr "Speichern"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Bildschirmfoto als Datei speichern"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -291,7 +291,7 @@ msgstr "PNG Datei"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG Datei"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -513,7 +513,7 @@ msgstr "Versionsinformation"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Listet die unterstützten Bildformate auf, die Ergebnisse können je nach installiertem pixbuf-Lader variieren"
 
 #: ../src/main.c:150
 #, c-format
