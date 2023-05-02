@@ -154,7 +154,7 @@ msgstr "Зберегти"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Зберегти знімок екрана у файл"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -289,7 +289,7 @@ msgstr "Файл PNG"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "Файл JPEG"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -301,11 +301,11 @@ msgstr "Файл WebP"
 
 #: ../lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "Файл JPEG XL"
 
 #: ../lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "Файл AVIF"
 
 #: ../lib/screenshooter-utils.c:367
 #, c-format
@@ -493,7 +493,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Шлях до файлу або каталог, де буде збережено знімок екрана, приймаються розширення png, jpg та bmp. webp, jxl та avif підтримуються лише якщо встановлено відповідні завантажувачі pixbuf."
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -511,7 +511,7 @@ msgstr "Інформація про версію"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Список підтримуваних форматів зображень, результати можуть відрізнятися залежно від встановлених завантажувачів pixbuf"
 
 #: ../src/main.c:150
 #, c-format
