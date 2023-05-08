@@ -10,7 +10,7 @@
 # Cally Mal <zhouxiaobo.500@gmail.com>, 2021
 # 玉堂白鹤 <yjwork@qq.com>, 2014
 # Cally Mal <zhouxiaobo.500@gmail.com>, 2013,2015
-# 玉堂白鹤 <yjwork@qq.com>, 2015,2018-2022
+# 玉堂白鹤 <yjwork@qq.com>, 2015,2018-2023
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-05 10:53+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Cally Mal <zhouxiaobo.500@gmail.com>, 2023\n"
+"Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2015,2018-2023\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -495,7 +495,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "要保存截图的文件路径或目录，接受 png, jpg 和 bmp 扩展名。仅当安装了对应 pixbuf 加载程序的情况下，才支持 webp、jxl 和 avif。"
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -513,7 +513,7 @@ msgstr "版本信息"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "列出支持的图像格式，结果可能因安装的 pixbuf 加载程序而有所变化"
 
 #: ../src/main.c:150
 #, c-format
