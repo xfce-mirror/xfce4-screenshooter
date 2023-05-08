@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Alper Tekinalp <alper.tekinalp@gmail.com>, 2014
-# Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2022
+# Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2023
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020-2022
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Murat Pınar <muratpinar@archlinux.org.tr>, 2010
@@ -16,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-05-05 10:53+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2022\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2023\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -156,7 +156,7 @@ msgstr "Kaydet"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Ekran görüntüsünü bir dosyaya kaydedin"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -291,7 +291,7 @@ msgstr "PNG Dosyası"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG Dosyası"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -303,11 +303,11 @@ msgstr "WebP Dosyası"
 
 #: ../lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "JPEG XL Dosyası"
 
 #: ../lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF Dosyası"
 
 #: ../lib/screenshooter-utils.c:367
 #, c-format
@@ -495,7 +495,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Ekran görüntüsünün kaydedileceği dosya yolu veya dizin, png, jpg ve bmp uzantılarını kabul eder. webp, jxl ve avif yalnızca ilgili pixbuf yükleyicileri kuruluysa desteklenir."
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -513,7 +513,7 @@ msgstr "Sürüm bilgisi"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Desteklenen resim formatlarını listeler, sonuçlar yüklü pixbuf yükleyicilere göre değişebilir"
 
 #: ../src/main.c:150
 #, c-format
