@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-05-05 10:53+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2020-2021,2023\n"
 "Language-Team: Slovenian (http://app.transifex.com/xfce/xfce-apps/language/sl/)\n"
@@ -151,7 +151,7 @@ msgstr "Shrani"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Shrani posnetek zaslona v datoteko"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -286,7 +286,7 @@ msgstr "Datoteka PNG"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG datoteka"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -298,11 +298,11 @@ msgstr "Datoteka WebP"
 
 #: ../lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "JPEG Xl datoteka"
 
 #: ../lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF datoteka"
 
 #: ../lib/screenshooter-utils.c:367
 #, c-format
@@ -490,7 +490,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Pot do datoteke ali mape, kamor bo shranjen posnetek zaslona. Sprejema png, jpg in bmp končnice. Webp, jxl in avif so podprti le, kadar je nameščen ustrezen pixbuf nalagalnik."
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -508,7 +508,7 @@ msgstr "Podatki o različici"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Seznam podprtih slikovnih zapisov. Rezultat je odvisen od nameščenih pixbuf nalagalnikov"
 
 #: ../src/main.c:150
 #, c-format
