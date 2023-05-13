@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Elishai Eliyahu <elishai@mailfence.com>, 2018-2020
-# Elishai Eliyahu <elishai@mailfence.com>, 2020-2022
+# Elishai Eliyahu <elishai@mailfence.com>, 2020-2023
 # gk <genghiskhan@gmx.ca>, 2015
 # 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021
 # 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021
@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-05-05 10:53+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>, 2020-2022\n"
+"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>, 2020-2023\n"
 "Language-Team: Hebrew (http://app.transifex.com/xfce/xfce-apps/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,7 +153,7 @@ msgstr "שמור"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "שמור את צילום המסך לקובץ"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -288,7 +288,7 @@ msgstr "PNG קובץ"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG קובץ"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -300,11 +300,11 @@ msgstr "WebP קובץ"
 
 #: ../lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "JPEG XL קובץ"
 
 #: ../lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF קובץ"
 
 #: ../lib/screenshooter-utils.c:367
 #, c-format
@@ -492,7 +492,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "נתיב קובץ או ספריה בהם צילום המסך יישמר, מקבל סיומות png, jpg ו-bmp. קיימת תמיכה ב-webp, jxl ו-avif רק אם טועני ה-pixbuf שלהם מותקנים."
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -510,7 +510,7 @@ msgstr "מידע גרסה"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "מספק רשימה של פורמטי תמונה נתמכים, תוצאות משתנות בהתאם לטועני pixbuf מותקנים"
 
 #: ../src/main.c:150
 #, c-format
