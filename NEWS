@@ -1,3 +1,24 @@
+1.10.4 (2023-05-14)
+======
+- Fix warning about checking file permissions
+- Refactor supported image formats handling (!49)
+- Add support to AVIF (#109)
+- Add support to JPEG XL (#108)
+- Check if the pixbuf-loader supports writing
+- Restrict file permission if not saved in a user-owned directory (#2)
+- Save preferences when plugin finalizes screenshot (#96)
+- Fix screenshot finalize behavior for plugin
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Kazakh, Korean, Lithuanian, Malay, Norwegian
+  Bokmål, Occitan (post 1500), Persian (Iran), Polish, Portuguese,
+  Portuguese (Brazil), Russian, Serbian, Slovak, Slovenian, Spanish,
+  Swedish, Thai, Turkish, Ukrainian
+
 1.10.3 (2023-01-12)
 ======
 - Lower minimal Xfce dependecies back to 4.16
