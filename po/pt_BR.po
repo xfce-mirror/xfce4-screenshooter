@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Andre Miranda <andre42m@gmail.com>, 2018-2019,2022
+# Andre Miranda <andre42m@gmail.com>, 2018-2019,2022-2023
 # Andre Miranda <andre42m@gmail.com>, 2014-2015
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007
 # Automatically generated, 2007
@@ -22,9 +22,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-05-05 10:53+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Andre Miranda <andre42m@gmail.com>, 2018-2019,2022\n"
+"Last-Translator: Andre Miranda <andre42m@gmail.com>, 2018-2019,2022-2023\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/xfce/xfce-apps/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -162,7 +162,7 @@ msgstr "Salvar"
 
 #: ../lib/screenshooter-dialogs.c:1189
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Salvar a captura de tela em um arquivo"
 
 #. Show in folder checkbox
 #: ../lib/screenshooter-dialogs.c:1193
@@ -297,7 +297,7 @@ msgstr "Arquivo PNG"
 
 #: ../lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "Arquivo JPEG"
 
 #: ../lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -309,11 +309,11 @@ msgstr "Arquivo WebP"
 
 #: ../lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "Arquivo JPEG XL"
 
 #: ../lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "Arquivo AVIF"
 
 #: ../lib/screenshooter-utils.c:367
 #, c-format
@@ -501,7 +501,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "O caminho do arquivo ou diretório onde a captura de tela será salva, aceita as extensões png, jpg e bmp. As extensões webp, jxl e avif são suportadas apenas se seus respectivos carregadores de pixbuf estiverem instalados."
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -519,7 +519,7 @@ msgstr "Informação da versão"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Lista os formatos de imagem suportados, os resultados podem variar dependendo dos carregadores de pixbuf instalados"
 
 #: ../src/main.c:150
 #, c-format
