@@ -46,6 +46,11 @@ From release tarball:
     % make
     % make install
 
+You need several dependencies to build. The correct way to install dependencies depends on your distribution.
+On XUbuntu 22.04 this should be enough:
+
+    sudo apt install --yes build-essential xfce4-dev-tools libpackagekit-glib2-dev libxfce4panel-2.0-dev libxfce4ui-2-dev libxml2-dev libexo-2-dev libsoup2.4-dev 
+
 ### Reporting Bugs
 
 Visit the [reporting bugs](https://docs.xfce.org/apps/xfce4-screenshooter/bugs) page to view currently open bug reports and instructions on reporting new bugs or submitting bugfixes.
