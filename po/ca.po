@@ -209,7 +209,7 @@ msgid ""
 "available and there is no guarantee it can be certainly deleted.\n"
 "Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
-msgstr ""
+msgstr "Vigileu amb els continguts sensibles, la imatge pujada estarà\ndisponible públicament i no hi ha cap garantia que pugui ser realment esborrada.\nXfce NO està afiliat amb Imgur™, ni la seva integració apovada.\nSi utilitzeu aquesta funcionalitat haureu d'acceptar els <a href=\"https://imgur.com/tos\">Termes de servei</a> de Imgur™."
 
 #: ../lib/screenshooter-dialogs.c:1357
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -491,7 +491,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Camí de l'arxiu o directori on es desarà la captura de pantalla. Accepta extensions PNG, JPG i BMP. Només es suportaran WEBP, JXL i AVIF si estan instal·lats llurs respectius carregadors de pixbuf. "
 
 #: ../src/main.c:94
 msgid "Show the saved file in the folder."
@@ -509,7 +509,7 @@ msgstr "Informació de la versió"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Llista els formats d'imatge suportats, els resultats podran variar segons els carregadors de pixbuf instal·lats"
 
 #: ../src/main.c:150
 #, c-format
@@ -543,4 +543,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a PNG or "
 "JPG file, copy it to the clipboard, open it using another application, or "
 "host it on imgur, a free online image hosting service."
-msgstr ""
+msgstr "Us permet capturar la pantalla sencera, la finestra activa o una regió seleccionada. Podeu establir el retard que hi haurà abans de prendre la captura de pantalla i l'acció que es realitzarà amb ella: desar-la a un arxiu PNG o JPG, copiar-la al porta-retalls, obrir-la amb una altra aplicació o allotjar-la a Imgur, un servei gratuït d'allotjament d'imatges."
