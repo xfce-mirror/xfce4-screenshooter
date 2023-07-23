@@ -258,7 +258,7 @@ install-data-hook:
 	fi
 
 
-.PHONY: ChangeLog
+.PHONY: ChangeLog imgur-upload.sh
 
 ChangeLog: Makefile
 	(GIT_DIR=$(top_srcdir)/.git git log > .changelog.tmp \
