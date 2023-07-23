@@ -1302,8 +1302,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
     {
       GtkWidget *image;
 
-      box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
-      gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 5, 1, 1);
+      box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+      gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 5, 2, 1);
 
       radio =
         gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
@@ -1344,6 +1344,10 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
       g_signal_connect (evbox, "realize",
                         G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
       g_object_unref (cursor);
+
+      label = gtk_label_new (NULL);
+      gtk_label_set_markup (GTK_LABEL (label), _("<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"));
+      gtk_container_add (GTK_CONTAINER (box), label);
     }
 
   /* Preview box */
