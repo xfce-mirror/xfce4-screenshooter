@@ -174,21 +174,19 @@ screenshooter_custom_action_load (GtkListStore *list_store)
     }
 
   imgur_custom_action_added = xfconf_channel_get_bool (channel, "/imgur-custom-action-added", FALSE);
+
   if (G_UNLIKELY (!imgur_custom_action_added))
     {
       xfconf_channel_set_bool (channel, "/imgur-custom-action-added", TRUE);
-    }
 
-  xfconf_shutdown ();
-
-  if (G_UNLIKELY (!imgur_custom_action_added))
-    {
       gtk_list_store_append (list_store, &iter);
       gtk_list_store_set (GTK_LIST_STORE (list_store), &iter,
                           CUSTOM_ACTION_NAME, _("Host on Imgur™"),
                           CUSTOM_ACTION_COMMAND, PACKAGE_SCRIPTS_DIR "/imgur-upload.sh %f %imgur_client_id", -1);
       screenshooter_custom_action_save (GTK_TREE_MODEL (list_store));
     }
+
+  xfconf_shutdown ();
 }
 
 
