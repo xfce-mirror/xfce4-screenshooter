@@ -283,7 +283,8 @@ EXTRA_DIST = \
 	$(48icons_DATA) \
 	$(128icons_DATA) \
 	$(scalicons_DATA) \
-	$(appdata_in_files)
+	$(appdata_in_files) \
+	$(script_DATA)
 
 DISTCLEANFILES = \
 	intltool-extract \
