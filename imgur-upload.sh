@@ -36,10 +36,10 @@ fi
 
 #RESPONSE='{"data":{"id":"q9a8Oh4","title":null,"description":null,"datetime":1690124891,"type":"image\/png","animated":false,"width":217,"height":186,"size":593,"views":0,"bandwidth":0,"vote":null,"favorite":false,"nsfw":null,"section":null,"account_url":null,"account_id":0,"is_ad":false,"in_most_viral":false,"has_sound":false,"tags":[],"ad_type":0,"ad_url":"","edited":"0","in_gallery":false,"deletehash":"b0AjSDJjSU4iyhE","name":"","link":"https:\/\/i.imgur.com\/q9a8Oh4.png"},"success":true,"status":200}'
 #RESPONSE='{"data":{"error":{"code":1003,"message":"File type invalid (1)","type":"ImgurException","exception":[]},"request":"\/3\/image","method":"POST"},"success":false,"status":400}'
-RESPONSE=$(curl --silent --location $URL --header "Authorization: Client-ID $CLIENT_ID" --form "image=@$SCREENSHOT_PATH")
-STATUS=$(echo $RESPONSE | jq -r .status)
+RESPONSE=$(curl --silent --location "$URL" --header "Authorization: Client-ID $CLIENT_ID" --form "image=@$SCREENSHOT_PATH")
+STATUS=$(echo "$RESPONSE" | jq -r .status)
 
-if [ $STATUS -ne 200 ]; then
+if [ -z "$STATUS" ] || [ $STATUS -ne 200 ]; then
     ERROR=$(echo $RESPONSE | jq -r .data.error.message)
     zenity --error --text="Failed to upload screenshot:\n$ERROR"
     exit 1
@@ -51,14 +51,14 @@ LOG_DIRECTORY="$HOME/.local/share/xfce4"
 LOG="$LOG_DIRECTORY/xfce4-screenshooter-imgur.log"
 
 # Add link to clipboard
-echo $LINK | xclip -selection c
+echo "$LINK" | xclip -selection c
 
 # Add links to log
-mkdir -p $LOG_DIRECTORY
+mkdir -p "$LOG_DIRECTORY"
 echo "---
 $(date '+%x %X')
 Link: $LINK
-Delete: $DELETE" >> $LOG
+Delete: $DELETE" >> "$LOG"
 
 # Show dialog with links
 zenity --info --title="Screenshot uploaded" --text="Link: <a href='$LINK'>$LINK</a>
