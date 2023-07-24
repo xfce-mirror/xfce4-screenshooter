@@ -26,7 +26,8 @@
 #include <libxml/parser.h>
 
 /* for v3 API - key registered *only* for xfce4-screenshooter! */
-#define HEADER_CLIENT_ID "Client-ID 66ab680b597e293"
+#define CLIENT_ID "66ab680b597e293"
+#define HEADER_CLIENT_ID "Client-ID " CLIENT_ID
 
 static gboolean          imgur_upload_job          (ScreenshooterJob  *job,
                                                     GArray            *param_values,
@@ -245,4 +246,17 @@ gboolean screenshooter_upload_to_imgur   (const gchar  *image_path,
   g_signal_connect (job, "info-message", G_CALLBACK (cb_update_info), label);
 
   return gtk_dialog_run (GTK_DIALOG (dialog)) != DIALOG_RESPONSE_ERROR;
+}
+
+
+
+/**
+ * screenshooter_imgur_client_id:
+ *
+ * Returns: the API client id, *only* for xfce4-screenshooter. Do not free it.
+ **/
+const char*
+screenshooter_imgur_client_id (void)
+{
+  return CLIENT_ID;
 }
