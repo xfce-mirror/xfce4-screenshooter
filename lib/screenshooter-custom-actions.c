@@ -201,6 +201,7 @@ screenshooter_custom_action_execute (gchar *save_location,
   gchar **envp;
   gchar  *formatted_command;
   gchar  *expanded_command;
+  gchar  *save_location_quoted;
   GError *error = NULL;
 
   if (g_strcmp0 (name, "none") == 0 ||
@@ -214,7 +215,9 @@ screenshooter_custom_action_execute (gchar *save_location,
 
   /* Replace %f placeholder */
   split = g_strsplit (command, "\%f", -1);
-  formatted_command = g_strjoinv (save_location, split);
+  save_location_quoted = g_shell_quote (save_location);
+  formatted_command = g_strjoinv (save_location_quoted, split);
+  g_free (save_location_quoted);
   g_strfreev (split);
 
   /**
