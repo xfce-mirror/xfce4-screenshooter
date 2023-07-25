@@ -40,13 +40,13 @@ RESPONSE=$(curl --silent --location "$URL" --header "Authorization: Client-ID $C
 STATUS=$(echo "$RESPONSE" | jq -r .status)
 
 if [ -z "$STATUS" ] || [ $STATUS -ne 200 ]; then
-    ERROR=$(echo $RESPONSE | jq -r .data.error.message)
+    ERROR=$(echo "$RESPONSE" | jq -r .data.error.message)
     zenity --error --text="Failed to upload screenshot:\n$ERROR"
     exit 1
 fi
 
-LINK="https://imgur.com/$(echo $RESPONSE | jq -r .data.id).png"
-DELETE="https://imgur.com/delete/$(echo $RESPONSE | jq -r .data.deletehash)"
+LINK="https://imgur.com/$(echo "$RESPONSE" | jq -r .data.id).png"
+DELETE="https://imgur.com/delete/$(echo "$RESPONSE" | jq -r .data.deletehash)"
 LOG_DIRECTORY="$HOME/.local/share/xfce4"
 LOG="$LOG_DIRECTORY/xfce4-screenshooter-imgur.log"
 
