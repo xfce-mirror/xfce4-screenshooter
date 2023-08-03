@@ -22,6 +22,10 @@ distcheck-bz2: distcheck
 # Convienence library for the application and the panel plugin
 noinst_LTLIBRARIES = lib/libscreenshooter.la
 
+# Imgur upload custom action script
+scriptdir = $(libexecdir)/xfce4/screenshooter/scripts
+script_DATA = imgur-upload.sh
+
 lib_libscreenshooter_la_SOURCES =	\
 	$(lib_libscreenshooter_built_sources) \
 	lib/libscreenshooter.h \
@@ -54,7 +58,8 @@ lib_libscreenshooter_la_CFLAGS = \
 	@LIBX11_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
 	@XFCONF_CFLAGS@ \
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
+	-DPACKAGE_SCRIPTS_DIR=\"$(scriptdir)\"
 
 lib_libscreenshooter_la_LIBADD = \
 	-lm \
@@ -116,7 +121,8 @@ src_xfce4_screenshooter_CFLAGS = \
 	@SOUP3_CFLAGS@ \
 	@LIBXML_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
+	-DPACKAGE_SCRIPTS_DIR=\"$(scriptdir)\"
 
 src_xfce4_screenshooter_LDFLAGS = \
 	@EXO_LIBS@ \
@@ -163,6 +169,7 @@ plugin_LTLIBRARIES = panel-plugin/libscreenshooterplugin.la
 
 panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"	\
+	-DPACKAGE_SCRIPTS_DIR=\"$(scriptdir)\"	\
 	-I$(top_srcdir)	\
 	-I$(top_srcdir)/lib/	\
 	-I$(top_builddir)/lib/	\
@@ -276,7 +283,8 @@ EXTRA_DIST = \
 	$(48icons_DATA) \
 	$(128icons_DATA) \
 	$(scalicons_DATA) \
-	$(appdata_in_files)
+	$(appdata_in_files) \
+	$(script_DATA)
 
 DISTCLEANFILES = \
 	intltool-extract \
@@ -293,3 +301,5 @@ DISTCLEANFILES = \
 
 # Man pages
 dist_man_MANS = xfce4-screenshooter.1
+
+script_SCRIPTS = $(script_DATA)
