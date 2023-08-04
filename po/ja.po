@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-08-04 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016,2018-2019,2021-2023\n"
 "Language-Team: Japanese (http://app.transifex.com/xfce/xfce-apps/language/ja/)\n"
@@ -52,7 +52,7 @@ msgstr "設定(_P)"
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1509
+#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1513
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "閉じる(_C)"
@@ -193,6 +193,7 @@ msgid "Custom action to execute"
 msgstr "実行するカスタムアクション"
 
 #: ../lib/screenshooter-dialogs.c:1310
+#: ../lib/screenshooter-custom-actions.c:184
 msgid "Host on Imgur™"
 msgstr "Imgur™ でホストする"
 
@@ -208,72 +209,78 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "機密性の高いコンテンツに注意してください。\nアップロードされた画像は公開され、確実に削除できる保証は\nありません。\nXfce は Imgur™ と提携しておらず、この統合は Imgur™ によって\n承認されていません。この機能を使用する場合は、Imgur™ の\n<a href=\"https://imgur.com/tos\">利用規約</a>に同意する必要があります。"
 
-#: ../lib/screenshooter-dialogs.c:1357
+#: ../lib/screenshooter-dialogs.c:1349
+msgid ""
+"<a "
+"href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
+msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>廃止されました!</a>"
+
+#: ../lib/screenshooter-dialogs.c:1361
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">プレビュー</span>"
 
-#: ../lib/screenshooter-dialogs.c:1418
+#: ../lib/screenshooter-dialogs.c:1422
 msgid "Save screenshot as..."
 msgstr "名前をつけてスクリーンショットを保存..."
 
-#: ../lib/screenshooter-dialogs.c:1507
+#: ../lib/screenshooter-dialogs.c:1511
 msgid "Preferences"
 msgstr "設定"
 
-#: ../lib/screenshooter-dialogs.c:1532
+#: ../lib/screenshooter-dialogs.c:1536
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">カスタムアクション</span>"
 
-#: ../lib/screenshooter-dialogs.c:1551
+#: ../lib/screenshooter-dialogs.c:1555
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "キャプチャされたスクリーンショットを処理するためのカスタムアクションを設定できます。"
 
-#: ../lib/screenshooter-dialogs.c:1581
+#: ../lib/screenshooter-dialogs.c:1585
 msgid "Custom Action"
 msgstr "カスタムアクション"
 
-#: ../lib/screenshooter-dialogs.c:1594
+#: ../lib/screenshooter-dialogs.c:1598
 msgid "Add custom action"
 msgstr "カスタムアクションを追加"
 
-#: ../lib/screenshooter-dialogs.c:1601
+#: ../lib/screenshooter-dialogs.c:1605
 msgid "Remove selected custom action"
 msgstr "選択したカスタムアクションを削除"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1623
+#: ../lib/screenshooter-dialogs.c:1627
 msgid "Name"
 msgstr "名前"
 
-#: ../lib/screenshooter-dialogs.c:1624
+#: ../lib/screenshooter-dialogs.c:1628
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "アクションダイアログに表示されるアクション名"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1633
+#: ../lib/screenshooter-dialogs.c:1637
 msgid "Command"
 msgstr "コマンド"
 
-#: ../lib/screenshooter-dialogs.c:1634
+#: ../lib/screenshooter-dialogs.c:1638
 msgid "Command that will be executed for this custom action"
 msgstr "このカスタム アクションで実行するコマンド"
 
-#: ../lib/screenshooter-dialogs.c:1641
+#: ../lib/screenshooter-dialogs.c:1645
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "キャプチャしたスクリーンショットのプレースホルダーとして %f を使用します"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
 msgstr "カスタムアクションを実行できません"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
 msgstr "無効なカスタムアクションが選択されました"
 
-#: ../lib/screenshooter-custom-actions.c:208
+#: ../lib/screenshooter-custom-actions.c:238
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "カスタム アクション %s の実行に失敗しました"
@@ -313,16 +320,16 @@ msgstr "<b>アプリケーションを起動できませんでした。</b>\n%s"
 msgid "Error"
 msgstr "エラー"
 
-#: ../lib/screenshooter-imgur.c:133
+#: ../lib/screenshooter-imgur.c:134
 msgid "Upload the screenshot..."
 msgstr "スクリーンショットをアップロードしています..."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:167
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "imgur へのデータ転送中にエラーが発生しました。"
 
-#: ../lib/screenshooter-imgur.c:231
+#: ../lib/screenshooter-imgur.c:232
 msgid "Imgur"
 msgstr "Imgur"
 
