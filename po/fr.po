@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-08-04 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Wallon Wallon, 2023\n"
 "Language-Team: French (http://app.transifex.com/xfce/xfce-apps/language/fr/)\n"
@@ -61,7 +61,7 @@ msgstr "_Préférences"
 msgid "_Help"
 msgstr "Aid_e"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1509
+#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1513
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "_Fermer"
@@ -202,6 +202,7 @@ msgid "Custom action to execute"
 msgstr "Action personnalisée à exécuter"
 
 #: ../lib/screenshooter-dialogs.c:1310
+#: ../lib/screenshooter-custom-actions.c:184
 msgid "Host on Imgur™"
 msgstr "Héberger sur Imgur™"
 
@@ -217,72 +218,78 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Attention au contenu sensible : l’image téléversée sera publiquement\ndisponible et risque de ne pas pouvoir être supprimée.\nXfce n’est PAS affilié à Imgur et cette fonctionnalité d’intégration n’est pas explicitement approuvée par Imgur™.\nSi vous utilisez cette fonctionnalité, vous devez accepter les <a href=\"https://imgur.com/tos\">conditions d’utilisation d’Imgur™</a>."
 
-#: ../lib/screenshooter-dialogs.c:1357
+#: ../lib/screenshooter-dialogs.c:1349
+msgid ""
+"<a "
+"href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
+msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Déclassé !</a>"
+
+#: ../lib/screenshooter-dialogs.c:1361
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aperçu</span>"
 
-#: ../lib/screenshooter-dialogs.c:1418
+#: ../lib/screenshooter-dialogs.c:1422
 msgid "Save screenshot as..."
 msgstr "Enregistrer la capture d’écran sous…"
 
-#: ../lib/screenshooter-dialogs.c:1507
+#: ../lib/screenshooter-dialogs.c:1511
 msgid "Preferences"
 msgstr "Préférences"
 
-#: ../lib/screenshooter-dialogs.c:1532
+#: ../lib/screenshooter-dialogs.c:1536
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Action personnalisée</span>"
 
-#: ../lib/screenshooter-dialogs.c:1551
+#: ../lib/screenshooter-dialogs.c:1555
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Vous pouvez définir des actions personnalisées qui seront disponibles pour traiter les captures d’écran juste après la capture."
 
-#: ../lib/screenshooter-dialogs.c:1581
+#: ../lib/screenshooter-dialogs.c:1585
 msgid "Custom Action"
 msgstr "Action personnalisée"
 
-#: ../lib/screenshooter-dialogs.c:1594
+#: ../lib/screenshooter-dialogs.c:1598
 msgid "Add custom action"
 msgstr "Ajouter une action personnalisée"
 
-#: ../lib/screenshooter-dialogs.c:1601
+#: ../lib/screenshooter-dialogs.c:1605
 msgid "Remove selected custom action"
 msgstr "Retirer l’action personnalisée sélectionnée"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1623
+#: ../lib/screenshooter-dialogs.c:1627
 msgid "Name"
 msgstr "Nom"
 
-#: ../lib/screenshooter-dialogs.c:1624
+#: ../lib/screenshooter-dialogs.c:1628
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Nom de l’action qui sera affichée dans la boîte de dialogue Actions"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1633
+#: ../lib/screenshooter-dialogs.c:1637
 msgid "Command"
 msgstr "Commande"
 
-#: ../lib/screenshooter-dialogs.c:1634
+#: ../lib/screenshooter-dialogs.c:1638
 msgid "Command that will be executed for this custom action"
 msgstr "Commande qui sera exécutée pour cette action personnalisée"
 
-#: ../lib/screenshooter-dialogs.c:1641
+#: ../lib/screenshooter-dialogs.c:1645
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Utiliser %f comme code à la place duquel sera écrit le chemin vers la capture d’écran"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
 msgstr "Impossible d’exécuter l’action personnalisée"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
 msgstr "Action personnalisée sélectionnée non valide "
 
-#: ../lib/screenshooter-custom-actions.c:208
+#: ../lib/screenshooter-custom-actions.c:238
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "Échec à l’exécution de l’action personnalisée %s"
@@ -322,16 +329,16 @@ msgstr "<b>L’application n’a pas pu être lancée.</b>\n%s"
 msgid "Error"
 msgstr "Erreur"
 
-#: ../lib/screenshooter-imgur.c:133
+#: ../lib/screenshooter-imgur.c:134
 msgid "Upload the screenshot..."
 msgstr "Téléversement de la capture d’écran…"
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:167
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "Une erreur s’est produite lors du transfert des données vers Imgur."
 
-#: ../lib/screenshooter-imgur.c:231
+#: ../lib/screenshooter-imgur.c:232
 msgid "Imgur"
 msgstr "Imgur"
 
