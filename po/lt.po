@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-08-04 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Moo, 2023\n"
 "Language-Team: Lithuanian (http://app.transifex.com/xfce/xfce-apps/language/lt/)\n"
@@ -53,7 +53,7 @@ msgstr "_Nuostatos"
 msgid "_Help"
 msgstr "Ž_inynas"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1509
+#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1513
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "_Užverti"
@@ -194,6 +194,7 @@ msgid "Custom action to execute"
 msgstr "Tinkintas veiksmas, kurį vykdyti"
 
 #: ../lib/screenshooter-dialogs.c:1310
+#: ../lib/screenshooter-custom-actions.c:184
 msgid "Host on Imgur™"
 msgstr "Talpinti į Imgur™"
 
@@ -209,72 +210,78 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Saugokitės, kad neišsiųstumėte slapto turinio. Įkeltas paveikslas\nbus viešai prieinamas ir nėra jokių garantijų, kad jį tikrai galima bus ištrinti.\nXfce NĖRA niekaip susijusi su Imgur™ ir ši integracija nėra patvirtinta Imgur™.\nJei naudositės šia ypatybe, privalote sutikti su Imgur™ <a href=\"https://imgur.com/tos\">Naudojimosi paslauga sąlygomis</a>."
 
-#: ../lib/screenshooter-dialogs.c:1357
+#: ../lib/screenshooter-dialogs.c:1349
+msgid ""
+"<a "
+"href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
+msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Pasenę!</a>"
+
+#: ../lib/screenshooter-dialogs.c:1361
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Peržiūra</span>"
 
-#: ../lib/screenshooter-dialogs.c:1418
+#: ../lib/screenshooter-dialogs.c:1422
 msgid "Save screenshot as..."
 msgstr "Įrašyti ekrano kopiją kaip..."
 
-#: ../lib/screenshooter-dialogs.c:1507
+#: ../lib/screenshooter-dialogs.c:1511
 msgid "Preferences"
 msgstr "Nuostatos"
 
-#: ../lib/screenshooter-dialogs.c:1532
+#: ../lib/screenshooter-dialogs.c:1536
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tinkinti veiksmai</span>"
 
-#: ../lib/screenshooter-dialogs.c:1551
+#: ../lib/screenshooter-dialogs.c:1555
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Galite sukonfigūruoti tinkintus veiksmus, kurie padarius ekrano kopiją, bus prieinami ekrano kopijų apdorojimui."
 
-#: ../lib/screenshooter-dialogs.c:1581
+#: ../lib/screenshooter-dialogs.c:1585
 msgid "Custom Action"
 msgstr "Tinkintas veiksmas"
 
-#: ../lib/screenshooter-dialogs.c:1594
+#: ../lib/screenshooter-dialogs.c:1598
 msgid "Add custom action"
 msgstr "Pridėti tinkintą veiksmą"
 
-#: ../lib/screenshooter-dialogs.c:1601
+#: ../lib/screenshooter-dialogs.c:1605
 msgid "Remove selected custom action"
 msgstr "Šalinti pasirinktą tinkintą veiksmą"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1623
+#: ../lib/screenshooter-dialogs.c:1627
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: ../lib/screenshooter-dialogs.c:1624
+#: ../lib/screenshooter-dialogs.c:1628
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Veiksmo, kuris bus rodomas veiksmų dialoge, pavadinimas"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1633
+#: ../lib/screenshooter-dialogs.c:1637
 msgid "Command"
 msgstr "Komanda"
 
-#: ../lib/screenshooter-dialogs.c:1634
+#: ../lib/screenshooter-dialogs.c:1638
 msgid "Command that will be executed for this custom action"
 msgstr "Komanda, kuri bus vykdoma šiam tinkintam veiksmui"
 
-#: ../lib/screenshooter-dialogs.c:1641
+#: ../lib/screenshooter-dialogs.c:1645
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Naudokite %f kaip vietos, kurioje saugoma padaryta ekrano kopija, vietaženklį"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
 msgstr "Nepavyko įvykdyti tinkinto veiksmo"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
 msgstr "Pasirinktas neteisingas tinkintas veiksmas"
 
-#: ../lib/screenshooter-custom-actions.c:208
+#: ../lib/screenshooter-custom-actions.c:238
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "Nepavyko paleisti tinkinto veiksmo %s"
@@ -314,16 +321,16 @@ msgstr "<b>Nepavyko paleisti programos.</b>\n%s"
 msgid "Error"
 msgstr "Klaida"
 
-#: ../lib/screenshooter-imgur.c:133
+#: ../lib/screenshooter-imgur.c:134
 msgid "Upload the screenshot..."
 msgstr "Įkeliama ekrano kopija..."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:167
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "Įvyko klaida, perkeliant duomenis į imgur."
 
-#: ../lib/screenshooter-imgur.c:231
+#: ../lib/screenshooter-imgur.c:232
 msgid "Imgur"
 msgstr "Imgur"
 
