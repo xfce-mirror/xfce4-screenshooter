@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-08-04 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Gordon Freeman, 2023\n"
 "Language-Team: Ukrainian (http://app.transifex.com/xfce/xfce-apps/language/uk/)\n"
@@ -57,7 +57,7 @@ msgstr "_Налаштування"
 msgid "_Help"
 msgstr "_Допомога"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1509
+#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1513
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "_Закрити"
@@ -198,6 +198,7 @@ msgid "Custom action to execute"
 msgstr "Спеціальна дія для виконання"
 
 #: ../lib/screenshooter-dialogs.c:1310
+#: ../lib/screenshooter-custom-actions.c:184
 msgid "Host on Imgur™"
 msgstr "Розмістити на Imgur™"
 
@@ -213,72 +214,78 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Слідкуйте за чутливим вмістом, завантажене зображення буде загальнодоступним і не гарантовано, що його згодом можна буде видалити. \nXfce НЕ пов'язане з хостингом і ця інтеграція не схвалена Imgur ™.\nЯкщо ви використовуєте цю функцію, ви повинні погодитися із\n<a href=\"https://imgur.com/tos\">Умовами надання послуг</a>Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1357
+#: ../lib/screenshooter-dialogs.c:1349
+msgid ""
+"<a "
+"href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
+msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Застаріло!</a>"
+
+#: ../lib/screenshooter-dialogs.c:1361
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Перегляд</span>"
 
-#: ../lib/screenshooter-dialogs.c:1418
+#: ../lib/screenshooter-dialogs.c:1422
 msgid "Save screenshot as..."
 msgstr "Зберегти знімок як..."
 
-#: ../lib/screenshooter-dialogs.c:1507
+#: ../lib/screenshooter-dialogs.c:1511
 msgid "Preferences"
 msgstr "Параметри"
 
-#: ../lib/screenshooter-dialogs.c:1532
+#: ../lib/screenshooter-dialogs.c:1536
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Спеціальні дії</span>"
 
-#: ../lib/screenshooter-dialogs.c:1551
+#: ../lib/screenshooter-dialogs.c:1555
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Ви можете налаштувати спеціальні дії, які будуть доступні для обробки знімків екрана після їх створення."
 
-#: ../lib/screenshooter-dialogs.c:1581
+#: ../lib/screenshooter-dialogs.c:1585
 msgid "Custom Action"
 msgstr "Спеціальна дія"
 
-#: ../lib/screenshooter-dialogs.c:1594
+#: ../lib/screenshooter-dialogs.c:1598
 msgid "Add custom action"
 msgstr "Додати спеціальна дію"
 
-#: ../lib/screenshooter-dialogs.c:1601
+#: ../lib/screenshooter-dialogs.c:1605
 msgid "Remove selected custom action"
 msgstr "Видали обрану спеціальну дію"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1623
+#: ../lib/screenshooter-dialogs.c:1627
 msgid "Name"
 msgstr "Назва"
 
-#: ../lib/screenshooter-dialogs.c:1624
+#: ../lib/screenshooter-dialogs.c:1628
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Назва дії, що буде відображатися у діалогу"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1633
+#: ../lib/screenshooter-dialogs.c:1637
 msgid "Command"
 msgstr "Команда"
 
-#: ../lib/screenshooter-dialogs.c:1634
+#: ../lib/screenshooter-dialogs.c:1638
 msgid "Command that will be executed for this custom action"
 msgstr "Команда, що буде виконана для цієї спеціальної дії"
 
-#: ../lib/screenshooter-dialogs.c:1641
+#: ../lib/screenshooter-dialogs.c:1645
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Використовуйте  %f як заповнювач для розташування знімка екрана"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
 msgstr "Не вдалося виконати спеціальну дію"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
 msgstr "Вибрано недійсну спеціальну дію"
 
-#: ../lib/screenshooter-custom-actions.c:208
+#: ../lib/screenshooter-custom-actions.c:238
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "Не вдалося запустити спеціальну дію %s"
@@ -318,16 +325,16 @@ msgstr "<b>Програму неможливо запустити.</b>\n%s"
 msgid "Error"
 msgstr "Помилка"
 
-#: ../lib/screenshooter-imgur.c:133
+#: ../lib/screenshooter-imgur.c:134
 msgid "Upload the screenshot..."
 msgstr "Вивантаження знімка екрану..."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:167
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "Сталася помилка під час передачі даних до imgur."
 
-#: ../lib/screenshooter-imgur.c:231
+#: ../lib/screenshooter-imgur.c:232
 msgid "Imgur"
 msgstr "Imgur"
 
