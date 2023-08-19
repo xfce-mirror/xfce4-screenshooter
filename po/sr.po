@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-27 00:48+0200\n"
+"POT-Creation-Date: 2023-08-04 00:48+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>, 2012-2016,2018-2019\n"
 "Language-Team: Serbian (http://app.transifex.com/xfce/xfce-apps/language/sr/)\n"
@@ -55,7 +55,7 @@ msgstr "_Својства"
 msgid "_Help"
 msgstr "_Помоћ"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1509
+#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1513
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "_Затвори"
@@ -196,6 +196,7 @@ msgid "Custom action to execute"
 msgstr "Произвољна радња за извршавање"
 
 #: ../lib/screenshooter-dialogs.c:1310
+#: ../lib/screenshooter-custom-actions.c:184
 msgid "Host on Imgur™"
 msgstr "Отпреми на Имгур™"
 
@@ -211,72 +212,78 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Пазите на осетљив садржај, отпремљене слике ће бити видљиве јавно\nи нико не јемчи да неће бити избрисане.\nИксФЦЕ НИЈЕ повезан са, нити је усклађивање одобрено од стране Имгур™.\nАко користите услугу, морате се сложити са <a href=\"https://imgur.com/tos\">условима коришћења</a> Имгур™-а."
 
-#: ../lib/screenshooter-dialogs.c:1357
+#: ../lib/screenshooter-dialogs.c:1349
+msgid ""
+"<a "
+"href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
+msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Застарело!</a>"
+
+#: ../lib/screenshooter-dialogs.c:1361
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Преглед</span>"
 
-#: ../lib/screenshooter-dialogs.c:1418
+#: ../lib/screenshooter-dialogs.c:1422
 msgid "Save screenshot as..."
 msgstr "Сачувај слику радне површи као..."
 
-#: ../lib/screenshooter-dialogs.c:1507
+#: ../lib/screenshooter-dialogs.c:1511
 msgid "Preferences"
 msgstr "Својства"
 
-#: ../lib/screenshooter-dialogs.c:1532
+#: ../lib/screenshooter-dialogs.c:1536
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Произвољне радње</span>"
 
-#: ../lib/screenshooter-dialogs.c:1551
+#: ../lib/screenshooter-dialogs.c:1555
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Можете подесити произвољне радње које ће бити доступне за руковање сликама заслона након њиховог сликања."
 
-#: ../lib/screenshooter-dialogs.c:1581
+#: ../lib/screenshooter-dialogs.c:1585
 msgid "Custom Action"
 msgstr "Произвољна радња"
 
-#: ../lib/screenshooter-dialogs.c:1594
+#: ../lib/screenshooter-dialogs.c:1598
 msgid "Add custom action"
 msgstr "Додај произвољну радњу"
 
-#: ../lib/screenshooter-dialogs.c:1601
+#: ../lib/screenshooter-dialogs.c:1605
 msgid "Remove selected custom action"
 msgstr "Уклони изабрану произвољну радњу"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1623
+#: ../lib/screenshooter-dialogs.c:1627
 msgid "Name"
 msgstr "Име"
 
-#: ../lib/screenshooter-dialogs.c:1624
+#: ../lib/screenshooter-dialogs.c:1628
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Име радње која ће се приказивати у прозорчићима радњи"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1633
+#: ../lib/screenshooter-dialogs.c:1637
 msgid "Command"
 msgstr "Наредба"
 
-#: ../lib/screenshooter-dialogs.c:1634
+#: ../lib/screenshooter-dialogs.c:1638
 msgid "Command that will be executed for this custom action"
 msgstr "Наредба која ће бити извршена у овој произвољној радњи"
 
-#: ../lib/screenshooter-dialogs.c:1641
+#: ../lib/screenshooter-dialogs.c:1645
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Користи %f као држача размака за место слику усликаног заслона"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
 msgstr "Нисам успео да извршим произвољну радњу"
 
-#: ../lib/screenshooter-custom-actions.c:196
+#: ../lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
 msgstr "Изабрана је неисправна произвољна радња"
 
-#: ../lib/screenshooter-custom-actions.c:208
+#: ../lib/screenshooter-custom-actions.c:238
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "Нисам успео да покренем произвољну радњу %s"
@@ -316,16 +323,16 @@ msgstr "<b>Нисам успео да покренем програм.</b>\n%s"
 msgid "Error"
 msgstr "Грeшкa"
 
-#: ../lib/screenshooter-imgur.c:133
+#: ../lib/screenshooter-imgur.c:134
 msgid "Upload the screenshot..."
 msgstr "Отпреми слику радне површи..."
 
-#: ../lib/screenshooter-imgur.c:166
+#: ../lib/screenshooter-imgur.c:167
 #, c-format
 msgid "An error occurred while transferring the data to imgur."
 msgstr "Десила се грешка приликом преноса података на Имгур."
 
-#: ../lib/screenshooter-imgur.c:231
+#: ../lib/screenshooter-imgur.c:232
 msgid "Imgur"
 msgstr "Имгур"
 
