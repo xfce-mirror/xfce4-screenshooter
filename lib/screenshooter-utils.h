@@ -57,17 +57,8 @@ void       screenshooter_open_help                (GtkWindow      *parent);
 gboolean   screenshooter_f1_key                   (GtkWidget      *widget,
                                                    GdkEventKey    *event,
                                                    gpointer        user_data);
-void       screenshooter_get_screen_geometry      (GdkRectangle   *geometry);
-GdkWindow *screenshooter_get_active_window        (GdkScreen      *screen,
-                                                   gboolean       *needs_unref,
-                                                   gboolean       *border);
 void       screenshooter_show_file_in_folder      (const gchar    *save_location);
 gboolean   screenshooter_is_format_supported      (const gchar    *format);
 void       screenshooter_restrict_file_permission (GFile          *file);
-GdkPixbuf *screenshooter_pixbuf_get_from_window   (GdkWindow      *window,
-                                                   gint            src_x,
-                                                   gint            src_y,
-                                                   gint            width,
-                                                   gint            height);
 
 #endif

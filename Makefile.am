@@ -26,7 +26,7 @@ noinst_LTLIBRARIES = lib/libscreenshooter.la
 scriptdir = $(libexecdir)/xfce4/screenshooter/scripts
 script_DATA = imgur-upload.sh
 
-lib_libscreenshooter_la_SOURCES =	\
+lib_libscreenshooter_la_SOURCES = \
 	$(lib_libscreenshooter_built_sources) \
 	lib/libscreenshooter.h \
 	lib/screenshooter-actions.c lib/screenshooter-actions.h \
@@ -41,6 +41,17 @@ lib_libscreenshooter_la_SOURCES =	\
 	lib/screenshooter-utils.c lib/screenshooter-utils.h \
 	lib/screenshooter-imgur.c lib/screenshooter-imgur.h \
 	lib/screenshooter-imgur-dialog.c lib/screenshooter-imgur-dialog.h
+
+if HAVE_LIBX11
+lib_libscreenshooter_la_SOURCES += \
+	lib/screenshooter-capture-x11.c lib/screenshooter-capture-x11.h \
+	lib/screenshooter-utils-x11.c lib/screenshooter-utils-x11.h
+endif
+
+if HAVE_WAYLAND
+lib_libscreenshooter_la_SOURCES += \
+	lib/screenshooter-capture-wayland.c lib/screenshooter-capture-wayland.h
+endif
 
 lib_libscreenshooter_la_CFLAGS = \
 	-I$(top_srcdir) \
@@ -75,7 +86,6 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXML_LIBS@ \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
-	@LIBX11_LDFLAGS@ \
 	@XFCONF_LIBS@ \
 	@XFIXES_LIBS@
 
@@ -135,7 +145,6 @@ src_xfce4_screenshooter_LDFLAGS = \
 	@SOUP3_LIBS@ \
 	@LIBXML_LIBS@ \
 	@LIBX11_LIBS@ \
-	@LIBX11_LDFLAGS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@
 
@@ -197,7 +206,6 @@ panel_plugin_libscreenshooterplugin_la_LIBADD = \
 	@SOUP3_LIBS@ \
 	@LIBXML_LIBS@ \
 	@LIBX11_LIBS@ \
-	@LIBX11_LDFLAGS@ \
 	@LIBXFCE4UI_LIBS@ \
 	lib/libscreenshooter.la
 
