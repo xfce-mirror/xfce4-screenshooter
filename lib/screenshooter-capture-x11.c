@@ -31,10 +31,10 @@
 #include <unistd.h>
 
 #include <libxfce4util/libxfce4util.h>
+#include <libxfce4ui/libxfce4ui.h>
 
 #include "screenshooter-global.h"
 #include "screenshooter-utils-x11.h"
-#include "screenshooter-utils.h"
 
 #define BACKGROUND_TRANSPARENCY 0.4
 

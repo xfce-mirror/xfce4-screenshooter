@@ -26,14 +26,6 @@
 
 #include "screenshooter-global.h"
 
-#include <gtk/gtk.h>
-#include <gdk/gdkkeysyms.h>
-#include <glib/gstdio.h>
-#include <time.h>
-
-#include <libxfce4util/libxfce4util.h>
-#include <libxfce4ui/libxfce4ui.h>
-
 
 
 void       screenshooter_copy_to_clipboard        (GdkPixbuf      *screenshot);

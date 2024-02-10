@@ -19,9 +19,8 @@
 
 #include "screenshooter-utils.h"
 
-#include <gdk/gdk.h>
+#include <glib/gstdio.h>
 #include <libxfce4ui/libxfce4ui.h>
-
 
 
 /* Internals */
