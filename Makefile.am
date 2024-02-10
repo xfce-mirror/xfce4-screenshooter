@@ -3,7 +3,7 @@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = po
+SUBDIRS = po protocols
 
 bin_PROGRAMS = src/xfce4-screenshooter
 
@@ -26,7 +26,7 @@ noinst_LTLIBRARIES = lib/libscreenshooter.la
 scriptdir = $(libexecdir)/xfce4/screenshooter/scripts
 script_DATA = imgur-upload.sh
 
-lib_libscreenshooter_la_SOURCES =	\
+lib_libscreenshooter_la_SOURCES = \
 	$(lib_libscreenshooter_built_sources) \
 	lib/libscreenshooter.h \
 	lib/screenshooter-actions.c lib/screenshooter-actions.h \
@@ -42,6 +42,17 @@ lib_libscreenshooter_la_SOURCES =	\
 	lib/screenshooter-imgur.c lib/screenshooter-imgur.h \
 	lib/screenshooter-imgur-dialog.c lib/screenshooter-imgur-dialog.h
 
+if HAVE_LIBX11
+lib_libscreenshooter_la_SOURCES += \
+	lib/screenshooter-capture-x11.c lib/screenshooter-capture-x11.h \
+	lib/screenshooter-utils-x11.c lib/screenshooter-utils-x11.h
+endif
+
+if HAVE_WAYLAND
+lib_libscreenshooter_la_SOURCES += \
+	lib/screenshooter-capture-wayland.c lib/screenshooter-capture-wayland.h
+endif
+
 lib_libscreenshooter_la_CFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_builddir)/lib \
@@ -56,6 +67,7 @@ lib_libscreenshooter_la_CFLAGS = \
 	@SOUP2_CFLAGS@ \
 	@SOUP3_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
+	@WAYLAND_CLIENT_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
 	@XFCONF_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
@@ -75,9 +87,14 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXML_LIBS@ \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
-	@LIBX11_LDFLAGS@ \
+	@WAYLAND_CLIENT_LIBS@ \
 	@XFCONF_LIBS@ \
 	@XFIXES_LIBS@
+
+if HAVE_WAYLAND
+lib_libscreenshooter_la_LIBADD += \
+	$(top_builddir)/protocols/libprotocols.la
+endif
 
 lib_libscreenshooter_built_sources = \
 	lib/screenshooter-marshal.c lib/screenshooter-marshal.h \
@@ -135,7 +152,6 @@ src_xfce4_screenshooter_LDFLAGS = \
 	@SOUP3_LIBS@ \
 	@LIBXML_LIBS@ \
 	@LIBX11_LIBS@ \
-	@LIBX11_LDFLAGS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@
 
@@ -197,7 +213,6 @@ panel_plugin_libscreenshooterplugin_la_LIBADD = \
 	@SOUP3_LIBS@ \
 	@LIBXML_LIBS@ \
 	@LIBX11_LIBS@ \
-	@LIBX11_LDFLAGS@ \
 	@LIBXFCE4UI_LIBS@ \
 	lib/libscreenshooter.la
 
