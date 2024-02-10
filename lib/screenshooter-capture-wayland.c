@@ -303,7 +303,7 @@ GdkPixbuf
       return NULL;
     }
 
-  frame = zwlr_screencopy_manager_v1_capture_output (client_data.screencopy_manager, 0, output);
+  frame = zwlr_screencopy_manager_v1_capture_output (client_data.screencopy_manager, show_mouse, output);
   zwlr_screencopy_frame_v1_add_listener (frame, &frame_listener, &client_data);
 
   while (!client_data.capture_done && !client_data.capture_failed)
