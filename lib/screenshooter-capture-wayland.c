@@ -22,7 +22,6 @@
 #include <syscall.h>
 #include <sys/mman.h>
 
-#include <cairo/cairo.h>
 #include <gdk/gdkwayland.h>
 #include <protocols/wlr-screencopy-unstable-v1-client.h>
 #include <libxfce4util/libxfce4util.h>
@@ -200,29 +199,43 @@ const struct zwlr_screencopy_frame_v1_listener frame_listener = {
 static GdkPixbuf
 *convert_buffer_to_pixbuf (WaylandClientData *client_data)
 {
-  cairo_surface_t *surface;
+  guint8 *data;
+  guchar *pixels;
+  GdkPixbuf *pixbuf = NULL;
+
+  data = client_data->shm_data;
+  pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, client_data->width, client_data->height);
+  pixels = gdk_pixbuf_get_pixels (pixbuf);
 
   if (client_data->format == WL_SHM_FORMAT_ARGB8888 || client_data->format == WL_SHM_FORMAT_XRGB8888)
     {
-      /* nothing to convert */
+      for (int y = 0; y < client_data->height; y++)
+        {
+          for (int x = 0; x < client_data->width; x++)
+            {
+              gint offset = y * client_data->stride + x * 4;
+              guint32 *px = (guint32 *)(data + offset);
+              pixels[offset + 0] = (*px >> 16) & 0xFF;  /* red */
+              pixels[offset + 1] = (*px >> 8)  & 0xFF;  /* green */
+              pixels[offset + 2] =  *px        & 0xFF;  /* blue */
+              pixels[offset + 3] = (*px >> 24) & 0xFF;  /* alpha */
+            }
+        }
     }
   else if (client_data->format == WL_SHM_FORMAT_ABGR8888 || client_data->format == WL_SHM_FORMAT_XBGR8888)
     {
-      guint8 *data = client_data->shm_data;
-      for (int x = 0; x < client_data->height; x++)
+      for (int y = 0; y < client_data->height; y++)
         {
-          for (int y = 0; y < client_data->width; y++)
+          for (int x = 0; x < client_data->width; x++)
             {
-              guint32 *px = (guint32 *)(data + x * client_data->stride + y * 4);
-              guint8 a = (*px >> 24) & 0xFF;
-              guint8 b = (*px >> 16) & 0xFF;
-              guint8 g = (*px >> 8) & 0xFF;
-              guint8 r = *px & 0xFF;
-              *px = (a << 24) | (r << 16) | (g << 8) | b;
+              gint offset = y * client_data->stride + x * 4;
+              guint32 *px = (guint32 *)(data + offset);
+              pixels[offset + 0] =  *px        & 0xFF; /* red */
+              pixels[offset + 1] = (*px >> 8)  & 0xFF; /* green */
+              pixels[offset + 2] = (*px >> 16) & 0xFF; /* blue */
+              pixels[offset + 3] = (*px >> 24) & 0xFF; /* alpha */
             }
         }
-
-      client_data->format = WL_SHM_FORMAT_ABGR8888 ? WL_SHM_FORMAT_ARGB8888 : WL_SHM_FORMAT_XRGB8888;
     }
   else
     {
@@ -230,10 +243,7 @@ static GdkPixbuf
       return NULL;
     }
 
-  surface = cairo_image_surface_create_for_data ((unsigned char *) client_data->shm_data,
-                                                 CAIRO_FORMAT_ARGB32, client_data->width,
-                                                 client_data->height, client_data->stride);
-  return gdk_pixbuf_get_from_surface (surface, 0,0, client_data->width, client_data->height);
+  return pixbuf;
 }
 
 
