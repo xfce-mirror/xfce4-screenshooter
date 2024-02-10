@@ -45,3 +45,7 @@ src/xfce4-screenshooter.appdata.xml
 
 # UI header files generated using xdt-csource
 lib/*_ui.h
+
+# Code generated using wayland-scanner
+/protocols/*.c
+/protocols/*.h

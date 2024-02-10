@@ -105,6 +105,7 @@ XDT_FEATURE_DEBUG()
 AC_OUTPUT([
 Makefile
 po/Makefile.in
+protocols/Makefile
 ])
 
 dnl ***************************

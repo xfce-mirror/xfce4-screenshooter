@@ -1482,7 +1482,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 
   if (region == FULLSCREEN)
     {
-      TRACE ("Get the screenshot of the entire window");
+      TRACE ("Get the screenshot of the entire screen");
       window = gdk_get_default_root_window ();
       screenshot = get_window_screenshot (window, show_mouse, FALSE);
     }

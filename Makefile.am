@@ -3,7 +3,7 @@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-SUBDIRS = po
+SUBDIRS = po protocols
 
 bin_PROGRAMS = src/xfce4-screenshooter
 
@@ -67,6 +67,7 @@ lib_libscreenshooter_la_CFLAGS = \
 	@SOUP2_CFLAGS@ \
 	@SOUP3_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
+	@WAYLAND_CLIENT_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
 	@XFCONF_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
@@ -86,8 +87,14 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXML_LIBS@ \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
+	@WAYLAND_CLIENT_LIBS@ \
 	@XFCONF_LIBS@ \
 	@XFIXES_LIBS@
+
+if HAVE_WAYLAND
+lib_libscreenshooter_la_LIBADD += \
+	$(top_builddir)/protocols/libprotocols.la
+endif
 
 lib_libscreenshooter_built_sources = \
 	lib/screenshooter-marshal.c lib/screenshooter-marshal.h \
