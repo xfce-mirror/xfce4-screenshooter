@@ -29,7 +29,7 @@ scriptdir = $(libexecdir)/xfce4/screenshooter/scripts
 script_DATA = imgur-upload.sh
 
 # Wayland protocols
-if HAVE_WAYLAND
+if ENABLE_WAYLAND
 
 noinst_LTLIBRARIES += \
 	protocols/libprotocols.la
@@ -52,17 +52,17 @@ protocols_libprotocols_la_LDFLAGS = \
 protocols_libprotocols_la_LIBADD = \
 	$(WAYLAND_CLIENT_LIBS)
 
-protocols/%.c: protocols/%.xml
+protocols/%.c: $(WLR_PROTOCOLS_PKGDATADIR)/unstable/%.xml
 	$(AM_V_GEN) wayland-scanner private-code $< $@
 
-protocols/%-client.h: protocols/%.xml
+protocols/%-client.h: $(WLR_PROTOCOLS_PKGDATADIR)/unstable/%.xml
 	$(AM_V_GEN) wayland-scanner client-header $< $@
 
 BUILT_SOURCES += \
 	$(protocols_libprotocols_built_sources)
 
 EXTRA_DIST += \
-	protocols/wlr-screencopy-unstable-v1.xml
+	protocols/wlr-protocols/unstable/wlr-screencopy-unstable-v1.xml
 
 DISTCLEANFILES += \
 	$(protocols_libprotocols_built_sources)
@@ -87,13 +87,13 @@ lib_libscreenshooter_la_SOURCES = \
 	lib/screenshooter-imgur.c lib/screenshooter-imgur.h \
 	lib/screenshooter-imgur-dialog.c lib/screenshooter-imgur-dialog.h
 
-if HAVE_LIBX11
+if ENABLE_X11
 lib_libscreenshooter_la_SOURCES += \
 	lib/screenshooter-capture-x11.c lib/screenshooter-capture-x11.h \
 	lib/screenshooter-utils-x11.c lib/screenshooter-utils-x11.h
 endif
 
-if HAVE_WAYLAND
+if ENABLE_WAYLAND
 lib_libscreenshooter_la_SOURCES += \
 	lib/screenshooter-capture-wayland.c lib/screenshooter-capture-wayland.h
 endif
@@ -136,7 +136,7 @@ lib_libscreenshooter_la_LIBADD = \
 	@XFCONF_LIBS@ \
 	@XFIXES_LIBS@
 
-if HAVE_WAYLAND
+if ENABLE_WAYLAND
 lib_libscreenshooter_la_LIBADD += \
 	$(top_builddir)/protocols/libprotocols.la
 endif
@@ -204,7 +204,7 @@ src_xfce4_screenshooter_LDADD = lib/libscreenshooter.la
 
 src_xfce4_screenshooter_SOURCES = src/main.c
 
-if HAVE_WAYLAND
+if ENABLE_WAYLAND
 src_xfce4_screenshooter_CFLAGS += \
 	-I$(top_srcdir)/protocols/ \
 	-I$(top_builddir)/protocols

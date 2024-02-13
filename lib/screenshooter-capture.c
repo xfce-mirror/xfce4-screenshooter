@@ -19,11 +19,11 @@
 
 #include "screenshooter-capture.h"
 
-#ifdef HAVE_LIBX11
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
 #include "screenshooter-capture-x11.h"
 #endif
-#ifdef HAVE_WAYLAND
+#ifdef ENABLE_WAYLAND
 #include <gdk/gdkwayland.h>
 #include "screenshooter-capture-wayland.h"
 #endif
@@ -38,11 +38,11 @@ GdkPixbuf
 {
   GdkPixbuf *screenshot = NULL;
 
-#ifdef HAVE_LIBX11
+#ifdef ENABLE_X11
   if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
     screenshot = screenshooter_capture_screenshot_x11 (region, delay, show_mouse, show_border);
 #endif
-#ifdef HAVE_WAYLAND
+#ifdef ENABLE_WAYLAND
   if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
     screenshot = screenshooter_capture_screenshot_wayland (region, delay, show_mouse, show_border);
 #endif
