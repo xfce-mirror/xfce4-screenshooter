@@ -17,15 +17,15 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#include <screenshooter-capture.h>
+#include "screenshooter-capture.h"
 
 #ifdef HAVE_LIBX11
 #include <gdk/gdkx.h>
-#include <screenshooter-capture-x11.h>
+#include "screenshooter-capture-x11.h"
 #endif
 #ifdef HAVE_WAYLAND
 #include <gdk/gdkwayland.h>
-#include <screenshooter-capture-wayland.h>
+#include "screenshooter-capture-wayland.h"
 #endif
 
 
