@@ -381,6 +381,8 @@ void screenshooter_error (const gchar *format, ...)
   message = g_strdup_vprintf (format, va_args);
   va_end (va_args);
 
+  g_fprintf (stderr, "Error: %s\n", message);
+
   dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
                                    GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
                                    NULL);

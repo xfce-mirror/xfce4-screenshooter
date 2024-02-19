@@ -27,6 +27,7 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include "screenshooter-global.h"
+#include "screenshooter-utils.h"
 
 
 
@@ -53,19 +54,15 @@ static const char * unsupported_image[] = {
 "                                                                                                    ",
 "                                                                                                    "};
 
-static void handle_global(void *data, struct wl_registry *registry, uint32_t name, const char *interface, uint32_t version);
-static void handle_global_remove(void *data, struct wl_registry *reg, uint32_t name);
-static void frame_handle_ready(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec);
-static void frame_handle_failed(void *data, struct zwlr_screencopy_frame_v1 *frame);
-static void frame_handle_flags(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags);
-static void frame_handle_buffer(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t fmt, uint32_t w, uint32_t h, uint32_t str);
-
 
 
 typedef struct {
+  struct wl_display *display;
+  struct wl_registry *registry;
   struct wl_compositor *compositor;
   struct wl_shm *shm;
   struct zwlr_screencopy_manager_v1 *screencopy_manager;
+  struct zwlr_screencopy_frame_v1 *frame;
   struct wl_buffer *buffer;
   struct wl_shm_pool *pool;
   unsigned char *shm_data;
@@ -78,6 +75,17 @@ typedef struct {
   gboolean capture_failed;
 }
 WaylandClientData;
+
+
+
+static void handle_global(void *data, struct wl_registry *registry, uint32_t name, const char *interface, uint32_t version);
+static void handle_global_remove(void *data, struct wl_registry *reg, uint32_t name);
+static void frame_handle_ready(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec);
+static void frame_handle_failed(void *data, struct zwlr_screencopy_frame_v1 *frame);
+static void frame_handle_flags(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags);
+static void frame_handle_buffer(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t fmt, uint32_t w, uint32_t h, uint32_t str);
+static void screenshooter_free_client_data (WaylandClientData *client_data);
+static gboolean screenshooter_initialize_client_data (WaylandClientData *client_data);
 
 
 
@@ -135,7 +143,7 @@ frame_handle_failed (void *data, struct zwlr_screencopy_frame_v1 *frame)
 {
   WaylandClientData *client_data = data;
 
-  fprintf (stderr, "Failed to capture screencopy frame\n");
+  screenshooter_error ("Failed to capture screencopy frame");
   client_data->capture_failed = TRUE;
 }
 
@@ -164,7 +172,7 @@ frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
   fd = syscall (SYS_memfd_create, "buffer", 0);
   if (fd == -1)
     {
-      fprintf (stderr, "Failed to create fd\n");
+      screenshooter_error ("Failed to create fd");
       abort();
     }
   ftruncate (fd, client_data->size);
@@ -172,7 +180,7 @@ frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
   client_data->shm_data = mmap (NULL, client_data->size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
   if (client_data->shm_data == MAP_FAILED)
     {
-      fprintf (stderr, "Failed to map memory\n");
+      screenshooter_error ("Failed to map memory");
       close (fd);
       abort ();
     }
@@ -180,6 +188,7 @@ frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
   client_data->pool = wl_shm_create_pool (client_data->shm, fd, client_data->size);
   client_data->buffer = wl_shm_pool_create_buffer (client_data->pool, 0, width, height, stride, format);
   close (fd);
+  wl_shm_pool_destroy (client_data->pool);
 
   zwlr_screencopy_frame_v1_copy (frame, client_data->buffer);
   /* wait for flags and ready events */
@@ -239,11 +248,63 @@ static GdkPixbuf
     }
   else
     {
-      fprintf (stderr, "unsupported format %d\n", client_data->format);
+      screenshooter_error ("unsupported format %d", client_data->format);
       return NULL;
     }
 
   return pixbuf;
+}
+
+
+
+void
+screenshooter_free_client_data (WaylandClientData *client_data)
+{
+  if (client_data->compositor != NULL)
+    wl_compositor_destroy (client_data->compositor);
+  if (client_data->shm != NULL)
+    wl_shm_destroy (client_data->shm);
+  if (client_data->screencopy_manager != NULL)
+    zwlr_screencopy_manager_v1_destroy (client_data->screencopy_manager);
+  if (client_data->shm_data != NULL)
+    munmap (client_data->shm_data, client_data->size);
+  if (client_data->buffer != NULL)
+    wl_buffer_destroy (client_data->buffer);
+  if (client_data->frame != NULL)
+    zwlr_screencopy_frame_v1_destroy(client_data->frame);
+
+  wl_registry_destroy (client_data->registry);
+  /* do not destroy client_data->display because it is owned by gdk */
+}
+
+
+
+gboolean
+screenshooter_initialize_client_data (WaylandClientData *client_data)
+{
+  client_data->display = gdk_wayland_display_get_wl_display (gdk_display_get_default ());
+  client_data->registry = wl_display_get_registry (client_data->display);
+
+  wl_registry_add_listener (client_data->registry, &registry_listener, client_data);
+  wl_display_roundtrip (client_data->display);
+
+  if (client_data->compositor == NULL)
+    {
+      screenshooter_error ("Required Wayland interfaces are missing");
+      return FALSE;
+    }
+  if (client_data->shm == NULL)
+    {
+      screenshooter_error ("Compositor is missing wl_shm");
+      return FALSE;
+    }
+  if (client_data->screencopy_manager == NULL)
+    {
+      screenshooter_error ("Compositor does not support wlr-screencopy-unstable-v1");
+      return FALSE;
+    }
+
+  return TRUE;
 }
 
 
@@ -254,12 +315,8 @@ GdkPixbuf
                                            gboolean show_mouse,
                                            gboolean show_border)
 {
-  GdkDisplay *gdk_display;
   GdkMonitor *monitor;
-  struct wl_display *display;
-  struct wl_registry *registry;
   struct wl_output *output;
-  struct zwlr_screencopy_frame_v1 *frame;
   WaylandClientData client_data = {};
   GdkPixbuf *screenshot = NULL;
 
@@ -269,52 +326,35 @@ GdkPixbuf
   /* Only fullscreen is supported for now */
   TRACE ("Get the screenshot of the entire screen");
 
-  gdk_display = gdk_display_get_default ();
-  display = gdk_wayland_display_get_wl_display (gdk_display);
-  registry = wl_display_get_registry (display);
-
-  wl_registry_add_listener (registry, &registry_listener, &client_data);
-  wl_display_roundtrip (display);
-
-  if (client_data.compositor == NULL)
+  if (!screenshooter_initialize_client_data (&client_data))
     {
-      fprintf (stderr, "Required Wayland interfaces are missing\n");
-      return NULL;
-    }
-  if (client_data.shm == NULL)
-    {
-      fprintf (stderr, "Compositor is missing wl_shm\n");
-      return NULL;
-    }
-  if (client_data.screencopy_manager == NULL)
-    {
-      fprintf (stderr, "Compositor does not support wlr-screencopy-unstable-v1\n");
+      screenshooter_free_client_data (&client_data);
       return NULL;
     }
 
-  monitor = gdk_display_get_primary_monitor (gdk_display);
-  if (monitor == NULL)
-    monitor = gdk_display_get_monitor (gdk_display, 0);
+  // TODO support multi-monitors
+  monitor = gdk_display_get_monitor (gdk_display_get_default (), 0);
   output = gdk_wayland_monitor_get_wl_output (monitor);
 
   if (output == NULL)
     {
-      fprintf (stderr, "No output available\n");
+      screenshooter_error ("No output available");
+      screenshooter_free_client_data (&client_data);
       return NULL;
     }
 
-  frame = zwlr_screencopy_manager_v1_capture_output (client_data.screencopy_manager, show_mouse, output);
-  zwlr_screencopy_frame_v1_add_listener (frame, &frame_listener, &client_data);
+  client_data.frame = zwlr_screencopy_manager_v1_capture_output (client_data.screencopy_manager, show_mouse, output);
+  zwlr_screencopy_frame_v1_add_listener (client_data.frame, &frame_listener, &client_data);
 
   while (!client_data.capture_done && !client_data.capture_failed)
-    wl_display_dispatch (display);
+    wl_display_dispatch (client_data.display);
 
   if (client_data.capture_done)
     screenshot = convert_buffer_to_pixbuf (&client_data);
   else
-    fprintf (stderr, "Failed to capture\n");
+    screenshooter_error ("Failed to capture");
 
-  munmap (client_data.shm_data, client_data.size);
+  screenshooter_free_client_data (&client_data);
 
   return screenshot;
 }
