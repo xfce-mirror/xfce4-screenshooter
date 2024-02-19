@@ -173,7 +173,7 @@ frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
   if (fd == -1)
     {
       screenshooter_error ("Failed to create fd");
-      abort();
+      g_abort ();
     }
   ftruncate (fd, client_data->size);
 
@@ -182,7 +182,7 @@ frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
     {
       screenshooter_error ("Failed to map memory");
       close (fd);
-      abort ();
+      g_abort ();
     }
 
   client_data->pool = wl_shm_create_pool (client_data->shm, fd, client_data->size);
