@@ -12,6 +12,7 @@ Makefile.in
 /configure~
 /depcomp
 /install-sh
+/install-sh~
 /intltool-*.in
 /ltmain.sh
 /missing
@@ -42,6 +43,11 @@ Makefile
 /src/xfce4-screenshooter.desktop*
 /stamp-h1
 src/xfce4-screenshooter.appdata.xml
+/protocols/.dirstamp
 
 # UI header files generated using xdt-csource
 lib/*_ui.h
+
+# Code generated using wayland-scanner
+/protocols/*.c
+/protocols/*.h
