@@ -172,7 +172,7 @@ frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
   fd = syscall (SYS_memfd_create, "buffer", 0);
   if (fd == -1)
     {
-      screenshooter_error ("Failed to create fd");
+      screenshooter_error ("Failed to create file descriptor");
       g_abort ();
     }
   ftruncate (fd, client_data->size);
@@ -248,7 +248,7 @@ static GdkPixbuf
     }
   else
     {
-      screenshooter_error ("unsupported format %d", client_data->format);
+      screenshooter_error ("Unsupported pixel format: %d", client_data->format);
       return NULL;
     }
 
