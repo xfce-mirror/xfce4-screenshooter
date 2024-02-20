@@ -997,8 +997,6 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
                                                  _("Select a region"));
   gtk_box_pack_start (GTK_BOX (box), rectangle_button, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button),
-                                (sd->region == SELECT));
   gtk_widget_set_tooltip_text (rectangle_button,
                                _("Select a region to be captured by clicking a point of "
                                  "the screen without releasing the mouse button, "
@@ -1009,6 +1007,17 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                     G_CALLBACK (cb_rectangle_toggled), sd);
   g_signal_connect (G_OBJECT (rectangle_button), "activate",
                     G_CALLBACK (cb_radiobutton_activate), dlg);
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    {
+      gtk_widget_set_sensitive (rectangle_button, FALSE);
+      gtk_widget_set_tooltip_text (rectangle_button, _("Not supported in Wayland"));
+    }
+  else
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
+#else
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
+#endif
 
   /* Create options label */
   label = gtk_label_new ("");
