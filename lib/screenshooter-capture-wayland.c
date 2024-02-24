@@ -64,10 +64,10 @@ OutputData;
 
 static void handle_global (void *data, struct wl_registry *registry, uint32_t name, const char *interface, uint32_t version);
 static void handle_global_remove (void *data, struct wl_registry *reg, uint32_t name);
-static void frame_handle_ready (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec);
-static void frame_handle_failed (void *data, struct zwlr_screencopy_frame_v1 *frame);
-static void frame_handle_flags (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags);
-static void frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t fmt, uint32_t w, uint32_t h, uint32_t str);
+static void handle_frame_ready (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec);
+static void handle_frame_failed (void *data, struct zwlr_screencopy_frame_v1 *frame);
+static void handle_frame_flags (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags);
+static void handle_frame_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t fmt, uint32_t w, uint32_t h, uint32_t str);
 static void screenshooter_free_client_data (ClientData *client_data);
 static void screenshooter_free_output_data (gpointer data);
 static gboolean screenshooter_initialize_client_data (ClientData *client_data);
@@ -145,7 +145,7 @@ const struct wl_registry_listener registry_listener = {
 
 
 static void
-frame_handle_ready (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec)
+handle_frame_ready (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec)
 {
   OutputData *output = data;
 
@@ -156,7 +156,7 @@ frame_handle_ready (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t
 
 
 static void
-frame_handle_failed (void *data, struct zwlr_screencopy_frame_v1 *frame)
+handle_frame_failed (void *data, struct zwlr_screencopy_frame_v1 *frame)
 {
   OutputData *output = data;
 
@@ -167,7 +167,7 @@ frame_handle_failed (void *data, struct zwlr_screencopy_frame_v1 *frame)
 
 
 static void
-frame_handle_flags (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags)
+handle_frame_flags (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags)
 {
   TRACE ("buffer flags received");
 }
@@ -175,7 +175,7 @@ frame_handle_flags (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t
 
 
 static void
-frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t format, uint32_t width, uint32_t height, uint32_t stride)
+handle_frame_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t format, uint32_t width, uint32_t height, uint32_t stride)
 {
   int fd;
   OutputData *output = data;
@@ -214,10 +214,10 @@ frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
 
 
 const struct zwlr_screencopy_frame_v1_listener frame_listener = {
-    .ready = frame_handle_ready,
-    .failed = frame_handle_failed,
-    .flags = frame_handle_flags,
-    .buffer = frame_handle_buffer
+    .ready = handle_frame_ready,
+    .failed = handle_frame_failed,
+    .flags = handle_frame_flags,
+    .buffer = handle_frame_buffer
 };
 
 
