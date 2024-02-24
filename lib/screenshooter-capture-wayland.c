@@ -160,7 +160,7 @@ handle_frame_failed (void *data, struct zwlr_screencopy_frame_v1 *frame)
 {
   OutputData *output = data;
 
-  screenshooter_error ("Failed to capture screencopy frame");
+  screenshooter_error (_("Failed to capture screencopy frame"));
   output->capture_failed = TRUE;
 }
 
@@ -189,7 +189,7 @@ handle_frame_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
   fd = syscall (SYS_memfd_create, "buffer", 0);
   if (fd == -1)
     {
-      screenshooter_error ("Failed to create file descriptor");
+      screenshooter_error (_("Failed to create file descriptor"));
       g_abort ();
     }
   ftruncate (fd, output->size);
@@ -197,7 +197,7 @@ handle_frame_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
   output->shm_data = mmap (NULL, output->size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
   if (output->shm_data == MAP_FAILED)
     {
-      screenshooter_error ("Failed to map memory");
+      screenshooter_error (_("Failed to map memory"));
       close (fd);
       g_abort ();
     }
@@ -237,17 +237,17 @@ screenshooter_initialize_client_data (ClientData *client_data)
 
   if (client_data->compositor == NULL)
     {
-      screenshooter_error ("Required Wayland interfaces are missing");
+      screenshooter_error (_("Required Wayland interfaces are missing"));
       return FALSE;
     }
   if (client_data->shm == NULL)
     {
-      screenshooter_error ("Compositor is missing wl_shm");
+      screenshooter_error (_("Compositor is missing wl_shm"));
       return FALSE;
     }
   if (client_data->screencopy_manager == NULL)
     {
-      screenshooter_error ("Compositor does not support wlr-screencopy-unstable-v1");
+      screenshooter_error (_("Compositor does not support wlr-screencopy-unstable-v1"));
       return FALSE;
     }
 
@@ -304,7 +304,7 @@ static GdkPixbuf
   else
     {
       g_object_unref (pixbuf);
-      screenshooter_error ("Unsupported pixel format: %d", output->format);
+      screenshooter_error (_("Unsupported pixel format: %d"), output->format);
       return NULL;
     }
 
@@ -379,7 +379,7 @@ GdkPixbuf
 
   if (region != FULLSCREEN)
     {
-      screenshooter_error ("The selected mode is not supported in Wayland");
+      screenshooter_error (_("The selected mode is not supported in Wayland"));
       return NULL;
     }
 
@@ -435,7 +435,7 @@ GdkPixbuf
 
   /* check the result */
   if (failure)
-    screenshooter_error ("Failed to capture");
+    screenshooter_error (_("Failed to capture"));
   else
     screenshot = screenshooter_compose_screenshot (outputs);
 
