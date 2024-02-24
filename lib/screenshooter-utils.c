@@ -22,6 +22,9 @@
 #include <glib/gstdio.h>
 #include <libxfce4ui/libxfce4ui.h>
 
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
 
 /* Internals */
 
@@ -197,6 +200,14 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->enable_imgur_upload = enable_imgur_upload;
   sd->show_in_folder = show_in_folder;
   sd->custom_action_command = last_custom_action_command;
+
+  /* Under Wayland force FULLSCREEN region */
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    {
+      sd->region = FULLSCREEN;
+    }
+#endif
 
   /* Check if the screenshot directory read from the preferences is valid */
   if (G_UNLIKELY (!screenshooter_is_directory_writable (sd->screenshot_dir)))

@@ -35,6 +35,10 @@ t */
 
 #include "libscreenshooter.h"
 
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
+
 #define SCREENSHOT_ICON_NAME  "org.xfce.screenshooter"
 
 /* Struct containing all panel plugin data */
@@ -174,17 +178,39 @@ static gboolean cb_button_scrolled (GtkWidget *widget,
     {
       case GDK_SCROLL_UP:
       case GDK_SCROLL_RIGHT:
+
+#ifdef ENABLE_WAYLAND
+        if (!GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+          {
+             pd->sd->region += 1;
+             if (pd->sd->region > SELECT)
+               pd->sd->region = FULLSCREEN;
+          }
+#else
         pd->sd->region += 1;
         if (pd->sd->region > SELECT)
           pd->sd->region = FULLSCREEN;
+#endif
+
         set_panel_button_tooltip (pd);
         gtk_widget_trigger_tooltip_query (pd->button);
         return TRUE;
       case GDK_SCROLL_DOWN:
       case GDK_SCROLL_LEFT:
+
+#ifdef ENABLE_WAYLAND
+        if (!GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+          {
+            pd->sd->region -= 1;
+            if (pd->sd->region == REGION_0)
+              pd->sd->region = SELECT;
+          }
+#else
         pd->sd->region -= 1;
         if (pd->sd->region == REGION_0)
           pd->sd->region = SELECT;
+#endif
+
         set_panel_button_tooltip (pd);
         gtk_widget_trigger_tooltip_query (pd->button);
         return TRUE;
