@@ -17,8 +17,8 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef __HAVE_CAPTURE_H__
-#define __HAVE_CAPTURE_H__
+#ifndef __HAVE_CAPTURE_WAYLAND_H__
+#define __HAVE_CAPTURE_WAYLAND_H__
 
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -29,9 +29,9 @@
 
 
 GdkPixbuf
-*screenshooter_capture_screenshot (gint     region,
-                                   gint     delay,
-                                   gboolean show_mouse,
-                                   gboolean show_border);
+*screenshooter_capture_screenshot_wayland (gint     region,
+                                           gint     delay,
+                                           gboolean show_mouse,
+                                           gboolean show_border);
 
 #endif

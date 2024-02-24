@@ -18,7 +18,11 @@
  */
 
 #include "screenshooter-job-callbacks.h"
+
+#include <libxfce4ui/libxfce4ui.h>
 #include "screenshooter-imgur-dialog.h"
+
+
 
 /* Create and return a dialog with a spinner and a translated title
  * will be used during upload jobs
