@@ -31,29 +31,7 @@
 
 
 
-static const char * unsupported_image[] = {
-"100 18 2 1",
-" 	c #F5FAFE",
-".	c #FF0000",
-"                                                                                                    ",
-"                                                                                                    ",
-" .     .                                                                                         .  ",
-" .     .                                                                   .                     .  ",
-" .     .                                                                   .                     .  ",
-" .     .  . ....    .....   .     .  . ...    . ...      ...      . ...  ......     ...      ... .  ",
-" .     .  ..   ..  .     .  .     .  ..   .   ..   .    .   .     ..   .   .       .   .    .   ..  ",
-" .     .  .     .  .        .     .  .     .  .     .  .     .    .        .      .     .  .     .  ",
-" .     .  .     .  ....     .     .  .     .  .     .  .     .    .        .      .     .  .     .  ",
-" .     .  .     .      ...  .     .  .     .  .     .  .     .    .        .      .......  .     .  ",
-" .     .  .     .        .  .     .  .     .  .     .  .     .    .        .      .        .     .  ",
-" ..   ..  .     .  .     .  ..   ..  ..   .   ..   .    .   .     .        .       .    .   .   ..  ",
-"  .....   .     .   .....    .... .  . ...    . ...      ...      .         ...     ....     ... .  ",
-"                                     .        .                                                     ",
-"                                     .        .                                                     ",
-"                                     .        .                                                     ",
-"                                                                                                    ",
-"                                                                                                    "};
-
+/* Internals */
 
 
 typedef struct {
@@ -62,6 +40,12 @@ typedef struct {
   struct wl_compositor *compositor;
   struct wl_shm *shm;
   struct zwlr_screencopy_manager_v1 *screencopy_manager;
+}
+ClientData;
+
+typedef struct {
+  ClientData *client_data;
+  GdkMonitor *monitor;
   struct zwlr_screencopy_frame_v1 *frame;
   struct wl_buffer *buffer;
   struct wl_shm_pool *pool;
@@ -74,18 +58,51 @@ typedef struct {
   gboolean capture_done;
   gboolean capture_failed;
 }
-WaylandClientData;
+OutputData;
 
 
 
-static void handle_global(void *data, struct wl_registry *registry, uint32_t name, const char *interface, uint32_t version);
-static void handle_global_remove(void *data, struct wl_registry *reg, uint32_t name);
-static void frame_handle_ready(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec);
-static void frame_handle_failed(void *data, struct zwlr_screencopy_frame_v1 *frame);
-static void frame_handle_flags(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags);
-static void frame_handle_buffer(void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t fmt, uint32_t w, uint32_t h, uint32_t str);
-static void screenshooter_free_client_data (WaylandClientData *client_data);
-static gboolean screenshooter_initialize_client_data (WaylandClientData *client_data);
+static void handle_global (void *data, struct wl_registry *registry, uint32_t name, const char *interface, uint32_t version);
+static void handle_global_remove (void *data, struct wl_registry *reg, uint32_t name);
+static void frame_handle_ready (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec);
+static void frame_handle_failed (void *data, struct zwlr_screencopy_frame_v1 *frame);
+static void frame_handle_flags (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags);
+static void frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t fmt, uint32_t w, uint32_t h, uint32_t str);
+static void screenshooter_free_client_data (ClientData *client_data);
+static void screenshooter_free_output_data (gpointer data);
+static gboolean screenshooter_initialize_client_data (ClientData *client_data);
+static GdkPixbuf *screenshooter_compose_screenshot (GList *outputs);
+
+
+
+void
+screenshooter_free_client_data (ClientData *client_data)
+{
+  if (client_data->compositor != NULL)
+    wl_compositor_destroy (client_data->compositor);
+  if (client_data->shm != NULL)
+    wl_shm_destroy (client_data->shm);
+  if (client_data->screencopy_manager != NULL)
+    zwlr_screencopy_manager_v1_destroy (client_data->screencopy_manager);
+
+  wl_registry_destroy (client_data->registry);
+  /* do not destroy client_data->display because it is owned by gdk */
+}
+
+
+
+void
+screenshooter_free_output_data (gpointer data)
+{
+  OutputData *output = data;
+
+  if (output->shm_data != NULL)
+    munmap (output->shm_data, output->size);
+  if (output->buffer != NULL)
+    wl_buffer_destroy (output->buffer);
+  if (output->frame != NULL)
+    zwlr_screencopy_frame_v1_destroy(output->frame);
+}
 
 
 
@@ -96,7 +113,7 @@ static gboolean screenshooter_initialize_client_data (WaylandClientData *client_
 static void
 handle_global (void *data, struct wl_registry *wl_registry, uint32_t name, const char *interface, uint32_t version)
 {
-  WaylandClientData *client_data = data;
+  ClientData *client_data = data;
 
   if (g_strcmp0 (interface, wl_compositor_interface.name) == 0)
     client_data->compositor = wl_registry_bind (wl_registry, name, &wl_compositor_interface, 1);
@@ -130,10 +147,10 @@ const struct wl_registry_listener registry_listener = {
 static void
 frame_handle_ready (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t tv_sec_hi, uint32_t tv_sec_lo, uint32_t tv_nsec)
 {
-  WaylandClientData *client_data = data;
+  OutputData *output = data;
 
   TRACE ("buffer copy ready");
-  client_data->capture_done = TRUE;
+  output->capture_done = TRUE;
 }
 
 
@@ -141,10 +158,10 @@ frame_handle_ready (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t
 static void
 frame_handle_failed (void *data, struct zwlr_screencopy_frame_v1 *frame)
 {
-  WaylandClientData *client_data = data;
+  OutputData *output = data;
 
   screenshooter_error ("Failed to capture screencopy frame");
-  client_data->capture_failed = TRUE;
+  output->capture_failed = TRUE;
 }
 
 
@@ -161,13 +178,13 @@ static void
 frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t format, uint32_t width, uint32_t height, uint32_t stride)
 {
   int fd;
-  WaylandClientData *client_data = data;
+  OutputData *output = data;
 
-  client_data->format = format;
-  client_data->width = width;
-  client_data->height = height;
-  client_data->stride = stride;
-  client_data->size = stride * height;
+  output->format = format;
+  output->width = width;
+  output->height = height;
+  output->stride = stride;
+  output->size = stride * height;
 
   fd = syscall (SYS_memfd_create, "buffer", 0);
   if (fd == -1)
@@ -175,22 +192,22 @@ frame_handle_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
       screenshooter_error ("Failed to create file descriptor");
       g_abort ();
     }
-  ftruncate (fd, client_data->size);
+  ftruncate (fd, output->size);
 
-  client_data->shm_data = mmap (NULL, client_data->size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
-  if (client_data->shm_data == MAP_FAILED)
+  output->shm_data = mmap (NULL, output->size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+  if (output->shm_data == MAP_FAILED)
     {
       screenshooter_error ("Failed to map memory");
       close (fd);
       g_abort ();
     }
 
-  client_data->pool = wl_shm_create_pool (client_data->shm, fd, client_data->size);
-  client_data->buffer = wl_shm_pool_create_buffer (client_data->pool, 0, width, height, stride, format);
+  output->pool = wl_shm_create_pool (output->client_data->shm, fd, output->size);
+  output->buffer = wl_shm_pool_create_buffer (output->pool, 0, width, height, stride, format);
   close (fd);
-  wl_shm_pool_destroy (client_data->pool);
+  wl_shm_pool_destroy (output->pool);
 
-  zwlr_screencopy_frame_v1_copy (frame, client_data->buffer);
+  zwlr_screencopy_frame_v1_copy (frame, output->buffer);
   /* wait for flags and ready events */
 }
 
@@ -205,82 +222,12 @@ const struct zwlr_screencopy_frame_v1_listener frame_listener = {
 
 
 
-static GdkPixbuf
-*convert_buffer_to_pixbuf (WaylandClientData *client_data)
-{
-  guint8 *data;
-  guchar *pixels;
-  GdkPixbuf *pixbuf = NULL;
-
-  data = client_data->shm_data;
-  pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, client_data->width, client_data->height);
-  pixels = gdk_pixbuf_get_pixels (pixbuf);
-
-  if (client_data->format == WL_SHM_FORMAT_ARGB8888 || client_data->format == WL_SHM_FORMAT_XRGB8888)
-    {
-      for (int y = 0; y < client_data->height; y++)
-        {
-          for (int x = 0; x < client_data->width; x++)
-            {
-              gint offset = y * client_data->stride + x * 4;
-              guint32 *px = (guint32 *)(data + offset);
-              pixels[offset + 0] = (*px >> 16) & 0xFF;  /* red */
-              pixels[offset + 1] = (*px >> 8)  & 0xFF;  /* green */
-              pixels[offset + 2] =  *px        & 0xFF;  /* blue */
-              pixels[offset + 3] = (*px >> 24) & 0xFF;  /* alpha */
-            }
-        }
-    }
-  else if (client_data->format == WL_SHM_FORMAT_ABGR8888 || client_data->format == WL_SHM_FORMAT_XBGR8888)
-    {
-      for (int y = 0; y < client_data->height; y++)
-        {
-          for (int x = 0; x < client_data->width; x++)
-            {
-              gint offset = y * client_data->stride + x * 4;
-              guint32 *px = (guint32 *)(data + offset);
-              pixels[offset + 0] =  *px        & 0xFF; /* red */
-              pixels[offset + 1] = (*px >> 8)  & 0xFF; /* green */
-              pixels[offset + 2] = (*px >> 16) & 0xFF; /* blue */
-              pixels[offset + 3] = (*px >> 24) & 0xFF; /* alpha */
-            }
-        }
-    }
-  else
-    {
-      screenshooter_error ("Unsupported pixel format: %d", client_data->format);
-      return NULL;
-    }
-
-  return pixbuf;
-}
-
-
-
-void
-screenshooter_free_client_data (WaylandClientData *client_data)
-{
-  if (client_data->compositor != NULL)
-    wl_compositor_destroy (client_data->compositor);
-  if (client_data->shm != NULL)
-    wl_shm_destroy (client_data->shm);
-  if (client_data->screencopy_manager != NULL)
-    zwlr_screencopy_manager_v1_destroy (client_data->screencopy_manager);
-  if (client_data->shm_data != NULL)
-    munmap (client_data->shm_data, client_data->size);
-  if (client_data->buffer != NULL)
-    wl_buffer_destroy (client_data->buffer);
-  if (client_data->frame != NULL)
-    zwlr_screencopy_frame_v1_destroy(client_data->frame);
-
-  wl_registry_destroy (client_data->registry);
-  /* do not destroy client_data->display because it is owned by gdk */
-}
+/* Wayland client initialization */
 
 
 
 gboolean
-screenshooter_initialize_client_data (WaylandClientData *client_data)
+screenshooter_initialize_client_data (ClientData *client_data)
 {
   client_data->display = gdk_wayland_display_get_wl_display (gdk_display_get_default ());
   client_data->registry = wl_display_get_registry (client_data->display);
@@ -309,52 +256,191 @@ screenshooter_initialize_client_data (WaylandClientData *client_data)
 
 
 
+/* Pixbuf manipulation functions */
+
+
+
+static GdkPixbuf
+*screenshooter_convert_buffer_to_pixbuf (OutputData *output)
+{
+  guint8 *data;
+  guchar *pixels;
+  GdkPixbuf *pixbuf = NULL;
+
+  data = output->shm_data;
+  pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, output->width, output->height);
+  pixels = gdk_pixbuf_get_pixels (pixbuf);
+
+  if (output->format == WL_SHM_FORMAT_ARGB8888 || output->format == WL_SHM_FORMAT_XRGB8888)
+    {
+      for (int y = 0; y < output->height; y++)
+        {
+          for (int x = 0; x < output->width; x++)
+            {
+              gint offset = y * output->stride + x * 4;
+              guint32 *px = (guint32 *)(data + offset);
+              pixels[offset + 0] = (*px >> 16) & 0xFF;  /* red */
+              pixels[offset + 1] = (*px >> 8)  & 0xFF;  /* green */
+              pixels[offset + 2] =  *px        & 0xFF;  /* blue */
+              pixels[offset + 3] = (*px >> 24) & 0xFF;  /* alpha */
+            }
+        }
+    }
+  else if (output->format == WL_SHM_FORMAT_ABGR8888 || output->format == WL_SHM_FORMAT_XBGR8888)
+    {
+      for (int y = 0; y < output->height; y++)
+        {
+          for (int x = 0; x < output->width; x++)
+            {
+              gint offset = y * output->stride + x * 4;
+              guint32 *px = (guint32 *)(data + offset);
+              pixels[offset + 0] =  *px        & 0xFF; /* red */
+              pixels[offset + 1] = (*px >> 8)  & 0xFF; /* green */
+              pixels[offset + 2] = (*px >> 16) & 0xFF; /* blue */
+              pixels[offset + 3] = (*px >> 24) & 0xFF; /* alpha */
+            }
+        }
+    }
+  else
+    {
+      g_object_unref (pixbuf);
+      screenshooter_error ("Unsupported pixel format: %d", output->format);
+      return NULL;
+    }
+
+  return pixbuf;
+}
+
+
+
+GdkPixbuf
+*screenshooter_compose_screenshot (GList *outputs)
+{
+  GdkRectangle geometry;
+  GdkPixbuf *dest = NULL;
+  int max_width = 0, max_height = 0;
+
+  /* find the maximum dimensions */
+  for (GList *iter = outputs; iter != NULL; iter = iter->next)
+    {
+      OutputData *output = (OutputData *) iter->data;
+      gdk_monitor_get_geometry (output->monitor, &geometry);
+      max_width = MAX (max_width, geometry.x + geometry.width);
+      max_height = MAX (max_height, geometry.y + geometry.height);
+    }
+
+  /* create a new destination pixbuf */
+  dest = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, max_width, max_height);
+  if (dest == NULL)
+    {
+      g_warning ("Failed to create destination pixbuf.");
+      return NULL;
+    }
+
+  /* fill with transparency */
+  gdk_pixbuf_fill (dest, 0x00000000);
+
+  /* composite each screenshot onto the destination pixbuf */
+  for (GList *iter = outputs; iter != NULL; iter = iter->next)
+    {
+      OutputData *output = (OutputData *) iter->data;
+      GdkPixbuf *pixbuf = screenshooter_convert_buffer_to_pixbuf (output);
+      gdk_monitor_get_geometry (output->monitor, &geometry);
+      gdk_pixbuf_composite (pixbuf, dest,
+                            geometry.x, geometry.y,
+                            geometry.width, geometry.height,
+                            geometry.x, geometry.y,
+                            1.0, 1.0,
+                            GDK_INTERP_BILINEAR,
+                            255);
+      g_object_unref (pixbuf);
+    }
+
+  return dest;
+}
+
+
+
+/* Public */
+
+
+
 GdkPixbuf
 *screenshooter_capture_screenshot_wayland (gint     region,
                                            gint     delay,
                                            gboolean show_mouse,
                                            gboolean show_border)
 {
-  GdkMonitor *monitor;
-  struct wl_output *output;
-  WaylandClientData client_data = {};
+  int n_monitors;
+  gboolean failure = FALSE;
+  GList *outputs = NULL;
+  ClientData client_data = {};
   GdkPixbuf *screenshot = NULL;
 
   if (region != FULLSCREEN)
-    return gdk_pixbuf_new_from_xpm_data (unsupported_image);
+    {
+      screenshooter_error ("The selected mode is not supported in Wayland");
+      return NULL;
+    }
 
-  /* Only fullscreen is supported for now */
+  /* only fullscreen is supported for now */
   TRACE ("Get the screenshot of the entire screen");
 
+  /* initializate the wayland client  */
   if (!screenshooter_initialize_client_data (&client_data))
     {
       screenshooter_free_client_data (&client_data);
       return NULL;
     }
 
-  // TODO support multi-monitors
-  monitor = gdk_display_get_monitor (gdk_display_get_default (), 0);
-  output = gdk_wayland_monitor_get_wl_output (monitor);
-
-  if (output == NULL)
+  /* collect outputs (monitors)  */
+  n_monitors = gdk_display_get_n_monitors (gdk_display_get_default ());
+  for (int i = 0; i < n_monitors; i++)
     {
-      screenshooter_error ("No output available");
-      screenshooter_free_client_data (&client_data);
-      return NULL;
+      GdkMonitor *monitor = gdk_display_get_monitor (gdk_display_get_default (), i);
+      struct wl_output *wl_output = gdk_wayland_monitor_get_wl_output (monitor);
+      if (wl_output == NULL)
+        {
+          g_warning ("No output available for monitor %d", i);
+          continue;
+        }
+
+      OutputData *output = g_new0 (OutputData, 1);
+      outputs = g_list_append (outputs, output);
+      output->monitor = monitor;
+      output->client_data = &client_data;
+      output->frame = zwlr_screencopy_manager_v1_capture_output (client_data.screencopy_manager, show_mouse, wl_output);
+      zwlr_screencopy_frame_v1_add_listener (output->frame, &frame_listener, output);
     }
 
-  client_data.frame = zwlr_screencopy_manager_v1_capture_output (client_data.screencopy_manager, show_mouse, output);
-  zwlr_screencopy_frame_v1_add_listener (client_data.frame, &frame_listener, &client_data);
+  /* wait for the capture of all outputs */
+  while (TRUE)
+    {
+      gboolean done = TRUE;
 
-  while (!client_data.capture_done && !client_data.capture_failed)
-    wl_display_dispatch (client_data.display);
+      for (GList *elem = outputs; elem; elem = elem->next)
+        {
+          OutputData *output = elem->data;
+          if (!output->capture_done && !output->capture_failed)
+            done = FALSE;
+          if (output->capture_failed)
+            failure = TRUE;
+        }
 
-  if (client_data.capture_done)
-    screenshot = convert_buffer_to_pixbuf (&client_data);
-  else
+      if (done)
+        break;
+
+      wl_display_dispatch (client_data.display);
+    }
+
+  /* check the result */
+  if (failure)
     screenshooter_error ("Failed to capture");
+  else
+    screenshot = screenshooter_compose_screenshot (outputs);
 
   screenshooter_free_client_data (&client_data);
+  g_list_free_full (outputs, screenshooter_free_output_data);
 
   return screenshot;
 }
