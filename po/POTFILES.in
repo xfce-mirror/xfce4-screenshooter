@@ -4,6 +4,7 @@ lib/screenshooter-format.c
 lib/screenshooter-utils.c
 lib/screenshooter-imgur.c
 lib/screenshooter-imgur-dialog.c
+lib/screenshooter-capture-wayland.c
 [type: gettext/glade]lib/screenshooter-imgur-dialog.ui
 lib/screenshooter-job-callbacks.c
 src/main.c
