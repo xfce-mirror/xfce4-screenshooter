@@ -266,13 +266,7 @@ screenshooter_initialize_client_data (ClientData *client_data)
 static GdkPixbuf
 *screenshooter_convert_buffer_to_pixbuf (OutputData *output)
 {
-  guint8 *data;
-  guchar *pixels;
-  GdkPixbuf *pixbuf = NULL;
-
-  data = output->shm_data;
-  pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, TRUE, 8, output->width, output->height);
-  pixels = gdk_pixbuf_get_pixels (pixbuf);
+  guint8 *data = output->shm_data;
 
   if (output->format == WL_SHM_FORMAT_ARGB8888 || output->format == WL_SHM_FORMAT_XRGB8888)
     {
@@ -282,10 +276,14 @@ static GdkPixbuf
             {
               gint offset = y * output->stride + x * 4;
               guint32 *px = (guint32 *)(data + offset);
-              pixels[offset + 0] = (*px >> 16) & 0xFF;  /* red */
-              pixels[offset + 1] = (*px >> 8)  & 0xFF;  /* green */
-              pixels[offset + 2] =  *px        & 0xFF;  /* blue */
-              pixels[offset + 3] = (*px >> 24) & 0xFF;  /* alpha */
+              guint8 red = (*px >> 16) & 0xFF;
+              guint8 green = (*px >> 8) & 0xFF;
+              guint8 blue = *px & 0xFF;
+              guint8 alpha = (*px >> 24) & 0xFF;
+              data[offset + 0] = red;
+              data[offset + 1] = green;
+              data[offset + 2] = blue;
+              data[offset + 3] = alpha;
             }
         }
     }
@@ -297,21 +295,24 @@ static GdkPixbuf
             {
               gint offset = y * output->stride + x * 4;
               guint32 *px = (guint32 *)(data + offset);
-              pixels[offset + 0] =  *px        & 0xFF; /* red */
-              pixels[offset + 1] = (*px >> 8)  & 0xFF; /* green */
-              pixels[offset + 2] = (*px >> 16) & 0xFF; /* blue */
-              pixels[offset + 3] = (*px >> 24) & 0xFF; /* alpha */
+              guint8 red = *px & 0xFF;
+              guint8 green = (*px >> 8) & 0xFF;
+              guint8 blue = (*px >> 16) & 0xFF;
+              guint8 alpha = (*px >> 24) & 0xFF;
+              data[offset + 0] = red;
+              data[offset + 1] = green; 
+              data[offset + 2] = blue;
+              data[offset + 3] = alpha;
             }
         }
     }
   else
     {
-      g_object_unref (pixbuf);
       screenshooter_error (_("Unsupported pixel format: %d"), output->format);
       return NULL;
     }
 
-  return pixbuf;
+  return gdk_pixbuf_new_from_data (data, GDK_COLORSPACE_RGB, TRUE, 8, output->width, output->height, output->stride, NULL, NULL);
 }
 
 
