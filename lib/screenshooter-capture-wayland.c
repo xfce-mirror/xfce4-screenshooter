@@ -101,7 +101,9 @@ screenshooter_free_output_data (gpointer data)
   if (output->buffer != NULL)
     wl_buffer_destroy (output->buffer);
   if (output->frame != NULL)
-    zwlr_screencopy_frame_v1_destroy(output->frame);
+    zwlr_screencopy_frame_v1_destroy (output->frame);
+
+  g_free (output);
 }
 
 
