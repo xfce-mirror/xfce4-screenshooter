@@ -19,7 +19,6 @@
 
 #include "screenshooter-capture-wayland.h"
 
-#include <syscall.h>
 #include <sys/mman.h>
 
 #include <gdk/gdkwayland.h>
@@ -180,6 +179,7 @@ static void
 handle_frame_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t format, uint32_t width, uint32_t height, uint32_t stride)
 {
   int fd;
+  char template[] = "/tmp/screenshooter-buffer-XXXXXX";
   OutputData *output = data;
 
   output->format = format;
@@ -188,13 +188,14 @@ handle_frame_buffer (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_
   output->stride = stride;
   output->size = stride * height;
 
-  fd = syscall (SYS_memfd_create, "buffer", 0);
+  fd = mkstemp (template);
   if (fd == -1)
     {
       screenshooter_error (_("Failed to create file descriptor"));
       g_abort ();
     }
   ftruncate (fd, output->size);
+  unlink (template);
 
   output->shm_data = mmap (NULL, output->size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
   if (output->shm_data == MAP_FAILED)
