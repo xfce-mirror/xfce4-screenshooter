@@ -24,6 +24,10 @@
 
 #include <exo/exo.h>
 
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#endif
+
 #define ICON_SIZE 16
 #define THUMB_X_SIZE 200
 #define THUMB_Y_SIZE 125
@@ -245,7 +249,8 @@ static void cb_imgur_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 
 static void cb_imgur_warning_change_cursor (GtkWidget *widget, GdkCursor *cursor)
 {
-  gdk_window_set_cursor (gtk_widget_get_window (widget), cursor);
+  if (cursor != NULL)
+    gdk_window_set_cursor (gtk_widget_get_window (widget), cursor);
 }
 
 
@@ -970,22 +975,29 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
                                                  _("Active window"));
   gtk_box_pack_start (GTK_BOX (box), active_window_button, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button),
-                                (sd->region == ACTIVE_WINDOW));
   gtk_widget_set_tooltip_text (active_window_button,
                                _("Take a screenshot of the active window"));
   g_signal_connect (G_OBJECT (active_window_button), "toggled",
                     G_CALLBACK (cb_active_window_toggled), sd);
   g_signal_connect (G_OBJECT (active_window_button), "activate",
                     G_CALLBACK (cb_radiobutton_activate), dlg);
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    {
+      gtk_widget_set_sensitive (active_window_button, FALSE);
+      gtk_widget_set_tooltip_text (active_window_button, _("Not supported in Wayland"));
+    }
+  else
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button), (sd->region == ACTIVE_WINDOW));
+#else
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button), (sd->region == ACTIVE_WINDOW));
+#endif
 
   /* Rectangle */
   rectangle_button =
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
                                                  _("Select a region"));
   gtk_box_pack_start (GTK_BOX (box), rectangle_button, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button),
-                                (sd->region == SELECT));
   gtk_widget_set_tooltip_text (rectangle_button,
                                _("Select a region to be captured by clicking a point of "
                                  "the screen without releasing the mouse button, "
@@ -996,6 +1008,17 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                     G_CALLBACK (cb_rectangle_toggled), sd);
   g_signal_connect (G_OBJECT (rectangle_button), "activate",
                     G_CALLBACK (cb_radiobutton_activate), dlg);
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    {
+      gtk_widget_set_sensitive (rectangle_button, FALSE);
+      gtk_widget_set_tooltip_text (rectangle_button, _("Not supported in Wayland"));
+    }
+  else
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
+#else
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
+#endif
 
   /* Create options label */
   label = gtk_label_new ("");
@@ -1045,6 +1068,13 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                     G_CALLBACK (cb_toggle_set_insensi), checkbox);
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
                     G_CALLBACK (cb_toggle_set_insensi), checkbox);
+#ifdef ENABLE_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+    {
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbox), FALSE);
+      gtk_widget_set_sensitive (checkbox, FALSE);
+    }
+#endif
 
   /* Create the main box for the delay stuff */
   main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
@@ -1340,7 +1370,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
       gtk_container_add (GTK_CONTAINER (box), evbox);
       gtk_container_add (GTK_CONTAINER (evbox), image);
 
-      cursor = gdk_cursor_new_for_display (gdk_display_get_default (), GDK_HAND2);
+      cursor = gdk_cursor_new_from_name (gdk_display_get_default (), "pointer");
       g_signal_connect (evbox, "realize",
                         G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
       g_object_unref (cursor);
