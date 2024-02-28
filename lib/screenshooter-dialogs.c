@@ -250,7 +250,10 @@ static void cb_imgur_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 static void cb_imgur_warning_change_cursor (GtkWidget *widget, GdkCursor *cursor)
 {
   if (cursor != NULL)
-    gdk_window_set_cursor (gtk_widget_get_window (widget), cursor);
+    {
+      gdk_window_set_cursor (gtk_widget_get_window (widget), cursor);
+      g_object_unref (cursor);
+    }
 }
 
 
@@ -1371,9 +1374,8 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
       gtk_container_add (GTK_CONTAINER (evbox), image);
 
       cursor = gdk_cursor_new_from_name (gdk_display_get_default (), "pointer");
-      g_signal_connect (evbox, "realize",
-                        G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
-      g_object_unref (cursor);
+      if (cursor != NULL)
+        g_signal_connect (evbox, "realize", G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
 
       label = gtk_label_new (NULL);
       gtk_label_set_markup (GTK_LABEL (label), _("<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"));
