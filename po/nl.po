@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Pjotr <pjotrvertaalt@gmail.com>, 2013-2015,2018-2023
+# Pjotr <pjotrvertaalt@gmail.com>, 2013-2015,2018-2024
 # Stephan Arts <stephan@xfce.org>, 2008
 # Vincent Tunru <projects@vinnl.nl>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 00:48+0200\n"
+"POT-Creation-Date: 2024-02-28 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2013-2015,2018-2023\n"
+"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2013-2015,2018-2024\n"
 "Language-Team: Dutch (http://app.transifex.com/xfce/xfce-apps/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,189 +20,193 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:524
+#: ../lib/screenshooter-dialogs.c:529
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb van %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:627
+#: ../lib/screenshooter-dialogs.c:632
 msgid "Transfer"
 msgstr "Overdracht"
 
-#: ../lib/screenshooter-dialogs.c:648
+#: ../lib/screenshooter-dialogs.c:653
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">De schermafdruk wordt overgedragen naar:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:888 ../lib/screenshooter-dialogs.c:897
-#: ../lib/screenshooter-dialogs.c:1125 ../lib/screenshooter-utils.c:185
-#: ../lib/screenshooter-utils.c:229 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:893 ../lib/screenshooter-dialogs.c:902
+#: ../lib/screenshooter-dialogs.c:1155 ../lib/screenshooter-utils.c:133
+#: ../lib/screenshooter-utils.c:177 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:890 ../lib/screenshooter-dialogs.c:900
+#: ../lib/screenshooter-dialogs.c:895 ../lib/screenshooter-dialogs.c:905
 msgid "_Preferences"
 msgstr "_Voorkeuren"
 
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-dialogs.c:899
-#: ../lib/screenshooter-dialogs.c:1127
+#: ../lib/screenshooter-dialogs.c:896 ../lib/screenshooter-dialogs.c:904
+#: ../lib/screenshooter-dialogs.c:1157
 msgid "_Help"
 msgstr "_Hulp"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1513
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-dialogs.c:1543
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "_Sluiten"
 
-#: ../lib/screenshooter-dialogs.c:901 ../lib/screenshooter-dialogs.c:1129
-#: ../lib/screenshooter-job-callbacks.c:172
+#: ../lib/screenshooter-dialogs.c:906 ../lib/screenshooter-dialogs.c:1159
+#: ../lib/screenshooter-job-callbacks.c:176
 msgid "_Cancel"
 msgstr "_Afbreken"
 
-#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-dialogs.c:1130
-#: ../lib/screenshooter-job-callbacks.c:173
+#: ../lib/screenshooter-dialogs.c:907 ../lib/screenshooter-dialogs.c:1160
+#: ../lib/screenshooter-job-callbacks.c:177
 msgid "_OK"
 msgstr "_Oké"
 
-#: ../lib/screenshooter-dialogs.c:935
+#: ../lib/screenshooter-dialogs.c:940
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Gebied om een schermafdruk van te maken</span>"
 
-#: ../lib/screenshooter-dialogs.c:957
+#: ../lib/screenshooter-dialogs.c:962
 msgid "Entire screen"
 msgstr "Volledig scherm"
 
-#: ../lib/screenshooter-dialogs.c:962 ../src/main.c:62
-#: ../panel-plugin/screenshooter-plugin.c:308
+#: ../lib/screenshooter-dialogs.c:967 ../src/main.c:62
+#: ../panel-plugin/screenshooter-plugin.c:332
 msgid "Take a screenshot of the entire screen"
 msgstr "Maak een schermafdruk van het hele scherm"
 
-#: ../lib/screenshooter-dialogs.c:971
+#: ../lib/screenshooter-dialogs.c:976
 msgid "Active window"
 msgstr "Actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:976 ../src/main.c:109
-#: ../panel-plugin/screenshooter-plugin.c:313
+#: ../lib/screenshooter-dialogs.c:979 ../src/main.c:109
+#: ../panel-plugin/screenshooter-plugin.c:337
 msgid "Take a screenshot of the active window"
 msgstr "Maak een schermafdruk van het actieve venster"
 
-#: ../lib/screenshooter-dialogs.c:985
+#: ../lib/screenshooter-dialogs.c:988 ../lib/screenshooter-dialogs.c:1015
+msgid "Not supported in Wayland"
+msgstr "Niet ondersteund in Wayland"
+
+#: ../lib/screenshooter-dialogs.c:999
 msgid "Select a region"
 msgstr "Kies een gebied"
 
-#: ../lib/screenshooter-dialogs.c:990
+#: ../lib/screenshooter-dialogs.c:1002
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Kies een gebied dat moet worden vastgelegd, door te klikken op het scherm en de muisknop ingedrukt te houden en uw muis naar de andere hoek van het gebied te slepen, waarna u de muisknop kunt loslaten.\n\nHoud de Ctrl-knop ingedrukt tijdens het slepen om het gebied te verplaatsen."
 
-#: ../lib/screenshooter-dialogs.c:1003
+#: ../lib/screenshooter-dialogs.c:1026
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opties</span>"
 
-#: ../lib/screenshooter-dialogs.c:1023
+#: ../lib/screenshooter-dialogs.c:1046
 msgid "Capture the mouse pointer"
 msgstr "Muispijl afbeelden"
 
-#: ../lib/screenshooter-dialogs.c:1027
+#: ../lib/screenshooter-dialogs.c:1050
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Toon muispijl op de schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:1034
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "Capture the window border"
 msgstr "Leg de vensterrand vast"
 
-#: ../lib/screenshooter-dialogs.c:1039
+#: ../lib/screenshooter-dialogs.c:1062
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Toon de vensterrand in de schermafdruk.\nUitzetten van deze optie heeft geen effect bij CSD-vensters."
 
-#: ../lib/screenshooter-dialogs.c:1056
+#: ../lib/screenshooter-dialogs.c:1086
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vertraging voor het maken van de schermafdruk</span>"
 
-#: ../lib/screenshooter-dialogs.c:1080
+#: ../lib/screenshooter-dialogs.c:1110
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Vertraging in seconden voor het maken van een schermafdruk"
 
-#: ../lib/screenshooter-dialogs.c:1083
+#: ../lib/screenshooter-dialogs.c:1113
 msgid "seconds"
 msgstr "seconden"
 
-#: ../lib/screenshooter-dialogs.c:1128
+#: ../lib/screenshooter-dialogs.c:1158
 msgid "_Back"
 msgstr "_Terug"
 
-#: ../lib/screenshooter-dialogs.c:1168
+#: ../lib/screenshooter-dialogs.c:1198
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Actie</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1183
+#: ../lib/screenshooter-dialogs.c:1213
 msgid "Save"
 msgstr "Opslaan"
 
-#: ../lib/screenshooter-dialogs.c:1189
+#: ../lib/screenshooter-dialogs.c:1219
 msgid "Save the screenshot to a file"
 msgstr "Sla de schermafdruk op als een bestand"
 
 #. Show in folder checkbox
-#: ../lib/screenshooter-dialogs.c:1193
+#: ../lib/screenshooter-dialogs.c:1223
 msgid "Show in Folder"
 msgstr "Tonen in map"
 
-#: ../lib/screenshooter-dialogs.c:1200
+#: ../lib/screenshooter-dialogs.c:1230
 msgid "Shows the saved file in the folder"
 msgstr "Toont het opgeslagen bestand in de map"
 
-#: ../lib/screenshooter-dialogs.c:1208
+#: ../lib/screenshooter-dialogs.c:1238
 msgid "Copy to the clipboard"
 msgstr "Kopieer naar het klembord"
 
-#: ../lib/screenshooter-dialogs.c:1210
+#: ../lib/screenshooter-dialogs.c:1240
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopieer de schermafdruk naar het klembord zodat deze later geplakt kan worden"
 
-#: ../lib/screenshooter-dialogs.c:1224
+#: ../lib/screenshooter-dialogs.c:1254
 msgid "Open with:"
 msgstr "Open met:"
 
-#: ../lib/screenshooter-dialogs.c:1232
+#: ../lib/screenshooter-dialogs.c:1262
 msgid "Open the screenshot with the chosen application"
 msgstr "Open de schermafdruk met de gekozen toepassing"
 
-#: ../lib/screenshooter-dialogs.c:1251 ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:1281 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Toepassing om de schermafdruk mee te openen"
 
-#: ../lib/screenshooter-dialogs.c:1265
+#: ../lib/screenshooter-dialogs.c:1295
 msgid "Custom Action:"
 msgstr "Aangepaste actie:"
 
-#: ../lib/screenshooter-dialogs.c:1273
+#: ../lib/screenshooter-dialogs.c:1303
 msgid "Execute the selected custom action"
 msgstr "Voer de gekozen aangepaste actie uit"
 
-#: ../lib/screenshooter-dialogs.c:1285
+#: ../lib/screenshooter-dialogs.c:1315
 msgid "Custom action to execute"
 msgstr "Uit te voeren aangepaste actie"
 
-#: ../lib/screenshooter-dialogs.c:1310
+#: ../lib/screenshooter-dialogs.c:1340
 #: ../lib/screenshooter-custom-actions.c:184
 msgid "Host on Imgur™"
 msgstr "Onderbrengen op Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1314
+#: ../lib/screenshooter-dialogs.c:1344
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr "Breng de schermafdruk onder op Imgur™, een gratis internetdienst om afbeeldingen te plaatsen"
 
-#: ../lib/screenshooter-dialogs.c:1326
+#: ../lib/screenshooter-dialogs.c:1356
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -210,65 +214,65 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Pas op met gevoelige inhoud, de opgestuurde afbeelding zal\npubliekelijk beschikbaar zijn en er is geen garantie dat zij veilig\nkan worden verwijderd. Xfce is niet geaffilieerd met Imgur™.\nAls u deze functie benut moet u instemmen met de<a href=\"https://imgur.com/tos\">voorwaarden</a>van Imgur™. "
 
-#: ../lib/screenshooter-dialogs.c:1349
+#: ../lib/screenshooter-dialogs.c:1379
 msgid ""
 "<a "
 "href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
 msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Verouderd!</a>"
 
-#: ../lib/screenshooter-dialogs.c:1361
+#: ../lib/screenshooter-dialogs.c:1391
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Voorbeeld</span>"
 
-#: ../lib/screenshooter-dialogs.c:1422
+#: ../lib/screenshooter-dialogs.c:1452
 msgid "Save screenshot as..."
 msgstr "Sla schermafdruk op als..."
 
-#: ../lib/screenshooter-dialogs.c:1511
+#: ../lib/screenshooter-dialogs.c:1541
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: ../lib/screenshooter-dialogs.c:1536
+#: ../lib/screenshooter-dialogs.c:1566
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aangepaste acties</span>"
 
-#: ../lib/screenshooter-dialogs.c:1555
+#: ../lib/screenshooter-dialogs.c:1585
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "U kunt aangepaste acties instellen die beschikbaar zullen zijn voor schermafdrukken nadat die zijn gemaakt."
 
-#: ../lib/screenshooter-dialogs.c:1585
+#: ../lib/screenshooter-dialogs.c:1615
 msgid "Custom Action"
 msgstr "Aangepaste actie"
 
-#: ../lib/screenshooter-dialogs.c:1598
+#: ../lib/screenshooter-dialogs.c:1628
 msgid "Add custom action"
 msgstr "Aangepaste actie toevoegen"
 
-#: ../lib/screenshooter-dialogs.c:1605
+#: ../lib/screenshooter-dialogs.c:1635
 msgid "Remove selected custom action"
 msgstr "Gekozen aangepaste actie verwijderen"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1627
+#: ../lib/screenshooter-dialogs.c:1657
 msgid "Name"
 msgstr "Naam"
 
-#: ../lib/screenshooter-dialogs.c:1628
+#: ../lib/screenshooter-dialogs.c:1658
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Naam van de actie die zal worden getoond in het Acties-dialoogvenster"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1637
+#: ../lib/screenshooter-dialogs.c:1667
 msgid "Command"
 msgstr "Opdracht"
 
-#: ../lib/screenshooter-dialogs.c:1638
+#: ../lib/screenshooter-dialogs.c:1668
 msgid "Command that will be executed for this custom action"
 msgstr "Opdracht die zal worden uitgevoerd voor deze aangepaste actie"
 
-#: ../lib/screenshooter-dialogs.c:1645
+#: ../lib/screenshooter-dialogs.c:1675
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Gebruik %f als tijdelijke aanduiding voor locatie van genomen schermafdruk"
@@ -310,14 +314,14 @@ msgstr "JPEG XL Bestand"
 msgid "AVIF File"
 msgstr "AVIF Bestand"
 
-#: ../lib/screenshooter-utils.c:367
+#: ../lib/screenshooter-utils.c:323
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>De toepassing kon niet worden gestart.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:442
+#: ../lib/screenshooter-utils.c:400
 msgid "Error"
 msgstr "Fout"
 
@@ -333,6 +337,43 @@ msgstr "Er is een fout opgetreden bij het overbrengen van de gegevens naar imgur
 #: ../lib/screenshooter-imgur.c:232
 msgid "Imgur"
 msgstr "Imgur"
+
+#: ../lib/screenshooter-capture-wayland.c:164
+msgid "Failed to capture screencopy frame"
+msgstr "Kon omlijsting van schermafdruk niet vastleggen"
+
+#: ../lib/screenshooter-capture-wayland.c:194
+msgid "Failed to create file descriptor"
+msgstr "Kon beschrijving van bestand niet maken"
+
+#: ../lib/screenshooter-capture-wayland.c:203
+msgid "Failed to map memory"
+msgstr "Kon geen geheugen toewijzen"
+
+#: ../lib/screenshooter-capture-wayland.c:243
+msgid "Required Wayland interfaces are missing"
+msgstr "Voor Wayland vereiste gebruikersschillen ontbreken"
+
+#: ../lib/screenshooter-capture-wayland.c:248
+msgid "Compositor is missing wl_shm"
+msgstr "Samensteller ontbeert wl_shm"
+
+#: ../lib/screenshooter-capture-wayland.c:253
+msgid "Compositor does not support wlr-screencopy-unstable-v1"
+msgstr "Samensteller ondersteunt wlr-screencopy-unstable-v1 niet"
+
+#: ../lib/screenshooter-capture-wayland.c:311
+#, c-format
+msgid "Unsupported pixel format: %d"
+msgstr "Niet-ondersteunde opmaak voor beeldpunten: %d"
+
+#: ../lib/screenshooter-capture-wayland.c:386
+msgid "The selected mode is not supported in Wayland"
+msgstr "De gekozen modus wordt niet ondersteund in Wayland"
+
+#: ../lib/screenshooter-capture-wayland.c:442
+msgid "Failed to capture"
+msgstr "Kon niet vastleggen"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -417,52 +458,52 @@ msgstr "Deze koppeling verschijnt maar één keer. Zorg ervoor om hem op te slaa
 msgid "Deletion link"
 msgstr "Koppeling voor verwijdering"
 
-#: ../lib/screenshooter-job-callbacks.c:73
+#: ../lib/screenshooter-job-callbacks.c:77
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
 #. Create the information dialog
-#: ../lib/screenshooter-job-callbacks.c:170
+#: ../lib/screenshooter-job-callbacks.c:174
 msgid "Details about the screenshot"
 msgstr "Bijzonderheden van de schermafdruk"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:213
+#: ../lib/screenshooter-job-callbacks.c:217
 msgid "User:"
 msgstr "Gebruiker:"
 
-#: ../lib/screenshooter-job-callbacks.c:221
+#: ../lib/screenshooter-job-callbacks.c:225
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr "Uw gebruikersnaam; indien u er nog geen hebt, maak er dan a.u.b. één aan op de webpagina waarvan hierboven een webkoppeling staat"
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:227
+#: ../lib/screenshooter-job-callbacks.c:231
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: ../lib/screenshooter-job-callbacks.c:234
+#: ../lib/screenshooter-job-callbacks.c:238
 msgid "The password for the user above"
 msgstr "Het wachtwoord voor bovenstaande gebruiker"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:240
+#: ../lib/screenshooter-job-callbacks.c:244
 msgid "Title:"
 msgstr "Titel:"
 
-#: ../lib/screenshooter-job-callbacks.c:248
+#: ../lib/screenshooter-job-callbacks.c:252
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "De titel van de schermafdruk; deze zal worden gebruikt bij het tonen van de schermafdruk op de afbeeldingenwebdienst"
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:254
+#: ../lib/screenshooter-job-callbacks.c:258
 msgid "Comment:"
 msgstr "Commentaar:"
 
-#: ../lib/screenshooter-job-callbacks.c:262
+#: ../lib/screenshooter-job-callbacks.c:266
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
@@ -484,7 +525,7 @@ msgstr "Toon muispijl op de schermafdruk"
 msgid "Removes the window border from the screenshot"
 msgstr "Verwijdert de vensterrand uit de schermafdruk"
 
-#: ../src/main.c:82 ../panel-plugin/screenshooter-plugin.c:318
+#: ../src/main.c:82 ../panel-plugin/screenshooter-plugin.c:342
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
