@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Besnik Bleta <besnik@programeshqip.org>, 2007
-# Besnik Bleta <besnik@programeshqip.org>, 2007,2020-2023
+# Besnik Bleta <besnik@programeshqip.org>, 2007,2020-2024
 # Besnik Bleta <besnik@programeshqip.org>, 2018-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 00:48+0200\n"
+"POT-Creation-Date: 2024-02-28 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2007,2020-2023\n"
+"Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2007,2020-2024\n"
 "Language-Team: Albanian (http://app.transifex.com/xfce/xfce-apps/language/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,189 +20,193 @@ msgstr ""
 "Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../lib/screenshooter-dialogs.c:524
+#: ../lib/screenshooter-dialogs.c:529
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb nga %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:627
+#: ../lib/screenshooter-dialogs.c:632
 msgid "Transfer"
 msgstr "Shpërngule"
 
-#: ../lib/screenshooter-dialogs.c:648
+#: ../lib/screenshooter-dialogs.c:653
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Fotoja e ekranit po shpërngulet te:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:888 ../lib/screenshooter-dialogs.c:897
-#: ../lib/screenshooter-dialogs.c:1125 ../lib/screenshooter-utils.c:185
-#: ../lib/screenshooter-utils.c:229 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:893 ../lib/screenshooter-dialogs.c:902
+#: ../lib/screenshooter-dialogs.c:1155 ../lib/screenshooter-utils.c:133
+#: ../lib/screenshooter-utils.c:177 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Foto ekrani"
 
-#: ../lib/screenshooter-dialogs.c:890 ../lib/screenshooter-dialogs.c:900
+#: ../lib/screenshooter-dialogs.c:895 ../lib/screenshooter-dialogs.c:905
 msgid "_Preferences"
 msgstr "_Parapëlqime"
 
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-dialogs.c:899
-#: ../lib/screenshooter-dialogs.c:1127
+#: ../lib/screenshooter-dialogs.c:896 ../lib/screenshooter-dialogs.c:904
+#: ../lib/screenshooter-dialogs.c:1157
 msgid "_Help"
 msgstr "_Ndihmë"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1513
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-dialogs.c:1543
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "_Mbylle"
 
-#: ../lib/screenshooter-dialogs.c:901 ../lib/screenshooter-dialogs.c:1129
-#: ../lib/screenshooter-job-callbacks.c:172
+#: ../lib/screenshooter-dialogs.c:906 ../lib/screenshooter-dialogs.c:1159
+#: ../lib/screenshooter-job-callbacks.c:176
 msgid "_Cancel"
 msgstr "_Anuloje"
 
-#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-dialogs.c:1130
-#: ../lib/screenshooter-job-callbacks.c:173
+#: ../lib/screenshooter-dialogs.c:907 ../lib/screenshooter-dialogs.c:1160
+#: ../lib/screenshooter-job-callbacks.c:177
 msgid "_OK"
 msgstr "_OK"
 
-#: ../lib/screenshooter-dialogs.c:935
+#: ../lib/screenshooter-dialogs.c:940
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zonë për t’u fotografuar</span>"
 
-#: ../lib/screenshooter-dialogs.c:957
+#: ../lib/screenshooter-dialogs.c:962
 msgid "Entire screen"
 msgstr "Krejt ekranin"
 
-#: ../lib/screenshooter-dialogs.c:962 ../src/main.c:62
-#: ../panel-plugin/screenshooter-plugin.c:308
+#: ../lib/screenshooter-dialogs.c:967 ../src/main.c:62
+#: ../panel-plugin/screenshooter-plugin.c:332
 msgid "Take a screenshot of the entire screen"
 msgstr "Bëni një foto të krejt ekranit"
 
-#: ../lib/screenshooter-dialogs.c:971
+#: ../lib/screenshooter-dialogs.c:976
 msgid "Active window"
 msgstr "Dritare aktive"
 
-#: ../lib/screenshooter-dialogs.c:976 ../src/main.c:109
-#: ../panel-plugin/screenshooter-plugin.c:313
+#: ../lib/screenshooter-dialogs.c:979 ../src/main.c:109
+#: ../panel-plugin/screenshooter-plugin.c:337
 msgid "Take a screenshot of the active window"
 msgstr "Bëni një foto ekrani të dritares aktive"
 
-#: ../lib/screenshooter-dialogs.c:985
+#: ../lib/screenshooter-dialogs.c:988 ../lib/screenshooter-dialogs.c:1015
+msgid "Not supported in Wayland"
+msgstr "S’mbulohet në Wayland"
+
+#: ../lib/screenshooter-dialogs.c:999
 msgid "Select a region"
 msgstr "Përzgjidhni një rajon"
 
-#: ../lib/screenshooter-dialogs.c:990
+#: ../lib/screenshooter-dialogs.c:1002
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Përzgjidhni një zonë që të fotografohet, duke klikuar mbi një pikë në ekran pa e lëshuar butonin e miut, duke e tërhequr miun tuaj në cepin kundruall të zonës, dhe duke e lëshuar butonin e miut.\n\nQë ta lëvizni zonën, shtypni tastin Ctrl teksa e tërhiqni."
 
-#: ../lib/screenshooter-dialogs.c:1003
+#: ../lib/screenshooter-dialogs.c:1026
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Mundësi</span>"
 
-#: ../lib/screenshooter-dialogs.c:1023
+#: ../lib/screenshooter-dialogs.c:1046
 msgid "Capture the mouse pointer"
 msgstr "Fotografoje kursorin e miut"
 
-#: ../lib/screenshooter-dialogs.c:1027
+#: ../lib/screenshooter-dialogs.c:1050
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Shfaq kursorin e miut në foto ekrani"
 
-#: ../lib/screenshooter-dialogs.c:1034
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "Capture the window border"
 msgstr "Me anë dritareje"
 
-#: ../lib/screenshooter-dialogs.c:1039
+#: ../lib/screenshooter-dialogs.c:1062
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Shfaq anë dritareje te fotoja e ekranit.\nÇaktivizimi i kësaj mundësie s’prek dritaret CSD."
 
-#: ../lib/screenshooter-dialogs.c:1056
+#: ../lib/screenshooter-dialogs.c:1086
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vonesë para fotografimit</span>"
 
-#: ../lib/screenshooter-dialogs.c:1080
+#: ../lib/screenshooter-dialogs.c:1110
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Vonesë në sekonda përpara bërjes së fotos së ekranit"
 
-#: ../lib/screenshooter-dialogs.c:1083
+#: ../lib/screenshooter-dialogs.c:1113
 msgid "seconds"
 msgstr "sekonda"
 
-#: ../lib/screenshooter-dialogs.c:1128
+#: ../lib/screenshooter-dialogs.c:1158
 msgid "_Back"
 msgstr "_Mbrapsht"
 
-#: ../lib/screenshooter-dialogs.c:1168
+#: ../lib/screenshooter-dialogs.c:1198
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Veprim</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1183
+#: ../lib/screenshooter-dialogs.c:1213
 msgid "Save"
 msgstr "Ruaje"
 
-#: ../lib/screenshooter-dialogs.c:1189
+#: ../lib/screenshooter-dialogs.c:1219
 msgid "Save the screenshot to a file"
 msgstr "Ruajeni foton e ekranit te një kartelë"
 
 #. Show in folder checkbox
-#: ../lib/screenshooter-dialogs.c:1193
+#: ../lib/screenshooter-dialogs.c:1223
 msgid "Show in Folder"
 msgstr "Shfaqe në Dosje"
 
-#: ../lib/screenshooter-dialogs.c:1200
+#: ../lib/screenshooter-dialogs.c:1230
 msgid "Shows the saved file in the folder"
 msgstr "Shfaq kartelën e ruajtur te dosja"
 
-#: ../lib/screenshooter-dialogs.c:1208
+#: ../lib/screenshooter-dialogs.c:1238
 msgid "Copy to the clipboard"
 msgstr "Kopjoje në të papastër"
 
-#: ../lib/screenshooter-dialogs.c:1210
+#: ../lib/screenshooter-dialogs.c:1240
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopjoje foton e ekranit në të papastër, që të mund të hidhet diku më vonë"
 
-#: ../lib/screenshooter-dialogs.c:1224
+#: ../lib/screenshooter-dialogs.c:1254
 msgid "Open with:"
 msgstr "Hape me:"
 
-#: ../lib/screenshooter-dialogs.c:1232
+#: ../lib/screenshooter-dialogs.c:1262
 msgid "Open the screenshot with the chosen application"
 msgstr "Hapeni foton e ekranit me aplikacionin e zgjedhur"
 
-#: ../lib/screenshooter-dialogs.c:1251 ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:1281 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Aplikacion për të hapur foton e ekranit"
 
-#: ../lib/screenshooter-dialogs.c:1265
+#: ../lib/screenshooter-dialogs.c:1295
 msgid "Custom Action:"
 msgstr "Veprim Vetjak:"
 
-#: ../lib/screenshooter-dialogs.c:1273
+#: ../lib/screenshooter-dialogs.c:1303
 msgid "Execute the selected custom action"
 msgstr "Kryej veprimin vetjak të përzgjedhur"
 
-#: ../lib/screenshooter-dialogs.c:1285
+#: ../lib/screenshooter-dialogs.c:1315
 msgid "Custom action to execute"
 msgstr "Veprim vetjak për t’u kryer "
 
-#: ../lib/screenshooter-dialogs.c:1310
+#: ../lib/screenshooter-dialogs.c:1340
 #: ../lib/screenshooter-custom-actions.c:184
 msgid "Host on Imgur™"
 msgstr "Strehojeni në Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1314
+#: ../lib/screenshooter-dialogs.c:1344
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr "Strehojeni foton e ekrani në Imgur™, një shërbim strehimi figurash falas në internet"
 
-#: ../lib/screenshooter-dialogs.c:1326
+#: ../lib/screenshooter-dialogs.c:1356
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -210,65 +214,65 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Hapni sytë për lëndë me spec, figura e ngarkuar do të jetë\n e passhme publikisht dhe s’ka garanci se s’do të fshihet.\nXfce-ja NUK ka lidhje, as është miratuar ky integrim nga Imgur™.\nNëse përdorni këtë veçori, duhet të pajtoheni me <a href=\"https://imgur.com/tos\">Kushte Shërbimi</a> të Imgur™."
 
-#: ../lib/screenshooter-dialogs.c:1349
+#: ../lib/screenshooter-dialogs.c:1379
 msgid ""
 "<a "
 "href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
 msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Nxjerrë nga përdorimi!</a>"
 
-#: ../lib/screenshooter-dialogs.c:1361
+#: ../lib/screenshooter-dialogs.c:1391
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Paraparje</span>"
 
-#: ../lib/screenshooter-dialogs.c:1422
+#: ../lib/screenshooter-dialogs.c:1452
 msgid "Save screenshot as..."
 msgstr "Ruajeni foton e ekranit si…"
 
-#: ../lib/screenshooter-dialogs.c:1511
+#: ../lib/screenshooter-dialogs.c:1541
 msgid "Preferences"
 msgstr "Parapëlqime"
 
-#: ../lib/screenshooter-dialogs.c:1536
+#: ../lib/screenshooter-dialogs.c:1566
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Veprime Vetjake</span>"
 
-#: ../lib/screenshooter-dialogs.c:1555
+#: ../lib/screenshooter-dialogs.c:1585
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Mund të formësoni veprime vetjake që do të jenë të përdorshëm për trajtimin e fotove të ekranit pasi këto të jenë bërë."
 
-#: ../lib/screenshooter-dialogs.c:1585
+#: ../lib/screenshooter-dialogs.c:1615
 msgid "Custom Action"
 msgstr "Veprim Vetjak"
 
-#: ../lib/screenshooter-dialogs.c:1598
+#: ../lib/screenshooter-dialogs.c:1628
 msgid "Add custom action"
 msgstr "Shtoni veprim vetjak"
 
-#: ../lib/screenshooter-dialogs.c:1605
+#: ../lib/screenshooter-dialogs.c:1635
 msgid "Remove selected custom action"
 msgstr "Hiqe veprimin vetjak e përzgjedhur"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1627
+#: ../lib/screenshooter-dialogs.c:1657
 msgid "Name"
 msgstr "Emër"
 
-#: ../lib/screenshooter-dialogs.c:1628
+#: ../lib/screenshooter-dialogs.c:1658
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Emër i veprimit, që do të shfaqet te dialogu Veprime"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1637
+#: ../lib/screenshooter-dialogs.c:1667
 msgid "Command"
 msgstr "Urdhër"
 
-#: ../lib/screenshooter-dialogs.c:1638
+#: ../lib/screenshooter-dialogs.c:1668
 msgid "Command that will be executed for this custom action"
 msgstr "Urdhër që do të kryhet për këtë veprim vetjak"
 
-#: ../lib/screenshooter-dialogs.c:1645
+#: ../lib/screenshooter-dialogs.c:1675
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Përdor %f si një vendmbajtëse për vendndodhjen e fotos së bërë të ekranit"
@@ -310,14 +314,14 @@ msgstr "Kartelë JPEG XL"
 msgid "AVIF File"
 msgstr "Kartelë AVIF"
 
-#: ../lib/screenshooter-utils.c:367
+#: ../lib/screenshooter-utils.c:323
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Aplikacioni s’u nis dot.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:442
+#: ../lib/screenshooter-utils.c:400
 msgid "Error"
 msgstr "Gabim"
 
@@ -333,6 +337,43 @@ msgstr "Ndodhi një gabim teksa shpërnguleshin të dhënat në Imgur."
 #: ../lib/screenshooter-imgur.c:232
 msgid "Imgur"
 msgstr "Imgur"
+
+#: ../lib/screenshooter-capture-wayland.c:164
+msgid "Failed to capture screencopy frame"
+msgstr "S’u arrit të regjistrohej kuadër kopjeje ekrani"
+
+#: ../lib/screenshooter-capture-wayland.c:194
+msgid "Failed to create file descriptor"
+msgstr "S’u arrit të krijohet përshkrues kartele"
+
+#: ../lib/screenshooter-capture-wayland.c:203
+msgid "Failed to map memory"
+msgstr ""
+
+#: ../lib/screenshooter-capture-wayland.c:243
+msgid "Required Wayland interfaces are missing"
+msgstr "Mungojnë ndërfaqe Wayland të domosdoshme"
+
+#: ../lib/screenshooter-capture-wayland.c:248
+msgid "Compositor is missing wl_shm"
+msgstr "Hartuesit i mungon missing wl_shm"
+
+#: ../lib/screenshooter-capture-wayland.c:253
+msgid "Compositor does not support wlr-screencopy-unstable-v1"
+msgstr "Hartuesi s’mbulon wlr-screencopy-unstable-v1"
+
+#: ../lib/screenshooter-capture-wayland.c:311
+#, c-format
+msgid "Unsupported pixel format: %d"
+msgstr "Format i pambuluar pikselash: %d"
+
+#: ../lib/screenshooter-capture-wayland.c:386
+msgid "The selected mode is not supported in Wayland"
+msgstr "Mënyra e përzgjedhur s’mbulohet në Wayland"
+
+#: ../lib/screenshooter-capture-wayland.c:442
+msgid "Failed to capture"
+msgstr "S’u arrit të regjistrohej"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -417,52 +458,52 @@ msgstr "Kjo lidhje shfaqet vetëm një herë. Sigurohuni që ta ruani, nëse men
 msgid "Deletion link"
 msgstr "Fshirje lidhjeje"
 
-#: ../lib/screenshooter-job-callbacks.c:73
+#: ../lib/screenshooter-job-callbacks.c:77
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Gjendje</span>"
 
 #. Create the information dialog
-#: ../lib/screenshooter-job-callbacks.c:170
+#: ../lib/screenshooter-job-callbacks.c:174
 msgid "Details about the screenshot"
 msgstr "Hollësi mbi foton e ekranit"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:213
+#: ../lib/screenshooter-job-callbacks.c:217
 msgid "User:"
 msgstr "Përdorues:"
 
-#: ../lib/screenshooter-job-callbacks.c:221
+#: ../lib/screenshooter-job-callbacks.c:225
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr "Emri juaj i përdoruesit, nëse s’keni të tillë, krijoni një te faqja që tregohet më sipër"
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:227
+#: ../lib/screenshooter-job-callbacks.c:231
 msgid "Password:"
 msgstr "Fjalëkalim:"
 
-#: ../lib/screenshooter-job-callbacks.c:234
+#: ../lib/screenshooter-job-callbacks.c:238
 msgid "The password for the user above"
 msgstr "Fjalëkalimi për përdoruesin më sipër"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:240
+#: ../lib/screenshooter-job-callbacks.c:244
 msgid "Title:"
 msgstr "Titull:"
 
-#: ../lib/screenshooter-job-callbacks.c:248
+#: ../lib/screenshooter-job-callbacks.c:252
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "Titulli i fotos së ekranit, do të përdoret kur fotoja e ekranit të shfaqet në shërbimin e strehimit të figurave"
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:254
+#: ../lib/screenshooter-job-callbacks.c:258
 msgid "Comment:"
 msgstr "Koment:"
 
-#: ../lib/screenshooter-job-callbacks.c:262
+#: ../lib/screenshooter-job-callbacks.c:266
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
@@ -484,7 +525,7 @@ msgstr "Shfaqe miun në foton e ekranit"
 msgid "Removes the window border from the screenshot"
 msgstr "Heq anë dritareje nga fotoja e ekranit"
 
-#: ../src/main.c:82 ../panel-plugin/screenshooter-plugin.c:318
+#: ../src/main.c:82 ../panel-plugin/screenshooter-plugin.c:342
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
