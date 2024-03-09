@@ -38,7 +38,7 @@ protocols_libprotocols_built_sources = \
 	protocols/wlr-screencopy-unstable-v1.c \
 	protocols/wlr-screencopy-unstable-v1-client.h
 
-protocols_libprotocols_la_SOURCES = \
+nodist_protocols_libprotocols_la_SOURCES = \
 	protocols/wlr-screencopy-unstable-v1.c
 
 protocols_libprotocols_la_CFLAGS = \
@@ -61,12 +61,12 @@ protocols/%-client.h: $(WLR_PROTOCOLS_PKGDATADIR)/unstable/%.xml
 BUILT_SOURCES += \
 	$(protocols_libprotocols_built_sources)
 
-EXTRA_DIST += \
-	protocols/wlr-protocols/unstable/wlr-screencopy-unstable-v1.xml
-
 DISTCLEANFILES += \
 	$(protocols_libprotocols_built_sources)
 endif
+
+EXTRA_DIST += \
+	protocols/wlr-protocols/unstable/wlr-screencopy-unstable-v1.xml
 
 # Convienence library for the application and the panel plugin
 noinst_LTLIBRARIES += lib/libscreenshooter.la
