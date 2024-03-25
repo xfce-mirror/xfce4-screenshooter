@@ -16,7 +16,7 @@
 # Michael Martins <michaelfm21@gmail.com>, 2014
 # Michael Martins <michaelfm21@gmail.com>, 2022
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2013
-# Rafael Fontenelle <rffontenelle@gmail.com>, 2019
+# Rafael Fontenelle <rffontenelle@gmail.com>, 2019,2024
 # secipolla <secipolla@gmail.com>, 2011
 # Wellington Almeida <wsalmeida6@gmail.com>, 2022
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-28 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Andre Miranda <andre@andreldm.com>, 2023\n"
+"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2019,2024\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/xfce/xfce-apps/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -105,7 +105,7 @@ msgstr "Capturar uma imagem da janela ativa"
 
 #: ../lib/screenshooter-dialogs.c:988 ../lib/screenshooter-dialogs.c:1015
 msgid "Not supported in Wayland"
-msgstr ""
+msgstr "Não suportado no Wayland"
 
 #: ../lib/screenshooter-dialogs.c:999
 msgid "Select a region"
@@ -353,40 +353,40 @@ msgstr "Imgur"
 
 #: ../lib/screenshooter-capture-wayland.c:164
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "Falha ao capturar o quadro de screencopy"
 
 #: ../lib/screenshooter-capture-wayland.c:194
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "Falha ao criar o descritor de arquivo"
 
 #: ../lib/screenshooter-capture-wayland.c:203
 msgid "Failed to map memory"
-msgstr ""
+msgstr "Falha ao mapear a memória"
 
 #: ../lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "As interfaces Wayland necessárias estão em falta"
 
 #: ../lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "O compositor está com wl_shm em falta"
 
 #: ../lib/screenshooter-capture-wayland.c:253
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
+msgstr "O compositor não tem suporte a wlr-screencopy-unstable-v1"
 
 #: ../lib/screenshooter-capture-wayland.c:311
 #, c-format
 msgid "Unsupported pixel format: %d"
-msgstr ""
+msgstr "Formato de pixels não suportado: %d"
 
 #: ../lib/screenshooter-capture-wayland.c:386
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "O modo selecionado não é suportado pelo Wayland"
 
 #: ../lib/screenshooter-capture-wayland.c:442
 msgid "Failed to capture"
-msgstr ""
+msgstr "Falha ao capturar"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
