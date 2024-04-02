@@ -4,16 +4,16 @@
 # 
 # Translators:
 # 8b03701f910565d01acaec9ce3f558ab_e9f0fee <b5b06e8f85fb8288fe43ad0bc2422d94_32848>, 2013
-# Arnold Marko <arnold.marko@gmail.com>, 2020-2021,2023
+# Arnold Marko <arnold.marko@gmail.com>, 2020-2021,2023-2024
 # Kernc, 2015
 # Martin Srebotnjak <miles@filmsi.net>, 2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-04 00:48+0200\n"
+"POT-Creation-Date: 2024-02-28 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2020-2021,2023\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>, 2020-2021,2023-2024\n"
 "Language-Team: Slovenian (http://app.transifex.com/xfce/xfce-apps/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,189 +21,193 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: ../lib/screenshooter-dialogs.c:524
+#: ../lib/screenshooter-dialogs.c:529
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb od %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:627
+#: ../lib/screenshooter-dialogs.c:632
 msgid "Transfer"
 msgstr "Prenos"
 
-#: ../lib/screenshooter-dialogs.c:648
+#: ../lib/screenshooter-dialogs.c:653
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ta zaslonska slika se prenaša na:</span>"
 
 #. Setup window
-#: ../lib/screenshooter-dialogs.c:888 ../lib/screenshooter-dialogs.c:897
-#: ../lib/screenshooter-dialogs.c:1125 ../lib/screenshooter-utils.c:185
-#: ../lib/screenshooter-utils.c:229 ../lib/screenshooter-imgur-dialog.c:128
+#: ../lib/screenshooter-dialogs.c:893 ../lib/screenshooter-dialogs.c:902
+#: ../lib/screenshooter-dialogs.c:1155 ../lib/screenshooter-utils.c:133
+#: ../lib/screenshooter-utils.c:177 ../lib/screenshooter-imgur-dialog.c:128
 #: ../src/xfce4-screenshooter.desktop.in.in.h:1
 #: ../panel-plugin/screenshooter.desktop.in.h:1
 msgid "Screenshot"
 msgstr "Zaslonska slika"
 
-#: ../lib/screenshooter-dialogs.c:890 ../lib/screenshooter-dialogs.c:900
+#: ../lib/screenshooter-dialogs.c:895 ../lib/screenshooter-dialogs.c:905
 msgid "_Preferences"
 msgstr "_Možnosti"
 
-#: ../lib/screenshooter-dialogs.c:891 ../lib/screenshooter-dialogs.c:899
-#: ../lib/screenshooter-dialogs.c:1127
+#: ../lib/screenshooter-dialogs.c:896 ../lib/screenshooter-dialogs.c:904
+#: ../lib/screenshooter-dialogs.c:1157
 msgid "_Help"
 msgstr "_Pomoč"
 
-#: ../lib/screenshooter-dialogs.c:892 ../lib/screenshooter-dialogs.c:1513
+#: ../lib/screenshooter-dialogs.c:897 ../lib/screenshooter-dialogs.c:1543
 #: ../lib/screenshooter-imgur-dialog.c:130
 msgid "_Close"
 msgstr "_Zapri"
 
-#: ../lib/screenshooter-dialogs.c:901 ../lib/screenshooter-dialogs.c:1129
-#: ../lib/screenshooter-job-callbacks.c:172
+#: ../lib/screenshooter-dialogs.c:906 ../lib/screenshooter-dialogs.c:1159
+#: ../lib/screenshooter-job-callbacks.c:176
 msgid "_Cancel"
 msgstr "_Prekliči"
 
-#: ../lib/screenshooter-dialogs.c:902 ../lib/screenshooter-dialogs.c:1130
-#: ../lib/screenshooter-job-callbacks.c:173
+#: ../lib/screenshooter-dialogs.c:907 ../lib/screenshooter-dialogs.c:1160
+#: ../lib/screenshooter-job-callbacks.c:177
 msgid "_OK"
 msgstr "_V redu"
 
-#: ../lib/screenshooter-dialogs.c:935
+#: ../lib/screenshooter-dialogs.c:940
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Območje za zajem</span>"
 
-#: ../lib/screenshooter-dialogs.c:957
+#: ../lib/screenshooter-dialogs.c:962
 msgid "Entire screen"
 msgstr "Celoten zaslon"
 
-#: ../lib/screenshooter-dialogs.c:962 ../src/main.c:62
-#: ../panel-plugin/screenshooter-plugin.c:308
+#: ../lib/screenshooter-dialogs.c:967 ../src/main.c:62
+#: ../panel-plugin/screenshooter-plugin.c:332
 msgid "Take a screenshot of the entire screen"
 msgstr "Naredi zaslonsko sliko celotnega zaslona"
 
-#: ../lib/screenshooter-dialogs.c:971
+#: ../lib/screenshooter-dialogs.c:976
 msgid "Active window"
 msgstr "Dejavno okno"
 
-#: ../lib/screenshooter-dialogs.c:976 ../src/main.c:109
-#: ../panel-plugin/screenshooter-plugin.c:313
+#: ../lib/screenshooter-dialogs.c:979 ../src/main.c:109
+#: ../panel-plugin/screenshooter-plugin.c:337
 msgid "Take a screenshot of the active window"
 msgstr "Naredi zaslonsko sliko dejavnega okna"
 
-#: ../lib/screenshooter-dialogs.c:985
+#: ../lib/screenshooter-dialogs.c:988 ../lib/screenshooter-dialogs.c:1015
+msgid "Not supported in Wayland"
+msgstr "Ni podprto v Wayland"
+
+#: ../lib/screenshooter-dialogs.c:999
 msgid "Select a region"
 msgstr "Izberi območje"
 
-#: ../lib/screenshooter-dialogs.c:990
+#: ../lib/screenshooter-dialogs.c:1002
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Izberite območje, ki naj se zajame, tako da kliknete na neko pozicijo na zaslonu in potem, ne da bi spustili gumb miške, vlečete miško na drug kot območja, nato pa spustite gumb miške.\n\nMed vlecenjem pritisnite ctrl, če želite prestavljati območje."
 
-#: ../lib/screenshooter-dialogs.c:1003
+#: ../lib/screenshooter-dialogs.c:1026
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Možnosti</span>"
 
-#: ../lib/screenshooter-dialogs.c:1023
+#: ../lib/screenshooter-dialogs.c:1046
 msgid "Capture the mouse pointer"
 msgstr "Zajemi miškin kazalec"
 
-#: ../lib/screenshooter-dialogs.c:1027
+#: ../lib/screenshooter-dialogs.c:1050
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Prikaži miškin kazalec na zaslonski sliki"
 
-#: ../lib/screenshooter-dialogs.c:1034
+#: ../lib/screenshooter-dialogs.c:1057
 msgid "Capture the window border"
 msgstr "Zajemi rob okna"
 
-#: ../lib/screenshooter-dialogs.c:1039
+#: ../lib/screenshooter-dialogs.c:1062
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Prikaži rob okna na zajeti sliki.\nIzklop te možnosti ne vpliva na CSD okna."
 
-#: ../lib/screenshooter-dialogs.c:1056
+#: ../lib/screenshooter-dialogs.c:1086
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zakasnitev pred zajemom</span>"
 
-#: ../lib/screenshooter-dialogs.c:1080
+#: ../lib/screenshooter-dialogs.c:1110
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Zakasnitev v sekundah preden se naredi zaslonska slika"
 
-#: ../lib/screenshooter-dialogs.c:1083
+#: ../lib/screenshooter-dialogs.c:1113
 msgid "seconds"
 msgstr "sekund"
 
-#: ../lib/screenshooter-dialogs.c:1128
+#: ../lib/screenshooter-dialogs.c:1158
 msgid "_Back"
 msgstr "_Nazaj"
 
-#: ../lib/screenshooter-dialogs.c:1168
+#: ../lib/screenshooter-dialogs.c:1198
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Dejanje</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1183
+#: ../lib/screenshooter-dialogs.c:1213
 msgid "Save"
 msgstr "Shrani"
 
-#: ../lib/screenshooter-dialogs.c:1189
+#: ../lib/screenshooter-dialogs.c:1219
 msgid "Save the screenshot to a file"
 msgstr "Shrani posnetek zaslona v datoteko"
 
 #. Show in folder checkbox
-#: ../lib/screenshooter-dialogs.c:1193
+#: ../lib/screenshooter-dialogs.c:1223
 msgid "Show in Folder"
 msgstr "Pokaži v mapi"
 
-#: ../lib/screenshooter-dialogs.c:1200
+#: ../lib/screenshooter-dialogs.c:1230
 msgid "Shows the saved file in the folder"
 msgstr "Pokaže shrranjeno datoteko v mapi"
 
-#: ../lib/screenshooter-dialogs.c:1208
+#: ../lib/screenshooter-dialogs.c:1238
 msgid "Copy to the clipboard"
 msgstr "Kopiraj v odložišče"
 
-#: ../lib/screenshooter-dialogs.c:1210
+#: ../lib/screenshooter-dialogs.c:1240
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopiraj zaslonsko sliko v odložišče, da se jo lahko kasneje prilepi"
 
-#: ../lib/screenshooter-dialogs.c:1224
+#: ../lib/screenshooter-dialogs.c:1254
 msgid "Open with:"
 msgstr "Odpri z:"
 
-#: ../lib/screenshooter-dialogs.c:1232
+#: ../lib/screenshooter-dialogs.c:1262
 msgid "Open the screenshot with the chosen application"
 msgstr "Odpri zaslonsko sliko z izbranim programom"
 
-#: ../lib/screenshooter-dialogs.c:1251 ../src/main.c:77
+#: ../lib/screenshooter-dialogs.c:1281 ../src/main.c:77
 msgid "Application to open the screenshot"
 msgstr "Program, ki bo odprl zaslonsko sliko"
 
-#: ../lib/screenshooter-dialogs.c:1265
+#: ../lib/screenshooter-dialogs.c:1295
 msgid "Custom Action:"
 msgstr "Dejanje po meri:"
 
-#: ../lib/screenshooter-dialogs.c:1273
+#: ../lib/screenshooter-dialogs.c:1303
 msgid "Execute the selected custom action"
 msgstr "Izvrši izbrano dejanje po meri"
 
-#: ../lib/screenshooter-dialogs.c:1285
+#: ../lib/screenshooter-dialogs.c:1315
 msgid "Custom action to execute"
 msgstr "Dejanje po meri za izvršitev"
 
-#: ../lib/screenshooter-dialogs.c:1310
+#: ../lib/screenshooter-dialogs.c:1340
 #: ../lib/screenshooter-custom-actions.c:184
 msgid "Host on Imgur™"
 msgstr "Gostuj na Imgur™-ju"
 
-#: ../lib/screenshooter-dialogs.c:1314
+#: ../lib/screenshooter-dialogs.c:1344
 msgid "Host the screenshot on Imgur™, a free online image hosting service"
 msgstr "Naloži sliko na Imgur, brezplačno spletno storitev za gostovanje slik"
 
-#: ../lib/screenshooter-dialogs.c:1326
+#: ../lib/screenshooter-dialogs.c:1356
 msgid ""
 "Watch for sensitive content, the uploaded image will be publicly\n"
 "available and there is no guarantee it can be certainly deleted.\n"
@@ -211,65 +215,65 @@ msgid ""
 "If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
 msgstr "Bodite pozorni na občutljive vsebine, saj bodo naložene slike javno vidne, \nzato ni zagotovila, da jih je mogoče trajno izbrisati.\nXfce NI povezan z Imgur™, niti ni ta inegracija potrjena z njihove strani.\nČe uporabljate to funkcijo, se morate strinjati s <a href=\"https://imgur.com/tos\">Pogoji uporabe</a> za Imgur™"
 
-#: ../lib/screenshooter-dialogs.c:1349
+#: ../lib/screenshooter-dialogs.c:1379
 msgid ""
 "<a "
 "href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
 msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Opuščeno!</a>"
 
-#: ../lib/screenshooter-dialogs.c:1361
+#: ../lib/screenshooter-dialogs.c:1391
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Predogled</span>"
 
-#: ../lib/screenshooter-dialogs.c:1422
+#: ../lib/screenshooter-dialogs.c:1452
 msgid "Save screenshot as..."
 msgstr "Shrani zaslonsko sliko kot ..."
 
-#: ../lib/screenshooter-dialogs.c:1511
+#: ../lib/screenshooter-dialogs.c:1541
 msgid "Preferences"
 msgstr "Možnosti"
 
-#: ../lib/screenshooter-dialogs.c:1536
+#: ../lib/screenshooter-dialogs.c:1566
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Dejanja po meri</span>"
 
-#: ../lib/screenshooter-dialogs.c:1555
+#: ../lib/screenshooter-dialogs.c:1585
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Prilagodite lahko dejanja po meri, ki bodo na voljo za obravnavo zaslonskih slik po njihovem zajemu."
 
-#: ../lib/screenshooter-dialogs.c:1585
+#: ../lib/screenshooter-dialogs.c:1615
 msgid "Custom Action"
 msgstr "Dejanje po meri"
 
-#: ../lib/screenshooter-dialogs.c:1598
+#: ../lib/screenshooter-dialogs.c:1628
 msgid "Add custom action"
 msgstr "Dodaj dejanje po meri"
 
-#: ../lib/screenshooter-dialogs.c:1605
+#: ../lib/screenshooter-dialogs.c:1635
 msgid "Remove selected custom action"
 msgstr "Odstrani izbrano dejanje po meri"
 
 #. Add custom action name
-#: ../lib/screenshooter-dialogs.c:1627
+#: ../lib/screenshooter-dialogs.c:1657
 msgid "Name"
 msgstr "Ime"
 
-#: ../lib/screenshooter-dialogs.c:1628
+#: ../lib/screenshooter-dialogs.c:1658
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Ime dejanja, ki bo prikazano v pogovornem oknu Dejanja"
 
 #. Add custom action command
-#: ../lib/screenshooter-dialogs.c:1637
+#: ../lib/screenshooter-dialogs.c:1667
 msgid "Command"
 msgstr "Ukaz"
 
-#: ../lib/screenshooter-dialogs.c:1638
+#: ../lib/screenshooter-dialogs.c:1668
 msgid "Command that will be executed for this custom action"
 msgstr "Ukaz, ki bo izvršen za to dejanje po meri"
 
-#: ../lib/screenshooter-dialogs.c:1645
+#: ../lib/screenshooter-dialogs.c:1675
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Rezervirajte %f za položaj zajetega posnetka zaslona"
@@ -311,14 +315,14 @@ msgstr "JPEG Xl datoteka"
 msgid "AVIF File"
 msgstr "AVIF datoteka"
 
-#: ../lib/screenshooter-utils.c:367
+#: ../lib/screenshooter-utils.c:323
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Ni mogoče zagnati programa.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:442
+#: ../lib/screenshooter-utils.c:400
 msgid "Error"
 msgstr "Napaka"
 
@@ -334,6 +338,43 @@ msgstr "Ob prenosu podatkov na imgur je prišlo do napake."
 #: ../lib/screenshooter-imgur.c:232
 msgid "Imgur"
 msgstr "Imgur"
+
+#: ../lib/screenshooter-capture-wayland.c:164
+msgid "Failed to capture screencopy frame"
+msgstr "Kopije posnetka zaslona ni bilo mogoče zajeti"
+
+#: ../lib/screenshooter-capture-wayland.c:194
+msgid "Failed to create file descriptor"
+msgstr "Ni bilo mogoče ustvariti desktriptorja datoteke"
+
+#: ../lib/screenshooter-capture-wayland.c:203
+msgid "Failed to map memory"
+msgstr "Pomnilnika ni bilo mogoče mapirati"
+
+#: ../lib/screenshooter-capture-wayland.c:243
+msgid "Required Wayland interfaces are missing"
+msgstr "Manjkajo zahtevani vmesniki za Wayland"
+
+#: ../lib/screenshooter-capture-wayland.c:248
+msgid "Compositor is missing wl_shm"
+msgstr "Manjka sestavljalnik wl_shm"
+
+#: ../lib/screenshooter-capture-wayland.c:253
+msgid "Compositor does not support wlr-screencopy-unstable-v1"
+msgstr "Sestavljalnik ne podpira wlr-screencopy-unstable-v1"
+
+#: ../lib/screenshooter-capture-wayland.c:311
+#, c-format
+msgid "Unsupported pixel format: %d"
+msgstr "Format piksla ni podprt: %d"
+
+#: ../lib/screenshooter-capture-wayland.c:386
+msgid "The selected mode is not supported in Wayland"
+msgstr "Izbrani način ni podprt v Wayland"
+
+#: ../lib/screenshooter-capture-wayland.c:442
+msgid "Failed to capture"
+msgstr "Napaka pri zajemu"
 
 #: ../lib/screenshooter-imgur-dialog.ui.h:1
 msgid "Size"
@@ -418,52 +459,52 @@ msgstr "Ta povezava se prikaže zgolj enkrat. Shranite jo, če menite, da boste 
 msgid "Deletion link"
 msgstr "Povezava za brisanje"
 
-#: ../lib/screenshooter-job-callbacks.c:73
+#: ../lib/screenshooter-job-callbacks.c:77
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
 
 #. Create the information dialog
-#: ../lib/screenshooter-job-callbacks.c:170
+#: ../lib/screenshooter-job-callbacks.c:174
 msgid "Details about the screenshot"
 msgstr "Podrobnosti o posnetu zaslona"
 
 #. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:213
+#: ../lib/screenshooter-job-callbacks.c:217
 msgid "User:"
 msgstr "Uporabnik:"
 
-#: ../lib/screenshooter-job-callbacks.c:221
+#: ../lib/screenshooter-job-callbacks.c:225
 msgid ""
 "Your user name, if you do not have one yet please create one on the Web page"
 " linked above"
 msgstr "Vaše uporabniško ime. Če ga še nimate, ga ustvarite na zgornji spletni strani."
 
 #. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:227
+#: ../lib/screenshooter-job-callbacks.c:231
 msgid "Password:"
 msgstr "Geslo:"
 
-#: ../lib/screenshooter-job-callbacks.c:234
+#: ../lib/screenshooter-job-callbacks.c:238
 msgid "The password for the user above"
 msgstr "Geslo za zgornjega uporabnika"
 
 #. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:240
+#: ../lib/screenshooter-job-callbacks.c:244
 msgid "Title:"
 msgstr "Naslov:"
 
-#: ../lib/screenshooter-job-callbacks.c:248
+#: ../lib/screenshooter-job-callbacks.c:252
 msgid ""
 "The title of the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
 msgstr "Naslov posnetka zaslona. Uporabljen bo za prikaz posnetka na storitvi za gostovanje slik."
 
 #. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:254
+#: ../lib/screenshooter-job-callbacks.c:258
 msgid "Comment:"
 msgstr "Komentar:"
 
-#: ../lib/screenshooter-job-callbacks.c:262
+#: ../lib/screenshooter-job-callbacks.c:266
 msgid ""
 "A comment on the screenshot, it will be used when displaying the screenshot "
 "on the image hosting service"
@@ -485,7 +526,7 @@ msgstr "Prikaži miško na zaslonski sliki"
 msgid "Removes the window border from the screenshot"
 msgstr "Odstrani rob okna iz posnetka zaslona"
 
-#: ../src/main.c:82 ../panel-plugin/screenshooter-plugin.c:318
+#: ../src/main.c:82 ../panel-plugin/screenshooter-plugin.c:342
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
