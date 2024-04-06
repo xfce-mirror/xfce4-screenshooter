@@ -3,15 +3,11 @@ dnl
 dnl xfce4-screenshooter
 dnl
 
-m4_define([xfce4_screenshooter_version_major], [1])
-m4_define([xfce4_screenshooter_version_minor], [10])
-m4_define([xfce4_screenshooter_version_micro], [5])
-m4_define([xfce4_screenshooter_version_nano],  []) dnl leave this empty to have no nano version
-m4_define([xfce4_screenshooter_version_build], [@REVISION@])
-m4_define([xfce4_screenshooter_version_tag], [git])
-m4_define([xfce4_screenshooter_version], [xfce4_screenshooter_version_major().xfce4_screenshooter_version_minor().xfce4_screenshooter_version_micro()ifelse(xfce4_screenshooter_version_nano(), [], [], [.xfce4_screenshooter_version_nano()])ifelse(xfce4_screenshooter_version_tag(), [git], [xfce4_screenshooter_version_tag()-xfce4_screenshooter_version_build()], [xfce4_screenshooter_version_tag()])])
+XDT_VERSION_INIT([1.10.5], [git])
 
-AC_INIT([xfce4-screenshooter], [xfce4_screenshooter_version], [https://gitlab.xfce.org/apps/xfce4-screenshooter], [xfce4-screenshooter])
+AC_INIT([xfce4-screenshooter], [xdt_version], [https://gitlab.xfce.org/apps/xfce4-screenshooter], [xfce4-screenshooter])
+AC_PREREQ([2.69])
+AC_REVISION([xdt_version_build])
 AC_CONFIG_MACRO_DIRS([m4])
 dnl ***************************
 dnl *** Initialize automake ***
@@ -28,7 +24,6 @@ AC_PROG_CC()
 AC_PROG_CC_C_O()
 AC_PROG_LD()
 AC_PROG_INSTALL()
-IT_PROG_INTLTOOL([0.35.0])
 AM_PROG_CC_C_O()
 
 dnl **************************
@@ -114,7 +109,12 @@ fi
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
-XDT_I18N([@LINGUAS@])
+GETTEXT_PACKAGE="$PACKAGE"
+AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Name of default gettext domain])
+AC_SUBST([GETTEXT_PACKAGE])
+
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 
 dnl **************************
 dnl *** Check for help2man ***
@@ -127,7 +127,7 @@ AM_CONDITIONAL([HAVE_HELP2MAN], false)
 fi
 
 dnl Check for debugging support
-XDT_FEATURE_DEBUG()
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 AC_OUTPUT([
 Makefile

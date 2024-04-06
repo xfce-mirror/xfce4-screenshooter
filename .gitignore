@@ -1,4 +1,5 @@
 # Autotools files generated into srcdir
+/ABOUT-NLS
 /INSTALL
 *.tar.bz2
 *.tar.gz
@@ -13,11 +14,17 @@ Makefile.in
 /depcomp
 /install-sh
 /install-sh~
-/intltool-*.in
 /ltmain.sh
 /missing
 /po/Makefile.in.in
-/configure.ac
+/po/Makevars.template
+/po/Rules-quot
+/po/boldquot.sed
+/po/en@boldquot.header
+/po/en@quot.header
+/po/insert-header.sin
+/po/quot.sed
+/po/remove-potcdate.sin
 /m4/
 /mkinstalldirs
 
@@ -33,14 +40,15 @@ Makefile
 /libtool
 /panel-plugin/.dirstamp
 /panel-plugin/screenshooter.desktop
-/po/.intltool-merge-cache*
 /po/POTFILES
 /po/*.gmo
-/po/stamp-it
+/po/remove-potcdate.sed
+/po/stamp-po
+/po/xfce4-screenshooter.pot
 /src/.dirstamp
 *.o
 /src/xfce4-screenshooter
-/src/xfce4-screenshooter.desktop*
+/src/xfce4-screenshooter.desktop
 /stamp-h1
 src/xfce4-screenshooter.appdata.xml
 /protocols/.dirstamp
