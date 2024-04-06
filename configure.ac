@@ -3,15 +3,11 @@ dnl
 dnl xfce4-screenshooter
 dnl
 
-m4_define([xfce4_screenshooter_version_major], [1])
-m4_define([xfce4_screenshooter_version_minor], [10])
-m4_define([xfce4_screenshooter_version_micro], [5])
-m4_define([xfce4_screenshooter_version_nano],  []) dnl leave this empty to have no nano version
-m4_define([xfce4_screenshooter_version_build], [@REVISION@])
-m4_define([xfce4_screenshooter_version_tag], [git])
-m4_define([xfce4_screenshooter_version], [xfce4_screenshooter_version_major().xfce4_screenshooter_version_minor().xfce4_screenshooter_version_micro()ifelse(xfce4_screenshooter_version_nano(), [], [], [.xfce4_screenshooter_version_nano()])ifelse(xfce4_screenshooter_version_tag(), [git], [xfce4_screenshooter_version_tag()-xfce4_screenshooter_version_build()], [xfce4_screenshooter_version_tag()])])
+XDT_VERSION_INIT([1.10.5], [git])
 
-AC_INIT([xfce4-screenshooter], [xfce4_screenshooter_version], [https://gitlab.xfce.org/apps/xfce4-screenshooter], [xfce4-screenshooter])
+AC_INIT([xfce4-screenshooter], [xdt_version], [https://gitlab.xfce.org/apps/xfce4-screenshooter], [xfce4-screenshooter])
+AC_PREREQ([2.69])
+AC_REVISION([xdt_version_build])
 AC_CONFIG_MACRO_DIRS([m4])
 dnl ***************************
 dnl *** Initialize automake ***
@@ -131,7 +127,7 @@ AM_CONDITIONAL([HAVE_HELP2MAN], false)
 fi
 
 dnl Check for debugging support
-XDT_FEATURE_DEBUG()
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 AC_OUTPUT([
 Makefile
