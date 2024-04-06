@@ -218,16 +218,8 @@ endif
 
 # Desktop file for the application
 app_desktopdir = $(datadir)/applications
-app_desktop_in_in_files = src/xfce4-screenshooter.desktop.in.in
-app_desktop_in_files = $(app_desktop_in_in_files:.desktop.in.in=.desktop.in)
+app_desktop_in_files = src/xfce4-screenshooter.desktop.in
 app_desktop_DATA = $(app_desktop_in_files:.desktop.in=.desktop)
-
-src/xfce4-screenshooter.desktop.in: src/xfce4-screenshooter.desktop.in.in
-	$(AM_V_GEN) ( \
-		$(MKDIR_P) $(dir $@); \
-		sed -e "s^@PLUGIN_PATH@^$(libexecdir)/applications^" \
-			$< > $@ \
-	)
 
 src/xfce4-screenshooter.desktop: src/xfce4-screenshooter.desktop.in
 	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
@@ -341,7 +333,7 @@ dist-hook: ChangeLog
 EXTRA_DIST += \
 	lib/screenshooter-marshal.list \
 	lib/screenshooter-imgur-dialog.ui \
-	$(app_desktop_in_in_files) \
+	$(app_desktop_in_files) \
 	$(panel_desktop_in_files) \
 	$(16icons_DATA) \
 	$(24icons_DATA) \
@@ -356,7 +348,7 @@ DISTCLEANFILES += \
 	stamp-screenshooter-marshal.h \
 	$(lib_libscreenshooter_built_sources) \
 	lib/stamp-screenshooter-marshal.h \
-	$(app_desktop_DATA) $(app_desktop_in_files) \
+	$(app_desktop_DATA) \
 	$(panel_desktop_DATA) \
 	$(appdata_DATA) \
 	xfce4-screenshooter.1
