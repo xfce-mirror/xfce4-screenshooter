@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce-apps.xfce4-screenshooter package.
 # 
 # Translators:
-# Priit Jõerüüt <transifex@joeruut.com>, 2020-2023
+# Priit Jõerüüt <transifex@joeruut.com>, 2020-2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-04-08 12:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2020-2023\n"
+"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2020-2024\n"
 "Language-Team: Estonian (http://app.transifex.com/xfce/xfce-apps/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,7 +90,7 @@ msgstr "Tee kuvatõmmis aktiivsest aknast"
 
 #: lib/screenshooter-dialogs.c:991 lib/screenshooter-dialogs.c:1018
 msgid "Not supported in Wayland"
-msgstr ""
+msgstr "Waylandis ei ole see tegevus toetatud"
 
 #: lib/screenshooter-dialogs.c:1002
 msgid "Select a region"
@@ -336,40 +336,40 @@ msgstr "Imgur"
 
 #: lib/screenshooter-capture-wayland.c:164
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "Kaadri jäädvustamine ei õnnestunud"
 
 #: lib/screenshooter-capture-wayland.c:194
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "Faili deskriptori loomine ei õnnestunud"
 
 #: lib/screenshooter-capture-wayland.c:203
 msgid "Failed to map memory"
-msgstr ""
+msgstr "Mälukasutuse tuvastamine ei õnnestunud"
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "Vajalik Wayland'i liides on puudu"
 
 #: lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "Komposiitoril on puudu wl_shm"
 
 #: lib/screenshooter-capture-wayland.c:253
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
+msgstr "Komposiitor ei toeta wlr-screencopy-unstable-v1 meetodit"
 
 #: lib/screenshooter-capture-wayland.c:311
 #, c-format
 msgid "Unsupported pixel format: %d"
-msgstr ""
+msgstr "Pikslivorming pole toetatud: %d"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "See kirjutusrežiim pole hetkel Waylandis toetatud"
 
 #: lib/screenshooter-capture-wayland.c:442
 msgid "Failed to capture"
-msgstr ""
+msgstr "Jäädvustamine ei õnnestunud"
 
 #: lib/screenshooter-imgur-dialog.ui:48 lib/screenshooter-imgur-dialog.ui:349
 msgid "Size"
@@ -581,11 +581,11 @@ msgstr "Tee kuvatõmmised tervest ekraanist, käsilolevast aknast või valitud a
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Rakendus ja ribaplugin kuvatõmmiste tegemiseks"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
