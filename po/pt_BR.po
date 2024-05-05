@@ -14,7 +14,7 @@
 # Henrique P. Machado <zehrique@gmail.com>, 2008
 # Lucas Wilm <lucaswilm@gmail.com>, 2021-2022
 # Michael Martins <michaelfm21@gmail.com>, 2014
-# Michael Martins <michaelfm21@gmail.com>, 2022
+# Michael Martins <michaelfm21@gmail.com>, 2022,2024
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2013
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2019,2024
 # secipolla <secipolla@gmail.com>, 2011
@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-04-08 12:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Rafael Fontenelle <rffontenelle@gmail.com>, 2019,2024\n"
+"Last-Translator: Michael Martins <michaelfm21@gmail.com>, 2022,2024\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/xfce/xfce-apps/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -464,7 +464,7 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr "Este link só aparece uma vez. Certifique-se de salvá-lo se achar que pode excluir essa imagem. Atualmente, não oferecemos suporte a fazer link de imagens a contas do Imgur."
+msgstr "Este link só aparece uma vez. Certifique-se de salvá-lo se achar que pode excluir essa imagem. Atualmente, não oferecemos suporte a fazer link de imagens para contas do Imgur."
 
 #: lib/screenshooter-imgur-dialog.ui:599
 msgid "Deletion link"
@@ -596,11 +596,11 @@ msgstr "Captura uma imagem da tela inteira, da janela ativa ou de uma região"
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Aplicativo e plugin de painel para tirar capturas de tela"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
