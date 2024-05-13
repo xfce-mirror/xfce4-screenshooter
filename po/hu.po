@@ -116,7 +116,7 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Beállítások</span>"
 
 #: lib/screenshooter-dialogs.c:1049
 msgid "Capture the mouse pointer"
-msgstr "Egérmutató bevétele"
+msgstr "Egérmutató belevétele"
 
 #: lib/screenshooter-dialogs.c:1053
 msgid "Display the mouse pointer on the screenshot"
@@ -192,7 +192,7 @@ msgstr "Alkalmazás a képernyő megnyitásához"
 
 #: lib/screenshooter-dialogs.c:1298
 msgid "Custom Action:"
-msgstr "Egyéni művelet"
+msgstr "Egyéni művelet:"
 
 #: lib/screenshooter-dialogs.c:1306
 msgid "Execute the selected custom action"
@@ -456,7 +456,7 @@ msgid ""
 "This link only shows up once. Make sure to save it if you think you might be"
 " deleting this image. We don't currently support linking images to Imgur "
 "accounts."
-msgstr "Ez a hivatkozás csak egyszer jelenik meg. Mentse el ha úgy gondolja, hogy később talán törölni akarja majd ezt a képet. Jelenleg nincs támogatva a képek Imgur-fiókokhoz való rendelése."
+msgstr "Ez a hivatkozás csak egyszer jelenik meg. Mentse el, ha úgy gondolja, hogy később talán törölni akarja ezt a képet. Jelenleg nem támogatjuk a képek Imgur-fiókokhoz való rendelését."
 
 #: lib/screenshooter-imgur-dialog.ui:599
 msgid "Deletion link"
@@ -588,11 +588,11 @@ msgstr "Képernyőkép készítése a teljes képernyőről, az aktív ablakról
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Képernyőképek készítésére szolgáló alkalmazás és panelbővítmény"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
