@@ -65,9 +65,6 @@ static void
 cb_clipboard_toggled               (GtkToggleButton    *tb,
                                     ScreenshotData     *sd);
 static void
-cb_imgur_toggled                   (GtkToggleButton    *tb,
-                                    ScreenshotData     *sd);
-static void
 cb_delay_spinner_changed           (GtkWidget          *spinner,
                                     ScreenshotData     *sd);
 static void
@@ -235,32 +232,6 @@ static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 {
   if (gtk_toggle_button_get_active (tb))
     sd->action = CLIPBOARD;
-}
-
-
-
-static void cb_imgur_toggled (GtkToggleButton *tb, ScreenshotData *sd)
-{
-  if (gtk_toggle_button_get_active (tb))
-    sd->action = UPLOAD_IMGUR;
-}
-
-
-
-static void cb_imgur_warning_change_cursor (GtkWidget *widget, GdkCursor *cursor)
-{
-  if (cursor != NULL)
-    {
-      gdk_window_set_cursor (gtk_widget_get_window (widget), cursor);
-      g_object_unref (cursor);
-    }
-}
-
-
-
-static void cb_imgur_warning_clicked (GtkWidget *popover)
-{
-  gtk_widget_set_visible (popover, TRUE);
 }
 
 
@@ -1143,7 +1114,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
 GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 {
-  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox, *popover;
+  GtkWidget *dlg, *grid, *box, *evbox, *label, *radio, *checkbox;
   GtkWidget *actions_grid;
 
   GtkTreeIter iter;
@@ -1153,7 +1124,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   GtkWidget *preview;
   GdkPixbuf *thumbnail;
-  GdkCursor *cursor;
 
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -1329,58 +1299,6 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   /* Run the callback functions to grey/ungrey the correct widgets */
   cb_toggle_set_sensi (GTK_TOGGLE_BUTTON (radio), combobox);
-
-  /* Upload to imgur radio button */
-  if (sd->enable_imgur_upload)
-    {
-      GtkWidget *image;
-
-      box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
-      gtk_grid_attach (GTK_GRID (actions_grid), box, 0, 5, 2, 1);
-
-      radio =
-        gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (radio),
-                                                    _("Host on Imgur™"));
-      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radio),
-                                  (sd->action & UPLOAD_IMGUR));
-      gtk_widget_set_tooltip_text (radio,
-                                  _("Host the screenshot on Imgur™, a free online "
-                                    "image hosting service"));
-      g_signal_connect (G_OBJECT (radio), "toggled",
-                        G_CALLBACK (cb_imgur_toggled), sd);
-      g_signal_connect (G_OBJECT (radio), "activate",
-                        G_CALLBACK (cb_radiobutton_activate), dlg);
-      gtk_container_add (GTK_CONTAINER (box), radio);
-
-      /* Upload to imgur warning info */
-      image = gtk_image_new_from_icon_name ("dialog-warning-symbolic", GTK_ICON_SIZE_BUTTON);
-      label = gtk_label_new (NULL);
-      gtk_label_set_markup (GTK_LABEL (label),
-        _("Watch for sensitive content, the uploaded image will be publicly\n"
-          "available and there is no guarantee it can be certainly deleted.\n"
-          "Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
-          "If you use this feature you must agree with Imgur™ "
-          "<a href=\"https://imgur.com/tos\">Terms of Service</a>."));
-
-      popover = gtk_popover_new (image);
-      gtk_container_add (GTK_CONTAINER (popover), label);
-      gtk_container_set_border_width (GTK_CONTAINER (popover), 6);
-      gtk_widget_show (label);
-
-      evbox = gtk_event_box_new ();
-      g_signal_connect_swapped (G_OBJECT (evbox), "button-press-event",
-                                G_CALLBACK (cb_imgur_warning_clicked), popover);
-      gtk_container_add (GTK_CONTAINER (box), evbox);
-      gtk_container_add (GTK_CONTAINER (evbox), image);
-
-      cursor = gdk_cursor_new_from_name (gdk_display_get_default (), "pointer");
-      if (cursor != NULL)
-        g_signal_connect (evbox, "realize", G_CALLBACK (cb_imgur_warning_change_cursor), cursor);
-
-      label = gtk_label_new (NULL);
-      gtk_label_set_markup (GTK_LABEL (label), _("<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"));
-      gtk_container_add (GTK_CONTAINER (box), label);
-    }
 
   /* Preview box */
   box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);

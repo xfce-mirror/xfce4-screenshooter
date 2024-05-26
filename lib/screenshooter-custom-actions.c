@@ -17,7 +17,6 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  * */
 
-#include "screenshooter-imgur.h"
 #include "screenshooter-custom-actions.h"
 
 #include <xfconf/xfconf.h>
@@ -226,7 +225,7 @@ screenshooter_custom_action_execute (gchar *save_location,
    **/
   split = g_strsplit (formatted_command, "\%imgur_client_id", -1);
   g_free (formatted_command);
-  formatted_command = g_strjoinv (screenshooter_imgur_client_id (), split);
+  formatted_command = g_strjoinv ("66ab680b597e293", split);
   g_strfreev (split);
 
   expanded_command = xfce_expand_variables (formatted_command, NULL);

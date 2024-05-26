@@ -135,7 +135,6 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   gchar *last_user = g_strdup ("");
   gchar *last_extension = g_strdup ("png");
   gchar *last_custom_action_command = g_strdup ("none");
-  gboolean enable_imgur_upload = TRUE;
 
   if (G_LIKELY (file != NULL))
     {
@@ -153,7 +152,6 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
           show_border = xfce_rc_read_int_entry (rc, "show_border", 1);
           timestamp = xfce_rc_read_bool_entry (rc, "timestamp", TRUE);
-          enable_imgur_upload = xfce_rc_read_bool_entry (rc, "enable_imgur_upload", TRUE);
           show_in_folder = xfce_rc_read_bool_entry (rc, "show_in_folder", FALSE);
 
           g_free (app);
@@ -197,7 +195,6 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->app_info = NULL;
   sd->last_user = last_user;
   sd->last_extension = last_extension;
-  sd->enable_imgur_upload = enable_imgur_upload;
   sd->show_in_folder = show_in_folder;
   sd->custom_action_command = last_custom_action_command;
 
@@ -245,7 +242,6 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   xfce_rc_write_entry (rc, "custom_action_command", sd->custom_action_command);
   xfce_rc_write_entry (rc, "last_user", sd->last_user);
   xfce_rc_write_entry (rc, "last_extension", sd->last_extension);
-  xfce_rc_write_bool_entry (rc, "enable_imgur_upload", sd->enable_imgur_upload);
   xfce_rc_write_bool_entry (rc, "show_in_folder", sd->show_in_folder);
 
   /* do not save if screenshot_dir is not path, i.e. specified from cli */
@@ -268,6 +264,9 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
     xfce_rc_write_int_entry (rc, "show_mouse", sd->show_mouse);
     xfce_rc_write_int_entry (rc, "show_border", sd->show_border);
   }
+
+  /* clean up rc, remove this after some releases */
+  xfce_rc_delete_entry (rc, "enable_imgur_upload", TRUE);
 
   TRACE ("Flush and close the rc file");
   xfce_rc_close (rc);
