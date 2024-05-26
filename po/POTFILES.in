@@ -3,7 +3,6 @@ lib/screenshooter-custom-actions.c
 lib/screenshooter-format.c
 lib/screenshooter-utils.c
 lib/screenshooter-capture-wayland.c
-lib/screenshooter-job-callbacks.c
 src/main.c
 src/xfce4-screenshooter.desktop.in
 panel-plugin/screenshooter-plugin.c
