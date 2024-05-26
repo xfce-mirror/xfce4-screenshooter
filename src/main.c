@@ -36,7 +36,6 @@ gboolean mouse = FALSE;
 gboolean no_border = FALSE;
 gboolean supported_formats = FALSE;
 gboolean clipboard = FALSE;
-gboolean upload_imgur = FALSE;
 gboolean show_in_folder = FALSE;
 gchar *screenshot_dir = NULL;
 gchar *application = NULL;
@@ -92,11 +91,6 @@ static GOptionEntry entries[] =
   {
     "show in folder", 'S', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &show_in_folder,
     N_("Show the saved file in the folder."),
-    NULL
-  },
-  {
-    "imgur", 'i', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &upload_imgur,
-    N_("Host the screenshot on Imgur, a free online image hosting service"),
     NULL
   },
   {
@@ -197,18 +191,6 @@ int main (int argc, char **argv)
 
       return EXIT_FAILURE;
     }
-  else if (upload_imgur && (screenshot_dir != NULL))
-    {
-      g_printerr (conflict_error, "imgur", "save");
-
-      return EXIT_FAILURE;
-    }
-  else if (upload_imgur && (application != NULL))
-    {
-      g_printerr (conflict_error, "imgur", "open");
-
-      return EXIT_FAILURE;
-    }
 
   /* Warn that action options, mouse and delay will be ignored in
    * non-cli mode */
@@ -219,8 +201,6 @@ int main (int argc, char **argv)
       g_printerr (ignore_error, "save");
       screenshot_dir = NULL;
     }
-  if (upload_imgur && !(fullscreen || window || region))
-    g_printerr (ignore_error, "imgur");
   if (clipboard && !(fullscreen || window || region))
     g_printerr (ignore_error, "clipboard");
   if (delay && !(fullscreen || window || region))
@@ -297,11 +277,6 @@ int main (int argc, char **argv)
         {
           sd->app = application;
           sd->action = OPEN;
-          sd->action_specified = TRUE;
-        }
-      else if (upload_imgur)
-        {
-          sd->action = UPLOAD_IMGUR;
           sd->action_specified = TRUE;
         }
       else if (screenshot_dir != NULL)

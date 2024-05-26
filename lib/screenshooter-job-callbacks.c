@@ -20,7 +20,6 @@
 #include "screenshooter-job-callbacks.h"
 
 #include <libxfce4ui/libxfce4ui.h>
-#include "screenshooter-imgur-dialog.h"
 
 
 
@@ -352,20 +351,3 @@ cb_ask_for_information (ScreenshooterJob *job,
 
   gtk_widget_destroy (dialog);
 }
-
-void cb_image_uploaded (ScreenshooterJob  *job,
-                        gchar             *upload_name,
-                        gchar             *delete_hash,
-                        gchar            **last_user)
-{
-  ScreenshooterImgurDialog *dialog;
-
-  g_return_if_fail (upload_name != NULL);
-  g_return_if_fail (delete_hash != NULL);
-
-  dialog = screenshooter_imgur_dialog_new (upload_name, delete_hash);
-  screenshooter_imgur_dialog_run (dialog);
-
-  g_object_unref (dialog);
-}
-
