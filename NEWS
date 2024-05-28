@@ -1,3 +1,18 @@
+1.10.6 (2024-05-28)
+======
+- build: Switch from intltool to gettext
+- Preliminary Wayland support
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, Georgian, German,
+  Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Italian, Japanese, Korean, Lithuanian, Malay, Norwegian Bokmål,
+  Occitan (post 1500), Persian (Iran), Polish, Portuguese, Portuguese
+  (Brazil), Russian, Serbian, Slovak, Slovenian, Spanish, Swedish,
+  Thai, Turkish, Ukrainian
+
 1.10.5 (2024-02-04)
 ======
 - Add imgur support as custom action (!51)
