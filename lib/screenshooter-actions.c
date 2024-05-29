@@ -23,7 +23,6 @@
 #include "screenshooter-capture.h"
 #include "screenshooter-global.h"
 #include "screenshooter-dialogs.h"
-#include "screenshooter-imgur.h"
 #include "screenshooter-format.h"
 
 
@@ -149,18 +148,6 @@ action_idle (gpointer user_data)
           if (sd->action & OPEN)
             {
               screenshooter_open_screenshot (save_location, sd->app, sd->app_info);
-            }
-          else if (sd->action & UPLOAD_IMGUR)
-            {
-              gboolean upload_successful = screenshooter_upload_to_imgur (save_location, sd->title);
-
-              /* If upload failed, regardless of whether it was chosen by GUI or CLI, and
-               * the action was not selected via CLI, show the actions dialog again.*/
-              if (!upload_successful && !sd->action_specified)
-                {
-                  g_free (save_location);
-                  return TRUE;
-                }
             }
           else if (sd->action & CUSTOM_ACTION)
             {

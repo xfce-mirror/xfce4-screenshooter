@@ -96,16 +96,6 @@ if test x"$ENABLE_WAYLAND" = x"yes"; then
   AC_SUBST([WLR_PROTOCOLS_PKGDATADIR])
 fi
 
-dnl *************************
-dnl *** Check for libsoup ***
-dnl *************************
-XDT_CHECK_OPTIONAL_PACKAGE([SOUP3], [libsoup-3.0], [3.0.0])
-
-if test "x$SOUP3_FOUND" = "x"; then
-    echo "libsoup 3 not found, try libsoup 2 as fallback"
-    XDT_CHECK_PACKAGE([SOUP2], [libsoup-2.4], [2.26.0])
-fi
-
 dnl ******************************
 dnl *** Check for i18n support ***
 dnl ******************************
@@ -144,7 +134,6 @@ echo ""
 
 echo "  * XFIXES support:                $XFIXES_FOUND"
 echo "  * Debugging support:             $enable_debug"
-echo "  * Libsoup version:               $SOUP2_VERSION$SOUP3_VERSION"
 echo "  * X11 Support:                   ${ENABLE_X11:-no}"
 echo "  * Wayland Support:               ${ENABLE_WAYLAND:-no}"
 
