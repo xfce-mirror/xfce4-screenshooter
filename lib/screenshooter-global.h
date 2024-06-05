@@ -35,8 +35,7 @@ enum {
   SAVE = 1,
   CLIPBOARD = 2,
   OPEN = 4,
-  UPLOAD_IMGUR = 8,
-  CUSTOM_ACTION = 16,
+  CUSTOM_ACTION = 8,
 };
 
 
@@ -58,7 +57,6 @@ typedef struct
   gboolean action_specified;
   gboolean region_specified;
   gboolean timestamp;
-  gboolean enable_imgur_upload;
   gboolean path_is_dir;
   gboolean show_in_folder;
   gchar *screenshot_dir;
