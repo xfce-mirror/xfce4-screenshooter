@@ -275,7 +275,7 @@ static GdkPixbuf
           for (int x = 0; x < output->width; x++)
             {
               gint offset = y * output->stride + x * 4;
-              guint32 *px = (guint32 *)(data + offset);
+              guint32 *px = (guint32 *)(gpointer)(data + offset);
               guint8 red = (*px >> 16) & 0xFF;
               guint8 green = (*px >> 8) & 0xFF;
               guint8 blue = *px & 0xFF;
@@ -294,7 +294,7 @@ static GdkPixbuf
           for (int x = 0; x < output->width; x++)
             {
               gint offset = y * output->stride + x * 4;
-              guint32 *px = (guint32 *)(data + offset);
+              guint32 *px = (guint32 *)(gpointer)(data + offset);
               guint8 red = *px & 0xFF;
               guint8 green = (*px >> 8) & 0xFF;
               guint8 blue = (*px >> 16) & 0xFF;
