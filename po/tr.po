@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-04-08 12:50+0200\n"
+"POT-Creation-Date: 2024-06-06 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2024\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/xfce-apps/language/tr/)\n"
@@ -27,271 +27,248 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: lib/screenshooter-dialogs.c:532
+#: lib/screenshooter-dialogs.c:503
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb aktarıldı, toplam %.2fKb"
 
-#: lib/screenshooter-dialogs.c:635
+#: lib/screenshooter-dialogs.c:606
 msgid "Transfer"
 msgstr "Aktar"
 
-#: lib/screenshooter-dialogs.c:656
+#: lib/screenshooter-dialogs.c:627
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekran görüntüsü aktarılıyor:</span>"
 
-#. Setup window
-#: lib/screenshooter-dialogs.c:896 lib/screenshooter-dialogs.c:905
-#: lib/screenshooter-dialogs.c:1158 lib/screenshooter-utils.c:133
-#: lib/screenshooter-utils.c:177 lib/screenshooter-imgur-dialog.c:128
-#: src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:867 lib/screenshooter-dialogs.c:876
+#: lib/screenshooter-dialogs.c:1128 lib/screenshooter-utils.c:133
+#: lib/screenshooter-utils.c:175 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Ekran görüntüsü"
 
-#: lib/screenshooter-dialogs.c:898 lib/screenshooter-dialogs.c:908
+#: lib/screenshooter-dialogs.c:869 lib/screenshooter-dialogs.c:879
 msgid "_Preferences"
 msgstr "_Tercihler"
 
-#: lib/screenshooter-dialogs.c:899 lib/screenshooter-dialogs.c:907
-#: lib/screenshooter-dialogs.c:1160
+#: lib/screenshooter-dialogs.c:870 lib/screenshooter-dialogs.c:878
+#: lib/screenshooter-dialogs.c:1130
 msgid "_Help"
 msgstr "_Yardım"
 
-#: lib/screenshooter-dialogs.c:900 lib/screenshooter-dialogs.c:1545
-#: lib/screenshooter-imgur-dialog.c:130
+#: lib/screenshooter-dialogs.c:871 lib/screenshooter-dialogs.c:1463
 msgid "_Close"
 msgstr "_Kapat"
 
-#: lib/screenshooter-dialogs.c:909 lib/screenshooter-dialogs.c:1162
-#: lib/screenshooter-job-callbacks.c:176
+#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:1132
 msgid "_Cancel"
 msgstr "İ_ptal"
 
-#: lib/screenshooter-dialogs.c:910 lib/screenshooter-dialogs.c:1163
-#: lib/screenshooter-job-callbacks.c:177
+#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:1133
 msgid "_OK"
 msgstr "_Tamam"
 
-#: lib/screenshooter-dialogs.c:943
+#: lib/screenshooter-dialogs.c:914
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Görüntüsü alınacak alan</span>"
 
-#: lib/screenshooter-dialogs.c:965
+#: lib/screenshooter-dialogs.c:936
 msgid "Entire screen"
 msgstr "Tüm ekran"
 
-#: lib/screenshooter-dialogs.c:970 src/main.c:62
+#: lib/screenshooter-dialogs.c:941 src/main.c:61
 #: panel-plugin/screenshooter-plugin.c:332
 msgid "Take a screenshot of the entire screen"
 msgstr "Tüm ekranın görüntüsünü al"
 
-#: lib/screenshooter-dialogs.c:979
+#: lib/screenshooter-dialogs.c:950
 msgid "Active window"
 msgstr "Etkin pencere"
 
-#: lib/screenshooter-dialogs.c:982 src/main.c:109
+#: lib/screenshooter-dialogs.c:953 src/main.c:103
 #: panel-plugin/screenshooter-plugin.c:337
 msgid "Take a screenshot of the active window"
 msgstr "Etkin pencerenin ekran görüntüsünü al"
 
-#: lib/screenshooter-dialogs.c:991 lib/screenshooter-dialogs.c:1018
+#: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
 msgid "Not supported in Wayland"
 msgstr "Wayland'de desteklenmiyor"
 
-#: lib/screenshooter-dialogs.c:1002
+#: lib/screenshooter-dialogs.c:973
 msgid "Select a region"
 msgstr "Alan seçimi"
 
-#: lib/screenshooter-dialogs.c:1005
+#: lib/screenshooter-dialogs.c:976
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Yakalanacak bölgeyi seçmek için ekranın bir noktasına tıklayın, düğmesini bırakmadan fareyi bölgenin diğer köşesine sürükleyin ve bırakın.\n\nBölgeyi taşımak için sürüklerken Ctrl'ye basın."
 
-#: lib/screenshooter-dialogs.c:1029
+#: lib/screenshooter-dialogs.c:1000
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Seçenekler</span>"
 
-#: lib/screenshooter-dialogs.c:1049
+#: lib/screenshooter-dialogs.c:1020
 msgid "Capture the mouse pointer"
 msgstr "Fare imlecini yakala"
 
-#: lib/screenshooter-dialogs.c:1053
+#: lib/screenshooter-dialogs.c:1024
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Ekran görüntüsünde fare imlecini göster"
 
-#: lib/screenshooter-dialogs.c:1060
+#: lib/screenshooter-dialogs.c:1031
 msgid "Capture the window border"
 msgstr "Pencere kenarını yakala"
 
-#: lib/screenshooter-dialogs.c:1065
+#: lib/screenshooter-dialogs.c:1036
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Ekran görüntüsünde pencere kenarını göster.\nBunu devre dışı bırakmak CSD pencerelerini etkilemez."
 
-#: lib/screenshooter-dialogs.c:1089
+#: lib/screenshooter-dialogs.c:1060
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Görüntü almadan önce beklenecek süre</span>"
 
-#: lib/screenshooter-dialogs.c:1113
+#: lib/screenshooter-dialogs.c:1084
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Ekran görüntüsü almayı saniye değerinden geciktir"
 
-#: lib/screenshooter-dialogs.c:1116
+#: lib/screenshooter-dialogs.c:1087
 msgid "seconds"
 msgstr "saniye"
 
-#: lib/screenshooter-dialogs.c:1161
+#: lib/screenshooter-dialogs.c:1131
 msgid "_Back"
 msgstr "_Geri"
 
-#: lib/screenshooter-dialogs.c:1201
+#: lib/screenshooter-dialogs.c:1171
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Eylem</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1216
+#: lib/screenshooter-dialogs.c:1186
 msgid "Save"
 msgstr "Kaydet"
 
-#: lib/screenshooter-dialogs.c:1222
+#: lib/screenshooter-dialogs.c:1192
 msgid "Save the screenshot to a file"
 msgstr "Ekran görüntüsünü bir dosyaya kaydedin"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1226
+#: lib/screenshooter-dialogs.c:1196
 msgid "Show in Folder"
 msgstr "Klasörde göster"
 
-#: lib/screenshooter-dialogs.c:1233
+#: lib/screenshooter-dialogs.c:1203
 msgid "Shows the saved file in the folder"
 msgstr "Kaydedilen dosyayı klasörde gösterir"
 
-#: lib/screenshooter-dialogs.c:1241
+#: lib/screenshooter-dialogs.c:1211
 msgid "Copy to the clipboard"
 msgstr "Panoya kopyala"
 
-#: lib/screenshooter-dialogs.c:1243
+#: lib/screenshooter-dialogs.c:1213
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Ekran görüntüsünü daha sonra yapıştırabilmek için panoya kopyala"
 
-#: lib/screenshooter-dialogs.c:1257
+#: lib/screenshooter-dialogs.c:1227
 msgid "Open with:"
 msgstr "Birlikte aç:"
 
-#: lib/screenshooter-dialogs.c:1265
+#: lib/screenshooter-dialogs.c:1235
 msgid "Open the screenshot with the chosen application"
 msgstr "Ekran görüntüsünü seçilen uygulama ile açar"
 
-#: lib/screenshooter-dialogs.c:1284 src/main.c:77
+#: lib/screenshooter-dialogs.c:1254 src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "Ekran görüntüsünü gösterecek uygulama"
 
-#: lib/screenshooter-dialogs.c:1298
+#: lib/screenshooter-dialogs.c:1268
 msgid "Custom Action:"
 msgstr "Özel İşlem:"
 
-#: lib/screenshooter-dialogs.c:1306
+#: lib/screenshooter-dialogs.c:1276
 msgid "Execute the selected custom action"
 msgstr "Seçili özel eylemi yürüt"
 
-#: lib/screenshooter-dialogs.c:1318
+#: lib/screenshooter-dialogs.c:1288
 msgid "Custom action to execute"
 msgstr "Yürütülecek özel eylem"
 
-#: lib/screenshooter-dialogs.c:1343 lib/screenshooter-custom-actions.c:184
-msgid "Host on Imgur™"
-msgstr "Imgur™'da Yayımla"
-
-#: lib/screenshooter-dialogs.c:1347
-msgid "Host the screenshot on Imgur™, a free online image hosting service"
-msgstr "Ekran görüntüsünü ücretsiz çevrim içi resim barındırma hizmeti Imgur™'da yayımla"
-
-#: lib/screenshooter-dialogs.c:1359
-msgid ""
-"Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted.\n"
-"Xfce is NOT affiliated with nor this integration is approved by Imgur™.\n"
-"If you use this feature you must agree with Imgur™ <a href=\"https://imgur.com/tos\">Terms of Service</a>."
-msgstr "Hassas içeriğe dikkat edin, yüklenen resim halka açılacaktır ve\ntümüyle silinebileceğinin garantisi yoktur.\nXfce, Imgur™'ye bağlı değildir ve bu tümleşim onaylı değildir.\nBu özelliği kullanırsanız Imgur™ <a href=\"https://imgur.com/tos\">Hizmet Koşulları</a>nı onaylarsınız."
-
-#: lib/screenshooter-dialogs.c:1381
-msgid ""
-"<a "
-"href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Deprecated!</a>"
-msgstr "<a href='https://gitlab.xfce.org/apps/xfce4-screenshooter/-/issues/115'>Kullanımdan kaldırıldı!</a>"
-
-#: lib/screenshooter-dialogs.c:1393
+#: lib/screenshooter-dialogs.c:1311
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ön izleme</span>"
 
-#: lib/screenshooter-dialogs.c:1454
+#: lib/screenshooter-dialogs.c:1372
 msgid "Save screenshot as..."
 msgstr "Ekran görüntüsünü farklı kaydet..."
 
-#: lib/screenshooter-dialogs.c:1543
+#: lib/screenshooter-dialogs.c:1461
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: lib/screenshooter-dialogs.c:1568
+#: lib/screenshooter-dialogs.c:1486
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Özel İşlemler</span>"
 
-#: lib/screenshooter-dialogs.c:1587
+#: lib/screenshooter-dialogs.c:1505
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Yakalandıktan sonra ekran görüntülerini işlemek için kullanılabilecek özel eylemleri yapılandırabilirsiniz."
 
-#: lib/screenshooter-dialogs.c:1617
+#: lib/screenshooter-dialogs.c:1535
 msgid "Custom Action"
 msgstr "Özel Eylem"
 
-#: lib/screenshooter-dialogs.c:1630
+#: lib/screenshooter-dialogs.c:1548
 msgid "Add custom action"
 msgstr "Özel işlem ekle"
 
-#: lib/screenshooter-dialogs.c:1637
+#: lib/screenshooter-dialogs.c:1555
 msgid "Remove selected custom action"
 msgstr "Seçili özel eylemi kaldır"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1659
+#: lib/screenshooter-dialogs.c:1577
 msgid "Name"
 msgstr "Ad"
 
-#: lib/screenshooter-dialogs.c:1660
+#: lib/screenshooter-dialogs.c:1578
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Eylemler iletişim kutusunda görüntülenecek eylemin adı"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1669
+#: lib/screenshooter-dialogs.c:1587
 msgid "Command"
 msgstr "Komut"
 
-#: lib/screenshooter-dialogs.c:1670
+#: lib/screenshooter-dialogs.c:1588
 msgid "Command that will be executed for this custom action"
 msgstr "Bu özel eylem için yürütülecek komut"
 
-#: lib/screenshooter-dialogs.c:1677
+#: lib/screenshooter-dialogs.c:1595
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Yakalanan ekran görüntüsünün konumu için %f'i yer tutucu olarak kullanın"
 
-#: lib/screenshooter-custom-actions.c:212
+#: lib/screenshooter-custom-actions.c:183
+msgid "Host on Imgur™"
+msgstr "Imgur™'da Yayımla"
+
+#: lib/screenshooter-custom-actions.c:211
 msgid "Unable to execute the custom action"
 msgstr "Özel eylem yürütülemiyor"
 
-#: lib/screenshooter-custom-actions.c:212
+#: lib/screenshooter-custom-actions.c:211
 msgid "Invalid custom action selected"
 msgstr "Geçersiz özel işlem seçildi"
 
-#: lib/screenshooter-custom-actions.c:238
+#: lib/screenshooter-custom-actions.c:237
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "Özel eylem %s çalıştırılamadı"
@@ -320,28 +297,16 @@ msgstr "JPEG XL Dosyası"
 msgid "AVIF File"
 msgstr "AVIF Dosyası"
 
-#: lib/screenshooter-utils.c:323
+#: lib/screenshooter-utils.c:322
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Uygulama çalıştırılamadı.</b>\n%s"
 
-#: lib/screenshooter-utils.c:400
+#: lib/screenshooter-utils.c:399
 msgid "Error"
 msgstr "Hata"
-
-#: lib/screenshooter-imgur.c:134
-msgid "Upload the screenshot..."
-msgstr "Ekran görüntüsünü gönder..."
-
-#: lib/screenshooter-imgur.c:167
-msgid "An error occurred while transferring the data to imgur."
-msgstr "Veri imgur'e aktarılırken hata oluştu."
-
-#: lib/screenshooter-imgur.c:232
-msgid "Imgur"
-msgstr "İmgur"
 
 #: lib/screenshooter-capture-wayland.c:164
 msgid "Failed to capture screencopy frame"
@@ -380,202 +345,63 @@ msgstr "Seçilen mod Wayland'da desteklenmiyor"
 msgid "Failed to capture"
 msgstr "Yakalanamadı"
 
-#: lib/screenshooter-imgur-dialog.ui:48 lib/screenshooter-imgur-dialog.ui:349
-msgid "Size"
-msgstr "Boyut"
-
-#: lib/screenshooter-imgur-dialog.ui:63
-msgid "Link"
-msgstr "Bağlantı"
-
-#: lib/screenshooter-imgur-dialog.ui:80 lib/screenshooter-imgur-dialog.ui:366
-msgid "Tiny"
-msgstr "Minik"
-
-#: lib/screenshooter-imgur-dialog.ui:96 lib/screenshooter-imgur-dialog.ui:381
-msgid "Medium"
-msgstr "Orta"
-
-#: lib/screenshooter-imgur-dialog.ui:112 lib/screenshooter-imgur-dialog.ui:396
-msgid "Full"
-msgstr "Tam"
-
-#: lib/screenshooter-imgur-dialog.ui:154 lib/screenshooter-imgur-dialog.ui:327
-#: lib/screenshooter-imgur-dialog.ui:540
-msgid "Copy"
-msgstr "Kopyala"
-
-#: lib/screenshooter-imgur-dialog.ui:169 lib/screenshooter-imgur-dialog.ui:554
-msgid "View in browser"
-msgstr "Tarayıcıda gör"
-
-#: lib/screenshooter-imgur-dialog.ui:190
-msgid "Image"
-msgstr "Resim"
-
-#: lib/screenshooter-imgur-dialog.ui:212
-msgid "Syntax"
-msgstr "Söz dizimi"
-
-#: lib/screenshooter-imgur-dialog.ui:229
-msgid "HTML"
-msgstr "HTML"
-
-#: lib/screenshooter-imgur-dialog.ui:244
-msgid "Markdown"
-msgstr "Markdown"
-
-#: lib/screenshooter-imgur-dialog.ui:260
-msgid "BBCODE"
-msgstr "BBCODE"
-
-#: lib/screenshooter-imgur-dialog.ui:285
-msgid "Code"
-msgstr "Kod"
-
-#: lib/screenshooter-imgur-dialog.ui:420
-msgid "Type"
-msgstr "Tür"
-
-#: lib/screenshooter-imgur-dialog.ui:437
-msgid "Direct image"
-msgstr "Doğrudan görüntü"
-
-#: lib/screenshooter-imgur-dialog.ui:453
-msgid "Link to full size"
-msgstr "Tam boyut bağlantısı"
-
-#: lib/screenshooter-imgur-dialog.ui:481
-msgid "Embed into code"
-msgstr "Koda ekle"
-
-#: lib/screenshooter-imgur-dialog.ui:507
-msgid "Delete"
-msgstr "Sil"
-
-#: lib/screenshooter-imgur-dialog.ui:581
-msgid ""
-"This link only shows up once. Make sure to save it if you think you might be"
-" deleting this image. We don't currently support linking images to Imgur "
-"accounts."
-msgstr "Bu bağlantı yalnızca bir kez gösterilir. Bu resmi silebileceğinizi düşünüyorsanız, kaydettiğinizden emin olun. Şu anda resimlerin Imgur hesaplarına bağlanmasını desteklemiyoruz."
-
-#: lib/screenshooter-imgur-dialog.ui:599
-msgid "Deletion link"
-msgstr "Silme bağlantısı"
-
-#: lib/screenshooter-job-callbacks.c:77
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Durum</span>"
-
-#. Create the information dialog
-#: lib/screenshooter-job-callbacks.c:174
-msgid "Details about the screenshot"
-msgstr "Ekran görüntüsü hakkında ayrıntılar"
-
-#. Create the user label
-#: lib/screenshooter-job-callbacks.c:217
-msgid "User:"
-msgstr "Kullanıcı:"
-
-#: lib/screenshooter-job-callbacks.c:225
-msgid ""
-"Your user name, if you do not have one yet please create one on the Web page"
-" linked above"
-msgstr "Kullanıcı adınız, eğer henüz kullanıcı oluşturmadıysanız yukarıdaki bağlantıyı kullanarak oluşturabilirsiniz"
-
-#. Create the password label
-#: lib/screenshooter-job-callbacks.c:231
-msgid "Password:"
-msgstr "Parola:"
-
-#: lib/screenshooter-job-callbacks.c:238
-msgid "The password for the user above"
-msgstr "Yukarıdaki kullanıcı için parola"
-
-#. Create the title label
-#: lib/screenshooter-job-callbacks.c:244
-msgid "Title:"
-msgstr "Başlık:"
-
-#: lib/screenshooter-job-callbacks.c:252
-msgid ""
-"The title of the screenshot, it will be used when displaying the screenshot "
-"on the image hosting service"
-msgstr "Ekran görüntüsünün adı, resim barındırma hizmetinde ekran görüntüsünü görüntülerken kullanılacaktır"
-
-#. Create the comment label
-#: lib/screenshooter-job-callbacks.c:258
-msgid "Comment:"
-msgstr "Yorum:"
-
-#: lib/screenshooter-job-callbacks.c:266
-msgid ""
-"A comment on the screenshot, it will be used when displaying the screenshot "
-"on the image hosting service"
-msgstr "Ekran görüntüsünün açıklaması, resim barındırma hizmetinde ekran görüntüsünü görüntülerken kullanılacaktır"
-
-#: src/main.c:52
+#: src/main.c:51
 msgid "Copy the screenshot to the clipboard"
 msgstr "Ekran görüntüsünü panoya kopyala"
 
-#: src/main.c:57
+#: src/main.c:56
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Ekran görüntüsü almayı saniye değerinden geciktir"
 
-#: src/main.c:67
+#: src/main.c:66
 msgid "Display the mouse on the screenshot"
 msgstr "Ekran görüntüsünde fare imlecini göster"
 
-#: src/main.c:72
+#: src/main.c:71
 msgid "Removes the window border from the screenshot"
 msgstr "Ekran görüntüsünden pencere kenarını kaldırır"
 
-#: src/main.c:82 panel-plugin/screenshooter-plugin.c:342
+#: src/main.c:81 panel-plugin/screenshooter-plugin.c:342
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "Yakalanacak bölgeyi seçmek için ekranın bir noktasına tıklayın, düğmesini bırakmadan fareyi bölgenin diğer köşesine sürükleyin ve bırakın."
 
-#: src/main.c:89
+#: src/main.c:88
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
 msgstr "Ekran görüntüsünün kaydedileceği dosya yolu veya dizin, png, jpg ve bmp uzantılarını kabul eder. webp, jxl ve avif yalnızca ilgili pixbuf yükleyicileri kuruluysa desteklenir."
 
-#: src/main.c:94
+#: src/main.c:93
 msgid "Show the saved file in the folder."
 msgstr "Kaydedilen dosyayı klasörde göster."
 
-#: src/main.c:99
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr "Ekran görüntüsünü, ücretsiz resim barındırma servisi olan Imgur'de barındır"
-
-#: src/main.c:104
+#: src/main.c:98
 msgid "Version information"
 msgstr "Sürüm bilgisi"
 
-#: src/main.c:114
+#: src/main.c:108
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
 msgstr "Desteklenen resim formatlarını listeler, sonuçlar yüklü pixbuf yükleyicilere göre değişebilir"
 
-#: src/main.c:150
+#: src/main.c:144
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Çakışan ayarlar: --%s ve --%s aynı anda kullanılamaz.\n"
 
-#: src/main.c:152
+#: src/main.c:146
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "--%s ayarı yalnızca --fulscreen, --window ya da --region seçmeleri doldurulduğunda kullanılabilir. Görmezden gelindi.\n"
 
-#: src/main.c:163
+#: src/main.c:157
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -600,7 +426,7 @@ msgstr ""
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG or "
-"JPG file, copy it to the clipboard, open it using another application, or "
-"host it on imgur, a free online image hosting service."
-msgstr "Bu uygulama tüm ekranın, etkin pencerenin veya seçilen bölgenin ekran görüntüsünü almanıza izin verir. Ekran görüntüsü almadan önce gecikme de ayarlayabilirsiniz: ekran görüntüsünü PNG veya JPG dosyasına kaydedin, panoya kopyalayın, başka uygulama kullanarak açın ya da imgur gibi ücretsiz resim barındırma servisinde saklayın."
+"and the action that will be done with the screenshot: save it to a file, "
+"copy it to the clipboard, open it using another application, or use your "
+"creativity with custom actions."
+msgstr ""
