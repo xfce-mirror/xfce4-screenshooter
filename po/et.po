@@ -309,7 +309,7 @@ msgstr "Faili deskriptori loomine ei õnnestunud"
 
 #: lib/screenshooter-capture-wayland.c:203
 msgid "Failed to map memory"
-msgstr "Mälukasutuse tuvastamine ei õnnestunud"
+msgstr "Mälukasutuse juhtimine ei õnnestunud"
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
@@ -420,4 +420,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "Võimaldab sul jäädvustada pildiks tervet ekraani, aktiivset aknent või valitud ala. Sa saad määrata viivituse enne pildi jäädvustamist ning tegevuse, mida soovid teha pärast seda. Selleks võib olla salvestamine failina, kopeerimine lõikelauale või avamine muu rakendusega. Lisaks saad vastavalt oma vajadustele luua erinevaid uusi pildistusjärgseid tegevusi."
