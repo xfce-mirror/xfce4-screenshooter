@@ -9,6 +9,7 @@
 # heskjestad, 2021-2023
 # Harald H. <haarektrans@gmail.com>, 2014
 # heskjestad, 2024
+# heskjestad, 2024
 # heskjestad, 2019-2020
 # b968a88efa3f7fe258997f7ec785f954, 2013
 # Terje Uriansrud <terje@uriansrud.net>, 2010
@@ -415,11 +416,11 @@ msgstr "Ta en skjermbildekopi av hele skjermen, det aktive vinduet eller et omr�
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Program og paneltillegg for å ta skjermbilder"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -428,4 +429,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "Gjør det mulig å fange hele skjermen, det aktive vinduet eller et utvalgt område. Du kan velge tidsforsinkelse før skjermbildet tas og handlingen som skal utføres etterpå: Lagre til en bildefil, kopiere til utklippstavlen, åpne med et annet program, eller være kreativ med selvvalgte handlinger."
