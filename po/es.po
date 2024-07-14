@@ -322,28 +322,28 @@ msgstr "No se pudo asignar la memoria"
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "Faltan las interfaces Wayland necesarias"
 
 #: lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "Falta el compositor wl_shm"
 
 #: lib/screenshooter-capture-wayland.c:253
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
+msgstr "Compositor no es compatible con wlr-screencopy-inestable-v1"
 
 #: lib/screenshooter-capture-wayland.c:311
 #, c-format
 msgid "Unsupported pixel format: %d"
-msgstr ""
+msgstr "Formato de píxeles no soportado: %d"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "El modo seleccionado no es compatible con Wayland"
 
 #: lib/screenshooter-capture-wayland.c:442
 msgid "Failed to capture"
-msgstr ""
+msgstr "No se pudo capturar"
 
 #: src/main.c:51
 msgid "Copy the screenshot to the clipboard"
@@ -416,11 +416,11 @@ msgstr "Toma capturas de toda la pantalla, de la ventana activa o de un área de
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "Capturador de pantalla de xfce4"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Complemento de aplicación y panel para realizar capturas de pantalla"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -429,4 +429,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "Le permite capturar la pantalla completa, la ventana activa o una región seleccionada. Puede configurar el retraso que transcurre antes de que se tome la captura de pantalla y la acción que se realizará con la captura de pantalla: guardarla en un archivo, copiarla al portapapeles, abrirla usando otra aplicación o usar su creatividad con acciones personalizadas."
