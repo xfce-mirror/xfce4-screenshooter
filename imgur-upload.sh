@@ -47,7 +47,7 @@ fi
 
 LINK="https://imgur.com/$(echo "$RESPONSE" | jq -r .data.id).png"
 DELETE="https://imgur.com/delete/$(echo "$RESPONSE" | jq -r .data.deletehash)"
-LOG_DIRECTORY="$HOME/.local/share/xfce4"
+LOG_DIRECTORY="${XDG_DATA_HOME:-$HOME/.local/share}/xfce4"
 LOG="$LOG_DIRECTORY/xfce4-screenshooter-imgur.log"
 
 # Add link to clipboard
