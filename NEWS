@@ -1,3 +1,21 @@
+1.11.0 (2024-07-25)
+======
+- Drop built-in support for imgur
+- Drop jobs-related code
+- Drop libsoup dependency
+- Use XDG_DATA_HOME in imgur-upload.sh
+- Make sure screenshot is copied to clipboard before closing (!56)
+- Add more tests
+- build: clang: Silence -Wcast-align
+- Translation Updates:
+  Albanian, Basque, Belarusian, Bulgarian, Catalan, Chinese (China),
+  Chinese (Taiwan), Croatian, Czech, Danish, Dutch, English (United
+  Kingdom), Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Indonesian, Italian, Japanese, Korean, Lithuanian, Malay,
+  Norwegian Bokmål, Occitan (post 1500), Persian (Iran), Polish,
+  Portuguese, Portuguese (Brazil), Russian, Serbian, Slovak, Slovenian,
+  Spanish, Swedish, Thai, Turkish, Ukrainian
+
 1.10.6 (2024-05-28)
 ======
 - build: Switch from intltool to gettext
