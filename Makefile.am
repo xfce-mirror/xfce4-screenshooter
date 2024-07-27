@@ -103,7 +103,6 @@ lib_libscreenshooter_la_CFLAGS = \
 	@GLIB_CFLAGS@ \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
-	@LIBXML_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
 	@WAYLAND_CLIENT_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
@@ -120,7 +119,6 @@ lib_libscreenshooter_la_LIBADD = \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@ \
 	@GLIB_LIBS@ \
-	@LIBXML_LIBS@ \
 	@LIBXEXT_LIBS@ \
 	@LIBX11_LIBS@ \
 	@WAYLAND_CLIENT_LIBS@ \
@@ -166,7 +164,6 @@ src_xfce4_screenshooter_CFLAGS = \
 	@LIBXFCE4UTIL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
-	@LIBXML_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
 	-DPACKAGE_SCRIPTS_DIR=\"$(scriptdir)\"
@@ -178,7 +175,6 @@ src_xfce4_screenshooter_LDFLAGS = \
 	@GDKX11_LIBS@ \
 	@GLIB_LIBS@ \
 	@GTHREAD_LIBS@ \
-	@LIBXML_LIBS@ \
 	@LIBX11_LIBS@ \
 	@LIBXFCE4UTIL_LIBS@ \
 	@LIBXFCE4UI_LIBS@
@@ -221,7 +217,6 @@ panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	@LIBXFCE4PANEL_CFLAGS@ \
 	@LIBXFCE4UI_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
-	@LIBXML_CFLAGS@ \
 	@LIBX11_CFLAGS@
 
 panel_plugin_libscreenshooterplugin_la_LDFLAGS = \
@@ -235,7 +230,6 @@ panel_plugin_libscreenshooterplugin_la_LIBADD = \
 	@EXO_LIBS@ \
 	@LIBXFCE4PANEL_LIBS@ \
 	@GTHREAD_LIBS@ \
-	@LIBXML_LIBS@ \
 	@LIBX11_LIBS@ \
 	@LIBXFCE4UI_LIBS@ \
 	lib/libscreenshooter.la
