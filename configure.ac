@@ -3,7 +3,7 @@ dnl
 dnl xfce4-screenshooter
 dnl
 
-XDT_VERSION_INIT([1.11.1])
+XDT_VERSION_INIT([1.11.1], [git])
 
 AC_INIT([xfce4-screenshooter], [xdt_version], [https://gitlab.xfce.org/apps/xfce4-screenshooter], [xfce4-screenshooter])
 AC_PREREQ([2.69])
