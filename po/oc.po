@@ -304,32 +304,32 @@ msgstr "Error"
 
 #: lib/screenshooter-capture-wayland.c:164
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "Fracàs de la captura de l’imatge de còpia d'ecran"
 
 #: lib/screenshooter-capture-wayland.c:194
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "Fracàs de la creacion del descriptor de fichièr"
 
 #: lib/screenshooter-capture-wayland.c:203
 msgid "Failed to map memory"
-msgstr ""
+msgstr "Fracàs del juntament de memòria"
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "Las interfàcias Wayland requeridas son absentas"
 
 #: lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "Li manca wl_shm a Compositor"
 
 #: lib/screenshooter-capture-wayland.c:253
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
+msgstr "Compositor prend pas en carga wlr-screencopy-unstable-v1"
 
 #: lib/screenshooter-capture-wayland.c:311
 #, c-format
 msgid "Unsupported pixel format: %d"
-msgstr ""
+msgstr "Format de pixèl pas pres en carga : %d"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "The selected mode is not supported in Wayland"
@@ -367,7 +367,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "L’emplaçament del fichièr o del repertòri ont la captura d'ecran serà enregistrada, accèpta las extensions png, jpg e bmp. webp, jxl e avif son solament suportats se lor cargador pixbuf respectiu es installats."
 
 #: src/main.c:93
 msgid "Show the saved file in the folder."
@@ -381,7 +381,7 @@ msgstr "Informacions sus la version"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Lista los formats d'imatge suportats, los resultats pòdon variar segon los cargadors pixbuf installats"
 
 #: src/main.c:144
 #, c-format
@@ -410,7 +410,7 @@ msgstr "Prene una captura d'ecran de l'ecran tot entièr, de la fenèstra activa
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "capturador d’ecran-wfce4"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
