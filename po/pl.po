@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Adam Stachowicz <saibamenppl@gmail.com>, 2015
-# hoek <hoek@tuta.io>, 2015
+# d703b7c9f8279b67f8ff243fa8f12e4a_ead0287 <01cbd6dcada4ad6beac99d868e1751df_141855>, 2015
 # Iro <irek.gierlach@gmail.com>, 2011
 # Marek Adamski, 2022-2024
 # Marek Adamski, 2018-2021
@@ -133,11 +133,11 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opóźnienie</span>"
 
 #: lib/screenshooter-dialogs.c:1084
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Wprowadza wartość opóźnienia przechwytywania obrazu, określoną w sekundach"
+msgstr "Opóźnienie w sekundach przed wykonaniem przechwytywania obrazu"
 
 #: lib/screenshooter-dialogs.c:1087
 msgid "seconds"
-msgstr "sekund"
+msgstr "sek."
 
 #: lib/screenshooter-dialogs.c:1131
 msgid "_Back"
@@ -418,7 +418,7 @@ msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr "Aplikacja i wtyczka panelu do przechwytywania obrazu"
+msgstr "Program i wtyczka panelu do przechwytywania obrazu"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
