@@ -86,7 +86,7 @@ msgstr "จับภาพหน้าจอของหน้าต่างท
 
 #: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
 msgid "Not supported in Wayland"
-msgstr ""
+msgstr "ไม่รองรับใน Wayland"
 
 #: lib/screenshooter-dialogs.c:973
 msgid "Select a region"
@@ -148,16 +148,16 @@ msgstr "บันทึก"
 
 #: lib/screenshooter-dialogs.c:1192
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "บันทึกภาพหน้าจอลงในแฟ้ม"
 
 #. Show in folder checkbox
 #: lib/screenshooter-dialogs.c:1196
 msgid "Show in Folder"
-msgstr ""
+msgstr "แสดงในโฟลเดอร์"
 
 #: lib/screenshooter-dialogs.c:1203
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "แสดงแฟ้มที่บันทึกในหน้าต่างโฟลเดอร์"
 
 #: lib/screenshooter-dialogs.c:1211
 msgid "Copy to the clipboard"
@@ -181,15 +181,15 @@ msgstr "โปรแกรมที่จะใช้เปิดภาพหน
 
 #: lib/screenshooter-dialogs.c:1268
 msgid "Custom Action:"
-msgstr ""
+msgstr "กำหนดการกระทำ:"
 
 #: lib/screenshooter-dialogs.c:1276
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "เรียกทำงานการกระทำที่เลือก"
 
 #: lib/screenshooter-dialogs.c:1288
 msgid "Custom action to execute"
-msgstr ""
+msgstr "การกระทำที่จะเรียกทำงาน"
 
 #: lib/screenshooter-dialogs.c:1311
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -205,25 +205,25 @@ msgstr "ปรับแต่ง"
 
 #: lib/screenshooter-dialogs.c:1486
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">การกระทำที่กำหนดเอง</span>"
 
 #: lib/screenshooter-dialogs.c:1505
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "คุณสามารถกำหนดการกระทำที่จะมีให้เลือกใช้ในการจัดการภาพหน้าจอที่จับได้"
 
 #: lib/screenshooter-dialogs.c:1535
 msgid "Custom Action"
-msgstr ""
+msgstr "การกระทำที่กำหนดเอง"
 
 #: lib/screenshooter-dialogs.c:1548
 msgid "Add custom action"
-msgstr ""
+msgstr "เพิ่มการกระทำที่กำหนดเอง"
 
 #: lib/screenshooter-dialogs.c:1555
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "ลบการกระทำกำหนดเองที่เลือก"
 
 #. Add custom action name
 #: lib/screenshooter-dialogs.c:1577
@@ -232,7 +232,7 @@ msgstr "ชื่อ"
 
 #: lib/screenshooter-dialogs.c:1578
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "ชื่อของการกระทำที่จะแสดงในกล่องโต้ตอบการกระทำ"
 
 #. Add custom action command
 #: lib/screenshooter-dialogs.c:1587
@@ -241,12 +241,12 @@ msgstr "คำสั่ง"
 
 #: lib/screenshooter-dialogs.c:1588
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "คำสั่งที่จะเรียกทำงานสำหรับการกระทำนี้"
 
 #: lib/screenshooter-dialogs.c:1595
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "ใช้ %f แทนตำแหน่งแฟ้มภาพหน้าจอที่จับได้"
 
 #: lib/screenshooter-custom-actions.c:183
 msgid "Host on Imgur™"
@@ -254,16 +254,16 @@ msgstr "โฮสต์ที่ Imgur™"
 
 #: lib/screenshooter-custom-actions.c:211
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "ไม่สามารถเรียกทำงานการกระทำที่กำหนดเอง"
 
 #: lib/screenshooter-custom-actions.c:211
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "การกระทำแบบกำหนดเองที่เลือกไม่สามารถใช้การได้"
 
 #: lib/screenshooter-custom-actions.c:237
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "เรียกทำงานการกระทำกำหนดเอง %s ไม่สำเร็จ"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -271,7 +271,7 @@ msgstr "แฟ้ม PNG"
 
 #: lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "แฟ้ม JPEG"
 
 #: lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -279,15 +279,15 @@ msgstr "แฟ้ม BMP"
 
 #: lib/screenshooter-format.c:34
 msgid "WebP File"
-msgstr ""
+msgstr "แฟ้ม WebP"
 
 #: lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "แฟ้ม JPEG XL"
 
 #: lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "แฟ้ม AVIF"
 
 #: lib/screenshooter-utils.c:322
 #, c-format
@@ -302,40 +302,40 @@ msgstr "ข้อผิดพลาด"
 
 #: lib/screenshooter-capture-wayland.c:164
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "จับภาพช่องกรอบ screencopy ไม่สำเร็จ"
 
 #: lib/screenshooter-capture-wayland.c:194
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "สร้างตัวอ้างแฟ้มไม่สำเร็จ"
 
 #: lib/screenshooter-capture-wayland.c:203
 msgid "Failed to map memory"
-msgstr ""
+msgstr "แม็ปหน่วยความจำไม่สำเร็จ"
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "การเชื่อมต่อ Wayland ที่จำเป็นขาดหายไป"
 
 #: lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "Compositor ไม่มี wl_shm"
 
 #: lib/screenshooter-capture-wayland.c:253
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
+msgstr "Compositor ไม่รองรับ wlr-screencopy-unstable-v1"
 
 #: lib/screenshooter-capture-wayland.c:311
 #, c-format
 msgid "Unsupported pixel format: %d"
-msgstr ""
+msgstr "ไม่รองรับรูปแบบพิกเซล: %d"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "โหมดที่เลือกยังไม่มีการรองรับใน Wayland"
 
 #: lib/screenshooter-capture-wayland.c:442
 msgid "Failed to capture"
-msgstr ""
+msgstr "จับภาพไม่สำเร็จ"
 
 #: src/main.c:51
 msgid "Copy the screenshot to the clipboard"
@@ -365,11 +365,11 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "พาธของแฟ้มหรือไดเรกทอรีที่จะเก็บแฟ้มภาพหน้าจอ สามารถใช้นามสกุล png, jpg และ bmp ได้ ส่วน webp, jxl และ avif จะรองรับก็ต่อเมื่อมีการติดตั้งตัวโหลด pixbuf สำหรับรูปแบบนั้นๆ"
 
 #: src/main.c:93
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "แสดงแฟ้มที่บันทึกในหน้าต่างโฟลเดอร์"
 
 #: src/main.c:98
 msgid "Version information"
@@ -379,7 +379,7 @@ msgstr "ข้อมูลรุ่น"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "แสดงรายชื่อรูปแบบรูปภาพที่รองรับ ซึ่งอาจต่างกันในระบบต่างๆ ขึ้นอยู่กับตัวโหลด pixbuf ที่ติดตั้งไว้"
 
 #: src/main.c:144
 #, c-format
@@ -408,11 +408,11 @@ msgstr "จับภาพหน้าจอของทั้งหน้าจ
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "แอปพลิเคชันและปลั๊กอินของพาเนลสำหรับใช้จับภาพหน้าจอ"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -421,4 +421,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "ให้คุณสามารถจับภาพทั้งหน้าจอ หรือภาพหน้าต่างที่แอคทีฟ หรือพื้นที่ที่เลือก คุณสามารถกำหนดให้หน่วงเวลาก่อนที่จะจับภาพ และกำหนดการกระทำที่จะทำกับภาพหน้าจอที่จับได้: บันทึกลงในแฟ้ม, คัดลอกลงในคลิปบอร์ด, เปิดด้วยแอปพลิเคชันอื่น, หรือใช้ความคิดสร้างสรรค์ของคุณกำหนดการกระทำเอง"
