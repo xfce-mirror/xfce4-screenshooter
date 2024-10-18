@@ -78,8 +78,9 @@ populate_liststore                 (GtkListStore       *liststore);
 static void
 set_default_item                   (GtkWidget          *combobox,
                                     ScreenshotData     *sd);
-static GdkPixbuf
-*screenshot_get_thumbnail          (GdkPixbuf          *screenshot);
+static cairo_surface_t
+*screenshot_get_thumbnail          (GdkPixbuf          *screenshot,
+                                    gint                scale_factor);
 static void
 cb_progress_upload                 (goffset             current_num_bytes,
                                     goffset             total_num_bytes,
@@ -473,9 +474,11 @@ static void custom_action_load_last_used (GtkWidget *combobox, ScreenshotData *s
 
 
 
-static GdkPixbuf
-*screenshot_get_thumbnail (GdkPixbuf *screenshot)
+static cairo_surface_t
+*screenshot_get_thumbnail (GdkPixbuf *screenshot, gint scale_factor)
 {
+  cairo_surface_t *surface;
+  GdkPixbuf *scaled_screenshot;
   gint w = gdk_pixbuf_get_width (screenshot);
   gint h = gdk_pixbuf_get_height (screenshot);
   gint width = THUMB_X_SIZE;
@@ -486,7 +489,11 @@ static GdkPixbuf
   else
     width = height * w / h;
 
-  return gdk_pixbuf_scale_simple (screenshot, width, height, GDK_INTERP_BILINEAR);
+  scaled_screenshot = gdk_pixbuf_scale_simple (screenshot, width * scale_factor, height * scale_factor, GDK_INTERP_BILINEAR);
+  surface = gdk_cairo_surface_create_from_pixbuf (scaled_screenshot, scale_factor, NULL);
+  g_free (scaled_screenshot);
+
+  return surface;
 }
 
 
@@ -675,8 +682,8 @@ save_screenshot_to_remote_location (GdkPixbuf *screenshot, GFile *save_file)
 static void
 preview_drag_begin (GtkWidget *widget, GdkDragContext *context, gpointer data)
 {
-  GdkPixbuf *pixbuf = data;
-  gtk_drag_source_set_icon_pixbuf (widget, pixbuf);
+  cairo_surface_t *surface = data;
+  gtk_drag_set_icon_surface (context, surface);
 }
 
 static void
@@ -1123,7 +1130,7 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   GtkCellRenderer *renderer, *renderer_pixbuf;
 
   GtkWidget *preview;
-  GdkPixbuf *thumbnail;
+  cairo_surface_t *thumbnail;
 
   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Screenshot"),
     NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -1315,10 +1322,10 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
   gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 0);
 
   /* The preview image */
-  thumbnail = screenshot_get_thumbnail (sd->screenshot);
+  thumbnail = screenshot_get_thumbnail (sd->screenshot, gtk_widget_get_scale_factor (dlg));
   evbox = gtk_event_box_new ();
-  preview = gtk_image_new_from_pixbuf (thumbnail);
-  g_object_unref (thumbnail);
+  preview = gtk_image_new_from_surface (thumbnail);
+  cairo_surface_destroy (thumbnail);
   gtk_container_add (GTK_CONTAINER (evbox), preview);
   gtk_box_pack_start (GTK_BOX (box), evbox, FALSE, FALSE, 0);
 
