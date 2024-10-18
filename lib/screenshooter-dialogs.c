@@ -574,11 +574,12 @@ static gchar
         }
     }
 
-  /* Restrict file permission if not saved in a user-owned directory */
-  screenshooter_restrict_file_permission (save_file);
+  if (G_LIKELY (gdk_pixbuf_savev (screenshot, save_path, type, option_keys, option_values, &error))) {
+    /* Restrict file permission if not saved in a user-owned directory */
+    screenshooter_restrict_file_permission (save_file);
 
-  if (G_LIKELY (gdk_pixbuf_savev (screenshot, save_path, type, option_keys, option_values, &error)))
     return save_path;
+  }
 
   if (error)
     {
