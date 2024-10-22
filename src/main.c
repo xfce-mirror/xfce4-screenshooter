@@ -338,5 +338,5 @@ int main (int argc, char **argv)
 
   TRACE ("Ciao");
 
-  return EXIT_SUCCESS;
+  return screenshooter_error_was_logged ();
 }
