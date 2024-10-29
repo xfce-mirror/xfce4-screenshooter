@@ -603,8 +603,11 @@ screenshooter_restrict_file_permission (GFile *file)
   if (g_strcmp0 (g_get_user_name (), g_file_info_get_attribute_string (info, G_FILE_ATTRIBUTE_OWNER_USER)) != 0)
     {
       FILE *f = g_fopen (path, "w");
-      g_chmod (path, S_IRUSR | S_IWUSR); /* 0600 */
-      fclose (f);
+      if (f)
+        {
+          g_chmod (path, S_IRUSR | S_IWUSR); /* 0600 */
+          fclose (f);
+        }
     }
 
   g_free (path);
