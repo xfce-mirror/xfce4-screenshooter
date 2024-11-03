@@ -3,9 +3,9 @@
 # This file is distributed under the same license as the xfce-apps.xfce4-screenshooter package.
 # 
 # Translators:
-# a a, 2024
+# Pythom1234, 2024
 # Alois Nešpor <info@aloisnespor.info>, 2013-2014
-# Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2022
+# Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2022,2024
 # Pavel Borecki <pavel.borecki@gmail.com>, 2019
 # Petr Šimáček <petr.simacek@gmail.com>, 2015
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-06-06 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: a a, 2024\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2022,2024\n"
 "Language-Team: Czech (http://app.transifex.com/xfce/xfce-apps/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -305,40 +305,40 @@ msgstr "Chyba"
 
 #: lib/screenshooter-capture-wayland.c:164
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "Zachycení rámce kopie obrazovky se nezdařilo"
 
 #: lib/screenshooter-capture-wayland.c:194
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "Vytvoření popisovače souboru se nezdařilo"
 
 #: lib/screenshooter-capture-wayland.c:203
 msgid "Failed to map memory"
-msgstr ""
+msgstr "Mapování paměti se nezdařilo"
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "Požadovaná rozhraní Wayland chybí"
 
 #: lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "Kompozitoru chybí wl_shm"
 
 #: lib/screenshooter-capture-wayland.c:253
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
+msgstr "Kompozitor nepodporuje wlr-screencopy-unstable-v1"
 
 #: lib/screenshooter-capture-wayland.c:311
 #, c-format
 msgid "Unsupported pixel format: %d"
-msgstr ""
+msgstr "Nepodporovaný formát pixelů: %d"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "Vybraný režim není ve Waylandu podporován"
 
 #: lib/screenshooter-capture-wayland.c:442
 msgid "Failed to capture"
-msgstr ""
+msgstr "Zachycení se nepodařilo"
 
 #: src/main.c:51
 msgid "Copy the screenshot to the clipboard"
@@ -368,7 +368,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Cesta souboru nebo adresáře, kam bude uložen snímek obrazovky, akceptuje přípony png, jpg a bmp. Formáty webp, jxl a avif jsou podporovány pouze v případě nainstalovaných odpovídajících nástrojů pixbuf."
 
 #: src/main.c:93
 msgid "Show the saved file in the folder."
@@ -382,7 +382,7 @@ msgstr "Informace o verzi"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Seznam podporovaných formátů obrázků, výsledky se mohou lišit v závislosti na nainstalovaných nástrojích pixbuf."
 
 #: src/main.c:144
 #, c-format
@@ -411,11 +411,11 @@ msgstr "Pořizuje snímky celé obrazovky, aktivního okna nebo zvolené oblasti
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Aplikace a zásuvný modul panelu pro zachytávání snímků obrazovky"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -424,4 +424,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "Umožňuje zachytit celou obrazovku, aktivní okno nebo vybranou oblast. Můžete nastavit prodlevu před pořízením snímku a akci, která se provede na snímku obrazovky: uložení snímku do souboru, zkopírování do schránky, otevření v jiné aplikaci nebo vlastní akce dle vaší kreativity."
