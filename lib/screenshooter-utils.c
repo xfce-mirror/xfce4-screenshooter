@@ -30,6 +30,10 @@
 
 
 
+static gboolean error_was_logged = FALSE;
+
+
+
 /**
  * @format - a date format string
  *
@@ -406,6 +410,19 @@ void screenshooter_error (const gchar *format, ...)
   gtk_widget_destroy  (dialog);
 
   g_free (message);
+
+  error_was_logged = TRUE;
+}
+
+
+
+/**
+ * Tells whether an error was logged via screenshooter_error.
+ */
+gboolean
+screenshooter_error_was_logged (void)
+{
+  return error_was_logged;
 }
 
 
