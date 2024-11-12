@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Daniel Muñiz Fontoira <dani@damufo.eu>, 2018-2020
-# Daniel Muñiz Fontoira <dani@damufo.eu>, 2021
+# Daniel Muñiz Fontoira <dani@damufo.eu>, 2021,2024
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2008-2009
 msgid ""
 msgstr ""
@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-06-06 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Daniel Muñiz Fontoira <dani@damufo.eu>, 2021\n"
+"Last-Translator: Daniel Muñiz Fontoira <dani@damufo.eu>, 2021,2024\n"
 "Language-Team: Galician (http://app.transifex.com/xfce/xfce-apps/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,7 +87,7 @@ msgstr "Facer unha captura de pantalla da xanela activa"
 
 #: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
 msgid "Not supported in Wayland"
-msgstr ""
+msgstr "Non é compatible no Wayland"
 
 #: lib/screenshooter-dialogs.c:973
 msgid "Select a region"
@@ -149,16 +149,16 @@ msgstr "Gardar"
 
 #: lib/screenshooter-dialogs.c:1192
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Gardar a captura de pantalla nun ficheiro"
 
 #. Show in folder checkbox
 #: lib/screenshooter-dialogs.c:1196
 msgid "Show in Folder"
-msgstr ""
+msgstr "Amosar no cartafol"
 
 #: lib/screenshooter-dialogs.c:1203
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "Amosar o ficheiro gardado no cartafol"
 
 #: lib/screenshooter-dialogs.c:1211
 msgid "Copy to the clipboard"
@@ -182,15 +182,15 @@ msgstr "Aplicación para abrir a captura de pantalla"
 
 #: lib/screenshooter-dialogs.c:1268
 msgid "Custom Action:"
-msgstr ""
+msgstr "Ación personalizada:"
 
 #: lib/screenshooter-dialogs.c:1276
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Executar a acción personalizada seleccionada"
 
 #: lib/screenshooter-dialogs.c:1288
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Acción personalizada a executar"
 
 #: lib/screenshooter-dialogs.c:1311
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -206,25 +206,25 @@ msgstr "Preferencias"
 
 #: lib/screenshooter-dialogs.c:1486
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Accións personalizadas</span>"
 
 #: lib/screenshooter-dialogs.c:1505
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "Pode configurar accións personalizadas que estarán dispoñíbeis para manexar as capturas de pantalla despois da captura."
 
 #: lib/screenshooter-dialogs.c:1535
 msgid "Custom Action"
-msgstr ""
+msgstr "Ación personalizada"
 
 #: lib/screenshooter-dialogs.c:1548
 msgid "Add custom action"
-msgstr ""
+msgstr "Engadir unha acción personalizada"
 
 #: lib/screenshooter-dialogs.c:1555
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "Retirar a acción personalizada seleccionada"
 
 #. Add custom action name
 #: lib/screenshooter-dialogs.c:1577
@@ -233,7 +233,7 @@ msgstr "Nome"
 
 #: lib/screenshooter-dialogs.c:1578
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Nome da acción que se amosada no diálogo de accións"
 
 #. Add custom action command
 #: lib/screenshooter-dialogs.c:1587
@@ -242,12 +242,12 @@ msgstr "Orde"
 
 #: lib/screenshooter-dialogs.c:1588
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Orde que será executada para esta acción personalizada"
 
 #: lib/screenshooter-dialogs.c:1595
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "Usar %f como marcador de posición para a localización da captura de pantalla"
 
 #: lib/screenshooter-custom-actions.c:183
 msgid "Host on Imgur™"
@@ -255,16 +255,16 @@ msgstr "Aloxar en Imgur™"
 
 #: lib/screenshooter-custom-actions.c:211
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Non se puido executar a acción personalizada"
 
 #: lib/screenshooter-custom-actions.c:211
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "A acción personalizada seleccionada non é válida"
 
 #: lib/screenshooter-custom-actions.c:237
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "Produciuse un fallo ao executar a acción personalizada %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -272,7 +272,7 @@ msgstr "Ficheiro PNG"
 
 #: lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "Ficheiro JPG"
 
 #: lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -280,15 +280,15 @@ msgstr "Ficheiro BMP"
 
 #: lib/screenshooter-format.c:34
 msgid "WebP File"
-msgstr ""
+msgstr "Ficheiro WebP"
 
 #: lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "Ficheiro JPG XL"
 
 #: lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "Ficheiro AVIF"
 
 #: lib/screenshooter-utils.c:322
 #, c-format
@@ -303,40 +303,40 @@ msgstr "Fallo"
 
 #: lib/screenshooter-capture-wayland.c:164
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "Produciuse un fallo ao capturar o fotograma da copia de pantalla"
 
 #: lib/screenshooter-capture-wayland.c:194
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "Produciuse un fallo ao crear o descritor do ficheiro"
 
 #: lib/screenshooter-capture-wayland.c:203
 msgid "Failed to map memory"
-msgstr ""
+msgstr "Produciuse un fallo ao asociar a unha localización a memoria"
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "Faltan as interfaces de Wayland necesarias"
 
 #: lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "Falta o compositor  wl_shm"
 
 #: lib/screenshooter-capture-wayland.c:253
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
+msgstr "O compositor non é compatíbel con wlr-screencopy-unstable-v1"
 
 #: lib/screenshooter-capture-wayland.c:311
 #, c-format
 msgid "Unsupported pixel format: %d"
-msgstr ""
+msgstr "Non se admite o formato de píxel: %d"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "O modo seleccionado non é compatíbel con Wayland"
 
 #: lib/screenshooter-capture-wayland.c:442
 msgid "Failed to capture"
-msgstr ""
+msgstr "Produciuse un fallo ao capturar"
 
 #: src/main.c:51
 msgid "Copy the screenshot to the clipboard"
@@ -366,11 +366,11 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "A ruta do ficheiro ou cartafol onde se gardará a captura de pantalla, acepta as extensións png, jpg e bmp. As extensións webp, jxl e avif só son compatíbeis se os seus respectivos cargadores de pixbuf están instalados."
 
 #: src/main.c:93
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "Amosa o ficheiro gardado no cartafol"
 
 #: src/main.c:98
 msgid "Version information"
@@ -380,7 +380,7 @@ msgstr "Información da versión"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Lista os formatos de imaxe admitidos, os resultados poden variar dependendo dos cargadores de pixbuf instalados"
 
 #: src/main.c:144
 #, c-format
@@ -409,11 +409,11 @@ msgstr "Facer capturas de pantalla de toda a pantalla, da xanela activa ou dunha
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Aplicación e engadido de panel para tomar capturas de pantalla"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -422,4 +422,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "Permite capturar toda a pantalla, a xanela activa ou unha rexión seleccionada. Pode estabelecer o atraso que transcorre antes de que se tome a captura de pantalla e a acción que se fará coa captura de pantalla: gardala nun ficheiro, copiala no portapapeis, abrila mediante outra aplicación ou utilizar a súa creatividade con accións personalizadas."
