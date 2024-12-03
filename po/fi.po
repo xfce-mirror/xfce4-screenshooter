@@ -5,7 +5,7 @@
 # Translators:
 # Ammuu5, 2018-2020,2022
 # Elias Julkunen <elias.julkunen@gmail.com>, 2008
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2013,2019
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2013,2019,2024
 # Pasi Lallinaho <pasi@shimmerproject.org>, 2014-2016,2019
 msgid ""
 msgstr ""
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-06-06 00:51+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Ammuu5, 2018-2020,2022\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>, 2013,2019,2024\n"
 "Language-Team: Finnish (http://app.transifex.com/xfce/xfce-apps/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,7 +88,7 @@ msgstr "Kaappaa kuva aktiivisesta ikkunasta"
 
 #: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
 msgid "Not supported in Wayland"
-msgstr ""
+msgstr "Ei tuettu Waylandissa"
 
 #: lib/screenshooter-dialogs.c:973
 msgid "Select a region"
@@ -103,7 +103,7 @@ msgstr ""
 
 #: lib/screenshooter-dialogs.c:1000
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Valinnat</span>"
 
 #: lib/screenshooter-dialogs.c:1020
 msgid "Capture the mouse pointer"
@@ -121,7 +121,7 @@ msgstr "Sisällytä ikkunan reuna"
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "Näytä ikkunareunus kuvakaappauksissa.\nTämän poistaminen käytöstä ei vaikuta CSD-ikkunoihin."
 
 #: lib/screenshooter-dialogs.c:1060
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
@@ -150,7 +150,7 @@ msgstr "Tallenna"
 
 #: lib/screenshooter-dialogs.c:1192
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Tallenna kuvakaappaus tiedostoon"
 
 #. Show in folder checkbox
 #: lib/screenshooter-dialogs.c:1196
@@ -183,15 +183,15 @@ msgstr "Sovellus, jolla kaappaus avataan"
 
 #: lib/screenshooter-dialogs.c:1268
 msgid "Custom Action:"
-msgstr ""
+msgstr "Mukautettu toiminto:"
 
 #: lib/screenshooter-dialogs.c:1276
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Suorita valittu mukautettu toiminto"
 
 #: lib/screenshooter-dialogs.c:1288
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Suoritettava mukautettu toiminto"
 
 #: lib/screenshooter-dialogs.c:1311
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
@@ -207,25 +207,25 @@ msgstr "Asetukset"
 
 #: lib/screenshooter-dialogs.c:1486
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Mukautetut toiminnot</span>"
 
 #: lib/screenshooter-dialogs.c:1505
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
-msgstr ""
+msgstr "Voit määrittää mukautettuja toimintoja, jotka käsittelevät kuvakaappauksia niiden ottamisen jälkeen."
 
 #: lib/screenshooter-dialogs.c:1535
 msgid "Custom Action"
-msgstr ""
+msgstr "Mukautettu toiminto"
 
 #: lib/screenshooter-dialogs.c:1548
 msgid "Add custom action"
-msgstr ""
+msgstr "Lisää mukautettu toiminto"
 
 #: lib/screenshooter-dialogs.c:1555
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "Poista valittu mukautettu toiminto"
 
 #. Add custom action name
 #: lib/screenshooter-dialogs.c:1577
@@ -243,7 +243,7 @@ msgstr "Komento"
 
 #: lib/screenshooter-dialogs.c:1588
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Komento, joka suoritetaan tämän mukautetun toiminnon kohdalla"
 
 #: lib/screenshooter-dialogs.c:1595
 #, c-format
@@ -256,7 +256,7 @@ msgstr "Lähetä Imgur™-palveluun"
 
 #: lib/screenshooter-custom-actions.c:211
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Mukautettua toimintoa ei voitu suorittaa"
 
 #: lib/screenshooter-custom-actions.c:211
 msgid "Invalid custom action selected"
@@ -273,7 +273,7 @@ msgstr "PNG-tiedosto"
 
 #: lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG-tiedosto"
 
 #: lib/screenshooter-format.c:33
 msgid "BMP File"
@@ -281,15 +281,15 @@ msgstr "BMP-tiedosto"
 
 #: lib/screenshooter-format.c:34
 msgid "WebP File"
-msgstr ""
+msgstr "WebP-tiedosto"
 
 #: lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "JPEG XL -tiedosto"
 
 #: lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF-tiedosto"
 
 #: lib/screenshooter-utils.c:322
 #, c-format
@@ -316,7 +316,7 @@ msgstr ""
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "Vaaditut Wayland-liitännät puuttuvat"
 
 #: lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
@@ -333,11 +333,11 @@ msgstr ""
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "Valittu tila ei ole tuettu Waylandissa"
 
 #: lib/screenshooter-capture-wayland.c:442
 msgid "Failed to capture"
-msgstr ""
+msgstr "Kaappaus epäonnistui"
 
 #: src/main.c:51
 msgid "Copy the screenshot to the clipboard"
@@ -414,7 +414,7 @@ msgstr ""
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Sovellus ja paneeliliitännäinen kuvakaappauksien ottamiseksi"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
