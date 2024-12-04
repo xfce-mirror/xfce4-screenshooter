@@ -92,7 +92,7 @@ msgstr "Przechwytuje obraz aktywnego okna"
 
 #: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
 msgid "Not supported in Wayland"
-msgstr "Nieobsługiwane w Wayland"
+msgstr "Nieobsługiwane w Wayland"
 
 #: lib/screenshooter-dialogs.c:973
 msgid "Select a region"
@@ -159,7 +159,7 @@ msgstr "Zapisuje przechwycony obraz do pliku"
 #. Show in folder checkbox
 #: lib/screenshooter-dialogs.c:1196
 msgid "Show in Folder"
-msgstr "Wyświetlenie w katalogu"
+msgstr "Wyświetlenie w katalogu"
 
 #: lib/screenshooter-dialogs.c:1203
 msgid "Shows the saved file in the folder"
@@ -238,7 +238,7 @@ msgstr "Nazwa"
 
 #: lib/screenshooter-dialogs.c:1578
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr "Nazwa czynności, która będzie wyświetlana w oknie dialogowym Czynności"
+msgstr "Nazwa czynności, która będzie wyświetlana w oknie dialogowym Czynności"
 
 #. Add custom action command
 #: lib/screenshooter-dialogs.c:1587
@@ -349,7 +349,7 @@ msgstr "Kopiuj przechwycony obraz do schowka"
 
 #: src/main.c:56
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Określa wartość opóźnienia przechwytywania obrazu (w sekundach)"
+msgstr "Określa wartość opóźnienia przechwytywania obrazu (w sekundach)"
 
 #: src/main.c:66
 msgid "Display the mouse on the screenshot"
@@ -375,7 +375,7 @@ msgstr "Ścieżka pliku lub katalog, w którym zostanie zapisany przechwycony o
 
 #: src/main.c:93
 msgid "Show the saved file in the folder."
-msgstr "Wyświetla zapisany plik w katalogu."
+msgstr "Wyświetla zapisany plik w katalogu."
 
 #: src/main.c:98
 msgid "Version information"
@@ -390,7 +390,7 @@ msgstr "Wyświetla listę obsługiwanych formatów obrazów, wyniki mogą się r
 #: src/main.c:144
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Opcje --%s i --%s nie mogą zostać użyte w tym samym wierszu poleceń.\n"
+msgstr "Opcje --%s i --%s nie mogą zostać użyte w tym samym wierszu poleceń.\n"
 
 #: src/main.c:146
 #, c-format
@@ -418,7 +418,7 @@ msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr "Program i wtyczka panelu do przechwytywania obrazu"
+msgstr "Program i wtyczka panelu do przechwytywania obrazu"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
