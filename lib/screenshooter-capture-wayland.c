@@ -267,8 +267,10 @@ static GdkPixbuf
 *screenshooter_convert_buffer_to_pixbuf (OutputData *output)
 {
   guint8 *data = output->shm_data;
+  uint32_t format = output->format;
+  gboolean has_alpha = TRUE;
 
-  if (output->format == WL_SHM_FORMAT_ARGB8888 || output->format == WL_SHM_FORMAT_XRGB8888)
+  if (format == WL_SHM_FORMAT_ARGB8888 || format == WL_SHM_FORMAT_XRGB8888)
     {
       for (int y = 0; y < output->height; y++)
         {
@@ -276,9 +278,9 @@ static GdkPixbuf
             {
               gint offset = y * output->stride + x * 4;
               guint32 *px = (guint32 *)(gpointer)(data + offset);
-              guint8 red = (*px >> 16) & 0xFF;
-              guint8 green = (*px >> 8) & 0xFF;
               guint8 blue = *px & 0xFF;
+              guint8 green = (*px >> 8) & 0xFF;
+              guint8 red = (*px >> 16) & 0xFF;
               guint8 alpha = (*px >> 24) & 0xFF;
               data[offset + 0] = red;
               data[offset + 1] = green;
@@ -287,7 +289,7 @@ static GdkPixbuf
             }
         }
     }
-  else if (output->format == WL_SHM_FORMAT_ABGR8888 || output->format == WL_SHM_FORMAT_XBGR8888)
+  else if (format == WL_SHM_FORMAT_ABGR8888 || format == WL_SHM_FORMAT_XBGR8888)
     {
       for (int y = 0; y < output->height; y++)
         {
@@ -300,19 +302,38 @@ static GdkPixbuf
               guint8 blue = (*px >> 16) & 0xFF;
               guint8 alpha = (*px >> 24) & 0xFF;
               data[offset + 0] = red;
-              data[offset + 1] = green; 
+              data[offset + 1] = green;
               data[offset + 2] = blue;
               data[offset + 3] = alpha;
             }
         }
     }
+  else if (format == WL_SHM_FORMAT_BGR888)
+    {
+      has_alpha = FALSE;
+
+      for (int y = 0; y < output->height; y++)
+        {
+          for (int x = 0; x < output->width; x++)
+            {
+              gint offset = y * output->stride + x * 3;
+              guint8 *px = (guint8 *)(gpointer)(data + offset);
+              guint8 blue = px[0];
+              guint8 green = px[1];
+              guint8 red = px[2];
+              data[offset + 0] = red;
+              data[offset + 1] = green;
+              data[offset + 2] = blue;
+            }
+        }
+    }
   else
     {
-      screenshooter_error (_("Unsupported pixel format: %d"), output->format);
+      screenshooter_error (_("Unsupported pixel format: 0x%x"), format);
       return NULL;
     }
 
-  return gdk_pixbuf_new_from_data (data, GDK_COLORSPACE_RGB, TRUE, 8, output->width, output->height, output->stride, NULL, NULL);
+  return gdk_pixbuf_new_from_data (data, GDK_COLORSPACE_RGB, has_alpha, 8, output->width, output->height, output->stride, NULL, NULL);
 }
 
 
@@ -390,14 +411,14 @@ GdkPixbuf
   /* only fullscreen is supported for now */
   TRACE ("Get the screenshot of the entire screen");
 
-  /* initializate the wayland client  */
+  /* initializate the wayland client */
   if (!screenshooter_initialize_client_data (&client_data))
     {
       screenshooter_free_client_data (&client_data);
       return NULL;
     }
 
-  /* collect outputs (monitors)  */
+  /* collect outputs (monitors) */
   n_monitors = gdk_display_get_n_monitors (gdk_display_get_default ());
   for (int i = 0; i < n_monitors; i++)
     {
