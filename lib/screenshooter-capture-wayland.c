@@ -318,9 +318,9 @@ static GdkPixbuf
             {
               gint offset = y * output->stride + x * 3;
               guint8 *px = (guint8 *)(gpointer)(data + offset);
-              guint8 blue = px[0];
+              guint8 blue = px[2];
               guint8 green = px[1];
-              guint8 red = px[2];
+              guint8 red = px[0];
               data[offset + 0] = red;
               data[offset + 1] = green;
               data[offset + 2] = blue;
