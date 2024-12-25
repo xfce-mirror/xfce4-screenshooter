@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-06-06 00:51+0200\n"
+"POT-Creation-Date: 2024-12-25 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2007,2020-2024\n"
 "Language-Team: Albanian (http://app.transifex.com/xfce/xfce-apps/language/sq/)\n"
@@ -20,231 +20,231 @@ msgstr ""
 "Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/screenshooter-dialogs.c:503
+#: lib/screenshooter-dialogs.c:510
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb nga %.2fKb"
 
-#: lib/screenshooter-dialogs.c:606
+#: lib/screenshooter-dialogs.c:613
 msgid "Transfer"
 msgstr "Shpërngule"
 
-#: lib/screenshooter-dialogs.c:627
+#: lib/screenshooter-dialogs.c:634
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Fotoja e ekranit po shpërngulet te:</span>"
 
-#: lib/screenshooter-dialogs.c:867 lib/screenshooter-dialogs.c:876
-#: lib/screenshooter-dialogs.c:1128 lib/screenshooter-utils.c:133
-#: lib/screenshooter-utils.c:175 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:874 lib/screenshooter-dialogs.c:883
+#: lib/screenshooter-dialogs.c:1135 lib/screenshooter-utils.c:135
+#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Foto ekrani"
 
-#: lib/screenshooter-dialogs.c:869 lib/screenshooter-dialogs.c:879
+#: lib/screenshooter-dialogs.c:876 lib/screenshooter-dialogs.c:886
 msgid "_Preferences"
 msgstr "_Parapëlqime"
 
-#: lib/screenshooter-dialogs.c:870 lib/screenshooter-dialogs.c:878
-#: lib/screenshooter-dialogs.c:1130
+#: lib/screenshooter-dialogs.c:877 lib/screenshooter-dialogs.c:885
+#: lib/screenshooter-dialogs.c:1137
 msgid "_Help"
 msgstr "_Ndihmë"
 
-#: lib/screenshooter-dialogs.c:871 lib/screenshooter-dialogs.c:1463
+#: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:1470
 msgid "_Close"
 msgstr "_Mbylle"
 
-#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:1132
+#: lib/screenshooter-dialogs.c:887 lib/screenshooter-dialogs.c:1139
 msgid "_Cancel"
 msgstr "_Anuloje"
 
-#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:1133
+#: lib/screenshooter-dialogs.c:888 lib/screenshooter-dialogs.c:1140
 msgid "_OK"
 msgstr "_OK"
 
-#: lib/screenshooter-dialogs.c:914
+#: lib/screenshooter-dialogs.c:921
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Zonë për t’u fotografuar</span>"
 
-#: lib/screenshooter-dialogs.c:936
+#: lib/screenshooter-dialogs.c:943
 msgid "Entire screen"
 msgstr "Krejt ekranin"
 
-#: lib/screenshooter-dialogs.c:941 src/main.c:61
+#: lib/screenshooter-dialogs.c:948 src/main.c:61
 #: panel-plugin/screenshooter-plugin.c:332
 msgid "Take a screenshot of the entire screen"
 msgstr "Bëni një foto të krejt ekranit"
 
-#: lib/screenshooter-dialogs.c:950
+#: lib/screenshooter-dialogs.c:957
 msgid "Active window"
 msgstr "Dritare aktive"
 
-#: lib/screenshooter-dialogs.c:953 src/main.c:103
+#: lib/screenshooter-dialogs.c:960 src/main.c:103
 #: panel-plugin/screenshooter-plugin.c:337
 msgid "Take a screenshot of the active window"
 msgstr "Bëni një foto ekrani të dritares aktive"
 
-#: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
+#: lib/screenshooter-dialogs.c:969 lib/screenshooter-dialogs.c:996
 msgid "Not supported in Wayland"
 msgstr "S’mbulohet në Wayland"
 
-#: lib/screenshooter-dialogs.c:973
+#: lib/screenshooter-dialogs.c:980
 msgid "Select a region"
 msgstr "Përzgjidhni një rajon"
 
-#: lib/screenshooter-dialogs.c:976
+#: lib/screenshooter-dialogs.c:983
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Përzgjidhni një zonë që të fotografohet, duke klikuar mbi një pikë në ekran pa e lëshuar butonin e miut, duke e tërhequr miun tuaj në cepin kundruall të zonës, dhe duke e lëshuar butonin e miut.\n\nQë ta lëvizni zonën, shtypni tastin Ctrl teksa e tërhiqni."
 
-#: lib/screenshooter-dialogs.c:1000
+#: lib/screenshooter-dialogs.c:1007
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Mundësi</span>"
 
-#: lib/screenshooter-dialogs.c:1020
+#: lib/screenshooter-dialogs.c:1027
 msgid "Capture the mouse pointer"
 msgstr "Fotografoje kursorin e miut"
 
-#: lib/screenshooter-dialogs.c:1024
+#: lib/screenshooter-dialogs.c:1031
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Shfaq kursorin e miut në foto ekrani"
 
-#: lib/screenshooter-dialogs.c:1031
+#: lib/screenshooter-dialogs.c:1038
 msgid "Capture the window border"
 msgstr "Me anë dritareje"
 
-#: lib/screenshooter-dialogs.c:1036
+#: lib/screenshooter-dialogs.c:1043
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Shfaq anë dritareje te fotoja e ekranit.\nÇaktivizimi i kësaj mundësie s’prek dritaret CSD."
 
-#: lib/screenshooter-dialogs.c:1060
+#: lib/screenshooter-dialogs.c:1067
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vonesë para fotografimit</span>"
 
-#: lib/screenshooter-dialogs.c:1084
+#: lib/screenshooter-dialogs.c:1091
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Vonesë në sekonda përpara bërjes së fotos së ekranit"
 
-#: lib/screenshooter-dialogs.c:1087
+#: lib/screenshooter-dialogs.c:1094
 msgid "seconds"
 msgstr "sekonda"
 
-#: lib/screenshooter-dialogs.c:1131
+#: lib/screenshooter-dialogs.c:1138
 msgid "_Back"
 msgstr "_Mbrapsht"
 
-#: lib/screenshooter-dialogs.c:1171
+#: lib/screenshooter-dialogs.c:1178
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Veprim</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1186
+#: lib/screenshooter-dialogs.c:1193
 msgid "Save"
 msgstr "Ruaje"
 
-#: lib/screenshooter-dialogs.c:1192
+#: lib/screenshooter-dialogs.c:1199
 msgid "Save the screenshot to a file"
 msgstr "Ruajeni foton e ekranit te një kartelë"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1196
+#: lib/screenshooter-dialogs.c:1203
 msgid "Show in Folder"
 msgstr "Shfaqe në Dosje"
 
-#: lib/screenshooter-dialogs.c:1203
+#: lib/screenshooter-dialogs.c:1210
 msgid "Shows the saved file in the folder"
 msgstr "Shfaq kartelën e ruajtur te dosja"
 
-#: lib/screenshooter-dialogs.c:1211
+#: lib/screenshooter-dialogs.c:1218
 msgid "Copy to the clipboard"
 msgstr "Kopjoje në të papastër"
 
-#: lib/screenshooter-dialogs.c:1213
+#: lib/screenshooter-dialogs.c:1220
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopjoje foton e ekranit në të papastër, që të mund të hidhet diku më vonë"
 
-#: lib/screenshooter-dialogs.c:1227
+#: lib/screenshooter-dialogs.c:1234
 msgid "Open with:"
 msgstr "Hape me:"
 
-#: lib/screenshooter-dialogs.c:1235
+#: lib/screenshooter-dialogs.c:1242
 msgid "Open the screenshot with the chosen application"
 msgstr "Hapeni foton e ekranit me aplikacionin e zgjedhur"
 
-#: lib/screenshooter-dialogs.c:1254 src/main.c:76
+#: lib/screenshooter-dialogs.c:1261 src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "Aplikacion për të hapur foton e ekranit"
 
-#: lib/screenshooter-dialogs.c:1268
+#: lib/screenshooter-dialogs.c:1275
 msgid "Custom Action:"
 msgstr "Veprim Vetjak:"
 
-#: lib/screenshooter-dialogs.c:1276
+#: lib/screenshooter-dialogs.c:1283
 msgid "Execute the selected custom action"
 msgstr "Kryej veprimin vetjak të përzgjedhur"
 
-#: lib/screenshooter-dialogs.c:1288
+#: lib/screenshooter-dialogs.c:1295
 msgid "Custom action to execute"
 msgstr "Veprim vetjak për t’u kryer "
 
-#: lib/screenshooter-dialogs.c:1311
+#: lib/screenshooter-dialogs.c:1318
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Paraparje</span>"
 
-#: lib/screenshooter-dialogs.c:1372
+#: lib/screenshooter-dialogs.c:1379
 msgid "Save screenshot as..."
 msgstr "Ruajeni foton e ekranit si…"
 
-#: lib/screenshooter-dialogs.c:1461
+#: lib/screenshooter-dialogs.c:1468
 msgid "Preferences"
 msgstr "Parapëlqime"
 
-#: lib/screenshooter-dialogs.c:1486
+#: lib/screenshooter-dialogs.c:1493
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Veprime Vetjake</span>"
 
-#: lib/screenshooter-dialogs.c:1505
+#: lib/screenshooter-dialogs.c:1512
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Mund të formësoni veprime vetjake që do të jenë të përdorshëm për trajtimin e fotove të ekranit pasi këto të jenë bërë."
 
-#: lib/screenshooter-dialogs.c:1535
+#: lib/screenshooter-dialogs.c:1542
 msgid "Custom Action"
 msgstr "Veprim Vetjak"
 
-#: lib/screenshooter-dialogs.c:1548
+#: lib/screenshooter-dialogs.c:1555
 msgid "Add custom action"
 msgstr "Shtoni veprim vetjak"
 
-#: lib/screenshooter-dialogs.c:1555
+#: lib/screenshooter-dialogs.c:1562
 msgid "Remove selected custom action"
 msgstr "Hiqe veprimin vetjak e përzgjedhur"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1577
+#: lib/screenshooter-dialogs.c:1584
 msgid "Name"
 msgstr "Emër"
 
-#: lib/screenshooter-dialogs.c:1578
+#: lib/screenshooter-dialogs.c:1585
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Emër i veprimit, që do të shfaqet te dialogu Veprime"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1587
+#: lib/screenshooter-dialogs.c:1594
 msgid "Command"
 msgstr "Urdhër"
 
-#: lib/screenshooter-dialogs.c:1588
+#: lib/screenshooter-dialogs.c:1595
 msgid "Command that will be executed for this custom action"
 msgstr "Urdhër që do të kryhet për këtë veprim vetjak"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1602
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Përdor %f si një vendmbajtëse për vendndodhjen e fotos së bërë të ekranit"
@@ -290,14 +290,14 @@ msgstr "Kartelë JPEG XL"
 msgid "AVIF File"
 msgstr "Kartelë AVIF"
 
-#: lib/screenshooter-utils.c:322
+#: lib/screenshooter-utils.c:324
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Aplikacioni s’u nis dot.</b>\n%s"
 
-#: lib/screenshooter-utils.c:399
+#: lib/screenshooter-utils.c:401
 msgid "Error"
 msgstr "Gabim"
 
@@ -325,16 +325,16 @@ msgstr "Hartuesit i mungon missing wl_shm"
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
 msgstr "Hartuesi s’mbulon wlr-screencopy-unstable-v1"
 
-#: lib/screenshooter-capture-wayland.c:311
+#: lib/screenshooter-capture-wayland.c:332
 #, c-format
-msgid "Unsupported pixel format: %d"
-msgstr "Format i pambuluar pikselash: %d"
+msgid "Unsupported pixel format: 0x%x"
+msgstr "Format i pambuluar pikselash: 0x%x"
 
-#: lib/screenshooter-capture-wayland.c:386
+#: lib/screenshooter-capture-wayland.c:407
 msgid "The selected mode is not supported in Wayland"
 msgstr "Mënyra e përzgjedhur s’mbulohet në Wayland"
 
-#: lib/screenshooter-capture-wayland.c:442
+#: lib/screenshooter-capture-wayland.c:463
 msgid "Failed to capture"
 msgstr "S’u arrit të regjistrohej"
 
