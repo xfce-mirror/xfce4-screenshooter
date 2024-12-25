@@ -326,7 +326,7 @@ msgstr "Композиторът не поддържа wlr-screencopy-unstable-v
 #: lib/screenshooter-capture-wayland.c:332
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
-msgstr ""
+msgstr "Неподдържан пикселен формат: 0x %x"
 
 #: lib/screenshooter-capture-wayland.c:407
 msgid "The selected mode is not supported in Wayland"
