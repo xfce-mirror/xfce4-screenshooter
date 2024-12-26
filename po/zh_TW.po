@@ -330,7 +330,7 @@ msgstr "合成器不支援 wlr-screencopy-unstable-v1"
 #: lib/screenshooter-capture-wayland.c:332
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
-msgstr ""
+msgstr "不支援的畫素格式：0x%x"
 
 #: lib/screenshooter-capture-wayland.c:407
 msgid "The selected mode is not supported in Wayland"
