@@ -6,7 +6,7 @@
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
 # ebal <ebalaskas@ebalaskas.gr>, 2008-2009
-# Ioannis LM, 2023
+# Ioannis LM, 2023,2025
 # Panagiotis Mantzios <pmantzios@hotmail.com>, 2018
 # Stavros Giannouris <stavrosg@hellug.gr>, 2008
 # Πέτρος Σαμαράς <psamaras1@gmail.com>, 2019
@@ -15,9 +15,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-06-06 00:51+0200\n"
+"POT-Creation-Date: 2024-12-25 00:50+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Ioannis LM, 2023\n"
+"Last-Translator: Ioannis LM, 2023,2025\n"
 "Language-Team: Greek (http://app.transifex.com/xfce/xfce-apps/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,231 +25,231 @@ msgstr ""
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/screenshooter-dialogs.c:503
+#: lib/screenshooter-dialogs.c:510
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb από %.2fKb"
 
-#: lib/screenshooter-dialogs.c:606
+#: lib/screenshooter-dialogs.c:613
 msgid "Transfer"
 msgstr "Μεταφορά"
 
-#: lib/screenshooter-dialogs.c:627
+#: lib/screenshooter-dialogs.c:634
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Το στιγμιότυπο μεταφέρθηκε στο:</span>"
 
-#: lib/screenshooter-dialogs.c:867 lib/screenshooter-dialogs.c:876
-#: lib/screenshooter-dialogs.c:1128 lib/screenshooter-utils.c:133
-#: lib/screenshooter-utils.c:175 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:874 lib/screenshooter-dialogs.c:883
+#: lib/screenshooter-dialogs.c:1135 lib/screenshooter-utils.c:135
+#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Στιγμιότυπο οθόνης"
 
-#: lib/screenshooter-dialogs.c:869 lib/screenshooter-dialogs.c:879
+#: lib/screenshooter-dialogs.c:876 lib/screenshooter-dialogs.c:886
 msgid "_Preferences"
 msgstr "_Προτιμήσεις"
 
-#: lib/screenshooter-dialogs.c:870 lib/screenshooter-dialogs.c:878
-#: lib/screenshooter-dialogs.c:1130
+#: lib/screenshooter-dialogs.c:877 lib/screenshooter-dialogs.c:885
+#: lib/screenshooter-dialogs.c:1137
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: lib/screenshooter-dialogs.c:871 lib/screenshooter-dialogs.c:1463
+#: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:1470
 msgid "_Close"
 msgstr "_Κλείσιμο"
 
-#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:1132
+#: lib/screenshooter-dialogs.c:887 lib/screenshooter-dialogs.c:1139
 msgid "_Cancel"
 msgstr "Άκ_υρο"
 
-#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:1133
+#: lib/screenshooter-dialogs.c:888 lib/screenshooter-dialogs.c:1140
 msgid "_OK"
 msgstr "_Εντάξει"
 
-#: lib/screenshooter-dialogs.c:914
+#: lib/screenshooter-dialogs.c:921
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Περιοχή αποτύπωσης</span>"
 
-#: lib/screenshooter-dialogs.c:936
+#: lib/screenshooter-dialogs.c:943
 msgid "Entire screen"
 msgstr "Ολόκληρη οθόνη"
 
-#: lib/screenshooter-dialogs.c:941 src/main.c:61
+#: lib/screenshooter-dialogs.c:948 src/main.c:61
 #: panel-plugin/screenshooter-plugin.c:332
 msgid "Take a screenshot of the entire screen"
 msgstr "Λήψη στιγμιότυπου ολόκληρης της οθόνης"
 
-#: lib/screenshooter-dialogs.c:950
+#: lib/screenshooter-dialogs.c:957
 msgid "Active window"
 msgstr "Ενεργό παράθυρο"
 
-#: lib/screenshooter-dialogs.c:953 src/main.c:103
+#: lib/screenshooter-dialogs.c:960 src/main.c:103
 #: panel-plugin/screenshooter-plugin.c:337
 msgid "Take a screenshot of the active window"
 msgstr "Λήψη στιγμιότυπου μόνο του ενεργού παραθύρου"
 
-#: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
+#: lib/screenshooter-dialogs.c:969 lib/screenshooter-dialogs.c:996
 msgid "Not supported in Wayland"
-msgstr ""
+msgstr "Δεν υποστηρίζεται στο Wayland"
 
-#: lib/screenshooter-dialogs.c:973
+#: lib/screenshooter-dialogs.c:980
 msgid "Select a region"
 msgstr "Επιλογή περιοχής"
 
-#: lib/screenshooter-dialogs.c:976
+#: lib/screenshooter-dialogs.c:983
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr "Επιλέξτε την περιοχή αποτύπωσης κάνοντας κλικ σε ένα σημείο στην οθόνη χωρίς να αφήσετε το κουμπί του ποντικιού, σύρετε το ποντίκι στην άλλη γωνία της περιοχής και αφήστε το κουμπί.\n \nΠατήστε Ctrl ενώ σύρετε το ποντίκι για να μετακινήσετε την περιοχή."
 
-#: lib/screenshooter-dialogs.c:1000
+#: lib/screenshooter-dialogs.c:1007
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Επιλογές</span>"
 
-#: lib/screenshooter-dialogs.c:1020
+#: lib/screenshooter-dialogs.c:1027
 msgid "Capture the mouse pointer"
 msgstr "Αποτύπωση του δείκτη του ποντικιού"
 
-#: lib/screenshooter-dialogs.c:1024
+#: lib/screenshooter-dialogs.c:1031
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Εμφάνιση του δείκτη του ποντικιού στο στιγμιότυπο οθόνης"
 
-#: lib/screenshooter-dialogs.c:1031
+#: lib/screenshooter-dialogs.c:1038
 msgid "Capture the window border"
 msgstr "Αποτύπωση του περιθωρίου του παραθύρου"
 
-#: lib/screenshooter-dialogs.c:1036
+#: lib/screenshooter-dialogs.c:1043
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Εμφάνιση του περιθωρίου του παραθύρου στο στιγμιότυπο οθόνης.\nΗ απενεργοποίηση αυτής της επιλογής δεν επηρεάζει τα παράθυρα CSD."
 
-#: lib/screenshooter-dialogs.c:1060
+#: lib/screenshooter-dialogs.c:1067
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Καθυστέρηση πριν την αποτύπωση</span>"
 
-#: lib/screenshooter-dialogs.c:1084
+#: lib/screenshooter-dialogs.c:1091
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Καθυστέρηση σε δευτερόλεπτα πριν την λήψη του στιγμιότυπου οθόνης"
 
-#: lib/screenshooter-dialogs.c:1087
+#: lib/screenshooter-dialogs.c:1094
 msgid "seconds"
 msgstr "δευτερόλεπτα"
 
-#: lib/screenshooter-dialogs.c:1131
+#: lib/screenshooter-dialogs.c:1138
 msgid "_Back"
 msgstr "_Πίσω"
 
-#: lib/screenshooter-dialogs.c:1171
+#: lib/screenshooter-dialogs.c:1178
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ενέργεια</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1186
+#: lib/screenshooter-dialogs.c:1193
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: lib/screenshooter-dialogs.c:1192
+#: lib/screenshooter-dialogs.c:1199
 msgid "Save the screenshot to a file"
 msgstr "Αποθήκευση στιγμιότυπου σε αρχείο"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1196
+#: lib/screenshooter-dialogs.c:1203
 msgid "Show in Folder"
 msgstr "Εμφάνιση στο φάκελο"
 
-#: lib/screenshooter-dialogs.c:1203
+#: lib/screenshooter-dialogs.c:1210
 msgid "Shows the saved file in the folder"
 msgstr "Εμφανίζει το αρχείο στο φάκελο αποθήκευσης"
 
-#: lib/screenshooter-dialogs.c:1211
+#: lib/screenshooter-dialogs.c:1218
 msgid "Copy to the clipboard"
 msgstr "Αντιγραφή στο πρόχειρο"
 
-#: lib/screenshooter-dialogs.c:1213
+#: lib/screenshooter-dialogs.c:1220
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Αντιγραφή του στιγμιότυπου οθόνης στο πρόχειρο ώστε να μπορεί να επικολληθεί αργότερα"
 
-#: lib/screenshooter-dialogs.c:1227
+#: lib/screenshooter-dialogs.c:1234
 msgid "Open with:"
 msgstr "Άνοιγμα με:"
 
-#: lib/screenshooter-dialogs.c:1235
+#: lib/screenshooter-dialogs.c:1242
 msgid "Open the screenshot with the chosen application"
 msgstr "Άνοιγμα του στιγμιότυπου οθόνης με την επιλεγμένη εφαρμογή"
 
-#: lib/screenshooter-dialogs.c:1254 src/main.c:76
+#: lib/screenshooter-dialogs.c:1261 src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "Εφαρμογή για το άνοιγμα του στιγμιότυπου οθόνης"
 
-#: lib/screenshooter-dialogs.c:1268
+#: lib/screenshooter-dialogs.c:1275
 msgid "Custom Action:"
 msgstr "Προσαρμοσμένη ενέργεια:"
 
-#: lib/screenshooter-dialogs.c:1276
+#: lib/screenshooter-dialogs.c:1283
 msgid "Execute the selected custom action"
 msgstr "Εκτέλεση της επιλεγμένης ενέργειας"
 
-#: lib/screenshooter-dialogs.c:1288
+#: lib/screenshooter-dialogs.c:1295
 msgid "Custom action to execute"
 msgstr "Ενέργεια για εκτέλεση"
 
-#: lib/screenshooter-dialogs.c:1311
+#: lib/screenshooter-dialogs.c:1318
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Προεσκόπιση</span>"
 
-#: lib/screenshooter-dialogs.c:1372
+#: lib/screenshooter-dialogs.c:1379
 msgid "Save screenshot as..."
 msgstr "Αποθήκευση στιγμιότυπου ως ... "
 
-#: lib/screenshooter-dialogs.c:1461
+#: lib/screenshooter-dialogs.c:1468
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: lib/screenshooter-dialogs.c:1486
+#: lib/screenshooter-dialogs.c:1493
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Προσαρμοσμένες ενέργειες</span>"
 
-#: lib/screenshooter-dialogs.c:1505
+#: lib/screenshooter-dialogs.c:1512
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured."
 msgstr "Μπορείτε να διαμορφώσετε ενέργειες οι οποίες θα είναι διαθέσιμες για τη διαχείριση των στιγμιότυπων οθόνης μετά την αποτύπωση."
 
-#: lib/screenshooter-dialogs.c:1535
+#: lib/screenshooter-dialogs.c:1542
 msgid "Custom Action"
 msgstr "Προσαρμοσμένη ενέργεια"
 
-#: lib/screenshooter-dialogs.c:1548
+#: lib/screenshooter-dialogs.c:1555
 msgid "Add custom action"
 msgstr "Προσθήκη ενέργειας"
 
-#: lib/screenshooter-dialogs.c:1555
+#: lib/screenshooter-dialogs.c:1562
 msgid "Remove selected custom action"
 msgstr "Αφαίρεση επιλεγμένης ενέργειας"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1577
+#: lib/screenshooter-dialogs.c:1584
 msgid "Name"
 msgstr "Όνομα"
 
-#: lib/screenshooter-dialogs.c:1578
+#: lib/screenshooter-dialogs.c:1585
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Το όνομα της ενέργειας που θα εμφανίζεται στο πίνακα ενεργειών"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1587
+#: lib/screenshooter-dialogs.c:1594
 msgid "Command"
 msgstr "Εντολή"
 
-#: lib/screenshooter-dialogs.c:1588
+#: lib/screenshooter-dialogs.c:1595
 msgid "Command that will be executed for this custom action"
 msgstr "Η εντολή που θα εκτελεστεί για αυτή την ενέργεια"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1602
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Χρήση του χαρακτήρα %f για τη καταχώρηση της τοποθεσίας του στιγμιότυπου οθόνης"
@@ -295,20 +295,20 @@ msgstr "Αρχείο JPEG XL"
 msgid "AVIF File"
 msgstr "Αρχείο AVIF"
 
-#: lib/screenshooter-utils.c:322
+#: lib/screenshooter-utils.c:324
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Αυτή η εφαρμογή δεν ήταν δυνατό να εκκινηθεί<b/>\n%s"
 
-#: lib/screenshooter-utils.c:399
+#: lib/screenshooter-utils.c:401
 msgid "Error"
 msgstr "Σφάλμα"
 
 #: lib/screenshooter-capture-wayland.c:164
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "Απέτυχε η λήψη"
 
 #: lib/screenshooter-capture-wayland.c:194
 msgid "Failed to create file descriptor"
@@ -320,7 +320,7 @@ msgstr ""
 
 #: lib/screenshooter-capture-wayland.c:243
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "Δεν υπάρχουν οι απαιτούμενες διεπαφές για το Wayland"
 
 #: lib/screenshooter-capture-wayland.c:248
 msgid "Compositor is missing wl_shm"
@@ -330,18 +330,18 @@ msgstr ""
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
 msgstr ""
 
-#: lib/screenshooter-capture-wayland.c:311
+#: lib/screenshooter-capture-wayland.c:332
 #, c-format
-msgid "Unsupported pixel format: %d"
-msgstr ""
+msgid "Unsupported pixel format: 0x%x"
+msgstr "Δεν υποστηρίζεται μορφή pixel: 0x%x"
 
-#: lib/screenshooter-capture-wayland.c:386
+#: lib/screenshooter-capture-wayland.c:407
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "Η επιλεγμένη λειτουργία δεν υποστηρίζεται σε Wayland"
 
-#: lib/screenshooter-capture-wayland.c:442
+#: lib/screenshooter-capture-wayland.c:463
 msgid "Failed to capture"
-msgstr ""
+msgstr "Απέτυχε η λήψη"
 
 #: src/main.c:51
 msgid "Copy the screenshot to the clipboard"
@@ -414,11 +414,11 @@ msgstr "Λήψη στιγμιότυπου ολόκληρης οθόνης, εν�
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Εφαρμογή και πρόσθετο στο ταμπλό για τη λήψη στιγμιότυπου της οθόνης"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -427,4 +427,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "Σας επιτρέπει να αποτυπώσετε ολόκληρη την οθόνη, το ενεργό παράθυρο ή μια επιλεγμένη περιοχή. Μπορείτε να ρυθμίσετε την χρονική καθυστέρηση πριν από την λήψη καθώς και την ενέργεια που θα ακολουθήσει: αποθήκευση σε αρχείο, αντιγραφή στο πρόχειρο, άνοιγμα με άλλη εφαρμογή ή χρησιμοποιήστε τη δημιουργικότητά σας με προσαρμοσμένες ενέργειες."
