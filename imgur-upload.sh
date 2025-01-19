@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Permission to use, copy, modify, and/or distribute this software for
 # any purpose with or without fee is hereby granted.
@@ -34,9 +34,17 @@ if [ -z "$SCREENSHOT_PATH" ] || [ -z "$CLIENT_ID" ]; then
     exit 1
 fi
 
+if ! command -v jq >&2; then
+    zenity --error --text="jq: command not found!"
+    exit 1
+fi
+
 #RESPONSE='{"data":{"id":"q9a8Oh4","title":null,"description":null,"datetime":1690124891,"type":"image\/png","animated":false,"width":217,"height":186,"size":593,"views":0,"bandwidth":0,"vote":null,"favorite":false,"nsfw":null,"section":null,"account_url":null,"account_id":0,"is_ad":false,"in_most_viral":false,"has_sound":false,"tags":[],"ad_type":0,"ad_url":"","edited":"0","in_gallery":false,"deletehash":"b0AjSDJjSU4iyhE","name":"","link":"https:\/\/i.imgur.com\/q9a8Oh4.png"},"success":true,"status":200}'
 #RESPONSE='{"data":{"error":{"code":1003,"message":"File type invalid (1)","type":"ImgurException","exception":[]},"request":"\/3\/image","method":"POST"},"success":false,"status":400}'
-RESPONSE=$(curl --silent --location "$URL" --header "Authorization: Client-ID $CLIENT_ID" --form "image=@$SCREENSHOT_PATH")
+RESPONSE=$(curl --silent --location "$URL" \
+    --header "Authorization: Client-ID $CLIENT_ID" \
+    --form "image=@$SCREENSHOT_PATH" | \
+    tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Uploading screenshot..."))
 STATUS=$(echo "$RESPONSE" | jq -r .status)
 
 if [ -z "$STATUS" ] || [ $STATUS -ne 200 ]; then
