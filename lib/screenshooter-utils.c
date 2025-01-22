@@ -294,7 +294,7 @@ screenshooter_open_screenshot (const gchar *screenshot_path, const gchar *applic
 
   TRACE ("Path was != NULL");
 
-  if (g_str_equal (application, "none"))
+  if (g_strcmp0 (application, "none") == 0)
     return;
 
   TRACE ("Application was not none");
