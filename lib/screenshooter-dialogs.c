@@ -373,7 +373,7 @@ static void set_default_item (GtkWidget *combobox, ScreenshotData *sd)
           gtk_tree_model_get (model, &iter, 2, &command, -1);
           gtk_tree_model_get (model, &iter, 3, &app_info, -1);
 
-          if (g_str_equal (command, sd->app))
+          if (g_strcmp0 (command, sd->app) == 0)
             {
               gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox),
                                              &iter);
