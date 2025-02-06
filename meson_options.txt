@@ -1,0 +1,18 @@
+option(
+  'x11',
+  type: 'feature',
+  value: 'auto',
+  description: 'Support for the X11 windowing system',
+)
+option(
+  'wayland',
+  type: 'feature',
+  value: 'auto',
+  description: 'Support for the Wayland windowing system',
+)
+option(
+  'xfixes',
+  type: 'feature',
+  value: 'auto',
+  description: 'Support for XFIXES',
+)

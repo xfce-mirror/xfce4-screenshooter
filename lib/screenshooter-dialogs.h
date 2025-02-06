@@ -28,10 +28,6 @@
 #include "screenshooter-global.h"
 #include "screenshooter-actions.h"
 
-#ifdef HAVE_GIO
-#include <gio/gio.h>
-#endif
-
 #include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfce4ui/libxfce4ui.h>
