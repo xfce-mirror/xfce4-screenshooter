@@ -12,9 +12,7 @@ libscreenshooter_sources = [
   'screenshooter-dialogs.h',
   'screenshooter-global.h',
   'screenshooter-utils.c',
-  'screenshooter-utils.h',
-  'screenshooter-marshal.c',
-  'screenshooter-marshal.h'
+  'screenshooter-utils.h'
 ]
 
 libscreenshooter_sources += gnome.genmarshal(
