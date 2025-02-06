@@ -2,7 +2,7 @@ project(
   'xfce4-screenshooter',
   'c',
   version: '1.11.1-dev',
-  license: 'GPL-2',
+  license: 'GPL-2.0-or-later',
   meson_version: '>= 0.57.0',
   default_options: [
     'c_std=gnu11',
@@ -66,10 +66,10 @@ foreach dep : x11_deps
 endforeach
 if enable_x11
   feature_cflags += '-DENABLE_X11=1'
-  feature_cflags += '-DHAVE_XFIXES=@0@'.format(xfixes.found().to_int())
   if xfixes.found()
-    x11_deps += xfixes
+    feature_cflags += '-DHAVE_XFIXES=1'
   endif
+  x11_deps += xfixes
 endif
 
 enable_wayland = not get_option('wayland').disabled()

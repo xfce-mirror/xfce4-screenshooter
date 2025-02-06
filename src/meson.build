@@ -1,5 +1,5 @@
 screenshooter_sources = [
-  'main.c'
+  'main.c',
 ]
 
 screenshooter = executable(
@@ -16,10 +16,10 @@ screenshooter = executable(
     libxfce4ui,
     xfconf,
     x11_deps,
-    wayland_deps
+    wayland_deps,
   ],
   link_with: [
-    libscreenshooter
+    libscreenshooter,
   ],
   install: true,
   install_dir: get_option('prefix') / get_option('bindir'),
@@ -50,9 +50,9 @@ if help2man.found()
     depends: screenshooter,
     output: 'xfce4-screenshooter.1',
     command: [
-      help2man, ['--no-info'], '--output=@OUTPUT@', screenshooter.full_path()
+      help2man, ['--no-info'], '--output=@OUTPUT@', screenshooter.full_path(),
     ],
     install: true,
-    install_dir: get_option('prefix') / get_option('datadir') / 'man' / 'man1'
+    install_dir: get_option('prefix') / get_option('datadir') / 'man' / 'man1',
   )
 endif

@@ -19,10 +19,10 @@ shared_module(
     libxfce4panel,
     xfconf,
     x11_deps,
-    wayland_deps
+    wayland_deps,
   ],
   link_with: [
-    libscreenshooter
+    libscreenshooter,
   ],
   install: true,
   install_dir: get_option('prefix') / get_option('libdir') / plugin_install_subdir,

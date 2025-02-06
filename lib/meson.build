@@ -12,7 +12,7 @@ libscreenshooter_sources = [
   'screenshooter-dialogs.h',
   'screenshooter-global.h',
   'screenshooter-utils.c',
-  'screenshooter-utils.h'
+  'screenshooter-utils.h',
 ]
 
 libscreenshooter_sources += gnome.genmarshal(
@@ -27,8 +27,8 @@ if enable_x11
   libscreenshooter_sources += [
     'screenshooter-capture-x11.c',
     'screenshooter-capture-x11.h',
-	  'screenshooter-utils-x11.c',
-    'screenshooter-utils-x11.h'
+    'screenshooter-utils-x11.c',
+    'screenshooter-utils-x11.h',
   ]
 endif
 
@@ -36,7 +36,7 @@ if enable_wayland
   libscreenshooter_sources += wayland_protocols_generated_sources
   libscreenshooter_sources += [
     'screenshooter-capture-wayland.c',
-    'screenshooter-capture-wayland.h'
+    'screenshooter-capture-wayland.h',
   ]
 endif
 
