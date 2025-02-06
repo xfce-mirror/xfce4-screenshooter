@@ -2,7 +2,7 @@ screenshooter_sources = [
   'main.c'
 ]
 
-executable(
+screenshooter = executable(
   'xfce4-screenshooter',
   screenshooter_sources,
   sources: xfce_revision_h,
@@ -47,9 +47,10 @@ help2man = find_program('help2man', required: false)
 if help2man.found()
   custom_target(
     'xfce4-screenshooter.1',
+    depends: screenshooter,
     output: 'xfce4-screenshooter.1',
     command: [
-      help2man, ['--no-info'], '--output=@OUTPUT@', 'xfce4-screenshooter'
+      help2man, ['--no-info'], '--output=@OUTPUT@', screenshooter.full_path()
     ],
     install: true,
     install_dir: get_option('prefix') / get_option('datadir') / 'man' / 'man1'
