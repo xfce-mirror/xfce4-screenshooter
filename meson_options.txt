@@ -10,3 +10,9 @@ option(
   value: 'auto',
   description: 'Support for the Wayland windowing system',
 )
+option(
+  'xfixes',
+  type: 'feature',
+  value: 'auto',
+  description: 'Support for XFIXES',
+)

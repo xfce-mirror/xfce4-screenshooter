@@ -17,6 +17,7 @@ screenshooter = executable(
     xfconf,
     x11_deps,
     wayland_deps,
+    xfixes,
   ],
   link_with: [
     libscreenshooter,

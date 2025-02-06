@@ -55,6 +55,7 @@ libscreenshooter = static_library(
     xfconf,
     x11_deps,
     wayland_deps,
+    xfixes,
   ],
   install: false,
 )
