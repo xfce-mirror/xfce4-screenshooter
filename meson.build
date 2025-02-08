@@ -51,7 +51,7 @@ x11_deps = [libx11, gdk_x11, xinput, libxext]
 # Feature: 'wayland'
 gdk_wayland = dependency('gdk-wayland-3.0', version: dependency_versions['gtk'], required: get_option('wayland'))
 wayland_client = dependency('wayland-client', version: dependency_versions['wayland'], required: get_option('wayland'))
-wayland_scanner = dependency('wayland-scanner', version: dependency_versions['wayland'], required: get_option('wayland'))
+wayland_scanner = dependency('wayland-scanner', version: dependency_versions['wayland'], required: get_option('wayland'), native: true)
 wayland_protocols = dependency('wayland-protocols', version: dependency_versions['wayland-protocols'], required: get_option('wayland'))
 wayland_deps = [gdk_wayland, wayland_client, wayland_scanner, wayland_protocols]
 
@@ -193,4 +193,5 @@ subdir('po')
 subdir('protocols')
 subdir('lib')
 subdir('src')
+
 subdir('panel-plugin')
