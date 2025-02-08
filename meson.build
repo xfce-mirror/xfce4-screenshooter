@@ -55,12 +55,6 @@ wayland_scanner = dependency('wayland-scanner', version: dependency_versions['wa
 wayland_protocols = dependency('wayland-protocols', version: dependency_versions['wayland-protocols'], required: get_option('wayland'))
 wayland_deps = [gdk_wayland, wayland_client, wayland_scanner, wayland_protocols]
 
-# Feature: 'xfixes'
-xfixes = dependency('xfixes', version: dependency_versions['xfixes'], required: get_option('xfixes'))
-if xfixes.found()
-  feature_cflags += '-DHAVE_XFIXES=1'
-endif
-
 # Optional dependencies
 wlr_protocols = dependency('wlr-protocols', version: dependency_versions['wlr-protocols'], required: false)
 
@@ -70,6 +64,11 @@ foreach dep : x11_deps
 endforeach
 if enable_x11
   feature_cflags += '-DENABLE_X11=1'
+
+  xfixes = dependency('xfixes', version: dependency_versions['xfixes'], required: get_option('xfixes'))
+  if xfixes.found()
+    feature_cflags += '-DHAVE_XFIXES=1'
+  endif
 endif
 
 enable_wayland = not get_option('wayland').disabled()

@@ -14,5 +14,5 @@ option(
   'xfixes',
   type: 'feature',
   value: 'auto',
-  description: 'Support for XFIXES',
+  description: 'Support for XFIXES  (X11 only)',
 )
