@@ -69,6 +69,8 @@ if enable_x11
   if xfixes.found()
     feature_cflags += '-DHAVE_XFIXES=1'
   endif
+else 
+  xfixes = dependency('', required: false)
 endif
 
 enable_wayland = not get_option('wayland').disabled()
@@ -192,5 +194,4 @@ subdir('po')
 subdir('protocols')
 subdir('lib')
 subdir('src')
-
 subdir('panel-plugin')
