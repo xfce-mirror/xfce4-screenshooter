@@ -305,6 +305,15 @@ dist-hook: ChangeLog
 # Extra dist and distclean rules
 EXTRA_DIST += \
 	lib/screenshooter-marshal.list \
+	meson.build \
+	meson_options.txt \
+	icons/meson.build \
+	lib/meson.build \
+	panel-plugin/meson.build \
+	po/meson.build \
+	protocols/meson.build \
+	src/meson.build \
+	xfce-revision.h.in \
 	$(app_desktop_in_files) \
 	$(panel_desktop_in_files) \
 	$(16icons_DATA) \
