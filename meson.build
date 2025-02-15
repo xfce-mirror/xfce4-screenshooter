@@ -13,7 +13,6 @@ project(
 
 project_namespace = 'apps'
 pkgdatadir = get_option('prefix') / get_option('datadir') / meson.project_name()
-scriptdir = get_option('prefix') / get_option('libexecdir') / 'xfce4' / 'screenshooter' / 'scripts'
 feature_cflags = []
 
 cc = meson.get_compiler('c')
@@ -69,7 +68,7 @@ if enable_x11
   if xfixes.found()
     feature_cflags += '-DHAVE_XFIXES=1'
   endif
-else 
+else
   xfixes = dependency('', required: false)
 endif
 
@@ -159,7 +158,6 @@ extra_cflags += [
   '-DPACKAGE_STRING="@0@ @1@"'.format(meson.project_name(), meson.project_version()),
   '-DPACKAGE_DATADIR="@0@"'.format(pkgdatadir),
   '-DPACKAGE_LOCALE_DIR="@0@"'.format(get_option('prefix') / get_option('localedir')),
-  '-DPACKAGE_SCRIPTS_DIR="@0@"'.format(scriptdir),
   '-DPACKAGE_BUGREPORT="https://gitlab.xfce.org/@0@/@1@/-/issues"'.format(project_namespace, meson.project_name()),
   '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
   '-DPREFIX="@0@"'.format(get_option('prefix')),
@@ -186,8 +184,6 @@ xfce_revision_h = vcs_tag(
   output: 'xfce-revision.h',
   replace_string: '@REVISION@',
 )
-
-install_data('imgur-upload.sh', install_dir: scriptdir)
 
 subdir('icons')
 subdir('po')

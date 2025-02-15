@@ -24,10 +24,6 @@ dist-bz2: dist
 distcheck-bz2: distcheck
 	zcat $(PACKAGE)-$(VERSION).tar.gz | bzip2 --best -c > $(PACKAGE)-$(VERSION).tar.bz2
 
-# Imgur upload custom action script
-scriptdir = $(libexecdir)/xfce4/screenshooter/scripts
-script_DATA = imgur-upload.sh
-
 # Wayland protocols
 if ENABLE_WAYLAND
 
@@ -107,8 +103,7 @@ lib_libscreenshooter_la_CFLAGS = \
 	@WAYLAND_CLIENT_CFLAGS@ \
 	@XFIXES_CFLAGS@ \
 	@XFCONF_CFLAGS@ \
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
-	-DPACKAGE_SCRIPTS_DIR=\"$(scriptdir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 lib_libscreenshooter_la_LIBADD = \
 	-lm \
@@ -165,8 +160,7 @@ src_xfce4_screenshooter_CFLAGS = \
 	@LIBXFCE4UI_CFLAGS@ \
 	@GTHREAD_CFLAGS@ \
 	@LIBX11_CFLAGS@ \
-	-DPACKAGE_LOCALE_DIR=\"$(localedir)\" \
-	-DPACKAGE_SCRIPTS_DIR=\"$(scriptdir)\"
+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
 src_xfce4_screenshooter_LDFLAGS = \
 	@EXO_LIBS@ \
@@ -209,7 +203,6 @@ plugin_LTLIBRARIES = panel-plugin/libscreenshooterplugin.la
 
 panel_plugin_libscreenshooterplugin_la_CFLAGS =	\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"	\
-	-DPACKAGE_SCRIPTS_DIR=\"$(scriptdir)\"	\
 	-I$(top_srcdir)	\
 	-I$(top_srcdir)/lib/	\
 	-I$(top_builddir)/lib/	\

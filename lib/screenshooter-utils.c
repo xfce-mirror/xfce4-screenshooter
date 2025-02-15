@@ -267,9 +267,6 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
     xfce_rc_write_int_entry (rc, "show_border", sd->show_border);
   }
 
-  /* clean up rc, remove this after some releases */
-  xfce_rc_delete_entry (rc, "enable_imgur_upload", TRUE);
-
   TRACE ("Flush and close the rc file");
   xfce_rc_close (rc);
 }

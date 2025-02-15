@@ -135,7 +135,6 @@ screenshooter_custom_action_load (GtkListStore *list_store)
 {
   gint32 max_id;
   gint32 id;
-  gboolean imgur_custom_action_added;
   XfconfChannel *channel;
   GtkTreeIter iter;
   GError *error = NULL;
@@ -172,18 +171,8 @@ screenshooter_custom_action_load (GtkListStore *list_store)
       g_free (command_address);
     }
 
-  imgur_custom_action_added = xfconf_channel_get_bool (channel, "/imgur-custom-action-added", FALSE);
-
-  if (G_UNLIKELY (!imgur_custom_action_added))
-    {
-      xfconf_channel_set_bool (channel, "/imgur-custom-action-added", TRUE);
-
-      gtk_list_store_append (list_store, &iter);
-      gtk_list_store_set (GTK_LIST_STORE (list_store), &iter,
-                          CUSTOM_ACTION_NAME, _("Host on Imgur™"),
-                          CUSTOM_ACTION_COMMAND, PACKAGE_SCRIPTS_DIR "/imgur-upload.sh %f %imgur_client_id", -1);
-      screenshooter_custom_action_save (GTK_TREE_MODEL (list_store));
-    }
+  /* TODO remove after a few releases */
+  xfconf_channel_reset_property (channel, "/imgur-custom-action-added", FALSE);
 
   xfconf_shutdown ();
 }
@@ -217,15 +206,6 @@ screenshooter_custom_action_execute (gchar *save_location,
   save_location_quoted = g_shell_quote (save_location);
   formatted_command = g_strjoinv (save_location_quoted, split);
   g_free (save_location_quoted);
-  g_strfreev (split);
-
-  /**
-   * Replace %imgur_client_id placeholder
-   * UNDOCUMENTED: CAN BE REMOVED IN ANY RELEASE!!!
-   **/
-  split = g_strsplit (formatted_command, "\%imgur_client_id", -1);
-  g_free (formatted_command);
-  formatted_command = g_strjoinv ("66ab680b597e293", split);
   g_strfreev (split);
 
   expanded_command = xfce_expand_variables (formatted_command, NULL);
