@@ -315,8 +315,7 @@ EXTRA_DIST += \
 	$(48icons_DATA) \
 	$(128icons_DATA) \
 	$(scalicons_DATA) \
-	$(appdata_in_files) \
-	$(script_DATA)
+	$(appdata_in_files)
 
 DISTCLEANFILES += \
 	stamp-screenshooter-marshal.h \
@@ -329,5 +328,3 @@ DISTCLEANFILES += \
 
 # Man pages
 dist_man_MANS = xfce4-screenshooter.1
-
-script_SCRIPTS = $(script_DATA)
