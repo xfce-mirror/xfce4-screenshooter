@@ -1509,7 +1509,8 @@ static GtkWidget
   gtk_container_set_border_width (GTK_CONTAINER (grid), 0);
 
   image = gtk_image_new_from_icon_name ("dialog-information", GTK_ICON_SIZE_DND);
-  label = gtk_label_new (_("You can configure custom actions that will be available to handle screenshots after they are captured."));
+  label = gtk_label_new (NULL);
+  gtk_label_set_markup (GTK_LABEL (label), _("You can configure custom actions that will be available to handle screenshots after they are captured. You can find more examples in the <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">documentation</a>."));
   gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
   gtk_label_set_max_width_chars (GTK_LABEL (label), 30);
   gtk_widget_set_hexpand (label, TRUE);
