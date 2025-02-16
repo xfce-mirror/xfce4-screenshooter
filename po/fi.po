@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-06-06 00:51+0200\n"
+"POT-Creation-Date: 2025-02-16 00:49+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>, 2013,2019,2024\n"
 "Language-Team: Finnish (http://app.transifex.com/xfce/xfce-apps/language/fi/)\n"
@@ -21,248 +21,246 @@ msgstr ""
 "Language: fi\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/screenshooter-dialogs.c:503
+#: lib/screenshooter-dialogs.c:510
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2f kt / %.2f kt"
 
-#: lib/screenshooter-dialogs.c:606
+#: lib/screenshooter-dialogs.c:613
 msgid "Transfer"
 msgstr "Siirto"
 
-#: lib/screenshooter-dialogs.c:627
+#: lib/screenshooter-dialogs.c:634
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kuvakaappausta siirretään kohteeseen:</span>"
 
-#: lib/screenshooter-dialogs.c:867 lib/screenshooter-dialogs.c:876
-#: lib/screenshooter-dialogs.c:1128 lib/screenshooter-utils.c:133
-#: lib/screenshooter-utils.c:175 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:874 lib/screenshooter-dialogs.c:883
+#: lib/screenshooter-dialogs.c:1135 lib/screenshooter-utils.c:135
+#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Kuvakaappaus"
 
-#: lib/screenshooter-dialogs.c:869 lib/screenshooter-dialogs.c:879
+#: lib/screenshooter-dialogs.c:876 lib/screenshooter-dialogs.c:886
 msgid "_Preferences"
 msgstr "_Asetukset"
 
-#: lib/screenshooter-dialogs.c:870 lib/screenshooter-dialogs.c:878
-#: lib/screenshooter-dialogs.c:1130
+#: lib/screenshooter-dialogs.c:877 lib/screenshooter-dialogs.c:885
+#: lib/screenshooter-dialogs.c:1137
 msgid "_Help"
 msgstr "_Ohje"
 
-#: lib/screenshooter-dialogs.c:871 lib/screenshooter-dialogs.c:1463
+#: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:1470
 msgid "_Close"
 msgstr "_Sulje"
 
-#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:1132
+#: lib/screenshooter-dialogs.c:887 lib/screenshooter-dialogs.c:1139
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:1133
+#: lib/screenshooter-dialogs.c:888 lib/screenshooter-dialogs.c:1140
 msgid "_OK"
 msgstr "_OK"
 
-#: lib/screenshooter-dialogs.c:914
+#: lib/screenshooter-dialogs.c:921
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kaapattava alue</span>"
 
-#: lib/screenshooter-dialogs.c:936
+#: lib/screenshooter-dialogs.c:943
 msgid "Entire screen"
 msgstr "Koko näyttö"
 
-#: lib/screenshooter-dialogs.c:941 src/main.c:61
+#: lib/screenshooter-dialogs.c:948 src/main.c:61
 #: panel-plugin/screenshooter-plugin.c:332
 msgid "Take a screenshot of the entire screen"
 msgstr "Kaappaa kuva koko näytöstä"
 
-#: lib/screenshooter-dialogs.c:950
+#: lib/screenshooter-dialogs.c:957
 msgid "Active window"
 msgstr "Aktiivinen ikkuna"
 
-#: lib/screenshooter-dialogs.c:953 src/main.c:103
+#: lib/screenshooter-dialogs.c:960 src/main.c:103
 #: panel-plugin/screenshooter-plugin.c:337
 msgid "Take a screenshot of the active window"
 msgstr "Kaappaa kuva aktiivisesta ikkunasta"
 
-#: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
+#: lib/screenshooter-dialogs.c:969 lib/screenshooter-dialogs.c:996
 msgid "Not supported in Wayland"
 msgstr "Ei tuettu Waylandissa"
 
-#: lib/screenshooter-dialogs.c:973
+#: lib/screenshooter-dialogs.c:980
 msgid "Select a region"
 msgstr "Valitse alue"
 
-#: lib/screenshooter-dialogs.c:976
+#: lib/screenshooter-dialogs.c:983
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr ""
 
-#: lib/screenshooter-dialogs.c:1000
+#: lib/screenshooter-dialogs.c:1007
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Valinnat</span>"
 
-#: lib/screenshooter-dialogs.c:1020
+#: lib/screenshooter-dialogs.c:1027
 msgid "Capture the mouse pointer"
 msgstr "Sisällytä hiiren osoitin"
 
-#: lib/screenshooter-dialogs.c:1024
+#: lib/screenshooter-dialogs.c:1031
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Näytä hiiren osoitin kaapatussa kuvassa"
 
-#: lib/screenshooter-dialogs.c:1031
+#: lib/screenshooter-dialogs.c:1038
 msgid "Capture the window border"
 msgstr "Sisällytä ikkunan reuna"
 
-#: lib/screenshooter-dialogs.c:1036
+#: lib/screenshooter-dialogs.c:1043
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Näytä ikkunareunus kuvakaappauksissa.\nTämän poistaminen käytöstä ei vaikuta CSD-ikkunoihin."
 
-#: lib/screenshooter-dialogs.c:1060
+#: lib/screenshooter-dialogs.c:1067
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kaappausviive</span>"
 
-#: lib/screenshooter-dialogs.c:1084
+#: lib/screenshooter-dialogs.c:1091
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Aika sekunteina ennen kuvakaappauksen ottamista"
 
-#: lib/screenshooter-dialogs.c:1087
+#: lib/screenshooter-dialogs.c:1094
 msgid "seconds"
 msgstr "sekuntia"
 
-#: lib/screenshooter-dialogs.c:1131
+#: lib/screenshooter-dialogs.c:1138
 msgid "_Back"
 msgstr "_Edellinen"
 
-#: lib/screenshooter-dialogs.c:1171
+#: lib/screenshooter-dialogs.c:1178
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tehtävä</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1186
+#: lib/screenshooter-dialogs.c:1193
 msgid "Save"
 msgstr "Tallenna"
 
-#: lib/screenshooter-dialogs.c:1192
+#: lib/screenshooter-dialogs.c:1199
 msgid "Save the screenshot to a file"
 msgstr "Tallenna kuvakaappaus tiedostoon"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1196
+#: lib/screenshooter-dialogs.c:1203
 msgid "Show in Folder"
 msgstr "Näytä kansiossa"
 
-#: lib/screenshooter-dialogs.c:1203
+#: lib/screenshooter-dialogs.c:1210
 msgid "Shows the saved file in the folder"
 msgstr "Näyttää tallennetun tiedoston kansiossa"
 
-#: lib/screenshooter-dialogs.c:1211
+#: lib/screenshooter-dialogs.c:1218
 msgid "Copy to the clipboard"
 msgstr "Kopioi leikepöydälle"
 
-#: lib/screenshooter-dialogs.c:1213
+#: lib/screenshooter-dialogs.c:1220
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopioi kuvakaappaus leikepöydälle, josta voit liittää sen haluamaasi sovellukseen"
 
-#: lib/screenshooter-dialogs.c:1227
+#: lib/screenshooter-dialogs.c:1234
 msgid "Open with:"
 msgstr "Avaa sovelluksessa:"
 
-#: lib/screenshooter-dialogs.c:1235
+#: lib/screenshooter-dialogs.c:1242
 msgid "Open the screenshot with the chosen application"
 msgstr "Avaa kuvakaappaus valitussa sovelluksessa"
 
-#: lib/screenshooter-dialogs.c:1254 src/main.c:76
+#: lib/screenshooter-dialogs.c:1261 src/main.c:76
 msgid "Application to open the screenshot"
 msgstr "Sovellus, jolla kaappaus avataan"
 
-#: lib/screenshooter-dialogs.c:1268
+#: lib/screenshooter-dialogs.c:1275
 msgid "Custom Action:"
 msgstr "Mukautettu toiminto:"
 
-#: lib/screenshooter-dialogs.c:1276
+#: lib/screenshooter-dialogs.c:1283
 msgid "Execute the selected custom action"
 msgstr "Suorita valittu mukautettu toiminto"
 
-#: lib/screenshooter-dialogs.c:1288
+#: lib/screenshooter-dialogs.c:1295
 msgid "Custom action to execute"
 msgstr "Suoritettava mukautettu toiminto"
 
-#: lib/screenshooter-dialogs.c:1311
+#: lib/screenshooter-dialogs.c:1318
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Esikatselu</span>"
 
-#: lib/screenshooter-dialogs.c:1372
+#: lib/screenshooter-dialogs.c:1379
 msgid "Save screenshot as..."
 msgstr "Tallenna kaappaus nimellä..."
 
-#: lib/screenshooter-dialogs.c:1461
+#: lib/screenshooter-dialogs.c:1468
 msgid "Preferences"
 msgstr "Asetukset"
 
-#: lib/screenshooter-dialogs.c:1486
+#: lib/screenshooter-dialogs.c:1493
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Mukautetut toiminnot</span>"
 
-#: lib/screenshooter-dialogs.c:1505
+#: lib/screenshooter-dialogs.c:1513
 msgid ""
 "You can configure custom actions that will be available to handle "
-"screenshots after they are captured."
-msgstr "Voit määrittää mukautettuja toimintoja, jotka käsittelevät kuvakaappauksia niiden ottamisen jälkeen."
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr ""
 
-#: lib/screenshooter-dialogs.c:1535
+#: lib/screenshooter-dialogs.c:1543
 msgid "Custom Action"
 msgstr "Mukautettu toiminto"
 
-#: lib/screenshooter-dialogs.c:1548
+#: lib/screenshooter-dialogs.c:1556
 msgid "Add custom action"
 msgstr "Lisää mukautettu toiminto"
 
-#: lib/screenshooter-dialogs.c:1555
+#: lib/screenshooter-dialogs.c:1563
 msgid "Remove selected custom action"
 msgstr "Poista valittu mukautettu toiminto"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1577
+#: lib/screenshooter-dialogs.c:1585
 msgid "Name"
 msgstr "Nimi"
 
-#: lib/screenshooter-dialogs.c:1578
+#: lib/screenshooter-dialogs.c:1586
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr ""
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1587
+#: lib/screenshooter-dialogs.c:1595
 msgid "Command"
 msgstr "Komento"
 
-#: lib/screenshooter-dialogs.c:1588
+#: lib/screenshooter-dialogs.c:1596
 msgid "Command that will be executed for this custom action"
 msgstr "Komento, joka suoritetaan tämän mukautetun toiminnon kohdalla"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1603
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr ""
 
-#: lib/screenshooter-custom-actions.c:183
-msgid "Host on Imgur™"
-msgstr "Lähetä Imgur™-palveluun"
-
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Unable to execute the custom action"
 msgstr "Mukautettua toimintoa ei voitu suorittaa"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Invalid custom action selected"
 msgstr ""
 
-#: lib/screenshooter-custom-actions.c:237
+#: lib/screenshooter-custom-actions.c:217
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr ""
@@ -291,14 +289,14 @@ msgstr "JPEG XL -tiedosto"
 msgid "AVIF File"
 msgstr "AVIF-tiedosto"
 
-#: lib/screenshooter-utils.c:322
+#: lib/screenshooter-utils.c:321
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Sovellusta ei voitu käynnistää.</b>\n%s"
 
-#: lib/screenshooter-utils.c:399
+#: lib/screenshooter-utils.c:398
 msgid "Error"
 msgstr "Virhe"
 
@@ -326,16 +324,16 @@ msgstr ""
 msgid "Compositor does not support wlr-screencopy-unstable-v1"
 msgstr ""
 
-#: lib/screenshooter-capture-wayland.c:311
+#: lib/screenshooter-capture-wayland.c:332
 #, c-format
-msgid "Unsupported pixel format: %d"
+msgid "Unsupported pixel format: 0x%x"
 msgstr ""
 
-#: lib/screenshooter-capture-wayland.c:386
+#: lib/screenshooter-capture-wayland.c:407
 msgid "The selected mode is not supported in Wayland"
 msgstr "Valittu tila ei ole tuettu Waylandissa"
 
-#: lib/screenshooter-capture-wayland.c:442
+#: lib/screenshooter-capture-wayland.c:463
 msgid "Failed to capture"
 msgstr "Kaappaus epäonnistui"
 
