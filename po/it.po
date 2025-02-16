@@ -6,8 +6,8 @@
 # Cristian Marchi <cri.penta@gmail.com>, 2014-2015
 # Dmytro Tokayev, 2021,2024
 # Edoardo Maria Elidoro <edoardo.elidoro@gmail.com>, 2013
-# Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2018-2019
-# Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2019-2024
+# Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2018-2019
+# Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2019-2024
 # Enrico B. <enricobe@hotmail.com>, 2018
 # Gianluca Foddis <gianluca.foddis@gmail.com>, 2009
 # Vincenzo Reale <vinx.reale@gmail.com>, 2020,2024
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-12-25 00:50+0100\n"
+"POT-Creation-Date: 2025-02-16 00:49+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Dmytro Tokayev, 2021,2024\n"
 "Language-Team: Italian (http://app.transifex.com/xfce/xfce-apps/language/it/)\n"
@@ -213,60 +213,58 @@ msgstr "Preferenze"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Azioni Personalizzate</span>"
 
-#: lib/screenshooter-dialogs.c:1512
+#: lib/screenshooter-dialogs.c:1513
 msgid ""
 "You can configure custom actions that will be available to handle "
-"screenshots after they are captured."
-msgstr "Si possono configurare azioni personalizzate che sono disponibili per gestire le istantanee dopo la cattura."
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr ""
 
-#: lib/screenshooter-dialogs.c:1542
+#: lib/screenshooter-dialogs.c:1543
 msgid "Custom Action"
 msgstr "Azione Personalizzata"
 
-#: lib/screenshooter-dialogs.c:1555
+#: lib/screenshooter-dialogs.c:1556
 msgid "Add custom action"
 msgstr "Aggiungi azione personalizzata"
 
-#: lib/screenshooter-dialogs.c:1562
+#: lib/screenshooter-dialogs.c:1563
 msgid "Remove selected custom action"
 msgstr "Rimuovi l'azione personalizzata selezionata"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1584
+#: lib/screenshooter-dialogs.c:1585
 msgid "Name"
 msgstr "Nome"
 
-#: lib/screenshooter-dialogs.c:1585
+#: lib/screenshooter-dialogs.c:1586
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Nome dell'azione visualizzato nella finestra delle Azioni"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1594
+#: lib/screenshooter-dialogs.c:1595
 msgid "Command"
 msgstr "Comando"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1596
 msgid "Command that will be executed for this custom action"
 msgstr "Comando eseguito per l'azione personalizzata"
 
-#: lib/screenshooter-dialogs.c:1602
+#: lib/screenshooter-dialogs.c:1603
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Utilizzare %f come segnaposto per la posizione dell'istantanea catturata"
 
-#: lib/screenshooter-custom-actions.c:183
-msgid "Host on Imgur™"
-msgstr "Carica su Imgur™"
-
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Unable to execute the custom action"
 msgstr "Impossibile eseguire l'azione personalizzata"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Invalid custom action selected"
 msgstr "È stata selezionata un'azione personalizzata non valida"
 
-#: lib/screenshooter-custom-actions.c:237
+#: lib/screenshooter-custom-actions.c:217
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "Impossibile eseguire l'azione personalizzata %s"
@@ -295,14 +293,14 @@ msgstr "file JPEG XL"
 msgid "AVIF File"
 msgstr "File AVIF"
 
-#: lib/screenshooter-utils.c:324
+#: lib/screenshooter-utils.c:321
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>L'applicazione non può essere avviata.</b>\n%s"
 
-#: lib/screenshooter-utils.c:401
+#: lib/screenshooter-utils.c:398
 msgid "Error"
 msgstr "Errore"
 
