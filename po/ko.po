@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-12-25 00:50+0100\n"
+"POT-Creation-Date: 2025-02-16 00:49+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2015,2018-2019,2021-2024\n"
 "Language-Team: Korean (http://app.transifex.com/xfce/xfce-apps/language/ko/)\n"
@@ -210,60 +210,58 @@ msgstr "기본 설정"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">개별 동작</span>"
 
-#: lib/screenshooter-dialogs.c:1512
+#: lib/screenshooter-dialogs.c:1513
 msgid ""
 "You can configure custom actions that will be available to handle "
-"screenshots after they are captured."
-msgstr "스크린 샷을 찍은 다음 실행할 개별 동작을 설정할 수 있습니다."
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr ""
 
-#: lib/screenshooter-dialogs.c:1542
+#: lib/screenshooter-dialogs.c:1543
 msgid "Custom Action"
 msgstr "개별 동작"
 
-#: lib/screenshooter-dialogs.c:1555
+#: lib/screenshooter-dialogs.c:1556
 msgid "Add custom action"
 msgstr "개별 동작 추가"
 
-#: lib/screenshooter-dialogs.c:1562
+#: lib/screenshooter-dialogs.c:1563
 msgid "Remove selected custom action"
 msgstr "선택한 개별 동작 제거"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1584
+#: lib/screenshooter-dialogs.c:1585
 msgid "Name"
 msgstr "이름"
 
-#: lib/screenshooter-dialogs.c:1585
+#: lib/screenshooter-dialogs.c:1586
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "동작 대화 상자에 나타낼 동작 이름"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1594
+#: lib/screenshooter-dialogs.c:1595
 msgid "Command"
 msgstr "명령어"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1596
 msgid "Command that will be executed for this custom action"
 msgstr "이 개별 동작을 실행할 명령"
 
-#: lib/screenshooter-dialogs.c:1602
+#: lib/screenshooter-dialogs.c:1603
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "찍은 스크린샷 위치의 채움 빈칸으로 %f을(를) 사용"
 
-#: lib/screenshooter-custom-actions.c:183
-msgid "Host on Imgur™"
-msgstr "Imgur™ 에 게시"
-
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Unable to execute the custom action"
 msgstr "개별 동작을 실행할 수 없습니다"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Invalid custom action selected"
 msgstr "부적절한 개별 동작을 선택했습니다"
 
-#: lib/screenshooter-custom-actions.c:237
+#: lib/screenshooter-custom-actions.c:217
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "%s개별 동작 실행 실패"
@@ -292,14 +290,14 @@ msgstr "JPEG XL 파일"
 msgid "AVIF File"
 msgstr "AVIF 파일"
 
-#: lib/screenshooter-utils.c:324
+#: lib/screenshooter-utils.c:321
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>프로그램을 실행할 수 없습니다.</b>\n%s"
 
-#: lib/screenshooter-utils.c:401
+#: lib/screenshooter-utils.c:398
 msgid "Error"
 msgstr "오류"
 
