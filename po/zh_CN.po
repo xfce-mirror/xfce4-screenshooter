@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-12-25 00:50+0100\n"
+"POT-Creation-Date: 2025-02-16 00:49+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2015,2018-2024\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/xfce/xfce-apps/language/zh_CN/)\n"
@@ -214,60 +214,58 @@ msgstr "首选项"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">自定义动作</span>"
 
-#: lib/screenshooter-dialogs.c:1512
+#: lib/screenshooter-dialogs.c:1513
 msgid ""
 "You can configure custom actions that will be available to handle "
-"screenshots after they are captured."
-msgstr "您可以配置自定义动作，以便在捕获屏幕截图后对其进行处理。"
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr ""
 
-#: lib/screenshooter-dialogs.c:1542
+#: lib/screenshooter-dialogs.c:1543
 msgid "Custom Action"
 msgstr "自定义动作"
 
-#: lib/screenshooter-dialogs.c:1555
+#: lib/screenshooter-dialogs.c:1556
 msgid "Add custom action"
 msgstr "添加自定义动作"
 
-#: lib/screenshooter-dialogs.c:1562
+#: lib/screenshooter-dialogs.c:1563
 msgid "Remove selected custom action"
 msgstr "移除所选自定义动作"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1584
+#: lib/screenshooter-dialogs.c:1585
 msgid "Name"
 msgstr "名称"
 
-#: lib/screenshooter-dialogs.c:1585
+#: lib/screenshooter-dialogs.c:1586
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "将在“动作”对话框显示的动作名称"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1594
+#: lib/screenshooter-dialogs.c:1595
 msgid "Command"
 msgstr "命令"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1596
 msgid "Command that will be executed for this custom action"
 msgstr "此自定义动作将执行的命令"
 
-#: lib/screenshooter-dialogs.c:1602
+#: lib/screenshooter-dialogs.c:1603
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "使用 %f 作为捕获的屏幕截图位置的占位符"
 
-#: lib/screenshooter-custom-actions.c:183
-msgid "Host on Imgur™"
-msgstr "上传至 Imgur™"
-
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Unable to execute the custom action"
 msgstr "无法执行此自定义动作"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Invalid custom action selected"
 msgstr "所选自定义动作无效"
 
-#: lib/screenshooter-custom-actions.c:237
+#: lib/screenshooter-custom-actions.c:217
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "执行自定义动作 %s 失败"
@@ -296,14 +294,14 @@ msgstr "JPEG  XL 文件"
 msgid "AVIF File"
 msgstr "AVIF 文件"
 
-#: lib/screenshooter-utils.c:324
+#: lib/screenshooter-utils.c:321
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>应用程序无法启动。</b>\n%s"
 
-#: lib/screenshooter-utils.c:401
+#: lib/screenshooter-utils.c:398
 msgid "Error"
 msgstr "错误"
 
