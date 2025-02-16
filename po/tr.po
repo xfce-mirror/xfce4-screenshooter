@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-12-25 00:50+0100\n"
+"POT-Creation-Date: 2025-02-16 00:49+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: A. Cem Hanoğlu <ardacemhanoglu5@gmail.com>, 2025\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/xfce-apps/language/tr/)\n"
@@ -217,60 +217,58 @@ msgstr "Tercihler"
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Özel İşlemler</span>"
 
-#: lib/screenshooter-dialogs.c:1512
+#: lib/screenshooter-dialogs.c:1513
 msgid ""
 "You can configure custom actions that will be available to handle "
-"screenshots after they are captured."
-msgstr "Yakalandıktan sonra ekran görüntülerini işlemek için kullanılabilecek özel eylemleri yapılandırabilirsiniz."
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr ""
 
-#: lib/screenshooter-dialogs.c:1542
+#: lib/screenshooter-dialogs.c:1543
 msgid "Custom Action"
 msgstr "Özel Eylem"
 
-#: lib/screenshooter-dialogs.c:1555
+#: lib/screenshooter-dialogs.c:1556
 msgid "Add custom action"
 msgstr "Özel işlem ekle"
 
-#: lib/screenshooter-dialogs.c:1562
+#: lib/screenshooter-dialogs.c:1563
 msgid "Remove selected custom action"
 msgstr "Seçili özel eylemi kaldır"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1584
+#: lib/screenshooter-dialogs.c:1585
 msgid "Name"
 msgstr "Ad"
 
-#: lib/screenshooter-dialogs.c:1585
+#: lib/screenshooter-dialogs.c:1586
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Eylemler iletişim kutusunda görüntülenecek eylemin adı"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1594
+#: lib/screenshooter-dialogs.c:1595
 msgid "Command"
 msgstr "Komut"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1596
 msgid "Command that will be executed for this custom action"
 msgstr "Bu özel eylem için yürütülecek komut"
 
-#: lib/screenshooter-dialogs.c:1602
+#: lib/screenshooter-dialogs.c:1603
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Yakalanan ekran görüntüsünün konumu için %f'i yer tutucu olarak kullanın"
 
-#: lib/screenshooter-custom-actions.c:183
-msgid "Host on Imgur™"
-msgstr "Imgur™'da Yayımla"
-
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Unable to execute the custom action"
 msgstr "Özel eylem yürütülemiyor"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:200
 msgid "Invalid custom action selected"
 msgstr "Geçersiz özel işlem seçildi"
 
-#: lib/screenshooter-custom-actions.c:237
+#: lib/screenshooter-custom-actions.c:217
 #, c-format
 msgid "Failed to run the custom action %s"
 msgstr "Özel eylem %s çalıştırılamadı"
@@ -299,14 +297,14 @@ msgstr "JPEG XL Dosyası"
 msgid "AVIF File"
 msgstr "AVIF Dosyası"
 
-#: lib/screenshooter-utils.c:324
+#: lib/screenshooter-utils.c:321
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Uygulama çalıştırılamadı.</b>\n%s"
 
-#: lib/screenshooter-utils.c:401
+#: lib/screenshooter-utils.c:398
 msgid "Error"
 msgstr "Hata"
 
