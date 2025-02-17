@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008,2016,2018-2019,2021-2023
-# UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2019-2024
+# UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2019-2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-02-16 00:49+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2019-2024\n"
+"Last-Translator: UTUMI Hirosi <utuhiro78@yahoo.co.jp>, 2019-2025\n"
 "Language-Team: Japanese (http://app.transifex.com/xfce/xfce-apps/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -213,7 +213,7 @@ msgid ""
 "screenshots after they are captured. You can find more examples in the <a "
 "href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
 "actions#examples\">documentation</a>."
-msgstr ""
+msgstr "スクリーンショットのキャプチャー後にスクリーンショットを処理するためのカスタムアクションを設定できます。<a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">ドキュメント</a>に更に多くの例が記載されています。"
 
 #: lib/screenshooter-dialogs.c:1543
 msgid "Custom Action"
