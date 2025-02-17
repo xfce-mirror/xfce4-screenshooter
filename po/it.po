@@ -6,6 +6,7 @@
 # Cristian Marchi <cri.penta@gmail.com>, 2014-2015
 # Dmytro Tokayev, 2021,2024
 # Edoardo Maria Elidoro <edoardo.elidoro@gmail.com>, 2013
+# Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2025
 # Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2018-2019
 # Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2019-2024
 # Enrico B. <enricobe@hotmail.com>, 2018
@@ -17,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-02-16 00:49+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Dmytro Tokayev, 2021,2024\n"
+"Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.com>, 2025\n"
 "Language-Team: Italian (http://app.transifex.com/xfce/xfce-apps/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -219,7 +220,7 @@ msgid ""
 "screenshots after they are captured. You can find more examples in the <a "
 "href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
 "actions#examples\">documentation</a>."
-msgstr ""
+msgstr "Si possono configurare le azioni personalizzate che saranno disponibili per gestire le istantanee dopo essere state catturate. Si possono trovare degli esempi nella <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">documentazione</a>."
 
 #: lib/screenshooter-dialogs.c:1543
 msgid "Custom Action"
@@ -331,7 +332,7 @@ msgstr "Il compositore non supporta wlr-screencopy-unstable-v1"
 #: lib/screenshooter-capture-wayland.c:332
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
-msgstr "Formato pixel non supportato: 0x%x"
+msgstr "Unsupported pixel format: 0x%x"
 
 #: lib/screenshooter-capture-wayland.c:407
 msgid "The selected mode is not supported in Wayland"
