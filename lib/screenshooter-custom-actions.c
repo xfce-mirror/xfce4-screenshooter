@@ -138,6 +138,7 @@ screenshooter_custom_action_load (GtkListStore *list_store)
   XfconfChannel *channel;
   GtkTreeIter iter;
   GError *error = NULL;
+  gboolean imgur_found = FALSE;
 
   if (!xfconf_init (&error))
     {
@@ -162,8 +163,16 @@ screenshooter_custom_action_load (GtkListStore *list_store)
       name = xfconf_channel_get_string (channel, name_address, "");
       command = xfconf_channel_get_string (channel, command_address, "");
 
-      gtk_list_store_append (list_store, &iter);
-      gtk_list_store_set (GTK_LIST_STORE (list_store), &iter, CUSTOM_ACTION_NAME, name, CUSTOM_ACTION_COMMAND, command, -1);
+      /* Do not load action if that's the removed imgur upload script */
+      if (g_strrstr (command, "imgur-upload.sh") != NULL)
+        {
+          imgur_found = TRUE;
+        }
+      else
+        {
+          gtk_list_store_append (list_store, &iter);
+          gtk_list_store_set (GTK_LIST_STORE (list_store), &iter, CUSTOM_ACTION_NAME, name, CUSTOM_ACTION_COMMAND, command, -1);
+        }
 
       g_free (name);
       g_free (command);
@@ -173,6 +182,8 @@ screenshooter_custom_action_load (GtkListStore *list_store)
 
   /* TODO remove after a few releases */
   xfconf_channel_reset_property (channel, "/imgur-custom-action-added", FALSE);
+  if (imgur_found)
+    screenshooter_custom_action_save (GTK_TREE_MODEL (list_store));
 
   xfconf_shutdown ();
 }
