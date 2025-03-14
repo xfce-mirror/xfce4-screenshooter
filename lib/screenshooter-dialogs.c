@@ -22,7 +22,11 @@
 #include "screenshooter-custom-actions.h"
 #include "screenshooter-format.h"
 
+#include <libxfce4ui/libxfce4ui.h>
+
+#if !LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
 #include <exo/exo.h>
+#endif
 
 #ifdef ENABLE_WAYLAND
 #include <gdk/gdkwayland.h>
@@ -1406,7 +1410,11 @@ gchar
     gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (chooser), combobox);
 
     if (show_preview)
+#if LIBXFCE4UI_CHECK_VERSION(4, 21, 0)
+      xfce_gtk_file_chooser_add_thumbnail_preview (GTK_FILE_CHOOSER (chooser));
+#else
       exo_gtk_file_chooser_add_thumbnail_preview (GTK_FILE_CHOOSER (chooser));
+#endif
 
     dialog_response = gtk_dialog_run (GTK_DIALOG (chooser));
 
