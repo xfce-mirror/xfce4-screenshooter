@@ -139,7 +139,7 @@ int main (int argc, char **argv)
   ScreenshotData *sd;
   GError *cli_error = NULL;
   GFile *default_save_dir;
-  const gchar *rc_file;
+  gchar *rc_file;
   const gchar *conflict_error =
     _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
   const gchar *ignore_error =
@@ -326,6 +326,7 @@ int main (int argc, char **argv)
 
   /* Save preferences */
   screenshooter_write_rc_file (rc_file, sd);
+  g_free (rc_file);
 
   g_free (sd->screenshot_dir);
   g_free (sd->title);
