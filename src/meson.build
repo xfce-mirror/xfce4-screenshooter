@@ -54,6 +54,6 @@ if help2man.found()
       help2man, ['--no-info'], '--output=@OUTPUT@', screenshooter.full_path(),
     ],
     install: true,
-    install_dir: get_option('prefix') / get_option('datadir') / 'man' / 'man1',
+    install_dir: get_option('prefix') / get_option('mandir') / 'man1',
   )
 endif
