@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-02-16 00:49+0100\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Quentin PAGÈS, 2020,2022-2025\n"
+"Last-Translator: Quentin PAGÈS, 2020\n"
 "Language-Team: Occitan (post 1500) (http://app.transifex.com/xfce/xfce-apps/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -215,7 +215,7 @@ msgid ""
 "screenshots after they are captured. You can find more examples in the <a "
 "href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
 "actions#examples\">documentation</a>."
-msgstr ""
+msgstr "Podètz configurar d’accions personalizadas que seràn disponiblas per gerir las capturas d’ecran un còp capturadas. Podètz trobar mai d’exemples dins la <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">documentacion</a>."
 
 #: lib/screenshooter-dialogs.c:1543
 msgid "Custom Action"
@@ -369,7 +369,7 @@ msgstr "L’emplaçament del fichièr o del repertòri ont la captura d'ecran se
 
 #: src/main.c:93
 msgid "Show the saved file in the folder."
-msgstr "Afichar lo fichièr enregistrat dins lo dorsièr"
+msgstr "Afichar lo fichièr enregistrat dins lo dorsièr."
 
 #: src/main.c:98
 msgid "Version information"
