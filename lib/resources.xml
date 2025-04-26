@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/org/xfce/screenshooter">
+        <file preprocess="xml-stripblanks">rectangle-symbolic.svg</file>
+        <file preprocess="xml-stripblanks">screen-symbolic.svg</file>
+        <file preprocess="xml-stripblanks">window-symbolic.svg</file>
+    </gresource>
+</gresources>

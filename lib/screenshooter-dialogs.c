@@ -21,6 +21,7 @@
 #include "screenshooter-actions.h"
 #include "screenshooter-custom-actions.h"
 #include "screenshooter-format.h"
+#include "resources.h"
 
 #include <libxfce4ui/libxfce4ui.h>
 
@@ -865,12 +866,14 @@ void screenshooter_region_dialog_show (ScreenshotData *sd, gboolean plugin)
 }
 
 
-
 GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 {
   GtkWidget *dlg, *grid, *main_box, *box, *label, *checkbox;
   GtkWidget *fullscreen_button, *active_window_button, *rectangle_button;
   GtkWidget *spinner_box, *spinner;
+
+  /* FIXME: Probably this is not the best place to call this */
+  screenshooter_register_resource ();
 
   /* Create the dialog */
   if (plugin)
@@ -899,27 +902,21 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "org.xfce.screenshooter");
   gtk_dialog_set_default_response (GTK_DIALOG (dlg), GTK_RESPONSE_OK);
 
-  /* Create the main box for the dialog */
-  main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
-  gtk_widget_set_hexpand (main_box, TRUE);
-  gtk_widget_set_vexpand (main_box, TRUE);
-  gtk_widget_set_margin_top (main_box, 6);
-  gtk_widget_set_margin_bottom (main_box, 0);
-  gtk_widget_set_margin_start (main_box, 12);
-  gtk_widget_set_margin_end (main_box, 12);
-  gtk_container_set_border_width (GTK_CONTAINER (main_box), 12);
-  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), main_box, TRUE, TRUE, 0);
-
   /* Create the grid to align the different parts of the top of the UI */
   grid = gtk_grid_new ();
   gtk_grid_set_column_spacing (GTK_GRID (grid), 100);
-  gtk_box_pack_start (GTK_BOX (main_box), grid, TRUE, TRUE, 0);
+  gtk_widget_set_margin_top (grid, 6);
+  gtk_widget_set_margin_bottom (grid, 0);
+  gtk_widget_set_margin_start (grid, 12);
+  gtk_widget_set_margin_end (grid, 12);
+  gtk_container_set_border_width (GTK_CONTAINER (grid), 12);
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dlg))), grid, TRUE, TRUE, 0);
 
   /* Create the main box for the regions */
   main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_grid_attach (GTK_GRID (grid), main_box, 0, 0, 1, 2);
+  gtk_grid_attach (GTK_GRID (grid), main_box, 0, 0, 2, 1);
 
-  /* Create area label */
+  /* Create region label */
   label = gtk_label_new ("");
   gtk_label_set_markup (GTK_LABEL (label),
                         _("<span weight=\"bold\" stretch=\"semiexpanded\">"
@@ -928,19 +925,20 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_widget_set_valign (label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (main_box), label);
 
-  /* Create area box */
-  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_box_set_spacing (GTK_BOX (box), 6);
+  /* Create box for region radio buttons */
+  box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
   gtk_widget_set_hexpand (box, TRUE);
   gtk_widget_set_vexpand (box, TRUE);
-  gtk_widget_set_margin_top (box, 0);
-  gtk_widget_set_margin_bottom (box, 6);
+  gtk_widget_set_margin_top (box, 6);
+  gtk_widget_set_margin_bottom (box, 30);
   gtk_widget_set_margin_start (box, 12);
   gtk_widget_set_margin_end (box, 0);
+  gtk_widget_set_halign(box, GTK_ALIGN_CENTER);
+  gtk_style_context_add_class (gtk_widget_get_style_context (box), "linked");
   gtk_container_add (GTK_CONTAINER (main_box), box);
   gtk_container_set_border_width (GTK_CONTAINER (box), 0);
 
-  /* Create radio buttons for areas to screenshot */
+  /* Create radio buttons for regions to screenshot */
 
   /* Fullscreen */
   fullscreen_button =
@@ -948,8 +946,13 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_box_pack_start (GTK_BOX (box), fullscreen_button, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fullscreen_button),
                                 (sd->region == FULLSCREEN));
+  gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (fullscreen_button), FALSE);
   gtk_widget_set_tooltip_text (fullscreen_button,
                                _("Take a screenshot of the entire screen"));
+  gtk_button_set_image (GTK_BUTTON (fullscreen_button),
+                        gtk_image_new_from_resource ("/org/xfce/screenshooter/screen-symbolic.svg"));
+  gtk_button_set_always_show_image (GTK_BUTTON (fullscreen_button), TRUE);
+  gtk_button_set_image_position (GTK_BUTTON (fullscreen_button), GTK_POS_TOP);
   g_signal_connect (G_OBJECT (fullscreen_button), "toggled",
                     G_CALLBACK (cb_fullscreen_screen_toggled), sd);
   g_signal_connect (G_OBJECT (fullscreen_button), "activate",
@@ -960,8 +963,13 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
                                                  _("Active window"));
   gtk_box_pack_start (GTK_BOX (box), active_window_button, FALSE, FALSE, 0);
+  gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (active_window_button), FALSE);
   gtk_widget_set_tooltip_text (active_window_button,
                                _("Take a screenshot of the active window"));
+  gtk_button_set_image (GTK_BUTTON (active_window_button),
+                        gtk_image_new_from_resource ("/org/xfce/screenshooter/window-symbolic.svg"));
+  gtk_button_set_always_show_image (GTK_BUTTON (active_window_button), TRUE);
+  gtk_button_set_image_position (GTK_BUTTON (active_window_button), GTK_POS_TOP);
   g_signal_connect (G_OBJECT (active_window_button), "toggled",
                     G_CALLBACK (cb_active_window_toggled), sd);
   g_signal_connect (G_OBJECT (active_window_button), "activate",
@@ -983,12 +991,17 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
     gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
                                                  _("Select a region"));
   gtk_box_pack_start (GTK_BOX (box), rectangle_button, FALSE, FALSE, 0);
+  gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (rectangle_button), FALSE);
   gtk_widget_set_tooltip_text (rectangle_button,
                                _("Select a region to be captured by clicking a point of "
                                  "the screen without releasing the mouse button, "
                                  "dragging your mouse to the other corner of the region, "
                                  "and releasing the mouse button.\n\n"
                                  "Press Ctrl while dragging to move the region."));
+  gtk_button_set_image (GTK_BUTTON (rectangle_button),
+                        gtk_image_new_from_resource ("/org/xfce/screenshooter/rectangle-symbolic.svg"));
+  gtk_button_set_always_show_image (GTK_BUTTON (rectangle_button), TRUE);
+  gtk_button_set_image_position (GTK_BUTTON (rectangle_button), GTK_POS_TOP);
   g_signal_connect (G_OBJECT (rectangle_button), "toggled",
                     G_CALLBACK (cb_rectangle_toggled), sd);
   g_signal_connect (G_OBJECT (rectangle_button), "activate",
@@ -1005,6 +1018,10 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
 #endif
 
+  /* Create the main box for options */
+  main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+  gtk_grid_attach (GTK_GRID (grid), main_box, 0, 1, 1, 1);
+
   /* Create options label */
   label = gtk_label_new ("");
   gtk_label_set_markup (GTK_LABEL (label),
@@ -1014,7 +1031,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_widget_set_valign (label, GTK_ALIGN_START);
   gtk_container_add (GTK_CONTAINER (main_box), label);
 
-  /* Create options box */
+  /* Create box options check buttons */
   box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_set_spacing (GTK_BOX (box), 6);
   gtk_widget_set_hexpand (box, TRUE);
@@ -1063,7 +1080,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
 
   /* Create the main box for the delay stuff */
   main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-  gtk_grid_attach (GTK_GRID (grid), main_box, 1, 0, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), main_box, 1, 1, 1, 1);
 
   /* Create delay label */
   label = gtk_label_new ("");
