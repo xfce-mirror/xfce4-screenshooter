@@ -40,13 +40,13 @@
 /* Prototypes */
 
 static void
-cb_fullscreen_screen_toggled       (GtkToggleButton    *tb,
+cb_fullscreen_screen_clicked       (GtkButton          *b,
                                     ScreenshotData     *sd);
 static void
-cb_active_window_toggled           (GtkToggleButton    *tb,
+cb_active_window_clicked           (GtkButton          *b,
                                     ScreenshotData     *sd);
 static void
-cb_rectangle_toggled               (GtkToggleButton    *tb,
+cb_rectangle_clicked               (GtkButton          *b,
                                     ScreenshotData     *sd);
 static void
 cb_radiobutton_activate            (GtkToggleButton    *tb,
@@ -126,29 +126,29 @@ cb_custom_action_delete            (GtkToolButton      *button,
 
 
 
-/* Set the captured area when the button is toggled */
-static void cb_fullscreen_screen_toggled (GtkToggleButton *tb, ScreenshotData *sd)
+/* Set the captured area when the button is clicked */
+static void cb_fullscreen_screen_clicked (GtkButton *b, ScreenshotData *sd)
 {
-  if (gtk_toggle_button_get_active (tb))
-    sd->region = FULLSCREEN;
+  sd->region = FULLSCREEN;
+  gtk_dialog_response (GTK_DIALOG (gtk_widget_get_toplevel (GTK_WIDGET (b))), GTK_RESPONSE_OK);
 }
 
 
 
-/* Set the captured area when the button is toggled */
-static void cb_active_window_toggled (GtkToggleButton *tb, ScreenshotData *sd)
+/* Set the captured area when the button is clicked */
+static void cb_active_window_clicked (GtkButton *b, ScreenshotData *sd)
 {
-  if (gtk_toggle_button_get_active (tb))
-    sd->region = ACTIVE_WINDOW;
+  sd->region = ACTIVE_WINDOW;
+  gtk_dialog_response (GTK_DIALOG (gtk_widget_get_toplevel (GTK_WIDGET (b))), GTK_RESPONSE_OK);
 }
 
 
 
-/* Set the captured area when the button is toggled */
-static void cb_rectangle_toggled (GtkToggleButton *tb, ScreenshotData *sd)
+/* Set the captured area when the button is clicked */
+static void cb_rectangle_clicked (GtkButton *b, ScreenshotData *sd)
 {
-  if (gtk_toggle_button_get_active (tb))
-    sd->region = SELECT;
+  sd->region = SELECT;
+  gtk_dialog_response (GTK_DIALOG (gtk_widget_get_toplevel (GTK_WIDGET (b))), GTK_RESPONSE_OK);
 }
 
 
@@ -892,7 +892,6 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
         "help-browser-symbolic", _("_Help"), GTK_RESPONSE_HELP,
         "", _("_Preferences"), GTK_RESPONSE_PREFERENCES,
         "", _("_Cancel"), GTK_RESPONSE_CANCEL,
-        "", _("_OK"), GTK_RESPONSE_OK,
         NULL);
     }
 
@@ -941,39 +940,29 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   /* Create radio buttons for regions to screenshot */
 
   /* Fullscreen */
-  fullscreen_button =
-    gtk_radio_button_new_with_mnemonic (NULL, _("Entire screen"));
+  fullscreen_button = gtk_button_new_with_label (_("Entire screen"));
   gtk_box_pack_start (GTK_BOX (box), fullscreen_button, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (fullscreen_button),
-                                (sd->region == FULLSCREEN));
-  gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (fullscreen_button), FALSE);
+  if (sd->region == FULLSCREEN) gtk_widget_grab_focus (fullscreen_button);
   gtk_widget_set_tooltip_text (fullscreen_button,
                                _("Take a screenshot of the entire screen"));
   gtk_button_set_image (GTK_BUTTON (fullscreen_button),
                         gtk_image_new_from_resource ("/org/xfce/screenshooter/screen-symbolic.svg"));
   gtk_button_set_always_show_image (GTK_BUTTON (fullscreen_button), TRUE);
   gtk_button_set_image_position (GTK_BUTTON (fullscreen_button), GTK_POS_TOP);
-  g_signal_connect (G_OBJECT (fullscreen_button), "toggled",
-                    G_CALLBACK (cb_fullscreen_screen_toggled), sd);
-  g_signal_connect (G_OBJECT (fullscreen_button), "activate",
-                    G_CALLBACK (cb_radiobutton_activate), dlg);
+  g_signal_connect (G_OBJECT (fullscreen_button), "clicked",
+                    G_CALLBACK (cb_fullscreen_screen_clicked), sd);
 
   /* Active window */
-  active_window_button =
-    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
-                                                 _("Active window"));
+  active_window_button = gtk_button_new_with_label (_("Active window"));
   gtk_box_pack_start (GTK_BOX (box), active_window_button, FALSE, FALSE, 0);
-  gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (active_window_button), FALSE);
   gtk_widget_set_tooltip_text (active_window_button,
                                _("Take a screenshot of the active window"));
   gtk_button_set_image (GTK_BUTTON (active_window_button),
                         gtk_image_new_from_resource ("/org/xfce/screenshooter/window-symbolic.svg"));
   gtk_button_set_always_show_image (GTK_BUTTON (active_window_button), TRUE);
   gtk_button_set_image_position (GTK_BUTTON (active_window_button), GTK_POS_TOP);
-  g_signal_connect (G_OBJECT (active_window_button), "toggled",
-                    G_CALLBACK (cb_active_window_toggled), sd);
-  g_signal_connect (G_OBJECT (active_window_button), "activate",
-                    G_CALLBACK (cb_radiobutton_activate), dlg);
+  g_signal_connect (G_OBJECT (active_window_button), "clicked",
+                    G_CALLBACK (cb_active_window_clicked), sd);
 #ifdef ENABLE_WAYLAND
   if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
     {
@@ -981,17 +970,14 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
       gtk_widget_set_tooltip_text (active_window_button, _("Not supported in Wayland"));
     }
   else
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button), (sd->region == ACTIVE_WINDOW));
+    if (sd->region == ACTIVE_WINDOW) gtk_widget_grab_focus (active_window_button);
 #else
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (active_window_button), (sd->region == ACTIVE_WINDOW));
+  if (sd->region == ACTIVE_WINDOW) gtk_widget_grab_focus (active_window_button);
 #endif
 
   /* Rectangle */
-  rectangle_button =
-    gtk_radio_button_new_with_label_from_widget (GTK_RADIO_BUTTON (fullscreen_button),
-                                                 _("Select a region"));
+  rectangle_button = gtk_button_new_with_label (_("Select a region"));
   gtk_box_pack_start (GTK_BOX (box), rectangle_button, FALSE, FALSE, 0);
-  gtk_toggle_button_set_mode (GTK_TOGGLE_BUTTON (rectangle_button), FALSE);
   gtk_widget_set_tooltip_text (rectangle_button,
                                _("Select a region to be captured by clicking a point of "
                                  "the screen without releasing the mouse button, "
@@ -1002,10 +988,8 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                         gtk_image_new_from_resource ("/org/xfce/screenshooter/rectangle-symbolic.svg"));
   gtk_button_set_always_show_image (GTK_BUTTON (rectangle_button), TRUE);
   gtk_button_set_image_position (GTK_BUTTON (rectangle_button), GTK_POS_TOP);
-  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
-                    G_CALLBACK (cb_rectangle_toggled), sd);
-  g_signal_connect (G_OBJECT (rectangle_button), "activate",
-                    G_CALLBACK (cb_radiobutton_activate), dlg);
+  g_signal_connect (G_OBJECT (rectangle_button), "clicked",
+                    G_CALLBACK (cb_rectangle_clicked), sd);
 #ifdef ENABLE_WAYLAND
   if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
     {
@@ -1013,9 +997,9 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
       gtk_widget_set_tooltip_text (rectangle_button, _("Not supported in Wayland"));
     }
   else
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
+    if (sd->region == SELECT) gtk_widget_grab_focus (rectangle_button);
 #else
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
+  if (sd->region == SELECT) gtk_widget_grab_focus (rectangle_button);
 #endif
 
   /* Create the main box for options */
@@ -1064,12 +1048,12 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                                _("Display the window border on the screenshot.\n"
                                  "Disabling this option has no effect for CSD windows."));
   gtk_box_pack_start (GTK_BOX (box), checkbox, FALSE, FALSE, 0);
-  g_signal_connect (G_OBJECT (checkbox), "toggled",
-                    G_CALLBACK (cb_show_border_toggled), sd);
-  g_signal_connect (G_OBJECT (fullscreen_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_insensi), checkbox);
-  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
-                    G_CALLBACK (cb_toggle_set_insensi), checkbox);
+  // g_signal_connect (G_OBJECT (checkbox), "toggled",
+  //                   G_CALLBACK (cb_show_border_toggled), sd);
+  // g_signal_connect (G_OBJECT (fullscreen_button), "toggled",
+  //                   G_CALLBACK (cb_toggle_set_insensi), checkbox);
+  // g_signal_connect (G_OBJECT (rectangle_button), "toggled",
+  //                   G_CALLBACK (cb_toggle_set_insensi), checkbox);
 #ifdef ENABLE_WAYLAND
   if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
     {
