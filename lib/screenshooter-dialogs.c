@@ -495,7 +495,7 @@ static cairo_surface_t
 
   scaled_screenshot = gdk_pixbuf_scale_simple (screenshot, width * scale_factor, height * scale_factor, GDK_INTERP_BILINEAR);
   surface = gdk_cairo_surface_create_from_pixbuf (scaled_screenshot, scale_factor, NULL);
-  g_free (scaled_screenshot);
+  g_object_unref (scaled_screenshot);
 
   return surface;
 }
