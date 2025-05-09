@@ -452,6 +452,7 @@ screenshooter_get_filename_for_uri (const gchar *uri,
 
   if (!g_file_query_exists (file, NULL))
     {
+      g_free (datetime);
       g_object_unref (file);
       g_object_unref (directory);
 
