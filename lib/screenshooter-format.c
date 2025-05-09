@@ -60,7 +60,7 @@ screenshooter_is_format_supported (const gchar *format)
       g_free (name);
     }
 
-  g_slist_free_1 (supported_formats);
+  g_slist_free (supported_formats);
 
   return result;
 }
