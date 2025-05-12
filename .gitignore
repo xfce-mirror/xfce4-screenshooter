@@ -36,6 +36,7 @@ Makefile
 *.lo
 *.la
 /lib/screenshooter-marshal.[ch]
+/lib/resources.[ch]
 /lib/stamp-screenshooter-marshal.h
 /libtool
 /panel-plugin/.dirstamp

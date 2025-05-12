@@ -23,6 +23,17 @@ libscreenshooter_sources += gnome.genmarshal(
   install_header: false,
 )
 
+libscreenshooter_sources += gnome.compile_resources(
+  'resources',
+  'resources.xml',
+  c_name: 'screenshooter',
+  export: false,
+  extra_args: [
+    '--manual-register',
+  ],
+  source_dir: '..' / 'icons' / 'scalable',
+)
+
 if enable_x11
   libscreenshooter_sources += [
     'screenshooter-capture-x11.c',
