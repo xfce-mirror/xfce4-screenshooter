@@ -2,12 +2,9 @@
 
 # xfce4-screenshooter
 
-Xfce4-screenshooter allows you to capture the entire screen, the active
-window or a selected region. You can set the delay that elapses
-before the screenshot is taken and the action that will be done with
-the screenshot: save it to a file, copy it to the clipboard, open
-it using another application or use your creativity with custom actions
-scripts.
+Xfce4-screenshooter allows you to capture the entire screen, the active window or a selected region.
+You can set the delay that elapses before the screenshot is taken and the action that will be done with the screenshot:
+save it to a file, copy it to the clipboard, open it using another application or use your creativity with custom actions scripts.
 
 ----
 
@@ -31,22 +28,21 @@ See [NEWS](https://gitlab.xfce.org/apps/xfce4-screenshooter/-/blob/master/NEWS) 
 
 ### Installation
 
-From source code repository: 
+From source code repository:
 
     % cd xfce4-screenshooter
-    % ./autogen.sh
-    % make
-    % make install
+    % meson setup build
+    % meson compile -C build
+    % meson install -C build
 
 From release tarball:
 
     % tar xf xfce4-screenshooter-<version>.tar.bz2
     % cd xfce4-screenshooter-<version>
-    % ./configure
-    % make
-    % make install
+    % meson setup build
+    % meson compile -C build
+    % meson install -C build
 
 ### Reporting Bugs
 
 Visit the [reporting bugs](https://docs.xfce.org/apps/xfce4-screenshooter/bugs) page to view currently open bug reports and instructions on reporting new bugs or submitting bugfixes.
-
