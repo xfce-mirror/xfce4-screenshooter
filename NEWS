@@ -1,3 +1,37 @@
+1.11.2 (2025-05-22)
+======
+- Fully free a GSList to fix a leak
+- Fix a string leak in screenshooter_get_filename_for_uri
+- Properly free a GdkPixbuf to fix a leak
+- meson-build: Fix manpage install dir
+- Improve selection background in black surfaces
+- Fix xfce_resource_save_location leak in main
+- Replace deprecated exo with libxfce4ui 4.21.0
+- Remove imgur upload custom action automatically
+- Fix build with autotools
+- Drop Imgur custom action
+- preferences: Add link to the documentation for custom actions examples
+- Add support to Meson
+- Update xfce4-screenshooter.1
+- Fix segfault in another location
+- Fix segfault when app command is NULL (#132)
+- Improved imgur upload script
+- Add support to WL_SHM_FORMAT_BGR888
+- Check if file was correctly open before using it
+- Revert "Only restrict file permissions after sucessfully writing them"
+- Fix blurred preview images at scale >1
+- Only restrict file permissions after sucessfully writing them
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Czech, Danish, Dutch,
+  Eastern Armenian, English (Australia), English (United Kingdom),
+  Estonian, Finnish, French, Galician, Georgian, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Interlingue, Italian, Japanese,
+  Kazakh, Korean, Latvian, Lithuanian, Malay, Norwegian Bokmål,
+  Norwegian Nynorsk, Occitan (post 1500), Persian (Iran), Polish,
+  Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak,
+  Slovenian, Spanish, Swedish, Thai, Turkish, Ukrainian, Uyghur
+
 1.11.1 (2024-07-30)
 ======
 - Drop unnecessary libxml dependency
