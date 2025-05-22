@@ -1,7 +1,7 @@
 project(
   'xfce4-screenshooter',
   'c',
-  version: '1.11.2',
+  version: '1.11.2-dev',
   license: 'GPL-2.0-or-later',
   meson_version: '>= 0.56.0',
   default_options: [
