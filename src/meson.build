@@ -56,4 +56,9 @@ if help2man.found()
     install: true,
     install_dir: get_option('prefix') / get_option('mandir') / 'man1',
   )
+else
+  install_data(
+    '..' / 'xfce4-screenshooter.1',
+    install_dir: get_option('prefix') / get_option('mandir') / 'man1',
+  )
 endif
