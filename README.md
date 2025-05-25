@@ -28,6 +28,8 @@ See [NEWS](https://gitlab.xfce.org/apps/xfce4-screenshooter/-/blob/master/NEWS) 
 
 ### Installation
 
+If a man page is desired, `help2man` should be installed to generate it during build.
+
 From source code repository:
 
     % cd xfce4-screenshooter
