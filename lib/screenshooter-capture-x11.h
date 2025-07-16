@@ -20,10 +20,6 @@
 #ifndef __HAVE_CAPTURE_X11_H__
 #define __HAVE_CAPTURE_X11_H__
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <gdk/gdk.h>
 
 
