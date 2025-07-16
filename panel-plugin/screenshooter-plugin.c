@@ -277,9 +277,6 @@ cb_dialog_response (GtkWidget *dlg, int response, PluginData *pd)
   g_object_set_data (G_OBJECT (pd->plugin), "dialog", NULL);
   gtk_widget_destroy (dlg);
 
-  /* Unblock the menu */
-  xfce_panel_plugin_unblock_menu (pd->plugin);
-
   if (response == GTK_RESPONSE_OK)
     {
       /* Update tooltips according to the chosen option */
@@ -300,13 +297,14 @@ cb_properties_dialog (XfcePanelPlugin *plugin, PluginData *pd)
 {
   GtkWidget *dlg;
 
+  if ((dlg = g_object_get_data (G_OBJECT (plugin), "dialog")) != NULL)
+    {
+      gtk_window_present (GTK_WINDOW (dlg));
+      return;
+    }
+
   TRACE ("Create the dialog");
   dlg = screenshooter_region_dialog_new (pd->sd, TRUE);
-
-  /* Block the menu to prevent the user from launching several dialogs at
-  the same time */
-  TRACE ("Block the menu");
-  xfce_panel_plugin_block_menu (plugin);
 
   TRACE ("Run the dialog");
   g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
