@@ -20,10 +20,6 @@
 #ifndef __HAVE_DIALOGS_H__
 #define __HAVE_DIALOGS_H__
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "screenshooter-utils.h"
 #include "screenshooter-global.h"
 #include "screenshooter-actions.h"
