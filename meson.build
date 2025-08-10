@@ -28,7 +28,7 @@ dependency_versions = {
   'xfixes': '>= 4.0.0',
   'xfce4': '>= 4.18.0',
   'wayland': '>= 1.20',
-  'wayland-protocols': '>= 1.25',
+  'wayland-protocols': '>= 1.37',
   'wlr-protocols': '>= 0',
 }
 
