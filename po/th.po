@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-07-18 11:04+0200\n"
+"POT-Creation-Date: 2025-08-14 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>, 2013,2015,2018,2021\n"
 "Language-Team: Thai (http://app.transifex.com/xfce/xfce-apps/language/th/)\n"
@@ -70,8 +70,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">พื้นที่ท�
 msgid "Entire screen"
 msgstr "ทั้งหน้าจอ"
 
-#: lib/screenshooter-dialogs.c:952 src/main.c:61
-#: panel-plugin/screenshooter-plugin.c:332
+#: lib/screenshooter-dialogs.c:952 src/main.c:57
+#: panel-plugin/screenshooter-plugin.c:326
 msgid "Take a screenshot of the entire screen"
 msgstr "จับภาพหน้าจอทั้งหน้าจอ"
 
@@ -79,8 +79,8 @@ msgstr "จับภาพหน้าจอทั้งหน้าจอ"
 msgid "Active window"
 msgstr "หน้าต่างที่แอคทีฟ"
 
-#: lib/screenshooter-dialogs.c:964 src/main.c:103
-#: panel-plugin/screenshooter-plugin.c:337
+#: lib/screenshooter-dialogs.c:964 src/main.c:99
+#: panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the active window"
 msgstr "จับภาพหน้าจอของหน้าต่างที่แอคทีฟ"
 
@@ -175,7 +175,7 @@ msgstr "เปิดด้วย:"
 msgid "Open the screenshot with the chosen application"
 msgstr "เปิดภาพหน้าจอด้วยโปรแกรมที่เลือก"
 
-#: lib/screenshooter-dialogs.c:1265 src/main.c:76
+#: lib/screenshooter-dialogs.c:1265 src/main.c:72
 msgid "Application to open the screenshot"
 msgstr "โปรแกรมที่จะใช้เปิดภาพหน้าจอ"
 
@@ -298,100 +298,116 @@ msgstr "<b>ไม่สามารถเรียกโปรแกรมทำ
 msgid "Error"
 msgstr "ข้อผิดพลาด"
 
-#: lib/screenshooter-capture-wayland.c:164
+#: lib/screenshooter-capture-wayland.c:195
 msgid "Failed to capture screencopy frame"
 msgstr "จับภาพช่องกรอบ screencopy ไม่สำเร็จ"
 
-#: lib/screenshooter-capture-wayland.c:194
+#: lib/screenshooter-capture-wayland.c:225
+#: lib/screenshooter-capture-wayland.c:389
 msgid "Failed to create file descriptor"
 msgstr "สร้างตัวอ้างแฟ้มไม่สำเร็จ"
 
-#: lib/screenshooter-capture-wayland.c:203
+#: lib/screenshooter-capture-wayland.c:234
+#: lib/screenshooter-capture-wayland.c:398
 msgid "Failed to map memory"
 msgstr "แม็ปหน่วยความจำไม่สำเร็จ"
 
-#: lib/screenshooter-capture-wayland.c:243
+#: lib/screenshooter-capture-wayland.c:303
+msgid "Failed to capture frame"
+msgstr ""
+
+#: lib/screenshooter-capture-wayland.c:382
+msgid "Supported format not found"
+msgstr ""
+
+#: lib/screenshooter-capture-wayland.c:410
+msgid "Failed to create buffer"
+msgstr ""
+
+#: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
 msgstr "การเชื่อมต่อ Wayland ที่จำเป็นขาดหายไป"
 
-#: lib/screenshooter-capture-wayland.c:248
+#: lib/screenshooter-capture-wayland.c:462
 msgid "Compositor is missing wl_shm"
 msgstr "Compositor ไม่มี wl_shm"
 
-#: lib/screenshooter-capture-wayland.c:253
-msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr "Compositor ไม่รองรับ wlr-screencopy-unstable-v1"
+#: lib/screenshooter-capture-wayland.c:467
+msgid ""
+"Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
+"capture-source-v1/ext-image-copy-capture-v1"
+msgstr ""
 
-#: lib/screenshooter-capture-wayland.c:332
+#: lib/screenshooter-capture-wayland.c:577
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
 msgstr ""
 
-#: lib/screenshooter-capture-wayland.c:407
+#: lib/screenshooter-capture-wayland.c:652
 msgid "The selected mode is not supported in Wayland"
 msgstr "โหมดที่เลือกยังไม่มีการรองรับใน Wayland"
 
-#: lib/screenshooter-capture-wayland.c:463
+#: lib/screenshooter-capture-wayland.c:720
 msgid "Failed to capture"
 msgstr "จับภาพไม่สำเร็จ"
 
-#: src/main.c:51
+#: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
 msgstr "คัดลอกภาพหน้าจอลงในคลิปบอร์ด"
 
-#: src/main.c:56
+#: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
 msgstr "ระยะเวลาเป็นวินาทีที่จะหยุดคอยก่อนจับภาพหน้าจอ"
 
-#: src/main.c:66
+#: src/main.c:62
 msgid "Display the mouse on the screenshot"
 msgstr "แสดงตัวชี้เมาส์ในภาพหน้าจอที่จับด้วย"
 
-#: src/main.c:71
+#: src/main.c:67
 msgid "Removes the window border from the screenshot"
 msgstr "ตัดกรอบหน้าต่างออกจากภาพหน้าจอที่จับ"
 
-#: src/main.c:81 panel-plugin/screenshooter-plugin.c:342
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:336
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "เลือกพื้นที่ที่จะจับภาพ โดยคลิกที่จุดจุดหนึ่งบนหน้าจอโดยไม่ต้องปล่อยปุ่มเมาส์ แล้วลากเมาส์ไปยังอีกมุมหนึ่งของพื้นที่ที่ต้องการ แล้วจึงปล่อยปุ่มเมาส์"
 
-#: src/main.c:88
+#: src/main.c:84
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
 msgstr "พาธของแฟ้มหรือไดเรกทอรีที่จะเก็บแฟ้มภาพหน้าจอ สามารถใช้นามสกุล png, jpg และ bmp ได้ ส่วน webp, jxl และ avif จะรองรับก็ต่อเมื่อมีการติดตั้งตัวโหลด pixbuf สำหรับรูปแบบนั้นๆ"
 
-#: src/main.c:93
+#: src/main.c:89
 msgid "Show the saved file in the folder."
 msgstr "แสดงแฟ้มที่บันทึกในหน้าต่างโฟลเดอร์"
 
-#: src/main.c:98
+#: src/main.c:94
 msgid "Version information"
 msgstr "ข้อมูลรุ่น"
 
-#: src/main.c:108
+#: src/main.c:104
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
 msgstr "แสดงรายชื่อรูปแบบรูปภาพที่รองรับ ซึ่งอาจต่างกันในระบบต่างๆ ขึ้นอยู่กับตัวโหลด pixbuf ที่ติดตั้งไว้"
 
-#: src/main.c:144
+#: src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "ตัวเลือกขัดแย้งกัน: --%s และ --%s ไม่สามารถใช้ร่วมกันได้\n"
 
-#: src/main.c:146
+#: src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "ตัวเลือก --%s จะใช้เมื่อมีการกำหนด --fullscreen, --window หรือ --region เท่านั้น ขอข้ามไป\n"
 
-#: src/main.c:157
+#: src/main.c:153
 #, c-format
 msgid ""
 "%s: %s\n"
