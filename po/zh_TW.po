@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-07-18 11:04+0200\n"
+"POT-Creation-Date: 2025-08-14 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2019-2025\n"
 "Language-Team: Chinese (Taiwan) (http://app.transifex.com/xfce/xfce-apps/language/zh_TW/)\n"
@@ -73,8 +73,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">要抓取的區域</span>
 msgid "Entire screen"
 msgstr "整個螢幕"
 
-#: lib/screenshooter-dialogs.c:952 src/main.c:61
-#: panel-plugin/screenshooter-plugin.c:332
+#: lib/screenshooter-dialogs.c:952 src/main.c:57
+#: panel-plugin/screenshooter-plugin.c:326
 msgid "Take a screenshot of the entire screen"
 msgstr "拍攝整個螢幕的螢幕快照"
 
@@ -82,8 +82,8 @@ msgstr "拍攝整個螢幕的螢幕快照"
 msgid "Active window"
 msgstr "使用中的視窗"
 
-#: lib/screenshooter-dialogs.c:964 src/main.c:103
-#: panel-plugin/screenshooter-plugin.c:337
+#: lib/screenshooter-dialogs.c:964 src/main.c:99
+#: panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the active window"
 msgstr "拍攝使用中視窗的螢幕快照"
 
@@ -178,7 +178,7 @@ msgstr "以此開啟："
 msgid "Open the screenshot with the chosen application"
 msgstr "以選定的應用程式開啟螢幕快照"
 
-#: lib/screenshooter-dialogs.c:1265 src/main.c:76
+#: lib/screenshooter-dialogs.c:1265 src/main.c:72
 msgid "Application to open the screenshot"
 msgstr "用來開啟螢幕快照的應用程式"
 
@@ -301,100 +301,116 @@ msgstr "<b>應用程式無法開啟。</b>\n%s"
 msgid "Error"
 msgstr "出錯"
 
-#: lib/screenshooter-capture-wayland.c:164
+#: lib/screenshooter-capture-wayland.c:195
 msgid "Failed to capture screencopy frame"
 msgstr "無法擷取螢幕副本影格"
 
-#: lib/screenshooter-capture-wayland.c:194
+#: lib/screenshooter-capture-wayland.c:225
+#: lib/screenshooter-capture-wayland.c:389
 msgid "Failed to create file descriptor"
 msgstr "建立檔案描述子失敗"
 
-#: lib/screenshooter-capture-wayland.c:203
+#: lib/screenshooter-capture-wayland.c:234
+#: lib/screenshooter-capture-wayland.c:398
 msgid "Failed to map memory"
 msgstr "記憶體對映失敗"
 
-#: lib/screenshooter-capture-wayland.c:243
+#: lib/screenshooter-capture-wayland.c:303
+msgid "Failed to capture frame"
+msgstr "擷取影格失敗"
+
+#: lib/screenshooter-capture-wayland.c:382
+msgid "Supported format not found"
+msgstr "找不到支援的格式"
+
+#: lib/screenshooter-capture-wayland.c:410
+msgid "Failed to create buffer"
+msgstr "建立緩衝失敗"
+
+#: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
 msgstr "缺少所需的 Wayland 介面"
 
-#: lib/screenshooter-capture-wayland.c:248
+#: lib/screenshooter-capture-wayland.c:462
 msgid "Compositor is missing wl_shm"
 msgstr "合成器缺少 wl_shm"
 
-#: lib/screenshooter-capture-wayland.c:253
-msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr "合成器不支援 wlr-screencopy-unstable-v1"
+#: lib/screenshooter-capture-wayland.c:467
+msgid ""
+"Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
+"capture-source-v1/ext-image-copy-capture-v1"
+msgstr "合成器不支援 wlr-screencopy-unstable-v1、ext-image-capture-source-v1、ext-image-copy-capture-v1"
 
-#: lib/screenshooter-capture-wayland.c:332
+#: lib/screenshooter-capture-wayland.c:577
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
 msgstr "不支援的畫素格式：0x%x"
 
-#: lib/screenshooter-capture-wayland.c:407
+#: lib/screenshooter-capture-wayland.c:652
 msgid "The selected mode is not supported in Wayland"
 msgstr "在 Wayland 中不支援選定的格式"
 
-#: lib/screenshooter-capture-wayland.c:463
+#: lib/screenshooter-capture-wayland.c:720
 msgid "Failed to capture"
 msgstr "擷取失敗"
 
-#: src/main.c:51
+#: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
 msgstr "將螢幕快照複製到剪貼簿中"
 
-#: src/main.c:56
+#: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
 msgstr "在拍攝螢幕快照前所等候的秒數"
 
-#: src/main.c:66
+#: src/main.c:62
 msgid "Display the mouse on the screenshot"
 msgstr "於螢幕快照中顯示滑鼠"
 
-#: src/main.c:71
+#: src/main.c:67
 msgid "Removes the window border from the screenshot"
 msgstr "從螢幕截圖中移除視窗邊框"
 
-#: src/main.c:81 panel-plugin/screenshooter-plugin.c:342
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:336
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "先按住螢幕中的某個點且不放開滑鼠按鈕，接著拖曳滑鼠至想抓區區域的對角，最後放開滑鼠按鈕；透過這樣的方式來選取要抓取的區域。"
 
-#: src/main.c:88
+#: src/main.c:84
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
 msgstr "螢幕截圖要儲存的檔案路徑或目錄，可接受 png、jpg 與 bmp 副檔名。webp、jxl 與 avif 僅在安裝了對應的 pixbuf 載入程式後才支援。"
 
-#: src/main.c:93
+#: src/main.c:89
 msgid "Show the saved file in the folder."
 msgstr "顯示資料夾中已儲存的檔案。"
 
-#: src/main.c:98
+#: src/main.c:94
 msgid "Version information"
 msgstr "版本資訊"
 
-#: src/main.c:108
+#: src/main.c:104
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
 msgstr "列出支援的影像格式，結果可能會取決於您所安裝的 pixbuf 載入程式而有所變化"
 
-#: src/main.c:144
+#: src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "衝突的選項：--%s 與 --%s 無法同時使用。\n"
 
-#: src/main.c:146
+#: src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "--%s 選項僅在給予 --fullscreen、--window 或 --region 時可以使用。它會被忽略。\n"
 
-#: src/main.c:157
+#: src/main.c:153
 #, c-format
 msgid ""
 "%s: %s\n"
