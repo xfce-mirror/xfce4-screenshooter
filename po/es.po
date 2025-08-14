@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-07-18 11:04+0200\n"
+"POT-Creation-Date: 2025-08-14 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Ignacio Poggi <ignaciop.3@gmail.com>, 2020,2023,2025\n"
 "Language-Team: Spanish (http://app.transifex.com/xfce/xfce-apps/language/es/)\n"
@@ -78,8 +78,8 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Área de captura</span>"
 msgid "Entire screen"
 msgstr "Toda la pantalla"
 
-#: lib/screenshooter-dialogs.c:952 src/main.c:61
-#: panel-plugin/screenshooter-plugin.c:332
+#: lib/screenshooter-dialogs.c:952 src/main.c:57
+#: panel-plugin/screenshooter-plugin.c:326
 msgid "Take a screenshot of the entire screen"
 msgstr "Tomar una captura de toda la pantalla"
 
@@ -87,8 +87,8 @@ msgstr "Tomar una captura de toda la pantalla"
 msgid "Active window"
 msgstr "Ventana activa"
 
-#: lib/screenshooter-dialogs.c:964 src/main.c:103
-#: panel-plugin/screenshooter-plugin.c:337
+#: lib/screenshooter-dialogs.c:964 src/main.c:99
+#: panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the active window"
 msgstr "Tomar una captura de la ventana activa"
 
@@ -183,7 +183,7 @@ msgstr "Abrir con:"
 msgid "Open the screenshot with the chosen application"
 msgstr "Abrir la captura con la aplicación elegida"
 
-#: lib/screenshooter-dialogs.c:1265 src/main.c:76
+#: lib/screenshooter-dialogs.c:1265 src/main.c:72
 msgid "Application to open the screenshot"
 msgstr "Aplicación para abrir la captura"
 
@@ -306,100 +306,116 @@ msgstr "<b>No se ha podido ejecutar la aplicación.</b>\n%s"
 msgid "Error"
 msgstr "Error"
 
-#: lib/screenshooter-capture-wayland.c:164
+#: lib/screenshooter-capture-wayland.c:195
 msgid "Failed to capture screencopy frame"
 msgstr "No se pudo capturar el marco de la copia de pantalla"
 
-#: lib/screenshooter-capture-wayland.c:194
+#: lib/screenshooter-capture-wayland.c:225
+#: lib/screenshooter-capture-wayland.c:389
 msgid "Failed to create file descriptor"
 msgstr "No se pudo crear el descriptor de archivo"
 
-#: lib/screenshooter-capture-wayland.c:203
+#: lib/screenshooter-capture-wayland.c:234
+#: lib/screenshooter-capture-wayland.c:398
 msgid "Failed to map memory"
 msgstr "No se pudo asignar la memoria"
 
-#: lib/screenshooter-capture-wayland.c:243
+#: lib/screenshooter-capture-wayland.c:303
+msgid "Failed to capture frame"
+msgstr ""
+
+#: lib/screenshooter-capture-wayland.c:382
+msgid "Supported format not found"
+msgstr ""
+
+#: lib/screenshooter-capture-wayland.c:410
+msgid "Failed to create buffer"
+msgstr ""
+
+#: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
 msgstr "Faltan las interfaces Wayland necesarias"
 
-#: lib/screenshooter-capture-wayland.c:248
+#: lib/screenshooter-capture-wayland.c:462
 msgid "Compositor is missing wl_shm"
 msgstr "Falta el compositor wl_shm"
 
-#: lib/screenshooter-capture-wayland.c:253
-msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr "Compositor no es compatible con wlr-screencopy-inestable-v1"
+#: lib/screenshooter-capture-wayland.c:467
+msgid ""
+"Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
+"capture-source-v1/ext-image-copy-capture-v1"
+msgstr ""
 
-#: lib/screenshooter-capture-wayland.c:332
+#: lib/screenshooter-capture-wayland.c:577
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
 msgstr "Formato de píxel no compatible: 0x%x"
 
-#: lib/screenshooter-capture-wayland.c:407
+#: lib/screenshooter-capture-wayland.c:652
 msgid "The selected mode is not supported in Wayland"
 msgstr "El modo seleccionado no es compatible con Wayland"
 
-#: lib/screenshooter-capture-wayland.c:463
+#: lib/screenshooter-capture-wayland.c:720
 msgid "Failed to capture"
 msgstr "No se pudo capturar"
 
-#: src/main.c:51
+#: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
 msgstr "Copiar la captura en el portapapeles"
 
-#: src/main.c:56
+#: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Tiempo de espera en segundos para tomar la captura"
 
-#: src/main.c:66
+#: src/main.c:62
 msgid "Display the mouse on the screenshot"
 msgstr "Mostrar el ratón en la captura"
 
-#: src/main.c:71
+#: src/main.c:67
 msgid "Removes the window border from the screenshot"
 msgstr "Elimina el borde de la ventana de la captura"
 
-#: src/main.c:81 panel-plugin/screenshooter-plugin.c:342
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:336
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "Para seleccionar un área de captura, haga clic en un punto de la pantalla y, sin soltar el botón del ratón, arrastre el ratón hasta la otra esquina del área y suelte el botón del ratón."
 
-#: src/main.c:88
+#: src/main.c:84
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
 msgstr "Ruta del archivo o directorio donde se guardará la captura, aceptando las extensiones png, jpg y bmp. webp, jxl y avif sólo son compatibles si están instalados sus respectivos cargadores pixbuf."
 
-#: src/main.c:93
+#: src/main.c:89
 msgid "Show the saved file in the folder."
 msgstr "Mostrar el archivo guardado en la carpeta."
 
-#: src/main.c:98
+#: src/main.c:94
 msgid "Version information"
 msgstr "Información de la versión"
 
-#: src/main.c:108
+#: src/main.c:104
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
 msgstr "Enumera los formatos de imagen admitidos; los resultados pueden variar según los cargadores de pixbuf instalados"
 
-#: src/main.c:144
+#: src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Opciones en conflicto: --%s y --%s no se pueden usar al mismo tiempo.\n"
 
-#: src/main.c:146
+#: src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "La opción --%s solo se puede usar con --fullscreen (pantalla completa), --window (ventana) o --region (área). Se ignorará.\n"
 
-#: src/main.c:157
+#: src/main.c:153
 #, c-format
 msgid ""
 "%s: %s\n"
