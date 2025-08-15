@@ -156,11 +156,11 @@ msgstr "Сачувај слику радне у датотеку"
 #. Show in folder checkbox
 #: lib/screenshooter-dialogs.c:1207
 msgid "Show in Folder"
-msgstr "Приказуј у фасцикли"
+msgstr "Приказуј у омоту"
 
 #: lib/screenshooter-dialogs.c:1214
 msgid "Shows the saved file in the folder"
-msgstr "Приказуј сачувану датотеку у фасцикли"
+msgstr "Приказуј сачувану датотеку у омоту"
 
 #: lib/screenshooter-dialogs.c:1222
 msgid "Copy to the clipboard"
@@ -317,15 +317,15 @@ msgstr "Нисам успео да створим карту памети"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "Нисам успео да снимим оквир"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "Нисам пронашао подржани облик датотеке"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "Нисам успео да створим међумеморију"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -339,7 +339,7 @@ msgstr "Слагачу приказа недостаје wl_shm"
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "Слагач приказа не подржава wlr-screencopy-unstable-v1 нити ext-image-capture-source-v1/ext-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
@@ -382,11 +382,11 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr "Путања датотеке или фасцикле где ће се сачувати слика радне површи, прихвата наставке пнг, јпг и бмп. вебп, јхл и авиф у подржане само ако су њихови одговарајући програми читачи уграђени."
+msgstr "Путања датотеке или омота где ће се сачувати слика радне површи, прихвата наставке пнг, јпг и бмп. вебп, јхл и авиф у подржане само ако су њихови одговарајући програми читачи уграђени."
 
 #: src/main.c:89
 msgid "Show the saved file in the folder."
-msgstr "Приказуј сачувану датотеку у фасцикли."
+msgstr "Приказуј сачувану датотеку у омоту."
 
 #: src/main.c:94
 msgid "Version information"
