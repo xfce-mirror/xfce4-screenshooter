@@ -88,7 +88,7 @@ action_idle (gpointer user_data)
       else
         {
           gchar *filename;
-          const gchar *temp;
+          gchar *temp;
 
           if (sd->screenshot_dir == NULL)
             sd->screenshot_dir = screenshooter_get_xdg_image_dir_uri ();
@@ -112,6 +112,7 @@ action_idle (gpointer user_data)
               g_free (sd->screenshot_dir);
               temp = g_path_get_dirname (save_location);
               sd->screenshot_dir = g_build_filename ("file://", temp, NULL);
+              g_free (temp);
               TRACE ("New save directory: %s", sd->screenshot_dir);
             }
           else if (!sd->action_specified)
