@@ -313,15 +313,15 @@ msgstr "Mälukasutuse juhtimine ei õnnestunud"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "Kaadri jäädvustamine ei õnnestunud"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "Toetatud vormingut ei leidu"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "Puhvri loomine ei õnnestunud"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -335,7 +335,7 @@ msgstr "Komposiitoril on puudu wl_shm"
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "Komposiitor ei toeta wlr-screencopy-unstable-v1 ega ext-image-capture-source-v1/ext-image-copy-capture-v1 meetodeid"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
