@@ -321,15 +321,15 @@ msgstr "内存映射失败"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "捕获帧失败"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "未找到支持的格式"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "创建缓冲区失败"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -343,7 +343,7 @@ msgstr "合成器缺少 wl_shm"
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "合成器不支持 wlr-screencopy-unstable-v1，也不支持 ext-image-capture-source-v1 和 ext-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
