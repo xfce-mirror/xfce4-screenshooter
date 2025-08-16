@@ -517,6 +517,7 @@ screenshooter_show_file_in_folder (const gchar *save_location)
 {
   GDBusProxy *proxy;
   GVariantBuilder *builder;
+  GVariant *variant;
   gchar *uri, *startup_id;
 
   if (save_location == NULL)
@@ -535,9 +536,12 @@ screenshooter_show_file_in_folder (const gchar *save_location)
   builder = g_variant_builder_new (G_VARIANT_TYPE ("as"));
   g_variant_builder_add (builder, "s", uri);
 
-  g_dbus_proxy_call_sync (proxy, "ShowItems",
-                          g_variant_new ("(ass)", builder, startup_id),
-                          G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL);
+  variant = g_dbus_proxy_call_sync (proxy, "ShowItems",
+                                    g_variant_new ("(ass)", builder, startup_id),
+                                    G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL);
+  g_object_unref (proxy);
+  if (variant != NULL)
+    g_variant_unref (variant);
 
   g_variant_builder_unref (builder);
   g_free (startup_id);
