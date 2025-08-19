@@ -314,15 +314,15 @@ msgstr "メモリのマッピングに失敗しました"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "フレームのキャプチャに失敗しました"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "サポートされている形式が見つかりません"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "バッファの作成に失敗しました"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -336,7 +336,7 @@ msgstr "コンポジターに wlshm がありません(_S)"
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "コンポジターが wlr-screencopy-unstable-v1 も ext-image-capture-source-v1/ext-image-copy-capture-v1 もサポートしていません"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
