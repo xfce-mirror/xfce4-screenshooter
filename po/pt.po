@@ -318,15 +318,15 @@ msgstr "Falha ao mapear a memória"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "Falha ao capturar o fotograma"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "Formato suportado não encontrado"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "Falha ao criar buffer"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -340,7 +340,7 @@ msgstr "O compositor está com wl_shm em falta"
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "O Compositor não suporta wlr-screencopy-unstable-v1 nem ext-image-capture-source-v1/ext-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
