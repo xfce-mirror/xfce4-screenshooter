@@ -330,34 +330,34 @@ msgstr "Nepodarilo sa vytvoriť vyrovnávaciu pamäť"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "Chýbajú požadované rozhrania Waylandu"
 
 #: lib/screenshooter-capture-wayland.c:462
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "Chýba kompozitor wl_shm"
 
 #: lib/screenshooter-capture-wayland.c:467
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "Kompozitor nepodporuje wlr-screencopy-unstable-v1 ani ext-image-capture-source-v1/ext-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
-msgstr ""
+msgstr "Nepodporovaný formát pixelov: 0x%x"
 
 #: lib/screenshooter-capture-wayland.c:652
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "Vybraný režim nie je podporovaný vo Waylande"
 
 #: lib/screenshooter-capture-wayland.c:720
 msgid "Failed to capture"
-msgstr ""
+msgstr "Nepodarilo sa zachytiť"
 
 #: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
-msgstr "Kopírovať snímok do oschránky"
+msgstr "Kopírovať snímku obrazovky do schránky"
 
 #: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
@@ -365,7 +365,7 @@ msgstr "Oneskorenie pred vytvorením snímky obrazovky v sekundách"
 
 #: src/main.c:62
 msgid "Display the mouse on the screenshot"
-msgstr "Zobrazí myš na snímke obrazovky"
+msgstr "Zobrazí kurzor myši na snímke obrazovky"
 
 #: src/main.c:67
 msgid "Removes the window border from the screenshot"
@@ -383,7 +383,7 @@ msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Cesta alebo adresár súboru, kde sa uloží snímka obrazovky akceptuje rozšírenia PNG, JPG a BMP. WebP, JXL a AviF sú podporované iba vtedy, ak sú nainštalované príslušné zavádzače PixBuF."
 
 #: src/main.c:89
 msgid "Show the saved file in the folder."
@@ -397,7 +397,7 @@ msgstr "Informácie o verzii"
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Zoznamy podporovaných formátov obrázkov, výsledky sa môžu líšiť v závislosti od nainštalovaných zavádzačov PixBUF"
 
 #: src/main.c:140
 #, c-format
@@ -426,11 +426,11 @@ msgstr "Vytvorí snímku celej obrazovky, aktívneho okna, alebo vybranej oblast
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Aplikácia a doplnok panela na zachytenie snímok obrazovky"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -439,4 +439,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "Umožňuje zachytiť celú obrazovku, aktívne okno alebo vybranú oblasť. Môžete nastaviť oneskorenie, ktoré uplynie pred snímaním obrazovky a akciu, ktorá sa uskutoční pomocou snímky obrazovky: Uložte ju do súboru, skopírujte ju do schránky, otvorte ju pomocou inej aplikácie alebo použite svoju kreativitu s vlastnými akciami."
