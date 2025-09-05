@@ -115,7 +115,7 @@ msgstr "Αποτύπωση του δείκτη του ποντικιού"
 
 #: lib/screenshooter-dialogs.c:1035
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Εμφάνιση του δείκτη του ποντικιού στο στιγμιότυπο οθόνης"
+msgstr "Εμφάνιση του δείκτη του ποντικιού στο στιγμιότυπο"
 
 #: lib/screenshooter-dialogs.c:1042
 msgid "Capture the window border"
@@ -311,24 +311,24 @@ msgstr "Απέτυχε η λήψη"
 #: lib/screenshooter-capture-wayland.c:225
 #: lib/screenshooter-capture-wayland.c:389
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "Απέτυχε η δημιουργία αρχείου περιγραφής"
 
 #: lib/screenshooter-capture-wayland.c:234
 #: lib/screenshooter-capture-wayland.c:398
 msgid "Failed to map memory"
-msgstr ""
+msgstr "Απέτυχε η αντιστοίχιση μνήμης"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "Απέτυχε η λήψη εικόνας"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "Δεν υποστηρίζεται η μορφή"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "Απέτυχε η δημιουργία προσωρινής μνήμης"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -336,13 +336,13 @@ msgstr "Δεν υπάρχουν οι απαιτούμενες διεπαφές �
 
 #: lib/screenshooter-capture-wayland.c:462
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "Λείπει ο συνθέτης wl_shm"
 
 #: lib/screenshooter-capture-wayland.c:467
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "Ο συνθέτης δεν υποστηρίζει wlr-screencopy-unstable-v1 ούτε ext-image-capture-source-v1/ext-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
