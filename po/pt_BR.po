@@ -15,6 +15,7 @@
 # Lucas Wilm <lucaswilm@gmail.com>, 2021-2022
 # Michael Martins, 2014
 # Michael Martins, 2022,2024-2025
+# Michael Martins, 2025
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2013
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2019,2024
 # secipolla <secipolla@gmail.com>, 2011
@@ -26,7 +27,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-08-14 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Michael Martins, 2022,2024-2025\n"
+"Last-Translator: Michael Martins, 2025\n"
 "Language-Team: Portuguese (Brazil) (http://app.transifex.com/xfce/xfce-apps/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -329,15 +330,15 @@ msgstr "Falha ao mapear a memória"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "Falha ao capturar quadro"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "Formato suportado não encontrado"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "Falha ao criar buffer"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -351,7 +352,7 @@ msgstr "O compositor está com wl_shm em falta"
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "O Compositor não suporta wlr-screencopy-suntable-v1 nem ext-image-capture-source-contra1-imagem-1/ex-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
