@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-06-06 00:51+0200\n"
+"POT-Creation-Date: 2025-08-14 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Gheyret Kenji <gheyret@yahoo.com>, 2013\n"
 "Language-Team: Uyghur (http://app.transifex.com/xfce/xfce-apps/language/ug/)\n"
@@ -18,381 +18,395 @@ msgstr ""
 "Language: ug\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/screenshooter-dialogs.c:503
+#: lib/screenshooter-dialogs.c:514
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fKb / %.2fKb"
 
-#: lib/screenshooter-dialogs.c:606
+#: lib/screenshooter-dialogs.c:617
 msgid "Transfer"
-msgstr "يوللاش"
+msgstr "يوللا"
 
-#: lib/screenshooter-dialogs.c:627
+#: lib/screenshooter-dialogs.c:638
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ئېكران كۆرۈنۈشىنى يوللايدىغان ئورۇن</span>"
 
-#: lib/screenshooter-dialogs.c:867 lib/screenshooter-dialogs.c:876
-#: lib/screenshooter-dialogs.c:1128 lib/screenshooter-utils.c:133
-#: lib/screenshooter-utils.c:175 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
+#: lib/screenshooter-dialogs.c:1139 lib/screenshooter-utils.c:135
+#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "ئېكران كۆرۈنۈشى"
 
-#: lib/screenshooter-dialogs.c:869 lib/screenshooter-dialogs.c:879
+#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:890
 msgid "_Preferences"
-msgstr ""
+msgstr "مايىللىق(_P)"
 
-#: lib/screenshooter-dialogs.c:870 lib/screenshooter-dialogs.c:878
-#: lib/screenshooter-dialogs.c:1130
+#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:889
+#: lib/screenshooter-dialogs.c:1141
 msgid "_Help"
 msgstr "ياردەم(_H)"
 
-#: lib/screenshooter-dialogs.c:871 lib/screenshooter-dialogs.c:1463
+#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1478
 msgid "_Close"
-msgstr "تاقا(_C)"
+msgstr "ياپ(_C)"
 
-#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:1132
+#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1143
 msgid "_Cancel"
-msgstr ""
+msgstr "ۋاز كەچ(_C)"
 
-#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:1133
+#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1144
 msgid "_OK"
-msgstr ""
+msgstr "جەزملە(_O)"
 
-#: lib/screenshooter-dialogs.c:914
+#: lib/screenshooter-dialogs.c:925
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">تۇتىدىغان دائىرە</span>"
 
-#: lib/screenshooter-dialogs.c:936
+#: lib/screenshooter-dialogs.c:947
 msgid "Entire screen"
 msgstr "پۈتۈن ئېكران"
 
-#: lib/screenshooter-dialogs.c:941 src/main.c:61
-#: panel-plugin/screenshooter-plugin.c:332
+#: lib/screenshooter-dialogs.c:952 src/main.c:57
+#: panel-plugin/screenshooter-plugin.c:326
 msgid "Take a screenshot of the entire screen"
-msgstr "پۈتۈن ئېكراننىڭ ئېكران كۆرۈنۈشىنى تۇتۇش"
+msgstr "پۈتۈن ئېكراننىڭ ئېكران كۆرۈنۈشىنى تۇتىدۇ"
 
-#: lib/screenshooter-dialogs.c:950
+#: lib/screenshooter-dialogs.c:961
 msgid "Active window"
 msgstr "ئاكتىپ كۆزنەك"
 
-#: lib/screenshooter-dialogs.c:953 src/main.c:103
-#: panel-plugin/screenshooter-plugin.c:337
+#: lib/screenshooter-dialogs.c:964 src/main.c:99
+#: panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the active window"
-msgstr "ئاكتىپ كۆزنەكنىڭ ئېكران كۆرۈنۈشىنى تۇتۇش"
+msgstr "ئاكتىپ كۆزنەكنىڭ ئېكران كۆرۈنۈشىنى تۇتىدۇ"
 
-#: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
+#: lib/screenshooter-dialogs.c:973 lib/screenshooter-dialogs.c:1000
 msgid "Not supported in Wayland"
-msgstr ""
+msgstr "Wayland دە قوللىمايدۇ"
 
-#: lib/screenshooter-dialogs.c:973
+#: lib/screenshooter-dialogs.c:984
 msgid "Select a region"
-msgstr "دائىرە تاللا"
+msgstr "دائىرە تاللىنىدۇ"
 
-#: lib/screenshooter-dialogs.c:976
+#: lib/screenshooter-dialogs.c:987
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr ""
+msgstr "چاشقىنەكنى بېسىپ قويۇۋەتمەي، رەسىمگە ئالىدىغان دائىرىنى كۆرسىتىپ بېرىڭ. تۆت بۇلۇڭلۇق دائىرە رەسىمگە ئېلىنىدۇ.\n\nسۆرىگەندە Ctrl كۇنۇپكىسى بېسىپ تۇرۇلسا دائىرە يۆتكىلىدۇ."
 
-#: lib/screenshooter-dialogs.c:1000
+#: lib/screenshooter-dialogs.c:1011
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
-
-#: lib/screenshooter-dialogs.c:1020
-msgid "Capture the mouse pointer"
-msgstr "چاشقىنەك نۇر بەلگىسىنى رەسىمگە تارتىش"
-
-#: lib/screenshooter-dialogs.c:1024
-msgid "Display the mouse pointer on the screenshot"
-msgstr "ئېكران كۆرۈنۈشىنى چاشقىنەك نۇربەلگىسىنى كۆرسىتىش"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">تاللانما</span>"
 
 #: lib/screenshooter-dialogs.c:1031
-msgid "Capture the window border"
-msgstr ""
+msgid "Capture the mouse pointer"
+msgstr "چاشقىنەك نىشانلىغۇچنى رەسىمگە تارتىدۇ"
 
-#: lib/screenshooter-dialogs.c:1036
+#: lib/screenshooter-dialogs.c:1035
+msgid "Display the mouse pointer on the screenshot"
+msgstr "ئېكران كۆرۈنۈشىنى چاشقىنەك نىشانلىغۇچنى كۆرسىتىدۇ"
+
+#: lib/screenshooter-dialogs.c:1042
+msgid "Capture the window border"
+msgstr "كۆزنەك گىرۋىكىنى تۇتىدۇ"
+
+#: lib/screenshooter-dialogs.c:1047
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "ئېكران كەسمىسىدە كۆزنەك گىرۋىكىنى كۆرسىتىدۇ.\nبۇ تاللانما چەكلەنسە CSD كۆزنەككە تەسىر كۆرسەتمەيدۇ."
 
-#: lib/screenshooter-dialogs.c:1060
+#: lib/screenshooter-dialogs.c:1071
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">رەسىمگە ئېلىشتىن بۇرۇنقى توختاش ۋاقتى</span>"
 
-#: lib/screenshooter-dialogs.c:1084
+#: lib/screenshooter-dialogs.c:1095
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "رەسىمگە ئېلىشتىن بۇرۇنقى توختاش ۋاقتى(سېكۇنت)"
 
-#: lib/screenshooter-dialogs.c:1087
+#: lib/screenshooter-dialogs.c:1098
 msgid "seconds"
 msgstr "سېكۇنت"
 
-#: lib/screenshooter-dialogs.c:1131
+#: lib/screenshooter-dialogs.c:1142
 msgid "_Back"
-msgstr "كەينىگە(_B)"
+msgstr "قايت(_B)"
 
-#: lib/screenshooter-dialogs.c:1171
+#: lib/screenshooter-dialogs.c:1182
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ھەرىكەت</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1186
+#: lib/screenshooter-dialogs.c:1197
 msgid "Save"
 msgstr "ساقلا"
 
-#: lib/screenshooter-dialogs.c:1192
+#: lib/screenshooter-dialogs.c:1203
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "ئېكران كەسمىسىنى ھۆججەتكە ساقلايدۇ"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1196
+#: lib/screenshooter-dialogs.c:1207
 msgid "Show in Folder"
-msgstr ""
+msgstr "قىسقۇچتا كۆرسەت"
 
-#: lib/screenshooter-dialogs.c:1203
+#: lib/screenshooter-dialogs.c:1214
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "ساقلانغان ھۆججەتنى قىسقۇچتا كۆرسىتىدۇ"
 
-#: lib/screenshooter-dialogs.c:1211
+#: lib/screenshooter-dialogs.c:1222
 msgid "Copy to the clipboard"
-msgstr "چاپلاش تاختىسىغا كۆچۈرۈش"
+msgstr "چاپلاش تاختىسىغا كۆچۈر"
 
-#: lib/screenshooter-dialogs.c:1213
+#: lib/screenshooter-dialogs.c:1224
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "ئېكران كۆرۈنۈشىنى چاپلاش تاختىسىغا قا كۆچۈرۈپ قويىدۇ، بۇنداق بولغاندا كېيىن ئۇنى چاپلاپ ئىشلەتكىلى بولىدۇ"
 
-#: lib/screenshooter-dialogs.c:1227
+#: lib/screenshooter-dialogs.c:1238
 msgid "Open with:"
-msgstr "بۇنىڭدا ئاچ:"
+msgstr "ئاچقۇز:"
 
-#: lib/screenshooter-dialogs.c:1235
+#: lib/screenshooter-dialogs.c:1246
 msgid "Open the screenshot with the chosen application"
-msgstr "ئېكران كۆرۈنۈشىنى تاللانغان پروگراممىدا ئاچىدۇ"
+msgstr "ئېكران كۆرۈنۈشىنى تاللانغان پىروگراممىدا ئاچىدۇ"
 
-#: lib/screenshooter-dialogs.c:1254 src/main.c:76
+#: lib/screenshooter-dialogs.c:1265 src/main.c:72
 msgid "Application to open the screenshot"
-msgstr "ئېكران كۆرۈنۈشىنى ئاچىدىغان پروگرامما"
+msgstr "ئېكران كۆرۈنۈشىنى ئاچىدىغان پىروگرامما"
 
-#: lib/screenshooter-dialogs.c:1268
+#: lib/screenshooter-dialogs.c:1279
 msgid "Custom Action:"
-msgstr ""
+msgstr "ئىختىيارى مەشغۇلات:"
 
-#: lib/screenshooter-dialogs.c:1276
+#: lib/screenshooter-dialogs.c:1287
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "تاللانغان ئىختىيارى مەشغۇلاتنى ئىجرا قىلىدۇ"
 
-#: lib/screenshooter-dialogs.c:1288
+#: lib/screenshooter-dialogs.c:1299
 msgid "Custom action to execute"
-msgstr ""
+msgstr "ئىجرا قىلىدىغان ئىختىيارى مەشغۇلات"
 
-#: lib/screenshooter-dialogs.c:1311
+#: lib/screenshooter-dialogs.c:1322
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ئالدىن كۆر</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ئالدىن كۆزەت</span>"
 
-#: lib/screenshooter-dialogs.c:1372
+#: lib/screenshooter-dialogs.c:1383
 msgid "Save screenshot as..."
 msgstr "ئېكران كۆرۈنۈشىنى باشقا ئاتتا ساقلا..."
 
-#: lib/screenshooter-dialogs.c:1461
+#: lib/screenshooter-dialogs.c:1476
 msgid "Preferences"
-msgstr "تەڭشەكلەر"
+msgstr "مايىللىق"
 
-#: lib/screenshooter-dialogs.c:1486
+#: lib/screenshooter-dialogs.c:1501
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ئىختىيارى مەشغۇلات</span>"
 
-#: lib/screenshooter-dialogs.c:1505
+#: lib/screenshooter-dialogs.c:1521
 msgid ""
 "You can configure custom actions that will be available to handle "
-"screenshots after they are captured."
-msgstr ""
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr "ئېكران كەسمىسىنى تۇتقاندىن كېيىن ئۇلارنى بىر تەرەپ قىلىشقا قولايلىق يارىتىش ئۈچۈن ئىختىيارى مەشغۇلاتنى سەپلىيەلەيسىز.سىز  <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">قوللانما</a> دىن تېخىمۇ كۆپ مىسالنى تاپالايسىز."
 
-#: lib/screenshooter-dialogs.c:1535
+#: lib/screenshooter-dialogs.c:1551
 msgid "Custom Action"
-msgstr ""
+msgstr "ئىختىيارى مەشغۇلات"
 
-#: lib/screenshooter-dialogs.c:1548
+#: lib/screenshooter-dialogs.c:1564
 msgid "Add custom action"
-msgstr ""
+msgstr "ئىختىيارى مەشغۇلات قوش"
 
-#: lib/screenshooter-dialogs.c:1555
+#: lib/screenshooter-dialogs.c:1571
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "تاللانغان ئىختىيارى مەشغۇلاتنى چىقىرىۋەت"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1577
+#: lib/screenshooter-dialogs.c:1593
 msgid "Name"
 msgstr "ئاتى"
 
-#: lib/screenshooter-dialogs.c:1578
+#: lib/screenshooter-dialogs.c:1594
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "مەشغۇلات سۆزلەشكۈدە كۆرسىتىلىدىغان مەشغۇلاتنىڭ ئىسمى"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1587
+#: lib/screenshooter-dialogs.c:1603
 msgid "Command"
 msgstr "بۇيرۇق"
 
-#: lib/screenshooter-dialogs.c:1588
+#: lib/screenshooter-dialogs.c:1604
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "بۇ ئىختىيارى مەشغۇلاتتا ئىجرا قىلىنىدىغان بۇيرۇق"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1611
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
-
-#: lib/screenshooter-custom-actions.c:183
-msgid "Host on Imgur™"
-msgstr ""
+msgstr "ئېكران كەسمىسى تۇتۇشتا ئورۇن ئۇچۇرىغا %f ئورۇن بەلگىسى ئىشلىتىلىدۇ"
 
 #: lib/screenshooter-custom-actions.c:211
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "ئىختىيارى مەشغۇلاتنى ئىجرا قىلالمايدۇ"
 
 #: lib/screenshooter-custom-actions.c:211
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "ئىناۋەتسىز ئىختىيارى مەشغۇلات تاللاندى"
 
-#: lib/screenshooter-custom-actions.c:237
+#: lib/screenshooter-custom-actions.c:228
 #, c-format
 msgid "Failed to run the custom action %s"
-msgstr ""
+msgstr "ئىختىيارى مەشغۇلات %s نى ئىجرا قىلالمىدى"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
-msgstr ""
+msgstr "PNG ھۆججىتى"
 
 #: lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG ھۆججىتى"
 
 #: lib/screenshooter-format.c:33
 msgid "BMP File"
-msgstr ""
+msgstr "BMP ھۆججىتى"
 
 #: lib/screenshooter-format.c:34
 msgid "WebP File"
-msgstr ""
+msgstr "WebP ھۆججىتى"
 
 #: lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "JPEG XL ھۆججىتى"
 
 #: lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF ھۆججىتى"
 
-#: lib/screenshooter-utils.c:322
+#: lib/screenshooter-utils.c:321
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
-msgstr ""
+msgstr "<b>پىروگراممىنى قوزغىتالمايدۇ.</b>\n%s"
 
-#: lib/screenshooter-utils.c:399
+#: lib/screenshooter-utils.c:398
 msgid "Error"
 msgstr "خاتالىق"
 
-#: lib/screenshooter-capture-wayland.c:164
+#: lib/screenshooter-capture-wayland.c:195
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "ئېكران كۆپەيتىلمىسىنىڭ كاندۇكىنى تۇتالمىدى"
 
-#: lib/screenshooter-capture-wayland.c:194
+#: lib/screenshooter-capture-wayland.c:225
+#: lib/screenshooter-capture-wayland.c:389
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "ھۆججەت چۈشەندۈرگۈچنى قۇرالمىدى"
 
-#: lib/screenshooter-capture-wayland.c:203
+#: lib/screenshooter-capture-wayland.c:234
+#: lib/screenshooter-capture-wayland.c:398
 msgid "Failed to map memory"
-msgstr ""
+msgstr "ئەسلەك خەرىتىلىيەلمىدى"
 
-#: lib/screenshooter-capture-wayland.c:243
+#: lib/screenshooter-capture-wayland.c:303
+msgid "Failed to capture frame"
+msgstr "كاندۇكنى تۇتالمىدى"
+
+#: lib/screenshooter-capture-wayland.c:382
+msgid "Supported format not found"
+msgstr "قوللايدىغان پىچىم تېپىلمىدى"
+
+#: lib/screenshooter-capture-wayland.c:410
+msgid "Failed to create buffer"
+msgstr "يىغلەك قۇرالمىدى"
+
+#: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
-msgstr ""
+msgstr "زۆرۈر بولغان Wayland ئارايۈزى كەم"
 
-#: lib/screenshooter-capture-wayland.c:248
+#: lib/screenshooter-capture-wayland.c:462
 msgid "Compositor is missing wl_shm"
-msgstr ""
+msgstr "بىرىكتۈرگۈچ wl_shm كەم"
 
-#: lib/screenshooter-capture-wayland.c:253
-msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
+#: lib/screenshooter-capture-wayland.c:467
+msgid ""
+"Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
+"capture-source-v1/ext-image-copy-capture-v1"
+msgstr "بىرىكتۈرگۈچ wlr-screencopy-unstable-v1 نى قوللىمايدۇ، ext-image-capture-source-v1/ext-image-copy-capture-v1 نىمۇ قوللىمايدۇ"
 
-#: lib/screenshooter-capture-wayland.c:311
+#: lib/screenshooter-capture-wayland.c:577
 #, c-format
-msgid "Unsupported pixel format: %d"
-msgstr ""
+msgid "Unsupported pixel format: 0x%x"
+msgstr "قوللىمايدىغان پىكسېل پىچىمى: 0x%x"
 
-#: lib/screenshooter-capture-wayland.c:386
+#: lib/screenshooter-capture-wayland.c:652
 msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgstr "Wayland تاللانغان ھالەتنى  قوللىمايدۇ"
 
-#: lib/screenshooter-capture-wayland.c:442
+#: lib/screenshooter-capture-wayland.c:720
 msgid "Failed to capture"
-msgstr ""
+msgstr "تۇتالمىدى"
 
-#: src/main.c:51
+#: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
 msgstr "ئېكران كۆرۈنۈشىنى چاپلاش تاختىسىغا قا كۆچۈرىدۇ"
 
-#: src/main.c:56
+#: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
 msgstr "ئېكران كۆرۈنۈشىنى رەسىمگە ئېلىش باشلانغۇچە بولغان ۋاقىت"
 
-#: src/main.c:66
+#: src/main.c:62
 msgid "Display the mouse on the screenshot"
 msgstr "ئېكران كۆرۈنۈشىدە چاشقىنەك نۇر بەلگىسىنى كۆرسەت"
 
-#: src/main.c:71
+#: src/main.c:67
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "ئېكران كەسمىسىدىن كۆزنەك گىرۋىكىنى چىقىرىۋېتىدۇ"
 
-#: src/main.c:81 panel-plugin/screenshooter-plugin.c:342
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:336
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "چاشقىنەكنى بېسىپ قويۇۋەتمەي، رەسىمگە ئالىدىغان دائىرىنى كۆرسىتىپ بېرىڭ. تۆت بۇلۇڭلۇق دائىرە رەسىمگە ئېلىنىدۇ."
 
-#: src/main.c:88
+#: src/main.c:84
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "ئېكران كەسمىسىنى ساقلايدىغان ھۆججەت يولى ياكى مۇندەرىجە، png، jpg ۋە bmp كېڭەيتىلگەن ئاتىنى قوللايدۇ. مۇناسىپ pixbuf يۈكلىگۈچ ئورنىتىلغاندا ئاندىن webp، jxl ۋە avif نى قوللايدۇ."
 
-#: src/main.c:93
+#: src/main.c:89
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "ساقلانغان ھۆججەتنى قىسقۇچتا كۆرسىتىدۇ."
 
-#: src/main.c:98
+#: src/main.c:94
 msgid "Version information"
 msgstr "نەشر ئۇچۇرى"
 
-#: src/main.c:108
+#: src/main.c:104
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "قوللايدىغان سۈرەت پىچىمىنى تىزىدۇ، نەتىجىسى ئورناتقان pixbuf يۈكلىگۈچكە ئاساسەن پەرقلىق بولىدۇ"
 
-#: src/main.c:144
+#: src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "توقۇنۇشۇپ قالىدىغان تاللانمىلار : --%s ۋە --%s نى بىرگە ئىشلىتىشكە بولمايدۇ.\n"
 
-#: src/main.c:146
+#: src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "تالانما --%s  نى پەقەت  --fullscreen ، --window ياكى -- region بىلەنلا ئىشلىتىشكە بولىدۇ. شۇڭا بۇنىڭغا پەرۋا قىلمايدۇ.\n"
 
-#: src/main.c:157
+#: src/main.c:153
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -403,15 +417,15 @@ msgstr "%s: %s\nبۇيرۇق قۇرىدا ئىشلەتكىلى بولىدىغا�
 #: panel-plugin/screenshooter.desktop.in:5
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "تولۇق ئېكران، ئاكتىپ كۆزنەك ياكى كۆرسىتىلگەن دائىرىنىڭ ئېكران كۆرۈنۈشىنى رەسىمگە ئالىدۇ."
+msgstr "تولۇق ئېكران، ئاكتىپ كۆزنەك ياكى كۆرسىتىلگەن دائىرىنىڭ ئېكران كۆرۈنۈشىنى رەسىمگە ئالىدۇ"
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "ئېكران كەسمىسى تۇتىدىغان پىروگرامما ۋە كۆزنەكچە قىستۇرمىسى"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -420,4 +434,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "پۈتكۈل ئېكران، ئاكتىپ كۆزنەك ۋە تاللانغان دائىرىدىن سۈرەت تۇتۇشقا يول قويىدۇ. ئېكراندىن سۈرەت تۇتۇشتىن ئىلگىرى كېچىكتۈرىدىغان ۋاقىت ۋە ئېكران كەسمىسىنى تۇتقاندىن كېيىن ئىجرا قىلىدىغان مەشغۇلاتنى تەڭشىيەلەيسىز: ئۇنى ھۆججەتكە ساقلاپ، چاپلاش تاختىسىغا كۆچۈرۈپ، باشقا پىروگراممىدا ئېچىپ ياكى ئىجادچانلىقىڭىزنى جارى قىلدۇرۇپ ئىختىيارى مەشغۇلات ئېلىپ بارالايسىز."
