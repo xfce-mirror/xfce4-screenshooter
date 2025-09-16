@@ -28,6 +28,7 @@ void       screenshooter_get_screen_geometry      (GdkRectangle   *geometry);
 GdkWindow *screenshooter_get_active_window        (GdkScreen      *screen,
                                                    gboolean       *needs_unref,
                                                    gboolean       *border);
+GdkWindow *screenshooter_get_window_at_cursor     (void);
 GdkPixbuf *screenshooter_pixbuf_get_from_window   (GdkWindow      *window,
                                                    gint            src_x,
                                                    gint            src_y,
