@@ -322,15 +322,15 @@ msgstr "Klarte ikke mappe minne"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "Klarte ikke fange inn ramme"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "Fant ingen støttede formater"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "Klarte ikke opprette buffer"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -344,7 +344,7 @@ msgstr "Kompositor mangler wl_shm"
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "Kompositøren støtter ikke wlr-screencopy-unstable-v1 eller ext-image-capture-source-v1/ext-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
