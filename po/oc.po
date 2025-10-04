@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-08-14 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Quentin PAGÈS, 2020\n"
+"Last-Translator: Quentin PAGÈS, 2020,2022-2025\n"
 "Language-Team: Occitan (post 1500) (http://app.transifex.com/xfce/xfce-apps/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,7 +75,7 @@ msgstr "L'ecran tot entièr"
 #: lib/screenshooter-dialogs.c:952 src/main.c:57
 #: panel-plugin/screenshooter-plugin.c:326
 msgid "Take a screenshot of the entire screen"
-msgstr "Prene una captura d'ecran de l'ecran tot entièr"
+msgstr "Prendre una captura d'ecran de l'ecran tot entièr"
 
 #: lib/screenshooter-dialogs.c:961
 msgid "Active window"
@@ -84,7 +84,7 @@ msgstr "La fenèstra activa"
 #: lib/screenshooter-dialogs.c:964 src/main.c:99
 #: panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the active window"
-msgstr "Prene una captura d'ecran de la fenèstra activa"
+msgstr "Prendre una captura d'ecran de la fenèstra activa"
 
 #: lib/screenshooter-dialogs.c:973 lib/screenshooter-dialogs.c:1000
 msgid "Not supported in Wayland"
@@ -420,7 +420,7 @@ msgstr "%s : %s\nEnsajatz %s --help per afichar la lista de las opcions de linha
 #: panel-plugin/screenshooter.desktop.in:5
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Prene una captura d'ecran de l'ecran tot entièr, de la fenèstra activa o d'una zòna"
+msgstr "Prendre una captura d'ecran de l'ecran tot entièr, de la fenèstra activa o d'una zòna"
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
