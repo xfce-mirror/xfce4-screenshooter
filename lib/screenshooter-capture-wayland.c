@@ -27,7 +27,9 @@
 #include <protocols/ext-image-copy-source-v1-client.h>
 #include <libxfce4util/libxfce4util.h>
 
+#include "glib-object.h"
 #include "screenshooter-global.h"
+#include "screenshooter-select.h"
 #include "screenshooter-utils.h"
 
 
@@ -630,16 +632,9 @@ GdkPixbuf
 }
 
 
-
-/* Public */
-
-
-
-GdkPixbuf
-*screenshooter_capture_screenshot_wayland (gint     region,
-                                           gint     delay,
-                                           gboolean show_mouse,
-                                           gboolean show_border)
+static GdkPixbuf
+*screenshooter_capture_fullscreen (gboolean show_mouse,
+                                   gboolean show_border)
 {
   int n_monitors;
   gboolean failure = FALSE;
@@ -647,13 +642,6 @@ GdkPixbuf
   ClientData client_data = {};
   GdkPixbuf *screenshot = NULL;
 
-  if (region != FULLSCREEN)
-    {
-      screenshooter_error (_("The selected mode is not supported in Wayland"));
-      return NULL;
-    }
-
-  /* only fullscreen is supported for now */
   TRACE ("Get the screenshot of the entire screen");
 
   /* initializate the wayland client */
@@ -725,4 +713,54 @@ GdkPixbuf
   g_list_free_full (outputs, screenshooter_free_output_data);
 
   return screenshot;
+}
+
+
+
+static GdkPixbuf
+*screenshooter_capture_region (gint     delay,
+                               gboolean show_mouse,
+                               gboolean show_border)
+{
+
+  GdkRectangle region;
+  GdkPixbuf *screenshot = NULL, *clipped;
+
+  if (G_UNLIKELY (!screenshooter_select_region (&region)))
+    return NULL;
+
+  // FIXME consider delay, maybe extract code shared with x11 to utils
+  // TODO check if there is a more efficient way to do this, maybe exclude outputs out of the region
+  screenshot = screenshooter_capture_fullscreen (show_mouse, show_border);
+  clipped = gdk_pixbuf_new_subpixbuf (screenshot, region.x, region.y, region.width, region.height);
+  g_object_unref (screenshot);
+
+  return clipped;
+}
+
+
+
+/* Public */
+
+
+
+GdkPixbuf
+*screenshooter_capture_screenshot_wayland (gint     region,
+                                           gint     delay,
+                                           gboolean show_mouse,
+                                           gboolean show_border)
+{
+  if (region == FULLSCREEN)
+    {
+      return screenshooter_capture_fullscreen (show_mouse, show_border);
+    }
+  if (region == SELECT)
+    {
+      return screenshooter_capture_region (delay, show_mouse, show_border);
+    }
+  else
+    {
+      screenshooter_error (_("The selected mode is not supported in Wayland"));
+      return NULL;
+    }
 }
