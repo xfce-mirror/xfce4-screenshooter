@@ -27,7 +27,6 @@
 #include <protocols/ext-image-copy-source-v1-client.h>
 #include <libxfce4util/libxfce4util.h>
 
-#include "glib-object.h"
 #include "screenshooter-global.h"
 #include "screenshooter-select.h"
 #include "screenshooter-utils.h"
@@ -725,6 +724,7 @@ static GdkPixbuf
 
   GdkRectangle region;
   GdkPixbuf *screenshot = NULL, *clipped;
+  int root_width, root_height;
 
   if (G_UNLIKELY (!screenshooter_select_region (&region)))
     return NULL;
@@ -732,6 +732,24 @@ static GdkPixbuf
   // FIXME consider delay, maybe extract code shared with x11 to utils
   // TODO check if there is a more efficient way to do this, maybe exclude outputs out of the region
   screenshot = screenshooter_capture_fullscreen (show_mouse, show_border);
+
+  /* Avoid rectangle parts outside the screen */
+  if (region.x < 0)
+    region.width += region.x;
+  if (region.y < 0)
+    region.height += region.y;
+
+  region.x = MAX(0, region.x);
+  region.y = MAX(0, region.y);
+
+  root_width = gdk_pixbuf_get_width (screenshot);
+  root_height = gdk_pixbuf_get_height (screenshot);
+
+  if (region.x + region.width > root_width)
+    region.width = root_width - region.x;
+  if (region.y + region.height > root_height)
+    region.height = root_height - region.y;
+
   clipped = gdk_pixbuf_new_subpixbuf (screenshot, region.x, region.y, region.width, region.height);
   g_object_unref (screenshot);
 

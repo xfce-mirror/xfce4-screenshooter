@@ -55,6 +55,7 @@ libscreenshooter = static_library(
   dependencies: [
     glib,
     gtk,
+    gtk_layer_shell,
     exo,
     libxfce4ui,
     libxfce4util,
