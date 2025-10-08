@@ -62,6 +62,7 @@ typedef struct
 typedef struct
 {
   GtkWidget *window;
+  GdkMonitor *monitor;
   GdkRectangle monitor_geometry;
 } OverlayData;
 
@@ -221,6 +222,8 @@ static gboolean cb_button_released (GtkWidget *widget,
     {
       if (rbdata->rubber_banding && rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
         {
+          gtk_widget_destroy (rbdata->size_window);
+          rbdata->size_window = NULL;
           gtk_main_quit ();
           return TRUE;
         }
@@ -228,6 +231,102 @@ static gboolean cb_button_released (GtkWidget *widget,
     }
 
   return FALSE;
+}
+
+
+
+static gboolean cb_size_window_draw (GtkWidget *widget,
+                                     cairo_t *cr,
+                                     gpointer user_data)
+{
+  cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+  cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, 0.0);
+  cairo_paint (cr);
+
+  return FALSE;
+}
+
+
+
+static void size_window_get_offset (GtkWidget *widget,
+                                    gint digits,
+                                    gint digit_width,
+                                    gint line_height,
+                                    gint x_event,
+                                    gint y_event,
+                                    gint *x_offset,
+                                    gint *y_offset)
+{
+  GdkRectangle geometry;
+  gint relative_x, relative_y, text_width;
+
+  GdkDisplay *display = gtk_widget_get_display (widget);
+  GdkMonitor *monitor = gdk_display_get_monitor_at_point (display, x_event, y_event);
+  gdk_monitor_get_geometry (monitor, &geometry);
+
+  relative_x = x_event - geometry.x;
+  relative_y = y_event - geometry.y;
+
+  *x_offset = -2;
+  *y_offset = -4;
+
+  /* Add 3/4 of a digit width as right padding */
+  text_width = (digits + 0.75) * digit_width;
+  /* Add 10% of line height as bottom padding */
+  line_height = line_height * 1.1;
+
+  if (relative_x > geometry.width - text_width)
+    *x_offset -= text_width;
+
+  if (relative_y > geometry.height - line_height)
+    *y_offset -= line_height;
+}
+
+
+
+static void create_size_window (RubberBandData *rbdata)
+{
+  GtkWidget *window, *label;
+  GtkCssProvider *css_provider;
+  GtkStyleContext *context;
+  GdkVisual *visual;
+
+  rbdata->size_window = window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_layer_init_for_window (GTK_WINDOW (window));
+  gtk_layer_set_layer (GTK_WINDOW (window), GTK_LAYER_SHELL_LAYER_OVERLAY);
+  gtk_layer_set_anchor (GTK_WINDOW (window), GTK_LAYER_SHELL_EDGE_TOP, TRUE);
+  gtk_layer_set_anchor (GTK_WINDOW (window), GTK_LAYER_SHELL_EDGE_LEFT, TRUE);
+  gtk_container_set_border_width (GTK_CONTAINER (window), 0);
+  gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
+  gtk_window_set_default_size (GTK_WINDOW (window), 100, 50);
+  gtk_widget_set_size_request (GTK_WIDGET (window), 100, 50);
+  gtk_window_set_decorated (GTK_WINDOW (window), FALSE);
+  gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
+  gtk_window_set_skip_taskbar_hint (GTK_WINDOW (window), FALSE);
+  g_signal_connect (G_OBJECT (window), "draw",
+                    G_CALLBACK (cb_size_window_draw), NULL);
+
+  visual = gdk_screen_get_rgba_visual (gtk_widget_get_screen (window));
+  gtk_widget_set_visual (window, visual);
+
+  rbdata->size_label = label = gtk_label_new ("");
+  gtk_label_set_xalign (GTK_LABEL (label), 0.0);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_widget_set_margin_start (label, 6);
+  gtk_widget_set_margin_top (label, 6);
+  gtk_container_add (GTK_CONTAINER (window), label);
+
+  css_provider = gtk_css_provider_new ();
+  gtk_css_provider_load_from_data (css_provider,
+    "label { font-family: monospace; color: #fff; text-shadow: 1px 1px 0px black; }", -1, NULL);
+
+  context = gtk_widget_get_style_context (GTK_WIDGET (label));
+  gtk_style_context_add_provider (context,
+                                  GTK_STYLE_PROVIDER (css_provider),
+                                  GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  g_object_unref (css_provider);
+
+  gtk_widget_show_all (GTK_WIDGET (window));
 }
 
 
@@ -252,6 +351,7 @@ static gboolean cb_motion_notify (GtkWidget *widget,
       TRACE ("Mouse is moving with left button pressed");
 
       overlay = lookup_overlay (widget, rbdata);
+      /* The event x and y under wayland are relative to the monitor */
       event_x_root = overlay->monitor_geometry.x + event->x;
       event_y_root = overlay->monitor_geometry.y + event->y;
       new_rect = &rbdata->rectangle;
@@ -265,6 +365,8 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           old_rect.x = rbdata->x;
           old_rect.y = rbdata->y;
           old_rect.height = old_rect.width = 1;
+
+          gtk_layer_set_monitor (GTK_WINDOW (rbdata->size_window), overlay->monitor);
         }
       else
         {
@@ -320,28 +422,27 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           PangoContext *context;
           PangoFontMetrics *metrics;
 
-          // layout = gtk_label_get_layout (GTK_LABEL (rbdata->size_label));
-          // context = pango_layout_get_context (layout);
-          // metrics = pango_context_get_metrics (context,
-          //                                      pango_context_get_font_description (context),
-          //                                      pango_context_get_language (context));
+          layout = gtk_label_get_layout (GTK_LABEL (rbdata->size_label));
+          context = pango_layout_get_context (layout);
+          metrics = pango_context_get_metrics (context,
+                                               pango_context_get_font_description (context),
+                                               pango_context_get_language (context));
 
-          // digit_width = PANGO_PIXELS_CEIL (pango_font_metrics_get_approximate_digit_width (metrics));
-          // line_height = PANGO_PIXELS_CEIL (pango_font_metrics_get_height (metrics));
+          digit_width = PANGO_PIXELS_CEIL (pango_font_metrics_get_approximate_digit_width (metrics));
+          line_height = PANGO_PIXELS_CEIL (pango_font_metrics_get_height (metrics));
 
-          // pango_font_metrics_unref (metrics);
+          pango_font_metrics_unref (metrics);
         }
 
-      // size_window_get_offset (rbdata->size_window, strlen (coords),
-      //                         digit_width, line_height,
-      //                         event->x, event->y,
-      //                         &x_offset, &y_offset);
+      size_window_get_offset (rbdata->size_window, strlen (coords),
+                              digit_width, line_height,
+                              event->x, event->y,
+                              &x_offset, &y_offset);
 
-      // gtk_window_move (GTK_WINDOW (rbdata->size_window),
-      //                  event->x + x_offset,
-      //                  event->y + y_offset);
+      gtk_layer_set_margin (GTK_WINDOW (rbdata->size_window), GTK_LAYER_SHELL_EDGE_LEFT, event->x + x_offset);
+      gtk_layer_set_margin (GTK_WINDOW (rbdata->size_window), GTK_LAYER_SHELL_EDGE_TOP, event->y + y_offset);
 
-      // gtk_label_set_text (GTK_LABEL (rbdata->size_label), coords);
+      gtk_label_set_text (GTK_LABEL (rbdata->size_label), coords);
       g_free (coords);
 
       region = cairo_region_create_rectangle (&old_rect);
@@ -462,6 +563,9 @@ screenshooter_select_region_wayland (GdkRectangle *region)
       gtk_widget_show_now (window);
       gdk_window_set_cursor (gtk_widget_get_window (window), xhair_cursor);
     }
+
+  /* Set up the window showing the screenshot size */
+  create_size_window (&rbdata);
 
   gtk_main ();
   g_slist_foreach (rbdata.overlays, (GFunc) (void (*)(void)) destroy_overlay, NULL);
