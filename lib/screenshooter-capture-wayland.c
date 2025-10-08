@@ -729,7 +729,15 @@ static GdkPixbuf
   if (G_UNLIKELY (!screenshooter_select_region (&region)))
     return NULL;
 
-  // FIXME consider delay, maybe extract code shared with x11 to utils
+  /* Clear the display before capturing */
+  wl_display_roundtrip (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
+
+    /* Await the specified delay, but not less than 200ms */
+  if (delay == 0)
+    g_usleep (200000);
+  else
+    sleep (delay);
+
   // TODO check if there is a more efficient way to do this, maybe exclude outputs out of the region
   screenshot = screenshooter_capture_fullscreen (show_mouse, show_border);
 
@@ -739,8 +747,8 @@ static GdkPixbuf
   if (region.y < 0)
     region.height += region.y;
 
-  region.x = MAX(0, region.x);
-  region.y = MAX(0, region.y);
+  region.x = MAX (0, region.x);
+  region.y = MAX (0, region.y);
 
   root_width = gdk_pixbuf_get_width (screenshot);
   root_height = gdk_pixbuf_get_height (screenshot);
