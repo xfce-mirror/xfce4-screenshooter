@@ -742,21 +742,33 @@ static GdkPixbuf
   screenshot = screenshooter_capture_fullscreen (show_mouse, show_border);
 
   /* Avoid rectangle parts outside the screen */
+  root_width = gdk_pixbuf_get_width (screenshot);
+  root_height = gdk_pixbuf_get_height (screenshot);
+
   if (region.x < 0)
     region.width += region.x;
   if (region.y < 0)
     region.height += region.y;
 
-  region.x = MAX (0, region.x);
-  region.y = MAX (0, region.y);
-
-  root_width = gdk_pixbuf_get_width (screenshot);
-  root_height = gdk_pixbuf_get_height (screenshot);
+  region.x = MAX (0, MIN (region.x, root_width));
+  region.y = MAX (0, MIN (region.y, root_height));
 
   if (region.x + region.width > root_width)
     region.width = root_width - region.x;
   if (region.y + region.height > root_height)
     region.height = root_height - region.y;
+
+  if (region.width == 0 && region.x == root_width)
+    {
+      region.width = 1;
+      region.x--;
+    }
+  if (region.height == 0 && region.y == root_height)
+    {
+      region.height = 1;
+      region.y--;
+    }
+
 
   clipped = gdk_pixbuf_new_subpixbuf (screenshot, region.x, region.y, region.width, region.height);
   g_object_unref (screenshot);
