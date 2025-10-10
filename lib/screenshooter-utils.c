@@ -200,9 +200,9 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   sd->show_in_folder = show_in_folder;
   sd->custom_action_command = last_custom_action_command;
 
-  /* Under Wayland force FULLSCREEN region */
+  /* Under Wayland force FULLSCREEN region if a non supported region is loaded */
 #ifdef ENABLE_WAYLAND
-  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()) && sd->region == ACTIVE_WINDOW)
     {
       sd->region = FULLSCREEN;
     }
