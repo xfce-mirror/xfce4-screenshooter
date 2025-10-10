@@ -222,8 +222,6 @@ static gboolean cb_button_released (GtkWidget *widget,
     {
       if (rbdata->rubber_banding && rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
         {
-          gtk_widget_destroy (rbdata->size_window);
-          rbdata->size_window = NULL;
           gtk_main_quit ();
           return TRUE;
         }
@@ -366,6 +364,7 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           old_rect.y = rbdata->y;
           old_rect.height = old_rect.width = 1;
 
+          create_size_window (rbdata);
           gtk_layer_set_monitor (GTK_WINDOW (rbdata->size_window), overlay->monitor);
         }
       else
@@ -560,17 +559,15 @@ screenshooter_select_region_wayland (GdkRectangle *region)
       g_signal_connect (window, "button-release-event", G_CALLBACK (cb_button_released), &rbdata);
       g_signal_connect (window, "motion-notify-event", G_CALLBACK (cb_motion_notify), &rbdata);
 
-      gtk_widget_show_now (window);
+      gtk_widget_show_all (window);
       gdk_window_set_cursor (gtk_widget_get_window (window), xhair_cursor);
     }
-
-  /* Set up the window showing the screenshot size */
-  create_size_window (&rbdata);
 
   gtk_main ();
   g_slist_foreach (rbdata.overlays, (GFunc) (void (*)(void)) destroy_overlay, NULL);
   g_slist_free (rbdata.overlays);
   g_object_unref (xhair_cursor);
+  gtk_widget_destroy (rbdata.size_window);
 
   if (rbdata.cancelled)
     return FALSE;
