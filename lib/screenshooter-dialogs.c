@@ -489,9 +489,9 @@ static cairo_surface_t
   gint height = THUMB_Y_SIZE;
 
   if (G_LIKELY (w >= h))
-    height = width * h / w;
+    height = MAX (1, width * h / w);
   else
-    width = height * w / h;
+    width = MAX (1, height * w / h);
 
   scaled_screenshot = gdk_pixbuf_scale_simple (screenshot, width * scale_factor, height * scale_factor, GDK_INTERP_BILINEAR);
   surface = gdk_cairo_surface_create_from_pixbuf (scaled_screenshot, scale_factor, NULL);
