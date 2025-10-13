@@ -350,8 +350,10 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 
       overlay = lookup_overlay (widget, rbdata);
       /* The event x and y under wayland are relative to the monitor */
-      event_x_root = overlay->monitor_geometry.x + event->x;
-      event_y_root = overlay->monitor_geometry.y + event->y;
+      /* It is weird but at the top left of the monitor the event x,y is 1,1
+       * not 0,0. For this reason we need to substract 1 */
+      event_x_root = overlay->monitor_geometry.x + event->x - 1;
+      event_y_root = overlay->monitor_geometry.y + event->y - 1;
       new_rect = &rbdata->rectangle;
 
       if (!rbdata->rubber_banding)
@@ -435,7 +437,7 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 
       size_window_get_offset (rbdata->size_window, strlen (coords),
                               digit_width, line_height,
-                              event->x, event->y,
+                              event_x_root, event_y_root,
                               &x_offset, &y_offset);
 
       gtk_layer_set_margin (GTK_WINDOW (rbdata->size_window), GTK_LAYER_SHELL_EDGE_LEFT, event->x + x_offset);
