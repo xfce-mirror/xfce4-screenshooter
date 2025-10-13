@@ -63,6 +63,7 @@ typedef struct {
   gboolean has_format;
   gboolean capture_done;
   gboolean capture_failed;
+  gboolean skip_composition;
   enum wl_output_transform transform;
   struct ext_image_copy_capture_session_v1 *image_copy_capture_session;
   struct ext_image_copy_capture_frame_v1 *image_copy_capture_frame;
@@ -614,8 +615,11 @@ GdkPixbuf
   /* composite each screenshot onto the destination pixbuf */
   for (GList *iter = outputs; iter != NULL; iter = iter->next)
     {
+      GdkPixbuf *pixbuf;
       OutputData *output = (OutputData *) iter->data;
-      GdkPixbuf *pixbuf = screenshooter_convert_buffer_to_pixbuf (output);
+      if (output->skip_composition)
+        continue;
+      pixbuf = screenshooter_convert_buffer_to_pixbuf (output);
       gdk_monitor_get_geometry (output->monitor, &geometry);
       gdk_pixbuf_composite (pixbuf, dest,
                             geometry.x, geometry.y,
@@ -631,9 +635,11 @@ GdkPixbuf
 }
 
 
+
 static GdkPixbuf
 *screenshooter_capture_fullscreen (gboolean show_mouse,
-                                   gboolean show_border)
+                                   gboolean show_border,
+                                   GdkRectangle* selection_region)
 {
   int n_monitors;
   gboolean failure = FALSE;
@@ -654,6 +660,8 @@ static GdkPixbuf
   n_monitors = gdk_display_get_n_monitors (gdk_display_get_default ());
   for (int i = 0; i < n_monitors; i++)
     {
+      OutputData *output;
+      GdkRectangle monitor_geometry;
       GdkMonitor *monitor = gdk_display_get_monitor (gdk_display_get_default (), i);
       struct wl_output *wl_output = gdk_wayland_monitor_get_wl_output (monitor);
       if (wl_output == NULL)
@@ -662,10 +670,24 @@ static GdkPixbuf
           continue;
         }
 
-      OutputData *output = g_new0 (OutputData, 1);
+      output = g_new0 (OutputData, 1);
       outputs = g_list_append (outputs, output);
       output->monitor = monitor;
       output->client_data = &client_data;
+
+      /* Do not capture output if the selection region is present and is not in the monitor */
+      if (selection_region != NULL)
+        {
+          gdk_monitor_get_geometry (monitor, &monitor_geometry);
+          if (!gdk_rectangle_intersect (&monitor_geometry, selection_region, NULL))
+            {
+              output->capture_done = TRUE;
+              output->skip_composition = TRUE;
+              output->width = monitor_geometry.width;
+              output->height = monitor_geometry.height;
+              continue;
+            }
+        }
 
       if (client_data.output_image_capture_source_manager != NULL)
         {
@@ -738,13 +760,11 @@ static GdkPixbuf
   else
     sleep (delay);
 
-  // TODO check if there is a more efficient way to do this, maybe exclude outputs out of the region
-  screenshot = screenshooter_capture_fullscreen (show_mouse, show_border);
-
-  /* Avoid rectangle parts outside the screen */
+  screenshot = screenshooter_capture_fullscreen (show_mouse, show_border, &region);
   root_width = gdk_pixbuf_get_width (screenshot);
   root_height = gdk_pixbuf_get_height (screenshot);
 
+  /* Avoid rectangle parts outside the screen */
   if (region.x < 0)
     region.width += region.x;
   if (region.y < 0)
@@ -758,6 +778,7 @@ static GdkPixbuf
   if (region.y + region.height > root_height)
     region.height = root_height - region.y;
 
+  /* Avoid regions if 0 width or height */
   if (region.width == 0 && region.x == root_width)
     {
       region.width = 1;
@@ -790,7 +811,7 @@ GdkPixbuf
 {
   if (region == FULLSCREEN)
     {
-      return screenshooter_capture_fullscreen (show_mouse, show_border);
+      return screenshooter_capture_fullscreen (show_mouse, show_border, NULL);
     }
   if (region == SELECT)
     {
