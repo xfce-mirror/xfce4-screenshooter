@@ -68,33 +68,6 @@ typedef struct
 
 
 
-static OverlayData* lookup_overlay (GtkWidget      *widget,
-                                    RubberBandData *rbdata)
-{
-  GSList *l;
-  OverlayData* result = NULL;
-
-  for (l = rbdata->overlays; l != NULL; l = l->next)
-    {
-      OverlayData *data = l->data;
-      if (GTK_WIDGET (data->window) == widget)
-        {
-          result = l->data;
-          break;
-        }
-    }
-
-  if (result == NULL)
-    {
-      screenshooter_error (_("Failed to find overlay info"));
-      g_abort ();
-    }
-
-  return result;
-}
-
-
-
 static void destroy_overlay (OverlayData *overlay)
 {
   gtk_widget_destroy (overlay->window);
@@ -161,7 +134,7 @@ static gboolean cb_draw (GtkWidget      *widget,
       cairo_rectangle_int_t intersection;
       cairo_rectangle_int_t selection_rect_local = rbdata->rectangle;
 
-      overlay = lookup_overlay (widget, rbdata);
+      overlay = g_object_get_data (G_OBJECT (widget), "overlay");
 
       /* Translate global selection rectangle to local window coordinates */
       selection_rect_local.x -= overlay->monitor_geometry.x;
@@ -200,7 +173,7 @@ static gboolean cb_button_pressed (GtkWidget *widget,
 
       TRACE ("Left button pressed");
 
-      overlay = lookup_overlay (widget, rbdata);
+      overlay = g_object_get_data (G_OBJECT (widget), "overlay");
 
       rbdata->left_pressed = TRUE;
       rbdata->x_root = overlay->monitor_geometry.x + event->x;
@@ -348,7 +321,7 @@ static gboolean cb_motion_notify (GtkWidget *widget,
 
       TRACE ("Mouse is moving with left button pressed");
 
-      overlay = lookup_overlay (widget, rbdata);
+      overlay = g_object_get_data (G_OBJECT (widget), "overlay");
       /* The event x and y under wayland are relative to the monitor */
       /* It is weird but at the top left of the monitor the event x,y is 1,1
        * not 0,0. For this reason we need to substract 1 */
@@ -522,6 +495,7 @@ screenshooter_select_region_wayland (GdkRectangle *region)
       overlay->window = window;
       gdk_monitor_get_geometry (monitor, &(overlay->monitor_geometry));
       rbdata.overlays = g_slist_append (rbdata.overlays, overlay);
+      g_object_set_data (G_OBJECT (window), "overlay", overlay);
 
       gtk_window_set_title (GTK_WINDOW (window), _("Screenshooter overlay"));
       gtk_window_set_decorated (GTK_WINDOW (window), FALSE);
