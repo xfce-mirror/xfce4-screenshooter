@@ -474,30 +474,11 @@ static GdkPixbuf
 *get_rectangle_screenshot (gint delay, gboolean show_mouse)
 {
   GdkRectangle region;
-  GdkPixbuf *screenshot;
   GdkWindow *root;
-  int root_width, root_height;
+  GdkPixbuf *screenshot;
 
   if (G_UNLIKELY (!screenshooter_select_region (&region)))
     return NULL;
-
-  root = gdk_get_default_root_window ();
-  root_width = gdk_window_get_width (root);
-  root_height = gdk_window_get_height (root);
-
-  /* Avoid rectangle parts outside the screen */
-  if (region.x < 0)
-    region.width += region.x;
-  if (region.y < 0)
-    region.height += region.y;
-
-  region.x = MAX(0, region.x);
-  region.y = MAX(0, region.y);
-
-  if (region.x + region.width > root_width)
-    region.width = root_width - region.x;
-  if (region.y + region.height > root_height)
-    region.height = root_height - region.y;
 
   /* Await the specified delay, but not less than 200ms */
   if (delay == 0)
@@ -507,6 +488,7 @@ static GdkPixbuf
 
   /* Get the screenshot's pixbuf */
   TRACE ("Get the pixbuf for the screenshot");
+  root = gdk_get_default_root_window ();
   screenshot = screenshooter_pixbuf_get_from_window (root, region.x, region.y, region.width, region.height);
 
   if (show_mouse)
