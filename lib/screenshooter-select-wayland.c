@@ -267,6 +267,7 @@ static void create_size_window (RubberBandData *rbdata)
   gtk_layer_set_layer (GTK_WINDOW (window), GTK_LAYER_SHELL_LAYER_OVERLAY);
   gtk_layer_set_anchor (GTK_WINDOW (window), GTK_LAYER_SHELL_EDGE_TOP, TRUE);
   gtk_layer_set_anchor (GTK_WINDOW (window), GTK_LAYER_SHELL_EDGE_LEFT, TRUE);
+  gtk_layer_set_exclusive_zone (GTK_WINDOW (window), -1);
   gtk_container_set_border_width (GTK_CONTAINER (window), 0);
   gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
   gtk_window_set_default_size (GTK_WINDOW (window), 100, 50);
@@ -493,6 +494,7 @@ screenshooter_select_region_wayland (GdkRectangle *region)
       window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
       overlay = g_new0 (OverlayData ,1);
       overlay->window = window;
+      overlay->monitor = monitor;
       gdk_monitor_get_geometry (monitor, &(overlay->monitor_geometry));
       rbdata.overlays = g_slist_append (rbdata.overlays, overlay);
       g_object_set_data (G_OBJECT (window), "overlay", overlay);
@@ -543,7 +545,8 @@ screenshooter_select_region_wayland (GdkRectangle *region)
   g_slist_foreach (rbdata.overlays, (GFunc) (void (*)(void)) destroy_overlay, NULL);
   g_slist_free (rbdata.overlays);
   g_object_unref (xhair_cursor);
-  gtk_widget_destroy (rbdata.size_window);
+  if (rbdata.size_window)
+    gtk_widget_destroy (rbdata.size_window);
 
   if (rbdata.cancelled)
     return FALSE;
