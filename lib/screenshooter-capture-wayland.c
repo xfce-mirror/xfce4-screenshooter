@@ -638,7 +638,6 @@ GdkPixbuf
 
 static GdkPixbuf
 *screenshooter_capture_fullscreen (gboolean show_mouse,
-                                   gboolean show_border,
                                    GdkRectangle* selection_region)
 {
   int n_monitors;
@@ -740,10 +739,8 @@ static GdkPixbuf
 
 static GdkPixbuf
 *screenshooter_capture_region (gint     delay,
-                               gboolean show_mouse,
-                               gboolean show_border)
+                               gboolean show_mouse)
 {
-
   GdkRectangle region;
   GdkPixbuf *screenshot = NULL, *clipped;
 
@@ -759,7 +756,7 @@ static GdkPixbuf
   else
     sleep (delay);
 
-  screenshot = screenshooter_capture_fullscreen (show_mouse, show_border, &region);
+  screenshot = screenshooter_capture_fullscreen (show_mouse, &region);
 
   clipped = gdk_pixbuf_new_subpixbuf (screenshot, region.x, region.y, region.width, region.height);
   g_object_unref (screenshot);
@@ -779,17 +776,23 @@ GdkPixbuf
                                            gboolean show_mouse,
                                            gboolean show_border)
 {
+  GdkPixbuf *screenshot = NULL;
+
   if (region == FULLSCREEN)
     {
-      return screenshooter_capture_fullscreen (show_mouse, show_border, NULL);
+      TRACE ("Get the screenshot of the entire screen");
+      screenshot = screenshooter_capture_fullscreen (show_mouse, NULL);
     }
-  if (region == SELECT)
+  else if (region == ACTIVE_WINDOW)
     {
-      return screenshooter_capture_region (delay, show_mouse, show_border);
-    }
-  else
-    {
+      TRACE ("Get the screenshot of the active window");
       screenshooter_error (_("The selected mode is not supported in Wayland"));
-      return NULL;
     }
+  else if (region == SELECT)
+    {
+      TRACE ("Let the user select the region to screenshot");
+      screenshot = screenshooter_capture_region (delay, show_mouse);
+    }
+
+  return screenshot;
 }
