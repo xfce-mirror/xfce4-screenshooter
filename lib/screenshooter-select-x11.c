@@ -956,13 +956,33 @@ screenshooter_select_region_x11 (GdkRectangle *region)
 {
   gboolean result;
   GdkScreen *screen;
+  GdkWindow *root;
+  gint root_width, root_height;
 
   screen = gdk_screen_get_default ();
 
   TRACE ("Let the user select the region to screenshot");
   result = gdk_screen_is_composited (screen) ?
-                get_rectangle_region_composited(region) :
+                get_rectangle_region_composited (region) :
                 get_rectangle_region (region);
+
+  root = gdk_get_default_root_window ();
+  root_width = gdk_window_get_width (root);
+  root_height = gdk_window_get_height (root);
+
+  /* Avoid rectangle parts outside the screen */
+  if (region->x < 0)
+    region->width += region->x;
+  if (region->y < 0)
+    region->height += region->y;
+
+  region->x = MAX (0, region->x);
+  region->y = MAX (0, region->y);
+
+  if (region->x + region->width > root_width)
+    region->width = root_width - region->x;
+  if (region->y + region->height > root_height)
+    region->height = root_height - region->y;
 
   return result;
 }

@@ -472,6 +472,7 @@ screenshooter_select_region_wayland (GdkRectangle *region)
   GdkCursor *xhair_cursor;
   GdkDisplay *display;
   int n_monitors;
+  GdkRectangle root_geometry = {0};
 
   if (!gtk_layer_is_supported())
     {
@@ -496,6 +497,7 @@ screenshooter_select_region_wayland (GdkRectangle *region)
       overlay->window = window;
       overlay->monitor = monitor;
       gdk_monitor_get_geometry (monitor, &(overlay->monitor_geometry));
+      gdk_rectangle_union (&(overlay->monitor_geometry), &root_geometry, &root_geometry);
       rbdata.overlays = g_slist_append (rbdata.overlays, overlay);
       g_object_set_data (G_OBJECT (window), "overlay", overlay);
 
@@ -555,6 +557,32 @@ screenshooter_select_region_wayland (GdkRectangle *region)
   region->y = rbdata.rectangle.y;
   region->width = rbdata.rectangle.width;
   region->height = rbdata.rectangle.height;
+
+  /* Avoid rectangle parts outside the screen */
+  if (region->x < 0)
+    region->width += region->x;
+  if (region->y < 0)
+    region->height += region->y;
+
+  region->x = MAX (0, MIN (region->x, root_geometry.width));
+  region->y = MAX (0, MIN (region->y, root_geometry.height));
+
+  if (region->x + region->width > root_geometry.width)
+    region->width = root_geometry.width - region->x;
+  if (region->y + region->height > root_geometry.height)
+    region->height = root_geometry.height - region->y;
+
+  /* Avoid regions with 0 width or height */
+  if (region->width == 0 && region->x == root_geometry.width)
+    {
+      region->width = 1;
+      region->x--;
+    }
+  if (region->height == 0 && region->y == root_geometry.height)
+    {
+      region->height = 1;
+      region->y--;
+    }
 
   return TRUE;
 }
