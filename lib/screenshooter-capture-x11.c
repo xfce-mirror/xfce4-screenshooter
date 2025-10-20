@@ -18,6 +18,7 @@
  */
 
 #include "screenshooter-capture-x11.h"
+#include "glib-object.h"
 
 #ifdef HAVE_XFIXES
 #include <X11/extensions/Xfixes.h>
@@ -52,6 +53,7 @@ typedef struct
   gboolean rubber_banding;
   gboolean cancelled;
   gboolean move_rectangle;
+  gboolean simple_click;
   gint anchor;
   gint x;
   gint y;
@@ -68,6 +70,7 @@ typedef struct
   gboolean pressed;
   gboolean cancelled;
   gboolean move_rectangle;
+  gboolean simple_click;
   gint anchor;
   cairo_rectangle_int_t rectangle;
   gint x1, y1; /* holds the position where the mouse was pressed */
@@ -99,7 +102,8 @@ static GdkFilterReturn  region_filter_func                  (GdkXEvent      *xev
                                                              GdkEvent       *event,
                                                              RbData         *rbdata);
 static GdkPixbuf       *get_rectangle_screenshot            (gint            delay,
-                                                             gboolean        show_mouse);
+                                                             gboolean        show_mouse,
+                                                             gboolean        show_border);
 static gboolean         cb_key_pressed                      (GtkWidget      *widget,
                                                              GdkEventKey    *event,
                                                              RubberBandData *rbdata);
@@ -119,7 +123,8 @@ static gboolean         cb_motion_notify                    (GtkWidget      *wid
                                                              GdkEventMotion *event,
                                                              RubberBandData *rbdata);
 static GdkPixbuf       *get_rectangle_screenshot_composited (gint            delay,
-                                                             gboolean        show_mouse);
+                                                             gboolean        show_mouse,
+                                                             gboolean        show_border);
 
 
 
@@ -673,16 +678,19 @@ static gboolean cb_button_released (GtkWidget *widget,
         {
           gtk_widget_destroy (rbdata->size_window);
           rbdata->size_window = NULL;
-          gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
-          return TRUE;
         }
       else
-        rbdata->left_pressed = rbdata->rubber_banding = FALSE;
+        {
+          rbdata->left_pressed = rbdata->rubber_banding = FALSE;
+          rbdata->simple_click = TRUE;
+        }
+
+      gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
+      return TRUE;
     }
 
   return FALSE;
 }
-
 
 
 
@@ -978,7 +986,7 @@ try_grab (GdkSeat *seat, GdkWindow *window, GdkCursor *cursor)
 
 
 static GdkPixbuf
-*get_rectangle_screenshot_composited (gint delay, gboolean show_mouse)
+*get_rectangle_screenshot_composited (gint delay, gboolean show_mouse, gboolean show_border)
 {
   GtkWidget *window;
   RubberBandData rbdata;
@@ -992,6 +1000,7 @@ static GdkPixbuf
   /* Initialize the rubber band data */
   rbdata.left_pressed = FALSE;
   rbdata.rubber_banding = FALSE;
+  rbdata.simple_click = FALSE;
   rbdata.x = rbdata.y = 0;
   rbdata.cancelled = FALSE;
   rbdata.move_rectangle = FALSE;
@@ -1066,6 +1075,24 @@ static GdkPixbuf
 
   if (rbdata.cancelled)
     goto cleanup;
+
+  if (rbdata.simple_click)
+    {
+      GdkWindow *target_window = screenshooter_get_window_at_cursor ();
+
+      if (target_window)
+        {
+          g_usleep (200000);
+          screenshot = get_window_screenshot (target_window, show_mouse, show_border);
+          g_object_unref (target_window);
+        }
+      else
+        {
+          /* TODO: Show error dialog */
+        }
+
+      goto cleanup;
+    }
 
   /* Grab the screenshot on the main window */
   screenshot = capture_rectangle_screenshot (rbdata.rectangle.x,
@@ -1322,7 +1349,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
 
 static GdkPixbuf
-*get_rectangle_screenshot (gint delay, gboolean show_mouse)
+*get_rectangle_screenshot (gint delay, gboolean show_mouse, gboolean show_border)
 {
   GdkPixbuf *screenshot = NULL;
   GdkWindow *root_window;
@@ -1393,6 +1420,7 @@ static GdkPixbuf
   rbdata.context = &gc;
   rbdata.pressed = FALSE;
   rbdata.cancelled = FALSE;
+  rbdata.simple_click = FALSE;
 
   /* Set the filter function to handle the GDK events */
   TRACE ("Add the events filter");
@@ -1409,17 +1437,36 @@ static GdkPixbuf
 
   gdk_seat_ungrab (seat);
 
-  /* Get the screenshot's pixbuf */
-  if (G_LIKELY (!rbdata.cancelled))
+  if (G_UNLIKELY (rbdata.cancelled))
+    goto cleanup;
+
+  if (rbdata.simple_click)
     {
-      TRACE ("Get the pixbuf for the screenshot");
-      screenshot = capture_rectangle_screenshot (rbdata.rectangle.x / scale,
-                                                 rbdata.rectangle.y / scale,
-                                                 rbdata.rectangle.width / scale,
-                                                 rbdata.rectangle.height / scale,
-                                                 delay, show_mouse);
+      GdkWindow *target_window = screenshooter_get_window_at_cursor ();
+
+      if (target_window)
+        {
+          g_usleep (200000);
+          screenshot = get_window_screenshot (target_window, show_mouse, show_border);
+          g_object_unref (target_window);
+        }
+      else
+        {
+          /* TODO: Show error dialog */
+        }
+
+      goto cleanup;
     }
 
+  /* Get the screenshot's pixbuf */
+  TRACE ("Get the pixbuf for the screenshot");
+  screenshot = capture_rectangle_screenshot (rbdata.rectangle.x / scale,
+                                             rbdata.rectangle.y / scale,
+                                             rbdata.rectangle.width / scale,
+                                             rbdata.rectangle.height / scale,
+                                             delay, show_mouse);
+
+  cleanup:
   if (G_LIKELY (gc != NULL))
     XFreeGC (display, gc);
 
@@ -1448,14 +1495,13 @@ static GdkPixbuf
  * the screenshot is captured after @delay seconds. If @region is
  * ACTIVE_WINDOW, a delay of @delay seconds elapses, then the active
  * window is detected and captured. If @region is SELECT, the user will
- * have to select a portion of the screen with the mouse. Then a delay of
- * @delay seconds elapses, and a screenshot is captured.
+ * have to select a portion of the screen with the mouse or simple click
+ * without moving the cursor to capture the active window screenshot.
+ * Then a delay of @delay seconds elapses, and a screenshot is captured.
  *
- * @show_mouse is only taken into account when @region is FULLSCREEN
- * or ACTIVE_WINDOW.
- *
- * @show_border is only taken into account when @region is ACTIVE_WINDOW
- * and if the window uses server side decorations.
+ * @show_border is only taken into account when @region is ACTIVE_WINDOW,
+ * or if a simple click is performed in SELECT mode, and if the window
+ * uses server side decorations.
  *
  * Return value: a #GdkPixbuf containing the screenshot or %NULL
  * (if @region is SELECT, the user can cancel the operation).
@@ -1501,8 +1547,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
     {
       TRACE ("Let the user select the region to screenshot");
       screenshot = gdk_screen_is_composited (screen) ?
-                    get_rectangle_screenshot_composited (delay, show_mouse) :
-                    get_rectangle_screenshot (delay, show_mouse);
+                    get_rectangle_screenshot_composited (delay, show_mouse, show_border) :
+                    get_rectangle_screenshot (delay, show_mouse, show_border);
     }
 
   return screenshot;
