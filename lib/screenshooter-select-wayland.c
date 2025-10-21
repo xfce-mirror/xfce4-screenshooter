@@ -33,6 +33,8 @@
 
 
 #define BACKGROUND_TRANSPARENCY 0.4
+#define DROP_SHADOW_SIZE 2
+#define SIZE_DISPLAY_OFFSET 4
 
 enum {
   ANCHOR_UNSET = 0,
@@ -52,10 +54,12 @@ typedef struct
   gint y;
   gint x_root;
   gint y_root;
+  gint cursor_x;
+  gint cursor_y;
+  cairo_rectangle_int_t old_text_rect;
   cairo_rectangle_int_t rectangle;
+  PangoLayout *text_layout;
   GSList *overlays;
-  GtkWidget *size_window;
-  GtkWidget *size_label;
 } RubberBandData;
 
 /* Overlay window data */
@@ -145,6 +149,9 @@ static gboolean cb_draw (GtkWidget      *widget,
                                    &(GdkRectangle) {0, 0, overlay->monitor_geometry.width, overlay->monitor_geometry.height},
                                    &intersection))
         {
+          gchar *coords;
+          gint rect_width, rect_height, x_offset, y_offset, text_width, text_height, x_text, y_text;
+
           /* First, clear the area of the selection from the dark overlay */
           cairo_set_operator (cr, CAIRO_OPERATOR_CLEAR);
           gdk_cairo_rectangle (cr, &intersection);
@@ -154,7 +161,56 @@ static gboolean cb_draw (GtkWidget      *widget,
           cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
           cairo_set_source_rgba (cr, 1.0f, 1.0f, 1.0f, 0.1f);
           gdk_cairo_rectangle (cr, &intersection);
-          cairo_fill(cr);
+          cairo_fill (cr);
+
+          /* If cursor is not in the current window/monitor, skip render the coords text */
+          if (rbdata->cursor_x < overlay->monitor_geometry.x ||
+              rbdata->cursor_x > overlay->monitor_geometry.x + overlay->monitor_geometry.width ||
+              rbdata->cursor_y < overlay->monitor_geometry.y ||
+              rbdata->cursor_y > overlay->monitor_geometry.y + overlay->monitor_geometry.height)
+            return FALSE;
+
+          rect_width = rbdata->rectangle.width;
+          rect_height = rbdata->rectangle.height;
+
+          /* Take into account when the rectangle is moved out of screen */
+          if (rbdata->rectangle.x < 0) rect_width += rbdata->rectangle.x;
+          if (rbdata->rectangle.y < 0) rect_height += rbdata->rectangle.y;
+
+          if (rbdata->text_layout == NULL)
+          {
+            rbdata->text_layout = pango_cairo_create_layout (cr);
+            pango_layout_set_font_description (rbdata->text_layout, pango_font_description_from_string ("monospace 10"));
+          }
+          coords = g_strdup_printf ("%d x %d", rect_width, rect_height);
+          pango_layout_set_text (rbdata->text_layout, coords, -1);
+          pango_layout_get_pixel_size (rbdata->text_layout, &text_width, &text_height);
+          g_free (coords);
+
+          x_offset = SIZE_DISPLAY_OFFSET;
+          y_offset = SIZE_DISPLAY_OFFSET;
+
+          if (rbdata->cursor_x - overlay->monitor_geometry.x > overlay->monitor_geometry.width - text_width - x_offset)
+            x_offset -= text_width + SIZE_DISPLAY_OFFSET;
+
+          if (rbdata->cursor_y - overlay->monitor_geometry.y > overlay->monitor_geometry.height - text_height - y_offset)
+            y_offset -= text_height + SIZE_DISPLAY_OFFSET;
+
+          rbdata->old_text_rect.x = rbdata->cursor_x + x_offset;
+          rbdata->old_text_rect.y = rbdata->cursor_y + y_offset;
+          rbdata->old_text_rect.width = text_width + DROP_SHADOW_SIZE;
+          rbdata->old_text_rect.height = text_height + DROP_SHADOW_SIZE;
+
+          x_text = rbdata->old_text_rect.x - overlay->monitor_geometry.x;
+          y_text = rbdata->old_text_rect.y - overlay->monitor_geometry.y;
+
+          cairo_move_to (cr, x_text + DROP_SHADOW_SIZE, y_text + DROP_SHADOW_SIZE);
+          cairo_set_source_rgb (cr, 0, 0, 0);
+          pango_cairo_show_layout (cr, rbdata->text_layout);
+
+          cairo_move_to (cr, x_text, y_text);
+          cairo_set_source_rgb (cr, 1, 1, 1);
+          pango_cairo_show_layout (cr, rbdata->text_layout);
         }
     }
 
@@ -206,111 +262,10 @@ static gboolean cb_button_released (GtkWidget *widget,
 
 
 
-static gboolean cb_size_window_draw (GtkWidget *widget,
-                                     cairo_t *cr,
-                                     gpointer user_data)
-{
-  cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
-  cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, 0.0);
-  cairo_paint (cr);
-
-  return FALSE;
-}
-
-
-
-static void size_window_get_offset (GtkWidget *widget,
-                                    gint digits,
-                                    gint digit_width,
-                                    gint line_height,
-                                    gint x_event,
-                                    gint y_event,
-                                    gint *x_offset,
-                                    gint *y_offset)
-{
-  GdkRectangle geometry;
-  gint relative_x, relative_y, text_width;
-
-  GdkDisplay *display = gtk_widget_get_display (widget);
-  GdkMonitor *monitor = gdk_display_get_monitor_at_point (display, x_event, y_event);
-  gdk_monitor_get_geometry (monitor, &geometry);
-
-  relative_x = x_event - geometry.x;
-  relative_y = y_event - geometry.y;
-
-  *x_offset = -2;
-  *y_offset = -4;
-
-  /* Add 3/4 of a digit width as right padding */
-  text_width = (digits + 0.75) * digit_width;
-  /* Add 10% of line height as bottom padding */
-  line_height = line_height * 1.1;
-
-  if (relative_x > geometry.width - text_width)
-    *x_offset -= text_width;
-
-  if (relative_y > geometry.height - line_height)
-    *y_offset -= line_height;
-}
-
-
-
-static void create_size_window (RubberBandData *rbdata)
-{
-  GtkWidget *window, *label;
-  GtkCssProvider *css_provider;
-  GtkStyleContext *context;
-  GdkVisual *visual;
-
-  rbdata->size_window = window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_layer_init_for_window (GTK_WINDOW (window));
-  gtk_layer_set_layer (GTK_WINDOW (window), GTK_LAYER_SHELL_LAYER_OVERLAY);
-  gtk_layer_set_anchor (GTK_WINDOW (window), GTK_LAYER_SHELL_EDGE_TOP, TRUE);
-  gtk_layer_set_anchor (GTK_WINDOW (window), GTK_LAYER_SHELL_EDGE_LEFT, TRUE);
-  gtk_layer_set_exclusive_zone (GTK_WINDOW (window), -1);
-  gtk_container_set_border_width (GTK_CONTAINER (window), 0);
-  gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
-  gtk_window_set_default_size (GTK_WINDOW (window), 100, 50);
-  gtk_widget_set_size_request (GTK_WIDGET (window), 100, 50);
-  gtk_window_set_decorated (GTK_WINDOW (window), FALSE);
-  gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
-  gtk_window_set_skip_taskbar_hint (GTK_WINDOW (window), FALSE);
-  g_signal_connect (G_OBJECT (window), "draw",
-                    G_CALLBACK (cb_size_window_draw), NULL);
-
-  visual = gdk_screen_get_rgba_visual (gtk_widget_get_screen (window));
-  gtk_widget_set_visual (window, visual);
-
-  rbdata->size_label = label = gtk_label_new ("");
-  gtk_label_set_xalign (GTK_LABEL (label), 0.0);
-  gtk_widget_set_valign (label, GTK_ALIGN_START);
-  gtk_widget_set_margin_start (label, 6);
-  gtk_widget_set_margin_top (label, 6);
-  gtk_container_add (GTK_CONTAINER (window), label);
-
-  css_provider = gtk_css_provider_new ();
-  gtk_css_provider_load_from_data (css_provider,
-    "label { font-family: monospace; color: #fff; text-shadow: 1px 1px 0px black; }", -1, NULL);
-
-  context = gtk_widget_get_style_context (GTK_WIDGET (label));
-  gtk_style_context_add_provider (context,
-                                  GTK_STYLE_PROVIDER (css_provider),
-                                  GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-  g_object_unref (css_provider);
-
-  gtk_widget_show_all (GTK_WIDGET (window));
-}
-
-
-
 static gboolean cb_motion_notify (GtkWidget *widget,
                                   GdkEventMotion *event,
                                   RubberBandData *rbdata)
 {
-  gchar *coords;
-  gint rect_width, rect_height, x_offset, y_offset;
-  static gint digit_width = -1, line_height = -1;
-
   if (rbdata->left_pressed)
     {
       cairo_rectangle_int_t *new_rect;
@@ -326,8 +281,8 @@ static gboolean cb_motion_notify (GtkWidget *widget,
       /* The event x and y under wayland are relative to the monitor */
       /* It is weird but at the top left of the monitor the event x,y is 1,1
        * not 0,0. For this reason we need to substract 1 */
-      event_x_root = overlay->monitor_geometry.x + event->x - 1;
-      event_y_root = overlay->monitor_geometry.y + event->y - 1;
+      rbdata->cursor_x = event_x_root = overlay->monitor_geometry.x + event->x - 1;
+      rbdata->cursor_y = event_y_root = overlay->monitor_geometry.y + event->y - 1;
       new_rect = &rbdata->rectangle;
 
       if (!rbdata->rubber_banding)
@@ -339,9 +294,6 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           old_rect.x = rbdata->x;
           old_rect.y = rbdata->y;
           old_rect.height = old_rect.width = 1;
-
-          create_size_window (rbdata);
-          gtk_layer_set_monitor (GTK_WINDOW (rbdata->size_window), overlay->monitor);
         }
       else
         {
@@ -382,63 +334,26 @@ static gboolean cb_motion_notify (GtkWidget *widget,
           new_rect->height = ABS (rbdata->y - event_y_root) + 1;
         }
 
-      rect_width = new_rect->width;
-      rect_height = new_rect->height;
-
-      /* Take into account when the rectangle is moved out of screen */
-      if (new_rect->x < 0) rect_width += new_rect->x;
-      if (new_rect->y < 0) rect_height += new_rect->y;
-
-      coords = g_strdup_printf ("%d x %d", rect_width, rect_height);
-
-      if (digit_width == -1)
-        {
-          PangoLayout *layout;
-          PangoContext *context;
-          PangoFontMetrics *metrics;
-
-          layout = gtk_label_get_layout (GTK_LABEL (rbdata->size_label));
-          context = pango_layout_get_context (layout);
-          metrics = pango_context_get_metrics (context,
-                                               pango_context_get_font_description (context),
-                                               pango_context_get_language (context));
-
-          digit_width = PANGO_PIXELS_CEIL (pango_font_metrics_get_approximate_digit_width (metrics));
-          line_height = PANGO_PIXELS_CEIL (pango_font_metrics_get_height (metrics));
-
-          pango_font_metrics_unref (metrics);
-        }
-
-      size_window_get_offset (rbdata->size_window, strlen (coords),
-                              digit_width, line_height,
-                              event_x_root, event_y_root,
-                              &x_offset, &y_offset);
-
-      gtk_layer_set_margin (GTK_WINDOW (rbdata->size_window), GTK_LAYER_SHELL_EDGE_LEFT, event->x + x_offset);
-      gtk_layer_set_margin (GTK_WINDOW (rbdata->size_window), GTK_LAYER_SHELL_EDGE_TOP, event->y + y_offset);
-
-      gtk_label_set_text (GTK_LABEL (rbdata->size_label), coords);
-      g_free (coords);
-
       region = cairo_region_create_rectangle (&old_rect);
       cairo_region_union_rectangle (region, new_rect);
 
-      /* Try to be smart: don't send the expose event for regions which
-       * have already been painted */
-      if (gdk_rectangle_intersect (&old_rect, new_rect, &intersect)
-          && intersect.width > 2 && intersect.height > 2)
+      /* Try to be smart: don't send the expose event for regions which have already been painted */
+      if (gdk_rectangle_intersect (&old_rect, new_rect, &intersect) && intersect.width > 2 && intersect.height > 2)
         {
-          cairo_region_t *region_intersect;
-
           intersect.x += 1;
           intersect.width -= 2;
           intersect.y += 1;
           intersect.height -= 2;
 
-          region_intersect = cairo_region_create_rectangle (&intersect);
-          cairo_region_subtract (region, region_intersect);
-          cairo_region_destroy (region_intersect);
+          cairo_region_subtract_rectangle (region, &intersect);
         }
+
+      /* Add text rectangle to the invalidate region with a good margin to avoid artifacts */
+      rbdata->old_text_rect.x -= 10;
+      rbdata->old_text_rect.y -= 10;
+      rbdata->old_text_rect.width += 20;
+      rbdata->old_text_rect.height += 20;
+      cairo_region_union_rectangle (region, &(rbdata->old_text_rect));
 
       for (l = rbdata->overlays; l != NULL; l = l->next)
         {
@@ -547,8 +462,8 @@ screenshooter_select_region_wayland (GdkRectangle *region)
   g_slist_foreach (rbdata.overlays, (GFunc) (void (*)(void)) destroy_overlay, NULL);
   g_slist_free (rbdata.overlays);
   g_object_unref (xhair_cursor);
-  if (rbdata.size_window)
-    gtk_widget_destroy (rbdata.size_window);
+  if (rbdata.text_layout != NULL)
+    g_object_unref (rbdata.text_layout);
 
   if (rbdata.cancelled)
     return FALSE;
