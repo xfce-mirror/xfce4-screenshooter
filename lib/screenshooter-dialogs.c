@@ -489,9 +489,9 @@ static cairo_surface_t
   gint height = THUMB_Y_SIZE;
 
   if (G_LIKELY (w >= h))
-    height = width * h / w;
+    height = MAX (1, width * h / w);
   else
-    width = height * w / h;
+    width = MAX (1, height * w / h);
 
   scaled_screenshot = gdk_pixbuf_scale_simple (screenshot, width * scale_factor, height * scale_factor, GDK_INTERP_BILINEAR);
   surface = gdk_cairo_surface_create_from_pixbuf (scaled_screenshot, scale_factor, NULL);
@@ -993,17 +993,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
                     G_CALLBACK (cb_rectangle_toggled), sd);
   g_signal_connect (G_OBJECT (rectangle_button), "activate",
                     G_CALLBACK (cb_radiobutton_activate), dlg);
-#ifdef ENABLE_WAYLAND
-  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
-    {
-      gtk_widget_set_sensitive (rectangle_button, FALSE);
-      gtk_widget_set_tooltip_text (rectangle_button, _("Not supported in Wayland"));
-    }
-  else
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
-#else
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (rectangle_button), (sd->region == SELECT));
-#endif
 
   /* Create options label */
   label = gtk_label_new ("");
