@@ -27,6 +27,7 @@
 #include "gdk/gdk.h"
 #include "glib-object.h"
 #include "glib.h"
+#include "glibconfig.h"
 #include "gtk/gtk.h"
 #include "screenshooter-utils.h"
 
@@ -95,9 +96,16 @@ static void close_overlays (RubberBandData *rbdata)
       gtk_widget_queue_draw (data->window);
     }
 
-  first_overlay = rbdata->overlays->data;
-  frame_clock = gtk_widget_get_frame_clock (first_overlay->window);
-  g_signal_connect (frame_clock, "after-paint", G_CALLBACK (gtk_main_quit), NULL);
+  if (G_LIKELY(rbdata->overlays != NULL))
+    {
+      first_overlay = rbdata->overlays->data;
+      frame_clock = gtk_widget_get_frame_clock (first_overlay->window);
+      g_signal_connect (frame_clock, "after-paint", G_CALLBACK (gtk_main_quit), NULL);
+    }
+  else
+    {
+      gtk_main_quit ();
+    }
 }
 
 
