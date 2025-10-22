@@ -151,12 +151,7 @@ static gboolean cb_draw (GtkWidget      *widget,
 {
   /* Draw the transparent background */
   /* When rubber banding is finished, clear the window with full transparency */
-  if (rbdata->finished)
-    {
-      cairo_set_source_rgba (cr, 0, 0, 0, 0);
-    }
-  else
-    cairo_set_source_rgba (cr, 0, 0, 0, BACKGROUND_TRANSPARENCY);
+  cairo_set_source_rgba (cr, 0, 0, 0, rbdata->finished ? 0 : BACKGROUND_TRANSPARENCY);
   cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
   cairo_paint (cr);
 
@@ -378,10 +373,10 @@ static gboolean cb_motion_notify (GtkWidget *widget,
         }
 
       /* Add text rectangle to the invalidate region with a good margin to avoid artifacts */
-      rbdata->old_text_rect.x -= 10;
-      rbdata->old_text_rect.y -= 10;
-      rbdata->old_text_rect.width += 20;
-      rbdata->old_text_rect.height += 20;
+      rbdata->old_text_rect.x -= rbdata->old_text_rect.width;
+      rbdata->old_text_rect.y -= rbdata->old_text_rect.height;
+      rbdata->old_text_rect.width += 2 * rbdata->old_text_rect.width;
+      rbdata->old_text_rect.height += 2 * rbdata->old_text_rect.height;
       cairo_region_union_rectangle (region, &(rbdata->old_text_rect));
 
       for (l = rbdata->overlays; l != NULL; l = l->next)
