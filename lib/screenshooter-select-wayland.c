@@ -49,6 +49,7 @@ typedef struct
   gboolean rubber_banding;
   gboolean cancelled;
   gboolean move_rectangle;
+  gboolean finished;
   gint anchor;
   gint x;
   gint y;
@@ -80,6 +81,27 @@ static void destroy_overlay (OverlayData *overlay)
 
 
 
+static void close_overlays (RubberBandData *rbdata)
+{
+  GSList *l;
+  OverlayData *first_overlay;
+  GdkFrameClock *frame_clock;
+
+  rbdata->finished = TRUE;
+
+  for (l = rbdata->overlays; l != NULL; l = l->next)
+    {
+      OverlayData *data = l->data;
+      gtk_widget_queue_draw (data->window);
+    }
+
+  first_overlay = rbdata->overlays->data;
+  frame_clock = gtk_widget_get_frame_clock (first_overlay->window);
+  g_signal_connect (frame_clock, "after-paint", G_CALLBACK (gtk_main_quit), NULL);
+}
+
+
+
 /* Callbacks for the rubber banding function */
 static gboolean cb_key_pressed (GtkWidget      *widget,
                                 GdkEventKey    *event,
@@ -90,7 +112,7 @@ static gboolean cb_key_pressed (GtkWidget      *widget,
   if (key == GDK_KEY_Escape)
     {
       rbdata->cancelled = TRUE;
-      gtk_main_quit ();
+      close_overlays (rbdata);
       return TRUE;
     }
 
@@ -128,7 +150,13 @@ static gboolean cb_draw (GtkWidget      *widget,
                          RubberBandData *rbdata)
 {
   /* Draw the transparent background */
-  cairo_set_source_rgba (cr, 0, 0, 0, BACKGROUND_TRANSPARENCY);
+  /* When rubber banding is finished, clear the window with full transparency */
+  if (rbdata->finished)
+    {
+      cairo_set_source_rgba (cr, 0, 0, 0, 0);
+    }
+  else
+    cairo_set_source_rgba (cr, 0, 0, 0, BACKGROUND_TRANSPARENCY);
   cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
   cairo_paint (cr);
 
@@ -251,7 +279,8 @@ static gboolean cb_button_released (GtkWidget *widget,
     {
       if (rbdata->rubber_banding && rbdata->rectangle.width > 0 && rbdata->rectangle.height > 0)
         {
-          gtk_main_quit ();
+          rbdata->left_pressed = rbdata->rubber_banding = FALSE;
+          close_overlays (rbdata);
           return TRUE;
         }
       rbdata->left_pressed = rbdata->rubber_banding = FALSE;
