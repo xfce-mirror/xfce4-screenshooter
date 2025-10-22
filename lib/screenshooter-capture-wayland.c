@@ -750,10 +750,8 @@ static GdkPixbuf
   /* Clear the display before capturing */
   wl_display_roundtrip (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
 
-    /* Await the specified delay, but not less than 200ms */
-  if (delay == 0)
-    g_usleep (200000);
-  else
+  /* Await the specified delay */
+  if (delay > 0)
     sleep (delay);
 
   screenshot = screenshooter_capture_fullscreen (show_mouse, &region);
