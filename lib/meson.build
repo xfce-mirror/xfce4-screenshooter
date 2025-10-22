@@ -11,6 +11,8 @@ libscreenshooter_sources = [
   'screenshooter-dialogs.c',
   'screenshooter-dialogs.h',
   'screenshooter-global.h',
+  'screenshooter-select.c',
+  'screenshooter-select.h',
   'screenshooter-utils.c',
   'screenshooter-utils.h',
 ]
@@ -27,6 +29,8 @@ if enable_x11
   libscreenshooter_sources += [
     'screenshooter-capture-x11.c',
     'screenshooter-capture-x11.h',
+    'screenshooter-select-x11.c',
+    'screenshooter-select-x11.h',
     'screenshooter-utils-x11.c',
     'screenshooter-utils-x11.h',
   ]
@@ -37,6 +41,8 @@ if enable_wayland
   libscreenshooter_sources += [
     'screenshooter-capture-wayland.c',
     'screenshooter-capture-wayland.h',
+    'screenshooter-select-wayland.c',
+    'screenshooter-select-wayland.h',
   ]
 endif
 
@@ -49,6 +55,7 @@ libscreenshooter = static_library(
   dependencies: [
     glib,
     gtk,
+    gtk_layer_shell,
     exo,
     libxfce4ui,
     libxfce4util,

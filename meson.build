@@ -22,6 +22,7 @@ i18n = import('i18n')
 dependency_versions = {
   'glib': '>= 2.66.0',
   'gtk': '>= 3.24.0',
+  'gtk-layer-shell': '>= 0.7.0',
   'libx11': '>= 1.6.7',
   'xinput': '>= 1.7.8',
   'libxext': '>= 1.0.0',
@@ -53,10 +54,11 @@ x11_deps = [libx11, gdk_x11, xinput, libxext]
 
 # Feature: 'wayland'
 gdk_wayland = dependency('gdk-wayland-3.0', version: dependency_versions['gtk'], required: get_option('wayland'))
+gtk_layer_shell = dependency('gtk-layer-shell-0', version: dependency_versions['gtk-layer-shell'], required: get_option('wayland'))
 wayland_client = dependency('wayland-client', version: dependency_versions['wayland'], required: get_option('wayland'))
 wayland_scanner = dependency('wayland-scanner', version: dependency_versions['wayland'], required: get_option('wayland'), native: true)
 wayland_protocols = dependency('wayland-protocols', version: dependency_versions['wayland-protocols'], required: get_option('wayland'))
-wayland_deps = [gdk_wayland, wayland_client, wayland_scanner, wayland_protocols]
+wayland_deps = [gdk_wayland, gtk_layer_shell, wayland_client, wayland_scanner, wayland_protocols]
 
 # Optional dependencies
 wlr_protocols = dependency('wlr-protocols', version: dependency_versions['wlr-protocols'], required: false)

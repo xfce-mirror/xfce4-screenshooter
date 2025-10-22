@@ -175,17 +175,12 @@ static gboolean cb_button_scrolled (GtkWidget *widget,
       case GDK_SCROLL_UP:
       case GDK_SCROLL_RIGHT:
 
-#ifdef ENABLE_WAYLAND
-        if (!GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
-          {
-             pd->sd->region += 1;
-             if (pd->sd->region > SELECT)
-               pd->sd->region = FULLSCREEN;
-          }
-#else
         pd->sd->region += 1;
         if (pd->sd->region > SELECT)
           pd->sd->region = FULLSCREEN;
+#ifdef ENABLE_WAYLAND
+        if (pd->sd->region == ACTIVE_WINDOW && GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+          pd->sd->region = SELECT;
 #endif
 
         set_panel_button_tooltip (pd);
@@ -194,17 +189,12 @@ static gboolean cb_button_scrolled (GtkWidget *widget,
       case GDK_SCROLL_DOWN:
       case GDK_SCROLL_LEFT:
 
-#ifdef ENABLE_WAYLAND
-        if (!GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
-          {
-            pd->sd->region -= 1;
-            if (pd->sd->region == REGION_0)
-              pd->sd->region = SELECT;
-          }
-#else
         pd->sd->region -= 1;
         if (pd->sd->region == REGION_0)
           pd->sd->region = SELECT;
+#ifdef ENABLE_WAYLAND
+        if (pd->sd->region == ACTIVE_WINDOW && GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+          pd->sd->region = FULLSCREEN;
 #endif
 
         set_panel_button_tooltip (pd);
