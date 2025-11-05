@@ -1,3 +1,23 @@
+1.11.3 (2025-11-05)
+======
+- Wayland region selection
+- Fix leaks in screenshooter_show_file_in_folder
+- Fix string leak in action_idle
+- wayland: Fullscreen capture with ext_image_capture_source/copy_capture
+- README.md: Add uninstall info
+- Stop using xfce_panel_plugin_(block|unblock)_menu
+- Drop autootols
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (United
+  Kingdom), Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Italian, Japanese, Korean,
+  Lithuanian, Malay, Norwegian Bokmål, Occitan (post 1500), Persian
+  (Iran), Polish, Portuguese, Portuguese (Brazil), Romanian, Russian,
+  Serbian, Slovak, Slovenian, Spanish, Swedish, Thai, Turkish,
+  Ukrainian, Uyghur
+
 1.11.2 (2025-05-22)
 ======
 - Fully free a GSList to fix a leak
