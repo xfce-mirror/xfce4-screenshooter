@@ -1332,6 +1332,20 @@ GtkWidget *screenshooter_actions_dialog_new (ScreenshotData *sd)
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
+  /* Ensure sd->action is correctly set.
+   * The value loaded from the rc file might not correspond
+   * to a valid radio button, for example, if copying to the
+   * clipboard is stored but is not available anymore.
+   */
+   for (GSList *lp = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radio)); lp != NULL; lp = lp->next)
+     {
+       if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (lp->data)))
+         {
+           g_signal_emit_by_name (G_OBJECT (lp->data), "toggled");
+           break;
+         }
+     }
+
   return dlg;
 }
 
