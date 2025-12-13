@@ -1,404 +1,438 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-apps.xfce4-screenshooter package.
 # 
 # Translators:
 # Automatically generated, 2009
+# Loc Huynh <https://github.com/hthienloc>, 2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 12:47+0100\n"
-"PO-Revision-Date: 2020-12-20 11:47+0000\n"
-"Last-Translator: Duy Truong Nguyen <truongap.ars@gmail.com>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/xfce/xfce-apps/language/vi/)\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-08-14 00:50+0200\n"
+"PO-Revision-Date: 2013-07-03 18:40+0000\n"
+"Last-Translator: Loc Huynh <https://github.com/hthienloc>, 2025\n"
+"Language-Team: Vietnamese (http://app.transifex.com/xfce/xfce-apps/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../lib/screenshooter-dialogs.c:467
+#: lib/screenshooter-dialogs.c:514
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr ""
+msgstr "%.2fKb trên %.2fKb"
 
-#: ../lib/screenshooter-dialogs.c:553
+#: lib/screenshooter-dialogs.c:617
 msgid "Transfer"
-msgstr ""
+msgstr "Chuyển"
 
-#: ../lib/screenshooter-dialogs.c:574
+#: lib/screenshooter-dialogs.c:638
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ảnh chụp đang được chuyển đến:</span>"
 
-#. Setup window
-#: ../lib/screenshooter-dialogs.c:673 ../lib/screenshooter-dialogs.c:679
-#: ../lib/screenshooter-dialogs.c:691 ../lib/screenshooter-dialogs.c:698
-#: ../lib/screenshooter-dialogs.c:926 ../lib/screenshooter-dialogs.c:933
-#: ../lib/screenshooter-utils.c:124 ../lib/screenshooter-utils.c:156
-#: ../lib/screenshooter-imgur-dialog.c:128
-#: ../src/xfce4-screenshooter.desktop.in.in.h:1
-#: ../panel-plugin/screenshooter.desktop.in.h:1
+#: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
+#: lib/screenshooter-dialogs.c:1139 lib/screenshooter-utils.c:135
+#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
+#: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Ảnh chụp màn hình"
 
-#: ../lib/screenshooter-dialogs.c:675 ../lib/screenshooter-dialogs.c:693
-#: ../lib/screenshooter-dialogs.c:928
+#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:890
+msgid "_Preferences"
+msgstr "_Tùy chọn"
+
+#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:889
+#: lib/screenshooter-dialogs.c:1141
 msgid "_Help"
 msgstr "Trợ _giúp"
 
-#: ../lib/screenshooter-dialogs.c:676
+#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1478
 msgid "_Close"
-msgstr "Đóng lại"
+msgstr "Đón_g"
 
-#: ../lib/screenshooter-dialogs.c:686
-msgid "Preferences"
-msgstr "Tuỳ chỉnh"
-
-#: ../lib/screenshooter-dialogs.c:694 ../lib/screenshooter-dialogs.c:929
+#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1143
 msgid "_Cancel"
-msgstr ""
+msgstr "_Hủy bỏ"
 
-#: ../lib/screenshooter-dialogs.c:695 ../lib/screenshooter-dialogs.c:930
+#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1144
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
-#: ../lib/screenshooter-dialogs.c:706
-msgid "Take a screenshot"
-msgstr "Tạo ảnh chụp màn hình"
-
-#: ../lib/screenshooter-dialogs.c:743
+#: lib/screenshooter-dialogs.c:925
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vùng chụp</span>"
 
-#: ../lib/screenshooter-dialogs.c:770
+#: lib/screenshooter-dialogs.c:947
 msgid "Entire screen"
 msgstr "Toàn bộ màn hình"
 
-#: ../lib/screenshooter-dialogs.c:777 ../src/main.c:59
-#: ../panel-plugin/screenshooter-plugin.c:330
+#: lib/screenshooter-dialogs.c:952 src/main.c:57
+#: panel-plugin/screenshooter-plugin.c:326
 msgid "Take a screenshot of the entire screen"
-msgstr "Tạo ảnh chụp toàn bộ màn hình"
+msgstr "Chụp toàn bộ màn hình"
 
-#: ../lib/screenshooter-dialogs.c:788
+#: lib/screenshooter-dialogs.c:961
 msgid "Active window"
-msgstr "Của sổ đang kích hoạt"
+msgstr "Cửa sổ đang kích hoạt"
 
-#: ../lib/screenshooter-dialogs.c:795 ../src/main.c:96
-#: ../panel-plugin/screenshooter-plugin.c:335
+#: lib/screenshooter-dialogs.c:964 src/main.c:99
+#: panel-plugin/screenshooter-plugin.c:331
 msgid "Take a screenshot of the active window"
-msgstr "Tạo một ảnh chụp của cửa sổ đang kích hoạt"
+msgstr "Chụp cửa sổ đang kích hoạt"
 
-#: ../lib/screenshooter-dialogs.c:806
+#: lib/screenshooter-dialogs.c:973 lib/screenshooter-dialogs.c:1000
+msgid "Not supported in Wayland"
+msgstr "Không hỗ trợ trên Wayland"
+
+#: lib/screenshooter-dialogs.c:984
 msgid "Select a region"
 msgstr "Chọn vùng"
 
-#: ../lib/screenshooter-dialogs.c:811
+#: lib/screenshooter-dialogs.c:987
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr ""
+msgstr "Chọn vùng chụp bằng cách nhấn vào một điểm trên màn hình và không thả nút chuột, rê chuột đến góc còn lại của vùng rồi thả nút chuột.\n\nNhấn Ctrl khi rê để di chuyển vùng."
 
-#: ../lib/screenshooter-dialogs.c:825
+#: lib/screenshooter-dialogs.c:1011
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tùy chọn</span>"
+
+#: lib/screenshooter-dialogs.c:1031
 msgid "Capture the mouse pointer"
-msgstr "Chụp ảnh chuột"
+msgstr "Chụp con trỏ chuột"
 
-#: ../lib/screenshooter-dialogs.c:829
+#: lib/screenshooter-dialogs.c:1035
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Hiển thị chuột trên ảnh"
+msgstr "Hiển thị con trỏ chuột trên ảnh chụp"
 
-#: ../lib/screenshooter-dialogs.c:843
+#: lib/screenshooter-dialogs.c:1042
+msgid "Capture the window border"
+msgstr "Chụp viền cửa sổ"
+
+#: lib/screenshooter-dialogs.c:1047
+msgid ""
+"Display the window border on the screenshot.\n"
+"Disabling this option has no effect for CSD windows."
+msgstr "Hiển thị viền cửa sổ trên ảnh chụp.\nTắt tùy chọn này không ảnh hưởng đến cửa sổ CSD."
+
+#: lib/screenshooter-dialogs.c:1071
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tạm dừng trước khi chụp</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Độ trễ trước khi chụp</span>"
 
-#: ../lib/screenshooter-dialogs.c:871
+#: lib/screenshooter-dialogs.c:1095
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Số giây để hoãn trước khi ảnh được chụp"
+msgstr "Số giây hoãn trước khi chụp"
 
-#: ../lib/screenshooter-dialogs.c:874
+#: lib/screenshooter-dialogs.c:1098
 msgid "seconds"
 msgstr "giây"
 
-#: ../lib/screenshooter-dialogs.c:942
-msgid "Choose what to do with the screenshot"
-msgstr ""
+#: lib/screenshooter-dialogs.c:1142
+msgid "_Back"
+msgstr "_Quay lại"
 
-#: ../lib/screenshooter-dialogs.c:976
+#: lib/screenshooter-dialogs.c:1182
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Hành động</span>"
 
 #. Save option radio button
-#: ../lib/screenshooter-dialogs.c:1001
+#: lib/screenshooter-dialogs.c:1197
 msgid "Save"
-msgstr "Ghi"
+msgstr "Lưu"
 
-#: ../lib/screenshooter-dialogs.c:1008
-msgid "Save the screenshot to a PNG file"
-msgstr "Lưu ảnh chụp màn hình thành tập tin PNG"
+#: lib/screenshooter-dialogs.c:1203
+msgid "Save the screenshot to a file"
+msgstr "Lưu ảnh chụp vào tập tin"
 
-#: ../lib/screenshooter-dialogs.c:1017
+#. Show in folder checkbox
+#: lib/screenshooter-dialogs.c:1207
+msgid "Show in Folder"
+msgstr "Hiển thị trong thư mục"
+
+#: lib/screenshooter-dialogs.c:1214
+msgid "Shows the saved file in the folder"
+msgstr "Hiển thị tập tin đã lưu trong thư mục"
+
+#: lib/screenshooter-dialogs.c:1222
 msgid "Copy to the clipboard"
 msgstr "Sao chép vào bộ đệm"
 
-#: ../lib/screenshooter-dialogs.c:1019
+#: lib/screenshooter-dialogs.c:1224
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Sao chép ảnh chụp màn hình đến bộ đệm để bạn có thể sao chép nó sau"
+msgstr "Sao chép ảnh chụp vào bộ đệm để dán sau"
 
-#: ../lib/screenshooter-dialogs.c:1033
+#: lib/screenshooter-dialogs.c:1238
 msgid "Open with:"
-msgstr "Mở với:"
+msgstr "Mở bằng:"
 
-#: ../lib/screenshooter-dialogs.c:1041
+#: lib/screenshooter-dialogs.c:1246
 msgid "Open the screenshot with the chosen application"
-msgstr "Mở ảnh chụp với ứng dụng đã chọn"
+msgstr "Mở ảnh chụp bằng ứng dụng đã chọn"
 
-#: ../lib/screenshooter-dialogs.c:1060 ../src/main.c:69
+#: lib/screenshooter-dialogs.c:1265 src/main.c:72
 msgid "Application to open the screenshot"
-msgstr "Ứng dụng để mở ảnh chụp"
+msgstr "Ứng dụng mở ảnh chụp"
 
-#: ../lib/screenshooter-dialogs.c:1073
-msgid "Host on Imgur"
-msgstr ""
+#: lib/screenshooter-dialogs.c:1279
+msgid "Custom Action:"
+msgstr "Hành động tùy chỉnh:"
 
-#: ../lib/screenshooter-dialogs.c:1077 ../src/main.c:86
-msgid "Host the screenshot on Imgur, a free online image hosting service"
-msgstr ""
+#: lib/screenshooter-dialogs.c:1287
+msgid "Execute the selected custom action"
+msgstr "Thực thi hành động tùy chỉnh đã chọn"
 
-#: ../lib/screenshooter-dialogs.c:1089
-msgid ""
-"Watch for sensitive content, the uploaded image will be publicly\n"
-"available and there is no guarantee it can be certainly deleted."
-msgstr ""
+#: lib/screenshooter-dialogs.c:1299
+msgid "Custom action to execute"
+msgstr "Hành động tùy chỉnh cần thực thi"
 
-#: ../lib/screenshooter-dialogs.c:1116
+#: lib/screenshooter-dialogs.c:1322
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Xem trước</span>"
 
-#: ../lib/screenshooter-dialogs.c:1178
+#: lib/screenshooter-dialogs.c:1383
 msgid "Save screenshot as..."
 msgstr "Lưu ảnh chụp thành..."
 
-#: ../lib/screenshooter-utils.c:269
+#: lib/screenshooter-dialogs.c:1476
+msgid "Preferences"
+msgstr "Tùy chọn"
+
+#: lib/screenshooter-dialogs.c:1501
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Hành động tùy chỉnh</span>"
+
+#: lib/screenshooter-dialogs.c:1521
+msgid ""
+"You can configure custom actions that will be available to handle "
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr "Bạn có thể cấu hình các hành động tùy chỉnh để xử lý ảnh chụp sau khi chụp. Có thêm ví dụ trong <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">tài liệu</a>."
+
+#: lib/screenshooter-dialogs.c:1551
+msgid "Custom Action"
+msgstr "Hành động tùy chỉnh"
+
+#: lib/screenshooter-dialogs.c:1564
+msgid "Add custom action"
+msgstr "Thêm hành động tùy chỉnh"
+
+#: lib/screenshooter-dialogs.c:1571
+msgid "Remove selected custom action"
+msgstr "Xóa hành động tùy chỉnh đã chọn"
+
+#. Add custom action name
+#: lib/screenshooter-dialogs.c:1593
+msgid "Name"
+msgstr "Tên"
+
+#: lib/screenshooter-dialogs.c:1594
+msgid "Name of the action that will be displayed in Actions dialog"
+msgstr "Tên hành động sẽ hiển thị trong hộp thoại Hành động"
+
+#. Add custom action command
+#: lib/screenshooter-dialogs.c:1603
+msgid "Command"
+msgstr "Lệnh"
+
+#: lib/screenshooter-dialogs.c:1604
+msgid "Command that will be executed for this custom action"
+msgstr "Lệnh sẽ thực thi cho hành động tùy chỉnh này"
+
+#: lib/screenshooter-dialogs.c:1611
+#, c-format
+msgid "Use %f as a placeholder for location of the screenshot captured"
+msgstr "Dùng %f làm placeholder cho vị trí ảnh chụp"
+
+#: lib/screenshooter-custom-actions.c:211
+msgid "Unable to execute the custom action"
+msgstr "Không thực thi được hành động tùy chỉnh"
+
+#: lib/screenshooter-custom-actions.c:211
+msgid "Invalid custom action selected"
+msgstr "Hành động tùy chỉnh không hợp lệ"
+
+#: lib/screenshooter-custom-actions.c:228
+#, c-format
+msgid "Failed to run the custom action %s"
+msgstr "Không chạy được hành động tùy chỉnh %s"
+
+#: lib/screenshooter-format.c:31
+msgid "PNG File"
+msgstr "Tập tin PNG"
+
+#: lib/screenshooter-format.c:32
+msgid "JPEG File"
+msgstr "Tập tin JPEG"
+
+#: lib/screenshooter-format.c:33
+msgid "BMP File"
+msgstr "Tập tin BMP"
+
+#: lib/screenshooter-format.c:34
+msgid "WebP File"
+msgstr "Tập tin WebP"
+
+#: lib/screenshooter-format.c:35
+msgid "JPEG XL File"
+msgstr "Tập tin JPEG XL"
+
+#: lib/screenshooter-format.c:36
+msgid "AVIF File"
+msgstr "Tập tin AVIF"
+
+#: lib/screenshooter-utils.c:321
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
-msgstr ""
+msgstr "<b>Không khởi chạy được ứng dụng.</b>\n%s"
 
-#: ../lib/screenshooter-utils.c:344
+#: lib/screenshooter-utils.c:398
 msgid "Error"
 msgstr "Lỗi"
 
-#: ../lib/screenshooter-imgur.c:106
-msgid "Upload the screenshot..."
-msgstr "Tải ảnh chụp màn hình lên..."
+#: lib/screenshooter-capture-wayland.c:195
+msgid "Failed to capture screencopy frame"
+msgstr "Không chụp được khung screencopy"
 
-#: ../lib/screenshooter-imgur.c:116
+#: lib/screenshooter-capture-wayland.c:225
+#: lib/screenshooter-capture-wayland.c:389
+msgid "Failed to create file descriptor"
+msgstr "Không tạo được mô tả tập tin"
+
+#: lib/screenshooter-capture-wayland.c:234
+#: lib/screenshooter-capture-wayland.c:398
+msgid "Failed to map memory"
+msgstr "Không ánh xạ bộ nhớ"
+
+#: lib/screenshooter-capture-wayland.c:303
+msgid "Failed to capture frame"
+msgstr "Không chụp được khung"
+
+#: lib/screenshooter-capture-wayland.c:382
+msgid "Supported format not found"
+msgstr "Không tìm thấy định dạng hỗ trợ"
+
+#: lib/screenshooter-capture-wayland.c:410
+msgid "Failed to create buffer"
+msgstr "Không tạo được bộ đệm"
+
+#: lib/screenshooter-capture-wayland.c:457
+msgid "Required Wayland interfaces are missing"
+msgstr "Thiếu giao diện Wayland cần thiết"
+
+#: lib/screenshooter-capture-wayland.c:462
+msgid "Compositor is missing wl_shm"
+msgstr "Trình tổng hợp thiếu wl_shm"
+
+#: lib/screenshooter-capture-wayland.c:467
+msgid ""
+"Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
+"capture-source-v1/ext-image-copy-capture-v1"
+msgstr "Trình tổng hợp không hỗ trợ wlr-screencopy-unstable-v1 hay ext-image-capture-source-v1/ext-image-copy-capture-v1"
+
+#: lib/screenshooter-capture-wayland.c:577
 #, c-format
-msgid "An error occurred while transferring the data to imgur."
-msgstr ""
+msgid "Unsupported pixel format: 0x%x"
+msgstr "Định dạng pixel không hỗ trợ: 0x%x"
 
-#: ../lib/screenshooter-imgur.c:173
-msgid "Imgur"
-msgstr ""
+#: lib/screenshooter-capture-wayland.c:652
+msgid "The selected mode is not supported in Wayland"
+msgstr "Chế độ đã chọn không hỗ trợ trên Wayland"
 
-#: ../lib/screenshooter-imgur-dialog.c:134
-msgid "Your uploaded image"
-msgstr ""
+#: lib/screenshooter-capture-wayland.c:720
+msgid "Failed to capture"
+msgstr "Không chụp được"
 
-#: ../lib/screenshooter-imgur-dialog.ui.h:1
-msgid "Size"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:2
-msgid "Link"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:3
-msgid "Tiny"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:4
-msgid "Medium"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:5
-msgid "Full"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:6
-msgid "Copy"
-msgstr "Sao chép"
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:7
-msgid "View in browser"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:8
-msgid "Image"
-msgstr "Ảnh"
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:9
-msgid "Syntax"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:10
-msgid "HTML"
-msgstr "HTML"
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:11
-msgid "Markdown"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:12
-msgid "BBCODE"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:13
-msgid "Code"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:14
-msgid "Type"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:15
-msgid "Direct image"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:16
-msgid "Link to full size"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:17
-msgid "Embed into code"
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:18
-msgid "Delete"
-msgstr "Xóa"
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:19
-msgid ""
-"This link only shows up once. Make sure to save it if you think you might be"
-" deleting this image. We don't currently support linking images to Imgur "
-"accounts."
-msgstr ""
-
-#: ../lib/screenshooter-imgur-dialog.ui.h:20
-msgid "Deletion link"
-msgstr ""
-
-#: ../lib/screenshooter-job-callbacks.c:73
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Status</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tình trạng</span>"
-
-#: ../lib/screenshooter-job-callbacks.c:171
-msgid "Details about the screenshot"
-msgstr ""
-
-#. Create the user label
-#: ../lib/screenshooter-job-callbacks.c:217
-msgid "User:"
-msgstr "Người dùng:"
-
-#: ../lib/screenshooter-job-callbacks.c:225
-msgid ""
-"Your user name, if you do not have one yet please create one on the Web page"
-" linked above"
-msgstr ""
-
-#. Create the password label
-#: ../lib/screenshooter-job-callbacks.c:231
-msgid "Password:"
-msgstr "Mật khẩu"
-
-#: ../lib/screenshooter-job-callbacks.c:238
-msgid "The password for the user above"
-msgstr "Mật khẩu cho người dùng trên"
-
-#. Create the title label
-#: ../lib/screenshooter-job-callbacks.c:244
-msgid "Title:"
-msgstr "Tiêu đề:"
-
-#: ../lib/screenshooter-job-callbacks.c:252
-msgid ""
-"The title of the screenshot, it will be used when displaying the screenshot "
-"on the image hosting service"
-msgstr ""
-
-#. Create the comment label
-#: ../lib/screenshooter-job-callbacks.c:258
-msgid "Comment:"
-msgstr "Chú thích:"
-
-#: ../lib/screenshooter-job-callbacks.c:266
-msgid ""
-"A comment on the screenshot, it will be used when displaying the screenshot "
-"on the image hosting service"
-msgstr ""
-
-#: ../src/main.c:49
+#: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
-msgstr ""
+msgstr "Sao chép ảnh chụp vào bộ đệm"
 
-#: ../src/main.c:54
+#: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Số giây hoãn trước khi chụp"
 
-#: ../src/main.c:64
+#: src/main.c:62
 msgid "Display the mouse on the screenshot"
-msgstr ""
+msgstr "Hiển thị chuột trên ảnh chụp"
 
-#: ../src/main.c:74 ../panel-plugin/screenshooter-plugin.c:340
+#: src/main.c:67
+msgid "Removes the window border from the screenshot"
+msgstr "Xóa viền cửa sổ khỏi ảnh chụp"
+
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:336
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Chọn một vùng để chụp bằng cách nhấn vào một điểm trên màn hình và không thả nút chuột, rê chuột đến góc còn lại của vùng rồi thả nút chuột."
+msgstr "Chọn vùng chụp bằng cách nhấn vào một điểm trên màn hình và không thả nút chuột, rê chuột đến góc còn lại của vùng rồi thả nút chuột."
 
-#: ../src/main.c:81
-msgid "File path or directory where the screenshot will be saved"
-msgstr ""
+#: src/main.c:84
+msgid ""
+"File path or directory where the screenshot will be saved, accepts png, jpg "
+"and bmp extensions. webp, jxl and avif are only supported if their "
+"respective pixbuf loaders are installed."
+msgstr "Đường dẫn tập tin hoặc thư mục lưu ảnh chụp, hỗ trợ phần mở rộng png, jpg và bmp. webp, jxl và avif chỉ hỗ trợ nếu đã cài bộ tải pixbuf tương ứng."
 
-#: ../src/main.c:91
+#: src/main.c:89
+msgid "Show the saved file in the folder."
+msgstr "Hiển thị tập tin đã lưu trong thư mục."
+
+#: src/main.c:94
 msgid "Version information"
 msgstr "Thông tin phiên bản"
 
-#: ../src/main.c:140
+#: src/main.c:104
+msgid ""
+"Lists supported image formats, results can vary depending on installed "
+"pixbuf loaders"
+msgstr "Liệt kê định dạng ảnh hỗ trợ, kết quả có thể khác nhau tùy bộ tải pixbuf đã cài"
+
+#: src/main.c:140
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr ""
+msgstr "Tùy chọn xung đột: --%s và --%s không dùng cùng lúc.\n"
 
-#: ../src/main.c:142
+#: src/main.c:142
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr ""
+msgstr "Tùy chọn --%s chỉ dùng khi có --fullscreen, --window hoặc --region. Sẽ bỏ qua.\n"
 
-#: ../src/main.c:159
+#: src/main.c:153
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nThử %s --help để xem danh sách đầy đủ của các tuỳ chọn dòng lệnh khả dụng.\n"
+msgstr "%s: %s\nThử %s --help để xem danh sách đầy đủ tùy chọn dòng lệnh.\n"
 
-#: ../src/xfce4-screenshooter.desktop.in.in.h:2
-#: ../panel-plugin/screenshooter.desktop.in.h:2
+#: src/xfce4-screenshooter.desktop.in:5
+#: panel-plugin/screenshooter.desktop.in:5
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Chụp toàn bộ màn hình, hay cửa sổ đang kích hoạt hay một vùng màn hình"
+msgstr "Chụp toàn bộ màn hình, cửa sổ đang kích hoạt hoặc một vùng"
 
-#: ../src/xfce4-screenshooter.appdata.xml.in.h:1
+#: src/xfce4-screenshooter.appdata.xml.in:10
+msgid "xfce4-screenshooter"
+msgstr "xfce4-screenshooter"
+
+#: src/xfce4-screenshooter.appdata.xml.in:11
+msgid "Application and panel plugin to take screenshots"
+msgstr "Ứng dụng và phần mở rộng bảng điều khiển để chụp màn hình"
+
+#: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
 "Allows you to capture the entire screen, the active window or a selected "
 "region. You can set the delay that elapses before the screenshot is taken "
-"and the action that will be done with the screenshot: save it to a PNG file,"
-" copy it to the clipboard, open it using another application, or host it on "
-"imgur, a free online image hosting service."
-msgstr ""
+"and the action that will be done with the screenshot: save it to a file, "
+"copy it to the clipboard, open it using another application, or use your "
+"creativity with custom actions."
+msgstr "Cho phép chụp toàn bộ màn hình, cửa sổ đang kích hoạt hoặc vùng chọn. Bạn có thể đặt độ trễ trước khi chụp và hành động sau khi chụp: lưu vào tập tin, sao chép vào bộ đệm, mở bằng ứng dụng khác, hoặc dùng hành động tùy chỉnh."
