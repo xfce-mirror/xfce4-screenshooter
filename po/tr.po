@@ -5,7 +5,7 @@
 # Translators:
 # A. Cem Hanoğlu <cem.hanoglu@yahoo.com>, 2025
 # Alper Tekinalp <alper.tekinalp@gmail.com>, 2014
-# Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2024
+# Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2024,2026
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020-2022
 # Emin Tufan Çetin <etcetin@gmail.com>, 2020
 # Murat Pınar <muratpinar@archlinux.org.tr>, 2010
@@ -22,7 +22,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-08-14 00:50+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: 3909d6133b383976bde86621da215840_711025d, 2025\n"
+"Last-Translator: Demiray Muhterem <mdemiray@msn.com>, 2018-2019,2021-2024,2026\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/xfce-apps/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -325,15 +325,15 @@ msgstr "Bellek eşleştirilemedi"
 
 #: lib/screenshooter-capture-wayland.c:303
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "Çerçeve yakalanamadı"
 
 #: lib/screenshooter-capture-wayland.c:382
 msgid "Supported format not found"
-msgstr ""
+msgstr "Desteklenen biçim bulunamadı"
 
 #: lib/screenshooter-capture-wayland.c:410
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "Arabellek oluşturulamadı"
 
 #: lib/screenshooter-capture-wayland.c:457
 msgid "Required Wayland interfaces are missing"
@@ -347,7 +347,7 @@ msgstr "Compositor, wl_shm eksik"
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "Birleştirici, wlr-screencopy-unstable-v1 veya ext-image-capture-source-v1/ext-image-copy-capture-v1 desteklemiyor"
 
 #: lib/screenshooter-capture-wayland.c:577
 #, c-format
