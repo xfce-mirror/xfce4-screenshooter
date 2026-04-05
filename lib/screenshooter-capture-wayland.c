@@ -64,6 +64,7 @@ typedef struct {
   gboolean capture_done;
   gboolean capture_failed;
   gboolean skip_composition;
+  gboolean y_inverted;
   enum wl_output_transform transform;
   struct ext_image_copy_capture_session_v1 *image_copy_capture_session;
   struct ext_image_copy_capture_frame_v1 *image_copy_capture_frame;
@@ -203,6 +204,8 @@ handle_frame_failed (void *data, struct zwlr_screencopy_frame_v1 *frame)
 static void
 handle_frame_flags (void *data, struct zwlr_screencopy_frame_v1 *frame, uint32_t flags)
 {
+  OutputData *output = data;
+  output->y_inverted = flags & ZWLR_SCREENCOPY_FRAME_V1_FLAGS_Y_INVERT ? TRUE : FALSE;
   TRACE ("buffer flags received");
 }
 
@@ -516,6 +519,7 @@ static GdkPixbuf
   guint8 *data = output->shm_data;
   enum wl_shm_format format = output->format;
   gboolean has_alpha = TRUE;
+  GdkPixbuf *pixbuf;
 
   if (format == WL_SHM_FORMAT_ARGB8888 || format == WL_SHM_FORMAT_XRGB8888)
     {
@@ -580,7 +584,16 @@ static GdkPixbuf
       return NULL;
     }
 
-  return gdk_pixbuf_new_from_data (data, GDK_COLORSPACE_RGB, has_alpha, 8, output->width, output->height, output->stride, NULL, NULL);
+  pixbuf = gdk_pixbuf_new_from_data (data, GDK_COLORSPACE_RGB, has_alpha, 8, output->width, output->height, output->stride, NULL, NULL);
+
+  if (output->y_inverted)
+    {
+      GdkPixbuf *flipped = gdk_pixbuf_flip (pixbuf, FALSE);
+      g_free (pixbuf);
+      return flipped;
+    }
+
+  return pixbuf;
 }
 
 
