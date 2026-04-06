@@ -125,6 +125,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
 
   XfceRc *rc;
   gint delay = 0;
+  gint region_delay = 0;
   gint region = FULLSCREEN;
   gint action = SAVE;
   gint show_mouse = 1;
@@ -149,6 +150,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
           TRACE ("Read the entries");
 
           delay = xfce_rc_read_int_entry (rc, "delay", 0);
+          region_delay = xfce_rc_read_int_entry (rc, "region_delay", 0);
           region = xfce_rc_read_int_entry (rc, "region", FULLSCREEN);
           action = xfce_rc_read_int_entry (rc, "action", SAVE);
           show_mouse = xfce_rc_read_int_entry (rc, "show_mouse", 1);
@@ -186,6 +188,7 @@ screenshooter_read_rc_file (const gchar *file, ScreenshotData *sd)
   TRACE ("Set the values of the struct");
 
   sd->delay = delay;
+  sd->region_delay = region_delay;
   sd->region = region;
   sd->action = action;
   sd->show_mouse = show_mouse;
@@ -262,6 +265,7 @@ screenshooter_write_rc_file (const gchar *file, ScreenshotData *sd)
   if (!sd->region_specified)
   {
     xfce_rc_write_int_entry (rc, "delay", sd->delay);
+    xfce_rc_write_int_entry (rc, "region_delay", sd->region_delay);
     xfce_rc_write_int_entry (rc, "region", sd->region);
     xfce_rc_write_int_entry (rc, "show_mouse", sd->show_mouse);
     xfce_rc_write_int_entry (rc, "show_border", sd->show_border);
