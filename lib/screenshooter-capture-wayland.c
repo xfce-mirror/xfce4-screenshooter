@@ -783,7 +783,7 @@ static GdkPixbuf
 {
   GdkRectangle region;
   GdkPixbuf *screenshot = NULL, *clipped;
-  gdouble scale;
+  gdouble scale = 1.0;
 
   if (G_UNLIKELY (!screenshooter_select_region (&region)))
     return NULL;
