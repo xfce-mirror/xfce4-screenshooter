@@ -589,7 +589,7 @@ static GdkPixbuf
   if (output->y_inverted)
     {
       GdkPixbuf *flipped = gdk_pixbuf_flip (pixbuf, FALSE);
-      g_free (pixbuf);
+      g_object_unref (pixbuf);
       return flipped;
     }
 
