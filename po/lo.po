@@ -1,0 +1,436 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-apps.xfce4-screenshooter package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Apps\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-08-14 00:50+0200\n"
+"PO-Revision-Date: 2013-07-03 18:40+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Lao (http://app.transifex.com/xfce/xfce-apps/language/lo/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lo\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lib/screenshooter-dialogs.c:514
+#, c-format
+msgid "%.2fKb of %.2fKb"
+msgstr "%.2fKb ຈາກ %.2fKb"
+
+#: lib/screenshooter-dialogs.c:617
+msgid "Transfer"
+msgstr "ການຖ່າຍໂອນ"
+
+#: lib/screenshooter-dialogs.c:638
+msgid ""
+"<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
+"transferred to:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ຮູບໜ້າຈໍກຳລັງຖືກຖ່າຍໂອນໄປຫາ:</span>"
+
+#: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
+#: lib/screenshooter-dialogs.c:1139 lib/screenshooter-utils.c:135
+#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
+#: panel-plugin/screenshooter.desktop.in:4
+msgid "Screenshot"
+msgstr "ຮູບໜ້າຈໍ"
+
+#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:890
+msgid "_Preferences"
+msgstr "_ການຕັ້ງຄ່າ"
+
+#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:889
+#: lib/screenshooter-dialogs.c:1141
+msgid "_Help"
+msgstr "_ຊ່ວຍເຫຼືອ"
+
+#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1478
+msgid "_Close"
+msgstr "_ປິດ"
+
+#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1143
+msgid "_Cancel"
+msgstr "_ຍົກເລີກ"
+
+#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1144
+msgid "_OK"
+msgstr "_ຕົກລົງ"
+
+#: lib/screenshooter-dialogs.c:925
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ຂົງເຂດທີ່ຈະຖ່າຍ</span>"
+
+#: lib/screenshooter-dialogs.c:947
+msgid "Entire screen"
+msgstr "ທັງໝົດໜ້າຈໍ"
+
+#: lib/screenshooter-dialogs.c:952 src/main.c:57
+#: panel-plugin/screenshooter-plugin.c:326
+msgid "Take a screenshot of the entire screen"
+msgstr "ຖ່າຍຮູບໜ້າຈໍທັງໝົດ"
+
+#: lib/screenshooter-dialogs.c:961
+msgid "Active window"
+msgstr "ໜ້າຕ່າງທີ່ໃຊ້ງານຢູ່"
+
+#: lib/screenshooter-dialogs.c:964 src/main.c:99
+#: panel-plugin/screenshooter-plugin.c:331
+msgid "Take a screenshot of the active window"
+msgstr "ຖ່າຍຮູບໜ້າຕ່າງທີ່ກຳລັງໃຊ້ງານຢູ່"
+
+#: lib/screenshooter-dialogs.c:973 lib/screenshooter-dialogs.c:1000
+msgid "Not supported in Wayland"
+msgstr "ບໍ່ຮອງຮັບໃນ Wayland"
+
+#: lib/screenshooter-dialogs.c:984
+msgid "Select a region"
+msgstr "ເລືອກຂົງເຂດ"
+
+#: lib/screenshooter-dialogs.c:987
+msgid ""
+"Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
+"\n"
+"Press Ctrl while dragging to move the region."
+msgstr "ເລືອກຂົງເຂດທີ່ຈະຖ່າຍໂດຍການຄລິກໃສ່ຈຸດໃດໜຶ່ງຂອງໜ້າຈໍແລ້ວຄ້າງໄວ້, ລາກເມົາສ໌ໄປຫາອີກມຸມໜຶ່ງຂອງຂົງເຂດ, ແລ້ວປ່ອຍປຸ່ມເມົາສ໌.\n\nກົດ Ctrl ໃນຂະນະທີ່ລາກເພື່ອຍ້າຍຂົງເຂດ."
+
+#: lib/screenshooter-dialogs.c:1011
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ຕົວເລືອກ</span>"
+
+#: lib/screenshooter-dialogs.c:1031
+msgid "Capture the mouse pointer"
+msgstr "ຖ່າຍຕິດລູກສອນເມົາສ໌"
+
+#: lib/screenshooter-dialogs.c:1035
+msgid "Display the mouse pointer on the screenshot"
+msgstr "ສະແດງລູກສອນເມົາສ໌ໃນຮູບໜ້າຈໍ"
+
+#: lib/screenshooter-dialogs.c:1042
+msgid "Capture the window border"
+msgstr "ຖ່າຍຕິດຂອບໜ້າຕ່າງ"
+
+#: lib/screenshooter-dialogs.c:1047
+msgid ""
+"Display the window border on the screenshot.\n"
+"Disabling this option has no effect for CSD windows."
+msgstr "ສະແດງຂອບໜ້າຕ່າງໃນຮູບໜ້າຈໍ.\nການປິດຕົວເລືອກນີ້ຈະບໍ່ມີຜົນກັບໜ້າຕ່າງ CSD."
+
+#: lib/screenshooter-dialogs.c:1071
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ປະວິງເວລາກ່ອນຖ່າຍ</span>"
+
+#: lib/screenshooter-dialogs.c:1095
+msgid "Delay in seconds before the screenshot is taken"
+msgstr "ປະວິງເວລາເປັນວິນາທີກ່ອນຈະຖ່າຍຮູບໜ້າຈໍ"
+
+#: lib/screenshooter-dialogs.c:1098
+msgid "seconds"
+msgstr "ວິນາທີ"
+
+#: lib/screenshooter-dialogs.c:1142
+msgid "_Back"
+msgstr "_ກັບຄືນ"
+
+#: lib/screenshooter-dialogs.c:1182
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ການດຳເນີນການ</span>"
+
+#. Save option radio button
+#: lib/screenshooter-dialogs.c:1197
+msgid "Save"
+msgstr "ບັນທຶກ"
+
+#: lib/screenshooter-dialogs.c:1203
+msgid "Save the screenshot to a file"
+msgstr "ບັນທຶກຮູບໜ້າຈໍເປັນໄຟລ໌"
+
+#. Show in folder checkbox
+#: lib/screenshooter-dialogs.c:1207
+msgid "Show in Folder"
+msgstr "ສະແດງໃນໂຟນເດີ"
+
+#: lib/screenshooter-dialogs.c:1214
+msgid "Shows the saved file in the folder"
+msgstr "ສະແດງໄຟລ໌ທີ່ບັນທຶກໄວ້ໃນໂຟນເດີ"
+
+#: lib/screenshooter-dialogs.c:1222
+msgid "Copy to the clipboard"
+msgstr "ສຳເນົາໄປຍັງຄລິບບອດ"
+
+#: lib/screenshooter-dialogs.c:1224
+msgid "Copy the screenshot to the clipboard so that it can be pasted later"
+msgstr "ສຳເນົາຮູບໜ້າຈໍໄປຍັງຄລິບບອດເພື່ອໃຫ້ສາມາດວາງໄດ້ໃນພາຍຫຼັງ"
+
+#: lib/screenshooter-dialogs.c:1238
+msgid "Open with:"
+msgstr "ເປີດດ້ວຍ:"
+
+#: lib/screenshooter-dialogs.c:1246
+msgid "Open the screenshot with the chosen application"
+msgstr "ເປີດຮູບໜ້າຈໍດ້ວຍແອັບພລິເຄຊັນທີ່ເລືອກ"
+
+#: lib/screenshooter-dialogs.c:1265 src/main.c:72
+msgid "Application to open the screenshot"
+msgstr "ແອັບພລິເຄຊັນສຳລັບເປີດຮູບໜ້າຈໍ"
+
+#: lib/screenshooter-dialogs.c:1279
+msgid "Custom Action:"
+msgstr "ການດຳເນີນການກຳນົດເອງ:"
+
+#: lib/screenshooter-dialogs.c:1287
+msgid "Execute the selected custom action"
+msgstr "ປະຕິບັດການດຳເນີນການກຳນົດເອງທີ່ເລືອກ"
+
+#: lib/screenshooter-dialogs.c:1299
+msgid "Custom action to execute"
+msgstr "ການດຳເນີນການກຳນົດເອງທີ່ຈະປະຕິບັດ"
+
+#: lib/screenshooter-dialogs.c:1322
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ຕົວຢ່າງ</span>"
+
+#: lib/screenshooter-dialogs.c:1383
+msgid "Save screenshot as..."
+msgstr "ບັນທຶກຮູບໜ້າຈໍເປັນ..."
+
+#: lib/screenshooter-dialogs.c:1476
+msgid "Preferences"
+msgstr "ການຕັ້ງຄ່າ"
+
+#: lib/screenshooter-dialogs.c:1501
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ການດຳເນີນການກຳນົດເອງ</span>"
+
+#: lib/screenshooter-dialogs.c:1521
+msgid ""
+"You can configure custom actions that will be available to handle "
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr "ທ່ານສາມາດຕັ້ງຄ່າການດຳເນີນການກຳນົດເອງທີ່ຈະໃຊ້ຈັດການຮູບໜ້າຈໍຫຼັງຈາກຖ່າຍແລ້ວ. ທ່ານສາມາດເບິ່ງຕົວຢ່າງເພີ່ມເຕີມໄດ້ທີ່ <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">ເອກະສານແນະນຳ</a>."
+
+#: lib/screenshooter-dialogs.c:1551
+msgid "Custom Action"
+msgstr "ການດຳເນີນການກຳນົດເອງ"
+
+#: lib/screenshooter-dialogs.c:1564
+msgid "Add custom action"
+msgstr "ເພີ່ມການດຳເນີນການກຳນົດເອງ"
+
+#: lib/screenshooter-dialogs.c:1571
+msgid "Remove selected custom action"
+msgstr "ລຶບການດຳເນີນການກຳນົດເອງທີ່ເລືອກອອກ"
+
+#. Add custom action name
+#: lib/screenshooter-dialogs.c:1593
+msgid "Name"
+msgstr "ຊື່"
+
+#: lib/screenshooter-dialogs.c:1594
+msgid "Name of the action that will be displayed in Actions dialog"
+msgstr "ຊື່ຂອງການດຳເນີນການທີ່ຈະສະແດງໃນກ່ອງໂຕ້ຕອບການດຳເນີນການ"
+
+#. Add custom action command
+#: lib/screenshooter-dialogs.c:1603
+msgid "Command"
+msgstr "ຄຳສັ່ງ"
+
+#: lib/screenshooter-dialogs.c:1604
+msgid "Command that will be executed for this custom action"
+msgstr "ຄຳສັ່ງທີ່ຈະຖືກປະຕິບັດສຳລັບການດຳເນີນການກຳນົດເອງນີ້"
+
+#: lib/screenshooter-dialogs.c:1611
+#, c-format
+msgid "Use %f as a placeholder for location of the screenshot captured"
+msgstr "ໃຊ້ %f ເປັນຕົວແທນສຳລັບຕຳແໜ່ງຂອງຮູບໜ້າຈໍທີ່ຖ່າຍໄດ້"
+
+#: lib/screenshooter-custom-actions.c:211
+msgid "Unable to execute the custom action"
+msgstr "ບໍ່ສາມາດປະຕິບັດການດຳເນີນການກຳນົດເອງໄດ້"
+
+#: lib/screenshooter-custom-actions.c:211
+msgid "Invalid custom action selected"
+msgstr "ການດຳເນີນການກຳນົດເອງທີ່ເລືອກບໍ່ຖືກຕ້ອງ"
+
+#: lib/screenshooter-custom-actions.c:228
+#, c-format
+msgid "Failed to run the custom action %s"
+msgstr "ບໍ່ສາມາດລັນການດຳເນີນການກຳນົດເອງ %s"
+
+#: lib/screenshooter-format.c:31
+msgid "PNG File"
+msgstr "ໄຟລ໌ PNG"
+
+#: lib/screenshooter-format.c:32
+msgid "JPEG File"
+msgstr "ໄຟລ໌ JPEG"
+
+#: lib/screenshooter-format.c:33
+msgid "BMP File"
+msgstr "ໄຟລ໌ BMP"
+
+#: lib/screenshooter-format.c:34
+msgid "WebP File"
+msgstr "ໄຟລ໌ WebP"
+
+#: lib/screenshooter-format.c:35
+msgid "JPEG XL File"
+msgstr "ໄຟລ໌ JPEG XL"
+
+#: lib/screenshooter-format.c:36
+msgid "AVIF File"
+msgstr "ໄຟລ໌ AVIF"
+
+#: lib/screenshooter-utils.c:321
+#, c-format
+msgid ""
+"<b>The application could not be launched.</b>\n"
+"%s"
+msgstr "<b>ບໍ່ສາມາດເປີດແອັບພລິເຄຊັນໄດ້.</b>\n%s"
+
+#: lib/screenshooter-utils.c:398
+msgid "Error"
+msgstr "ຂໍ້ຜິດພາດ"
+
+#: lib/screenshooter-capture-wayland.c:195
+msgid "Failed to capture screencopy frame"
+msgstr "ບໍ່ສາມາດຈັບເຟຣມການສຳເນົາໜ້າຈໍໄດ້"
+
+#: lib/screenshooter-capture-wayland.c:225
+#: lib/screenshooter-capture-wayland.c:389
+msgid "Failed to create file descriptor"
+msgstr "ບໍ່ສາມາດສ້າງ file descriptor ໄດ້"
+
+#: lib/screenshooter-capture-wayland.c:234
+#: lib/screenshooter-capture-wayland.c:398
+msgid "Failed to map memory"
+msgstr "ບໍ່ສາມາດຈັບຄູ່ໜ່ວຍຄວາມຈຳ (map memory) ໄດ້"
+
+#: lib/screenshooter-capture-wayland.c:303
+msgid "Failed to capture frame"
+msgstr "ບໍ່ສາມາດຈັບເຟຣມໄດ້"
+
+#: lib/screenshooter-capture-wayland.c:382
+msgid "Supported format not found"
+msgstr "ບໍ່ພົບຮູບແບບທີ່ຮອງຮັບ"
+
+#: lib/screenshooter-capture-wayland.c:410
+msgid "Failed to create buffer"
+msgstr "ບໍ່ສາມາດສ້າງບັບເຟີ (buffer) ໄດ້"
+
+#: lib/screenshooter-capture-wayland.c:457
+msgid "Required Wayland interfaces are missing"
+msgstr "ອິນເຕີເຟດ Wayland ທີ່ຈຳເປັນຂາດຫາຍໄປ"
+
+#: lib/screenshooter-capture-wayland.c:462
+msgid "Compositor is missing wl_shm"
+msgstr "Compositor ຂາດ wl_shm"
+
+#: lib/screenshooter-capture-wayland.c:467
+msgid ""
+"Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
+"capture-source-v1/ext-image-copy-capture-v1"
+msgstr "Compositor ບໍ່ຮອງຮັບ wlr-screencopy-unstable-v1 ຫຼື ext-image-capture-source-v1/ext-image-copy-capture-v1"
+
+#: lib/screenshooter-capture-wayland.c:577
+#, c-format
+msgid "Unsupported pixel format: 0x%x"
+msgstr "ຮູບແບບພິກເຊວທີ່ບໍ່ຮອງຮັບ: 0x%x"
+
+#: lib/screenshooter-capture-wayland.c:652
+msgid "The selected mode is not supported in Wayland"
+msgstr "ໂໝດທີ່ເລືອກບໍ່ຮອງຮັບໃນ Wayland"
+
+#: lib/screenshooter-capture-wayland.c:720
+msgid "Failed to capture"
+msgstr "ການຖ່າຍພາບລົ້ມເຫຼວ"
+
+#: src/main.c:47
+msgid "Copy the screenshot to the clipboard"
+msgstr "ສຳເນົາຮູບໜ້າຈໍໄປຍັງຄລິບບອດ"
+
+#: src/main.c:52
+msgid "Delay in seconds before taking the screenshot"
+msgstr "ປະວິງເວລາເປັນວິນາທີກ່ອນຈະຖ່າຍຮູບໜ້າຈໍ"
+
+#: src/main.c:62
+msgid "Display the mouse on the screenshot"
+msgstr "ສະແດງລູກສອນເມົາສ໌ໃນຮູບໜ້າຈໍ"
+
+#: src/main.c:67
+msgid "Removes the window border from the screenshot"
+msgstr "ເອົາຂອບໜ້າຕ່າງອອກຈາກຮູບໜ້າຈໍ"
+
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:336
+msgid ""
+"Select a region to be captured by clicking a point of the screen without "
+"releasing the mouse button, dragging your mouse to the other corner of the "
+"region, and releasing the mouse button."
+msgstr "ເລືອກຂົງເຂດທີ່ຈະຖ່າຍໂດຍການຄລິກໃສ່ຈຸດໃດໜຶ່ງຂອງໜ້າຈໍແລ້ວຄ້າງໄວ້, ລາກເມົາສ໌ໄປຫາອີກມຸມໜຶ່ງຂອງຂົງເຂດ, ແລ້ວປ່ອຍປຸ່ມເມົາສ໌."
+
+#: src/main.c:84
+msgid ""
+"File path or directory where the screenshot will be saved, accepts png, jpg "
+"and bmp extensions. webp, jxl and avif are only supported if their "
+"respective pixbuf loaders are installed."
+msgstr "ເສັ້ນທາງໄຟລ໌ ຫຼື ໂຟນເດີທີ່ຈະບັນທຶກຮູບໜ້າຈໍ, ຮອງຮັບນາມສະກຸນ png, jpg ແລະ bmp. ສ່ວນ webp, jxl ແລະ avif ແມ່ນຮອງຮັບກໍ່ຕໍ່ເມື່ອໄດ້ຕິດຕັ້ງ pixbuf loader ຂອງພວກມັນແລ້ວ."
+
+#: src/main.c:89
+msgid "Show the saved file in the folder."
+msgstr "ສະແດງໄຟລ໌ທີ່ບັນທຶກໄວ້ໃນໂຟນເດີ."
+
+#: src/main.c:94
+msgid "Version information"
+msgstr "ຂໍ້ມູນເວີຊັນ"
+
+#: src/main.c:104
+msgid ""
+"Lists supported image formats, results can vary depending on installed "
+"pixbuf loaders"
+msgstr "ລາຍການຮູບແບບຮູບພາບທີ່ຮອງຮັບ, ຜົນໄດ້ຮັບອາດຈະແຕກຕ່າງກັນໄປຕາມ pixbuf loaders ທີ່ຕິດຕັ້ງໄວ້"
+
+#: src/main.c:140
+#, c-format
+msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
+msgstr "ຕົວເລືອກຂັດແຍ້ງກັນ: --%s ແລະ --%s ບໍ່ສາມາດໃຊ້ພ້ອມກັນໄດ້.\n"
+
+#: src/main.c:142
+#, c-format
+msgid ""
+"The --%s option is only used when --fullscreen, --window or --region is "
+"given. It will be ignored.\n"
+msgstr "ຕົວເລືອກ --%s ແມ່ນໃຊ້ໄດ້ສະເພາະເມື່ອກຳນົດ --fullscreen, --window ຫຼື --region ເທົັ້ນັ້ນ. ມັນຈະຖືກລະເລີຍ.\n"
+
+#: src/main.c:153
+#, c-format
+msgid ""
+"%s: %s\n"
+"Try %s --help to see a full list of available command line options.\n"
+msgstr "%s: %s\nລອງໃຊ້ %s --help ເພື່ອເບິ່ງລາຍການຄຳສັ່ງທັງໝົດທີ່ມີ.\n"
+
+#: src/xfce4-screenshooter.desktop.in:5
+#: panel-plugin/screenshooter.desktop.in:5
+msgid ""
+"Take screenshots of the entire screen, of the active window or of a region"
+msgstr "ຖ່າຍຮູບໜ້າຈໍທັງໝົດ, ຖ່າຍສະເພາະໜ້າຕ່າງທີ່ໃຊ້ງານຢູ່ ຫຼື ເລືອກຂົງເຂດ"
+
+#: src/xfce4-screenshooter.appdata.xml.in:10
+msgid "xfce4-screenshooter"
+msgstr "xfce4-screenshooter"
+
+#: src/xfce4-screenshooter.appdata.xml.in:11
+msgid "Application and panel plugin to take screenshots"
+msgstr "ແອັບພລິເຄຊັນ ແລະ ປລັກອິນແຖບພາເນລສຳລັບຖ່າຍຮູບໜ້າຈໍ"
+
+#: src/xfce4-screenshooter.appdata.xml.in:14
+msgid ""
+"Allows you to capture the entire screen, the active window or a selected "
+"region. You can set the delay that elapses before the screenshot is taken "
+"and the action that will be done with the screenshot: save it to a file, "
+"copy it to the clipboard, open it using another application, or use your "
+"creativity with custom actions."
+msgstr "ຊ່ວຍໃຫ້ທ່ານສາມາດຖ່າຍຮູບໜ້າຈໍທັງໝົດ, ໜ້າຕ່າງທີ່ໃຊ້ງານຢູ່ ຫຼື ຂົງເຂດທີ່ເລືອກ. ທ່ານສາມາດຕັ້ງເວລາປະວິງກ່ອນຈະຖ່າຍ ແລະ ກຳນົດສິ່ງທີ່ຈະເຮັດກັບຮູບໜ້າຈໍໄດ້: ບັນທຶກເປັນໄຟລ໌, ສຳເນົາໄປຍັງຄລິບບອດ, ເປີດດ້ວຍແອັບພລິເຄຊັນອື່ນ ຫຼື ໃຊ້ຄວາມຄິດສ້າງສັນຂອງທ່ານກັບການດຳເນີນການກຳນົດເອງ."
