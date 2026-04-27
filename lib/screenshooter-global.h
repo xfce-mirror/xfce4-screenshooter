@@ -55,6 +55,7 @@ typedef struct
   gboolean timestamp;
   gboolean path_is_dir;
   gboolean show_in_folder;
+  gboolean show_save_file_chooser;
   gchar *screenshot_dir;
   gchar *title;
   gchar *app;
