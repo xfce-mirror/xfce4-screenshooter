@@ -33,6 +33,7 @@ gboolean no_border = FALSE;
 gboolean supported_formats = FALSE;
 gboolean clipboard = FALSE;
 gboolean show_in_folder = FALSE;
+gboolean quiet = FALSE;
 gchar *screenshot_dir = NULL;
 gchar *application = NULL;
 gint delay = 0;
@@ -102,6 +103,11 @@ static GOptionEntry entries[] =
   {
     "supported-formats", 0, G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &supported_formats,
     N_("Lists supported image formats, results can vary depending on installed pixbuf loaders"),
+    NULL
+  },
+  {
+    "quiet", 'q', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &quiet,
+    N_("Do not show save dialog"),
     NULL
   },
   {
@@ -240,6 +246,7 @@ int main (int argc, char **argv)
   sd->custom_action_name = g_strdup ("none");
   sd->finalize_callback = cb_finalize;
   sd->finalize_callback_data = NULL;
+  sd->show_save_file_chooser = !quiet;
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);

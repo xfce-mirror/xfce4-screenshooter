@@ -102,8 +102,8 @@ action_idle (gpointer user_data)
                                                          sd->screenshot_dir,
                                                          filename,
                                                          sd->last_extension,
-                                                         TRUE,
-                                                         TRUE);
+                                                         sd->show_save_file_chooser,
+                                                         sd->show_save_file_chooser);
 
           g_free (filename);
 
