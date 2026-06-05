@@ -28,7 +28,7 @@
 #include <libxfce4util/libxfce4util.h>
 
 #include "screenshooter-global.h"
-#include "screenshooter-select.h"
+#include "screenshooter-select-wayland.h"
 #include "screenshooter-utils.h"
 
 
@@ -790,7 +790,7 @@ static GdkPixbuf
   GdkPixbuf *screenshot = NULL, *clipped;
   gdouble scale = 1.0;
 
-  if (G_UNLIKELY (!screenshooter_select_region (&region)))
+  if (G_UNLIKELY (!screenshooter_select_region_wayland (&region)))
     return NULL;
 
   /* Clear the display before capturing */

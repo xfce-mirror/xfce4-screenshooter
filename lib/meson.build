@@ -11,8 +11,6 @@ libscreenshooter_sources = [
   'screenshooter-dialogs.c',
   'screenshooter-dialogs.h',
   'screenshooter-global.h',
-  'screenshooter-select.c',
-  'screenshooter-select.h',
   'screenshooter-utils.c',
   'screenshooter-utils.h',
 ]

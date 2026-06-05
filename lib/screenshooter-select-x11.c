@@ -43,6 +43,7 @@ typedef struct
   gboolean rubber_banding;
   gboolean cancelled;
   gboolean move_rectangle;
+  gboolean simple_click;
   gint anchor;
   gint x;
   gint y;
@@ -59,6 +60,7 @@ typedef struct
   gboolean pressed;
   gboolean cancelled;
   gboolean move_rectangle;
+  gboolean simple_click;
   gint anchor;
   cairo_rectangle_int_t rectangle;
   gint x1, y1; /* holds the position where the mouse was pressed */
@@ -89,8 +91,10 @@ static gboolean         cb_button_released                  (GtkWidget      *wid
 static gboolean         cb_motion_notify                    (GtkWidget      *widget,
                                                              GdkEventMotion *event,
                                                              RubberBandData *rbdata);
-static gboolean         get_rectangle_region                (GdkRectangle   *region);
-static gboolean         get_rectangle_region_composited     (GdkRectangle   *region);
+static gboolean         get_rectangle_region                (GdkRectangle   *region,
+                                                             GdkWindow     **selected_window);
+static gboolean         get_rectangle_region_composited     (GdkRectangle   *region,
+                                                             GdkWindow     **selected_window);
 
 
 
@@ -238,11 +242,15 @@ static gboolean cb_button_released (GtkWidget *widget,
         {
           gtk_widget_destroy (rbdata->size_window);
           rbdata->size_window = NULL;
-          gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
-          return TRUE;
         }
       else
-        rbdata->left_pressed = rbdata->rubber_banding = FALSE;
+        {
+          rbdata->left_pressed = rbdata->rubber_banding = FALSE;
+          rbdata->simple_click = TRUE;
+        }
+
+      gtk_dialog_response (GTK_DIALOG (widget), GTK_RESPONSE_NONE);
+      return TRUE;
     }
 
   return FALSE;
@@ -502,7 +510,7 @@ try_grab (GdkSeat *seat, GdkWindow *window, GdkCursor *cursor)
 
 
 static gboolean
-get_rectangle_region_composited (GdkRectangle *region)
+get_rectangle_region_composited (GdkRectangle *region, GdkWindow **selected_window)
 {
   gboolean result = FALSE;
   GtkWidget *window;
@@ -516,6 +524,7 @@ get_rectangle_region_composited (GdkRectangle *region)
   /* Initialize the rubber band data */
   rbdata.left_pressed = FALSE;
   rbdata.rubber_banding = FALSE;
+  rbdata.simple_click = FALSE;
   rbdata.x = rbdata.y = 0;
   rbdata.cancelled = FALSE;
   rbdata.move_rectangle = FALSE;
@@ -588,7 +597,12 @@ get_rectangle_region_composited (GdkRectangle *region)
   g_object_unref (xhair_cursor);
   gdk_display_flush (display);
 
-  if (G_LIKELY (!rbdata.cancelled))
+  if (rbdata.simple_click)
+    {
+      *selected_window = screenshooter_get_window_at_cursor ();
+      result = (*selected_window != NULL);
+    }
+  else if (G_LIKELY (!rbdata.cancelled))
     {
       result = TRUE;
       region->x = rbdata.rectangle.x;
@@ -677,10 +691,8 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
               }
             else
               {
-                /* The user has not dragged the mouse, start again */
-                TRACE ("Mouse was not dragged, start again");
-
-                rbdata->pressed = FALSE;
+                rbdata->simple_click = TRUE;
+                gtk_main_quit ();
               }
           }
         return GDK_FILTER_REMOVE;
@@ -843,7 +855,7 @@ region_filter_func (GdkXEvent *xevent, GdkEvent *event, RbData *rbdata)
 
 
 static gboolean
-get_rectangle_region (GdkRectangle *region)
+get_rectangle_region (GdkRectangle *region, GdkWindow **selected_window)
 {
   gboolean result = FALSE;
   GdkWindow *root_window;
@@ -912,6 +924,7 @@ get_rectangle_region (GdkRectangle *region)
   rbdata.context = &gc;
   rbdata.pressed = FALSE;
   rbdata.cancelled = FALSE;
+  rbdata.simple_click = FALSE;
 
   /* Set the filter function to handle the GDK events */
   TRACE ("Add the events filter");
@@ -928,7 +941,12 @@ get_rectangle_region (GdkRectangle *region)
 
   gdk_seat_ungrab (seat);
 
-  if (G_LIKELY (!rbdata.cancelled))
+  if (rbdata.simple_click)
+    {
+      *selected_window = screenshooter_get_window_at_cursor ();
+      result = (*selected_window != NULL);
+    }
+  else if (G_LIKELY (!rbdata.cancelled))
     {
       result = TRUE;
       region->x = rbdata.rectangle.x / scale;
@@ -952,7 +970,7 @@ get_rectangle_region (GdkRectangle *region)
 
 
 gboolean
-screenshooter_select_region_x11 (GdkRectangle *region)
+screenshooter_select_region_x11 (GdkRectangle *region, GdkWindow **selected_window)
 {
   gboolean result;
   GdkScreen *screen;
@@ -963,8 +981,11 @@ screenshooter_select_region_x11 (GdkRectangle *region)
 
   TRACE ("Let the user select the region to screenshot");
   result = gdk_screen_is_composited (screen) ?
-                get_rectangle_region_composited (region) :
-                get_rectangle_region (region);
+                get_rectangle_region_composited (region, selected_window) :
+                get_rectangle_region (region, selected_window);
+
+  if (*selected_window != NULL)
+    return result;
 
   root = gdk_get_default_root_window ();
   root_width = gdk_window_get_width (root);

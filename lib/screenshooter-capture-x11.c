@@ -30,7 +30,7 @@
 #include <libxfce4ui/libxfce4ui.h>
 
 #include "screenshooter-global.h"
-#include "screenshooter-select.h"
+#include "screenshooter-select-x11.h"
 #include "screenshooter-utils-x11.h"
 
 
@@ -56,7 +56,8 @@ static GdkPixbuf       *get_window_screenshot               (GdkWindow      *win
                                                              gboolean        show_mouse,
                                                              gboolean        border);
 static GdkPixbuf       *get_rectangle_screenshot            (gint            delay,
-                                                             gboolean        show_mouse);
+                                                             gboolean        show_mouse,
+                                                             gboolean        show_border);
 
 
 
@@ -471,14 +472,23 @@ static GdkPixbuf
 
 
 static GdkPixbuf
-*get_rectangle_screenshot (gint delay, gboolean show_mouse)
+*get_rectangle_screenshot (gint delay, gboolean show_mouse, gboolean show_border)
 {
   GdkRectangle region;
   GdkWindow *root;
   GdkPixbuf *screenshot;
+  GdkWindow *selected_window = NULL;
 
-  if (G_UNLIKELY (!screenshooter_select_region (&region)))
+  if (G_UNLIKELY (!screenshooter_select_region_x11 (&region, &selected_window)))
     return NULL;
+
+  if (selected_window)
+    {
+      g_usleep (200000);
+      screenshot = get_window_screenshot (selected_window, show_mouse, show_border);
+      g_object_unref (selected_window);
+      return screenshot;
+    }
 
   /* Await the specified delay, but not less than 200ms */
   if (delay == 0)
@@ -517,14 +527,13 @@ static GdkPixbuf
  * the screenshot is captured after @delay seconds. If @region is
  * ACTIVE_WINDOW, a delay of @delay seconds elapses, then the active
  * window is detected and captured. If @region is SELECT, the user will
- * have to select a portion of the screen with the mouse. Then a delay of
- * @delay seconds elapses, and a screenshot is captured.
+ * have to select a portion of the screen with the mouse or simple click
+ * without moving the cursor to capture the window under the cursor.
+ * Then a delay of @delay seconds elapses, and a screenshot is captured.
  *
- * @show_mouse is only taken into account when @region is FULLSCREEN
- * or ACTIVE_WINDOW.
- *
- * @show_border is only taken into account when @region is ACTIVE_WINDOW
- * and if the window uses server side decorations.
+ * @show_border is only taken into account when @region is ACTIVE_WINDOW,
+ * or if a simple click is performed in SELECT mode, and if the window
+ * uses server side decorations.
  *
  * Return value: a #GdkPixbuf containing the screenshot or %NULL
  * (if @region is SELECT, the user can cancel the operation).
@@ -569,7 +578,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
   else if (region == SELECT)
     {
       TRACE ("Let the user select the region to screenshot");
-      screenshot = get_rectangle_screenshot (delay, show_mouse);
+      screenshot = get_rectangle_screenshot (delay, show_mouse, show_border);
     }
 
   return screenshot;
