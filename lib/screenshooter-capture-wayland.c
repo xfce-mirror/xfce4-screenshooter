@@ -382,6 +382,11 @@ handle_image_copy_capture_session_done (void *data, struct ext_image_copy_captur
       return;
     }
 
+  if (output->size <= 0) {
+      screenshooter_error (_("Invalid buffer size"));
+      g_abort ();
+  }
+
   if (!output->has_format)
     {
       screenshooter_error (_("Supported format not found"));
@@ -397,7 +402,7 @@ handle_image_copy_capture_session_done (void *data, struct ext_image_copy_captur
   ftruncate (fd, output->size);
   unlink (template);
 
-  output->shm_data = mmap (NULL, output->size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+  output->shm_data = mmap (NULL, (size_t) output->size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
   if (output->shm_data == MAP_FAILED)
     {
       screenshooter_error (_("Failed to map memory"));
