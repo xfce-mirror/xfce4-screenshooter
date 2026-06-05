@@ -22,6 +22,7 @@
 
 #include <gdk/gdk.h>
 
-gboolean screenshooter_select_region_x11 (GdkRectangle *region);
+gboolean screenshooter_select_region_x11 (GdkRectangle *region,
+                                          GdkWindow   **selected_window);
 
 #endif
