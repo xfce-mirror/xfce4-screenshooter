@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Harald Servat <redcrash@gmail.com>, 2009
-# Davidmp <medipas@gmail.com>, 2016,2025
+# Davidmp <medipas@gmail.com>, 2016,2025-2026
 # Oscar Perez <oscarpc@gmail.com>, 2023-2024
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016-2021
 # Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016
@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-08-14 00:50+0200\n"
+"POT-Creation-Date: 2026-06-06 00:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Davidmp <medipas@gmail.com>, 2016,2025\n"
+"Last-Translator: Davidmp <medipas@gmail.com>, 2016,2025-2026\n"
 "Language-Team: Catalan (http://app.transifex.com/xfce/xfce-apps/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgid ""
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">S'està transferint la captura de pantalla a:</span>"
 
 #: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
-#: lib/screenshooter-dialogs.c:1139 lib/screenshooter-utils.c:135
+#: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:135
 #: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
@@ -49,19 +49,19 @@ msgid "_Preferences"
 msgstr "_Preferències"
 
 #: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:889
-#: lib/screenshooter-dialogs.c:1141
+#: lib/screenshooter-dialogs.c:1131
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1478
+#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1482
 msgid "_Close"
 msgstr "Tan_ca"
 
-#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1143
+#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1133
 msgid "_Cancel"
 msgstr "_Cancel·la"
 
-#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1144
+#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1134
 msgid "_OK"
 msgstr "D'ac_ord"
 
@@ -74,7 +74,7 @@ msgid "Entire screen"
 msgstr "Tota la pantalla"
 
 #: lib/screenshooter-dialogs.c:952 src/main.c:57
-#: panel-plugin/screenshooter-plugin.c:326
+#: panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the entire screen"
 msgstr "Fes una captura de pantalla de tota la pantalla"
 
@@ -83,11 +83,11 @@ msgid "Active window"
 msgstr "Finestra activa"
 
 #: lib/screenshooter-dialogs.c:964 src/main.c:99
-#: panel-plugin/screenshooter-plugin.c:331
+#: panel-plugin/screenshooter-plugin.c:321
 msgid "Take a screenshot of the active window"
 msgstr "Fes una captura de pantalla de la finestra activa"
 
-#: lib/screenshooter-dialogs.c:973 lib/screenshooter-dialogs.c:1000
+#: lib/screenshooter-dialogs.c:973
 msgid "Not supported in Wayland"
 msgstr "No s'admet a Wayland."
 
@@ -102,115 +102,115 @@ msgid ""
 "Press Ctrl while dragging to move the region."
 msgstr "Seleccioneu una regió per capturar-la en fer clic amb el ratolí en un punt de la pantalla i sense deixar anar el botó del ratolí, arrossegueu el ratolí fins a l'altra cantonada de la regió, i deixeu anar el botó del ratolí.\n\nPremeu Ctrl mentre arrossegueu per moure la regió."
 
-#: lib/screenshooter-dialogs.c:1011
+#: lib/screenshooter-dialogs.c:1001
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opcions</span>"
 
-#: lib/screenshooter-dialogs.c:1031
+#: lib/screenshooter-dialogs.c:1021
 msgid "Capture the mouse pointer"
 msgstr "Captura el punter del ratolí"
 
-#: lib/screenshooter-dialogs.c:1035
+#: lib/screenshooter-dialogs.c:1025
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Visualitza el punter del ratolí a la captura de pantalla"
 
-#: lib/screenshooter-dialogs.c:1042
+#: lib/screenshooter-dialogs.c:1032
 msgid "Capture the window border"
 msgstr "Captura la vora de la finestra"
 
-#: lib/screenshooter-dialogs.c:1047
+#: lib/screenshooter-dialogs.c:1037
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Mostra la vora de la finestra a la captura de pantalla.\nDesactivar aquesta opció no té cap efecte a les finestres CSD."
 
-#: lib/screenshooter-dialogs.c:1071
+#: lib/screenshooter-dialogs.c:1061
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Retard abans de fer la captura</span>"
 
-#: lib/screenshooter-dialogs.c:1095
+#: lib/screenshooter-dialogs.c:1085
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Retard en segons abans de fer la captura de pantalla"
 
-#: lib/screenshooter-dialogs.c:1098
+#: lib/screenshooter-dialogs.c:1088
 msgid "seconds"
 msgstr "segons"
 
-#: lib/screenshooter-dialogs.c:1142
+#: lib/screenshooter-dialogs.c:1132
 msgid "_Back"
 msgstr "_Enrere"
 
-#: lib/screenshooter-dialogs.c:1182
+#: lib/screenshooter-dialogs.c:1172
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Acció</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1197
+#: lib/screenshooter-dialogs.c:1187
 msgid "Save"
 msgstr "Desa"
 
-#: lib/screenshooter-dialogs.c:1203
+#: lib/screenshooter-dialogs.c:1193
 msgid "Save the screenshot to a file"
 msgstr "Desa la captura de pantalla a un fitxer"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1207
+#: lib/screenshooter-dialogs.c:1197
 msgid "Show in Folder"
 msgstr "Mostra a la carpeta"
 
-#: lib/screenshooter-dialogs.c:1214
+#: lib/screenshooter-dialogs.c:1204
 msgid "Shows the saved file in the folder"
 msgstr "Mostra el fitxer desat a la carpeta"
 
-#: lib/screenshooter-dialogs.c:1222
+#: lib/screenshooter-dialogs.c:1212
 msgid "Copy to the clipboard"
 msgstr "Copia al porta-retalls"
 
-#: lib/screenshooter-dialogs.c:1224
+#: lib/screenshooter-dialogs.c:1214
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Copia la captura de pantalla al porta-retalls i, d'aquesta manera, ho podreu enganxar més endavant"
 
-#: lib/screenshooter-dialogs.c:1238
+#: lib/screenshooter-dialogs.c:1228
 msgid "Open with:"
 msgstr "Obre amb:"
 
-#: lib/screenshooter-dialogs.c:1246
+#: lib/screenshooter-dialogs.c:1236
 msgid "Open the screenshot with the chosen application"
 msgstr "Obre la captura de pantalla amb l'aplicació seleccionada"
 
-#: lib/screenshooter-dialogs.c:1265 src/main.c:72
+#: lib/screenshooter-dialogs.c:1255 src/main.c:72
 msgid "Application to open the screenshot"
 msgstr "Aplicació per obrir la captura de pantalla"
 
-#: lib/screenshooter-dialogs.c:1279
+#: lib/screenshooter-dialogs.c:1269
 msgid "Custom Action:"
 msgstr "Acció personalitzada:"
 
-#: lib/screenshooter-dialogs.c:1287
+#: lib/screenshooter-dialogs.c:1277
 msgid "Execute the selected custom action"
 msgstr "Executa l'acció personalitzada seleccionada"
 
-#: lib/screenshooter-dialogs.c:1299
+#: lib/screenshooter-dialogs.c:1289
 msgid "Custom action to execute"
 msgstr "Acció personalitzada a executar<br>"
 
-#: lib/screenshooter-dialogs.c:1322
+#: lib/screenshooter-dialogs.c:1312
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Vista prèvia</span>"
 
-#: lib/screenshooter-dialogs.c:1383
+#: lib/screenshooter-dialogs.c:1387
 msgid "Save screenshot as..."
 msgstr "Desa la captura de pantalla com..."
 
-#: lib/screenshooter-dialogs.c:1476
+#: lib/screenshooter-dialogs.c:1480
 msgid "Preferences"
 msgstr "Preferències"
 
-#: lib/screenshooter-dialogs.c:1501
+#: lib/screenshooter-dialogs.c:1505
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Accions personalitzades</span>"
 
-#: lib/screenshooter-dialogs.c:1521
+#: lib/screenshooter-dialogs.c:1525
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured. You can find more examples in the <a "
@@ -218,37 +218,37 @@ msgid ""
 "actions#examples\">documentation</a>."
 msgstr "Podeu configurar accions personalitzades que estaran disponibles per gestionar les captures de pantalla després de capturar-les. Podeu trobar-ne més exemples a la <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">documentació</a>."
 
-#: lib/screenshooter-dialogs.c:1551
+#: lib/screenshooter-dialogs.c:1555
 msgid "Custom Action"
 msgstr "Acció personalitzada"
 
-#: lib/screenshooter-dialogs.c:1564
+#: lib/screenshooter-dialogs.c:1568
 msgid "Add custom action"
 msgstr "Afegeix una acció personalitzada"
 
-#: lib/screenshooter-dialogs.c:1571
+#: lib/screenshooter-dialogs.c:1575
 msgid "Remove selected custom action"
 msgstr "Elimina l'acció personalitzada seleccionada"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1593
+#: lib/screenshooter-dialogs.c:1597
 msgid "Name"
 msgstr "Nom"
 
-#: lib/screenshooter-dialogs.c:1594
+#: lib/screenshooter-dialogs.c:1598
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Nom de l'acció que serà mostrada al diàleg d'accions"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1603
+#: lib/screenshooter-dialogs.c:1607
 msgid "Command"
 msgstr "Ordre"
 
-#: lib/screenshooter-dialogs.c:1604
+#: lib/screenshooter-dialogs.c:1608
 msgid "Command that will be executed for this custom action"
 msgstr "Comanda que s'executarà per a aquesta acció personalitzada"
 
-#: lib/screenshooter-dialogs.c:1611
+#: lib/screenshooter-dialogs.c:1615
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Utilitzeu %f com a marcador de posició per a la ubicació de la captura de pantalla"
@@ -301,58 +301,62 @@ msgstr "<b>No s'ha pogut obrir l'aplicació.</b>\n%s"
 msgid "Error"
 msgstr "Error"
 
-#: lib/screenshooter-capture-wayland.c:195
+#: lib/screenshooter-capture-wayland.c:198
 msgid "Failed to capture screencopy frame"
 msgstr "No s'ha pogut capturar el fotograma de la còpia de pantalla."
 
-#: lib/screenshooter-capture-wayland.c:225
-#: lib/screenshooter-capture-wayland.c:389
+#: lib/screenshooter-capture-wayland.c:230
+#: lib/screenshooter-capture-wayland.c:399
 msgid "Failed to create file descriptor"
 msgstr "No s'ha pogut crear el descriptor del fitxer."
 
-#: lib/screenshooter-capture-wayland.c:234
-#: lib/screenshooter-capture-wayland.c:398
+#: lib/screenshooter-capture-wayland.c:239
+#: lib/screenshooter-capture-wayland.c:408
 msgid "Failed to map memory"
 msgstr "No s'ha pogut mapar la memòria."
 
-#: lib/screenshooter-capture-wayland.c:303
+#: lib/screenshooter-capture-wayland.c:308
 msgid "Failed to capture frame"
 msgstr "No s'ha pogut capturar el fotograma."
 
-#: lib/screenshooter-capture-wayland.c:382
+#: lib/screenshooter-capture-wayland.c:386
+msgid "Invalid buffer size"
+msgstr "Mida de memòria intermèdia no vàlida"
+
+#: lib/screenshooter-capture-wayland.c:392
 msgid "Supported format not found"
 msgstr "No s'ha trobat el format compatible."
 
-#: lib/screenshooter-capture-wayland.c:410
+#: lib/screenshooter-capture-wayland.c:420
 msgid "Failed to create buffer"
 msgstr "Ha fallat crear la memòria intermèdia."
 
-#: lib/screenshooter-capture-wayland.c:457
+#: lib/screenshooter-capture-wayland.c:467
 msgid "Required Wayland interfaces are missing"
 msgstr "Falten interfícies de Wayland necessàries."
 
-#: lib/screenshooter-capture-wayland.c:462
+#: lib/screenshooter-capture-wayland.c:472
 msgid "Compositor is missing wl_shm"
 msgstr "Falta wl_shm al compositor"
 
-#: lib/screenshooter-capture-wayland.c:467
+#: lib/screenshooter-capture-wayland.c:477
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
 msgstr "El compositor no admet wlr-screencopy-unstable-v1 ni ext-image-capture-source-v1/ext-image-copy-capture-v1."
 
-#: lib/screenshooter-capture-wayland.c:577
+#: lib/screenshooter-capture-wayland.c:588
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
 msgstr "Format de píxels no compatible: 0x%x"
 
-#: lib/screenshooter-capture-wayland.c:652
-msgid "The selected mode is not supported in Wayland"
-msgstr "El mode seleccionat no és compatible amb Wayland."
-
-#: lib/screenshooter-capture-wayland.c:720
+#: lib/screenshooter-capture-wayland.c:773
 msgid "Failed to capture"
 msgstr "No s'ha pogut capturar."
+
+#: lib/screenshooter-capture-wayland.c:837
+msgid "The selected mode is not supported in Wayland"
+msgstr "El mode seleccionat no és compatible amb Wayland."
 
 #: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
@@ -370,7 +374,7 @@ msgstr "Mostra el ratolí a la captura de pantalla"
 msgid "Removes the window border from the screenshot"
 msgstr "Elimina la vora de la finestra de la captura de pantalla"
 
-#: src/main.c:77 panel-plugin/screenshooter-plugin.c:336
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:326
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
