@@ -163,6 +163,34 @@ screenshooter_get_active_window (GdkScreen *screen,
 
 
 
+GdkWindow *
+screenshooter_get_window_at_cursor (void)
+{
+  Window root_window, window;
+  int x1, y1, x2, y2;
+  unsigned int mask;
+  GdkDisplay *display = gdk_display_get_default ();
+  Display *xdisplay = gdk_x11_display_get_xdisplay (display);
+  Window root_xwindow = gdk_x11_get_default_root_xwindow ();
+
+  if (XQueryPointer (xdisplay, root_xwindow, &root_window, &window, &x1, &y1, &x2, &y2, &mask)
+      && window != None)
+    {
+      /* Try to find the actual window, not the WM frame */
+      Window subwindow;
+      if (XQueryPointer (xdisplay, window, &root_window, &subwindow, &x1, &y1, &x2, &y2, &mask)
+          && subwindow != None)
+        {
+          return gdk_x11_window_foreign_new_for_display (display, subwindow);
+        }
+      return gdk_x11_window_foreign_new_for_display (display, window);
+    }
+
+  return NULL;
+}
+
+
+
 /*
  * Replacement for gdk_pixbuf_get_from_window which only takes
  * one (first) correct screenshot per execution.
