@@ -482,19 +482,18 @@ static GdkPixbuf
   if (G_UNLIKELY (!screenshooter_select_region_x11 (&region, &selected_window)))
     return NULL;
 
-  if (selected_window)
-    {
-      g_usleep (200000);
-      screenshot = get_window_screenshot (selected_window, show_mouse, show_border);
-      g_object_unref (selected_window);
-      return screenshot;
-    }
-
   /* Await the specified delay, but not less than 200ms */
   if (delay == 0)
     g_usleep (200000);
   else
     sleep (delay);
+
+  if (selected_window)
+    {
+      screenshot = get_window_screenshot (selected_window, show_mouse, show_border);
+      g_object_unref (selected_window);
+      return screenshot;
+    }
 
   /* Get the screenshot's pixbuf */
   TRACE ("Get the pixbuf for the screenshot");
