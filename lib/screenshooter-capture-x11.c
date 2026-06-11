@@ -273,20 +273,13 @@ static GdkPixbuf
   gint x_orig, y_orig;
   gint width, height;
   GdkPixbuf *screenshot;
-  GdkWindow *root;
 
   gint scale;
   GdkRectangle real_coords;
-  GdkRectangle screen_geometry;
   GtkBorder extents;
   gboolean has_extents;
 
   Window wm_xid;
-
-  /* Get the root window */
-  TRACE ("Get the root window");
-
-  root = gdk_get_default_root_window ();
 
   if ((has_extents = xfce_has_gtk_frame_extents (window, &extents)))
     border = FALSE;
@@ -299,41 +292,31 @@ static GdkPixbuf
     gdk_window_get_origin (window, &real_coords.x, &real_coords.y);
   }
 
-  /* Don't grab things offscreen. */
-
-  TRACE ("Make sure we don't grab things offscreen");
-
   x_orig = real_coords.x;
   y_orig = real_coords.y;
   width  = real_coords.width;
   height = real_coords.height;
 
-  screenshooter_get_screen_geometry (&screen_geometry);
-
-  if (x_orig < 0)
-    {
-      width = width + x_orig;
-      x_orig = 0;
-    }
-
-  if (y_orig < 0)
-    {
-      height = height + y_orig;
-      y_orig = 0;
-    }
-
-  if (x_orig + width > screen_geometry.width)
-    width = screen_geometry.width - x_orig;
-
-  if (y_orig + height > screen_geometry.height)
-    height = screen_geometry.height - y_orig;
-
   scale = gdk_window_get_scale_factor (window);
 
   TRACE ("Grab the screenshot");
 
+  wm_xid = find_wm_xid (window);
+
   if (!has_extents)
-    screenshot = screenshooter_pixbuf_get_from_window (root, x_orig, y_orig, width, height);
+    {
+      if (border && wm_xid != None)
+        {
+          GdkWindow *wm_window = gdk_x11_window_foreign_new_for_display (
+            gdk_window_get_display (window), wm_xid);
+          screenshot = screenshooter_pixbuf_get_from_window (
+            wm_window, 0, 0, width, height);
+          g_object_unref (wm_window);
+        }
+      else
+        screenshot = screenshooter_pixbuf_get_from_window (
+          window, 0, 0, width, height);
+    }
   else
     {
       GdkRectangle rect;
@@ -351,7 +334,6 @@ static GdkPixbuf
    * Copyright (C) 2001-2006  Jonathan Blandford <jrb@alum.mit.edu>
    * Copyright (C) 2008 Cosimo Cecchi <cosimoc@gnome.org>
    */
-  wm_xid = find_wm_xid (window);
 
   if (border && wm_xid != None)
     {
@@ -407,26 +389,6 @@ static GdkPixbuf
               rec_y = rectangles[i].y / scale;
               rec_width = rectangles[i].width / scale - (frame_offset.left + frame_offset.right);
               rec_height = rectangles[i].height / scale - (frame_offset.top + frame_offset.bottom);
-
-              if (real_coords.x < 0)
-                {
-                  rec_x += real_coords.x;
-                  rec_x = MAX(rec_x, 0);
-                  rec_width += real_coords.x;
-                }
-
-              if (real_coords.y < 0)
-                {
-                  rec_y += real_coords.y;
-                  rec_y = MAX(rec_y, 0);
-                  rec_height += real_coords.y;
-                }
-
-              if (x_orig + rec_x + rec_width > screen_geometry.width)
-                rec_width = screen_geometry.width - x_orig - rec_x;
-
-              if (y_orig + rec_y + rec_height > screen_geometry.height)
-                rec_height = screen_geometry.height - y_orig - rec_y;
 
               /* Undo the scale factor in order to copy the pixbuf data pixel-wise */
               for (gint y = rec_y * scale; y < (rec_y + rec_height) * scale; y++)
