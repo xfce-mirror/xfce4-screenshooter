@@ -36,6 +36,7 @@ gboolean show_in_folder = FALSE;
 gchar *screenshot_dir = NULL;
 gchar *application = NULL;
 gint delay = 0;
+gint region_delay = 0;
 
 
 
@@ -50,6 +51,11 @@ static GOptionEntry entries[] =
   {
     "delay", 'd', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &delay,
     N_("Delay in seconds before taking the screenshot"),
+    NULL
+  },
+  {
+    "delay-before-region", 'D', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_INT, &region_delay,
+    N_("Delay in seconds before selecting a region (only used with --region)"),
     NULL
   },
   {
@@ -139,8 +145,9 @@ int main (int argc, char **argv)
   const gchar *conflict_error =
     _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
   const gchar *ignore_error =
-    _("The --%s option is only used when --fullscreen, --window or"
-      " --region is given. It will be ignored.\n");
+    _("The --%s option is only used when --fullscreen, --window or --region is given. It will be ignored.\n");
+  const gchar *ignore_error_region_only =
+    _("The --%s option is only used when --region is given. It will be ignored.\n");
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
@@ -201,6 +208,8 @@ int main (int argc, char **argv)
     g_printerr (ignore_error, "clipboard");
   if (delay && !(fullscreen || window || region))
     g_printerr (ignore_error, "delay");
+  if (region_delay && !region)
+    g_printerr (ignore_error_region_only, "delay-before-region");
   if (mouse && !(fullscreen || window || region))
     g_printerr (ignore_error, "mouse");
 
@@ -268,6 +277,7 @@ int main (int argc, char **argv)
       no_border ? (sd->show_border = 0) : (sd->show_border = 1);
 
       sd->delay = delay;
+      sd->region_delay = region_delay;
 
       if (application != NULL)
         {
