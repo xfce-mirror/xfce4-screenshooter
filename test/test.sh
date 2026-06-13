@@ -13,6 +13,7 @@ TEST_FAILED_MSG=""
 
 XFWM4_THEME=Basix # Border size top=24px bottom=5px left=5px right=5px
 XFWM4_THEME_BAK=$(xfconf-query -c xfwm4 -p /general/theme)
+SCREENSHOOTER_PATH="$(git rev-parse --show-toplevel)/build/src/xfce4-screenshooter"
 
 assertEquals()
 {
@@ -37,14 +38,15 @@ openTestWindow()
 
 closeTestWindow()
 {
-    kill "$PID"
+    [[ -n $PID ]] && kill "$PID"
+    PID=
 }
 
 test()
 {
     TEST_FAILED=0
     TEST_FAILED_MSG=""
-    echo -e "${LIGHT_PURPLE}[TEST] ${PURPLE}$1${NC}"
+    echo -n -e "${LIGHT_PURPLE}[TEST] ${PURPLE}$1${NC} "
 
     $1
 
@@ -53,8 +55,6 @@ test()
     else
         echo -e "${RED}FAILED: ${TEST_FAILED_MSG}${NC}"
     fi
-
-    echo
 }
 
 setUp()
@@ -63,18 +63,21 @@ setUp()
         gcc $(pkg-config --cflags gtk+-3.0) test.c -o /tmp/xfce4-screenshooter-test $(pkg-config --libs gtk+-3.0)
     fi
     xfconf-query -c xfwm4 -p /general/theme -s $XFWM4_THEME
-    
+
 }
 
 tearDown()
 {
+    closeTestWindow
     xfconf-query -c xfwm4 -p /general/theme -s $XFWM4_THEME_BAK
+    xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 1
 }
+trap tearDown INT TERM EXIT
 
 testScreenshotActiveWindow()
 {
     openTestWindow
-    ../src/xfce4-screenshooter -w -s /tmp/test.png
+    $SCREENSHOOTER_PATH -w -s /tmp/test.png
     assertEquals '300x300' $(identify -format '%wx%h' /tmp/test.png)
     assertEquals 0 $(magick /tmp/test.png -format %c histogram:info:- | grep -v '#00FF00' | wc -l)
     closeTestWindow
@@ -83,7 +86,7 @@ testScreenshotActiveWindow()
 testScreenshotActiveWindowDecoration()
 {
     openTestWindow --decoration
-    ../src/xfce4-screenshooter -w -s /tmp/test.png
+    $SCREENSHOOTER_PATH -w -s /tmp/test.png
     assertEquals '310x329' $(identify -format '%wx%h' /tmp/test.png)
     assertEquals 0 $(magick /tmp/test.png -crop 300x300+5+24 -format %c histogram:info:- | grep -v '#00FF00' | wc -l)
     closeTestWindow
@@ -91,17 +94,19 @@ testScreenshotActiveWindowDecoration()
 
 testScreenshotActiveWindowDecorationScale2x()
 {
-    GDK_SCALE=2 openTestWindow --decoration
-    ../src/xfce4-screenshooter -w -s /tmp/test.png
+    xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2
+    openTestWindow --decoration
+    $SCREENSHOOTER_PATH -w -s /tmp/test.png
     assertEquals '610x629' $(identify -format '%wx%h' /tmp/test.png)
     assertEquals 0 $(magick /tmp/test.png -crop 300x300+5+24 -format %c histogram:info:- | grep -v '#00FF00' | wc -l)
     closeTestWindow
+    xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 1
 }
 
 testScreenshotRegion()
 {
     openTestWindow
-    ../src/xfce4-screenshooter -r -s /tmp/test.png &
+    $SCREENSHOOTER_PATH -r -s /tmp/test.png &
     sleep 1
     xdotool mousemove 100 100
     xdotool mousedown 1
@@ -116,7 +121,7 @@ testScreenshotRegion()
 
 testScreenshotFullscreen()
 {
-    ../src/xfce4-screenshooter -f -s /tmp/test.png
+    $SCREENSHOOTER_PATH -f -s /tmp/test.png
     assertEquals $(xrandr --current | grep '*' | awk '{print $1}') $(identify -format '%wx%h' /tmp/test.png)
 }
 
@@ -126,4 +131,3 @@ test testScreenshotActiveWindowDecoration
 test testScreenshotActiveWindowDecorationScale2x
 test testScreenshotRegion
 test testScreenshotFullscreen
-tearDown
