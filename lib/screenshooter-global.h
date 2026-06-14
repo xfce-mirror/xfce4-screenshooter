@@ -52,7 +52,6 @@ typedef struct
   gint action;
   gboolean action_specified;
   gboolean region_specified;
-  gboolean interactive;
   gboolean timestamp;
   gboolean path_is_dir;
   gboolean show_in_folder;
