@@ -37,6 +37,8 @@ gchar     *screenshooter_get_xdg_image_dir_uri    (void);
 gboolean   screenshooter_is_remote_uri            (const gchar    *uri);
 void       screenshooter_error                    (const gchar    *format,
                                                    ...);
+void       screenshooter_error_set_interactive    (gboolean        value);
+gboolean   screenshooter_error_was_logged         (void);
 gchar     *screenshooter_get_filename_for_uri     (const gchar    *uri,
                                                    const gchar    *title,
                                                    const gchar    *extension,

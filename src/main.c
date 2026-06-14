@@ -136,6 +136,7 @@ int main (int argc, char **argv)
   GError *cli_error = NULL;
   GFile *default_save_dir;
   gchar *rc_file;
+  gboolean interactive = TRUE;
   const gchar *conflict_error =
     _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
   const gchar *ignore_error =
@@ -240,13 +241,12 @@ int main (int argc, char **argv)
   sd->custom_action_name = g_strdup ("none");
   sd->finalize_callback = cb_finalize;
   sd->finalize_callback_data = NULL;
+  sd->action_specified = FALSE;
+  sd->region_specified = FALSE;
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
   screenshooter_read_rc_file (rc_file, sd);
-
-  /* Default to no action specified */
-  sd->action_specified = FALSE;
 
   /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
@@ -311,12 +311,19 @@ int main (int argc, char **argv)
           g_free (screenshot_dir);
         }
 
+      if (sd->action_specified)
+        interactive = FALSE;
+      screenshooter_error_set_interactive (interactive);
+
       screenshooter_take_screenshot (sd, TRUE);
       gtk_main ();
     }
   /* Else we show a dialog which allows to set the screenshot options */
   else
     {
+      interactive = TRUE;
+      screenshooter_error_set_interactive (interactive);
+
       screenshooter_region_dialog_show (sd, FALSE);
     }
 
@@ -334,6 +341,10 @@ int main (int argc, char **argv)
   g_free (sd);
 
   TRACE ("Ciao");
+
+  /* Only exit with non-zero in non-interactive executions and if an error was logged. */
+  if (!interactive)
+    return screenshooter_error_was_logged () ? EXIT_FAILURE : EXIT_SUCCESS;
 
   return EXIT_SUCCESS;
 }
