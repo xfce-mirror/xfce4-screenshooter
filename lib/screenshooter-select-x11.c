@@ -25,6 +25,7 @@
 
 #include <libxfce4ui/libxfce4ui.h>
 
+#include "screenshooter-utils.h"
 #include "screenshooter-utils-x11.h"
 
 #define BACKGROUND_TRANSPARENCY 0.4
@@ -576,7 +577,7 @@ get_rectangle_region_composited (GdkRectangle *region)
     {
       gtk_widget_destroy (window);
       g_object_unref (xhair_cursor);
-      g_warning ("Failed to grab seat");
+      screenshooter_error ("Failed to grab seat");
       return result;
     }
 
