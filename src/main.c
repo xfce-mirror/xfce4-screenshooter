@@ -136,6 +136,7 @@ int main (int argc, char **argv)
   GError *cli_error = NULL;
   GFile *default_save_dir;
   gchar *rc_file;
+  gboolean interactive = TRUE;
   const gchar *conflict_error =
     _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
   const gchar *ignore_error =
@@ -242,7 +243,6 @@ int main (int argc, char **argv)
   sd->finalize_callback_data = NULL;
   sd->action_specified = FALSE;
   sd->region_specified = FALSE;
-  sd->interactive = TRUE;
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
@@ -312,8 +312,8 @@ int main (int argc, char **argv)
         }
 
       if (sd->action_specified)
-        sd->interactive = FALSE;
-      screenshooter_error_set_interactive (sd->interactive);
+        interactive = FALSE;
+      screenshooter_error_set_interactive (interactive);
 
       screenshooter_take_screenshot (sd, TRUE);
       gtk_main ();
@@ -321,8 +321,8 @@ int main (int argc, char **argv)
   /* Else we show a dialog which allows to set the screenshot options */
   else
     {
-      sd->interactive = TRUE;
-      screenshooter_error_set_interactive (sd->interactive);
+      interactive = TRUE;
+      screenshooter_error_set_interactive (interactive);
 
       screenshooter_region_dialog_show (sd, FALSE);
     }
@@ -343,7 +343,7 @@ int main (int argc, char **argv)
   TRACE ("Ciao");
 
   /* Only exit with non-zero in non-interactive executions and if an error was logged. */
-  if (!sd->interactive)
+  if (!interactive)
     return screenshooter_error_was_logged () ? EXIT_FAILURE : EXIT_SUCCESS;
 
   return EXIT_SUCCESS;
