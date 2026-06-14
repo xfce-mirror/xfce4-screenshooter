@@ -634,7 +634,7 @@ GdkPixbuf
   dest = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, max_width, max_height);
   if (dest == NULL)
     {
-      g_warning ("Failed to create destination pixbuf.");
+      screenshooter_error ("Failed to create destination pixbuf.");
       return NULL;
     }
 

@@ -31,6 +31,7 @@
 
 #include "screenshooter-global.h"
 #include "screenshooter-select.h"
+#include "screenshooter-utils.h"
 #include "screenshooter-utils-x11.h"
 
 
@@ -79,7 +80,7 @@ find_wm_xid (GdkWindow *window)
       if (XQueryTree (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
                       xid, &root, &parent, &children, &nchildren) == 0)
         {
-          g_warning ("Couldn't find window manager window");
+          screenshooter_error ("Couldn't find window manager window");
           return None;
         }
 

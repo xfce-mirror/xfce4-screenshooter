@@ -18,6 +18,7 @@
  * */
 
 #include "screenshooter-custom-actions.h"
+#include "screenshooter-utils.h"
 
 #include <xfconf/xfconf.h>
 #include <libxfce4ui/libxfce4ui.h>
@@ -77,7 +78,7 @@ screenshooter_custom_action_save (GtkTreeModel *list_store)
 
   if (!xfconf_init (&error))
     {
-      g_critical ("Failed to initialized xfconf");
+      screenshooter_error ("Failed to initialize xfconf: %s", error->message);
       g_error_free (error);
       return;
     }
@@ -142,7 +143,7 @@ screenshooter_custom_action_load (GtkListStore *list_store)
 
   if (!xfconf_init (&error))
     {
-      g_critical ("Failed to initialized xfconf");
+      screenshooter_error ("Failed to initialize xfconf: %s", error->message);
       g_error_free (error);
       return;
     }
@@ -196,7 +197,7 @@ screenshooter_custom_action_execute (gchar *save_location,
                                      gchar *command)
 {
   gchar **split;
-  gchar **argv;
+  gchar **argv = NULL;
   gchar **envp;
   gchar  *formatted_command;
   gchar  *expanded_command;
@@ -222,12 +223,14 @@ screenshooter_custom_action_execute (gchar *save_location,
   expanded_command = xfce_expand_variables (formatted_command, NULL);
   envp = screenshooter_parse_envp (&expanded_command);
 
-  if (G_LIKELY (g_shell_parse_argv (expanded_command, NULL, &argv, &error)))
-    if (!g_spawn_async (NULL, argv, envp, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error))
-      {
-        xfce_dialog_show_error (NULL, error, _("Failed to run the custom action %s"), name);
-        g_error_free (error);
-      }
+  g_shell_parse_argv (expanded_command, NULL, &argv, &error);
+  if (G_LIKELY (error == NULL))
+    g_spawn_async (NULL, argv, envp, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
+  if (error != NULL)
+  {
+    screenshooter_error (_("Failed to run the custom action %s: %s"), name, error->message);
+    g_error_free (error);
+  }
 
   g_free (formatted_command);
   g_free (expanded_command);

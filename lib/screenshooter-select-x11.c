@@ -882,7 +882,7 @@ get_rectangle_region (GdkRectangle *region)
   if (res != GDK_GRAB_SUCCESS)
     {
       g_object_unref (xhair_cursor);
-      g_warning ("Failed to grab seat");
+      screenshooter_error ("Failed to grab seat");
       return result;
     }
 
