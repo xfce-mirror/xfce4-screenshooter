@@ -240,13 +240,13 @@ int main (int argc, char **argv)
   sd->custom_action_name = g_strdup ("none");
   sd->finalize_callback = cb_finalize;
   sd->finalize_callback_data = NULL;
+  sd->action_specified = FALSE;
+  sd->region_specified = FALSE;
+  sd->interactive = TRUE;
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
   screenshooter_read_rc_file (rc_file, sd);
-
-  /* Default to no action specified */
-  sd->action_specified = FALSE;
 
   /* If a region cli option is given, take the screenshot accordingly.*/
   if (fullscreen || window || region)
@@ -311,12 +311,19 @@ int main (int argc, char **argv)
           g_free (screenshot_dir);
         }
 
+      if (sd->action_specified)
+        sd->interactive = FALSE;
+      screenshooter_error_set_interactive (sd->interactive);
+
       screenshooter_take_screenshot (sd, TRUE);
       gtk_main ();
     }
   /* Else we show a dialog which allows to set the screenshot options */
   else
     {
+      sd->interactive = TRUE;
+      screenshooter_error_set_interactive (sd->interactive);
+
       screenshooter_region_dialog_show (sd, FALSE);
     }
 
@@ -336,7 +343,7 @@ int main (int argc, char **argv)
   TRACE ("Ciao");
 
   /* Only exit with non-zero in non-interactive executions and if an error was logged. */
-  if (sd->region_specified && sd->action_specified)
+  if (!sd->interactive)
     return screenshooter_error_was_logged () ? EXIT_FAILURE : EXIT_SUCCESS;
 
   return EXIT_SUCCESS;

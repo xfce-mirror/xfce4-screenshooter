@@ -31,6 +31,7 @@
 
 
 static gboolean error_was_logged = FALSE;
+static gboolean interactive = FALSE;
 
 
 
@@ -379,14 +380,13 @@ gboolean screenshooter_is_remote_uri (const gchar *uri)
  * @format: printf()-style format string
  * @...: arguments for @format
  *
- * Shows a modal error dialog with the given error text. Blocks until the user
- * clicks the OK button.
+ * Always logs the error to stderr. In interactive mode it also shows a modal
+ * error dialog and blocks until the user clicks the OK button.
  **/
 void screenshooter_error (const gchar *format, ...)
 {
   va_list va_args;
   gchar *message = NULL;
-  GtkWidget *dialog;
 
   g_return_if_fail (format != NULL);
 
@@ -396,19 +396,39 @@ void screenshooter_error (const gchar *format, ...)
 
   g_fprintf (stderr, "Error: %s\n", message);
 
-  dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
-                                   GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
-                                   NULL);
-  gtk_window_set_title (GTK_WINDOW (dialog), _("Error"));
-  gtk_window_set_icon_name (GTK_WINDOW (dialog), "dialog-error-symbolic");
-  gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog), message);
+  if (interactive)
+    {
+      GtkWidget *dialog;
 
-  gtk_dialog_run (GTK_DIALOG (dialog));
-  gtk_widget_destroy  (dialog);
+      dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL,
+                                       GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
+                                       NULL);
+      gtk_window_set_title (GTK_WINDOW (dialog), _("Error"));
+      gtk_window_set_icon_name (GTK_WINDOW (dialog), "dialog-error-symbolic");
+      gtk_message_dialog_set_markup (GTK_MESSAGE_DIALOG (dialog), message);
+
+      gtk_dialog_run (GTK_DIALOG (dialog));
+      gtk_widget_destroy  (dialog);
+    }
 
   g_free (message);
 
   error_was_logged = TRUE;
+}
+
+
+
+/**
+ * screenshooter_set_interactive:
+ * @value: whether the execution is interactive
+ *
+ * Controls how screenshooter_error reports errors: in interactive mode it shows
+ * a modal error dialog, otherwise it only logs to stderr.
+ **/
+void
+screenshooter_error_set_interactive (gboolean value)
+{
+  interactive = value;
 }
 
 
