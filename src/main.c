@@ -335,5 +335,9 @@ int main (int argc, char **argv)
 
   TRACE ("Ciao");
 
-  return screenshooter_error_was_logged ();
+  /* Only exit with non-zero in non-interactive executions and if an error was logged. */
+  if (sd->region_specified && sd->action_specified)
+    return screenshooter_error_was_logged () ? EXIT_FAILURE : EXIT_SUCCESS;
+
+  return EXIT_SUCCESS;
 }
