@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2025-08-14 00:50+0200\n"
+"POT-Creation-Date: 2026-06-15 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: scootergrisen, 2017-2025\n"
 "Language-Team: Danish (http://app.transifex.com/xfce/xfce-apps/language/da/)\n"
@@ -39,8 +39,8 @@ msgid ""
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Skærmbilledet bliver overført til:</span>"
 
 #: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
-#: lib/screenshooter-dialogs.c:1139 lib/screenshooter-utils.c:135
-#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:140
+#: lib/screenshooter-utils.c:182 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Skærmbillede"
@@ -50,19 +50,19 @@ msgid "_Preferences"
 msgstr "_Præferencer"
 
 #: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:889
-#: lib/screenshooter-dialogs.c:1141
+#: lib/screenshooter-dialogs.c:1131
 msgid "_Help"
 msgstr "H_jælp"
 
-#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1478
+#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1482
 msgid "_Close"
 msgstr "_Luk"
 
-#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1143
+#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1133
 msgid "_Cancel"
 msgstr "_Annuller"
 
-#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1144
+#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1134
 msgid "_OK"
 msgstr "_OK"
 
@@ -75,7 +75,7 @@ msgid "Entire screen"
 msgstr "Hele skærmen"
 
 #: lib/screenshooter-dialogs.c:952 src/main.c:57
-#: panel-plugin/screenshooter-plugin.c:326
+#: panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the entire screen"
 msgstr "Tag et skærmbillede af hele skærmen"
 
@@ -84,11 +84,11 @@ msgid "Active window"
 msgstr "Aktive vindue"
 
 #: lib/screenshooter-dialogs.c:964 src/main.c:99
-#: panel-plugin/screenshooter-plugin.c:331
+#: panel-plugin/screenshooter-plugin.c:321
 msgid "Take a screenshot of the active window"
 msgstr "Tag et skærmbillede af det aktive vindue"
 
-#: lib/screenshooter-dialogs.c:973 lib/screenshooter-dialogs.c:1000
+#: lib/screenshooter-dialogs.c:973
 msgid "Not supported in Wayland"
 msgstr "Understøttes ikke i Wayland"
 
@@ -103,115 +103,115 @@ msgid ""
 "Press Ctrl while dragging to move the region."
 msgstr "Vælg et område som skal indfanges ved at klikke et startpunkt på skærmen uden at slippe museknappen, og trække musen til slutpunkt af området, og derefter slippe museknappen.\n\nTryk på Ctrl mens der trækkes for at flytte området."
 
-#: lib/screenshooter-dialogs.c:1011
+#: lib/screenshooter-dialogs.c:1001
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Valgmuligheder</span>"
 
-#: lib/screenshooter-dialogs.c:1031
+#: lib/screenshooter-dialogs.c:1021
 msgid "Capture the mouse pointer"
 msgstr "Indfang musemarkøren"
 
-#: lib/screenshooter-dialogs.c:1035
+#: lib/screenshooter-dialogs.c:1025
 msgid "Display the mouse pointer on the screenshot"
 msgstr "Vis musemarkøren på skærmbilledet"
 
-#: lib/screenshooter-dialogs.c:1042
+#: lib/screenshooter-dialogs.c:1032
 msgid "Capture the window border"
 msgstr "Indfang vinduets kant"
 
-#: lib/screenshooter-dialogs.c:1047
+#: lib/screenshooter-dialogs.c:1037
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr "Vis vinduets kant på skærmbilledet.\nDeaktivering af valgmuligheden påvirker ikke CSD-vinduer."
 
-#: lib/screenshooter-dialogs.c:1071
+#: lib/screenshooter-dialogs.c:1061
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Forsinkelse</span>"
 
-#: lib/screenshooter-dialogs.c:1095
+#: lib/screenshooter-dialogs.c:1085
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "Forsinkelse i sekunder før skærmbilledet bliver taget"
 
-#: lib/screenshooter-dialogs.c:1098
+#: lib/screenshooter-dialogs.c:1088
 msgid "seconds"
 msgstr "sekunder"
 
-#: lib/screenshooter-dialogs.c:1142
+#: lib/screenshooter-dialogs.c:1132
 msgid "_Back"
 msgstr "_Tilbage"
 
-#: lib/screenshooter-dialogs.c:1182
+#: lib/screenshooter-dialogs.c:1172
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Handling</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1197
+#: lib/screenshooter-dialogs.c:1187
 msgid "Save"
 msgstr "Gem"
 
-#: lib/screenshooter-dialogs.c:1203
+#: lib/screenshooter-dialogs.c:1193
 msgid "Save the screenshot to a file"
 msgstr "Gem skærmbilledet til en fil"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1207
+#: lib/screenshooter-dialogs.c:1197
 msgid "Show in Folder"
 msgstr "Vis i mappe"
 
-#: lib/screenshooter-dialogs.c:1214
+#: lib/screenshooter-dialogs.c:1204
 msgid "Shows the saved file in the folder"
 msgstr "Viser den gemte fil i mappen"
 
-#: lib/screenshooter-dialogs.c:1222
+#: lib/screenshooter-dialogs.c:1212
 msgid "Copy to the clipboard"
 msgstr "Kopiér til udklipsholderen"
 
-#: lib/screenshooter-dialogs.c:1224
+#: lib/screenshooter-dialogs.c:1214
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "Kopiér skærmbilledet til udklipsholderen til senere indsætning"
 
-#: lib/screenshooter-dialogs.c:1238
+#: lib/screenshooter-dialogs.c:1228
 msgid "Open with:"
 msgstr "Åbn med:"
 
-#: lib/screenshooter-dialogs.c:1246
+#: lib/screenshooter-dialogs.c:1236
 msgid "Open the screenshot with the chosen application"
 msgstr "Åbn skærmbilledet med det valgte program"
 
-#: lib/screenshooter-dialogs.c:1265 src/main.c:72
+#: lib/screenshooter-dialogs.c:1255 src/main.c:72
 msgid "Application to open the screenshot"
 msgstr "Program til åbning af skærmbilledet"
 
-#: lib/screenshooter-dialogs.c:1279
+#: lib/screenshooter-dialogs.c:1269
 msgid "Custom Action:"
 msgstr "Tilpasset handling:"
 
-#: lib/screenshooter-dialogs.c:1287
+#: lib/screenshooter-dialogs.c:1277
 msgid "Execute the selected custom action"
 msgstr "Udfør den valgte tilpasset handling"
 
-#: lib/screenshooter-dialogs.c:1299
+#: lib/screenshooter-dialogs.c:1289
 msgid "Custom action to execute"
 msgstr "Tilpasset handling som skal udføres"
 
-#: lib/screenshooter-dialogs.c:1322
+#: lib/screenshooter-dialogs.c:1312
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Forhåndsvisning</span>"
 
-#: lib/screenshooter-dialogs.c:1383
+#: lib/screenshooter-dialogs.c:1387
 msgid "Save screenshot as..."
 msgstr "Gem skærmbillede som ..."
 
-#: lib/screenshooter-dialogs.c:1476
+#: lib/screenshooter-dialogs.c:1480
 msgid "Preferences"
 msgstr "Præferencer"
 
-#: lib/screenshooter-dialogs.c:1501
+#: lib/screenshooter-dialogs.c:1505
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Tilpasset handlinger</span>"
 
-#: lib/screenshooter-dialogs.c:1521
+#: lib/screenshooter-dialogs.c:1525
 msgid ""
 "You can configure custom actions that will be available to handle "
 "screenshots after they are captured. You can find more examples in the <a "
@@ -219,53 +219,53 @@ msgid ""
 "actions#examples\">documentation</a>."
 msgstr "Du kan kofigurerer tilpassede handlinger som kan bruges til at håndtere skærmbilleder efter de er blevet taget. Du kan finde flere eksempler i <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">dokumentationen</a>."
 
-#: lib/screenshooter-dialogs.c:1551
+#: lib/screenshooter-dialogs.c:1555
 msgid "Custom Action"
 msgstr "Tilpasset handling"
 
-#: lib/screenshooter-dialogs.c:1564
+#: lib/screenshooter-dialogs.c:1568
 msgid "Add custom action"
 msgstr "Tilføj tilpasset handling"
 
-#: lib/screenshooter-dialogs.c:1571
+#: lib/screenshooter-dialogs.c:1575
 msgid "Remove selected custom action"
 msgstr "Fjern den valgte tilpasset handling"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1593
+#: lib/screenshooter-dialogs.c:1597
 msgid "Name"
 msgstr "Navn"
 
-#: lib/screenshooter-dialogs.c:1594
+#: lib/screenshooter-dialogs.c:1598
 msgid "Name of the action that will be displayed in Actions dialog"
 msgstr "Navnet på handlingen som vil blive vist i Handlinger-dialogen"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1603
+#: lib/screenshooter-dialogs.c:1607
 msgid "Command"
 msgstr "Kommando"
 
-#: lib/screenshooter-dialogs.c:1604
+#: lib/screenshooter-dialogs.c:1608
 msgid "Command that will be executed for this custom action"
 msgstr "Kommando som udføres for denne tilpasset handling"
 
-#: lib/screenshooter-dialogs.c:1611
+#: lib/screenshooter-dialogs.c:1615
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Brug %f som en pladsholder til placeringen af det skærmbillede der blev taget"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
 msgstr "Kan ikke udføre den tilpasset handling"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
 msgstr "Ugyldig tilpasset handling valgt"
 
-#: lib/screenshooter-custom-actions.c:228
+#: lib/screenshooter-custom-actions.c:231
 #, c-format
-msgid "Failed to run the custom action %s"
-msgstr "Kunne ikke køre den tilpasset handling %s"
+msgid "Failed to run the custom action %s: %s"
+msgstr ""
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -291,69 +291,73 @@ msgstr "JPEG XL-fil"
 msgid "AVIF File"
 msgstr "AVIF-fil"
 
-#: lib/screenshooter-utils.c:321
+#: lib/screenshooter-utils.c:326
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Programmet kunne ikke startes.</b>\n%s"
 
-#: lib/screenshooter-utils.c:398
+#: lib/screenshooter-utils.c:406
 msgid "Error"
 msgstr "Fejl"
 
-#: lib/screenshooter-capture-wayland.c:195
+#: lib/screenshooter-capture-wayland.c:198
 msgid "Failed to capture screencopy frame"
 msgstr "Kunne ikke indfange screencopy-billede"
 
-#: lib/screenshooter-capture-wayland.c:225
-#: lib/screenshooter-capture-wayland.c:389
+#: lib/screenshooter-capture-wayland.c:230
+#: lib/screenshooter-capture-wayland.c:399
 msgid "Failed to create file descriptor"
 msgstr "Kunne ikke oprette filbeskriver"
 
-#: lib/screenshooter-capture-wayland.c:234
-#: lib/screenshooter-capture-wayland.c:398
+#: lib/screenshooter-capture-wayland.c:239
+#: lib/screenshooter-capture-wayland.c:408
 msgid "Failed to map memory"
 msgstr "Kunne ikke kortlægge hukommelse"
 
-#: lib/screenshooter-capture-wayland.c:303
+#: lib/screenshooter-capture-wayland.c:308
 msgid "Failed to capture frame"
 msgstr "Kunne ikke indfange billede"
 
-#: lib/screenshooter-capture-wayland.c:382
+#: lib/screenshooter-capture-wayland.c:386
+msgid "Invalid buffer size"
+msgstr ""
+
+#: lib/screenshooter-capture-wayland.c:392
 msgid "Supported format not found"
 msgstr "Understøttede format ikke fundet"
 
-#: lib/screenshooter-capture-wayland.c:410
+#: lib/screenshooter-capture-wayland.c:420
 msgid "Failed to create buffer"
 msgstr "Kunne ikke oprette mellemlager"
 
-#: lib/screenshooter-capture-wayland.c:457
+#: lib/screenshooter-capture-wayland.c:467
 msgid "Required Wayland interfaces are missing"
 msgstr "Nødvendige Wayland-grænseflade mangler"
 
-#: lib/screenshooter-capture-wayland.c:462
+#: lib/screenshooter-capture-wayland.c:472
 msgid "Compositor is missing wl_shm"
 msgstr "Kompositør mangler wl_shm"
 
-#: lib/screenshooter-capture-wayland.c:467
+#: lib/screenshooter-capture-wayland.c:477
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
 msgstr "Kompositør understøtter ikke wlr-screencopy-unstable-v1 og ext-image-capture-source-v1/ext-image-copy-capture-v1"
 
-#: lib/screenshooter-capture-wayland.c:577
+#: lib/screenshooter-capture-wayland.c:588
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
 msgstr "Ikke-understøttet pixelformat: 0x%x"
 
-#: lib/screenshooter-capture-wayland.c:652
-msgid "The selected mode is not supported in Wayland"
-msgstr "Den valgte tilstand understøttes ikke i Wayland"
-
-#: lib/screenshooter-capture-wayland.c:720
+#: lib/screenshooter-capture-wayland.c:773
 msgid "Failed to capture"
 msgstr "Kunne ikke indfange"
+
+#: lib/screenshooter-capture-wayland.c:837
+msgid "The selected mode is not supported in Wayland"
+msgstr "Den valgte tilstand understøttes ikke i Wayland"
 
 #: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
@@ -371,7 +375,7 @@ msgstr "Vis musen på skærmbilledet"
 msgid "Removes the window border from the screenshot"
 msgstr "Fjerner vinduets kant fra skærmbilledet"
 
-#: src/main.c:77 panel-plugin/screenshooter-plugin.c:336
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:326
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
@@ -399,19 +403,19 @@ msgid ""
 "pixbuf loaders"
 msgstr "Viser understøttede billedformater. Resultatet kan variere afhængig af hvilke pixbuf-indlæsere som er installeret."
 
-#: src/main.c:140
+#: src/main.c:141
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Modstridende tilvalg: --%s og --%s kan ikke bruges samtidigt.\n"
 
-#: src/main.c:142
+#: src/main.c:143
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "Tilvalget --%s kan kun bruges med --fullscreen, --window eller --region angivet. Det vil blive ignoreret.\n"
 
-#: src/main.c:153
+#: src/main.c:154
 #, c-format
 msgid ""
 "%s: %s\n"
