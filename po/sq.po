@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-06-06 00:56+0200\n"
+"POT-Creation-Date: 2026-06-15 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>, 2007,2020-2026\n"
 "Language-Team: Albanian (http://app.transifex.com/xfce/xfce-apps/language/sq/)\n"
@@ -36,8 +36,8 @@ msgid ""
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Fotoja e ekranit po shpërngulet te:</span>"
 
 #: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
-#: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:135
-#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:140
+#: lib/screenshooter-utils.c:182 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Foto ekrani"
@@ -251,18 +251,18 @@ msgstr "Urdhër që do të kryhet për këtë veprim vetjak"
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Përdor %f si një vendmbajtëse për vendndodhjen e fotos së bërë të ekranit"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
 msgstr "S’arrihet të kryhet veprimi vetjak"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
 msgstr "U përzgjodh veprim vetjak i pavlefshëm"
 
-#: lib/screenshooter-custom-actions.c:228
+#: lib/screenshooter-custom-actions.c:231
 #, c-format
-msgid "Failed to run the custom action %s"
-msgstr "S’u arrit të xhirohet veprimi vetjak %s"
+msgid "Failed to run the custom action %s: %s"
+msgstr "S’u arrit të kryhej veprimi vetjak %s: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -288,14 +288,14 @@ msgstr "Kartelë JPEG XL"
 msgid "AVIF File"
 msgstr "Kartelë AVIF"
 
-#: lib/screenshooter-utils.c:321
+#: lib/screenshooter-utils.c:326
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Aplikacioni s’u nis dot.</b>\n%s"
 
-#: lib/screenshooter-utils.c:398
+#: lib/screenshooter-utils.c:406
 msgid "Error"
 msgstr "Gabim"
 
@@ -400,19 +400,19 @@ msgid ""
 "pixbuf loaders"
 msgstr "Paraqet formate figurash që mbulohen, përfundimet mund të jenë të ndryshme, varet nga ngarkues “pixbuf” të instaluar"
 
-#: src/main.c:140
+#: src/main.c:141
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Përplasje mundësish: --%s dhe --%s s’mund të përdoren në të njëjtën kohë.\n"
 
-#: src/main.c:142
+#: src/main.c:143
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "Mundësia --%s përdoret vetëm kur jepet --fullscreen, --window ose --region. Do të shpërfillet.\n"
 
-#: src/main.c:153
+#: src/main.c:154
 #, c-format
 msgid ""
 "%s: %s\n"
