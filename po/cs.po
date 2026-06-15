@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2026-06-06 00:56+0200\n"
+"POT-Creation-Date: 2026-06-15 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2014-2015,2018-2022,2024-2026\n"
 "Language-Team: Czech (http://app.transifex.com/xfce/xfce-apps/language/cs/)\n"
@@ -38,8 +38,8 @@ msgid ""
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Snímek obrazovky se přenáší na adresu:</span>"
 
 #: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
-#: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:135
-#: lib/screenshooter-utils.c:177 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:140
+#: lib/screenshooter-utils.c:182 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Snímek obrazovky"
@@ -253,18 +253,18 @@ msgstr "Příkaz, který tato vlastní akce spustí"
 msgid "Use %f as a placeholder for location of the screenshot captured"
 msgstr "Použijte %f jako zástupný symbol pro cestu k pořízenému snímku obrazovky"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
 msgstr "Nelze spustit vlastní akci"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
 msgstr "Vybrána neplatná vlastní akce"
 
-#: lib/screenshooter-custom-actions.c:228
+#: lib/screenshooter-custom-actions.c:231
 #, c-format
-msgid "Failed to run the custom action %s"
-msgstr "Nepodařilo se spustit vlastní akci %s"
+msgid "Failed to run the custom action %s: %s"
+msgstr "Spuštění vlastní akce %s se nezdařilo: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -290,14 +290,14 @@ msgstr "Soubor JPEG XL"
 msgid "AVIF File"
 msgstr "Soubor AVIF"
 
-#: lib/screenshooter-utils.c:321
+#: lib/screenshooter-utils.c:326
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>Aplikace nemohla být spuštěna.</b>\n%s"
 
-#: lib/screenshooter-utils.c:398
+#: lib/screenshooter-utils.c:406
 msgid "Error"
 msgstr "Chyba"
 
@@ -402,19 +402,19 @@ msgid ""
 "pixbuf loaders"
 msgstr "Vypíše podporované formáty obrázků; výsledek se může lišit podle nainstalovaných načítacích modulů pixbuf."
 
-#: src/main.c:140
+#: src/main.c:141
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "Konflikt voleb: --%s a --%s nelze použít najednou.\n"
 
-#: src/main.c:142
+#: src/main.c:143
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "Volba --%s se používá pouze při současném použití jedné z voleb --fullscreen, --window nebo --region. Volba bude ignorována.\n"
 
-#: src/main.c:153
+#: src/main.c:154
 #, c-format
 msgid ""
 "%s: %s\n"
