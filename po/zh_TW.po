@@ -264,7 +264,7 @@ msgstr "選取了無效的自訂動作"
 #: lib/screenshooter-custom-actions.c:231
 #, c-format
 msgid "Failed to run the custom action %s: %s"
-msgstr ""
+msgstr "執行自訂動作 %s 失敗：%s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
