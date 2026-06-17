@@ -268,7 +268,7 @@ msgstr "Ungültige benutzerdefinierte Aktion ausgewählt"
 #: lib/screenshooter-custom-actions.c:231
 #, c-format
 msgid "Failed to run the custom action %s: %s"
-msgstr ""
+msgstr "Die benutzerdefinierte Aktion konnte nicht ausgeführt werden %s: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
