@@ -268,7 +268,7 @@ msgstr "È stata selezionata un'azione personalizzata non valida"
 #: lib/screenshooter-custom-actions.c:231
 #, c-format
 msgid "Failed to run the custom action %s: %s"
-msgstr ""
+msgstr "Impossibile eseguire l'azione personalizzata %s: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
