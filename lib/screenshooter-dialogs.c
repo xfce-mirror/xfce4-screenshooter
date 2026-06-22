@@ -72,6 +72,9 @@ static void
 cb_delay_spinner_changed           (GtkWidget          *spinner,
                                     ScreenshotData     *sd);
 static void
+cb_region_delay_spinner_changed    (GtkWidget          *spinner,
+                                    ScreenshotData     *sd);
+static void
 cb_combo_active_item_changed       (GtkWidget          *box,
                                     ScreenshotData     *sd);
 static void
@@ -245,6 +248,13 @@ static void cb_clipboard_toggled (GtkToggleButton *tb, ScreenshotData *sd)
 static void cb_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
 {
   sd->delay = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
+}
+
+
+
+static void cb_region_delay_spinner_changed (GtkWidget *spinner, ScreenshotData *sd)
+{
+  sd->region_delay = gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (spinner));
 }
 
 
@@ -871,6 +881,7 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   GtkWidget *dlg, *grid, *main_box, *box, *label, *checkbox;
   GtkWidget *fullscreen_button, *active_window_button, *rectangle_button;
   GtkWidget *spinner_box, *spinner;
+  GtkWidget *region_spinner_box, *region_spinner;
 
   /* Create the dialog */
   if (plugin)
@@ -1064,22 +1075,12 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_widget_set_valign (label, GTK_ALIGN_START);
   gtk_box_pack_start (GTK_BOX (main_box), label, FALSE, FALSE, 0);
 
-  /* Create delay box */
-  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-  gtk_widget_set_hexpand (box, FALSE);
-  gtk_widget_set_vexpand (box, FALSE);
-  gtk_widget_set_margin_top (box, 0);
-  gtk_widget_set_margin_bottom (box, 6);
-  gtk_widget_set_margin_start (box, 12);
-  gtk_widget_set_margin_end (box, 0);
-  gtk_box_pack_start (GTK_BOX (main_box), box, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (box), 0);
-
   /* Create delay spinner */
   spinner_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
-  gtk_box_pack_start (GTK_BOX (box), spinner_box, FALSE, FALSE, 0);
+  gtk_widget_set_margin_start (spinner_box, 12);
+  gtk_box_pack_start (GTK_BOX (main_box), spinner_box, FALSE, FALSE, 0);
 
-  spinner = gtk_spin_button_new_with_range(0.0, 60.0, 1.0);
+  spinner = gtk_spin_button_new_with_range (0.0, 60.0, 1.0);
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (spinner), sd->delay);
   gtk_widget_set_tooltip_text (spinner,
                                _("Delay in seconds before the screenshot is taken"));
@@ -1089,6 +1090,35 @@ GtkWidget *screenshooter_region_dialog_new (ScreenshotData *sd, gboolean plugin)
   gtk_box_pack_start (GTK_BOX (spinner_box), label, FALSE, FALSE, 0);
   g_signal_connect (G_OBJECT (spinner), "value-changed",
                     G_CALLBACK (cb_delay_spinner_changed), sd);
+
+  /* Create region delay label */
+  label = gtk_label_new ("");
+  gtk_label_set_markup (GTK_LABEL(label),
+                        _("<span weight=\"bold\" stretch=\"semiexpanded\">"
+                          "Delay before selecting region</span>"));
+  gtk_widget_set_halign (label, GTK_ALIGN_START);
+  gtk_widget_set_valign (label, GTK_ALIGN_START);
+  gtk_box_pack_start (GTK_BOX (main_box), label, FALSE, FALSE, 0);
+
+  /* Create region delay spinner */
+  region_spinner_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 4);
+  gtk_widget_set_margin_start (region_spinner_box, 12);
+  gtk_box_pack_start (GTK_BOX (main_box), region_spinner_box, FALSE, FALSE, 0);
+
+  region_spinner = gtk_spin_button_new_with_range (0.0, 60.0, 1.0);
+  gtk_spin_button_set_value (GTK_SPIN_BUTTON (region_spinner), sd->region_delay);
+  gtk_widget_set_tooltip_text (region_spinner,
+                               _("Delay in seconds before selecting the screenshot region"));
+  gtk_box_pack_start (GTK_BOX (region_spinner_box), region_spinner, FALSE, FALSE, 0);
+
+  label = gtk_label_new (_("seconds"));
+  gtk_box_pack_start (GTK_BOX (region_spinner_box), label, FALSE, FALSE, 0);
+  g_signal_connect (G_OBJECT (region_spinner), "value-changed",
+                    G_CALLBACK (cb_region_delay_spinner_changed), sd);
+
+  gtk_widget_set_sensitive (region_spinner_box, sd->region == SELECT);
+  g_signal_connect (G_OBJECT (rectangle_button), "toggled",
+                    G_CALLBACK (cb_toggle_set_sensi), region_spinner_box);
 
   gtk_widget_show_all (gtk_dialog_get_content_area (GTK_DIALOG (dlg)));
 
