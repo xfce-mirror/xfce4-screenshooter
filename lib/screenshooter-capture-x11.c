@@ -18,6 +18,7 @@
  */
 
 #include "screenshooter-capture-x11.h"
+#include "gdk/gdk.h"
 
 #ifdef HAVE_XFIXES
 #include <X11/extensions/Xfixes.h>
@@ -25,6 +26,7 @@
 
 #include <X11/extensions/shape.h>
 #include <gdk/gdkx.h>
+#include <cairo-xlib.h>
 #include <unistd.h>
 
 #include <libxfce4ui/libxfce4ui.h>
@@ -274,6 +276,7 @@ static GdkPixbuf
   gint x_orig, y_orig;
   gint width, height;
   GdkPixbuf *screenshot;
+  GdkDisplay *display;
 
   gint scale;
   GdkRectangle real_coords;
@@ -299,6 +302,7 @@ static GdkPixbuf
   height = real_coords.height;
 
   scale = gdk_window_get_scale_factor (window);
+  display = gdk_window_get_display (window);
 
   TRACE ("Grab the screenshot");
 
@@ -308,15 +312,28 @@ static GdkPixbuf
     {
       if (border && wm_xid != None)
         {
-          GdkWindow *wm_window = gdk_x11_window_foreign_new_for_display (
-            gdk_window_get_display (window), wm_xid);
-          screenshot = screenshooter_pixbuf_get_from_window (
-            wm_window, 0, 0, width, height);
+          XWindowAttributes attrs;
+          Display *xdisplay;
+          cairo_surface_t *surface;
+          GdkWindow *wm_window = gdk_x11_window_foreign_new_for_display (display, wm_xid);
+
+          /* Use actual X11 dimensions to avoid truncation from integer
+           * division when GDK converts device pixels to display pixels */
+          xdisplay = gdk_x11_display_get_xdisplay (gdk_window_get_display (wm_window));
+          XGetWindowAttributes (xdisplay, wm_xid, &attrs);
+
+          surface = cairo_xlib_surface_create (xdisplay, wm_xid,
+            gdk_x11_visual_get_xvisual (gdk_window_get_visual (wm_window)),
+            attrs.width, attrs.height);
+          screenshot = gdk_pixbuf_get_from_surface (surface, 0, 0, attrs.width, attrs.height);
+          cairo_surface_destroy (surface);
+
+          width = gdk_window_get_width (wm_window);
+          height = gdk_window_get_height (wm_window);
           g_object_unref (wm_window);
         }
       else
-        screenshot = screenshooter_pixbuf_get_from_window (
-          window, 0, 0, width, height);
+        screenshot = screenshooter_pixbuf_get_from_window (window, 0, 0, width, height);
     }
   else
     {
@@ -343,8 +360,7 @@ static GdkPixbuf
       int rectangle_count, rectangle_order, i;
       GtkBorder frame_offset = { 0, 0, 0, 0 };
 
-      GdkWindow *wm_window = gdk_x11_window_foreign_new_for_display
-        (gdk_window_get_display (window), wm_xid);
+      GdkWindow *wm_window = gdk_x11_window_foreign_new_for_display (display, wm_xid);
 
       gdk_window_get_frame_extents (wm_window, &wm_coords);
 
@@ -382,29 +398,39 @@ static GdkPixbuf
                * In that case, trim every rectangle we get by the offset between the
                * WM window size and the frame extents.
                *
-               * Note that the XShape values are in actual pixels, whereas the GDK
-               * ones are in display pixels (i.e. scaled), so we need to apply the
-               * scale factor to the former to use display pixels for all our math.
+               * Both XShape values and pixbuf dimensions are in device pixels,
+               * so we keep all math in device pixels to avoid precision loss
+               * from integer division when converting to display pixels.
                */
-              rec_x = rectangles[i].x / scale;
-              rec_y = rectangles[i].y / scale;
-              rec_width = rectangles[i].width / scale - (frame_offset.left + frame_offset.right);
-              rec_height = rectangles[i].height / scale - (frame_offset.top + frame_offset.bottom);
+              rec_x = rectangles[i].x;
+              rec_y = rectangles[i].y;
+              rec_width = rectangles[i].width - (frame_offset.left + frame_offset.right) * scale;
+              rec_height = rectangles[i].height - (frame_offset.top + frame_offset.bottom) * scale;
 
-              /* Undo the scale factor in order to copy the pixbuf data pixel-wise */
-              for (gint y = rec_y * scale; y < (rec_y + rec_height) * scale; y++)
+              /* Clamp to pixbuf bounds: device-pixel dimensions from XShape may
+               * exceed the pixbuf size due to integer truncation in GDK scaling */
+              gint pb_width = gdk_pixbuf_get_width (screenshot);
+              gint pb_height = gdk_pixbuf_get_height (screenshot);
+              if (rec_x + rec_width > pb_width)
+                rec_width = pb_width - rec_x;
+              if (rec_y + rec_height > pb_height)
+                rec_height = pb_height - rec_y;
+              if (rec_x < 0 || rec_y < 0 || rec_width <= 0 || rec_height <= 0)
+                continue;
+
+              for (gint y = rec_y; y < rec_y + rec_height; y++)
                 {
                   guchar *src_pixels, *dest_pixels;
                   gint x;
 
                   src_pixels = gdk_pixbuf_get_pixels (screenshot)
                              + y * gdk_pixbuf_get_rowstride(screenshot)
-                             + rec_x * scale * (has_alpha ? 4 : 3);
+                             + rec_x * (has_alpha ? 4 : 3);
                   dest_pixels = gdk_pixbuf_get_pixels (tmp)
                               + y * gdk_pixbuf_get_rowstride (tmp)
-                              + rec_x * scale * 4;
+                              + rec_x * 4;
 
-                  for (x = 0; x < rec_width * scale; x++)
+                  for (x = 0; x < rec_width; x++)
                     {
                       *dest_pixels++ = *src_pixels++;
                       *dest_pixels++ = *src_pixels++;
