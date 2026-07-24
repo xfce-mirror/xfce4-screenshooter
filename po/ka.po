@@ -5,13 +5,14 @@
 # Translators:
 # ზურაბი დავითაშვილი <zurabi@tuta.io>, 2019
 # ზურაბი დავითაშვილი <zurabi@tuta.io>, 2021
+# ზურაბი დავითაშვილი <zurabi@tuta.io>, 2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-06-06 00:51+0200\n"
+"POT-Creation-Date: 2026-06-15 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: ზურაბი დავითაშვილი <zurabi@tuta.io>, 2021\n"
+"Last-Translator: ზურაბი დავითაშვილი <zurabi@tuta.io>, 2019,2021\n"
 "Language-Team: Georgian (http://app.transifex.com/xfce/xfce-apps/language/ka/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,381 +20,399 @@ msgstr ""
 "Language: ka\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: lib/screenshooter-dialogs.c:503
+#: lib/screenshooter-dialogs.c:514
 #, c-format
 msgid "%.2fKb of %.2fKb"
 msgstr "%.2fკბ %.2fკბ-დან"
 
-#: lib/screenshooter-dialogs.c:606
+#: lib/screenshooter-dialogs.c:617
 msgid "Transfer"
 msgstr "გადაცემა"
 
-#: lib/screenshooter-dialogs.c:627
+#: lib/screenshooter-dialogs.c:638
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">სკრინშოტი გადაეცემა:</span>"
 
-#: lib/screenshooter-dialogs.c:867 lib/screenshooter-dialogs.c:876
-#: lib/screenshooter-dialogs.c:1128 lib/screenshooter-utils.c:133
-#: lib/screenshooter-utils.c:175 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
+#: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:140
+#: lib/screenshooter-utils.c:182 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "სკრინშოტი"
 
-#: lib/screenshooter-dialogs.c:869 lib/screenshooter-dialogs.c:879
+#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:890
 msgid "_Preferences"
-msgstr ""
+msgstr "_მორგება"
 
-#: lib/screenshooter-dialogs.c:870 lib/screenshooter-dialogs.c:878
-#: lib/screenshooter-dialogs.c:1130
+#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:889
+#: lib/screenshooter-dialogs.c:1131
 msgid "_Help"
 msgstr "დახმარება"
 
-#: lib/screenshooter-dialogs.c:871 lib/screenshooter-dialogs.c:1463
+#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1482
 msgid "_Close"
 msgstr "დახურვა"
 
-#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:1132
+#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1133
 msgid "_Cancel"
 msgstr "გაუქმება"
 
-#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:1133
+#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1134
 msgid "_OK"
 msgstr "კარგი"
 
-#: lib/screenshooter-dialogs.c:914
+#: lib/screenshooter-dialogs.c:925
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">გადასაღები რეგიონი</span>"
 
-#: lib/screenshooter-dialogs.c:936
+#: lib/screenshooter-dialogs.c:947
 msgid "Entire screen"
 msgstr "მთლიანი ეკრანი"
 
-#: lib/screenshooter-dialogs.c:941 src/main.c:61
-#: panel-plugin/screenshooter-plugin.c:332
+#: lib/screenshooter-dialogs.c:952 src/main.c:57
+#: panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the entire screen"
 msgstr "გადაიღეთ მთლიანი ეკრანის სკრინშოტი"
 
-#: lib/screenshooter-dialogs.c:950
+#: lib/screenshooter-dialogs.c:961
 msgid "Active window"
 msgstr "აქტიური ფანჯარა"
 
-#: lib/screenshooter-dialogs.c:953 src/main.c:103
-#: panel-plugin/screenshooter-plugin.c:337
+#: lib/screenshooter-dialogs.c:964 src/main.c:99
+#: panel-plugin/screenshooter-plugin.c:321
 msgid "Take a screenshot of the active window"
 msgstr "გადაიღეთ აქტიური ფანჯრის სკრინშოტი"
 
-#: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
-msgid "Not supported in Wayland"
-msgstr ""
-
 #: lib/screenshooter-dialogs.c:973
+msgid "Not supported in Wayland"
+msgstr "Wayland-ზე მხარდაჭერილი არაა"
+
+#: lib/screenshooter-dialogs.c:984
 msgid "Select a region"
 msgstr "აირჩიეთ რეგიონი"
 
-#: lib/screenshooter-dialogs.c:976
+#: lib/screenshooter-dialogs.c:987
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
 msgstr ""
 
-#: lib/screenshooter-dialogs.c:1000
+#: lib/screenshooter-dialogs.c:1001
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">მორგება</span>"
 
-#: lib/screenshooter-dialogs.c:1020
+#: lib/screenshooter-dialogs.c:1021
 msgid "Capture the mouse pointer"
 msgstr "გადაიღე თაგვის მაჩვენებელი"
 
-#: lib/screenshooter-dialogs.c:1024
+#: lib/screenshooter-dialogs.c:1025
 msgid "Display the mouse pointer on the screenshot"
 msgstr "გამოაჩინე თაგვის მაჩვენებელი სკრინშოტზე"
 
-#: lib/screenshooter-dialogs.c:1031
+#: lib/screenshooter-dialogs.c:1032
 msgid "Capture the window border"
-msgstr ""
+msgstr "ფანჯრის საზღვრის გადაღება"
 
-#: lib/screenshooter-dialogs.c:1036
+#: lib/screenshooter-dialogs.c:1037
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
 msgstr ""
 
-#: lib/screenshooter-dialogs.c:1060
+#: lib/screenshooter-dialogs.c:1061
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">დაყოვნება გადაღებამდე</span>"
 
-#: lib/screenshooter-dialogs.c:1084
+#: lib/screenshooter-dialogs.c:1085
 msgid "Delay in seconds before the screenshot is taken"
 msgstr "დაყოვნება წამებში, სკრინშოტის გადაღებამდე"
 
-#: lib/screenshooter-dialogs.c:1087
+#: lib/screenshooter-dialogs.c:1088
 msgid "seconds"
 msgstr "წამი"
 
-#: lib/screenshooter-dialogs.c:1131
+#: lib/screenshooter-dialogs.c:1132
 msgid "_Back"
-msgstr ""
+msgstr "_უკან"
 
-#: lib/screenshooter-dialogs.c:1171
+#: lib/screenshooter-dialogs.c:1172
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">მოქმედება</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1186
+#: lib/screenshooter-dialogs.c:1187
 msgid "Save"
 msgstr "შენახვა"
 
-#: lib/screenshooter-dialogs.c:1192
+#: lib/screenshooter-dialogs.c:1193
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "ეკრანის ანაბეჭდის ფაილში ჩაწერა"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1196
+#: lib/screenshooter-dialogs.c:1197
 msgid "Show in Folder"
-msgstr ""
+msgstr "საქაღალდეში ჩვენება"
 
-#: lib/screenshooter-dialogs.c:1203
+#: lib/screenshooter-dialogs.c:1204
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "აჩვენებს შენახულ ფაილს საქაღალდეში"
 
-#: lib/screenshooter-dialogs.c:1211
+#: lib/screenshooter-dialogs.c:1212
 msgid "Copy to the clipboard"
 msgstr "ბუფერში კოპირება"
 
-#: lib/screenshooter-dialogs.c:1213
+#: lib/screenshooter-dialogs.c:1214
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
 msgstr "დააკოპირეთ სკრინშოტი ბუფერში, რათა მისი ჩასმა მოგვიანებით იყოს შესაძლებელი"
 
-#: lib/screenshooter-dialogs.c:1227
+#: lib/screenshooter-dialogs.c:1228
 msgid "Open with:"
 msgstr "გახსნა:"
 
-#: lib/screenshooter-dialogs.c:1235
+#: lib/screenshooter-dialogs.c:1236
 msgid "Open the screenshot with the chosen application"
 msgstr "გახსნით სკრინშოტი არჩეული პროგრამით"
 
-#: lib/screenshooter-dialogs.c:1254 src/main.c:76
+#: lib/screenshooter-dialogs.c:1255 src/main.c:72
 msgid "Application to open the screenshot"
 msgstr "პროგრამა სკრინშოტის გასახსნელად"
 
-#: lib/screenshooter-dialogs.c:1268
+#: lib/screenshooter-dialogs.c:1269
 msgid "Custom Action:"
-msgstr ""
+msgstr "მორგებული ქმედება:"
 
-#: lib/screenshooter-dialogs.c:1276
+#: lib/screenshooter-dialogs.c:1277
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "არჩეული მორგებული ქმედების შესრულება"
 
-#: lib/screenshooter-dialogs.c:1288
+#: lib/screenshooter-dialogs.c:1289
 msgid "Custom action to execute"
-msgstr ""
+msgstr "შესასრულებელი მორგებული ქმედება"
 
-#: lib/screenshooter-dialogs.c:1311
+#: lib/screenshooter-dialogs.c:1312
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">ესკიზი</span>"
 
-#: lib/screenshooter-dialogs.c:1372
+#: lib/screenshooter-dialogs.c:1387
 msgid "Save screenshot as..."
 msgstr "შეინახეთ სკრინშოტი როგორც..."
 
-#: lib/screenshooter-dialogs.c:1461
+#: lib/screenshooter-dialogs.c:1480
 msgid "Preferences"
 msgstr "პარამეტრები"
 
-#: lib/screenshooter-dialogs.c:1486
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
-
 #: lib/screenshooter-dialogs.c:1505
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">მორგებული ქმედებები</span>"
+
+#: lib/screenshooter-dialogs.c:1525
 msgid ""
 "You can configure custom actions that will be available to handle "
-"screenshots after they are captured."
-msgstr ""
-
-#: lib/screenshooter-dialogs.c:1535
-msgid "Custom Action"
-msgstr ""
-
-#: lib/screenshooter-dialogs.c:1548
-msgid "Add custom action"
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
 msgstr ""
 
 #: lib/screenshooter-dialogs.c:1555
+msgid "Custom Action"
+msgstr "მორგებული ქმედება"
+
+#: lib/screenshooter-dialogs.c:1568
+msgid "Add custom action"
+msgstr "მორგებული ქმედების დამატება"
+
+#: lib/screenshooter-dialogs.c:1575
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "არჩეული მორგებული ქმედების წაშლა"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1577
+#: lib/screenshooter-dialogs.c:1597
 msgid "Name"
-msgstr ""
+msgstr "სახელი"
 
-#: lib/screenshooter-dialogs.c:1578
+#: lib/screenshooter-dialogs.c:1598
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "ქმედების სახელი, რომელიც ქმედებების დიალოგში გამოჩნდბეა"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1587
+#: lib/screenshooter-dialogs.c:1607
 msgid "Command"
-msgstr ""
+msgstr "ბრძანება"
 
-#: lib/screenshooter-dialogs.c:1588
+#: lib/screenshooter-dialogs.c:1608
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "ბრძანება, რომელიც ამ მორგებული ქმედებისთვის შესრულდება"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1615
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "გამოიყენეთ %f ადგილმჭერად გადაღებული ეკრანის ანაბეჭდის მდებარეობისთვის"
 
-#: lib/screenshooter-custom-actions.c:183
-msgid "Host on Imgur™"
-msgstr ""
-
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "მორგებული ქმედების შესრულება შეუძ₾ებელია"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "არჩეულია არასწორი მორგებული ქმედება"
 
-#: lib/screenshooter-custom-actions.c:237
+#: lib/screenshooter-custom-actions.c:231
 #, c-format
-msgid "Failed to run the custom action %s"
-msgstr ""
+msgid "Failed to run the custom action %s: %s"
+msgstr "მორგებული ქმედების %s გაშვება შეუძლებელია: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
-msgstr ""
+msgstr "PNG ფაილი"
 
 #: lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG ფაილი"
 
 #: lib/screenshooter-format.c:33
 msgid "BMP File"
-msgstr ""
+msgstr "BMP ფაილი"
 
 #: lib/screenshooter-format.c:34
 msgid "WebP File"
-msgstr ""
+msgstr "WebP ფაილი"
 
 #: lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "JPEG XL ფაილი"
 
 #: lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF ფაილი"
 
-#: lib/screenshooter-utils.c:322
+#: lib/screenshooter-utils.c:326
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
 msgstr "<b>პროგრამის გაშვება ვერ მოხერხდა.</b>\n%s"
 
-#: lib/screenshooter-utils.c:399
+#: lib/screenshooter-utils.c:406
 msgid "Error"
 msgstr "შეცდომა"
 
-#: lib/screenshooter-capture-wayland.c:164
+#: lib/screenshooter-capture-wayland.c:198
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "ეკრანის ასლის კადრის გადაღება ჩავარდა"
 
-#: lib/screenshooter-capture-wayland.c:194
+#: lib/screenshooter-capture-wayland.c:230
+#: lib/screenshooter-capture-wayland.c:399
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "ფაილის დესკრიპტორის შექმნა ჩავარდა"
 
-#: lib/screenshooter-capture-wayland.c:203
+#: lib/screenshooter-capture-wayland.c:239
+#: lib/screenshooter-capture-wayland.c:408
 msgid "Failed to map memory"
-msgstr ""
+msgstr "მეხსიერების ასახვა ჩავარდა"
 
-#: lib/screenshooter-capture-wayland.c:243
-msgid "Required Wayland interfaces are missing"
-msgstr ""
-
-#: lib/screenshooter-capture-wayland.c:248
-msgid "Compositor is missing wl_shm"
-msgstr ""
-
-#: lib/screenshooter-capture-wayland.c:253
-msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
-
-#: lib/screenshooter-capture-wayland.c:311
-#, c-format
-msgid "Unsupported pixel format: %d"
-msgstr ""
+#: lib/screenshooter-capture-wayland.c:308
+msgid "Failed to capture frame"
+msgstr "კადრის გადაღება ჩავარდა"
 
 #: lib/screenshooter-capture-wayland.c:386
-msgid "The selected mode is not supported in Wayland"
+msgid "Invalid buffer size"
+msgstr "არასწორი ბუფერის ზომა"
+
+#: lib/screenshooter-capture-wayland.c:392
+msgid "Supported format not found"
+msgstr "მხარდაჭერილი ფორმატი აღმოჩენილი არაა"
+
+#: lib/screenshooter-capture-wayland.c:420
+msgid "Failed to create buffer"
+msgstr "ბუფერის შექმნა ჩავარდა"
+
+#: lib/screenshooter-capture-wayland.c:467
+msgid "Required Wayland interfaces are missing"
+msgstr "Wayland-ის აუცილებელი ინტერფეისები აღმოჩენილი არაა"
+
+#: lib/screenshooter-capture-wayland.c:472
+msgid "Compositor is missing wl_shm"
+msgstr "კომპოზიტორს აკლია wl_shm"
+
+#: lib/screenshooter-capture-wayland.c:477
+msgid ""
+"Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
+"capture-source-v1/ext-image-copy-capture-v1"
 msgstr ""
 
-#: lib/screenshooter-capture-wayland.c:442
+#: lib/screenshooter-capture-wayland.c:588
+#, c-format
+msgid "Unsupported pixel format: 0x%x"
+msgstr "მხარდაუჭერელი პიქსელის ფორმატი: 0x%x"
+
+#: lib/screenshooter-capture-wayland.c:773
 msgid "Failed to capture"
-msgstr ""
+msgstr "გადაღების შეცდომა"
 
-#: src/main.c:51
+#: lib/screenshooter-capture-wayland.c:837
+msgid "The selected mode is not supported in Wayland"
+msgstr "არჩეული რეჟიმი Wayland-ზე მხარდაჭერილი არაა"
+
+#: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
 msgstr "სკრინშოტის ბუფერში კოპირება"
 
-#: src/main.c:56
+#: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
 msgstr "დაყოვნება წამებში, სკრინშოტის გადაღებამდე"
 
-#: src/main.c:66
+#: src/main.c:62
 msgid "Display the mouse on the screenshot"
 msgstr "თაგვის გამოჩენა სკრინშოტზე"
 
-#: src/main.c:71
+#: src/main.c:67
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "მოაცილებს ფანჯრის საზღვარს ეკრანის ანაბეჭდიდან"
 
-#: src/main.c:81 panel-plugin/screenshooter-plugin.c:342
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:326
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
 msgstr "გადასაღები რეგიონის ასარჩევად დააჭირეთ ეკრანზე შერჩეულ წერტილს თაგვის ღილაკით, თითი არ აუშვათ, გადაადგილეთ თაგვი რეგიონის სხვა კუთხეში და აუშვით თაგვის ღილაკს თითი."
 
-#: src/main.c:88
+#: src/main.c:84
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
 msgstr ""
 
-#: src/main.c:93
+#: src/main.c:89
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "საქაღალდეში შენახული ფაილის ჩვენება."
 
-#: src/main.c:98
+#: src/main.c:94
 msgid "Version information"
 msgstr "ინფორმაცია ვერსიის შესახებ"
 
-#: src/main.c:108
+#: src/main.c:104
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
 msgstr ""
 
-#: src/main.c:144
+#: src/main.c:141
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
 msgstr "კონფლიქტური პარამეტრები: --%s და --%s მათი ერთდროულად გამოყენება არ შეიძლება.\n"
 
-#: src/main.c:146
+#: src/main.c:143
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
 msgstr "--%s პარამეტრი გამოიყენება მხოლოდ მაშინ, როდესაც მოცემულია --fullscreen, --window ან --region. იგი უგულებელყოფილი იქნება.\n"
 
-#: src/main.c:157
+#: src/main.c:154
 #, c-format
 msgid ""
 "%s: %s\n"
@@ -408,7 +427,7 @@ msgstr "გადაიღეთ მთლიანი ეკრანის, �
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
