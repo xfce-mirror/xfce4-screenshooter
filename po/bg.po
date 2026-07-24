@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the xfce-apps.xfce4-screenshooter package.
 # 
 # Translators:
-# Kiril Kirilov <cybercop_montana@abv.bg>, 2014-2015,2018-2025
+# Kiril Kirilov <cybercop_montana@abv.bg>, 2014-2015,2018-2026
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2026-06-15 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2014-2015,2018-2025\n"
+"Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2014-2015,2018-2026\n"
 "Language-Team: Bulgarian (http://app.transifex.com/xfce/xfce-apps/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -260,7 +260,7 @@ msgstr "Избрано е невалидно потребителско дейс
 #: lib/screenshooter-custom-actions.c:231
 #, c-format
 msgid "Failed to run the custom action %s: %s"
-msgstr ""
+msgstr "Не може да бъде стартирано потребителското действие %s: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -317,7 +317,7 @@ msgstr "Заснемането на кадъра не бе успешно"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "Invalid buffer size"
-msgstr ""
+msgstr "Невалиден размер на буфера"
 
 #: lib/screenshooter-capture-wayland.c:392
 msgid "Supported format not found"
