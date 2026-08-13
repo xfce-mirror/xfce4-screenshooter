@@ -272,7 +272,7 @@ msgstr "Выбрано недопустимое пользовательское
 #: lib/screenshooter-custom-actions.c:231
 #, c-format
 msgid "Failed to run the custom action %s: %s"
-msgstr ""
+msgstr "Не удалось запустить пользовательское действие %s: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -329,7 +329,7 @@ msgstr "Не удалось захватить кадр"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "Invalid buffer size"
-msgstr ""
+msgstr "Недопустимый размер буфера"
 
 #: lib/screenshooter-capture-wayland.c:392
 msgid "Supported format not found"
