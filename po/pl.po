@@ -340,13 +340,13 @@ msgstr "Brak wymaganych interfejsów Wayland"
 
 #: lib/screenshooter-capture-wayland.c:472
 msgid "Compositor is missing wl_shm"
-msgstr "Brakuje kompozytora wl_shm"
+msgstr "Menedżerowi składania brakuje wl_shm"
 
 #: lib/screenshooter-capture-wayland.c:477
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr "Kompozytor nie obsługuje wlr-screencopy-unstable-v1 ani ext-image-capture-source-v1/ext-image-copy-capture-v1"
+msgstr "Menedżer składania nie obsługuje wlr-screencopy-unstable-v1 ani ext-image-capture-source-v1/ext-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:588
 #, c-format
