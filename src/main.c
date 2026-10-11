@@ -35,6 +35,7 @@ gboolean clipboard = FALSE;
 gboolean show_in_folder = FALSE;
 gchar *screenshot_dir = NULL;
 gchar *application = NULL;
+gchar *custom_action = NULL;
 gint delay = 0;
 
 
@@ -42,6 +43,11 @@ gint delay = 0;
 /* Set cli options. */
 static GOptionEntry entries[] =
 {
+  {
+    "action", 'a', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_STRING, &custom_action,
+    N_("Run a custom action by its name on the screenshot"),
+    NULL
+  },
   {
     "clipboard", 'c', G_OPTION_FLAG_IN_MAIN, G_OPTION_ARG_NONE, &clipboard,
     N_("Copy the screenshot to the clipboard"),
@@ -136,7 +142,9 @@ int main (int argc, char **argv)
   GError *cli_error = NULL;
   GFile *default_save_dir;
   gchar *rc_file;
+  gchar *custom_action_command = NULL;
   gboolean interactive = TRUE;
+  gboolean region_specified = FALSE;
   const gchar *conflict_error =
     _("Conflicting options: --%s and --%s cannot be used at the same time.\n");
   const gchar *ignore_error =
@@ -188,21 +196,38 @@ int main (int argc, char **argv)
 
       return EXIT_FAILURE;
     }
+  else if ((custom_action != NULL) && (application != NULL))
+    {
+      g_printerr (conflict_error, "action", "open");
 
-  /* Warn that action options, mouse and delay will be ignored in
-   * non-cli mode */
-  if ((application != NULL) && !(fullscreen || window || region))
+      return EXIT_FAILURE;
+    }
+  else if ((custom_action != NULL) && (screenshot_dir != NULL))
+    {
+      g_printerr (conflict_error, "action", "save");
+
+      return EXIT_FAILURE;
+    }
+
+  /* Warn that action options, mouse and delay will be ignored in interactive mode */
+  region_specified = fullscreen || window || region;
+  if ((application != NULL) && !region_specified)
     g_printerr (ignore_error, "open");
-  if ((screenshot_dir != NULL)  && !(fullscreen || window || region ))
+  if ((screenshot_dir != NULL)  && !region_specified)
     {
       g_printerr (ignore_error, "save");
       screenshot_dir = NULL;
     }
-  if (clipboard && !(fullscreen || window || region))
+  if (custom_action != NULL && !region_specified)
+    {
+      g_printerr (ignore_error, "action");
+      custom_action = NULL;
+    }
+  if (clipboard && !region_specified)
     g_printerr (ignore_error, "clipboard");
-  if (delay && !(fullscreen || window || region))
+  if (delay && !region_specified)
     g_printerr (ignore_error, "delay");
-  if (mouse && !(fullscreen || window || region))
+  if (mouse && !region_specified)
     g_printerr (ignore_error, "mouse");
 
   /* Warn when dependent option is not present */
@@ -234,6 +259,17 @@ int main (int argc, char **argv)
       return EXIT_SUCCESS;
     }
 
+  /* Exit prematurely if no custom action is found */
+  if (custom_action)
+    {
+      custom_action_command = screenshooter_custom_action_get_command_by_name (custom_action);
+      if (custom_action_command == NULL)
+        {
+          g_printerr (_("No custom action named '%s' was found.\n"), custom_action);
+          return EXIT_FAILURE;
+        }
+    }
+
   sd = g_new0 (ScreenshotData, 1);
   sd->path_is_dir = TRUE;
   sd->app_info = NULL;
@@ -242,18 +278,16 @@ int main (int argc, char **argv)
   sd->finalize_callback = cb_finalize;
   sd->finalize_callback_data = NULL;
   sd->action_specified = FALSE;
-  sd->region_specified = FALSE;
+  sd->region_specified = region_specified;
 
   /* Read the preferences */
   rc_file = xfce_resource_save_location (XFCE_RESOURCE_CONFIG, "xfce4/xfce4-screenshooter", TRUE);
   screenshooter_read_rc_file (rc_file, sd);
 
   /* If a region cli option is given, take the screenshot accordingly.*/
-  if (fullscreen || window || region)
+  if (region_specified)
     {
       /* Set the region to be captured */
-      sd->region_specified = TRUE;
-
       if (window)
         sd->region = ACTIVE_WINDOW;
       else if (fullscreen)
@@ -280,6 +314,14 @@ int main (int argc, char **argv)
           sd->action = SAVE;
           sd->action_specified = TRUE;
           sd->show_in_folder = show_in_folder;
+        }
+      else if (custom_action != NULL)
+        {
+          g_free (sd->custom_action_name);
+          sd->custom_action_name = g_strdup (custom_action);
+          sd->custom_action_command = custom_action_command;
+          sd->action = CUSTOM_ACTION;
+          sd->action_specified = TRUE;
         }
 
       if (clipboard)

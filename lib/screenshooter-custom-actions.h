@@ -34,6 +34,7 @@ enum {
 
 void screenshooter_custom_action_save    (GtkTreeModel   *list_store);
 void screenshooter_custom_action_load    (GtkListStore   *list_store);
+gchar *screenshooter_custom_action_get_command_by_name (const gchar *name);
 void screenshooter_custom_action_execute (gchar          *save_location,
                                           gchar          *name,
                                           gchar          *command);

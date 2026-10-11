@@ -191,6 +191,40 @@ screenshooter_custom_action_load (GtkListStore *list_store)
 
 
 
+gchar *
+screenshooter_custom_action_get_command_by_name (const gchar *name)
+{
+  GtkTreeIter iter;
+  gboolean has_next;
+  gchar *result = NULL;
+  GtkListStore *list_store = gtk_list_store_new (CUSTOM_ACTION_N_COLUMN, G_TYPE_STRING, G_TYPE_STRING);
+
+  screenshooter_custom_action_load (list_store);
+  has_next = gtk_tree_model_get_iter_first (GTK_TREE_MODEL (list_store), &iter);
+  while (has_next)
+    {
+      gchar *action_name, *action_cmd;
+      gtk_tree_model_get (GTK_TREE_MODEL (list_store), &iter,
+                          CUSTOM_ACTION_NAME, &action_name,
+                          CUSTOM_ACTION_COMMAND, &action_cmd, -1);
+      if (g_strcmp0 (name, action_name) == 0)
+        {
+          result = action_cmd;
+          g_free (action_name);
+          break;
+        }
+      g_free (action_name);
+      g_free (action_cmd);
+
+      has_next = gtk_tree_model_iter_next (GTK_TREE_MODEL (list_store), &iter);
+    }
+
+  g_object_unref (list_store);
+  return result;
+}
+
+
+
 void
 screenshooter_custom_action_execute (gchar *save_location,
                                      gchar *name,
