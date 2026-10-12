@@ -220,8 +220,12 @@ screenshooter_take_screenshot (ScreenshotData *sd, gboolean immediate)
 
   if (sd->region == SELECT)
     {
-      /* The delay will be applied after the rectangle selection */
-      g_idle_add (take_screenshot_idle, sd);
+      /* Await pre region delay or schedule the region selection to start immediately.
+       * The regular sd->delay will be executed after the region is selected. */
+      if (sd->region_delay > 0)
+        g_timeout_add (sd->region_delay * 1000, take_screenshot_idle, sd);
+      else
+        g_idle_add (take_screenshot_idle, sd);
       return;
     }
 
