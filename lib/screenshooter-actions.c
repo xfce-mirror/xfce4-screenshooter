@@ -44,25 +44,25 @@ action_idle (gpointer user_data)
 {
   gchar *save_location = NULL;
   ScreenshotData *sd = user_data;
+  GtkWidget *actions_dialog = NULL;
 
   if (!sd->action_specified)
     {
-      GtkWidget *dialog = screenshooter_actions_dialog_new (sd);
+      actions_dialog = screenshooter_actions_dialog_new (sd);
       gint response;
 
-      g_signal_connect (dialog, "response",
+      g_signal_connect (actions_dialog, "response",
                         G_CALLBACK (cb_help_response), NULL);
-      g_signal_connect (dialog, "key-press-event",
+      g_signal_connect (actions_dialog, "key-press-event",
                         G_CALLBACK (screenshooter_f1_key), NULL);
 
-      response = gtk_dialog_run (GTK_DIALOG (dialog));
-
-      gtk_widget_destroy (dialog);
+      response = gtk_dialog_run (GTK_DIALOG (actions_dialog));
 
       if (response == GTK_RESPONSE_CANCEL ||
           response == GTK_RESPONSE_DELETE_EVENT ||
           response == GTK_RESPONSE_CLOSE)
         {
+          gtk_widget_destroy (actions_dialog);
           g_object_unref (sd->screenshot);
           sd->finalize_callback (FALSE, sd->finalize_callback_data);
           return FALSE;
@@ -70,6 +70,7 @@ action_idle (gpointer user_data)
 
       if (response == GTK_RESPONSE_REJECT)
         {
+          gtk_widget_destroy (actions_dialog);
           g_object_unref (sd->screenshot);
 
           /* If the user clicked 'Back' button */
@@ -117,6 +118,8 @@ action_idle (gpointer user_data)
             }
           else if (!sd->action_specified)
             {
+              if (actions_dialog != NULL)
+                gtk_widget_destroy (actions_dialog);
               /* Show actions dialog again if no action was specified from CLI */
               return TRUE;
             }
@@ -179,6 +182,9 @@ action_idle (gpointer user_data)
 
       g_free (save_location);
     }
+
+  if (actions_dialog != NULL)
+    gtk_widget_destroy (actions_dialog);
 
   sd->finalize_callback (TRUE, sd->finalize_callback_data);
 
