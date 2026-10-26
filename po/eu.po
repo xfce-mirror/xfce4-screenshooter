@@ -5,7 +5,9 @@
 # Translators:
 # beriain, 2018
 # beriain, 2018
+# beriain, 2018
 # beriain, 2019-2023
+# Eder Etxebarria Rojo, 2024
 # Eder Etxebarria Rojo, 2024
 # Piarres Beobide <pi@beobide.net>, 2006,2008-2009
 # Piarres Beobide <pi+debian@beobide.net>, 2009
@@ -15,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2026-06-15 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Eder Etxebarria Rojo, 2024\n"
+"Last-Translator: Piarres Beobide <pi+debian@beobide.net>, 2009\n"
 "Language-Team: Basque (http://app.transifex.com/xfce/xfce-apps/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +28,7 @@ msgstr ""
 #: lib/screenshooter-dialogs.c:514
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%.2fKb %.2fKb-tik"
+msgstr "%.2fKb / %.2fKb"
 
 #: lib/screenshooter-dialogs.c:617
 msgid "Transfer"
@@ -36,7 +38,7 @@ msgstr "Transferitu"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pantaila argazkia hona transferitzen ari da:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pantaila-argazkia hona transferitzen ari da:</span>"
 
 #: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
 #: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:140
@@ -90,7 +92,7 @@ msgstr "Atera leiho aktiboaren pantaila-argazkia"
 
 #: lib/screenshooter-dialogs.c:973
 msgid "Not supported in Wayland"
-msgstr "Wayland-ek ez du barneratzen"
+msgstr "Ez da onartzen Wayland-en"
 
 #: lib/screenshooter-dialogs.c:984
 msgid "Select a region"
@@ -101,7 +103,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr "Kapturatu behar den eremua aukeratzeko pantailaren puntu bat hautatu eta sagu botoia askatu gabe arrastatu kurtsorea eremuaren beste ertzera, han sagu botoia askatuaz.\n\nKlikatu Ctrl tekla arrastatu bitartean eremua mugitzeko."
+msgstr "Kapturatu nahi duzun eremua hautatzeko, egin klik pantailako puntu batean saguaren botoia askatu gabe, arrastatu sagua eremuaren beste izkinara eta askatu saguaren botoia.\n\nSakatu Ctrl arrastatzen ari zaren bitartean eremua mugitzeko."
 
 #: lib/screenshooter-dialogs.c:1001
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
@@ -109,25 +111,25 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aukerak</span>"
 
 #: lib/screenshooter-dialogs.c:1021
 msgid "Capture the mouse pointer"
-msgstr "Kapturatu sagu markatzailea"
+msgstr "Kapturatu saguaren erakuslea"
 
 #: lib/screenshooter-dialogs.c:1025
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Bistarazi sagu markatzailea pantaila-argazkian."
+msgstr "Bistaratu saguaren erakuslea pantaila-argazkian"
 
 #: lib/screenshooter-dialogs.c:1032
 msgid "Capture the window border"
-msgstr "Leihoaren ertza kapturatu"
+msgstr "Kapturatu leihoaren ertza"
 
 #: lib/screenshooter-dialogs.c:1037
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr "Leihoaren ertza erakutsi pantaila-argazkian.\nAukera hau ezgaitzeak ez du efekturik CSD leihoetan."
+msgstr "Bistaratu leihoaren ertza pantaila-argazkian.\nAukera hau desgaitzeak ez du eraginik CSD leihoetan."
 
 #: lib/screenshooter-dialogs.c:1061
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kapturatu arreko atzerapena</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Kapturatu aurreko atzerapena</span>"
 
 #: lib/screenshooter-dialogs.c:1085
 msgid "Delay in seconds before the screenshot is taken"
@@ -135,7 +137,7 @@ msgstr "Pantaila-argazkia atera aurretiko atzerapena segundotan"
 
 #: lib/screenshooter-dialogs.c:1088
 msgid "seconds"
-msgstr "segundu"
+msgstr "segundo"
 
 #: lib/screenshooter-dialogs.c:1132
 msgid "_Back"
@@ -152,12 +154,12 @@ msgstr "Gorde"
 
 #: lib/screenshooter-dialogs.c:1193
 msgid "Save the screenshot to a file"
-msgstr "Pantaila-argazkia fitxategi batean gorde"
+msgstr "Gorde pantaila-argazkia fitxategi batean"
 
 #. Show in folder checkbox
 #: lib/screenshooter-dialogs.c:1197
 msgid "Show in Folder"
-msgstr "Karpetan ikusi"
+msgstr "Erakutsi karpetan"
 
 #: lib/screenshooter-dialogs.c:1204
 msgid "Shows the saved file in the folder"
@@ -185,11 +187,11 @@ msgstr "Pantaila-argazkia irekitzeko aplikazioa"
 
 #: lib/screenshooter-dialogs.c:1269
 msgid "Custom Action:"
-msgstr "Pertsonalizatutako ekintza:"
+msgstr "Ekintza pertsonalizatua:"
 
 #: lib/screenshooter-dialogs.c:1277
 msgid "Execute the selected custom action"
-msgstr "Exekutatu hautatutako ekintza pertsonalizatua:"
+msgstr "Exekutatu hautatutako ekintza pertsonalizatua"
 
 #: lib/screenshooter-dialogs.c:1289
 msgid "Custom action to execute"
@@ -197,11 +199,11 @@ msgstr "Exekutatuko den ekintza pertsonalizatua"
 
 #: lib/screenshooter-dialogs.c:1312
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aurreikusi</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aurrebista</span>"
 
 #: lib/screenshooter-dialogs.c:1387
 msgid "Save screenshot as..."
-msgstr "Gorde pantaila-argazkia honela ..."
+msgstr "Gorde pantaila-argazkia honela..."
 
 #: lib/screenshooter-dialogs.c:1480
 msgid "Preferences"
@@ -217,7 +219,7 @@ msgid ""
 "screenshots after they are captured. You can find more examples in the <a "
 "href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
 "actions#examples\">documentation</a>."
-msgstr ""
+msgstr "Pantaila-argazkiak atera ondoren haiek kudeatzeko erabilgarri egongo diren ekintza pertsonalizatuak konfigura ditzakezu. Adibide gehiago aurki ditzakezu <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">dokumentazioan</a>."
 
 #: lib/screenshooter-dialogs.c:1555
 msgid "Custom Action"
@@ -225,11 +227,11 @@ msgstr "Ekintza pertsonalizatua"
 
 #: lib/screenshooter-dialogs.c:1568
 msgid "Add custom action"
-msgstr "Ekintza pertsonalizatua gehitu"
+msgstr "Gehitu ekintza pertsonalizatua"
 
 #: lib/screenshooter-dialogs.c:1575
 msgid "Remove selected custom action"
-msgstr "Hautatutako ekintza pertsonalizatua kendu"
+msgstr "Kendu hautatutako ekintza pertsonalizatua"
 
 #. Add custom action name
 #: lib/screenshooter-dialogs.c:1597
@@ -238,7 +240,7 @@ msgstr "Izena"
 
 #: lib/screenshooter-dialogs.c:1598
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr "Ekintzen leihotxoan agertuko den ekintzaren izena"
+msgstr "Ekintzen elkarrizketan bistaratuko den ekintzaren izena"
 
 #. Add custom action command
 #: lib/screenshooter-dialogs.c:1607
@@ -252,7 +254,7 @@ msgstr "Ekintza pertsonalizatu honek exekutatuko duen komandoa"
 #: lib/screenshooter-dialogs.c:1615
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr "Erabili %f kokapen markatzaile bezala hartutako pantaila-argazkiaren kokapenerako"
+msgstr "Erabili %f ateratako pantaila-argazkiaren kokalekuaren leku-marka gisa"
 
 #: lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
@@ -260,12 +262,12 @@ msgstr "Ezin izan da ekintza pertsonalizatua exekutatu"
 
 #: lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
-msgstr "Hautatutako ekintza pertsonalizatua ez da balioduna"
+msgstr "Hautatutako ekintza pertsonalizatua baliogabea da"
 
 #: lib/screenshooter-custom-actions.c:231
 #, c-format
 msgid "Failed to run the custom action %s: %s"
-msgstr ""
+msgstr "Huts egin du %s ekintza pertsonalizatua exekutatzean: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -289,14 +291,14 @@ msgstr "JPEG XL fitxategia"
 
 #: lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr "AVIF fitxategia    "
+msgstr "AVIF fitxategia"
 
 #: lib/screenshooter-utils.c:326
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
-msgstr "<b>Aplikazioa ezin izan da hasi.</b>\n%s"
+msgstr "<b>Ezin izan da aplikazioa abiarazi.</b>\n%s"
 
 #: lib/screenshooter-utils.c:406
 msgid "Error"
@@ -309,7 +311,7 @@ msgstr "Ezin izan da pantaila-kopiaren kaptura egin"
 #: lib/screenshooter-capture-wayland.c:230
 #: lib/screenshooter-capture-wayland.c:399
 msgid "Failed to create file descriptor"
-msgstr "Ezin izan da sortu fitxategiaren deskribatzailea"
+msgstr "Ezin izan da fitxategi-deskriptorea sortu"
 
 #: lib/screenshooter-capture-wayland.c:239
 #: lib/screenshooter-capture-wayland.c:408
@@ -318,42 +320,42 @@ msgstr "Ezin izan da memoria mapeatu"
 
 #: lib/screenshooter-capture-wayland.c:308
 msgid "Failed to capture frame"
-msgstr ""
+msgstr "Huts egin du markoa kapturatzean"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "Invalid buffer size"
-msgstr ""
+msgstr "Bufferraren tamaina baliogabea"
 
 #: lib/screenshooter-capture-wayland.c:392
 msgid "Supported format not found"
-msgstr ""
+msgstr "Ez da onartutako formaturik aurkitu"
 
 #: lib/screenshooter-capture-wayland.c:420
 msgid "Failed to create buffer"
-msgstr ""
+msgstr "Huts egin du bufferra sortzean"
 
 #: lib/screenshooter-capture-wayland.c:467
 msgid "Required Wayland interfaces are missing"
-msgstr "Wayland-ek beharrezkoak dituen interfazeak falta dira"
+msgstr "Beharrezko Wayland interfazeak falta dira"
 
 #: lib/screenshooter-capture-wayland.c:472
 msgid "Compositor is missing wl_shm"
-msgstr "Konposatzailea falta da wl_shm"
+msgstr "Konposatzaileari wl_shm falta zaio"
 
 #: lib/screenshooter-capture-wayland.c:477
 msgid ""
 "Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
 "capture-source-v1/ext-image-copy-capture-v1"
-msgstr ""
+msgstr "Konposatzaileak ez ditu onartzen ez wlr-screencopy-unstable-v1, ez ext-image-capture-source-v1/ext-image-copy-capture-v1"
 
 #: lib/screenshooter-capture-wayland.c:588
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
-msgstr ""
+msgstr "Pixel-formatua ez da onartzen: 0x%x"
 
 #: lib/screenshooter-capture-wayland.c:773
 msgid "Failed to capture"
-msgstr "Kaptura ezin izan da egin"
+msgstr "Ezin izan da kapturatu"
 
 #: lib/screenshooter-capture-wayland.c:837
 msgid "The selected mode is not supported in Wayland"
@@ -361,15 +363,15 @@ msgstr "Hautatutako modua ez da Wayland-ekin bateragarria"
 
 #: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
-msgstr "Pantaila-argazkia arbelera kopiatu"
+msgstr "Kopiatu pantaila-argazkia arbelera"
 
 #: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
-msgstr "Pantaila-argazkia ateratzeko atzerapena segundotan"
+msgstr "Pantaila-argazkia atera aurretiko atzerapena segundotan"
 
 #: src/main.c:62
 msgid "Display the mouse on the screenshot"
-msgstr "Bistarazi sagua pantaila-argazkian"
+msgstr "Bistaratu sagua pantaila-argazkian"
 
 #: src/main.c:67
 msgid "Removes the window border from the screenshot"
@@ -380,7 +382,7 @@ msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Kapturatu behar den eremua aukeratzeko pantailaren puntu bat hautatu eta sagu botoia askatu gabe arrastratu kurtsorea eremuaren beste ertzera, han sagu botoia askatuaz."
+msgstr "Kapturatu nahi duzun eremua hautatzeko, egin klik pantailako puntu batean saguaren botoia askatu gabe, arrastatu sagua eremuaren beste izkinara eta askatu saguaren botoia."
 
 #: src/main.c:84
 msgid ""
@@ -406,31 +408,31 @@ msgstr "Onartutako irudi formatuak zerrendatzen ditu; emaitzak alda daitezke ins
 #: src/main.c:141
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Aukera elkar-jotzea: --%s eta --%s ezin dira aldi berean erabili.\n"
+msgstr "Aukera bateraezinak: --%s eta --%s ezin dira aldi berean erabili.\n"
 
 #: src/main.c:143
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr "--%s aukera --fullscreen, --window edo --region aukera ematean bakarrik erabiltzen da. Baztertua izango da.\n"
+msgstr "--%s aukera --fullscreen, --window edo --region ematen denean soilik erabiltzen da. Ez ikusi egingo zaio.\n"
 
 #: src/main.c:154
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nErabili %s --help komando-lerroko komando erabilgarriak ikusteko.\n"
+msgstr "%s: %s\nErabili %s --help komando-lerroko aukera erabilgarri guztien zerrenda ikusteko.\n"
 
 #: src/xfce4-screenshooter.desktop.in:5
 #: panel-plugin/screenshooter.desktop.in:5
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Panataila osoaren, aktibo dagoen leihoaren edo panatailaren eremu baten  pantaila-argazki bat egin"
+msgstr "Atera pantaila osoaren, leiho aktiboaren edo eremu baten pantaila-argazkiak"
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr "xfce4-pantaila kapturatzailea"
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
@@ -443,4 +445,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr "Pantaila osoa, leiho aktiboa edo hautatutako eskualdea harrapatzeko aukera ematen du. Pantaila-argazkia egin baino lehen igarotzen den atzerapena eta pantaila-argazkiarekin egingo den ekintza ezar ditzakezu: gorde fitxategi batean, kopiatu arbelean, ireki beste aplikazio bat erabiliz edo erabili zure sormena ekintza pertsonalizatuekin."
+msgstr "Pantaila osoa, leiho aktiboa edo hautatutako eremu bat kapturatzeko aukera ematen du. Pantaila-argazkia atera aurretik igarotzen den atzerapena eta pantaila-argazkiarekin egingo den ekintza ezar ditzakezu: fitxategi batean gorde, arbelera kopiatu, beste aplikazio batekin ireki edo zure sormena erabili ekintza pertsonalizatuekin."
