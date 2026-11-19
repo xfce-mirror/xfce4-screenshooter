@@ -49,6 +49,7 @@ typedef struct
   gint show_mouse;
   gint show_border;
   gint delay;
+  gint region_delay;
   gint action;
   gboolean action_specified;
   gboolean region_specified;
