@@ -6,7 +6,7 @@
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
 # ebal <ebalaskas@ebalaskas.gr>, 2008-2009
-# Ioannis LM, 2023,2025
+# Ioannis LM, 2023,2025-2026
 # Panagiotis Mantzios <pmantzios@hotmail.com>, 2018
 # Stavros Giannouris <stavrosg@hellug.gr>, 2008
 # Πέτρος Σαμαράς <psamaras1@gmail.com>, 2019
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2026-06-15 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Ioannis LM, 2023,2025\n"
+"Last-Translator: Ioannis LM, 2023,2025-2026\n"
 "Language-Team: Greek (http://app.transifex.com/xfce/xfce-apps/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -187,7 +187,7 @@ msgstr "Εφαρμογή για το άνοιγμα του στιγμιότυπ�
 
 #: lib/screenshooter-dialogs.c:1269
 msgid "Custom Action:"
-msgstr "Προσαρμοσμένη ενέργεια:"
+msgstr "Ενέργεια:"
 
 #: lib/screenshooter-dialogs.c:1277
 msgid "Execute the selected custom action"
@@ -211,7 +211,7 @@ msgstr "Προτιμήσεις"
 
 #: lib/screenshooter-dialogs.c:1505
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Προσαρμοσμένες ενέργειες</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ενέργειες</span>"
 
 #: lib/screenshooter-dialogs.c:1525
 msgid ""
@@ -219,11 +219,11 @@ msgid ""
 "screenshots after they are captured. You can find more examples in the <a "
 "href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
 "actions#examples\">documentation</a>."
-msgstr "Μπορείτε να διαμορφώσετε προσαρμοσμένες ενέργειες που θα είναι διαθέσιμες για τη διαχείριση των στιγμιότυπων μετά τη λήψη τους. Μπορείτε να βρείτε περισσότερα παραδείγματα στην <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">τεκμηρίωση</a>."
+msgstr "Μπορείτε να διαμορφώσετε ενέργειες που θα είναι διαθέσιμες για τη διαχείριση των στιγμιότυπων μετά τη λήψη τους. Μπορείτε να βρείτε περισσότερα παραδείγματα στην <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">τεκμηρίωση</a>."
 
 #: lib/screenshooter-dialogs.c:1555
 msgid "Custom Action"
-msgstr "Προσαρμοσμένη ενέργεια"
+msgstr "Ενέργεια"
 
 #: lib/screenshooter-dialogs.c:1568
 msgid "Add custom action"
@@ -258,16 +258,16 @@ msgstr "Χρήση του χαρακτήρα %f για τη καταχώρηση
 
 #: lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
-msgstr "Αδύνατη η εκτέλεση της προσαρμοσμένης ενέργειας"
+msgstr "Αδύνατη η εκτέλεση της ενέργειας"
 
 #: lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
-msgstr "Μη έγκυρη επιλεγμένη προσαρμοσμένη ενέργεια"
+msgstr "Μη έγκυρη επιλεγμένη ενέργεια"
 
 #: lib/screenshooter-custom-actions.c:231
 #, c-format
 msgid "Failed to run the custom action %s: %s"
-msgstr ""
+msgstr "Απέτυχε η εκτέλεση της ενέργειας %s: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
@@ -324,7 +324,7 @@ msgstr "Απέτυχε η λήψη εικόνας"
 
 #: lib/screenshooter-capture-wayland.c:386
 msgid "Invalid buffer size"
-msgstr ""
+msgstr "Μη έγκυρο μέγεθος buffer"
 
 #: lib/screenshooter-capture-wayland.c:392
 msgid "Supported format not found"
