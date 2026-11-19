@@ -5,14 +5,15 @@
 # Translators:
 # Gatis Kalniņš <>, 2014
 # Rihards Priedītis <rprieditis@gmail.com>, 2009
+# Rihards Priedītis <rprieditis@gmail.com>, 2007,2009,2026
 # Rihards Prieditis <rprieditis@inbox.lv>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Apps\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-06-06 00:51+0200\n"
+"POT-Creation-Date: 2026-06-15 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 18:40+0000\n"
-"Last-Translator: Gatis Kalniņš <>, 2014\n"
+"Last-Translator: Rihards Priedītis <rprieditis@gmail.com>, 2007,2009,2026\n"
 "Language-Team: Latvian (http://app.transifex.com/xfce/xfce-apps/language/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,400 +21,418 @@ msgstr ""
 "Language: lv\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
-#: lib/screenshooter-dialogs.c:503
+#: lib/screenshooter-dialogs.c:514
 #, c-format
 msgid "%.2fKb of %.2fKb"
-msgstr "%.2fKb of %.2fKb"
+msgstr "%.2f Kb no %.2f Kb"
 
-#: lib/screenshooter-dialogs.c:606
+#: lib/screenshooter-dialogs.c:617
 msgid "Transfer"
-msgstr "Pārsūtīt"
+msgstr "Pārsūtīšana"
 
-#: lib/screenshooter-dialogs.c:627
+#: lib/screenshooter-dialogs.c:638
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekrāna kopija tiek pārsūtīta uz:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ekrānkopija tiek pārsūtīta uz:</span>"
 
-#: lib/screenshooter-dialogs.c:867 lib/screenshooter-dialogs.c:876
-#: lib/screenshooter-dialogs.c:1128 lib/screenshooter-utils.c:133
-#: lib/screenshooter-utils.c:175 src/xfce4-screenshooter.desktop.in:4
+#: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
+#: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:140
+#: lib/screenshooter-utils.c:182 src/xfce4-screenshooter.desktop.in:4
 #: panel-plugin/screenshooter.desktop.in:4
 msgid "Screenshot"
 msgstr "Ekrānkopija"
 
-#: lib/screenshooter-dialogs.c:869 lib/screenshooter-dialogs.c:879
+#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:890
 msgid "_Preferences"
-msgstr ""
+msgstr "_Iestatījumi"
 
-#: lib/screenshooter-dialogs.c:870 lib/screenshooter-dialogs.c:878
-#: lib/screenshooter-dialogs.c:1130
+#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:889
+#: lib/screenshooter-dialogs.c:1131
 msgid "_Help"
 msgstr "_Palīdzība"
 
-#: lib/screenshooter-dialogs.c:871 lib/screenshooter-dialogs.c:1463
+#: lib/screenshooter-dialogs.c:882 lib/screenshooter-dialogs.c:1482
 msgid "_Close"
-msgstr "Ai_zvērt"
+msgstr "_Aizvērt"
 
-#: lib/screenshooter-dialogs.c:880 lib/screenshooter-dialogs.c:1132
+#: lib/screenshooter-dialogs.c:891 lib/screenshooter-dialogs.c:1133
 msgid "_Cancel"
-msgstr ""
+msgstr "A_tcelt"
 
-#: lib/screenshooter-dialogs.c:881 lib/screenshooter-dialogs.c:1133
+#: lib/screenshooter-dialogs.c:892 lib/screenshooter-dialogs.c:1134
 msgid "_OK"
-msgstr ""
+msgstr "_Labi"
 
-#: lib/screenshooter-dialogs.c:914
+#: lib/screenshooter-dialogs.c:925
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Region to capture</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Ķeramais reģions</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Uzņemamais apgabals</span>"
 
-#: lib/screenshooter-dialogs.c:936
+#: lib/screenshooter-dialogs.c:947
 msgid "Entire screen"
-msgstr "Visu ekrānu"
+msgstr "Viss ekrāns"
 
-#: lib/screenshooter-dialogs.c:941 src/main.c:61
-#: panel-plugin/screenshooter-plugin.c:332
+#: lib/screenshooter-dialogs.c:952 src/main.c:57
+#: panel-plugin/screenshooter-plugin.c:316
 msgid "Take a screenshot of the entire screen"
 msgstr "Uzņemt visa ekrāna ekrānkopiju"
 
-#: lib/screenshooter-dialogs.c:950
+#: lib/screenshooter-dialogs.c:961
 msgid "Active window"
 msgstr "Aktīvais logs"
 
-#: lib/screenshooter-dialogs.c:953 src/main.c:103
-#: panel-plugin/screenshooter-plugin.c:337
+#: lib/screenshooter-dialogs.c:964 src/main.c:99
+#: panel-plugin/screenshooter-plugin.c:321
 msgid "Take a screenshot of the active window"
 msgstr "Uzņemt aktīvā loga ekrānkopiju"
 
-#: lib/screenshooter-dialogs.c:962 lib/screenshooter-dialogs.c:989
-msgid "Not supported in Wayland"
-msgstr ""
-
 #: lib/screenshooter-dialogs.c:973
-msgid "Select a region"
-msgstr "Atlasīt reģionu"
+msgid "Not supported in Wayland"
+msgstr "Netiek atbalstīts Wayland vidē"
 
-#: lib/screenshooter-dialogs.c:976
+#: lib/screenshooter-dialogs.c:984
+msgid "Select a region"
+msgstr "Atlasīt apgabalu"
+
+#: lib/screenshooter-dialogs.c:987
 msgid ""
 "Select a region to be captured by clicking a point of the screen without releasing the mouse button, dragging your mouse to the other corner of the region, and releasing the mouse button.\n"
 "\n"
 "Press Ctrl while dragging to move the region."
-msgstr ""
+msgstr "Atlasiet uzņemamo apgabalu: noklikšķiniet uz ekrāna punkta, neatlaižot peles pogu, velciet peli uz apgabala pretējo stūri un atlaidiet peles pogu.\n\nLai pārvietotu apgabalu, vilkšanas laikā turiet nospiestu Ctrl."
 
-#: lib/screenshooter-dialogs.c:1000
+#: lib/screenshooter-dialogs.c:1001
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Options</span>"
-msgstr ""
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opcijas</span>"
 
-#: lib/screenshooter-dialogs.c:1020
+#: lib/screenshooter-dialogs.c:1021
 msgid "Capture the mouse pointer"
-msgstr "Uzņemt peles kursoru"
+msgstr "Uzņemt peles rādītāju"
 
-#: lib/screenshooter-dialogs.c:1024
+#: lib/screenshooter-dialogs.c:1025
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Attēlot peles kursoru ekrānkopijā"
+msgstr "Rādīt peles rādītāju ekrānkopijā"
 
-#: lib/screenshooter-dialogs.c:1031
+#: lib/screenshooter-dialogs.c:1032
 msgid "Capture the window border"
-msgstr ""
+msgstr "Uzņemt loga apmali"
 
-#: lib/screenshooter-dialogs.c:1036
+#: lib/screenshooter-dialogs.c:1037
 msgid ""
 "Display the window border on the screenshot.\n"
 "Disabling this option has no effect for CSD windows."
-msgstr ""
+msgstr "Rādīt loga apmali ekrānkopijā.\nCSD logiem šīs opcijas atspējošana neko nemaina."
 
-#: lib/screenshooter-dialogs.c:1060
+#: lib/screenshooter-dialogs.c:1061
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Delay before capturing</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Aizture pirms uzņemšanas</span>"
 
-#: lib/screenshooter-dialogs.c:1084
+#: lib/screenshooter-dialogs.c:1085
 msgid "Delay in seconds before the screenshot is taken"
-msgstr "Aizture sekundēs, pirms ekrānkopijas uzņemšanas"
+msgstr "Aizture sekundēs pirms ekrānkopijas uzņemšanas"
 
-#: lib/screenshooter-dialogs.c:1087
+#: lib/screenshooter-dialogs.c:1088
 msgid "seconds"
 msgstr "sekundes"
 
-#: lib/screenshooter-dialogs.c:1131
+#: lib/screenshooter-dialogs.c:1132
 msgid "_Back"
 msgstr "_Atpakaļ"
 
-#: lib/screenshooter-dialogs.c:1171
+#: lib/screenshooter-dialogs.c:1172
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Action</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Darbības</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Darbība</span>"
 
 #. Save option radio button
-#: lib/screenshooter-dialogs.c:1186
+#: lib/screenshooter-dialogs.c:1187
 msgid "Save"
 msgstr "Saglabāt"
 
-#: lib/screenshooter-dialogs.c:1192
+#: lib/screenshooter-dialogs.c:1193
 msgid "Save the screenshot to a file"
-msgstr ""
+msgstr "Saglabāt ekrānkopiju failā"
 
 #. Show in folder checkbox
-#: lib/screenshooter-dialogs.c:1196
+#: lib/screenshooter-dialogs.c:1197
 msgid "Show in Folder"
-msgstr ""
+msgstr "Rādīt mapē"
 
-#: lib/screenshooter-dialogs.c:1203
+#: lib/screenshooter-dialogs.c:1204
 msgid "Shows the saved file in the folder"
-msgstr ""
+msgstr "Rāda saglabāto failu mapē"
 
-#: lib/screenshooter-dialogs.c:1211
+#: lib/screenshooter-dialogs.c:1212
 msgid "Copy to the clipboard"
-msgstr "Kopēt uz starpliktuvi"
+msgstr "Kopēt starpliktuvē"
 
-#: lib/screenshooter-dialogs.c:1213
+#: lib/screenshooter-dialogs.c:1214
 msgid "Copy the screenshot to the clipboard so that it can be pasted later"
-msgstr "Kopēt ekrānkopiju uz starpliktuvi, lai vēlāk kopija var tikt ielīmētā"
+msgstr "Kopēt ekrānkopiju starpliktuvē, lai to vēlāk varētu ielīmēt"
 
-#: lib/screenshooter-dialogs.c:1227
+#: lib/screenshooter-dialogs.c:1228
 msgid "Open with:"
 msgstr "Atvērt ar:"
 
-#: lib/screenshooter-dialogs.c:1235
+#: lib/screenshooter-dialogs.c:1236
 msgid "Open the screenshot with the chosen application"
 msgstr "Atvērt ekrānkopiju ar izvēlēto lietotni"
 
-#: lib/screenshooter-dialogs.c:1254 src/main.c:76
+#: lib/screenshooter-dialogs.c:1255 src/main.c:72
 msgid "Application to open the screenshot"
-msgstr "Lietotne ar kuru atvērt ekrānkopiju"
+msgstr "Lietotne, ar ko atvērt ekrānkopiju"
 
-#: lib/screenshooter-dialogs.c:1268
+#: lib/screenshooter-dialogs.c:1269
 msgid "Custom Action:"
-msgstr ""
+msgstr "Pielāgota darbība:"
 
-#: lib/screenshooter-dialogs.c:1276
+#: lib/screenshooter-dialogs.c:1277
 msgid "Execute the selected custom action"
-msgstr ""
+msgstr "Izpildīt atlasīto pielāgoto darbību"
 
-#: lib/screenshooter-dialogs.c:1288
+#: lib/screenshooter-dialogs.c:1289
 msgid "Custom action to execute"
-msgstr ""
+msgstr "Izpildāmā pielāgotā darbība"
 
-#: lib/screenshooter-dialogs.c:1311
+#: lib/screenshooter-dialogs.c:1312
 msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Preview</span>"
 msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Priekšskatījums</span>"
 
-#: lib/screenshooter-dialogs.c:1372
+#: lib/screenshooter-dialogs.c:1387
 msgid "Save screenshot as..."
 msgstr "Saglabāt ekrānkopiju kā..."
 
-#: lib/screenshooter-dialogs.c:1461
+#: lib/screenshooter-dialogs.c:1480
 msgid "Preferences"
-msgstr "Uzstādījumi"
-
-#: lib/screenshooter-dialogs.c:1486
-msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
-msgstr ""
+msgstr "Iestatījumi"
 
 #: lib/screenshooter-dialogs.c:1505
+msgid "<span weight=\"bold\" stretch=\"semiexpanded\">Custom Actions</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Pielāgotās darbības</span>"
+
+#: lib/screenshooter-dialogs.c:1525
 msgid ""
 "You can configure custom actions that will be available to handle "
-"screenshots after they are captured."
-msgstr ""
-
-#: lib/screenshooter-dialogs.c:1535
-msgid "Custom Action"
-msgstr ""
-
-#: lib/screenshooter-dialogs.c:1548
-msgid "Add custom action"
-msgstr ""
+"screenshots after they are captured. You can find more examples in the <a "
+"href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-"
+"actions#examples\">documentation</a>."
+msgstr "Varat konfigurēt pielāgotas darbības, kas būs pieejamas ekrānkopiju apstrādei pēc to uzņemšanas. Vairāk piemēru atradīsiet <a href=\"https://docs.xfce.org/apps/xfce4-screenshooter/custom-actions#examples\">dokumentācijā</a>."
 
 #: lib/screenshooter-dialogs.c:1555
+msgid "Custom Action"
+msgstr "Pielāgota darbība"
+
+#: lib/screenshooter-dialogs.c:1568
+msgid "Add custom action"
+msgstr "Pievienot pielāgotu darbību"
+
+#: lib/screenshooter-dialogs.c:1575
 msgid "Remove selected custom action"
-msgstr ""
+msgstr "Noņemt atlasīto pielāgoto darbību"
 
 #. Add custom action name
-#: lib/screenshooter-dialogs.c:1577
+#: lib/screenshooter-dialogs.c:1597
 msgid "Name"
 msgstr "Nosaukums"
 
-#: lib/screenshooter-dialogs.c:1578
+#: lib/screenshooter-dialogs.c:1598
 msgid "Name of the action that will be displayed in Actions dialog"
-msgstr ""
+msgstr "Darbības nosaukums, kas tiks rādīts dialoglodziņā „Darbības”"
 
 #. Add custom action command
-#: lib/screenshooter-dialogs.c:1587
+#: lib/screenshooter-dialogs.c:1607
 msgid "Command"
 msgstr "Komanda"
 
-#: lib/screenshooter-dialogs.c:1588
+#: lib/screenshooter-dialogs.c:1608
 msgid "Command that will be executed for this custom action"
-msgstr ""
+msgstr "Komanda, kas tiks izpildīta šai pielāgotajai darbībai"
 
-#: lib/screenshooter-dialogs.c:1595
+#: lib/screenshooter-dialogs.c:1615
 #, c-format
 msgid "Use %f as a placeholder for location of the screenshot captured"
-msgstr ""
+msgstr "Izmantojiet %f kā vietturi uzņemtās ekrānkopijas atrašanās vietai"
 
-#: lib/screenshooter-custom-actions.c:183
-msgid "Host on Imgur™"
-msgstr ""
-
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
-msgstr ""
+msgstr "Neizdevās izpildīt pielāgoto darbību"
 
-#: lib/screenshooter-custom-actions.c:211
+#: lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
-msgstr ""
+msgstr "Atlasīta nederīga pielāgotā darbība"
 
-#: lib/screenshooter-custom-actions.c:237
+#: lib/screenshooter-custom-actions.c:231
 #, c-format
-msgid "Failed to run the custom action %s"
-msgstr ""
+msgid "Failed to run the custom action %s: %s"
+msgstr "Neizdevās palaist pielāgoto darbību %s: %s"
 
 #: lib/screenshooter-format.c:31
 msgid "PNG File"
-msgstr ""
+msgstr "PNG fails"
 
 #: lib/screenshooter-format.c:32
 msgid "JPEG File"
-msgstr ""
+msgstr "JPEG fails"
 
 #: lib/screenshooter-format.c:33
 msgid "BMP File"
-msgstr ""
+msgstr "BMP fails"
 
 #: lib/screenshooter-format.c:34
 msgid "WebP File"
-msgstr ""
+msgstr "WebP fails"
 
 #: lib/screenshooter-format.c:35
 msgid "JPEG XL File"
-msgstr ""
+msgstr "JPEG XL fails"
 
 #: lib/screenshooter-format.c:36
 msgid "AVIF File"
-msgstr ""
+msgstr "AVIF fails"
 
-#: lib/screenshooter-utils.c:322
+#: lib/screenshooter-utils.c:326
 #, c-format
 msgid ""
 "<b>The application could not be launched.</b>\n"
 "%s"
-msgstr ""
+msgstr "<b>Lietotni neizdevās palaist.</b>\n%s"
 
-#: lib/screenshooter-utils.c:399
+#: lib/screenshooter-utils.c:406
 msgid "Error"
 msgstr "Kļūda"
 
-#: lib/screenshooter-capture-wayland.c:164
+#: lib/screenshooter-capture-wayland.c:198
 msgid "Failed to capture screencopy frame"
-msgstr ""
+msgstr "Neizdevās uzņemt ekrāna kopijas kadru"
 
-#: lib/screenshooter-capture-wayland.c:194
+#: lib/screenshooter-capture-wayland.c:230
+#: lib/screenshooter-capture-wayland.c:399
 msgid "Failed to create file descriptor"
-msgstr ""
+msgstr "Neizdevās izveidot faila deskriptoru"
 
-#: lib/screenshooter-capture-wayland.c:203
+#: lib/screenshooter-capture-wayland.c:239
+#: lib/screenshooter-capture-wayland.c:408
 msgid "Failed to map memory"
-msgstr ""
+msgstr "Neizdevās kartēt atmiņu"
 
-#: lib/screenshooter-capture-wayland.c:243
-msgid "Required Wayland interfaces are missing"
-msgstr ""
-
-#: lib/screenshooter-capture-wayland.c:248
-msgid "Compositor is missing wl_shm"
-msgstr ""
-
-#: lib/screenshooter-capture-wayland.c:253
-msgid "Compositor does not support wlr-screencopy-unstable-v1"
-msgstr ""
-
-#: lib/screenshooter-capture-wayland.c:311
-#, c-format
-msgid "Unsupported pixel format: %d"
-msgstr ""
+#: lib/screenshooter-capture-wayland.c:308
+msgid "Failed to capture frame"
+msgstr "Neizdevās uzņemt kadru"
 
 #: lib/screenshooter-capture-wayland.c:386
-msgid "The selected mode is not supported in Wayland"
-msgstr ""
+msgid "Invalid buffer size"
+msgstr "Nederīgs bufera izmērs"
 
-#: lib/screenshooter-capture-wayland.c:442
+#: lib/screenshooter-capture-wayland.c:392
+msgid "Supported format not found"
+msgstr "Atbalstīts formāts nav atrasts"
+
+#: lib/screenshooter-capture-wayland.c:420
+msgid "Failed to create buffer"
+msgstr "Neizdevās izveidot buferi"
+
+#: lib/screenshooter-capture-wayland.c:467
+msgid "Required Wayland interfaces are missing"
+msgstr "Trūkst vajadzīgo Wayland saskarņu"
+
+#: lib/screenshooter-capture-wayland.c:472
+msgid "Compositor is missing wl_shm"
+msgstr "Kompozitoram trūkst wl_shm"
+
+#: lib/screenshooter-capture-wayland.c:477
+msgid ""
+"Compositor does not support wlr-screencopy-unstable-v1 nor ext-image-"
+"capture-source-v1/ext-image-copy-capture-v1"
+msgstr "Kompozitors neatbalsta ne wlr-screencopy-unstable-v1, ne ext-image-capture-source-v1/ext-image-copy-capture-v1"
+
+#: lib/screenshooter-capture-wayland.c:588
+#, c-format
+msgid "Unsupported pixel format: 0x%x"
+msgstr "Neatbalstīts pikseļu formāts: 0x%x"
+
+#: lib/screenshooter-capture-wayland.c:773
 msgid "Failed to capture"
-msgstr ""
+msgstr "Neizdevās uzņemt"
 
-#: src/main.c:51
+#: lib/screenshooter-capture-wayland.c:837
+msgid "The selected mode is not supported in Wayland"
+msgstr "Izvēlētais režīms Wayland vidē netiek atbalstīts"
+
+#: src/main.c:47
 msgid "Copy the screenshot to the clipboard"
-msgstr "Kopēt ekrānattēlu buferī"
+msgstr "Kopēt ekrānkopiju starpliktuvē"
 
-#: src/main.c:56
+#: src/main.c:52
 msgid "Delay in seconds before taking the screenshot"
 msgstr "Aizture sekundēs pirms ekrānkopijas uzņemšanas"
 
-#: src/main.c:66
+#: src/main.c:62
 msgid "Display the mouse on the screenshot"
-msgstr "Attēlot peles kursoru uz ekrāna kopijas"
+msgstr "Rādīt peli ekrānkopijā"
 
-#: src/main.c:71
+#: src/main.c:67
 msgid "Removes the window border from the screenshot"
-msgstr ""
+msgstr "Noņem loga apmali no ekrānkopijas"
 
-#: src/main.c:81 panel-plugin/screenshooter-plugin.c:342
+#: src/main.c:77 panel-plugin/screenshooter-plugin.c:326
 msgid ""
 "Select a region to be captured by clicking a point of the screen without "
 "releasing the mouse button, dragging your mouse to the other corner of the "
 "region, and releasing the mouse button."
-msgstr "Atlasīt reģionu kuru uzņemt. Klikšķiniet uz ekrāna neatlaižot peli un velciet peli līdz nākamajam reģiona stūrim, pēc tam atlaižiet peles pogu."
+msgstr "Atlasīt uzņemamo apgabalu: noklikšķiniet uz ekrāna punkta, neatlaižot peles pogu, velciet peli uz apgabala pretējo stūri un atlaidiet peles pogu."
 
-#: src/main.c:88
+#: src/main.c:84
 msgid ""
 "File path or directory where the screenshot will be saved, accepts png, jpg "
 "and bmp extensions. webp, jxl and avif are only supported if their "
 "respective pixbuf loaders are installed."
-msgstr ""
+msgstr "Faila ceļš vai mape, kurā tiks saglabāta ekrānkopija; pieņem paplašinājumus png, jpg un bmp. webp, jxl un avif tiek atbalstīti tikai tad, ja instalēti attiecīgie pixbuf ielādētāji."
 
-#: src/main.c:93
+#: src/main.c:89
 msgid "Show the saved file in the folder."
-msgstr ""
+msgstr "Rādīt saglabāto failu mapē."
 
-#: src/main.c:98
+#: src/main.c:94
 msgid "Version information"
 msgstr "Versijas informācija"
 
-#: src/main.c:108
+#: src/main.c:104
 msgid ""
 "Lists supported image formats, results can vary depending on installed "
 "pixbuf loaders"
-msgstr ""
+msgstr "Uzskaita atbalstītos attēlu formātus; rezultāti var atšķirties atkarībā no instalētajiem pixbuf ielādētājiem"
 
-#: src/main.c:144
+#: src/main.c:141
 #, c-format
 msgid "Conflicting options: --%s and --%s cannot be used at the same time.\n"
-msgstr "Konfliktējošās opcijas: --%s un --%s nevar tikt lietotas vienlaicīgi.\n"
+msgstr "Konfliktējošas opcijas: --%s un --%s nevar izmantot vienlaikus.\n"
 
-#: src/main.c:146
+#: src/main.c:143
 #, c-format
 msgid ""
 "The --%s option is only used when --fullscreen, --window or --region is "
 "given. It will be ignored.\n"
-msgstr "Opcija --%s tiek lietota tikai tad, kad tiek lietotats --fullscreen, --window vai --region. Opcija tiek ignorēta.\n"
+msgstr "Opcija --%s tiek izmantota tikai tad, ja norādīts --fullscreen, --window vai --region. Tā tiks ignorēta.\n"
 
-#: src/main.c:157
+#: src/main.c:154
 #, c-format
 msgid ""
 "%s: %s\n"
 "Try %s --help to see a full list of available command line options.\n"
-msgstr "%s: %s\nMēģiniet %s --help , lai redzētu pilnu pieejamo komandas līnijas iespēju sarakstu.\n"
+msgstr "%s: %s\nLai redzētu pilnu pieejamo komandrindas opciju sarakstu, mēģiniet %s --help.\n"
 
 #: src/xfce4-screenshooter.desktop.in:5
 #: panel-plugin/screenshooter.desktop.in:5
 msgid ""
 "Take screenshots of the entire screen, of the active window or of a region"
-msgstr "Uzņemt pilna ekrāna, aktīva loga, vai reģiona kopiju"
+msgstr "Uzņemt visa ekrāna, aktīvā loga vai apgabala ekrānkopiju"
 
 #: src/xfce4-screenshooter.appdata.xml.in:10
 msgid "xfce4-screenshooter"
-msgstr ""
+msgstr "xfce4-screenshooter"
 
 #: src/xfce4-screenshooter.appdata.xml.in:11
 msgid "Application and panel plugin to take screenshots"
-msgstr ""
+msgstr "Lietotne un paneļa spraudnis ekrānkopiju uzņemšanai"
 
 #: src/xfce4-screenshooter.appdata.xml.in:14
 msgid ""
@@ -422,4 +441,4 @@ msgid ""
 "and the action that will be done with the screenshot: save it to a file, "
 "copy it to the clipboard, open it using another application, or use your "
 "creativity with custom actions."
-msgstr ""
+msgstr "Ļauj uzņemt visu ekrānu, aktīvo logu vai atlasītu apgabalu. Varat iestatīt aizturi pirms ekrānkopijas uzņemšanas un darbību, kas tiks veikta ar ekrānkopiju: saglabāt failā, kopēt starpliktuvē, atvērt citā lietotnē vai izmantot savu radošumu ar pielāgotām darbībām."
