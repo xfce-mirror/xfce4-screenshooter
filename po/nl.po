@@ -33,7 +33,7 @@ msgstr "Overdracht"
 msgid ""
 "<span weight=\"bold\" stretch=\"semiexpanded\">The screenshot is being "
 "transferred to:</span>"
-msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">De schermafdruk wordt overgedragen naar:</span>"
+msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">De schermafdruk wordt overgebracht naar:</span>"
 
 #: lib/screenshooter-dialogs.c:878 lib/screenshooter-dialogs.c:887
 #: lib/screenshooter-dialogs.c:1129 lib/screenshooter-utils.c:140
@@ -106,11 +106,11 @@ msgstr "<span weight=\"bold\" stretch=\"semiexpanded\">Opties</span>"
 
 #: lib/screenshooter-dialogs.c:1021
 msgid "Capture the mouse pointer"
-msgstr "Muispijl afbeelden"
+msgstr "Muisaanwijzer vastleggen"
 
 #: lib/screenshooter-dialogs.c:1025
 msgid "Display the mouse pointer on the screenshot"
-msgstr "Toon muispijl op de schermafdruk"
+msgstr "Toon de muisaanwijzer op de schermafdruk"
 
 #: lib/screenshooter-dialogs.c:1032
 msgid "Capture the window border"
@@ -154,7 +154,7 @@ msgstr "Sla de schermafdruk op als een bestand"
 #. Show in folder checkbox
 #: lib/screenshooter-dialogs.c:1197
 msgid "Show in Folder"
-msgstr "Tonen in map"
+msgstr "Toon in map"
 
 #: lib/screenshooter-dialogs.c:1204
 msgid "Shows the saved file in the folder"
@@ -170,7 +170,7 @@ msgstr "Kopieer de schermafdruk naar het klembord zodat deze later geplakt kan w
 
 #: lib/screenshooter-dialogs.c:1228
 msgid "Open with:"
-msgstr "Open met:"
+msgstr "Openen met:"
 
 #: lib/screenshooter-dialogs.c:1236
 msgid "Open the screenshot with the chosen application"
@@ -253,7 +253,7 @@ msgstr "Gebruik %f als tijdelijke aanduiding voor locatie van genomen schermafdr
 
 #: lib/screenshooter-custom-actions.c:212
 msgid "Unable to execute the custom action"
-msgstr "Kon de aangepaste actie niet uitvoeren"
+msgstr "Kan de aangepaste actie niet uitvoeren"
 
 #: lib/screenshooter-custom-actions.c:212
 msgid "Invalid custom action selected"
@@ -346,7 +346,7 @@ msgstr "Beeldsamensteller heeft geen ondersteuning voor wlr-screencopy-unstable-
 #: lib/screenshooter-capture-wayland.c:588
 #, c-format
 msgid "Unsupported pixel format: 0x%x"
-msgstr "Niet-ondersteunde beeldpuntgrootte: 0x%x"
+msgstr "Niet-ondersteunde beeldpuntopmaak: 0x%x"
 
 #: lib/screenshooter-capture-wayland.c:773
 msgid "Failed to capture"
@@ -366,7 +366,7 @@ msgstr "Vertraging in seconden voor het maken van een schermafdruk"
 
 #: src/main.c:62
 msgid "Display the mouse on the screenshot"
-msgstr "Toon muispijl op de schermafdruk"
+msgstr "Toon de muisaanwijzer op de schermafdruk"
 
 #: src/main.c:67
 msgid "Removes the window border from the screenshot"
